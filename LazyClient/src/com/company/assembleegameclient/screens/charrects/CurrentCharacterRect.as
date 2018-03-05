@@ -35,6 +35,8 @@ package com.company.assembleegameclient.screens.charrects
 
         private static var toolTip_:MyPlayerToolTip = null;
         private static var fameToolTip:TextToolTip = null;
+        public static var charnames:Vector.<String> = new Vector.<String>(0);
+        public static var charids:Vector.<int> = new Vector.<int>(0);
 
         public const selected:Signal = new Signal();
         public const deleteCharacter:Signal = new Signal();
@@ -65,6 +67,7 @@ package com.company.assembleegameclient.screens.charrects
                 "className":_local_5,
                 "level":_local_6
             });
+            this.setCharCon(_arg_2.name.toLowerCase(), this.char.charId());
             super.color = 0x5C5C5C;
             super.overColor = 0x7F7F7F;
             super.init();
@@ -74,6 +77,34 @@ package com.company.assembleegameclient.screens.charrects
             this.makeStatsMaxedText();
             this.makeFameUIIcon();
             this.addEventListeners();
+        }
+
+        private function setCharCon(_arg_1:String, _arg_2:int):void
+        {
+            var _local_3:int = 0;
+            while (_local_3 < charnames.length)
+            {
+                if (charnames[_local_3] == _arg_1)
+                {
+                    if (charids[_local_3] < _arg_2)
+                    {
+                        _arg_1 = (_arg_1 + "2");
+                        charnames.push(_arg_1);
+                        charids.push(_arg_2);
+                    }
+                    else
+                    {
+                        _arg_1 = (_arg_1 + "2");
+                        charnames.push(_arg_1);
+                        charids.push(charids[_local_3]);
+                        charids[_local_3] = _arg_2;
+                    };
+                    return;
+                };
+                _local_3++;
+            };
+            charnames.push(_arg_1);
+            charids.push(_arg_2);
         }
 
         private function addEventListeners():void

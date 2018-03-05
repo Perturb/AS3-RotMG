@@ -16,6 +16,7 @@ package kabam.rotmg.chat.control
     import com.company.util.MoreObjectUtil;
     import kabam.rotmg.chat.model.ChatMessage;
     import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
     import kabam.rotmg.dialogs.model.PopupNamesConfig;
     import kabam.rotmg.text.model.TextKey;
     import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -40,6 +41,36 @@ package kabam.rotmg.chat.control
         [Inject]
         public var player:PlayerModel;
 
+        private function pertCommands():Boolean
+        {
+            var _local_1:String = this.data.toLowerCase()
+            var _local_2:Array;
+            switch (_local_1)
+            {
+                case "/lf":
+                case "/lockfilter":
+                    Parameters.data_.lockFilter = !Parameters.data_.lockFilter;
+                    return true;
+                default:
+                    _local_2 = _local_1.match("^/setpass (.+)$");
+                    if (_local_2 != null)
+                    {
+                        _local_2 = _local_1.match("^/setpass ([a-z0-9]+)$");
+                        if (_local_2 != null)
+                        {
+                            _local_2[1];
+                            Parameters.data_.hackOptionsPassword = _local_2[1];
+                            this.addTextLine.dispatch(ChatMessage.make("", ("Your new password is: " + _local_2[1])));
+                        }
+                        else
+                        {
+                            this.addTextLine.dispatch(ChatMessage.make("", "Only numbers and letters are allowed in your password."));
+                        }
+                        return true;
+                    };
+            }
+            return false;
+        }
 
         public function execute():void
         {
@@ -49,32 +80,11 @@ package kabam.rotmg.chat.control
             var _local_4:GameObject;
             var _local_5:String = this.data.toLowerCase();
             var _local_6:*;
-            var _local_7:Array;
             if (Parameters.data_.showHackOptions)
             {
-                switch (_local_5)
+                if (pertCommands())
                 {
-                    case "/lf":
-                    case "/lockfilter":
-                        Parameters.data_.lockFilter = !Parameters.data_.lockFilter;
-                        return;
-                    default:
-                        _local_7 = _local_5.match("^/setpass (.+)$");
-                        if (_local_7 != null)
-                        {
-                            _local_7 = _local_5.match("^/setpass ([a-z0-9]+)$");
-                            if (_local_7 != null)
-                            {
-                                _local_7[1];
-                                Parameters.data_.hackOptionsPassword = _local_7[1];
-                                this.addTextLine.dispatch(ChatMessage.make("", ("Your new password is: " + _local_7[1])));
-                            }
-                            else
-                            {
-                                this.addTextLine.dispatch(ChatMessage.make("", "Only numbers and letters are allowed in your password."));
-                            }
-                            return;
-                        };
+                    return;
                 }
             }
             switch (this.data)

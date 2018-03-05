@@ -66,7 +66,6 @@ package com.company.assembleegameclient.ui.options
         public function Options(_arg_1:GameSprite)
         {
             var _local_2:TextFieldDisplayConcrete;
-            //var _local_6:int;
             var _local_7:OptionsTabTitle;
             super();
             this.gs_ = _arg_1;
@@ -102,39 +101,6 @@ package com.company.assembleegameclient.ui.options
             this.homeButton_.setAutoSize(TextFieldAutoSize.RIGHT);
             this.homeButton_.addEventListener(MouseEvent.CLICK, this.onHomeClick);
             addChild(this.homeButton_);
-            /*
-            //Old Options menu toggles
-            _local_6 = TABS.indexOf("Experimental");
-            if (UIUtils.SHOW_EXPERIMENTAL_MENU)
-            {
-                if (_local_6 == -1)
-                {
-                    TABS.push("Experimental");
-                };
-            }
-            else
-            {
-                if (_local_6 != -1)
-                {
-                    TABS.removeAt(_local_6);
-                };
-            };
-            _local_6 = TABS.indexOf("Hacks");
-            if (Parameters.data_.showHackOptions)
-            {
-                if (_local_6 == -1)
-                {
-                    TABS.push("Hacks");
-                };
-            }
-            else
-            {
-                if (_local_6 != -1)
-                {
-                    TABS.removeAt(_local_6);
-                };
-            };
-            */
             var _local_3:int = 14;
             var _local_4:int = 0;
             while (_local_4 < TABS.length)
@@ -184,9 +150,9 @@ package com.company.assembleegameclient.ui.options
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Chvzto1"), new StaticStringBuilder("Chvzto2")]);
         }
 
-        private function AutoNexusValues():Vector.<StringBuilder>
+        private static function autoNexusValues():Vector.<StringBuilder>
         {
-            //new StaticStringBuilder(((Parameters.data_.AutoNexus == 0) ? "Off" : (Parameters.data_.AutoNexus + "%")))
+            //new StaticStringBuilder(((Parameters.data_.autoNexus == 0) ? "Off" : (Parameters.data_.autoNexus + "%")))
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("10%"), new StaticStringBuilder("15%"), new StaticStringBuilder("20%"), new StaticStringBuilder("25%"), new StaticStringBuilder("30%"), new StaticStringBuilder("Pussy")]);
         }
 
@@ -562,7 +528,8 @@ package com.company.assembleegameclient.ui.options
 
         private function addHackOptions():void
         {
-            this.addOptionAndPosition(new ChoiceOption("autoNexus", this.AutoNexusValues(), [0, 10, 15, 20, 25, 30, 40], "Auto Nexus", "You can still die.", null));
+            this.addOptionAndPosition(new ChoiceOption("autoNexus", autoNexusValues(), [0, 10, 15, 20, 25, 30, 40], "Auto Nexus", "Not an invitation to play like an idiot.", null));
+            this.addOptionAndPosition(new ChoiceOption("connectCommand", makeOnOffLabels(), ["/conn", "/con"], "Replace /con with /conn", "Use /conn instead of /con to avoid conflict while using a proxy.", null));
             this.addOptionAndPosition(new ChoiceOption("lockFilter", makeOnOffLabels(), [true, false], "Lock Filter", "Don't render unlocked players when enabled.", null));
             this.addOptionAndPosition(new ChoiceOption("noConfuse", makeOnOffLabels(), [true, false], "No Confuse", "Blocks the confuse status effect when enabled.", null));
             this.addOptionAndPosition(new ChoiceOption("noBlind", makeOnOffLabels(), [true, false], "No Blind", "Blocks the blind status effect when enabled.", null));

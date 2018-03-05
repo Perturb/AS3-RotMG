@@ -7268,7 +7268,7 @@
       <Family>Farm</Family>
       <Rarity>Rare</Rarity>
       <DefaultSkin>Mini Pegasus Skin</DefaultSkin>
-      <Size>60</Size>
+      <Size>80</Size>
    </Object>
    <Object type="0x609a" id="Mini Pegasus Skin">
       <PetSkin/>
@@ -7305,7 +7305,7 @@
       <Family>Aquatic</Family>
       <Rarity>Rare</Rarity>
       <DefaultSkin>Prince Frog Skin</DefaultSkin>
-      <Size>60</Size>
+      <Size>80</Size>
    </Object>
    <Object type="0x609d" id="Prince Frog Skin">
       <PetSkin/>
@@ -7379,7 +7379,7 @@
       <Family>Avian</Family>
       <Rarity>Rare</Rarity>
       <DefaultSkin>Lovebird Skin</DefaultSkin>
-      <Size>60</Size>
+      <Size>80</Size>
    </Object>
    <Object type="0x6200" id="Lovebird Skin">
       <PetSkin/>
@@ -7459,6 +7459,43 @@
       <SlotType>10</SlotType>
       <Description>One flap of these wings can create a hurricane on the other side of the world.\n\nSprite Credits: Phops\n\nTransform your pet into Giant Monarch of the Insect family. This is irreversible and the item is consumed upon use. The rarity and abilities of your pet will be retained. If you fuse your pet to reach a new rarity level it is not guaranteed that your pet will retain the current skin.</Description>
       <Activate skinId="25096">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Zodiac Dog" type="0x620b">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Canine</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Zodiac Dog Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x620c" id="Zodiac Dog Skin">
+      <PetSkin/>
+      <DisplayId>Zodiac Dog</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>58</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x620d" id="Zodiac Dog Pet Stone">
+      <DisplayId>Zodiac Dog Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>58</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>There has never been a gooder boy in a thousand dynasties.\n\nSprite Credits: Dappertron\n\nTransform your pet into Zodiac Dog of the Canine family. This is irreversible and the item is consumed upon use. The rarity and abilities of your pet will be retained. If you fuse your pet to reach a new rarity level it is not guaranteed that your pet will retain the current skin.</Description>
+      <Activate skinId="25099">PetSkin</Activate>
       <Consumable/>
       <Soulbound/>
       <BagType>8</BagType>

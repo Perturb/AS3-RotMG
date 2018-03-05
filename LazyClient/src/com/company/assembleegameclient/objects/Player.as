@@ -85,6 +85,7 @@ package com.company.assembleegameclient.objects
         public var creditsWereChanged:Signal = new Signal();
         public var fameWasChanged:Signal = new Signal();
         private var famePortrait_:BitmapData = null;
+        public var lastSwap_:int = -1;
         public var accountId_:String = "";
         public var credits_:int = 0;
         public var tokens_:int = 0;
@@ -730,12 +731,6 @@ package com.company.assembleegameclient.objects
             super.damage(_arg_1, _arg_2, _arg_3, false, _arg_5);
         }
 
-        public function damageWithoutAck(_arg_1:int):void
-        {
-            this.negateHealth(_arg_1);
-            showDamageText(_arg_1, false);
-        }
-
         public function negateHealth(_arg_1:int):void
         {
             if (this == map_.player_)
@@ -747,7 +742,7 @@ package com.company.assembleegameclient.objects
 
         private function checkOPAuto():void
         {
-            if ((!map_.gs_.isSafeMap) && ((((chp / maxHP_) * 100) <= Parameters.data_.AutoNexus) && (!(Parameters.data_.AutoNexus == 0))))
+            if ((!map_.gs_.isSafeMap) && ((((chp / cmaxhp) * 100) <= Parameters.data_.autoNexus) && (!(Parameters.data_.autoNexus == 0))))
             {
                 map_.gs_.gsc_.escape();
                 if (this.opFailed)
@@ -823,39 +818,20 @@ package com.company.assembleegameclient.objects
                     this.checkOPAuto();
                 };
                 vitTime = getTimer();
-                //Reworked seal contribution
                 for (var i:int = (remBuffTime.length - 1); i >= 0; i--)
                 {
-                    if (getTimer() >= remBuffTime[i]) {
-                        remBuffTime.removeAt(i);
-                    };
-                };
-                if (remBuffTime.length > 0)
-                {
-                    /*
-                    //Well if seals ever make sense, I'm ready
-                    if (getTimer() >= remBuffTime[topBuffIndex])
+                    if (getTimer() >= remBuffTime[i])
                     {
-                        topBuffIndex = 0;
-                        for (var i:int = (remBuffTime.length - 1); i >= 0; i--)
-                        {
-                            if (getTimer() >= remBuffTime[i]) {
-                                remBuffTime.removeAt(i);
-                                remBuffValue.removeAt(i);
-                                topBuffIndex--;
-                            }
-                            else if (remBuffValue[i] > _local_8)
-                            {
-                                _local_8 = remBuffValue[i];
-                                topBuffIndex = i;
-                            };
-                        };
+                        remBuffTime.pop();
                     }
                     else
                     {
-                        _local_8 = remBuffValue[topBuffIndex];
-                    };
-                    */
+                        break;
+                    }
+                    ;
+                };
+                if (remBuffTime.length > 0)
+                {
                     _local_8 = cmaxseal;
                 };
                 _local_8 = (this.getItemHp() + _local_8);

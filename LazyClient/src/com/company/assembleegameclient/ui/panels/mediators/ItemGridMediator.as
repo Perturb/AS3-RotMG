@@ -38,6 +38,8 @@ package com.company.assembleegameclient.ui.panels.mediators
     import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.objects.Player;
+    import flash.utils.getTimer;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
     public class ItemGridMediator extends Mediator 
     {
@@ -95,6 +97,11 @@ package com.company.assembleegameclient.ui.panels.mediators
             var _local_7:FoodFeedFuseSlot;
             var _local_8:int;
             var _local_2:InteractiveItemTile = _arg_1.tile;
+            if (this.swapTooSoon())
+            {
+                _local_2.resetItemPosition();
+                return;
+            };
             var _local_3:* = DisplayHierarchy.getParentWithTypeArray(_local_2.getDropTarget(), TabStripView, InteractiveItemTile, FoodFeedFuseSlot, Map);
             if (((_local_2.getItemId() == PotionInventoryModel.HEALTH_POTION_ID) || ((_local_2.getItemId() == PotionInventoryModel.MAGIC_POTION_ID) && (!(Boolean((_local_3 as FoodFeedFuseSlot)))))))
             {
@@ -300,6 +307,10 @@ package com.company.assembleegameclient.ui.panels.mediators
         {
             var _local_2:InteractiveItemTile;
             var _local_3:int;
+            if (this.swapTooSoon())
+            {
+                return;
+            };
             if (Parameters.data_.inventorySwap)
             {
                 _local_2 = _arg_1.tile;
@@ -318,6 +329,10 @@ package com.company.assembleegameclient.ui.panels.mediators
 
         private function onDoubleClick(_arg_1:ItemTileEvent):void
         {
+            if (this.swapTooSoon())
+            {
+                return;
+            };
             var _local_2:InteractiveItemTile = _arg_1.tile;
             if (this.isPetFormStone(_local_2))
             {
@@ -413,6 +428,17 @@ package com.company.assembleegameclient.ui.panels.mediators
             };
         }
 
+        private function swapTooSoon():Boolean
+        {
+            var _local_1:int = getTimer();
+            if ((this.view.curPlayer.lastSwap_ + 500) > _local_1)
+            {
+                SoundEffectLibrary.play("error");
+                return (true);
+            };
+            this.view.curPlayer.lastSwap_ = _local_1;
+            return (false);
+        }
 
     }
 }//package com.company.assembleegameclient.ui.panels.mediators

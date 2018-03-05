@@ -769,13 +769,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>1</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -787,13 +786,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>2</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -805,13 +803,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>3</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -823,13 +820,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>4</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -841,13 +837,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>5</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -859,13 +854,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>6</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -877,13 +871,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>7</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -895,13 +888,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>8</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -913,13 +905,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>9</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -931,13 +922,12 @@
          <Index>0x6c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Hearts and exchange them for love letters!</Description>
+      <Description>Collect Hearts and exchange them for Love Letters at the Tinkerer... or share them with others!</Description>
       <Quantity>10</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="10"/>
          <EffectInfo name="Event" description="Valentine's Day 2018"/>
       </ExtraTooltipData>
-      <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
    </Object>
@@ -949,7 +939,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>1</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -967,7 +957,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect Love Letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>2</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -985,7 +975,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>3</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1003,7 +993,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>4</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1021,7 +1011,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>5</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1039,7 +1029,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>6</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1057,7 +1047,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>7</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1075,7 +1065,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>8</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1093,7 +1083,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>9</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1111,7 +1101,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>10</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1129,7 +1119,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>11</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1147,7 +1137,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>12</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1165,7 +1155,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>13</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1183,7 +1173,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>14</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1201,7 +1191,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>15</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1219,7 +1209,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>16</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1237,7 +1227,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>17</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1255,7 +1245,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>18</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1273,7 +1263,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>19</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>
@@ -1291,7 +1281,7 @@
          <Index>0x69</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Collect love letters and exchange them for exclusive rewards!</Description>
+      <Description>Bring Love Letters to the Tinkerer and exchange them for exclusive rewards!</Description>
       <Quantity>20</Quantity>
       <ExtraTooltipData>
          <EffectInfo name="Stack limit" description="20"/>

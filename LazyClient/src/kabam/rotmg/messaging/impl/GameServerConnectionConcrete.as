@@ -230,6 +230,9 @@ package kabam.rotmg.messaging.impl
     import kabam.rotmg.messaging.impl.data.*;
     import com.company.assembleegameclient.objects.particles.*;
     import kabam.rotmg.messaging.impl.outgoing.*;
+    import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
+    import kabam.rotmg.servers.api.ServerModel;
+    import kabam.rotmg.game.commands.PlayGameCommand;
 
     public class GameServerConnectionConcrete extends GameServerConnection 
     {
@@ -273,6 +276,10 @@ package kabam.rotmg.messaging.impl
         private var petsModel:PetsModel;
         private var friendModel:FriendModel;
         private var statsTracker:CharactersMetricsTracker;
+        private var servers:ServerModel;
+
+        private const servs:Vector.<String> = new <String>["EUEast", "EUNorth2", "EUNorth", "USWest", "USMidWest", "EUWest", "USEast", "AsiaSouthEast", "USSouth", "USSouthWest", "EUSouthWest", "USEast3", "USWest2", "USMidWest2", "USEast2", "USNorthWest", "AsiaEast", "USSouth3", "EUWest2", "EUSouth", "USSouth2", "USWest3", "Australia", "Proxy"];
+        private const abbrs:Vector.<String> = new <String>["eue", "eun2", "eun", "usw", "usmw", "euw", "use", "ase", "uss", "ussw", "eusw", "use3", "usw2", "usmw2", "use2", "usnw", "ae", "uss3", "euw2", "eus", "uss2", "usw3", "au", "p"];
 
         public function GameServerConnectionConcrete(_arg_1:AGameSprite, _arg_2:Server, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:int, _arg_7:ByteArray, _arg_8:String, _arg_9:Boolean)
         {
@@ -306,6 +313,7 @@ package kabam.rotmg.messaging.impl
             this.messages = this.injector.getInstance(MessageProvider);
             this.model = this.injector.getInstance(GameModel);
             this.currentArenaRun = this.injector.getInstance(CurrentArenaRunModel);
+            this.servers = this.injector.getInstance(ServerModel);
             gs_ = _arg_1;
             server_ = _arg_2;
             gameId_ = _arg_3;
@@ -715,9 +723,116 @@ package kabam.rotmg.messaging.impl
 
         override public function playerText(_arg_1:String):void
         {
-            var _local_2:PlayerText = (this.messages.require(PLAYERTEXT) as PlayerText);
-            _local_2.text_ = _arg_1;
-            serverConnection.sendMessage(_local_2);
+            var _local_2:Server;
+            var _local_4:int;
+            var _local_5:int;
+            var _local_6:Vector.<String>;
+            var _local_7:Vector.<int>;
+            var _local_8:String;
+            var _local_9:String;
+            var _local_10:int = 0;
+            var _local_11:int;
+            var _local_14:String = Parameters.data_.connectCommand;
+            var _local_15:PlayerText = (this.messages.require(PLAYERTEXT) as PlayerText);
+            _local_15.text_ = _arg_1;
+            if ((_local_15.text_.substr(0, 5) != "/con ") || !Parameters.data_.showHackOptions)
+            {
+                serverConnection.sendMessage(_local_15);
+                return;
+            }
+            var _local_16:Array = _local_15.text_.toLowerCase().match((_local_14 + "?(\\w*) ?(\\w*) ?(\\w*)"));
+            var _local_17:int = -2;
+            var _local_18:int = charId_;
+            if (_local_16 != null)
+            {
+                _local_5 = 1;
+                while (_local_5 < 4)
+                {
+                    if (_local_16[_local_5] != "")
+                    {
+                        if (_local_16[_local_5].substr(0, 1) == "v")
+                        {
+                            _local_17 = -5;
+                        }
+                        else
+                        {
+                            if (_local_16[_local_5] == "p")
+                            {
+                                Parameters.data_.preferredServer = "Proxy";
+                                Parameters.save();
+                            }
+                            else
+                            {
+                                if ((((_local_16[_local_5].length > 2) && (((_local_16[_local_5].substr(0, 2) == "eu") || (_local_16[_local_5].substr(0, 2) == "us")) || (_local_16[_local_5].substr(0, 3) == "ase"))) || ((_local_16[_local_5].length == 2) && ((_local_16[_local_5].substr(0, 2) == "ae") || (_local_16[_local_5].substr(0, 2) == "au")))))
+                                {
+                                    _local_4 = 0;
+                                    while (_local_4 < this.abbrs.length)
+                                    {
+                                        if (_local_16[_local_5] == this.abbrs[_local_4])
+                                        {
+                                            Parameters.data_.preferredServer = this.servs[_local_4];
+                                            Parameters.save();
+                                            break;
+                                        };
+                                        _local_4++;
+                                    };
+                                }
+                                else
+                                {
+                                    _local_6 = CurrentCharacterRect.charnames;
+                                    _local_7 = CurrentCharacterRect.charids;
+                                    while (_local_10 < _local_6.length)
+                                    {
+                                        _local_8 = _local_16[_local_5];
+                                        _local_9 = _local_6[_local_10];
+                                        if (((_local_8.substr((_local_8.length - 1), 1) == "2") && (_local_9.substr((_local_9.length - 1), 1) == "2")))
+                                        {
+                                            if (_local_9.substring(0, (_local_8.length - 1)) == _local_8.substr(0, (_local_8.length - 1)))
+                                            {
+                                                _local_16[_local_5] = _local_7[_local_10];
+                                                break;
+                                            };
+                                        }
+                                        else
+                                        {
+                                            if (_local_9.substring(0, _local_8.length) == _local_8)
+                                            {
+                                                _local_16[_local_5] = _local_7[_local_10];
+                                                break;
+                                            };
+                                        };
+                                        _local_10++;
+                                    };
+                                    _local_11 = _local_16[_local_5];
+                                    if (_local_11 > 0)
+                                    {
+                                        _local_18 = _local_11;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                    _local_5++;
+                };
+                _local_2 = this.getServerByName(Parameters.data_.preferredServer);
+                gs_.dispatchEvent(new ReconnectEvent(_local_2, _local_17, false, _local_18, getTimer(), new ByteArray(), false));
+                return;
+            };
+            serverConnection.sendMessage(_local_15);
+        }
+
+        private function getServerByName(_arg_1:String):Server
+        {
+            var _local_2:Server;
+            var _local_3:Vector.<Server> = this.servers.getServers();
+            for each (_local_2 in _local_3)
+            {
+                if (_local_2.name == _arg_1)
+                {
+                    return (_local_2);
+                };
+            };
+            return (null);
         }
 
         override public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean

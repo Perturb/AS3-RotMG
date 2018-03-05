@@ -18,8 +18,8 @@ package com.company.assembleegameclient.parameters
     public class Parameters 
     {
 
-        public static const BUILD_VERSION:String = "X22.0";
-        public static const MINOR_VERSION:String = "0";
+        public static const BUILD_VERSION:String = "X22.1";
+        public static const MINOR_VERSION:String = "1";
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = false;
@@ -268,6 +268,7 @@ package com.company.assembleegameclient.parameters
             setDefault("hackOptionsMasterPass", "perturb");
             setDefault("hackOptionsPassword", "mpgh");
             setDefault("autoNexus", 0);
+            setDefault("connectCommand", "/con");
             setDefault("noConfuse", false);
             setDefault("noBlind", false);
             setDefault("noDrunk", false);

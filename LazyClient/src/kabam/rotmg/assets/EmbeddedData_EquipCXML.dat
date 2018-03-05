@@ -19573,7 +19573,7 @@
          <Index>0xb7</Index>
       </Texture>
       <SlotType>9</SlotType>
-      <Description>Used to bound aggressive golems. Considering it&#8217;s no longer attached, it does not appear to have been very effective.</Description>
+      <Description>Used to bind aggressive golems. Considering they are no longer attached, they do not appear to have been very effective.</Description>
       <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
@@ -21110,7 +21110,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>257</Index>
       </AnimatedTexture>
       <SlotType>10</SlotType>
-      <Description>Oryx you hairy God, what magic powers do you have to let you talk so big? Clear off, or I&#8217;ll give you a taste of my cudgel!\n\nSkin Class: Paladin\nSprite Credits: Dappertron</Description>
+      <Description>Oryx you hairy God, what magic powers do you have to let you talk so big? Clear off, or I'll give you a taste of my cudgel!\n\nSkin Class: Paladin\nSprite Credits: Dappertron</Description>
       <Activate skinType="6042">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -22485,7 +22485,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
       <Soulbound/>
       <feedPower>10</feedPower>
    </Object>
-   <Object type="0x2042" id="Santa&#8217;s Sleigh">
+   <Object type="0x2042" id="Santa's Sleigh">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
@@ -23428,7 +23428,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
       <Soulbound/>
       <feedPower>2000</feedPower>
    </Object>
-   <Object type="0x0770" id="Stolen Heart Prism">
+   <Object type="0x0770" id="Heart of Gold Prism">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
@@ -23436,9 +23436,9 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x6d</Index>
       </Texture>
       <SlotType>22</SlotType>
-      <Description>spawns a loyal and trustworthy companion.\n\nSprite Credits: Lovens</Description>
+      <Description>It's said that love lasts three years... this angel didn't get the memo.\n\nSprite Credits: Lovens</Description>
       <Usable/>
-      <BagType>1</BagType>
+      <BagType>6</BagType>
       <MpCost>60</MpCost>
       <Activate objectId="heartDecoy">Pet</Activate>
       <Activate maxDistance="13">Teleport</Activate>
@@ -23454,11 +23454,11 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x67</Index>
       </Texture>
       <SlotType>6</SlotType>
-      <Description>Who said diapers couldn't be fashionable?</Description>
+      <Description>Who said diapers couldn't be fashionable?\n\nSprite Credits: WunderWafe</Description>
       <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
-      <BagType>4</BagType>
+      <BagType>6</BagType>
       <FameBonus>7</FameBonus>
       <feedPower>800</feedPower>
       <Soulbound/>
@@ -23471,9 +23471,9 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x68</Index>
       </Texture>
       <SlotType>9</SlotType>
-      <Description>My heart couldn't be anymore full!</Description>
+      <Description>My heart couldn't be anymore full!\n\nSprite Credits: WunderWafe</Description>
       <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
-      <BagType>9</BagType>
+      <BagType>6</BagType>
       <FameBonus>7</FameBonus>
       <feedPower>325</feedPower>
       <Soulbound/>
@@ -23486,7 +23486,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x65</Index>
       </Texture>
       <SlotType>3</SlotType>
-      <Description>Some people wear their heart on their sleeve, I chose to use mine as ammunition!</Description>
+      <Description>Some people wear their heart on their sleeve, I chose to use mine as ammunition!\n\nSprite Credits: WunderWafe</Description>
       <RateOfFire>1.4</RateOfFire>
       <Sound>weapon/golden_bow</Sound>
       <Projectile>
@@ -23515,7 +23515,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x66</Index>
       </Texture>
       <SlotType>15</SlotType>
-      <Description>It truly is dazzling when you put your heart into the work!</Description>
+      <Description>It truly is dazzling when you put your heart into the work!\n\nSprite Credits: WunderWafe</Description>
       <Sound>spell/fire_spray</Sound>
       <Projectile>
          <ObjectId>Love Bolt</ObjectId>
