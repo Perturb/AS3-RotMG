@@ -5,33 +5,35 @@
 
 package com.company.assembleegameclient.ui.dialogs
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import com.company.assembleegameclient.util.StageProxy;
-    import flash.display.Shape;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import com.company.googleanalytics.GA;
-    import flash.display.Graphics;
-    import flash.events.Event;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.util.StageProxy;
+import com.company.util.GraphicsUtil;
 
-    public class ErrorDialog extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class ErrorDialog extends Sprite
     {
 
         public static const GREY:int = 0xB3B3B3;
@@ -108,7 +110,7 @@ package com.company.assembleegameclient.ui.dialogs
                 this.titleText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8, 1)];
                 this.titleText_.setStringBuilder(new StaticStringBuilder(_arg_1));
                 this.addTextFieldDisplay(this.titleText_);
-            };
+            }
         }
 
         private function makeNonNullButtons(_arg_1:String, _arg_2:String):void
@@ -117,12 +119,12 @@ package com.company.assembleegameclient.ui.dialogs
             {
                 this.button1_ = new DeprecatedTextButton(16, _arg_1, 120);
                 this.button1_.addEventListener(MouseEvent.CLICK, this.onButton1Click);
-            };
+            }
             if (_arg_2 != null)
             {
                 this.button2_ = new DeprecatedTextButton(16, _arg_2, 120);
                 this.button2_.addEventListener(MouseEvent.CLICK, this.onButton2Click);
-            };
+            }
         }
 
         private function onComplete():void
@@ -138,18 +140,22 @@ package com.company.assembleegameclient.ui.dialogs
             if (this.analyticsPageName_ != null)
             {
                 this.tryAnalytics();
-            };
+            }
         }
 
         private function tryAnalytics():void
         {
+            var _local_1:GoogleAnalytics;
             try
             {
-                GA.global().trackPageview(this.analyticsPageName_);
+                _local_1 = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+                if (_local_1){
+                    _local_1.trackPageView(this.analyticsPageName_);
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         private function draw():void
@@ -168,7 +174,7 @@ package com.company.assembleegameclient.ui.dialogs
             if (this.box_.contains(this.rect_))
             {
                 this.box_.removeChild(this.rect_);
-            };
+            }
             this.removeButtonsIfAlreadyAdded();
             this.addButtonsAndLayout();
             this.drawBackground();
@@ -208,8 +214,8 @@ package com.company.assembleegameclient.ui.dialogs
                     this.box_.addChild(this.button2_);
                     this.button2_.x = (((3 * WIDTH) / 4) - (this.button2_.width / 2));
                     this.button2_.y = _local_1;
-                };
-            };
+                }
+            }
         }
 
         private function removeButtonsIfAlreadyAdded():void
@@ -217,11 +223,11 @@ package com.company.assembleegameclient.ui.dialogs
             if (((this.button1_) && (this.box_.contains(this.button1_))))
             {
                 this.box_.removeChild(this.button1_);
-            };
+            }
             if (((this.button2_) && (this.box_.contains(this.button2_))))
             {
                 this.box_.removeChild(this.button2_);
-            };
+            }
         }
 
         private function drawTitleAndText():void
@@ -234,7 +240,7 @@ package com.company.assembleegameclient.ui.dialogs
             else
             {
                 this.textText_.y = 4;
-            };
+            }
         }
 
         private function onButton1Click(_arg_1:MouseEvent):void

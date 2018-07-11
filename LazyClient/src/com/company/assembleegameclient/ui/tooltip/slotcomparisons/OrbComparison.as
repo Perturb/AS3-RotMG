@@ -5,12 +5,13 @@
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
-    public class OrbComparison extends SlotComparison 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class OrbComparison extends SlotComparison 
     {
 
 
@@ -32,7 +33,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                 comparisonStringBuilder.pushParams(TextKey.STASIS_GROUP, {"stasis":new LineBuilder().setParams(TextKey.SEC_COUNT, {"duration":_local_5}).setPrefix(TooltipHelper.getOpenTag(_local_7)).setPostfix(TooltipHelper.getCloseTag())});
                 processedTags[_local_3.toXMLString()] = true;
                 this.handleExceptions(_arg_1);
-            };
+            }
         }
 
         private function getStasisBlastTag(orbXML:XML):XML
@@ -64,7 +65,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                 }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                 processedTags[speedy.toXMLString()] = true;
                 processedTags[damaging.toXMLString()] = true;
-            };
+            }
         }
 
 

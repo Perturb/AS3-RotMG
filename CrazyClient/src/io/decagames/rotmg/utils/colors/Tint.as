@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.utils.colors.Tint
 
 package io.decagames.rotmg.utils.colors
 {
-    import flash.geom.ColorTransform;
-    import flash.display.DisplayObject;
+import flash.display.DisplayObject;
+import flash.geom.ColorTransform;
 
-    public class Tint 
+public class Tint 
     {
 
 

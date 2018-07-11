@@ -1,31 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.Frame
 
 package com.company.assembleegameclient.account.ui
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import __AS3__.vec.Vector;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.account.web.view.LabeledField;
-    import flash.display.DisplayObject;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.util.GraphicsUtil;
 
-    public class Frame extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.DisplayObject;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.web.view.LabeledField;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class Frame extends Sprite
     {
 
         private static const INDENT:Number = 17;
@@ -70,7 +70,7 @@ package com.company.assembleegameclient.account.ui
                 this.leftButton_.buttonMode = true;
                 this.leftButton_.x = 109;
                 addChild(this.leftButton_);
-            };
+            }
         }
 
         private function makeAndAddRightButton(_arg_1:String):void
@@ -82,7 +82,7 @@ package com.company.assembleegameclient.account.ui
                 this.rightButton_.x = ((this.w_ - this.rightButton_.width) - 26);
                 this.rightButton_.setAutoSize(TextFieldAutoSize.RIGHT);
                 addChild(this.rightButton_);
-            };
+            }
         }
 
         public function addLabeledField(_arg_1:LabeledField):void
@@ -181,7 +181,7 @@ package com.company.assembleegameclient.account.ui
             for each (_local_1 in this.navigationLinks_)
             {
                 _local_1.setDefaultColor(0xB3B3B3);
-            };
+            }
             this.leftButton_.setDefaultColor(0xB3B3B3);
             this.rightButton_.setDefaultColor(0xB3B3B3);
         }
@@ -194,7 +194,7 @@ package com.company.assembleegameclient.account.ui
             for each (_local_1 in this.navigationLinks_)
             {
                 _local_1.setDefaultColor(0xFFFFFF);
-            };
+            }
             this.leftButton_.setDefaultColor(0xFFFFFF);
             this.rightButton_.setDefaultColor(0xFFFFFF);
         }
@@ -207,7 +207,7 @@ package com.company.assembleegameclient.account.ui
             if (this.textInputFields_.length > 0)
             {
                 stage.focus = this.textInputFields_[0].inputText_;
-            };
+            }
         }
 
         protected function draw():void

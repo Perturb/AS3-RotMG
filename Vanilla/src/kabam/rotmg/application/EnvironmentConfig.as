@@ -5,11 +5,13 @@
 
 package kabam.rotmg.application
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.application.model.DomainModel;
+import kabam.rotmg.application.model.DomainModel;
 
-    public class EnvironmentConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class EnvironmentConfig implements IConfig
     {
 
         [Inject]

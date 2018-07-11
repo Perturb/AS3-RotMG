@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.DialogBackground
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.util.graphics.BevelRect;
-    import kabam.rotmg.util.graphics.GraphicsHelper;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
 
-    public class DialogBackground extends Sprite 
+import kabam.rotmg.util.graphics.BevelRect;
+import kabam.rotmg.util.graphics.GraphicsHelper;
+
+public class DialogBackground extends Sprite
     {
 
         private static const BEVEL:int = 4;

@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.scroll.UIScrollbar
 
 package io.decagames.rotmg.ui.scroll
 {
-    import flash.display.Sprite;
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-    import flash.display.DisplayObject;
-    import io.decagames.rotmg.ui.texture.TextureParser;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
 
-    public class UIScrollbar extends Sprite 
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import io.decagames.rotmg.ui.texture.TextureParser;
+
+public class UIScrollbar extends Sprite 
     {
 
         public static const SCROLL_SLIDER_MINIMUM_HEIGHT:int = 39;
         public static const SCROLL_SLIDER_SCALE_FACTOR:Number = 0.5;
+        public static const SCROLL_SLIDER_WIDTH:int = 17;
 
         private var _slider:Sprite;
         private var background:SliceScalingBitmap;
@@ -29,7 +31,7 @@ package io.decagames.rotmg.ui.scroll
         public function UIScrollbar(_arg_1:int)
         {
             this.contentHeight = _arg_1;
-            this.background = TextureParser.instance.getSliceScalingBitmap("UI", "scrollbar_background", 17);
+            this.background = TextureParser.instance.getSliceScalingBitmap("UI", "scrollbar_background", SCROLL_SLIDER_WIDTH);
             this.background.height = _arg_1;
             addChild(this.background);
             this._slider = new Sprite();
@@ -54,6 +56,7 @@ package io.decagames.rotmg.ui.scroll
             if (this._content.height <= this.contentHeight)
             {
                 this.sliderAsset.height = this.contentHeight;
+                this._slider.y = 1;
             }
             else
             {
@@ -62,9 +65,9 @@ package io.decagames.rotmg.ui.scroll
                 if (_local_1 < SCROLL_SLIDER_MINIMUM_HEIGHT)
                 {
                     _local_1 = SCROLL_SLIDER_MINIMUM_HEIGHT;
-                };
+                }
                 this.sliderAsset.height = _local_1;
-            };
+            }
         }
 
         public function updatePosition(_arg_1:Number):void
@@ -73,13 +76,16 @@ package io.decagames.rotmg.ui.scroll
             if (this._slider.y < 0)
             {
                 this._slider.y = 0;
-            };
+            }
             var _local_2:int = (this.contentHeight - this._slider.height);
             if (this._slider.y > _local_2)
             {
                 this._slider.y = _local_2;
-            };
-            this._content.y = (this.initalPosition + -(Math.round((((this._content.height - this.contentHeight) * this._slider.y) / _local_2))));
+            }
+            if (_local_2 > 0)
+            {
+                this._content.y = (this.initalPosition + -(Math.round((((this._content.height - this.contentHeight) * this._slider.y) / _local_2))));
+            }
         }
 
         public function get content():DisplayObject
@@ -97,7 +103,7 @@ package io.decagames.rotmg.ui.scroll
             if (this._scrollObject)
             {
                 return (this._scrollObject);
-            };
+            }
             return (this._content);
         }
 

@@ -5,18 +5,20 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.PurchaseGoldTask;
-    import kabam.rotmg.account.core.Account;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import kabam.rotmg.account.core.model.OfferModel;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.offer.Offers;
-    import com.company.assembleegameclient.util.PaymentMethod;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.PaymentMethod;
+import com.company.assembleegameclient.util.offer.Offer;
+import com.company.assembleegameclient.util.offer.Offers;
 
-    public class WebPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.model.OfferModel;
+import kabam.rotmg.account.core.services.PurchaseGoldTask;
+
+public class WebPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
     {
 
         [Inject]

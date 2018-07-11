@@ -1,25 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.TextureDataConcrete
 
 package com.company.assembleegameclient.objects
 {
-    import flash.display.BitmapData;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.appengine.RemoteTexture;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.objects.particles.EffectProperties;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import com.company.assembleegameclient.util.AssetLoader;
-    import flash.utils.Dictionary;
-    import __AS3__.vec.*;
-    import com.company.assembleegameclient.appengine.*;
+import com.company.assembleegameclient.appengine.RemoteTexture;
+import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.AssetLoader;
+import com.company.assembleegameclient.util.MaskedImage;
+import com.company.util.AssetLibrary;
 
-    public class TextureDataConcrete extends TextureData 
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
+
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class TextureDataConcrete extends TextureData
     {
 
         public static var remoteTexturesUsed:Boolean = false;
@@ -56,22 +56,22 @@ package com.company.assembleegameclient.objects
                         else
                         {
                             this.parse(_arg_1);
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             for each (_local_2 in _arg_1.AltTexture)
             {
                 this.parse(_local_2);
-            };
+            }
             if (_arg_1.hasOwnProperty("Mask"))
             {
                 this.parse(XML(_arg_1.Mask));
-            };
+            }
             if (_arg_1.hasOwnProperty("Effect"))
             {
                 this.parse(XML(_arg_1.Effect));
-            };
+            }
         }
 
         override public function getTexture(_arg_1:int=0):BitmapData
@@ -79,7 +79,7 @@ package com.company.assembleegameclient.objects
             if (randomTextureData_ == null)
             {
                 return (texture_);
-            };
+            }
             var _local_2:TextureData = randomTextureData_[(_arg_1 % randomTextureData_.length)];
             return (_local_2.getTexture(_arg_1));
         }
@@ -89,7 +89,7 @@ package com.company.assembleegameclient.objects
             if (altTextures_ == null)
             {
                 return (null);
-            };
+            }
             return (altTextures_[_arg_1]);
         }
 
@@ -127,11 +127,11 @@ package com.company.assembleegameclient.objects
                     {
                         _local_3 = new RemoteTexture(_arg_1.Id, _arg_1.Instance, this.onRemoteTexture);
                         _local_3.run();
-                        if (!AssetLoader.currentXmlIsTesting)
+                        if ((!(AssetLoader.currentXmlIsTesting)))
                         {
                             remoteTexturesUsed = true;
-                        };
-                    };
+                        }
+                    }
                     remoteTextureDir_ = ((_arg_1.hasOwnProperty("Right")) ? AnimatedChar.RIGHT : AnimatedChar.DOWN);
                     return;
                 case "RandomTexture":
@@ -139,16 +139,16 @@ package com.company.assembleegameclient.objects
                     for each (_local_4 in _arg_1.children())
                     {
                         randomTextureData_.push(new TextureDataConcrete(_local_4));
-                    };
+                    }
                     return;
                 case "AltTexture":
                     if (altTextures_ == null)
                     {
                         altTextures_ = new Dictionary();
-                    };
+                    }
                     altTextures_[int(_arg_1.@id)] = new TextureDataConcrete(_arg_1);
                     return;
-            };
+            }
         }
 
         private function onRemoteTexture(_arg_1:BitmapData):void
@@ -162,7 +162,7 @@ package com.company.assembleegameclient.objects
             else
             {
                 texture_ = _arg_1;
-            };
+            }
         }
 
 

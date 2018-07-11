@@ -5,13 +5,15 @@
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.assembleegameclient.engine3d.ObjectFace3D;
-    import flash.geom.Vector3D;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.stage3D.GraphicsFillExtra;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.engine3d.ObjectFace3D;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class CaveWall extends ConnectedObject 
+import flash.display.BitmapData;
+import flash.geom.Vector3D;
+
+import kabam.rotmg.stage3D.GraphicsFillExtra;
+
+public class CaveWall extends ConnectedObject
     {
 
         public function CaveWall(_arg_1:XML)
@@ -36,8 +38,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_6 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_6.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         override protected function buildShortLine():void
@@ -60,8 +62,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_9 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_9.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         override protected function buildL():void
@@ -86,8 +88,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_11 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_11.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         override protected function buildLine():void
@@ -109,8 +111,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_9 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_9.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         override protected function buildT():void
@@ -137,8 +139,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_13 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_13.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         override protected function buildCross():void
@@ -170,8 +172,8 @@ package com.company.assembleegameclient.objects
                 for each (_local_17 in obj3D_.faces_)
                 {
                     GraphicsFillExtra.setSoftwareDraw(_local_17.bitmapFill_, true);
-                };
-            };
+                }
+            }
         }
 
         protected function getVertex(_arg_1:int, _arg_2:int):Vector3D
@@ -190,7 +192,7 @@ package com.company.assembleegameclient.objects
                 case 2:
                     _local_4++;
                     break;
-            };
+            }
             switch (_arg_2)
             {
                 case 0:
@@ -201,7 +203,7 @@ package com.company.assembleegameclient.objects
                 case 2:
                     _local_6 = (3 + (((_local_3 * 2179) ^ (_local_4 * 1237)) % 35));
                     break;
-            };
+            }
             switch (_arg_2)
             {
                 case 0:
@@ -220,7 +222,7 @@ package com.company.assembleegameclient.objects
                     _local_7 = (_local_6 / 100);
                     _local_8 = 0;
                     break;
-            };
+            }
             switch (_arg_1)
             {
                 case 0:
@@ -231,7 +233,7 @@ package com.company.assembleegameclient.objects
                     return (new Vector3D(_local_7, 0.5, _local_8));
                 case 3:
                     return (new Vector3D(-0.5, _local_7, _local_8));
-            };
+            }
             return (null);
         }
 
@@ -244,7 +246,7 @@ package com.company.assembleegameclient.objects
             for each (_local_5 in _args)
             {
                 obj3D_.vL_.push(_local_5.x, _local_5.y, _local_5.z);
-            };
+            }
             _local_6 = obj3D_.faces_.length;
             if (_args.length == 4)
             {
@@ -256,7 +258,7 @@ package com.company.assembleegameclient.objects
                 else
                 {
                     obj3D_.faces_.push(new ObjectFace3D(obj3D_, new <int>[_local_4, (_local_4 + 2), (_local_4 + 3)]), new ObjectFace3D(obj3D_, new <int>[_local_4, (_local_4 + 1), (_local_4 + 2)]));
-                };
+                }
             }
             else
             {
@@ -285,11 +287,11 @@ package com.company.assembleegameclient.objects
                             {
                                 obj3D_.uvts_.push(0, 0, 0, 0.2, 0, 0, 1, 0.2, 0, 1, 0.8, 0, 0.8, 1, 0, 0.2, 1, 0, 0, 0.8, 0, 0, 0.2, 0);
                                 obj3D_.faces_.push(new ObjectFace3D(obj3D_, new <int>[_local_4, (_local_4 + 1), (_local_4 + 2), (_local_4 + 3), (_local_4 + 4), (_local_4 + 5), (_local_4 + 6), (_local_4 + 7)]));
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
             if (((!(_arg_1 == null)) || (!(_arg_2 == null))))
             {
                 _local_7 = _local_6;
@@ -298,8 +300,8 @@ package com.company.assembleegameclient.objects
                     obj3D_.faces_[_local_7].normalL_ = _arg_1;
                     obj3D_.faces_[_local_7].texture_ = _arg_2;
                     _local_7++;
-                };
-            };
+                }
+            }
         }
 
 

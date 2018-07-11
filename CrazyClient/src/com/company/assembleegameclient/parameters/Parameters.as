@@ -1,41 +1,46 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.parameters.Parameters
 
 package com.company.assembleegameclient.parameters
 {
-    import flash.display.DisplayObject;
-    import flash.net.SharedObject;
-    import __AS3__.vec.Vector;
-    import flash.utils.Dictionary;
-    import com.company.util.KeyCodes;
-    import com.company.assembleegameclient.map.Map;
-    import flash.events.Event;
-    import com.company.util.MoreDateUtil;
-    import flash.display.StageScaleMode;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.util.KeyCodes;
 
-    public class Parameters 
+import flash.display.DisplayObject;
+import flash.display.StageScaleMode;
+import flash.events.Event;
+import flash.net.SharedObject;
+import flash.utils.Dictionary;
+
+public class Parameters
     {
 
-        public static const BUILD_VERSION:String = "X22.0";
-        public static const MINOR_VERSION:String = "0";
-        public static const CRAZY_VERSION:String = "Hotfix v420";//"v420"
+        public static const BUILD_VERSION:String = "X27.0";
+        public static const MINOR_VERSION:String = "1";
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = true;
+        public static const USE_NEW_FRIENDS_UI:Boolean = true;
         public static const FELLOW_GUILD_COLOR:uint = 10944349;
         public static const NAME_CHOSEN_COLOR:uint = 0xFCDF00;
         public static var root:DisplayObject;
         public static var PLAYER_ROTATE_SPEED:Number = 0.003;
+        public static var RECONNECT_DELAY:int = 100;
         public static const BREATH_THRESH:int = 20;
         public static const SERVER_CHAT_NAME:String = "";
         public static const CLIENT_CHAT_NAME:String = "*Client*";
         public static const ERROR_CHAT_NAME:String = "*Error*";
         public static const HELP_CHAT_NAME:String = "*Help*";
         public static const GUILD_CHAT_NAME:String = "*Guild*";
+        public static const TYPE:String = "CC";
         public static const NEWS_TIMESTAMP_DEFAULT:Number = 1.1;
         public static const NAME_CHANGE_PRICE:int = 1000;
+        public static var followName:String = "";
+        public static var followPlayer:GameObject;
+        public static var followingName:Boolean = false;
         public static const GUILD_CREATION_PRICE:int = 1000;
         public static var data_:Object = null;
         public static var GPURenderError:Boolean = false;
@@ -43,7 +48,6 @@ package com.company.assembleegameclient.parameters
         public static var projColorType_:int = 0;
         public static var drawProj_:Boolean = true;
         public static var screenShotMode_:Boolean = false;
-        public static var screenShotSlimMode_:Boolean = false;
         public static var sendLogin_:Boolean = true;
         public static const TUTORIAL_GAMEID:int = -1;
         public static const NEXUS_GAMEID:int = -2;
@@ -55,28 +59,44 @@ package com.company.assembleegameclient.parameters
         public static const TERMS_OF_USE_URL:String = "";
         public static const PRIVACY_POLICY_URL:String = "";
         public static const USER_GENERATED_CONTENT_TERMS:String = "";
-        public static const RANDOM1:String = "311f80691451c71b09a13a2a6e";
-        public static const RANDOM2:String = "72c5583cafb6818995cbd74b80";
         public static const RSA_PUBLIC_KEY:String = ((((("-----BEGIN PUBLIC KEY-----\n" + "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCKFctVrhfF3m2Kes0FBL/JFeO") + "cmNg9eJz8k/hQy1kadD+XFUpluRqa//Uxp2s9W2qE0EoUCu59ugcf/p7lGuL99Uo") + "SGmQEynkBvZct+/M40L0E0rZ4BVgzLOJmIbXMp0J4PnPcb6VLZvxazGcmSfjauC7") + "F3yWYqUbZd/HCBtawwIDAQAB\n") + "-----END PUBLIC KEY-----");
         private static var savedOptions_:SharedObject = null;
-        public static var toggleHPBar_:Boolean = false;
-        public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973, 19494, 19531];
-        public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939, 19494, 19531];
+        public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973, 19494, 19531, 6346];
+        public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939, 19494, 19531, 6347];
         private static var keyNames_:Dictionary = new Dictionary();
+        public static var timerActive:Boolean;
+        public static var phaseChangeAt:int;
+        public static var phaseName:String;
+        public static var AutoNexus:Number = 20;
+        public static var timerPhaseTimes:Dictionary = new Dictionary();
+        public static var timerPhaseNames:Dictionary = new Dictionary();
+        public static var dmgCounter:Array = [];
+        public static var lowCPUMode:Boolean = false;
+        public static var dailyClaimKeys:Vector.<String> = new Vector.<String>();
 
+
+        public static function setTimerPhases():void
+        {
+            timerPhaseTimes['{"key":"server.oryx_closed_realm"}'] = 120000;
+            timerPhaseTimes['{"key":"server.oryx_minions_failed"}'] = 12000;
+            timerPhaseTimes["DIE! DIE! DIE!!!"] = 23000;
+            timerPhaseNames['{"key":"server.oryx_closed_realm"}'] = "Realm Closed";
+            timerPhaseNames['{"key":"server.oryx_minions_failed"}'] = "Oryx Shake";
+        }
 
         public static function load():void
         {
             try
             {
-                savedOptions_ = SharedObject.getLocal("AssembleeGameClientOptions", "/");
+                savedOptions_ = SharedObject.getLocal("AssembleeGameClientOptionsCC", "/");
                 data_ = savedOptions_.data;
             }
             catch(error:Error)
             {
                 data_ = {};
-            };
+            }
             setDefaults();
+            setTimerPhases();
             save();
         }
 
@@ -87,19 +107,19 @@ package com.company.assembleegameclient.parameters
                 if (savedOptions_ != null)
                 {
                     savedOptions_.flush();
-                };
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         private static function setDefaultKey(_arg_1:String, _arg_2:uint):void
         {
-            if (!data_.hasOwnProperty(_arg_1))
+            if ((!(data_.hasOwnProperty(_arg_1))))
             {
                 data_[_arg_1] = _arg_2;
-            };
+            }
             keyNames_[_arg_1] = true;
         }
 
@@ -109,23 +129,23 @@ package com.company.assembleegameclient.parameters
             if (_arg_2 == 0)
             {
                 return;
-            };
+            }
             for (_local_3 in keyNames_)
             {
                 if (data_[_local_3] == _arg_2)
                 {
                     data_[_local_3] = KeyCodes.UNSET;
-                };
-            };
+                }
+            }
             data_[_arg_1] = _arg_2;
         }
 
         private static function setDefault(_arg_1:String, _arg_2:*):void
         {
-            if (!data_.hasOwnProperty(_arg_1))
+            if ((!(data_.hasOwnProperty(_arg_1))))
             {
                 data_[_arg_1] = _arg_2;
-            };
+            }
         }
 
         public static function isGpuRender():Boolean
@@ -176,29 +196,29 @@ package com.company.assembleegameclient.parameters
             setDefaultKey("chatCommand", KeyCodes.SLASH);
             setDefaultKey("tell", KeyCodes.TAB);
             setDefaultKey("guildChat", KeyCodes.G);
-            setDefaultKey("testOne", KeyCodes.PERIOD);
             setDefaultKey("toggleFullscreen", KeyCodes.UNSET);
             setDefaultKey("useHealthPotion", KeyCodes.F);
             setDefaultKey("GPURenderToggle", KeyCodes.UNSET);
             setDefaultKey("friendList", KeyCodes.UNSET);
             setDefaultKey("useMagicPotion", KeyCodes.V);
             setDefaultKey("switchTabs", KeyCodes.B);
-            setDefaultKey("particleEffect", KeyCodes.P);
+            setDefaultKey("particleEffect", KeyCodes.UNSET);
             setDefaultKey("toggleHPBar", KeyCodes.H);
+            setDefaultKey("toggleProjectiles", KeyCodes.UNSET);
+            setDefaultKey("toggleMasterParticles", KeyCodes.UNSET);
             setDefault("playerObjectType", 782);
             setDefault("playMusic", true);
             setDefault("playSFX", true);
             setDefault("playPewPew", true);
             setDefault("centerOnPlayer", true);
             setDefault("preferredServer", null);
-            setDefault("cameraAngle", ((7 * Math.PI) / 4));
-            setDefault("defaultCameraAngle", ((7 * Math.PI) / 4));
+            setDefault("bestServer", null);
+            setDefault("cameraAngle", 0);
+            setDefault("defaultCameraAngle", 0);
             setDefault("showQuestPortraits", true);
             setDefault("fullscreenMode", false);
             setDefault("showProtips", true);
             setDefault("protipIndex", 0);
-            setDefault("joinDate", MoreDateUtil.getDayStringInPT());
-            setDefault("lastDailyAnalytics", null);
             setDefault("allowRotation", false);
             setDefault("allowMiniMapRotation", false);
             setDefault("charIdUseMap", {});
@@ -219,7 +239,6 @@ package com.company.assembleegameclient.parameters
             setDefault("particleEffect", true);
             setDefault("uiQuality", true);
             setDefault("cursorSelect", "4");
-            setDefault("friendListDisplayFlag", false);
             setDefault("forceChatQuality", false);
             setDefault("hidePlayerChat", false);
             setDefault("chatStarRequirement", 13);
@@ -229,7 +248,6 @@ package com.company.assembleegameclient.parameters
             setDefault("chatTrade", true);
             setDefault("rotateSpeed", 3);
             setDefault("normalUI", false);
-            setDefault("uiShadow", false);
             if (((data_.hasOwnProperty("playMusic")) && (data_.playMusic == true)))
             {
                 setDefault("musicVolume", 1);
@@ -237,7 +255,7 @@ package com.company.assembleegameclient.parameters
             else
             {
                 setDefault("musicVolume", 0);
-            };
+            }
             if (((data_.hasOwnProperty("playSFX")) && (data_.playMusic == true)))
             {
                 setDefault("SFXVolume", 1);
@@ -245,26 +263,29 @@ package com.company.assembleegameclient.parameters
             else
             {
                 setDefault("SFXVolume", 0);
-            };
+            }
             setDefault("friendList", KeyCodes.UNSET);
             setDefault("tradeWithFriends", false);
             setDefault("chatFriend", false);
             setDefault("friendStarRequirement", 0);
-            setDefault("HPBar", true);
-            setDefault("toggleBarText", false);
-            setDefault("disableEnemyParticles", false);
-            setDefault("disableAllyParticles", false);
-            setDefault("disablePlayersHitParticles", false);
+            setDefault("HPBar", 1);
+            setDefault("newMiniMapColors", false);
+            setDefault("toggleBarText", 0);
+            setDefault("disableEnemyParticles", true);
+            setDefault("disableAllyShoot", 0);
+            setDefault("disablePlayersHitParticles", true);
             setDefault("toggleToMaxText", false);
-            setDefault("noParticlesMaster", false);
+            setDefault("noParticlesMaster", true);
             setDefault("noAllyNotifications", false);
             setDefault("noEnemyDamage", false);
-            setDefault("noAllyDamage", false);
-            setDefault("forceEXP", false);
+            setDefault("noAllyDamage", true);
+            setDefault("forceEXP", 0);
+            setDefault("curseIndication", false);
+            setDefault("showTierTag", true);
             setDefault("stageScale", StageScaleMode.NO_SCALE);
             setDefault("uiscale", false);
             setDefault("removeParticles", true);
-            setDefault("drawProjectiles", true);
+            setDefault("drawProjectiles", false);
             setDefault("filterZeroStar", true);
             setDefault("tombAim", false);
             setDefault("activateSpellBomb", true);
@@ -291,33 +312,33 @@ package com.company.assembleegameclient.parameters
             setDefaultKey("AAModeHotkey", KeyCodes.M);
             setDefault("AATargetLead", true);
             setDefault("AAOn", false);
-            setDefault("STDamage", false);
-            setDefault("STHealth", true);
+            setDefault("STDamage", true);
+            setDefault("STHealth", false);
             setDefault("STColor", true);
             setDefault("LNAbility", 6);
             setDefault("LNRing", 6);
             setDefault("LNWeap", 12);
             setDefault("LNArmor", 13);
             setDefault("AutoLootOn", true);
-            setDefault("showLootNotifs", true);
-            setDefault("NoLoot", ["common", "tincture", "mark"]);
+            setDefault("showLootNotifs", false);
+            setDefault("lootPreview", true);
             setDefault("pots2inv", true);
             setDefault("potsMinor", true);
             setDefault("potsMajor", true);
             setDefault("lootHP", false);
             setDefault("lootMP", false);
             setDefaultKey("ReconRealm", KeyCodes.P);
-            setDefaultKey("ReconDung", KeyCodes.K);
-            setDefaultKey("ReconVault", KeyCodes.V);
-            setDefaultKey("ReconRandom", KeyCodes.UNSET);
-            setDefault("AutoNexus", 20);
+            setDefaultKey("ReconVault", KeyCodes.RIGHTBRACKET);
+            setDefaultKey("ReconRandom", KeyCodes.BACKSLASH);
+            setDefaultKey("ReconDaily", KeyCodes.LEFTBRACKET);
+            setDefaultKey("ReconDung", KeyCodes.UNSET);
+            setDefault("autoRecon", false);
             setDefault("NoClip", false);
             setDefault("NumericalHP", true);
             setDefault("PassesCover", true);
-            setDefault("HidePlayerFilter", false);
             setDefault("hideLockList", false);
             setDefault("TradeDelay", true);
-            setDefault("lockHighlight", true);
+            setDefault("lockHighlight", false);
             setDefault("SafeWalk", false);
             setDefault("InvViewer", true);
             setDefault("StatsViewer", true);
@@ -329,9 +350,9 @@ package com.company.assembleegameclient.parameters
             setDefault("AAAddOne", false);
             setDefault("AABoundingDist", 20);
             setDefault("showMobInfo", false);
-            setDefault("AAException", [3414, 3417, 3448, 3449, 3472, 3334, 5952, 2354, 2369, 3368, 3366, 3367, 3391, 3389, 3390, 5920, 2314, 3412, 3639, 3634, 2327, 1755, 24582, 24351, 24363, 24135, 24133, 24134, 24132, 24136, 3356, 3357, 3358, 3359, 3360, 3361, 3362, 3363, 3364, 2352, 28780, 28781, 28795, 28942, 28957, 28988, 28938, 29291, 29018, 29517, 24338, 29580, 29712, 6282, 29054, 29308, 29309, 29550, 29551, 29258, 29259, 29260, 29261, 29262]);
-            setDefault("AAIgnore", [1550, 1551, 1552, 1619, 1715, 2309, 2310, 2311, 2371, 3441, 2312, 0x0909, 2370, 2392, 2393, 2400, 2401, 3335, 3336, 3337, 3338, 3413, 3418, 3419, 3420, 3421, 3427, 3454, 3638, 3645, 6157, 28715, 28716, 28717, 28718, 28719, 28730, 28731, 28732, 28733, 28734, 29306, 29568, 29594, 29597, 29710, 29711, 29742, 29743, 29746, 29748, 30001, 29752, 43702, 43708, 43709, 43710, 3389, 3390, 3391, 24223, 0x0900, 2305, 2306, 0x0600, 1537, 1538, 1539, 1540]);
-            setDefault("AAPriority", [29054, 29308, 29309, 29550, 29551, 29258, 29259, 29260, 29261, 29262, 6282, 1646]);
+            setDefault("AAException", [355, 373, 374, 375, 376, 3463, 2053, 2052, 3461, 3414, 3417, 3441, 3561, 3448, 3449, 3472, 3334, 5952, 2354, 2369, 3368, 3366, 3367, 3391, 3389, 3390, 5920, 2314, 3412, 3639, 3634, 2327, 1755, 24582, 24351, 24363, 24135, 24133, 24134, 24132, 24136, 3356, 3357, 3358, 3359, 3360, 3361, 3362, 3363, 3364, 2352, 28780, 28781, 28795, 28942, 28957, 28988, 28938, 29291, 29018, 29517, 24338, 29580, 29712, 6282, 29054, 29308, 29309, 29550, 29551, 29258, 29259, 29260, 29261, 29262]);
+            setDefault("AAIgnore", [1711, 1712, 1550, 1551, 1552, 1619, 1715, 2309, 2310, 2311, 2371, 2312, 0x0909, 2370, 2392, 2393, 2400, 2401, 3335, 3336, 3337, 3338, 3413, 3418, 3419, 3420, 3421, 3427, 3454, 3638, 3645, 6157, 28715, 28716, 28717, 28718, 28719, 28730, 28731, 28732, 28733, 28734, 29306, 29568, 29594, 29597, 29710, 29711, 29742, 29743, 29746, 29748, 30001, 29752, 43702, 43708, 43709, 43710, 3389, 3390, 3391, 0x0900, 2305, 2306, 0x0600, 1537, 1538, 1539, 1540]);
+            setDefault("AAPriority", [29535, 29518, 29054, 5952, 29308, 29309, 29550, 29551, 29258, 29259, 29260, 29261, 29262, 6282, 1646, 3472, 3408]);
             setDefault("damageIgnored", false);
             setDefault("QuestToolTipMod", true);
             setDefault("SkipRender", false);
@@ -339,27 +360,26 @@ package com.company.assembleegameclient.parameters
             setDefault("AntiLag", true);
             setDefault("bestServ", "Default");
             setDefault("showSkins", true);
-            setDefault("showPests", true);
-            setDefault("sizer", true);
+            setDefault("showPets", true);
+            setDefault("sizer", false);
             setDefaultKey("enterPortal", KeyCodes.UNSET);
             setDefault("perfectBomb", true);
             setDefault("perfectQuiv", true);
             setDefault("perfectStun", false);
             setDefault("perfectLead", true);
             setDefault("spellVoid", false);
-            setDefault("tombHack", true);
+            setDefault("tombHack", false);
             setDefault("curBoss", 3368);
             setDefaultKey("tombCycle", KeyCodes.UNSET);
-            setDefaultKey("incFinder", KeyCodes.UNSET);
-            setDefaultKey("Beekey", KeyCodes.UNSET);
             setDefaultKey("maxPrism", KeyCodes.UNSET);
             setDefaultKey("tpto", KeyCodes.UNSET);
             setDefaultKey("pbToggle", KeyCodes.UNSET);
-            setDefault("clientSwap", true);
-            setDefault("slideOnIce", false);
+            setDefaultKey("QuestTeleport", KeyCodes.UNSET);
+            setDefault("autoAbilKey", KeyCodes.UNSET);
+            setDefault("slideOnIce", true);
             setDefault("autoAbil", false);
-            setDefault("autoHealP", 60);
-            setDefault("autoPot", 60);
+            setDefault("autoHealP", 70);
+            setDefault("autoPot", 35);
             setDefault("autoMana", 0);
             setDefault("servName", null);
             setDefault("servAddr", null);
@@ -371,22 +391,37 @@ package com.company.assembleegameclient.parameters
             setDefault("dreconGID", null);
             setDefault("dreconTime", null);
             setDefault("dreconKey", null);
-            setDefault("msg1", "black");
-            setDefault("msg2", "ready");
-            setDefault("msg3", "skip");
+            setDefault("msg1", "");
+            setDefault("msg2", "");
+            setDefault("msg3", "");
+            setDefault("msg4", "");
+            setDefault("msg5", "");
+            setDefault("msg6", "");
+            setDefault("msg7", "");
+            setDefault("msg8", "");
+            setDefault("msg9", "");
             setDefaultKey("msg1key", KeyCodes.UNSET);
             setDefaultKey("msg2key", KeyCodes.UNSET);
             setDefaultKey("msg3key", KeyCodes.UNSET);
-            setDefault("spamFilter", ["realmk!ngs", "oryx.ln", "realmpower.net", "oryxsh0p.net", "lifepot. org"]);
-            setDefault("oryxcalls", ["testx", "Skull_Shrine.new", "Pentaract.new", "Cube_God.new", "Ghost_Ship.new", "shtrs_Defense_System.new", "Grand_Sphinx.new", "Hermit_God.new", "Temple_Encounter.new", "Lord_of_the_Lost_Lands.new", "Dragon_Head_Leader.new", "LH_Lost_Sentry.new"]);
+            setDefaultKey("msg4key", KeyCodes.UNSET);
+            setDefaultKey("msg5key", KeyCodes.UNSET);
+            setDefaultKey("msg6key", KeyCodes.UNSET);
+            setDefaultKey("msg7key", KeyCodes.UNSET);
+            setDefaultKey("msg8key", KeyCodes.UNSET);
+            setDefaultKey("msg9key", KeyCodes.UNSET);
+            setDefault("spamFilter", ["realmk!ngs", "rea!mkings", "oryx.ln", "realmpower.net", "oryxsh0p.net", "lifepot. org", "realmgold"]);
+            setDefault("eventCalls", ["Skull_Shrine.new", "Pentaract.new", "Cube_God.new", "Ghost_Ship.new", "shtrs_Defense_System.new", "Grand_Sphinx.new", "Hermit_God.new", "Temple_Encounter.new", "Lord_of_the_Lost_Lands.new", "Dragon_Head_Leader.new", "LH_Lost_Sentry.new"]);
             setDefault("friendList2", []);
-            setDefault("tptoList", ["lab", "manor", "sew"]);
+            setDefault("tptoList", ["tp", "udl", "manor"]);
+            setDefault("wordNotiList", ["tp", "sew", "davy"]);
             setDefault("lootIgnore", [9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 3861, 2635, 7718, 7719, 7720, 7722, 7727, 7730]);
+            setDefault("NoLoot", ["common", "tincture", "mark"]);
             setDefault("wMenu", true);
             setDefault("conCom", "/con");
             setDefault("dbPre1", ["Preset 1", 0, false]);
             setDefault("dbPre2", ["Preset 2", 0, false]);
             setDefault("dbPre3", ["Preset 3", 0, false]);
+            setDefaultKey("panicKey", KeyCodes.DELETE);
             setDefaultKey("kdbArmorBroken", KeyCodes.UNSET);
             setDefaultKey("kdbBleeding", KeyCodes.UNSET);
             setDefaultKey("kdbDazed", KeyCodes.UNSET);
@@ -403,20 +438,22 @@ package com.company.assembleegameclient.parameters
             setDefaultKey("kdbPre3", KeyCodes.UNSET);
             setDefaultKey("kdbAll", KeyCodes.UNSET);
             setDefaultKey("resetCHP", KeyCodes.UNSET);
-            setDefault("autoCorrCHP", false);
             setDefaultKey("tPassCover", KeyCodes.UNSET);
-            setDefaultKey("Cam45DegInc", KeyCodes.UNSET);
-            setDefaultKey("Cam45DegDec", KeyCodes.UNSET);
+            setDefaultKey("Cam90DegInc", KeyCodes.UNSET);
+            setDefaultKey("Cam90DegDec", KeyCodes.UNSET);
             setDefaultKey("cam2quest", KeyCodes.UNSET);
-            setDefault("rclickTp", false);
+            setDefaultKey("SafeWalkKey", KeyCodes.UNSET);
+            setDefaultKey("SelfTPHotkey", KeyCodes.UNSET);
+            setDefaultKey("LowCPUModeHotKey", KeyCodes.UNSET);
+            setDefault("autoCorrCHP", false);
+            setDefault("rclickTp", true);
             setDefault("autoTp", true);
-            setDefault("spriteId", 0);
-            setDefault("questClosest", true);
+            setDefault("questHUD", true);
             setDefault("drinkPot", true);
             setDefault("deactPre", true);
             setDefault("ninjaTap", true);
             setDefault("palaSpam", true);
-            setDefault("grandmaMode", false);
+            setDefault("bigBag", false);
             setDefault("speedy", false);
             setDefault("setTex1", 0);
             setDefault("setTex2", 0);
@@ -430,13 +467,38 @@ package com.company.assembleegameclient.parameters
             setDefault("thunderMove", false);
             setDefault("mapHack", false);
             setDefault("eventnotify", false);
-            setDefault("sneakymode", false);
-            setDefaultKey("keyFinder", KeyCodes.UNSET);
-            setDefault("keyFinderid", 0);
-            setDefault("urlbasestr", "you suck");
             setDefault("bDebug", false);
-            setDefault("keynoti", false);
-            setDefault("teehee", false);
+            setDefault("keyNoti", false);
+            setDefault("mobNotifier", true);
+            setDefault("wordNoti", false);
+            setDefault("dodBot", false);
+            setDefault("templeBot", false);
+            setDefault("autoDecrementHP", true);
+            setDefault("voidbowDisable", true);
+            setDefault("offsetVoidbow", true);
+            setDefault("coloOffset", 19);
+            setDefault("etheriteDisable", true);
+            setDefault("spiritdaggerDisable", true);
+            setDefault("cultistStaffDisable", true);
+            setDefault("AutoReply", false);
+            setDefault("statusText", true);
+            setDefault("SWNoTileMove", true);
+            setDefault("blockTP", false);
+            setDefault("blockAbil", false);
+            setDefault("blockPots", false);
+            setDefault("blockCubes", false);
+            setDefault("onlyGods", false);
+            setDefault("showDamageOnEnemy", false);
+            setDefault("spellThreshold", 1000);
+            setDefault("uiTextSize", 15);
+            setDefault("disableNexus", false);
+            setDefault("autoClaimCalendar", true);
+            setDefault("alphaOnOthers", false);
+            setDefault("alphaMan", 0.5);
+            setDefault("tpBeforeNexus", true);
+            setDefault("rightClickOption", 0);
+            setDefault("tiltCam", false);
+            setDefault("HidePlayerFilter", false);
         }
 
 

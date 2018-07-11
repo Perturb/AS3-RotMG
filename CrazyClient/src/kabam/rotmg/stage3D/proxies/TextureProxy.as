@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.proxies.TextureProxy
 
 package kabam.rotmg.stage3D.proxies
 {
-    import flash.display3D.textures.Texture;
-    import flash.display.BitmapData;
-    import flash.display3D.textures.TextureBase;
+import flash.display.BitmapData;
+import flash.display3D.textures.Texture;
+import flash.display3D.textures.TextureBase;
 
-    public class TextureProxy 
+public class TextureProxy 
     {
 
         private var texture:Texture;

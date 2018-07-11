@@ -5,16 +5,15 @@
 
 package com.company.assembleegameclient.map.partyoverlay
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.map.Map;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.Party;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.Party;
+import com.company.assembleegameclient.objects.Player;
 
-    public class PartyOverlay extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+public class PartyOverlay extends Sprite
     {
 
         public var map_:Map;
@@ -34,7 +33,7 @@ package com.company.assembleegameclient.map.partyoverlay
                 this.partyMemberArrows_[_local_2] = _local_3;
                 addChild(_local_3);
                 _local_2++;
-            };
+            }
             this.questArrow_ = new QuestArrow(this.map_);
             addChild(this.questArrow_);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
@@ -56,7 +55,7 @@ package com.company.assembleegameclient.map.partyoverlay
             if (this.map_.player_ == null)
             {
                 return;
-            };
+            }
             var _local_3:Party = this.map_.party_;
             var _local_4:Player = this.map_.player_;
             var _local_5:int;
@@ -90,22 +89,22 @@ package com.company.assembleegameclient.map.partyoverlay
                                     if (!_local_9.mouseOver_)
                                     {
                                         _local_9.addGameObject(_local_7);
-                                    };
+                                    }
                                     _local_6.setGameObject(null);
                                     break;
-                                };
+                                }
                                 _local_8++;
-                            };
+                            }
                             _local_6.draw(_arg_2, _arg_1);
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 _local_5++;
-            };
+            }
             if (!this.questArrow_.mouseOver_)
             {
                 this.questArrow_.draw(_arg_2, _arg_1);
-            };
+            }
         }
 
 

@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.display.BitmapData;
-    import kabam.rotmg.constants.ItemConstants;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+import com.company.util.AssetLibrary;
+import com.company.util.MoreColorUtil;
 
-    public class EquipmentTile extends InteractiveItemTile 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.filters.ColorMatrixFilter;
+
+import kabam.rotmg.constants.ItemConstants;
+
+public class EquipmentTile extends InteractiveItemTile 
     {
 
         private static const greyColorFilter:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x363636));
@@ -115,7 +117,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 case ItemConstants.SHURIKEN_TYPE:
                     _local_2 = AssetLibrary.getImageFromSet("lofiObj3", 555);
                     break;
-            };
+            }
             if (_local_2 != null)
             {
                 this.backgroundDetail = new Bitmap(_local_2);
@@ -125,7 +127,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 this.backgroundDetail.scaleY = 4;
                 this.backgroundDetail.filters = [greyColorFilter];
                 addChildAt(this.backgroundDetail, 0);
-            };
+            }
             this.itemType = _arg_1;
         }
 
@@ -137,9 +139,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 if (this.backgroundDetail != null)
                 {
                     this.backgroundDetail.visible = (itemSprite.itemId <= 0);
-                };
+                }
                 this.updateMinMana();
-            };
+            }
             return (_local_2);
         }
 
@@ -159,14 +161,14 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                     else
                     {
                         this.minManaUsage = _local_1.MpCost;
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public function updateDim(_arg_1:Player):void
         {
-            itemSprite.setDim(((_arg_1) && ((_arg_1.mp_ < this.minManaUsage) || ((this.minManaUsage) && (_arg_1.isSilenced())))));
+            itemSprite.setDim(((_arg_1) && ((_arg_1.mp_ < this.minManaUsage) || ((this.minManaUsage) && (_arg_1.isSilenced_())))));
         }
 
         override protected function beginDragCallback():void

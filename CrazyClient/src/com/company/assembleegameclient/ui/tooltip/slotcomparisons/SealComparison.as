@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
-    public class SealComparison extends SlotComparison 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+
+public class SealComparison extends SlotComparison 
     {
 
         private var healingTag:XML;
@@ -39,8 +40,8 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                         "duration":tag.@duration
                     }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                     processedTags[tag.toXMLString()] = true;
-                };
-            };
+                }
+            }
         }
 
         private function canCompare():Boolean
@@ -58,8 +59,8 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                 if (tag.@effect == effectName)
                 {
                     return (tag);
-                };
-            };
+                }
+            }
             return (null);
         }
 

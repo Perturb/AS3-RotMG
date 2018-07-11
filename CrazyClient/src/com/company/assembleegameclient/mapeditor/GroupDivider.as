@@ -1,21 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.GroupDivider
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.Dictionary;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.map.RegionLibrary;
-    import com.company.util.MoreStringUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.util.MoreStringUtil;
 
-    public class GroupDivider 
+import flash.utils.Dictionary;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+
+public class GroupDivider
     {
 
         public static const GROUP_LABELS:Vector.<String> = new <String>["Ground", "Basic Objects", "Enemies", "Walls", "3D Objects", "All Objects", "Regions", "Dungeons"];
@@ -47,9 +47,9 @@ package com.company.assembleegameclient.mapeditor
                 _local_2 = _local_4.@id;
                 _local_1 = int(_local_4.@type);
                 _local_6 = StaticInjectorContext.getInjector().getInstance(PlayerModel);
-                if (!((((((_local_4.hasOwnProperty("Item")) || (_local_4.hasOwnProperty("Player"))) || (_local_4.Class == "Projectile")) || (_local_4.Class == "PetSkin")) || (_local_4.Class == "Pet")) || ((_local_2.search("Spawner") >= 0) && (!(_local_6.isAdmin())))))
+                if ((!((((((_local_4.hasOwnProperty("Item")) || (_local_4.hasOwnProperty("Player"))) || (_local_4.Class == "Projectile")) || (_local_4.Class == "PetSkin")) || (_local_4.Class == "Pet")) || ((_local_2.search("Spawner") >= 0) && (!(_local_6.isAdmin()))))))
                 {
-                    if (!((!(_local_6.isAdmin())) && (HIDE_OBJECTS_IDS.indexOf(_local_2) >= 0)))
+                    if ((!((!(_local_6.isAdmin())) && (HIDE_OBJECTS_IDS.indexOf(_local_2) >= 0))))
                     {
                         _local_3 = false;
                         if (((_local_4.hasOwnProperty("Class")) && (String(_local_4.Class).match(/wall$/i))))
@@ -87,33 +87,33 @@ package com.company.assembleegameclient.mapeditor
                                         if (_local_6.isAdmin())
                                         {
                                             _local_15[_local_1] = _local_4;
-                                        };
-                                    };
-                                };
-                            };
-                        };
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         _local_7 = ObjectLibrary.propsLibrary_[_local_1].belonedDungeon;
                         if (((_local_3) && (!(_local_7 == ""))))
                         {
                             if (_local_16[_local_7] == null)
                             {
                                 _local_16[_local_7] = new Dictionary(true);
-                            };
+                            }
                             _local_16[_local_7][_local_1] = _local_4;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             for each (_local_5 in GroundLibrary.xmlLibrary_)
             {
                 _local_9[int(_local_5.@type)] = _local_5;
-            };
+            }
             if (_local_6.isAdmin())
             {
                 for each (_local_8 in RegionLibrary.xmlLibrary_)
                 {
                     _local_10[int(_local_8.@type)] = _local_8;
-                };
+                }
             }
             else
             {
@@ -122,7 +122,9 @@ package com.company.assembleegameclient.mapeditor
                 _local_10[RegionLibrary.idToType_["Hallway 1"]] = RegionLibrary.xmlLibrary_[RegionLibrary.idToType_["Hallway 1"]];
                 _local_10[RegionLibrary.idToType_["Hallway 2"]] = RegionLibrary.xmlLibrary_[RegionLibrary.idToType_["Hallway 2"]];
                 _local_10[RegionLibrary.idToType_["Hallway 3"]] = RegionLibrary.xmlLibrary_[RegionLibrary.idToType_["Hallway 3"]];
-            };
+                _local_2[RegionLibrary.idToType_["Quest Monster Region"]] = RegionLibrary.xmlLibrary_[RegionLibrary.idToType_["Quest Monster Region"]];
+                _local_2[RegionLibrary.idToType_["Quest Monster Region 2"]] = RegionLibrary.xmlLibrary_[RegionLibrary.idToType_["Quest Monster Region 2"]];
+            }
             GROUPS[GROUP_LABELS[0]] = _local_9;
             GROUPS[GROUP_LABELS[1]] = _local_11;
             GROUPS[GROUP_LABELS[2]] = _local_12;
@@ -140,7 +142,7 @@ package com.company.assembleegameclient.mapeditor
             for (_local_1 in ObjectLibrary.dungeonsXMLLibrary_)
             {
                 _local_2.push(_local_1);
-            };
+            }
             _local_2.sort(MoreStringUtil.cmp);
             return (_local_2);
         }
@@ -157,36 +159,36 @@ package com.company.assembleegameclient.mapeditor
             if (_arg_2 == Layer.REGION)
             {
                 return (GROUP_LABELS[6]);
-            };
+            }
             if (_arg_2 == Layer.GROUND)
             {
                 return (GROUP_LABELS[0]);
-            };
+            }
             if (_local_4.isAdmin())
             {
                 return (GROUP_LABELS[5]);
-            };
+            }
             _local_3 = ObjectLibrary.xmlLibrary_[_arg_1];
             if ((((((_local_3.hasOwnProperty("Item")) || (_local_3.hasOwnProperty("Player"))) || (_local_3.Class == "Projectile")) || (_local_3.Class == "PetSkin")) || (_local_3.Class == "Pet")))
             {
                 return ("");
-            };
+            }
             if (_local_3.hasOwnProperty("Enemy"))
             {
                 return (GROUP_LABELS[2]);
-            };
+            }
             if (_local_3.hasOwnProperty("Model"))
             {
                 return (GROUP_LABELS[4]);
-            };
+            }
             if (((_local_3.hasOwnProperty("Class")) && (String(_local_3.Class).match(/wall$/i))))
             {
                 return (GROUP_LABELS[3]);
-            };
+            }
             if (((_local_3.hasOwnProperty("Static")) && (!(_local_3.hasOwnProperty("Price")))))
             {
                 return (GROUP_LABELS[1]);
-            };
+            }
             return ("");
         }
 

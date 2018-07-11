@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.services.GetMysteryBoxesTask
 
 package kabam.rotmg.mysterybox.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.fortune.services.FortuneModel;
-    import kabam.rotmg.account.core.Account;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.language.model.LanguageModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.application.DynamicSettings;
-    import flash.utils.getTimer;
-    import kabam.rotmg.fortune.model.FortuneInfo;
-    import com.company.assembleegameclient.util.TimeUtil;
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class GetMysteryBoxesTask extends BaseTask 
+import flash.utils.getTimer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.DynamicSettings;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.fortune.model.FortuneInfo;
+import kabam.rotmg.fortune.services.FortuneModel;
+import kabam.rotmg.language.model.LanguageModel;
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetMysteryBoxesTask extends BaseTask
     {
 
         private static const TEN_MINUTES:int = 600;
@@ -43,8 +46,8 @@ package kabam.rotmg.mysterybox.services
 
         override protected function startTask():void
         {
+            var _local_1:Number;
             var _local_2:Object;
-            var _local_1:Number = NaN;
             if (DynamicSettings.settingExists("MysteryBoxRefresh"))
             {
                 _local_1 = DynamicSettings.getSettingValue("MysteryBoxRefresh");
@@ -52,7 +55,7 @@ package kabam.rotmg.mysterybox.services
             else
             {
                 _local_1 = TEN_MINUTES;
-            };
+            }
             if (((this.lastRan == 0) || ((this.lastRan + _local_1) < (getTimer() / 1000))))
             {
                 this.lastRan = (getTimer() / 1000);
@@ -67,7 +70,7 @@ package kabam.rotmg.mysterybox.services
             {
                 completeTask(true);
                 reset();
-            };
+            }
         }
 
         public function clearLastRanBlock():void
@@ -86,7 +89,7 @@ package kabam.rotmg.mysterybox.services
             {
                 this.logger.warn("GetMysteryBox.onComplete: Request failed.");
                 completeTask(false);
-            };
+            }
         }
 
         private function handleOkay(_arg_1:*):void
@@ -98,7 +101,7 @@ package kabam.rotmg.mysterybox.services
                 if (this.mysteryBoxModel.isInitialized())
                 {
                     return;
-                };
+                }
                 this.mysteryBoxModel.setInitialized(false);
             }
             else
@@ -110,8 +113,8 @@ package kabam.rotmg.mysterybox.services
                 if (_local_3.length() > 0)
                 {
                     this.parseFortune(_local_3);
-                };
-            };
+                }
+            }
             completeTask(true);
         }
 
@@ -142,66 +145,70 @@ package kabam.rotmg.mysterybox.services
 
         private function parse(_arg_1:XMLList):void
         {
-            var _local_2:XML;
-            var _local_3:MysteryBoxInfo;
-            var _local_5:Boolean;
-            var _local_4:Array = [];
-            for each (_local_2 in _arg_1)
+            var _local_4:XML;
+            var _local_5:MysteryBoxInfo;
+            var _local_3:Boolean;
+            var _local_2:Array = [];
+            for each (_local_4 in _arg_1)
             {
-                _local_3 = new MysteryBoxInfo();
-                _local_3.id = _local_2.attribute("id").toString();
-                _local_3.title = _local_2.attribute("title").toString();
-                _local_3.weight = _local_2.attribute("weight").toString();
-                _local_3.description = _local_2.Description.toString();
-                _local_3.contents = _local_2.Contents.toString();
-                _local_3.priceAmount = int(_local_2.Price.attribute("amount").toString());
-                _local_3.priceCurrency = _local_2.Price.attribute("currency").toString();
-                if (_local_2.hasOwnProperty("Sale"))
+                _local_5 = new MysteryBoxInfo();
+                _local_5.id = _local_4.attribute("id").toString();
+                _local_5.title = _local_4.attribute("title").toString();
+                _local_5.weight = _local_4.attribute("weight").toString();
+                _local_5.description = _local_4.Description.toString();
+                _local_5.contents = _local_4.Contents.toString();
+                _local_5.priceAmount = int(_local_4.Price.attribute("amount").toString());
+                _local_5.priceCurrency = _local_4.Price.attribute("currency").toString();
+                if (_local_4.hasOwnProperty("Sale"))
                 {
-                    _local_3.saleAmount = _local_2.Sale.attribute("price").toString();
-                    _local_3.saleCurrency = _local_2.Sale.attribute("currency").toString();
-                    _local_3.saleEnd = TimeUtil.parseUTCDate(_local_2.Sale.End.toString());
-                };
-                if (_local_2.hasOwnProperty("Left"))
+                    _local_5.saleAmount = _local_4.Sale.attribute("price").toString();
+                    _local_5.saleCurrency = _local_4.Sale.attribute("currency").toString();
+                    _local_5.saleEnd = TimeUtil.parseUTCDate(_local_4.Sale.End.toString());
+                }
+                if (_local_4.hasOwnProperty("Left"))
                 {
-                    _local_3.unitsLeft = _local_2.Left;
-                };
-                if (_local_2.hasOwnProperty("Total"))
+                    _local_5.unitsLeft = _local_4.Left;
+                }
+                if (_local_4.hasOwnProperty("Total"))
                 {
-                    _local_3.totalUnits = _local_2.Total;
-                };
-                if (_local_2.hasOwnProperty("Slot"))
+                    _local_5.totalUnits = _local_4.Total;
+                }
+                if (_local_4.hasOwnProperty("Slot"))
                 {
-                    _local_3.slot = _local_2.Slot;
-                };
-                if (_local_2.hasOwnProperty("Jackpots"))
+                    _local_5.slot = _local_4.Slot;
+                }
+                if (_local_4.hasOwnProperty("Jackpots"))
                 {
-                    _local_3.jackpots = _local_2.Jackpots;
-                };
-                if (_local_2.hasOwnProperty("Rolls"))
+                    _local_5.jackpots = _local_4.Jackpots;
+                }
+                if (_local_4.hasOwnProperty("DisplayedItems"))
                 {
-                    _local_3.rolls = int(_local_2.Rolls);
-                };
-                if (_local_2.hasOwnProperty("Tags"))
+                    _local_5.displayedItems = _local_4.DisplayedItems;
+                }
+                if (_local_4.hasOwnProperty("Rolls"))
                 {
-                    _local_3.tags = _local_2.Tags;
-                };
-                _local_3.iconImageUrl = _local_2.Icon.toString();
-                _local_3.infoImageUrl = _local_2.Image.toString();
-                _local_3.startTime = TimeUtil.parseUTCDate(_local_2.StartTime.toString());
-                if (_local_2.EndTime.toString())
+                    _local_5.rolls = int(_local_4.Rolls);
+                }
+                if (_local_4.hasOwnProperty("Tags"))
                 {
-                    _local_3.endTime = TimeUtil.parseUTCDate(_local_2.EndTime.toString());
-                };
-                _local_3.parseContents();
-                if (((!(_local_5)) && ((_local_3.isNew()) || (_local_3.isOnSale()))))
+                    _local_5.tags = _local_4.Tags;
+                }
+                _local_5.iconImageUrl = _local_4.Icon.toString();
+                _local_5.infoImageUrl = _local_4.Image.toString();
+                _local_5.startTime = TimeUtil.parseUTCDate(_local_4.StartTime.toString());
+                if (_local_4.EndTime.toString())
                 {
-                    _local_5 = true;
-                };
-                _local_4.push(_local_3);
-            };
-            this.mysteryBoxModel.setMysetryBoxes(_local_4);
-            this.mysteryBoxModel.isNew = _local_5;
+                    _local_5.endTime = TimeUtil.parseUTCDate(_local_4.EndTime.toString());
+                }
+                _local_5.parseContents();
+                if (((!(_local_3)) && ((_local_5.isNew()) || (_local_5.isOnSale()))))
+                {
+                    _local_3 = true;
+                }
+                _local_2.push(_local_5);
+            }
+            this.mysteryBoxModel.setMysetryBoxes(_local_2);
+            this.mysteryBoxModel.isNew = _local_3;
         }
 
 

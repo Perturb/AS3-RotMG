@@ -1,18 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebRegisterAccountTask
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
 
-    public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask 
     {
 
         [Inject]
@@ -43,7 +43,7 @@ package kabam.rotmg.account.web.services
             return (_local_1);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:String):void
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void
         {
             ((_arg_1) && (this.onRegisterDone(_arg_2)));
             completeTask(_arg_1, _arg_2);
@@ -53,15 +53,15 @@ package kabam.rotmg.account.web.services
         {
             this.model.setIsAgeVerified(true);
             var _local_2:XML = new XML(_arg_1);
-            if (_local_2.hasOwnProperty("token"))
+            if (("token" in _local_2))
             {
                 this.data.token = _local_2.token;
-                this.account.updateUser(this.data.username, this.data.password, _local_2.token);
+                this.account.updateUser(this.data.username, this.data.password, _local_2.token, "");
             }
             else
             {
-                this.account.updateUser(this.data.username, this.data.password, "");
-            };
+                this.account.updateUser(this.data.username, this.data.password, "", "");
+            }
         }
 
 

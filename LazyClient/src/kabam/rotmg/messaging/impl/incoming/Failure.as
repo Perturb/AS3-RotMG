@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class Failure extends IncomingMessage 
+public class Failure extends IncomingMessage
     {
 
         public static const INCORRECT_VERSION:int = 4;

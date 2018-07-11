@@ -5,12 +5,13 @@
 
 package kabam.rotmg.arena.component
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import kabam.rotmg.arena.view.HostQueryDialog;
-    import flash.display.BitmapData;
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
 
-    public class ArenaQueryDialogHost extends Sprite 
+import kabam.rotmg.arena.view.HostQueryDialog;
+
+public class ArenaQueryDialogHost extends Sprite 
     {
 
         private const speechBubble:HostQuerySpeechBubble = makeSpeechBubble();
@@ -29,8 +30,7 @@ package kabam.rotmg.arena.component
 
         private function makeDetailBubble():HostQueryDetailBubble
         {
-            var _local_1:HostQueryDetailBubble;
-            _local_1 = new HostQueryDetailBubble();
+            var _local_1:HostQueryDetailBubble = new HostQueryDetailBubble();
             _local_1.y = 60;
             return (_local_1);
         }

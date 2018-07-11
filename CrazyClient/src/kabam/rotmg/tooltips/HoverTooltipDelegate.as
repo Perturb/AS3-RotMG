@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.tooltips.HoverTooltipDelegate
 
 package kabam.rotmg.tooltips
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import flash.display.DisplayObject;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
 
-    public class HoverTooltipDelegate implements TooltipAble 
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+
+public class HoverTooltipDelegate implements TooltipAble
     {
 
         public var tooltip:Sprite;
@@ -24,6 +25,7 @@ package kabam.rotmg.tooltips
         public function setDisplayObject(_arg_1:DisplayObject):void
         {
             this.displayObject = _arg_1;
+            this.displayObject.addEventListener(MouseEvent.CLICK, this.onMouseOut);
             this.displayObject.addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             this.displayObject.addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             this.displayObject.addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
@@ -33,11 +35,12 @@ package kabam.rotmg.tooltips
         {
             if (this.displayObject != null)
             {
+                this.displayObject.removeEventListener(MouseEvent.CLICK, this.onMouseOut);
                 this.displayObject.removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
                 this.displayObject.removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
                 this.displayObject.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
                 this.displayObject = null;
-            };
+            }
         }
 
         public function getDisplayObject():DisplayObject
@@ -70,7 +73,8 @@ package kabam.rotmg.tooltips
             if (((!(this.tooltip == null)) && (!(this.tooltip.parent == null))))
             {
                 this.hideToolTips.dispatch();
-            };
+            }
+            this.displayObject.removeEventListener(MouseEvent.CLICK, this.onMouseOut);
             this.displayObject.removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             this.displayObject.removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             this.displayObject.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);

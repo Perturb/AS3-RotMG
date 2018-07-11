@@ -5,11 +5,12 @@
 
 package kabam.rotmg.text.view
 {
-    import flash.text.TextField;
-    import kabam.rotmg.language.model.DebugStringMap;
-    import kabam.rotmg.text.model.DebugTextInfo;
+import flash.text.TextField;
 
-    public class DebugTextField extends TextField 
+import kabam.rotmg.language.model.DebugStringMap;
+import kabam.rotmg.text.model.DebugTextInfo;
+
+public class DebugTextField extends TextField 
     {
 
         public static const WRONG_LANGUAGE_COLOR:uint = 977663;
@@ -41,9 +42,9 @@ package kabam.rotmg.text.view
                 else
                 {
                     this.setBackground(INVALID_KEY_COLOR);
-                };
+                }
                 return (_local_2.key);
-            };
+            }
             return (_arg_1);
         }
 

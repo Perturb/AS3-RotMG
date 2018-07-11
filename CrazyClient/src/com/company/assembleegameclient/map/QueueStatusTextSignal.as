@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.QueueStatusTextSignal
 
 package com.company.assembleegameclient.map
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class QueueStatusTextSignal extends Signal 
+public class QueueStatusTextSignal extends Signal
     {
 
         public function QueueStatusTextSignal()

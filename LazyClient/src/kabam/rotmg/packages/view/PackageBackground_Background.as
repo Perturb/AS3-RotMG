@@ -7,8 +7,6 @@ package kabam.rotmg.packages.view
 	{
 		public function PackageBackground_Background()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -1,22 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.FindMenu
 
 package com.company.assembleegameclient.ui.menu
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
 
-    public class FindMenu extends Frame 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+public class FindMenu extends Frame 
     {
 
         private const perRow:int = 5;
@@ -34,6 +35,7 @@ package com.company.assembleegameclient.ui.menu
             var _local_6:DeprecatedClickableText;
             var _local_7:PlayerGameObjectListItem;
             var _local_8:DeprecatedClickableText;
+            var _local_9:DeprecatedClickableText;
             super((_arg_3 + " (Click to trade)"), "", "");
             this.gs_ = _arg_1;
             this.p_ = _arg_2;
@@ -43,7 +45,7 @@ package com.company.assembleegameclient.ui.menu
             if ((_local_4 % this.perRow) > 0)
             {
                 h_ = (h_ + this.padY);
-            };
+            }
             this.closeDialogs = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             while (_local_5 < _local_4)
             {
@@ -53,7 +55,7 @@ package com.company.assembleegameclient.ui.menu
                 addChild(_local_7);
                 _local_7.addEventListener(MouseEvent.CLICK, this.onClick);
                 _local_5++;
-            };
+            }
             _local_6 = new DeprecatedClickableText(18, true, "Close");
             _local_6.buttonMode = true;
             _local_6.x = (w_ - 100);
@@ -62,13 +64,19 @@ package com.company.assembleegameclient.ui.menu
             _local_6.addEventListener(MouseEvent.CLICK, this.onClose);
             if (_local_4 > 1)
             {
-                _local_8 = new DeprecatedClickableText(18, true, "Trade All");
+                _local_9 = new DeprecatedClickableText(18, true, "Lock");
+                _local_9.buttonMode = true;
+                _local_9.x = (w_ - 175);
+                _local_9.y = (h_ - 40);
+                addChild(_local_9);
+                _local_9.addEventListener(MouseEvent.CLICK, this.lockAllFunc);
+                _local_8 = new DeprecatedClickableText(18, true, "Trade");
                 _local_8.buttonMode = true;
-                _local_8.x = (w_ - 200);
+                _local_8.x = (w_ - 250);
                 _local_8.y = (h_ - 40);
                 addChild(_local_8);
                 _local_8.addEventListener(MouseEvent.CLICK, this.tradeAllFunc);
-            };
+            }
         }
 
         private function onClick(_arg_1:MouseEvent):void
@@ -79,11 +87,21 @@ package com.company.assembleegameclient.ui.menu
 
         private function tradeAllFunc(_arg_1:MouseEvent):void
         {
-            var _local_2:Player;
-            for each (_local_2 in this.p_)
+            var _local_1:Player;
+            for each (_local_1 in this.p_)
             {
-                this.gs_.gsc_.requestTrade(_local_2.name_);
-            };
+                this.gs_.gsc_.requestTrade(_local_1.name_);
+            }
+            this.closeDialogs.dispatch();
+        }
+
+        private function lockAllFunc(_arg_1:MouseEvent):void
+        {
+            var _local_1:Player;
+            for each (_local_1 in this.p_)
+            {
+                this.gs_.map.party_.lockPlayer(_local_1);
+            }
             this.closeDialogs.dispatch();
         }
 

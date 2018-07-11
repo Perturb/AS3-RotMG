@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
-    public class GenericArmorComparison extends SlotComparison 
+public class GenericArmorComparison extends SlotComparison
     {
 
         private static const DEFENSE_STAT:String = "21";
@@ -30,7 +30,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             {
                 defense = int(this.defTags.@amount);
                 otherDefense = int(this.otherDefTags.@amount);
-            };
+            }
         }
 
         private function compareDefense(_arg_1:int, _arg_2:int):String

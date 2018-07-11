@@ -1,18 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebChangePasswordDialogForced
 
 package kabam.rotmg.account.web.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
 
-    public class WebChangePasswordDialogForced extends Frame 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebChangePasswordDialogForced extends Frame
     {
 
         public var cancel:Signal;
@@ -36,10 +39,10 @@ package kabam.rotmg.account.web.view
         private function isCurrentPasswordValid():Boolean
         {
             var _local_1:* = (this.password_.text().length >= 5);
-            if (!_local_1)
+            if ((!(_local_1)))
             {
                 this.password_.setError(TextKey.WEB_CHANGE_PASSWORD_INCORRECT);
-            };
+            }
             return (_local_1);
         }
 
@@ -48,7 +51,7 @@ package kabam.rotmg.account.web.view
             var _local_1:String;
             var _local_2:int;
             var _local_3:* = (this.newPassword_.text().length >= 10);
-            if (!_local_3)
+            if ((!(_local_3)))
             {
                 this.newPassword_.setError(TextKey.LINK_WEB_ACCOUNT_SHORT);
             }
@@ -62,20 +65,20 @@ package kabam.rotmg.account.web.view
                     {
                         this.newPassword_.setError(TextKey.LINK_WEB_ACCOUNT_SHORT);
                         _local_3 = false;
-                    };
+                    }
                     _local_2++;
-                };
-            };
+                }
+            }
             return (_local_3);
         }
 
         private function isNewPasswordVerified():Boolean
         {
             var _local_1:* = (this.newPassword_.text() == this.retypeNewPassword_.text());
-            if (!_local_1)
+            if ((!(_local_1)))
             {
                 this.retypeNewPassword_.setError(TextKey.PASSWORD_DOES_NOT_MATCH);
-            };
+            }
             return (_local_1);
         }
 

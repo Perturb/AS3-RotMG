@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ShockeeEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class ShockeeEffect extends ParticleEffect 
+import flash.events.TimerEvent;
+import flash.geom.Point;
+import flash.utils.Timer;
+
+public class ShockeeEffect extends ParticleEffect
     {
 
         public var start_:Point;

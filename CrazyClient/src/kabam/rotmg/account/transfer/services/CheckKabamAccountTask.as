@@ -1,18 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.services.CheckKabamAccountTask
 
 package kabam.rotmg.account.transfer.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.transfer.view.KabamLoginView;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.account.transfer.view.KabamLoginView;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
 
-    public class CheckKabamAccountTask extends BaseTask 
+public class CheckKabamAccountTask extends BaseTask 
     {
 
         [Inject]
@@ -35,7 +35,7 @@ package kabam.rotmg.account.transfer.services
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void
         {
-            if (!_arg_1)
+            if ((!(_arg_1)))
             {
                 this.view.setError(_arg_2);
                 this.view.enable();
@@ -43,7 +43,7 @@ package kabam.rotmg.account.transfer.services
             else
             {
                 this.onChangeDone();
-            };
+            }
             completeTask(_arg_1, _arg_2);
         }
 
@@ -57,7 +57,7 @@ package kabam.rotmg.account.transfer.services
 
         private function onChangeDone():void
         {
-            this.account.updateUser(this.data.newEmail, this.data.newPassword, "");
+            this.account.updateUser(this.data.newEmail, this.data.newPassword, "", "");
             completeTask(true);
         }
 

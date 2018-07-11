@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.NewTick
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.messaging.impl.data.ObjectStatusData;
-    import com.company.assembleegameclient.util.FreeList;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class NewTick extends IncomingMessage 
+import flash.utils.IDataInput;
+
+import kabam.rotmg.messaging.impl.data.ObjectStatusData;
+
+public class NewTick extends IncomingMessage 
     {
 
         public var tickId_:int;
@@ -34,18 +34,18 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 FreeList.deleteObject(this.statuses_[_local_2]);
                 _local_2++;
-            };
+            }
             this.statuses_.length = Math.min(_local_3, this.statuses_.length);
             while (this.statuses_.length < _local_3)
             {
                 this.statuses_.push((FreeList.newObject(ObjectStatusData) as ObjectStatusData));
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _local_3)
             {
                 this.statuses_[_local_2].parseFromInput(_arg_1);
                 _local_2++;
-            };
+            }
         }
 
         override public function toString():String

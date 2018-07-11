@@ -5,26 +5,27 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Shape;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import flash.utils.getTimer;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.util.GraphicsUtil;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
+import com.company.util.GraphicsUtil;
 
-    public class TradeButton extends BackgroundFilledText 
+import flash.display.CapsStyle;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.text.TextFieldAutoSize;
+import flash.utils.getTimer;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TradeButton extends BackgroundFilledText 
     {
 
         private static const WAIT_TIME:int = 2999;
@@ -102,7 +103,7 @@ package com.company.assembleegameclient.ui
             if (_arg_1 == mouseEnabled)
             {
                 return;
-            };
+            }
             mouseEnabled = _arg_1;
             mouseChildren = _arg_1;
             graphicsData_[0] = ((_arg_1) ? enabledFill_ : disabledFill_);
@@ -183,8 +184,8 @@ package com.company.assembleegameclient.ui
                 {
                     this.state_ = NORMAL_STATE;
                     this.setEnabled(true);
-                };
-            };
+                }
+            }
             switch (this.state_)
             {
                 case COUNTDOWN_STATE:
@@ -197,7 +198,7 @@ package com.company.assembleegameclient.ui
                 case WAITING_STATE:
                     this.statusBar_.visible = false;
                     break;
-            };
+            }
             graphics.clear();
             graphics.drawGraphicsData(graphicsData_);
         }

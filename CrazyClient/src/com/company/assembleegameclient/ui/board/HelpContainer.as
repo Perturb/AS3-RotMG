@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.HelpContainer
 
 package com.company.assembleegameclient.ui.board
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class HelpContainer extends Sprite 
+public class HelpContainer extends Sprite 
     {
 
         private var articles:HelpXML = new HelpXML();
@@ -32,7 +32,7 @@ package com.company.assembleegameclient.ui.board
                 addChild(_local_3);
                 _local_4 = (_local_4 + (42 + (_local_2 * 12)));
                 _local_1++;
-            };
+            }
         }
 
         private function count(_arg_1:String, _arg_2:String):int

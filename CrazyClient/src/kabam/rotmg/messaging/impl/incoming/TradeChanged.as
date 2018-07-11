@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.TradeChanged
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import flash.utils.IDataInput;
 
-    public class TradeChanged extends IncomingMessage 
+public class TradeChanged extends IncomingMessage 
     {
 
         public var offer_:Vector.<Boolean> = new Vector.<Boolean>();
@@ -28,7 +26,7 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 this.offer_.push(_arg_1.readBoolean());
                 _local_2++;
-            };
+            }
         }
 
         override public function toString():String

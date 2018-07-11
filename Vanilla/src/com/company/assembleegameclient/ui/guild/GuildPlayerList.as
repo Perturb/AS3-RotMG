@@ -5,25 +5,27 @@
 
 package com.company.assembleegameclient.ui.guild
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.ui.BaseSimpleText;
-    import flash.display.Bitmap;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.account.core.Account;
-    import com.company.util.MoreObjectUtil;
-    import flash.display.Graphics;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.Scrollbar;
+import com.company.assembleegameclient.util.GuildUtil;
+import com.company.ui.BaseSimpleText;
+import com.company.util.MoreObjectUtil;
 
-    public class GuildPlayerList extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class GuildPlayerList extends Sprite 
     {
 
         private var num_:int;
@@ -76,7 +78,7 @@ package com.company.assembleegameclient.ui.guild
             else
             {
                 this.onTextError(_arg_2);
-            };
+            }
         }
 
         private function onGenericData(_arg_1:String):void
@@ -145,7 +147,7 @@ package com.company.assembleegameclient.ui.guild
                 _local_9.y = (_local_4 * MemberListLine.HEIGHT);
                 this.listSprite_.addChild(_local_9);
                 _local_4++;
-            };
+            }
             _local_6 = (GuildUtil.MAX_MEMBERS - (this.offset_ + _local_4));
             this.openSlotsText_ = new TextFieldDisplayConcrete().setSize(22).setColor(0xB3B3B3);
             this.openSlotsText_.setStringBuilder(new LineBuilder().setParams(TextKey.GUILD_PLAYER_LIST_OPENSLOTS, {"openSlots":_local_6}));
@@ -163,7 +165,7 @@ package com.company.assembleegameclient.ui.guild
                 this.scrollBar_.setIndicatorSize(400, this.listSprite_.height);
                 this.scrollBar_.addEventListener(Event.CHANGE, this.onScrollBarChange);
                 addChild(this.scrollBar_);
-            };
+            }
         }
 
         private function onScrollBarChange(_arg_1:Event):void

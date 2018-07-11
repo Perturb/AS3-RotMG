@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
-    public class TomeComparison extends SlotComparison 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TomeComparison extends SlotComparison 
     {
 
 
@@ -43,7 +44,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                 }).setPrefix(TooltipHelper.getOpenTag(getTextColor((wavg - otherWavg)))).setPostfix(TooltipHelper.getCloseTag());
                 comparisonStringBuilder.pushParams(TextKey.PARTY_HEAL, {"effect":innerStringBuilder});
                 processedTags[nova.toXMLString()] = true;
-            };
+            }
             if (itemXML.@id == "Tome of Purification")
             {
                 tag = itemXML.Activate.(text() == "RemoveNegativeConditions")[0];
@@ -61,8 +62,8 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
                         "duration":tag.@duration
                     }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                     processedTags[tag.toXMLString()] = true;
-                };
-            };
+                }
+            }
         }
 
 

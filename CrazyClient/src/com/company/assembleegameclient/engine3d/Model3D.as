@@ -1,19 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Model3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
-    import flash.utils.ByteArray;
-    import flash.display3D.Context3D;
-    import com.company.util.ConversionUtil;
-    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-    import __AS3__.vec.*;
+import com.company.util.ConversionUtil;
 
-    public class Model3D 
+import flash.display3D.Context3D;
+import flash.utils.ByteArray;
+
+import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
+import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+
+public class Model3D
     {
 
         private static var modelLib_:Object = {};
@@ -37,7 +37,7 @@ package com.company.assembleegameclient.engine3d
             for each (_local_2 in models)
             {
                 _local_2.CreatBuffer(_arg_1);
-            };
+            }
         }
 
         public static function parseFromOBJ(_arg_1:String, _arg_2:String):void
@@ -64,7 +64,7 @@ package com.company.assembleegameclient.engine3d
             var _local_22:Array = [];
             for each (_local_3 in _local_16)
             {
-                if (!((_local_3.charAt(0) == "#") || (_local_3.length == 0)))
+                if ((!((_local_3.charAt(0) == "#") || (_local_3.length == 0))))
                 {
                     _local_7 = _local_3.split(/\s+/);
                     if (_local_7.length != 0)
@@ -78,44 +78,44 @@ package com.company.assembleegameclient.engine3d
                                     if (_local_7.length != 3)
                                     {
                                         return;
-                                    };
+                                    }
                                     _local_17.push(_local_7);
                                     break;
                                 case "vt":
                                     if (_local_7.length != 2)
                                     {
                                         return;
-                                    };
+                                    }
                                     _local_18.push(_local_7);
                                     break;
                                 case "f":
                                     if (_local_7.length < 3)
                                     {
                                         return;
-                                    };
+                                    }
                                     _local_21.push(_local_7);
                                     _local_22.push(_local_15);
                                     for each (_local_9 in _local_7)
                                     {
-                                        if (!_local_20.hasOwnProperty(_local_9))
+                                        if ((!(_local_20.hasOwnProperty(_local_9))))
                                         {
                                             _local_20[_local_9] = _local_19.length;
                                             _local_19.push(_local_9);
-                                        };
-                                    };
+                                        }
+                                    }
                                     break;
                                 case "usemtl":
                                     if (_local_7.length != 1)
                                     {
                                         return;
-                                    };
+                                    }
                                     _local_15 = _local_7[0];
                                     break;
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
             _local_4 = new (Model3D)();
             for each (_local_5 in _local_19)
             {
@@ -129,8 +129,8 @@ package com.company.assembleegameclient.engine3d
                 else
                 {
                     _local_4.uvts_.push(0, 0, 0);
-                };
-            };
+                }
+            }
             _local_6 = 0;
             while (_local_6 < _local_21.length)
             {
@@ -142,10 +142,10 @@ package com.company.assembleegameclient.engine3d
                 {
                     _local_13.push(_local_20[_local_11[_local_14]]);
                     _local_14++;
-                };
+                }
                 _local_4.faces_.push(new ModelFace3D(_local_4, _local_13, ((_local_12 == null) || (!(_local_12.substr(0, 5) == "Solid")))));
                 _local_6++;
-            };
+            }
             _local_4.orderFaces();
             modelLib_[_arg_1] = _local_4;
         }
@@ -161,7 +161,7 @@ package com.company.assembleegameclient.engine3d
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             return (new Object3D(_local_2));
         }
 
@@ -171,7 +171,7 @@ package com.company.assembleegameclient.engine3d
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             return (new Object3DStage3D(_local_2));
         }
 

@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.model.TellModel
 
 package kabam.rotmg.chat.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class TellModel 
+public class TellModel
     {
 
         private var pastRecipients:Vector.<String> = new Vector.<String>();
@@ -21,7 +18,7 @@ package kabam.rotmg.chat.model
             if (_local_2 != -1)
             {
                 this.pastRecipients.splice(_local_2, 1);
-            };
+            }
             this.pastRecipients.unshift(_arg_1);
         }
 
@@ -31,7 +28,7 @@ package kabam.rotmg.chat.model
             {
                 this.index = ((this.index + 1) % this.pastRecipients.length);
                 return (this.pastRecipients[this.index]);
-            };
+            }
             return ("");
         }
 

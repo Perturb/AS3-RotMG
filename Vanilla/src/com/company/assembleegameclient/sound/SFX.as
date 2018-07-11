@@ -5,11 +5,14 @@
 
 package com.company.assembleegameclient.sound
 {
-    import flash.media.SoundTransform;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.googleanalytics.GA;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class SFX 
+import flash.media.SoundTransform;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.service.GoogleAnalytics;
+
+public class SFX
     {
 
         private static var sfxTrans_:SoundTransform;
@@ -22,7 +25,10 @@ package com.company.assembleegameclient.sound
 
         public static function setPlaySFX(_arg_1:Boolean):void
         {
-            GA.global().trackEvent("sound", ((_arg_1) ? "soundOn" : "soundOff"));
+            var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            if (_local_2)
+            {
+            }
             Parameters.data_.playSFX = _arg_1;
             Parameters.save();
             SoundEffectLibrary.updateTransform();

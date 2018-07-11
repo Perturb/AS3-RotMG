@@ -5,11 +5,13 @@
 
 package com.company.assembleegameclient.account.ui.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.account.ui.CreateGuildFrame;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import com.company.assembleegameclient.account.ui.CreateGuildFrame;
 
-    public class CreateGuildFrameMediator extends Mediator 
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CreateGuildFrameMediator extends Mediator 
     {
 
         [Inject]

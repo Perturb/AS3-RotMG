@@ -7,8 +7,6 @@ package kabam.rotmg.mysterybox.model
 	{
 		public function MysteryBoxInfo_chestImageEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

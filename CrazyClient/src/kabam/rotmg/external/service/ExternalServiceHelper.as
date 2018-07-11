@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.service.ExternalServiceHelper
 
 package kabam.rotmg.external.service
 {
-    import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
-    import flash.external.ExternalInterface;
+import flash.external.ExternalInterface;
 
-    public class ExternalServiceHelper 
+import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
+
+public class ExternalServiceHelper 
     {
 
         [Inject]
@@ -20,7 +21,7 @@ package kabam.rotmg.external.service
             if (ExternalInterface.available)
             {
                 ExternalInterface.addCallback("updatePlayerCredits", this.updatePlayerCredits);
-            };
+            }
         }
 
         private function updatePlayerCredits():void

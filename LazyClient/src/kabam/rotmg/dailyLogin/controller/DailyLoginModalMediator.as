@@ -5,21 +5,23 @@
 
 package kabam.rotmg.dailyLogin.controller
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dailyLogin.view.DailyLoginModal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.game.signals.ExitGameSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import flash.globalization.DateTimeFormatter;
-    import com.company.assembleegameclient.map.Map;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.pets.view.components.DialogCloseButton;
-    import kabam.rotmg.dailyLogin.view.*;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class DailyLoginModalMediator extends Mediator 
+import flash.events.MouseEvent;
+import flash.globalization.DateTimeFormatter;
+
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+import kabam.rotmg.dailyLogin.view.DailyLoginModal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.game.signals.ExitGameSignal;
+import kabam.rotmg.pets.view.components.DialogCloseButton;
+import kabam.rotmg.ui.model.HUDModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DailyLoginModalMediator extends Mediator 
     {
 
         [Inject]
@@ -53,7 +55,7 @@ package kabam.rotmg.dailyLogin.controller
             {
                 this.view.claimButton.addEventListener(MouseEvent.CLICK, this.onClaimClickHandler);
                 this.view.addEventListener(MouseEvent.CLICK, this.onPopupClickHandler);
-            };
+            }
             Parameters.data_.calendarShowOnDay = this.dailyLoginModel.getTimestampDay();
             Parameters.save();
             this.dailyLoginModel.shouldDisplayCalendarAtStartup = false;
@@ -61,7 +63,7 @@ package kabam.rotmg.dailyLogin.controller
             this.view.closeButton.clicked.add(this.onCloseButtonClicked);
         }
 
-        public function onCloseButtonClicked():*
+        public function onCloseButtonClicked():void
         {
             this.view.closeButton.clicked.remove(this.onCloseButtonClicked);
             this.flushStartupQueue.dispatch();
@@ -73,7 +75,7 @@ package kabam.rotmg.dailyLogin.controller
             {
                 this.view.claimButton.removeEventListener(MouseEvent.CLICK, this.onClaimClickHandler);
                 this.view.removeEventListener(MouseEvent.CLICK, this.onPopupClickHandler);
-            };
+            }
             super.destroy();
         }
 
@@ -93,7 +95,7 @@ package kabam.rotmg.dailyLogin.controller
             if (_arg_1.target != DialogCloseButton)
             {
                 this.enterPortal();
-            };
+            }
         }
 
 

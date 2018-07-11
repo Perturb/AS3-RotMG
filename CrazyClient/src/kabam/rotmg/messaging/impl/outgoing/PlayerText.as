@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.PlayerText
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class PlayerText extends OutgoingMessage 
+public class PlayerText extends OutgoingMessage 
     {
 
-        public var text_:String = new String();
+        public var text_:String;
 
         public function PlayerText(_arg_1:uint, _arg_2:Function)
         {

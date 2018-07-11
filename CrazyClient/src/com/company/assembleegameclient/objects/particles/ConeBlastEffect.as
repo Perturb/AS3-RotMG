@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ConeBlastEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class ConeBlastEffect extends ParticleEffect 
+import flash.geom.Point;
+
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class ConeBlastEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -45,7 +47,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_7, this.color_, _local_8, this.start_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 
@@ -69,7 +71,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_7, this.color_, _local_8, this.start_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 

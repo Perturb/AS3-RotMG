@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.DialogCloserMediator
 
 package com.company.assembleegameclient.ui.dialogs
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import org.osflash.signals.Signal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class DialogCloserMediator extends Mediator 
+import org.osflash.signals.Signal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DialogCloserMediator extends Mediator
     {
 
         [Inject]

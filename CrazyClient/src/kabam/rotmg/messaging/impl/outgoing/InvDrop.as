@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.InvDrop
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import kabam.rotmg.messaging.impl.data.SlotObjectData;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class InvDrop extends OutgoingMessage 
+import kabam.rotmg.messaging.impl.data.SlotObjectData;
+
+public class InvDrop extends OutgoingMessage 
     {
 
         public var slotObject_:SlotObjectData = new SlotObjectData();

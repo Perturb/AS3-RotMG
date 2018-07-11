@@ -5,9 +5,9 @@
 
 package kabam.rotmg.death.model
 {
-    import kabam.rotmg.messaging.impl.incoming.Death;
+import kabam.rotmg.messaging.impl.incoming.Death;
 
-    public class DeathModel 
+public class DeathModel 
     {
 
         private var isDeathFameViewPending:Boolean;

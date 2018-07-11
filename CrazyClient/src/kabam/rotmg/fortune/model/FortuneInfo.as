@@ -1,21 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.model.FortuneInfo
 
 package kabam.rotmg.fortune.model
 {
-    import flash.display.DisplayObject;
-    import kabam.display.Loader.LoaderProxy;
-    import kabam.display.Loader.LoaderProxyConcrete;
-    import __AS3__.vec.Vector;
-    import flash.events.Event;
-    import flash.events.IOErrorEvent;
-    import flash.net.URLRequest;
-    import flash.utils.Dictionary;
-    import __AS3__.vec.*;
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.net.URLRequest;
+import flash.utils.Dictionary;
 
-    public class FortuneInfo 
+import kabam.display.Loader.LoaderProxy;
+import kabam.display.Loader.LoaderProxyConcrete;
+
+public class FortuneInfo
     {
 
         public static var chestImageEmbed:Class = FortuneInfo_chestImageEmbed;
@@ -237,11 +236,11 @@ package kabam.rotmg.fortune.model
                     {
                         _local_6[int(_local_4)] = true;
                         this._rollsWithContentsUnique.push(int(_local_4));
-                    };
+                    }
                     _local_2.push(int(_local_4));
-                };
+                }
                 this._rollsWithContents.push(_local_2);
-            };
+            }
         }
 
         public function get infoImage():DisplayObject

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.HealParticle
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.geom.Vector3D;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class HealParticle extends Particle 
+import flash.geom.Vector3D;
+
+public class HealParticle extends Particle
     {
 
         public var timeLeft_:int;
@@ -33,7 +34,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.timeLeft_ <= 0)
             {
                 return (false);
-            };
+            }
             x_ = (this.go_.x_ + (this.dist_ * Math.cos(this.angle_)));
             y_ = (this.go_.y_ + (this.dist_ * Math.sin(this.angle_)));
             z_ = (z_ + ((this.moveVec_.z * _arg_2) * 0.008));

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.api.BuyButton
 
 package kabam.rotmg.util.components.api
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
+import flash.display.Sprite;
 
-    public class BuyButton extends Sprite 
+import org.osflash.signals.Signal;
+
+public class BuyButton extends Sprite
     {
 
         public const readyForPlacement:Signal = new Signal();

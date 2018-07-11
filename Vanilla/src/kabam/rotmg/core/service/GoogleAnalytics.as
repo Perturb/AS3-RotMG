@@ -5,30 +5,34 @@
 
 package kabam.rotmg.core.service
 {
-    import com.google.analytics.GATracker;
-    import com.company.googleanalytics.GA;
-    import flash.display.Stage;
+import flash.system.Capabilities;
 
-    public class GoogleAnalytics 
+import io.decagames.rotmg.service.tracking.GoogleAnalyticsTracker;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GoogleAnalytics
     {
 
-        private var tracker:GATracker;
+        private var tracker:GoogleAnalyticsTracker;
+        [Inject]
+        public var logger:ILogger;
 
 
-        public function init(_arg_1:Stage, _arg_2:String):void
+        public function init(_arg_1:String, _arg_2:String):void
         {
-            this.tracker = new GATracker(_arg_1, _arg_2);
-            GA.setTracker(this.tracker);
+            this.logger.debug(((("GA setup: " + _arg_1) + ", type:") + Capabilities.playerType));
+            this.tracker = new GoogleAnalyticsTracker(_arg_1, this.logger, _arg_2);
         }
 
-        public function trackEvent(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:Number):Boolean
+        public function trackEvent(_arg_1:String, _arg_2:String, _arg_3:String="", _arg_4:Number=NaN):void
         {
-            return (this.tracker.trackEvent(_arg_1, _arg_2, _arg_3, _arg_4));
+            this.tracker.trackEvent(_arg_1, _arg_2, _arg_3, _arg_4);
+            this.logger.debug(((((((("Track event - category: " + _arg_1) + ", action:") + _arg_2) + ", label: ") + _arg_3) + ", value:") + _arg_4));
         }
 
         public function trackPageView(_arg_1:String):void
         {
-            this.tracker.trackPageview(_arg_1);
         }
 
 

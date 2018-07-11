@@ -1,21 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.control.ReskinCharacterCommand
 
 package kabam.rotmg.characters.reskin.control
 {
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.lib.net.api.MessageProvider;
-    import kabam.lib.net.impl.SocketServer;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import kabam.rotmg.messaging.impl.outgoing.Reskin;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.game.model.GameModel;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ReskinCharacterCommand 
+import kabam.lib.net.api.MessageProvider;
+import kabam.lib.net.impl.SocketServer;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.messaging.impl.outgoing.Reskin;
+
+public class ReskinCharacterCommand 
     {
 
         [Inject]
@@ -41,8 +42,8 @@ package kabam.rotmg.characters.reskin.control
                 else
                 {
                     _local_2.size_ = 100;
-                };
-            };
+                }
+            }
             this.server.sendMessage(_local_1);
         }
 

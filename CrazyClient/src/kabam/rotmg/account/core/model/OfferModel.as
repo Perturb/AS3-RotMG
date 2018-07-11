@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.model.OfferModel
 
 package kabam.rotmg.account.core.model
 {
-    import com.company.assembleegameclient.util.offer.Offers;
+import com.company.assembleegameclient.util.offer.Offers;
 
-    public class OfferModel 
+public class OfferModel
     {
 
         public static const TIME_BETWEEN_REQS:int = ((5 * 60) * 1000);//300000

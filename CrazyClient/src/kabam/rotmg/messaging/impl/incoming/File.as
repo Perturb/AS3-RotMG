@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.File
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class File extends IncomingMessage 
+public class File extends IncomingMessage 
     {
 
         public var filename_:String;

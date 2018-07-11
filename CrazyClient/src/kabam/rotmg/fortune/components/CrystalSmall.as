@@ -1,33 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.components.CrystalSmall
 
 package kabam.rotmg.fortune.components
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import __AS3__.vec.Vector;
-    import flash.text.TextField;
-    import flash.filters.GlowFilter;
-    import flash.display.BitmapData;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.text.TextFormat;
-    import flash.text.TextFormatAlign;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.text.TextFieldAutoSize;
-    import com.gskinner.motion.GTween;
-    import flash.ui.Mouse;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.MoreColorUtil;
+import com.gskinner.motion.GTween;
 
-    public class CrystalSmall extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.ColorMatrixFilter;
+import flash.filters.GlowFilter;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+import flash.text.TextFormatAlign;
+import flash.ui.Mouse;
+
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class CrystalSmall extends Sprite
     {
 
         public static const ANIM_PULSE:int = 1;
@@ -80,7 +80,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 3)
             {
@@ -88,7 +88,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -96,7 +96,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -104,7 +104,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 5)
             {
@@ -112,7 +112,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 8)
             {
@@ -120,7 +120,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_1 = AssetLibrary.getImageFromSet("lofiCharBig", 0x0100);
             _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0, true);
             this.crystal = new Bitmap(_local_1);
@@ -194,7 +194,7 @@ package kabam.rotmg.fortune.components
             if (this.glowState == GLOW_STATE_PULSE)
             {
                 this.glowFilter.alpha = 1;
-            };
+            }
         }
 
         public function doItemReveal(_arg_1:int):void
@@ -202,7 +202,7 @@ package kabam.rotmg.fortune.components
             if (((this.parent == null) || (this.parent.parent == null)))
             {
                 return;
-            };
+            }
             this.removeItemReveal();
             this.item = new ItemWithTooltip(_arg_1);
             this.item.itemBitmap.alpha = 1;
@@ -224,11 +224,11 @@ package kabam.rotmg.fortune.components
             if (((!(this.item == null)) && (this.item.parent)))
             {
                 parent.removeChild(this.item);
-            };
+            }
             if (((!(this.itemNameField == null)) && (this.itemNameField.parent)))
             {
                 parent.removeChild(this.itemNameField);
-            };
+            }
         }
 
         public function doItemShow(_arg_1:int):void
@@ -236,7 +236,7 @@ package kabam.rotmg.fortune.components
             if (((this.parent == null) || (this.parent.parent == null)))
             {
                 return;
-            };
+            }
             this.removeItemReveal();
             var _local_2:TextFormat = new TextFormat();
             _local_2.size = 18;
@@ -304,13 +304,13 @@ package kabam.rotmg.fortune.components
 
         public function setActive():void
         {
-            if (!this.active)
+            if ((!(this.active)))
             {
                 this.crystal.alpha = 0;
                 this.crystalGrey.alpha = 1;
                 this.setAnimation(0, 3);
                 this.setAnimationDuration(100);
-            };
+            }
             this.active = true;
         }
 
@@ -325,12 +325,12 @@ package kabam.rotmg.fortune.components
                 if (this.crystal != null)
                 {
                     this.crystal.alpha = 1;
-                };
+                }
                 if (this.crystalGrey != null)
                 {
                     this.crystalGrey.alpha = 0;
-                };
-            };
+                }
+            }
             this.active = false;
         }
 
@@ -349,7 +349,7 @@ package kabam.rotmg.fortune.components
                 {
                     this.crystalGrey.alpha = 0;
                     this.crystal.alpha = 1;
-                };
+                }
             }
             else
             {
@@ -362,8 +362,8 @@ package kabam.rotmg.fortune.components
                 {
                     this.crystalGrey.alpha = 1;
                     this.crystal.alpha = 0;
-                };
-            };
+                }
+            }
             if (this.glowState == GLOW_STATE_FADE)
             {
                 this.glowFilter.alpha = (this.glowFilter.alpha - 0.07);
@@ -371,7 +371,7 @@ package kabam.rotmg.fortune.components
                 if (this.glowFilter.alpha <= 0.03)
                 {
                     this.filters = [];
-                };
+                }
             }
             else
             {
@@ -386,13 +386,13 @@ package kabam.rotmg.fortune.components
                         if (((this.glowFilter.alpha <= 0.5) && (!(this.pulsePolarity))))
                         {
                             this.pulsePolarity = true;
-                        };
-                    };
+                        }
+                    }
                     _local_3 = ((this.pulsePolarity) ? 1 : -1);
                     this.glowFilter.alpha = (this.glowFilter.alpha + (0.01 * _local_3));
                     this.filters = [this.glowFilter];
-                };
-            };
+                }
+            }
             if (this.isTrackingMouse_)
             {
                 _local_4 = this.squareDistanceTo(FortuneModal.fMouseX, FortuneModal.fMouseY);
@@ -401,7 +401,7 @@ package kabam.rotmg.fortune.components
                     if (this.currentAnimation != ANIM_HOVER)
                     {
                         this.setAnimationHover();
-                    };
+                    }
                     this.animationDuration_ = Math.max((_local_4 / 8), 70);
                     this.animationDuration_ = Math.min(this.animationDuration_, 170);
                 }
@@ -410,9 +410,9 @@ package kabam.rotmg.fortune.components
                     if (this.currentAnimation != ANIM_PULSE)
                     {
                         this.setAnimationPulse();
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (this.shake)
             {
                 this.setXPos((this.originX + ((Math.random() * 6) - 3)));
@@ -422,8 +422,8 @@ package kabam.rotmg.fortune.components
                 {
                     this.shake = false;
                     this.shakeCount = 0;
-                };
-            };
+                }
+            }
             this.drawAnimation(_arg_1, _arg_2);
         }
 
@@ -448,8 +448,8 @@ package kabam.rotmg.fortune.components
                     if (this.frameOffset_ > this.numFramesofLoop_)
                     {
                         this.frameOffset_ = 0;
-                    };
-                };
+                    }
+                }
                 this.crystal = this.crystalFrames[(this.startFrame_ + this.frameOffset_)];
                 if (this.currentAnimation == ANIM_CLICKED)
                 {
@@ -464,10 +464,10 @@ package kabam.rotmg.fortune.components
                     {
                         this.scaleX = 0.01;
                         this.scaleY = 0.01;
-                    };
-                };
+                    }
+                }
                 addChild(this.crystal);
-            };
+            }
         }
 
         public function setAnimationDuration(_arg_1:Number):void

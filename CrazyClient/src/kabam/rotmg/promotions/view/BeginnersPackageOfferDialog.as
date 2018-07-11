@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.BeginnersPackageOfferDialog
 
 package kabam.rotmg.promotions.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.promotions.view.components.TransparentButton;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
 
-    public class BeginnersPackageOfferDialog extends Sprite 
+import kabam.rotmg.promotions.view.components.TransparentButton;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class BeginnersPackageOfferDialog extends Sprite 
     {
 
         public static const LANGUAGE_KEY_SINGULAR:String = "BeginnersPackageOfferDialog.dayLeft";

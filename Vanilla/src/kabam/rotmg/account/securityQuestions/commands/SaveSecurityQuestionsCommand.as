@@ -5,19 +5,19 @@
 
 package kabam.rotmg.account.securityQuestions.commands
 {
-    import kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-    import kabam.lib.tasks.BranchingTask;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.lib.tasks.Task;
-    import kabam.rotmg.core.service.TrackingData;
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+import kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask;
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.core.signals.TrackEventSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class SaveSecurityQuestionsCommand 
+public class SaveSecurityQuestionsCommand
     {
 
         [Inject]
@@ -44,7 +44,6 @@ package kabam.rotmg.account.securityQuestions.commands
         private function makeSuccess():Task
         {
             var _local_1:TaskSequence = new TaskSequence();
-            _local_1.add(new DispatchSignalTask(this.track, this.getTrackingData()));
             _local_1.add(new DispatchSignalTask(this.closeDialogs));
             this.securityQuestionsModel.showSecurityQuestionsOnStartup = false;
             return (_local_1);

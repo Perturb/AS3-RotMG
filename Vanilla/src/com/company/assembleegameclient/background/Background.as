@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.background
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
 
-    public class Background extends Sprite 
+import flash.display.Sprite;
+
+public class Background extends Sprite
     {
 
         public static const NO_BACKGROUND:int = 0;
@@ -31,7 +32,7 @@ package com.company.assembleegameclient.background
                     return (new StarBackground());
                 case NEXUS_BACKGROUND:
                     return (new NexusBackground());
-            };
+            }
             return (null);
         }
 

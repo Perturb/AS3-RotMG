@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class CancelTrade extends OutgoingMessage 
+public class CancelTrade extends OutgoingMessage
     {
 
         public var objectId_:int;

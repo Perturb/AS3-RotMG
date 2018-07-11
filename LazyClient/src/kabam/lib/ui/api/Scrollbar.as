@@ -5,9 +5,9 @@
 
 package kabam.lib.ui.api
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public interface Scrollbar 
+public interface Scrollbar 
     {
 
         function get positionChanged():Signal;

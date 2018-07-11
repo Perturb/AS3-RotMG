@@ -5,12 +5,14 @@
 
 package kabam.rotmg.arena.util
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.DropShadowFilter;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class ArenaViewAssetFactory 
+import flash.display.Bitmap;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class ArenaViewAssetFactory
     {
 
 

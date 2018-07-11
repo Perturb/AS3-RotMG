@@ -5,13 +5,13 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.ChangePasswordTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.web.model.ChangePasswordData;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.ChangePasswordTask;
+import kabam.rotmg.account.web.model.ChangePasswordData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class WebChangePasswordTask extends BaseTask implements ChangePasswordTask 
+public class WebChangePasswordTask extends BaseTask implements ChangePasswordTask 
     {
 
         [Inject]

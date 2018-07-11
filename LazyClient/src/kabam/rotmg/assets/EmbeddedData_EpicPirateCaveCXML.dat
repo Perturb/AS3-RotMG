@@ -42,7 +42,7 @@
       <God/>
       <StasisImmune/>
       <Level>1</Level>
-      <XpMult>0.4</XpMult>
+      <Exp>78</Exp>
       <NoArticle/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -71,8 +71,6 @@
       </Texture>
       <Size>80</Size>
       <Z>0.40</Z>
-      <StasisImmune/>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x705b" id="Deadwater Docks Parrot">
       <Group>Deadwater Parrots</Group>
@@ -87,7 +85,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Sound Wave</ObjectId>
          <Damage>60</Damage>
@@ -109,7 +107,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Sound Wave</ObjectId>
          <Damage>60</Damage>
@@ -132,7 +130,7 @@
       <Z>0.40</Z>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Sound Wave</ObjectId>
          <Damage>60</Damage>
@@ -153,7 +151,6 @@
       <Size>105</Size>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1.0</XpMult>
       <Projectile id="0">
          <ObjectId>Black Ball</ObjectId>
          <Damage>150</Damage>
@@ -174,7 +171,6 @@
       <Size>110</Size>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1.0</XpMult>
       <Projectile id="0">
          <ObjectId>Black Ball</ObjectId>
          <Damage>150</Damage>
@@ -195,7 +191,6 @@
       <Size>115</Size>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.0</XpMult>
       <Projectile id="0">
          <ObjectId>Black Ball</ObjectId>
          <Damage>150</Damage>
@@ -216,7 +211,6 @@
       <Size>120</Size>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1.0</XpMult>
       <Projectile id="0">
          <ObjectId>Black Ball</ObjectId>
          <Damage>150</Damage>
@@ -232,7 +226,7 @@
          <File>chars8x8dEncounters</File>
          <Index>38</Index>
       </AnimatedTexture>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <HitSound>monster/cave_pirates_hit</HitSound>
       <DeathSound>monster/cave_pirates_death</DeathSound>
       <Size>100</Size>
@@ -258,7 +252,7 @@
       <Size>100</Size>
       <MaxHitPoints>2100</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Projectile id="0">
          <ObjectId>Beer Bottle</ObjectId>
          <Damage>90</Damage>
@@ -279,7 +273,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>100</Damage>
@@ -395,7 +389,7 @@
       <HitSound>monster/stone_walls_hit</HitSound>
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x698" id="Group Wall Observer">
@@ -408,7 +402,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
 </Objects>

@@ -5,23 +5,26 @@
 
 package kabam.rotmg.account.ui.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.ui.BaseSimpleText;
-    import kabam.lib.util.DateValidator;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.events.TextEvent;
-    import flash.events.FocusEvent;
-    import flash.events.Event;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.text.TextFieldAutoSize;
-    import org.osflash.signals.Signal;
+import com.company.ui.BaseSimpleText;
 
-    public class DateField extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.FocusEvent;
+import flash.events.TextEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.lib.util.DateValidator;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class DateField extends Sprite
     {
 
         private static const BACKGROUND_COLOR:uint = 0x333333;
@@ -132,7 +135,7 @@ package kabam.rotmg.account.ui.components
             if (((!(_local_2 == "0")) && (!(this.validator.isValidMonth(_local_3)))))
             {
                 _arg_1.preventDefault();
-            };
+            }
         }
 
         private function onMonthFocusOut(_arg_1:FocusEvent):void
@@ -141,7 +144,7 @@ package kabam.rotmg.account.ui.components
             if (((_local_2 < 10) && (!(this.days.text == ""))))
             {
                 this.months.text = ("0" + _local_2.toString());
-            };
+            }
         }
 
         private function onEditMonth(_arg_1:Event):void
@@ -156,7 +159,7 @@ package kabam.rotmg.account.ui.components
             if (((!(_local_2 == "0")) && (!(this.validator.isValidDay(_local_3)))))
             {
                 _arg_1.preventDefault();
-            };
+            }
         }
 
         private function onDayFocusOut(_arg_1:FocusEvent):void
@@ -165,7 +168,7 @@ package kabam.rotmg.account.ui.components
             if (((_local_2 < 10) && (!(this.days.text == ""))))
             {
                 this.days.text = ("0" + _local_2.toString());
-            };
+            }
         }
 
         private function onEditDay(_arg_1:Event):void
@@ -180,7 +183,7 @@ package kabam.rotmg.account.ui.components
             if (_local_3 > this.thisYear)
             {
                 _arg_1.preventDefault();
-            };
+            }
         }
 
         private function getEarliestYear(_arg_1:String):int
@@ -188,7 +191,7 @@ package kabam.rotmg.account.ui.components
             while (_arg_1.length < 4)
             {
                 _arg_1 = (_arg_1 + "0");
-            };
+            }
             return (int(_arg_1));
         }
 
@@ -218,7 +221,7 @@ package kabam.rotmg.account.ui.components
             while (_arg_1.length < _arg_2)
             {
                 _arg_1 = ("0" + _arg_1);
-            };
+            }
             return (_arg_1);
         }
 

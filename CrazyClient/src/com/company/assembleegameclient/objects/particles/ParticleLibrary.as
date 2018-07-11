@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ParticleLibrary
@@ -17,7 +17,7 @@ package com.company.assembleegameclient.objects.particles
             for each (_local_2 in _arg_1.Particle)
             {
                 propsLibrary_[_local_2.@id] = new ParticleProperties(_local_2);
-            };
+            }
         }
 
 

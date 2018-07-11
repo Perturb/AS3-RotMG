@@ -1,20 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.DoubleWall
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.engine3d.Face3D;
-    import flash.display.BitmapData;
-    import com.company.util.BitmapUtil;
-    import com.company.assembleegameclient.map.Square;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.engine3d.Face3D;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Square;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.util.BitmapUtil;
 
-    public class DoubleWall extends GameObject 
+import flash.display.BitmapData;
+import flash.display.IGraphicsData;
+
+public class DoubleWall extends GameObject
     {
 
         private static const UVT:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
@@ -52,14 +53,18 @@ package com.company.assembleegameclient.objects
             var _local_5:Face3D;
             var _local_6:Square;
             var _local_7:int;
+            if (((!(Options.hidden)) && (Parameters.lowCPUMode)))
+            {
+                return;
+            }
             if (texture_ == null)
             {
                 return;
-            };
+            }
             if (this.faces_.length == 0)
             {
                 this.rebuild3D();
-            };
+            }
             var _local_8:BitmapData = texture_;
             if (animations_ != null)
             {
@@ -67,8 +72,8 @@ package com.company.assembleegameclient.objects
                 if (_local_4 != null)
                 {
                     _local_8 = _local_4;
-                };
-            };
+                }
+            }
             while (_local_7 < this.faces_.length)
             {
                 _local_5 = this.faces_[_local_7];
@@ -83,11 +88,11 @@ package com.company.assembleegameclient.objects
                     if (animations_ != null)
                     {
                         _local_5.setTexture(_local_8);
-                    };
-                };
+                    }
+                }
                 _local_5.draw(_arg_1, _arg_2);
                 _local_7++;
-            };
+            }
             this.topFace_.draw(_arg_1, _arg_2);
         }
 

@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.AnimatedChars
 
 package com.company.assembleegameclient.util
 {
-    import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
 
-    public class AnimatedChars 
+public class AnimatedChars
     {
 
         private static var nameMap_:Dictionary = new Dictionary();
@@ -22,7 +20,7 @@ package com.company.assembleegameclient.util
             if (((_local_3 == null) || (_arg_2 >= _local_3.length)))
             {
                 return (null);
-            };
+            }
             return (_local_3[_arg_2]);
         }
 
@@ -35,7 +33,7 @@ package com.company.assembleegameclient.util
             for each (_local_9 in _local_11.images_)
             {
                 _local_10.push(new AnimatedChar(_local_9, _arg_4, _arg_5, _arg_8));
-            };
+            }
             nameMap_[_arg_1] = _local_10;
         }
 

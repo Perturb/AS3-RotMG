@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TextButtonBase
 
 package com.company.assembleegameclient.ui
 {
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import flash.events.MouseEvent;
 
-    public class TextButtonBase extends BackgroundFilledText 
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TextButtonBase extends BackgroundFilledText
     {
 
         public function TextButtonBase(_arg_1:int)
@@ -34,7 +35,7 @@ package com.company.assembleegameclient.ui
             if (_arg_1 == mouseEnabled)
             {
                 return;
-            };
+            }
             mouseEnabled = _arg_1;
             graphicsData_[0] = ((_arg_1) ? enabledFill_ : disabledFill_);
             this.draw();

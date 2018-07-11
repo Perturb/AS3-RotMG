@@ -5,28 +5,32 @@
 
 package com.company.assembleegameclient.appengine
 {
-    import kabam.rotmg.pets.data.PetVO;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.pets.data.PetsModel;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-    import com.company.util.CachingColorTransformer;
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.constants.GeneralConstants;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.MaskedImage;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+import com.company.util.CachingColorTransformer;
 
-    public class SavedCharacter 
+import flash.display.BitmapData;
+import flash.geom.ColorTransform;
+
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+
+import org.swiftsuspenders.Injector;
+
+public class SavedCharacter
     {
 
         public var charXML_:XML;
@@ -48,7 +52,7 @@ package com.company.assembleegameclient.appengine
                 _local_5 = StaticInjectorContext.getInjector().getInstance(PetsModel).getPetVO(_local_4);
                 _local_5.apply(_local_3);
                 this.setPetVO(_local_5);
-            };
+            }
         }
 
         public static function getImage(_arg_1:SavedCharacter, _arg_2:XML, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Boolean, _arg_7:Boolean):BitmapData
@@ -68,8 +72,8 @@ package com.company.assembleegameclient.appengine
                 if (!_arg_7)
                 {
                     _local_12 = CachingColorTransformer.transformBitmapData(_local_12, new ColorTransform(0.75, 0.75, 0.75, 1, 0, 0, 0, 0));
-                };
-            };
+                }
+            }
             return (_local_12);
         }
 
@@ -80,7 +84,7 @@ package com.company.assembleegameclient.appengine
             if (_local_3 != _local_4)
             {
                 return (_local_4 - _local_3);
-            };
+            }
             return (_arg_2.xp() - _arg_1.xp());
         }
 
@@ -108,11 +112,11 @@ package com.company.assembleegameclient.appengine
                         if (((!(_local_5 == null)) && (_local_5.hasOwnProperty("FameBonus"))))
                         {
                             _local_2 = (_local_2 + int(_local_5.FameBonus));
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 _local_3++;
-            };
+            }
             return (_local_2);
         }
 
@@ -217,7 +221,7 @@ package com.company.assembleegameclient.appengine
             if (!this.charXML_.hasOwnProperty("CreationDate"))
             {
                 return ("Unknown");
-            };
+            }
             return (this.charXML_.CreationDate);
         }
 

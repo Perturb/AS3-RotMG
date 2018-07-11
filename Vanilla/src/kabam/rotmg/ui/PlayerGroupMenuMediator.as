@@ -5,15 +5,18 @@
 
 package kabam.rotmg.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
 
-    public class PlayerGroupMenuMediator extends Mediator 
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PlayerGroupMenuMediator extends Mediator 
     {
 
         [Inject]

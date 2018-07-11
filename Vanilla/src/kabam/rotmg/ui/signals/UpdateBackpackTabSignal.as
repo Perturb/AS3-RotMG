@@ -5,9 +5,9 @@
 
 package kabam.rotmg.ui.signals
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class UpdateBackpackTabSignal extends Signal 
+public class UpdateBackpackTabSignal extends Signal 
     {
 
         public function UpdateBackpackTabSignal()

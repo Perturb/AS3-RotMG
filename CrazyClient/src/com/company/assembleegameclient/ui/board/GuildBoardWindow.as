@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.GuildBoardWindow
 
 package com.company.assembleegameclient.ui.board
 {
-    import flash.display.Sprite;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import flash.display.Graphics;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.account.core.Account;
-    import flash.events.Event;
-    import com.company.util.MoreObjectUtil;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.util.MoreObjectUtil;
 
-    public class GuildBoardWindow extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class GuildBoardWindow extends Sprite 
     {
 
         private var canEdit_:Boolean;
@@ -59,7 +61,7 @@ package com.company.assembleegameclient.ui.board
             else
             {
                 this.reportError(_arg_2);
-            };
+            }
         }
 
         private function showGuildBoard(_arg_1:String):void
@@ -129,7 +131,7 @@ package com.company.assembleegameclient.ui.board
             else
             {
                 this.onSaveError(_arg_2);
-            };
+            }
         }
 
         private function onSaveDone(_arg_1:String):void

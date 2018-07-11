@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_stPatricksChars8x8Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -1,29 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.commands.ExternalOpenMoneyWindowCommand
 
 package kabam.rotmg.account.core.commands
 {
-    import kabam.rotmg.account.core.model.JSInitializedModel;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.model.MoneyConfig;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.build.api.BuildData;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
-    import kabam.rotmg.account.web.WebAccount;
-    import flash.net.URLVariables;
-    import flash.net.URLRequest;
-    import flash.net.URLRequestMethod;
-    import flash.net.navigateToURL;
-    import flash.external.ExternalInterface;
-    import kabam.rotmg.build.api.BuildEnvironment;
+import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-    public class ExternalOpenMoneyWindowCommand 
+import flash.external.ExternalInterface;
+import flash.net.URLRequest;
+import flash.net.URLRequestMethod;
+import flash.net.URLVariables;
+import flash.net.navigateToURL;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.model.JSInitializedModel;
+import kabam.rotmg.account.core.model.MoneyConfig;
+import kabam.rotmg.account.web.WebAccount;
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.api.BuildEnvironment;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class ExternalOpenMoneyWindowCommand 
     {
 
         private const TESTING_ERROR_MESSAGE:String = "You cannot purchase gold on the testing server";
@@ -60,22 +63,22 @@ package kabam.rotmg.account.core.commands
             else
             {
                 this.handleInvalidMoneyWindowRequest();
-            };
+            }
         }
 
         private function handleInvalidMoneyWindowRequest():void
         {
-            if (!this.isGoldPurchaseEnabled())
+            if ((!(this.isGoldPurchaseEnabled())))
             {
                 this.openDialogSignal.dispatch(new ErrorDialog(this.TESTING_ERROR_MESSAGE));
             }
             else
             {
-                if (!this.account.isRegistered())
+                if ((!(this.account.isRegistered())))
                 {
                     this.openDialogSignal.dispatch(new ErrorDialog(this.REGISTRATION_ERROR_MESSAGE));
-                };
-            };
+                }
+            }
         }
 
         private function handleValidMoneyWindowRequest():void
@@ -89,7 +92,7 @@ package kabam.rotmg.account.core.commands
                 catch(e:Error)
                 {
                     openPaymentwallMoneyWindowFromStandalonePlayer(WebAccount(account).paymentData);
-                };
+                }
             }
             else
             {
@@ -100,8 +103,8 @@ package kabam.rotmg.account.core.commands
                 catch(e:Error)
                 {
                     openKabamMoneyWindowFromStandalonePlayer();
-                };
-            };
+                }
+            }
         }
 
         private function openKabamMoneyWindowFromStandalonePlayer():void
@@ -118,7 +121,7 @@ package kabam.rotmg.account.core.commands
             else
             {
                 _local_2.createdat = 0;
-            };
+            }
             _local_3.url = (_local_1 + "/credits/kabamadd");
             _local_3.method = URLRequestMethod.POST;
             _local_3.data = _local_2;
@@ -142,7 +145,7 @@ package kabam.rotmg.account.core.commands
         private function initializeMoneyWindow():void
         {
             var _local_1:Number;
-            if (!this.moneyWindowModel.isInitialized)
+            if ((!(this.moneyWindowModel.isInitialized)))
             {
                 if (this.beginnersPackageModel.isBeginnerAvailable())
                 {
@@ -151,10 +154,10 @@ package kabam.rotmg.account.core.commands
                 else
                 {
                     _local_1 = 0;
-                };
+                }
                 ExternalInterface.call(this.moneyConfig.jsInitializeFunction(), this.account.getMoneyUserId(), this.account.getMoneyAccessToken(), _local_1);
                 this.moneyWindowModel.isInitialized = true;
-            };
+            }
         }
 
         private function openKabamMoneyWindowFromBrowser():void

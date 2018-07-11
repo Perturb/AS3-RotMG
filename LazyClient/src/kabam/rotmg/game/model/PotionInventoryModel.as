@@ -5,11 +5,13 @@
 
 package kabam.rotmg.game.model
 {
-    import flash.utils.Dictionary;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.model.PotionModel;
+import flash.utils.Dictionary;
 
-    public class PotionInventoryModel 
+import kabam.rotmg.ui.model.PotionModel;
+
+import org.osflash.signals.Signal;
+
+public class PotionInventoryModel
     {
 
         public static const HEALTH_POTION_ID:int = 2594;
@@ -34,7 +36,7 @@ package kabam.rotmg.game.model
                     return (HEALTH_POTION_SLOT);
                 case MAGIC_POTION_ID:
                     return (MAGIC_POTION_SLOT);
-            };
+            }
             return (-1);
         }
 
@@ -46,11 +48,11 @@ package kabam.rotmg.game.model
             var _local_2:int = _arg_1.PotionPurchaseCooldown;
             var _local_3:int = _arg_1.PotionPurchaseCostCooldown;
             var _local_4:int = _arg_1.MaxStackablePotions;
-            var _local_5:Array = new Array();
+            var _local_5:Array = [];
             for each (_local_6 in _arg_1.PotionPurchaseCosts.cost)
             {
                 _local_5.push(_local_6);
-            };
+            }
             _local_7 = new PotionModel();
             _local_7.purchaseCooldownMillis = _local_2;
             _local_7.priceCooldownMillis = _local_3;
@@ -79,8 +81,8 @@ package kabam.rotmg.game.model
                 if (this.potionModels[_local_2].objectId == _arg_1)
                 {
                     return (this.potionModels[_local_2]);
-                };
-            };
+                }
+            }
             return (null);
         }
 

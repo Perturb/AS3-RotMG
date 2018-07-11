@@ -5,12 +5,13 @@
 
 package kabam.rotmg.account.kabam.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
-    import flash.external.ExternalInterface;
+import flash.external.ExternalInterface;
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
 
-    public class AccountLoadErrorMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class AccountLoadErrorMediator extends Mediator 
     {
 
         private static const GET_KABAM_PAGE_JS:String = "rotmg.KabamDotComLib.getKabamGamePage";
@@ -41,11 +42,11 @@ package kabam.rotmg.account.kabam.view
                 if (((_local_2) && (_local_2.length)))
                 {
                     _local_1 = _local_2;
-                };
+                }
             }
             catch(error:Error)
             {
-            };
+            }
             return (_local_1);
         }
 

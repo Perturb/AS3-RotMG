@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.BattleSummaryDialogMediator
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.arena.model.CurrentArenaRunModel;
-    import kabam.rotmg.arena.model.BestArenaRunModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import flash.utils.Timer;
-    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import flash.events.TimerEvent;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
-    public class BattleSummaryDialogMediator extends Mediator 
+import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import kabam.rotmg.arena.model.BestArenaRunModel;
+import kabam.rotmg.arena.model.CurrentArenaRunModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class BattleSummaryDialogMediator extends Mediator
     {
 
         [Inject]

@@ -1,22 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.mapoverlay.CharacterStatusText
 
 package com.company.assembleegameclient.map.mapoverlay
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.geom.Point;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.GlowFilter;
-    import com.company.assembleegameclient.map.Camera;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.display.Bitmap;
-    import flash.display.BitmapData;
-    import flash.geom.Matrix;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class CharacterStatusText extends Sprite implements IMapOverlayElement 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.filters.GlowFilter;
+import flash.geom.Matrix;
+import flash.geom.Point;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class CharacterStatusText extends Sprite implements IMapOverlayElement
     {
 
         public const MAX_DRIFT:int = 40;
@@ -47,22 +49,22 @@ package com.company.assembleegameclient.map.mapoverlay
             if (this.startTime_ == 0)
             {
                 this.startTime_ = (_arg_2 + this.offsetTime_);
-            };
+            }
             if (_arg_2 < this.startTime_)
             {
                 visible = false;
                 return (true);
-            };
+            }
             var _local_3:int = (_arg_2 - this.startTime_);
             if (((_local_3 > this.lifetime_) || ((!(this.go_ == null)) && (this.go_.map_ == null))))
             {
                 return (false);
-            };
+            }
             if (((this.go_ == null) || (!(this.go_.drawn_))))
             {
                 visible = false;
                 return (true);
-            };
+            }
             visible = true;
             x = (((this.go_ != null) ? this.go_.posS_[0] : 0) + ((this.offset_ != null) ? this.offset_.x : 0));
             var _local_4:Number = ((_local_3 / this.lifetime_) * this.MAX_DRIFT);

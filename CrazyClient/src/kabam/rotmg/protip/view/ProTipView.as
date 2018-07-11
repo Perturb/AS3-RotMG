@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.protip.view.ProTipView
 
 package kabam.rotmg.protip.view
 {
-    import flash.display.Sprite;
-    import flash.filters.GlowFilter;
-    import com.gskinner.motion.GTween;
+import com.gskinner.motion.GTween;
 
-    public class ProTipView extends Sprite 
+import flash.display.Sprite;
+import flash.filters.GlowFilter;
+
+public class ProTipView extends Sprite 
     {
 
         private var text:ProTipText;

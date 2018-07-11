@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.component.BattleSummaryText
 
 package kabam.rotmg.arena.component
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
 
-    public class BattleSummaryText extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class BattleSummaryText extends Sprite
     {
 
         private var titleText:StaticTextDisplay;
@@ -42,7 +43,7 @@ package kabam.rotmg.arena.component
 
         private function createTimerString(_arg_1:int):String
         {
-            var _local_2:int = int((_arg_1 / 60));
+            var _local_2:int = int(int((_arg_1 / 60)));
             var _local_3:int = (_arg_1 % 60);
             var _local_4:String = ((_local_2 < 10) ? "0" : "");
             _local_4 = (_local_4 + (_local_2 + ":"));

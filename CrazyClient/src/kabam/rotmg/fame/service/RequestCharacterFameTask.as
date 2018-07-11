@@ -1,23 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.service.RequestCharacterFameTask
 
 package kabam.rotmg.fame.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.model.CharacterTemplate;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import com.company.util.DateFormatterReplacement;
-    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+import com.company.util.DateFormatterReplacement;
 
-    public class RequestCharacterFameTask extends BaseTask 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.assets.model.CharacterTemplate;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+public class RequestCharacterFameTask extends BaseTask
     {
 
         [Inject]
@@ -76,7 +78,7 @@ package kabam.rotmg.fame.service
             else
             {
                 this.onFameError(_arg_2);
-            };
+            }
         }
 
         private function parseFameData(_arg_1:String):void
@@ -128,7 +130,7 @@ package kabam.rotmg.fame.service
             {
                 this.errorRetry = false;
                 this.openDialog.dispatch(new ErrorDialog(_arg_1));
-            };
+            }
         }
 
 

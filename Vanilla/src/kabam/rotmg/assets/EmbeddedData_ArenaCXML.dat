@@ -9,7 +9,7 @@
          <Index>0xb6</Index>
       </Texture>
       <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <NoMiniMap/>
       <StasisImmune/>
@@ -23,7 +23,7 @@
       </AnimatedTexture>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>120</Size>
       <ShadowSize>0</ShadowSize>
       <Flying/>
@@ -67,7 +67,7 @@
       <DeathSound>monster/skull_shrine_hit</DeathSound>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <Projectile id="0">
          <ObjectId>LavaBombBlast</ObjectId>
@@ -177,7 +177,6 @@
       <Size>80</Size>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.75</XpMult>
       <Projectile id="0">
          <ObjectId>White Star Stunner</ObjectId>
          <Speed>80</Speed>
@@ -206,7 +205,6 @@
       <Size>80</Size>
       <MaxHitPoints>9000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.75</XpMult>
       <Projectile id="0">
          <ObjectId>White Star Stunner</ObjectId>
          <Speed>90</Speed>
@@ -260,7 +258,6 @@
          </AnimatedTexture>
       </RandomTexture>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
       <Z>1</Z>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
@@ -319,7 +316,6 @@
          </AnimatedTexture>
       </RandomTexture>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
       <Z>1.9</Z>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>

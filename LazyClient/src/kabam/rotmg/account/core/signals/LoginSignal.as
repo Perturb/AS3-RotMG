@@ -5,10 +5,11 @@
 
 package kabam.rotmg.account.core.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.account.web.model.AccountData;
 
-    public class LoginSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class LoginSignal extends Signal
     {
 
         public function LoginSignal()

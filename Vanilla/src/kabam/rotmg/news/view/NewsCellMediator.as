@@ -5,15 +5,17 @@
 
 package kabam.rotmg.news.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.packages.control.OpenPackageSignal;
-    import kabam.rotmg.news.controller.OpenSkinSignal;
-    import flash.net.URLRequest;
-    import flash.net.navigateToURL;
-    import kabam.rotmg.news.model.NewsCellLinkType;
-    import kabam.rotmg.news.model.NewsCellVO;
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
 
-    public class NewsCellMediator extends Mediator 
+import kabam.rotmg.news.controller.OpenSkinSignal;
+import kabam.rotmg.news.model.NewsCellLinkType;
+import kabam.rotmg.news.model.NewsCellVO;
+import kabam.rotmg.packages.control.OpenPackageSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewsCellMediator extends Mediator 
     {
 
         [Inject]
@@ -49,7 +51,7 @@ package kabam.rotmg.news.view
                 case NewsCellLinkType.OPENS_SKIN:
                     this.openSkinSignal.dispatch(_arg_1.linkDetail);
                     return;
-            };
+            }
         }
 
 

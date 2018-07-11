@@ -1,30 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemsSetBox
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
-    import io.decagames.rotmg.ui.gird.UIGridElement;
-    import __AS3__.vec.Vector;
+import io.decagames.rotmg.ui.gird.UIGridElement;
 
-    public class ItemsSetBox extends UIGridElement 
+public class ItemsSetBox extends UIGridElement
     {
 
         private var items:Vector.<ItemBox>;
 
         public function ItemsSetBox(_arg_1:Vector.<ItemBox>)
         {
-            var _local_2:ItemBox;
-            var _local_3:int;
+            var _local_3:ItemBox;
+            var _local_2:int;
             super();
             this.items = _arg_1;
-            for each (_local_2 in _arg_1)
+            for each (_local_3 in _arg_1)
             {
-                _local_2.y = _local_3;
-                addChild(_local_2);
-                _local_3 = (_local_3 + _local_2.height);
-            };
+                _local_3.y = _local_2;
+                addChild(_local_3);
+                _local_2 = (_local_2 + _local_3.height);
+            }
             this.drawBackground(260);
         }
 
@@ -53,7 +52,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             for each (_local_1 in this.items)
             {
                 _local_1.dispose();
-            };
+            }
             this.items = null;
             super.dispose();
         }

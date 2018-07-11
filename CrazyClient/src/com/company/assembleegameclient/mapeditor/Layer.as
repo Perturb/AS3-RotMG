@@ -1,13 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.Layer
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
-
-    public class Layer 
+public class Layer
     {
 
         public static const GROUND:int = 0;

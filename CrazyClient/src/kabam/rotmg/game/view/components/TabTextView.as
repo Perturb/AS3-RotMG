@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.TabTextView
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import flash.display.Bitmap;
-    import com.company.util.AssetLibrary;
-    import flash.geom.ColorTransform;
+import com.company.ui.BaseSimpleText;
+import com.company.util.AssetLibrary;
 
-    public class TabTextView extends TabView 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.geom.ColorTransform;
+
+public class TabTextView extends TabView
     {
 
         private var background:Sprite;
@@ -25,7 +26,7 @@ package kabam.rotmg.game.view.components
             if (_arg_3)
             {
                 this.initTabText(_arg_3);
-            };
+            }
         }
 
         public function setBadge(_arg_1:int):void
@@ -37,7 +38,7 @@ package kabam.rotmg.game.view.components
                 this.badgeIcon.x = (this.x - 26);
                 this.badgeIcon.y = 4;
                 addChild(this.badgeIcon);
-            };
+            }
             this.badgeIcon.visible = (_arg_1 > 0);
         }
 

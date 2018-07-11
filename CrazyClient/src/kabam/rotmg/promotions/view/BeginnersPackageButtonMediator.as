@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.BeginnersPackageButtonMediator
 
 package kabam.rotmg.promotions.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
 
-    public class BeginnersPackageButtonMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class BeginnersPackageButtonMediator extends Mediator 
     {
 
         [Inject]

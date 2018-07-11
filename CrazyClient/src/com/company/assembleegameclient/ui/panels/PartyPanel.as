@@ -1,26 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.PartyPanel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import flash.display.DisplayObjectContainer;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
-    import com.company.assembleegameclient.objects.Party;
-    import com.company.assembleegameclient.ui.menu.PlayerMenu;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import flash.geom.ColorTransform;
-    import flash.utils.getTimer;
-    import com.company.util.MoreColorUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Party;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.GameObjectListItem;
+import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
+import com.company.assembleegameclient.ui.menu.PlayerMenu;
+import com.company.util.MoreColorUtil;
 
-    public class PartyPanel extends Panel 
+import flash.display.DisplayObjectContainer;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.utils.getTimer;
+
+public class PartyPanel extends Panel
     {
 
         public var menuLayer:DisplayObjectContainer;
@@ -58,7 +57,7 @@ package com.company.assembleegameclient.ui.panels
                 _local_2.addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
                 _local_2.addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
                 _local_2.addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
-            };
+            }
         }
 
         private function onRemovedFromStage(_arg_1:Event):void
@@ -70,7 +69,7 @@ package com.company.assembleegameclient.ui.panels
                 _local_2.removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
                 _local_2.removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
                 _local_2.removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
-            };
+            }
         }
 
         private function onMouseOver(_arg_1:MouseEvent):void
@@ -78,13 +77,13 @@ package com.company.assembleegameclient.ui.panels
             if (((!(this.menu == null)) && (!(this.menu.parent == null))))
             {
                 return;
-            };
+            }
             var _local_2:PlayerGameObjectListItem = (_arg_1.currentTarget as PlayerGameObjectListItem);
             var _local_3:Player = (_local_2.go as Player);
             if (((_local_3 == null) || (_local_3.texture_ == null)))
             {
                 return;
-            };
+            }
             this.mouseOver_ = true;
         }
 
@@ -114,8 +113,8 @@ package com.company.assembleegameclient.ui.panels
                 if (_local_3)
                 {
                     _local_3.setEnabled(true);
-                };
-            };
+                }
+            }
             _arg_1.currentTarget.removeEventListener(Event.REMOVED_FROM_STAGE, this.onMenuRemoved);
         }
 
@@ -125,7 +124,7 @@ package com.company.assembleegameclient.ui.panels
             {
                 this.menu.remove();
                 this.menu = null;
-            };
+            }
         }
 
         override public function draw():void
@@ -143,9 +142,9 @@ package com.company.assembleegameclient.ui.panels
                 for each (_local_1 in this.memberPanels)
                 {
                     _local_1.clear();
-                };
+                }
                 return;
-            };
+            }
             while (_local_7 < Party.NUM_MEMBERS)
             {
                 if (((this.mouseOver_) || ((!(this.menu == null)) && (!(this.menu.parent == null)))))
@@ -155,11 +154,11 @@ package com.company.assembleegameclient.ui.panels
                 else
                 {
                     _local_2 = _local_8.members_[_local_7];
-                };
+                }
                 if (((!(_local_2 == null)) && (_local_2.map_ == null)))
                 {
                     _local_2 = null;
-                };
+                }
                 _local_3 = null;
                 if (_local_2 != null)
                 {
@@ -168,12 +167,12 @@ package com.company.assembleegameclient.ui.panels
                         if (_local_6 == 0)
                         {
                             _local_6 = getTimer();
-                        };
+                        }
                         _local_4 = (int((Math.abs(Math.sin((_local_6 / 200))) * 10)) / 10);
                         _local_5 = 128;
                         _local_3 = new ColorTransform(1, 1, 1, 1, (_local_4 * _local_5), (-(_local_4) * _local_5), (-(_local_4) * _local_5));
-                    };
-                    if (!_local_2.starred_)
+                    }
+                    if ((!(_local_2.starred_)))
                     {
                         if (_local_3 != null)
                         {
@@ -182,12 +181,12 @@ package com.company.assembleegameclient.ui.panels
                         else
                         {
                             _local_3 = MoreColorUtil.darkCT;
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 this.memberPanels[_local_7].draw(_local_2, _local_3);
                 _local_7++;
-            };
+            }
         }
 
 

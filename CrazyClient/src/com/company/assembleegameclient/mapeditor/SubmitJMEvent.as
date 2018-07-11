@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.SubmitJMEvent
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class SubmitJMEvent extends Event 
+public class SubmitJMEvent extends Event
     {
 
         public static const SUBMIT_JM_EVENT:String = "SUBMIT_JM_EVENT";

@@ -5,16 +5,18 @@
 
 package kabam.rotmg.text.view
 {
-    import flash.filters.GlowFilter;
-    import kabam.rotmg.text.model.FontModel;
-    import kabam.rotmg.text.model.TextAndMapProvider;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.geom.Matrix;
-    import flash.display.BitmapData;
-    import flash.text.TextFieldAutoSize;
-    import com.company.util.PointUtil;
+import com.company.util.PointUtil;
 
-    public class BitmapTextFactory 
+import flash.display.BitmapData;
+import flash.filters.GlowFilter;
+import flash.geom.Matrix;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class BitmapTextFactory
     {
 
         private const glowFilter:GlowFilter = new GlowFilter(0, 1, 3, 3, 2, 1);

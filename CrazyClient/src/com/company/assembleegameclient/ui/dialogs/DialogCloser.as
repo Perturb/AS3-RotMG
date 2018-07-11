@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.DialogCloser
 
 package com.company.assembleegameclient.ui.dialogs
 {
-    import flash.events.IEventDispatcher;
-    import org.osflash.signals.Signal;
+import flash.events.IEventDispatcher;
 
-    public interface DialogCloser extends IEventDispatcher 
+import org.osflash.signals.Signal;
+
+public interface DialogCloser extends IEventDispatcher
     {
 
         function getCloseSignal():Signal;

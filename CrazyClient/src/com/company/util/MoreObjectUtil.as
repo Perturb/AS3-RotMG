@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.MoreObjectUtil
@@ -15,7 +15,7 @@ package com.company.util
             for (_local_3 in _arg_2)
             {
                 _arg_1[_local_3] = _arg_2[_local_3];
-            };
+            }
         }
 
 

@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.FortuneGround
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.game.view.FortuneGroundPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class FortuneGround extends GameObject implements IInteractiveObject 
+import kabam.rotmg.game.view.FortuneGroundPanel;
+
+public class FortuneGround extends GameObject implements IInteractiveObject
     {
 
         public function FortuneGround(_arg_1:XML)

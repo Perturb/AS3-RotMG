@@ -5,10 +5,7 @@
 
 package kabam.rotmg.dailyLogin.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class DailyLoginModel 
+public class DailyLoginModel 
     {
 
         public static const DAY_IN_MILLISECONDS:Number = (((24 * 60) * 60) * 1000);//86400000
@@ -28,11 +25,11 @@ package kabam.rotmg.dailyLogin.model
             if (_arg_1.dayNumber < _arg_2.dayNumber)
             {
                 return (-1);
-            };
+            }
             if (_arg_1.dayNumber > _arg_2.dayNumber)
             {
                 return (1);
-            };
+            }
             return (0);
         };
 
@@ -111,10 +108,10 @@ package kabam.rotmg.dailyLogin.model
                 if (_local_5 == this.userDayConfig[_arg_1])
                 {
                     _local_6.isCurrent = true;
-                };
+                }
                 _local_4.push(_local_6);
                 _local_5++;
-            };
+            }
             this.daysConfig[_arg_1] = _local_4;
         }
 
@@ -126,8 +123,8 @@ package kabam.rotmg.dailyLogin.model
                 if (_local_3.dayNumber == _arg_2)
                 {
                     return (_local_3);
-                };
-            };
+                }
+            }
             return (new CalendarDayModel(_arg_2, -1, 0, 0, false, _arg_1));
         }
 
@@ -150,8 +147,8 @@ package kabam.rotmg.dailyLogin.model
                 if (_local_2 > _local_1)
                 {
                     _local_1 = _local_2;
-                };
-            };
+                }
+            }
             return (_local_1);
         }
 

@@ -7,8 +7,6 @@ package com.company.assembleegameclient.mapeditor
 	{
 		public function MEMap_transbackgroundEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

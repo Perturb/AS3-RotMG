@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.pets.view.components.DialogCloseButtonMediator
 
 package kabam.rotmg.pets.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class DialogCloseButtonMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DialogCloseButtonMediator extends Mediator
     {
 
         [Inject]

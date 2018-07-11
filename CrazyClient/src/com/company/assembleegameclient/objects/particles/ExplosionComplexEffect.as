@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ExplosionComplexEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class ExplosionComplexEffect extends ParticleEffect 
+public class ExplosionComplexEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -54,7 +54,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_10 = new ExplosionComplexParticle(this.color_, 0.2, size_, this.maxLife_, _local_6, _local_7, _local_9);
                 map_.addObj(_local_10, x_, y_);
                 _local_11++;
-            };
+            }
             return (false);
         }
 
@@ -73,9 +73,10 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
+
 import flash.geom.Vector3D;
 
-class ExplosionComplexParticle extends Particle 
+class ExplosionComplexParticle extends Particle
 {
 
     public static var total_:int = 0;
@@ -83,7 +84,7 @@ class ExplosionComplexParticle extends Particle
     public var lifetime_:int;
     public var timeLeft_:int;
     protected var moveVec_:Vector3D = new Vector3D();
-    /*private*/ var deleted:Boolean = false;
+    private var deleted:Boolean = false;
 
     public function ExplosionComplexParticle(_arg_1:uint, _arg_2:Number, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:Number)
     {
@@ -100,13 +101,13 @@ class ExplosionComplexParticle extends Particle
         this.timeLeft_ = (this.timeLeft_ - _arg_2);
         if (this.timeLeft_ <= 0)
         {
-            if (!this.deleted)
+            if ((!(this.deleted)))
             {
                 total_--;
                 this.deleted = true;
-            };
+            }
             return (false);
-        };
+        }
         x_ = (x_ + ((this.moveVec_.x * _arg_2) * 0.008));
         y_ = (y_ + ((this.moveVec_.y * _arg_2) * 0.008));
         z_ = (z_ + ((this.moveVec_.z * _arg_2) * 0.008));

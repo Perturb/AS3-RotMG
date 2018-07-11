@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.Quest
 
 package com.company.assembleegameclient.map
 {
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.geom.Point;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class Quest 
+import flash.geom.Point;
+import flash.utils.getTimer;
+
+public class Quest
     {
 
         public var map_:Map;
@@ -28,7 +29,7 @@ package com.company.assembleegameclient.map
             {
                 this.questAvailableAt_ = getTimer();
                 this.questOldAt_ = this.questAvailableAt_;
-            };
+            }
             this.objectId_ = _arg_1;
         }
 

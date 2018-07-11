@@ -5,10 +5,11 @@
 
 package kabam.rotmg.pets.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class DialogCloseButtonMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DialogCloseButtonMediator extends Mediator 
     {
 
         [Inject]

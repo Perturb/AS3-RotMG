@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.protip.view.ProTipText
 
 package kabam.rotmg.protip.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.text.TextFormatAlign;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFormatAlign;
 
-    public class ProTipText extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class ProTipText extends Sprite 
     {
 
         private var text:TextFieldDisplayConcrete;

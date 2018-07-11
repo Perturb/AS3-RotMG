@@ -5,13 +5,16 @@
 
 package kabam.rotmg.game.focus.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.Dictionary;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class GameFocusMediator extends Mediator 
+import flash.utils.Dictionary;
+
+import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class GameFocusMediator extends Mediator 
     {
 
         [Inject]
@@ -41,15 +44,15 @@ package kabam.rotmg.game.focus.view
             if (_arg_1 == "")
             {
                 return (this.view.map.player_);
-            };
+            }
             var _local_2:Dictionary = this.view.map.goDict_;
             for each (_local_3 in _local_2)
             {
                 if (_local_3.name_ == _arg_1)
                 {
                     return (_local_3);
-                };
-            };
+                }
+            }
             return (this.view.map.player_);
         }
 

@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.AgeVerificationMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.VerifyAgeSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.account.core.signals.VerifyAgeSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class AgeVerificationMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class AgeVerificationMediator extends Mediator
     {
 
         [Inject]
@@ -39,7 +40,7 @@ package kabam.rotmg.ui.view
             else
             {
                 this.handleRejected();
-            };
+            }
         }
 
         private function handleAccepted():void

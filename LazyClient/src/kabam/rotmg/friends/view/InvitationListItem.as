@@ -5,22 +5,25 @@
 
 package kabam.rotmg.friends.view
 {
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.icons.IconButton;
-    import kabam.rotmg.friends.model.FriendVO;
-    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.friends.model.FriendConstant;
+import com.company.assembleegameclient.ui.icons.IconButton;
+import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+import com.company.util.AssetLibrary;
 
-    public class InvitationListItem extends FListItem 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+
+import io.decagames.rotmg.social.config.FriendsActions;
+import io.decagames.rotmg.social.model.FriendVO;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class InvitationListItem extends FListItem
     {
 
         private var _senderName:String;
@@ -80,7 +83,7 @@ package kabam.rotmg.friends.view
                 this._portrait.bitmapData = _arg_1.getPortrait();
                 this._nameText.setStringBuilder(new StaticStringBuilder(this._senderName));
                 this._nameText.x = (this._portrait.width + 12);
-            };
+            }
         }
 
         override public function destroy():void
@@ -88,7 +91,7 @@ package kabam.rotmg.friends.view
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
-            };
+            }
             this._portrait = null;
             this._nameText = null;
             this._acceptButton.removeEventListener(MouseEvent.CLICK, this.onAcceptClicked);
@@ -107,17 +110,17 @@ package kabam.rotmg.friends.view
 
         private function onAcceptClicked(_arg_1:MouseEvent):void
         {
-            actionSignal.dispatch(FriendConstant.ACCEPT, this._senderName);
+            actionSignal.dispatch(FriendsActions.ACCEPT, this._senderName);
         }
 
         private function onRejectClicked(_arg_1:MouseEvent):void
         {
-            actionSignal.dispatch(FriendConstant.REJECT, this._senderName);
+            actionSignal.dispatch(FriendsActions.REJECT, this._senderName);
         }
 
         private function onBlockClicked(_arg_1:MouseEvent):void
         {
-            actionSignal.dispatch(FriendConstant.BLOCK, this._senderName);
+            actionSignal.dispatch(FriendsActions.BLOCK, this._senderName);
         }
 
 

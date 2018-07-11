@@ -456,4 +456,34 @@
       <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
       <UnlockCost>999</UnlockCost>
    </Object>
+   <Object type="0x0311" id="????">
+      <Class>Player</Class>
+      <Description>Coming soon!</Description>
+      <AnimatedTexture>
+         <File>players</File>
+         <Index>14</Index>
+      </AnimatedTexture>
+      <Player/>
+      <BloodProb>1.0</BloodProb>
+      <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+      <Equipment>0xc44, -1, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+      <MaxHitPoints max="200">100</MaxHitPoints>
+      <MaxMagicPoints max="200">100</MaxMagicPoints>
+      <Attack max="40">10</Attack>
+      <Defense max="25">0</Defense>
+      <Speed max="40">10</Speed>
+      <Dexterity max="40">10</Dexterity>
+      <HpRegen max="40">10</HpRegen>
+      <MpRegen max="40">10</MpRegen>
+      <LevelIncrease min="0" max="0">MaxHitPoints</LevelIncrease>
+      <LevelIncrease min="0" max="0">MaxMagicPoints</LevelIncrease>
+      <LevelIncrease min="0" max="0">Attack</LevelIncrease>
+      <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+      <LevelIncrease min="0" max="0">Speed</LevelIncrease>
+      <LevelIncrease min="0" max="0">Dexterity</LevelIncrease>
+      <LevelIncrease min="0" max="0">HpRegen</LevelIncrease>
+      <LevelIncrease min="0" max="0">MpRegen</LevelIncrease>
+      <UnlockLevel level="25" type="0x030e">Wizard</UnlockLevel>
+      <UnlockCost>999999</UnlockCost>
+   </Object>
 </Objects>

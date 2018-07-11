@@ -5,14 +5,15 @@
 
 package kabam.display.Loader
 {
-    import flash.display.Loader;
-    import kabam.display.LoaderInfo.LoaderInfoProxy;
-    import flash.display.DisplayObject;
-    import kabam.display.LoaderInfo.LoaderInfoProxyConcrete;
-    import flash.net.URLRequest;
-    import flash.system.LoaderContext;
+import flash.display.DisplayObject;
+import flash.display.Loader;
+import flash.net.URLRequest;
+import flash.system.LoaderContext;
 
-    public class LoaderProxyConcrete extends LoaderProxy 
+import kabam.display.LoaderInfo.LoaderInfoProxy;
+import kabam.display.LoaderInfo.LoaderInfoProxyConcrete;
+
+public class LoaderProxyConcrete extends LoaderProxy 
     {
 
         private var loader:Loader = (addChild(new Loader()) as Loader);
@@ -30,7 +31,7 @@ package kabam.display.Loader
             {
                 this._contentLoaderInfo = new LoaderInfoProxyConcrete();
                 this._contentLoaderInfo.loaderInfo = this.loader.contentLoaderInfo;
-            };
+            }
             return (this._contentLoaderInfo);
         }
 

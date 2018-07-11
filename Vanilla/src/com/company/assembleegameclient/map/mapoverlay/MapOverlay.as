@@ -5,12 +5,14 @@
 
 package com.company.assembleegameclient.map.mapoverlay
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.game.view.components.QueuedStatusTextList;
-    import kabam.rotmg.game.view.components.QueuedStatusText;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
 
-    public class MapOverlay extends Sprite 
+import flash.display.Sprite;
+
+import kabam.rotmg.game.view.components.QueuedStatusText;
+import kabam.rotmg.game.view.components.QueuedStatusTextList;
+
+public class MapOverlay extends Sprite
     {
 
         private const speechBalloons:Object = {};
@@ -29,7 +31,7 @@ package com.company.assembleegameclient.map.mapoverlay
             if (((_local_3) && (contains(_local_3))))
             {
                 removeChild(_local_3);
-            };
+            }
             this.speechBalloons[_local_2] = _arg_1;
             addChild(_arg_1);
         }
@@ -67,8 +69,8 @@ package com.company.assembleegameclient.map.mapoverlay
                 else
                 {
                     _local_4.dispose();
-                };
-            };
+                }
+            }
         }
 
 

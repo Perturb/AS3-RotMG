@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
-    import kabam.rotmg.text.model.TextKey;
+import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
-    public class GeneralProjectileComparison extends SlotComparison 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+
+public class GeneralProjectileComparison extends SlotComparison 
     {
 
         private var itemXML:XML;
@@ -27,12 +28,12 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             {
                 this.addNumProjectileText();
                 processedTags[_arg_1.NumProjectiles.toXMLString()] = true;
-            };
+            }
             if (_arg_1.hasOwnProperty("Projectile"))
             {
                 this.addProjectileText();
                 processedTags[_arg_1.Projectile.toXMLString()] = true;
-            };
+            }
             this.buildRateOfFireText();
         }
 
@@ -46,15 +47,15 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             if (this.projXML.hasOwnProperty("MultiHit"))
             {
                 comparisonStringBuilder.pushParams(TextKey.MULTIHIT, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
-            };
+            }
             if (this.projXML.hasOwnProperty("PassesCover"))
             {
                 comparisonStringBuilder.pushParams(TextKey.PASSES_COVER, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
-            };
+            }
             if (this.projXML.hasOwnProperty("ArmorPiercing"))
             {
                 comparisonStringBuilder.pushParams(TextKey.ARMOR_PIERCING, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
-            };
+            }
         }
 
         private function addNumProjectileText():void
@@ -84,7 +85,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             if (((this.itemXML.RateOfFire.length() == 0) || (this.curItemXML.RateOfFire.length() == 0)))
             {
                 return;
-            };
+            }
             var _local_1:Number = Number(this.curItemXML.RateOfFire[0]);
             var _local_2:Number = Number(this.itemXML.RateOfFire[0]);
             var _local_3:int = int(int(((_local_2 / _local_1) * 100)));
@@ -92,13 +93,13 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             if (_local_4 == 0)
             {
                 return;
-            };
+            }
             var _local_5:uint = getTextColor(_local_4);
             var _local_6:String = _local_4.toString();
             if (_local_4 > 0)
             {
                 _local_6 = ("+" + _local_6);
-            };
+            }
             _local_6 = wrapInColoredFont((_local_6 + "%"), _local_5);
             comparisonStringBuilder.pushParams(TextKey.RATE_OF_FIRE, {"data":_local_6});
             processedTags[this.itemXML.RateOfFire[0].toXMLString()];

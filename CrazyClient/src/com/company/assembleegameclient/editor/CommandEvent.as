@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.editor.CommandEvent
 
 package com.company.assembleegameclient.editor
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class CommandEvent extends Event 
+public class CommandEvent extends Event
     {
 
         public static const UNDO_COMMAND_EVENT:String = "UNDO_COMMAND_EVENT";

@@ -5,14 +5,16 @@
 
 package kabam.rotmg.chat.control
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import kabam.rotmg.text.model.TextAndMapProvider;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ParseAddTextLineCommand extends Command 
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class ParseAddTextLineCommand extends Command 
     {
 
         [Inject]
@@ -43,7 +45,7 @@ package kabam.rotmg.chat.control
                 _local_1.setStringMap(this.textStringMap.getStringMap());
                 _local_2 = _local_1.getString();
                 this.chatMessage.name = ((_local_2) ? ("#" + _local_2) : this.chatMessage.name);
-            };
+            }
         }
 
         private function translateMessage():void
@@ -51,7 +53,7 @@ package kabam.rotmg.chat.control
             if ((((((this.chatMessage.name == Parameters.CLIENT_CHAT_NAME) || (this.chatMessage.name == Parameters.SERVER_CHAT_NAME)) || (this.chatMessage.name == Parameters.ERROR_CHAT_NAME)) || (this.chatMessage.name == Parameters.HELP_CHAT_NAME)) || (this.chatMessage.name.charAt(0) == "#")))
             {
                 this.translateChatMessage();
-            };
+            }
         }
 
         public function translateChatMessage():void

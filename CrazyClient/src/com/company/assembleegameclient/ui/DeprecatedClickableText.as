@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.DeprecatedClickableText
 
 package com.company.assembleegameclient.ui
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 
-    public class DeprecatedClickableText extends ClickableTextBase 
+public class DeprecatedClickableText extends ClickableTextBase
     {
 
         public function DeprecatedClickableText(_arg_1:int, _arg_2:Boolean, _arg_3:String)

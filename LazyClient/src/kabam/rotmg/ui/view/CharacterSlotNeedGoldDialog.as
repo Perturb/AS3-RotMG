@@ -5,13 +5,16 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class CharacterSlotNeedGoldDialog extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class CharacterSlotNeedGoldDialog extends Sprite
     {
 
         private static const ANALYTICS_PAGE:String = "/charSlotNeedGold";

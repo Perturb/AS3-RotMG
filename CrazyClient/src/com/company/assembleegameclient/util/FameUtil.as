@@ -1,20 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.FameUtil
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.display.Sprite;
-    import flash.filters.DropShadowFilter;
-    import com.company.rotmg.graphics.StarGraphic;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.rotmg.graphics.StarGraphic;
+import com.company.util.AssetLibrary;
 
-    public class FameUtil 
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+
+public class FameUtil
     {
 
         public static const STARS:Vector.<int> = new <int>[20, 150, 400, 800, 2000];
@@ -37,7 +37,7 @@ package com.company.assembleegameclient.util
             while (((_local_2 < STARS.length) && (_arg_1 >= STARS[_local_2])))
             {
                 _local_2++;
-            };
+            }
             return (_local_2);
         }
 
@@ -50,9 +50,9 @@ package com.company.assembleegameclient.util
                 if (STARS[_local_3] > _local_4)
                 {
                     return (STARS[_local_3]);
-                };
+                }
                 _local_3++;
-            };
+            }
             return (-1);
         }
 
@@ -70,8 +70,8 @@ package com.company.assembleegameclient.util
                 else
                 {
                     _local_5 = (_local_5 + FameUtil.numStars(_local_4.BestFame));
-                };
-            };
+                }
+            }
             return (_local_5 + FameUtil.numStars(Math.max(_local_6, _arg_2)));
         }
 
@@ -115,11 +115,11 @@ package com.company.assembleegameclient.util
                             if (_arg_1 < (ObjectLibrary.playerChars_.length * 5))
                             {
                                 _local_2.transform.colorTransform = yellowCT;
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
             return (_local_2);
         }
 
@@ -130,8 +130,8 @@ package com.company.assembleegameclient.util
             _local_2 = numStarsToImage(_arg_1);
             _local_3 = new Sprite();
             _local_3.graphics.beginFill(0, 0.4);
-            var _local_4:int = int(((_local_2.width / 2) + 2));
-            var _local_5:int = int(((_local_2.height / 2) + 2));
+            var _local_4:int = int(int(((_local_2.width / 2) + 2)));
+            var _local_5:int = int(int(((_local_2.height / 2) + 2)));
             _local_3.graphics.drawCircle(_local_4, _local_5, _local_4);
             _local_2.x = 2;
             _local_2.y = 1;

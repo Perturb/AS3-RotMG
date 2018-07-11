@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebSetPaymentDataCommand
 
 package kabam.rotmg.account.web.commands
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.web.WebAccount;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.web.WebAccount;
 
-    public class WebSetPaymentDataCommand 
+public class WebSetPaymentDataCommand
     {
 
         [Inject]
@@ -26,7 +26,7 @@ package kabam.rotmg.account.web.commands
                 _local_1 = XML(this.characterListData.KabamPaymentInfo);
                 _local_2.signedRequest = _local_1.signedRequest;
                 _local_2.kabamId = _local_1.naid;
-            };
+            }
         }
 
 

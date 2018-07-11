@@ -61,7 +61,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>4200</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.85</XpMult>
+      <Exp>165</Exp>
       <God/>
       <StasisImmune/>
       <Quest/>
@@ -178,17 +178,12 @@
       <ShadowSize>80</ShadowSize>
    </Object>
    <Object type="0x0dc7" id="Jungle Summoner">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
       <Size>0</Size>
-      <ShadowSize>0</ShadowSize>
-      <MaxHitPoints>10</MaxHitPoints>
-      <Defense>0</Defense>
-      <XpMult>0</XpMult>
-      <NoMiniMap/>
    </Object>
    <Object type="0x0dc8" id="Jungle Invisible Solid">
       <Class>GameObject</Class>
@@ -285,7 +280,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>125</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.2</XpMult>
+      <Exp>2</Exp>
       <Z>0.26</Z>
       <Projectile id="0">
          <ObjectId>Ghost Shot</ObjectId>
@@ -622,7 +617,7 @@
       <MaxHitPoints>500</MaxHitPoints>
       <StasisImmune/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <HitSound>monster/trees_hit</HitSound>
       <DeathSound>monster/tress_death</DeathSound>
    </Object>

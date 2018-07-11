@@ -5,17 +5,20 @@
 
 package kabam.rotmg.account.web.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
 
-    public class WebAccountDetailDialog extends Frame 
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebAccountDetailDialog extends Frame 
     {
 
         public var cancel:Signal;
@@ -48,7 +51,7 @@ package kabam.rotmg.account.web.view
             if (!_arg_2)
             {
                 this.makeVerifyEmailText();
-            };
+            }
             this.makeChangeText();
             this.makeLogoutText();
         }
@@ -58,7 +61,7 @@ package kabam.rotmg.account.web.view
             if (this.verifyEmail != null)
             {
                 removeChild(this.verifyEmail);
-            };
+            }
             this.verifyEmail = new DeprecatedClickableText(12, false, "WebAccountDetailDialog.verify");
             addNavigationText(this.verifyEmail);
             this.verifyEmail.addEventListener(MouseEvent.CLICK, this.onVerifyEmail);
@@ -69,7 +72,7 @@ package kabam.rotmg.account.web.view
             if (this.changeText != null)
             {
                 removeChild(this.changeText);
-            };
+            }
             this.changeText = new DeprecatedClickableText(12, false, "WebAccountDetailDialog.changePassword");
             this.changeText.addEventListener(MouseEvent.CLICK, this.onChange);
             addNavigationText(this.changeText);
@@ -85,7 +88,7 @@ package kabam.rotmg.account.web.view
             if (this.logoutText != null)
             {
                 removeChild(this.logoutText);
-            };
+            }
             this.logoutText = new DeprecatedClickableText(12, false, "WebAccountDetailDialog.logout");
             this.logoutText.addEventListener(MouseEvent.CLICK, this.onLogout);
             addNavigationText(this.logoutText);

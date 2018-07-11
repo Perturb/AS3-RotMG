@@ -5,16 +5,16 @@
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.display.Sprite;
-    import flash.filters.DropShadowFilter;
-    import com.company.rotmg.graphics.StarGraphic;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.rotmg.graphics.StarGraphic;
+import com.company.util.AssetLibrary;
 
-    public class FameUtil 
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+
+public class FameUtil
     {
 
         public static const MAX_STARS:int = 70;
@@ -38,7 +38,7 @@ package com.company.assembleegameclient.util
             while (((_local_2 < STARS.length) && (_arg_1 >= STARS[_local_2])))
             {
                 _local_2++;
-            };
+            }
             return (_local_2);
         }
 
@@ -51,9 +51,9 @@ package com.company.assembleegameclient.util
                 if (STARS[_local_4] > _local_3)
                 {
                     return (STARS[_local_4]);
-                };
+                }
                 _local_4++;
-            };
+            }
             return (-1);
         }
 
@@ -71,8 +71,8 @@ package com.company.assembleegameclient.util
                 else
                 {
                     _local_4 = (_local_4 + FameUtil.numStars(_local_6.BestFame));
-                };
-            };
+                }
+            }
             _local_4 = (_local_4 + FameUtil.numStars(Math.max(_local_5, _arg_2)));
             return (_local_4);
         }
@@ -116,11 +116,11 @@ package com.company.assembleegameclient.util
                             if (_arg_1 < (ObjectLibrary.playerChars_.length * 5))
                             {
                                 _local_2.transform.colorTransform = yellowCT;
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
             return (_local_2);
         }
 

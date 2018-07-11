@@ -5,13 +5,16 @@
 
 package kabam.rotmg.account.web.view
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.ui.BaseSimpleText;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import org.osflash.signals.Signal;
+import com.company.ui.BaseSimpleText;
 
-    public class LabeledField extends FormField 
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class LabeledField extends FormField
     {
 
         public var nameText_:TextFieldDisplayConcrete;

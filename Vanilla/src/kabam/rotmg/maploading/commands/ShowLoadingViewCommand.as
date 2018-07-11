@@ -5,10 +5,10 @@
 
 package kabam.rotmg.maploading.commands
 {
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.maploading.view.MapLoadingView;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.maploading.view.MapLoadingView;
 
-    public class ShowLoadingViewCommand 
+public class ShowLoadingViewCommand 
     {
 
         [Inject]

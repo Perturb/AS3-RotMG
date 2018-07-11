@@ -5,11 +5,9 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import flash.utils.Dictionary;
 
-    public class FreeList 
+public class FreeList 
     {
 
         private static var dict_:Dictionary = new Dictionary();
@@ -28,8 +26,8 @@ package com.company.assembleegameclient.util
                 if (_local_2.length > 0)
                 {
                     return (_local_2.pop());
-                };
-            };
+                }
+            }
             return (new (_arg_1)());
         }
 
@@ -40,7 +38,7 @@ package com.company.assembleegameclient.util
             {
                 _local_3 = new Vector.<Object>();
                 dict_[_arg_1] = _local_3;
-            };
+            }
             _local_3.push(_arg_2);
         }
 
@@ -50,7 +48,7 @@ package com.company.assembleegameclient.util
             if (((!(_local_2 == null)) && (_local_2.length > 0)))
             {
                 return (_local_2.pop());
-            };
+            }
             return (null);
         }
 
@@ -67,7 +65,7 @@ package com.company.assembleegameclient.util
             {
                 _local_3 = new Vector.<Object>();
                 dict_[_local_2] = _local_3;
-            };
+            }
             _local_3.push(_arg_1);
         }
 

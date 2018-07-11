@@ -28,7 +28,7 @@
       <God/>
       <StasisImmune/>
       <Level>1</Level>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <NoArticle/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -747,7 +747,7 @@
       <Size>120</Size>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>35</Damage>
@@ -768,7 +768,7 @@
       <Size>120</Size>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Bolt</ObjectId>
          <Damage>40</Damage>
@@ -789,7 +789,7 @@
       <Size>120</Size>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>30</Damage>

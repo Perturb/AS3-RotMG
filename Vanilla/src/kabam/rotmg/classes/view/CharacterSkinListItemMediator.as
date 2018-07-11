@@ -5,13 +5,14 @@
 
 package kabam.rotmg.classes.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.classes.control.BuyCharacterSkinSignal;
-    import kabam.rotmg.classes.control.FocusCharacterSkinSignal;
-    import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.control.BuyCharacterSkinSignal;
+import kabam.rotmg.classes.control.FocusCharacterSkinSignal;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
 
-    public class CharacterSkinListItemMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CharacterSkinListItemMediator extends Mediator
     {
 
         [Inject]

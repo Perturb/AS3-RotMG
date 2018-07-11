@@ -1,66 +1,75 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.GameSprite
 
 package com.company.assembleegameclient.game
 {
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.chat.view.Chat;
-    import kabam.rotmg.game.view.NewsModalButton;
-    import com.company.assembleegameclient.ui.RankText;
-    import com.company.assembleegameclient.ui.GuildText;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import kabam.rotmg.news.view.NewsTicker;
-    import kabam.rotmg.arena.view.ArenaTimer;
-    import kabam.rotmg.arena.view.ArenaWaveCounter;
-    import kabam.rotmg.core.model.MapModel;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.ui.menu.PlayerMenu;
-    import kabam.rotmg.ui.view.QuestHealthBar;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.maploading.signals.MapLoadedSignal;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.ui.view.HUDView;
-    import com.company.assembleegameclient.util.AssetLoader;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.protip.signals.ShowProTipSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import com.company.util.MoreObjectUtil;
-    import flash.events.Event;
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.ui.UIUtils;
-    import com.company.assembleegameclient.objects.IInteractiveObject;
-    import kabam.rotmg.constants.GeneralConstants;
-    import com.company.assembleegameclient.objects.Pet;
-    import com.company.util.PointUtil;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.stage3D.Renderer;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.game.events.MoneyChangedEvent;
-    import flash.display.StageScaleMode;
-    import kabam.lib.loopedprocs.LoopedProcess;
-    import kabam.lib.loopedprocs.LoopedCallback;
-    import com.company.util.CachingColorTransformer;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.objects.Projectile;
+import com.company.assembleegameclient.game.events.MoneyChangedEvent;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.IInteractiveObject;
+import com.company.assembleegameclient.objects.Pet;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Projectile;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.GuildText;
+import com.company.assembleegameclient.ui.RankText;
+import com.company.assembleegameclient.ui.menu.PlayerMenu;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.CachingColorTransformer;
+import com.company.util.MoreColorUtil;
+import com.company.util.MoreObjectUtil;
+import com.company.util.PointUtil;
 
-    public class GameSprite extends AGameSprite 
+import flash.display.StageScaleMode;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.ColorMatrixFilter;
+import flash.filters.DropShadowFilter;
+import flash.geom.Vector3D;
+import flash.utils.ByteArray;
+import flash.utils.getTimer;
+
+import kabam.lib.loopedprocs.LoopedCallback;
+import kabam.lib.loopedprocs.LoopedProcess;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.arena.view.ArenaTimer;
+import kabam.rotmg.arena.view.ArenaWaveCounter;
+import kabam.rotmg.chat.view.Chat;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.MapModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.dailyLogin.view.DailyLoginModal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.game.view.NewsModalButton;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.maploading.signals.MapLoadedSignal;
+import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
+import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.news.view.NewsTicker;
+import kabam.rotmg.protip.signals.ShowProTipSignal;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.stage3D.Renderer;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.ui.UIUtils;
+import kabam.rotmg.ui.view.HUDView;
+import kabam.rotmg.ui.view.QuestHealthBar;
+
+import org.osflash.signals.Signal;
+
+public class GameSprite extends AGameSprite
     {
 
         protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 
+        protected const EMPTY_FILTER:DropShadowFilter = new DropShadowFilter(0, 0, 0);
         public const monitor:Signal = new Signal(String, int);
         public const modelInitialized:Signal = new Signal();
         public const drawCharacterWindow:Signal = new Signal(Player);
@@ -81,6 +90,8 @@ package com.company.assembleegameclient.game
         private var displaysPosY:uint = 4;
         public var chatPlayerMenu:PlayerMenu;
         public var questBar:QuestHealthBar;
+        private var timerCounter:TextFieldDisplayConcrete;
+        public var openDialog:OpenDialogSignal;
 
         public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean)
         {
@@ -107,13 +118,23 @@ package com.company.assembleegameclient.game
             ((_local_1) && (_local_1.dispatch()));
         }
 
+        public static function toTimeCode(_arg_1:Number):String
+        {
+            var _local_2:int = Math.floor(((_arg_1 * 0.001) % 60));
+            var _local_3:String = ((_local_2 < 10) ? ("0" + _local_2) : String(_local_2));
+            var _local_4:int = Math.round(Math.floor(((_arg_1 * 0.001) * 0.0166666666666667)));
+            var _local_5:String = String(_local_4);
+            var _local_6:String = ((_local_5 + ":") + _local_3);
+            return (_local_6);
+        }
+
 
         public function onChatDown(_arg_1:MouseEvent):void
         {
             if (this.chatPlayerMenu != null)
             {
                 this.removeChatPlayerMenu();
-            };
+            }
             mui_.onMouseDown(_arg_1);
         }
 
@@ -156,10 +177,10 @@ package com.company.assembleegameclient.game
                     if (((_arg_4.length > 0) && (((_arg_4.charAt(0) == "#") || (_arg_4.charAt(0) == "*")) || (_arg_4.charAt(0) == "@"))))
                     {
                         return;
-                    };
+                    }
                     this.chatPlayerMenu.initDifferentServer(this, _arg_4, _arg_5);
-                };
-            };
+                }
+            }
             addChild(this.chatPlayerMenu);
             this.chatMenuPositionFixed();
         }
@@ -170,7 +191,7 @@ package com.company.assembleegameclient.game
             {
                 removeChild(this.chatPlayerMenu);
                 this.chatPlayerMenu = null;
-            };
+            }
         }
 
         override public function applyMapInfo(_arg_1:MapInfo):void
@@ -184,20 +205,6 @@ package com.company.assembleegameclient.game
             hudView = new HUDView();
             hudView.x = 600;
             addChild(hudView);
-            switch (gsc_.mapName)
-            {
-                case "Vault":
-                    hudView.miniMap.miniMapData_ = AssetLoader.vaultMap;
-                    return;
-                case "Oryx's Castle":
-                    hudView.miniMap.miniMapData_ = AssetLoader.castleMap;
-                    return;
-                case "Oryx's Chamber":
-                    hudView.miniMap.miniMapData_ = AssetLoader.chamberMap;
-                    return;
-                case "Wine Cellar":
-                    hudView.miniMap.miniMapData_ = AssetLoader.wcMap;
-            };
         }
 
         override public function initialize():void
@@ -209,16 +216,16 @@ package com.company.assembleegameclient.game
             if (this.evalIsNotInCombatMapArea())
             {
                 this.showSafeAreaDisplays();
-            };
+            }
             if (map.name_ == "Arena")
             {
                 this.showTimer();
                 this.showWaveCounter();
-            };
+            }
             if (map.name_ == Map.DAILY_QUEST_ROOM)
             {
                 gsc_.questFetch();
-            };
+            }
             _local_1 = StaticInjectorContext.getInjector().getInstance(Account);
             this.questBar = new QuestHealthBar();
             this.questBar.x = 4;
@@ -239,7 +246,7 @@ package com.company.assembleegameclient.game
                     this.creditDisplay_.x = 594;
                     this.creditDisplay_.y = 0;
                     addChild(this.creditDisplay_);
-            };
+            }
             var _local_3:AppEngineClient = StaticInjectorContext.getInjector().getInstance(AppEngineClient);
             var _local_4:Object = {
                 "game_net_user_id":_local_1.gameNetworkUserId(),
@@ -269,7 +276,7 @@ package com.company.assembleegameclient.game
                 this.newsModalButton.x = 8;
                 this.newsModalButton.y = 34;
                 addChild(this.newsModalButton);
-            };
+            }
         }
 
         private function showTimer():void
@@ -321,7 +328,7 @@ package com.company.assembleegameclient.game
             if (((!(map)) || (!(map.player_))))
             {
                 return;
-            };
+            }
             var _local_5:Player = map.player_;
             var _local_6:Number = GeneralConstants.MAXIMUM_INTERACTION_DISTANCE;
             var _local_7:Number = _local_5.x_;
@@ -338,10 +345,10 @@ package com.company.assembleegameclient.game
                         {
                             _local_6 = _local_1;
                             _local_4 = _local_3;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             this.mapModel.currentInteractiveTarget = _local_4;
         }
 
@@ -360,7 +367,7 @@ package com.company.assembleegameclient.game
             {
                 this.map.scaleX = (_local_3 * Parameters.data_.mscale);
                 this.map.scaleY = (_local_4 * Parameters.data_.mscale);
-            };
+            }
             if (this.hudView != null)
             {
                 if (_local_2)
@@ -374,18 +381,18 @@ package com.company.assembleegameclient.game
                     this.hudView.scaleX = _local_3;
                     this.hudView.scaleY = _local_4;
                     this.hudView.y = (300 * (1 - _local_4));
-                };
+                }
                 this.hudView.x = (800 - (200 * this.hudView.scaleX));
                 if (this.creditDisplay_ != null)
                 {
                     this.creditDisplay_.x = (this.hudView.x - (6 * this.creditDisplay_.scaleX));
-                };
-            };
+                }
+            }
             if (this.questBar != null)
             {
                 this.questBar.scaleX = _local_5;
                 this.questBar.scaleY = 1;
-            };
+            }
             if (this.chatBox_ != null)
             {
                 if (_local_2)
@@ -397,9 +404,9 @@ package com.company.assembleegameclient.game
                 {
                     this.chatBox_.scaleX = _local_3;
                     this.chatBox_.scaleY = _local_4;
-                };
+                }
                 this.chatBox_.y = (300 + (300 * (1 - this.chatBox_.scaleY)));
-            };
+            }
             if (this.rankText_ != null)
             {
                 if (_local_2)
@@ -411,10 +418,10 @@ package com.company.assembleegameclient.game
                 {
                     this.rankText_.scaleX = _local_3;
                     this.rankText_.scaleY = _local_4;
-                };
+                }
                 this.rankText_.x = (8 * this.rankText_.scaleX);
                 this.rankText_.y = (4 * this.rankText_.scaleY);
-            };
+            }
             if (this.newsModalButton != null)
             {
                 if (_local_2)
@@ -426,10 +433,10 @@ package com.company.assembleegameclient.game
                 {
                     this.newsModalButton.scaleX = _local_3;
                     this.newsModalButton.scaleY = _local_4;
-                };
+                }
                 this.newsModalButton.x = (6 * this.newsModalButton.scaleX);
                 this.newsModalButton.y = (34 * this.newsModalButton.scaleY);
-            };
+            }
             if (this.guildText_ != null)
             {
                 if (_local_2)
@@ -441,10 +448,10 @@ package com.company.assembleegameclient.game
                 {
                     this.guildText_.scaleX = _local_3;
                     this.guildText_.scaleY = _local_4;
-                };
+                }
                 this.guildText_.x = (64 * this.guildText_.scaleX);
                 this.guildText_.y = (6 * this.guildText_.scaleY);
-            };
+            }
             if (this.creditDisplay_ != null)
             {
                 if (_local_2)
@@ -456,13 +463,13 @@ package com.company.assembleegameclient.game
                 {
                     this.creditDisplay_.scaleX = _local_3;
                     this.creditDisplay_.scaleY = _local_4;
-                };
-            };
+                }
+            }
         }
 
         public function connect():void
         {
-            if (!this.isGameStarted)
+            if ((!(this.isGameStarted)))
             {
                 this.isGameStarted = true;
                 Renderer.inGame = true;
@@ -474,21 +481,21 @@ package com.company.assembleegameclient.game
                 if (Parameters.data_.mscale == undefined)
                 {
                     Parameters.data_.mscale = "1.0";
-                };
+                }
                 if (Parameters.data_.stageScale == undefined)
                 {
                     Parameters.data_.stageScale = StageScaleMode.NO_SCALE;
-                };
+                }
                 if (Parameters.data_.uiscale == undefined)
                 {
                     Parameters.data_.uiscale = true;
-                };
+                }
                 Parameters.save();
                 stage.scaleMode = Parameters.data_.stageScale;
                 stage.addEventListener(Event.RESIZE, this.onScreenResize);
                 stage.dispatchEvent(new Event(Event.RESIZE));
                 LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
-            };
+            }
         }
 
         public function disconnect():void
@@ -508,8 +515,14 @@ package com.company.assembleegameclient.game
                 CachingColorTransformer.clear();
                 TextureRedrawer.clearCache();
                 Projectile.dispose();
+                if (((this.timerCounter) && (!(((Parameters.phaseName == "Realm Closed") || (Parameters.phaseName == "Oryx Shake")) || (Parameters.phaseName == "Portal Opened")))))
+                {
+                    Parameters.timerActive = false;
+                    this.timerCounter.visible = false;
+                    this.timerCounter = null;
+                }
                 gsc_.disconnect();
-            };
+            }
         }
 
         private function onMoneyChanged(_arg_1:Event):void
@@ -524,9 +537,22 @@ package com.company.assembleegameclient.game
 
         private function onEnterFrame(_arg_1:Event):void
         {
+            var _local_8:int;
+            var _local_9:int;
             var _local_2:Number = NaN;
             var _local_3:int = getTimer();
             var _local_4:int = (_local_3 - lastUpdate_);
+            if (mui_.held)
+            {
+                _local_9 = (WebMain.STAGE.mouseX - mui_.heldX);
+                Parameters.data_.cameraAngle = (mui_.heldAngle + (_local_9 * (Math.PI / 180)));
+                if (((!(Options.hidden)) && (Parameters.data_.tiltCam)))
+                {
+                    _local_8 = (WebMain.STAGE.mouseY - mui_.heldY);
+                    mui_.heldY = WebMain.STAGE.mouseY;
+                    this.camera_.nonPPMatrix_.appendRotation(_local_8, Vector3D.X_AXIS, null);
+                }
+            }
             LoopedProcess.runProcesses(_local_3);
             this.frameTimeSum_ = (this.frameTimeSum_ + _local_4);
             this.frameTimeCount_ = (this.frameTimeCount_ + 1);
@@ -535,29 +561,46 @@ package com.company.assembleegameclient.game
                 _local_2 = int(Math.round(((1000 * this.frameTimeCount_) / this.frameTimeSum_)));
                 this.frameTimeCount_ = 0;
                 this.frameTimeSum_ = 0;
-            };
+            }
             var _local_5:int = getTimer();
             map.update(_local_3, _local_4);
             this.monitor.dispatch("Map.update", (getTimer() - _local_5));
             camera_.update(_local_4);
+            if (Parameters.timerActive)
+            {
+                if (this.timerCounter == null)
+                {
+                    this.addTimer();
+                }
+                if (_local_5 >= Parameters.phaseChangeAt)
+                {
+                    Parameters.phaseChangeAt = 2147483647;
+                    Parameters.timerActive = false;
+                    this.timerCounter.visible = false;
+                }
+                else
+                {
+                    this.updateTimer(_local_5);
+                }
+            }
             var _local_6:Player = map.player_;
             if (this.focus)
             {
                 camera_.configureCamera(this.focus, ((_local_6) ? Boolean(_local_6.isHallucinating()) : false));
                 map.draw(camera_, _local_3);
-            };
+            }
             if (_local_6 != null)
             {
                 if (this.creditDisplay_ != null)
                 {
                     this.creditDisplay_.draw(_local_6.credits_, _local_6.fame_, _local_6.tokens_);
-                };
+                }
                 this.drawCharacterWindow.dispatch(_local_6);
                 if (this.evalIsNotInCombatMapArea())
                 {
                     this.rankText_.draw(_local_6.numStars_);
                     this.guildText_.draw(_local_6.guildName_, _local_6.guildRank_);
-                };
+                }
                 if (_local_6.isPaused())
                 {
                     map.filters = [PAUSED_FILTER];
@@ -577,10 +620,10 @@ package com.company.assembleegameclient.game
                         map.mouseChildren = true;
                         hudView.mouseEnabled = true;
                         hudView.mouseChildren = true;
-                    };
-                };
+                    }
+                }
                 moveRecords_.addRecord(_local_3, _local_6.x_, _local_6.y_);
-            };
+            }
             lastUpdate_ = _local_3;
             var _local_7:int = (getTimer() - _local_3);
             this.monitor.dispatch("GameSprite.loop", _local_7);
@@ -588,6 +631,31 @@ package com.company.assembleegameclient.game
 
         public function showPetToolTip(_arg_1:Boolean):void
         {
+        }
+
+        private function updateTimer(_arg_1:int):void
+        {
+            this.timerCounter.visible = true;
+            this.timerCounter.setText(((Parameters.phaseName + "\n") + toTimeCode((Parameters.phaseChangeAt - _arg_1))));
+        }
+
+        private function addTimer():void
+        {
+            if (this.timerCounter == null)
+            {
+                this.timerCounter = new TextFieldDisplayConcrete().setSize(Parameters.data_.uiTextSize).setColor(0xFFFFFF);
+                this.timerCounter.mouseChildren = false;
+                this.timerCounter.setBold(true);
+                this.timerCounter.filters = [this.EMPTY_FILTER];
+                this.timerCounter.x = 3;
+                this.timerCounter.y = 80;
+                addChild(this.timerCounter);
+            }
+        }
+
+        override public function showDailyLoginCalendar():void
+        {
+            this.openDialog.dispatch(new DailyLoginModal());
         }
 
 

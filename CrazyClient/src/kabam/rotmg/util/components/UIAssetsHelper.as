@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.UIAssetsHelper
 
 package kabam.rotmg.util.components
 {
-    import flash.display.BitmapData;
-    import com.company.util.AssetLibrary;
-    import flash.display.Bitmap;
-    import flash.display.Sprite;
+import com.company.util.AssetLibrary;
 
-    public class UIAssetsHelper 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+
+public class UIAssetsHelper 
     {
 
         public static const LEFT_NEVIGATOR:String = "left";
@@ -27,7 +28,7 @@ package kabam.rotmg.util.components
             else
             {
                 _local_4 = AssetLibrary.getImageFromSet("lofiInterface", 54);
-            };
+            }
             var _local_5:Bitmap = new Bitmap(_local_4);
             _local_5.scaleX = _arg_2;
             _local_5.scaleY = _arg_2;

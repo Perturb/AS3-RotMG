@@ -11,14 +11,55 @@
       <CanUseTexes/>
       <NoMiniMap/>
    </Object>
-   <Object type="0x367f" id="heartDecoy">
+   <Object type="0x755f" id="Dire Decoy">
+      <Class>Character</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <Friendly/>
+      <NoMiniMap/>
+   </Object>
+   <Object type="0xb101" id="Golem Decoy 2">
+      <Class>GameObject</Class>
+      <Texture>
+         <File>lostHallsObjects8x8</File>
+         <Index>0xbe</Index>
+      </Texture>
+      <Friendly/>
+   </Object>
+   <Object type="0xb053" id="Eye of Marble">
+      <Class>GameObject</Class>
+      <Texture>
+         <File>lostHallsObjects16x16</File>
+         <Index>0x00</Index>
+      </Texture>
+      <Size>140</Size>
+      <ShadowSize>80</ShadowSize>
+      <Effect color="0xFFDF3F" rate="15" life=".5" lifeVariance="0" speed="0" speedVariance="0" size="8" rise="0" riseAcc="0" riseVariance="0" rangeX="4" rangeY="4">CustomParticles</Effect>
+   </Object>
+   <Object type="0x9f9" id="CR Friendly Cnidarian">
+      <Class>GameObject</Class>
+      <Texture>
+         <File>cnidarianReefObjects8x8</File>
+         <Index>0x24</Index>
+      </Texture>
+      <AltTexture id="1">
+         <Texture>
+            <File>cnidarianReefObjects8x8</File>
+            <Index>0x25</Index>
+         </Texture>
+      </AltTexture>
+      <Size>85</Size>
+      <ShadowColor>0xFFA447</ShadowColor>
+   </Object>
+   <Object type="0x367f" id="Heart Decoy">
       <Class>Character</Class>
       <AnimatedTexture>
          <File>oryxHordeChars8x8</File>
          <Index>19</Index>
       </AnimatedTexture>
       <Friendly/>
-      <CanUseTexes/>
       <NoMiniMap/>
    </Object>
    <Object type="0x1400" id="Purple Drake">
@@ -473,6 +514,26 @@
          </Texture>
       </RandomTexture>
       <Size>50</Size>
+      <NoMiniMap/>
+   </Object>
+   <Object type="0x23f5" id="St Patrick's Flying Hat">
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>187</Index>
+      </AnimatedTexture>
+      <Flying/>
+      <Z>0.4</Z>
+      <NoMiniMap/>
+   </Object>
+   <Object type="0x23f7" id="Flying Rainbow Clover">
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>68</Index>
+      </AnimatedTexture>
+      <Flying/>
+      <Z>0.2</Z>
       <NoMiniMap/>
    </Object>
 </Objects>

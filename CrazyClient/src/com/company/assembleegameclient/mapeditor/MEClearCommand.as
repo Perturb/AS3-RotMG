@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.MEClearCommand
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.editor.Command;
+import com.company.assembleegameclient.editor.Command;
 
-    public class MEClearCommand extends Command 
+public class MEClearCommand extends Command
     {
 
         private var map_:MEMap;

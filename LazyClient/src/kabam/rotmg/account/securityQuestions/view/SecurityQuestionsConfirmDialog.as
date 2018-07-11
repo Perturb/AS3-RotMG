@@ -5,13 +5,15 @@
 
 package kabam.rotmg.account.securityQuestions.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.account.ui.Frame;
 
-    public class SecurityQuestionsConfirmDialog extends Frame 
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class SecurityQuestionsConfirmDialog extends Frame 
     {
 
         private var infoText:TextFieldDisplayConcrete;
@@ -36,7 +38,7 @@ package kabam.rotmg.account.securityQuestions.view
                 _local_1 = (_local_1 + (('<font color="#7777EE">' + LineBuilder.getLocalizedStringFromKey(_local_3)) + "</font>\n"));
                 _local_1 = (_local_1 + (this.answerList[_local_2] + "\n\n"));
                 _local_2++;
-            };
+            }
             _local_1 = (_local_1 + LineBuilder.getLocalizedStringFromKey(TextKey.SECURITY_QUESTIONS_CONFIRM_TEXT));
             this.infoText = new TextFieldDisplayConcrete();
             this.infoText.setStringBuilder(new LineBuilder().setParams(_local_1));

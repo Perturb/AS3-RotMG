@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.MapInfo
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import flash.utils.IDataInput;
 
-    public class MapInfo extends IncomingMessage 
+public class MapInfo extends IncomingMessage 
     {
 
         public var width_:int;
@@ -61,7 +59,7 @@ package kabam.rotmg.messaging.impl.incoming
                 _local_4 = _arg_1.readInt();
                 this.clientXML_.push(_arg_1.readUTFBytes(_local_4));
                 _local_3++;
-            };
+            }
             _local_2 = _arg_1.readShort();
             this.extraXML_.length = 0;
             _local_3 = 0;
@@ -70,7 +68,7 @@ package kabam.rotmg.messaging.impl.incoming
                 _local_4 = _arg_1.readInt();
                 this.extraXML_.push(_arg_1.readUTFBytes(_local_4));
                 _local_3++;
-            };
+            }
         }
 
         override public function toString():String

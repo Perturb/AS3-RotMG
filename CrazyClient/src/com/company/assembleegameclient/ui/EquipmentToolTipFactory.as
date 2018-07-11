@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.EquipmentToolTipFactory
 
 package com.company.assembleegameclient.ui
 {
-    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.display.Sprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
 
-    public class EquipmentToolTipFactory 
+import flash.display.Sprite;
+
+public class EquipmentToolTipFactory
     {
 
 

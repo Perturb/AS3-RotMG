@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.view.DialogsMediator
 
 package kabam.rotmg.dialogs.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
-    import kabam.rotmg.dialogs.control.PushDialogSignal;
-    import kabam.rotmg.dialogs.control.PopDialogSignal;
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class DialogsMediator extends Mediator 
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.dialogs.control.PopDialogSignal;
+import kabam.rotmg.dialogs.control.PushDialogSignal;
+import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DialogsMediator extends Mediator 
     {
 
         [Inject]

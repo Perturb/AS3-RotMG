@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.data
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class ObjectData 
+public class ObjectData
     {
 
         public var objectType_:int;

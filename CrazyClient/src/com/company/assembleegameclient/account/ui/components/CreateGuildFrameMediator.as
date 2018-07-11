@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.components.CreateGuildFrameMediator
 
 package com.company.assembleegameclient.account.ui.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.account.ui.CreateGuildFrame;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import com.company.assembleegameclient.account.ui.CreateGuildFrame;
 
-    public class CreateGuildFrameMediator extends Mediator 
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CreateGuildFrameMediator extends Mediator 
     {
 
         [Inject]

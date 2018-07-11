@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_playersSkins16Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

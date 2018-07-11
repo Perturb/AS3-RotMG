@@ -1,27 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.view.LegendListItem
 
 package kabam.rotmg.legends.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.legends.model.Legend;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
-    import com.company.util.IIterator;
-    import com.company.assembleegameclient.ui.Slot;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.ui.Slot;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.IIterator;
 
-    public class LegendListItem extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.legends.model.Legend;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+
+public class LegendListItem extends Sprite 
     {
 
         private static const FONT_SIZE:int = 22;
@@ -92,7 +95,7 @@ package kabam.rotmg.legends.view
             {
                 _local_1 = InteractiveItemTile(_local_2.next());
                 _local_1.setInteractive(false);
-            };
+            }
             this.inventoryGrid.setItems(this.legend.equipment);
             this.inventoryGrid.x = 400;
             this.inventoryGrid.y = ((HEIGHT / 2) - (Slot.HEIGHT / 2));
@@ -135,8 +138,8 @@ package kabam.rotmg.legends.view
                 else
                 {
                     _local_1 = 0xFFFFFF;
-                };
-            };
+                }
+            }
             return (_local_1);
         }
 

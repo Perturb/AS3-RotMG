@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.LoadingMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.LoadingScreen;
-    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+import com.company.assembleegameclient.screens.LoadingScreen;
 
-    public class LoadingMediator extends Mediator 
+import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class LoadingMediator extends Mediator
     {
 
         [Inject]

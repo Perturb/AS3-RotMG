@@ -1,28 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebAccountInfoView
 
 package kabam.rotmg.account.web.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.account.core.view.AccountInfoView;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.build.api.BuildData;
-    import kabam.rotmg.build.api.BuildEnvironment;
+import com.company.assembleegameclient.screens.TitleMenuOption;
 
-    public class WebAccountInfoView extends Sprite implements AccountInfoView 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.view.AccountInfoView;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.api.BuildEnvironment;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebAccountInfoView extends Sprite implements AccountInfoView
     {
 
         private static const FONT_SIZE:int = 18;
@@ -76,7 +79,6 @@ package kabam.rotmg.account.web.view
         private function makeAccountText():void
         {
             this.accountText = this.makeTextFieldConcrete();
-            this.accountText.setStringBuilder(new LineBuilder().setParams(TextKey.GUEST_ACCOUNT));
         }
 
         private function makeTextFieldConcrete():TextFieldDisplayConcrete
@@ -133,7 +135,7 @@ package kabam.rotmg.account.web.view
             else
             {
                 this.showUIForGuestAccount();
-            };
+            }
         }
 
         private function removeUIElements():void
@@ -141,7 +143,7 @@ package kabam.rotmg.account.web.view
             while (numChildren)
             {
                 removeChildAt(0);
-            };
+            }
         }
 
         private function showUIForRegisteredAccount():void
@@ -156,15 +158,13 @@ package kabam.rotmg.account.web.view
             else
             {
                 this.addAndAlignHorizontally(this.accountText, this.loginButton);
-            };
+            }
         }
 
         private function showUIForGuestAccount():void
         {
-            this.accountText.setStringBuilder(new LineBuilder().setParams(TextKey.GUEST_ACCOUNT, {"userName":this.userName}));
-            var _local_1:BuildData = StaticInjectorContext.getInjector().getInstance(BuildData);
             this.loginButton.setTextKey(TextKey.LOG_IN);
-            this.addAndAlignHorizontally(this.accountText, this.makeDividerText(), this.registerButton, this.makeDividerText(), this.loginButton);
+            this.addAndAlignHorizontally(this.registerButton, this.makeDividerText(), this.loginButton);
         }
 
         private function addAndAlignHorizontally(... _args):void
@@ -176,7 +176,7 @@ package kabam.rotmg.account.web.view
             for each (_local_2 in _args)
             {
                 addChild(_local_2);
-            };
+            }
             _local_3 = 0;
             _local_4 = _args.length;
             while (_local_4--)
@@ -184,7 +184,7 @@ package kabam.rotmg.account.web.view
                 _local_5 = _args[_local_4];
                 _local_5.x = _local_3;
                 _local_3 = (_local_3 - _local_5.width);
-            };
+            }
         }
 
 

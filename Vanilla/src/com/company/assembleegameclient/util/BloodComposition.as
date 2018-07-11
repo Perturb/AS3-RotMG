@@ -5,12 +5,10 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
 
-    public class BloodComposition 
+public class BloodComposition
     {
 
         private static var idDict_:Dictionary = new Dictionary();
@@ -23,7 +21,7 @@ package com.company.assembleegameclient.util
             if (_local_5 != null)
             {
                 return (_local_5);
-            };
+            }
             _local_5 = new Vector.<uint>();
             var _local_6:Vector.<uint> = getColors(_arg_2);
             var _local_7:int;
@@ -36,9 +34,9 @@ package com.company.assembleegameclient.util
                 else
                 {
                     _local_5.push(_local_6[int((_local_6.length * Math.random()))]);
-                };
+                }
                 _local_7++;
-            };
+            }
             return (_local_5);
         }
 
@@ -49,7 +47,7 @@ package com.company.assembleegameclient.util
             {
                 _local_2 = buildColors(_arg_1);
                 imageDict_[_arg_1] = _local_2;
-            };
+            }
             return (_local_2);
         }
 
@@ -68,11 +66,11 @@ package com.company.assembleegameclient.util
                     if ((_local_5 & 0xFF000000) != 0)
                     {
                         _local_2.push(_local_5);
-                    };
+                    }
                     _local_4++;
-                };
+                }
                 _local_3++;
-            };
+            }
             return (_local_2);
         }
 

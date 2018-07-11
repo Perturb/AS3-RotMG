@@ -5,36 +5,37 @@
 
 package kabam.rotmg.news.view
 {
-    import kabam.rotmg.account.core.view.EmptyFrame;
-    import flash.geom.ColorTransform;
-    import flash.filters.DropShadowFilter;
-    import flash.filters.GlowFilter;
-    import flash.text.TextField;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.model.FontModel;
-    import flash.display.Sprite;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.events.KeyboardEvent;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormatAlign;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.ui.model.HUDModel;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.pets.view.components.PopupWindowBackground;
-    import com.company.util.KeyCodes;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import com.company.util.MoreColorUtil;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.util.AssetLibrary;
+import com.company.util.KeyCodes;
+import com.company.util.MoreColorUtil;
 
-    public class NewsModal extends EmptyFrame 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.filters.GlowFilter;
+import flash.geom.ColorTransform;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
+
+import kabam.rotmg.account.core.view.EmptyFrame;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.pets.view.components.PopupWindowBackground;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.model.HUDModel;
+
+public class NewsModal extends EmptyFrame
     {
 
         public static var backgroundImageEmbed:Class = NewsModal_backgroundImageEmbed;
@@ -93,7 +94,7 @@ package kabam.rotmg.news.view
             else
             {
                 _local_5.setStringBuilder(new LineBuilder().setParams(_arg_1));
-            };
+            }
             _local_5.setWordWrap(true);
             _local_5.setMultiLine(true);
             _local_5.setAutoSize(TextFieldAutoSize.CENTER);
@@ -105,23 +106,23 @@ package kabam.rotmg.news.view
         }
 
 
-        public function onCloseButtonClicked():*
+        public function onCloseButtonClicked():void
         {
             var _local_1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
             closeButton.clicked.remove(this.onCloseButtonClicked);
             if (this.triggeredOnStartup)
             {
                 _local_1.dispatch();
-            };
+            }
         }
 
-        private function onAdded(_arg_1:Event):*
+        private function onAdded(_arg_1:Event):void
         {
             this.newsModel.markAsRead();
             this.refreshNewsButton();
         }
 
-        private function updateIndicator():*
+        private function updateIndicator():void
         {
             this.fontModel.apply(this.pageIndicator, 24, 0xFFFFFF, true);
             this.pageIndicator.text = ((this.currentPageNumber + " / ") + this.newsModel.numberOfNews);
@@ -152,15 +153,15 @@ package kabam.rotmg.news.view
                     if ((this.currentPageNumber + 1) <= this.newsModel.numberOfNews)
                     {
                         this.setPage((this.currentPageNumber + 1));
-                    };
+                    }
                     return;
                 case this.leftNavSprite:
                     if ((this.currentPageNumber - 1) >= 1)
                     {
                         this.setPage((this.currentPageNumber - 1));
-                    };
+                    }
                     return;
-            };
+            }
         }
 
         private function destroy(_arg_1:Event):void
@@ -182,7 +183,7 @@ package kabam.rotmg.news.view
             if (((this.currentPage) && (this.currentPage.parent)))
             {
                 removeChild(this.currentPage);
-            };
+            }
             this.currentPage = this.newsModel.getModalPage(_arg_1);
             addChild(this.currentPage);
             this.updateIndicator();
@@ -194,7 +195,7 @@ package kabam.rotmg.news.view
             if (((!(_local_1 == null)) && (!(_local_1.gameSprite == null))))
             {
                 _local_1.gameSprite.refreshNewsUpdateButton();
-            };
+            }
         }
 
         override protected function makeModalBackground():Sprite
@@ -225,7 +226,7 @@ package kabam.rotmg.news.view
                 if ((this.currentPageNumber + 1) <= this.newsModel.numberOfNews)
                 {
                     this.setPage((this.currentPageNumber + 1));
-                };
+                }
             }
             else
             {
@@ -234,9 +235,9 @@ package kabam.rotmg.news.view
                     if ((this.currentPageNumber - 1) >= 1)
                     {
                         this.setPage((this.currentPageNumber - 1));
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function makeLeftNav():Sprite

@@ -5,15 +5,17 @@
 
 package io.decagames.rotmg.ui.popups
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-    import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
-    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
+import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
+import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
-    public class PopupMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PopupMediator extends Mediator
     {
 
         [Inject]
@@ -23,9 +25,15 @@ package io.decagames.rotmg.ui.popups
         [Inject]
         public var closePopupSignal:ClosePopupSignal;
         [Inject]
+        public var closePopupByClassSignal:ClosePopupByClassSignal;
+        [Inject]
         public var closeCurrentPopupSignal:CloseCurrentPopupSignal;
         [Inject]
         public var closeAllPopupsSignal:CloseAllPopupsSignal;
+        [Inject]
+        public var removeLockFade:RemoveLockFade;
+        [Inject]
+        public var showLockFade:ShowLockFade;
         private var popups:Vector.<BasePopup>;
 
         public function PopupMediator()
@@ -37,8 +45,11 @@ package io.decagames.rotmg.ui.popups
         {
             this.showPopupSignal.add(this.showPopupHandler);
             this.closePopupSignal.add(this.closePopupHandler);
+            this.closePopupByClassSignal.add(this.closeByClassHandler);
             this.closeCurrentPopupSignal.add(this.closeCurrentPopupHandler);
             this.closeAllPopupsSignal.add(this.closeAllPopupsHandler);
+            this.removeLockFade.add(this.onRemoveLock);
+            this.showLockFade.add(this.onShowLock);
         }
 
         private function closeCurrentPopupHandler():void
@@ -47,13 +58,23 @@ package io.decagames.rotmg.ui.popups
             this.view.removeChild(_local_1);
         }
 
+        private function onShowLock():void
+        {
+            this.view.showFade();
+        }
+
+        private function onRemoveLock():void
+        {
+            this.view.removeFade();
+        }
+
         private function closeAllPopupsHandler():void
         {
             var _local_1:BasePopup;
             for each (_local_1 in this.popups)
             {
                 this.view.removeChild(_local_1);
-            };
+            }
             this.popups = new Vector.<BasePopup>();
         }
 
@@ -72,8 +93,8 @@ package io.decagames.rotmg.ui.popups
                 {
                     _arg_1.x = Math.round(((800 - _arg_1.width) / 2));
                     _arg_1.y = Math.round(((600 - _arg_1.height) / 2));
-                };
-            };
+                }
+            }
             this.drawPopupBackground(_arg_1);
         }
 
@@ -84,7 +105,21 @@ package io.decagames.rotmg.ui.popups
             {
                 this.view.removeChild(this.popups[_local_2]);
                 this.popups.splice(_local_2, 1);
-            };
+            }
+        }
+
+        private function closeByClassHandler(_arg_1:Class):void
+        {
+            var _local_2:int = (this.popups.length - 1);
+            while (_local_2 >= 0)
+            {
+                if ((this.popups[_local_2] is _arg_1))
+                {
+                    this.view.removeChild(this.popups[_local_2]);
+                    this.popups.splice(_local_2, 1);
+                }
+                _local_2--;
+            }
         }
 
         private function drawPopupBackground(_arg_1:BasePopup):void
@@ -98,7 +133,10 @@ package io.decagames.rotmg.ui.popups
         {
             this.showPopupSignal.remove(this.showPopupHandler);
             this.closePopupSignal.remove(this.closePopupHandler);
-            this.closeCurrentPopupSignal.add(this.closeCurrentPopupHandler);
+            this.closePopupByClassSignal.remove(this.closeByClassHandler);
+            this.closeCurrentPopupSignal.remove(this.closeCurrentPopupHandler);
+            this.removeLockFade.remove(this.onRemoveLock);
+            this.showLockFade.remove(this.onShowLock);
         }
 
 

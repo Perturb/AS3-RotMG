@@ -5,12 +5,14 @@
 
 package kabam.rotmg.death.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class ZombifyDialog extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+import org.osflash.signals.Signal;
+
+public class ZombifyDialog extends Sprite
     {
 
         public static const TITLE:String = "ZombifyDialog.title";

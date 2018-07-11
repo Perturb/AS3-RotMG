@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_monsterTank4Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

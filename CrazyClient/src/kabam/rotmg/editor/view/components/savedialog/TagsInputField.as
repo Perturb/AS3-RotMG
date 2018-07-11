@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.editor.view.components.savedialog.TagsInputField
 
 package kabam.rotmg.editor.view.components.savedialog
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import flash.filters.DropShadowFilter;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.events.FocusEvent;
+import com.company.ui.BaseSimpleText;
 
-    public class TagsInputField extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.FocusEvent;
+import flash.filters.DropShadowFilter;
+
+public class TagsInputField extends Sprite 
     {
 
         public static const HEIGHT:int = 88;
@@ -57,7 +58,7 @@ package kabam.rotmg.editor.view.components.savedialog
             if (this.inputText_.text == "")
             {
                 addChild(this.instructionsText_);
-            };
+            }
         }
 
         public function text():String
@@ -70,7 +71,7 @@ package kabam.rotmg.editor.view.components.savedialog
             if (contains(this.instructionsText_))
             {
                 removeChild(this.instructionsText_);
-            };
+            }
         }
 
         private function onFocusOut(_arg_1:FocusEvent):void
@@ -78,7 +79,7 @@ package kabam.rotmg.editor.view.components.savedialog
             if (((!(contains(this.instructionsText_))) && (this.inputText_.text == "")))
             {
                 addChild(this.instructionsText_);
-            };
+            }
         }
 
 

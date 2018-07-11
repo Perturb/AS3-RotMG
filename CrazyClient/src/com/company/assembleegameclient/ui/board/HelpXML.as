@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.HelpXML
 
 package com.company.assembleegameclient.ui.board
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class HelpXML 
+public class HelpXML 
     {
 
         public static var protipsXML:Class = EmbeddedHelp;
@@ -29,7 +26,7 @@ package com.company.assembleegameclient.ui.board
             {
                 this.commands.push(_local_2.Article.Command[_local_1]);
                 this.explanations.push(_local_2.Article.Explanation[_local_1]);
-            };
+            }
         }
 
 

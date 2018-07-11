@@ -5,11 +5,12 @@
 
 package kabam.rotmg.messaging.impl
 {
-    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import kabam.rotmg.messaging.impl.data.SlotObjectData;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class ReskinPet extends OutgoingMessage 
+import kabam.rotmg.messaging.impl.data.SlotObjectData;
+import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+
+public class ReskinPet extends OutgoingMessage
     {
 
         public var petInstanceId:int;

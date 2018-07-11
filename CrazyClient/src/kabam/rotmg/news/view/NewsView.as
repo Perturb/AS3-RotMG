@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsView
 
 package kabam.rotmg.news.view
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.news.model.NewsCellVO;
+import flash.display.Sprite;
 
-    public class NewsView extends Sprite 
+import kabam.rotmg.news.model.NewsCellVO;
+
+public class NewsView extends Sprite 
     {
 
         private const LARGE_CELL_WIDTH:Number = 306;

@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class SliderOption extends BaseOption 
+import flash.events.Event;
+
+public class SliderOption extends BaseOption
     {
 
         private var sliderBar:VolumeSliderBar;
@@ -43,7 +44,7 @@ package com.company.assembleegameclient.ui.options
             if (this.callbackFunc != null)
             {
                 this.callbackFunc(this.sliderBar.currentVolume);
-            };
+            }
             Parameters.save();
         }
 

@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.ExperienceBoostTimerPopup
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.components.TimerDisplay;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.ui.components.TimerDisplay;
 
-    public class ExperienceBoostTimerPopup extends Sprite 
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class ExperienceBoostTimerPopup extends Sprite
     {
 
         private var timerDisplay:TimerDisplay;

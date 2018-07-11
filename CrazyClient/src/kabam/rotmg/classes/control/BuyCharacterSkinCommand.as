@@ -1,19 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.BuyCharacterSkinCommand
 
 package kabam.rotmg.classes.control
 {
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.services.BuySkinTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.classes.model.CharacterSkinState;
-    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.classes.services.BuySkinTask;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 
-    public class BuyCharacterSkinCommand 
+public class BuyCharacterSkinCommand 
     {
 
         [Inject]
@@ -33,7 +33,7 @@ package kabam.rotmg.classes.control
             if (this.isSkinPurchasable())
             {
                 this.enterPurchaseFlow();
-            };
+            }
         }
 
         private function enterPurchaseFlow():void
@@ -45,7 +45,7 @@ package kabam.rotmg.classes.control
             else
             {
                 this.enterGetCreditsFlow();
-            };
+            }
         }
 
         private function isSkinPurchasable():Boolean

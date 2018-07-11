@@ -5,19 +5,18 @@
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GenericArmorComparison;
-    import kabam.rotmg.constants.ItemConstants;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.PoisonComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.OrbComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.PrismComparison;
-    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SlotComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GenericArmorComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.OrbComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SlotComparison;
+import com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison;
 
-    public class SlotComparisonFactory 
+import kabam.rotmg.constants.ItemConstants;
+
+public class SlotComparisonFactory
     {
 
         private var hash:Object;
@@ -34,9 +33,7 @@ package com.company.assembleegameclient.ui.tooltip
             this.hash[ItemConstants.CLOAK_TYPE] = new CloakComparison();
             this.hash[ItemConstants.ROBE_TYPE] = _local_2;
             this.hash[ItemConstants.HELM_TYPE] = new HelmetComparison();
-            this.hash[ItemConstants.POISON_TYPE] = new PoisonComparison();
             this.hash[ItemConstants.ORB_TYPE] = new OrbComparison();
-            this.hash[ItemConstants.PRISM_TYPE] = new PrismComparison();
         }
 
         public function getComparisonResults(_arg_1:XML, _arg_2:XML):SlotComparisonResult
@@ -49,7 +46,7 @@ package com.company.assembleegameclient.ui.tooltip
                 _local_4.compare(_arg_1, _arg_2);
                 _local_5.lineBuilder = _local_4.comparisonStringBuilder;
                 _local_5.processedTags = _local_4.processedTags;
-            };
+            }
             return (_local_5);
         }
 

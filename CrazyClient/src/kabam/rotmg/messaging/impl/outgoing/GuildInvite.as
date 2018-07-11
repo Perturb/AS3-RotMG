@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.GuildInvite
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class GuildInvite extends OutgoingMessage 
+public class GuildInvite extends OutgoingMessage 
     {
 
         public var name_:String;

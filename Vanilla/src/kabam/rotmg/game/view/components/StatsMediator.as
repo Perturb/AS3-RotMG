@@ -5,13 +5,16 @@
 
 package kabam.rotmg.game.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.ui.view.StatsDockedSignal;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.objects.Player;
 
-    public class StatsMediator extends Mediator 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+import kabam.rotmg.ui.view.StatsDockedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class StatsMediator extends Mediator 
     {
 
         [Inject]
@@ -48,7 +51,7 @@ package kabam.rotmg.game.view.components
             {
                 this.view.undock();
                 this.statsUndocked.dispatch(this.view);
-            };
+            }
         }
 
         private function onStatsDock():void

@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.service.RequestPlayerCreditsTask
 
 package kabam.rotmg.external.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.core.model.PlayerModel;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import com.company.util.MoreObjectUtil;
+import com.company.util.MoreObjectUtil;
 
-    public class RequestPlayerCreditsTask extends BaseTask 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.game.model.GameModel;
+
+public class RequestPlayerCreditsTask extends BaseTask 
     {
 
         private static const REQUEST:String = "account/getCredits";
@@ -50,7 +52,7 @@ package kabam.rotmg.external.service
                 this.makeRequest();
                 this.retryCount++;
                 this.timer.stop();
-            };
+            }
         }
 
         private function makeRequest():void
@@ -69,7 +71,7 @@ package kabam.rotmg.external.service
                 if (((!(_local_3 == "")) && (!(_local_3.search("Error") == -1))))
                 {
                     this.setCredits(int(_local_3));
-                };
+                }
             }
             else
             {
@@ -78,8 +80,8 @@ package kabam.rotmg.external.service
                     this.timer.addEventListener(TimerEvent.TIMER, this.handleTimer);
                     this.timer.start();
                     _local_4 = true;
-                };
-            };
+                }
+            }
             ((!(_local_4)) && (completeTask(_arg_1, _arg_2)));
         }
 
@@ -96,9 +98,9 @@ package kabam.rotmg.external.service
                     if (((!(this.playerModel == null)) && (!(this.playerModel.getCredits() == _arg_1))))
                     {
                         this.playerModel.setCredits(_arg_1);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function makeRequestObject():Object

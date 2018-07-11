@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Death
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.display.BitmapData;
-    import flash.utils.IDataInput;
+import flash.display.BitmapData;
+import flash.utils.IDataInput;
 
-    public class Death extends IncomingMessage 
+public class Death extends IncomingMessage 
     {
 
         public var accountId_:String;

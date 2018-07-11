@@ -5,14 +5,14 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.service.TrackingData;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TrackEventSignal;
 
-    public class WebSendVerificationEmailTask extends BaseTask implements SendConfirmEmailAddressTask 
+public class WebSendVerificationEmailTask extends BaseTask implements SendConfirmEmailAddressTask 
     {
 
         [Inject]
@@ -38,7 +38,7 @@ package kabam.rotmg.account.web.services
             else
             {
                 this.onError(_arg_2);
-            };
+            }
         }
 
         private function onSent():void
@@ -52,7 +52,6 @@ package kabam.rotmg.account.web.services
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "account";
             _local_1.action = "verifyEmailSent";
-            this.track.dispatch(_local_1);
         }
 
         private function onError(_arg_1:String):void

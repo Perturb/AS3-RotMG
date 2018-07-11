@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.shaders.FragmentShader
 
 package kabam.rotmg.stage3D.shaders
 {
-    import flash.utils.ByteArray;
-    import com.adobe.utils.AGALMiniAssembler;
-    import flash.display3D.Context3DProgramType;
+import com.adobe.utils.AGALMiniAssembler;
 
-    public class FragmentShader 
+import flash.display3D.Context3DProgramType;
+import flash.utils.ByteArray;
+
+public class FragmentShader
     {
 
         private var vertexProgram:ByteArray;

@@ -1,35 +1,37 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModal
 
 package io.decagames.rotmg.shop.mysteryBox.rollModal
 {
-    import io.decagames.rotmg.ui.popups.modal.ModalPopup;
-    import flash.display.Sprite;
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
-    import flash.display.Bitmap;
-    import io.decagames.rotmg.ui.gird.UIGrid;
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-    import io.decagames.rotmg.shop.ShopBuyButton;
-    import io.decagames.rotmg.ui.spinner.FixedNumbersSpinner;
-    import io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner;
-    import com.company.assembleegameclient.map.ParticleModalMap;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import org.osflash.signals.Signal;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import flash.geom.Point;
-    import com.gskinner.motion.GTween;
-    import com.gskinner.motion.easing.Sine;
-    import io.decagames.rotmg.ui.texture.TextureParser;
-    import io.decagames.rotmg.shop.mysteryBox.contentPopup.UIItemContainer;
-    import flash.utils.setTimeout;
-    import flash.utils.clearTimeout;
-    import flash.utils.Dictionary;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.ParticleModalMap;
+import com.gskinner.motion.GTween;
+import com.gskinner.motion.easing.Sine;
 
-    public class MysteryBoxRollModal extends ModalPopup 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.geom.Point;
+import flash.utils.Dictionary;
+import flash.utils.clearTimeout;
+import flash.utils.setTimeout;
+
+import io.decagames.rotmg.shop.ShopBuyButton;
+import io.decagames.rotmg.shop.mysteryBox.contentPopup.UIItemContainer;
+import io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner;
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.gird.UIGrid;
+import io.decagames.rotmg.ui.labels.UILabel;
+import io.decagames.rotmg.ui.popups.modal.ModalPopup;
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import io.decagames.rotmg.ui.spinner.FixedNumbersSpinner;
+import io.decagames.rotmg.ui.texture.TextureParser;
+
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+
+import org.osflash.signals.Signal;
+
+public class MysteryBoxRollModal extends ModalPopup
     {
 
         private const iconSize:Number = 80;
@@ -45,7 +47,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
         private var maxResultWidth:int;
         private var maxResultRows:int = 3;
         private var resultElementWidth:int;
-        private var resultGridMargin:* = 10;
+        private var resultGridMargin:int = 10;
         private var spinnerTopMargin:int = 165;
         private var buyButtonBackground:SliceScalingBitmap;
         private var maxResultHeight:int = 135;
@@ -91,62 +93,62 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
 
         private function calculateElementSize(_arg_1:Point):int
         {
-            var _local_2:int = int(Math.floor((this.maxResultHeight / _arg_1.y)));
+            var _local_2:int = int(int(Math.floor((this.maxResultHeight / _arg_1.y))));
             if ((_local_2 * _arg_1.x) > this.maxResultWidth)
             {
-                _local_2 = int(Math.floor((this.maxResultWidth / _arg_1.x)));
-            };
+                _local_2 = int(int(Math.floor((this.maxResultWidth / _arg_1.x))));
+            }
             if ((_local_2 * _arg_1.y) > this.maxResultHeight)
             {
                 return (-1);
-            };
+            }
             return (_local_2);
         }
 
         private function calculateGrid(_arg_1:int):Point
         {
-            var _local_2:int;
-            var _local_3:int;
-            var _local_4:Point = new Point(11, 4);
-            var _local_5:int = int.MIN_VALUE;
-            if (_arg_1 >= (_local_4.x * _local_4.y))
+            var _local_5:int;
+            var _local_6:int;
+            var _local_2:Point = new Point(11, 4);
+            var _local_3:int = int.MIN_VALUE;
+            if (_arg_1 >= (_local_2.x * _local_2.y))
             {
-                return (_local_4);
-            };
-            var _local_6:int = 11;
-            while (_local_6 >= 1)
+                return (_local_2);
+            }
+            var _local_4:int = 11;
+            while (_local_4 >= 1)
             {
-                _local_2 = 4;
-                while (_local_2 >= 1)
+                _local_5 = 4;
+                while (_local_5 >= 1)
                 {
-                    if ((((_local_6 * _local_2) >= _arg_1) && (((_local_6 - 1) * (_local_2 - 1)) < _arg_1)))
+                    if ((((_local_4 * _local_5) >= _arg_1) && (((_local_4 - 1) * (_local_5 - 1)) < _arg_1)))
                     {
-                        _local_3 = this.calculateElementSize(new Point(_local_6, _local_2));
-                        if (_local_3 != -1)
+                        _local_6 = this.calculateElementSize(new Point(_local_4, _local_5));
+                        if (_local_6 != -1)
                         {
-                            if (_local_3 > _local_5)
+                            if (_local_6 > _local_3)
                             {
-                                _local_5 = _local_3;
-                                _local_4 = new Point(_local_6, _local_2);
+                                _local_3 = _local_6;
+                                _local_2 = new Point(_local_4, _local_5);
                             }
                             else
                             {
-                                if (_local_3 == _local_5)
+                                if (_local_6 == _local_3)
                                 {
-                                    if (((_local_4.x * _local_4.y) - _arg_1) > ((_local_6 * _local_2) - _arg_1))
+                                    if (((_local_2.x * _local_2.y) - _arg_1) > ((_local_4 * _local_5) - _arg_1))
                                     {
-                                        _local_5 = _local_3;
-                                        _local_4 = new Point(_local_6, _local_2);
-                                    };
-                                };
-                            };
-                        };
-                    };
-                    _local_2--;
-                };
-                _local_6--;
-            };
-            return (_local_4);
+                                        _local_3 = _local_6;
+                                        _local_2 = new Point(_local_4, _local_5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    _local_5--;
+                }
+                _local_4--;
+            }
+            return (_local_2);
         }
 
         public function prepareResultGrid(_arg_1:int):void
@@ -191,7 +193,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
             else
             {
                 this.buyButton = new ShopBuyButton(this.info.priceAmount, this.info.priceCurrency);
-            };
+            }
             this.buyButton.width = 95;
             this.buyButtonBackground = TextureParser.instance.getSliceScalingBitmap("UI", "buy_button_background", (this.buyButton.width + 60));
             this.buySectionContainer.addChild(this.buyButtonBackground);
@@ -207,23 +209,16 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
             this.buySectionContainer.x = Math.round(((contentWidth - this.buySectionContainer.width) / 2));
         }
 
-        private function animateGridElement(param1:UIItemContainer, param2:Number, param3:Boolean):void
+        private function animateGridElement(element:UIItemContainer, delay:Number, triggerEventOnEnd:Boolean):void
         {
             var resultGridElement:UIItemContainer;
             var timeout:uint;
-            var element:UIItemContainer;
-            var triggerEventOnEnd:Boolean;
-            resultGridElement = null;
-            timeout = 0;
-            element = param1;
-            var delay:Number = param2;
-            triggerEventOnEnd = param3;
             resultGridElement = new UIItemContainer(element.itemId, 0, 0, this.resultElementWidth);
             resultGridElement.alpha = 0;
             if (element.quantity > 1)
             {
                 resultGridElement.showQuantityLabel(element.quantity);
-            };
+            }
             resultGridElement.showTooltip = false;
             this.resultGrid.addGridElement(resultGridElement);
             var scale:Number = (this.resultElementWidth / this.iconSize);
@@ -245,7 +240,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
                 if (triggerEventOnEnd)
                 {
                     finishedShowingResult.dispatch();
-                };
+                }
             };
             timeout = setTimeout(function ():*
             {
@@ -254,11 +249,9 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
             }, (delay + 0.2));
         }
 
-        public function displayResult(param1:Array):void
+        public function displayResult(items:Array):void
         {
             var elements:Vector.<UIItemContainer>;
-            elements = null;
-            var items:Array = param1;
             elements = this.displayItems(items);
             var resetTween:GTween = new GTween(this.rollGrid, this.exposeDuration, {
                 "scaleX":1,
@@ -275,7 +268,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
                 {
                     _local_2 = elements.indexOf(_local_1);
                     animateGridElement(_local_1, (_local_2 * movingDelay), (_local_2 == (elements.length - 1)));
-                };
+                }
             };
             var blinkTween:GTween = new GTween(this.rollGrid, this.exposeDuration, {
                 "x":(this.rollGrid.x - ((this.rollGrid.width * (this.exposeScale - 1)) / 2)),
@@ -288,35 +281,35 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
 
         public function displayItems(_arg_1:Array):Vector.<UIItemContainer>
         {
-            var _local_2:Dictionary;
-            var _local_4:UIItemContainer;
-            var _local_5:int;
-            var _local_3:* = null;
-            this.rollGrid.clearGird();
-            var _local_6:Vector.<UIItemContainer> = new Vector.<UIItemContainer>();
-            for each (_local_2 in _arg_1)
+            var _local_3:Dictionary;
+            var _local_4:String;
+            var _local_5:UIItemContainer;
+            var _local_6:int;
+            this.rollGrid.clearGrid();
+            var _local_2:Vector.<UIItemContainer> = new Vector.<UIItemContainer>();
+            for each (_local_3 in _arg_1)
             {
-                for (_local_3 in _local_2)
+                for (_local_4 in _local_3)
                 {
-                    _local_4 = new UIItemContainer(int(_local_3), 0, 0, this.iconSize);
-                    _local_5 = _local_2[_local_3];
-                    if (_local_5 > 1)
+                    _local_5 = new UIItemContainer(int(_local_4), 0, 0, this.iconSize);
+                    _local_6 = _local_3[_local_4];
+                    if (_local_6 > 1)
                     {
-                        _local_4.showQuantityLabel(_local_5);
-                    };
-                    _local_4.showTooltip = false;
-                    _local_6.push(_local_4);
-                    this.rollGrid.addGridElement(_local_4);
-                };
-            };
+                        _local_5.showQuantityLabel(_local_6);
+                    }
+                    _local_5.showTooltip = false;
+                    _local_2.push(_local_5);
+                    this.rollGrid.addGridElement(_local_5);
+                }
+            }
             this.rollGrid.render();
-            if (!this.rollGrid.parent)
+            if ((!(this.rollGrid.parent)))
             {
                 addChild(this.rollGrid);
-            };
+            }
             this.rollGrid.x = (this.spinnersContainer.x - (this.rollGrid.width / 2));
             this.rollGrid.y = (this.spinnersContainer.y - (this.rollGrid.height / 2));
-            return (_local_6);
+            return (_local_2);
         }
 
         private function createSpinners():void
@@ -338,7 +331,10 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
         override public function dispose():void
         {
             this.rollGrid.dispose();
-            this.resultGrid.dispose();
+            if (this.resultGrid)
+            {
+                this.resultGrid.dispose();
+            }
             this.buyButtonBackground.dispose();
             this.buyButton.dispose();
             this.spinner.dispose();

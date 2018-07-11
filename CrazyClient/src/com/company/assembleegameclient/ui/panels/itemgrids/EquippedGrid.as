@@ -1,21 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.util.ArrayIterator;
-    import kabam.lib.util.VectorAS3Util;
-    import com.company.util.IIterator;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+import com.company.util.ArrayIterator;
+import com.company.util.IIterator;
 
-    public class EquippedGrid extends ItemGrid 
+import kabam.lib.util.VectorAS3Util;
+
+public class EquippedGrid extends ItemGrid 
     {
 
         public static const NUM_SLOTS:uint = 4;
@@ -28,11 +29,11 @@ package com.company.assembleegameclient.ui.panels.itemgrids
             var _local_7:int;
             var _local_8:int = 1;
             var _local_9:uint = NUM_SLOTS;
-            if (((_arg_5) && (Parameters.data_["InvViewer"])))
+            if ((((_arg_5) && (!(Options.hidden))) && (Parameters.data_["InvViewer"])))
             {
                 _local_8 = ((_arg_3.hasBackpack_) ? 4 : 3);
                 _local_9 = ((_arg_3.hasBackpack_) ? 20 : 12);
-            };
+            }
             super(_arg_1, _arg_3, _arg_4);
             this.tiles = new Vector.<EquipmentTile>(_local_9);
             while (_local_7 < _local_9)
@@ -42,7 +43,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                 _local_6.setType(_arg_2[_local_7]);
                 this.tiles[_local_7] = _local_6;
                 _local_7++;
-            };
+            }
         }
 
         public function createInteractiveItemTileIterator():IIterator
@@ -67,11 +68,20 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                     else
                     {
                         this.tiles[_local_4].setItem(-1);
-                    };
+                    }
                     this.tiles[_local_4].updateDim(curPlayer);
                     _local_4++;
-                };
-            };
+                }
+            }
+        }
+
+        public function toggleTierTags(_arg_1:Boolean):void
+        {
+            var _local_2:ItemTile;
+            for each (_local_2 in this.tiles)
+            {
+                _local_2.toggleTierTag(_arg_1);
+            }
         }
 
 

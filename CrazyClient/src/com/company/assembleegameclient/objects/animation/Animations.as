@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.animation.Animations
 
 package com.company.assembleegameclient.objects.animation
 {
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
 
-    public class Animations 
+public class Animations 
     {
 
         public var animationsData_:AnimationsData;
@@ -33,17 +31,17 @@ package com.company.assembleegameclient.objects.animation
                 for each (_local_2 in this.animationsData_.animations)
                 {
                     this.nextRun_.push(_local_2.getLastRun(_arg_1));
-                };
-            };
+                }
+            }
             if (this.running_ != null)
             {
                 _local_3 = this.running_.getTexture(_arg_1);
                 if (_local_3 != null)
                 {
                     return (_local_3);
-                };
+                }
                 this.running_ = null;
-            };
+            }
             while (_local_5 < this.nextRun_.length)
             {
                 if (_arg_1 > this.nextRun_[_local_5])
@@ -51,14 +49,14 @@ package com.company.assembleegameclient.objects.animation
                     _local_4 = this.nextRun_[_local_5];
                     _local_2 = this.animationsData_.animations[_local_5];
                     this.nextRun_[_local_5] = _local_2.getNextRun(_arg_1);
-                    if (!((!(_local_2.prob_ == 1)) && (Math.random() > _local_2.prob_)))
+                    if ((!((!(_local_2.prob_ == 1)) && (Math.random() > _local_2.prob_))))
                     {
                         this.running_ = new RunningAnimation(_local_2, _local_4);
                         return (this.running_.getTexture(_arg_1));
-                    };
-                };
+                    }
+                }
                 _local_5++;
-            };
+            }
             return (null);
         }
 
@@ -67,8 +65,9 @@ package com.company.assembleegameclient.objects.animation
 }//package com.company.assembleegameclient.objects.animation
 
 import com.company.assembleegameclient.objects.animation.AnimationData;
-import flash.display.BitmapData;
 import com.company.assembleegameclient.objects.animation.FrameData;
+
+import flash.display.BitmapData;
 
 class RunningAnimation 
 {
@@ -96,16 +95,16 @@ class RunningAnimation
             if (this.frameId_ >= (this.animationData_.frames.length - 1))
             {
                 return (null);
-            };
+            }
             this.frameStart_ = (this.frameStart_ + _local_2.time_);
             this.frameId_++;
             _local_2 = this.animationData_.frames[this.frameId_];
             this.texture_ = null;
-        };
+        }
         if (this.texture_ == null)
         {
             this.texture_ = _local_2.textureData_.getTexture((Math.random() * 100));
-        };
+        }
         return (this.texture_);
     }
 

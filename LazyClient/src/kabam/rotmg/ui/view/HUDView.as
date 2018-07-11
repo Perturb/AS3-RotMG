@@ -5,29 +5,31 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import flash.geom.Point;
-    import kabam.rotmg.minimap.view.MiniMapImp;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.game.view.components.TabStripView;
-    import com.company.assembleegameclient.ui.panels.InteractPanel;
-    import com.company.assembleegameclient.ui.TradePanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import com.company.util.GraphicsUtil;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import kabam.rotmg.messaging.impl.incoming.TradeStart;
-    import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-    import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
-    import com.company.util.SpriteUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.TradePanel;
+import com.company.assembleegameclient.ui.panels.InteractPanel;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.util.GraphicsUtil;
+import com.company.util.SpriteUtil;
 
-    public class HUDView extends Sprite implements UnFocusAble 
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.geom.Point;
+
+import io.decagames.rotmg.classes.NewClassUnlockNotification;
+
+import kabam.rotmg.game.view.components.TabStripView;
+import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+import kabam.rotmg.messaging.impl.incoming.TradeStart;
+import kabam.rotmg.minimap.view.MiniMapImp;
+
+public class HUDView extends Sprite implements UnFocusAble
     {
 
         private const BG_POSITION:Point = new Point(0, 0);
@@ -40,6 +42,7 @@ package kabam.rotmg.ui.view
 
         private var background:CharacterWindowBackground;
         private var miniMap:MiniMapImp;
+        private var newClassUnlockNotification:NewClassUnlockNotification;
         private var equippedGrid:EquippedGrid;
         private var statMeters:StatMetersView;
         private var characterDetails:CharacterDetailsView;
@@ -60,6 +63,7 @@ package kabam.rotmg.ui.view
         {
             this.background = new CharacterWindowBackground();
             this.miniMap = new MiniMapImp(192, 192);
+            this.newClassUnlockNotification = new NewClassUnlockNotification();
             this.tabStrip = new TabStripView();
             this.characterDetails = new CharacterDetailsView();
             this.statMeters = new StatMetersView();
@@ -69,6 +73,7 @@ package kabam.rotmg.ui.view
         {
             addChild(this.background);
             addChild(this.miniMap);
+            addChild(this.newClassUnlockNotification);
             addChild(this.tabStrip);
             addChild(this.characterDetails);
             addChild(this.statMeters);
@@ -80,6 +85,8 @@ package kabam.rotmg.ui.view
             this.background.y = this.BG_POSITION.y;
             this.miniMap.x = this.MAP_POSITION.x;
             this.miniMap.y = this.MAP_POSITION.y;
+            this.newClassUnlockNotification.x = this.MAP_POSITION.x;
+            this.newClassUnlockNotification.y = this.MAP_POSITION.y;
             this.tabStrip.x = this.TAB_STRIP_POSITION.x;
             this.tabStrip.y = this.TAB_STRIP_POSITION.y;
             this.characterDetails.x = this.CHARACTER_DETAIL_PANEL_POSITION.x;
@@ -131,11 +138,11 @@ package kabam.rotmg.ui.view
             if (this.equippedGrid)
             {
                 this.equippedGrid.draw();
-            };
+            }
             if (this.interactPanel)
             {
                 this.interactPanel.draw();
-            };
+            }
         }
 
         public function startTrade(_arg_1:AGameSprite, _arg_2:TradeStart):void
@@ -147,7 +154,7 @@ package kabam.rotmg.ui.view
                 this.tradePanel.addEventListener(Event.CANCEL, this.onTradeCancel);
                 addChild(this.tradePanel);
                 this.setNonTradePanelAssetsVisible(false);
-            };
+            }
         }
 
         private function setNonTradePanelAssetsVisible(_arg_1:Boolean):void
@@ -170,7 +177,7 @@ package kabam.rotmg.ui.view
             if (this.tradePanel)
             {
                 this.tradePanel.setYourOffer(_arg_1.offer_);
-            };
+            }
         }
 
         public function tradeAccepted(_arg_1:TradeAccepted):void
@@ -178,7 +185,7 @@ package kabam.rotmg.ui.view
             if (this.tradePanel)
             {
                 this.tradePanel.youAccepted(_arg_1.myOffer_, _arg_1.yourOffer_);
-            };
+            }
         }
 
         private function onTradeCancel(_arg_1:Event):void
@@ -194,7 +201,7 @@ package kabam.rotmg.ui.view
                 this.tradePanel.removeEventListener(Event.CANCEL, this.onTradeCancel);
                 this.tradePanel = null;
                 this.setNonTradePanelAssetsVisible(true);
-            };
+            }
         }
 
 

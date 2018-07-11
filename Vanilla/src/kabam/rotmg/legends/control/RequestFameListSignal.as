@@ -5,10 +5,11 @@
 
 package kabam.rotmg.legends.control
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.legends.model.Timespan;
+import kabam.rotmg.legends.model.Timespan;
 
-    public class RequestFameListSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class RequestFameListSignal extends Signal 
     {
 
         public function RequestFameListSignal()

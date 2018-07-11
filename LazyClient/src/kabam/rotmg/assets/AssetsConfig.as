@@ -5,12 +5,14 @@
 
 package kabam.rotmg.assets
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.assets.services.IconFactory;
 
-    public class AssetsConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class AssetsConfig implements IConfig
     {
 
         [Inject]

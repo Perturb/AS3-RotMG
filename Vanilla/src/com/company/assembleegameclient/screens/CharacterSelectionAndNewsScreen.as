@@ -5,31 +5,34 @@
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.promotions.view.BeginnersPackageButton;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import kabam.rotmg.packages.view.PackageButton;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.ui.view.ButtonFactory;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import kabam.rotmg.news.view.NewsView;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.geom.Rectangle;
-    import flash.display.DisplayObject;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.assembleegameclient.ui.Scrollbar;
 
-    public class CharacterSelectionAndNewsScreen extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.news.view.NewsView;
+import kabam.rotmg.packages.view.PackageButton;
+import kabam.rotmg.promotions.view.BeginnersPackageButton;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.ButtonFactory;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+
+public class CharacterSelectionAndNewsScreen extends Sprite 
     {
 
         private static const NEWS_X:int = 475;
@@ -80,7 +83,7 @@ package com.company.assembleegameclient.screens
             if (this.isInitialized)
             {
                 return;
-            };
+            }
             this.isInitialized = true;
             this.model = _arg_1;
             this.createDisplayAssets(_arg_1);
@@ -99,13 +102,13 @@ package com.company.assembleegameclient.screens
             {
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.createOpenGraveyardText();
-            };
+            }
             this.createCharacterListChar();
             this.makeMenuOptionsBar();
             if (!_arg_1.isNameChosen())
             {
                 this.createChooseNameLink();
-            };
+            }
         }
 
         private function makeMenuOptionsBar():void
@@ -158,7 +161,7 @@ package com.company.assembleegameclient.screens
             if (this.characterListHeight > this.SCROLLBAR_REQUIREMENT_HEIGHT)
             {
                 this.createScrollbar();
-            };
+            }
             addChild(this.characterList);
         }
 
@@ -172,7 +175,7 @@ package com.company.assembleegameclient.screens
             if (this.characterListHeight > this.SCROLLBAR_REQUIREMENT_HEIGHT)
             {
                 this.createScrollbar();
-            };
+            }
             addChild(this.characterList);
         }
 
@@ -182,12 +185,12 @@ package com.company.assembleegameclient.screens
             {
                 removeChild(this.characterList);
                 this.characterList = null;
-            };
+            }
             if (this.scrollBar != null)
             {
                 removeChild(this.scrollBar);
                 this.scrollBar = null;
-            };
+            }
         }
 
         private function createOpenCharactersText():void
@@ -210,7 +213,7 @@ package com.company.assembleegameclient.screens
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.openGraveyardText.setColor(TAB_UNSELECTED);
                 this.createCharacterListChar();
-            };
+            }
         }
 
         private function createOpenGraveyardText():void
@@ -233,7 +236,7 @@ package com.company.assembleegameclient.screens
                 this.openCharactersText.setColor(TAB_UNSELECTED);
                 this.openGraveyardText.setColor(TAB_SELECTED);
                 this.createCharacterListGrave();
-            };
+            }
         }
 
         private function createCreditDisplay():void
@@ -272,7 +275,7 @@ package com.company.assembleegameclient.screens
             if (stage)
             {
                 _local_1 = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
-            };
+            }
             return (_local_1);
         }
 
@@ -299,16 +302,7 @@ package com.company.assembleegameclient.screens
             if (this.characterList != null)
             {
                 this.characterList.setPos((-(this.scrollBar.pos()) * (this.characterListHeight - 400)));
-            };
-        }
-
-        public function showBeginnersOfferButton():void
-        {
-            this.beginnersPackageButton = new BeginnersPackageButton();
-            this.beginnersPackageButton.x = 14;
-            this.beginnersPackageButton.y = 40;
-            addChild(this.beginnersPackageButton);
-            this.removeIfAble(this.packageButton);
+            }
         }
 
         public function showPackageButton():void
@@ -326,7 +320,7 @@ package com.company.assembleegameclient.screens
             if (((_arg_1) && (contains(_arg_1))))
             {
                 removeChild(_arg_1);
-            };
+            }
         }
 
         private function onPlayClick():void
@@ -338,7 +332,7 @@ package com.company.assembleegameclient.screens
             else
             {
                 this.playGame.dispatch();
-            };
+            }
         }
 
         public function setName(_arg_1:String):void
@@ -349,7 +343,7 @@ package com.company.assembleegameclient.screens
             {
                 removeChild(this.nameChooseLink_);
                 this.nameChooseLink_ = null;
-            };
+            }
         }
 
 

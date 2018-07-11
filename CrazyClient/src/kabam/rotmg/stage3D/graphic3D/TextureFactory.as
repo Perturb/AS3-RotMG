@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.graphic3D.TextureFactory
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import flash.utils.Dictionary;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import flash.display.BitmapData;
-    import flash.geom.Matrix;
-    import kabam.rotmg.stage3D.proxies.TextureProxy;
-    import flash.display3D.Context3DTextureFormat;
-    import flash.geom.Point;
+import flash.display.BitmapData;
+import flash.display3D.Context3DTextureFormat;
+import flash.geom.Matrix;
+import flash.geom.Point;
+import flash.utils.Dictionary;
 
-    public class TextureFactory 
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+import kabam.rotmg.stage3D.proxies.TextureProxy;
+
+public class TextureFactory
     {
 
         private static var textures:Dictionary = new Dictionary();
@@ -30,7 +31,7 @@ package kabam.rotmg.stage3D.graphic3D
             if ((_arg_1 in flippedTextures))
             {
                 return (flippedTextures[_arg_1]);
-            };
+            }
             _local_2 = flipBitmapData(_arg_1, "y");
             flippedTextures[_arg_1] = _local_2;
             return (_local_2);
@@ -47,7 +48,7 @@ package kabam.rotmg.stage3D.graphic3D
             else
             {
                 _local_3 = new Matrix(1, 0, 0, -1, 0, _arg_1.height);
-            };
+            }
             _local_4.draw(_arg_1, _local_3, null, null, null, true);
             return (_local_4);
         }
@@ -70,12 +71,12 @@ package kabam.rotmg.stage3D.graphic3D
             for each (_local_1 in textures)
             {
                 _local_1.dispose();
-            };
+            }
             textures = new Dictionary();
             for each (_local_2 in flippedTextures)
             {
                 _local_2.dispose();
-            };
+            }
             flippedTextures = new Dictionary();
             count = 0;
         }
@@ -86,7 +87,7 @@ package kabam.rotmg.stage3D.graphic3D
             for each (_local_1 in textures)
             {
                 _local_1.dispose();
-            };
+            }
             textures = new Dictionary();
         }
 
@@ -100,11 +101,11 @@ package kabam.rotmg.stage3D.graphic3D
             if (_arg_1 == null)
             {
                 return (null);
-            };
+            }
             if ((_arg_1 in textures))
             {
                 return (textures[_arg_1]);
-            };
+            }
             _local_2 = getNextPowerOf2(_arg_1.width);
             _local_3 = getNextPowerOf2(_arg_1.height);
             _local_4 = this.context3D.createTexture(_local_2, _local_3, Context3DTextureFormat.BGRA, false);
@@ -115,7 +116,7 @@ package kabam.rotmg.stage3D.graphic3D
             {
                 disposeNormalTextures();
                 count = 0;
-            };
+            }
             textures[_arg_1] = _local_4;
             count++;
             return (_local_4);

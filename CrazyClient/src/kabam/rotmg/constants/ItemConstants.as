@@ -1,11 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.constants.ItemConstants
 
 package kabam.rotmg.constants
 {
-    public class ItemConstants 
+
+import com.company.util.AssetLibrary;
+
+import flash.display.BitmapData;
+
+public class ItemConstants
     {
 
         public static const NO_ITEM:int = -1;
@@ -36,6 +41,7 @@ package kabam.rotmg.constants
         public static const KATANA_TYPE:int = 24;
         public static const SHURIKEN_TYPE:int = 25;
         public static const EGG_TYPE:int = 26;
+        public static const NEW_ABIL_TYPE:int = 27;
 
 
         public static function itemTypeToName(_arg_1:int):String
@@ -96,10 +102,97 @@ package kabam.rotmg.constants
                     return ("EquipmentType.Shuriken");
                 case EGG_TYPE:
                     return ("EquipmentType.Any");
-            };
+                case NEW_ABIL_TYPE:
+                    return ("EquipmentType.NewAbil");
+            }
             return ("EquipmentType.InvalidType");
         }
 
+        public static function itemTypeToBaseSprite(_arg_1:int):BitmapData
+        {
+            var _local_2:BitmapData;
+            switch (_arg_1)
+            {
+                case ALL_TYPE:
+                    break;
+                case SWORD_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 48);
+                    break;
+                case DAGGER_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 96);
+                    break;
+                case BOW_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 80);
+                    break;
+                case TOME_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 80);
+                    break;
+                case SHIELD_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 112);
+                    break;
+                case LEATHER_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 0);
+                    break;
+                case PLATE_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 32);
+                    break;
+                case WAND_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 64);
+                    break;
+                case RING_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj", 44);
+                    break;
+                case SPELL_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 64);
+                    break;
+                case SEAL_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 160);
+                    break;
+                case CLOAK_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 32);
+                    break;
+                case ROBE_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 16);
+                    break;
+                case QUIVER_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 48);
+                    break;
+                case HELM_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 96);
+                    break;
+                case STAFF_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj5", 112);
+                    break;
+                case POISON_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 128);
+                    break;
+                case SKULL_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 0);
+                    break;
+                case TRAP_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 16);
+                    break;
+                case ORB_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 144);
+                    break;
+                case PRISM_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 176);
+                    break;
+                case SCEPTER_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 192);
+                    break;
+                case KATANA_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj3", 540);
+                    break;
+                case SHURIKEN_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj3", 555);
+                    break;
+                case NEW_ABIL_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj2", 122);
+                    break;
+            }
+            return (_local_2);
+        }
 
     }
 }//package kabam.rotmg.constants

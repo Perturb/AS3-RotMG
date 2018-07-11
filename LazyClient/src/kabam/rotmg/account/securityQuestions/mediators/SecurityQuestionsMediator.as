@@ -5,21 +5,24 @@
 
 package kabam.rotmg.account.securityQuestions.mediators
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsDialog;
-    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsConfirmDialog;
-    import kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-    import flash.events.MouseEvent;
-    import kabam.lib.tasks.Task;
-    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsData;
-    import com.hurlant.util.Base64;
+import com.hurlant.util.Base64;
 
-    public class SecurityQuestionsMediator extends Mediator 
+import flash.events.MouseEvent;
+
+import kabam.lib.tasks.Task;
+import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsData;
+import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+import kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal;
+import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsConfirmDialog;
+import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsDialog;
+import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class SecurityQuestionsMediator extends Mediator 
     {
 
         [Inject]
@@ -79,7 +82,7 @@ package kabam.rotmg.account.securityQuestions.mediators
                 this.securityQuestionsModel.securityQuestionsAnswers = this.view.getAnswers();
                 this.closeDialogs.dispatch();
                 this.openDialog.dispatch(new SecurityQuestionsConfirmDialog(this.securityQuestionsModel.securityQuestionsList, this.securityQuestionsModel.securityQuestionsAnswers));
-            };
+            }
         }
 
         private function onBackClick(_arg_1:MouseEvent):void
@@ -104,7 +107,7 @@ package kabam.rotmg.account.securityQuestions.mediators
             for each (_local_3 in this.securityQuestionsModel.securityQuestionsAnswers)
             {
                 _local_2.answers.push(Base64.encode(_local_3));
-            };
+            }
             this.saveQuestions.dispatch(_local_2);
         }
 

@@ -1,29 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.components.MysteryBoxSelectModal
 
 package kabam.rotmg.mysterybox.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.pets.view.components.DialogCloseButton;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.mysterybox.services.MysteryBoxModel;
-    import flash.events.Event;
-    import kabam.rotmg.pets.view.components.PopupWindowBackground;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormatAlign;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.pets.util.PetsViewAssetFactory;
-    import __AS3__.vec.*;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
 
-    public class MysteryBoxSelectModal extends Sprite 
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+import kabam.rotmg.pets.view.components.DialogCloseButton;
+import kabam.rotmg.pets.view.components.PopupWindowBackground;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.swiftsuspenders.Injector;
+
+public class MysteryBoxSelectModal extends Sprite
     {
 
         public static var modalWidth:int;
@@ -100,7 +101,7 @@ package kabam.rotmg.mysterybox.components
             for each (_local_1 in this.mysteryData)
             {
                 modalHeight = (modalHeight + aMysteryBoxHeight);
-            };
+            }
             _local_2 = new backgroundImageEmbed();
             _local_2.width = (modalWidth + 1);
             _local_2.height = (modalHeight - 25);
@@ -124,7 +125,7 @@ package kabam.rotmg.mysterybox.components
                 this.box_.addChild(_local_5);
                 this.selectEntries.push(_local_5);
                 _local_4++;
-            };
+            }
         }
 
         public function updateContent():void
@@ -133,7 +134,7 @@ package kabam.rotmg.mysterybox.components
             for each (_local_1 in this.selectEntries)
             {
                 _local_1.updateContent();
-            };
+            }
         }
 
         private function onRemovedFromStage(_arg_1:Event):void

@@ -1,28 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.GuildRegisterPanel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.Currency;
-    import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.util.Currency;
+import com.company.assembleegameclient.util.GuildUtil;
 
-    public class GuildRegisterPanel extends Panel 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+import kabam.rotmg.util.components.LegacyBuyButton;
+
+import org.osflash.signals.Signal;
+
+public class GuildRegisterPanel extends Panel 
     {
 
         public const openCreateGuildFrame:Signal = new Signal();
@@ -41,7 +44,7 @@ package com.company.assembleegameclient.ui.panels
             if (((gs_.map == null) || (gs_.map.player_ == null)))
             {
                 return;
-            };
+            }
             _local_2 = gs_.map.player_;
             this.title_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(WIDTH).setWordWrap(true).setMultiLine(true).setAutoSize(TextFieldAutoSize.CENTER).setHTML(true);
             this.title_.filters = [new DropShadowFilter(0, 0, 0)];
@@ -69,7 +72,7 @@ package com.company.assembleegameclient.ui.panels
                 this.waiter.push(_local_4.readyForPlacement);
                 addChild(_local_4);
                 this.button_ = _local_4;
-            };
+            }
             this.waiter.complete.addOnce(this.alignUI);
         }
 

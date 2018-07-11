@@ -29,7 +29,7 @@
       <Flying/>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.9</XpMult>
+      <Exp>175</Exp>
       <LeachHealth/>
       <EventChestBoss/>
       <God/>
@@ -63,7 +63,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Z>0.24</Z>
       <Flying/>
       <Size>80</Size>
@@ -138,7 +138,7 @@
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>120</Size>
       <ShadowSize>80</ShadowSize>
       <Projectile id="0">
@@ -160,7 +160,7 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>125</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Flying/>
       <Size>0</Size>
    </Object>
@@ -176,7 +176,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Z>0.24</Z>
       <Flying/>
       <Size>80</Size>
@@ -199,7 +199,7 @@
          <Index>26</Index>
       </AnimatedTexture>
       <MaxHitPoints>125</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Flying/>
       <Size>0</Size>
    </Object>
@@ -215,7 +215,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Z>0.24</Z>
       <Flying/>
       <Size>80</Size>
@@ -240,7 +240,6 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>125</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>1</XpMult>
       <Z>0.24</Z>
       <Flying/>
       <Size>80</Size>
@@ -265,7 +264,7 @@
       <DeathSound>monster/cyclops_death</DeathSound>
       <MaxHitPoints>1100</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>0.75</XpMult>
+      <Exp>82</Exp>
       <Size>100</Size>
       <ShadowSize>60</ShadowSize>
       <Projectile id="0">
@@ -295,7 +294,6 @@
       <DeathSound>monster/golems_death</DeathSound>
       <MaxHitPoints>900</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>1</XpMult>
       <Size>100</Size>
       <ShadowSize>60</ShadowSize>
       <Projectile id="0">
@@ -324,7 +322,7 @@
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>130</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <ShadowSize>60</ShadowSize>
       <Projectile id="0">
@@ -346,7 +344,6 @@
       <DeathSound>monster/abyss_brutes_death</DeathSound>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1</XpMult>
       <Size>100</Size>
       <ShadowSize>60</ShadowSize>
       <Projectile id="0">
@@ -369,7 +366,6 @@
       <DeathSound>monster/undead_dwarves_hit</DeathSound>
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>1</XpMult>
       <Size>100</Size>
       <ShadowSize>100</ShadowSize>
       <Projectile id="0">
@@ -423,7 +419,6 @@
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>350</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1</XpMult>
       <Size>80</Size>
       <ShadowSize>60</ShadowSize>
       <Projectile id="0">
@@ -469,7 +464,7 @@
       <DeathSound>monster/undead_dwarves_hit</DeathSound>
       <MaxHitPoints>480</MaxHitPoints>
       <Defense>35</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <ShadowSize>100</ShadowSize>
       <Projectile id="0">

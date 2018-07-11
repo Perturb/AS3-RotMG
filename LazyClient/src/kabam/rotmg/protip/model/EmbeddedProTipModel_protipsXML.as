@@ -7,8 +7,6 @@ package kabam.rotmg.protip.model
 	{
 		public function EmbeddedProTipModel_protipsXML()
 		{
-			super();
-			return;
 		}
 	}
 }

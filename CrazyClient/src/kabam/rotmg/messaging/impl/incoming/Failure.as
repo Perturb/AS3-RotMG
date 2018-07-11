@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Failure
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class Failure extends IncomingMessage 
+public class Failure extends IncomingMessage 
     {
 
         public static const INCORRECT_VERSION:int = 4;

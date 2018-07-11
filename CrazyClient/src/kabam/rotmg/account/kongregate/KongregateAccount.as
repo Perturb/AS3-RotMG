@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.KongregateAccount
 
 package kabam.rotmg.account.kongregate
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
 
-    public class KongregateAccount implements Account 
+public class KongregateAccount implements Account 
     {
 
         public static const NETWORK_NAME:String = "kongregate";
@@ -22,7 +22,7 @@ package kabam.rotmg.account.kongregate
         private var _rememberMe:Boolean;
 
 
-        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String):void
+        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String):void
         {
             this.userId = _arg_1;
             this.password = _arg_2;
@@ -68,7 +68,7 @@ package kabam.rotmg.account.kongregate
 
         public function gameNetwork():String
         {
-            return (NETWORK_NAME);
+            return ("kongregate");
         }
 
         public function playPlatform():String

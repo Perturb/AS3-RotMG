@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_epicHiveChars16x16Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

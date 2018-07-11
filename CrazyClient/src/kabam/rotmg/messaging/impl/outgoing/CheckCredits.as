@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.CheckCredits
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class CheckCredits extends OutgoingMessage 
+public class CheckCredits extends OutgoingMessage 
     {
 
         public function CheckCredits(_arg_1:uint, _arg_2:Function)

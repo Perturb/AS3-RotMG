@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.MapEditor
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.servers.api.Server;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import com.company.assembleegameclient.game.events.DeathEvent;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.game.events.DeathEvent;
+import com.company.assembleegameclient.game.events.ReconnectEvent;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.screens.TitleMenuOption;
 
-    public class MapEditor extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.servers.api.Server;
+
+public class MapEditor extends Sprite
     {
 
         private var model:PlayerModel;
@@ -65,7 +67,7 @@ package com.company.assembleegameclient.mapeditor
         private function onSubmitMapPopup(_arg_1:SubmitJMEvent):void
         {
             var _local_2:SubmitMapForm;
-            if (!SubmitMapForm.isInitialized())
+            if ((!(SubmitMapForm.isInitialized())))
             {
                 _local_2 = new SubmitMapForm(_arg_1.mapJSON_, _arg_1.mapInfo_, this.model.account);
                 this.showCurtain();
@@ -74,7 +76,7 @@ package com.company.assembleegameclient.mapeditor
                 _local_2.y = ((600 - _local_2.height) / 2);
                 SubmitMapForm.cancel.add(this.onSubmitClose);
                 this.editingScreen_.disableInput();
-            };
+            }
         }
 
         private function onSubmitClose():void
@@ -97,7 +99,7 @@ package com.company.assembleegameclient.mapeditor
                 this.blackBackground.graphics.beginFill(0, 0.4);
                 this.blackBackground.graphics.drawRect(0, 0, width, height);
                 this.blackBackground.graphics.endFill();
-            };
+            }
             addChild(this.blackBackground);
         }
 
@@ -106,7 +108,7 @@ package com.company.assembleegameclient.mapeditor
             if (((!(this.blackBackground == null)) && (this.blackBackground.parent)))
             {
                 removeChild(this.blackBackground);
-            };
+            }
         }
 
         private function cleanupGameSprite():void

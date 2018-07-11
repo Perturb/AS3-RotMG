@@ -5,9 +5,9 @@
 
 package kabam.rotmg.startup.control
 {
-    import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskMonitor;
 
-    public class StartupCommand 
+public class StartupCommand 
     {
 
         [Inject]

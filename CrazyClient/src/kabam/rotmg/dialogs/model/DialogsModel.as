@@ -1,16 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.model.DialogsModel
 
 package kabam.rotmg.dialogs.model
 {
-    import __AS3__.vec.Vector;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class DialogsModel 
+import org.osflash.signals.Signal;
+
+public class DialogsModel 
     {
 
         private var popupPriority:Array = [PopupNamesConfig.BEGINNERS_OFFER_POPUP, PopupNamesConfig.NEWS_POPUP, PopupNamesConfig.DAILY_LOGIN_POPUP, PopupNamesConfig.PACKAGES_OFFER_POPUP];
@@ -23,7 +22,7 @@ package kabam.rotmg.dialogs.model
             {
                 this.queue.push(new PopupQueueEntry(_arg_1, _arg_2, _arg_3, _arg_4));
                 this.sortQueue();
-            };
+            }
         }
 
         private function sortQueue():void
@@ -35,7 +34,7 @@ package kabam.rotmg.dialogs.model
                 if (_local_3 < _local_4)
                 {
                     return (-1);
-                };
+                }
                 return (1);
             });
         }
@@ -45,7 +44,7 @@ package kabam.rotmg.dialogs.model
             if (this.queue.length == 0)
             {
                 return (null);
-            };
+            }
             var _local_1:PopupQueueEntry = this.queue.shift();
             Parameters.data_[_local_1.name] = new Date().time;
             return (_local_1);
@@ -55,12 +54,12 @@ package kabam.rotmg.dialogs.model
         {
             var _local_2:int;
             var _local_3:int;
-            if (!Parameters.data_[_arg_1])
+            if ((!(Parameters.data_[_arg_1])))
             {
                 return (true);
-            };
-            _local_2 = int(Math.floor((Number(Parameters.data_[_arg_1]) / 86400000)));
-            _local_3 = int(Math.floor((new Date().time / 86400000)));
+            }
+            _local_2 = int(int(Math.floor((Number(Parameters.data_[_arg_1]) / 86400000))));
+            _local_3 = int(int(Math.floor((new Date().time / 86400000))));
             return (_local_3 > _local_2);
         }
 
@@ -70,7 +69,7 @@ package kabam.rotmg.dialogs.model
             if (_local_2 < 0)
             {
                 _local_2 = int.MAX_VALUE;
-            };
+            }
             return (_local_2);
         }
 

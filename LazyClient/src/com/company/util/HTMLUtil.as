@@ -5,12 +5,12 @@
 
 package com.company.util
 {
-    import flash.xml.XMLDocument;
-    import flash.xml.XMLNode;
-    import flash.xml.XMLNodeType;
-    import flash.external.ExternalInterface;
+import flash.external.ExternalInterface;
+import flash.xml.XMLDocument;
+import flash.xml.XMLNode;
+import flash.xml.XMLNodeType;
 
-    public class HTMLUtil 
+public class HTMLUtil 
     {
 
 
@@ -39,10 +39,10 @@ package com.company.util
                     if (_local_3.indexOf("www.kabam") != -1)
                     {
                         _local_3 = "http://www.realmofthemadgod.com";
-                    };
+                    }
                     ExternalInterface.call("window.location.assign", _local_3);
-                };
-            };
+                }
+            }
         }
 
 

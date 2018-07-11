@@ -5,10 +5,11 @@
 
 package kabam.rotmg.errors.control
 {
-    import org.osflash.signals.Signal;
-    import flash.events.ErrorEvent;
+import flash.events.ErrorEvent;
 
-    public class ErrorSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class ErrorSignal extends Signal 
     {
 
         public function ErrorSignal()

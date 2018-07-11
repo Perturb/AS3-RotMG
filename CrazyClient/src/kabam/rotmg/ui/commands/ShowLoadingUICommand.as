@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.ShowLoadingUICommand
 
 package kabam.rotmg.ui.commands
 {
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.application.model.DomainModel;
-    import robotlegs.bender.framework.api.ILogger;
-    import com.company.assembleegameclient.screens.AccountLoadingScreen;
-    import kabam.rotmg.core.view.BadDomainView;
+import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
-    public class ShowLoadingUICommand 
+import kabam.rotmg.application.model.DomainModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.view.BadDomainView;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class ShowLoadingUICommand
     {
 
         [Inject]
@@ -31,7 +33,7 @@ package kabam.rotmg.ui.commands
             else
             {
                 this.openBadDomainView();
-            };
+            }
         }
 
         private function showLoadingScreen():void

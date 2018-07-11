@@ -1,33 +1,34 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //ru.inspirit.net.MultipartURLLoader
 
 package ru.inspirit.net
 {
-    import flash.events.EventDispatcher;
-    import flash.net.URLLoader;
-    import flash.utils.Dictionary;
-    import flash.utils.ByteArray;
-    import flash.errors.IllegalOperationError;
-    import flash.utils.clearInterval;
-    import flash.net.URLLoaderDataFormat;
-    import flash.net.URLRequest;
-    import flash.net.URLRequestMethod;
-    import flash.net.URLRequestHeader;
-    import flash.utils.Endian;
-    import ru.inspirit.net.events.MultipartURLLoaderEvent;
-    import flash.events.ProgressEvent;
-    import flash.events.Event;
-    import flash.events.IOErrorEvent;
-    import flash.events.SecurityErrorEvent;
-    import flash.events.HTTPStatusEvent;
-    import flash.utils.setTimeout;
+import flash.errors.IllegalOperationError;
+import flash.events.Event;
+import flash.events.EventDispatcher;
+import flash.events.HTTPStatusEvent;
+import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
+import flash.events.SecurityErrorEvent;
+import flash.net.URLLoader;
+import flash.net.URLLoaderDataFormat;
+import flash.net.URLRequest;
+import flash.net.URLRequestHeader;
+import flash.net.URLRequestMethod;
+import flash.utils.ByteArray;
+import flash.utils.Dictionary;
+import flash.utils.Endian;
+import flash.utils.clearInterval;
+import flash.utils.setTimeout;
 
-    public class MultipartURLLoader extends EventDispatcher 
+import ru.inspirit.net.events.MultipartURLLoaderEvent;
+
+public class MultipartURLLoader extends EventDispatcher
     {
 
-        public static var BLOCK_SIZE:uint = (64 * 0x0400);//65536
+        public static var BLOCK_SIZE:uint = (64 * 0x0400);//0x10000
 
         private var _loader:URLLoader;
         private var _boundary:String;
@@ -47,12 +48,12 @@ package ru.inspirit.net
 
         public function MultipartURLLoader()
         {
-            this._fileNames = new Array();
+            this._fileNames = [];
             this._files = new Dictionary();
-            this._variableNames = new Array();
+            this._variableNames = [];
             this._variables = new Dictionary();
             this._loader = new URLLoader();
-            this.requestHeaders = new Array();
+            this.requestHeaders = [];
         }
 
         public function get bytesLoaded():uint
@@ -78,25 +79,25 @@ package ru.inspirit.net
             if (((_arg_1 == null) || (_arg_1 == "")))
             {
                 throw (new IllegalOperationError("You cant load without specifing PATH"));
-            };
+            }
             this._path = _arg_1;
             this._async = _arg_2;
             if (this._async)
             {
-                if (!this._prepared)
+                if ((!(this._prepared)))
                 {
                     this.constructPostDataAsync();
                 }
                 else
                 {
                     this.doSend();
-                };
+                }
             }
             else
             {
                 this._data = this.constructPostData();
                 this.doSend();
-            };
+            }
         }
 
         public function startLoad():void
@@ -104,11 +105,11 @@ package ru.inspirit.net
             if ((((this._path == null) || (this._path == "")) || (this._async == false)))
             {
                 throw (new IllegalOperationError("You can use this method only if loading asynchronous."));
-            };
+            }
             if (((!(this._prepared)) && (this._async)))
             {
                 throw (new IllegalOperationError("You should prepare data before sending when using asynchronous."));
-            };
+            }
             this.doSend();
         }
 
@@ -125,7 +126,7 @@ package ru.inspirit.net
             }
             catch(e:Error)
             {
-            };
+            }
         }
 
         public function addVariable(_arg_1:String, _arg_2:Object=""):void
@@ -133,7 +134,7 @@ package ru.inspirit.net
             if (this._variableNames.indexOf(_arg_1) == -1)
             {
                 this._variableNames.push(_arg_1);
-            };
+            }
             this._variables[_arg_1] = _arg_2;
             this._prepared = false;
         }
@@ -156,13 +157,13 @@ package ru.inspirit.net
                 _local_5.dataField = _arg_3;
                 _local_5.contentType = _arg_4;
                 this.totalFilesSize = (this.totalFilesSize + _arg_1.length);
-            };
+            }
             this._prepared = false;
         }
 
         public function clearVariables():void
         {
-            this._variableNames = new Array();
+            this._variableNames = [];
             this._variables = new Dictionary();
             this._prepared = false;
         }
@@ -173,8 +174,8 @@ package ru.inspirit.net
             for each (_local_1 in this._fileNames)
             {
                 (this._files[_local_1] as FilePart).dispose();
-            };
-            this._fileNames = new Array();
+            }
+            this._fileNames = [];
             this._files = new Dictionary();
             this.totalFilesSize = 0;
             this._prepared = false;
@@ -206,8 +207,8 @@ package ru.inspirit.net
                 {
                     this._boundary = (this._boundary + String.fromCharCode(int((97 + (Math.random() * 25)))));
                     _local_1++;
-                };
-            };
+                }
+            }
             return (this._boundary);
         }
 
@@ -231,7 +232,7 @@ package ru.inspirit.net
             if ((((!(_arg_1 == URLLoaderDataFormat.BINARY)) && (!(_arg_1 == URLLoaderDataFormat.TEXT))) && (!(_arg_1 == URLLoaderDataFormat.VARIABLES))))
             {
                 throw (new IllegalOperationError("Illegal URLLoader Data Format"));
-            };
+            }
             this._loader.dataFormat = _arg_1;
         }
 
@@ -250,7 +251,7 @@ package ru.inspirit.net
             if (this.requestHeaders.length)
             {
                 _local_1.requestHeaders = _local_1.requestHeaders.concat(this.requestHeaders);
-            };
+            }
             this.addListener();
             this._loader.load(_local_1);
         }
@@ -273,7 +274,7 @@ package ru.inspirit.net
                 this._data = this.closeDataObject(this._data);
                 this._prepared = true;
                 dispatchEvent(new MultipartURLLoaderEvent(MultipartURLLoaderEvent.DATA_PREPARE_COMPLETE));
-            };
+            }
         }
 
         private function constructPostData():ByteArray
@@ -306,12 +307,12 @@ package ru.inspirit.net
                 {
                     _arg_1.writeByte(_local_3.charCodeAt(_local_2));
                     _local_2++;
-                };
+                }
                 _arg_1 = this.LINEBREAK(_arg_1);
                 _arg_1 = this.LINEBREAK(_arg_1);
                 _arg_1.writeUTFBytes(this._variables[_local_4]);
                 _arg_1 = this.LINEBREAK(_arg_1);
-            };
+            }
             return (_arg_1);
         }
 
@@ -329,11 +330,11 @@ package ru.inspirit.net
                     if (_local_2 != (this._fileNames.length - 1))
                     {
                         _arg_1 = this.LINEBREAK(_arg_1);
-                    };
+                    }
                     _local_2++;
-                };
+                }
                 _arg_1 = this.closeFilePartsData(_arg_1);
-            };
+            }
             return (_arg_1);
         }
 
@@ -350,7 +351,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(_local_3.charCodeAt(_local_2));
                 _local_2++;
-            };
+            }
             _arg_1 = this.LINEBREAK(_arg_1);
             _arg_1 = this.LINEBREAK(_arg_1);
             _local_3 = "Submit Query";
@@ -359,7 +360,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(_local_3.charCodeAt(_local_2));
                 _local_2++;
-            };
+            }
             return (this.LINEBREAK(_arg_1));
         }
 
@@ -375,7 +376,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(_local_4.charCodeAt(_local_3));
                 _local_3++;
-            };
+            }
             _arg_1 = this.LINEBREAK(_arg_1);
             _arg_1 = this.LINEBREAK(_arg_1);
             _arg_1.writeUTFBytes(_arg_2.fileName);
@@ -388,7 +389,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(_local_4.charCodeAt(_local_3));
                 _local_3++;
-            };
+            }
             _arg_1.writeUTFBytes(_arg_2.fileName);
             _arg_1 = this.QUOTATIONMARK(_arg_1);
             _arg_1 = this.LINEBREAK(_arg_1);
@@ -398,7 +399,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(_local_4.charCodeAt(_local_3));
                 _local_3++;
-            };
+            }
             _arg_1 = this.LINEBREAK(_arg_1);
             return (this.LINEBREAK(_arg_1));
         }
@@ -464,7 +465,7 @@ package ru.inspirit.net
             {
                 _arg_1.writeByte(this._boundary.charCodeAt(_local_3));
                 _local_3++;
-            };
+            }
             return (_arg_1);
         }
 
@@ -503,7 +504,7 @@ package ru.inspirit.net
                 this._prepared = true;
                 dispatchEvent(new MultipartURLLoaderEvent(MultipartURLLoaderEvent.DATA_PREPARE_PROGRESS, this.totalFilesSize, this.totalFilesSize));
                 dispatchEvent(new MultipartURLLoaderEvent(MultipartURLLoaderEvent.DATA_PREPARE_COMPLETE));
-            };
+            }
         }
 
         private function writeChunkLoop(_arg_1:ByteArray, _arg_2:ByteArray, _arg_3:uint=0):void
@@ -515,13 +516,13 @@ package ru.inspirit.net
                 _arg_1 = this.LINEBREAK(_arg_1);
                 this.nextAsyncLoop();
                 return;
-            };
+            }
             _arg_3 = (_arg_3 + _local_4);
             this.writtenBytes = (this.writtenBytes + _local_4);
             if (((this.writtenBytes % BLOCK_SIZE) * 2) == 0)
             {
                 dispatchEvent(new MultipartURLLoaderEvent(MultipartURLLoaderEvent.DATA_PREPARE_PROGRESS, this.writtenBytes, this.totalFilesSize));
-            };
+            }
             this.asyncWriteTimeoutId = setTimeout(this.writeChunkLoop, 10, _arg_1, _arg_2, _arg_3);
         }
 
@@ -531,7 +532,7 @@ package ru.inspirit.net
 
 import flash.utils.ByteArray;
 
-class FilePart 
+class FilePart
 {
 
     public var fileContent:ByteArray;

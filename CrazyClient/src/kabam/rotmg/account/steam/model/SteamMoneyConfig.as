@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.model.SteamMoneyConfig
 
 package kabam.rotmg.account.steam.model
 {
-    import kabam.rotmg.account.core.model.MoneyConfig;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public class SteamMoneyConfig implements MoneyConfig 
+import kabam.rotmg.account.core.model.MoneyConfig;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class SteamMoneyConfig implements MoneyConfig 
     {
 
 

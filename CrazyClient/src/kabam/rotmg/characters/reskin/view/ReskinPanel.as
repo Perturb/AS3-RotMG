@@ -1,25 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.view.ReskinPanel
 
 package kabam.rotmg.characters.reskin.view
 {
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.game.GameSprite;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.KeyboardEvent;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class ReskinPanel extends Panel 
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class ReskinPanel extends Panel 
     {
 
         private const title:TextFieldDisplayConcrete = makeTitle();
@@ -69,7 +72,7 @@ package kabam.rotmg.characters.reskin.view
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.reskin.dispatch();
-            };
+            }
         }
 
 

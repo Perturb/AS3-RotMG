@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.Account
@@ -10,7 +10,7 @@ package kabam.rotmg.account.core
 
         function getPlatformToken():String;
         function setPlatformToken(_arg_1:String):void;
-        function updateUser(_arg_1:String, _arg_2:String, _arg_3:String):void;
+        function updateUser(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String):void;
         function getUserName():String;
         function getUserId():String;
         function getPassword():String;

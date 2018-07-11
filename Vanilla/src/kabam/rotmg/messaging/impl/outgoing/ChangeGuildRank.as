@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class ChangeGuildRank extends OutgoingMessage 
+public class ChangeGuildRank extends OutgoingMessage
     {
 
         public var name_:String;

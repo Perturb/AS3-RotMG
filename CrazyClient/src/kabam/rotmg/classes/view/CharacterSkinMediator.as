@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinMediator
 
 package kabam.rotmg.classes.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.signals.PlayGameSignal;
-    import com.company.assembleegameclient.screens.NewCharacterScreen;
-    import kabam.rotmg.game.model.GameInitData;
+import com.company.assembleegameclient.screens.NewCharacterScreen;
 
-    public class CharacterSkinMediator extends Mediator 
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.game.signals.PlayGameSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CharacterSkinMediator extends Mediator
     {
 
         [Inject]
@@ -32,7 +34,7 @@ package kabam.rotmg.classes.view
             if (_local_1)
             {
                 this.view.play.addOnce(this.onPlay);
-            };
+            }
             this.view.back.addOnce(this.onBack);
         }
 

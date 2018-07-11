@@ -5,22 +5,50 @@
 
 package io.decagames.rotmg.dailyQuests.model
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.constants.GeneralConstants;
-    import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
-    import __AS3__.vec.*;
+import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
+import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
 
-    public class DailyQuestsModel 
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.ui.model.HUDModel;
+
+public class DailyQuestsModel 
     {
 
         private var _questsList:Vector.<DailyQuest> = new Vector.<DailyQuest>();
+        private var slots:Vector.<DailyQuestItemSlot> = new Vector.<DailyQuestItemSlot>();
         public var currentQuest:DailyQuest;
         public var isPopupOpened:Boolean;
         public var categoriesWeight:Array = [1, 0, 2, 3, 4];
+        public var selectedItem:int = -1;
         [Inject]
         public var hud:HUDModel;
 
+
+        public function registerSelectableSlot(_arg_1:DailyQuestItemSlot):void
+        {
+            this.slots.push(_arg_1);
+        }
+
+        public function unregisterSelectableSlot(_arg_1:DailyQuestItemSlot):void
+        {
+            var _local_2:int = this.slots.indexOf(_arg_1);
+            if (_local_2 != -1)
+            {
+                this.slots.splice(_local_2, 1);
+            }
+        }
+
+        public function unselectAllSlots(_arg_1:int):void
+        {
+            var _local_2:DailyQuestItemSlot;
+            for each (_local_2 in this.slots)
+            {
+                if (_local_2.itemID != _arg_1)
+                {
+                    _local_2.selected = false;
+                }
+            }
+        }
 
         public function clear():void
         {
@@ -40,8 +68,8 @@ package io.decagames.rotmg.dailyQuests.model
                 if (_local_2.id == _arg_1)
                 {
                     _local_2.completed = true;
-                };
-            };
+                }
+            }
         }
 
         public function get playerItemsFromInventory():Vector.<int>
@@ -68,8 +96,8 @@ package io.decagames.rotmg.dailyQuests.model
                 if (_local_2.completed)
                 {
                     _local_1++;
-                };
-            };
+                }
+            }
             return (_local_1);
         }
 
@@ -84,7 +112,7 @@ package io.decagames.rotmg.dailyQuests.model
             if (_arg_1.name > _arg_2.name)
             {
                 return (1);
-            };
+            }
             return (-1);
         }
 
@@ -93,11 +121,11 @@ package io.decagames.rotmg.dailyQuests.model
             if (this.categoriesWeight[_arg_1.category] < this.categoriesWeight[_arg_2.category])
             {
                 return (-1);
-            };
+            }
             if (this.categoriesWeight[_arg_1.category] > this.categoriesWeight[_arg_2.category])
             {
                 return (1);
-            };
+            }
             return (this.questsNameSort(_arg_1, _arg_2));
         }
 
@@ -108,11 +136,11 @@ package io.decagames.rotmg.dailyQuests.model
             if (((_local_3) && (!(_local_4))))
             {
                 return (-1);
-            };
+            }
             if (((_local_3) && (_local_4)))
             {
                 return (this.questsNameSort(_arg_1, _arg_2));
-            };
+            }
             return (1);
         }
 
@@ -121,15 +149,15 @@ package io.decagames.rotmg.dailyQuests.model
             if (((_arg_1.completed) && (!(_arg_2.completed))))
             {
                 return (1);
-            };
+            }
             if (((_arg_1.completed) && (_arg_2.completed)))
             {
                 return (this.sortByCategory(_arg_1, _arg_2));
-            };
+            }
             if (((!(_arg_1.completed)) && (!(_arg_2.completed))))
             {
                 return (this.sortByCategory(_arg_1, _arg_2));
-            };
+            }
             return (-1);
         }
 
@@ -141,8 +169,8 @@ package io.decagames.rotmg.dailyQuests.model
                 if (_local_2.id == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (null);
         }
 
@@ -151,7 +179,7 @@ package io.decagames.rotmg.dailyQuests.model
             if (this._questsList.length > 0)
             {
                 return (this.questsList[0]);
-            };
+            }
             return (null);
         }
 

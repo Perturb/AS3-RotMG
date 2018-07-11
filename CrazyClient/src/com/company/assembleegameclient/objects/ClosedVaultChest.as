@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.ClosedVaultChest
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class ClosedVaultChest extends SellableObject 
+import flash.display.BitmapData;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class ClosedVaultChest extends SellableObject
     {
 
         public function ClosedVaultChest(_arg_1:XML)

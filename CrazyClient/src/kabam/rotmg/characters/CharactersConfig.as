@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.CharactersConfig
 
 package kabam.rotmg.characters
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.rotmg.characters.model.CharacterModel;
-    import kabam.rotmg.characters.model.LegacyCharacterModel;
-    import kabam.rotmg.characters.deletion.DeletionConfig;
-    import kabam.rotmg.characters.reskin.ReskinConfig;
+import kabam.rotmg.characters.deletion.DeletionConfig;
+import kabam.rotmg.characters.model.CharacterModel;
+import kabam.rotmg.characters.model.LegacyCharacterModel;
+import kabam.rotmg.characters.reskin.ReskinConfig;
 
-    public class CharactersConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class CharactersConfig implements IConfig
     {
 
         [Inject]

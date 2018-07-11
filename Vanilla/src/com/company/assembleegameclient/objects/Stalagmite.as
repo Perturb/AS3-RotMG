@@ -5,10 +5,10 @@
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.assembleegameclient.engine3d.Object3D;
-    import com.company.assembleegameclient.engine3d.ObjectFace3D;
+import com.company.assembleegameclient.engine3d.Object3D;
+import com.company.assembleegameclient.engine3d.ObjectFace3D;
 
-    public class Stalagmite extends GameObject 
+public class Stalagmite extends GameObject
     {
 
         private static const bs:Number = (Math.PI / 6);//0.523598775598299

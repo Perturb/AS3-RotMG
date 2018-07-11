@@ -7,8 +7,6 @@ package kabam.rotmg.news.view
 	{
 		public function NewsCell_DefaultGraphicLarge()
 		{
-			super();
-			return;
 		}
 	}
 }

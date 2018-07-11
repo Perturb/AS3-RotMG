@@ -5,9 +5,9 @@
 
 package kabam.rotmg.ui.noservers
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public interface NoServersDialogFactory 
+public interface NoServersDialogFactory
     {
 
         function makeDialog():Dialog;

@@ -1,20 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.model.LegendFactory
 
 package kabam.rotmg.legends.model
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import com.company.util.ConversionUtil;
-    import __AS3__.vec.*;
+import com.company.util.ConversionUtil;
 
-    public class LegendFactory 
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.model.PlayerModel;
+
+public class LegendFactory 
     {
 
         [Inject]
@@ -42,14 +41,14 @@ package kabam.rotmg.legends.model
             var _local_4:Legend;
             for each (_local_3 in _arg_1)
             {
-                if (!this.legendsContains(_local_3))
+                if ((!(this.legendsContains(_local_3))))
                 {
                     _local_4 = this.makeLegend(_local_3);
                     _local_4.isOwnLegend = (_local_3.@accountId == this.ownAccountId);
                     _local_4.isFocus = _arg_2;
                     this.legends.push(_local_4);
-                };
-            };
+                }
+            }
         }
 
         private function legendsContains(_arg_1:XML):Boolean
@@ -60,8 +59,8 @@ package kabam.rotmg.legends.model
                 if (((_local_2.accountId == _arg_1.@accountId) && (_local_2.charId == _arg_1.@charId)))
                 {
                     return (true);
-                };
-            };
+                }
+            }
             return (false);
         }
 

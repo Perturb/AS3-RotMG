@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.view.TextFieldDisplayConcrete
 
 package kabam.rotmg.text.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.text.TextField;
-    import kabam.rotmg.language.model.StringMap;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import kabam.rotmg.text.model.FontInfo;
-    import flash.text.TextLineMetrics;
-    import flash.text.TextFormat;
+import flash.display.Sprite;
+import flash.text.TextField;
+import flash.text.TextFormat;
+import flash.text.TextLineMetrics;
 
-    public class TextFieldDisplayConcrete extends Sprite implements TextFieldDisplay 
+import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.text.model.FontInfo;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+import org.osflash.signals.Signal;
+
+public class TextFieldDisplayConcrete extends Sprite implements TextFieldDisplay
     {
 
         public static const MIDDLE:String = "middle";
@@ -212,7 +214,7 @@ package kabam.rotmg.text.view
             if (this.textField)
             {
                 this.setProperties();
-            };
+            }
         }
 
         private function setProperties():void
@@ -226,11 +228,11 @@ package kabam.rotmg.text.view
             if (this.textWidth != 0)
             {
                 this.textField.width = this.textWidth;
-            };
+            }
             if (this.textHeight != 0)
             {
                 this.textField.height = this.textHeight;
-            };
+            }
             this.textField.selectable = false;
             this.textField.textColor = this.color;
             this.textField.autoSize = this.autoSize;
@@ -259,7 +261,7 @@ package kabam.rotmg.text.view
             {
                 _arg_1.text = this.textField.text;
                 removeChild(this.textField);
-            };
+            }
         }
 
         private function setTextIfAble():void
@@ -273,7 +275,7 @@ package kabam.rotmg.text.view
                 this.alignVertically();
                 this.invalidateTextField();
                 this.textChanged.dispatch();
-            };
+            }
         }
 
         private function invalidateTextField():void
@@ -290,7 +292,7 @@ package kabam.rotmg.text.view
             else
             {
                 this.textField.text = _arg_1;
-            };
+            }
         }
 
         private function alignVertically():void
@@ -306,8 +308,8 @@ package kabam.rotmg.text.view
                 {
                     _local_1 = this.textField.getLineMetrics(0);
                     this.textField.y = -(getOnlyTextHeight(_local_1));
-                };
-            };
+                }
+            }
         }
 
         public function getTextHeight():Number

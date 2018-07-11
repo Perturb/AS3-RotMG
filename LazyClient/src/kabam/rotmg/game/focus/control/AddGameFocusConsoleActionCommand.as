@@ -5,10 +5,10 @@
 
 package kabam.rotmg.game.focus.control
 {
-    import kabam.lib.console.signals.RegisterConsoleActionSignal;
-    import kabam.lib.console.vo.ConsoleAction;
+import kabam.lib.console.signals.RegisterConsoleActionSignal;
+import kabam.lib.console.vo.ConsoleAction;
 
-    public class AddGameFocusConsoleActionCommand 
+public class AddGameFocusConsoleActionCommand 
     {
 
         [Inject]

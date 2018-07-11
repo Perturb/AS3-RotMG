@@ -5,12 +5,15 @@
 
 package kabam.rotmg.account.core.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class PurchaseConfirmationMediator extends Mediator 
+import flash.events.Event;
+
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PurchaseConfirmationMediator extends Mediator
     {
 
         [Inject]

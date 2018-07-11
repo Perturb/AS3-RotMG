@@ -5,26 +5,28 @@
 
 package kabam.rotmg.chat.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.chat.model.ChatShortcutModel;
-    import kabam.rotmg.chat.control.ShowChatInputSignal;
-    import kabam.rotmg.chat.control.ScrollListSignal;
-    import kabam.rotmg.chat.model.TellModel;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.core.signals.RegisterSignal;
-    import flash.display.Stage;
-    import flash.display.Sprite;
-    import kabam.rotmg.account.web.model.AccountData;
-    import flash.events.KeyboardEvent;
-    import flash.events.Event;
-    import kabam.rotmg.account.core.view.RegisterPromptDialog;
-    import kabam.rotmg.text.model.TextKey;
+import flash.display.Sprite;
+import flash.display.Stage;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
 
-    public class ChatMediator extends Mediator 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.RegisterSignal;
+import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.chat.control.ScrollListSignal;
+import kabam.rotmg.chat.control.ShowChatInputSignal;
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.chat.model.ChatShortcutModel;
+import kabam.rotmg.chat.model.TellModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.ui.model.HUDModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChatMediator extends Mediator 
     {
 
         private static const SCROLL_BUFFER_SIZE:int = 10;
@@ -91,7 +93,7 @@ package kabam.rotmg.chat.view
             {
                 this.addListeners();
                 this.stage.focus = null;
-            };
+            }
         }
 
         private function onRegister(_arg_1:AccountData):void
@@ -99,7 +101,7 @@ package kabam.rotmg.chat.view
             if (_arg_1.error == null)
             {
                 this.view.removeRegisterBlock();
-            };
+            }
         }
 
         override public function destroy():void
@@ -119,7 +121,7 @@ package kabam.rotmg.chat.view
                 this.stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
                 this.stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
                 this.listenersAdded = true;
-            };
+            }
         }
 
         private function removeListeners():void
@@ -130,7 +132,7 @@ package kabam.rotmg.chat.view
                 this.stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
                 this.stage.removeEventListener(Event.ENTER_FRAME, this.iterate);
                 this.listenersAdded = false;
-            };
+            }
         }
 
         private function onKeyDown(_arg_1:KeyboardEvent):void
@@ -144,8 +146,8 @@ package kabam.rotmg.chat.view
                 if (_arg_1.keyCode == this.shortcuts.getScrollDown())
                 {
                     this.setupScroll(1);
-                };
-            };
+                }
+            }
         }
 
         private function setupScroll(_arg_1:int):void
@@ -161,7 +163,7 @@ package kabam.rotmg.chat.view
             if (this.scrollBuffer++ >= SCROLL_BUFFER_SIZE)
             {
                 this.scrollList.dispatch(this.scrollDirection);
-            };
+            }
         }
 
         private function onKeyUp(_arg_1:KeyboardEvent):void
@@ -169,11 +171,11 @@ package kabam.rotmg.chat.view
             if (this.listenersAdded)
             {
                 this.checkForInputTrigger(_arg_1.keyCode);
-            };
+            }
             if (((_arg_1.keyCode == this.shortcuts.getScrollUp()) || (_arg_1.keyCode == this.shortcuts.getScrollDown())))
             {
                 this.view.removeEventListener(Event.ENTER_FRAME, this.iterate);
-            };
+            }
         }
 
         private function checkForInputTrigger(_arg_1:uint):void
@@ -201,11 +203,11 @@ package kabam.rotmg.chat.view
                             if (_arg_1 == this.shortcuts.getTellShortcut())
                             {
                                 this.triggerOrPromptRegistration((("/tell " + this.tellModel.getNext()) + " "));
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private function triggerOrPromptRegistration(_arg_1:String):void
@@ -219,8 +221,8 @@ package kabam.rotmg.chat.view
                 if (((!(this.hudModel.gameSprite == null)) && (this.hudModel.gameSprite.evalIsNotInCombatMapArea())))
                 {
                     this.openDialog.dispatch(new RegisterPromptDialog(TextKey.CHAT_REGISTER_TO_CHAT));
-                };
-            };
+                }
+            }
         }
 
 

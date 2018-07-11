@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterRectListMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.charrects.CharacterRectList;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
-    import com.company.assembleegameclient.screens.NewCharacterScreen;
+import com.company.assembleegameclient.screens.NewCharacterScreen;
+import com.company.assembleegameclient.screens.charrects.CharacterRectList;
 
-    public class CharacterRectListMediator extends Mediator 
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CharacterRectListMediator extends Mediator
     {
 
         [Inject]

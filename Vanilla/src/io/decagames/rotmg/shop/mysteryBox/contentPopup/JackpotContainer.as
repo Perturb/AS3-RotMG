@@ -5,12 +5,13 @@
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
-    import flash.display.Sprite;
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-    import io.decagames.rotmg.ui.gird.UIGrid;
-    import io.decagames.rotmg.ui.texture.TextureParser;
+import flash.display.Sprite;
 
-    public class JackpotContainer extends Sprite 
+import io.decagames.rotmg.ui.gird.UIGrid;
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import io.decagames.rotmg.ui.texture.TextureParser;
+
+public class JackpotContainer extends Sprite
     {
 
         private var background:SliceScalingBitmap;
@@ -37,24 +38,24 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
 
         public function addGrid(_arg_1:UIGrid):void
         {
-            if (_arg_1.numberOfElement > 5)
+            if (_arg_1.numberOfElements > 5)
             {
                 this.background.height = 125;
             }
             else
             {
                 this.background.height = 80;
-            };
+            }
             this.grid = _arg_1;
             _arg_1.y = 30;
-            if (_arg_1.numberOfElement <= 5)
+            if (_arg_1.numberOfElements <= 5)
             {
-                _arg_1.x = Math.round(((this.background.width - ((_arg_1.numberOfElement * 40) + ((_arg_1.numberOfElement - 1) * 4))) / 2));
+                _arg_1.x = Math.round(((this.background.width - ((_arg_1.numberOfElements * 40) + ((_arg_1.numberOfElements - 1) * 4))) / 2));
             }
             else
             {
                 _arg_1.x = Math.round(((this.background.width - ((5 * 40) + (4 * 4))) / 2));
-            };
+            }
             addChild(_arg_1);
         }
 

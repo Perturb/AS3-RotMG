@@ -68,7 +68,7 @@
             <Index>0x0b</Index>
          </Texture>
       </AltTexture>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>100000</MaxHitPoints>
       <Size>120</Size>
       <ShadowSize>80</ShadowSize>
       <NoMiniMap/>
@@ -147,7 +147,7 @@
             <Index>74</Index>
          </AnimatedTexture>
       </AltTexture>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>100000</MaxHitPoints>
       <Size>0</Size>
       <ShadowSize>80</ShadowSize>
       <StasisImmune/>
@@ -193,7 +193,7 @@
       <Flying/>
       <DontFaceAttacks/>
       <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.45</XpMult>
+      <Exp>45</Exp>
       <Defense>8</Defense>
       <Projectile id="0">
          <ObjectId>Skull Wave</ObjectId>
@@ -295,7 +295,7 @@
       <Size>120</Size>
       <ShadowSize>60</ShadowSize>
       <MaxHitPoints>48000</MaxHitPoints>
-      <XpMult>0.85</XpMult>
+      <Exp>165</Exp>
       <Defense>15</Defense>
       <StasisImmune/>
       <EventChestBoss/>
@@ -352,7 +352,7 @@
       <HitSound>monster/abyss_demons_hit</HitSound>
       <DeathSound>monster/dwarf_god_hit</DeathSound>
       <MaxHitPoints>550</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Defense>12</Defense>
       <Projectile id="0">
          <ObjectId>Blue Zombie Wave</ObjectId>
@@ -451,7 +451,7 @@
       <ShadowSize>0</ShadowSize>
       <NoMiniMap/>
       <MaxHitPoints>10000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x600c" id="Mini Werewolf">
       <Group>Hallowrena</Group>
@@ -466,7 +466,7 @@
       <Size>100</Size>
       <MaxHitPoints>550</MaxHitPoints>
       <Defense>3</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Wereshot</ObjectId>
          <Damage>50</Damage>
@@ -494,7 +494,7 @@
       <HitSound>monster/archdemon_hit</HitSound>
       <DeathSound>monster/abyss_demons_death</DeathSound>
       <MaxHitPoints>3000</MaxHitPoints>
-      <XpMult>0.35</XpMult>
+      <Exp>68</Exp>
       <Defense>13</Defense>
       <Projectile id="0">
          <ObjectId>Big Zombie Wave</ObjectId>
@@ -539,7 +539,7 @@
       <Flying/>
       <DontFaceAttacks/>
       <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.25</XpMult>
+      <Exp>25</Exp>
       <Defense>8</Defense>
       <Projectile id="0">
          <ObjectId>White Ghost Shot</ObjectId>
@@ -955,11 +955,7 @@
          <File>lofiObj3</File>
          <Index>0x30e</Index>
       </Texture>
-      <HitSound>monster/trees_hit</HitSound>
-      <DeathSound>monster/tress_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
       <Static/>
-      <XpMult>0.0</XpMult>
       <OccupySquare/>
    </Object>
    <Object type="0x5f10" id="Arena Statue Right">
@@ -982,7 +978,6 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>14000</MaxHitPoints>
       <Defense>20</Defense>
-      <NoMiniMap/>
       <Projectile id="0">
          <ObjectId>Assassin Slash</ObjectId>
          <Damage>125</Damage>
@@ -1018,11 +1013,7 @@
             <Index>0x93</Index>
          </Texture>
       </RandomTexture>
-      <HitSound>monster/trees_hit</HitSound>
-      <DeathSound>monster/tress_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
       <Static/>
-      <XpMult>0.0</XpMult>
       <OccupySquare/>
       <EnemyOccupySquare/>
    </Object>
@@ -1038,11 +1029,7 @@
             <Index>0x95</Index>
          </Texture>
       </RandomTexture>
-      <HitSound>monster/rocks_hit</HitSound>
-      <DeathSound>monster/rocks_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
       <Static/>
-      <XpMult>0.0</XpMult>
       <OccupySquare/>
    </Object>
    <Object type="0x5f12" id="Arena Ghost 2">
@@ -1176,7 +1163,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Skeleton Attack</ObjectId>
          <Damage>70</Damage>
@@ -1329,7 +1316,7 @@
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
       <Z>.4</Z>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
          <Damage>60</Damage>
@@ -1389,7 +1376,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <NoMiniMap/>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
@@ -1419,7 +1406,6 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>14000</MaxHitPoints>
       <Defense>30</Defense>
-      <NoMiniMap/>
       <Projectile id="0">
          <ObjectId>Demon Fire Blast</ObjectId>
          <Damage>90</Damage>

@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_innerP2MaskEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

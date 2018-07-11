@@ -5,12 +5,12 @@
 
 package com.company.util
 {
-    import flash.utils.Dictionary;
-    import flash.display.BitmapData;
-    import flash.media.Sound;
-    import flash.media.SoundTransform;
+import flash.display.BitmapData;
+import flash.media.Sound;
+import flash.media.SoundTransform;
+import flash.utils.Dictionary;
 
-    public class AssetLibrary 
+public class AssetLibrary
     {
 
         private static var images_:Dictionary = new Dictionary();
@@ -39,7 +39,7 @@ package com.company.util
             {
                 imageLookup_[_local_5.images_[_local_6]] = [_arg_1, _local_6];
                 _local_6++;
-            };
+            }
         }
 
         public static function addToImageSet(_arg_1:String, _arg_2:BitmapData):void
@@ -49,7 +49,7 @@ package com.company.util
             {
                 _local_3 = new ImageSet();
                 imageSets_[_arg_1] = _local_3;
-            };
+            }
             _local_3.add(_arg_2);
             var _local_4:int = (_local_3.images_.length - 1);
             imageLookup_[_local_3.images_[_local_4]] = [_arg_1, _local_4];
@@ -60,8 +60,8 @@ package com.company.util
             var _local_3:Array = sounds_[_arg_1];
             if (_local_3 == null)
             {
-                sounds_[_arg_1] = new Array();
-            };
+                sounds_[_arg_1] = [];
+            }
             sounds_[_arg_1].push(_arg_2);
         }
 
@@ -102,7 +102,7 @@ package com.company.util
             if (_arg_2 != 1)
             {
                 _local_6 = new SoundTransform(_arg_2);
-            };
+            }
             _local_5.play(0, 0, _local_6);
         }
 

@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.logging.RollingMeanLoopMonitor
 
 package kabam.rotmg.game.logging
 {
-    import kabam.lib.console.signals.ConsoleWatchSignal;
+import kabam.lib.console.signals.ConsoleWatchSignal;
 
-    public class RollingMeanLoopMonitor implements LoopMonitor 
+public class RollingMeanLoopMonitor implements LoopMonitor 
     {
 
         [Inject]

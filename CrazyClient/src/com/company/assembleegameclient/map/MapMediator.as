@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.MapMediator
 
 package com.company.assembleegameclient.map
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.game.view.components.QueuedStatusText;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.game.view.components.QueuedStatusText;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-    public class MapMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class MapMediator extends Mediator
     {
 
         [Inject]

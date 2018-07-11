@@ -5,21 +5,21 @@
 
 package com.company.assembleegameclient.map
 {
-    import flash.display.Sprite;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.background.Background;
-    import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
-    import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.Party;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.BasicObject;
-    import flash.geom.Point;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.background.Background;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
+import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
+import com.company.assembleegameclient.objects.BasicObject;
+import com.company.assembleegameclient.objects.Party;
+import com.company.assembleegameclient.objects.Player;
 
-    public class AbstractMap extends Sprite 
+import flash.display.Sprite;
+import flash.geom.Point;
+import flash.utils.Dictionary;
+
+import org.osflash.signals.Signal;
+
+public class AbstractMap extends Sprite
     {
 
         public var goDict_:Dictionary = new Dictionary();
@@ -40,7 +40,7 @@ package com.company.assembleegameclient.map
         public var squareList_:Vector.<Square> = new Vector.<Square>();
         public var squares_:Vector.<Square> = new Vector.<Square>();
         public var boDict_:Dictionary = new Dictionary();
-        public var merchLookup_:Object = new Object();
+        public var merchLookup_:Object = {};
         public var party_:Party = null;
         public var quest_:Quest = null;
         public var signalRenderSwitch:Signal = new Signal(Boolean);

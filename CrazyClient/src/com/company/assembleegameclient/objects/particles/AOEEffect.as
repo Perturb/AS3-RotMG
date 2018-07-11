@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.AOEEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
+import flash.geom.Point;
 
-    public class AOEEffect extends ParticleEffect 
+public class AOEEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -30,7 +30,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.color_ == -1)
             {
                 return (false);
-            };
+            }
             x_ = this.start_.x;
             y_ = this.start_.y;
             var _local_7:int = 40;
@@ -43,7 +43,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_7, this.color_, _local_8, this.start_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 
@@ -56,7 +56,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.color_ == -1)
             {
                 return (false);
-            };
+            }
             x_ = this.start_.x;
             y_ = this.start_.y;
             var _local_7:* = 200;
@@ -69,7 +69,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_7, this.color_, _local_8, this.start_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 

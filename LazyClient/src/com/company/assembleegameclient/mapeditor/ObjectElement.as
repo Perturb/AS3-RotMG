@@ -5,17 +5,15 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.mapeditor.Element;
-    import com.company.assembleegameclient.objects.animation.Animations;
-    import flash.display.Bitmap;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.animation.AnimationsData;
-    import com.company.assembleegameclient.mapeditor.ObjectTypeToolTip;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.assembleegameclient.mapeditor.*;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.animation.Animations;
+import com.company.assembleegameclient.objects.animation.AnimationsData;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    internal class ObjectElement extends Element 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+
+internal class ObjectElement extends Element
     {
 
         public var objXML_:XML;
@@ -36,8 +34,8 @@ package com.company.assembleegameclient.mapeditor
                 if (_local_7 != null)
                 {
                     _local_2 = _local_7;
-                };
-            };
+                }
+            }
             _local_5 = new Bitmap(_local_2);
             var _local_6:Number = ((WIDTH - 4) / Math.max(_local_5.width, _local_5.height));
             _local_5.scaleX = (_local_5.scaleY = _local_6);

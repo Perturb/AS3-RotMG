@@ -5,12 +5,10 @@
 
 package kabam.rotmg.language.model
 {
-    import flash.net.SharedObject;
-    import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import flash.net.SharedObject;
+import flash.utils.Dictionary;
 
-    public class CookieLanguageModel implements LanguageModel 
+public class CookieLanguageModel implements LanguageModel
     {
 
         public static const DEFAULT_LOCALE:String = "en";
@@ -29,7 +27,7 @@ package kabam.rotmg.language.model
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function getLanguage():String
@@ -52,7 +50,7 @@ package kabam.rotmg.language.model
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function getLanguageFamily():String
@@ -67,7 +65,7 @@ package kabam.rotmg.language.model
             for (_local_2 in this.availableLanguages)
             {
                 _local_1.push(_local_2);
-            };
+            }
             return (_local_1);
         }
 
@@ -85,8 +83,8 @@ package kabam.rotmg.language.model
                 if (this.availableLanguages[_local_3] == _arg_1)
                 {
                     _local_2 = _local_3;
-                };
-            };
+                }
+            }
             return (_local_2);
         }
 

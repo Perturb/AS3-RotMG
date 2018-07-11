@@ -1,27 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.TabStripView
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-    import com.company.assembleegameclient.objects.ImageFactory;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.ui.icons.IconButton;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.display.Bitmap;
-    import com.company.ui.BaseSimpleText;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.ImageFactory;
+import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+import com.company.ui.BaseSimpleText;
+import com.company.util.GraphicsUtil;
 
-    public class TabStripView extends Sprite 
+import flash.display.Bitmap;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+
+import org.osflash.signals.Signal;
+
+public class TabStripView extends Sprite
     {
 
         public const tabSelected:Signal = new Signal(String);
@@ -35,7 +33,6 @@ package kabam.rotmg.game.view.components
         public var imageFactory:ImageFactory;
         public var tabs:Vector.<TabView> = new Vector.<TabView>();
         public var currentTabIndex:int;
-        public var friendsBtn:IconButton;
         private var _width:Number;
         private var _height:Number;
         private var contents:Vector.<Sprite> = new Vector.<Sprite>();
@@ -51,15 +48,6 @@ package kabam.rotmg.game.view.components
             this.containerSprite.y = TabConstants.TAB_TOP_OFFSET;
         }
 
-        public function initFriendList(_arg_1:ImageFactory, _arg_2:IconButtonFactory, _arg_3:Function):void
-        {
-            this.friendsBtn = _arg_2.create(_arg_1.getImageFromSet("lofiInterfaceBig", 13), "", TextKey.OPTIONS_FRIEND, "");
-            this.friendsBtn.x = 160;
-            this.friendsBtn.y = 6;
-            this.friendsBtn.addEventListener(MouseEvent.CLICK, _arg_3);
-            addChild(this.friendsBtn);
-        }
-
         public function setSelectedTab(_arg_1:uint):void
         {
             this.selectTab(this.tabs[_arg_1]);
@@ -73,8 +61,8 @@ package kabam.rotmg.game.view.components
                 if ((_local_2 is _arg_1))
                 {
                     return (_local_2 as _arg_1);
-                };
-            };
+                }
+            }
             return (null);
         }
 
@@ -100,7 +88,7 @@ package kabam.rotmg.game.view.components
                 this.tabSprite.removeChild(this.tabs[_local_1]);
                 this.containerSprite.removeChild(this.contents[_local_1]);
                 _local_1++;
-            };
+            }
             this.tabs = new Vector.<TabView>();
             this.contents = new Vector.<Sprite>();
         }
@@ -118,8 +106,8 @@ package kabam.rotmg.game.view.components
                 if ((_arg_1 is BaseSimpleText))
                 {
                     _local_3 = this.addTextTab(_local_4, (_arg_1 as BaseSimpleText));
-                };
-            };
+                }
+            }
             this.tabs.push(_local_3);
             this.tabSprite.addChild(_local_3);
             this.contents.push(_arg_2);
@@ -133,7 +121,7 @@ package kabam.rotmg.game.view.components
                 _local_3.setSelected(true);
                 this.showContent(0);
                 this.tabSelected.dispatch(_arg_2.name);
-            };
+            }
         }
 
         public function removeTab():void
@@ -152,8 +140,8 @@ package kabam.rotmg.game.view.components
                     _arg_1.setSelected(true);
                     this.showContent(_arg_1.index);
                     this.tabSelected.dispatch(this.contents[_arg_1.index].name);
-                };
-            };
+                }
+            }
         }
 
         private function addIconTab(_arg_1:int, _arg_2:Bitmap):TabIconView
@@ -189,7 +177,7 @@ package kabam.rotmg.game.view.components
                 _local_2.visible = false;
                 _local_3.visible = true;
                 this.currentTabIndex = _arg_1;
-            };
+            }
         }
 
         private function onTabClicked(_arg_1:MouseEvent):void

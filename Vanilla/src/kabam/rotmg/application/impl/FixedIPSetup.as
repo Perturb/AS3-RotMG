@@ -5,13 +5,14 @@
 
 package kabam.rotmg.application.impl
 {
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class FixedIPSetup implements ApplicationSetup 
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class FixedIPSetup implements ApplicationSetup
     {
 
-        private const SERVER:String = "rotmgtesting.appspot.com";
+        private const SERVER:String = "test.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
         private const ANALYTICS:String = "UA-99999999-1";
@@ -34,6 +35,11 @@ package kabam.rotmg.application.impl
         public function getAnalyticsCode():String
         {
             return (this.ANALYTICS);
+        }
+
+        public function isServerLocal():Boolean
+        {
+            return (false);
         }
 
         public function getBuildLabel():String
@@ -75,6 +81,11 @@ package kabam.rotmg.application.impl
         public function isDebug():Boolean
         {
             return (false);
+        }
+
+        public function getServerDomain():String
+        {
+            return (this.SERVER);
         }
 
 

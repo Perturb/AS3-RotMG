@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.api.RetryLoader
 
 package kabam.rotmg.appengine.api
 {
-    import org.osflash.signals.OnceSignal;
+import org.osflash.signals.OnceSignal;
 
-    public interface RetryLoader 
+public interface RetryLoader 
     {
 
         function get complete():OnceSignal;

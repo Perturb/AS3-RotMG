@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.model.ScreenModel
 
 package kabam.rotmg.core.model
 {
-    import com.company.assembleegameclient.screens.AccountLoadingScreen;
+import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
-    public class ScreenModel 
+public class ScreenModel
     {
 
         private var currentType:Class;
@@ -18,7 +18,7 @@ package kabam.rotmg.core.model
             if (_arg_1 != AccountLoadingScreen)
             {
                 this.currentType = _arg_1;
-            };
+            }
         }
 
         public function getCurrentScreenType():Class

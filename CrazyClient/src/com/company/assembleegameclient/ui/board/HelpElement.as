@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.HelpElement
 
 package com.company.assembleegameclient.ui.board
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
 
-    public class HelpElement extends Sprite 
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class HelpElement extends Sprite 
     {
 
         private var title:TextFieldDisplayConcrete;

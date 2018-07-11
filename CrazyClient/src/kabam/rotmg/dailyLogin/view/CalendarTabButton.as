@@ -1,28 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.CalendarTabButton
 
 package kabam.rotmg.dailyLogin.view
 {
-    import flash.display.Sprite;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import kabam.rotmg.dailyLogin.config.CalendarSettings;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.events.Event;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
 
-    public class CalendarTabButton extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.dailyLogin.config.CalendarSettings;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class CalendarTabButton extends Sprite 
     {
 
         public static const STATE_SELECTED:String = "selected";
@@ -67,17 +67,17 @@ package kabam.rotmg.dailyLogin.view
             if (this.background)
             {
                 removeChild(this.background);
-            };
+            }
             if (this.tooltip)
             {
                 removeChild(this.tooltip);
-            };
+            }
             this.background = CalendarDayBox.drawRectangleWithCuts([1, 1, 0, 0], CalendarSettings.TABS_WIDTH, CalendarSettings.TABS_HEIGHT, 0x363636, 1, ((this.state_ == STATE_IDLE) ? this.graphicsDataBackgroundIdle : this.graphicsDataBackground), this.path_);
             this.addChild(this.background);
             if (this.tabNameTxt)
             {
                 removeChild(this.tabNameTxt);
-            };
+            }
             this.tabNameTxt = new TextFieldDisplayConcrete().setSize(CalendarSettings.TABS_FONT_SIZE).setColor(((this.state_ == STATE_IDLE) ? uint(0xFFFFFF) : uint(0xFFDE00))).setTextWidth(CalendarSettings.TABS_WIDTH).setAutoSize(TextFieldAutoSize.CENTER);
             this.tabNameTxt.setStringBuilder(new StaticStringBuilder(this.tabName));
             this.tabNameTxt.y = ((CalendarSettings.TABS_HEIGHT - CalendarSettings.TABS_FONT_SIZE) / 2);
@@ -88,7 +88,7 @@ package kabam.rotmg.dailyLogin.view
             if (this.state_ == STATE_IDLE)
             {
                 this.tabNameTxt.alpha = 0.5;
-            };
+            }
             this.addChild(this.tabNameTxt);
         }
 
@@ -98,7 +98,7 @@ package kabam.rotmg.dailyLogin.view
             {
                 this.state_ = _arg_1;
                 this.drawTab();
-            };
+            }
         }
 
         public function get calendarType():String

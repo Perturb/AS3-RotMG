@@ -5,9 +5,9 @@
 
 package kabam.rotmg.minimap.control
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class MiniMapZoomSignal extends Signal 
+public class MiniMapZoomSignal extends Signal
     {
 
         public static const OUT:String = "OUT";

@@ -5,17 +5,15 @@
 
 package kabam.rotmg.mysterybox.services
 {
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
-    public class MysteryBoxModel 
+public class MysteryBoxModel
     {
 
         private var models:Object;
         private var initialized:Boolean = false;
         private var _isNew:Boolean = false;
-        private var maxSlots:int = 6;
+        private var maxSlots:int = 12;
 
 
         public function getBoxesOrderByWeight():Object
@@ -32,8 +30,8 @@ package kabam.rotmg.mysterybox.services
                 if (_local_2.slot != 0)
                 {
                     _local_1[(_local_2.slot - 1)] = _local_2;
-                };
-            };
+                }
+            }
             return (_local_1);
         }
 
@@ -44,7 +42,7 @@ package kabam.rotmg.mysterybox.services
             for each (_local_2 in _arg_1)
             {
                 this.models[_local_2.id] = _local_2;
-            };
+            }
             this.initialized = true;
         }
 

@@ -12,6 +12,9 @@ package kabam.rotmg.assets
         private static const GroundCXML:Class = EmbeddedData_GroundCXML;
         private static const ProjectilesCXML:Class = EmbeddedData_ProjectilesCXML;
         private static const EquipCXML:Class = EmbeddedData_EquipCXML;
+        private static const EquipEggsCXML:Class = EmbeddedData_EquipEggsCXML;
+        private static const EquipKeysCXML:Class = EmbeddedData_EquipKeysCXML;
+        private static const EquipSkinsCXML:Class = EmbeddedData_EquipSkinsCXML;
         private static const EquipmentSetsCXML:Class = EmbeddedData_EquipmentSetsCXML;
         private static const SkinsCXML:Class = EmbeddedData_SkinsCXML;
         private static const DyesCXML:Class = EmbeddedData_DyesCXML;
@@ -73,7 +76,6 @@ package kabam.rotmg.assets
         private static const ShattersCXML:Class = EmbeddedData_ShattersCXML;
         private static const BelladonnaCXML:Class = EmbeddedData_BelladonnaCXML;
         private static const PuppetMasterCXML:Class = EmbeddedData_PuppetMasterCXML;
-        private static const IceCaveCXML:Class = EmbeddedData_IceCaveCXML;
         private static const TheHiveCXML:Class = EmbeddedData_TheHiveCXML;
         private static const ToxicSewersCXML:Class = EmbeddedData_ToxicSewersCXML;
         private static const PuppetMasterEncoreCXML:Class = EmbeddedData_PuppetMasterEncoreCXML;
@@ -81,6 +83,8 @@ package kabam.rotmg.assets
         private static const PermaFrostLordCXML:Class = EmbeddedData_PermaFrostLordCXML;
         private static const parasiteDenGroundCXML:Class = EmbeddedData_parasiteDenGroundCXML;
         private static const parasiteDenObjectsCXML:Class = EmbeddedData_parasiteDenObjectsCXML;
+        private static const iceCaveGroundCXML:Class = EmbeddedData_iceCaveGroundCXML;
+        private static const iceCaveObjectsCXML:Class = EmbeddedData_iceCaveObjectsCXML;
         private static const stPatricksGroundCXML:Class = EmbeddedData_stPatricksGroundCXML;
         private static const stPatricksObjectCXML:Class = EmbeddedData_stPatricksObjectCXML;
         private static const buffedBunnyObjectCXML:Class = EmbeddedData_buffedBunnyObjectCXML;
@@ -100,12 +104,16 @@ package kabam.rotmg.assets
         private static const epicHiveGroundCXML:Class = EmbeddedData_epicHiveGroundCXML;
         private static const lostHallsGroundCXML:Class = EmbeddedData_lostHallsGroundCXML;
         private static const lostHallsObjectsCXML:Class = EmbeddedData_lostHallsObjectsCXML;
+        private static const magicWoodsGroundCXML:Class = EmbeddedData_magicWoodsGroundCXML;
+        private static const magicWoodsObjectsCXML:Class = EmbeddedData_magicWoodsObjectsCXML;
+        private static const cnidarianReefGroundCXML:Class = EmbeddedData_cnidarianReefGroundCXML;
+        private static const cnidarianReefObjectsCXML:Class = EmbeddedData_cnidarianReefObjectsCXML;
         public static const skins:Array = [new SkinsCXML()];
         public static const eqSets:Array = [new EquipmentSetsCXML()];
         public static const skinsXML:XML = appendXML(skins, "Objects", "Object");
         public static const skinsEquipmentSetsXML:XML = appendXML(eqSets, "EquipmentSets", "EquipmentSet");
-        public static const groundFiles:Array = [new GroundCXML(), new parasiteDenGroundCXML(), new stPatricksGroundCXML(), new hanaminexusGroundCXML(), new mountainTempleGroundCXML(), new oryxHordeGroundCXML(), new summerNexusGroundCXML(), new autumnNexusGroundCXML(), new epicHiveGroundCXML(), new lostHallsGroundCXML(), new santaWorkshopGroundCXML()];
-        public static const objectFiles:Array = [new ProjectilesCXML(), new EquipCXML(), new DyesCXML(), new TextilesCXML(), new PermapetsCXML(), new TokenCXML(), new WillemTestingCXML(), new TTestingCXML(), new BTestingCXML(), new STestingCXML(), new MTestingCXML(), new KTestingCXML(), new PlayersCXML(), new ContainersCXML(), new ObjectsCXML(), new PortalsCXML(), new TestingObjectsCXML(), new StaticObjectsCXML(), new TutorialObjectsCXML(), new TutorialMonstersCXML(), new AlliesCXML(), new HeroesCXML(), new PlayersZombiesCXML(), new PetsCXML(), new NPCsCXML(), new ShoreCXML(), new LowCXML(), new MidCXML(), new HighCXML(), new MountainsCXML(), new EncountersCXML(), new ArenaCXML(), new OryxCastleCXML(), new TombOfTheAncientsCXML(), new SpriteWorldCXML(), new UndeadLairCXML(), new OceanTrenchCXML(), new ForbiddenJungleCXML(), new OryxChamberCXML(), new OryxChickenChamberCXML(), new OryxWineCellarCXML(), new ManorOfTheImmortalsCXML(), new PirateCaveCXML(), new SnakePitCXML(), new SpiderDenCXML(), new AbyssOfDemonsCXML(), new GhostShipCXML(), new MadLabCXML(), new CaveOfAThousandTreasuresCXML(), new CandyLandCXML(), new HauntedCemeteryCXML(), new ForestMazeCXML(), new EpicForestMazeCXML(), new EpicPirateCaveCXML(), new EpicSpiderDenCXML(), new NexusDestroyedCXML(), new MiniDungeonHubCXML(), new LairOfDraconisCXML(), new LairOfShaitanCXML(), new ShattersCXML(), new BelladonnaCXML(), new PuppetMasterCXML(), new IceCaveCXML(), new TheHiveCXML(), new ToxicSewersCXML(), new PuppetMasterEncoreCXML(), new IceTombCXML(), new PermaFrostLordCXML(), new parasiteDenObjectsCXML(), new stPatricksObjectCXML(), new buffedBunnyObjectCXML(), new hanaminexusObjectCXML(), new mountainTempleObjectCXML(), new oryxHordeObjectsCXML(), new summerNexusObjectCXML(), new autumnNexusObjectsCXML(), new epicHiveObjectsCXML(), new lostHallsObjectsCXML(), new santaWorkshopObjectsCXML()];
+        public static const groundFiles:Array = [new GroundCXML(), new parasiteDenGroundCXML(), new iceCaveGroundCXML(), new stPatricksGroundCXML(), new hanaminexusGroundCXML(), new mountainTempleGroundCXML(), new oryxHordeGroundCXML(), new summerNexusGroundCXML(), new autumnNexusGroundCXML(), new epicHiveGroundCXML(), new lostHallsGroundCXML(), new santaWorkshopGroundCXML(), new magicWoodsGroundCXML(), new cnidarianReefGroundCXML()];
+        public static const objectFiles:Array = [new ProjectilesCXML(), new EquipEggsCXML(), new EquipKeysCXML(), new EquipSkinsCXML(), new EquipCXML(), new DyesCXML(), new TextilesCXML(), new PermapetsCXML(), new TokenCXML(), new WillemTestingCXML(), new TTestingCXML(), new BTestingCXML(), new STestingCXML(), new MTestingCXML(), new KTestingCXML(), new PlayersCXML(), new ContainersCXML(), new ObjectsCXML(), new PortalsCXML(), new TestingObjectsCXML(), new StaticObjectsCXML(), new TutorialObjectsCXML(), new TutorialMonstersCXML(), new AlliesCXML(), new HeroesCXML(), new PlayersZombiesCXML(), new PetsCXML(), new NPCsCXML(), new ShoreCXML(), new LowCXML(), new MidCXML(), new HighCXML(), new MountainsCXML(), new EncountersCXML(), new ArenaCXML(), new OryxCastleCXML(), new TombOfTheAncientsCXML(), new SpriteWorldCXML(), new UndeadLairCXML(), new OceanTrenchCXML(), new ForbiddenJungleCXML(), new OryxChamberCXML(), new OryxChickenChamberCXML(), new OryxWineCellarCXML(), new ManorOfTheImmortalsCXML(), new PirateCaveCXML(), new SnakePitCXML(), new SpiderDenCXML(), new AbyssOfDemonsCXML(), new GhostShipCXML(), new MadLabCXML(), new CaveOfAThousandTreasuresCXML(), new CandyLandCXML(), new HauntedCemeteryCXML(), new ForestMazeCXML(), new EpicForestMazeCXML(), new EpicPirateCaveCXML(), new EpicSpiderDenCXML(), new NexusDestroyedCXML(), new MiniDungeonHubCXML(), new LairOfDraconisCXML(), new LairOfShaitanCXML(), new ShattersCXML(), new BelladonnaCXML(), new PuppetMasterCXML(), new iceCaveObjectsCXML(), new TheHiveCXML(), new ToxicSewersCXML(), new PuppetMasterEncoreCXML(), new IceTombCXML(), new PermaFrostLordCXML(), new parasiteDenObjectsCXML(), new stPatricksObjectCXML(), new buffedBunnyObjectCXML(), new hanaminexusObjectCXML(), new mountainTempleObjectCXML(), new oryxHordeObjectsCXML(), new summerNexusObjectCXML(), new autumnNexusObjectsCXML(), new epicHiveObjectsCXML(), new lostHallsObjectsCXML(), new santaWorkshopObjectsCXML(), new magicWoodsObjectsCXML(), new cnidarianReefObjectsCXML(), new SkinsCXML()];
         private static const RegionsCXML:Class = EmbeddedData_RegionsCXML;
         public static const regionFiles:Array = [new RegionsCXML()];
         private static const TutorialScriptCXML:Class = EmbeddedData_TutorialScriptCXML;
@@ -124,9 +132,9 @@ package kabam.rotmg.assets
                 for each (_local_7 in _local_6[_arg_3])
                 {
                     _local_4 = _local_4.appendChild(_local_7);
-                };
+                }
                 _local_5++;
-            };
+            }
             return (_local_4);
         }
 

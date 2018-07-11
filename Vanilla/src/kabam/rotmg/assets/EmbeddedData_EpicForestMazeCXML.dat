@@ -112,7 +112,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Size>110</Size>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
@@ -134,7 +134,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <Flying/>
       <Z>0.3</Z>
@@ -159,7 +159,6 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>6</Defense>
-      <XpMult>1.0</XpMult>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Fire Acorn</ObjectId>
@@ -182,7 +181,7 @@
       <DeathSound>monster/dark_elves_death</DeathSound>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>3</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>75</Exp>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Leaf Magic</ObjectId>
@@ -206,7 +205,7 @@
       <DeathSound>monster/dark_elves_death</DeathSound>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
@@ -237,7 +236,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>66000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Size>140</Size>
       <Quest/>
       <Projectile id="1">
@@ -261,7 +260,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>66000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Size>140</Size>
       <Quest/>
       <Flying/>
@@ -286,7 +285,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>50</Size>
       <Projectile id="0">
          <ObjectId>Dragon Attack Blue Bullet</ObjectId>
@@ -308,7 +307,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>35000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>.3</XpMult>
+      <Exp>58</Exp>
       <Size>170</Size>
       <EventChestBoss/>
       <God/>

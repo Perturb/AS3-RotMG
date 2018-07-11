@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.util.VectorAS3Util
@@ -16,7 +16,7 @@ package kabam.lib.util
             for each (_local_2 in _arg_1)
             {
                 _local_3.push(_local_2);
-            };
+            }
             return (_local_3);
         }
 

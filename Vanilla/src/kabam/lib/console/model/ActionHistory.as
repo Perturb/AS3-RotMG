@@ -5,11 +5,7 @@
 
 package kabam.lib.console.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-    import kabam.lib.console.model.*;
-
-    internal final class ActionHistory 
+internal final class ActionHistory 
     {
 
         private var stack:Vector.<String>;

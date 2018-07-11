@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.DeprecatedTextButtonStatic
 
 package com.company.assembleegameclient.ui
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-    public class DeprecatedTextButtonStatic extends TextButtonBase 
+import org.osflash.signals.Signal;
+
+public class DeprecatedTextButtonStatic extends TextButtonBase
     {
 
         public const textChanged:Signal = new Signal();

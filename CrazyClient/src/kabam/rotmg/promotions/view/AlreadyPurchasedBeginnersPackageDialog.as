@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog
 
 package kabam.rotmg.promotions.view
 {
-    import flash.display.Sprite;
-    import kabam.lib.resizing.view.Resizable;
-    import flash.events.MouseEvent;
-    import flash.geom.Rectangle;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
 
-    public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable 
+import kabam.lib.resizing.view.Resizable;
+
+public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable 
     {
 
         public static var hifiBeginnerOfferAlreadyPurchasedEmbed:Class = AlreadyPurchasedBeginnersPackageDialog_hifiBeginnerOfferAlreadyPurchasedEmbed;

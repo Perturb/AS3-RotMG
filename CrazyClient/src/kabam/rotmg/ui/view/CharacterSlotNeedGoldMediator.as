@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterSlotNeedGoldMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-    import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class CharacterSlotNeedGoldMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CharacterSlotNeedGoldMediator extends Mediator
     {
 
         [Inject]

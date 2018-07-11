@@ -1,25 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.GuildChronicleScreen
 
 package com.company.assembleegameclient.ui.guild
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import com.company.rotmg.graphics.ScreenGraphic;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.game.events.GuildResultEvent;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.events.KeyboardEvent;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.events.GuildResultEvent;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.rotmg.graphics.ScreenGraphic;
 
-    public class GuildChronicleScreen extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class GuildChronicleScreen extends Sprite 
     {
 
         private var gs_:AGameSprite;
@@ -51,7 +53,7 @@ package com.company.assembleegameclient.ui.guild
             if (((this.guildPlayerList_) && (this.guildPlayerList_.parent)))
             {
                 this.container.removeChild(this.guildPlayerList_);
-            };
+            }
             var _local_1:Player = this.gs_.map.player_;
             this.guildPlayerList_ = new GuildPlayerList(50, 0, ((_local_1 == null) ? "" : _local_1.name_), _local_1.guildRank_);
             this.guildPlayerList_.addEventListener(GuildPlayerListEvent.SET_RANK, this.onSetRank);
@@ -77,14 +79,14 @@ package com.company.assembleegameclient.ui.guild
         private function onSetRankResult(_arg_1:GuildResultEvent):void
         {
             this.gs_.removeEventListener(GuildResultEvent.EVENT, this.onSetRankResult);
-            if (!_arg_1.success_)
+            if ((!(_arg_1.success_)))
             {
                 this.showError(_arg_1.errorKey);
             }
             else
             {
                 this.addList();
-            };
+            }
         }
 
         private function onRemoveMember(_arg_1:GuildPlayerListEvent):void
@@ -97,14 +99,14 @@ package com.company.assembleegameclient.ui.guild
         private function onRemoveResult(_arg_1:GuildResultEvent):void
         {
             this.gs_.removeEventListener(GuildResultEvent.EVENT, this.onRemoveResult);
-            if (!_arg_1.success_)
+            if ((!(_arg_1.success_)))
             {
                 this.showError(_arg_1.errorKey);
             }
             else
             {
                 this.addList();
-            };
+            }
         }
 
         private function showError(_arg_1:String):void

@@ -5,20 +5,22 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Shape;
-    import com.company.assembleegameclient.map.RegionLibrary;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class RegionElement extends Element 
+import flash.display.Shape;
+
+public class RegionElement extends Element
     {
 
         public var regionXML_:XML;
 
         public function RegionElement(_arg_1:XML)
         {
+            var _local_2:Shape;
             super(int(_arg_1.@type));
             this.regionXML_ = _arg_1;
-            var _local_2:Shape = new Shape();
+            _local_2 = new Shape();
             _local_2.graphics.beginFill(RegionLibrary.getColor(type_), 0.5);
             _local_2.graphics.drawRect(0, 0, (WIDTH - 8), (HEIGHT - 8));
             _local_2.graphics.endFill();

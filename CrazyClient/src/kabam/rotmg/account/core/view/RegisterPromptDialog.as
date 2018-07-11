@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.RegisterPromptDialog
 
 package kabam.rotmg.account.core.view
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.natives.NativeMappedSignal;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class RegisterPromptDialog extends Dialog 
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class RegisterPromptDialog extends Dialog 
     {
 
         public var cancel:Signal;

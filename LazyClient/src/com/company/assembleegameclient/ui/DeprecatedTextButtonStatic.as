@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.ui
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-    public class DeprecatedTextButtonStatic extends TextButtonBase 
+import org.osflash.signals.Signal;
+
+public class DeprecatedTextButtonStatic extends TextButtonBase
     {
 
         public const textChanged:Signal = new Signal();

@@ -1,18 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.services.KongregateRegisterAccountTask
 
 package kabam.rotmg.account.kongregate.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class KongregateRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+public class KongregateRegisterAccountTask extends BaseTask implements RegisterAccountTask 
     {
 
         [Inject]
@@ -55,7 +55,7 @@ package kabam.rotmg.account.kongregate.services
         private function updateAccount(_arg_1:String):void
         {
             var _local_2:XML = new XML(_arg_1);
-            this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
+            this.account.updateUser(_local_2.GUID, _local_2.Secret, "", "");
             this.account.setPlatformToken(_local_2.PlatformToken);
         }
 

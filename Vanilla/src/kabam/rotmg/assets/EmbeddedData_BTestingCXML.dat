@@ -36,6 +36,6 @@
       </Texture>
       <Size>80</Size>
       <MaxHitPoints>500</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
 </Objects>

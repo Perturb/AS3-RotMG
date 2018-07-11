@@ -1,30 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.MoneyFrame
 
 package kabam.rotmg.account.core.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.util.offer.Offers;
-    import kabam.rotmg.account.core.model.MoneyConfig;
-    import com.company.assembleegameclient.account.ui.Frame;
-    import com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons;
-    import com.company.assembleegameclient.account.ui.OfferRadioButtons;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import flash.events.MouseEvent;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.PaymentMethod;
-    import flash.display.Shape;
-    import flash.text.TextFieldAutoSize;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.OfferRadioButtons;
+import com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.util.PaymentMethod;
+import com.company.assembleegameclient.util.offer.Offer;
+import com.company.assembleegameclient.util.offer.Offers;
 
-    public class MoneyFrame extends Sprite 
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.model.MoneyConfig;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class MoneyFrame extends Sprite
     {
 
         private static const TITLE:String = TextKey.MONEY_FRAME_TITLE;//"MoneyFrame.title"
@@ -86,7 +87,7 @@ package kabam.rotmg.account.core.view
             for each (_local_1 in PaymentMethod.PAYMENT_METHODS)
             {
                 _local_2.push(_local_1.label_);
-            };
+            }
             return (_local_2);
         }
 
@@ -126,7 +127,7 @@ package kabam.rotmg.account.core.view
                 this.cancelButton.y = (((600 / 2) + (this.frame.h_ / 2)) - 52);
                 this.cancelButton.setAutoSize(TextFieldAutoSize.RIGHT);
                 addChild(this.cancelButton);
-            };
+            }
         }
 
         protected function onBuyNowClick(_arg_1:MouseEvent):void

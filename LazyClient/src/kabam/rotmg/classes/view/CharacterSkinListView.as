@@ -5,13 +5,13 @@
 
 package kabam.rotmg.classes.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.util.components.VerticalScrollingList;
-    import __AS3__.vec.Vector;
-    import flash.display.DisplayObject;
-    import kabam.lib.ui.api.Size;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
 
-    public class CharacterSkinListView extends Sprite 
+import kabam.lib.ui.api.Size;
+import kabam.rotmg.util.components.VerticalScrollingList;
+
+public class CharacterSkinListView extends Sprite
     {
 
         public static const PADDING:int = 5;
@@ -47,11 +47,11 @@ package kabam.rotmg.classes.view
             if (!_arg_1)
             {
                 _local_2 = (_local_2 + VerticalScrollingList.SCROLLBAR_GUTTER);
-            };
+            }
             for each (_local_3 in this.items)
             {
                 _local_3.setWidth(_local_2);
-            };
+            }
         }
 
         public function getListHeight():Number

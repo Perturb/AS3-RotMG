@@ -5,10 +5,10 @@
 
 package kabam.rotmg.tooltips.view
 {
-    import flash.display.Sprite;
-    import flash.display.DisplayObject;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
 
-    public class TooltipsView extends Sprite 
+public class TooltipsView extends Sprite 
     {
 
         private var toolTip:DisplayObject;
@@ -21,7 +21,7 @@ package kabam.rotmg.tooltips.view
             if (_arg_1)
             {
                 addChild(_arg_1);
-            };
+            }
         }
 
         public function hide():void
@@ -29,7 +29,7 @@ package kabam.rotmg.tooltips.view
             if (((this.toolTip) && (this.toolTip.parent)))
             {
                 this.toolTip.parent.removeChild(this.toolTip);
-            };
+            }
             this.toolTip = null;
         }
 

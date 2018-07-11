@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.MoreColorUtil
 
 package com.company.util
 {
-    import flash.geom.ColorTransform;
+import flash.geom.ColorTransform;
 
-    public class MoreColorUtil 
+public class MoreColorUtil
     {
 
         public static const greyscaleFilterMatrix:Array = [0.3, 0.59, 0.11, 0, 0, 0.3, 0.59, 0.11, 0, 0, 0.3, 0.59, 0.11, 0, 0, 0, 0, 0, 1, 0];
@@ -46,7 +46,7 @@ package com.company.util
             var _local_4:Number;
             var _local_5:Number;
             var _local_6:Number;
-            var _local_7:int = int((int((_arg_1 / 60)) % 6));
+            var _local_7:int = int(int((int((_arg_1 / 60)) % 6)));
             var _local_8:Number = ((_arg_1 / 60) - Math.floor((_arg_1 / 60)));
             var _local_9:Number = (_arg_3 * (1 - _arg_2));
             var _local_10:Number = (_arg_3 * (1 - (_local_8 * _arg_2)));
@@ -83,7 +83,7 @@ package com.company.util
                     _local_5 = _local_9;
                     _local_6 = _local_10;
                     break;
-            };
+            }
             return (((int(Math.min(0xFF, Math.floor((_local_4 * 0xFF)))) << 16) | (int(Math.min(0xFF, Math.floor((_local_5 * 0xFF)))) << 8)) | int(Math.min(0xFF, Math.floor((_local_6 * 0xFF)))));
         }
 
@@ -118,11 +118,11 @@ package com.company.util
             if (_arg_1 == null)
             {
                 _arg_1 = identity;
-            };
+            }
             if (_arg_2 == null)
             {
                 _arg_2 = identity;
-            };
+            }
             var _local_4:Number = (1 - _arg_3);
             return (new ColorTransform(((_arg_1.redMultiplier * _local_4) + (_arg_2.redMultiplier * _arg_3)), ((_arg_1.greenMultiplier * _local_4) + (_arg_2.greenMultiplier * _arg_3)), ((_arg_1.blueMultiplier * _local_4) + (_arg_2.blueMultiplier * _arg_3)), ((_arg_1.alphaMultiplier * _local_4) + (_arg_2.alphaMultiplier * _arg_3)), ((_arg_1.redOffset * _local_4) + (_arg_2.redOffset * _arg_3)), ((_arg_1.greenOffset * _local_4) + (_arg_2.greenOffset * _arg_3)), ((_arg_1.blueOffset * _local_4) + (_arg_2.blueOffset * _arg_3)), ((_arg_1.alphaOffset * _local_4) + (_arg_2.alphaOffset * _arg_3))));
         }

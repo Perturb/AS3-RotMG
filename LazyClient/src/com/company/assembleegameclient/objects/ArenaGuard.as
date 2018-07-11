@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.arena.view.ArenaQueryPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class ArenaGuard extends GameObject implements IInteractiveObject 
+import kabam.rotmg.arena.view.ArenaQueryPanel;
+
+public class ArenaGuard extends GameObject implements IInteractiveObject
     {
 
         public function ArenaGuard(_arg_1:XML)

@@ -12,16 +12,12 @@
       <Size>0</Size>
    </Object>
    <Object type="0x0e28" id="Snakepit Guard Spawner">
-      <Class>Character</Class>
-      <NoMiniMap/>
+      <Class>GameObject</Class>
       <AnimatedTexture>
          <File>chars16x16dEncounters2</File>
          <Index>39</Index>
       </AnimatedTexture>
-      <XpMult>0.0</XpMult>
       <Size>0</Size>
-      <MaxHitPoints>100</MaxHitPoints>
-      <StasisImmune/>
    </Object>
    <Object type="0x0e27" id="Snakepit Button">
       <Class>Character</Class>
@@ -37,8 +33,6 @@
             <Index>0x09</Index>
          </Texture>
       </AltTexture>
-      <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
       <Size>100</Size>
       <ShadowSize>0</ShadowSize>
    </Object>
@@ -51,7 +45,6 @@
       </AnimatedTexture>
       <HitSound>monster/greater_pit_snakes_death</HitSound>
       <DeathSound>monster/scorpions_death</DeathSound>
-      <XpMult>1.0</XpMult>
       <Size>0</Size>
       <MaxHitPoints>5500</MaxHitPoints>
       <Defense>50</Defense>
@@ -88,7 +81,7 @@
          <Index>0x0a</Index>
       </Texture>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <ShadowSize>0</ShadowSize>
       <StasisImmune/>
@@ -117,7 +110,7 @@
       <StasisImmune/>
       <Quest/>
       <Level>1</Level>
-      <XpMult>2</XpMult>
+      <Exp>390</Exp>
       <NoArticle/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -151,7 +144,7 @@
       <Defense>7</Defense>
       <Enemy/>
       <Level>1</Level>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Aqua Missile</ObjectId>
          <Speed>60</Speed>
@@ -175,7 +168,7 @@
       <Defense>4</Defense>
       <Enemy/>
       <Level>1</Level>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Aqua Missile</ObjectId>
          <Speed>60</Speed>
@@ -198,7 +191,7 @@
       <Size>80</Size>
       <MaxHitPoints>5</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile>
          <ObjectId>Green Magic</ObjectId>
          <Speed>60</Speed>
@@ -219,7 +212,7 @@
       <Size>80</Size>
       <MaxHitPoints>5</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile>
          <ObjectId>Purple Magic</ObjectId>
          <Speed>60</Speed>

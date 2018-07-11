@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsTickerMediator
 
 package kabam.rotmg.news.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class NewsTickerMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewsTickerMediator extends Mediator 
     {
 
         [Inject]

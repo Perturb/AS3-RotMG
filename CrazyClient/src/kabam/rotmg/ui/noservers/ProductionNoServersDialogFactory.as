@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.noservers.ProductionNoServersDialogFactory
 
 package kabam.rotmg.ui.noservers
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.text.model.TextKey;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class ProductionNoServersDialogFactory implements NoServersDialogFactory 
+import kabam.rotmg.text.model.TextKey;
+
+public class ProductionNoServersDialogFactory implements NoServersDialogFactory
     {
 
         private static const forums_link:String = '<font color="#7777EE"><a href="http://forums.wildshadow.com/">forums.wildshadow.com</a></font>';

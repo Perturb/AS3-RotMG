@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.game.events
 {
-    import flash.events.Event;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
+import flash.events.Event;
+import flash.utils.ByteArray;
 
-    public class ReconnectEvent extends Event 
+import kabam.rotmg.servers.api.Server;
+
+public class ReconnectEvent extends Event
     {
 
         public static const RECONNECT:String = "RECONNECT_EVENT";

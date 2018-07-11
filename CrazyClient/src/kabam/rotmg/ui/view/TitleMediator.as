@@ -1,39 +1,41 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.TitleMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import kabam.rotmg.ui.signals.EnterGameSignal;
-    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.core.view.Layers;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.build.api.BuildData;
-    import flash.net.URLRequest;
-    import flash.net.URLVariables;
-    import flash.net.URLRequestMethod;
-    import kabam.rotmg.build.api.BuildEnvironment;
-    import flash.net.navigateToURL;
-    import kabam.rotmg.application.DynamicSettings;
-    import flash.system.Capabilities;
-    import flash.external.ExternalInterface;
-    import com.company.assembleegameclient.ui.language.LanguageOptionOverlay;
-    import kabam.rotmg.ui.model.EnvironmentData;
-    import com.company.assembleegameclient.screens.ServersScreen;
-    import kabam.rotmg.legends.view.LegendsView;
-    import com.company.assembleegameclient.mapeditor.MapEditor;
-    import flash.events.Event;
+import com.company.assembleegameclient.mapeditor.MapEditor;
+import com.company.assembleegameclient.screens.ServersScreen;
 
-    public class TitleMediator extends Mediator 
+import flash.events.Event;
+import flash.external.ExternalInterface;
+import flash.net.URLRequest;
+import flash.net.URLRequestMethod;
+import flash.net.URLVariables;
+import flash.net.navigateToURL;
+import flash.system.Capabilities;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.DynamicSettings;
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.api.BuildEnvironment;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.legends.view.LegendsView;
+import kabam.rotmg.ui.model.EnvironmentData;
+import kabam.rotmg.ui.signals.EnterGameSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+import robotlegs.bender.framework.api.ILogger;
+
+public class TitleMediator extends Mediator
     {
 
         private static var supportCalledBefore:Boolean = false;
@@ -78,7 +80,7 @@ package kabam.rotmg.ui.view
             if (this.playerModel.isNewToEditing())
             {
                 this.view.putNoticeTagToOption(ButtonFactory.getEditorButton(), "new");
-            };
+            }
         }
 
         private function openSupportPage():void
@@ -103,8 +105,8 @@ package kabam.rotmg.ui.view
                 if (((_local_3.hasOwnProperty("mp")) && (_local_3.hasOwnProperty("sg"))))
                 {
                     this.toSupportPage(_local_3.mp, _local_3.sg);
-                };
-            };
+                }
+            }
         }
 
         private function toSupportPage(_arg_1:String, _arg_2:String):void
@@ -117,7 +119,7 @@ package kabam.rotmg.ui.view
             if (((DynamicSettings.settingExists("SalesforceMobile")) && (DynamicSettings.getSettingValue("SalesforceMobile") == 1)))
             {
                 _local_5 = true;
-            };
+            }
             var _local_6:String = this.playerModel.getSalesForceData();
             if (((_local_6 == "unavailable") || (!(_local_5))))
             {
@@ -130,7 +132,7 @@ package kabam.rotmg.ui.view
             {
                 if (((Capabilities.playerType == "PlugIn") || (Capabilities.playerType == "ActiveX")))
                 {
-                    if (!supportCalledBefore)
+                    if ((!(supportCalledBefore)))
                     {
                         ExternalInterface.call("openSalesForceFirstTime", _local_6);
                         supportCalledBefore = true;
@@ -138,7 +140,7 @@ package kabam.rotmg.ui.view
                     else
                     {
                         ExternalInterface.call("reopenSalesForce");
-                    };
+                    }
                 }
                 else
                 {
@@ -147,19 +149,14 @@ package kabam.rotmg.ui.view
                     _local_4.method = URLRequestMethod.GET;
                     _local_4.data = _local_3;
                     navigateToURL(_local_4, "_blank");
-                };
-            };
+                }
+            }
         }
 
         private function onOptionalButtonsAdded():void
         {
             ((this.view.editorClicked) && (this.view.editorClicked.add(this.showMapEditor)));
             ((this.view.quitClicked) && (this.view.quitClicked.add(this.attemptToCloseClient)));
-        }
-
-        private function showLanguagesScreen():void
-        {
-            this.setScreen.dispatch(new LanguageOptionOverlay());
         }
 
         private function makeEnvironmentData():EnvironmentData
@@ -183,14 +180,16 @@ package kabam.rotmg.ui.view
             ((this.view.quitClicked) && (this.view.quitClicked.remove(this.attemptToCloseClient)));
         }
 
-        private function openKabamTransferView():void
-        {
-            this.view.openKabamTransferView();
-        }
-
         private function handleIntentionToPlay():void
         {
-            this.enterGame.dispatch();
+            if (this.account.isRegistered())
+            {
+                this.enterGame.dispatch();
+            }
+            else
+            {
+                this.openAccountInfo.dispatch(false);
+            }
         }
 
         private function showServersScreen():void

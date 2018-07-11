@@ -5,13 +5,14 @@
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.services.GetOffersTask;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.GetOffersTask;
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class NotEnoughGoldMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NotEnoughGoldMediator extends Mediator
     {
 
         [Inject]

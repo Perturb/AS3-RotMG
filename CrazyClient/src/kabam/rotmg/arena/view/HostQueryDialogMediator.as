@@ -1,17 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.HostQueryDialogMediator
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.display.BitmapData;
-    import flash.events.Event;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class HostQueryDialogMediator extends Mediator 
+import flash.display.BitmapData;
+import flash.events.Event;
+
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class HostQueryDialogMediator extends Mediator
     {
 
         [Inject]

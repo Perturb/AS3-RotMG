@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.services.GetInGameNewsTask
 
 package kabam.rotmg.news.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.news.model.InGameNews;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.news.model.InGameNews;
+import kabam.rotmg.news.model.NewsModel;
 
-    public class GetInGameNewsTask extends BaseTask 
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetInGameNewsTask extends BaseTask 
     {
 
         [Inject]
@@ -54,7 +55,7 @@ package kabam.rotmg.news.services
             else
             {
                 completeTask(true);
-            };
+            }
         }
 
         private function parseNews(_arg_1:String):*
@@ -78,11 +79,11 @@ package kabam.rotmg.news.services
                     _local_4.platform = _local_3.platform;
                     _local_4.weight = _local_3.weight;
                     this.model.addInGameNews(_local_4);
-                };
+                }
             }
             catch(e:Error)
             {
-            };
+            }
             var _local_5:InGameNews = this.model.getFirstNews();
             completeTask(true);
         }

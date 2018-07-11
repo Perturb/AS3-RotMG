@@ -5,17 +5,21 @@
 
 package kabam.rotmg.core.commands
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import flash.display.Sprite;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.account.core.services.GetCharListTask;
-    import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
-    import com.company.assembleegameclient.screens.LoadingScreen;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
+import com.company.assembleegameclient.screens.LoadingScreen;
 
-    public class SetScreenWithValidDataCommand 
+import flash.display.Sprite;
+
+import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
+
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.GetCharListTask;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
+
+public class SetScreenWithValidDataCommand
     {
 
         [Inject]
@@ -30,6 +34,8 @@ package kabam.rotmg.core.commands
         public var task:GetCharListTask;
         [Inject]
         public var calendarTask:FetchPlayerCalendarTask;
+        [Inject]
+        public var petSkinsTask:GetOwnedPetSkinsTask;
 
 
         public function execute():void
@@ -41,7 +47,7 @@ package kabam.rotmg.core.commands
             else
             {
                 this.setScreen.dispatch(this.view);
-            };
+            }
         }
 
         private function reloadDataThenSetScreen():void
@@ -50,6 +56,7 @@ package kabam.rotmg.core.commands
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.task);
             _local_1.add(this.calendarTask);
+            _local_1.add(this.petSkinsTask);
             _local_1.add(new DispatchSignalTask(this.setScreen, this.view));
             this.monitor.add(_local_1);
             _local_1.start();

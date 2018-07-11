@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.PlaySound
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class PlaySound extends IncomingMessage 
+public class PlaySound extends IncomingMessage 
     {
 
         public var ownerId_:int;

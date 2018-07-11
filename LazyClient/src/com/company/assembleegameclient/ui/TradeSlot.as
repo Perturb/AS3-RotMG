@@ -5,34 +5,34 @@
 
 package com.company.assembleegameclient.ui
 {
-    import kabam.rotmg.tooltips.TooltipAble;
-    import flash.geom.Matrix;
-    import flash.display.Shape;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import com.company.util.MoreColorUtil;
-    import flash.display.Bitmap;
-    import flash.display.BitmapData;
-    import com.company.util.SpriteUtil;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.geom.Point;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-    import com.company.assembleegameclient.objects.Player;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.util.GraphicsUtil;
+import com.company.util.MoreColorUtil;
+import com.company.util.SpriteUtil;
 
-    public class TradeSlot extends Slot implements TooltipAble 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.CapsStyle;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Shape;
+import flash.geom.Matrix;
+import flash.geom.Point;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+
+public class TradeSlot extends Slot implements TooltipAble
     {
 
         private static const IDENTITY_MATRIX:Matrix = new Matrix();
@@ -62,7 +62,7 @@ package com.company.assembleegameclient.ui
             if (!_arg_2)
             {
                 transform.colorTransform = MoreColorUtil.veryDarkCT;
-            };
+            }
             this.overlay_ = this.getOverlay();
             addChild(this.overlay_);
             this.setIncluded(_arg_3);
@@ -82,13 +82,14 @@ package com.company.assembleegameclient.ui
             if (!this.isEmpty())
             {
                 this.drawItem();
-            };
+            }
         }
 
         private function drawItem():void
         {
             var _local_4:Bitmap;
             var _local_5:BitmapData;
+            var _local_6:BitmapData;
             SpriteUtil.safeRemoveChild(this, backgroundImage_);
             var _local_1:BitmapData = ObjectLibrary.getRedrawnTextureFromType(this.item_, 80, true);
             var _local_2:XML = ObjectLibrary.xmlLibrary_[this.item_];
@@ -97,13 +98,13 @@ package com.company.assembleegameclient.ui
                 _local_1 = _local_1.clone();
                 _local_5 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                 _local_1.draw(_local_5, DOSE_MATRIX);
-            };
+            }
             if (((_local_2.hasOwnProperty("Quantity")) && (this.bitmapFactory)))
             {
                 _local_1 = _local_1.clone();
-                _local_5 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
-                _local_1.draw(_local_5, DOSE_MATRIX);
-            };
+                _local_6 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
+                _local_1.draw(_local_6, DOSE_MATRIX);
+            }
             var _local_3:Point = offsets(this.item_, type_, false);
             _local_4 = new Bitmap(_local_1);
             _local_4.x = (((WIDTH / 2) - (_local_4.width / 2)) + _local_3.x);
@@ -122,7 +123,7 @@ package com.company.assembleegameclient.ui
             else
             {
                 fill_.color = 0x545454;
-            };
+            }
             drawBackground();
         }
 
@@ -166,7 +167,7 @@ package com.company.assembleegameclient.ui
             if (!this.isEmpty())
             {
                 this.hoverTooltipDelegate.tooltip = this.equipmentToolTipFactory.make(this.item_, _arg_1, -1, InventoryOwnerTypes.OTHER_PLAYER, this.id);
-            };
+            }
         }
 
         public function isEmpty():Boolean

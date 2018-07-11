@@ -5,18 +5,21 @@
 
 package kabam.rotmg.account.steam.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import com.company.assembleegameclient.account.ui.Frame;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
 
-    public class SteamAccountDetailDialog extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+
+public class SteamAccountDetailDialog extends Sprite 
     {
 
         public var done:Signal;
@@ -75,7 +78,7 @@ package kabam.rotmg.account.steam.view
                 this.register_ = new DeprecatedClickableText(12, false, TextKey.STEAM_ACCOUNT_DETAIL_DIALOG_REGISTER);
                 this.register_.addEventListener(MouseEvent.CLICK, this.onRegister);
                 _local_4.addNavigationText(this.register_);
-            };
+            }
             _local_4.rightButton_.addEventListener(MouseEvent.CLICK, this.onContinue);
         }
 

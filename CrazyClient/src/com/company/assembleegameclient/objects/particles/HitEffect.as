@@ -1,13 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.HitEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import __AS3__.vec.Vector;
-
-    public class HitEffect extends ParticleEffect 
+public class HitEffect extends ParticleEffect 
     {
 
         public var colors_:Vector.<uint>;
@@ -32,7 +30,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.colors_.length == 0)
             {
                 return (false);
-            };
+            }
             var _local_6:Number = ((this.speed_ / 600) * Math.cos((this.angle_ + Math.PI)));
             var _local_7:Number = ((this.speed_ / 600) * Math.sin((this.angle_ + Math.PI)));
             while (_local_5 < this.numParts_)
@@ -41,7 +39,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_4 = new HitParticle(_local_3, 0.5, size_, (200 + (Math.random() * 100)), (_local_6 + ((Math.random() - 0.5) * 0.4)), (_local_7 + ((Math.random() - 0.5) * 0.4)), 0);
                 map_.addObj(_local_4, x_, y_);
                 _local_5++;
-            };
+            }
             return (false);
         }
 
@@ -53,7 +51,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.colors_.length == 0)
             {
                 return (false);
-            };
+            }
             var _local_6:Number = ((this.speed_ / 600) * Math.cos((this.angle_ + Math.PI)));
             var _local_7:Number = ((this.speed_ / 600) * Math.sin((this.angle_ + Math.PI)));
             this.numParts_ = (this.numParts_ * 0.2);
@@ -63,7 +61,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_4 = new HitParticle(_local_3, 0.5, 10, (5 + (Math.random() * 100)), (_local_6 + ((Math.random() - 0.5) * 0.4)), (_local_7 + ((Math.random() - 0.5) * 0.4)), 0);
                 map_.addObj(_local_4, x_, y_);
                 _local_5++;
-            };
+            }
             return (false);
         }
 
@@ -72,6 +70,7 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
+
 import flash.geom.Vector3D;
 
 class HitParticle extends Particle 
@@ -96,7 +95,7 @@ class HitParticle extends Particle
         if (this.timeLeft_ <= 0)
         {
             return (false);
-        };
+        }
         x_ = (x_ + ((this.moveVec_.x * _arg_2) * 0.008));
         y_ = (y_ + ((this.moveVec_.y * _arg_2) * 0.008));
         z_ = (z_ + ((this.moveVec_.z * _arg_2) * 0.008));

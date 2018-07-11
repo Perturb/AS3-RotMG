@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.logging.GameSpriteLoopWatch
 
 package kabam.rotmg.game.logging
 {
-    import kabam.lib.console.model.Watch;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import kabam.lib.console.model.Watch;
 
-    public class GameSpriteLoopWatch extends Watch 
+public class GameSpriteLoopWatch extends Watch 
     {
 
         private static const WATCH_PATTERN:String = "[{NAME}] [0x33FF33:{/x {MEAN}ms (min {MIN}ms, max {MAX}ms)]";
@@ -47,20 +45,20 @@ package kabam.rotmg.game.logging
                 this.rollingTotal = (this.rollingTotal - this.times[this.index]);
                 this.rollingTotal = (this.rollingTotal + _arg_1);
                 this.times[this.index] = _arg_1;
-            };
+            }
             if (++this.index == COUNT)
             {
                 this.index = 0;
-            };
+            }
             this.mean = (this.rollingTotal / this.count);
             if (_arg_1 > this.max)
             {
                 this.max = _arg_1;
-            };
+            }
             if (_arg_1 < this.min)
             {
                 this.min = _arg_1;
-            };
+            }
             data = WATCH_PATTERN.replace("{NAME}", name).replace("{MEAN}", this.mean).replace("{MIN}", this.min).replace("{MAX}", this.max);
         }
 

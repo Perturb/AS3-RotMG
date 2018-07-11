@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.BeginnersPackageOfferDialogMediator
 
 package kabam.rotmg.promotions.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
-    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
 
-    public class BeginnersPackageOfferDialogMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class BeginnersPackageOfferDialogMediator extends Mediator 
     {
 
         [Inject]

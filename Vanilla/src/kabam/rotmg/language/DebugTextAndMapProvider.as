@@ -5,13 +5,14 @@
 
 package kabam.rotmg.language
 {
-    import kabam.rotmg.text.model.TextAndMapProvider;
-    import kabam.rotmg.language.model.DebugStringMap;
-    import kabam.rotmg.text.view.DebugTextField;
-    import flash.text.TextField;
-    import kabam.rotmg.language.model.StringMap;
+import flash.text.TextField;
 
-    public class DebugTextAndMapProvider implements TextAndMapProvider 
+import kabam.rotmg.language.model.DebugStringMap;
+import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.text.view.DebugTextField;
+
+public class DebugTextAndMapProvider implements TextAndMapProvider
     {
 
         [Inject]

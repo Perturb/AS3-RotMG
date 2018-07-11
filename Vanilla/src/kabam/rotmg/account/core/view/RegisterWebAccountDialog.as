@@ -5,18 +5,21 @@
 
 package kabam.rotmg.account.core.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.web.model.AccountData;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.account.ui.CheckBoxField;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.util.EmailValidator;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.EmailValidator;
 
-    public class RegisterWebAccountDialog extends Frame 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class RegisterWebAccountDialog extends Frame
     {
 
         public var register:Signal = new Signal(AccountData);
@@ -88,7 +91,7 @@ package kabam.rotmg.account.core.view
                 _local_2.username = this.emailInput.text();
                 _local_2.password = this.passwordInput.text();
                 this.register.dispatch(_local_2);
-            };
+            }
         }
 
         private function isCheckboxChecked():Boolean
@@ -97,7 +100,7 @@ package kabam.rotmg.account.core.view
             if (!_local_1)
             {
                 this.checkbox.setError(TextKey.REGISTER_WEB_ACCOUNT_CHECK_ERROR);
-            };
+            }
             return (_local_1);
         }
 
@@ -107,7 +110,7 @@ package kabam.rotmg.account.core.view
             if (!_local_1)
             {
                 this.emailInput.setError(TextKey.INVALID_EMAIL_ADDRESS);
-            };
+            }
             return (_local_1);
         }
 
@@ -117,7 +120,7 @@ package kabam.rotmg.account.core.view
             if (!_local_1)
             {
                 this.passwordInput.setError(TextKey.REGISTER_WEB_SHORT_ERROR);
-            };
+            }
             return (_local_1);
         }
 
@@ -127,7 +130,7 @@ package kabam.rotmg.account.core.view
             if (!_local_1)
             {
                 this.retypePasswordInput.setError(TextKey.REGISTER_WEB_MATCH_ERROR);
-            };
+            }
             return (_local_1);
         }
 

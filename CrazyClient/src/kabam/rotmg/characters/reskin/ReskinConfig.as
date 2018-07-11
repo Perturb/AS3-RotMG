@@ -1,31 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.ReskinConfig
 
 package kabam.rotmg.characters.reskin
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.lib.net.api.MessageMap;
-    import kabam.rotmg.characters.reskin.view.ReskinCharacterView;
-    import kabam.rotmg.characters.reskin.view.ReskinCharacterMediator;
-    import kabam.rotmg.characters.reskin.view.ReskinPanel;
-    import kabam.rotmg.characters.reskin.view.ReskinPanelMediator;
-    import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionSignal;
-    import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionCommand;
-    import kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
-    import kabam.rotmg.characters.reskin.control.OpenReskinDialogCommand;
-    import kabam.rotmg.characters.reskin.control.ReskinCharacterSignal;
-    import kabam.rotmg.characters.reskin.control.ReskinCharacterCommand;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import kabam.rotmg.messaging.impl.outgoing.Reskin;
-    import kabam.rotmg.characters.reskin.control.ReskinHandler;
+import kabam.lib.net.api.MessageMap;
+import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionCommand;
+import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionSignal;
+import kabam.rotmg.characters.reskin.control.OpenReskinDialogCommand;
+import kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
+import kabam.rotmg.characters.reskin.control.ReskinCharacterCommand;
+import kabam.rotmg.characters.reskin.control.ReskinCharacterSignal;
+import kabam.rotmg.characters.reskin.control.ReskinHandler;
+import kabam.rotmg.characters.reskin.view.ReskinCharacterMediator;
+import kabam.rotmg.characters.reskin.view.ReskinCharacterView;
+import kabam.rotmg.characters.reskin.view.ReskinPanel;
+import kabam.rotmg.characters.reskin.view.ReskinPanelMediator;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.messaging.impl.outgoing.Reskin;
 
-    public class ReskinConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class ReskinConfig implements IConfig 
     {
 
         [Inject]

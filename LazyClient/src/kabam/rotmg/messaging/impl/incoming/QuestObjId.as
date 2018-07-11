@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class QuestObjId extends IncomingMessage 
+public class QuestObjId extends IncomingMessage
     {
 
         public var objectId_:int;

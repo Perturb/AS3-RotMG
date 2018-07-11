@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.RegisterPromptDialogMediator
 
 package kabam.rotmg.account.core.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class RegisterPromptDialogMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class RegisterPromptDialogMediator extends Mediator 
     {
 
         [Inject]

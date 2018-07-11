@@ -7,8 +7,6 @@ package kabam.rotmg.ui.view.components
 	{
 		public function MapBackground_EMBEDDED_BACKGROUNDMAP()
 		{
-			super();
-			return;
 		}
 	}
 }

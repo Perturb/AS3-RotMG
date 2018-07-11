@@ -1,25 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.tutorial.Tutorial
 
 package com.company.assembleegameclient.tutorial
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import kabam.rotmg.assets.EmbeddedData;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.getTimer;
-    import flash.filters.BlurFilter;
-    import com.company.util.PointUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.util.PointUtil;
 
-    public class Tutorial extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.BlurFilter;
+import flash.utils.getTimer;
+
+import kabam.rotmg.assets.EmbeddedData;
+
+public class Tutorial extends Sprite
     {
 
         public static const NEXT_ACTION:String = "Next";
@@ -57,7 +57,7 @@ package com.company.assembleegameclient.tutorial
             for each (_local_2 in EmbeddedData.tutorialXML.Step)
             {
                 this.steps_.push(new Step(_local_2));
-            };
+            }
             addChild(this.boxesBack_);
             addChild(this.boxes_);
             _local_3 = this.darkBox_.graphics;
@@ -110,24 +110,24 @@ package com.company.assembleegameclient.tutorial
                             _local_9 = false;
                             for each (_local_10 in this.gs_.map.goDict_)
                             {
-                                if (!((!(_local_10.objectType_ == _local_4.objectType_)) || ((!(_local_4.objectName_ == "")) && (!(_local_10.name_ == _local_4.objectName_)))))
+                                if ((!((!(_local_10.objectType_ == _local_4.objectType_)) || ((!(_local_4.objectName_ == "")) && (!(_local_10.name_ == _local_4.objectName_))))))
                                 {
                                     _local_11 = PointUtil.distanceXY(_local_10.x_, _local_10.y_, _local_8.x_, _local_8.y_);
                                     if (_local_11 <= _local_4.radius_)
                                     {
                                         _local_9 = true;
                                         break;
-                                    };
-                                };
-                            };
-                            if (!_local_9)
+                                    }
+                                }
+                            }
+                            if ((!(_local_9)))
                             {
                                 _local_3 = false;
-                            };
+                            }
                             break;
-                    };
-                };
-                if (!_local_3)
+                    }
+                }
+                if ((!(_local_3)))
                 {
                     _local_2.satisfiedSince_ = 0;
                 }
@@ -136,21 +136,21 @@ package com.company.assembleegameclient.tutorial
                     if (_local_2.satisfiedSince_ == 0)
                     {
                         _local_2.satisfiedSince_ = getTimer();
-                    };
+                    }
                     _local_5 = (getTimer() - _local_2.satisfiedSince_);
                     for each (_local_6 in _local_2.uiDrawBoxes_)
                     {
                         _local_6.draw((5 * _local_13), this.boxes_.graphics, _local_5);
                         _local_6.draw((6 * _local_13), this.boxesBack_.graphics, _local_5);
-                    };
+                    }
                     for each (_local_7 in _local_2.uiDrawArrows_)
                     {
                         _local_7.draw((5 * _local_13), this.boxes_.graphics, _local_5);
                         _local_7.draw((6 * _local_13), this.boxesBack_.graphics, _local_5);
-                    };
-                };
+                    }
+                }
                 _local_12++;
-            };
+            }
         }
 
         public function doneAction(_arg_1:String):void
@@ -163,12 +163,12 @@ package com.company.assembleegameclient.tutorial
             if (this.currStepId_ >= this.steps_.length)
             {
                 return;
-            };
+            }
             var _local_7:Step = this.steps_[this.currStepId_];
             if (_arg_1 != _local_7.action_)
             {
                 return;
-            };
+            }
             for each (_local_2 in _local_7.reqs_)
             {
                 _local_3 = this.gs_.map.player_;
@@ -185,22 +185,22 @@ package com.company.assembleegameclient.tutorial
                                 {
                                     _local_4 = true;
                                     break;
-                                };
-                            };
-                        };
-                        if (!_local_4)
+                                }
+                            }
+                        }
+                        if ((!(_local_4)))
                         {
                             return;
-                        };
+                        }
                         break;
                     case EQUIP_REQUIREMENT:
                         if (_local_3.equipment_[_local_2.slot_] != _local_2.objectType_)
                         {
                             return;
-                        };
+                        }
                         break;
-                };
-            };
+                }
+            }
             this.currStepId_++;
             this.draw();
         }

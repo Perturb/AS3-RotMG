@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class ImageFactory 
+import flash.display.BitmapData;
+
+public class ImageFactory
     {
 
 
@@ -28,7 +29,7 @@ package com.company.assembleegameclient.objects
                 _local_4 = ((_arg_2 - TextureRedrawer.minSize) / _local_3.width);
                 _local_5 = ObjectLibrary.getRedrawnTextureFromType(_arg_1, 100, true, false, _local_4);
                 return (_local_5);
-            };
+            }
             return (new BitmapDataSpy(_arg_2, _arg_2));
         }
 

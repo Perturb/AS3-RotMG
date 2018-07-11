@@ -5,32 +5,32 @@
 
 package com.company.assembleegameclient.map.mapoverlay
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.text.TextField;
-    import flash.geom.Point;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormat;
-    import flash.display.GraphicsPathCommand;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.ui.model.HUDModel;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.GraphicsUtil;
 
-    public class SpeechBalloon extends Sprite implements IMapOverlayElement 
+import flash.display.CapsStyle;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsPathCommand;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Point;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.ui.model.HUDModel;
+
+public class SpeechBalloon extends Sprite implements IMapOverlayElement
     {
 
         public var go_:GameObject;
@@ -116,13 +116,13 @@ package com.company.assembleegameclient.map.mapoverlay
                         if (((((this.isTrade) && (!(this.senderName == null))) && (!(this.senderName == ""))) && (!(hmod.gameSprite.map.player_.name_ == this.senderName))))
                         {
                             hmod.gameSprite.addChatPlayerMenu(null, e.stageX, e.stageY, this.senderName, false, true);
-                        };
-                    };
-                };
+                        }
+                    }
+                }
             }
             catch(e:Error)
             {
-            };
+            }
         }
 
         public function draw(_arg_1:Camera, _arg_2:int):Boolean
@@ -130,22 +130,22 @@ package com.company.assembleegameclient.map.mapoverlay
             if (this.startTime_ == 0)
             {
                 this.startTime_ = _arg_2;
-            };
+            }
             var _local_3:int = (_arg_2 - this.startTime_);
             if (((_local_3 > this.lifetime_) || ((!(this.go_ == null)) && (this.go_.map_ == null))))
             {
                 return (false);
-            };
+            }
             if (((this.go_ == null) || (!(this.go_.drawn_))))
             {
                 visible = false;
                 return (true);
-            };
+            }
             if (((this.hideable_) && (!(Parameters.data_.textBubbles))))
             {
                 visible = false;
                 return (true);
-            };
+            }
             visible = true;
             x = int((this.go_.posS_[0] + this.offset_.x));
             y = int((this.go_.posS_[1] + this.offset_.y));

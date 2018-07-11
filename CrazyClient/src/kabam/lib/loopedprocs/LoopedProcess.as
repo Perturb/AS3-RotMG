@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.loopedprocs.LoopedProcess
 
 package kabam.lib.loopedprocs
 {
-    import flash.utils.Dictionary;
-    import flash.utils.getTimer;
+import flash.utils.Dictionary;
+import flash.utils.getTimer;
 
-    public class LoopedProcess 
+public class LoopedProcess 
     {
 
         private static var maxId:uint;
@@ -29,7 +29,7 @@ package kabam.lib.loopedprocs
             if (loopProcs[_arg_1.id] == _arg_1)
             {
                 return (_arg_1.id);
-            };
+            }
             var _local_2:int = ++maxId;
             loopProcs[_local_2] = _arg_1;
             _arg_1.lastRun = getTimer();
@@ -42,16 +42,16 @@ package kabam.lib.loopedprocs
             var _local_3:int;
             for each (_local_2 in loopProcs)
             {
-                if (!_local_2.paused)
+                if ((!(_local_2.paused)))
                 {
                     _local_3 = (_arg_1 - _local_2.lastRun);
                     if (_local_3 >= _local_2.interval)
                     {
                         _local_2.lastRun = _arg_1;
                         _local_2.run();
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public static function destroyProcess(_arg_1:LoopedProcess):void
@@ -66,7 +66,7 @@ package kabam.lib.loopedprocs
             for each (_local_1 in loopProcs)
             {
                 _local_1.destroy();
-            };
+            }
             loopProcs = new Dictionary();
         }
 

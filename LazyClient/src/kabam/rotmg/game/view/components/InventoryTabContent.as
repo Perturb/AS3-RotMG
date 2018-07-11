@@ -5,13 +5,15 @@
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-    import kabam.rotmg.ui.view.PotionInventoryView;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.ui.model.TabStripModel;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
 
-    public class InventoryTabContent extends Sprite 
+import flash.display.Sprite;
+
+import kabam.rotmg.ui.model.TabStripModel;
+import kabam.rotmg.ui.view.PotionInventoryView;
+
+public class InventoryTabContent extends Sprite
     {
 
         private var storageContent:Sprite = new Sprite();

@@ -1,20 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.partyoverlay.PartyOverlay
 
 package com.company.assembleegameclient.map.partyoverlay
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.map.Map;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.Party;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.Party;
+import com.company.assembleegameclient.objects.Player;
 
-    public class PartyOverlay extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+public class PartyOverlay extends Sprite
     {
 
         public var map_:Map;
@@ -34,7 +33,7 @@ package com.company.assembleegameclient.map.partyoverlay
                 this.partyMemberArrows_[_local_3] = _local_2;
                 addChild(_local_2);
                 _local_3++;
-            };
+            }
             this.questArrow_ = new QuestArrow(this.map_);
             addChild(this.questArrow_);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
@@ -57,13 +56,13 @@ package com.company.assembleegameclient.map.partyoverlay
             if (this.map_.player_ == null)
             {
                 return;
-            };
+            }
             var _local_10:Party = this.map_.party_;
             var _local_11:Player = this.map_.player_;
             while (_local_9 < Party.NUM_MEMBERS)
             {
                 _local_3 = this.partyMemberArrows_[_local_9];
-                if (!_local_3.mouseOver_)
+                if ((!(_local_3.mouseOver_)))
                 {
                     if (_local_9 >= _local_10.members_.length)
                     {
@@ -87,25 +86,25 @@ package com.company.assembleegameclient.map.partyoverlay
                                 _local_8 = (_local_3.y - _local_6.y);
                                 if (((_local_7 * _local_7) + (_local_8 * _local_8)) < 64)
                                 {
-                                    if (!_local_6.mouseOver_)
+                                    if ((!(_local_6.mouseOver_)))
                                     {
                                         _local_6.addGameObject(_local_4);
-                                    };
+                                    }
                                     _local_3.setGameObject(null);
                                     break;
-                                };
+                                }
                                 _local_5++;
-                            };
+                            }
                             _local_3.draw(_arg_2, _arg_1);
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 _local_9++;
-            };
-            if (!this.questArrow_.mouseOver_)
+            }
+            if ((!(this.questArrow_.mouseOver_)))
             {
                 this.questArrow_.draw(_arg_2, _arg_1);
-            };
+            }
         }
 
 

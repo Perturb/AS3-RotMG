@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.impl.LocalhostSetup
 
 package kabam.rotmg.application.impl
 {
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class LocalhostSetup implements ApplicationSetup 
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class LocalhostSetup implements ApplicationSetup 
     {
 
         private const SERVER:String = "http://localhost:8080";
@@ -64,6 +65,11 @@ package kabam.rotmg.application.impl
         public function isDebug():Boolean
         {
             return (true);
+        }
+
+        public function getServerDomain():String
+        {
+            return ("localhost");
         }
 
 

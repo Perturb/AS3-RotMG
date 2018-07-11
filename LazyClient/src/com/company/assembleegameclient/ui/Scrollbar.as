@@ -5,21 +5,20 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.geom.Rectangle;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import flash.display.Graphics;
-    import flash.geom.ColorTransform;
-    import flash.utils.getTimer;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
 
-    public class Scrollbar extends Sprite 
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.geom.Rectangle;
+import flash.utils.getTimer;
+
+public class Scrollbar extends Sprite 
     {
 
         private var width_:int;
@@ -85,7 +84,7 @@ package com.company.assembleegameclient.ui
             if (_arg_3)
             {
                 this.setPos(0);
-            };
+            }
         }
 
         public function setPos(_arg_1:Number):void
@@ -93,7 +92,7 @@ package com.company.assembleegameclient.ui
             if (((_arg_1 == Number.POSITIVE_INFINITY) || (_arg_1 == Number.NEGATIVE_INFINITY)))
             {
                 return;
-            };
+            }
             _arg_1 = Math.max(0, Math.min(1, _arg_1));
             this.posIndicator_.y = ((_arg_1 * (this.indicatorRect_.height - this.posIndicator_.height)) + this.indicatorRect_.y);
             this.sendPos();
@@ -139,7 +138,7 @@ package com.company.assembleegameclient.ui
             else
             {
                 this.jumpDown();
-            };
+            }
         }
 
         protected function onAddedToStage(_arg_1:Event):void
@@ -157,8 +156,8 @@ package com.company.assembleegameclient.ui
                 else
                 {
                     WebMain.STAGE.addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                };
-            };
+                }
+            }
         }
 
         protected function onRemovedFromStage(_arg_1:Event):void
@@ -176,8 +175,8 @@ package com.company.assembleegameclient.ui
                 else
                 {
                     WebMain.STAGE.removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                };
-            };
+                }
+            }
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
@@ -195,8 +194,8 @@ package com.company.assembleegameclient.ui
                 if (_arg_1.delta < 0)
                 {
                     this.jumpDown();
-                };
-            };
+                }
+            }
         }
 
         private function onUpArrowDown(_arg_1:MouseEvent):void

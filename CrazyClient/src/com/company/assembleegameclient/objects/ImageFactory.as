@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.ImageFactory
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class ImageFactory 
+import flash.display.BitmapData;
+
+public class ImageFactory
     {
 
 
@@ -27,7 +28,7 @@ package com.company.assembleegameclient.objects
             {
                 _local_3 = ((_arg_2 - TextureRedrawer.minSize) / _local_5.width);
                 return (ObjectLibrary.getRedrawnTextureFromType(_arg_1, 100, true, false, _local_3));
-            };
+            }
             return (new BitmapDataSpy(_arg_2, _arg_2));
         }
 

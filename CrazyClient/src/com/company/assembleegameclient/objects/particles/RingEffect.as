@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.RingEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class RingEffect extends ParticleEffect 
+import flash.geom.Point;
+
+public class RingEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -42,7 +43,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_6 = new SparkerParticle(_local_7, this.color_, _local_10, _local_5, _local_4);
                 map_.addObj(_local_6, x_, y_);
                 _local_8++;
-            };
+            }
             return (false);
         }
 
@@ -66,7 +67,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_6 = new SparkerParticle(_local_7, this.color_, _local_10, _local_5, _local_4);
                 map_.addObj(_local_6, x_, y_);
                 _local_8++;
-            };
+            }
             return (false);
         }
 

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.tasks.BaseTask
 
 package kabam.lib.tasks
 {
-    import flash.errors.IllegalOperationError;
-    import org.osflash.signals.Signal;
+import flash.errors.IllegalOperationError;
 
-    public class BaseTask implements Task 
+import org.osflash.signals.Signal;
+
+public class BaseTask implements Task 
     {
 
         private var _started:TaskStartedSignal;
@@ -22,12 +23,12 @@ package kabam.lib.tasks
 
         final public function start():void
         {
-            if (!this._isStarted)
+            if ((!(this._isStarted)))
             {
                 this._isStarted = true;
                 ((this._started) && (this._started.dispatch(this)));
                 this.startTask();
-            };
+            }
         }
 
         final public function reset():void
@@ -35,11 +36,11 @@ package kabam.lib.tasks
             if (this._isStarted)
             {
                 this._isStarted = false;
-                if (!this._isFinished)
+                if ((!(this._isFinished)))
                 {
                     throw (new IllegalOperationError("Unable to Task.reset() when a task is ongoing"));
-                };
-            };
+                }
+            }
             ((this._started) && (this._started.removeAll()));
             ((this._finished) && (this._finished.removeAll()));
             ((this._lastly) && (this._lastly.removeAll()));

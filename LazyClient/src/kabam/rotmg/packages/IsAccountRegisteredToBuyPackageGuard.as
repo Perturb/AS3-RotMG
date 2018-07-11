@@ -5,9 +5,9 @@
 
 package kabam.rotmg.packages
 {
-    import kabam.rotmg.account.core.control.IsAccountRegisteredGuard;
+import kabam.rotmg.account.core.control.IsAccountRegisteredGuard;
 
-    public class IsAccountRegisteredToBuyPackageGuard extends IsAccountRegisteredGuard 
+public class IsAccountRegisteredToBuyPackageGuard extends IsAccountRegisteredGuard
     {
 
 

@@ -1,20 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.GameObjectListItem;
 
-    public class PlayerGroupToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class PlayerGroupToolTip extends ToolTip
     {
 
         public var players_:Vector.<Player> = null;
@@ -29,10 +29,10 @@ package com.company.assembleegameclient.ui.tooltip
             this.clickMessage_.filters = [new DropShadowFilter(0, 0, 0)];
             addChild(this.clickMessage_);
             this.setPlayers(_arg_1);
-            if (!_arg_2)
+            if ((!(_arg_2)))
             {
                 filters = [];
-            };
+            }
             waiter.push(this.clickMessage_.textChanged);
         }
 
@@ -46,7 +46,7 @@ package com.company.assembleegameclient.ui.tooltip
             if (((this.players_ == null) || (this.players_.length == 0)))
             {
                 return;
-            };
+            }
             for each (_local_2 in _arg_1)
             {
                 _local_3 = new GameObjectListItem(0xB3B3B3, true, _local_2);
@@ -56,7 +56,7 @@ package com.company.assembleegameclient.ui.tooltip
                 this.playerPanels_.push(_local_3);
                 _local_3.textReady.addOnce(this.onTextChanged);
                 _local_4 = (_local_4 + 32);
-            };
+            }
             this.clickMessage_.x = ((width / 2) - (this.clickMessage_.width / 2));
             this.clickMessage_.y = _local_4;
             draw();
@@ -70,7 +70,7 @@ package com.company.assembleegameclient.ui.tooltip
             for each (_local_1 in this.playerPanels_)
             {
                 _local_1.textReady.remove(this.onTextChanged);
-            };
+            }
         }
 
         private function clear():void
@@ -80,7 +80,7 @@ package com.company.assembleegameclient.ui.tooltip
             for each (_local_1 in this.playerPanels_)
             {
                 removeChild(_local_1);
-            };
+            }
             this.playerPanels_.length = 0;
         }
 

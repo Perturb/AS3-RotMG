@@ -5,11 +5,9 @@
 
 package kabam.rotmg.arena.model
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.*;
+import kabam.rotmg.text.model.TextKey;
 
-    public class ArenaLeaderboardModel 
+public class ArenaLeaderboardModel
     {
 
         public static const FILTERS:Vector.<ArenaLeaderboardFilter> = Vector.<ArenaLeaderboardFilter>([new ArenaLeaderboardFilter(TextKey.ARENA_LEADERBOARD_ALLTIME, "alltime"), new ArenaLeaderboardFilter(TextKey.ARENA_LEADERBOARD_WEEKLY, "weekly"), new ArenaLeaderboardFilter(TextKey.ARENA_LEADERBOARD_YOURRANK, "personal")]);
@@ -21,7 +19,7 @@ package kabam.rotmg.arena.model
             for each (_local_1 in FILTERS)
             {
                 _local_1.clearEntries();
-            };
+            }
         }
 
 

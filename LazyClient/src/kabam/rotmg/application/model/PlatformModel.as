@@ -5,12 +5,11 @@
 
 package kabam.rotmg.application.model
 {
-    import flash.display.DisplayObjectContainer;
-    import flash.system.Capabilities;
-    import flash.display.LoaderInfo;
-    import kabam.rotmg.application.*;
+import flash.display.DisplayObjectContainer;
+import flash.display.LoaderInfo;
+import flash.system.Capabilities;
 
-    public class PlatformModel 
+public class PlatformModel 
     {
 
         private static var platform:PlatformType;
@@ -42,15 +41,15 @@ package kabam.rotmg.application.model
             if (this.isKongregate(_local_1))
             {
                 return (PlatformType.KONGREGATE);
-            };
+            }
             if (this.isSteam(_local_1))
             {
                 return (PlatformType.STEAM);
-            };
+            }
             if (this.isKabam(_local_1))
             {
                 return (PlatformType.KABAM);
-            };
+            }
             return (PlatformType.WEB);
         }
 

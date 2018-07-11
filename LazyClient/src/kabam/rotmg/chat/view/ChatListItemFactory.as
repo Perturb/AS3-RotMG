@@ -5,26 +5,26 @@
 
 package kabam.rotmg.chat.view
 {
-    import flash.geom.Matrix;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.text.TextField;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.text.model.FontModel;
-    import com.company.assembleegameclient.util.StageProxy;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import __AS3__.vec.Vector;
-    import flash.display.DisplayObject;
-    import flash.text.TextFormat;
-    import com.company.assembleegameclient.util.FameUtil;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.display.BitmapData;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.display.Bitmap;
-    import flash.display.StageQuality;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.assembleegameclient.util.StageProxy;
 
-    public class ChatListItemFactory 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.StageQuality;
+import flash.geom.Matrix;
+import flash.text.TextField;
+import flash.text.TextFormat;
+
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ChatListItemFactory
     {
 
         private static const IDENTITY_MATRIX:Matrix = new Matrix();
@@ -93,10 +93,10 @@ package kabam.rotmg.chat.view
                     if (_arg_1.text.charAt(_local_8) == '"') break;
                     _local_7 = (_local_7 + _arg_1.text.charAt(_local_8));
                     _local_8++;
-                };
+                }
                 _local_6 = _local_7;
                 _local_4 = true;
-            };
+            }
             return (new ChatListItem(this.buffer, this.model.bounds.width, this.model.lineHeight, _arg_2, _arg_1.objectId, _local_6, (_arg_1.recipient == GUILD), _local_4));
         }
 
@@ -106,7 +106,7 @@ package kabam.rotmg.chat.view
             if (_local_1 >= 0)
             {
                 this.buffer.push(FameUtil.numStarsToIcon(_local_1));
-            };
+            }
         }
 
         private function makeWhisperText():void
@@ -118,7 +118,7 @@ package kabam.rotmg.chat.view
                 _local_1 = new StaticStringBuilder("To: ");
                 _local_2 = this.getBitmapData(_local_1, 61695);
                 this.buffer.push(new Bitmap(_local_2));
-            };
+            }
         }
 
         private function makeNameText():void
@@ -126,7 +126,7 @@ package kabam.rotmg.chat.view
             if (!this.isSpecialMessageType())
             {
                 this.bufferNameText();
-            };
+            }
         }
 
         private function isSpecialMessageType():Boolean
@@ -148,7 +148,7 @@ package kabam.rotmg.chat.view
             if (((_local_1.charAt(0) == "#") || (_local_1.charAt(0) == "@")))
             {
                 _local_1 = _local_1.substr(1);
-            };
+            }
             return (("<" + _local_1) + ">");
         }
 
@@ -164,8 +164,8 @@ package kabam.rotmg.chat.view
                 {
                     this.makeNewLineFreeMessageText(_local_1[_local_2], false);
                     _local_2++;
-                };
-            };
+                }
+            }
         }
 
         private function makeNewLineFreeMessageText(_arg_1:String, _arg_2:Boolean):void
@@ -183,21 +183,21 @@ package kabam.rotmg.chat.view
                 for each (_local_7 in this.buffer)
                 {
                     _local_4 = (_local_4 + _local_7.width);
-                };
+                }
                 _local_5 = _local_3.length;
                 testField.text = _local_3;
                 while (testField.textWidth >= (this.model.bounds.width - _local_4))
                 {
                     _local_5 = (_local_5 - 10);
                     testField.text = _local_3.substr(0, _local_5);
-                };
+                }
                 if (_local_5 < _local_3.length)
                 {
                     _local_8 = _local_3.substr(0, _local_5).lastIndexOf(" ");
                     _local_5 = (((_local_8 == 0) || (_local_8 == -1)) ? _local_5 : (_local_8 + 1));
-                };
+                }
                 this.makeMessageLine(_local_3.substr(0, _local_5));
-            };
+            }
             var _local_6:int = _local_3.length;
             if (_local_6 > _local_5)
             {
@@ -210,17 +210,17 @@ package kabam.rotmg.chat.view
                     {
                         _local_9 = (_local_9 - 2);
                         testField.text = _local_3.substr(_local_10, _local_9);
-                    };
+                    }
                     _local_11 = _local_9;
                     if (_local_3.length > (_local_10 + _local_9))
                     {
                         _local_11 = _local_3.substr(_local_10, _local_9).lastIndexOf(" ");
                         _local_11 = (((_local_11 == 0) || (_local_11 == -1)) ? _local_9 : (_local_11 + 1));
-                    };
+                    }
                     this.makeMessageLine(_local_3.substr(_local_10, _local_11));
                     _local_10 = (_local_10 + _local_11);
-                };
-            };
+                }
+            }
         }
 
         private function makeMessageLine(_arg_1:String):void
@@ -235,19 +235,19 @@ package kabam.rotmg.chat.view
             if (this.message.name.charAt(0) == "#")
             {
                 return (0xFFA800);
-            };
+            }
             if (this.message.name.charAt(0) == "@")
             {
                 return (0xFFFF00);
-            };
+            }
             if (this.message.recipient == GUILD)
             {
                 return (10944349);
-            };
+            }
             if (this.message.recipient != "")
             {
                 return (61695);
-            };
+            }
             return (0xFF00);
         }
 
@@ -257,31 +257,31 @@ package kabam.rotmg.chat.view
             if (_local_1 == SERVER)
             {
                 return (0xFFFF00);
-            };
+            }
             if (_local_1 == CLIENT)
             {
                 return (0xFF);
-            };
+            }
             if (_local_1 == HELP)
             {
                 return (16734981);
-            };
+            }
             if (_local_1 == ERROR)
             {
                 return (0xFF0000);
-            };
+            }
             if (_local_1.charAt(0) == "@")
             {
                 return (0xFFFF00);
-            };
+            }
             if (this.message.recipient == GUILD)
             {
                 return (10944349);
-            };
+            }
             if (this.message.recipient != "")
             {
                 return (61695);
-            };
+            }
             return (0xFFFFFF);
         }
 

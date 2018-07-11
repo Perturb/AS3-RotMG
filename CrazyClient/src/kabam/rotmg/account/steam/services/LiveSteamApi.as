@@ -1,20 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.LiveSteamApi
 
 package kabam.rotmg.account.steam.services
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.account.steam.SteamApi;
-    import org.osflash.signals.Signal;
-    import robotlegs.bender.framework.api.ILogger;
-    import flash.display.Loader;
-    import flash.events.Event;
-    import flash.net.URLRequest;
-    import org.osflash.signals.OnceSignal;
+import flash.display.Loader;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.net.URLRequest;
 
-    public class LiveSteamApi extends Sprite implements SteamApi 
+import kabam.rotmg.account.steam.SteamApi;
+
+import org.osflash.signals.OnceSignal;
+import org.osflash.signals.Signal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class LiveSteamApi extends Sprite implements SteamApi 
     {
 
         private const _loaded:Signal = new Signal();

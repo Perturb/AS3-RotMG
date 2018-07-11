@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo
 
 package io.decagames.rotmg.shop.genericBox.data
 {
-    import com.company.assembleegameclient.util.TimeUtil;
-    import io.decagames.rotmg.utils.date.TimeLeft;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class GenericBoxInfo 
+import io.decagames.rotmg.utils.date.TimeLeft;
+
+public class GenericBoxInfo
     {
 
         protected var _id:String;
@@ -202,10 +203,10 @@ package io.decagames.rotmg.shop.genericBox.data
 
         public function getSecondsToEnd():Number
         {
-            if (!this._endTime)
+            if ((!(this._endTime)))
             {
                 return (int.MAX_VALUE);
-            };
+            }
             var _local_1:Date = new Date();
             return ((this._endTime.time - _local_1.time) / 1000);
         }
@@ -217,7 +218,7 @@ package io.decagames.rotmg.shop.genericBox.data
             {
                 _local_1 = new Date();
                 return (_local_1.time < this._saleEnd.time);
-            };
+            }
             return (false);
         }
 
@@ -229,16 +230,16 @@ package io.decagames.rotmg.shop.genericBox.data
 
         public function getEndTimeString():String
         {
-            if (!this._endTime)
+            if ((!(this._endTime)))
             {
                 return ("");
-            };
+            }
             var _local_1:* = "Ends in: ";
             var _local_2:Number = this.getSecondsToEnd();
             if (_local_2 <= 0)
             {
                 return ("");
-            };
+            }
             if (_local_2 > TimeUtil.DAY_IN_S)
             {
                 _local_1 = (_local_1 + TimeLeft.parse(_local_2, "%dd %hh"));
@@ -252,8 +253,8 @@ package io.decagames.rotmg.shop.genericBox.data
                 else
                 {
                     _local_1 = (_local_1 + TimeLeft.parse(_local_2, "%mm %ss"));
-                };
-            };
+                }
+            }
             return (_local_1);
         }
 

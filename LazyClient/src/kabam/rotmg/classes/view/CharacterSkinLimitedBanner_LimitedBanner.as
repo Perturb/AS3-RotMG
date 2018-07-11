@@ -7,8 +7,6 @@ package kabam.rotmg.classes.view
 	{
 		public function CharacterSkinLimitedBanner_LimitedBanner()
 		{
-			super();
-			return;
 		}
 	}
 }

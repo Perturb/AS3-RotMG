@@ -5,9 +5,9 @@
 
 package com.company.util
 {
-    import flash.system.Capabilities;
+import flash.system.Capabilities;
 
-    public class CapabilitiesUtil 
+public class CapabilitiesUtil 
     {
 
 

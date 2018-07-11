@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.servers.api.Server
@@ -57,11 +57,11 @@ package kabam.rotmg.servers.api
             if (this.isAdminOnly)
             {
                 return (2);
-            };
+            }
             if (this.isCrowded())
             {
                 return (1);
-            };
+            }
             return (0);
         }
 

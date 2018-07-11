@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.TextPanelMediator
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.game.model.TextPanelData;
+import kabam.rotmg.game.model.TextPanelData;
 
-    public class TextPanelMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TextPanelMediator extends Mediator
     {
 
         [Inject]

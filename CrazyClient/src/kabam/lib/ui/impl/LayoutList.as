@@ -1,23 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.ui.impl.LayoutList
 
 package kabam.lib.ui.impl
 {
-    import flash.display.Sprite;
-    import kabam.lib.ui.api.List;
-    import kabam.lib.ui.api.Layout;
-    import kabam.lib.ui.api.Size;
-    import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import flash.display.DisplayObject;
-    import flash.display.Shape;
-    import flash.geom.Rectangle;
-    import flash.display.Graphics;
-    import __AS3__.vec.*;
+import flash.display.DisplayObject;
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.geom.Rectangle;
 
-    public class LayoutList extends Sprite implements List 
+import kabam.lib.ui.api.Layout;
+import kabam.lib.ui.api.List;
+import kabam.lib.ui.api.Size;
+
+import org.osflash.signals.Signal;
+
+public class LayoutList extends Sprite implements List 
     {
 
         private static const NULL_LAYOUT:Layout = new NullLayout();
@@ -108,7 +108,7 @@ package kabam.lib.ui.impl
             while (_local_1--)
             {
                 this.container.removeChild(this.list[_local_1]);
-            };
+            }
             this.list.length = 0;
         }
 
@@ -118,7 +118,7 @@ package kabam.lib.ui.impl
             for each (_local_2 in _arg_1)
             {
                 this.addToListAndContainer(_local_2);
-            };
+            }
         }
 
         private function addToListAndContainer(_arg_1:DisplayObject):void

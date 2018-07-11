@@ -5,26 +5,26 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import flash.display.Graphics;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
 
-    public class ChoiceBox extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ChoiceBox extends Sprite
     {
 
         public static const WIDTH:int = 80;
@@ -72,17 +72,17 @@ package com.company.assembleegameclient.ui.options
                     if (_local_3 == this.selectedIndex_)
                     {
                         return;
-                    };
+                    }
                     this.selectedIndex_ = _local_3;
                     break;
-                };
+                }
                 _local_3++;
-            };
+            }
             this.setSelected(this.selectedIndex_);
             if (_arg_2)
             {
                 dispatchEvent(new Event(Event.CHANGE));
-            };
+            }
         }
 
         public function value():*
@@ -125,7 +125,7 @@ package com.company.assembleegameclient.ui.options
             if (((this.selectedIndex_ < 0) || (this.selectedIndex_ >= this.labels_.length)))
             {
                 this.selectedIndex_ = 0;
-            };
+            }
             this.setText(this.labels_[this.selectedIndex_]);
         }
 

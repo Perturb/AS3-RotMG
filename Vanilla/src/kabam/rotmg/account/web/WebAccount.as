@@ -5,13 +5,15 @@
 
 package kabam.rotmg.account.web
 {
-    import kabam.rotmg.account.core.Account;
-    import flash.external.ExternalInterface;
-    import com.company.assembleegameclient.util.GUID;
-    import flash.net.SharedObject;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.GUID;
 
-    public class WebAccount implements Account 
+import flash.external.ExternalInterface;
+import flash.net.SharedObject;
+
+import kabam.rotmg.account.core.Account;
+
+public class WebAccount implements Account
     {
 
         public static const NETWORK_NAME:String = "rotmg";
@@ -39,7 +41,7 @@ package kabam.rotmg.account.web
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function getUserName():String
@@ -90,11 +92,11 @@ package kabam.rotmg.account.web
                     _local_4.data["Token"] = _arg_3;
                     _local_4.data["Password"] = _arg_2;
                     _local_4.flush();
-                };
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function clear():void

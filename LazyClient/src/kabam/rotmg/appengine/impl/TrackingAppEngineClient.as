@@ -5,13 +5,15 @@
 
 package kabam.rotmg.appengine.impl
 {
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import org.osflash.signals.OnceSignal;
-    import flash.utils.getTimer;
-    import kabam.rotmg.core.service.TrackingData;
+import flash.utils.getTimer;
 
-    public class TrackingAppEngineClient implements AppEngineClient 
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TrackEventSignal;
+
+import org.osflash.signals.OnceSignal;
+
+public class TrackingAppEngineClient implements AppEngineClient 
     {
 
         [Inject]
@@ -55,8 +57,7 @@ package kabam.rotmg.appengine.impl
             var _local_3:TrackingData = new TrackingData();
             _local_3.category = "AppEngineResponseTime";
             _local_3.action = this.target;
-            _local_3.value = (this.time - getTimer());
-            this.track.dispatch(_local_3);
+            _local_3.value = (getTimer() - this.time);
         }
 
         public function requestInProgress():Boolean

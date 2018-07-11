@@ -1,31 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.EditBoard
 
 package com.company.assembleegameclient.ui.board
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import flash.events.Event;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.ui.Scrollbar;
+import com.company.ui.BaseSimpleText;
+import com.company.util.GraphicsUtil;
 
-    public class EditBoard extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class EditBoard extends Sprite 
     {
 
         public static const TEXT_WIDTH:int = 400;
@@ -125,7 +125,7 @@ package com.company.assembleegameclient.ui.board
             if (this.scrollBar_ == null)
             {
                 return;
-            };
+            }
             this.scrollBar_.setIndicatorSize(TEXT_HEIGHT, this.boardText_.textHeight, false);
             if (this.boardText_.maxScrollV == 1)
             {
@@ -134,7 +134,7 @@ package com.company.assembleegameclient.ui.board
             else
             {
                 this.scrollBar_.setPos(((this.boardText_.scrollV - 1) / (this.boardText_.maxScrollV - 1)));
-            };
+            }
         }
 
 

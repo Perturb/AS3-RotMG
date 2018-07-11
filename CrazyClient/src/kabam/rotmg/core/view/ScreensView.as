@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.ScreensView
 
 package kabam.rotmg.core.view
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class ScreensView extends Sprite 
+public class ScreensView extends Sprite
     {
 
         private var current:Sprite;
@@ -19,7 +19,7 @@ package kabam.rotmg.core.view
             if (this.current == _arg_1)
             {
                 return;
-            };
+            }
             this.removePrevious();
             this.current = _arg_1;
             addChild(_arg_1);
@@ -31,7 +31,7 @@ package kabam.rotmg.core.view
             {
                 this.previous = this.current;
                 removeChild(this.current);
-            };
+            }
         }
 
         public function getPrevious():Sprite

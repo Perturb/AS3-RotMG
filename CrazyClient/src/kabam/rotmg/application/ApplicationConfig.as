@@ -1,28 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.ApplicationConfig
 
 package kabam.rotmg.application
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import flash.display.DisplayObjectContainer;
-    import kabam.rotmg.build.api.BuildData;
-    import flash.display.LoaderInfo;
-    import kabam.rotmg.application.model.DomainModel;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.application.api.DebugSetup;
-    import kabam.rotmg.application.model.PlatformModel;
-    import kabam.rotmg.build.api.BuildEnvironment;
-    import kabam.rotmg.application.impl.LocalhostSetup;
-    import kabam.rotmg.application.impl.PrivateSetup;
-    import kabam.rotmg.application.impl.TestingSetup;
-    import kabam.rotmg.application.impl.Testing2Setup;
-    import kabam.rotmg.application.impl.ProductionSetup;
-    import kabam.rotmg.application.impl.FixedIPSetup;
+import flash.display.DisplayObjectContainer;
+import flash.display.LoaderInfo;
 
-    public class ApplicationConfig implements IConfig 
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.application.api.DebugSetup;
+import kabam.rotmg.application.impl.FixedIPSetup;
+import kabam.rotmg.application.impl.LocalhostSetup;
+import kabam.rotmg.application.impl.PrivateSetup;
+import kabam.rotmg.application.impl.ProductionSetup;
+import kabam.rotmg.application.impl.Testing2Setup;
+import kabam.rotmg.application.impl.TestingSetup;
+import kabam.rotmg.application.model.DomainModel;
+import kabam.rotmg.application.model.PlatformModel;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.api.BuildEnvironment;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class ApplicationConfig implements IConfig
     {
 
         [Inject]
@@ -62,7 +65,7 @@ package kabam.rotmg.application
                     return (new Testing2Setup());
                 default:
                     return (new ProductionSetup());
-            };
+            }
         }
 
         private function makeFixedIPSetup():FixedIPSetup

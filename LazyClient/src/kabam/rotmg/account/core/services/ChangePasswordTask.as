@@ -5,9 +5,9 @@
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
 
-    public interface ChangePasswordTask extends Task 
+public interface ChangePasswordTask extends Task 
     {
 
     }

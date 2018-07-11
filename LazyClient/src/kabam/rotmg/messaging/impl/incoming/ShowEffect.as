@@ -5,10 +5,11 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class ShowEffect extends IncomingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class ShowEffect extends IncomingMessage
     {
 
         public static const UNKNOWN_EFFECT_TYPE:int = 0;

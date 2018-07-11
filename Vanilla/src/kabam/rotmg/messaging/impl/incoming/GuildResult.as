@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class GuildResult extends IncomingMessage 
+public class GuildResult extends IncomingMessage
     {
 
         public var success_:Boolean;

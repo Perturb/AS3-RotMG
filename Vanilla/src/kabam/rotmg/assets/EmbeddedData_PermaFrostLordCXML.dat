@@ -62,7 +62,7 @@
       <Size>85</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.795</XpMult>
+      <Exp>350</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>FR God Wave</ObjectId>
@@ -241,7 +241,7 @@
       <Size>140</Size>
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>10.2565</XpMult>
+      <Exp>2000</Exp>
       <God/>
       <Quest/>
       <Level>20</Level>

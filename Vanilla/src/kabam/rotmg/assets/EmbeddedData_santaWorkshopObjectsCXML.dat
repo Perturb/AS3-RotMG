@@ -2040,7 +2040,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>250</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>12</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d21" id="SW Gift Medium TutoT2R1">
@@ -2057,7 +2057,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>20</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d22" id="SW Gift Large TutoT3R1">
@@ -2074,7 +2074,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3ced" id="SW Gift Small TutoT1R2">
@@ -2091,7 +2091,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>300</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>15</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cee" id="SW Gift Medium TutoT2R2">
@@ -2108,7 +2108,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>500</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>25</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cef" id="SW Gift Large TutoT3R2">
@@ -2125,7 +2125,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>800</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>40</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d1e" id="SW Gift Small TutoT1R3">
@@ -2142,7 +2142,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>500</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>25</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d1f" id="SW Gift Medium TutoT2R3">
@@ -2159,7 +2159,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>700</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>35</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d30" id="SW Gift Large TutoT3R3">
@@ -2176,7 +2176,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cdb" id="SW Gift Small R1T1">
@@ -2223,7 +2223,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>250</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>12</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cdc" id="SW Gift Medium R1T2">
@@ -2270,7 +2270,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>20</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc1" id="SW Gift Large R1T3 RedYellow">
@@ -2287,7 +2287,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc2" id="SW Gift Large R1T3 BlueWhite">
@@ -2304,7 +2304,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc3" id="SW Gift Large R1T3 WhiteGreen">
@@ -2321,7 +2321,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc4" id="SW Gift Large R1T3 GreenRed">
@@ -2338,7 +2338,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc5" id="SW Gift Large R1T3 YellowGreen">
@@ -2355,7 +2355,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cc6" id="SW Gift Large R1T3 RedWhite">
@@ -2372,7 +2372,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>30</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d42" id="SW Room1 Gift Healer">
@@ -2432,7 +2432,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3cec" id="SW Gift Medium R2T2">
@@ -2479,7 +2479,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d0e" id="SW Gift Large R2T3 RedYellow">
@@ -2496,7 +2496,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d0f" id="SW Gift Large R2T3 BlueWhite">
@@ -2513,7 +2513,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d10" id="SW Gift Large R2T3 WhiteGreen">
@@ -2530,7 +2530,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d11" id="SW Gift Large R2T3 GreenRed">
@@ -2547,7 +2547,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d12" id="SW Gift Large R2T3 YellowGreen">
@@ -2564,7 +2564,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d13" id="SW Gift Large R2T3 RedWhite">
@@ -2581,7 +2581,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d43" id="SW Room2 Gift Healer">
@@ -2641,7 +2641,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d16" id="SW Gift Medium R3T2">
@@ -2688,7 +2688,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d17" id="SW Gift Large R3T3 RedYellow">
@@ -2705,7 +2705,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d18" id="SW Gift Large R3T3 BlueWhite">
@@ -2722,7 +2722,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d19" id="SW Gift Large R3T3 WhiteGreen">
@@ -2739,7 +2739,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d1a" id="SW Gift Large R3T3 GreenRed">
@@ -2756,7 +2756,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d1b" id="SW Gift Large R3T3 YellowGreen">
@@ -2773,7 +2773,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d1c" id="SW Gift Large R3T3 RedWhite">
@@ -2790,7 +2790,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>60</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x3d44" id="SW Room3 Gift Healer">

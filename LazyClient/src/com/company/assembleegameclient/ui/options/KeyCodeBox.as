@@ -5,22 +5,24 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.DropShadowFilter;
-    import flash.text.TextFieldAutoSize;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import com.company.util.KeyCodes;
-    import flash.display.Graphics;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.events.KeyboardEvent;
-    import flash.utils.getTimer;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
+import com.company.util.KeyCodes;
 
-    public class KeyCodeBox extends Sprite 
+import flash.display.Graphics;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.utils.getTimer;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class KeyCodeBox extends Sprite
     {
 
         public static const WIDTH:int = 80;
@@ -57,7 +59,7 @@ package com.company.assembleegameclient.ui.options
             if (_arg_1 == this.keyCode_)
             {
                 return;
-            };
+            }
             this.keyCode_ = _arg_1;
             this.setTextToKey();
             dispatchEvent(new Event(Event.CHANGE, true));
@@ -107,7 +109,7 @@ package com.company.assembleegameclient.ui.options
             {
                 removeEventListener(KeyboardEvent.KEY_DOWN, this.onInputKeyDown);
                 stage.removeEventListener(MouseEvent.MOUSE_DOWN, this.onInputMouseDown, true);
-            };
+            }
             this.setTextToKey();
             addEventListener(MouseEvent.CLICK, this.onNormalClick);
         }
@@ -117,7 +119,7 @@ package com.company.assembleegameclient.ui.options
             if (stage == null)
             {
                 return;
-            };
+            }
             stage.stageFocusRect = false;
             stage.focus = this;
             this.inputMode_ = true;
@@ -143,7 +145,7 @@ package com.company.assembleegameclient.ui.options
             else
             {
                 this.setText(new LineBuilder().setParams(TextKey.KEYCODEBOX_HITKEY));
-            };
+            }
         }
 
         private function onInputKeyDown(_arg_1:KeyboardEvent):void

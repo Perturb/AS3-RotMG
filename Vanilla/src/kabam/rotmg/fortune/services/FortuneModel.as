@@ -5,10 +5,11 @@
 
 package kabam.rotmg.fortune.services
 {
-    import kabam.rotmg.fortune.model.FortuneInfo;
-    import org.osflash.signals.Signal;
+import kabam.rotmg.fortune.model.FortuneInfo;
 
-    public class FortuneModel 
+import org.osflash.signals.Signal;
+
+public class FortuneModel
     {
 
         public static var HAS_FORTUNES:Boolean = false;

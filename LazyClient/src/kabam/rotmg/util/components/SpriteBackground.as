@@ -5,26 +5,26 @@
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import flash.display.BitmapData;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import com.company.assembleegameclient.util.Currency;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.Currency;
+import com.company.util.GraphicsUtil;
+import com.company.util.MoreColorUtil;
 
-    public class SpriteBackground extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.filters.ColorMatrixFilter;
+
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+public class SpriteBackground extends Sprite
     {
 
         private static const BEVEL:int = 4;
@@ -73,7 +73,7 @@ package kabam.rotmg.util.components
                 mouseEnabled = _arg_1;
                 filters = ((_arg_1) ? [] : [grayfilter]);
                 this.draw();
-            };
+            }
         }
 
         private function updateUI():void

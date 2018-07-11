@@ -1,36 +1,41 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import flash.filters.DropShadowFilter;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.promotions.view.BeginnersPackageButton;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import kabam.rotmg.packages.view.PackageButton;
-    import kabam.rotmg.ui.view.ButtonFactory;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import com.company.assembleegameclient.screens.charrects.PotionsNeededDisplay;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import kabam.rotmg.news.view.NewsView;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.geom.Rectangle;
-    import flash.display.DisplayObject;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.screens.charrects.PotionsNeededDisplay;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.assembleegameclient.ui.Scrollbar;
 
-    public class CharacterSelectionAndNewsScreen extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.news.view.NewsView;
+import kabam.rotmg.packages.view.PackageButton;
+import kabam.rotmg.promotions.view.BeginnersPackageButton;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.ButtonFactory;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+
+public class CharacterSelectionAndNewsScreen extends Sprite
     {
 
         private static const NEWS_X:int = 475;
@@ -68,6 +73,8 @@ package com.company.assembleegameclient.screens
         private var menuOptionsBar:MenuOptionsBar;
         private var BOUNDARY_LINE_ONE_Y:int = 106;
         private var potionDisplay:PotionsNeededDisplay;
+        private var disableNexusCheckBox:CheckBoxField;
+        private var disableAutoReconCheckBox:CheckBoxField;
 
         public function CharacterSelectionAndNewsScreen()
         {
@@ -82,7 +89,7 @@ package com.company.assembleegameclient.screens
             if (this.isInitialized)
             {
                 return;
-            };
+            }
             this.isInitialized = true;
             this.model = _arg_1;
             this.createDisplayAssets(_arg_1);
@@ -102,13 +109,15 @@ package com.company.assembleegameclient.screens
             {
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.createOpenGraveyardText();
-            };
+            }
             this.createCharacterListChar();
             this.makeMenuOptionsBar();
-            if (!_arg_1.isNameChosen())
+            if ((!(_arg_1.isNameChosen())))
             {
                 this.createChooseNameLink();
-            };
+            }
+            this.createDisableNexusCheckBox();
+            this.createDisableAutoReconCheckBox();
         }
 
         private function createPotionDisplay():void
@@ -178,7 +187,7 @@ package com.company.assembleegameclient.screens
             if (this.model.getMaxCharacters() > 15)
             {
                 this.createScrollbar();
-            };
+            }
             addChild(this.characterList);
         }
 
@@ -192,7 +201,7 @@ package com.company.assembleegameclient.screens
             if (this.characterListHeight > this.SCROLLBAR_REQUIREMENT_HEIGHT)
             {
                 this.createScrollbar();
-            };
+            }
             addChild(this.characterList);
         }
 
@@ -202,12 +211,56 @@ package com.company.assembleegameclient.screens
             {
                 removeChild(this.characterList);
                 this.characterList = null;
-            };
+            }
             if (this.scrollBar != null)
             {
                 removeChild(this.scrollBar);
                 this.scrollBar = null;
-            };
+            }
+        }
+
+        private function createDisableNexusCheckBox():void
+        {
+            this.disableNexusCheckBox = new CheckBoxField("Vault", false);
+            this.disableNexusCheckBox.x = 700;
+            this.disableNexusCheckBox.y = this.openCharactersText.y;
+            if (Parameters.data_.disableNexus)
+            {
+                this.disableNexusCheckBox.setChecked();
+            }
+            else
+            {
+                this.disableNexusCheckBox.setUnchecked();
+            }
+            this.disableNexusCheckBox.addEventListener(MouseEvent.CLICK, this.onDisableVaultCheckBoxCheckedChanged);
+            addChild(this.disableNexusCheckBox);
+        }
+
+        private function createDisableAutoReconCheckBox():void
+        {
+            this.disableAutoReconCheckBox = new CheckBoxField("Auto Reconnect", false);
+            this.disableAutoReconCheckBox.x = (this.CHARACTER_LIST_X_POS + 300);
+            this.disableAutoReconCheckBox.y = this.openCharactersText.y;
+            if (Parameters.data_.autoRecon)
+            {
+                this.disableAutoReconCheckBox.setChecked();
+            }
+            else
+            {
+                this.disableAutoReconCheckBox.setUnchecked();
+            }
+            this.disableAutoReconCheckBox.addEventListener(MouseEvent.CLICK, this.onDisableAutoReconCheckBoxCheckedChanged);
+            addChild(this.disableAutoReconCheckBox);
+        }
+
+        public function onDisableVaultCheckBoxCheckedChanged(_arg_1:MouseEvent):void
+        {
+            Parameters.data_.disableNexus = this.disableNexusCheckBox.isChecked();
+        }
+
+        public function onDisableAutoReconCheckBoxCheckedChanged(_arg_1:MouseEvent):void
+        {
+            Parameters.data_.autoRecon = this.disableAutoReconCheckBox.isChecked();
         }
 
         private function createOpenCharactersText():void
@@ -230,7 +283,7 @@ package com.company.assembleegameclient.screens
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.openGraveyardText.setColor(TAB_UNSELECTED);
                 this.createCharacterListChar();
-            };
+            }
         }
 
         private function createOpenGraveyardText():void
@@ -253,7 +306,7 @@ package com.company.assembleegameclient.screens
                 this.openCharactersText.setColor(TAB_UNSELECTED);
                 this.openGraveyardText.setColor(TAB_SELECTED);
                 this.createCharacterListGrave();
-            };
+            }
         }
 
         private function createChooseNameLink():void
@@ -283,7 +336,7 @@ package com.company.assembleegameclient.screens
             if (stage)
             {
                 _local_1 = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
-            };
+            }
             return (_local_1);
         }
 
@@ -310,7 +363,7 @@ package com.company.assembleegameclient.screens
             if (this.characterList != null)
             {
                 this.characterList.setPos((-(this.scrollBar.pos()) * (this.characterListHeight - 400)));
-            };
+            }
         }
 
         public function showBeginnersOfferButton():void
@@ -337,7 +390,7 @@ package com.company.assembleegameclient.screens
             if (((_arg_1) && (contains(_arg_1))))
             {
                 removeChild(_arg_1);
-            };
+            }
         }
 
         private function onPlayClick():void
@@ -349,7 +402,7 @@ package com.company.assembleegameclient.screens
             else
             {
                 this.playGame.dispatch();
-            };
+            }
         }
 
         public function setName(_arg_1:String):void
@@ -360,7 +413,7 @@ package com.company.assembleegameclient.screens
             {
                 removeChild(this.nameChooseLink_);
                 this.nameChooseLink_ = null;
-            };
+            }
         }
 
 

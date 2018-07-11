@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Articles>
+    <Article>
+      <Command>/status</Command>
+      <Explanation>Display current values to commands.&#xA;List of commands:&#xA;/onlygods &lt;true|false&gt;&#xA;/blockcubes &lt;true|false&gt;&#xA;/blockpots &lt;true|false&gt;&#xA;/blockabil &lt;true|false&gt;&#xA;/blocktp &lt;true|false&gt;&#xA;/statustext &lt;true|false&gt;&#xA;/dodbot &lt;true|false&gt;&#xA;/lockfilter &lt;true|false&gt;&#xA;/recondelay &lt;value&gt;&#xA;/autonex &lt;value&gt;&#xA;/autopot &lt;value&gt;&#xA;/automana &lt;value&gt;</Explanation>
+   </Article>
    <Article>
       <Command>/con &lt;server?&gt; &lt;character?&gt; &lt;realm?&gt;</Command>
       <Explanation>Connects you to different servers and worlds&#xA;All parameters are optional (indicated by ?)&#xA;Server specifies the server to connect to (e.g. uss2)&#xA;Character is the class you want to connect as, name doesn't have to be written in its entirety (e.g. /con kn)&#xA;2 can be postfixed to indicate the second instance of the said character (e.g. kn2 for second knight)&#xA;Realm selects a realm to connect to, the realm must have been visited before (e.g. med for medusa)&#xA;v can be used for vault&#xA;If no parameters are given you'll be connected the a server told by a friend&#xA;To ask a friend to tell their server, tell them s? (note: they must have added you as a friend with /afr command)</Explanation>
@@ -70,6 +74,14 @@
       <Explanation>Sets your skin&#xA;A map change is required for this to take effect&#xA;Use none to remove the skin</Explanation>
    </Article>
    <Article>
+      <Command>/name &lt;name&gt;</Command>
+      <Explanation>Changes the name displayed on the HUD&#xA;Does not change your name on chat&#xA;The name will only be displayed on characters that have no backpack</Explanation>
+   </Article>
+   <Article>
+      <Command>/name</Command>
+      <Explanation>Changes the name displayed on the HUD back to normal</Explanation>
+   </Article>
+   <Article>
       <Command>/setmsg &lt;message id&gt; &lt;message&gt;</Command>
       <Explanation>Sets a message to be used with a hotkey (Options -> Messages)&#xA;Message ID must be between 1 and 3</Explanation>
    </Article>
@@ -98,8 +110,12 @@
       <Explanation>Sets your autopot percentage&#xA;Set to 0 to turn off</Explanation>
    </Article>
    <Article>
-      <Command>/timer &lt;count&gt; &lt;step?&gt;</Command>
-      <Explanation>Starts a timer which will be shown on top of your character&#xA;Count specifies how many timer the timer should tick&#xA;Step is an optional parameter, it specifies how often a tick happens (in milliseconds)&#xA;Step defaults to 1000</Explanation>
+      <Command>/timer &lt;count&gt;</Command>
+      <Explanation>Starts a timer which will be shown on top left of your screen&#xA;Count specifies how many timer the timer should ticks.</Explanation>
+   </Article>
+   <Article>
+      <Command>/uitextsize &lt;value&gt;</Command>
+      <Explanation>Set size of text in left-side ui panel&#xA;Default is 15.</Explanation>
    </Article>
    <Article>
       <Command>/nexus</Command>
@@ -116,14 +132,6 @@
    <Article>
       <Command>/flist</Command>
       <Explanation>Opens Deca's friends list</Explanation>
-   </Article>
-   <Article>
-      <Command>/name &lt;name&gt;</Command>
-      <Explanation>Changes the name displayed on the HUD&#xA;Does not change your name on chat&#xA;The name will only be displayed on characters that have no backpack</Explanation>
-   </Article>
-   <Article>
-      <Command>/name</Command>
-      <Explanation>Changes the name displayed on the HUD back to normal</Explanation>
    </Article>
    <Article>
       <Command>/take &lt;partial item name&gt;</Command>
@@ -182,6 +190,22 @@
       <Explanation>Shows all your realmeye guild mates who are online</Explanation>
    </Article>
    <Article>
+      <Command>/public</Command>
+         <Explanation>Sends /tell mreyeball public profile</Explanation>
+   </Article>
+   <Article>
+      <Command>/hideguild</Command>
+         <Explanation>Sends /tell mreyeball hide my guild</Explanation>
+   </Article>
+      <Article>
+         <Command>/private</Command>
+         <Explanation>Sends /tell mreyeball private profile</Explanation>
+      </Article>
+      <Article>
+         <Command>/hideme</Command>
+         <Explanation>Sends /tell mreyeball hideme</Explanation>
+      </Article>
+   <Article>
       <Command>/fr</Command>
       <Explanation>Shows all your realmeye friends who are online</Explanation>
    </Article>
@@ -190,8 +214,84 @@
       <Explanation>Hides you on realmeye</Explanation>
    </Article>
    <Article>
+      <Command>/lf</Command>
+      <Explanation>Hide non locked players from screen</Explanation>
+   </Article>
+   <Article>
+      <Command>/colo &lt;decimal value&gt;</Command>
+     <Explanation>Set offset to Colossus sword.&#xA;Set between 0.2 and 0.4.&#xA;Default: 0.225</Explanation>
+   </Article>
+   <Article>
       <Command>/serv</Command>
       <Explanation>Shows the server and realm you're on</Explanation>
+   </Article>
+   <Article>
+      <Command>/recondelay &lt;value&gt;</Command>
+      <Explanation>Set reconnect delay to custom value in milliseconds.&#xA;Set how fast you connect to locations.&#xA;Default: 100</Explanation>
+   </Article>
+   <Article>
+      <Command>/spellthreshold &lt;value&gt;</Command>
+      <Explanation>Set spell threshold to custom value.&#xA;Sets the threshold of lives, after which enable auto-aim.&#xA;Default: 1000</Explanation>
+   </Article>
+   <Article>
+      <Command>/hidehacks</Command>
+      <Explanation>Toggle visual hacks to take screenshot.</Explanation>
+   </Article>
+    <Article>
+      <Command>/vaultonly</Command>
+      <Explanation>Automatically send you to vault.</Explanation>
+   </Article>
+   <Article>
+      <Command>/ao</Command>
+      <Explanation>Make other players transparent</Explanation>
+   </Article>
+   <Article>
+      <Command>/alpha &lt;decimal value&gt;</Command>
+      <Explanation>Make other players transparent.#xA;Default is 0.5</Explanation>
+   </Article>
+   <Article>
+      <Command>/blocktp</Command>
+      <Explanation>Block teleport function to achieve Boots on the Ground.</Explanation>
+   </Article>
+   <Article>
+      <Command>/blockabil</Command>
+      <Explanation>Block all abilities function to achieve Mundane.</Explanation>
+   </Article>
+   <Article>
+      <Command>/blockcubes</Command>
+      <Explanation>Block cubes to achieve Friend of the Cubes.</Explanation>
+   </Article>
+   <Article>
+      <Command>/onlygods</Command>
+      <Explanation>Allow damaging only on gods enemies to achieve Slayer of the Gods.</Explanation>
+   </Article>
+   <Article>
+      <Command>/blockpots</Command>
+      <Explanation>Block potions use to achieve Thirsty.</Explanation>
+   </Article>
+   <Article>
+      <Command>/statustext</Command>
+      <Explanation>Disable all status notifications (pet healing/quest complete/etc).</Explanation>
+   </Article>
+   <Article>
+      <Command>/pets</Command>
+      <Explanation>Toggle displaying of pets.</Explanation>
+   </Article>
+   <Article>
+      <Command>/swmove</Command>
+      <Explanation>Toggle tile moving in sprite world.</Explanation>
+   </Article>
+   <Article>
+      <Command>/swtree</Command>
+      <Explanation>Remove/add trees from sprite world in aim exception list.</Explanation>
+   </Article>
+   <Article>
+      <Command>/const</Command>
+      <Explanation>Remove/add constructs from godland in aim ignoring list.</Explanation>
+   </Article>
+   <Article>
+      <Command>/dodbot</Command>
+      <Explanation>Activate Doer of Deeds bot.&#xA;Automatically enter in the tutorial and kill Evil Chicken</Explanation>
    </Article>
    <Article>
       <Command>/fs</Command>
@@ -321,6 +421,26 @@
    <Article>
       <Command>/tpclear</Command>
       <Explanation>Clears the teleport keyword list</Explanation>
+   </Article>
+   <Article>
+      <Command>/awn &lt;word&gt;</Command>
+      <Explanation>Adds a word to the notifier keyword list&#xA;You receive sound notification if someone say word in list.</Explanation>
+   </Article>
+   <Article>
+      <Command>/rwn &lt;word&gt;</Command>
+      <Explanation>Removes a word from the notifier keyword list</Explanation>
+   </Article>
+   <Article>
+      <Command>/wnlist</Command>
+      <Explanation>Prints out the notifier keyword list</Explanation>
+   </Article>
+   <Article>
+      <Command>/wndefault</Command>
+      <Explanation>Sets the notifier keyword list to its default values</Explanation>
+   </Article>
+   <Article>
+      <Command>/wnclear</Command>
+      <Explanation>Clears the notifier keyword list</Explanation>
    </Article>
    <Article>
       <Command>/ali &lt;partial item name&gt;</Command>

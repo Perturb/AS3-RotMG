@@ -5,14 +5,14 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
 
-    public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask 
     {
 
         [Inject]
@@ -61,7 +61,7 @@ package kabam.rotmg.account.web.services
             else
             {
                 this.account.updateUser(this.data.username, this.data.password, "");
-            };
+            }
         }
 
 

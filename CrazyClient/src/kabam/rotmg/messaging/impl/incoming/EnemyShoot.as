@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.EnemyShoot
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class EnemyShoot extends IncomingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class EnemyShoot extends IncomingMessage 
     {
 
         public var bulletId_:uint;
@@ -42,7 +43,7 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 this.numShots_ = 1;
                 this.angleInc_ = 0;
-            };
+            }
         }
 
         override public function toString():String

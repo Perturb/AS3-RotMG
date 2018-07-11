@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.WebAccount
 
 package kabam.rotmg.account.web
 {
-    import kabam.rotmg.account.core.Account;
-    import flash.external.ExternalInterface;
-    import com.company.assembleegameclient.util.GUID;
-    import flash.net.SharedObject;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.GUID;
 
-    public class WebAccount implements Account 
+import flash.external.ExternalInterface;
+import flash.net.SharedObject;
+
+import kabam.rotmg.account.core.Account;
+
+public class WebAccount implements Account 
     {
 
         public static const NETWORK_NAME:String = "rotmg";
@@ -20,6 +22,7 @@ package kabam.rotmg.account.web
 
         private var userId:String = "";
         private var password:String;
+        private var secret:String = "";
         private var token:String = "";
         private var entryTag:String = "";
         private var isVerifiedEmail:Boolean;
@@ -39,7 +42,7 @@ package kabam.rotmg.account.web
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function getUserName():String
@@ -49,7 +52,9 @@ package kabam.rotmg.account.web
 
         public function getUserId():String
         {
-            return (this.userId = ((this.userId) || (GUID.create())));
+            var _local_1:* = ((this.userId) || (GUID.create()));
+            this.userId = _local_1;
+            return (_local_1);
         }
 
         public function getPassword():String
@@ -64,6 +69,13 @@ package kabam.rotmg.account.web
 
         public function getCredentials():Object
         {
+            if (this.getSecret() != "")
+            {
+                return ({
+                    "guid":this.getUserId(),
+                    "secret":this.getSecret()
+                });
+            }
             return ({
                 "guid":this.getUserId(),
                 "password":this.getPassword()
@@ -72,35 +84,37 @@ package kabam.rotmg.account.web
 
         public function isRegistered():Boolean
         {
-            return ((!(this.getPassword() == "")) || (!(this.getToken() == "")));
+            return ((!(this.getPassword() == "")) || (!(this.getSecret() == "")));
         }
 
-        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String):void
+        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String):void
         {
-            var _local_4:SharedObject;
+            var _local_5:SharedObject;
             this.userId = _arg_1;
             this.password = _arg_2;
+            this.secret = _arg_4;
             this.token = _arg_3;
             try
             {
                 if (this._rememberMe)
                 {
-                    _local_4 = SharedObject.getLocal("RotMG", "/");
-                    _local_4.data["GUID"] = _arg_1;
-                    _local_4.data["Token"] = _arg_3;
-                    _local_4.data["Password"] = _arg_2;
-                    _local_4.flush();
-                };
+                    _local_5 = SharedObject.getLocal("RotMG", "/");
+                    _local_5.data["GUID"] = _arg_1;
+                    _local_5.data["Token"] = _arg_3;
+                    _local_5.data["Password"] = _arg_2;
+                    _local_5.data["Secret"] = _arg_4;
+                    _local_5.flush();
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         public function clear():void
         {
             this._rememberMe = true;
-            this.updateUser(GUID.create(), null, null);
+            this.updateUser(GUID.create(), null, null, null);
             Parameters.sendLogin_ = true;
             Parameters.data_.charIdUseMap = {};
             Parameters.save();
@@ -117,17 +131,17 @@ package kabam.rotmg.account.web
 
         public function gameNetworkUserId():String
         {
-            return (WEB_USER_ID);
+            return ("");
         }
 
         public function gameNetwork():String
         {
-            return (NETWORK_NAME);
+            return ("rotmg");
         }
 
         public function playPlatform():String
         {
-            return (WEB_PLAY_PLATFORM_NAME);
+            return ("rotmg");
         }
 
         public function getEntryTag():String
@@ -137,7 +151,7 @@ package kabam.rotmg.account.web
 
         public function getSecret():String
         {
-            return ("");
+            return ((this.secret) || (""));
         }
 
         public function verify(_arg_1:Boolean):void

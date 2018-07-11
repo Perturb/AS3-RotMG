@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.KabamAccount
 
 package kabam.rotmg.account.kabam
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.lib.json.JsonParser;
-    import flash.external.ExternalInterface;
+import flash.external.ExternalInterface;
 
-    public class KabamAccount implements Account 
+import kabam.lib.json.JsonParser;
+import kabam.rotmg.account.core.Account;
+
+public class KabamAccount implements Account 
     {
 
         public static const NETWORK_NAME:String = "kabam.com";
@@ -18,7 +19,6 @@ package kabam.rotmg.account.kabam
         private var entryTag:String;
         private var userId:String = "";
         private var password:String = null;
-        private var token:String = null;
         private var isVerifiedEmail:Boolean;
         private var platformToken:String;
         public var signedRequest:String;
@@ -36,18 +36,22 @@ package kabam.rotmg.account.kabam
                 if (_local_1 != null)
                 {
                     this.entryTag = _local_1;
-                };
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
-        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String):void
+        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String):void
         {
             this.userId = _arg_1;
             this.password = _arg_2;
-            this.token = _arg_3;
+        }
+
+        public function getUserNaid():String
+        {
+            return ("");
         }
 
         public function getRequestPrefix():String
@@ -64,11 +68,6 @@ package kabam.rotmg.account.kabam
             });
         }
 
-        public function getToken():String
-        {
-            return ("");
-        }
-
         public function getEntryTag():String
         {
             return ((this.entryTag) || (""));
@@ -79,13 +78,13 @@ package kabam.rotmg.account.kabam
             if (((this.userSession == null) || (this.userSession["kabam_naid"] == null)))
             {
                 return ("");
-            };
+            }
             return (this.userSession["kabam_naid"]);
         }
 
         public function gameNetwork():String
         {
-            return (NETWORK_NAME);
+            return ("kabam.com");
         }
 
         public function getUserName():String
@@ -93,14 +92,14 @@ package kabam.rotmg.account.kabam
             if ((((this.userSession == null) || (this.userSession["user"] == null)) || (this.userSession["user"]["email"] == null)))
             {
                 return ("");
-            };
-            var _local_1:String = this.userSession["user"]["email"];
-            var _local_2:Array = _local_1.split("@", 2);
-            if (_local_2.length != 2)
+            }
+            var _local_2:String = this.userSession["user"]["email"];
+            var _local_1:Array = _local_2.split("@", 2);
+            if (_local_1.length != 2)
             {
                 return ("");
-            };
-            return (_local_2[0]);
+            }
+            return (_local_1[0]);
         }
 
         public function getUserId():String
@@ -120,7 +119,7 @@ package kabam.rotmg.account.kabam
 
         public function playPlatform():String
         {
-            return (PLAY_PLATFORM_NAME);
+            return ("kabam.com");
         }
 
         public function getSecret():String
@@ -169,6 +168,11 @@ package kabam.rotmg.account.kabam
         public function getMoneyUserId():String
         {
             return (this.gameNetworkUserId());
+        }
+
+        public function getToken():String
+        {
+            return ("");
         }
 
 

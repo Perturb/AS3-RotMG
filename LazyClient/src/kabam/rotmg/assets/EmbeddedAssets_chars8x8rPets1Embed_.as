@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_chars8x8rPets1Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

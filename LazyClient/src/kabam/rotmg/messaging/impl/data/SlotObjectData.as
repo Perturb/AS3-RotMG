@@ -5,10 +5,10 @@
 
 package kabam.rotmg.messaging.impl.data
 {
-    import flash.utils.IDataInput;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataInput;
+import flash.utils.IDataOutput;
 
-    public class SlotObjectData 
+public class SlotObjectData
     {
 
         public var objectId_:int;

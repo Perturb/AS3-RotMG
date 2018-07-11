@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.SlotComparisonResult
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import flash.utils.Dictionary;
+import flash.utils.Dictionary;
 
-    public class SlotComparisonResult 
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+
+public class SlotComparisonResult
     {
 
         public var lineBuilder:AppendingLineBuilder;

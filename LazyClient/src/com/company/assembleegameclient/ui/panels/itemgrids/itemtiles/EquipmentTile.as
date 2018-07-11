@@ -5,19 +5,16 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.constants.ItemConstants;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+import com.company.assembleegameclient.util.EquipmentUtil;
+import com.company.assembleegameclient.util.FilterUtil;
 
-    public class EquipmentTile extends InteractiveItemTile 
+import flash.display.Bitmap;
+
+public class EquipmentTile extends InteractiveItemTile 
     {
-
-        private static const greyColorFilter:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x363636));
 
         public var backgroundDetail:Bitmap;
         public var itemType:int;
@@ -35,17 +32,14 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 
         public function setType(_arg_1:int):void
         {
-            var _local_2:BitmapData = ItemConstants.itemTypeToBaseSprite(_arg_1);
-            if (_local_2 != null)
+            this.backgroundDetail = EquipmentUtil.getEquipmentBackground(_arg_1, 4);
+            if (this.backgroundDetail)
             {
-                this.backgroundDetail = new Bitmap(_local_2);
                 this.backgroundDetail.x = BORDER;
                 this.backgroundDetail.y = BORDER;
-                this.backgroundDetail.scaleX = 4;
-                this.backgroundDetail.scaleY = 4;
-                this.backgroundDetail.filters = [greyColorFilter];
+                this.backgroundDetail.filters = FilterUtil.getGreyColorFilter();
                 addChildAt(this.backgroundDetail, 0);
-            };
+            }
             this.itemType = _arg_1;
         }
 
@@ -56,7 +50,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             {
                 this.backgroundDetail.visible = (itemSprite.itemId <= 0);
                 this.updateMinMana();
-            };
+            }
             return (_local_2);
         }
 
@@ -76,9 +70,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                     else
                     {
                         this.minManaUsage = _local_1.MpCost;
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public function updateDim(_arg_1:Player):void

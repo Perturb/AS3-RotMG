@@ -5,15 +5,17 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.geom.Matrix;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 
-    public class InventoryTile extends InteractiveItemTile 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.geom.Matrix;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class InventoryTile extends InteractiveItemTile 
     {
 
         private static const IDENTITY_MATRIX:Matrix = new Matrix();
@@ -54,7 +56,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             if (_local_2)
             {
                 this.hotKeyBMP.visible = (itemSprite.itemId <= 0);
-            };
+            }
             return (_local_2);
         }
 

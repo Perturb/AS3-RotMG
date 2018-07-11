@@ -1,27 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.commands.TransferAccountCommand
 
 package kabam.rotmg.account.transfer.commands
 {
-    import kabam.rotmg.account.core.services.MigrateAccountTask;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
-    import kabam.lib.tasks.BranchingTask;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.application.model.PlatformModel;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
-    import com.company.util.HTMLUtil;
-    import kabam.lib.tasks.Task;
+import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.util.HTMLUtil;
 
-    public class TransferAccountCommand 
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.MigrateAccountTask;
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.application.model.PlatformModel;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+public class TransferAccountCommand 
     {
 
         [Inject]

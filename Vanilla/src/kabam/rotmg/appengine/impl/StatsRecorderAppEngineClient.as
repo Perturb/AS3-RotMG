@@ -5,12 +5,14 @@
 
 package kabam.rotmg.appengine.impl
 {
-    import flash.events.EventDispatcher;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import org.osflash.signals.OnceSignal;
-    import flash.utils.getTimer;
+import flash.events.EventDispatcher;
+import flash.utils.getTimer;
 
-    public class StatsRecorderAppEngineClient extends EventDispatcher implements AppEngineClient 
+import kabam.rotmg.appengine.api.AppEngineClient;
+
+import org.osflash.signals.OnceSignal;
+
+public class StatsRecorderAppEngineClient extends EventDispatcher implements AppEngineClient
     {
 
         [Inject]

@@ -5,24 +5,27 @@
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.servers.api.Server;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import flash.events.Event;
-    import com.company.googleanalytics.GA;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import kabam.rotmg.ui.view.ButtonFactory;
-    import flash.display.Graphics;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.ui.Scrollbar;
 
-    public class ServersScreen extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.ButtonFactory;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+
+public class ServersScreen extends Sprite
     {
 
         private var selectServerText_:TextFieldDisplayConcrete;
@@ -55,7 +58,10 @@ package com.company.assembleegameclient.screens
             this.makeServerBoxes();
             ((this.serverBoxes_.height > 400) && (this.makeScrollbar()));
             this.makeMenuBar();
-            GA.global().trackPageview("/serversScreen");
+            var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            if (_local_2){
+                _local_2.trackPageView("/serversScreen");
+            }
         }
 
         private function makeMenuBar():void

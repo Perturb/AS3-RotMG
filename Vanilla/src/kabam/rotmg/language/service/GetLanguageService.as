@@ -5,14 +5,17 @@
 
 package kabam.rotmg.language.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.language.model.LanguageModel;
-    import kabam.rotmg.language.model.StringMap;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-    public class GetLanguageService extends BaseTask 
+import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.language.model.LanguageModel;
+import kabam.rotmg.language.model.StringMap;
+
+public class GetLanguageService extends BaseTask
     {
 
         private static const LANGUAGE:String = "LANGUAGE";
@@ -45,7 +48,7 @@ package kabam.rotmg.language.service
             else
             {
                 this.onLanguageError();
-            };
+            }
             completeTask(_arg_1, _arg_2);
         }
 
@@ -57,7 +60,8 @@ package kabam.rotmg.language.service
             for each (_local_3 in _local_2)
             {
                 this.strings.setValue(_local_3[0], _local_3[1], _local_3[2]);
-            };
+            }
+            PetRarityEnum.parseNames();
         }
 
         private function onLanguageError():void

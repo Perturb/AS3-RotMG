@@ -1,13 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.METile
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
-
-    public class METile 
+public class METile
     {
 
         public var types_:Vector.<int>;
@@ -36,9 +34,9 @@ package com.company.assembleegameclient.mapeditor
                 if (this.types_[_local_1] != -1)
                 {
                     return (false);
-                };
+                }
                 _local_1++;
-            };
+            }
             return (true);
         }
 

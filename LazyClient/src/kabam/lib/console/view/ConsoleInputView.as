@@ -5,16 +5,17 @@
 
 package kabam.lib.console.view
 {
-    import flash.text.TextField;
-    import kabam.lib.resizing.view.Resizable;
-    import kabam.lib.util.StageLifecycleUtil;
-    import flash.text.TextFormat;
-    import flash.text.TextFieldType;
-    import flash.events.KeyboardEvent;
-    import flash.ui.Keyboard;
-    import flash.geom.Rectangle;
+import flash.events.KeyboardEvent;
+import flash.geom.Rectangle;
+import flash.text.TextField;
+import flash.text.TextFieldType;
+import flash.text.TextFormat;
+import flash.ui.Keyboard;
 
-    public final class ConsoleInputView extends TextField implements Resizable 
+import kabam.lib.resizing.view.Resizable;
+import kabam.lib.util.StageLifecycleUtil;
+
+public final class ConsoleInputView extends TextField implements Resizable
     {
 
         public static const HEIGHT:int = 20;
@@ -61,7 +62,7 @@ package kabam.lib.console.view
                 case Keyboard.DOWN:
                     dispatchEvent(new ConsoleEvent(ConsoleEvent.GET_NEXT));
                     return;
-            };
+            }
         }
 
         public function resize(_arg_1:Rectangle):void
@@ -70,7 +71,7 @@ package kabam.lib.console.view
             if (_local_2 > HEIGHT)
             {
                 _local_2 = HEIGHT;
-            };
+            }
             width = _arg_1.width;
             height = _local_2;
             x = _arg_1.x;

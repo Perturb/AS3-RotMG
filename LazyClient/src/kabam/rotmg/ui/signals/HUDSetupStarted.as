@@ -5,10 +5,11 @@
 
 package kabam.rotmg.ui.signals
 {
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.game.GameSprite;
 
-    public class HUDSetupStarted extends Signal 
+import org.osflash.signals.Signal;
+
+public class HUDSetupStarted extends Signal
     {
 
         public function HUDSetupStarted()

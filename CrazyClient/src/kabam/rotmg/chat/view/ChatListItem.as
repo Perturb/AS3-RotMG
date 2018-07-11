@@ -1,26 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatListItem
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.ui.model.HUDModel;
-    import flash.utils.getTimer;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.geom.Rectangle;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChatListItem extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
+import flash.utils.getTimer;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.ui.model.HUDModel;
+
+import org.swiftsuspenders.Injector;
+
+public class ChatListItem extends Sprite 
     {
 
         private static const CHAT_ITEM_TIMEOUT:uint = 20000;
@@ -75,7 +77,7 @@ package kabam.rotmg.chat.view
                     if (((!(_local_2 == null)) && (_local_2 is Player)))
                     {
                         this.model.gameSprite.gsc_.teleport(_local_2.name_);
-                    };
+                    }
                 }
                 else
                 {
@@ -88,7 +90,7 @@ package kabam.rotmg.chat.view
                     {
                         if ((((!(this.playerName == null)) && (!(this.playerName == ""))) && (!(this.model.gameSprite.map.player_.name_ == this.playerName))))
                         {
-                            if (!this.isTrade)
+                            if ((!(this.isTrade)))
                             {
                                 this.model.gameSprite.addChatPlayerMenu(null, _arg_1.stageX, _arg_1.stageY, this.playerName, this.fromGuild);
                             }
@@ -97,12 +99,12 @@ package kabam.rotmg.chat.view
                                 if (this.isTrade)
                                 {
                                     this.model.gameSprite.addChatPlayerMenu(null, _arg_1.stageX, _arg_1.stageY, this.playerName, false, true);
-                                };
-                            };
-                        };
-                    };
-                };
-            };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public function isTimedOut():Boolean
@@ -133,11 +135,11 @@ package kabam.rotmg.chat.view
                     {
                         this.list[_local_4].y = (this.list[_local_4].y - this.layoutHeight);
                         _local_4++;
-                    };
-                };
+                    }
+                }
                 _local_1 = (_local_1 + _local_3.width);
                 _local_5++;
-            };
+            }
         }
 
         private function addItems():void
@@ -146,7 +148,7 @@ package kabam.rotmg.chat.view
             for each (_local_1 in this.list)
             {
                 addChild(_local_1);
-            };
+            }
         }
 
 

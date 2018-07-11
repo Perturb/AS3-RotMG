@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamLoadAccountTask
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.rotmg.account.core.services.LoadAccountTask;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.LoadAccountTask;
 
-    public class SteamLoadAccountTask extends TaskSequence implements LoadAccountTask 
+public class SteamLoadAccountTask extends TaskSequence implements LoadAccountTask 
     {
 
         [Inject]

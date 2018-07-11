@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse
 
 package kabam.rotmg.dailyLogin.message
 {
-    import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class ClaimDailyRewardResponse extends IncomingMessage 
+import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
+
+public class ClaimDailyRewardResponse extends IncomingMessage
     {
 
         public var itemId:int;

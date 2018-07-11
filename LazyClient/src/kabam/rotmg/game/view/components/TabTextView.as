@@ -5,13 +5,14 @@
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import flash.display.Bitmap;
-    import com.company.util.AssetLibrary;
-    import flash.geom.ColorTransform;
+import com.company.ui.BaseSimpleText;
+import com.company.util.AssetLibrary;
 
-    public class TabTextView extends TabView 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.geom.ColorTransform;
+
+public class TabTextView extends TabView 
     {
 
         private var background:Sprite;
@@ -26,7 +27,7 @@ package kabam.rotmg.game.view.components
             if (_arg_3)
             {
                 this.initTabText(_arg_3);
-            };
+            }
         }
 
         public function setBadge(_arg_1:int):void
@@ -45,7 +46,7 @@ package kabam.rotmg.game.view.components
                 this.badgeBG.y = 3;
                 this.badgeBG.scaleX = (this.badgeBG.scaleY = 2);
                 addChild(this.badgeBG);
-            };
+            }
             this.badgeIcon.visible = (this.badgeBG.visible = (_arg_1 > 0));
         }
 

@@ -5,49 +5,54 @@
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
-    import kabam.rotmg.core.signals.InvalidateDataSignal;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.signals.PlayGameSignal;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.game.signals.GameClosedSignal;
-    import kabam.rotmg.core.model.MapModel;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.game.logging.LoopMonitor;
-    import kabam.rotmg.ui.signals.HUDSetupStarted;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.ui.signals.HUDModelInitialized;
-    import kabam.rotmg.core.signals.TrackPageViewSignal;
-    import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
-    import kabam.rotmg.packages.control.PackageAvailableSignal;
-    import kabam.rotmg.packages.control.InitPackagesSignal;
-    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
-    import kabam.rotmg.packages.services.PackageModel;
-    import kabam.rotmg.packages.control.OpenPackageSignal;
-    import kabam.rotmg.pets.controller.ShowPetTooltip;
-    import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
-    import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.model.DialogsModel;
-    import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
-    import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.game.model.GameInitData;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
+import com.company.assembleegameclient.game.events.ReconnectEvent;
+import com.company.assembleegameclient.objects.Player;
 
-    public class GameSpriteMediator extends Mediator 
+import flash.utils.getTimer;
+
+import io.decagames.rotmg.pets.signals.ShowPetTooltip;
+import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
+import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.MapModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.InvalidateDataSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.core.signals.TrackPageViewSignal;
+import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
+import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.dialogs.model.DialogsModel;
+import kabam.rotmg.game.logging.LoopMonitor;
+import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.game.signals.GameClosedSignal;
+import kabam.rotmg.game.signals.PlayGameSignal;
+import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
+import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
+import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
+import kabam.rotmg.packages.control.InitPackagesSignal;
+import kabam.rotmg.packages.control.OpenPackageSignal;
+import kabam.rotmg.packages.control.PackageAvailableSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.services.PackageModel;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+import kabam.rotmg.ui.signals.HUDModelInitialized;
+import kabam.rotmg.ui.signals.HUDSetupStarted;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class GameSpriteMediator extends Mediator
     {
 
         [Inject]
@@ -114,6 +119,8 @@ package kabam.rotmg.game.view
         public var closeAllPopups:CloseAllPopupsSignal;
         [Inject]
         public var showPopupSignal:ShowPopupSignal;
+        [Inject]
+        public var displayAreaChangedSignal:DisplayAreaChangedSignal;
 
 
         public static function sleepForMs(_arg_1:int):void
@@ -122,12 +129,13 @@ package kabam.rotmg.game.view
             while (true)
             {
                 if ((getTimer() - _local_2) >= _arg_1) break;
-            };
+            }
         }
 
 
         override public function initialize():void
         {
+            this.displayAreaChangedSignal.add(this.onDisplayAreaChanged);
             this.showLoadingViewSignal.dispatch();
             this.view.packageModel = this.packageModel;
             this.setWorldInteraction.add(this.onSetWorldInteraction);
@@ -152,6 +160,11 @@ package kabam.rotmg.game.view
             this.newsButtonRefreshSignal.add(this.onNewsButtonRefreshSignal);
         }
 
+        private function onDisplayAreaChanged():void
+        {
+            this.view.positionDynamicDisplays();
+        }
+
         private function onShowPackage():void
         {
             var _local_1:PackageInfo = this.packageModel.startupPackage();
@@ -162,11 +175,12 @@ package kabam.rotmg.game.view
             else
             {
                 this.flushQueueSignal.dispatch();
-            };
+            }
         }
 
         override public function destroy():void
         {
+            this.displayAreaChangedSignal.remove(this.onDisplayAreaChanged);
             this.view.showPackage.remove(this.onShowPackage);
             this.setWorldInteraction.remove(this.onSetWorldInteraction);
             removeViewListener(ReconnectEvent.RECONNECT, this.onReconnect);
@@ -193,7 +207,7 @@ package kabam.rotmg.game.view
 
         private function onBeginner():void
         {
-            this.view.showBeginnersButtonIfSafe();
+            this.view.showSpecialOfferIfSafe();
         }
 
         private function onPackage():void
@@ -206,7 +220,7 @@ package kabam.rotmg.game.view
             if (!this.view.isEditor)
             {
                 this.gameClosed.dispatch();
-            };
+            }
             this.closeDialogs.dispatch();
             this.closeAllPopups.dispatch();
             var _local_1:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
@@ -219,7 +233,7 @@ package kabam.rotmg.game.view
             if (this.view.isEditor)
             {
                 return;
-            };
+            }
             var _local_2:GameInitData = new GameInitData();
             _local_2.server = _arg_1.server_;
             _local_2.gameId = _arg_1.gameId_;

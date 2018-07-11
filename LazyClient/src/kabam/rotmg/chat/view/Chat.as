@@ -5,10 +5,11 @@
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.chat.model.ChatModel;
+import flash.display.Sprite;
 
-    public class Chat extends Sprite 
+import kabam.rotmg.chat.model.ChatModel;
+
+public class Chat extends Sprite
     {
 
         public var list:ChatList;
@@ -36,7 +37,7 @@ package kabam.rotmg.chat.view
             else
             {
                 this.addInputNotAllowed();
-            };
+            }
         }
 
         private function addChatInput():void
@@ -57,11 +58,11 @@ package kabam.rotmg.chat.view
             if (((!(this.notAllowed == null)) && (contains(this.notAllowed))))
             {
                 removeChild(this.notAllowed);
-            };
+            }
             if (((this.input == null) || (!(contains(this.input)))))
             {
                 this.addChatInput();
-            };
+            }
         }
 
 

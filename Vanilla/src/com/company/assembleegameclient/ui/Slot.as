@@ -5,25 +5,25 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.geom.Matrix;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.display.Bitmap;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.geom.Point;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import flash.display.BitmapData;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
+import com.company.util.MoreColorUtil;
 
-    public class Slot extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.filters.ColorMatrixFilter;
+import flash.geom.Matrix;
+import flash.geom.Point;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class Slot extends Sprite 
     {
 
         public static const IDENTITY_MATRIX:Matrix = new Matrix();
@@ -60,7 +60,7 @@ package com.company.assembleegameclient.ui
                 case ItemConstants.SPELL_TYPE:
                     _local_4.y = -2;
                     break;
-            };
+            }
             return (_local_4);
         }
 
@@ -96,9 +96,9 @@ package com.company.assembleegameclient.ui
                         this.backgroundImage_.x = ((WIDTH / 2) - (_local_1.width / 2));
                         this.backgroundImage_.y = ((HEIGHT / 2) - 18);
                         addChild(this.backgroundImage_);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
 

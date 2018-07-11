@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class ActivePetUpdateRequest extends OutgoingMessage 
+public class ActivePetUpdateRequest extends OutgoingMessage
     {
 
         public var commandtype:uint;

@@ -1,18 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dropdown.DropDown
 
 package com.company.assembleegameclient.ui.dropdown
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import com.company.ui.BaseSimpleText;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import flash.geom.Point;
+import com.company.ui.BaseSimpleText;
 
-    public class DropDown extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+
+public class DropDown extends Sprite
     {
 
         protected var strings_:Vector.<String>;
@@ -38,7 +38,7 @@ package com.company.assembleegameclient.ui.dropdown
                 this.labelText_.updateMetrics();
                 addChild(this.labelText_);
                 this.xOffset_ = (this.labelText_.width + 5);
-            };
+            }
             this.setIndex(_arg_5);
         }
 
@@ -61,9 +61,9 @@ package com.company.assembleegameclient.ui.dropdown
                 {
                     this.setIndex(_local_2);
                     return (true);
-                };
+                }
                 _local_2++;
-            };
+            }
             return (false);
         }
 
@@ -72,7 +72,7 @@ package com.company.assembleegameclient.ui.dropdown
             if (_arg_1 >= this.strings_.length)
             {
                 _arg_1 = 0;
-            };
+            }
             this.setSelected(this.strings_[_arg_1]);
         }
 
@@ -84,9 +84,9 @@ package com.company.assembleegameclient.ui.dropdown
                 if (this.selected_.getValue() == this.strings_[_local_1])
                 {
                     return (_local_1);
-                };
+                }
                 _local_1++;
-            };
+            }
             return (-1);
         }
 
@@ -101,7 +101,7 @@ package com.company.assembleegameclient.ui.dropdown
             if (_arg_1 != _local_2)
             {
                 dispatchEvent(new Event(Event.CHANGE));
-            };
+            }
         }
 
         private function onClick(_arg_1:MouseEvent):void
@@ -111,7 +111,7 @@ package com.company.assembleegameclient.ui.dropdown
             if (contains(this.selected_))
             {
                 removeChild(this.selected_);
-            };
+            }
             this.showAll();
         }
 
@@ -125,7 +125,7 @@ package com.company.assembleegameclient.ui.dropdown
             _local_4 = parent.localToGlobal(new Point(x, y));
             this.all_.x = _local_4.x;
             this.all_.y = _local_4.y;
-            var _local_5:int = int(Math.ceil((this.strings_.length / this.maxItems_)));
+            var _local_5:int = int(int(Math.ceil((this.strings_.length / this.maxItems_))));
             while (_local_6 < _local_5)
             {
                 _local_1 = (_local_6 * this.maxItems_);
@@ -133,7 +133,7 @@ package com.company.assembleegameclient.ui.dropdown
                 _local_3 = (this.xOffset_ - (this.w_ * _local_6));
                 this.listItems(_local_1, _local_2, _local_3);
                 _local_6++;
-            };
+            }
             this.all_.addEventListener(MouseEvent.ROLL_OUT, this.onOut);
             stage.addChild(this.all_);
         }
@@ -153,7 +153,7 @@ package com.company.assembleegameclient.ui.dropdown
                 this.all_.addChild(_local_5);
                 _local_4 = (_local_4 + _local_5.h_);
                 _local_6++;
-            };
+            }
         }
 
         private function hideAll():void

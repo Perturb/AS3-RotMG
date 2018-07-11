@@ -5,19 +5,20 @@
 
 package kabam.rotmg.classes.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import kabam.rotmg.util.components.StarsView;
-    import kabam.rotmg.assets.model.Animation;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.assets.services.IconFactory;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
 
-    public class ClassDetailView extends Sprite 
+import kabam.rotmg.assets.model.Animation;
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+import kabam.rotmg.util.components.StarsView;
+
+public class ClassDetailView extends Sprite
     {
 
         private static const RIGHT_JUSTIFICATION_STATS:int = 205;
@@ -118,7 +119,7 @@ package kabam.rotmg.classes.view
                 this.nextGoalDetailText.x = ((WIDTH / 2) - (this.nextGoalDetailText.width / 2));
                 this.waiter.push(this.nextGoalDetailText.textChanged);
                 this.waiter.push(this.nextGoalText.textChanged);
-            };
+            }
         }
 
         public function setWalkingAnimation(_arg_1:Animation):void

@@ -5,13 +5,13 @@
 
 package com.company.util
 {
-    import flash.utils.Dictionary;
-    import flash.display.BitmapData;
-    import flash.geom.ColorTransform;
-    import flash.geom.Point;
-    import flash.filters.BitmapFilter;
+import flash.display.BitmapData;
+import flash.filters.BitmapFilter;
+import flash.geom.ColorTransform;
+import flash.geom.Point;
+import flash.utils.Dictionary;
 
-    public class CachingColorTransformer 
+public class CachingColorTransformer
     {
 
         private static var bds_:Dictionary = new Dictionary();
@@ -27,15 +27,15 @@ package com.company.util
             }
             else
             {
-                _local_4 = new Object();
+                _local_4 = {};
                 bds_[_arg_1] = _local_4;
-            };
+            }
             if (_local_3 == null)
             {
                 _local_3 = _arg_1.clone();
                 _local_3.colorTransform(_local_3.rect, _arg_2);
                 _local_4[_arg_2] = _local_3;
-            };
+            }
             return (_local_3);
         }
 
@@ -49,15 +49,15 @@ package com.company.util
             }
             else
             {
-                _local_4 = new Object();
+                _local_4 = {};
                 bds_[_arg_1] = _local_4;
-            };
+            }
             if (_local_3 == null)
             {
                 _local_3 = _arg_1.clone();
                 _local_3.applyFilter(_local_3, _local_3.rect, new Point(), _arg_2);
                 _local_4[_arg_2] = _local_3;
-            };
+            }
             return (_local_3);
         }
 
@@ -77,8 +77,8 @@ package com.company.util
                 for each (_local_2 in _local_1)
                 {
                     _local_2.dispose();
-                };
-            };
+                }
+            }
             bds_ = new Dictionary();
         }
 

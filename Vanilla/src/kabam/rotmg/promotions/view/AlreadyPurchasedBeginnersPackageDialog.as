@@ -5,15 +5,16 @@
 
 package kabam.rotmg.promotions.view
 {
-    import flash.display.Sprite;
-    import kabam.lib.resizing.view.Resizable;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import flash.geom.Rectangle;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
 
-    public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable 
+import kabam.lib.resizing.view.Resizable;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+
+public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable
     {
 
         public static var hifiBeginnerOfferAlreadyPurchasedEmbed:Class = AlreadyPurchasedBeginnersPackageDialog_hifiBeginnerOfferAlreadyPurchasedEmbed;

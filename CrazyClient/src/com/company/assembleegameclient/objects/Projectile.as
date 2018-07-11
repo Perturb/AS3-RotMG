@@ -1,37 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Projectile
 
 package com.company.assembleegameclient.objects
 {
-    import flash.utils.Dictionary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.engine3d.Point3D;
-    import flash.geom.Point;
-    import flash.geom.Vector3D;
-    import flash.display.GraphicsGradientFill;
-    import flash.display.GradientType;
-    import flash.geom.Matrix;
-    import flash.display.GraphicsPath;
-    import com.company.util.GraphicsUtil;
-    import com.company.util.Trig;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.map.Map;
-    import com.company.assembleegameclient.map.Square;
-    import com.company.assembleegameclient.util.FreeList;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.util.BloodComposition;
-    import com.company.assembleegameclient.objects.particles.HitEffect;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.objects.particles.SparkParticle;
-    import com.company.assembleegameclient.util.RandomUtil;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.engine3d.Point3D;
+import com.company.assembleegameclient.game.MapUserInput;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.map.Square;
+import com.company.assembleegameclient.objects.particles.HitEffect;
+import com.company.assembleegameclient.objects.particles.SparkParticle;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.BloodComposition;
+import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.util.RandomUtil;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.GraphicsUtil;
+import com.company.util.Trig;
 
-    public class Projectile extends BasicObject 
+import flash.display.BitmapData;
+import flash.display.GradientType;
+import flash.display.GraphicsGradientFill;
+import flash.display.GraphicsPath;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix;
+import flash.geom.Point;
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
+
+public class Projectile extends BasicObject
     {
 
         private static var objBullIdToObjId_:Dictionary = new Dictionary();
@@ -113,7 +112,7 @@ package com.company.assembleegameclient.objects
             else
             {
                 _local_9 = ObjectLibrary.getSizeFromType(this.containerType_);
-            };
+            }
             this.p_.setSize((8 * (_local_9 / 100)));
             this.damage_ = 0;
         }
@@ -128,10 +127,10 @@ package com.company.assembleegameclient.objects
             var _local_4:Player;
             this.startX_ = _arg_2;
             this.startY_ = _arg_3;
-            if (!super.addTo(_arg_1, _arg_2, _arg_3))
+            if ((!(super.addTo(_arg_1, _arg_2, _arg_3))))
             {
                 return (false);
-            };
+            }
             if (((!(this.containerProps_.flying_)) && (square_.sink_)))
             {
                 z_ = 0.1;
@@ -142,8 +141,8 @@ package com.company.assembleegameclient.objects
                 if (((!(_local_4 == null)) && (_local_4.sinkLevel_ > 0)))
                 {
                     z_ = (0.5 - (0.4 * (_local_4.sinkLevel_ / Parameters.MAX_SINK_LEVEL)));
-                };
-            };
+                }
+            }
             return (true);
         }
 
@@ -154,7 +153,7 @@ package com.company.assembleegameclient.objects
             if (_local_3 == null)
             {
                 return (false);
-            };
+            }
             x_ = _arg_1;
             y_ = _arg_2;
             square_ = _local_3;
@@ -213,8 +212,8 @@ package com.company.assembleegameclient.objects
                         if (_local_13 > _local_11)
                         {
                             _local_13 = (_local_11 - (_local_13 - _local_11));
-                        };
-                    };
+                        }
+                    }
                     _arg_2.x = (_arg_2.x + (_local_13 * Math.cos(this.angle_)));
                     _arg_2.y = (_arg_2.y + (_local_13 * Math.sin(this.angle_)));
                     if (this.projProps_.amplitude_ != 0)
@@ -222,9 +221,9 @@ package com.company.assembleegameclient.objects
                         _local_12 = (this.projProps_.amplitude_ * Math.sin((_local_14 + ((((_arg_1 / this.projProps_.lifetime_) * this.projProps_.frequency_) * 2) * Math.PI))));
                         _arg_2.x = (_arg_2.x + (_local_12 * Math.cos((this.angle_ + (Math.PI / 2)))));
                         _arg_2.y = (_arg_2.y + (_local_12 * Math.sin((this.angle_ + (Math.PI / 2)))));
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         override public function update(_arg_1:int, _arg_2:int):Boolean
@@ -241,7 +240,7 @@ package com.company.assembleegameclient.objects
             if (_local_11 > this.projProps_.lifetime_)
             {
                 return (false);
-            };
+            }
             var _local_12:Point = this.staticPoint_;
             this.positionAt(_local_11, _local_12);
             if (((!(this.moveTo(_local_12.x, _local_12.y))) || (square_.tileType_ == 0xFFFF)))
@@ -254,15 +253,15 @@ package com.company.assembleegameclient.objects
                 {
                     if (square_.obj_ != null)
                     {
-                        if (!Parameters.data_.noParticlesMaster)
+                        if ((!(Parameters.data_.noParticlesMaster)))
                         {
                             _local_3 = BloodComposition.getColors(this.texture_);
                             map_.addObj(new HitEffect(_local_3, 100, 3, this.angle_, this.projProps_.speed_), _local_12.x, _local_12.y);
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 return (false);
-            };
+            }
             if ((((!(square_.obj_ == null)) && ((!(square_.obj_.props_.isEnemy_)) || (!(this.damagesEnemies_)))) && ((square_.obj_.props_.enemyOccupySquare_) || ((!(this.projProps_.passesCover_)) && (square_.obj_.props_.occupySquare_)))))
             {
                 if (this.damagesPlayers_)
@@ -271,17 +270,17 @@ package com.company.assembleegameclient.objects
                 }
                 else
                 {
-                    if (!Parameters.data_.noParticlesMaster)
+                    if ((!(Parameters.data_.noParticlesMaster)))
                     {
                         _local_3 = BloodComposition.getColors(this.texture_);
                         map_.addObj(new HitEffect(_local_3, 100, 3, this.angle_, this.projProps_.speed_), _local_12.x, _local_12.y);
-                    };
-                };
-                if (!((Parameters.data_.PassesCover) && (this.ownerId_ == map_.player_.objectId_)))
+                    }
+                }
+                if ((!((Parameters.data_.PassesCover) && (this.ownerId_ == map_.player_.objectId_))))
                 {
                     return (false);
-                };
-            };
+                }
+            }
             var _local_13:GameObject = this.getHit(_local_12.x, _local_12.y);
             if (_local_13 != null)
             {
@@ -296,7 +295,7 @@ package com.company.assembleegameclient.objects
                     if (_local_13.hp_ < _local_8)
                     {
                         _local_9 = true;
-                    };
+                    }
                     if (_local_13 == _local_4)
                     {
                         _local_10 = this.statEffHit(this.projProps_.effects_);
@@ -304,7 +303,7 @@ package com.company.assembleegameclient.objects
                         {
                             _local_4.notifyPlayer(_local_10, 0xFF00, 1500);
                             _local_10 = "";
-                        };
+                        }
                         if (_local_10 == "")
                         {
                             _local_13.damage(true, _local_8, this.projProps_.effects_, false, this);
@@ -316,9 +315,9 @@ package com.company.assembleegameclient.objects
                             if (_local_8 > 0)
                             {
                                 _local_4.damageWithoutAck(_local_8);
-                            };
+                            }
                             return (false);
-                        };
+                        }
                     }
                     else
                     {
@@ -327,26 +326,35 @@ package com.company.assembleegameclient.objects
                             if (((!(this.damageIgnored(_local_13))) || (((_local_13.isInvulnerable()) && (!(this.isStun()))) && (Parameters.data_.PassesCover))))
                             {
                                 return (true);
-                            };
+                            }
                             if (((Parameters.data_.tombHack) && (((_local_13.objectType_ >= 3366) && (_local_13.objectType_ <= 3368)) || ((_local_13.objectType_ >= 32692) && (_local_13.objectType_ <= 32694)))))
                             {
                                 if (((!(_local_13.objectType_ == Parameters.data_.curBoss)) && (!(_local_13.objectType_ == (Parameters.data_.curBoss + 29326)))))
                                 {
                                     return (true);
-                                };
-                            };
+                                }
+                            }
+                            if ((((_local_13.props_.isCube_) && (Parameters.data_.blockCubes)) || ((!(_local_13.props_.isGod_)) && (Parameters.data_.onlyGods))))
+                            {
+                                return (true);
+                            }
                             map_.gs_.gsc_.enemyHit(_arg_1, this.bulletId_, _local_13.objectId_, _local_9);
                             _local_13.damage(true, _local_8, this.projProps_.effects_, _local_9, this);
+                            if (isNaN(Parameters.dmgCounter[_local_13.objectId_]))
+                            {
+                                Parameters.dmgCounter[_local_13.objectId_] = 0;
+                            }
+                            Parameters.dmgCounter[_local_13.objectId_] = (Parameters.dmgCounter[_local_13.objectId_] + _local_8);
                         }
                         else
                         {
-                            if (!this.projProps_.multiHit_)
+                            if ((!(this.projProps_.multiHit_)))
                             {
                                 map_.gs_.gsc_.otherHit(_arg_1, this.bulletId_, this.ownerId_, _local_13.objectId_);
-                            };
-                        };
-                    };
-                };
+                            }
+                        }
+                    }
+                }
                 if (this.projProps_.multiHit_)
                 {
                     this.multiHitDict_[_local_13] = true;
@@ -354,8 +362,8 @@ package com.company.assembleegameclient.objects
                 else
                 {
                     return (false);
-                };
-            };
+                }
+            }
             return (true);
         }
 
@@ -367,78 +375,78 @@ package com.company.assembleegameclient.objects
                 switch (_local_2)
                 {
                     case 2:
-                        if (!Parameters.data_.dbQuiet)
+                        if ((!(Parameters.data_.dbQuiet)))
                         {
                             if (((map_.name_ == "Oryx's Castle") && (Parameters.data_.dbQuietCastle)))
                             {
                                 return ("");
-                            };
+                            }
                             return ("Quiet");
-                        };
+                        }
                         break;
                     case 3:
-                        if (!Parameters.data_.dbWeak)
+                        if ((!(Parameters.data_.dbWeak)))
                         {
                             return ("Weak");
-                        };
+                        }
                         break;
                     case 4:
-                        if (!Parameters.data_.dbSlowed)
+                        if ((!(Parameters.data_.dbSlowed)))
                         {
                             if (map_.name_ == "Oryx's Castle")
                             {
                                 return ("");
-                            };
+                            }
                             return ("Slowed");
-                        };
+                        }
                         break;
                     case 5:
-                        if (!Parameters.data_.dbSick)
+                        if ((!(Parameters.data_.dbSick)))
                         {
                             return ("Sick");
-                        };
+                        }
                         break;
                     case 6:
-                        if (!Parameters.data_.dbDazed)
+                        if ((!(Parameters.data_.dbDazed)))
                         {
                             return ("Dazed");
-                        };
+                        }
                         break;
                     case 7:
-                        if (!Parameters.data_.dbStunned)
+                        if ((!(Parameters.data_.dbStunned)))
                         {
                             return ("Stunned");
-                        };
+                        }
                         break;
                     case 14:
-                        if (!Parameters.data_.dbParalyzed)
+                        if ((!(Parameters.data_.dbParalyzed)))
                         {
                             return ("Paralyzed");
-                        };
+                        }
                         break;
                     case 16:
-                        if (!Parameters.data_.dbBleeding)
+                        if ((!(Parameters.data_.dbBleeding)))
                         {
                             return ("Bleeding");
-                        };
+                        }
                         break;
                     case 22:
-                        if (!Parameters.data_.dbPetStasis)
+                        if ((!(Parameters.data_.dbPetStasis)))
                         {
                             return ("Pet Stasis");
-                        };
+                        }
                         break;
                     case 27:
-                        if (!Parameters.data_.dbArmorBroken)
+                        if ((!(Parameters.data_.dbArmorBroken)))
                         {
                             return ("Armor Broken");
-                        };
+                        }
                         break;
                     case 35:
-                        if (!Parameters.data_.dbPetrify)
+                        if ((!(Parameters.data_.dbPetrify)))
                         {
                             return ("Petrify");
-                        };
+                        }
                         break;
                     case 8:
                     case 9:
@@ -449,8 +457,8 @@ package com.company.assembleegameclient.objects
                         break;
                     default:
                         return ("Unknown: " + _local_2);
-                };
-            };
+                }
+            }
             return ("");
         }
 
@@ -459,11 +467,11 @@ package com.company.assembleegameclient.objects
             if (((this.containerType_ > 2567) && (this.containerType_ < 2573)))
             {
                 return (true);
-            };
+            }
             if (((this.containerType_ > 2656) && (this.containerType_ < 2662)))
             {
                 return (true);
-            };
+            }
             switch (this.containerType_)
             {
                 case 2767:
@@ -477,7 +485,7 @@ package com.company.assembleegameclient.objects
                 case 2782:
                 case 2326:
                     return (true);
-            };
+            }
             return (false);
         }
 
@@ -486,18 +494,15 @@ package com.company.assembleegameclient.objects
             var _local_2:int;
             for each (_local_2 in Parameters.data_.AAIgnore)
             {
-                if (!((_local_2 == 1619) || (_local_2 == 3441)))
+                if (_local_2 == _arg_1.props_.type_)
                 {
-                    if (_local_2 == _arg_1.props_.type_)
+                    if ((!(Parameters.data_.damageIgnored)))
                     {
-                        if (!Parameters.data_.damageIgnored)
-                        {
-                            return (false);
-                        };
-                        break;
-                    };
-                };
-            };
+                        return (false);
+                    }
+                    break;
+                }
+            }
             return (true);
         }
 
@@ -515,30 +520,34 @@ package com.company.assembleegameclient.objects
                 {
                     if ((((this.damagesEnemies_) && (_local_3.props_.isEnemy_)) || ((this.damagesPlayers_) && (_local_3.props_.isPlayer_))))
                     {
-                        if (!((_local_3.dead_) || (_local_3.isPaused())))
+                        if ((!((_local_3.dead_) || (_local_3.isPaused()))))
                         {
+                            if (this.damagesEnemies_)
+                            {
+                                if ((((_local_3.props_.isCube_) && (Parameters.data_.blockCubes)) || ((!(_local_3.props_.isGod_)) && (Parameters.data_.onlyGods)))) continue;
+                            }
                             _local_4 = ((_local_3.x_ > _arg_1) ? (_local_3.x_ - _arg_1) : (_arg_1 - _local_3.x_));
                             _local_5 = ((_local_3.y_ > _arg_2) ? (_local_3.y_ - _arg_2) : (_arg_2 - _local_3.y_));
-                            if (!((_local_4 > 0.5) || (_local_5 > 0.5)))
+                            if ((!((_local_4 > 0.5) || (_local_5 > 0.5))))
                             {
-                                if (!((this.projProps_.multiHit_) && (!(this.multiHitDict_[_local_3] == null))))
+                                if ((!((this.projProps_.multiHit_) && (!(this.multiHitDict_[_local_3] == null)))))
                                 {
                                     if (_local_3 == map_.player_)
                                     {
                                         return (_local_3);
-                                    };
+                                    }
                                     _local_6 = ((_local_4 * _local_4) + (_local_5 * _local_5));
                                     if (_local_6 < _local_8)
                                     {
                                         _local_8 = _local_6;
                                         _local_7 = _local_3;
-                                    };
-                                };
-                            };
-                        };
-                    };
-                };
-            };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             return (_local_7);
         }
 
@@ -551,11 +560,11 @@ package com.company.assembleegameclient.objects
             if (MapUserInput.skipRender == true)
             {
                 return;
-            };
-            if (!Parameters.drawProj_)
+            }
+            if ((!(Parameters.drawProj_)))
             {
                 return;
-            };
+            }
             var _local_8:BitmapData = this.texture_;
             if (Parameters.projColorType_ != 0)
             {
@@ -585,9 +594,9 @@ package com.company.assembleegameclient.objects
                         _local_4 = 0;
                         _local_5 = 0;
                         break;
-                };
+                }
                 _local_8 = TextureRedrawer.redraw(_local_8, 120, true, _local_5);
-            };
+            }
             var _local_9:Number = ((this.props_.rotation_ == 0) ? 0 : (_arg_3 / this.props_.rotation_));
             this.staticVector3D_.x = x_;
             this.staticVector3D_.y = y_;
@@ -602,18 +611,18 @@ package com.company.assembleegameclient.objects
                     if (((!((!(map_ == null)) && (!(map_.player_.objectId_ == this.ownerId_)))) || (!((this.projProps_.particleTrailIntensity_ == -1) && ((Math.random() * 100) > this.projProps_.particleTrailIntensity_)))))
                     {
                         map_.addObj(new SparkParticle(100, this.projProps_.particleTrailColor_, _local_6, 0.5, RandomUtil.plusMinus(3), RandomUtil.plusMinus(3)), x_, y_);
-                    };
+                    }
                     _local_7++;
-                };
-            };
+                }
+            }
         }
 
         override public function drawShadow(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
         {
-            if (!Parameters.drawProj_)
+            if ((!(Parameters.drawProj_)))
             {
                 return;
-            };
+            }
             var _local_4:Number = (this.props_.shadowSize_ / 400);
             var _local_5:Number = (30 * _local_4);
             var _local_6:Number = (15 * _local_4);

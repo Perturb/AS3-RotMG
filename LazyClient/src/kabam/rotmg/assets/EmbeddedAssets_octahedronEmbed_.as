@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_octahedronEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

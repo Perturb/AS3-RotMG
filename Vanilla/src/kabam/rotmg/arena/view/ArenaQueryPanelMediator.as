@@ -5,13 +5,16 @@
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.account.core.Account;
-    import flash.events.MouseEvent;
+import flash.events.MouseEvent;
 
-    public class ArenaQueryPanelMediator extends Mediator 
+import io.decagames.rotmg.pets.data.PetsModel;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ArenaQueryPanelMediator extends Mediator 
     {
 
         [Inject]
@@ -39,7 +42,7 @@ package kabam.rotmg.arena.view
             else
             {
                 this.view.infoButton.addEventListener(MouseEvent.CLICK, this.onButtonRightClick);
-            };
+            }
         }
 
         override public function destroy():void

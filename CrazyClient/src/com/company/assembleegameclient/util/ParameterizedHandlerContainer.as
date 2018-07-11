@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.ParameterizedHandlerContainer
 
 package com.company.assembleegameclient.util
 {
-    import flash.utils.Dictionary;
-    import flash.events.IEventDispatcher;
-    import flash.events.Event;
-    import flash.events.*;
-    import flash.utils.*;
+import flash.events.Event;
+import flash.events.IEventDispatcher;
+import flash.utils.Dictionary;
 
-    public class ParameterizedHandlerContainer 
+public class ParameterizedHandlerContainer
     {
 
         internal var _handlers:Dictionary;
@@ -50,7 +48,7 @@ package com.company.assembleegameclient.util
             {
                 _local_3.dispatcher.removeEventListener(_arg_2.type, _local_3.handler);
                 delete this._handlers[_arg_1];
-            };
+            }
         }
 
 
@@ -59,7 +57,7 @@ package com.company.assembleegameclient.util
 
 import flash.events.IEventDispatcher;
 
-class HandlerConfig 
+class HandlerConfig
 {
 
     public var handler:Function;

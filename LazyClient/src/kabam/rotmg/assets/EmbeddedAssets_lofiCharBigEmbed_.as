@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_lofiCharBigEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

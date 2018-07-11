@@ -5,28 +5,30 @@
 
 package kabam.rotmg.news
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.rotmg.startup.control.StartupSequence;
-    import kabam.rotmg.news.controller.OpenSkinSignal;
-    import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
-    import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.news.services.GetAppEngineNewsTask;
-    import kabam.rotmg.news.services.GetInGameNewsTask;
-    import kabam.rotmg.news.view.NewsView;
-    import kabam.rotmg.news.view.NewsMediator;
-    import kabam.rotmg.news.view.NewsCell;
-    import kabam.rotmg.news.view.NewsCellMediator;
-    import kabam.rotmg.game.view.NewsModalButton;
-    import kabam.rotmg.news.view.NewsModalMediator;
-    import kabam.rotmg.news.view.NewsTicker;
-    import kabam.rotmg.news.view.NewsTickerMediator;
+import kabam.rotmg.game.view.NewsModalButton;
+import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
+import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
+import kabam.rotmg.news.controller.OpenSkinSignal;
+import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.news.services.GetAppEngineNewsTask;
+import kabam.rotmg.news.services.GetInGameNewsTask;
+import kabam.rotmg.news.view.NewsCell;
+import kabam.rotmg.news.view.NewsCellMediator;
+import kabam.rotmg.news.view.NewsMediator;
+import kabam.rotmg.news.view.NewsModalMediator;
+import kabam.rotmg.news.view.NewsTicker;
+import kabam.rotmg.news.view.NewsTickerMediator;
+import kabam.rotmg.news.view.NewsView;
+import kabam.rotmg.startup.control.StartupSequence;
 
-    public class NewsConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class NewsConfig implements IConfig 
     {
 
         [Inject]

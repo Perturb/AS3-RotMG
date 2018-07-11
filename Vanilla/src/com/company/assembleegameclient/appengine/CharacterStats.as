@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.appengine
 {
-    import com.company.assembleegameclient.util.FameUtil;
+import com.company.assembleegameclient.util.FameUtil;
 
-    public class CharacterStats 
+public class CharacterStats 
     {
 
         public var charStatsXML_:XML;

@@ -1,31 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import com.company.assembleegameclient.ui.StatusBar;
-    import kabam.rotmg.ui.view.StatMetersView;
-    import com.company.assembleegameclient.ui.LineBreakDesign;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-    import com.company.assembleegameclient.appengine.CharacterStats;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import com.company.assembleegameclient.util.FameUtil;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.appengine.CharacterStats;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.GameObjectListItem;
+import com.company.assembleegameclient.ui.LineBreakDesign;
+import com.company.assembleegameclient.ui.StatusBar;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+import com.company.assembleegameclient.util.FameUtil;
 
-    public class MyPlayerToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.StatMetersView;
+
+public class MyPlayerToolTip extends ToolTip
     {
 
         private var factory:CharacterFactory;
@@ -83,7 +85,7 @@ package com.company.assembleegameclient.ui.tooltip
             if (_local_5 > 0)
             {
                 this.makeNextClassQuestText(_local_5, _local_2);
-            };
+            }
         }
 
         public function makeNextClassQuestText(_arg_1:int, _arg_2:XML):void
@@ -120,7 +122,7 @@ package com.company.assembleegameclient.ui.tooltip
             {
                 this.nextClassQuest_.x = 8;
                 this.nextClassQuest_.y = (this.bestLevel_.getBounds(this).bottom - 2);
-            };
+            }
         }
 
         override public function draw():void

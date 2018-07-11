@@ -1,29 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.components.PotionSlotMediator
 
 package kabam.rotmg.ui.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import kabam.rotmg.game.signals.UseBuyPotionSignal;
-    import kabam.rotmg.pets.data.PetSlotsState;
-    import kabam.rotmg.ui.model.PotionModel;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
-    import com.company.assembleegameclient.util.DisplayHierarchy;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import kabam.rotmg.constants.ItemConstants;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.game.model.UseBuyPotionVO;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+import com.company.assembleegameclient.util.DisplayHierarchy;
 
-    public class PotionSlotMediator extends Mediator 
+import flash.display.DisplayObject;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.model.UseBuyPotionVO;
+import kabam.rotmg.game.signals.UseBuyPotionSignal;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.model.PotionModel;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PotionSlotMediator extends Mediator
     {
 
         [Inject]
@@ -36,8 +37,6 @@ package kabam.rotmg.ui.view.components
         public var potionInventoryModel:PotionInventoryModel;
         [Inject]
         public var useBuyPotionSignal:UseBuyPotionSignal;
-        [Inject]
-        public var petSlotsState:PetSlotsState;
         private var blockingUpdate:Boolean = false;
 
 
@@ -72,40 +71,40 @@ package kabam.rotmg.ui.view.components
                 _local_2 = this.potionInventoryModel.getPotionModel(this.view.objectType);
                 _local_3 = _arg_1.getPotionCount(_local_2.objectId);
                 this.view.setData(_local_3, _local_2.currentCost(_local_3), _local_2.available);
-            };
+            }
         }
 
         private function onDrop(_arg_1:DisplayObject):void
         {
-            var _local_2:InteractiveItemTile;
-            var _local_3:Player = this.hudModel.gameSprite.map.player_;
-            var _local_4:* = DisplayHierarchy.getParentWithTypeArray(_arg_1, InteractiveItemTile, Map, FoodFeedFuseSlot);
-            if (((_local_4 is Map) || ((Parameters.isGpuRender()) && (_local_4 == null))))
+            var _local_4:InteractiveItemTile;
+            var _local_2:Player = this.hudModel.gameSprite.map.player_;
+            var _local_3:* = DisplayHierarchy.getParentWithTypeArray(_arg_1, InteractiveItemTile, Map);
+            if (((_local_3 is Map) || ((Parameters.isGpuRender()) && (_local_3 == null))))
             {
-                GameServerConnection.instance.invDrop(_local_3, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType);
+                GameServerConnection.instance.invDrop(_local_2, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType);
             }
             else
             {
-                if ((_local_4 is InteractiveItemTile))
+                if ((_local_3 is InteractiveItemTile))
                 {
-                    _local_2 = (_local_4 as InteractiveItemTile);
-                    if (((_local_2.getItemId() == ItemConstants.NO_ITEM) && (!(_local_2.ownerGrid.owner == _local_3))))
+                    _local_4 = (_local_3 as InteractiveItemTile);
+                    if (((_local_4.getItemId() == ItemConstants.NO_ITEM) && (!(_local_4.ownerGrid.owner == _local_2))))
                     {
-                        GameServerConnection.instance.invSwapPotion(_local_3, _local_3, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType, _local_2.ownerGrid.owner, _local_2.tileId, ItemConstants.NO_ITEM);
-                    };
-                };
-            };
+                        GameServerConnection.instance.invSwapPotion(_local_2, _local_2, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType, _local_4.ownerGrid.owner, _local_4.tileId, ItemConstants.NO_ITEM);
+                    }
+                }
+            }
         }
 
         private function onBuyUse():void
         {
-            var _local_1:UseBuyPotionVO;
-            var _local_2:PotionModel = this.potionInventoryModel.potionModels[this.view.position];
-            if (_local_2.available)
+            var _local_2:UseBuyPotionVO;
+            var _local_1:PotionModel = this.potionInventoryModel.potionModels[this.view.position];
+            if (_local_1.available)
             {
-                _local_1 = new UseBuyPotionVO(_local_2.objectId, UseBuyPotionVO.SHIFTCLICK);
-                this.useBuyPotionSignal.dispatch(_local_1);
-            };
+                _local_2 = new UseBuyPotionVO(_local_1.objectId, UseBuyPotionVO.SHIFTCLICK);
+                this.useBuyPotionSignal.dispatch(_local_2);
+            }
         }
 
 

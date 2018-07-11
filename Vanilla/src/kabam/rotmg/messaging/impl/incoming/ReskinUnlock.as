@@ -5,12 +5,13 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class ReskinUnlock extends IncomingMessage 
+public class ReskinUnlock extends IncomingMessage
     {
 
         public var skinID:int;
+        public var isPetSkin:int;
 
         public function ReskinUnlock(_arg_1:uint, _arg_2:Function)
         {
@@ -20,6 +21,7 @@ package kabam.rotmg.messaging.impl.incoming
         override public function parseFromInput(_arg_1:IDataInput):void
         {
             this.skinID = _arg_1.readInt();
+            this.isPetSkin = _arg_1.readInt();
         }
 
         override public function toString():String

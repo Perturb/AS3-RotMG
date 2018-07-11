@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.PicView
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import flash.events.Event;
-    import flash.display.BitmapData;
-    import flash.events.MouseEvent;
-    import flash.net.FileReference;
-    import com.adobe.images.PNGEncoder;
+import com.adobe.images.PNGEncoder;
 
-    public class PicView extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.net.FileReference;
+
+public class PicView extends Sprite
     {
 
         private var bitmap_:Bitmap;
@@ -60,7 +61,7 @@ package com.company.assembleegameclient.ui
             if (parent != null)
             {
                 parent.removeChild(this);
-            };
+            }
         }
 
 

@@ -5,10 +5,11 @@
 
 package kabam.rotmg.core
 {
-    import robotlegs.bender.framework.impl.Context;
-    import org.swiftsuspenders.Injector;
+import org.swiftsuspenders.Injector;
 
-    public class StaticInjectorContext extends Context 
+import robotlegs.bender.framework.impl.Context;
+
+public class StaticInjectorContext extends Context
     {
 
         public static var injector:Injector;
@@ -18,7 +19,7 @@ package kabam.rotmg.core
             if (!StaticInjectorContext.injector)
             {
                 StaticInjectorContext.injector = this.injector;
-            };
+            }
         }
 
         public static function getInjector():Injector

@@ -1,17 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
 
-    public class InventoryGrid extends ItemGrid 
+public class InventoryGrid extends ItemGrid 
     {
 
         private const NUM_SLOTS:uint = 8;
@@ -33,7 +32,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                 addToGrid(_local_5, 2, _local_6);
                 this._tiles[_local_6] = _local_5;
                 _local_6++;
-            };
+            }
         }
 
         public function getItemById(_arg_1:int):InventoryTile
@@ -44,8 +43,8 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                 if (_local_2.getItemId() == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (null);
         }
 
@@ -66,27 +65,36 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                         if (this._tiles[_local_5].setItem(_arg_1[(_local_5 + indexOffset)]))
                         {
                             _local_3 = true;
-                        };
+                        }
                     }
                     else
                     {
                         if (this._tiles[_local_5].setItem(-1))
                         {
                             _local_3 = true;
-                        };
-                    };
+                        }
+                    }
                     _local_5++;
-                };
+                }
                 if (_local_3)
                 {
                     refreshTooltip();
-                };
-            };
+                }
+            }
         }
 
         public function get tiles():Vector.<InventoryTile>
         {
             return (this._tiles.concat());
+        }
+
+        public function toggleTierTags(_arg_1:Boolean):void
+        {
+            var _local_2:ItemTile;
+            for each (_local_2 in this._tiles)
+            {
+                _local_2.toggleTierTag(_arg_1);
+            }
         }
 
 

@@ -1,36 +1,39 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinListItem
 
 package kabam.rotmg.classes.view
 {
-    import flash.display.Sprite;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.display.Shape;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.util.components.RadioButton;
-    import flash.display.Bitmap;
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.classes.model.CharacterSkinState;
-    import kabam.rotmg.util.components.api.BuyButton;
-    import flash.filters.DropShadowFilter;
-    import flash.display.BitmapData;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.util.Currency;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormatAlign;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.geom.ColorTransform;
-    import flash.display.Graphics;
+import com.company.assembleegameclient.util.Currency;
+import com.company.util.MoreColorUtil;
 
-    public class CharacterSkinListItem extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.ColorMatrixFilter;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
+
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.util.components.RadioButton;
+import kabam.rotmg.util.components.api.BuyButton;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class CharacterSkinListItem extends Sprite
     {
 
         public static const WIDTH:int = 420;
@@ -243,7 +246,7 @@ package kabam.rotmg.classes.view
             else
             {
                 this.removeEventListeners();
-            };
+            }
         }
 
         private function setCost():void
@@ -281,7 +284,7 @@ package kabam.rotmg.classes.view
             {
                 this.lockText.setStringBuilder(((this.state == CharacterSkinState.PURCHASING) ? new LineBuilder().setParams(TextKey.PURCHASING_SKIN) : this.makeUnlockTextStringBuilder()));
                 this.lockText.y = (HEIGHT / 2);
-            };
+            }
             this.lockText.x = ((WIDTH - this.lockText.width) - 15);
             this.lock.x = ((this.lockText.x - this.lock.width) - 5);
         }
@@ -334,11 +337,11 @@ package kabam.rotmg.classes.view
             if (this.state.isDisabled())
             {
                 return (LOCKED_COLOR);
-            };
+            }
             if (((this.isSelected) || (this.isOver)))
             {
                 return (HIGHLIGHTED_COLOR);
-            };
+            }
             return (AVAILABLE_COLOR);
         }
 

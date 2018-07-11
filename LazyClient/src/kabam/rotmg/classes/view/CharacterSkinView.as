@@ -5,24 +5,27 @@
 
 package kabam.rotmg.classes.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import com.company.assembleegameclient.screens.AccountScreen;
-    import flash.display.Shape;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import com.company.rotmg.graphics.ScreenGraphic;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.constants.ScreenTypes;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import com.company.assembleegameclient.constants.ScreenTypes;
+import com.company.assembleegameclient.screens.AccountScreen;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.rotmg.graphics.ScreenGraphic;
 
-    public class CharacterSkinView extends Sprite 
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.ui.view.SignalWaiter;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class CharacterSkinView extends Sprite
     {
 
         private const base:ScreenBase = makeScreenBase();
@@ -61,7 +64,7 @@ package kabam.rotmg.classes.view
             if (_local_2 != null)
             {
                 _local_1.draw(_local_2.getCredits(), _local_2.getFame(), _local_2.getTokens());
-            };
+            }
             _local_1.x = 800;
             _local_1.y = 20;
             addChild(_local_1);
@@ -136,7 +139,7 @@ package kabam.rotmg.classes.view
             if (!_arg_1)
             {
                 this.playBtn.deactivate();
-            };
+            }
         }
 
         private function makeSignalWaiter():SignalWaiter

@@ -5,9 +5,9 @@
 
 package kabam.rotmg.core.model
 {
-    import com.company.assembleegameclient.screens.AccountLoadingScreen;
+import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
-    public class ScreenModel 
+public class ScreenModel
     {
 
         private var currentType:Class;
@@ -18,7 +18,7 @@ package kabam.rotmg.core.model
             if (_arg_1 != AccountLoadingScreen)
             {
                 this.currentType = _arg_1;
-            };
+            }
         }
 
         public function getCurrentScreenType():Class

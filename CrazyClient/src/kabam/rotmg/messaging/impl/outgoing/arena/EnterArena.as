@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.arena.EnterArena
 
 package kabam.rotmg.messaging.impl.outgoing.arena
 {
-    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class EnterArena extends OutgoingMessage 
+import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+
+public class EnterArena extends OutgoingMessage 
     {
 
         public var currency:int;

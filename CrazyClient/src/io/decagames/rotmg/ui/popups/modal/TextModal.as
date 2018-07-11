@@ -1,48 +1,54 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.modal.TextModal
 
 package io.decagames.rotmg.ui.popups.modal
 {
-    import io.decagames.rotmg.ui.buttons.BaseButton;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import __AS3__.vec.Vector;
+import io.decagames.rotmg.ui.buttons.BaseButton;
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.labels.UILabel;
 
-    public class TextModal extends ModalPopup 
+public class TextModal extends ModalPopup
     {
 
         private var buttonsMargin:int = 30;
 
-        public function TextModal(_arg_1:int, _arg_2:String, _arg_3:String, _arg_4:Vector.<BaseButton>)
+        public function TextModal(_arg_1:int, _arg_2:String, _arg_3:String, _arg_4:Vector.<BaseButton>, _arg_5:Boolean=false)
         {
-            var _local_5:BaseButton;
-            var _local_6:int;
-            var _local_8:int;
+            var _local_8:BaseButton;
+            var _local_9:int;
+            var _local_7:int;
             super(_arg_1, 0, _arg_2);
-            var _local_7:UILabel = new UILabel();
-            _local_7.multiline = true;
-            DefaultLabelFormat.defaultTextModalText(_local_7);
-            _local_7.multiline = true;
-            _local_7.width = _arg_1;
-            _local_7.text = _arg_3;
-            _local_7.wordWrap = true;
-            addChild(_local_7);
-            for each (_local_5 in _arg_4)
+            var _local_6:UILabel = new UILabel();
+            _local_6.multiline = true;
+            DefaultLabelFormat.defaultTextModalText(_local_6);
+            _local_6.multiline = true;
+            _local_6.width = _arg_1;
+            if (_arg_5)
             {
-                _local_8 = (_local_8 + _local_5.width);
-            };
-            _local_8 = (_local_8 + (this.buttonsMargin * (_arg_4.length - 1)));
-            _local_6 = int(((_arg_1 - _local_8) / 2));
-            for each (_local_5 in _arg_4)
+                _local_6.htmlText = _arg_3;
+            }
+            else
             {
-                _local_5.x = _local_6;
-                _local_6 = (_local_6 + (this.buttonsMargin + _local_5.width));
-                _local_5.y = ((_local_7.y + _local_7.textHeight) + 15);
-                addChild(_local_5);
-                registerButton(_local_5);
-            };
+                _local_6.text = _arg_3;
+            }
+            _local_6.wordWrap = true;
+            addChild(_local_6);
+            for each (_local_8 in _arg_4)
+            {
+                _local_7 = (_local_7 + _local_8.width);
+            }
+            _local_7 = (_local_7 + (this.buttonsMargin * (_arg_4.length - 1)));
+            _local_9 = int(int(((_arg_1 - _local_7) / 2)));
+            for each (_local_8 in _arg_4)
+            {
+                _local_8.x = _local_9;
+                _local_9 = (_local_9 + (this.buttonsMargin + _local_8.width));
+                _local_8.y = ((_local_6.y + _local_6.textHeight) + 15);
+                addChild(_local_8);
+                registerButton(_local_8);
+            }
         }
 
     }

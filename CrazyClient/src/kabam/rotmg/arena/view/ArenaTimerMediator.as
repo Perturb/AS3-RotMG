@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaTimerMediator
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
-    import kabam.rotmg.arena.control.ArenaDeathSignal;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
-    public class ArenaTimerMediator extends Mediator 
+import kabam.rotmg.arena.control.ArenaDeathSignal;
+import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ArenaTimerMediator extends Mediator 
     {
 
         [Inject]

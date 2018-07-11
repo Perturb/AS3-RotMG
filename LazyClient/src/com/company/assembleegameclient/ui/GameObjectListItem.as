@@ -5,20 +5,23 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.TemplateBuilder;
-    import com.company.assembleegameclient.objects.GameObject;
-    import org.osflash.signals.Signal;
-    import flash.filters.DropShadowFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreColorUtil;
 
-    public class GameObjectListItem extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.TemplateBuilder;
+
+import org.osflash.signals.Signal;
+
+public class GameObjectListItem extends Sprite
     {
 
         public var portrait:Bitmap;
@@ -46,7 +49,7 @@ package com.company.assembleegameclient.ui
             if (!_arg_2)
             {
                 this.text.setTextWidth(66).setTextHeight(20).setBold(true);
-            };
+            }
             this.text.x = 32;
             this.text.y = 6;
             this.text.filters = [new DropShadowFilter(0, 0, 0)];
@@ -65,7 +68,7 @@ package com.company.assembleegameclient.ui
             {
                 this.redraw();
                 transform.colorTransform = ((_arg_2) || (MoreColorUtil.identity));
-            };
+            }
         }
 
         public function clear():void
@@ -117,8 +120,8 @@ package com.company.assembleegameclient.ui
                 else
                 {
                     this.builder.setTemplate(ObjectLibrary.typeToDisplayId_[this.type]);
-                };
-            };
+                }
+            }
             return (this.builder);
         }
 
@@ -135,7 +138,7 @@ package com.company.assembleegameclient.ui
                 else
                 {
                     _local_1 = "<b>{name}</b> ({type}{level})";
-                };
+                }
                 _local_2.name = this.go.name_;
                 _local_2.type = ObjectLibrary.typeToDisplayId_[this.type];
                 _local_2.level = ((this.level < 1) ? "" : (" " + this.level));
@@ -144,7 +147,7 @@ package com.company.assembleegameclient.ui
             {
                 _local_1 = "<b>{name}</b>";
                 _local_2.name = ObjectLibrary.typeToDisplayId_[this.type];
-            };
+            }
             this.builder.setTemplate(_local_1, _local_2);
         }
 
@@ -159,15 +162,15 @@ package com.company.assembleegameclient.ui
             if (_local_1 == null)
             {
                 return (this.color);
-            };
+            }
             if (_local_1.isFellowGuild_)
             {
                 return (Parameters.FELLOW_GUILD_COLOR);
-            };
+            }
             if (_local_1.nameChosen_)
             {
                 return (Parameters.NAME_CHOSEN_COLOR);
-            };
+            }
             return (this.color);
         }
 

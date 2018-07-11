@@ -16,8 +16,9 @@
       <Quest/>
       <StasisImmune/>
       <Level>1</Level>
-      <XpMult>0.8</XpMult>
+      <Exp>64</Exp>
       <NoArticle/>
+      <EventChestBoss/>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>17</Damage>

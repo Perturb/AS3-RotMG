@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.GUID
 
 package com.company.assembleegameclient.util
 {
-    import flash.system.Capabilities;
+import flash.system.Capabilities;
 
-    public class GUID 
+public class GUID
     {
 
         private static var counter:Number = 0;
@@ -67,7 +67,7 @@ package com.company.assembleegameclient.util
                     else
                     {
                         _local_10[_local_8] = rol((((_local_10[(_local_8 - 3)] ^ _local_10[(_local_8 - 8)]) ^ _local_10[(_local_8 - 14)]) ^ _local_10[(_local_8 - 16)]), 1);
-                    };
+                    }
                     _local_9 = safe_add(safe_add(rol(_local_11, 5), sha1_ft(_local_8, _local_12, _local_13, _local_14)), safe_add(safe_add(_local_15, _local_10[_local_8]), sha1_kt(_local_8)));
                     _local_15 = _local_14;
                     _local_14 = _local_13;
@@ -75,14 +75,14 @@ package com.company.assembleegameclient.util
                     _local_12 = _local_11;
                     _local_11 = _local_9;
                     _local_8++;
-                };
+                }
                 _local_11 = safe_add(_local_11, _local_3);
                 _local_12 = safe_add(_local_12, _local_4);
                 _local_13 = safe_add(_local_13, _local_5);
                 _local_14 = safe_add(_local_14, _local_6);
                 _local_15 = safe_add(_local_15, _local_7);
                 _local_16 = (_local_16 + 16);
-            };
+            }
             return ([_local_11, _local_12, _local_13, _local_14, _local_15]);
         }
 
@@ -91,15 +91,15 @@ package com.company.assembleegameclient.util
             if (_arg_1 < 20)
             {
                 return ((_arg_2 & _arg_3) | ((~(_arg_2)) & _arg_4));
-            };
+            }
             if (_arg_1 < 40)
             {
                 return ((_arg_2 ^ _arg_3) ^ _arg_4);
-            };
+            }
             if (_arg_1 < 60)
             {
                 return (((_arg_2 & _arg_3) | (_arg_2 & _arg_4)) | (_arg_3 & _arg_4));
-            };
+            }
             return ((_arg_2 ^ _arg_3) ^ _arg_4);
         }
 
@@ -129,7 +129,7 @@ package com.company.assembleegameclient.util
             {
                 _local_2[(_local_4 >> 5)] = (_local_2[(_local_4 >> 5)] | ((_arg_1.charCodeAt((_local_4 / 8)) & _local_3) << (24 - (_local_4 % 32))));
                 _local_4 = (_local_4 + 8);
-            };
+            }
             return (_local_2);
         }
 
@@ -142,7 +142,7 @@ package com.company.assembleegameclient.util
             {
                 _local_2 = (_local_2 + (_local_3.charAt(((_arg_1[(_local_4 >> 2)] >> (((3 - (_local_4 % 4)) * 8) + 4)) & 0x0F)) + _local_3.charAt(((_arg_1[(_local_4 >> 2)] >> ((3 - (_local_4 % 4)) * 8)) & 0x0F))));
                 _local_4++;
-            };
+            }
             return (_local_2);
         }
 

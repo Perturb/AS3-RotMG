@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.util.ArenaViewAssetFactory
 
 package kabam.rotmg.arena.util
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.DropShadowFilter;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class ArenaViewAssetFactory 
+import flash.display.Bitmap;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class ArenaViewAssetFactory 
     {
 
 

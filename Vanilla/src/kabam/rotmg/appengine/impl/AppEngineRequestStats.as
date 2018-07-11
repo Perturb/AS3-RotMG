@@ -5,9 +5,9 @@
 
 package kabam.rotmg.appengine.impl
 {
-    import kabam.lib.console.signals.ConsoleWatchSignal;
+import kabam.lib.console.signals.ConsoleWatchSignal;
 
-    public class AppEngineRequestStats 
+public class AppEngineRequestStats
     {
 
         private const nameMap:Object = {};
@@ -29,7 +29,7 @@ package kabam.rotmg.appengine.impl
 
 import kabam.lib.console.model.Watch;
 
-class StatsWatch extends Watch 
+class StatsWatch extends Watch
 {
 
     private static const STATS_PATTERN:String = "[APPENGINE STATS] [0xFFEE00:{/x={MEAN}ms, ok={OK}/{COUNT}} {NAME}]";

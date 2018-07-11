@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.view.AccountLoadErrorDialog
 
 package kabam.rotmg.account.kabam.view
 {
-    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.natives.NativeMappedSignal;
+import com.company.assembleegameclient.ui.dialogs.DebugDialog;
 
-    public class AccountLoadErrorDialog extends DebugDialog 
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class AccountLoadErrorDialog extends DebugDialog
     {
 
         private static const MESSAGE:String = "Failed to retrieve valid Kabam request! Click to reload.";

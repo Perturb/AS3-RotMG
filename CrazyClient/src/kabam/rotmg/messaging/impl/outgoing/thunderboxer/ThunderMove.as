@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.thunderboxer.ThunderMove
 
 package kabam.rotmg.messaging.impl.outgoing.thunderboxer
 {
-    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class ThunderMove extends OutgoingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+
+public class ThunderMove extends OutgoingMessage 
     {
 
         public var newPosition_:WorldPosData = new WorldPosData();

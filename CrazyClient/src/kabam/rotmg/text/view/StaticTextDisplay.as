@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.view.StaticTextDisplay
 
 package kabam.rotmg.text.view
 {
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.text.model.FontModel;
-    import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.model.TextAndMapProvider;
 
-    public class StaticTextDisplay extends TextDisplay 
+import org.swiftsuspenders.Injector;
+
+public class StaticTextDisplay extends TextDisplay
     {
 
         public function StaticTextDisplay()

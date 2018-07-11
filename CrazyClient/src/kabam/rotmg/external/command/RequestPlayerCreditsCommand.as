@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.command.RequestPlayerCreditsCommand
 
 package kabam.rotmg.external.command
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.lib.tasks.TaskMonitor;
-    import org.swiftsuspenders.Injector;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.rotmg.external.service.RequestPlayerCreditsTask;
-    import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.external.service.RequestPlayerCreditsTask;
 
-    public class RequestPlayerCreditsCommand extends Command 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class RequestPlayerCreditsCommand extends Command 
     {
 
         [Inject]

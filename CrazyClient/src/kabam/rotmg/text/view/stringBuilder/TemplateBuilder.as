@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.view.stringBuilder.TemplateBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {
-    import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.language.model.StringMap;
 
-    public class TemplateBuilder implements StringBuilder 
+public class TemplateBuilder implements StringBuilder 
     {
 
         private var template:String;
@@ -52,9 +52,9 @@ package kabam.rotmg.text.view.stringBuilder
                 if (((_local_2.charAt(0) == "{") && (_local_2.charAt((_local_2.length - 1)) == "}")))
                 {
                     _local_2 = this.provider.getValue(_local_2.substr(1, (_local_2.length - 2)));
-                };
+                }
                 _local_3 = _local_3.replace((("{" + _local_1) + "}"), _local_2);
-            };
+            }
             _local_3 = _local_3.replace(/\\n/g, "\n");
             return ((this.prefix + _local_3) + this.postfix);
         }

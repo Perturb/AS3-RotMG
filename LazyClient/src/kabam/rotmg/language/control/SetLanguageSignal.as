@@ -5,9 +5,9 @@
 
 package kabam.rotmg.language.control
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class SetLanguageSignal extends Signal 
+public class SetLanguageSignal extends Signal 
     {
 
         public function SetLanguageSignal()

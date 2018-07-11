@@ -5,23 +5,26 @@
 
 package kabam.rotmg.account.transfer.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.web.view.LabeledField;
-    import com.company.assembleegameclient.account.ui.CheckBoxField;
-    import kabam.rotmg.account.ui.components.DateField;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
-    import com.company.util.EmailValidator;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.EmailValidator;
 
-    public class TransferAccountView extends Frame 
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.account.ui.components.DateField;
+import kabam.rotmg.account.web.view.LabeledField;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class TransferAccountView extends Frame 
     {
 
         private const errors:Array = [];
@@ -117,7 +120,7 @@ package kabam.rotmg.account.transfer.view
             if (_local_2)
             {
                 this.sendData();
-            };
+            }
         }
 
         private function areInputsValid():Boolean
@@ -138,7 +141,7 @@ package kabam.rotmg.account.transfer.view
             else
             {
                 this.displayErrorText(((this.errors.length == 1) ? this.errors[0] : TextKey.MULTIPLE_ERRORS_MESSAGE));
-            };
+            }
         }
 
         public function displayServerError(_arg_1:String):void
@@ -165,7 +168,7 @@ package kabam.rotmg.account.transfer.view
             if (!_local_2)
             {
                 this.errors.push(TextKey.INVALID_EMAIL_ADDRESS);
-            };
+            }
             return (_local_2);
         }
 
@@ -176,7 +179,7 @@ package kabam.rotmg.account.transfer.view
             if (!_local_2)
             {
                 this.errors.push(TextKey.PASSWORD_TOO_SHORT);
-            };
+            }
             return (_local_2);
         }
 
@@ -187,7 +190,7 @@ package kabam.rotmg.account.transfer.view
             if (!_local_1)
             {
                 this.errors.push(TextKey.PASSWORDS_DONT_MATCH);
-            };
+            }
             return (_local_1);
         }
 

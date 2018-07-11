@@ -5,11 +5,11 @@
 
 package kabam.rotmg.arena.model
 {
-    import flash.display.BitmapData;
-    import kabam.rotmg.pets.data.PetVO;
-    import __AS3__.vec.Vector;
+import flash.display.BitmapData;
 
-    public class ArenaLeaderboardEntry 
+import io.decagames.rotmg.pets.data.vo.PetVO;
+
+public class ArenaLeaderboardEntry 
     {
 
         public var playerBitmap:BitmapData;

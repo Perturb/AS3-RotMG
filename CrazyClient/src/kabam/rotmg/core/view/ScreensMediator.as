@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.ScreensMediator
 
 package kabam.rotmg.core.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.core.model.ScreenModel;
-    import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class ScreensMediator extends Mediator 
+import kabam.rotmg.core.model.ScreenModel;
+import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ScreensMediator extends Mediator
     {
 
         [Inject]

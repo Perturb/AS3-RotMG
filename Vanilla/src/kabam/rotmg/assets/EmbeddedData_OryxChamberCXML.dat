@@ -20,7 +20,7 @@
       <Size>100</Size>
       <MaxHitPoints>60000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>51.2821</XpMult>
+      <Exp>10000</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>30</Speed>
@@ -186,7 +186,7 @@
       </AltTexture>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <ShadowSize>100</ShadowSize>
       <Projectile id="0">
@@ -213,7 +213,7 @@
       </Texture>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <ShadowSize>40</ShadowSize>
       <Z>0.27</Z>
@@ -293,7 +293,7 @@
       </Animation>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <ShadowSize>30</ShadowSize>
       <Z>0.26</Z>
@@ -360,7 +360,7 @@
          <MultiHit/>
       </Projectile>
       <Size>80</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x1745" id="Black Moon">
       <Group>Vagrant Repellent</Group>
@@ -373,7 +373,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <StasisImmune/>
@@ -397,7 +397,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <StasisImmune/>
@@ -427,7 +427,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <StasisImmune/>
@@ -468,7 +468,7 @@
          <MultiHit/>
       </Projectile>
       <Size>50</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x1749" id="Minion of Oryx">
       <Group>Minions of Oryx</Group>
@@ -503,7 +503,7 @@
          <MultiHit/>
       </Projectile>
       <Size>100</Size>
-      <XpMult>0.3</XpMult>
+      <Exp>58</Exp>
    </Object>
    <Object type="0x174a" id="Guardian Element 1">
       <DisplayId>Guardian Element</DisplayId>
@@ -536,7 +536,7 @@
          <Frequency>0.5</Frequency>
       </Projectile>
       <Size>130</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x174b" id="Guardian Element 2">
       <DisplayId>Guardian Element</DisplayId>
@@ -569,7 +569,7 @@
          <Frequency>0.5</Frequency>
       </Projectile>
       <Size>130</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x174c" id="Guardian Element 3">
       <DisplayId>Guardian Element</DisplayId>
@@ -602,7 +602,7 @@
          <Frequency>0.5</Frequency>
       </Projectile>
       <Size>130</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x174d" id="Guardian Element 4">
       <DisplayId>Guardian Element</DisplayId>
@@ -635,7 +635,7 @@
          <Frequency>0.5</Frequency>
       </Projectile>
       <Size>130</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x174e" id="Outer Guardian Element">
       <DisplayId>Guardian Element</DisplayId>
@@ -658,7 +658,7 @@
          <MultiHit/>
       </Projectile>
       <Size>130</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x802f" id="O1 Portal Dropper">
       <Class>GameObject</Class>

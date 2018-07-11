@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaTimer
 
 package kabam.rotmg.arena.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.utils.Timer;
 
-    public class ArenaTimer extends Sprite 
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class ArenaTimer extends Sprite 
     {
 
         private const timerText:StaticTextDisplay = makeTimerText();
@@ -37,7 +38,7 @@ package kabam.rotmg.arena.view
 
         private function updateTimer(_arg_1:TimerEvent):void
         {
-            var _local_2:int = int((this.secs / 60));
+            var _local_2:int = int(int((this.secs / 60)));
             var _local_3:int = (this.secs % 60);
             var _local_4:String = ((_local_2 < 10) ? "0" : "");
             _local_4 = (_local_4 + (_local_2 + ":"));

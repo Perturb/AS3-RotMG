@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.ButtonFactory
 
 package kabam.rotmg.ui.view
 {
-    import flash.text.TextFieldAutoSize;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import com.company.assembleegameclient.constants.ScreenTypes;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import com.company.assembleegameclient.constants.ScreenTypes;
+import com.company.assembleegameclient.screens.TitleMenuOption;
 
-    public class ButtonFactory 
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class ButtonFactory
     {
 
         public static const BUTTON_SIZE_LARGE:uint = 36;

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.GiftStatusUpdateCommand
 
 package kabam.rotmg.game.commands
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import com.company.assembleegameclient.game.GiftStatusModel;
+import com.company.assembleegameclient.game.GiftStatusModel;
 
-    public class GiftStatusUpdateCommand extends Command 
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class GiftStatusUpdateCommand extends Command 
     {
 
         [Inject]

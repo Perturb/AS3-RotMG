@@ -5,10 +5,10 @@
 
 package kabam.rotmg.packages.control
 {
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.packages.services.PackageModel;
+import kabam.rotmg.packages.services.PackageModel;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
-    public class InitPackagesCommand 
+public class InitPackagesCommand 
     {
 
         [Inject]
@@ -32,8 +32,8 @@ package kabam.rotmg.packages.control
                 if (this.packageModel.hasPackages())
                 {
                     this.packageAvailable.dispatch();
-                };
-            };
+                }
+            }
         }
 
 

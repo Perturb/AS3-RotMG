@@ -1,26 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.XMLParticle
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.BasicObject;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.animation.Animations;
-    import flash.geom.Vector3D;
-    import flash.display.GraphicsBitmapFill;
-    import flash.display.GraphicsPath;
-    import com.company.util.GraphicsUtil;
-    import __AS3__.vec.Vector;
-    import flash.geom.Matrix;
-    import com.company.assembleegameclient.map.Square;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Square;
+import com.company.assembleegameclient.objects.BasicObject;
+import com.company.assembleegameclient.objects.animation.Animations;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.GraphicsUtil;
 
-    public class XMLParticle extends BasicObject 
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsPath;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix;
+import flash.geom.Vector3D;
+
+public class XMLParticle extends BasicObject 
     {
 
         public var texture_:BitmapData = null;
@@ -44,7 +43,7 @@ package com.company.assembleegameclient.objects.particles
             if (_arg_1.animationsData_ != null)
             {
                 this.animations_ = new Animations(_arg_1.animationsData_);
-            };
+            }
             this.moveVec_ = new Vector3D();
             var _local_2:Number = ((Math.PI * 2) * Math.random());
             this.moveVec_.x = ((Math.cos(_local_2) * 0.1) * 5);
@@ -57,7 +56,7 @@ package com.company.assembleegameclient.objects.particles
             if (_local_3 == null)
             {
                 return (false);
-            };
+            }
             x_ = _arg_1;
             y_ = _arg_2;
             square_ = _local_3;
@@ -72,7 +71,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.durationLeft_ <= 0)
             {
                 return (false);
-            };
+            }
             x_ = (x_ + (this.moveVec_.x * _local_3));
             y_ = (y_ + (this.moveVec_.y * _local_3));
             return (true);
@@ -88,8 +87,8 @@ package com.company.assembleegameclient.objects.particles
                 if (_local_4 != null)
                 {
                     _local_5 = _local_4;
-                };
-            };
+                }
+            }
             _local_5 = TextureRedrawer.redraw(_local_5, this.size_, true, 0);
             var _local_6:int = _local_5.width;
             var _local_7:int = _local_5.height;

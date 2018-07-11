@@ -5,11 +5,11 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.display.BitmapData;
-    import flash.utils.ByteArray;
-    import flash.utils.IDataInput;
+import flash.display.BitmapData;
+import flash.utils.ByteArray;
+import flash.utils.IDataInput;
 
-    public class Pic extends IncomingMessage 
+public class Pic extends IncomingMessage
     {
 
         public var bitmapData_:BitmapData = null;

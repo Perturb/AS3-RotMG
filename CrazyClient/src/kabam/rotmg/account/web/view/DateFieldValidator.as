@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.DateFieldValidator
 
 package kabam.rotmg.account.web.view
 {
-    import kabam.rotmg.account.ui.components.DateField;
+import kabam.rotmg.account.ui.components.DateField;
 
-    public class DateFieldValidator 
+public class DateFieldValidator 
     {
 
 
@@ -19,7 +19,7 @@ package kabam.rotmg.account.web.view
             if (((_local_2.month > _local_3.month) || ((_local_2.month == _local_3.month) && (_local_2.date > _local_3.date))))
             {
                 _local_4--;
-            };
+            }
             return (_local_4);
         }
 

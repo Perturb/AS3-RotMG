@@ -5,21 +5,23 @@
 
 package kabam.rotmg.dailyLogin.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.dailyLogin.config.CalendarSettings;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.events.MouseEvent;
-    import com.company.util.MoreColorUtil;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.util.MoreColorUtil;
 
-    public class DailyCalendarInfoIcon extends Sprite implements TooltipAble 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.dailyLogin.config.CalendarSettings;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+
+public class DailyCalendarInfoIcon extends Sprite implements TooltipAble
     {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
@@ -35,7 +37,7 @@ package kabam.rotmg.dailyLogin.view
             if (_arg_1 != "")
             {
                 this.setToolTipTitle(_arg_1, _arg_2, _arg_3);
-            };
+            }
         }
 
         public function destroy():void
@@ -43,7 +45,7 @@ package kabam.rotmg.dailyLogin.view
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
-            };
+            }
             this.toolTip_ = null;
             this.hoverTooltipDelegate.removeDisplayObject();
             this.hoverTooltipDelegate = null;

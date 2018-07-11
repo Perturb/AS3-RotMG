@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.PotionInventoryView
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.components.PotionSlotView;
+import flash.display.Sprite;
 
-    public class PotionInventoryView extends Sprite 
+import kabam.rotmg.ui.view.components.PotionSlotView;
+
+public class PotionInventoryView extends Sprite
     {
 
         private static const LEFT_BUTTON_CUTS:Array = [1, 0, 0, 1];
@@ -25,10 +26,10 @@ package kabam.rotmg.ui.view
             while (_local_2 < 2)
             {
                 _local_1 = new PotionSlotView(this.cuts[_local_2], _local_2);
-                _local_1.x = (_local_2 * (PotionSlotView.BUTTON_WIDTH + BUTTON_SPACE));
+                _local_1.x = (_local_2 * (84 + 4));
                 addChild(_local_1);
                 _local_2++;
-            };
+            }
         }
 
     }

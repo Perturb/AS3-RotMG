@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.VerticalScrollbar
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import kabam.lib.ui.api.Scrollbar;
-    import org.osflash.signals.Signal;
+import flash.display.Sprite;
 
-    public class VerticalScrollbar extends Sprite implements Scrollbar 
+import kabam.lib.ui.api.Scrollbar;
+
+import org.osflash.signals.Signal;
+
+public class VerticalScrollbar extends Sprite implements Scrollbar 
     {
 
         public static const WIDTH:int = 20;
@@ -54,8 +56,8 @@ package kabam.rotmg.util.components
                 else
                 {
                     this.removeMouseListeners();
-                };
-            };
+                }
+            }
         }
 
         private function addMouseListeners():void
@@ -113,8 +115,8 @@ package kabam.rotmg.util.components
                 if (_arg_1 > 1)
                 {
                     _arg_1 = 1;
-                };
-            };
+                }
+            }
             this.position = _arg_1;
             this.bar.y = (PADDING + (this.range * this.position));
             ((this._positionChanged) && (this._positionChanged.dispatch(this.position)));

@@ -1,32 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.Menu
 
 package com.company.assembleegameclient.ui.menu
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.UnFocusAble;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.geom.Rectangle;
-    import com.company.util.RectangleUtil;
-    import flash.display.DisplayObjectContainer;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.GraphicsUtil;
+import com.company.util.RectangleUtil;
 
-    public class Menu extends Sprite implements UnFocusAble 
+import flash.display.CapsStyle;
+import flash.display.DisplayObjectContainer;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+
+import kabam.rotmg.ui.view.UnFocusAble;
+
+public class Menu extends Sprite implements UnFocusAble
     {
 
         private var background_:uint;
@@ -76,13 +76,13 @@ package com.company.assembleegameclient.ui.menu
             if (stage == null)
             {
                 return;
-            };
+            }
             var _local_2:Rectangle = getRect(stage);
             var _local_3:Number = RectangleUtil.pointDist(_local_2, stage.mouseX, stage.mouseY);
             if (_local_3 > 40)
             {
                 this.remove();
-            };
+            }
         }
 
         public function scaleParent(_arg_1:Boolean):void
@@ -95,7 +95,7 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 _local_2 = this.parent;
-            };
+            }
             var _local_3:Number = (800 / stage.stageWidth);
             var _local_4:Number = (600 / stage.stageHeight);
             if (_arg_1 == true)
@@ -107,7 +107,7 @@ package com.company.assembleegameclient.ui.menu
             {
                 _local_2.scaleX = _local_3;
                 _local_2.scaleY = _local_4;
-            };
+            }
         }
 
         private function position():void
@@ -122,11 +122,11 @@ package com.company.assembleegameclient.ui.menu
             {
                 _local_3 = (_local_3 * _local_4);
                 _local_1 = (_local_1 * _local_4);
-            };
+            }
             if (stage == null)
             {
                 return;
-            };
+            }
             if (((stage.mouseX + (0.5 * stage.stageWidth)) - 400) < (stage.stageWidth / 2))
             {
                 x = (_local_3 + 12);
@@ -134,11 +134,11 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 x = ((_local_3 - width) - 1);
-            };
+            }
             if (x < 12)
             {
                 x = 12;
-            };
+            }
             if (((stage.mouseY + (0.5 * stage.stageHeight)) - 300) < (stage.stageHeight / 3))
             {
                 y = (_local_1 + 12);
@@ -146,11 +146,11 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 y = ((_local_1 - height) - 1);
-            };
+            }
             if (y < 12)
             {
                 y = 12;
-            };
+            }
         }
 
         protected function onRollOut(_arg_1:Event):void
@@ -163,7 +163,7 @@ package com.company.assembleegameclient.ui.menu
             if (parent != null)
             {
                 parent.removeChild(this);
-            };
+            }
         }
 
         protected function draw():void

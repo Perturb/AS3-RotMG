@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.model.ChatFilter
 
 package kabam.rotmg.game.model
 {
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChatFilter 
+public class ChatFilter 
     {
 
 
@@ -17,19 +17,19 @@ package kabam.rotmg.game.model
             if (_arg_1 == null)
             {
                 return (true);
-            };
+            }
             if (((((_arg_1 == Parameters.SERVER_CHAT_NAME) || (_arg_1 == Parameters.HELP_CHAT_NAME)) || (_arg_1 == Parameters.ERROR_CHAT_NAME)) || (_arg_1 == Parameters.CLIENT_CHAT_NAME)))
             {
                 _local_2 = true;
-            };
+            }
             if (_arg_1.charAt(0) == "#")
             {
                 _local_2 = true;
-            };
+            }
             if (_arg_1.charAt(0) == "@")
             {
                 _local_2 = true;
-            };
+            }
             return (_local_2);
         }
 

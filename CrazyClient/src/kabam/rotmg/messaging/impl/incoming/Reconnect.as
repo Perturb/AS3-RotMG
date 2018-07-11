@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Reconnect
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.ByteArray;
-    import flash.utils.IDataInput;
+import flash.utils.ByteArray;
+import flash.utils.IDataInput;
 
-    public class Reconnect extends IncomingMessage 
+public class Reconnect extends IncomingMessage 
     {
 
         public var name_:String;

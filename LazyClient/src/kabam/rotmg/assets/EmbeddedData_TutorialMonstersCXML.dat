@@ -187,7 +187,7 @@
       <Defense>0</Defense>
       <Quest/>
       <Level>1</Level>
-      <XpMult>0.7</XpMult>
+      <Exp>20</Exp>
       <NoArticle/>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>

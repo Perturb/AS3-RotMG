@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.StatsMediator
 
 package kabam.rotmg.game.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.ui.view.StatsDockedSignal;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Player;
 
-    public class StatsMediator extends Mediator 
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+import kabam.rotmg.ui.view.StatsDockedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class StatsMediator extends Mediator
     {
 
         [Inject]
@@ -38,7 +40,7 @@ package kabam.rotmg.game.view.components
             if (this.view.myPlayer == false)
             {
                 return;
-            };
+            }
             this.view.draw(_arg_1);
         }
 

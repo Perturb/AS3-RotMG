@@ -15,7 +15,6 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>125</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -40,7 +39,6 @@
       <Size>100</Size>
       <MaxHitPoints>800</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>1</XpMult>
       <Projectile id="0">
          <ObjectId>Gray Spinner</ObjectId>
          <Damage>95</Damage>
@@ -51,9 +49,9 @@
       </Projectile>
    </Object>
    <Object type="0x714e" id="DS Natural Slime God">
-      <DisplayId>Natural Slime God</DisplayId>
       <Enemy/>
       <Class>Character</Class>
+      <DisplayId>Natural Slime God</DisplayId>
       <AnimatedTexture>
          <File>chars16x16dMountains1</File>
          <Index>0x07</Index>
@@ -64,7 +62,6 @@
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>12</Defense>
       <God/>
-      <XpMult>1</XpMult>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>80</Damage>
@@ -92,7 +89,7 @@
       <Size>100</Size>
       <MaxHitPoints>900</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.642</XpMult>
+      <Exp>57</Exp>
       <Projectile id="0">
          <ObjectId>Green Magic</ObjectId>
          <Damage>20</Damage>
@@ -114,7 +111,7 @@
       <Size>100</Size>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>8</Defense>
-      <XpMult>0.642</XpMult>
+      <Exp>77</Exp>
       <Projectile id="0">
          <ObjectId>Green Missile</ObjectId>
          <Damage>50</Damage>
@@ -144,7 +141,7 @@
       <Size>100</Size>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>8</Defense>
-      <XpMult>0.642</XpMult>
+      <Exp>77</Exp>
       <Projectile id="0">
          <ObjectId>Green Missile</ObjectId>
          <Damage>60</Damage>
@@ -165,7 +162,7 @@
       <Size>100</Size>
       <MaxHitPoints>1750</MaxHitPoints>
       <Defense>12</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>140</Exp>
       <Projectile id="0">
          <ObjectId>Green Bolt</ObjectId>
          <Damage>90</Damage>
@@ -186,7 +183,7 @@
       <Size>100</Size>
       <MaxHitPoints>2450</MaxHitPoints>
       <Defense>18</Defense>
-      <XpMult>0.642</XpMult>
+      <Exp>125</Exp>
       <Projectile id="0">
          <ObjectId>White Bolt</ObjectId>
          <Damage>140</Damage>
@@ -207,7 +204,7 @@
       <Size>100</Size>
       <MaxHitPoints>1700</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>136</Exp>
       <Projectile id="0">
          <ObjectId>Z Blast</ObjectId>
          <Damage>40</Damage>
@@ -230,7 +227,7 @@
       <Size>120</Size>
       <MaxHitPoints>2750</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <Projectile id="0">
          <ObjectId>Brown Magic</ObjectId>
          <Damage>40</Damage>
@@ -252,7 +249,7 @@
       <Size>120</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <Projectile id="0">
          <ObjectId>Yellow Magic</ObjectId>
          <Damage>30</Damage>
@@ -280,7 +277,7 @@
       <StasisImmune/>
       <NoArticle/>
       <Level>1</Level>
-      <XpMult>2.5642</XpMult>
+      <Exp>500</Exp>
       <EventChestBoss/>
       <Projectile id="0">
          <ObjectId>Poison Fireball</ObjectId>
@@ -327,7 +324,7 @@
       <Size>100</Size>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
    </Object>
    <Object type="0x17f" id="DS Gulpord the Slime God M">
@@ -345,7 +342,7 @@
       <Defense>25</Defense>
       <StasisImmune/>
       <NoArticle/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Poison Fireball</ObjectId>
          <Damage>60</Damage>
@@ -375,7 +372,7 @@
       <Size>50</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <NoArticle/>
       <Projectile id="0">
@@ -419,7 +416,7 @@
       <MaxHitPoints>10000</MaxHitPoints>
       <ShadowSize>0</ShadowSize>
       <Level>20</Level>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>140</Size>
       <Defense>60</Defense>
       <Projectile id="0">
@@ -445,7 +442,7 @@
       <HitSound>monster/djinn_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
       <MaxHitPoints>4200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <Defense>10</Defense>
    </Object>
@@ -461,7 +458,7 @@
       <HitSound>monster/djinn_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
       <MaxHitPoints>4200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <Defense>10</Defense>
    </Object>
@@ -477,7 +474,7 @@
       <HitSound>monster/djinn_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
       <MaxHitPoints>4200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <Defense>10</Defense>
    </Object>
@@ -493,7 +490,7 @@
       <HitSound>monster/djinn_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
       <MaxHitPoints>4200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <Defense>10</Defense>
    </Object>
@@ -510,7 +507,6 @@
       </AnimatedTexture>
       <MaxHitPoints>5500</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>1.0</XpMult>
       <HitSound>monster/bats_hit</HitSound>
       <DeathSound>monster/flayers_hit</DeathSound>
    </Object>
@@ -534,7 +530,7 @@
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>10000</MaxHitPoints>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x7167" id="DS Brown Slime Trail">
       <Enemy/>
@@ -568,7 +564,7 @@
       <NoMiniMap/>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
          <Damage>55</Damage>
@@ -611,7 +607,7 @@
       <NoMiniMap/>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
          <Damage>55</Damage>
@@ -645,7 +641,7 @@
          </Frame>
       </Animation>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Z>0.27</Z>
       <Flying/>
       <Size>80</Size>

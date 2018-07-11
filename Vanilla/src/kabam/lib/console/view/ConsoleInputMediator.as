@@ -5,11 +5,12 @@
 
 package kabam.lib.console.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.lib.console.model.Console;
-    import kabam.lib.console.signals.ConsoleLogSignal;
+import kabam.lib.console.model.Console;
+import kabam.lib.console.signals.ConsoleLogSignal;
 
-    public final class ConsoleInputMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public final class ConsoleInputMediator extends Mediator 
     {
 
         private static const ERROR_PATTERN:String = '[0xFF3333:error - "${value}" not found]';
@@ -53,7 +54,7 @@ package kabam.lib.console.view
             else
             {
                 this.logError(_arg_1);
-            };
+            }
         }
 
         private function logAction(_arg_1:String):void

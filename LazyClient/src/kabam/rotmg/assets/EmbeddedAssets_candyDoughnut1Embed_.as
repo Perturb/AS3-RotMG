@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_candyDoughnut1Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

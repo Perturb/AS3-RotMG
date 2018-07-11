@@ -5,14 +5,15 @@
 
 package kabam.rotmg.maploading.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.maploading.signals.MapLoadedSignal;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignalNoFade;
-    import kabam.rotmg.maploading.commands.CharacterAnimationFactory;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.maploading.commands.CharacterAnimationFactory;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignalNoFade;
+import kabam.rotmg.maploading.signals.MapLoadedSignal;
+import kabam.rotmg.messaging.impl.incoming.MapInfo;
 
-    public class MapLoadingMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class MapLoadingMediator extends Mediator 
     {
 
         [Inject]

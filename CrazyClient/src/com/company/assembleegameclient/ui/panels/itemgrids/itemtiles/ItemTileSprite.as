@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileSprite
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.display.Sprite;
-    import flash.filters.ColorMatrixFilter;
-    import flash.geom.Matrix;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import flash.display.BitmapData;
-    import kabam.rotmg.constants.ItemConstants;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class ItemTileSprite extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.filters.ColorMatrixFilter;
+import flash.geom.Matrix;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class ItemTileSprite extends Sprite
     {
 
         protected static const DIM_FILTER:Array = [new ColorMatrixFilter([0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 1, 0])];
@@ -60,7 +62,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 if (((_local_4 >= 0x9000) && (_local_4 < 0xF000)))
                 {
                     _local_4 = 36863;
-                };
+                }
                 _local_1 = ObjectLibrary.getRedrawnTextureFromType(_local_4, 80, true);
                 _local_2 = ObjectLibrary.xmlLibrary_[_local_4];
                 if ((((_local_2) && (_local_2.hasOwnProperty("Doses"))) && (this.bitmapFactory)))
@@ -68,13 +70,13 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                     _local_1 = _local_1.clone();
                     _local_3 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_1.draw(_local_3, DOSE_MATRIX);
-                };
+                }
                 if ((((_local_2) && (_local_2.hasOwnProperty("Quantity"))) && (this.bitmapFactory)))
                 {
                     _local_1 = _local_1.clone();
                     _local_3 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_1.draw(_local_3, DOSE_MATRIX);
-                };
+                }
                 this.itemBitmap.bitmapData = _local_1;
                 this.itemBitmap.x = (-(_local_1.width) / 2);
                 this.itemBitmap.y = (-(_local_1.height) / 2);
@@ -83,7 +85,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             else
             {
                 visible = false;
-            };
+            }
         }
 
         public function setBitmapFactory(_arg_1:BitmapTextFactory):void

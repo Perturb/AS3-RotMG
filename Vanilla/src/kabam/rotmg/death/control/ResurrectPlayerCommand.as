@@ -5,13 +5,14 @@
 
 package kabam.rotmg.death.control
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.death.view.ResurrectionView;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.death.view.ResurrectionView;
 
-    public class ResurrectPlayerCommand 
+import robotlegs.bender.framework.api.ILogger;
+
+public class ResurrectPlayerCommand 
     {
 
         [Inject]

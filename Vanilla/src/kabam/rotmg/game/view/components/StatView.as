@@ -5,19 +5,22 @@
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import org.osflash.signals.natives.NativeSignal;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.events.MouseEvent;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
-    public class StatView extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeSignal;
+
+public class StatView extends Sprite
     {
 
         public static var toMaxTextSignal:Signal = new Signal(Boolean);
@@ -66,7 +69,7 @@ package kabam.rotmg.game.view.components
             if (!stage.contains(this.toolTip_))
             {
                 stage.addChild(this.toolTip_);
-            };
+            }
         }
 
         public function removeTooltip():void
@@ -74,7 +77,7 @@ package kabam.rotmg.game.view.components
             if (this.toolTip_.parent != null)
             {
                 this.toolTip_.parent.removeChild(this.toolTip_);
-            };
+            }
         }
 
         public function draw(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int=0):void
@@ -83,7 +86,7 @@ package kabam.rotmg.game.view.components
             if ((((_arg_4 == this.level_) && (_arg_1 == this.val_)) && (_arg_2 == this.boost_)))
             {
                 return;
-            };
+            }
             this.val_ = _arg_1;
             this.boost_ = _arg_2;
             this.max_ = _arg_3;
@@ -107,14 +110,14 @@ package kabam.rotmg.game.view.components
                     else
                     {
                         _local_5 = 0xB3B3B3;
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (this.valColor_ != _local_5)
             {
                 this.valColor_ = _local_5;
                 this.valText_.setColor(this.valColor_);
-            };
+            }
             this.setNewText(Parameters.data_.toggleToMaxText);
         }
 
@@ -128,12 +131,12 @@ package kabam.rotmg.game.view.components
                 if (((this.level_ >= 20) && (_local_3 > 0)))
                 {
                     _local_2 = (_local_2 + ("|" + _local_3.toString()));
-                };
-            };
+                }
+            }
             if (this.boost_ != 0)
             {
                 _local_2 = (_local_2 + (((" (" + ((this.boost_ > 0) ? "+" : "")) + this.boost_.toString()) + ")"));
-            };
+            }
             this.valText_.setStringBuilder(new StaticStringBuilder(_local_2));
             this.valText_.x = 24;
         }

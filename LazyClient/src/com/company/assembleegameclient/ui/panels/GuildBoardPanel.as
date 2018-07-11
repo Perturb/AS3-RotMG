@@ -5,17 +5,19 @@
 
 package com.company.assembleegameclient.ui.panels
 {
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.board.GuildBoardWindow;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.board.GuildBoardWindow;
+import com.company.assembleegameclient.util.GuildUtil;
 
-    public class GuildBoardPanel extends ButtonPanel 
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class GuildBoardPanel extends ButtonPanel
     {
 
         public function GuildBoardPanel(_arg_1:GameSprite)
@@ -36,7 +38,7 @@ package com.company.assembleegameclient.ui.panels
             if (_local_1 == null)
             {
                 return;
-            };
+            }
             gs_.addChild(new GuildBoardWindow((_local_1.guildRank_ >= GuildUtil.OFFICER)));
         }
 
@@ -55,7 +57,7 @@ package com.company.assembleegameclient.ui.panels
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.openWindow();
-            };
+            }
         }
 
 

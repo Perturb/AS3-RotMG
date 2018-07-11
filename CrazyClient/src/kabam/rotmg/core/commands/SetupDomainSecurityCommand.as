@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.SetupDomainSecurityCommand
 
 package kabam.rotmg.core.commands
 {
-    import kabam.rotmg.application.model.PlatformModel;
-    import kabam.rotmg.application.model.DomainModel;
+import kabam.rotmg.application.model.DomainModel;
+import kabam.rotmg.application.model.PlatformModel;
 
-    public class SetupDomainSecurityCommand 
+public class SetupDomainSecurityCommand
     {
 
         [Inject]
@@ -22,7 +22,7 @@ package kabam.rotmg.core.commands
             if (this.client.isWeb())
             {
                 this.domains.applyDomainSecurity();
-            };
+            }
         }
 
 

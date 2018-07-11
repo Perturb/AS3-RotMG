@@ -1,20 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.services.BuyPackageTask
 
 package kabam.rotmg.packages.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.map.QueueStatusTextSignal;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import kabam.rotmg.packages.control.BuyPackageSuccessfulSignal;
-    import kabam.rotmg.text.model.TextKey;
+import com.company.assembleegameclient.map.QueueStatusTextSignal;
 
-    public class BuyPackageTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.packages.control.BuyPackageSuccessfulSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.text.model.TextKey;
+
+public class BuyPackageTask extends BaseTask 
     {
 
         private static const ERROR_MESSAGES_THAT_REFRESH:Array = ["Package is not Available", "Package is not Available Right Now", "Invalid PackageId"];
@@ -52,7 +53,7 @@ package kabam.rotmg.packages.services
             else
             {
                 this.abandonPurchase(_local_3);
-            };
+            }
             completeTask(true, _arg_2);
         }
 
@@ -73,7 +74,7 @@ package kabam.rotmg.packages.services
             if (ERROR_MESSAGES_THAT_REFRESH.indexOf(_arg_1) != -1)
             {
                 this.getPackageTask.start();
-            };
+            }
         }
 
 

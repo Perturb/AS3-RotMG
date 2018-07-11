@@ -5,25 +5,28 @@
 
 package kabam.rotmg.death
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.death.control.HandleDeathSignal;
-    import kabam.rotmg.death.control.HandleDeathCommand;
-    import kabam.rotmg.death.control.HandleNormalDeathSignal;
-    import kabam.rotmg.death.control.HandleNormalDeathCommand;
-    import kabam.rotmg.death.control.ZombifySignal;
-    import kabam.rotmg.death.control.ZombifyCommand;
-    import kabam.rotmg.death.control.ResurrectPlayerSignal;
-    import kabam.rotmg.death.control.ResurrectPlayerCommand;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.death.view.ZombifyGameMediator;
-    import kabam.rotmg.death.view.ZombifyDialog;
-    import kabam.rotmg.death.view.ZombifyDialogMediator;
+import com.company.assembleegameclient.game.GameSprite;
 
-    public class DeathConfig implements IConfig 
+import kabam.rotmg.death.control.HandleDeathCommand;
+import kabam.rotmg.death.control.HandleDeathSignal;
+import kabam.rotmg.death.control.HandleNormalDeathCommand;
+import kabam.rotmg.death.control.HandleNormalDeathSignal;
+import kabam.rotmg.death.control.ResurrectPlayerCommand;
+import kabam.rotmg.death.control.ResurrectPlayerSignal;
+import kabam.rotmg.death.control.ZombifyCommand;
+import kabam.rotmg.death.control.ZombifySignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.death.view.ZombifyDialog;
+import kabam.rotmg.death.view.ZombifyDialogMediator;
+import kabam.rotmg.death.view.ZombifyGameMediator;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+
+public class DeathConfig implements IConfig
     {
 
         [Inject]

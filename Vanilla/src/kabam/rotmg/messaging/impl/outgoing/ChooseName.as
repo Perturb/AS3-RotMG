@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class ChooseName extends OutgoingMessage 
+public class ChooseName extends OutgoingMessage
     {
 
         public var name_:String;

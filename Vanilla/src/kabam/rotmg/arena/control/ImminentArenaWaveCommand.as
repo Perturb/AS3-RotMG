@@ -5,12 +5,13 @@
 
 package kabam.rotmg.arena.control
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.arena.model.CurrentArenaRunModel;
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.arena.view.ImminentWaveCountdownClock;
+import kabam.rotmg.arena.model.CurrentArenaRunModel;
+import kabam.rotmg.arena.view.ImminentWaveCountdownClock;
+import kabam.rotmg.core.view.Layers;
 
-    public class ImminentArenaWaveCommand extends Command 
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class ImminentArenaWaveCommand extends Command 
     {
 
         [Inject]

@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleEvent
 
 package kabam.lib.console.view
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public final class ConsoleEvent extends Event 
+public final class ConsoleEvent extends Event 
     {
 
         public static const INPUT:String = "ConsoleEvent.INPUT";

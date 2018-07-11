@@ -5,19 +5,21 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.display.Sprite;
-    import flash.filters.ColorMatrixFilter;
-    import flash.geom.Matrix;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import flash.display.BitmapData;
-    import kabam.rotmg.constants.ItemConstants;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import com.company.util.PointUtil;
-    import kabam.rotmg.ui.view.components.PotionSlotView;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.util.PointUtil;
 
-    public class ItemTileSprite extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.filters.ColorMatrixFilter;
+import flash.geom.Matrix;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.components.PotionSlotView;
+
+public class ItemTileSprite extends Sprite
     {
 
         protected static const DIM_FILTER:Array = [new ColorMatrixFilter([0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 1, 0])];
@@ -56,13 +58,14 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             var _local_2:BitmapData;
             var _local_3:XML;
             var _local_4:BitmapData;
+            var _local_5:BitmapData;
             var _local_1:int = this.itemId;
             if (_local_1 != ItemConstants.NO_ITEM)
             {
                 if (((_local_1 >= 0x9000) && (_local_1 < 0xF000)))
                 {
                     _local_1 = 36863;
-                };
+                }
                 _local_2 = ObjectLibrary.getRedrawnTextureFromType(_local_1, 80, true);
                 _local_3 = ObjectLibrary.xmlLibrary_[_local_1];
                 if ((((_local_3) && (_local_3.hasOwnProperty("Doses"))) && (this.bitmapFactory)))
@@ -71,14 +74,14 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                     _local_4 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_3.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, PotionSlotView.READABILITY_SHADOW_2);
                     _local_2.draw(_local_4, DOSE_MATRIX);
-                };
+                }
                 if ((((_local_3) && (_local_3.hasOwnProperty("Quantity"))) && (this.bitmapFactory)))
                 {
                     _local_2 = _local_2.clone();
-                    _local_4 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_3.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
-                    _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, PotionSlotView.READABILITY_SHADOW_2);
-                    _local_2.draw(_local_4, DOSE_MATRIX);
-                };
+                    _local_5 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_3.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
+                    _local_5.applyFilter(_local_5, _local_5.rect, PointUtil.ORIGIN, PotionSlotView.READABILITY_SHADOW_2);
+                    _local_2.draw(_local_5, DOSE_MATRIX);
+                }
                 this.itemBitmap.bitmapData = _local_2;
                 this.itemBitmap.x = (-(_local_2.width) / 2);
                 this.itemBitmap.y = (-(_local_2.height) / 2);
@@ -87,7 +90,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             else
             {
                 visible = false;
-            };
+            }
         }
 
         public function setBitmapFactory(_arg_1:BitmapTextFactory):void

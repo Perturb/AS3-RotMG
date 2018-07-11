@@ -5,11 +5,12 @@
 
 package kabam.rotmg.stage3D.shaders
 {
-    import com.adobe.utils.AGALMiniAssembler;
-    import flash.utils.ByteArray;
-    import flash.display3D.Context3DProgramType;
+import com.adobe.utils.AGALMiniAssembler;
 
-    public class VertextShader extends AGALMiniAssembler 
+import flash.display3D.Context3DProgramType;
+import flash.utils.ByteArray;
+
+public class VertextShader extends AGALMiniAssembler
     {
 
         private var vertexProgram:ByteArray;

@@ -5,44 +5,44 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import net.hires.debug.Stats;
-    import com.company.assembleegameclient.editor.CommandQueue;
-    import com.company.assembleegameclient.ui.dropdown.DropDown;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import kabam.lib.json.JsonParser;
-    import __AS3__.vec.Vector;
-    import flash.net.FileReference;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.assembleegameclient.editor.CommandEvent;
-    import kabam.rotmg.core.model.PlayerModel;
-    import flash.events.Event;
-    import flash.text.TextFieldAutoSize;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.account.ui.CheckBoxField;
-    import com.company.util.IntPoint;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.editor.CommandList;
-    import com.company.util.SpriteUtil;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import flash.geom.Rectangle;
-    import flash.utils.ByteArray;
-    import com.hurlant.util.Base64;
-    import com.company.assembleegameclient.map.RegionLibrary;
-    import flash.net.FileFilter;
-    import flash.events.IOErrorEvent;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.editor.CommandEvent;
+import com.company.assembleegameclient.editor.CommandList;
+import com.company.assembleegameclient.editor.CommandQueue;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.assembleegameclient.ui.dropdown.DropDown;
+import com.company.util.IntPoint;
+import com.company.util.SpriteUtil;
+import com.hurlant.util.Base64;
 
-    public class EditingScreen extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
+import flash.net.FileFilter;
+import flash.net.FileReference;
+import flash.text.TextFieldAutoSize;
+import flash.utils.ByteArray;
+import flash.utils.Dictionary;
+
+import kabam.lib.json.JsonParser;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.swiftsuspenders.Injector;
+
+public class EditingScreen extends Sprite
     {
 
         private static const MAP_Y:int = ((600 - MEMap.SIZE) - 10);//78
-        public static const stats_:Stats = new Stats();
 
         public var commandMenu_:MECommandMenu;
         private var commandQueue_:CommandQueue;
@@ -66,21 +66,38 @@ package com.company.assembleegameclient.mapeditor
         public var chooser_:Chooser;
         public var filename_:String = null;
         public var checkBoxArray:Array;
-        public var showAllBtn:DeprecatedClickableText;
-        public var hideAllBtn:DeprecatedClickableText;
         private var json:JsonParser;
         private var pickObjHolder:Sprite;
+        private var injector:Injector;
+        private var isPlayerAdmin:Boolean;
         private var tilesBackup:Vector.<METile>;
         private var loadedFile_:FileReference = null;
 
         public function EditingScreen()
         {
-            var _local_2:Boolean;
-            var _local_5:int;
-            var _local_6:Vector.<String>;
-            super();
+            this.init();
+        }
+
+        private function init():void
+        {
+            this.injector = StaticInjectorContext.getInjector();
+            var _local_1:PlayerModel = this.injector.getInstance(PlayerModel);
+            this.isPlayerAdmin = _local_1.isAdmin();
             addChild(new ScreenBase());
-            this.json = StaticInjectorContext.getInjector().getInstance(JsonParser);
+            this.json = this.injector.getInstance(JsonParser);
+            this.createCommandMenu();
+            this.createMEMap();
+            this.createInfoPane();
+            this.createChooserDropDown();
+            this.createMapSizeDropDown();
+            this.createCheckboxes();
+            this.createFilter();
+            this.createReturnButton();
+            this.createChoosers();
+        }
+
+        private function createCommandMenu():void
+        {
             this.commandMenu_ = new MECommandMenu();
             this.commandMenu_.x = 15;
             this.commandMenu_.y = (MAP_Y - 60);
@@ -94,108 +111,66 @@ package com.company.assembleegameclient.mapeditor
             this.commandMenu_.addEventListener(CommandEvent.SELECT_COMMAND_EVENT, this.onMenuSelect);
             addChild(this.commandMenu_);
             this.commandQueue_ = new CommandQueue();
+        }
+
+        private function createMEMap():void
+        {
             this.meMap_ = new MEMap();
             this.meMap_.addEventListener(TilesEvent.TILES_EVENT, this.onTilesEvent);
             this.meMap_.x = ((800 / 2) - (MEMap.SIZE / 2));
             this.meMap_.y = MAP_Y;
             addChild(this.meMap_);
+        }
+
+        private function createInfoPane():void
+        {
             this.infoPane_ = new InfoPane(this.meMap_);
             this.infoPane_.x = 4;
             this.infoPane_.y = ((600 - InfoPane.HEIGHT) - 10);
             addChild(this.infoPane_);
-            var _local_1:PlayerModel = StaticInjectorContext.getInjector().getInstance(PlayerModel);
-            _local_2 = _local_1.isAdmin();
-            if (_local_2)
+        }
+
+        private function createChooserDropDown():void
+        {
+            var _local_1:Vector.<String>;
+            if (this.isPlayerAdmin)
             {
                 this.chooserDropDown_ = new DropDown(GroupDivider.GROUP_LABELS, Chooser.WIDTH, 26);
             }
             else
             {
-                _local_6 = GroupDivider.GROUP_LABELS.concat();
-                _local_6.splice(_local_6.indexOf("All Game Objects"), 1);
-                this.chooserDropDown_ = new DropDown(_local_6, Chooser.WIDTH, 26);
-            };
-            addChild(this.chooserDropDown_);
+                _local_1 = GroupDivider.GROUP_LABELS.concat();
+                _local_1.splice(_local_1.indexOf(AllObjectChooser.GROUP_NAME_GAME_OBJECTS), 1);
+                this.chooserDropDown_ = new DropDown(_local_1, Chooser.WIDTH, 26);
+            }
             this.chooserDropDown_.x = ((this.meMap_.x + MEMap.SIZE) + 4);
             this.chooserDropDown_.y = ((MAP_Y - this.chooserDropDown_.height) - 4);
             this.chooserDropDown_.addEventListener(Event.CHANGE, this.onDropDownChange);
-            var _local_3:Vector.<String> = new Vector.<String>(0);
-            var _local_4:Number = MEMap.MAX_ALLOWED_SQUARES;
-            while (_local_4 >= 64)
+            addChild(this.chooserDropDown_);
+        }
+
+        private function createMapSizeDropDown():void
+        {
+            var _local_1:Vector.<String> = new Vector.<String>(0);
+            var _local_2:Number = MEMap.MAX_ALLOWED_SQUARES;
+            while (_local_2 >= 64)
             {
-                _local_3.push(((_local_4 + "x") + _local_4));
-                _local_4 = (_local_4 / 2);
-            };
-            this.mapSizeDropDown_ = new DropDown(_local_3, Chooser.WIDTH, 26);
+                _local_1.push(((_local_2 + "x") + _local_2));
+                _local_2 = (_local_2 / 2);
+            }
+            this.mapSizeDropDown_ = new DropDown(_local_1, Chooser.WIDTH, 26);
             this.mapSizeDropDown_.setValue(((MEMap.NUM_SQUARES + "x") + MEMap.NUM_SQUARES));
             this.mapSizeDropDown_.x = ((this.chooserDropDown_.x - this.chooserDropDown_.width) - 4);
             this.mapSizeDropDown_.y = this.chooserDropDown_.y;
             this.mapSizeDropDown_.addEventListener(Event.CHANGE, this.onDropDownSizeChange);
             addChild(this.mapSizeDropDown_);
-            this.createCheckboxes();
-            this.filter = new Filter();
-            this.filter.x = ((this.meMap_.x + MEMap.SIZE) + 4);
-            this.filter.y = MAP_Y;
-            addChild(this.filter);
-            this.filter.addEventListener(Event.CHANGE, this.onFilterChange);
-            this.filter.enableDropDownFilter(true);
-            this.filter.enableValueFilter(false);
-            this.returnButton_ = new TitleMenuOption("Screens.back", 18, false);
-            this.returnButton_.setAutoSize(TextFieldAutoSize.RIGHT);
-            this.returnButton_.x = ((this.chooserDropDown_.x + this.chooserDropDown_.width) - 7);
-            this.returnButton_.y = 2;
-            addChild(this.returnButton_);
-            GroupDivider.divideObjects();
-            this.choosers_ = new Dictionary(true);
-            _local_5 = ((MAP_Y + this.mapSizeDropDown_.height) + 50);
-            this.groundChooser_ = new GroundChooser();
-            this.groundChooser_.x = this.chooserDropDown_.x;
-            this.groundChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[0]] = this.groundChooser_;
-            this.objChooser_ = new ObjectChooser();
-            this.objChooser_.x = this.chooserDropDown_.x;
-            this.objChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[1]] = this.objChooser_;
-            this.enemyChooser_ = new EnemyChooser();
-            this.enemyChooser_.x = this.chooserDropDown_.x;
-            this.enemyChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[2]] = this.enemyChooser_;
-            this.wallChooser_ = new WallChooser();
-            this.wallChooser_.x = this.chooserDropDown_.x;
-            this.wallChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[3]] = this.wallChooser_;
-            this.object3DChooser_ = new Object3DChooser();
-            this.object3DChooser_.x = this.chooserDropDown_.x;
-            this.object3DChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[4]] = this.object3DChooser_;
-            this.allObjChooser_ = new AllObjectChooser();
-            this.allObjChooser_.x = this.chooserDropDown_.x;
-            this.allObjChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[5]] = this.allObjChooser_;
-            this.regionChooser_ = new RegionChooser();
-            this.regionChooser_.x = this.chooserDropDown_.x;
-            this.regionChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[6]] = this.regionChooser_;
-            this.dungeonChooser_ = new DungeonChooser();
-            this.dungeonChooser_.x = this.chooserDropDown_.x;
-            this.dungeonChooser_.y = _local_5;
-            this.choosers_[GroupDivider.GROUP_LABELS[7]] = this.dungeonChooser_;
-            if (_local_2)
-            {
-                this.allGameObjChooser_ = new AllObjectChooser("", "All Game Objects");
-                this.allGameObjChooser_.x = this.chooserDropDown_.x;
-                this.allGameObjChooser_.y = _local_5;
-                this.choosers_[GroupDivider.GROUP_LABELS[8]] = this.allGameObjChooser_;
-            };
-            this.chooser_ = this.groundChooser_;
-            addChild(this.groundChooser_);
-            this.chooserDropDown_.setIndex(0);
         }
 
         private function createCheckboxes():void
         {
-            this.checkBoxArray = new Array();
-            var _local_1:* = new DeprecatedClickableText(14, true, "(Show All)");
+            var _local_1:DeprecatedClickableText;
+            this.checkBoxArray = [];
+            _local_1 = new DeprecatedClickableText(14, true, "(Show All)");
             _local_1.buttonMode = true;
             _local_1.x = (this.mapSizeDropDown_.x - 380);
             _local_1.y = (this.mapSizeDropDown_.y - 20);
@@ -208,7 +183,7 @@ package com.company.assembleegameclient.mapeditor
             _local_2.scaleX = (_local_2.scaleY = 0.8);
             _local_2.addEventListener(MouseEvent.CLICK, this.onCheckBoxUpdated);
             addChild(_local_2);
-            var _local_3:* = new DeprecatedClickableText(14, true, "(Hide All)");
+            var _local_3:DeprecatedClickableText = new DeprecatedClickableText(14, true, "(Hide All)");
             _local_3.buttonMode = true;
             _local_3.x = (this.mapSizeDropDown_.x - 380);
             _local_3.y = (this.mapSizeDropDown_.y + 8);
@@ -225,6 +200,76 @@ package com.company.assembleegameclient.mapeditor
             this.checkBoxArray.push(_local_2);
             this.checkBoxArray.push(_local_4);
             this.checkBoxArray.push(_local_3);
+        }
+
+        private function createFilter():void
+        {
+            this.filter = new Filter();
+            this.filter.x = ((this.meMap_.x + MEMap.SIZE) + 4);
+            this.filter.y = MAP_Y;
+            addChild(this.filter);
+            this.filter.addEventListener(Event.CHANGE, this.onFilterChange);
+            this.filter.enableDropDownFilter(true);
+            this.filter.enableValueFilter(false);
+        }
+
+        private function createReturnButton():void
+        {
+            this.returnButton_ = new TitleMenuOption("Screens.back", 18, false);
+            this.returnButton_.setAutoSize(TextFieldAutoSize.RIGHT);
+            this.returnButton_.x = ((this.chooserDropDown_.x + this.chooserDropDown_.width) - 7);
+            this.returnButton_.y = 2;
+            addChild(this.returnButton_);
+        }
+
+        private function createChoosers():void
+        {
+            GroupDivider.divideObjects();
+            this.choosers_ = new Dictionary(true);
+            var _local_1:int = ((MAP_Y + this.mapSizeDropDown_.height) + 50);
+            this.groundChooser_ = new GroundChooser();
+            this.groundChooser_.x = this.chooserDropDown_.x;
+            this.groundChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[0]] = this.groundChooser_;
+            this.objChooser_ = new ObjectChooser();
+            this.objChooser_.x = this.chooserDropDown_.x;
+            this.objChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[1]] = this.objChooser_;
+            this.enemyChooser_ = new EnemyChooser();
+            this.enemyChooser_.x = this.chooserDropDown_.x;
+            this.enemyChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[2]] = this.enemyChooser_;
+            this.wallChooser_ = new WallChooser();
+            this.wallChooser_.x = this.chooserDropDown_.x;
+            this.wallChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[3]] = this.wallChooser_;
+            this.object3DChooser_ = new Object3DChooser();
+            this.object3DChooser_.x = this.chooserDropDown_.x;
+            this.object3DChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[4]] = this.object3DChooser_;
+            this.allObjChooser_ = new AllObjectChooser();
+            this.allObjChooser_.x = this.chooserDropDown_.x;
+            this.allObjChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[5]] = this.allObjChooser_;
+            this.regionChooser_ = new RegionChooser();
+            this.regionChooser_.x = this.chooserDropDown_.x;
+            this.regionChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[6]] = this.regionChooser_;
+            this.dungeonChooser_ = new DungeonChooser();
+            this.dungeonChooser_.x = this.chooserDropDown_.x;
+            this.dungeonChooser_.y = _local_1;
+            this.choosers_[GroupDivider.GROUP_LABELS[7]] = this.dungeonChooser_;
+            if (this.isPlayerAdmin)
+            {
+                this.allGameObjChooser_ = new AllObjectChooser();
+                this.allGameObjChooser_.x = this.chooserDropDown_.x;
+                this.allGameObjChooser_.y = _local_1;
+                this.choosers_[GroupDivider.GROUP_LABELS[8]] = this.allGameObjChooser_;
+            }
+            this.chooser_ = this.groundChooser_;
+            this.groundChooser_.reloadObjects("", "");
+            addChild(this.groundChooser_);
+            this.chooserDropDown_.setIndex(0);
         }
 
         private function setSearch(_arg_1:String):void
@@ -257,14 +302,14 @@ package com.company.assembleegameclient.mapeditor
                     this.allObjChooser_.reloadObjects(this.filter.searchStr);
                     return;
                 case this.allGameObjChooser_:
-                    this.allGameObjChooser_.reloadObjects(this.filter.searchStr, false, "All Game Objects");
+                    this.allGameObjChooser_.reloadObjects(this.filter.searchStr, AllObjectChooser.GROUP_NAME_GAME_OBJECTS);
                     return;
                 case this.regionChooser_:
                     return;
                 case this.dungeonChooser_:
                     this.dungeonChooser_.reloadObjects(this.filter.dungeon, this.filter.searchStr);
                     return;
-            };
+            }
         }
 
         private function onCheckBoxUpdated(_arg_1:MouseEvent):void
@@ -294,7 +339,7 @@ package com.company.assembleegameclient.mapeditor
                     (this.checkBoxArray[Layer.OBJECT] as CheckBoxField).setUnchecked();
                     (this.checkBoxArray[Layer.REGION] as CheckBoxField).setUnchecked();
                     break;
-            };
+            }
             this.meMap_.draw();
         }
 
@@ -323,7 +368,7 @@ package com.company.assembleegameclient.mapeditor
                     if (_local_4 == -1)
                     {
                         return;
-                    };
+                    }
                     _local_5 = GroupDivider.getCategoryByType(_local_4, this.chooser_.layer_);
                     if (_local_5 == "") break;
                     this.chooser_ = this.choosers_[_local_5];
@@ -346,10 +391,10 @@ package com.company.assembleegameclient.mapeditor
                         if (_local_3 != null)
                         {
                             _local_3 = _local_3.clone();
-                        };
+                        }
                         this.tilesBackup.push(_local_3);
                         _local_8.push(null);
-                    };
+                    }
                     this.addPasteCommandList(_arg_1.tiles_, _local_8);
                     this.meMap_.freezeSelect();
                     this.commandMenu_.setCommand(MECommandMenu.PASTE_COMMAND);
@@ -362,9 +407,9 @@ package com.company.assembleegameclient.mapeditor
                         if (_local_3 != null)
                         {
                             _local_3 = _local_3.clone();
-                        };
+                        }
                         this.tilesBackup.push(_local_3);
-                    };
+                    }
                     this.meMap_.freezeSelect();
                     this.commandMenu_.setCommand(MECommandMenu.PASTE_COMMAND);
                     break;
@@ -382,7 +427,7 @@ package com.company.assembleegameclient.mapeditor
                         this.pickObjHolder.name = String(_local_3.types_[Layer.OBJECT]);
                         this.addModifyCommandList(_arg_1.tiles_, Layer.OBJECT, -1);
                         this.commandMenu_.setCommand(MECommandMenu.DROP_COMMAND);
-                    };
+                    }
                     break;
                 case MECommandMenu.DROP_COMMAND:
                     if (this.pickObjHolder != null)
@@ -393,9 +438,9 @@ package com.company.assembleegameclient.mapeditor
                         this.pickObjHolder.removeChildAt(0);
                         this.pickObjHolder = null;
                         this.commandMenu_.setCommand(MECommandMenu.PICK_UP_COMMAND);
-                    };
+                    }
                     break;
-            };
+            }
             this.meMap_.draw();
         }
 
@@ -416,12 +461,12 @@ package com.company.assembleegameclient.mapeditor
                 if (_local_6 != _arg_3)
                 {
                     _local_4.addCommand(new MEModifyCommand(this.meMap_, _local_5.x_, _local_5.y_, _arg_2, _local_6, _arg_3));
-                };
-            };
+                }
+            }
             if (_local_4.empty())
             {
                 return;
-            };
+            }
             this.commandQueue_.addCommandList(_local_4);
         }
 
@@ -437,11 +482,11 @@ package com.company.assembleegameclient.mapeditor
                 _local_6 = this.meMap_.getTile(_local_5.x_, _local_5.y_);
                 _local_3.addCommand(new MEReplaceCommand(this.meMap_, _local_5.x_, _local_5.y_, _local_6, _arg_2[_local_4]));
                 _local_4++;
-            };
+            }
             if (_local_3.empty())
             {
                 return;
-            };
+            }
             this.commandQueue_.addCommandList(_local_3);
         }
 
@@ -456,16 +501,16 @@ package com.company.assembleegameclient.mapeditor
                 if (_local_5 != _arg_2)
                 {
                     _local_3.addCommand(new MEObjectNameCommand(this.meMap_, _local_4.x_, _local_4.y_, _local_5, _arg_2));
-                };
-            };
+                }
+            }
             if (_local_3.empty())
             {
                 return;
-            };
+            }
             this.commandQueue_.addCommandList(_local_3);
         }
 
-        private function safeRemoveCategoryChildren():*
+        private function safeRemoveCategoryChildren():void
         {
             SpriteUtil.safeRemoveChild(this, this.groundChooser_);
             SpriteUtil.safeRemoveChild(this, this.objChooser_);
@@ -483,6 +528,10 @@ package com.company.assembleegameclient.mapeditor
             switch (this.chooserDropDown_.getValue())
             {
                 case GroundLibrary.GROUND_CATEGORY:
+                    if (!this.groundChooser_.hasBeenLoaded)
+                    {
+                        this.groundChooser_.reloadObjects("", "");
+                    }
                     this.setSearch(this.groundChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.groundChooser_);
@@ -493,6 +542,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableDungeonFilter(false);
                     return;
                 case "Basic Objects":
+                    if (!this.objChooser_.hasBeenLoaded)
+                    {
+                        this.objChooser_.reloadObjects("");
+                    }
                     this.setSearch(this.objChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.objChooser_);
@@ -502,6 +555,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableDungeonFilter(false);
                     return;
                 case "Enemies":
+                    if (!this.enemyChooser_.hasBeenLoaded)
+                    {
+                        this.enemyChooser_.reloadObjects("", "", 0, -1);
+                    }
                     this.setSearch(this.enemyChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.enemyChooser_);
@@ -521,6 +578,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableDungeonFilter(false);
                     return;
                 case "Walls":
+                    if (!this.wallChooser_.hasBeenLoaded)
+                    {
+                        this.wallChooser_.reloadObjects("");
+                    }
                     this.setSearch(this.wallChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.wallChooser_);
@@ -530,6 +591,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableDungeonFilter(false);
                     return;
                 case "3D Objects":
+                    if (!this.object3DChooser_.hasBeenLoaded)
+                    {
+                        this.object3DChooser_.reloadObjects("");
+                    }
                     this.setSearch(this.object3DChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.object3DChooser_);
@@ -539,6 +604,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableDungeonFilter(false);
                     return;
                 case "All Map Objects":
+                    if (!this.allObjChooser_.hasBeenLoaded)
+                    {
+                        this.allObjChooser_.reloadObjects("");
+                    }
                     this.setSearch(this.allObjChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.allObjChooser_);
@@ -547,6 +616,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableValueFilter(false);
                     return;
                 case "All Game Objects":
+                    if (!this.allGameObjChooser_.hasBeenLoaded)
+                    {
+                        this.allGameObjChooser_.reloadObjects("", AllObjectChooser.GROUP_NAME_GAME_OBJECTS);
+                    }
                     this.setSearch(this.allGameObjChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.allGameObjChooser_);
@@ -555,6 +628,10 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableValueFilter(false);
                     return;
                 case "Dungeons":
+                    if (!this.dungeonChooser_.hasBeenLoaded)
+                    {
+                        this.dungeonChooser_.reloadObjects(GroupDivider.DEFAULT_DUNGEON, "");
+                    }
                     this.setSearch(this.dungeonChooser_.getLastSearch());
                     this.safeRemoveCategoryChildren();
                     SpriteUtil.safeAddChild(this, this.dungeonChooser_);
@@ -563,7 +640,7 @@ package com.company.assembleegameclient.mapeditor
                     this.filter.enableValueFilter(false);
                     this.filter.enableDungeonFilter(true);
                     return;
-            };
+            }
         }
 
         private function onDropDownSizeChange(_arg_1:Event):void
@@ -586,7 +663,7 @@ package com.company.assembleegameclient.mapeditor
                 case "1024x1024":
                     _local_2 = 0x0400;
                     break;
-            };
+            }
             this.meMap_.resize(_local_2);
             this.meMap_.draw();
         }
@@ -615,12 +692,12 @@ package com.company.assembleegameclient.mapeditor
                 if (_local_5 != null)
                 {
                     _local_3.addCommand(new MEClearCommand(this.meMap_, _local_4.x_, _local_4.y_, _local_5));
-                };
-            };
+                }
+            }
             if (_local_3.empty())
             {
                 return;
-            };
+            }
             this.commandQueue_.addCommandList(_local_3);
             this.meMap_.draw();
             this.filename_ = null;
@@ -637,7 +714,7 @@ package com.company.assembleegameclient.mapeditor
             if (_local_1 == null)
             {
                 return (null);
-            };
+            }
             var _local_2:Object = {};
             _local_2["width"] = int(_local_1.width);
             _local_2["height"] = int(_local_1.height);
@@ -662,12 +739,12 @@ package com.company.assembleegameclient.mapeditor
                     else
                     {
                         _local_11 = _local_3[_local_10];
-                    };
+                    }
                     _local_5.writeShort(_local_11);
                     _local_7++;
-                };
+                }
                 _local_6++;
-            };
+            }
             _local_2["dict"] = _local_4;
             _local_5.compress();
             _local_2["data"] = Base64.encodeByteArray(_local_5);
@@ -680,7 +757,7 @@ package com.company.assembleegameclient.mapeditor
             if (_local_2 == null)
             {
                 return;
-            };
+            }
             new FileReference().save(_local_2, ((this.filename_ == null) ? "map.jm" : this.filename_));
         }
 
@@ -690,7 +767,7 @@ package com.company.assembleegameclient.mapeditor
             if (_local_2 == null)
             {
                 return;
-            };
+            }
             this.meMap_.setMinZoom();
             this.meMap_.draw();
             dispatchEvent(new SubmitJMEvent(_local_2, this.meMap_.getMapStatistics()));
@@ -709,7 +786,7 @@ package com.company.assembleegameclient.mapeditor
                 {
                     _local_4 = GroundLibrary.getIdFromType(_local_3[Layer.GROUND]);
                     _local_2["ground"] = _local_4;
-                };
+                }
                 if (_local_3[Layer.OBJECT] != -1)
                 {
                     _local_4 = ObjectLibrary.getIdFromType(_local_3[Layer.OBJECT]);
@@ -717,15 +794,15 @@ package com.company.assembleegameclient.mapeditor
                     if (_arg_1.objName_ != null)
                     {
                         _local_5["name"] = _arg_1.objName_;
-                    };
+                    }
                     _local_2["objs"] = [_local_5];
-                };
+                }
                 if (_local_3[Layer.REGION] != -1)
                 {
                     _local_4 = RegionLibrary.getIdFromType(_local_3[Layer.REGION]);
                     _local_2["regions"] = [{"id":_local_4}];
-                };
-            };
+                }
+            }
             return (_local_2);
         }
 
@@ -747,7 +824,7 @@ package com.company.assembleegameclient.mapeditor
             }
             catch(e:Error)
             {
-            };
+            }
         }
 
         private function onFileLoadComplete(_arg_1:Event):void
@@ -769,15 +846,15 @@ package com.company.assembleegameclient.mapeditor
             while (((_local_6 < _local_3["width"]) || (_local_6 < _local_3["height"])))
             {
                 _local_6 = (_local_6 * 2);
-            };
+            }
             if (MEMap.NUM_SQUARES != _local_6)
             {
                 _local_7 = ((_local_6 + "x") + _local_6);
                 if (!this.mapSizeDropDown_.setValue(_local_7))
                 {
                     this.mapSizeDropDown_.setValue("512x512");
-                };
-            };
+                }
+            }
             var _local_8:Rectangle = new Rectangle(int(((MEMap.NUM_SQUARES / 2) - (_local_4 / 2))), int(((MEMap.NUM_SQUARES / 2) - (_local_5 / 2))), _local_4, _local_5);
             this.meMap_.clear();
             this.commandQueue_.clear();
@@ -795,7 +872,7 @@ package com.company.assembleegameclient.mapeditor
                     {
                         _local_11 = GroundLibrary.idToType_[_local_14["ground"]];
                         this.meMap_.modifyTile(_local_13, _local_12, Layer.GROUND, _local_11);
-                    };
+                    }
                     _local_15 = _local_14["objs"];
                     if (_local_15 != null)
                     {
@@ -808,10 +885,10 @@ package com.company.assembleegameclient.mapeditor
                                 if (_local_17.hasOwnProperty("name"))
                                 {
                                     this.meMap_.modifyObjectName(_local_13, _local_12, _local_17["name"]);
-                                };
-                            };
-                        };
-                    };
+                                }
+                            }
+                        }
+                    }
                     _local_16 = _local_14["regions"];
                     if (_local_16 != null)
                     {
@@ -819,12 +896,12 @@ package com.company.assembleegameclient.mapeditor
                         {
                             _local_11 = RegionLibrary.idToType_[_local_18["id"]];
                             this.meMap_.modifyTile(_local_13, _local_12, Layer.REGION, _local_11);
-                        };
-                    };
+                        }
+                    }
                     _local_13++;
-                };
+                }
                 _local_12++;
-            };
+            }
             this.meMap_.draw();
         }
 
@@ -852,7 +929,7 @@ package com.company.assembleegameclient.mapeditor
             if (this.meMap_ != null)
             {
                 this.meMap_.clearSelect();
-            };
+            }
         }
 
 

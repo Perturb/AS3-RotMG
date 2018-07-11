@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.CapabilitiesUtil
 
 package com.company.util
 {
-    import flash.system.Capabilities;
+import flash.system.Capabilities;
 
-    public class CapabilitiesUtil 
+public class CapabilitiesUtil
     {
 
 

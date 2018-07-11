@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.TradeItem
 
 package kabam.rotmg.messaging.impl.data
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class TradeItem 
+public class TradeItem 
     {
 
         public var item_:int;

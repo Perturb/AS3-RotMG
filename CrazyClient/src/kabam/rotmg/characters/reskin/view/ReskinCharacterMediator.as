@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.view.ReskinCharacterMediator
 
 package kabam.rotmg.characters.reskin.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.characters.reskin.control.ReskinCharacterSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.classes.model.CharacterSkins;
+import kabam.rotmg.characters.reskin.control.ReskinCharacterSignal;
+import kabam.rotmg.classes.model.CharacterSkins;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class ReskinCharacterMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ReskinCharacterMediator extends Mediator 
     {
 
         [Inject]

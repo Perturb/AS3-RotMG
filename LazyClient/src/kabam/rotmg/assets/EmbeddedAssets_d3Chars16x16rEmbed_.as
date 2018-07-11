@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_d3Chars16x16rEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

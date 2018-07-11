@@ -1,19 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.services.KongregateRelayAPILoginTask
 
 package kabam.rotmg.account.kongregate.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RelayLoginTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.rotmg.account.kongregate.signals.KongregateAlreadyRegisteredSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RelayLoginTask;
+import kabam.rotmg.account.kongregate.signals.KongregateAlreadyRegisteredSignal;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class KongregateRelayAPILoginTask extends BaseTask implements RelayLoginTask 
+public class KongregateRelayAPILoginTask extends BaseTask implements RelayLoginTask 
     {
 
         public static const ALREADY_REGISTERED:String = "Kongregate account already registered";
@@ -55,15 +55,15 @@ package kabam.rotmg.account.kongregate.services
                 if (_arg_2 == ALREADY_REGISTERED)
                 {
                     this.alreadyRegistered.dispatch(this.data);
-                };
-            };
+                }
+            }
             completeTask(_arg_1, _arg_2);
         }
 
         private function onInternalRegisterDone(_arg_1:String):void
         {
             var _local_2:XML = new XML(_arg_1);
-            this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
+            this.account.updateUser(_local_2.GUID, _local_2.Secret, "", "");
             this.account.setPlatformToken(_local_2.PlatformToken);
         }
 

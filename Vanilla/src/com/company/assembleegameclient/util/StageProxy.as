@@ -5,13 +5,13 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.events.IEventDispatcher;
-    import flash.display.DisplayObject;
-    import flash.display.DisplayObjectContainer;
-    import flash.display.InteractiveObject;
-    import flash.events.Event;
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
+import flash.display.InteractiveObject;
+import flash.events.Event;
+import flash.events.IEventDispatcher;
 
-    public class StageProxy implements IEventDispatcher 
+public class StageProxy implements IEventDispatcher
     {
 
         private static var stage3D:Stage3DProxy = null;
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.util
             if (this.reference.stage != null)
             {
                 return (this.reference.stage.stageWidth);
-            };
+            }
             return (800);
         }
 
@@ -42,7 +42,7 @@ package com.company.assembleegameclient.util
             if (this.reference.stage != null)
             {
                 return (this.reference.stage.stageHeight);
-            };
+            }
             return (600);
         }
 
@@ -96,7 +96,7 @@ package com.company.assembleegameclient.util
             if (stage3D == null)
             {
                 stage3D = new Stage3DProxy(this.reference.stage.stage3Ds[_arg_1]);
-            };
+            }
             return (stage3D);
         }
 

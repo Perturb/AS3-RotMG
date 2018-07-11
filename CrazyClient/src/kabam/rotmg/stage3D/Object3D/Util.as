@@ -1,15 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.Object3D.Util
 
 package kabam.rotmg.stage3D.Object3D
 {
-    import flash.geom.Matrix3D;
-    import flash.utils.ByteArray;
-    import __AS3__.vec.*;
+import flash.geom.Matrix3D;
+import flash.utils.ByteArray;
 
-    public class Util 
+public class Util
     {
 
 
@@ -40,10 +39,10 @@ package kabam.rotmg.stage3D.Object3D
                 {
                     _arg_1.position = (_arg_1.position + Math.max(0, (_arg_2 - (_local_4 + 1))));
                     break;
-                };
+                }
                 _local_5 = (_local_5 + String.fromCharCode(_local_3));
                 _local_4++;
-            };
+            }
             return (_local_5);
         }
 

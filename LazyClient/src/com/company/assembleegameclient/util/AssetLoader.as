@@ -5,23 +5,25 @@
 
 package com.company.assembleegameclient.util
 {
-    import com.company.assembleegameclient.sound.IMusic;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.ui.options.Options;
-    import com.company.assembleegameclient.sound.SFX;
-    import com.company.util.AssetLibrary;
-    import kabam.rotmg.assets.EmbeddedAssets;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import flash.utils.ByteArray;
-    import com.company.assembleegameclient.engine3d.Model3D;
-    import com.company.assembleegameclient.objects.particles.ParticleLibrary;
-    import kabam.rotmg.assets.EmbeddedData;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.utils.getQualifiedClassName;
-    import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.engine3d.Model3D;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.particles.ParticleLibrary;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.sound.IMusic;
+import com.company.assembleegameclient.sound.SFX;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.util.AssetLibrary;
 
-    public class AssetLoader 
+import flash.utils.ByteArray;
+import flash.utils.getQualifiedClassName;
+
+import kabam.rotmg.assets.EmbeddedAssets;
+import kabam.rotmg.assets.EmbeddedData;
+
+public class AssetLoader
     {
 
         public static var currentXmlIsTesting:Boolean = false;
@@ -45,8 +47,7 @@ package com.company.assembleegameclient.util
             SFX.load();
         }
 
-        private function addImages():void
-        {
+        private function addImages():void{
             AssetLibrary.addImageSet("lofiChar8x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("lofiChar16x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 16, 8);
             AssetLibrary.addImageSet("lofiChar16x16", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 16, 16);
@@ -115,10 +116,13 @@ package com.company.assembleegameclient.util
             AssetLibrary.addImageSet("epicHiveObjects16x16", new EmbeddedAssets.epicHiveObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("lostHallsObjects8x8", new EmbeddedAssets.lostHallsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("lostHallsObjects16x16", new EmbeddedAssets.lostHallsObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("cnidarianReefObjects8x8", new EmbeddedAssets.cnidarianReefObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("cnidarianReefObjects16x16", new EmbeddedAssets.cnidarianReefObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("magicWoodsObjects8x8", new EmbeddedAssets.magicWoodsObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
         }
 
-        private function addAnimatedCharacters():void
-        {
+        private function addAnimatedCharacters():void{
             AnimatedChars.add("chars8x8rBeach", new EmbeddedAssets.chars8x8rBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("chars8x8dBeach", new EmbeddedAssets.chars8x8dBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.DOWN);
             AnimatedChars.add("chars8x8rLow1", new EmbeddedAssets.chars8x8rLow1Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
@@ -169,6 +173,8 @@ package com.company.assembleegameclient.util
             AnimatedChars.add("epicHiveChars16x16", new EmbeddedAssets.epicHiveChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("lostHallsChars16x16", new EmbeddedAssets.lostHallsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("lostHallsChars8x8", new EmbeddedAssets.lostHallsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("magicWoodsChars8x8", new EmbeddedAssets.magicWoodsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("magicWoodsChars16x16", new EmbeddedAssets.magicWoodsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
 
         private function addSoundEffects():void
@@ -196,7 +202,7 @@ package com.company.assembleegameclient.util
                 _local_3 = _local_2.readUTFBytes(_local_2.length);
                 Model3D.parse3DOBJ(_local_1, _local_2);
                 Model3D.parseFromOBJ(_local_1, _local_3);
-            };
+            }
         }
 
         private function parseParticleEffects():void
@@ -211,7 +217,7 @@ package com.company.assembleegameclient.util
             for each (_local_1 in EmbeddedData.groundFiles)
             {
                 GroundLibrary.parseFromXML(XML(_local_1));
-            };
+            }
         }
 
         private function parseObjectFiles():void
@@ -222,12 +228,11 @@ package com.company.assembleegameclient.util
                 currentXmlIsTesting = this.checkIsTestingXML(EmbeddedData.objectFiles[_local_1]);
                 ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
-            };
-            while (_local_1 < EmbeddedData.objectFiles.length)
-            {
+            }
+            while (_local_1 < EmbeddedData.objectFiles.length) {
                 ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_local_1]), XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
-            };
+            }
             currentXmlIsTesting = false;
         }
 
@@ -237,7 +242,7 @@ package com.company.assembleegameclient.util
             for each (_local_1 in EmbeddedData.regionFiles)
             {
                 RegionLibrary.parseFromXML(XML(_local_1));
-            };
+            }
         }
 
         private function checkIsTestingXML(_arg_1:*):Boolean

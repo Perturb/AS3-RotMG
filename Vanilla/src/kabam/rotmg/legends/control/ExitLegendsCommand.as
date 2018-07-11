@@ -5,13 +5,14 @@
 
 package kabam.rotmg.legends.control
 {
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.core.signals.InvalidateDataSignal;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-    import kabam.rotmg.ui.view.TitleView;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
-    public class ExitLegendsCommand 
+import kabam.rotmg.core.signals.InvalidateDataSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.ui.view.TitleView;
+
+public class ExitLegendsCommand 
     {
 
         [Inject]
@@ -31,7 +32,7 @@ package kabam.rotmg.legends.control
             else
             {
                 this.gotoTitleView();
-            };
+            }
         }
 
         private function clearRecentlyDeceasedAndGotoCharacterView():void

@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.Chat
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.chat.model.ChatModel;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class Chat extends Sprite 
+import flash.display.Sprite;
+
+import kabam.rotmg.chat.model.ChatModel;
+
+public class Chat extends Sprite
     {
 
         public var list:ChatList;
@@ -35,7 +37,7 @@ package kabam.rotmg.chat.view
             else
             {
                 y = (300 + (300 * (1 - (600 / WebMain.sHeight))));
-            };
+            }
             this.list.y = _arg_1.bounds.height;
             if (_arg_2)
             {
@@ -44,7 +46,7 @@ package kabam.rotmg.chat.view
             else
             {
                 this.addInputNotAllowed();
-            };
+            }
         }
 
         private function addChatInput():void
@@ -65,11 +67,11 @@ package kabam.rotmg.chat.view
             if (((!(this.notAllowed == null)) && (contains(this.notAllowed))))
             {
                 removeChild(this.notAllowed);
-            };
+            }
             if (((this.input == null) || (!(contains(this.input)))))
             {
                 this.addChatInput();
-            };
+            }
         }
 
 

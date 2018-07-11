@@ -1,25 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.BeginnersPackageButton
 
 package kabam.rotmg.promotions.view
 {
-    import kabam.rotmg.packages.view.BasePackageButton;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.DisplayObject;
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.UIUtils;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
 
-    public class BeginnersPackageButton extends BasePackageButton 
+import kabam.rotmg.packages.view.BasePackageButton;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.UIUtils;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class BeginnersPackageButton extends BasePackageButton 
     {
 
         private static const FONT_SIZE:int = 16;
+        public static const NOTIFICATION_BACKGROUND_WIDTH:Number = 50;
+        public static const NOTIFICATION_BACKGROUND_HEIGHT:Number = 25;
 
         public var clicked:Signal;
         private var timeLeftText:TextFieldDisplayConcrete;
@@ -29,7 +33,7 @@ package kabam.rotmg.promotions.view
 
         public function BeginnersPackageButton()
         {
-            this.clickArea = UIUtils.makeStaticHUDBackground();
+            this.clickArea = UIUtils.makeHUDBackground(NOTIFICATION_BACKGROUND_WIDTH, NOTIFICATION_BACKGROUND_HEIGHT);
             this.clicked = new NativeMappedSignal(this, MouseEvent.CLICK);
             tabChildren = false;
             tabEnabled = false;
@@ -42,7 +46,7 @@ package kabam.rotmg.promotions.view
             {
                 this.daysRemaining = _arg_1;
                 this.updateTimeLeftPosition();
-            };
+            }
         }
 
         public function destroy():void
@@ -62,7 +66,7 @@ package kabam.rotmg.promotions.view
         private function makeTimeLeftText():void
         {
             this.timeLeftText = new TextFieldDisplayConcrete().setSize(FONT_SIZE).setColor(0xFFFFFF);
-            this.timeLeftText.filters = [new DropShadowFilter(0, 0, 0)];
+            this.timeLeftText.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
             this.updateTimeLeftPosition();
             addChild(this.timeLeftText);
         }
@@ -70,7 +74,7 @@ package kabam.rotmg.promotions.view
         private function updateTimeLeftPosition():void
         {
             this.timeLeftText.textChanged.addOnce(this.onTextChanged);
-            this.timeLeftText.setStringBuilder(new StaticStringBuilder(((this.daysRemaining.toString() + " day") + ((this.daysRemaining > 1) ? "s" : ""))));
+            this.timeLeftText.setStringBuilder(new StaticStringBuilder((this.daysRemaining.toString() + "d")));
         }
 
         private function onTextChanged():void

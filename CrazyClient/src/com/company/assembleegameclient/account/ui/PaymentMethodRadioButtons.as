@@ -1,23 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons
 
 package com.company.assembleegameclient.account.ui
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.account.ui.components.SelectionGroup;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.account.ui.components.Selectable;
-    import flash.events.Event;
-    import flash.display.DisplayObject;
-    import kabam.lib.ui.impl.HorizontalLayout;
-    import kabam.lib.ui.api.Layout;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.account.ui.components.Selectable;
+import com.company.assembleegameclient.account.ui.components.SelectionGroup;
 
-    public class PaymentMethodRadioButtons extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import kabam.lib.ui.api.Layout;
+import kabam.lib.ui.impl.HorizontalLayout;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+public class PaymentMethodRadioButtons extends Sprite
     {
 
         private const waiter:SignalWaiter = new SignalWaiter();
@@ -54,7 +54,7 @@ package com.company.assembleegameclient.account.ui
             {
                 this.boxes[_local_1] = this.makeRadioButton(this.labels[_local_1]);
                 _local_1++;
-            };
+            }
         }
 
         private function makeRadioButton(_arg_1:String):PaymentMethodRadioButton
@@ -89,7 +89,7 @@ package com.company.assembleegameclient.account.ui
             {
                 _local_3[_local_1] = this.boxes[_local_1];
                 _local_1++;
-            };
+            }
             return (_local_3);
         }
 
@@ -109,7 +109,7 @@ package com.company.assembleegameclient.account.ui
             {
                 _local_3[_local_1] = this.boxes[_local_1];
                 _local_1++;
-            };
+            }
             return (_local_3);
         }
 

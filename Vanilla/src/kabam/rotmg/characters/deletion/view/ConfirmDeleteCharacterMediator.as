@@ -5,13 +5,15 @@
 
 package kabam.rotmg.characters.deletion.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.characters.model.CharacterModel;
-    import kabam.rotmg.characters.deletion.control.DeleteCharacterSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.appengine.SavedCharacter;
 
-    public class ConfirmDeleteCharacterMediator extends Mediator 
+import kabam.rotmg.characters.deletion.control.DeleteCharacterSignal;
+import kabam.rotmg.characters.model.CharacterModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ConfirmDeleteCharacterMediator extends Mediator
     {
 
         [Inject]

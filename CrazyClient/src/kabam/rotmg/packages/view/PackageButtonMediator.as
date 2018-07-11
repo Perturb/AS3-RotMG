@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageButtonMediator
 
 package kabam.rotmg.packages.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.packages.services.GetPackagesTask;
-    import kabam.rotmg.packages.services.PackageModel;
-    import kabam.rotmg.packages.control.OpenPackageSignal;
-    import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.control.OpenPackageSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.services.GetPackagesTask;
+import kabam.rotmg.packages.services.PackageModel;
 
-    public class PackageButtonMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PackageButtonMediator extends Mediator
     {
 
         [Inject]
@@ -39,15 +40,15 @@ package kabam.rotmg.packages.view
             {
                 this.view.visible = false;
                 this.getPackageTask.start();
-            };
+            }
         }
 
         override public function destroy():void
         {
             this.view.clicked.remove(this.onClicked);
-            if (!this.dataSet)
+            if ((!(this.dataSet)))
             {
-            };
+            }
         }
 
         private function onUpdateDuration(_arg_1:int):void
@@ -64,7 +65,7 @@ package kabam.rotmg.packages.view
             else
             {
                 this.view.setQuantity(_arg_1);
-            };
+            }
         }
 
         private function onDataChanged():void

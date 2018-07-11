@@ -5,10 +5,11 @@
 
 package kabam.rotmg.errors.control
 {
-    import robotlegs.bender.framework.api.ILogger;
-    import flash.events.ErrorEvent;
+import flash.events.ErrorEvent;
 
-    public class LogErrorCommand 
+import robotlegs.bender.framework.api.ILogger;
+
+public class LogErrorCommand
     {
 
         [Inject]
@@ -23,7 +24,7 @@ package kabam.rotmg.errors.control
             if (((this.event["error"]) && (this.event["error"] is Error)))
             {
                 this.logErrorObject(this.event["error"]);
-            };
+            }
         }
 
         private function logErrorObject(_arg_1:Error):void

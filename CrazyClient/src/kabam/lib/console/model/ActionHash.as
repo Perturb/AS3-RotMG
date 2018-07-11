@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.model.ActionHash
 
 package kabam.lib.console.model
 {
-    import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import org.osflash.signals.Signal;
 
-    public final class ActionHash 
+public final class ActionHash 
     {
 
         private var signalMap:Object;
@@ -34,7 +32,7 @@ package kabam.lib.console.model
             for (_local_1 in this.signalMap)
             {
                 _local_2.push(((_local_1 + " - ") + this.descriptionMap[_local_1]));
-            };
+            }
             return (_local_2);
         }
 
@@ -44,13 +42,13 @@ package kabam.lib.console.model
             if (_local_2.length == 0)
             {
                 return;
-            };
+            }
             var _local_3:String = _local_2.shift();
             var _local_4:Signal = this.signalMap[_local_3];
-            if (!_local_4)
+            if ((!(_local_4)))
             {
                 return;
-            };
+            }
             if (_local_2.length > 0)
             {
                 _local_4.dispatch.apply(this, _local_2.join(" ").split(","));
@@ -58,7 +56,7 @@ package kabam.lib.console.model
             else
             {
                 _local_4.dispatch.apply(this);
-            };
+            }
         }
 
         public function has(_arg_1:String):Boolean

@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.ui
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-    public class DeprecatedTextButton extends TextButtonBase 
+import org.osflash.signals.Signal;
+
+public class DeprecatedTextButton extends TextButtonBase
     {
 
         public const textChanged:Signal = new Signal();
@@ -25,7 +26,7 @@ package com.company.assembleegameclient.ui
             else
             {
                 text_.setStringBuilder(new LineBuilder().setParams(_arg_2));
-            };
+            }
             text_.textChanged.addOnce(this.onTextChanged);
         }
 

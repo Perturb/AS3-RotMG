@@ -1,14 +1,12 @@
-package kabam.rotmg.news.view
+﻿package kabam.rotmg.news.view
 {
-	import mx.core.*;
+import mx.core.*;
 
-	[Embed(source="NewsCell_DefaultGraphicLarge.jpg")]
-	public class NewsCell_DefaultGraphicLarge extends mx.core.BitmapAsset
+[Embed(source="NewsCell_DefaultGraphicLarge.jpg")]
+	public class NewsCell_DefaultGraphicLarge extends BitmapAsset
 	{
 		public function NewsCell_DefaultGraphicLarge()
 		{
-			super();
-			return;
 		}
 	}
 }

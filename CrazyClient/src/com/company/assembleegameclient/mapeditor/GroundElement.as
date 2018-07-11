@@ -1,23 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.GroundElement
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
-    import flash.display.Shape;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import flash.geom.Rectangle;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.map.SquareFace;
-    import com.company.assembleegameclient.map.AnimateProperties;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.AnimateProperties;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.SquareFace;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class GroundElement extends Element 
+import flash.display.BitmapData;
+import flash.display.IGraphicsData;
+import flash.display.Shape;
+import flash.geom.Rectangle;
+
+public class GroundElement extends Element
     {
 
         private static const VIN:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];

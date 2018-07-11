@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class TradeRequested extends IncomingMessage 
+public class TradeRequested extends IncomingMessage
     {
 
         public var name_:String;

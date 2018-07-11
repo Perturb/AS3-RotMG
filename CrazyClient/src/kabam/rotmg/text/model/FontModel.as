@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.FontModel
 
 package kabam.rotmg.text.model
 {
-    import flash.text.Font;
-    import flash.text.TextFormat;
-    import flash.text.TextField;
+import flash.text.Font;
+import flash.text.TextField;
+import flash.text.TextFormat;
 
-    public class FontModel 
+public class FontModel
     {
 
         public static const MyriadPro:Class = FontModel_MyriadPro;
@@ -43,7 +43,7 @@ package kabam.rotmg.text.model
             if (_arg_5)
             {
                 _local_6.align = "center";
-            };
+            }
             _arg_1.defaultTextFormat = _local_6;
             _arg_1.setTextFormat(_local_6);
             return (_local_6);

@@ -5,13 +5,13 @@
 
 package kabam.rotmg.promotions.commands
 {
-    import kabam.rotmg.account.core.PaymentData;
-    import kabam.rotmg.account.core.services.MakePaymentTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.packages.control.InitPackagesSignal;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.account.core.PaymentData;
+import kabam.rotmg.account.core.services.MakePaymentTask;
+import kabam.rotmg.packages.control.InitPackagesSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
-    public class MakeBeginnersPackagePaymentCommand 
+public class MakeBeginnersPackagePaymentCommand
     {
 
         [Inject]

@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebForgotPasswordMediator
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
+import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class WebForgotPasswordMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebForgotPasswordMediator extends Mediator
     {
 
         [Inject]

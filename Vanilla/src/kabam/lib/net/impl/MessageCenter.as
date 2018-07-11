@@ -5,14 +5,13 @@
 
 package kabam.lib.net.impl
 {
-    import kabam.lib.net.api.MessageMap;
-    import kabam.lib.net.api.MessageProvider;
-    import __AS3__.vec.Vector;
-    import org.swiftsuspenders.Injector;
-    import kabam.lib.net.api.MessageMapping;
-    import __AS3__.vec.*;
+import kabam.lib.net.api.MessageMap;
+import kabam.lib.net.api.MessageMapping;
+import kabam.lib.net.api.MessageProvider;
 
-    public class MessageCenter implements MessageMap, MessageProvider 
+import org.swiftsuspenders.Injector;
+
+public class MessageCenter implements MessageMap, MessageProvider 
     {
 
         private static const MAX_ID:int = 0x0100;

@@ -5,17 +5,16 @@
 
 package com.company.assembleegameclient.map
 {
-    import flash.geom.Vector3D;
-    import flash.geom.Rectangle;
-    import flash.geom.PerspectiveProjection;
-    import flash.geom.Matrix3D;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.RandomUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.RandomUtil;
 
-    public class Camera 
+import flash.geom.Matrix3D;
+import flash.geom.PerspectiveProjection;
+import flash.geom.Rectangle;
+import flash.geom.Vector3D;
+
+public class Camera
     {
 
         public static const lN_:Vector3D = new Vector3D(0, 0, 1);
@@ -70,8 +69,8 @@ package com.company.assembleegameclient.map
                 else
                 {
                     _local_3 = SLIM_SCREENSHOT_SCREEN_RECT;
-                };
-            };
+                }
+            }
             var _local_4:Number = Parameters.data_.cameraAngle;
             this.configure(_arg_1.x_, _arg_1.y_, 12, _local_4, _local_3);
             this.isHallucinating_ = _arg_2;
@@ -91,8 +90,8 @@ package com.company.assembleegameclient.map
                 if (this.jitter_ > this.MAX_JITTER)
                 {
                     this.jitter_ = this.MAX_JITTER;
-                };
-            };
+                }
+            }
         }
 
         public function configure(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Rectangle):void
@@ -101,7 +100,7 @@ package com.company.assembleegameclient.map
             {
                 _arg_1 = (_arg_1 + RandomUtil.plusMinus(this.jitter_));
                 _arg_2 = (_arg_2 + RandomUtil.plusMinus(this.jitter_));
-            };
+            }
             this.x_ = _arg_1;
             this.y_ = _arg_2;
             this.z_ = _arg_3;

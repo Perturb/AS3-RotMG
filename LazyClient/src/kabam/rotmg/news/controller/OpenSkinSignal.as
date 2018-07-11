@@ -5,9 +5,9 @@
 
 package kabam.rotmg.news.controller
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class OpenSkinSignal extends Signal 
+public class OpenSkinSignal extends Signal
     {
 
         public function OpenSkinSignal()

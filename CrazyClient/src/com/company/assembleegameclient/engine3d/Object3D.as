@@ -1,20 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Object3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
-    import flash.geom.Matrix3D;
-    import flash.geom.Vector3D;
-    import flash.geom.Utils3D;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
 
-    public class Object3D 
+import flash.display.BitmapData;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix3D;
+import flash.geom.Utils3D;
+import flash.geom.Vector3D;
+
+public class Object3D
     {
 
         public var model_:Model3D = null;
@@ -37,13 +38,13 @@ package com.company.assembleegameclient.engine3d
                 for each (_local_2 in this.model_.faces_)
                 {
                     this.faces_.push(new ObjectFace3D(this, _local_2.indicies_, _local_2.useTexture_));
-                };
+                }
             }
             else
             {
                 this.vL_ = new Vector.<Number>();
                 this.uvts_ = new Vector.<Number>();
-            };
+            }
             this.setPosition(0, 0, 0, 0);
         }
 
@@ -62,7 +63,7 @@ package com.company.assembleegameclient.engine3d
             for each (_local_1 in this.faces_)
             {
                 _local_1.dispose();
-            };
+            }
             this.faces_.length = 0;
             this.faces_ = null;
             this.vS_ = null;
@@ -80,7 +81,7 @@ package com.company.assembleegameclient.engine3d
             for each (_local_5 in this.faces_)
             {
                 _local_5.computeLighting();
-            };
+            }
         }
 
         public function getVecW(_arg_1:int):Vector3D
@@ -89,18 +90,22 @@ package com.company.assembleegameclient.engine3d
             if (_local_2 >= this.vW_.length)
             {
                 return (null);
-            };
+            }
             return (new Vector3D(this.vW_[_local_2], this.vW_[(_local_2 + 1)], this.vW_[(_local_2 + 2)]));
         }
 
         public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:uint, _arg_4:BitmapData):void
         {
             var _local_5:ObjectFace3D;
+            if (((!(Options.hidden)) && (Parameters.lowCPUMode)))
+            {
+                return;
+            }
             Utils3D.projectVectors(_arg_2.wToS_, this.vW_, this.vS_, this.uvts_);
             for each (_local_5 in this.faces_)
             {
                 _local_5.draw(_arg_1, _arg_3, _arg_4);
-            };
+            }
         }
 
 

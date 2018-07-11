@@ -5,25 +5,25 @@
 
 package com.company.assembleegameclient.ui.menu
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.UnFocusAble;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.geom.Rectangle;
-    import com.company.util.RectangleUtil;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
+import com.company.util.RectangleUtil;
 
-    public class Menu extends Sprite implements UnFocusAble 
+import flash.display.CapsStyle;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+
+import kabam.rotmg.ui.view.UnFocusAble;
+
+public class Menu extends Sprite implements UnFocusAble
     {
 
         private var background_:uint;
@@ -73,13 +73,13 @@ package com.company.assembleegameclient.ui.menu
             if (stage == null)
             {
                 return;
-            };
+            }
             var _local_2:Rectangle = getRect(stage);
             var _local_3:Number = RectangleUtil.pointDist(_local_2, stage.mouseX, stage.mouseY);
             if (_local_3 > 40)
             {
                 this.remove();
-            };
+            }
         }
 
         private function position():void
@@ -87,7 +87,7 @@ package com.company.assembleegameclient.ui.menu
             if (stage == null)
             {
                 return;
-            };
+            }
             if (stage.mouseX < (stage.stageWidth / 2))
             {
                 x = (stage.mouseX + 12);
@@ -95,11 +95,11 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 x = ((stage.mouseX - width) - 1);
-            };
+            }
             if (x < 12)
             {
                 x = 12;
-            };
+            }
             if (stage.mouseY < (stage.stageHeight / 3))
             {
                 y = (stage.mouseY + 12);
@@ -107,11 +107,11 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 y = ((stage.mouseY - height) - 1);
-            };
+            }
             if (y < 12)
             {
                 y = 12;
-            };
+            }
         }
 
         protected function onRollOut(_arg_1:Event):void
@@ -124,7 +124,7 @@ package com.company.assembleegameclient.ui.menu
             if (parent != null)
             {
                 parent.removeChild(this);
-            };
+            }
         }
 
         protected function draw():void

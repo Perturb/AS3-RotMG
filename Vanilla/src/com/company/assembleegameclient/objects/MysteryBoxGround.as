@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.game.view.MysteryBoxPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class MysteryBoxGround extends GameObject implements IInteractiveObject 
+import kabam.rotmg.game.view.MysteryBoxPanel;
+
+public class MysteryBoxGround extends GameObject implements IInteractiveObject
     {
 
         public function MysteryBoxGround(_arg_1:XML)

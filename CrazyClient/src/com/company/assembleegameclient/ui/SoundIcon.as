@@ -1,20 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.SoundIcon
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import flash.events.MouseEvent;
-    import flash.filters.GlowFilter;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.sound.Music;
-    import com.company.assembleegameclient.sound.SFX;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.sound.Music;
+import com.company.assembleegameclient.sound.SFX;
+import com.company.util.AssetLibrary;
 
-    public class SoundIcon extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.GlowFilter;
+
+public class SoundIcon extends Sprite
     {
 
         private var bitmap_:Bitmap = new Bitmap();

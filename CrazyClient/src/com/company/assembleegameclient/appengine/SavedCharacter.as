@@ -1,32 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.appengine.SavedCharacter
 
 package com.company.assembleegameclient.appengine
 {
-    import kabam.rotmg.pets.data.PetVO;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.pets.data.PetsModel;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-    import com.company.util.CachingColorTransformer;
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.constants.GeneralConstants;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.MaskedImage;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+import com.company.util.CachingColorTransformer;
 
-    public class SavedCharacter 
+import flash.display.BitmapData;
+import flash.geom.ColorTransform;
+
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+
+import org.swiftsuspenders.Injector;
+
+public class SavedCharacter
     {
 
         public var charXML_:XML;
@@ -48,7 +52,7 @@ package com.company.assembleegameclient.appengine
                 _local_5 = StaticInjectorContext.getInjector().getInstance(PetsModel).getPetVO(_local_4);
                 _local_5.apply(_local_3);
                 this.setPetVO(_local_5);
-            };
+            }
         }
 
         public static function getImage(_arg_1:SavedCharacter, _arg_2:XML, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Boolean, _arg_7:Boolean):BitmapData
@@ -59,17 +63,17 @@ package com.company.assembleegameclient.appengine
             var _local_11:int = ((_arg_1 != null) ? _arg_1.tex2() : null);
             var _local_12:BitmapData = TextureRedrawer.resize(_local_9.image_, _local_9.mask_, 100, false, _local_10, _local_11);
             _local_12 = GlowRedrawer.outlineGlow(_local_12, 0);
-            if (!_arg_6)
+            if ((!(_arg_6)))
             {
                 _local_12 = CachingColorTransformer.transformBitmapData(_local_12, new ColorTransform(0, 0, 0, 0.5, 0, 0, 0, 0));
             }
             else
             {
-                if (!_arg_7)
+                if ((!(_arg_7)))
                 {
                     _local_12 = CachingColorTransformer.transformBitmapData(_local_12, new ColorTransform(0.75, 0.75, 0.75, 1, 0, 0, 0, 0));
-                };
-            };
+                }
+            }
             return (_local_12);
         }
 
@@ -80,7 +84,7 @@ package com.company.assembleegameclient.appengine
             if (_local_3 != _local_4)
             {
                 return (_local_4 - _local_3);
-            };
+            }
             return (_arg_2.xp() - _arg_1.xp());
         }
 
@@ -108,11 +112,11 @@ package com.company.assembleegameclient.appengine
                         if (((!(_local_2 == null)) && (_local_2.hasOwnProperty("FameBonus"))))
                         {
                             _local_4 = (_local_4 + int(_local_2.FameBonus));
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 _local_5++;
-            };
+            }
             return (_local_4);
         }
 
@@ -214,10 +218,10 @@ package com.company.assembleegameclient.appengine
 
         public function bornOn():String
         {
-            if (!this.charXML_.hasOwnProperty("CreationDate"))
+            if ((!(this.charXML_.hasOwnProperty("CreationDate"))))
             {
                 return ("Unknown");
-            };
+            }
             return (this.charXML_.CreationDate);
         }
 

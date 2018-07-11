@@ -1,40 +1,44 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.AccountConfig
 
 package kabam.rotmg.account
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import flash.display.DisplayObjectContainer;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.framework.api.IContext;
-    import flash.display.LoaderInfo;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.account.core.services.VerifyAgeTask;
-    import kabam.rotmg.account.core.services.GetCharListTask;
-    import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
-    import kabam.rotmg.account.core.model.OfferModel;
-    import kabam.rotmg.account.core.view.MoneyFrame;
-    import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
-    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
-    import kabam.rotmg.account.core.BuyCharacterSlotCommand;
-    import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
-    import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
-    import kabam.rotmg.account.core.commands.PurchaseGoldCommand;
-    import kabam.rotmg.account.core.signals.VerifyAgeSignal;
-    import kabam.rotmg.account.core.commands.VerifyAgeCommand;
-    import kabam.rotmg.account.kongregate.KongregateAccountConfig;
-    import kabam.rotmg.account.steam.SteamAccountConfig;
-    import kabam.rotmg.account.kabam.KabamAccountConfig;
-    import kabam.rotmg.account.web.WebAccountConfig;
-    import kabam.rotmg.account.transfer.TransferAccountConfig;
+import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
 
-    public class AccountConfig implements IConfig 
+import flash.display.DisplayObjectContainer;
+import flash.display.LoaderInfo;
+
+import kabam.rotmg.account.core.BuyCharacterSlotCommand;
+import kabam.rotmg.account.core.commands.PurchaseGoldCommand;
+import kabam.rotmg.account.core.commands.VerifyAgeCommand;
+import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
+import kabam.rotmg.account.core.model.OfferModel;
+import kabam.rotmg.account.core.services.GetCharListTask;
+import kabam.rotmg.account.core.services.VerifyAgeTask;
+import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.account.core.signals.VerifyAgeSignal;
+import kabam.rotmg.account.core.view.MoneyFrame;
+import kabam.rotmg.account.kabam.KabamAccountConfig;
+import kabam.rotmg.account.kongregate.KongregateAccountConfig;
+import kabam.rotmg.account.steam.SteamAccountConfig;
+import kabam.rotmg.account.transfer.TransferAccountConfig;
+import kabam.rotmg.account.web.WebAccountConfig;
+import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+import robotlegs.bender.framework.api.ILogger;
+
+public class AccountConfig implements IConfig
     {
 
         [Inject]
@@ -95,9 +99,9 @@ package kabam.rotmg.account
                     else
                     {
                         this.context.configure(WebAccountConfig);
-                    };
-                };
-            };
+                    }
+                }
+            }
             this.context.configure(TransferAccountConfig);
         }
 

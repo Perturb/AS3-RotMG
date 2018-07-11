@@ -1,21 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.services.GetPackagesTask
 
 package kabam.rotmg.packages.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import flash.utils.Timer;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.language.model.LanguageModel;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import com.company.assembleegameclient.util.TimeUtil;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class GetPackagesTask extends BaseTask 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.language.model.LanguageModel;
+import kabam.rotmg.packages.model.PackageInfo;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetPackagesTask extends BaseTask
     {
 
         private static const HOUR:int = ((1000 * 60) * 60);//3600000
@@ -51,7 +54,7 @@ package kabam.rotmg.packages.services
             {
                 this.logger.warn("GetPackageTask.onComplete: Request failed.");
                 completeTask(true);
-            };
+            }
         }
 
         private function handleOkay(_arg_1:*):void
@@ -66,7 +69,7 @@ package kabam.rotmg.packages.services
             else
             {
                 this.parse(XML(_arg_1).child("Package"));
-            };
+            }
             completeTask(true);
         }
 
@@ -96,35 +99,37 @@ package kabam.rotmg.packages.services
                     _local_3.saleAmount = int(_local_2.Sale.attribute("price").toString());
                     _local_3.saleCurrency = int(_local_2.Sale.attribute("currency").toString());
                     _local_3.saleEnd = TimeUtil.parseUTCDate(_local_2.Sale.End.toString());
-                };
+                }
                 if (_local_2.hasOwnProperty("Left"))
                 {
                     _local_3.unitsLeft = _local_2.Left;
-                };
+                }
                 if (_local_2.hasOwnProperty("Total"))
                 {
                     _local_3.totalUnits = _local_2.Total;
-                };
+                }
                 if (_local_2.hasOwnProperty("Slot"))
                 {
                     _local_3.slot = _local_2.Slot;
-                };
+                }
                 if (_local_2.hasOwnProperty("Tags"))
                 {
                     _local_3.tags = _local_2.Tags;
-                };
+                }
                 _local_3.startTime = TimeUtil.parseUTCDate(_local_2.StartTime.toString());
                 if (_local_2.EndTime.toString())
                 {
                     _local_3.endTime = TimeUtil.parseUTCDate(_local_2.EndTime.toString());
-                };
+                }
                 _local_3.image = _local_2.Image.toString();
+                _local_3.gold = int(_local_2.Gold.toString());
+
                 if (_local_2.PopupImage.toString() != "")
                 {
                     _local_3.popupImage = _local_2.PopupImage.toString();
-                };
+                }
                 _local_4.push(_local_3);
-            };
+            }
             this.packageModel.setPackages(_local_4);
         }
 
@@ -141,8 +146,8 @@ package kabam.rotmg.packages.services
                 if (packageHistory)
                 {
                     numPurchased = int(packageHistory.Count);
-                };
-            };
+                }
+            }
             return (numPurchased);
         }
 

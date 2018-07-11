@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamMakePaymentTask
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.MakePaymentTask;
-    import kabam.rotmg.account.steam.SteamApi;
-    import kabam.rotmg.account.core.PaymentData;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.PaymentData;
+import kabam.rotmg.account.core.services.MakePaymentTask;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask 
     {
 
         [Inject]
@@ -54,7 +56,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.onPurchaseOfferError(_arg_2);
-            };
+            }
         }
 
         private function onPurchaseOfferComplete():void
@@ -84,7 +86,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.onPurchaseFinalizeError(_arg_2);
-            };
+            }
         }
 
         private function onPurchaseFinalizeComplete():void

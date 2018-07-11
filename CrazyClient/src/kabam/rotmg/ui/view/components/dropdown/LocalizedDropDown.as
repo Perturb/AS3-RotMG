@@ -1,18 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.components.dropdown.LocalizedDropDown
 
 package kabam.rotmg.ui.view.components.dropdown
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import __AS3__.vec.*;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
 
-    public class LocalizedDropDown extends Sprite 
+import kabam.rotmg.ui.view.SignalWaiter;
+
+public class LocalizedDropDown extends Sprite 
     {
 
         protected const h_:int = 36;
@@ -50,7 +49,7 @@ package kabam.rotmg.ui.view.components.dropdown
                 this.strings_[0] = _arg_1;
                 this.updateView();
                 dispatchEvent(new Event(Event.CHANGE));
-            };
+            }
         }
 
         public function getClosedHeight():int
@@ -68,7 +67,7 @@ package kabam.rotmg.ui.view.components.dropdown
                 this.selected_ = _local_1;
                 this.selected_.addEventListener(MouseEvent.CLICK, this.onClick);
                 addChild(this.selected_);
-            };
+            }
             var _local_2:int = 1;
             while (_local_2 < this.strings_.length)
             {
@@ -78,7 +77,7 @@ package kabam.rotmg.ui.view.components.dropdown
                 this.items_.push(_local_1);
                 this.all_.addChild(_local_1);
                 _local_2++;
-            };
+            }
         }
 
         private function makeDropDownItem(_arg_1:String):LocalizedDropDownItem
@@ -96,11 +95,11 @@ package kabam.rotmg.ui.view.components.dropdown
                 this.items_[_local_1].setValue(this.strings_[_local_1]);
                 this.items_[_local_1].setWidth(this.w_);
                 _local_1++;
-            };
+            }
             if (this.items_.length > 0)
             {
                 this.selected_ = this.items_[0];
-            };
+            }
         }
 
         private function showAll():void
@@ -122,7 +121,7 @@ package kabam.rotmg.ui.view.components.dropdown
             for each (_local_1 in this.items_)
             {
                 _local_2 = Math.max(_local_1.width, _local_2);
-            };
+            }
             this.w_ = _local_2;
             this.updateView();
         }

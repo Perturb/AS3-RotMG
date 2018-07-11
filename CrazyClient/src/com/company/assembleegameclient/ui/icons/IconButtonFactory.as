@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.icons.IconButtonFactory
 
 package com.company.assembleegameclient.ui.icons
 {
-    import flash.display.BitmapData;
+import flash.display.BitmapData;
 
-    public class IconButtonFactory 
+public class IconButtonFactory
     {
 
 

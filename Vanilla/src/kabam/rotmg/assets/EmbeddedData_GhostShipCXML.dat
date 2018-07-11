@@ -53,7 +53,7 @@
       <Defense>35</Defense>
       <God/>
       <Quest/>
-      <XpMult>1.75</XpMult>
+      <Exp>341</Exp>
       <KeepDamageRecord/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -99,7 +99,7 @@
          <Effect particle="SwirlingMist" cooldown="0.2">XMLEffect</Effect>
       </AltTexture>
       <NoMiniMap/>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>1700</MaxHitPoints>
       <Defense>15</Defense>
@@ -133,7 +133,7 @@
          <Size>140</Size>
          <ConditionEffect duration="2">Paralyzed</ConditionEffect>
       </Projectile>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>120</Size>
       <ShadowColor>0xfec937a</ShadowColor>
       <MaxHitPoints>600</MaxHitPoints>
@@ -152,7 +152,7 @@
       <HitSound>monster/traps_hit</HitSound>
       <DeathSound>spell/fire_nova</DeathSound>
       <MaxHitPoints>2000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>120</Size>
       <Defense>2</Defense>
    </Object>
@@ -254,7 +254,7 @@
          <Index>0xba</Index>
       </Texture>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
    </Object>
    <Object type="0x0e49" id="HDoor">
@@ -267,7 +267,7 @@
          <Index>0xbb</Index>
       </Texture>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
    </Object>
    <Object type="0x0e3a" id="Violent Spirit">
@@ -279,7 +279,7 @@
       <HitSound>monster/flaming_skulls_hit</HitSound>
       <DeathSound>monster/beholder_death</DeathSound>
       <MaxHitPoints>1200</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Enemy/>
       <Size>0</Size>
       <Z>0.3</Z>
@@ -318,7 +318,7 @@
             </RandomTexture>
          </Frame>
       </Animation>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>500</MaxHitPoints>
@@ -341,7 +341,6 @@
          <File>chars16x16rEncounters</File>
          <Index>33</Index>
       </AnimatedTexture>
-      <XpMult>1.0</XpMult>
       <Size>120</Size>
       <MaxHitPoints>2300</MaxHitPoints>
       <Defense>50</Defense>
@@ -371,7 +370,7 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>200</MaxHitPoints>
    </Object>
@@ -383,7 +382,6 @@
          <File>chars8x8rEncounters</File>
          <Index>30</Index>
       </AnimatedTexture>
-      <XpMult>1.0</XpMult>
       <Size>40</Size>
       <ShadowSize>85</ShadowSize>
       <MaxHitPoints>200</MaxHitPoints>
@@ -407,7 +405,6 @@
          <File>chars8x8rEncounters</File>
          <Index>31</Index>
       </AnimatedTexture>
-      <XpMult>1.0</XpMult>
       <Size>110</Size>
       <MaxHitPoints>1600</MaxHitPoints>
       <Defense>3</Defense>
@@ -438,7 +435,6 @@
       </AltTexture>
       <BloodProb>0.5</BloodProb>
       <BloodColor>0x50d71b</BloodColor>
-      <XpMult>1.0</XpMult>
       <Size>110</Size>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>17</Defense>
@@ -461,7 +457,6 @@
          <Index>32</Index>
       </AnimatedTexture>
       5171081
-      <XpMult>1.0</XpMult>
       <Size>110</Size>
       <MaxHitPoints>700</MaxHitPoints>
       <Defense>11</Defense>
@@ -493,7 +488,7 @@
          <Effect particle="SwirlingMist" cooldown="0.2">XMLEffect</Effect>
       </AltTexture>
       <NoMiniMap/>
-      <XpMult>0.005</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>700</MaxHitPoints>
       <Defense>0</Defense>
@@ -517,7 +512,6 @@
       </AnimatedTexture>
       <HitSound>monster/bats_hit</HitSound>
       <DeathSound>monster/flayers_hit</DeathSound>
-      <XpMult>1.0</XpMult>
       <Size>100</Size>
       <MaxHitPoints>650</MaxHitPoints>
       <Defense>5</Defense>

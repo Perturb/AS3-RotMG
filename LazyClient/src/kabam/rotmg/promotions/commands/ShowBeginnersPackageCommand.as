@@ -5,20 +5,20 @@
 
 package kabam.rotmg.promotions.commands
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.promotions.service.GetDaysRemainingTask;
-    import kabam.rotmg.account.core.services.GetOffersTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.lib.tasks.BranchingTask;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
-    import kabam.lib.tasks.Task;
-    import kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog;
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.GetOffersTask;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.service.GetPackageStatusTask;
+import kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog;
+import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
 
-    public class ShowBeginnersPackageCommand 
+public class ShowBeginnersPackageCommand 
     {
 
         [Inject]
@@ -28,7 +28,7 @@ package kabam.rotmg.promotions.commands
         [Inject]
         public var openDialog:OpenDialogSignal;
         [Inject]
-        public var getDaysRemaining:GetDaysRemainingTask;
+        public var getPackageStatusTask:GetPackageStatusTask;
         [Inject]
         public var getOffers:GetOffersTask;
         [Inject]
@@ -37,7 +37,7 @@ package kabam.rotmg.promotions.commands
 
         public function execute():void
         {
-            var _local_1:BranchingTask = new BranchingTask(this.getDaysRemaining, this.makeSuccessTask(), this.makeFailureTask());
+            var _local_1:BranchingTask = new BranchingTask(this.getPackageStatusTask, this.makeSuccessTask(), this.makeFailureTask());
             this.monitor.add(_local_1);
             _local_1.start();
         }

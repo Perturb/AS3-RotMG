@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_tableEdgeEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

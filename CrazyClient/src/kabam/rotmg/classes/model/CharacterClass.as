@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterClass
 
 package kabam.rotmg.classes.model
 {
-    import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import org.osflash.signals.Signal;
 
-    public class CharacterClass 
+public class CharacterClass
     {
 
         public const selected:Signal = new Signal(CharacterClass);
@@ -48,7 +46,7 @@ package kabam.rotmg.classes.model
             {
                 this.isSelected = _arg_1;
                 ((this.isSelected) && (this.selected.dispatch(this)));
-            };
+            }
         }
 
         public function getMaxLevelAchieved():int

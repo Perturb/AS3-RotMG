@@ -5,10 +5,10 @@
 
 package kabam.rotmg.messaging.impl
 {
-    import com.company.googleanalytics.GA;
-    import com.company.assembleegameclient.util.Currency;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.service.GoogleAnalytics;
 
-    internal class OutstandingBuy 
+internal class OutstandingBuy
     {
 
         private var id_:String;
@@ -26,18 +26,10 @@ package kabam.rotmg.messaging.impl
 
         public function record():void
         {
-            switch (this.currency_)
+            var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            if (_local_1)
             {
-                case Currency.GOLD:
-                    GA.global().trackEvent("credits", ((this.converted_) ? "buyConverted" : "buy"), this.id_, this.price_);
-                    return;
-                case Currency.FAME:
-                    GA.global().trackEvent("credits", "buyFame", this.id_, this.price_);
-                    return;
-                case Currency.GUILD_FAME:
-                    GA.global().trackEvent("credits", "buyGuildFame", this.id_, this.price_);
-                    return;
-            };
+            }
         }
 
 

@@ -5,15 +5,15 @@
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import org.swiftsuspenders.dependencyproviders.DependencyProvider;
-    import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import org.swiftsuspenders.Injector;
-    import flash.utils.Dictionary;
-    import __AS3__.vec.*;
+import flash.utils.Dictionary;
 
-    public class VertexBufferFactory implements DependencyProvider 
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
+
+import org.swiftsuspenders.Injector;
+import org.swiftsuspenders.dependencyproviders.DependencyProvider;
+
+public class VertexBufferFactory implements DependencyProvider
     {
 
         private var vertexBuffer:VertexBuffer3DProxy;

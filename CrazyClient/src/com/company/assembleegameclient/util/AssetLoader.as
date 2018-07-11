@@ -1,80 +1,76 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.AssetLoader
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.sound.IMusic;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.ui.options.Options;
-    import com.company.assembleegameclient.sound.SFX;
-    import flash.utils.ByteArray;
-    import flash.display.Loader;
-    import flash.events.Event;
-    import flash.display.Bitmap;
-    import com.company.util.AssetLibrary;
-    import kabam.rotmg.assets.EmbeddedAssets;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import com.company.assembleegameclient.engine3d.Model3D;
-    import com.company.assembleegameclient.objects.particles.ParticleLibrary;
-    import kabam.rotmg.assets.EmbeddedData;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.utils.getQualifiedClassName;
-    import com.company.assembleegameclient.map.RegionLibrary;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.engine3d.Model3D;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.particles.ParticleLibrary;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.sound.IMusic;
+import com.company.assembleegameclient.sound.SFX;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.util.AssetLibrary;
 
-    public class AssetLoader 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Loader;
+import flash.events.Event;
+import flash.utils.ByteArray;
+import flash.utils.getQualifiedClassName;
+
+import kabam.rotmg.assets.EmbeddedAssets;
+import kabam.rotmg.assets.EmbeddedData;
+
+public class AssetLoader
     {
 
         public static var maps:Vector.<BitmapData>;
-        public static var castleMap:BitmapData;
-        public static var chamberMap:BitmapData;
-        public static var wcMap:BitmapData;
-        public static var vaultMap:BitmapData;
         public static var shattersMap:BitmapData;
         public static var currentXmlIsTesting:Boolean = false;
 
         public var music:IMusic = new MusicProxy();
-        [Embed(source="assetloader_w1.dat", mimeType="application/octet-stream")]
-        private var w1:Class;
-        [Embed(source="assetloader_w2.dat", mimeType="application/octet-stream")]
-        private var w2:Class;
-        [Embed(source="assetloader_w3.dat", mimeType="application/octet-stream")]
-        private var w3:Class;
-        [Embed(source="assetloader_w4.dat", mimeType="application/octet-stream")]
-        private var w4:Class;
-        [Embed(source="assetloader_w5.dat", mimeType="application/octet-stream")]
-        private var w5:Class;
-        [Embed(source="assetloader_w6.dat", mimeType="application/octet-stream")]
-        private var w6:Class;
-        [Embed(source="assetloader_w7.dat", mimeType="application/octet-stream")]
-        private var w7:Class;
-        [Embed(source="assetloader_w8.dat", mimeType="application/octet-stream")]
-        private var w8:Class;
-        [Embed(source="assetloader_w9.dat", mimeType="application/octet-stream")]
-        private var w9:Class;
-        [Embed(source="assetloader_w10.dat", mimeType="application/octet-stream")]
-        private var w10:Class;
-        [Embed(source="assetloader_w11.dat", mimeType="application/octet-stream")]
-        private var w11:Class;
-        [Embed(source="assetloader_w12.dat", mimeType="application/octet-stream")]
-        private var w12:Class;
-        [Embed(source="assetloader_w13.dat", mimeType="application/octet-stream")]
-        private var w13:Class;
-        [Embed(source="assetloader_castle.dat", mimeType="application/octet-stream")]
-        private var castle:Class;
-        [Embed(source="assetloader_chamber.dat", mimeType="application/octet-stream")]
-        private var chamber:Class;
-        [Embed(source="assetloader_wc.dat", mimeType="application/octet-stream")]
-        private var wc:Class;
-        [Embed(source="assetloader_shatters.dat", mimeType="application/octet-stream")]
-        private var shatters:Class;
-        [Embed(source="assetloader_vault.dat", mimeType="application/octet-stream")]
-        private var vault:Class;
+        //[Embed(source="assetloader_castle.dat", mimeType="application/octet-stream")]
+        private var castle:Class = AssetLoader_castle;
+        //[Embed(source="assetloader_chamber.dat", mimeType="application/octet-stream")]
+        private var chamber:Class = AssetLoader_chamber;
+        //[Embed(source="assetloader_wc.dat", mimeType="application/octet-stream")]
+        private var wc:Class = AssetLoader_wc;
+        //[Embed(source="assetloader_vault.dat", mimeType="application/octet-stream")]
+        private var vault:Class = AssetLoader_vault;
+        //[Embed(source="assetloader_w1.dat", mimeType="application/octet-stream")]
+        private var w1:Class = AssetLoader_w1;
+        //[Embed(source="assetloader_w2.dat", mimeType="application/octet-stream")]
+        private var w2:Class = AssetLoader_w2;
+        //[Embed(source="assetloader_w3.dat", mimeType="application/octet-stream")]
+        private var w3:Class = AssetLoader_w3;
+        //[Embed(source="assetloader_w4.dat", mimeType="application/octet-stream")]
+        private var w4:Class = AssetLoader_w4;
+        //[Embed(source="assetloader_w5.dat", mimeType="application/octet-stream")]
+        private var w5:Class = AssetLoader_w5;
+        //[Embed(source="assetloader_w6.dat", mimeType="application/octet-stream")]
+        private var w6:Class = AssetLoader_w6;
+        //[Embed(source="assetloader_w7.dat", mimeType="application/octet-stream")]
+        private var w7:Class = AssetLoader_w7;
+        //[Embed(source="assetloader_w8.dat", mimeType="application/octet-stream")]
+        private var w8:Class = AssetLoader_w8;
+        //[Embed(source="assetloader_w9.dat", mimeType="application/octet-stream")]
+        private var w9:Class = AssetLoader_w9;
+        //[Embed(source="assetloader_w10.dat", mimeType="application/octet-stream")]
+        private var w10:Class = AssetLoader_w10;
+        //[Embed(source="assetloader_w11.dat", mimeType="application/octet-stream")]
+        private var w11:Class = AssetLoader_w11;
+        //[Embed(source="assetloader_w12.dat", mimeType="application/octet-stream")]
+        private var w12:Class = AssetLoader_w12;
+        //[Embed(source="assetloader_w13.dat", mimeType="application/octet-stream")]
+        private var w13:Class = AssetLoader_w13;
+        //[Embed(source="assetloader_shatters.dat", mimeType="application/octet-stream")]
+        private var shatters:Class = AssetLoader_shatters;
 
         public function AssetLoader()
         {
@@ -91,11 +87,7 @@ package com.company.assembleegameclient.util
             this.w11 = AssetLoader_w11;
             this.w12 = AssetLoader_w12;
             this.w13 = AssetLoader_w13;
-            this.castle = AssetLoader_castle;
-            this.chamber = AssetLoader_chamber;
-            this.wc = AssetLoader_wc;
             this.shatters = AssetLoader_shatters;
-            this.vault = AssetLoader_vault;
             super();
         }
 
@@ -132,10 +124,6 @@ package com.company.assembleegameclient.util
             this.loadMap(new this.w3(), 2);
             this.loadMap(new this.w2(), 1);
             this.loadMap(new this.w1(), 0);
-            this.loadMap(new this.castle(), 13);
-            this.loadMap(new this.chamber(), 14);
-            this.loadMap(new this.wc(), 15);
-            this.loadMap(new this.vault(), 16);
             this.loadMap(new this.shatters(), 17);
         }
 
@@ -160,22 +148,11 @@ package com.company.assembleegameclient.util
             {
                 switch (_arg_2)
                 {
-                    case 13:
-                        castleMap = _local_4;
-                        return;
-                    case 14:
-                        chamberMap = _local_4;
-                        return;
-                    case 15:
-                        wcMap = _local_4;
-                        return;
-                    case 16:
-                        vaultMap = _local_4;
-                        return;
                     case 17:
                         shattersMap = _local_4;
-                };
-            };
+                        return;
+                }
+            }
         }
 
         private function addImages():void
@@ -229,6 +206,8 @@ package com.company.assembleegameclient.util
             AssetLibrary.addImageSet("mountainTempleObjects16x16", new EmbeddedAssets.mountainTempleObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("oryxHordeObjects8x8", new EmbeddedAssets.oryxHordeObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("oryxHordeObjects16x16", new EmbeddedAssets.oryxHordeObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("santaWorkshopObjects8x8", new EmbeddedAssets.santaWorkshopObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("santaWorkshopObjects16x16", new EmbeddedAssets.santaWorkshopObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("parasiteDenObjects8x8", new EmbeddedAssets.parasiteDenObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("parasiteDenObjects16x16", new EmbeddedAssets.parasiteDenObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("stPatricksObjects8x8", new EmbeddedAssets.stPatricksObjects8x8Embed_().bitmapData, 8, 8);
@@ -246,8 +225,10 @@ package com.company.assembleegameclient.util
             AssetLibrary.addImageSet("epicHiveObjects16x16", new EmbeddedAssets.epicHiveObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("lostHallsObjects8x8", new EmbeddedAssets.lostHallsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("lostHallsObjects16x16", new EmbeddedAssets.lostHallsObjects16x16Embed_().bitmapData, 16, 16);
-            AssetLibrary.addImageSet("santaWorkshopObjects8x8", new EmbeddedAssets.santaWorkshopObjects8x8Embed_().bitmapData, 8, 8);
-            AssetLibrary.addImageSet("santaWorkshopObjects16x16", new EmbeddedAssets.santaWorkshopObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("cnidarianReefObjects8x8", new EmbeddedAssets.cnidarianReefObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("cnidarianReefObjects16x16", new EmbeddedAssets.cnidarianReefObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("magicWoodsObjects8x8", new EmbeddedAssets.magicWoodsObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
         }
 
         private function addAnimatedCharacters():void
@@ -291,6 +272,8 @@ package com.company.assembleegameclient.util
             AnimatedChars.add("mountainTempleChars16x16", new EmbeddedAssets.mountainTempleChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("oryxHordeChars8x8", new EmbeddedAssets.oryxHordeChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("oryxHordeChars16x16", new EmbeddedAssets.oryxHordeChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+            AnimatedChars.add("santaWorkshopChars8x8", new EmbeddedAssets.santaWorkshopChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("santaWorkshopChars16x16", new EmbeddedAssets.santaWorkshopChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("Hanami8x8chars", new EmbeddedAssets.Hanami8x8charsEmbed_().bitmapData, null, 8, 8, 64, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("summerNexusChars8x8", new EmbeddedAssets.summerNexusChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("summerNexusChars16x16", new EmbeddedAssets.summerNexusChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
@@ -300,8 +283,8 @@ package com.company.assembleegameclient.util
             AnimatedChars.add("epicHiveChars16x16", new EmbeddedAssets.epicHiveChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("lostHallsChars16x16", new EmbeddedAssets.lostHallsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("lostHallsChars8x8", new EmbeddedAssets.lostHallsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
-            AnimatedChars.add("santaWorkshopChars8x8", new EmbeddedAssets.santaWorkshopChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
-            AnimatedChars.add("santaWorkshopChars16x16", new EmbeddedAssets.santaWorkshopChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+            AnimatedChars.add("magicWoodsChars8x8", new EmbeddedAssets.magicWoodsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("magicWoodsChars16x16", new EmbeddedAssets.magicWoodsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
 
         private function addSoundEffects():void
@@ -330,7 +313,7 @@ package com.company.assembleegameclient.util
                 _local_3 = _local_2.readUTFBytes(_local_2.length);
                 Model3D.parse3DOBJ(_local_1, _local_2);
                 Model3D.parseFromOBJ(_local_1, _local_3);
-            };
+            }
         }
 
         private function parseParticleEffects():void
@@ -345,7 +328,7 @@ package com.company.assembleegameclient.util
             for each (_local_1 in EmbeddedData.groundFiles)
             {
                 GroundLibrary.parseFromXML(XML(_local_1));
-            };
+            }
         }
 
         private function parseObjectFiles():void
@@ -356,12 +339,12 @@ package com.company.assembleegameclient.util
                 currentXmlIsTesting = this.checkIsTestingXML(EmbeddedData.objectFiles[_local_1]);
                 ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
-            };
+            }
             while (_local_1 < EmbeddedData.objectFiles.length)
             {
                 ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_local_1]), XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
-            };
+            }
             currentXmlIsTesting = false;
         }
 
@@ -371,7 +354,7 @@ package com.company.assembleegameclient.util
             for each (_local_1 in EmbeddedData.regionFiles)
             {
                 RegionLibrary.parseFromXML(XML(_local_1));
-            };
+            }
         }
 
         private function checkIsTestingXML(_arg_1:*):Boolean

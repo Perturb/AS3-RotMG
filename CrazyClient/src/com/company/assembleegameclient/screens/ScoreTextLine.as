@@ -1,30 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.ScoreTextLine
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.DisplayObject;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.events.Event;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import flash.utils.getTimer;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
-    public class ScoreTextLine extends Sprite implements TooltipAble 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.utils.getTimer;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+
+public class ScoreTextLine extends Sprite implements TooltipAble
     {
 
         public static var textTooltip_:TextToolTip = new TextToolTip(0x363636, 0x9B9B9B, null, "", 150);
@@ -51,7 +53,12 @@ package com.company.assembleegameclient.screens
             this.nameText_ = new TextFieldDisplayConcrete().setSize(_arg_1).setColor(_arg_2);
             this.nameText_.setBold(true);
             this.nameText_.setAutoSize(TextFieldAutoSize.RIGHT);
-            this.nameText_.setStringBuilder(new LineBuilder().setParams(_arg_4));
+            var _local_11:LineBuilder = new LineBuilder().setParams(_arg_4);
+            if (_arg_8 == "+")
+            {
+                _local_11.setPrefix("Bonus: ");
+            }
+            this.nameText_.setStringBuilder(_local_11);
             this.nameText_.x = 410;
             this.nameText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
             addChild(this.nameText_);
@@ -63,18 +70,18 @@ package com.company.assembleegameclient.screens
                 this.numberText_.x = 450;
                 this.numberText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
                 addChild(this.numberText_);
-            };
+            }
             if (_arg_10 != null)
             {
                 this.unitIcon_ = _arg_10;
                 this.nameText_.textChanged.addOnce(this.onTextChanged);
                 addChild(this.unitIcon_);
-            };
+            }
             this.hoverTooltipDelegate.setDisplayObject(this);
             if (_arg_5)
             {
                 this.hoverTooltipDelegate.tooltip = textTooltip_;
-            };
+            }
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
@@ -90,7 +97,7 @@ package com.company.assembleegameclient.screens
             {
                 this.unitIcon_.x = 450;
                 this.unitIcon_.y = (((this.nameText_.height / 2) - (this.unitIcon_.height / 2)) + 2);
-            };
+            }
         }
 
         public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
@@ -123,7 +130,7 @@ package com.company.assembleegameclient.screens
             if (this.startTime_ == 0)
             {
                 this.startTime_ = getTimer();
-            };
+            }
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
         }
@@ -146,12 +153,12 @@ package com.company.assembleegameclient.screens
                 {
                     this.unitIcon_.x = ((this.numberText_.x + this.numberText_.width) - 4);
                     this.unitIcon_.y = (((this.numberText_.height / 2) - (this.unitIcon_.height / 2)) + 2);
-                };
-            };
+                }
+            }
             if (_local_3 == 1)
             {
                 removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-            };
+            }
         }
 
         public function onMouseOver(_arg_1:Event):void
@@ -160,7 +167,7 @@ package com.company.assembleegameclient.screens
             {
                 textTooltip_.setText(this.makeDescription());
                 stage.addChild(textTooltip_);
-            };
+            }
         }
 
         private function makeDescription():StringBuilder
@@ -170,10 +177,10 @@ package com.company.assembleegameclient.screens
             _local_1.pushParams(this.description);
             if (this.level > 1)
             {
-                _local_1.pushParams(TextKey.BLANK, {"data":" ("});
+                _local_1.pushParams(TextKey.BLANK, {"data":" \n("});
                 _local_1.pushParams("FameBonus.LevelRequirement", {"level":this.level});
                 _local_1.pushParams(TextKey.BLANK, {"data":")"});
-            };
+            }
             return (_local_1);
         }
 

@@ -157,7 +157,7 @@
       <Quest/>
       <Level>1</Level>
       <Enemy/>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <NoArticle/>
       <EventChestBoss/>
       <Projectile id="0">

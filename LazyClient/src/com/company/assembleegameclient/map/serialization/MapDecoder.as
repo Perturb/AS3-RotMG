@@ -5,18 +5,20 @@
 
 package com.company.assembleegameclient.map.serialization
 {
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.lib.json.JsonParser;
-    import com.company.assembleegameclient.map.Map;
-    import com.company.util.IntPoint;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.hurlant.util.Base64;
-    import flash.utils.ByteArray;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.objects.BasicObject;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.BasicObject;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.util.IntPoint;
+import com.hurlant.util.Base64;
 
-    public class MapDecoder 
+import flash.utils.ByteArray;
+
+import kabam.lib.json.JsonParser;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class MapDecoder 
     {
 
 
@@ -72,7 +74,7 @@ package com.company.assembleegameclient.map.serialization
                         {
                             _local_11 = GroundLibrary.idToType_[_local_9["ground"]];
                             _arg_2.setGroundTile(_local_8, _local_7, _local_11);
-                        };
+                        }
                         _local_10 = _local_9["objs"];
                         if (_local_10 != null)
                         {
@@ -81,13 +83,13 @@ package com.company.assembleegameclient.map.serialization
                                 _local_13 = getGameObject(_local_12);
                                 _local_13.objectId_ = BasicObject.getNextFakeObjectId();
                                 _arg_2.addObj(_local_13, (_local_8 + 0.5), (_local_7 + 0.5));
-                            };
-                        };
-                    };
+                            }
+                        }
+                    }
                     _local_8++;
-                };
+                }
                 _local_7++;
-            };
+            }
         }
 
         public static function getGameObject(_arg_1:Object):GameObject

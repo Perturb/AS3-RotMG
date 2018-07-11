@@ -5,13 +5,14 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
 
-    public class OptionsTabTitle extends Sprite 
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class OptionsTabTitle extends Sprite
     {
 
         private static const TEXT_SIZE:int = 16;
@@ -60,7 +61,7 @@ package com.company.assembleegameclient.ui.options
             if (this.selected_)
             {
                 return (0xFFC800);
-            };
+            }
             return ((_arg_1) ? 0xFFFFFF : 0xB3B3B3);
         }
 

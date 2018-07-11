@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage
 
 package kabam.rotmg.messaging.impl.incoming.pets
 {
-    import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class HatchPetMessage extends IncomingMessage 
+import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
+
+public class HatchPetMessage extends IncomingMessage 
     {
 
         public var petName:String;
         public var petSkin:int;
+        public var itemType:int;
 
         public function HatchPetMessage(_arg_1:uint, _arg_2:Function)
         {
@@ -23,6 +25,7 @@ package kabam.rotmg.messaging.impl.incoming.pets
         {
             this.petName = _arg_1.readUTF();
             this.petSkin = _arg_1.readInt();
+            this.itemType = _arg_1.readInt();
         }
 
 

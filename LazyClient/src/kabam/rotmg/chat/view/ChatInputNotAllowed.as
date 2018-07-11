@@ -5,17 +5,19 @@
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class ChatInputNotAllowed extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class ChatInputNotAllowed extends Sprite
     {
 
         public static const IMAGE_NAME:String = "lofiInterfaceBig";

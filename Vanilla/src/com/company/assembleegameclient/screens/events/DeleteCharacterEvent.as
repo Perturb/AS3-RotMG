@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.screens.events
 {
-    import flash.events.Event;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.appengine.SavedCharacter;
 
-    public class DeleteCharacterEvent extends Event 
+import flash.events.Event;
+
+public class DeleteCharacterEvent extends Event 
     {
 
         public static const DELETE_CHARACTER_EVENT:String = "DELETE_CHARACTER_EVENT";

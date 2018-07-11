@@ -5,13 +5,13 @@
 
 package kabam.rotmg.account.kongregate.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.LoadAccountTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.BaseTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.LoadAccountTask;
 
-    public class KongregateLoadAccountTask extends BaseTask implements LoadAccountTask 
+public class KongregateLoadAccountTask extends BaseTask implements LoadAccountTask
     {
 
         [Inject]

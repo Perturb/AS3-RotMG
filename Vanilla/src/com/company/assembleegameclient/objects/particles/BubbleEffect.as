@@ -5,10 +5,10 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class BubbleEffect extends ParticleEffect 
+public class BubbleEffect extends ParticleEffect 
     {
 
         private static const PERIOD_MAX:Number = 400;
@@ -33,7 +33,6 @@ package com.company.assembleegameclient.objects.particles
             var _local_5:int;
             var _local_6:Number;
             var _local_7:Number;
-            var _local_8:Number;
             var _local_9:Number;
             var _local_11:BubbleParticle;
             var _local_12:Number;
@@ -41,20 +40,20 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             if (!this.lastUpdate_)
             {
                 this.lastUpdate_ = _arg_1;
                 return (true);
-            };
+            }
             _local_3 = int(int((this.lastUpdate_ / this.rate_)));
             var _local_4:int = int(int((_arg_1 / this.rate_)));
-            _local_8 = this.go_.x_;
+            var _local_8:Number = this.go_.x_;
             _local_9 = this.go_.y_;
             if (this.lastUpdate_ < 0)
             {
                 this.lastUpdate_ = Math.max(0, (_arg_1 - PERIOD_MAX));
-            };
+            }
             x_ = _local_8;
             y_ = _local_9;
             var _local_10:int = _local_3;
@@ -69,7 +68,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_13 = (_local_9 + (_local_7 * Math.sin(_local_6)));
                 map_.addObj(_local_11, _local_12, _local_13);
                 _local_10++;
-            };
+            }
             this.lastUpdate_ = _arg_1;
             return (true);
         }

@@ -1,16 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.controller.UnFocusAbleMediator
 
 package kabam.rotmg.ui.controller
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.view.UnFocusAble;
-    import com.company.assembleegameclient.util.StageProxy;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.util.StageProxy;
 
-    public class UnFocusAbleMediator extends Mediator 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.ui.view.UnFocusAble;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class UnFocusAbleMediator extends Mediator
     {
 
         [Inject]

@@ -5,16 +5,18 @@
 
 package kabam.rotmg.packages.view
 {
-    import flash.display.Sprite;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class GoldDisplay extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class GoldDisplay extends Sprite 
     {
 
         internal var graphic:DisplayObject;

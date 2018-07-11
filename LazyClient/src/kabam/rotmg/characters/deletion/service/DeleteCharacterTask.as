@@ -5,13 +5,14 @@
 
 package kabam.rotmg.characters.deletion.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.characters.model.CharacterModel;
+import com.company.assembleegameclient.appengine.SavedCharacter;
 
-    public class DeleteCharacterTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.characters.model.CharacterModel;
+
+public class DeleteCharacterTask extends BaseTask
     {
 
         [Inject]

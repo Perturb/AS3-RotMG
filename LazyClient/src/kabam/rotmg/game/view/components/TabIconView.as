@@ -5,11 +5,11 @@
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import flash.geom.ColorTransform;
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.geom.ColorTransform;
 
-    public class TabIconView extends TabView 
+public class TabIconView extends TabView
     {
 
         private var background:Sprite;
@@ -22,7 +22,7 @@ package kabam.rotmg.game.view.components
             if (_arg_3)
             {
                 this.initIcon(_arg_3);
-            };
+            }
         }
 
         private function initBackground(_arg_1:Sprite):void

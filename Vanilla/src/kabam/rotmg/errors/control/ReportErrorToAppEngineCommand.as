@@ -5,13 +5,15 @@
 
 package kabam.rotmg.errors.control
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import flash.events.ErrorEvent;
-    import com.company.util.CapabilitiesUtil;
+import com.company.util.CapabilitiesUtil;
 
-    public class ReportErrorToAppEngineCommand 
+import flash.events.ErrorEvent;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class ReportErrorToAppEngineCommand 
     {
 
         [Inject]
@@ -47,15 +49,15 @@ package kabam.rotmg.errors.control
             if ((this.error is Error))
             {
                 return (this.error.message);
-            };
+            }
             if (this.event != null)
             {
                 return (this.event.text);
-            };
+            }
             if (this.error != null)
             {
                 return (this.error.toString());
-            };
+            }
             return ("(empty)");
         }
 

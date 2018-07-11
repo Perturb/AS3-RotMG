@@ -1,20 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebSendPasswordReminderCommand
 
 package kabam.rotmg.account.web.commands
 {
-    import kabam.rotmg.account.core.services.SendPasswordReminderTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.lib.tasks.TaskGroup;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.rotmg.account.web.view.WebLoginDialog;
-    import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.TaskGroup;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.account.core.services.SendPasswordReminderTask;
+import kabam.rotmg.account.web.view.WebLoginDialog;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class WebSendPasswordReminderCommand 
+public class WebSendPasswordReminderCommand 
     {
 
         [Inject]

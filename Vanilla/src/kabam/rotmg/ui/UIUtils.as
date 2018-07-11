@@ -5,10 +5,10 @@
 
 package kabam.rotmg.ui
 {
-    import flash.display.Sprite;
-    import flash.display.StageQuality;
+import flash.display.Sprite;
+import flash.display.StageQuality;
 
-    public class UIUtils 
+public class UIUtils
     {
 
         private static const NOTIFICATION_BACKGROUND_WIDTH:Number = 95;
@@ -46,7 +46,7 @@ package kabam.rotmg.ui
             if (WebMain.STAGE != null)
             {
                 WebMain.STAGE.quality = ((_arg_1) ? StageQuality.HIGH : StageQuality.LOW);
-            };
+            }
         }
 
 

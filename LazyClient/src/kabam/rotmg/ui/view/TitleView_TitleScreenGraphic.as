@@ -7,8 +7,6 @@ package kabam.rotmg.ui.view
 	{
 		public function TitleView_TitleScreenGraphic()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -5,21 +5,22 @@
 
 package kabam.rotmg.build.impl
 {
-    import kabam.rotmg.build.api.BuildData;
-    import flash.display.LoaderInfo;
-    import kabam.rotmg.build.api.BuildEnvironment;
-    import flash.net.LocalConnection;
-    import flash.system.Capabilities;
+import flash.display.LoaderInfo;
+import flash.net.LocalConnection;
+import flash.system.Capabilities;
 
-    public class CompileTimeBuildData implements BuildData 
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.api.BuildEnvironment;
+
+public class CompileTimeBuildData implements BuildData 
     {
 
         private static const DESKTOP:String = "Desktop";
         private static const ROTMG:String = "www.realmofthemadgod.com";
         private static const ROTMG_APPSPOT:String = "realmofthemadgodhrd.appspot.com";
-        private static const ROTMG_TESTING:String = "rotmgtesting.appspot.com";
-        private static const ROTMG_TESTING_MAP:String = "testing.realmofthemadgod.com";
-        private static const ROTMG_TESTING2:String = "realmtesting2.appspot.com";
+        private static const ROTMG_TESTING:String = "test.realmofthemadgod.com";
+        private static const ROTMG_TESTING_MAP:String = "test.realmofthemadgod.com";
+        private static const ROTMG_TESTING2:String = "test2.realmofthemadgod.com";
         private static const STEAM_PRODUCTION_CONFIG:String = "Production";
 
         [Inject]
@@ -63,13 +64,13 @@ package kabam.rotmg.build.impl
                     if (_local_3.domain == ROTMG_TESTING2)
                     {
                         this.environment = BuildEnvironment.TESTING2;
-                    };
-                };
+                    }
+                }
             }
             else
             {
                 this.environment = this.environments.getEnvironment(_arg_1);
-            };
+            }
         }
 
         private function conditionsRequireTesting(_arg_1:String):Boolean

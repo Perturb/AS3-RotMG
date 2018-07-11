@@ -5,23 +5,27 @@
 
 package kabam.rotmg.stage3D
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import com.company.assembleegameclient.util.StageProxy;
-    import org.swiftsuspenders.Injector;
-    import com.company.assembleegameclient.util.Stage3DProxy;
-    import flash.events.ErrorEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
-    import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-    import kabam.rotmg.stage3D.graphic3D.IndexBufferFactory;
-    import kabam.rotmg.stage3D.graphic3D.VertexBufferFactory;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import flash.display3D.Context3DBlendFactor;
-    import flash.display3D.Context3DCompareMode;
-    import kabam.rotmg.stage3D.graphic3D.Graphic3DHelper;
-    import com.company.assembleegameclient.engine3d.Model3D;
+import com.company.assembleegameclient.engine3d.Model3D;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.Stage3DProxy;
+import com.company.assembleegameclient.util.StageProxy;
 
-    public class Stage3DConfig implements IConfig 
+import flash.display3D.Context3DBlendFactor;
+import flash.display3D.Context3DCompareMode;
+import flash.events.ErrorEvent;
+import flash.events.Event;
+
+import kabam.rotmg.stage3D.graphic3D.Graphic3DHelper;
+import kabam.rotmg.stage3D.graphic3D.IndexBufferFactory;
+import kabam.rotmg.stage3D.graphic3D.TextureFactory;
+import kabam.rotmg.stage3D.graphic3D.VertexBufferFactory;
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class Stage3DConfig implements IConfig 
     {
 
         public static const WIDTH:int = 600;
@@ -61,7 +65,7 @@ package kabam.rotmg.stage3D
             if (_local_2.GetContext3D().driverInfo.toLowerCase().indexOf("software") != -1)
             {
                 Parameters.clearGpuRender();
-            };
+            }
             _local_2.configureBackBuffer(WIDTH, HEIGHT, 2, true);
             _local_2.setBlendFactors(Context3DBlendFactor.SOURCE_ALPHA, Context3DBlendFactor.ONE_MINUS_SOURCE_ALPHA);
             _local_2.setDepthTest(false, Context3DCompareMode.LESS_EQUAL);

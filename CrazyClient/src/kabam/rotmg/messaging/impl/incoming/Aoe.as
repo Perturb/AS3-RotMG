@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Aoe
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class Aoe extends IncomingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class Aoe extends IncomingMessage 
     {
 
         public var pos_:WorldPosData = new WorldPosData();

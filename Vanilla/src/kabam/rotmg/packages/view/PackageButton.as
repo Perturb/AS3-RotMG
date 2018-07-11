@@ -5,19 +5,22 @@
 
 package kabam.rotmg.packages.view
 {
-    import org.osflash.signals.Signal;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.ui.UIUtils;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.util.TimeUtil;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class PackageButton extends BasePackageButton 
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.UIUtils;
+
+import org.osflash.signals.Signal;
+
+public class PackageButton extends BasePackageButton 
     {
 
         private const SHOW_DURATION:String = "showDuration";
@@ -54,7 +57,7 @@ package kabam.rotmg.packages.view
             if (this._state == _arg_1)
             {
                 return;
-            };
+            }
             if (_arg_1 == this.SHOW_DURATION)
             {
                 removeChild(this.quantityText);
@@ -70,8 +73,8 @@ package kabam.rotmg.packages.view
                 else
                 {
                     throw (new Error(("PackageButton.setState: Unexpected state " + _arg_1)));
-                };
-            };
+                }
+            }
             this._state = _arg_1;
         }
 
@@ -93,7 +96,7 @@ package kabam.rotmg.packages.view
             else
             {
                 _local_3 = TextKey.PACKAGE_BUTTON_DAY;
-            };
+            }
             this.durationText.textChanged.addOnce(this.layout);
             this.durationStringBuilder.setParams(_local_3, {"number":_local_2});
             this.durationText.setStringBuilder(this.durationStringBuilder);

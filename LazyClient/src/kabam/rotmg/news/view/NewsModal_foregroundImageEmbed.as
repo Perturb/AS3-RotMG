@@ -7,8 +7,6 @@ package kabam.rotmg.news.view
 	{
 		public function NewsModal_foregroundImageEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

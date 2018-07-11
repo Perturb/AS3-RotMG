@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class TradeDone extends IncomingMessage 
+public class TradeDone extends IncomingMessage
     {
 
         public static const TRADE_SUCCESSFUL:int = 0;

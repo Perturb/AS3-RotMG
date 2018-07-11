@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.impl.PrivateSetup
 
 package kabam.rotmg.application.impl
 {
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class PrivateSetup implements ApplicationSetup 
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class PrivateSetup implements ApplicationSetup 
     {
 
-        private const SERVER:String = "rotmgtesting.appspot.com";
+        private const SERVER:String = "test.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
         private const BUILD_LABEL:String = "<font color='#FFEE00'>TESTING APP ENGINE, PRIVATE SERVER</font> #{VERSION}";
@@ -43,6 +44,11 @@ package kabam.rotmg.application.impl
             return (true);
         }
 
+        public function isServerLocal():Boolean
+        {
+            return (false);
+        }
+
         public function useProductionDialogs():Boolean
         {
             return (false);
@@ -61,6 +67,11 @@ package kabam.rotmg.application.impl
         public function isDebug():Boolean
         {
             return (true);
+        }
+
+        public function getServerDomain():String
+        {
+            return (this.SERVER);
         }
 
 

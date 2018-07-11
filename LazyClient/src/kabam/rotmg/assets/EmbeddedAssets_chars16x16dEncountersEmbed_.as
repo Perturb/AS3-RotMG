@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_chars16x16dEncountersEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

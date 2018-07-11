@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class VerifyEmail extends IncomingMessage 
+public class VerifyEmail extends IncomingMessage
     {
 
         public function VerifyEmail(_arg_1:uint, _arg_2:Function)

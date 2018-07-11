@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.animation.AnimationData
 
 package com.company.assembleegameclient.objects.animation
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class AnimationData 
+public class AnimationData 
     {
 
         public var prob_:Number = 1;
@@ -24,14 +21,14 @@ package com.company.assembleegameclient.objects.animation
             if (("@prob" in _arg_1))
             {
                 this.prob_ = Number(_arg_1.@prob);
-            };
+            }
             this.period_ = int((Number(_arg_1.@period) * 1000));
             this.periodJitter_ = int((Number(_arg_1.@periodJitter) * 1000));
             this.sync_ = (String(_arg_1.@sync) == "true");
             for each (_local_2 in _arg_1.Frame)
             {
                 this.frames.push(new FrameData(_local_2));
-            };
+            }
         }
 
         private function getPeriod():int
@@ -39,7 +36,7 @@ package com.company.assembleegameclient.objects.animation
             if (this.periodJitter_ == 0)
             {
                 return (this.period_);
-            };
+            }
             return ((this.period_ - this.periodJitter_) + ((2 * Math.random()) * this.periodJitter_));
         }
 
@@ -48,7 +45,7 @@ package com.company.assembleegameclient.objects.animation
             if (this.sync_)
             {
                 return (int((_arg_1 / this.period_)) * this.period_);
-            };
+            }
             return ((_arg_1 + this.getPeriod()) + (200 * Math.random()));
         }
 
@@ -57,7 +54,7 @@ package com.company.assembleegameclient.objects.animation
             if (this.sync_)
             {
                 return ((int((_arg_1 / this.period_)) * this.period_) + this.period_);
-            };
+            }
             return (_arg_1 + this.getPeriod());
         }
 

@@ -5,17 +5,20 @@
 
 package kabam.rotmg.account.kongregate.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.account.kongregate.services.KongregateSharedObject;
-    import kabam.rotmg.account.kongregate.signals.RelayApiLoginSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import org.osflash.signals.Signal;
-    import flash.display.Loader;
-    import flash.system.Security;
-    import flash.events.Event;
-    import flash.net.URLRequest;
+import flash.display.Loader;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.net.URLRequest;
+import flash.system.Security;
 
-    public class LiveKongregateApi extends Sprite implements KongregateApi 
+import kabam.rotmg.account.kongregate.services.KongregateSharedObject;
+import kabam.rotmg.account.kongregate.signals.RelayApiLoginSignal;
+
+import org.osflash.signals.Signal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class LiveKongregateApi extends Sprite implements KongregateApi 
     {
 
         [Inject]
@@ -60,7 +63,7 @@ package kabam.rotmg.account.kongregate.view
             {
                 this.logger.info("kongregate guest detected - listening for external login");
                 this.api.services.addEventListener("login", this.onExternalLogin);
-            };
+            }
         }
 
         private function onExternalLogin(_arg_1:Event):void

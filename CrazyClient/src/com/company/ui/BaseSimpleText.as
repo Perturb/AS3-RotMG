@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.ui.BaseSimpleText
 
 package com.company.ui
 {
-    import flash.text.TextField;
-    import kabam.rotmg.text.model.FontModel_MyriadPro;
-    import flash.text.TextFormat;
-    import flash.text.Font;
-    import flash.text.TextFieldType;
-    import flash.events.Event;
-    import flash.text.TextLineMetrics;
+import flash.events.Event;
+import flash.text.Font;
+import flash.text.TextField;
+import flash.text.TextFieldType;
+import flash.text.TextFormat;
+import flash.text.TextLineMetrics;
 
-    public class BaseSimpleText extends TextField 
+import kabam.rotmg.text.model.FontModel_MyriadPro;
+
+public class BaseSimpleText extends TextField
     {
 
         public static const MyriadPro:Class = FontModel_MyriadPro;
@@ -31,12 +32,12 @@ package com.company.ui
             if (this.inputWidth_ != 0)
             {
                 width = _arg_4;
-            };
+            }
             this.inputHeight_ = _arg_5;
             if (this.inputHeight_ != 0)
             {
                 height = _arg_5;
-            };
+            }
             _local_6 = this.defaultTextFormat;
             Font.registerFont(MyriadPro);
             var _local_7:Font = new MyriadPro();
@@ -61,7 +62,7 @@ package com.company.ui
             {
                 selectable = false;
                 mouseEnabled = false;
-            };
+            }
         }
 
         public function setFont(_arg_1:String):void
@@ -137,10 +138,10 @@ package com.company.ui
                 if (_local_2 > this.actualWidth_)
                 {
                     this.actualWidth_ = _local_2;
-                };
+                }
                 this.actualHeight_ = (this.actualHeight_ + _local_3);
                 _local_4++;
-            };
+            }
             width = ((this.inputWidth_ == 0) ? this.actualWidth_ : this.inputWidth_);
             height = ((this.inputHeight_ == 0) ? this.actualHeight_ : this.inputHeight_);
         }

@@ -5,9 +5,9 @@
 
 package kabam.rotmg.dialogs.model
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class PopupQueueEntry 
+public class PopupQueueEntry
     {
 
         private var _name:String;

@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebAccountInfoMediator
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.build.api.BuildEnvironment;
-    import kabam.rotmg.account.core.signals.LogoutSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.signals.LoginSignal;
-    import kabam.rotmg.account.web.model.AccountData;
-    import com.company.assembleegameclient.ui.dialogs.ConfirmDialog;
+import com.company.assembleegameclient.ui.dialogs.ConfirmDialog;
 
-    public class WebAccountInfoMediator extends Mediator 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.LoginSignal;
+import kabam.rotmg.account.core.signals.LogoutSignal;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.build.api.BuildEnvironment;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebAccountInfoMediator extends Mediator
     {
 
         [Inject]
@@ -64,7 +66,7 @@ package kabam.rotmg.account.web.view
             else
             {
                 this.openDialog.dispatch(new WebLoginDialog());
-            };
+            }
         }
 
         private function onLogOut():void
@@ -82,7 +84,7 @@ package kabam.rotmg.account.web.view
                 _local_3.username = this.email;
                 _local_3.password = this.pass;
                 this.login.dispatch(_local_3);
-            };
+            }
         }
 
         private function onResetPhase1():void

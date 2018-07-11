@@ -5,11 +5,9 @@
 
 package io.decagames.rotmg.dailyQuests.messages.data
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import flash.utils.IDataInput;
 
-    public class QuestData 
+public class QuestData 
     {
 
         public var id:String;
@@ -18,6 +16,7 @@ package io.decagames.rotmg.dailyQuests.messages.data
         public var requirements:Vector.<int> = new Vector.<int>();
         public var rewards:Vector.<int> = new Vector.<int>();
         public var completed:Boolean;
+        public var itemOfChoice:Boolean;
         public var category:int;
 
 
@@ -33,15 +32,16 @@ package io.decagames.rotmg.dailyQuests.messages.data
             {
                 this.requirements.push(_arg_1.readInt());
                 _local_3++;
-            };
+            }
             _local_2 = _arg_1.readShort();
             _local_3 = 0;
             while (_local_3 < _local_2)
             {
                 this.rewards.push(_arg_1.readInt());
                 _local_3++;
-            };
+            }
             this.completed = _arg_1.readBoolean();
+            this.itemOfChoice = _arg_1.readBoolean();
         }
 
 

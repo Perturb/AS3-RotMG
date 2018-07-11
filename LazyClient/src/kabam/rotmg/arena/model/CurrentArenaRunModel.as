@@ -5,14 +5,16 @@
 
 package kabam.rotmg.arena.model
 {
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.classes.model.CharacterSkin;
+import io.decagames.rotmg.pets.data.PetsModel;
 
-    public class CurrentArenaRunModel 
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.game.model.GameModel;
+
+import org.osflash.signals.Signal;
+
+public class CurrentArenaRunModel
     {
 
         [Inject]
@@ -51,7 +53,7 @@ package kabam.rotmg.arena.model
             {
                 this.entry.currentWave++;
                 this.waveUpdated.dispatch();
-            };
+            }
         }
 
         public function hasEntry():Boolean

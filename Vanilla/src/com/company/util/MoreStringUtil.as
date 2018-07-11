@@ -5,9 +5,9 @@
 
 package com.company.util
 {
-    import flash.utils.ByteArray;
+import flash.utils.ByteArray;
 
-    public class MoreStringUtil 
+public class MoreStringUtil 
     {
 
 
@@ -19,7 +19,7 @@ package com.company.util
             {
                 _local_2.writeByte(parseInt(_arg_1.substr(_local_3, 2), 16));
                 _local_3 = (_local_3 + 2);
-            };
+            }
             return (_local_2);
         }
 

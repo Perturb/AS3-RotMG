@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.QuestHealthBar
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.StatusBar;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.StatusBar;
+import com.company.assembleegameclient.ui.options.Options;
 
-    public class QuestHealthBar extends Sprite 
+import flash.display.Sprite;
+import flash.utils.getTimer;
+
+public class QuestHealthBar extends Sprite
     {
 
         private var questBar:StatusBar;
@@ -52,9 +54,9 @@ package kabam.rotmg.ui.view
                     {
                         _local_5 = _local_4;
                         _local_3 = _local_2;
-                    };
-                };
-            };
+                    }
+                }
+            }
             return (((" - " + _local_3.name_) + ": ") + _local_5);
         }
 
@@ -62,6 +64,13 @@ package kabam.rotmg.ui.view
         {
             var _local_2:GameObject;
             var _local_3:int;
+            if (((!(Parameters.data_.questHUD)) || (Options.hidden)))
+            {
+                this.questBar.visible = false;
+                this.questBar2.visible = false;
+                this.questBar3.visible = false;
+                return;
+            }
             var _local_4:* = "";
             if (((!(_arg_1.questMob == null)) || (!(_arg_1.questMob1 == null))))
             {
@@ -71,23 +80,23 @@ package kabam.rotmg.ui.view
                 if (_local_3 == 3368)
                 {
                     _local_4 = ((((Parameters.data_.tombHack) && (Parameters.data_.curBoss == 3368)) && (_local_2 == _arg_1.questMob1)) ? ": Active" : "");
-                };
-                if (((Parameters.data_.questClosest) && (!(_arg_1.questMob == null))))
+                }
+                if ((!(_arg_1.questMob == null)))
                 {
                     if (this.nextUpdate <= getTimer())
                     {
                         this.showstr = this.genClosest(_arg_1);
-                        this.nextUpdate = (getTimer() + 1000);
-                    };
+                        this.nextUpdate = (getTimer() + 250);
+                    }
                     _local_4 = this.showstr;
-                };
+                }
                 this.questBar.setLabelText((ObjectLibrary.typeToDisplayId_[_local_2.objectType_] + _local_4));
                 this.questBar.visible = true;
             }
             else
             {
                 this.questBar.visible = false;
-            };
+            }
             if (_arg_1.questMob2 != null)
             {
                 this.questBar2.draw(_arg_1.questMob2.hp_, _arg_1.questMob2.maxHP_, 0);
@@ -98,7 +107,7 @@ package kabam.rotmg.ui.view
             else
             {
                 this.questBar2.visible = false;
-            };
+            }
             if (_arg_1.questMob3 != null)
             {
                 this.questBar3.draw(_arg_1.questMob3.hp_, _arg_1.questMob3.maxHP_, 0);
@@ -109,7 +118,7 @@ package kabam.rotmg.ui.view
             else
             {
                 this.questBar3.visible = false;
-            };
+            }
         }
 
 

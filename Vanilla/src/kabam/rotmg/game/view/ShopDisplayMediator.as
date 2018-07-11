@@ -5,18 +5,20 @@
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.packages.services.PackageModel;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import flash.events.MouseEvent;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
-    public class ShopDisplayMediator extends Mediator 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.services.PackageModel;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ShopDisplayMediator extends Mediator 
     {
 
         [Inject]
@@ -43,7 +45,7 @@ package kabam.rotmg.game.view
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.shopButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            };
+            }
             var _local_1:Vector.<PackageInfo> = this.packageBoxModel.getBoxesForGrid();
             var _local_2:Date = new Date();
             _local_2.setTime(Parameters.data_["packages_indicator"]);
@@ -54,9 +56,9 @@ package kabam.rotmg.game.view
                     if (((_local_3.isNew()) && ((_local_3.startTime.getTime() > _local_2.getTime()) || (!(Parameters.data_["packages_indicator"])))))
                     {
                         this.view.newIndicator(true);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
 

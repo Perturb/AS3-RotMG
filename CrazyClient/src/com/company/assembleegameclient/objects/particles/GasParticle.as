@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.GasParticle
@@ -23,11 +23,11 @@ package com.company.assembleegameclient.objects.particles
             if (timeLeft_ <= 0)
             {
                 return (false);
-            };
+            }
             if (((square_.obj_) && (square_.obj_.props_.static_)))
             {
                 return (false);
-            };
+            }
             var _local_4:Number = (Math.random() * this.noise);
             _local_3 = (Math.random() * this.noise);
             x_ = (x_ + (((dx_ * _local_4) * _arg_2) / 1000));

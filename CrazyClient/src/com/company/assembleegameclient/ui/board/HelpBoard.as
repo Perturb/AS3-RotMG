@@ -1,25 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.HelpBoard
 
 package com.company.assembleegameclient.ui.board
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.events.Event;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import com.company.rotmg.graphics.DeleteXGraphic;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.ui.Scrollbar;
+import com.company.rotmg.graphics.DeleteXGraphic;
 
-    public class HelpBoard extends Frame 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class HelpBoard extends Frame 
     {
 
         private var closeDialogs:CloseDialogsSignal;

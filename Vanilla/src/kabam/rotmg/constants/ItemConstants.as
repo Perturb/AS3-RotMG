@@ -5,10 +5,11 @@
 
 package kabam.rotmg.constants
 {
-    import flash.display.BitmapData;
-    import com.company.util.AssetLibrary;
+import com.company.util.AssetLibrary;
 
-    public class ItemConstants 
+import flash.display.BitmapData;
+
+public class ItemConstants 
     {
 
         public static const NO_ITEM:int = -1;
@@ -39,6 +40,7 @@ package kabam.rotmg.constants
         public static const KATANA_TYPE:int = 24;
         public static const SHURIKEN_TYPE:int = 25;
         public static const EGG_TYPE:int = 26;
+        public static const NEW_ABIL_TYPE:int = 27;
 
 
         public static function itemTypeToName(_arg_1:int):String
@@ -99,7 +101,9 @@ package kabam.rotmg.constants
                     return ("EquipmentType.Shuriken");
                 case EGG_TYPE:
                     return ("EquipmentType.Any");
-            };
+                case NEW_ABIL_TYPE:
+                    return ("EquipmentType.NewAbil");
+            }
             return ("EquipmentType.InvalidType");
         }
 
@@ -182,7 +186,10 @@ package kabam.rotmg.constants
                 case SHURIKEN_TYPE:
                     _local_2 = AssetLibrary.getImageFromSet("lofiObj3", 555);
                     break;
-            };
+                case NEW_ABIL_TYPE:
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj2", 122);
+                    break;
+            }
             return (_local_2);
         }
 

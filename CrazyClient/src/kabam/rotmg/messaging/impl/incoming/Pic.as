@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Pic
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.display.BitmapData;
-    import flash.utils.ByteArray;
-    import flash.utils.IDataInput;
+import flash.display.BitmapData;
+import flash.utils.ByteArray;
+import flash.utils.IDataInput;
 
-    public class Pic extends IncomingMessage 
+public class Pic extends IncomingMessage 
     {
 
         public var bitmapData_:BitmapData = null;

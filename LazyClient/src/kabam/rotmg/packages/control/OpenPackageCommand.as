@@ -5,14 +5,16 @@
 
 package kabam.rotmg.packages.control
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.packages.services.PackageModel;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
+import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
-    public class OpenPackageCommand extends Command 
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.services.PackageModel;
+
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class OpenPackageCommand extends Command
     {
 
         [Inject]
@@ -25,17 +27,15 @@ package kabam.rotmg.packages.control
         public var alreadyBoughtPackage:AlreadyBoughtPackageSignal;
         [Inject]
         public var showPopupSignal:ShowPopupSignal;
-        [Inject]
-        public var model:PackageModel;
 
 
         override public function execute():void
         {
-            var _local_1:PackageInfo = this.model.getPackageById(this.packageId);
+            var _local_1:PackageInfo = this.packageModel.getPackageById(this.packageId);
             if (((_local_1) && (!(_local_1.popupImage == ""))))
             {
                 this.showPopupSignal.dispatch(new StartupPackage(_local_1));
-            };
+            }
         }
 
 

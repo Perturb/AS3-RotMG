@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.ui.BaseSimpleText;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.ui.BaseSimpleText;
 
-    public class GroundTypeToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+
+public class GroundTypeToolTip extends ToolTip
     {
 
         private static const MAX_WIDTH:int = 180;
@@ -37,31 +38,31 @@ package com.company.assembleegameclient.mapeditor
             else
             {
                 _local_2 = (_local_2 + "Speed: 1.00\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("NoWalk"))
             {
                 _local_2 = (_local_2 + "Unwalkable\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("Push"))
             {
                 _local_2 = (_local_2 + "Push\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("Sink"))
             {
                 _local_2 = (_local_2 + "Sink\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("Sinking"))
             {
                 _local_2 = (_local_2 + "Sinking\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("Animate"))
             {
                 _local_2 = (_local_2 + "Animated\n");
-            };
+            }
             if (_arg_1.hasOwnProperty("RandomOffset"))
             {
                 _local_2 = (_local_2 + "Randomized\n");
-            };
+            }
             this.descText_ = new BaseSimpleText(14, 0xB3B3B3, false, MAX_WIDTH, 0);
             this.descText_.wordWrap = true;
             this.descText_.text = String(_local_2);

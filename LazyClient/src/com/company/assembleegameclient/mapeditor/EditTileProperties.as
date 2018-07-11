@@ -5,14 +5,14 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import com.company.util.IntPoint;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import flash.events.Event;
+import com.company.util.IntPoint;
 
-    public class EditTileProperties extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+
+public class EditTileProperties extends Sprite
     {
 
         public var tiles_:Vector.<IntPoint>;
@@ -40,7 +40,7 @@ package com.company.assembleegameclient.mapeditor
             if (this.frame_.objectName_.text() == "")
             {
                 return (null);
-            };
+            }
             return (this.frame_.objectName_.text());
         }
 

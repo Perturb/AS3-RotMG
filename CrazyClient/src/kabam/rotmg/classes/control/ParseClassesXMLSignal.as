@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.ParseClassesXMLSignal
 
 package kabam.rotmg.classes.control
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class ParseClassesXMLSignal extends Signal 
+public class ParseClassesXMLSignal extends Signal 
     {
 
         public function ParseClassesXMLSignal()

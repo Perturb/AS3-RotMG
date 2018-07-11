@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardListItemMediator
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import kabam.rotmg.game.model.GameModel;
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class ArenaLeaderboardListItemMediator extends Mediator 
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.game.model.GameModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ArenaLeaderboardListItemMediator extends Mediator
     {
 
         [Inject]

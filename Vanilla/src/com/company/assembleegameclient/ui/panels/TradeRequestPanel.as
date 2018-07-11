@@ -5,22 +5,24 @@
 
 package com.company.assembleegameclient.ui.panels
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import flash.utils.Timer;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
-    public class TradeRequestPanel extends Panel 
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.utils.Timer;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+public class TradeRequestPanel extends Panel
     {
 
         public var name_:String;
@@ -80,7 +82,7 @@ package com.company.assembleegameclient.ui.panels
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 dispatchEvent(new Event(Event.COMPLETE));
-            };
+            }
         }
 
         private function onTimer(_arg_1:TimerEvent):void

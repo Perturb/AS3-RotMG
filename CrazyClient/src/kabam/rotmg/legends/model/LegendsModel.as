@@ -1,13 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.model.LegendsModel
 
 package kabam.rotmg.legends.model
 {
-    import __AS3__.vec.Vector;
-
-    public class LegendsModel 
+public class LegendsModel 
     {
 
         private const map:Object = {};
@@ -47,7 +45,7 @@ package kabam.rotmg.legends.model
             {
                 this.dispose(this.map[_local_1]);
                 delete this.map[_local_1];
-            };
+            }
         }
 
         private function dispose(_arg_1:Vector.<Legend>):void
@@ -56,7 +54,7 @@ package kabam.rotmg.legends.model
             for each (_local_2 in _arg_1)
             {
                 ((_local_2.character) && (this.removeLegendCharacter(_local_2)));
-            };
+            }
         }
 
         private function removeLegendCharacter(_arg_1:Legend):void

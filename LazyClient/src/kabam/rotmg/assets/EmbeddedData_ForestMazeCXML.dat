@@ -12,7 +12,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>120</Exp>
       <Size>140</Size>
       <Flying/>
       <Z>0.2</Z>
@@ -39,7 +39,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>100</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <Flying/>
       <Z>0.3</Z>
@@ -63,7 +63,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>40</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>4</Exp>
       <Size>100</Size>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
@@ -84,7 +84,7 @@
       <DeathSound>monster/bats_death</DeathSound>
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>4</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>48</Exp>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Acorn</ObjectId>
@@ -105,7 +105,7 @@
       <DeathSound>monster/dark_elves_death</DeathSound>
       <MaxHitPoints>35</MaxHitPoints>
       <Defense>1</Defense>
-      <XpMult>1.15</XpMult>
+      <Exp>4</Exp>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Leaf Magic</ObjectId>
@@ -128,7 +128,6 @@
       <DeathSound>monster/dark_elves_death</DeathSound>
       <MaxHitPoints>60</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>1</XpMult>
       <Size>120</Size>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>

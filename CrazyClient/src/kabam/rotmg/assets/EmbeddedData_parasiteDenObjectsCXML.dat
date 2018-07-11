@@ -245,7 +245,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2600</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <Projectile id="0">
          <ObjectId>pD Sword Shot</ObjectId>
          <Size>100</Size>
@@ -278,7 +278,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1800</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>138</Exp>
       <Projectile id="0">
          <ObjectId>pD Wand Shot</ObjectId>
          <Size>100</Size>
@@ -311,7 +311,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2200</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <Projectile id="0">
          <ObjectId>pD Bow Shot</ObjectId>
          <Size>100</Size>
@@ -349,7 +349,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2200</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <Projectile id="0">
          <ObjectId>pD Dagger Shot</ObjectId>
          <Size>100</Size>
@@ -385,7 +385,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1800</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>138</Exp>
       <Projectile id="0">
          <ObjectId>pD Staff Shot</ObjectId>
          <Size>100</Size>
@@ -413,7 +413,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2200</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <Projectile id="0">
          <ObjectId>pD Katana Shot</ObjectId>
          <Size>100</Size>
@@ -424,7 +424,7 @@
       </Projectile>
    </Object>
    <Object type="0x95a" id="pD Swords Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Sword Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -450,7 +450,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1700</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>130</Exp>
       <Projectile id="0">
          <ObjectId>pD Sword Shot</ObjectId>
          <Size>100</Size>
@@ -461,7 +461,7 @@
       <StunImmune/>
    </Object>
    <Object type="0x95b" id="pD Wands Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Wand Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -483,7 +483,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>92</Exp>
       <Projectile id="0">
          <ObjectId>pD Wand Shot</ObjectId>
          <Size>100</Size>
@@ -494,7 +494,7 @@
       </Projectile>
    </Object>
    <Object type="0x95c" id="pD Bows Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Bow Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -516,7 +516,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1450</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>111</Exp>
       <Projectile id="0">
          <ObjectId>pD Bow Shot</ObjectId>
          <Size>100</Size>
@@ -528,7 +528,7 @@
       <ParalyzeImmune/>
    </Object>
    <Object type="0x95d" id="pD Daggers Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Dagger Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -554,7 +554,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1450</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>111</Exp>
       <Projectile id="0">
          <ObjectId>pD Dagger Shot</ObjectId>
          <Size>100</Size>
@@ -564,7 +564,7 @@
       </Projectile>
    </Object>
    <Object type="0x95e" id="pD Staves Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Staff Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -590,7 +590,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>92</Exp>
       <Projectile id="0">
          <ObjectId>pD Staff Shot</ObjectId>
          <Size>100</Size>
@@ -602,7 +602,7 @@
       </Projectile>
    </Object>
    <Object type="0x95f" id="pD Katanas Scout">
-      <Group>Host Players</Group>
+      <Group>Host Players Scouts</Group>
       <DisplayId>Katana Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
@@ -618,7 +618,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1450</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>111</Exp>
       <Projectile id="0">
          <ObjectId>pD Katana Shot</ObjectId>
          <Size>100</Size>
@@ -642,7 +642,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>2.0513</XpMult>
+      <Exp>400</Exp>
       <Projectile id="0">
          <ObjectId>pD Stalker Shot</ObjectId>
          <Damage>130</Damage>
@@ -666,7 +666,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2600</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>2.0513</XpMult>
+      <Exp>400</Exp>
       <Projectile id="0">
          <ObjectId>pD Stalker Shot</ObjectId>
          <Damage>130</Damage>
@@ -690,7 +690,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <Projectile id="0">
          <ObjectId>Big Fireball</ObjectId>
          <Damage>10</Damage>
@@ -713,7 +713,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>4.1026</XpMult>
+      <Exp>800</Exp>
       <Projectile id="0">
          <ObjectId>pD Walker Shot</ObjectId>
          <Damage>150</Damage>
@@ -739,7 +739,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>6000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>4.1026</XpMult>
+      <Exp>800</Exp>
       <Projectile id="0">
          <ObjectId>pD Maw Shot</ObjectId>
          <Damage>140</Damage>
@@ -788,7 +788,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>4.1026</XpMult>
+      <Exp>800</Exp>
       <Projectile id="0">
          <ObjectId>pD Tongue Shot</ObjectId>
          <Damage>140</Damage>
@@ -813,7 +813,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>4.1026</XpMult>
+      <Exp>800</Exp>
       <Projectile id="0">
          <ObjectId>pD Maw Shot</ObjectId>
          <Damage>140</Damage>
@@ -862,7 +862,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>4.1026</XpMult>
+      <Exp>800</Exp>
       <Projectile id="0">
          <ObjectId>pD Tongue Shot</ObjectId>
          <Damage>140</Damage>
@@ -956,7 +956,7 @@
       <Size>100</Size>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>5.1283</XpMult>
+      <Exp>1000</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7c0" id="pD Blob Scout">
@@ -973,7 +973,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1300</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.4616</XpMult>
+      <Exp>60</Exp>
       <Projectile id="0">
          <ObjectId>pD Blob Shot</ObjectId>
          <Damage>80</Damage>
@@ -999,7 +999,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1600</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>80</Exp>
       <Projectile id="0">
          <ObjectId>pD Blob Shot</ObjectId>
          <Damage>80</Damage>
@@ -1025,7 +1025,7 @@
       <Size>105</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.5129</XpMult>
+      <Exp>100</Exp>
       <Projectile id="0">
          <ObjectId>pD Blob Shot</ObjectId>
          <Damage>80</Damage>
@@ -1089,7 +1089,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>2000</Defense>
-      <XpMult>10.2565</XpMult>
+      <Exp>2000</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7a2" id="pD Creepasite Maker">
@@ -1133,7 +1133,7 @@
       <Z>0.4</Z>
       <Flying/>
       <MaxHitPoints>2000</MaxHitPoints>
-      <XpMult>1.5385</XpMult>
+      <Exp>300</Exp>
       <Projectile id="0">
          <ObjectId>pD Pterasite Shot</ObjectId>
          <Damage>50</Damage>
@@ -1155,7 +1155,7 @@
       </Texture>
       <Size>120</Size>
       <MaxHitPoints>200000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Poison Fireball</ObjectId>
          <Damage>90</Damage>
@@ -1203,7 +1203,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>2000</Defense>
-      <XpMult>10.2565</XpMult>
+      <Exp>2000</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7be" id="pD Swarm Colony">
@@ -1234,7 +1234,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>2000</Defense>
-      <XpMult>10.2565</XpMult>
+      <Exp>2000</Exp>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
          <Speed>10</Speed>
@@ -1313,7 +1313,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.5385</XpMult>
+      <Exp>300</Exp>
       <Projectile id="0">
          <ObjectId>Poison Fireball</ObjectId>
          <Damage>90</Damage>
@@ -1359,7 +1359,7 @@
       <Size>170</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>5000</Defense>
-      <XpMult>205.1283</XpMult>
+      <Exp>40000</Exp>
       <Quest/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -1430,7 +1430,7 @@
       <HitSound>monster/flayers_hit</HitSound>
       <DeathSound>monster/flayers_death</DeathSound>
       <MaxHitPoints>50000</MaxHitPoints>
-      <XpMult>61.5385</XpMult>
+      <Exp>12000</Exp>
    </Object>
    <Object type="0x7b6" id="pD Boss Support">
       <DisplayId>Nightmare Colony</DisplayId>
@@ -1452,7 +1452,7 @@
       <Size>100</Size>
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>200000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>pD Tongue Shot</ObjectId>
          <Damage>150</Damage>
@@ -1494,7 +1494,7 @@
       <Size>120</Size>
       <MaxHitPoints>3200</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>10.2565</XpMult>
+      <Exp>2000</Exp>
       <Projectile id="0">
          <ObjectId>pD Maw Shot 2</ObjectId>
          <Speed>60</Speed>
@@ -1927,7 +1927,7 @@
          <Index>0x97</Index>
       </Texture>
       <MaxHitPoints>200000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Enemy/>
       <HealthBar>-1</HealthBar>
       <Projectile id="0">
@@ -1968,7 +1968,7 @@
       <OccupySquare/>
       <BlocksSight/>
       <MaxHitPoints>3000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Enemy/>
       <HealthBar>-1</HealthBar>
    </Object>

@@ -7,8 +7,6 @@ package kabam.rotmg.fortune.model
 	{
 		public function FortuneInfo_chestImageEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -1,24 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.MigrationDialog
 
 package kabam.rotmg.account.web.view
 {
-    import kabam.rotmg.account.core.view.EmptyFrame;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.util.components.SimpleButton;
-    import flash.utils.Timer;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import flash.events.MouseEvent;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
-    public class MigrationDialog extends EmptyFrame 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.view.EmptyFrame;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.util.components.SimpleButton;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class MigrationDialog extends EmptyFrame 
     {
 
         public var done:Signal;
@@ -63,7 +65,7 @@ package kabam.rotmg.account.web.view
                 _local_1 = this.account.getCredentials();
                 this.client.complete.addOnce(this.onMigrateStartComplete);
                 this.client.sendRequest("/migrate/doMigration", _local_1);
-            };
+            }
         }
 
         private function startPercentLoop():void
@@ -72,7 +74,7 @@ package kabam.rotmg.account.web.view
             if (this.progressCheckClient == null)
             {
                 this.progressCheckClient = StaticInjectorContext.getInjector().getInstance(SimpleAppEngineClient);
-            };
+            }
             this.timerProgressCheck.start();
             this.updatePercent(0);
         }
@@ -102,7 +104,7 @@ package kabam.rotmg.account.web.view
                 if (this.isClosed == true)
                 {
                     return;
-                };
+                }
                 _local_3 = new XML(_arg_2);
                 if (_local_3.hasOwnProperty("Percent"))
                 {
@@ -115,15 +117,15 @@ package kabam.rotmg.account.web.view
                             this.stopPercentLoop();
                             this.updatePercent(_local_5);
                             this.done.dispatch();
-                        };
+                        }
                     }
                     else
                     {
                         if (_local_5 != this.lastPercent)
                         {
                             this.updatePercent(_local_5);
-                        };
-                    };
+                        }
+                    }
                 }
                 else
                 {
@@ -134,10 +136,10 @@ package kabam.rotmg.account.web.view
                         {
                             this.stopPercentLoop();
                             this.reset();
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
         }
 
         private function updatePercent(_arg_1:Number):void
@@ -154,7 +156,7 @@ package kabam.rotmg.account.web.view
             if (this.isClosed)
             {
                 return;
-            };
+            }
             if (_arg_1)
             {
                 _local_3 = new XML(_arg_2);
@@ -178,15 +180,15 @@ package kabam.rotmg.account.web.view
                         {
                             this.stopPercentLoop();
                             this.reset();
-                        };
-                    };
-                };
+                        }
+                    }
+                }
             }
             else
             {
                 this.stopPercentLoop();
                 this.reset();
-            };
+            }
         }
 
         private function reset():void
@@ -217,7 +219,7 @@ package kabam.rotmg.account.web.view
             if (((!(this.progBar == null)) && (!(this.progBar.parent == null))))
             {
                 removeChild(this.progBar);
-            };
+            }
         }
 
         private function removeMigrateCallback():void
@@ -241,7 +243,7 @@ package kabam.rotmg.account.web.view
                 addChild(this.leftButton_);
                 this.leftButton_.x = (((modalWidth / 2) - 100) - this.leftButton_.width);
                 this.leftButton_.y = (modalHeight - 50);
-            };
+            }
         }
 
         private function makeAndAddRightButton(_arg_1:String):void
@@ -255,7 +257,7 @@ package kabam.rotmg.account.web.view
                 addChild(this.rightButton_);
                 this.rightButton_.x = ((modalWidth / 2) + 100);
                 this.rightButton_.y = (modalHeight - 50);
-            };
+            }
         }
 
 

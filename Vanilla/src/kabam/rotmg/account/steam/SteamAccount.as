@@ -5,10 +5,11 @@
 
 package kabam.rotmg.account.steam
 {
-    import kabam.rotmg.account.core.Account;
-    import com.company.util.EmailValidator;
+import com.company.util.EmailValidator;
 
-    public class SteamAccount implements Account 
+import kabam.rotmg.account.core.Account;
+
+public class SteamAccount implements Account 
     {
 
         public static const NETWORK_NAME:String = "steam";

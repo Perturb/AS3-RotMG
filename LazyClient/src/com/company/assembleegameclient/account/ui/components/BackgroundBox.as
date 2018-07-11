@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.account.ui.components
 {
-    import flash.display.Shape;
+import flash.display.Shape;
 
-    public class BackgroundBox extends Shape 
+public class BackgroundBox extends Shape 
     {
 
         private var _width:int;

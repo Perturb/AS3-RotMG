@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.service.GetDaysRemainingTask
 
 package kabam.rotmg.promotions.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
-    public class GetDaysRemainingTask extends BaseTask 
+public class GetDaysRemainingTask extends BaseTask 
     {
 
         [Inject]

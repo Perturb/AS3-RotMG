@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.VerticalScrollbarGroove
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.util.graphics.BevelRect;
-    import kabam.rotmg.util.graphics.GraphicsHelper;
-    import flash.events.MouseEvent;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
 
-    public final class VerticalScrollbarGroove extends Sprite 
+import kabam.rotmg.util.graphics.BevelRect;
+import kabam.rotmg.util.graphics.GraphicsHelper;
+
+import org.osflash.signals.Signal;
+
+public final class VerticalScrollbarGroove extends Sprite 
     {
 
         public static const WIDTH:int = VerticalScrollbar.WIDTH;//20

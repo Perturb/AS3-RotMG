@@ -1,26 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.PlayerMenu
 
 package com.company.assembleegameclient.ui.menu
 {
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.util.AssetLibrary;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.chat.control.ShowChatInputSignal;
-    import flash.events.Event;
-    import kabam.rotmg.friends.controller.FriendActionSignal;
-    import kabam.rotmg.friends.model.FriendRequestVO;
-    import kabam.rotmg.friends.model.FriendConstant;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.GameObjectListItem;
+import com.company.assembleegameclient.util.GuildUtil;
+import com.company.util.AssetLibrary;
 
-    public class PlayerMenu extends Menu 
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import io.decagames.rotmg.social.config.FriendsActions;
+import io.decagames.rotmg.social.model.FriendRequestVO;
+import io.decagames.rotmg.social.signals.FriendActionSignal;
+
+import kabam.rotmg.chat.control.ShowChatInputSignal;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+
+public class PlayerMenu extends Menu 
     {
 
         public var gs_:AGameSprite;
@@ -45,7 +48,7 @@ package com.company.assembleegameclient.ui.menu
                 _local_5 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_PM);
                 _local_5.addEventListener(MouseEvent.CLICK, this.onPrivateMessage);
                 addOption(_local_5);
-            };
+            }
         }
 
         public function init(_arg_1:AGameSprite, _arg_2:Player):void
@@ -62,14 +65,14 @@ package com.company.assembleegameclient.ui.menu
                 _local_3 = new TeleportMenuOption(this.gs_.map.player_);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onTeleport);
                 addOption(_local_3);
-            };
+            }
             if (((this.gs_.map.player_.guildRank_ >= GuildUtil.OFFICER) && ((_arg_2.guildName_ == null) || (_arg_2.guildName_.length == 0))))
             {
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 10), 0xFFFFFF, TextKey.PLAYERMENU_INVITE);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onInvite);
                 addOption(_local_3);
-            };
-            if (!this.player_.starred_)
+            }
+            if ((!(this.player_.starred_)))
             {
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterface2", 5), 0xFFFFFF, TextKey.PLAYERMENU_LOCK);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onLock);
@@ -80,7 +83,7 @@ package com.company.assembleegameclient.ui.menu
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterface2", 6), 0xFFFFFF, TextKey.PLAYERMENU_UNLOCK);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onUnlock);
                 addOption(_local_3);
-            };
+            }
             _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 7), 0xFFFFFF, TextKey.PLAYERMENU_TRADE);
             _local_3.addEventListener(MouseEvent.CLICK, this.onTrade);
             addOption(_local_3);
@@ -89,8 +92,8 @@ package com.company.assembleegameclient.ui.menu
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_PM);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onPrivateMessage);
                 addOption(_local_3);
-            };
-            if (!this.player_.ignored_)
+            }
+            if ((!(this.player_.ignored_)))
             {
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 8), 0xFFFFFF, TextKey.FRIEND_BLOCK_BUTTON);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onIgnore);
@@ -101,7 +104,7 @@ package com.company.assembleegameclient.ui.menu
                 _local_3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 9), 0xFFFFFF, TextKey.PLAYERMENU_UNIGNORE);
                 _local_3.addEventListener(MouseEvent.CLICK, this.onUnignore);
                 addOption(_local_3);
-            };
+            }
         }
 
         private function onPrivateMessage(_arg_1:Event):void
@@ -114,7 +117,7 @@ package com.company.assembleegameclient.ui.menu
         private function onAddFriend(_arg_1:Event):void
         {
             var _local_2:FriendActionSignal = StaticInjectorContext.getInjector().getInstance(FriendActionSignal);
-            _local_2.dispatch(new FriendRequestVO(FriendConstant.INVITE, this.playerName_));
+            _local_2.dispatch(new FriendRequestVO(FriendsActions.INVITE, this.playerName_));
             remove();
         }
 

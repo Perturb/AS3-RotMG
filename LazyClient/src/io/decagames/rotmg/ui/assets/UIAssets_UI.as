@@ -7,8 +7,6 @@ package io.decagames.rotmg.ui.assets
 	{
 		public function UIAssets_UI()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -5,24 +5,25 @@
 
 package com.company.assembleegameclient.parameters
 {
-    import flash.display.DisplayObject;
-    import flash.net.SharedObject;
-    import __AS3__.vec.Vector;
-    import flash.utils.Dictionary;
-    import com.company.util.KeyCodes;
-    import com.company.assembleegameclient.map.Map;
-    import flash.events.Event;
-    import com.company.util.MoreDateUtil;
-    import flash.system.Capabilities;
+import com.company.assembleegameclient.map.Map;
+import com.company.util.KeyCodes;
+import com.company.util.MoreDateUtil;
 
-    public class Parameters 
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.net.SharedObject;
+import flash.system.Capabilities;
+import flash.utils.Dictionary;
+
+public class Parameters
     {
 
-        public static const BUILD_VERSION:String = "X22.0";
-        public static const MINOR_VERSION:String = "0";
+        public static const BUILD_VERSION:String = "X27.0";
+        public static const MINOR_VERSION:String = "1";
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = false;
+        public static const USE_NEW_FRIENDS_UI:Boolean = true;
         public static const FELLOW_GUILD_COLOR:uint = 10944349;
         public static const NAME_CHOSEN_COLOR:uint = 0xFCDF00;
         public static var root:DisplayObject;
@@ -33,11 +34,13 @@ package com.company.assembleegameclient.parameters
         public static const ERROR_CHAT_NAME:String = "*Error*";
         public static const HELP_CHAT_NAME:String = "*Help*";
         public static const GUILD_CHAT_NAME:String = "*Guild*";
+        public static const TYPE:String = "VN";
         public static const NEWS_TIMESTAMP_DEFAULT:Number = 1.1;
         public static const NAME_CHANGE_PRICE:int = 1000;
         public static const GUILD_CREATION_PRICE:int = 1000;
         public static var data_:Object = null;
         public static var GPURenderError:Boolean = false;
+        public static var sessionStarted:Boolean = false;
         public static var blendType_:int = 1;
         public static var projColorType_:int = 0;
         public static var drawProj_:Boolean = true;
@@ -56,9 +59,8 @@ package com.company.assembleegameclient.parameters
         public static const RANDOM2:String = "72c5583cafb6818995cbd74b80";
         public static const RSA_PUBLIC_KEY:String = ((((("-----BEGIN PUBLIC KEY-----\n" + "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCKFctVrhfF3m2Kes0FBL/JFeO") + "cmNg9eJz8k/hQy1kadD+XFUpluRqa//Uxp2s9W2qE0EoUCu59ugcf/p7lGuL99Uo") + "SGmQEynkBvZct+/M40L0E0rZ4BVgzLOJmIbXMp0J4PnPcb6VLZvxazGcmSfjauC7") + "F3yWYqUbZd/HCBtawwIDAQAB\n") + "-----END PUBLIC KEY-----");
         private static var savedOptions_:SharedObject = null;
-        public static var toggleHPBar_:Boolean = false;
-        public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973, 19494, 19531];
-        public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939, 19494, 19531];
+        public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973, 19494, 19531, 6346];
+        public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939, 19494, 19531, 6347];
         private static var keyNames_:Dictionary = new Dictionary();
 
 
@@ -71,8 +73,8 @@ package com.company.assembleegameclient.parameters
             }
             catch(error:Error)
             {
-                data_ = new Object();
-            };
+                data_ = {};
+            }
             setDefaults();
             save();
         }
@@ -84,11 +86,11 @@ package com.company.assembleegameclient.parameters
                 if (savedOptions_ != null)
                 {
                     savedOptions_.flush();
-                };
+                }
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         private static function setDefaultKey(_arg_1:String, _arg_2:uint):void
@@ -96,7 +98,7 @@ package com.company.assembleegameclient.parameters
             if (!data_.hasOwnProperty(_arg_1))
             {
                 data_[_arg_1] = _arg_2;
-            };
+            }
             keyNames_[_arg_1] = true;
         }
 
@@ -108,8 +110,8 @@ package com.company.assembleegameclient.parameters
                 if (data_[_local_3] == _arg_2)
                 {
                     data_[_local_3] = KeyCodes.UNSET;
-                };
-            };
+                }
+            }
             data_[_arg_1] = _arg_2;
         }
 
@@ -118,7 +120,7 @@ package com.company.assembleegameclient.parameters
             if (!data_.hasOwnProperty(_arg_1))
             {
                 data_[_arg_1] = _arg_2;
-            };
+            }
         }
 
         public static function isGpuRender():Boolean
@@ -178,16 +180,19 @@ package com.company.assembleegameclient.parameters
             setDefaultKey("switchTabs", KeyCodes.B);
             setDefaultKey("particleEffect", KeyCodes.P);
             setDefaultKey("toggleHPBar", KeyCodes.H);
+            setDefaultKey("toggleProjectiles", KeyCodes.N);
+            setDefaultKey("toggleMasterParticles", KeyCodes.M);
             setDefault("playerObjectType", 782);
             setDefault("playMusic", true);
             setDefault("playSFX", true);
             setDefault("playPewPew", true);
             setDefault("centerOnPlayer", true);
             setDefault("preferredServer", null);
+            setDefault("bestServer", null);
             setDefault("needsTutorial", true);
             setDefault("needsRandomRealm", true);
-            setDefault("cameraAngle", ((7 * Math.PI) / 4));
-            setDefault("defaultCameraAngle", ((7 * Math.PI) / 4));
+            setDefault("cameraAngle", 0);
+            setDefault("defaultCameraAngle", 0);
             setDefault("showQuestPortraits", true);
             setDefault("fullscreenMode", false);
             setDefault("showProtips", true);
@@ -214,10 +219,9 @@ package com.company.assembleegameclient.parameters
             setDefault("particleEffect", false);
             setDefault("uiQuality", true);
             setDefault("disableEnemyParticles", false);
-            setDefault("disableAllyParticles", false);
+            setDefault("disableAllyShoot", 0);
             setDefault("disablePlayersHitParticles", false);
             setDefault("cursorSelect", "4");
-            setDefault("friendListDisplayFlag", false);
             if (Capabilities.playerType == "Desktop")
             {
                 setDefault("GPURender", false);
@@ -225,15 +229,15 @@ package com.company.assembleegameclient.parameters
             else
             {
                 setDefault("GPURender", false);
-            };
+            }
             setDefault("forceChatQuality", false);
             setDefault("hidePlayerChat", false);
-            setDefault("chatStarRequirement", 1);
+            setDefault("chatStarRequirement", 2);
             setDefault("chatAll", true);
             setDefault("chatWhisper", true);
             setDefault("chatGuild", true);
             setDefault("chatTrade", true);
-            setDefault("toggleBarText", false);
+            setDefault("toggleBarText", 0);
             setDefault("toggleToMaxText", false);
             setDefault("particleEffect", true);
             if (((data_.hasOwnProperty("playMusic")) && (data_.playMusic == true)))
@@ -243,7 +247,7 @@ package com.company.assembleegameclient.parameters
             else
             {
                 setDefault("musicVolume", 0);
-            };
+            }
             if (((data_.hasOwnProperty("playSFX")) && (data_.playMusic == true)))
             {
                 setDefault("SFXVolume", 1);
@@ -251,19 +255,21 @@ package com.company.assembleegameclient.parameters
             else
             {
                 setDefault("SFXVolume", 0);
-            };
+            }
             setDefault("friendList", KeyCodes.UNSET);
             setDefault("tradeWithFriends", false);
             setDefault("chatFriend", false);
             setDefault("friendStarRequirement", 0);
-            setDefault("HPBar", true);
+            setDefault("HPBar", 1);
             setDefault("newMiniMapColors", false);
             setDefault("noParticlesMaster", false);
             setDefault("noAllyNotifications", false);
             setDefault("noAllyDamage", false);
             setDefault("noEnemyDamage", false);
-            setDefault("forceEXP", false);
+            setDefault("forceEXP", 0);
             setDefault("showFameGain", false);
+            setDefault("curseIndication", false);
+            setDefault("showTierTag", true);
             if (!data_.hasOwnProperty("needsSurvey"))
             {
                 data_.needsSurvey = data_.needsTutorial;
@@ -294,8 +300,8 @@ package com.company.assembleegameclient.parameters
                         data_.playTimeLeftTillSurvey = (2 * 60);
                         data_.surveyGroup = "2WeekRealtime";
                         return;
-                };
-            };
+                }
+            }
         }
 
 

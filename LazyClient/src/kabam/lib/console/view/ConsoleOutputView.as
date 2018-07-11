@@ -5,18 +5,20 @@
 
 package kabam.lib.console.view
 {
-    import flash.display.Sprite;
-    import kabam.lib.resizing.view.Resizable;
-    import com.junkbyte.console.Console;
-    import flash.text.TextField;
-    import flash.display.BlendMode;
-    import flash.text.TextFormat;
-    import flash.text.TextFieldAutoSize;
-    import com.junkbyte.console.ConsoleConfig;
-    import kabam.lib.console.model.Watch;
-    import flash.geom.Rectangle;
+import com.junkbyte.console.Console;
+import com.junkbyte.console.ConsoleConfig;
 
-    public final class ConsoleOutputView extends Sprite implements Resizable 
+import flash.display.BlendMode;
+import flash.display.Sprite;
+import flash.geom.Rectangle;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+
+import kabam.lib.console.model.Watch;
+import kabam.lib.resizing.view.Resizable;
+
+public final class ConsoleOutputView extends Sprite implements Resizable
     {
 
         private static const DEFAULT_OUTPUT:String = "kabam.lib/console";
@@ -64,7 +66,7 @@ package kabam.lib.console.view
             {
                 delete this.watchMap[_arg_1];
                 this.watched.splice(this.watched.indexOf(_local_2), 1);
-            };
+            }
         }
 
         private function makeWatch(_arg_1:String):Watch
@@ -89,7 +91,7 @@ package kabam.lib.console.view
             for (_local_1 in this.watchMap)
             {
                 delete this.watchMap[_local_1];
-            };
+            }
         }
 
         public function resize(_arg_1:Rectangle):void

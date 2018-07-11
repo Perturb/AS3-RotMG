@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_gasEmitter_()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -66,7 +66,7 @@
       <Terrain>LowSand</Terrain>
       <Quest/>
       <Level>4</Level>
-      <XpMult>1.6</XpMult>
+      <Exp>43</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
@@ -90,7 +90,7 @@
       <Terrain>LowSand</Terrain>
       <Quest/>
       <Level>3</Level>
-      <XpMult>1.45</XpMult>
+      <Exp>43</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
@@ -141,7 +141,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Defense>1</Defense>
       <Terrain>LowSand</Terrain>
-      <XpMult>0.4</XpMult>
+      <Exp>4</Exp>
       <SpawnProb>1.0</SpawnProb>
       <Projectile id="0">
          <ObjectId>Dark Gray Spinner</ObjectId>
@@ -210,7 +210,7 @@
       <Terrain>LowPlains</Terrain>
       <Quest/>
       <Level>3</Level>
-      <XpMult>1.6</XpMult>
+      <Exp>32</Exp>
       <SpawnProb>1.0</SpawnProb>
       <Projectile id="0">
          <ObjectId>Dark Blue Magic</ObjectId>
@@ -288,7 +288,7 @@
       <Terrain>LowPlains</Terrain>
       <Quest/>
       <Level>4</Level>
-      <XpMult>1.6</XpMult>
+      <Exp>43</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>Yellow Missile</ObjectId>
@@ -372,7 +372,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>5</Defense>
-      <XpMult>1.65</XpMult>
+      <Exp>56</Exp>
    </Object>
    <Object type="0x7F01" id="Lil Sumo">
       <Group>Sumo</Group>
@@ -394,7 +394,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>4</Defense>
-      <XpMult>2.0</XpMult>
+      <Exp>1</Exp>
    </Object>
    <Object type="0x605" id="Elf Archer">
       <Group>Elves</Group>
@@ -474,7 +474,7 @@
       <Terrain>LowForest</Terrain>
       <Quest/>
       <Level>3</Level>
-      <XpMult>1.6</XpMult>
+      <Exp>32</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>Blue Bolt</ObjectId>
@@ -540,7 +540,7 @@
       <Defense>0</Defense>
       <Quest/>
       <Level>4</Level>
-      <XpMult>1.4</XpMult>
+      <Exp>39</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Terrain>LowForest</Terrain>
       <Projectile id="0">
@@ -572,7 +572,7 @@
       <MaxHitPoints>40</MaxHitPoints>
       <Defense>0</Defense>
       <Terrain>LowForest</Terrain>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <SpawnProb>0.7</SpawnProb>
    </Object>
    <Object type="0x6c9" id="Enraged Bunny">
@@ -587,7 +587,7 @@
       <Size>100</Size>
       <MaxHitPoints>130</MaxHitPoints>
       <Defense>1</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>6</Exp>
       <Projectile id="0">
          <ObjectId>Fire Missile</ObjectId>
          <Damage>12</Damage>
@@ -609,7 +609,7 @@
       <MaxHitPoints>120</MaxHitPoints>
       <Defense>1</Defense>
       <Terrain>LowForest</Terrain>
-      <XpMult>0.5</XpMult>
+      <Exp>6</Exp>
       <SpawnProb>1.0</SpawnProb>
       <Projectile id="0">
          <ObjectId>Purple Boomerang</ObjectId>

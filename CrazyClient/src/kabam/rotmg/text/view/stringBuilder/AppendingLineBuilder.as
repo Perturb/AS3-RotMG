@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.language.model.StringMap;
-    import __AS3__.vec.*;
+import kabam.rotmg.language.model.StringMap;
 
-    public class AppendingLineBuilder implements StringBuilder 
+public class AppendingLineBuilder implements StringBuilder
     {
 
         private var data:Vector.<LineData> = new Vector.<LineData>();
@@ -41,7 +39,7 @@ package kabam.rotmg.text.view.stringBuilder
             for each (_local_1 in this.data)
             {
                 _local_2.push(_local_1.getString(this.provider));
-            };
+            }
             return (_local_2.join(this.delimiter));
         }
 
@@ -59,11 +57,11 @@ package kabam.rotmg.text.view.stringBuilder
     }
 }//package kabam.rotmg.text.view.stringBuilder
 
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-class LineData 
+class LineData
 {
 
     public var key:String;
@@ -107,7 +105,7 @@ class LineData
         if (_local_2 == null)
         {
             _local_2 = this.key;
-        };
+        }
         _local_6 = _local_6.concat(_local_2);
         for (_local_3 in this.tokens)
         {
@@ -123,10 +121,10 @@ class LineData
                 if ((((_local_5.length > 0) && (_local_5.charAt(0) == "{")) && (_local_5.charAt((_local_5.length - 1)) == "}")))
                 {
                     _local_5 = _arg_1.getValue(_local_5.substr(1, (_local_5.length - 2)));
-                };
+                }
                 _local_6 = _local_6.replace((("{" + _local_3) + "}"), _local_5);
-            };
-        };
+            }
+        }
         _local_6 = _local_6.replace(/\\n/g, "\n");
         return (_local_6.concat(this.closingHTMLTags));
     }

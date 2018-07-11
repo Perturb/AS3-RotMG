@@ -5,9 +5,9 @@
 
 package kabam.rotmg.characters.model
 {
-    import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.appengine.SavedCharacter;
 
-    public interface CharacterModel 
+public interface CharacterModel 
     {
 
         function getCharacterCount():int;

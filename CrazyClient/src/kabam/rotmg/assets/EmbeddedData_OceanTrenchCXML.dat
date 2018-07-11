@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Objects>
+   <Object type="0x76e" id="Thessal Double Boss">
+      <DisplayId>Thessal the Mermaid Goddess</DisplayId>
+      <Group>Ocean Trench</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>chars16x16dEncounters2</File>
+         <Index>16</Index>
+      </AnimatedTexture>
+      <HitSound>monster/medusa_hit</HitSound>
+      <DeathSound>monster/medusa_death</DeathSound>
+      <MaxHitPoints>69000</MaxHitPoints>
+      <Exp>1000</Exp>
+      <ShadowSize>0</ShadowSize>
+      <God/>
+      <StasisImmune/>
+      <ParalyzeImmune/>
+      <Quest/>
+      <PerRealmMax>1</PerRealmMax>
+      <Level>20</Level>
+      <Size>140</Size>
+      <Defense>60</Defense>
+      <NoArticle/>
+      <EventChestBoss/>
+      <Projectile id="0">
+         <ObjectId>Thunder Swirl</ObjectId>
+         <Speed>55</Speed>
+         <Damage>100</Damage>
+         <Size>110</Size>
+         <LifetimeMS>1600</LifetimeMS>
+         <ConditionEffect duration="4.0">Armor Broken</ConditionEffect>
+         <MultiHit/>
+      </Projectile>
+      <Projectile id="1">
+         <ObjectId>Trident</ObjectId>
+         <Speed>70</Speed>
+         <Damage>65</Damage>
+         <Size>100</Size>
+         <LifetimeMS>3000</LifetimeMS>
+         <MultiHit/>
+      </Projectile>
+      <Projectile id="2">
+         <ObjectId>Super Trident</ObjectId>
+         <Speed>60</Speed>
+         <Damage>100</Damage>
+         <Size>110</Size>
+         <LifetimeMS>3000</LifetimeMS>
+         <MultiHit/>
+      </Projectile>
+      <Projectile id="3">
+         <ObjectId>Yellow Wall</ObjectId>
+         <Speed>60</Speed>
+         <Damage>120</Damage>
+         <Size>160</Size>
+         <LifetimeMS>3000</LifetimeMS>
+         <ConditionEffect duration="6">Weak</ConditionEffect>
+         <MultiHit/>
+      </Projectile>
+   </Object>
    <Object type="0x172f" id="Thessal Summoner">
       <Class>Character</Class>
       <Texture>
@@ -59,7 +118,7 @@
       <HitSound>monster/skeletons_hit</HitSound>
       <DeathSound>monster/dwarves_death</DeathSound>
       <MaxHitPoints>8000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ShadowSize>0</ShadowSize>
       <Size>0</Size>
       <Defense>50</Defense>
@@ -75,8 +134,8 @@
       </AnimatedTexture>
       <HitSound>monster/skeletons_hit</HitSound>
       <DeathSound>monster/dark_elves_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Exp>0</Exp>
       <Size>120</Size>
       <Defense>200</Defense>
       <Projectile id="0">
@@ -99,8 +158,8 @@
       </AnimatedTexture>
       <HitSound>monster/skeletons_hit</HitSound>
       <DeathSound>monster/dark_elves_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Exp>0.0</Exp>
       <Size>60</Size>
       <Defense>200</Defense>
       <Projectile id="0">
@@ -137,7 +196,7 @@
       <Quest/>
       <PerRealmMax>1</PerRealmMax>
       <Level>20</Level>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>140</Size>
       <Defense>60</Defense>
       <NoArticle/>
@@ -176,9 +235,8 @@
       <Class>Character</Class>
       <StasisImmune/>
       <Enemy/>
-      <NoMiniMap/>
-      <MaxHitPoints>1200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <MaxHitPoints>23000</MaxHitPoints>
+      <Exp>390</Exp>
       <Size>90</Size>
       <Defense>5</Defense>
       <Texture>
@@ -210,8 +268,8 @@
       </AnimatedTexture>
       <HitSound>monster/medusa_hit</HitSound>
       <DeathSound>monster/medusa_death</DeathSound>
-      <MaxHitPoints>96000</MaxHitPoints>
-      <XpMult>5.13</XpMult>
+      <MaxHitPoints>69000</MaxHitPoints>
+      <Exp>1000</Exp>
       <ShadowSize>0</ShadowSize>
       <God/>
       <StasisImmune/>
@@ -266,7 +324,7 @@
          <Index>0xb6</Index>
       </Texture>
       <MaxHitPoints>960000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <NoMiniMap/>
       <StasisImmune/>
@@ -285,7 +343,7 @@
       <ShadowSize>0</ShadowSize>
       <StasisImmune/>
       <PerRealmMax>1</PerRealmMax>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>60</Size>
       <Defense>60</Defense>
       <Projectile id="0">
@@ -362,7 +420,7 @@
       <HitSound>monster/elves_death</HitSound>
       <DeathSound>monster/night_elves_death</DeathSound>
       <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.6</XpMult>
+      <Exp>60</Exp>
       <Flying/>
       <Z>0.26</Z>
       <ShadowSize>80</ShadowSize>
@@ -387,7 +445,7 @@
       <HitSound>monster/ogres_hit</HitSound>
       <DeathSound>monster/medusa_death</DeathSound>
       <MaxHitPoints>6000</MaxHitPoints>
-      <XpMult>2.0</XpMult>
+      <Exp>390</Exp>
       <Projectile id="0">
          <ObjectId>Squid Shot</ObjectId>
          <Speed>50</Speed>
@@ -429,7 +487,7 @@
       </Projectile>
       <Size>120</Size>
       <Defense>40</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x170c" id="Giant Squid">
       <Group>Ocean Trench</Group>
@@ -477,7 +535,7 @@
       <HitSound>monster/trees_hit</HitSound>
       <DeathSound>monster/stone_walls_hit</DeathSound>
       <MaxHitPoints>5000</MaxHitPoints>
-      <XpMult>1.5</XpMult>
+      <Exp>292</Exp>
       <Projectile id="0">
          <ObjectId>Oryx Insect Sting</ObjectId>
          <Speed>65</Speed>
@@ -506,7 +564,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/blobs_death</DeathSound>
       <MaxHitPoints>1000</MaxHitPoints>
-      <XpMult>0.25</XpMult>
+      <Exp>25</Exp>
       <Projectile id="0">
          <ObjectId>Purple Spit</ObjectId>
          <Speed>60</Speed>

@@ -5,15 +5,18 @@
 
 package io.decagames.rotmg.shop.genericBox
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import io.decagames.rotmg.shop.ShopBuyButton;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.util.Currency;
 
-    public class SalePriceTag extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.labels.UILabel;
+
+import kabam.rotmg.assets.services.IconFactory;
+
+public class SalePriceTag extends Sprite 
     {
 
         private var coinBitmap:Bitmap;
@@ -26,7 +29,7 @@ package io.decagames.rotmg.shop.genericBox
             DefaultLabelFormat.originalPriceButtonLabel(_local_3);
             _local_3.text = _arg_1.toString();
             _local_4 = new Sprite();
-            var _local_5:BitmapData = ((_arg_2 == ShopBuyButton.CURRENCY_GOLD) ? IconFactory.makeCoin(35) : IconFactory.makeFame(35));
+            var _local_5:BitmapData = ((_arg_2 == Currency.GOLD) ? IconFactory.makeCoin(35) : IconFactory.makeFame(35));
             this.coinBitmap = new Bitmap(_local_5);
             this.coinBitmap.y = 0;
             addChild(this.coinBitmap);

@@ -5,23 +5,26 @@
 
 package io.decagames.rotmg.shop
 {
-    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import flash.display.Bitmap;
-    import io.decagames.rotmg.ui.texture.TextureParser;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.display.BitmapData;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import com.company.assembleegameclient.util.Currency;
 
-    public class ShopBuyButton extends SliceScalingButton 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+
+import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.labels.UILabel;
+import io.decagames.rotmg.ui.texture.TextureParser;
+
+import kabam.rotmg.assets.services.IconFactory;
+
+public class ShopBuyButton extends SliceScalingButton 
     {
-
-        public static const CURRENCY_GOLD:int = 0;
-        public static const CURRENCY_FAME:int = 1;
 
         private var _priceLabel:UILabel;
         private var coinBitmap:Bitmap;
         private var _price:int;
+        private var _soldOut:Boolean;
+        private var _currency:int;
 
         public function ShopBuyButton(_arg_1:int, _arg_2:int=0)
         {
@@ -30,7 +33,8 @@ package io.decagames.rotmg.shop
             this._priceLabel = new UILabel();
             this._priceLabel.text = _arg_1.toString();
             this._priceLabel.y = 7;
-            var _local_3:BitmapData = ((_arg_2 == CURRENCY_GOLD) ? IconFactory.makeCoin() : IconFactory.makeFame());
+            this._currency = _arg_2;
+            var _local_3:BitmapData = ((_arg_2 == Currency.GOLD) ? IconFactory.makeCoin() : IconFactory.makeFame());
             this.coinBitmap = new Bitmap(_local_3);
             this.coinBitmap.y = (Math.round((this.coinBitmap.height / 2)) - 3);
             DefaultLabelFormat.priceButtonLabel(this._priceLabel);
@@ -46,7 +50,7 @@ package io.decagames.rotmg.shop
 
         override public function set width(_arg_1:Number):void
         {
-            bitmap.width = _arg_1;
+            super.width = _arg_1;
             this.updateLabelPosition();
         }
 
@@ -59,23 +63,31 @@ package io.decagames.rotmg.shop
             else
             {
                 this._priceLabel.x = ((bitmap.width - this._priceLabel.textWidth) / 2);
-            };
+            }
             this.coinBitmap.x = ((bitmap.width - this.coinBitmap.width) - 15);
         }
 
         public function set price(_arg_1:int):void
         {
             this._price = _arg_1;
-            if (!_disabled)
-            {
-                this.priceLabel.text = _arg_1.toString();
-                this.updateLabelPosition();
-            };
+            this.priceLabel.text = _arg_1.toString();
+            this.updateLabelPosition();
         }
 
-        override public function set disabled(_arg_1:Boolean):void
+        public function get priceLabel():UILabel
         {
-            super.disabled = _arg_1;
+            return (this._priceLabel);
+        }
+
+        public function get soldOut():Boolean
+        {
+            return (this._soldOut);
+        }
+
+        public function set soldOut(_arg_1:Boolean):void
+        {
+            this._soldOut = _arg_1;
+            disabled = _arg_1;
             if (_arg_1)
             {
                 this._priceLabel.text = "Sold out";
@@ -85,13 +97,18 @@ package io.decagames.rotmg.shop
             {
                 this._priceLabel.text = this._price.toString();
                 addChild(this.coinBitmap);
-            };
+            }
             this.updateLabelPosition();
         }
 
-        public function get priceLabel():UILabel
+        public function get price():int
         {
-            return (this._priceLabel);
+            return (this._price);
+        }
+
+        public function get currency():int
+        {
+            return (this._currency);
         }
 
 

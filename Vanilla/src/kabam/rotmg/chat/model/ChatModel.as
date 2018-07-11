@@ -5,11 +5,9 @@
 
 package kabam.rotmg.chat.model
 {
-    import flash.geom.Rectangle;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import flash.geom.Rectangle;
 
-    public class ChatModel 
+public class ChatModel 
     {
 
         public var bounds:Rectangle;
@@ -22,7 +20,7 @@ package kabam.rotmg.chat.model
         {
             this.bounds = new Rectangle(0, 0, 600, 300);
             this.lineHeight = 20;
-            this.visibleItemCount = 10;
+            this.visibleItemCount = 5;
             this.storedItemCount = 150;
         }
 
@@ -32,7 +30,7 @@ package kabam.rotmg.chat.model
             if (this.chatMessages.length > this.storedItemCount)
             {
                 this.chatMessages.shift();
-            };
+            }
         }
 
 

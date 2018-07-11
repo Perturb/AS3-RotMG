@@ -5,13 +5,13 @@
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.core.model.PlayerModel;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class BuyCharacterSlotTask extends BaseTask 
+public class BuyCharacterSlotTask extends BaseTask 
     {
 
         [Inject]

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.Panel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.AGameSprite;
 
-    public class Panel extends Sprite 
+import flash.display.Sprite;
+
+public class Panel extends Sprite
     {
 
         public static const WIDTH:int = (200 - 12);//188

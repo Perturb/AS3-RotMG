@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //ru.inspirit.net.events.MultipartURLLoaderEvent
 
 package ru.inspirit.net.events
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class MultipartURLLoaderEvent extends Event 
+public class MultipartURLLoaderEvent extends Event
     {
 
         public static const DATA_PREPARE_PROGRESS:String = "dataPrepareProgress";

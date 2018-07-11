@@ -1,30 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.CharacterRectList
 
 package com.company.assembleegameclient.screens.charrects
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import com.company.assembleegameclient.appengine.CharacterStats;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import flash.display.DisplayObject;
-    import flash.events.Event;
+import com.company.assembleegameclient.appengine.CharacterStats;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class CharacterRectList extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+public class CharacterRectList extends Sprite 
     {
 
         private var classes:ClassesModel;
@@ -64,12 +66,12 @@ package com.company.assembleegameclient.screens.charrects
                 else
                 {
                     _local_5.setIcon(this.getIcon(_local_1, 100));
-                };
+                }
                 _local_5.x = ((_local_10 % 2) * (CharacterRect.WIDTH + 5));
                 _local_5.y = (int((_local_10 / 2)) * (CharacterRect.HEIGHT + 4));
                 addChild(_local_5);
                 _local_10++;
-            };
+            }
             if (this.model.hasAvailableCharSlot())
             {
                 _local_6 = 0;
@@ -82,8 +84,8 @@ package com.company.assembleegameclient.screens.charrects
                     addChild(_local_7);
                     _local_10++;
                     _local_6++;
-                };
-            };
+                }
+            }
             _local_2 = new BuyCharacterRect(this.model);
             _local_2.addEventListener(MouseEvent.MOUSE_DOWN, this.onBuyCharSlot);
             _local_2.x = ((_local_10 % 2) * (CharacterRect.WIDTH + 5));

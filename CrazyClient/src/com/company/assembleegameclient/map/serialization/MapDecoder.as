@@ -1,22 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.serialization.MapDecoder
 
 package com.company.assembleegameclient.map.serialization
 {
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.lib.json.JsonParser;
-    import com.company.assembleegameclient.map.Map;
-    import com.company.util.IntPoint;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.hurlant.util.Base64;
-    import flash.utils.ByteArray;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.objects.BasicObject;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.BasicObject;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.util.IntPoint;
+import com.hurlant.util.Base64;
 
-    public class MapDecoder 
+import flash.utils.ByteArray;
+
+import kabam.lib.json.JsonParser;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class MapDecoder
     {
 
 
@@ -66,13 +68,13 @@ package com.company.assembleegameclient.map.serialization
                 while (_local_6 < (_arg_3 + _arg_1["width"]))
                 {
                     _local_7 = _local_13[_local_12.readShort()];
-                    if (!((((_local_6 < 0) || (_local_6 >= _arg_2.width_)) || (_local_5 < 0)) || (_local_5 >= _arg_2.height_)))
+                    if ((!((((_local_6 < 0) || (_local_6 >= _arg_2.width_)) || (_local_5 < 0)) || (_local_5 >= _arg_2.height_))))
                     {
                         if (_local_7.hasOwnProperty("ground"))
                         {
                             _local_9 = GroundLibrary.idToType_[_local_7["ground"]];
                             _arg_2.setGroundTile(_local_6, _local_5, _local_9);
-                        };
+                        }
                         _local_8 = _local_7["objs"];
                         if (_local_8 != null)
                         {
@@ -81,13 +83,13 @@ package com.company.assembleegameclient.map.serialization
                                 _local_11 = getGameObject(_local_10);
                                 _local_11.objectId_ = BasicObject.getNextFakeObjectId();
                                 _arg_2.addObj(_local_11, (_local_6 + 0.5), (_local_5 + 0.5));
-                            };
-                        };
-                    };
+                            }
+                        }
+                    }
                     _local_6++;
-                };
+                }
                 _local_5++;
-            };
+            }
         }
 
         public static function getGameObject(_arg_1:Object):GameObject

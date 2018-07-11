@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.view.stringBuilder.PatternBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {
-    import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.language.model.StringMap;
 
-    public class PatternBuilder implements StringBuilder 
+public class PatternBuilder implements StringBuilder 
     {
 
         private const PATTERN:RegExp = /(\{([^\{]+?)\})/gi;
@@ -36,7 +36,7 @@ package kabam.rotmg.text.view.stringBuilder
             for each (_local_1 in this.keys)
             {
                 _local_2 = _local_2.replace(_local_1, this.provider.getValue(_local_1.substr(1, (_local_1.length - 2))));
-            };
+            }
             return (_local_2.replace(/\\n/g, "\n"));
         }
 

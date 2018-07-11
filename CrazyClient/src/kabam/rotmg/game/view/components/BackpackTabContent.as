@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.BackpackTabContent
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-    import kabam.rotmg.ui.view.PotionInventoryView;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.ui.model.TabStripModel;
-    import kabam.rotmg.constants.GeneralConstants;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
 
-    public class BackpackTabContent extends Sprite 
+import flash.display.Sprite;
+
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.ui.model.TabStripModel;
+import kabam.rotmg.ui.view.PotionInventoryView;
+
+public class BackpackTabContent extends Sprite
     {
 
         private var backpackContent:Sprite = new Sprite();

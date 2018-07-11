@@ -5,13 +5,15 @@
 
 package kabam.rotmg.core.view
 {
-    import flash.display.Sprite;
-    import flash.display.DisplayObjectContainer;
-    import kabam.rotmg.tooltips.view.TooltipsView;
-    import kabam.rotmg.dialogs.view.DialogsView;
-    import io.decagames.rotmg.ui.popups.PopupView;
+import flash.display.DisplayObjectContainer;
+import flash.display.Sprite;
 
-    public class Layers extends Sprite 
+import io.decagames.rotmg.ui.popups.PopupView;
+
+import kabam.rotmg.dialogs.view.DialogsView;
+import kabam.rotmg.tooltips.view.TooltipsView;
+
+public class Layers extends Sprite
     {
 
         private var menu:ScreensView;

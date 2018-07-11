@@ -1,27 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Point3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
-    import flash.display.GraphicsPathCommand;
-    import flash.display.GraphicsEndFill;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsBitmapFill;
-    import flash.geom.Matrix;
-    import flash.display.GraphicsSolidFill;
-    import flash.geom.Vector3D;
-    import flash.geom.Utils3D;
-    import com.company.util.Trig;
-    import flash.display.IGraphicsData;
-    import flash.geom.Matrix3D;
-    import com.company.assembleegameclient.map.Camera;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.util.Trig;
 
-    public class Point3D 
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsEndFill;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsPathCommand;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix;
+import flash.geom.Matrix3D;
+import flash.geom.Utils3D;
+import flash.geom.Vector3D;
+
+public class Point3D
     {
 
         private static const commands_:Vector.<int> = new <int>[GraphicsPathCommand.MOVE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO];
@@ -54,7 +53,7 @@ package com.company.assembleegameclient.engine3d
             if (this.posS_.w < 0)
             {
                 return;
-            };
+            }
             var _local_11:Number = (this.posS_.w * Math.sin(((_arg_5.pp_.fieldOfView / 2) * Trig.toRadians)));
             var _local_12:Number = (this.size_ / _local_11);
             this.data_.length = 0;
@@ -67,7 +66,7 @@ package com.company.assembleegameclient.engine3d
                 _local_8 = Math.cos(_arg_3);
                 _local_9 = Math.sin(_arg_3);
                 this.data_.push((this.posS_.x + ((_local_8 * -(_local_12)) + (_local_9 * -(_local_12)))), (this.posS_.y + ((_local_9 * -(_local_12)) - (_local_8 * -(_local_12)))), (this.posS_.x + ((_local_8 * _local_12) + (_local_9 * -(_local_12)))), (this.posS_.y + ((_local_9 * _local_12) - (_local_8 * -(_local_12)))), (this.posS_.x + ((_local_8 * _local_12) + (_local_9 * _local_12))), (this.posS_.y + ((_local_9 * _local_12) - (_local_8 * _local_12))), (this.posS_.x + ((_local_8 * -(_local_12)) + (_local_9 * _local_12))), (this.posS_.y + ((_local_9 * -(_local_12)) - (_local_8 * _local_12))));
-            };
+            }
             if (_arg_6 != null)
             {
                 this.bitmapFill_.bitmapData = _arg_6;
@@ -83,7 +82,7 @@ package com.company.assembleegameclient.engine3d
             {
                 this.solidFill_.color = _arg_7;
                 _arg_1.push(this.solidFill_);
-            };
+            }
             _arg_1.push(this.path_);
             _arg_1.push(END_FILL);
         }

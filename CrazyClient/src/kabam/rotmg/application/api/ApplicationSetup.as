@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.api.ApplicationSetup
@@ -16,6 +16,8 @@ package kabam.rotmg.application.api
         function isGameLoopMonitored():Boolean;
         function useProductionDialogs():Boolean;
         function areErrorsReported():Boolean;
+        function isServerLocal():Boolean;
+        function getServerDomain():String;
 
     }
 }//package kabam.rotmg.application.api

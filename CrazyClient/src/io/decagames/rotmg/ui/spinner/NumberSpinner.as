@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.spinner.NumberSpinner
 
 package io.decagames.rotmg.ui.spinner
 {
-    import flash.display.Sprite;
-    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import org.osflash.signals.Signal;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import flash.text.TextFieldAutoSize;
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import flash.display.Sprite;
+import flash.text.TextFieldAutoSize;
 
-    public class NumberSpinner extends Sprite 
+import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.labels.UILabel;
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+
+import org.osflash.signals.Signal;
+
+public class NumberSpinner extends Sprite
     {
 
         private var _upArrow:SliceScalingButton;
@@ -42,13 +44,14 @@ package io.decagames.rotmg.ui.spinner
             this.label.text = (_arg_2.toString() + _arg_6);
             this.label.x = (-(this.label.width) / 2);
             this._upArrow.x = (-(this._upArrow.width) / 2);
-            this.label.y = (this._upArrow.height + 3);
+            this._upArrow.y = 6;
+            this.label.y = (this._upArrow.height + 4);
             addChild(this.label);
             addChild(this._upArrow);
             this._downArrow = new SliceScalingButton(_arg_1.clone());
             this._downArrow.rotation = 180;
             this._downArrow.x = (this._downArrow.width / 2);
-            this._downArrow.y = ((this.label.y + this.label.height) + 10);
+            this._downArrow.y = ((this.label.y + this.label.height) + 6);
             addChild(this._downArrow);
             this._value = _arg_2;
         }
@@ -66,15 +69,15 @@ package io.decagames.rotmg.ui.spinner
             if (this._value > this.maxValue)
             {
                 this._value = this.maxValue;
-            };
+            }
             if (this._value < this.minValue)
             {
                 this._value = this.minValue;
-            };
+            }
             if (this._value != _local_2)
             {
                 this.valueWasChanged.dispatch(this.value);
-            };
+            }
             this.updateLabel();
         }
 
@@ -85,7 +88,7 @@ package io.decagames.rotmg.ui.spinner
             if (this._value != _local_2)
             {
                 this.valueWasChanged.dispatch(this.value);
-            };
+            }
             this.updateLabel();
         }
 

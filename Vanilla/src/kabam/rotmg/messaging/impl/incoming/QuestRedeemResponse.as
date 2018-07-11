@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class QuestRedeemResponse extends IncomingMessage 
+public class QuestRedeemResponse extends IncomingMessage
     {
 
         public var ok:Boolean;

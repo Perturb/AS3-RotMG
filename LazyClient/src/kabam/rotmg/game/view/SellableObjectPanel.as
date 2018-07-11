@@ -5,37 +5,39 @@
 
 package kabam.rotmg.game.view
 {
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.ConfirmBuyModal;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.util.Currency;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.RankText;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.account.core.Account;
-    import com.company.assembleegameclient.objects.Merchant;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import com.company.assembleegameclient.ui.panels.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Merchant;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.SellableObject;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.ConfirmBuyModal;
+import com.company.assembleegameclient.ui.RankText;
+import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.util.Currency;
+import com.company.assembleegameclient.util.GuildUtil;
 
-    public class SellableObjectPanel extends Panel implements TooltipAble 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+import kabam.rotmg.util.components.LegacyBuyButton;
+
+import org.osflash.signals.Signal;
+
+public class SellableObjectPanel extends Panel implements TooltipAble
     {
 
         private const BUTTON_OFFSET:int = 17;
@@ -112,7 +114,7 @@ package kabam.rotmg.game.view
             if (_arg_1 == this.owner_)
             {
                 return;
-            };
+            }
             this.owner_ = _arg_1;
             this.buyButton_.setPrice(this.owner_.price_, this.owner_.currency_);
             var _local_2:String = this.owner_.soldObjectName();
@@ -139,7 +141,7 @@ package kabam.rotmg.game.view
             if ((((!(parent == null)) && (!(this.confirmBuyModal == null))) && (this.confirmBuyModal.open)))
             {
                 parent.removeChild(this.confirmBuyModal);
-            };
+            }
         }
 
         private function onBuyButtonClick(_arg_1:MouseEvent):void
@@ -147,7 +149,7 @@ package kabam.rotmg.game.view
             if (ConfirmBuyModal.free)
             {
                 this.buyEvent();
-            };
+            }
         }
 
         private function onKeyDown(_arg_1:KeyboardEvent):void
@@ -155,7 +157,7 @@ package kabam.rotmg.game.view
             if ((((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)) && (ConfirmBuyModal.free)))
             {
                 this.buyEvent();
-            };
+            }
         }
 
         private function buyEvent():void
@@ -169,7 +171,7 @@ package kabam.rotmg.game.view
             else
             {
                 this.buyItem.dispatch(this.owner_);
-            };
+            }
         }
 
         override public function draw():void
@@ -182,14 +184,14 @@ package kabam.rotmg.game.view
                 if (contains(this.buyButton_))
                 {
                     removeChild(this.buyButton_);
-                };
+                }
                 if (((this.rankReqText_ == null) || (!(contains(this.rankReqText_)))))
                 {
                     this.rankReqText_ = createRankReqText(_local_2);
                     this.rankReqText_.x = ((WIDTH / 2) - (this.rankReqText_.width / 2));
                     this.rankReqText_.y = ((HEIGHT - (this.rankReqText_.height / 2)) - 20);
                     addChild(this.rankReqText_);
-                };
+                }
             }
             else
             {
@@ -198,14 +200,14 @@ package kabam.rotmg.game.view
                     if (contains(this.buyButton_))
                     {
                         removeChild(this.buyButton_);
-                    };
+                    }
                     if (((this.guildRankReqText_ == null) || (!(contains(this.guildRankReqText_)))))
                     {
                         this.guildRankReqText_ = createGuildRankReqText(this.owner_.guildRankReq_);
                         this.guildRankReqText_.x = ((WIDTH / 2) - (this.guildRankReqText_.width / 2));
                         this.guildRankReqText_.y = ((HEIGHT - (this.guildRankReqText_.height / 2)) - 20);
                         addChild(this.guildRankReqText_);
-                    };
+                    }
                 }
                 else
                 {
@@ -216,13 +218,13 @@ package kabam.rotmg.game.view
                     if (!contains(this.buyButton_))
                     {
                         addChild(this.buyButton_);
-                    };
+                    }
                     if (((!(this.rankReqText_ == null)) && (contains(this.rankReqText_))))
                     {
                         removeChild(this.rankReqText_);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void

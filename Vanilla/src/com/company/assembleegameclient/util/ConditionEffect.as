@@ -5,18 +5,18 @@
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.GlowFilter;
-    import flash.filters.BitmapFilterQuality;
-    import flash.display.BitmapData;
-    import flash.geom.Matrix;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-    import com.company.util.PointUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.PointUtil;
 
-    public class ConditionEffect 
+import flash.display.BitmapData;
+import flash.filters.BitmapFilterQuality;
+import flash.filters.GlowFilter;
+import flash.geom.Matrix;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class ConditionEffect
     {
 
         public static const NOTHING:uint = 0;
@@ -68,6 +68,7 @@ package com.company.assembleegameclient.util
         public static const WIS_BOOST:uint = 46;
         public static const DEX_BOOST:uint = 47;
         public static const SILENCED:uint = 48;
+        public static const EXPOSED:uint = 49;
         public static const GROUND_DAMAGE:uint = 99;
         public static const DEAD_BIT:uint = (1 << (DEAD - 1));
         public static const QUIET_BIT:uint = (1 << (QUIET - 1));
@@ -117,12 +118,13 @@ package com.company.assembleegameclient.util
         public static const WIS_BOOST_BIT:uint = (1 << (WIS_BOOST - NEW_CON_THREASHOLD));
         public static const DEX_BOOST_BIT:uint = (1 << (DEX_BOOST - NEW_CON_THREASHOLD));
         public static const SILENCED_BIT:uint = (1 << (SILENCED - NEW_CON_THREASHOLD));
+        public static const EXPOSED_BIT:uint = (1 << (EXPOSED - NEW_CON_THREASHOLD));
         public static const MAP_FILTER_BITMASK:uint = ((DRUNK_BIT | BLIND_BIT) | PAUSED_BIT);
         public static const CE_FIRST_BATCH:uint = 0;
         public static const CE_SECOND_BATCH:uint = 1;
         public static const NUMBER_CE_BATCHES:uint = 2;
         public static const NEW_CON_THREASHOLD:uint = 32;
-        public static var effects_:Vector.<ConditionEffect> = new <ConditionEffect>[new ConditionEffect("Nothing", 0, null, TextKey.CONDITIONEFFECT_NOTHING), new ConditionEffect("Dead", DEAD_BIT, null, TextKey.CONDITIONEFFECT_DEAD), new ConditionEffect("Quiet", QUIET_BIT, [32], TextKey.CONDITIONEFFECT_QUIET), new ConditionEffect("Weak", WEAK_BIT, [34, 35, 36, 37], TextKey.CONDITIONEFFECT_WEAK), new ConditionEffect("Slowed", SLOWED_BIT, [1], TextKey.CONDITION_EFFECT_SLOWED), new ConditionEffect("Sick", SICK_BIT, [39], TextKey.CONDITIONEFFECT_SICK), new ConditionEffect("Dazed", DAZED_BIT, [44], TextKey.CONDITION_EFFECT_DAZED), new ConditionEffect("Stunned", STUNNED_BIT, [45], TextKey.CONDITIONEFFECT_STUNNED), new ConditionEffect("Blind", BLIND_BIT, [41], TextKey.CONDITIONEFFECT_BLIND), new ConditionEffect("Hallucinating", HALLUCINATING_BIT, [42], TextKey.CONDITIONEFFECT_HALLUCINATING), new ConditionEffect("Drunk", DRUNK_BIT, [43], TextKey.CONDITIONEFFECT_DRUNK), new ConditionEffect("Confused", CONFUSED_BIT, [2], TextKey.CONDITIONEFFECT_CONFUSED), new ConditionEffect("Stun Immune", STUN_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_STUN_IMMUNE), new ConditionEffect("Invisible", INVISIBLE_BIT, null, TextKey.CONDITIONEFFECT_INVISIBLE), new ConditionEffect("Paralyzed", PARALYZED_BIT, [53, 54], TextKey.CONDITION_EFFECT_PARALYZED), new ConditionEffect("Speedy", SPEEDY_BIT, [0], TextKey.CONDITIONEFFECT_SPEEDY), new ConditionEffect("Bleeding", BLEEDING_BIT, [46], TextKey.CONDITIONEFFECT_BLEEDING), new ConditionEffect("Armor Broken Immune", ARMORBROKEN_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_ARMOR_BROKEN_IMMUNE), new ConditionEffect("Healing", HEALING_BIT, [47], TextKey.CONDITIONEFFECT_HEALING), new ConditionEffect("Damaging", DAMAGING_BIT, [49], TextKey.CONDITIONEFFECT_DAMAGING), new ConditionEffect("Berserk", BERSERK_BIT, [50], TextKey.CONDITIONEFFECT_BERSERK), new ConditionEffect("Paused", PAUSED_BIT, null, TextKey.CONDITIONEFFECT_PAUSED), new ConditionEffect("Stasis", STASIS_BIT, null, TextKey.CONDITIONEFFECT_STASIS), new ConditionEffect("Stasis Immune", STASIS_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_STASIS_IMMUNE), new ConditionEffect("Invincible", INVINCIBLE_BIT, null, TextKey.CONDITIONEFFECT_INVINCIBLE), new ConditionEffect("Invulnerable", INVULNERABLE_BIT, [17], TextKey.CONDITIONEFFECT_INVULNERABLE), new ConditionEffect("Armored", ARMORED_BIT, [16], TextKey.CONDITIONEFFECT_ARMORED), new ConditionEffect("Armor Broken", ARMORBROKEN_BIT, [55], TextKey.CONDITIONEFFECT_ARMOR_BROKEN), new ConditionEffect("Hexed", HEXED_BIT, [42], TextKey.CONDITIONEFFECT_HEXED), new ConditionEffect("Ninja Speedy", NINJA_SPEEDY_BIT, [0], TextKey.CONDITIONEFFECT_NINJA_SPEEDY), new ConditionEffect("Unstable", UNSTABLE_BIT, [56], TextKey.CONDITIONEFFECT_UNSTABLE), new ConditionEffect("Darkness", DARKNESS_BIT, [57], TextKey.CONDITIONEFFECT_DARKNESS), new ConditionEffect("Slowed Immune", SLOWED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_SLOWIMMUNE), new ConditionEffect("Dazed Immune", DAZED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_DAZEDIMMUNE), new ConditionEffect("Paralyzed Immune", PARALYZED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PARALYZEDIMMUNE), new ConditionEffect("Petrify", PETRIFIED_BIT, null, TextKey.CONDITIONEFFECT_PETRIFIED), new ConditionEffect("Petrify Immune", PETRIFIED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PETRIFY_IMMUNE), new ConditionEffect("Pet Disable", PET_EFFECT_ICON_BIT, [27], TextKey.CONDITIONEFFECT_STASIS, true), new ConditionEffect("Curse", CURSE_BIT, [58], TextKey.CONDITIONEFFECT_CURSE), new ConditionEffect("Curse Immune", CURSE_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_CURSE_IMMUNE), new ConditionEffect("HP Boost", HP_BOOST_BIT, [32], "HP Boost", true), new ConditionEffect("MP Boost", MP_BOOST_BIT, [33], "MP Boost", true), new ConditionEffect("Att Boost", ATT_BOOST_BIT, [34], "Att Boost", true), new ConditionEffect("Def Boost", DEF_BOOST_BIT, [35], "Def Boost", true), new ConditionEffect("Spd Boost", SPD_BOOST_BIT, [36], "Spd Boost", true), new ConditionEffect("Vit Boost", VIT_BOOST_BIT, [38], "Vit Boost", true), new ConditionEffect("Wis Boost", WIS_BOOST_BIT, [39], "Wis Boost", true), new ConditionEffect("Dex Boost", DEX_BOOST_BIT, [37], "Dex Boost", true), new ConditionEffect("Silenced", SILENCED_BIT, [33], "Silenced")];
+        public static var effects_:Vector.<ConditionEffect> = new <ConditionEffect>[new ConditionEffect("Nothing", 0, null, TextKey.CONDITIONEFFECT_NOTHING), new ConditionEffect("Dead", DEAD_BIT, null, TextKey.CONDITIONEFFECT_DEAD), new ConditionEffect("Quiet", QUIET_BIT, [32], TextKey.CONDITIONEFFECT_QUIET), new ConditionEffect("Weak", WEAK_BIT, [34, 35, 36, 37], TextKey.CONDITIONEFFECT_WEAK), new ConditionEffect("Slowed", SLOWED_BIT, [1], TextKey.CONDITION_EFFECT_SLOWED), new ConditionEffect("Sick", SICK_BIT, [39], TextKey.CONDITIONEFFECT_SICK), new ConditionEffect("Dazed", DAZED_BIT, [44], TextKey.CONDITION_EFFECT_DAZED), new ConditionEffect("Stunned", STUNNED_BIT, [45], TextKey.CONDITIONEFFECT_STUNNED), new ConditionEffect("Blind", BLIND_BIT, [41], TextKey.CONDITIONEFFECT_BLIND), new ConditionEffect("Hallucinating", HALLUCINATING_BIT, [42], TextKey.CONDITIONEFFECT_HALLUCINATING), new ConditionEffect("Drunk", DRUNK_BIT, [43], TextKey.CONDITIONEFFECT_DRUNK), new ConditionEffect("Confused", CONFUSED_BIT, [2], TextKey.CONDITIONEFFECT_CONFUSED), new ConditionEffect("Stun Immune", STUN_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_STUN_IMMUNE), new ConditionEffect("Invisible", INVISIBLE_BIT, null, TextKey.CONDITIONEFFECT_INVISIBLE), new ConditionEffect("Paralyzed", PARALYZED_BIT, [53, 54], TextKey.CONDITION_EFFECT_PARALYZED), new ConditionEffect("Speedy", SPEEDY_BIT, [0], TextKey.CONDITIONEFFECT_SPEEDY), new ConditionEffect("Bleeding", BLEEDING_BIT, [46], TextKey.CONDITIONEFFECT_BLEEDING), new ConditionEffect("Armor Broken Immune", ARMORBROKEN_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_ARMOR_BROKEN_IMMUNE), new ConditionEffect("Healing", HEALING_BIT, [47], TextKey.CONDITIONEFFECT_HEALING), new ConditionEffect("Damaging", DAMAGING_BIT, [49], TextKey.CONDITIONEFFECT_DAMAGING), new ConditionEffect("Berserk", BERSERK_BIT, [50], TextKey.CONDITIONEFFECT_BERSERK), new ConditionEffect("Paused", PAUSED_BIT, null, TextKey.CONDITIONEFFECT_PAUSED), new ConditionEffect("Stasis", STASIS_BIT, null, TextKey.CONDITIONEFFECT_STASIS), new ConditionEffect("Stasis Immune", STASIS_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_STASIS_IMMUNE), new ConditionEffect("Invincible", INVINCIBLE_BIT, null, TextKey.CONDITIONEFFECT_INVINCIBLE), new ConditionEffect("Invulnerable", INVULNERABLE_BIT, [17], TextKey.CONDITIONEFFECT_INVULNERABLE), new ConditionEffect("Armored", ARMORED_BIT, [16], TextKey.CONDITIONEFFECT_ARMORED), new ConditionEffect("Armor Broken", ARMORBROKEN_BIT, [55], TextKey.CONDITIONEFFECT_ARMOR_BROKEN), new ConditionEffect("Hexed", HEXED_BIT, [42], TextKey.CONDITIONEFFECT_HEXED), new ConditionEffect("Ninja Speedy", NINJA_SPEEDY_BIT, [0], TextKey.CONDITIONEFFECT_NINJA_SPEEDY), new ConditionEffect("Unstable", UNSTABLE_BIT, [56], TextKey.CONDITIONEFFECT_UNSTABLE), new ConditionEffect("Darkness", DARKNESS_BIT, [57], TextKey.CONDITIONEFFECT_DARKNESS), new ConditionEffect("Slowed Immune", SLOWED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_SLOWIMMUNE), new ConditionEffect("Dazed Immune", DAZED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_DAZEDIMMUNE), new ConditionEffect("Paralyzed Immune", PARALYZED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PARALYZEDIMMUNE), new ConditionEffect("Petrify", PETRIFIED_BIT, null, TextKey.CONDITIONEFFECT_PETRIFIED), new ConditionEffect("Petrify Immune", PETRIFIED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PETRIFY_IMMUNE), new ConditionEffect("Pet Disable", PET_EFFECT_ICON_BIT, [27], TextKey.CONDITIONEFFECT_STASIS, true), new ConditionEffect("Curse", CURSE_BIT, [58], TextKey.CONDITIONEFFECT_CURSE), new ConditionEffect("Curse Immune", CURSE_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_CURSE_IMMUNE), new ConditionEffect("HP Boost", HP_BOOST_BIT, [32], "HP Boost", true), new ConditionEffect("MP Boost", MP_BOOST_BIT, [33], "MP Boost", true), new ConditionEffect("Att Boost", ATT_BOOST_BIT, [34], "Att Boost", true), new ConditionEffect("Def Boost", DEF_BOOST_BIT, [35], "Def Boost", true), new ConditionEffect("Spd Boost", SPD_BOOST_BIT, [36], "Spd Boost", true), new ConditionEffect("Vit Boost", VIT_BOOST_BIT, [38], "Vit Boost", true), new ConditionEffect("Wis Boost", WIS_BOOST_BIT, [39], "Wis Boost", true), new ConditionEffect("Dex Boost", DEX_BOOST_BIT, [37], "Dex Boost", true), new ConditionEffect("Silenced", SILENCED_BIT, [33], "Silenced"), new ConditionEffect("Exposed", EXPOSED_BIT, [41], "Exposed", true)];
         private static var conditionEffectFromName_:Object = null;
         private static var effectIconCache:Object = null;
         private static var bitToIcon_:Object = null;
@@ -149,14 +151,14 @@ package com.company.assembleegameclient.util
             var _local_2:uint;
             if (conditionEffectFromName_ == null)
             {
-                conditionEffectFromName_ = new Object();
+                conditionEffectFromName_ = {};
                 _local_2 = 0;
                 while (_local_2 < effects_.length)
                 {
                     conditionEffectFromName_[effects_[_local_2].name_] = _local_2;
                     _local_2++;
-                };
-            };
+                }
+            }
             return (conditionEffectFromName_[_arg_1]);
         }
 
@@ -168,8 +170,8 @@ package com.company.assembleegameclient.util
                 if (_local_2.name_ == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (null);
         }
 
@@ -186,9 +188,9 @@ package com.company.assembleegameclient.util
                 if (_local_6 != null)
                 {
                     _arg_2.push(_local_6[(_arg_3 % _local_6.length)]);
-                };
+                }
                 _arg_1 = _local_4;
-            };
+            }
         }
 
         public static function getConditionEffectIcons2(_arg_1:uint, _arg_2:Vector.<BitmapData>, _arg_3:int):void
@@ -204,9 +206,9 @@ package com.company.assembleegameclient.util
                 if (_local_6 != null)
                 {
                     _arg_2.push(_local_6[(_arg_3 % _local_6.length)]);
-                };
+                }
                 _arg_1 = _local_4;
-            };
+            }
         }
 
         public static function addConditionEffectIcon(_arg_1:Vector.<BitmapData>, _arg_2:int, _arg_3:Boolean):void
@@ -217,7 +219,7 @@ package com.company.assembleegameclient.util
             if (effectIconCache == null)
             {
                 effectIconCache = {};
-            };
+            }
             if (effectIconCache[_arg_2])
             {
                 _local_4 = effectIconCache[_arg_2];
@@ -237,11 +239,11 @@ package com.company.assembleegameclient.util
                 {
                     _local_4 = new BitmapDataSpy(16, 16, true, 0);
                     _local_4.draw(AssetLibrary.getImageFromSet("lofiInterface2", _arg_2), _local_5);
-                };
+                }
                 _local_4 = GlowRedrawer.outlineGlow(_local_4, 0xFFFFFFFF);
                 _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, GLOW_FILTER);
                 effectIconCache[_arg_2] = _local_4;
-            };
+            }
             _arg_1.push(_local_4);
         }
 
@@ -254,7 +256,7 @@ package com.company.assembleegameclient.util
             var _local_6:BitmapData;
             if (bitToIcon_ == null)
             {
-                bitToIcon_ = new Object();
+                bitToIcon_ = {};
                 _local_2 = new Matrix();
                 _local_2.translate(4, 4);
                 _local_3 = 0;
@@ -273,12 +275,12 @@ package com.company.assembleegameclient.util
                             _local_6.applyFilter(_local_6, _local_6.rect, PointUtil.ORIGIN, GLOW_FILTER);
                             _local_4.push(_local_6);
                             _local_5++;
-                        };
-                    };
+                        }
+                    }
                     bitToIcon_[effects_[_local_3].bit_] = _local_4;
                     _local_3++;
-                };
-            };
+                }
+            }
             return (bitToIcon_[_arg_1]);
         }
 
@@ -317,21 +319,21 @@ package com.company.assembleegameclient.util
                             {
                                 _local_3 = new BitmapDataSpy(16, 16, true, 0);
                                 _local_3.draw(AssetLibrary.getImageFromSet("lofiInterface2", effects_[_local_6].iconOffsets_[_local_7]), _local_4);
-                            };
+                            }
                             _local_3 = GlowRedrawer.outlineGlow(_local_3, 0xFFFFFFFF);
                             _local_3.applyFilter(_local_3, _local_3.rect, PointUtil.ORIGIN, GLOW_FILTER);
                             _local_2.push(_local_3);
                             _local_7++;
-                        };
-                    };
+                        }
+                    }
                     bitToIcon2_[effects_[_local_6].bit_] = _local_2;
                     _local_6++;
-                };
-            };
+                }
+            }
             if (((!(bitToIcon2_ == null)) && (!(bitToIcon2_[_arg_1] == null))))
             {
                 return (bitToIcon2_[_arg_1]);
-            };
+            }
             return (null);
         }
 

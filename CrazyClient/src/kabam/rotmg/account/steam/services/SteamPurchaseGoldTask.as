@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamPurchaseGoldTask
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.PurchaseGoldTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.steam.SteamApi;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
-    import flash.utils.setTimeout;
-    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
+import flash.utils.setTimeout;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.PurchaseGoldTask;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
     {
 
         [Inject]
@@ -45,7 +48,7 @@ package kabam.rotmg.account.steam.services
 
         override protected function startTask():void
         {
-            if (!this.steam.isOverlayEnabled)
+            if ((!(this.steam.isOverlayEnabled)))
             {
                 this.logger.debug("isOverlayEnabled false!");
                 this.reportError('Can’t process purchase, because Steam Overlay is disabled for the RotMG! To enabled it go to you games library, right click on the "Realm of the Mad God" and select "Properties" from the drop-down menu. On the "Properties" popup, select "GENERAL" tab and select option "Enable the Steam Overlay while in-game". Next, restart the game and try again.');
@@ -60,7 +63,7 @@ package kabam.rotmg.account.steam.services
                     "steamid":this.steam.getSteamId(),
                     "data":this.offer.data_
                 });
-            };
+            }
         }
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void
@@ -72,7 +75,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.reportError(_arg_2);
-            };
+            }
         }
 
         private function onPurchaseOfferComplete():void
@@ -107,7 +110,7 @@ package kabam.rotmg.account.steam.services
                     "orderid":_arg_2,
                     "authorized":((_arg_3) ? 1 : 0)
                 });
-            };
+            }
         }
 
         private function onAuthorized(_arg_1:Boolean, _arg_2:*):void
@@ -119,7 +122,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.reportError(_arg_2);
-            };
+            }
         }
 
         private function onPurchaseFinalizeComplete():void

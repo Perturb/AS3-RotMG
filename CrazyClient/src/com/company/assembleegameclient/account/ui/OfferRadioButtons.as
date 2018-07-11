@@ -1,24 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.OfferRadioButtons
 
 package com.company.assembleegameclient.account.ui
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.util.offer.Offers;
-    import kabam.rotmg.account.core.model.MoneyConfig;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.account.ui.components.SelectionGroup;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import com.company.assembleegameclient.account.ui.components.Selectable;
-    import flash.display.DisplayObject;
-    import kabam.lib.ui.impl.VerticalLayout;
-    import kabam.lib.ui.api.Layout;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.account.ui.components.Selectable;
+import com.company.assembleegameclient.account.ui.components.SelectionGroup;
+import com.company.assembleegameclient.util.offer.Offer;
+import com.company.assembleegameclient.util.offer.Offers;
 
-    public class OfferRadioButtons extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+
+import kabam.lib.ui.api.Layout;
+import kabam.lib.ui.impl.VerticalLayout;
+import kabam.rotmg.account.core.model.MoneyConfig;
+
+public class OfferRadioButtons extends Sprite
     {
 
         private var offers:Offers;
@@ -49,7 +49,7 @@ package com.company.assembleegameclient.account.ui
             {
                 this.choices[_local_1] = this.makeGoldChoice(this.offers.offerList[_local_1]);
                 _local_1++;
-            };
+            }
         }
 
         private function makeGoldChoice(_arg_1:Offer):OfferRadioButton
@@ -83,7 +83,7 @@ package com.company.assembleegameclient.account.ui
             {
                 _local_3[_local_1] = this.choices[_local_1];
                 _local_1++;
-            };
+            }
             return (_local_3);
         }
 
@@ -103,7 +103,7 @@ package com.company.assembleegameclient.account.ui
             {
                 _local_3[_local_1] = this.choices[_local_1];
                 _local_1++;
-            };
+            }
             return (_local_3);
         }
 
@@ -113,7 +113,7 @@ package com.company.assembleegameclient.account.ui
             while (_local_2--)
             {
                 this.choices[_local_2].showBonus(_arg_1);
-            };
+            }
         }
 
 

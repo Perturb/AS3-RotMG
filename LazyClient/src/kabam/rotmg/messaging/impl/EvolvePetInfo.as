@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl
 {
-    import kabam.rotmg.pets.data.PetVO;
+import io.decagames.rotmg.pets.data.vo.PetVO;
 
-    public class EvolvePetInfo 
+public class EvolvePetInfo 
     {
 
         public var initialPet:PetVO;

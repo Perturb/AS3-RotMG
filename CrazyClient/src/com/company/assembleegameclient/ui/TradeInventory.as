@@ -1,28 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TradeInventory
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.ui.BaseSimpleText;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.messaging.impl.data.TradeItem;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.constants.GeneralConstants;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.ui.BaseSimpleText;
 
-    public class TradeInventory extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.messaging.impl.data.TradeItem;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TradeInventory extends Sprite
     {
 
         private static const NO_CUT:Array = [0, 0, 0, 0];
@@ -71,11 +71,11 @@ package com.company.assembleegameclient.ui
                 {
                     _local_6.addEventListener(MouseEvent.MOUSE_DOWN, this.onSlotClick);
                     _local_6.addEventListener(MouseEvent.RIGHT_CLICK, this.selectAll);
-                };
+                }
                 this.slots_.push(_local_6);
                 addChild(_local_6);
                 _local_7++;
-            };
+            }
         }
 
         private function onSlotClick(_arg_1:MouseEvent):void
@@ -96,7 +96,7 @@ package com.company.assembleegameclient.ui
             {
                 _local_2 = new <Boolean>[false, false, false, false, false, false, false, false, false, false, false, false];
                 this.gs_.map.player_.select_ = (_arg_1.currentTarget as TradeSlot).item_;
-            };
+            }
         }
 
         private function selectAllInstantly():void
@@ -111,14 +111,14 @@ package com.company.assembleegameclient.ui
                 if (_local_4.equipment_[_local_1] != -1)
                 {
                     _local_2 = ObjectLibrary.xmlLibrary_[_local_4.equipment_[_local_1]];
-                    if (!_local_2.hasOwnProperty("Soulbound"))
+                    if ((!(_local_2.hasOwnProperty("Soulbound"))))
                     {
                         _local_3[_local_1] = true;
                         this.slots_[_local_1].setIncluded((!(this.slots_[_local_1].included_)));
-                    };
-                };
+                    }
+                }
                 _local_1++;
-            };
+            }
             this.gs_.gsc_.changeTrade(_local_3);
         }
 
@@ -130,7 +130,7 @@ package com.company.assembleegameclient.ui
             {
                 _local_2.push(this.slots_[_local_1].included_);
                 _local_1++;
-            };
+            }
             return (_local_2);
         }
 
@@ -141,7 +141,7 @@ package com.company.assembleegameclient.ui
             {
                 this.slots_[_local_2].setIncluded(_arg_1[_local_2]);
                 _local_2++;
-            };
+            }
         }
 
         public function isOffer(_arg_1:Vector.<Boolean>):Boolean
@@ -152,9 +152,9 @@ package com.company.assembleegameclient.ui
                 if (_arg_1[_local_2] != this.slots_[_local_2].included_)
                 {
                     return (false);
-                };
+                }
                 _local_2++;
-            };
+            }
             return (true);
         }
 
@@ -167,9 +167,9 @@ package com.company.assembleegameclient.ui
                 if (this.slots_[_local_2].included_)
                 {
                     _local_1++;
-                };
+                }
                 _local_2++;
-            };
+            }
             return (_local_1);
         }
 
@@ -182,9 +182,9 @@ package com.company.assembleegameclient.ui
                 if (this.slots_[_local_2].isEmpty())
                 {
                     _local_1++;
-                };
+                }
                 _local_2++;
-            };
+            }
             return (_local_1);
         }
 
@@ -213,7 +213,7 @@ package com.company.assembleegameclient.ui
                     this.taglineText_.setColor(0xB3B3B3);
                     _local_2 = TextKey.TRADEINVENTORY_PLAYERISSELECTINGITEMS;
                     break;
-            };
+            }
             this.taglineText_.setStringBuilder(new LineBuilder().setParams(_local_2));
         }
 

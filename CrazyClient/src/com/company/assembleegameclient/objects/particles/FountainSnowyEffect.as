@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.FountainSnowyEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class FountainSnowyEffect extends ParticleEffect 
+public class FountainSnowyEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -28,14 +28,14 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             if (this.lastUpdate_ < 0)
             {
                 this.lastUpdate_ = Math.max(0, (_arg_1 - 400));
-            };
+            }
             x_ = this.go_.x_;
             y_ = this.go_.y_;
-            var _local_5:int = int((this.lastUpdate_ / 50));
+            var _local_5:int = int(int((this.lastUpdate_ / 50)));
             while (_local_5 < (_arg_1 / 50))
             {
                 _local_3 = (_local_5 * 50);
@@ -44,7 +44,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_4.restart(_local_3, _arg_1);
                 map_.addObj(_local_4, x_, y_);
                 _local_5 = (_local_5 + 2);
-            };
+            }
             this.lastUpdate_ = _arg_1;
             return (true);
         }
@@ -54,15 +54,16 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Vector3D;
 import com.company.assembleegameclient.util.FreeList;
 
-class FountainSnowyParticle extends Particle 
+import flash.geom.Vector3D;
+
+class FountainSnowyParticle extends Particle
 {
 
-    /*private*/ static const G:Number = -0.8;
-    /*private*/ static const VI:Number = 2;
-    /*private*/ static const ZI:Number = 0.75;
+    private static const G:Number = -0.8;
+    private static const VI:Number = 2;
+    private static const ZI:Number = 0.75;
 
     public var startTime_:int;
     protected var moveVec_:Vector3D = new Vector3D();

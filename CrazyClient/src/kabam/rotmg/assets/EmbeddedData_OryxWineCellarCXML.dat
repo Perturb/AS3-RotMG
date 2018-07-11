@@ -20,7 +20,7 @@
       <Size>120</Size>
       <MaxHitPoints>65000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>102.5642</XpMult>
+      <Exp>20000</Exp>
       <Quest/>
       <God/>
       <Oryx/>
@@ -106,7 +106,7 @@
       <Size>100</Size>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Projectile id="0">
          <ObjectId>Blue Shuriken</ObjectId>
          <Damage>100</Damage>
@@ -134,7 +134,7 @@
       <Size>80</Size>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>12</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>10</Exp>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>50</Damage>
@@ -178,7 +178,7 @@
       <Size>80</Size>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>12</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>10</Exp>
    </Object>
    <Object type="0x0de2" id="Monstrosity Scarab">
       <Enemy/>
@@ -192,7 +192,7 @@
       <Size>80</Size>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>2</Exp>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>50</Damage>
@@ -212,7 +212,7 @@
       <Size>80</Size>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>12</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>10</Exp>
    </Object>
    <Object type="0x0de4" id="Aberrant Blaster">
       <Enemy/>
@@ -226,7 +226,7 @@
       <Size>80</Size>
       <MaxHitPoints>100</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>1</Exp>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>50</Damage>
@@ -257,7 +257,7 @@
       <MaxHitPoints>3000</MaxHitPoints>
       <StasisImmune/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0de6" id="WineSpill Puddle">
       <Class>GameObject</Class>
@@ -390,7 +390,7 @@
       <NoMiniMap/>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
          <Damage>55</Damage>
@@ -415,7 +415,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>80</Defense>
-      <XpMult>0.08</XpMult>
+      <Exp>15</Exp>
    </Object>
    <Object type="0x0df2" id="Vintner of Oryx">
       <Enemy/>
@@ -429,7 +429,7 @@
       <Size>80</Size>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>18</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>15</Exp>
       <Projectile id="0">
          <ObjectId>Wine Bomb</ObjectId>
          <Damage>50</Damage>

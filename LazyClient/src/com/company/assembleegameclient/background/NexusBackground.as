@@ -5,20 +5,19 @@
 
 package com.company.assembleegameclient.background
 {
-    import flash.geom.Point;
-    import flash.display.BitmapData;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import flash.display.GraphicsBitmapFill;
-    import flash.geom.Matrix;
-    import flash.display.GraphicsPath;
-    import com.company.util.GraphicsUtil;
-    import flash.display.BitmapDataChannel;
-    import flash.geom.Rectangle;
-    import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.util.GraphicsUtil;
 
-    public class NexusBackground extends Background 
+import flash.display.BitmapData;
+import flash.display.BitmapDataChannel;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsPath;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+
+public class NexusBackground extends Background 
     {
 
         public static const MOVEMENT:Point = new Point(0.01, 0.01);
@@ -64,25 +63,24 @@ package com.company.assembleegameclient.background
                 _local_4 = this.islands_[_local_3];
                 _local_4.draw(_arg_1, _arg_2, this.graphicsData_);
                 _local_3++;
-            };
+            }
         }
 
 
     }
 }//package com.company.assembleegameclient.background
 
-import flash.geom.Point;
-import flash.display.BitmapData;
-import flash.display.GraphicsBitmapFill;
-import flash.geom.Matrix;
-import flash.display.GraphicsPath;
-import com.company.util.GraphicsUtil;
-import com.company.util.AssetLibrary;
 import com.company.assembleegameclient.background.NexusBackground;
 import com.company.assembleegameclient.map.Camera;
-import __AS3__.vec.Vector;
+import com.company.util.AssetLibrary;
+import com.company.util.GraphicsUtil;
+
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsPath;
 import flash.display.IGraphicsData;
-import __AS3__.vec.*;
+import flash.geom.Matrix;
+import flash.geom.Point;
 
 class Island 
 {

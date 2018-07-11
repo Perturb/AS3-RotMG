@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.icons.SimpleIconButton
 
 package com.company.assembleegameclient.ui.icons
 {
-    import flash.display.Sprite;
-    import flash.geom.ColorTransform;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import flash.events.MouseEvent;
-    import com.company.util.MoreColorUtil;
+import com.company.util.MoreColorUtil;
 
-    public class SimpleIconButton extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+
+public class SimpleIconButton extends Sprite 
     {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
@@ -52,7 +53,7 @@ package com.company.assembleegameclient.ui.icons
             if (_arg_1 == this.ct_)
             {
                 return;
-            };
+            }
             this.ct_ = _arg_1;
             if (this.ct_ == null)
             {
@@ -61,7 +62,7 @@ package com.company.assembleegameclient.ui.icons
             else
             {
                 transform.colorTransform = this.ct_;
-            };
+            }
         }
 
         protected function onMouseOver(_arg_1:MouseEvent):void

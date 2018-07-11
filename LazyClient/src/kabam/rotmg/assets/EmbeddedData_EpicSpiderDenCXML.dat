@@ -18,8 +18,6 @@
       <NoMiniMap/>
       <Size>150</Size>
       <ShadowSize>0</ShadowSize>
-      <StasisImmune/>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x709a" id="Red Egg Summoner">
       <Class>Character</Class>
@@ -30,8 +28,6 @@
       <NoMiniMap/>
       <Size>150</Size>
       <ShadowSize>0</ShadowSize>
-      <StasisImmune/>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x709b" id="Silver Egg Summoner">
       <Class>Character</Class>
@@ -42,8 +38,6 @@
       <NoMiniMap/>
       <Size>150</Size>
       <ShadowSize>0</ShadowSize>
-      <StasisImmune/>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x709c" id="Yellow Egg Summoner">
       <Class>Character</Class>
@@ -54,8 +48,6 @@
       <NoMiniMap/>
       <Size>150</Size>
       <ShadowSize>0</ShadowSize>
-      <StasisImmune/>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x701a" id="Crawling Depths Egg Sac">
       <Enemy/>
@@ -68,7 +60,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <Size>75</Size>
       <MaxHitPoints>400</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x701b" id="Crawling Spider Hatchling">
       <Class>Character</Class>
@@ -82,7 +74,7 @@
       <Size>75</Size>
       <MaxHitPoints>500</MaxHitPoints>
       <Enemy/>
-      <XpMult>0.2</XpMult>
+      <Exp>10</Exp>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
          <Speed>50</Speed>
@@ -109,7 +101,6 @@
       <DeathSound>monster/spiders_death</DeathSound>
       <Size>115</Size>
       <MaxHitPoints>3500</MaxHitPoints>
-      <XpMult>1.0</XpMult>
       <Defense>15</Defense>
       <Enemy/>
       <Projectile>
@@ -132,7 +123,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.3</XpMult>
+      <Exp>58</Exp>
       <Enemy/>
       <Projectile>
          <ObjectId>Red Star</ObjectId>
@@ -153,7 +144,6 @@
       <Size>90</Size>
       <MaxHitPoints>3500</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>1.0</XpMult>
       <Enemy/>
       <Projectile>
          <ObjectId>Purple Magic</ObjectId>
@@ -174,7 +164,7 @@
       <Size>70</Size>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.3</XpMult>
+      <Exp>45</Exp>
       <Enemy/>
       <Projectile>
          <ObjectId>Green Magic</ObjectId>
@@ -195,7 +185,7 @@
       <Size>200</Size>
       <MaxHitPoints>60000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>117</Exp>
       <Enemy/>
       <God/>
       <StasisImmune/>
@@ -268,7 +258,7 @@
       <Size>150</Size>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <StasisImmune/>
       <StunImmune/>
    </Object>
@@ -284,7 +274,7 @@
       <Size>150</Size>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <StasisImmune/>
       <StunImmune/>
    </Object>
@@ -300,7 +290,7 @@
       <Size>150</Size>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <StasisImmune/>
       <StunImmune/>
    </Object>
@@ -316,7 +306,7 @@
       <Size>150</Size>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <StasisImmune/>
       <StunImmune/>
    </Object>

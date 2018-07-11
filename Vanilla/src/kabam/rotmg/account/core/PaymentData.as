@@ -5,9 +5,9 @@
 
 package kabam.rotmg.account.core
 {
-    import com.company.assembleegameclient.util.offer.Offer;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public class PaymentData 
+public class PaymentData 
     {
 
         public var offer:Offer;

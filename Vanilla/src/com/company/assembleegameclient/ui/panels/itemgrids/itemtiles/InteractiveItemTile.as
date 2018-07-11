@@ -5,15 +5,16 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import flash.utils.Timer;
-    import flash.geom.Point;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import flash.display.DisplayObject;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 
-    public class InteractiveItemTile extends ItemTile 
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.events.TimerEvent;
+import flash.geom.Point;
+import flash.utils.Timer;
+
+public class InteractiveItemTile extends ItemTile
     {
 
         private static const DOUBLE_CLICK_PAUSE:uint = 250;
@@ -47,7 +48,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
                 removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
                 removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
-            };
+            }
         }
 
         public function getDropTarget():DisplayObject
@@ -73,7 +74,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             if (this.isDragging)
             {
                 return;
-            };
+            }
             if (_arg_1.shiftKey)
             {
                 this.setPendingDoubleClick(false);
@@ -96,9 +97,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                     {
                         this.setPendingDoubleClick(false);
                         dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_DOUBLE_CLICK, this));
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function onMouseDown(_arg_1:MouseEvent):void
@@ -106,7 +107,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             if (getItemId() == -1)
             {
                 return;
-            };
+            }
             this.beginDragCheck(_arg_1);
         }
 
@@ -121,7 +122,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             else
             {
                 this.doubleClickTimer.stop();
-            };
+            }
         }
 
         private function beginDragCheck(_arg_1:MouseEvent):void
@@ -149,7 +150,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 this.cancelDragCheck(null);
                 this.setPendingDoubleClick(false);
                 this.beginDrag(_arg_1);
-            };
+            }
         }
 
         private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void
@@ -161,6 +162,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
         private function beginDrag(_arg_1:MouseEvent):void
         {
             this.isDragging = true;
+            toggleDragState(false);
             stage.addChild(itemSprite);
             itemSprite.startDrag(true);
             itemSprite.x = _arg_1.stageX;
@@ -172,6 +174,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
         private function endDrag(_arg_1:MouseEvent):void
         {
             this.isDragging = false;
+            toggleDragState(true);
             itemSprite.stopDrag();
             itemSprite.removeEventListener(MouseEvent.MOUSE_UP, this.endDrag);
             dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_MOVE, this));
@@ -184,7 +187,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             if (_local_2)
             {
                 this.stopDragging();
-            };
+            }
             return (_local_2);
         }
 
@@ -203,9 +206,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
                 if (stage.contains(itemSprite))
                 {
                     stage.removeChild(itemSprite);
-                };
+                }
                 this.isDragging = false;
-            };
+            }
         }
 
 

@@ -1,21 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.Camera
 
 package com.company.assembleegameclient.map
 {
-    import flash.geom.Vector3D;
-    import flash.geom.Rectangle;
-    import flash.geom.PerspectiveProjection;
-    import flash.geom.Matrix3D;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.RandomUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.RandomUtil;
 
-    public class Camera 
+import flash.geom.Matrix3D;
+import flash.geom.PerspectiveProjection;
+import flash.geom.Rectangle;
+import flash.geom.Vector3D;
+
+public class Camera
     {
 
         public static const lN_:Vector3D = new Vector3D(0, 0, 1);
@@ -37,7 +36,7 @@ package com.company.assembleegameclient.map
         public var wToS_:Matrix3D = new Matrix3D();
         public var wToV_:Matrix3D = new Matrix3D();
         public var vToS_:Matrix3D = new Matrix3D();
-        private var nonPPMatrix_:Matrix3D = new Matrix3D();
+        public var nonPPMatrix_:Matrix3D = new Matrix3D();
         private var p_:Vector3D = new Vector3D();
         private var f_:Vector3D = new Vector3D();
         private var u_:Vector3D = new Vector3D();
@@ -77,7 +76,7 @@ package com.company.assembleegameclient.map
             if (_arg_1)
             {
                 return (new Rectangle(-((_local_3 - _local_5) / 2), -((_local_4 * 13) / 24), _local_3, _local_4));
-            };
+            }
             return (new Rectangle(-((_local_3 - _local_5) / 2), -((_local_4 * 3) / 4), _local_3, _local_4));
         }
 
@@ -95,8 +94,8 @@ package com.company.assembleegameclient.map
                 if (this.jitter_ > this.MAX_JITTER)
                 {
                     this.jitter_ = this.MAX_JITTER;
-                };
-            };
+                }
+            }
         }
 
         public function configure(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Rectangle):void
@@ -105,7 +104,7 @@ package com.company.assembleegameclient.map
             {
                 _arg_1 = (_arg_1 + RandomUtil.plusMinus(this.jitter_));
                 _arg_2 = (_arg_2 + RandomUtil.plusMinus(this.jitter_));
-            };
+            }
             this.x_ = _arg_1;
             this.y_ = _arg_2;
             this.z_ = _arg_3;

@@ -5,26 +5,26 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import flash.display.Graphics;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
 
-    public class ChoiceBox extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ChoiceBox extends Sprite
     {
 
         public static const WIDTH:int = 80;
@@ -36,6 +36,7 @@ package com.company.assembleegameclient.ui.options
         public var labelText_:TextFieldDisplayConcrete;
         private var over_:Boolean = false;
         private var color:Number = 0xFFFFFF;
+        private var showRed:Boolean = false;
 
         private var internalFill_:GraphicsSolidFill = new GraphicsSolidFill(0x333333, 1);
         private var overLineFill_:GraphicsSolidFill = new GraphicsSolidFill(0xB3B3B3, 1);
@@ -44,9 +45,10 @@ package com.company.assembleegameclient.ui.options
         private var lineStyle_:GraphicsStroke = new GraphicsStroke(2, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, normalLineFill_);
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[internalFill_, lineStyle_, path_, GraphicsUtil.END_STROKE, GraphicsUtil.END_FILL];
 
-        public function ChoiceBox(_arg_1:Vector.<StringBuilder>, _arg_2:Array, _arg_3:Object, _arg_4:Number=0xFFFFFF)
+        public function ChoiceBox(_arg_1:Vector.<StringBuilder>, _arg_2:Array, _arg_3:Object, _arg_4:Number=0xFFFFFF, _arg_5:Boolean=false)
         {
             this.color = _arg_4;
+            this.showRed = _arg_5;
             this.labels_ = _arg_1;
             this.values_ = _arg_2;
             this.labelText_ = new TextFieldDisplayConcrete().setSize(16).setColor(_arg_4);
@@ -72,17 +74,17 @@ package com.company.assembleegameclient.ui.options
                     if (_local_3 == this.selectedIndex_)
                     {
                         return;
-                    };
+                    }
                     this.selectedIndex_ = _local_3;
                     break;
-                };
+                }
                 _local_3++;
-            };
+            }
             this.setSelected(this.selectedIndex_);
             if (_arg_2)
             {
                 dispatchEvent(new Event(Event.CHANGE));
-            };
+            }
         }
 
         public function value():*
@@ -105,6 +107,11 @@ package com.company.assembleegameclient.ui.options
         private function onClick(_arg_1:MouseEvent):void
         {
             this.setSelected(((this.selectedIndex_ + 1) % this.values_.length));
+            if (this.showRed)
+            {
+                this.color = ((this.color == 0xFFFFFF) ? 0xFF0000 : 0xFFFFFF);
+                this.labelText_.setColor(this.color);
+            }
             dispatchEvent(new Event(Event.CHANGE));
         }
 
@@ -125,7 +132,7 @@ package com.company.assembleegameclient.ui.options
             if (((this.selectedIndex_ < 0) || (this.selectedIndex_ >= this.labels_.length)))
             {
                 this.selectedIndex_ = 0;
-            };
+            }
             this.setText(this.labels_[this.selectedIndex_]);
         }
 

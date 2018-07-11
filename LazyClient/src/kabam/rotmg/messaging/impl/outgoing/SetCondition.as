@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class SetCondition extends OutgoingMessage 
+public class SetCondition extends OutgoingMessage
     {
 
         public var conditionEffect_:uint;

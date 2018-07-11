@@ -1,23 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.PlayerGameObjectListItem
 
 package com.company.assembleegameclient.ui
 {
-    import kabam.rotmg.tooltips.TooltipAble;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.ui.tooltip.PlayerToolTip;
-    import com.company.util.MoreColorUtil;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.tooltip.PlayerToolTip;
+import com.company.util.MoreColorUtil;
 
-    public class PlayerGameObjectListItem extends GameObjectListItem implements TooltipAble 
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+
+public class PlayerGameObjectListItem extends GameObjectListItem implements TooltipAble
     {
 
         public const hoverTooltipDelegate:HoverTooltipDelegate = new HoverTooltipDelegate();
@@ -33,7 +35,7 @@ package com.company.assembleegameclient.ui
             if (_local_6)
             {
                 this.starred = _local_6.starred_;
-            };
+            }
             this.hover = _arg_4;
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
@@ -45,7 +47,7 @@ package com.company.assembleegameclient.ui
             {
                 addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
                 this.hoverTooltipDelegate.setDisplayObject(this);
-            };
+            }
             addEventListener(MouseEvent.RIGHT_CLICK, this.onRClick);
         }
 
@@ -54,7 +56,7 @@ package com.company.assembleegameclient.ui
             if (this.hover)
             {
                 removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
-            };
+            }
             removeEventListener(MouseEvent.RIGHT_CLICK, this.onRClick);
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
@@ -69,7 +71,7 @@ package com.company.assembleegameclient.ui
             else
             {
                 go.map_.gs_.gsc_.teleport(go.name_);
-            };
+            }
         }
 
         private function onMouseOver(_arg_1:MouseEvent):void
@@ -83,11 +85,11 @@ package com.company.assembleegameclient.ui
             {
                 this.enabled = _arg_1;
                 this.hoverTooltipDelegate.tooltip = ((this.enabled) ? new PlayerToolTip(Player(go)) : null);
-                if (!this.enabled)
+                if ((!(this.enabled)))
                 {
                     this.hoverTooltipDelegate.getShowToolTip().dispatch(this.hoverTooltipDelegate.tooltip);
-                };
-            };
+                }
+            }
         }
 
         override public function draw(_arg_1:GameObject, _arg_2:ColorTransform=null):void
@@ -97,7 +99,7 @@ package com.company.assembleegameclient.ui
             {
                 transform.colorTransform = ((_arg_2) || (MoreColorUtil.identity));
                 this.starred = _local_3.starred_;
-            };
+            }
             super.draw(_arg_1, _arg_2);
         }
 

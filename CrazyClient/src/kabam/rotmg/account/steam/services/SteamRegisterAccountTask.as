@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamRegisterAccountTask
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.steam.SteamApi;
-    import kabam.rotmg.account.web.model.AccountData;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class SteamRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+import robotlegs.bender.framework.api.ILogger;
+
+public class SteamRegisterAccountTask extends BaseTask implements RegisterAccountTask
     {
 
         [Inject]
@@ -45,7 +46,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.onRegisterError(_arg_2);
-            };
+            }
         }
 
         private function makeDataPacket():Object
@@ -61,7 +62,7 @@ package kabam.rotmg.account.steam.services
         {
             var _local_2:XML = new XML(_arg_1);
             this.logger.debug("done - {0}", [_local_2.GUID]);
-            this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
+            this.account.updateUser(_local_2.GUID, _local_2.Secret, "", "");
             this.account.setPlatformToken(_local_2.PlatformToken);
             completeTask(true);
         }

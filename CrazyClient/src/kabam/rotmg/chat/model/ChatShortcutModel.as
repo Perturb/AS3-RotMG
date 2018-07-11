@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.model.ChatShortcutModel
 
 package kabam.rotmg.chat.model
 {
-    import com.company.assembleegameclient.ui.options.Options;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
 
-    public class ChatShortcutModel 
+public class ChatShortcutModel
     {
 
         private var commandShortcut:int = 191;

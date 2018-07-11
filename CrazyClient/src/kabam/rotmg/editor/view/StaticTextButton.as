@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.editor.view.StaticTextButton
 
 package kabam.rotmg.editor.view
 {
-    import com.company.assembleegameclient.ui.TextButtonBase;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import com.company.assembleegameclient.ui.TextButtonBase;
 
-    public class StaticTextButton extends TextButtonBase 
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class StaticTextButton extends TextButtonBase
     {
 
         public function StaticTextButton(_arg_1:int, _arg_2:String, _arg_3:int=0)

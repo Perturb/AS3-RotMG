@@ -14,7 +14,7 @@
       <Size>60</Size>
       <MaxHitPoints>300</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
          <Damage>50</Damage>
@@ -40,7 +40,7 @@
       <Size>160</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x7f51" id="Ice Tomb Event Chest Dropper">
       <Class>GameObject</Class>
@@ -62,7 +62,7 @@
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>0</Defense>
       <Size>160</Size>
-      <XpMult>5.13</XpMult>
+      <Exp>1000</Exp>
    </Object>
    <Object type="0x7fab" id="Ice Artifact 1">
       <DisplayId>Ice Artifact</DisplayId>
@@ -75,7 +75,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
@@ -104,7 +104,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
@@ -133,7 +133,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
@@ -162,7 +162,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -182,7 +182,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -202,7 +202,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -222,7 +222,7 @@
       <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -243,7 +243,7 @@
       <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -264,7 +264,7 @@
       <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -275,15 +275,16 @@
       </Projectile>
    </Object>
    <Object type="0x7fa6" id="Ice Tomb Boss Anchor">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
          <File>lofiChar216x16</File>
          <Index>0x0e</Index>
       </Texture>
       <Size>0</Size>
-      <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
-      <NoMiniMap/>
+      <Enemy/>
+      <MaxHitPoints>90000</MaxHitPoints>
+      <Exp>0</Exp>
+      <EventChestBoss/>
    </Object>
    <Object type="0x7fa7" id="Activator">
       <DisplayId>Mysterious Ice Shard</DisplayId>
@@ -328,7 +329,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>130</Size>
       <ShadowSize>100</ShadowSize>
       <StasisImmune/>
@@ -385,7 +386,6 @@
       <MaxHitPoints>80000</MaxHitPoints>
       <Size>140</Size>
       <Defense>15</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
       <Projectile id="0">
@@ -483,10 +483,8 @@
       <MaxHitPoints>90000</MaxHitPoints>
       <Size>140</Size>
       <Defense>30</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
-      <EventChestBoss/>
       <Projectile id="0">
          <ObjectId>Blue Bolt Shot</ObjectId>
          <Damage>280</Damage>
@@ -554,7 +552,6 @@
       <MaxHitPoints>100000</MaxHitPoints>
       <Size>140</Size>
       <Defense>50</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
       <Projectile id="0">

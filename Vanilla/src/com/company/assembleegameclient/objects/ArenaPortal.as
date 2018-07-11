@@ -5,19 +5,20 @@
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.assembleegameclient.ui.panels.ArenaPortalPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.ui.panels.ArenaPortalPanel;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class ArenaPortal extends Portal implements IInteractiveObject 
+import flash.display.BitmapData;
+import flash.display.IGraphicsData;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ArenaPortal extends Portal implements IInteractiveObject
     {
 
         public function ArenaPortal(_arg_1:XML)

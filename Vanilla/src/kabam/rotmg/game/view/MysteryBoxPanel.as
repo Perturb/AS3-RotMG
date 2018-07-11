@@ -5,39 +5,42 @@
 
 package kabam.rotmg.game.view
 {
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.mysterybox.services.MysteryBoxModel;
-    import kabam.rotmg.account.core.Account;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.arena.util.ArenaViewAssetFactory;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import flash.events.KeyboardEvent;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import io.decagames.rotmg.shop.ShopConfiguration;
-    import io.decagames.rotmg.shop.ShopPopupView;
-    import kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
-    import kabam.rotmg.account.core.view.RegisterPromptDialog;
-    import com.company.assembleegameclient.util.Currency;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.ui.panels.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.SellableObject;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
+import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.util.Currency;
 
-    public class MysteryBoxPanel extends Panel 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import io.decagames.rotmg.shop.ShopConfiguration;
+import io.decagames.rotmg.shop.ShopPopupView;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import kabam.rotmg.arena.util.ArenaViewAssetFactory;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
+import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
+import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.util.components.LegacyBuyButton;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+public class MysteryBoxPanel extends Panel
     {
 
         private const BUTTON_OFFSET:int = 17;
@@ -83,7 +86,7 @@ package kabam.rotmg.game.view
             {
                 this.infoButton_ = new DeprecatedTextButton(16, _local_6);
                 addChild(this.infoButton_);
-            };
+            }
             this.nameText_.setStringBuilder(new LineBuilder().setParams("Shop"));
             this.bitmap_.bitmapData = ArenaViewAssetFactory.returnHostBitmap(_arg_2).bitmapData;
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
@@ -95,7 +98,7 @@ package kabam.rotmg.game.view
             if (_arg_1 == this.owner_)
             {
                 return;
-            };
+            }
             this.owner_ = _arg_1;
             this.buyButton_.setPrice(this.owner_.price_, this.owner_.currency_);
             var _local_2:String = this.owner_.soldObjectName();
@@ -139,15 +142,15 @@ package kabam.rotmg.game.view
                 else
                 {
                     _local_4.dispatch(new MysteryBoxSelectModal());
-                };
+                }
             }
             else
             {
                 if (!_local_3.isRegistered())
                 {
                     _local_4.dispatch(new RegisterPromptDialog("SellableObjectPanelMediator.text", {"type":Currency.typeToName(Currency.GOLD)}));
-                };
-            };
+                }
+            }
         }
 
         private function onKeyDown(_arg_1:KeyboardEvent):void
@@ -155,7 +158,7 @@ package kabam.rotmg.game.view
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.onInfoButton();
-            };
+            }
         }
 
         override public function draw():void
@@ -166,7 +169,7 @@ package kabam.rotmg.game.view
             if (!contains(this.infoButton_))
             {
                 addChild(this.infoButton_);
-            };
+            }
         }
 
 

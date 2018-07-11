@@ -1,22 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.TextInputField
 
 package com.company.assembleegameclient.account.ui
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.ui.BaseSimpleText;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import com.company.ui.BaseSimpleText;
 
-    public class TextInputField extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class TextInputField extends Sprite
     {
 
         public static const BACKGROUND_COLOR:uint = 0x333333;
@@ -44,14 +46,14 @@ package com.company.assembleegameclient.account.ui
             else
             {
                 this.inputText_.y = 0;
-            };
+            }
             if (this.textInputFieldWidth != 0)
             {
                 this.nameText_.setTextWidth(this.textInputFieldWidth);
                 this.nameText_.setMultiLine(true);
                 this.nameText_.setWordWrap(true);
                 this.nameText_.textChanged.add(this.textFieldWasCreatedHandler);
-            };
+            }
             this.nameText_.setBold(true);
             this.nameText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
             this.nameText_.filters = [new DropShadowFilter(0, 0, 0)];
@@ -66,7 +68,7 @@ package com.company.assembleegameclient.account.ui
             if (_arg_6 > 1)
             {
                 this.inputText_.maxChars = _arg_6;
-            };
+            }
             addChild(this.inputText_);
             graphics.lineStyle(2, 0x454545, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
             graphics.beginFill(0x333333, 1);
@@ -119,7 +121,7 @@ package com.company.assembleegameclient.account.ui
             {
                 this.inputText_.y = (this.nameText_.getTextHeight() + 8);
                 this.drawInputBorders(false);
-            };
+            }
         }
 
         public function onInputChange(_arg_1:Event):void

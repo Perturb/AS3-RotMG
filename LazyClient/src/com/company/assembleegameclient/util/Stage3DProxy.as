@@ -5,12 +5,13 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.events.IEventDispatcher;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import flash.display.Stage3D;
-    import flash.events.Event;
+import flash.display.Stage3D;
+import flash.events.Event;
+import flash.events.IEventDispatcher;
 
-    public class Stage3DProxy implements IEventDispatcher 
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+
+public class Stage3DProxy implements IEventDispatcher
     {
 
         private static var context3D:Context3DProxy;
@@ -32,7 +33,7 @@ package com.company.assembleegameclient.util
             if (context3D == null)
             {
                 context3D = new Context3DProxy(this.stage3D.context3D);
-            };
+            }
             return (context3D);
         }
 

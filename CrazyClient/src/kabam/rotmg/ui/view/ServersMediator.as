@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.ServersMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.ServersScreen;
-    import kabam.rotmg.servers.api.ServerModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import com.company.assembleegameclient.screens.ServersScreen;
 
-    public class ServersMediator extends Mediator 
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.servers.api.ServerModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ServersMediator extends Mediator
     {
 
         [Inject]

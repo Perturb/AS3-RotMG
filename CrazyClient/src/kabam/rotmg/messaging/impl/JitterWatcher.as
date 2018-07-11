@@ -1,22 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.JitterWatcher
 
 package kabam.rotmg.messaging.impl
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
-    import flash.utils.getTimer;
-    import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.*;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.utils.getTimer;
 
-    public class JitterWatcher extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class JitterWatcher extends Sprite
     {
 
         private static const lineBuilder:LineBuilder = new LineBuilder();
@@ -38,22 +37,22 @@ package kabam.rotmg.messaging.impl
 
         public function record():void
         {
-            var _local_1:int;
-            var _local_2:int = getTimer();
+            var _local_3:int;
+            var _local_1:int = getTimer();
             if (this.lastRecord_ == -1)
             {
-                this.lastRecord_ = _local_2;
+                this.lastRecord_ = _local_1;
                 return;
-            };
-            var _local_3:int = (_local_2 - this.lastRecord_);
-            this.ticks_.push(_local_3);
-            this.sum_ = (this.sum_ + _local_3);
+            }
+            var _local_2:int = (_local_1 - this.lastRecord_);
+            this.ticks_.push(_local_2);
+            this.sum_ = (this.sum_ + _local_2);
             if (this.ticks_.length > 50)
             {
-                _local_1 = this.ticks_.shift();
-                this.sum_ = (this.sum_ - _local_1);
-            };
-            this.lastRecord_ = _local_2;
+                _local_3 = this.ticks_.shift();
+                this.sum_ = (this.sum_ - _local_3);
+            }
+            this.lastRecord_ = _local_1;
         }
 
         private function onAddedToStage(_arg_1:Event):void
@@ -73,30 +72,19 @@ package kabam.rotmg.messaging.impl
 
         private function jitter():Number
         {
-            var _local_1:int;
-            var _local_2:int = this.ticks_.length;
-            if (_local_2 == 0)
+            var _local_4:int;
+            var _local_1:int = this.ticks_.length;
+            if (_local_1 == 0)
             {
                 return (0);
-            };
-            var _local_3:Number = (this.sum_ / _local_2);
-            var _local_4:Number = 0;
-            for each (_local_1 in this.ticks_)
+            }
+            var _local_2:Number = (this.sum_ / _local_1);
+            var _local_3:Number = 0;
+            for each (_local_4 in this.ticks_)
             {
-                _local_4 = (_local_4 + ((_local_1 - _local_3) * (_local_1 - _local_3)));
-            };
-            return (this.trim(Math.sqrt((_local_4 / _local_2)), 2));
-        }
-
-        private function trim(_arg_1:Number, _arg_2:Number):Number
-        {
-            var _local_3:Number;
-            if (_arg_2 >= 0)
-            {
-                _local_3 = Math.pow(10, _arg_2);
-                return (Math.round((_arg_1 * _local_3)) / _local_3);
-            };
-            return (_arg_1);
+                _local_3 = (_local_3 + ((_local_4 - _local_2) * (_local_4 - _local_2)));
+            }
+            return (Math.sqrt((_local_3 / _local_1)));
         }
 
 

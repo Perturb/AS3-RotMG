@@ -5,24 +5,27 @@
 
 package kabam.rotmg.arena.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
-    import kabam.rotmg.pets.view.components.PetTooltip;
-    import flash.display.Bitmap;
-    import kabam.rotmg.pets.view.components.PetIconFactory;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.text.TextFieldAutoSize;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.pets.data.PetVO;
-    import flash.filters.DropShadowFilter;
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
 
-    public class ArenaLeaderboardListItem extends Sprite 
+import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+
+import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
+import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+
+public class ArenaLeaderboardListItem extends Sprite 
     {
 
         private static const HEIGHT:int = 60;
@@ -103,7 +106,7 @@ package kabam.rotmg.arena.view
             if (this.playerTooltip)
             {
                 this.showTooltip.dispatch(this.playerTooltip);
-            };
+            }
         }
 
         private function onPetIconOut(_arg_1:MouseEvent):void
@@ -116,7 +119,7 @@ package kabam.rotmg.arena.view
             if (this.playerTooltip)
             {
                 this.showTooltip.dispatch(this.petTooltip);
-            };
+            }
         }
 
         private function onMouseOut(_arg_1:MouseEvent):void
@@ -124,7 +127,7 @@ package kabam.rotmg.arena.view
             if (this.isActive)
             {
                 this.background.alpha = 0;
-            };
+            }
         }
 
         private function onMouseOver(_arg_1:MouseEvent):void
@@ -132,7 +135,7 @@ package kabam.rotmg.arena.view
             if (this.isActive)
             {
                 this.background.alpha = 1;
-            };
+            }
         }
 
         public function apply(_arg_1:ArenaLeaderboardEntry, _arg_2:Boolean):void
@@ -150,15 +153,15 @@ package kabam.rotmg.arena.view
                 else
                 {
                     this.rankNumber.visible = false;
-                };
+                }
                 if (this.petBitmap)
                 {
                     this.destroyPetIcon();
-                };
+                }
                 if (_arg_1.pet)
                 {
                     this.initPetIcon(_arg_1);
-                };
+                }
                 this.rank = _arg_1.rank;
                 this.isPersonalRecord = _arg_1.isPersonalRecord;
                 this.setColor();
@@ -166,7 +169,7 @@ package kabam.rotmg.arena.view
             else
             {
                 this.clear();
-            };
+            }
             this.align();
         }
 
@@ -216,8 +219,8 @@ package kabam.rotmg.arena.view
                 if (this.rank == 1)
                 {
                     _local_1 = 16777103;
-                };
-            };
+                }
+            }
             this.playerName.setColor(_local_1);
             this.waveNumber.setColor(_local_1);
             this.runTime.setColor(_local_1);
@@ -234,7 +237,7 @@ package kabam.rotmg.arena.view
             if (this.petBitmap)
             {
                 this.destroyPetIcon();
-            };
+            }
             this.petBitmap = null;
             this.petIconBackground.visible = false;
             this.rank = 0;
@@ -290,7 +293,7 @@ package kabam.rotmg.arena.view
                 this.petBitmap.y = ((HEIGHT / 2) - (this.petBitmap.height / 2));
                 this.petIconBackground.x = 175;
                 this.petIconBackground.y = ((HEIGHT / 2) - (this.petIconBackground.height / 2));
-            };
+            }
             this.playerName.x = 230;
             this.playerName.y = ((HEIGHT / 2) - (this.playerName.height / 2));
             this.waveNumber.x = 485;

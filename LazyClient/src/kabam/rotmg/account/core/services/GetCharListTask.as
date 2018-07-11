@@ -5,29 +5,31 @@
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-    import kabam.rotmg.account.core.signals.CharListDataSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-    import flash.utils.Timer;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.util.MoreObjectUtil;
-    import kabam.rotmg.account.web.view.MigrationDialog;
-    import kabam.rotmg.account.web.WebAccount;
-    import kabam.rotmg.account.web.view.WebLoginDialog;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.fortune.components.TimerCallback;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.account.core.*;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreObjectUtil;
 
-    public class GetCharListTask extends BaseTask 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.CharListDataSignal;
+import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+import kabam.rotmg.account.web.WebAccount;
+import kabam.rotmg.account.web.view.MigrationDialog;
+import kabam.rotmg.account.web.view.WebLoginDialog;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.fortune.components.TimerCallback;
+import kabam.rotmg.text.model.TextKey;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetCharListTask extends BaseTask 
     {
 
         private static const ONE_SECOND_IN_MS:int = 1000;
@@ -80,7 +82,7 @@ package kabam.rotmg.account.core.services
             else
             {
                 this.onTextError(_arg_2);
-            };
+            }
         }
 
         public function makeRequestData():Object
@@ -106,7 +108,7 @@ package kabam.rotmg.account.core.services
                 if (_local_3 == 5)
                 {
                     this.sendRequest();
-                };
+                }
                 _local_4 = new MigrationDialog(this.account, _local_3);
                 this.fromMigration = true;
                 _local_4.done.addOnce(this.sendRequest);
@@ -124,8 +126,8 @@ package kabam.rotmg.account.core.services
                         if (_local_2.Account[0].hasOwnProperty("PaymentData"))
                         {
                             WebAccount(this.account).paymentData = _local_2.Account[0].PaymentData;
-                        };
-                    };
+                        }
+                    }
                     if (_local_2.Account[0].hasOwnProperty("SecurityQuestions"))
                     {
                         this.securityQuestionsModel.showSecurityQuestionsOnStartup = (_local_2.Account[0].SecurityQuestions[0].ShowSecurityQuestionsDialog[0] == "1");
@@ -133,16 +135,16 @@ package kabam.rotmg.account.core.services
                         for each (_local_5 in _local_2.Account[0].SecurityQuestions[0].SecurityQuestionsKeys[0].SecurityQuestionsKey)
                         {
                             this.securityQuestionsModel.addSecurityQuestion(_local_5.toString());
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 this.charListData.dispatch(XML(_arg_1));
                 completeTask(true);
-            };
+            }
             if (this.retryTimer != null)
             {
                 this.stopRetryTimer();
-            };
+            }
         }
 
         private function onTextError(_arg_1:String):void
@@ -157,7 +159,7 @@ package kabam.rotmg.account.core.services
                     _local_2.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_INVALID);
                     _local_2.setEmail(this.account.getUserId());
                     StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(_local_2);
-                };
+                }
                 this.clearAccountAndReloadCharacters();
             }
             else
@@ -170,8 +172,8 @@ package kabam.rotmg.account.core.services
                 else
                 {
                     this.waitForASecondThenRetryRequest();
-                };
-            };
+                }
+            }
         }
 
         private function clearAccountAndReloadCharacters():void
@@ -210,7 +212,7 @@ package kabam.rotmg.account.core.services
             {
                 this.clearAccountAndReloadCharacters();
                 this.setLoadingMessage.dispatch("LoginError.tooManyFails");
-            };
+            }
         }
 
 

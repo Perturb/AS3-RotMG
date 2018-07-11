@@ -5,14 +5,15 @@
 
 package kabam.rotmg.application.impl
 {
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class LocalhostSetup implements ApplicationSetup 
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class LocalhostSetup implements ApplicationSetup 
     {
 
         private const SERVER:String = "http://localhost:8080";
-        private const ANALYTICS:String = "UA-99999999-1";
+        private const ANALYTICS:String = "UA-101960510-5";
         private const BUILD_LABEL:String = "<font color='#FFEE00'>LOCALHOST</font> #{VERSION}";
 
 
@@ -70,6 +71,10 @@ package kabam.rotmg.application.impl
         public function isDebug():Boolean
         {
             return (true);
+        }
+
+        public function getServerDomain():String{
+            return ("localhost");
         }
 
 

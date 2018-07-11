@@ -1,21 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.VolumeSliderBar
 
 package com.company.assembleegameclient.ui.options
 {
-    import flash.display.Sprite;
-    import flash.display.Shape;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.geom.Point;
-    import flash.events.MouseEvent;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Point;
+import flash.text.TextFieldAutoSize;
 
-    public class VolumeSliderBar extends Sprite 
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class VolumeSliderBar extends Sprite
     {
 
         private const MIN:Number = 0;
@@ -95,7 +96,7 @@ package com.company.assembleegameclient.ui.options
             {
                 stage.addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
                 stage.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            };
+            }
         }
 
         private function onMouseUp(_arg_1:MouseEvent):void
@@ -104,15 +105,15 @@ package com.company.assembleegameclient.ui.options
             if (stage)
             {
                 stage.removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
-            };
+            }
         }
 
         private function onMouseMove(_arg_1:MouseEvent):void
         {
-            if (!this._isMouseDown)
+            if ((!(this._isMouseDown)))
             {
                 return;
-            };
+            }
             this._mousePoint.x = _arg_1.currentTarget.mouseX;
             this._localPoint = this.globalToLocal(this._mousePoint);
             this.currentVolume = (this._localPoint.x / 100);

@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.json.SoftwareJsonParser
 
 package kabam.lib.json
 {
-    import com.adobe.serialization.json.JSON;
+import com.adobe.serialization.json.JSON;
 
-    public class SoftwareJsonParser implements JsonParser 
+public class SoftwareJsonParser implements JsonParser
     {
 
 

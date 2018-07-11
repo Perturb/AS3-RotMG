@@ -1,33 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.ItemTileRenderer
 
 package kabam.rotmg.dailyLogin.view
 {
-    import flash.display.Sprite;
-    import flash.filters.ColorMatrixFilter;
-    import flash.geom.Matrix;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import flash.display.Bitmap;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.dailyLogin.config.CalendarSettings;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class ItemTileRenderer extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.ColorMatrixFilter;
+import flash.geom.Matrix;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.dailyLogin.config.CalendarSettings;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.swiftsuspenders.Injector;
+
+public class ItemTileRenderer extends Sprite 
     {
 
         protected static const DIM_FILTER:Array = [new ColorMatrixFilter([0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 1, 0])];
@@ -63,10 +66,10 @@ package kabam.rotmg.dailyLogin.view
 
         private function onTileHover(_arg_1:MouseEvent):void
         {
-            if (!stage)
+            if ((!(stage)))
             {
                 return;
-            };
+            }
             var _local_2:ItemTile = (_arg_1.currentTarget as ItemTile);
             this.addToolTipToTile(_local_2);
         }
@@ -87,9 +90,9 @@ package kabam.rotmg.dailyLogin.view
                 else
                 {
                     _local_2 = TextKey.ITEM;
-                };
+                }
                 this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, TextKey.ITEM_EMPTY_SLOT, 200, {"itemType":TextKey.wrapForTokenResolution(_local_2)});
-            };
+            }
             this.tooltip.attachToTarget(_arg_1);
             var _local_3:Injector = StaticInjectorContext.getInjector();
             var _local_4:ShowTooltipSignal = _local_3.getInstance(ShowTooltipSignal);
@@ -107,7 +110,7 @@ package kabam.rotmg.dailyLogin.view
                 if (((_local_4 >= 0x9000) && (_local_4 < 0xF000)))
                 {
                     _local_4 = 36863;
-                };
+                }
                 _local_1 = ObjectLibrary.getRedrawnTextureFromType(_local_4, CalendarSettings.ITEM_SIZE, true);
                 _local_2 = ObjectLibrary.xmlLibrary_[_local_4];
                 if ((((_local_2) && (_local_2.hasOwnProperty("Doses"))) && (this.bitmapFactory)))
@@ -115,13 +118,13 @@ package kabam.rotmg.dailyLogin.view
                     _local_1 = _local_1.clone();
                     _local_3 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_1.draw(_local_3, DOSE_MATRIX);
-                };
+                }
                 if ((((_local_2) && (_local_2.hasOwnProperty("Quantity"))) && (this.bitmapFactory)))
                 {
                     _local_1 = _local_1.clone();
                     _local_3 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_1.draw(_local_3, DOSE_MATRIX);
-                };
+                }
                 this.itemBitmap.bitmapData = _local_1;
                 this.itemBitmap.x = (-(_local_1.width) / 2);
                 this.itemBitmap.y = (-(_local_1.width) / 2);
@@ -130,7 +133,7 @@ package kabam.rotmg.dailyLogin.view
             else
             {
                 visible = false;
-            };
+            }
         }
 
 

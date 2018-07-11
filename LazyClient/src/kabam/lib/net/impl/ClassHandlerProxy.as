@@ -5,10 +5,11 @@
 
 package kabam.lib.net.impl
 {
-    import kabam.lib.net.api.MessageHandlerProxy;
-    import org.swiftsuspenders.Injector;
+import kabam.lib.net.api.MessageHandlerProxy;
 
-    public class ClassHandlerProxy implements MessageHandlerProxy 
+import org.swiftsuspenders.Injector;
+
+public class ClassHandlerProxy implements MessageHandlerProxy
     {
 
         private var injector:Injector;
@@ -38,7 +39,7 @@ package kabam.lib.net.impl
             if (!this.handlerType)
             {
                 return (null);
-            };
+            }
             this.handler = this.injector.getInstance(this.handlerType);
             return (this.handler.execute);
         }

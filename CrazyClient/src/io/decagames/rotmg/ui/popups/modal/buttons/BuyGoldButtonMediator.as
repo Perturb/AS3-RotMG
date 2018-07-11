@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.modal.buttons.BuyGoldButtonMediator
 
 package io.decagames.rotmg.ui.popups.modal.buttons
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-    import io.decagames.rotmg.ui.buttons.BaseButton;
+import io.decagames.rotmg.ui.buttons.BaseButton;
+import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
 
-    public class BuyGoldButtonMediator extends Mediator 
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class BuyGoldButtonMediator extends Mediator 
     {
 
         [Inject]

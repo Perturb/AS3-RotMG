@@ -5,15 +5,17 @@
 
 package kabam.rotmg.packages.model
 {
-    import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
-    import org.osflash.signals.Signal;
-    import flash.display.Loader;
-    import flash.events.Event;
-    import flash.events.IOErrorEvent;
-    import flash.events.SecurityErrorEvent;
-    import flash.net.URLRequest;
+import flash.display.Loader;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.SecurityErrorEvent;
+import flash.net.URLRequest;
 
-    public class PackageInfo extends GenericBoxInfo 
+import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
+
+import org.osflash.signals.Signal;
+
+public class PackageInfo extends GenericBoxInfo
     {
 
         public static const PURCHASE_TYPE_MIXED:String = "PURCHASE_TYPE_MIXED";
@@ -25,6 +27,7 @@ package kabam.rotmg.packages.model
         private var _showOnLogin:Boolean;
         private var _charSlot:int;
         private var _vaultSlot:int;
+        private var _gold:int;
         public var imageLoadedSignal:Signal = new Signal();
         public var popupImageLoadedSignal:Signal = new Signal();
         private var _loader:Loader;
@@ -43,9 +46,9 @@ package kabam.rotmg.packages.model
                 if (((this._charSlot > 0) || (this._vaultSlot > 0)))
                 {
                     return (PURCHASE_TYPE_MIXED);
-                };
+                }
                 return (PURCHASE_TYPE_CONTENTS_ONLY);
-            };
+            }
             return (PURCHASE_TYPE_SLOTS_ONLY);
         }
 
@@ -67,7 +70,7 @@ package kabam.rotmg.packages.model
             }
             catch(error:SecurityError)
             {
-            };
+            }
         }
 
         private function unbindLoaderEvents(_arg_1:Loader, _arg_2:Function):void
@@ -77,7 +80,7 @@ package kabam.rotmg.packages.model
                 _arg_1.contentLoaderInfo.removeEventListener(Event.COMPLETE, _arg_2);
                 _arg_1.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
                 _arg_1.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityEventError);
-            };
+            }
         }
 
         private function onIOError(_arg_1:IOErrorEvent):void
@@ -154,6 +157,16 @@ package kabam.rotmg.packages.model
         public function set vaultSlot(_arg_1:int):void
         {
             this._vaultSlot = _arg_1;
+        }
+
+        public function get gold():int
+        {
+            return (this._gold);
+        }
+
+        public function set gold(_arg_1:int):void
+        {
+            this._gold = _arg_1;
         }
 
 

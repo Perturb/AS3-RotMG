@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.PortalPanelMediator
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.ui.panels.PortalPanel;
-    import kabam.rotmg.game.signals.ExitGameSignal;
+import com.company.assembleegameclient.ui.panels.PortalPanel;
 
-    public class PortalPanelMediator extends Mediator 
+import kabam.rotmg.game.signals.ExitGameSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PortalPanelMediator extends Mediator
     {
 
         [Inject]

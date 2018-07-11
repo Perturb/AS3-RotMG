@@ -1,24 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask
 
 package kabam.rotmg.dailyLogin.tasks
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import kabam.rotmg.build.api.BuildData;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.dailyLogin.model.CalendarTypes;
-    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
-    import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
-    import com.company.util.MoreObjectUtil;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreObjectUtil;
 
-    public class FetchPlayerCalendarTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+import kabam.rotmg.dailyLogin.model.CalendarDayModel;
+import kabam.rotmg.dailyLogin.model.CalendarTypes;
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class FetchPlayerCalendarTask extends BaseTask 
     {
 
         [Inject]
@@ -58,7 +59,7 @@ package kabam.rotmg.dailyLogin.tasks
             else
             {
                 this.onTextError(_arg_2);
-            };
+            }
         }
 
         private function onCalendarUpdate(param1:String):void
@@ -73,22 +74,22 @@ package kabam.rotmg.dailyLogin.tasks
             {
                 completeTask(true);
                 return;
-            };
+            }
             this.dailyLoginModel.clear();
             var serverTimestamp:Number = (parseFloat(xmlData.attribute("serverTime")) * 1000);
             this.dailyLoginModel.setServerTime(serverTimestamp);
             if (((!(Parameters.data_.calendarShowOnDay)) || (Parameters.data_.calendarShowOnDay < this.dailyLoginModel.getTimestampDay())))
             {
                 this.dailyLoginModel.shouldDisplayCalendarAtStartup = true;
-            };
+            }
             if (((xmlData.hasOwnProperty("NonConsecutive")) && (xmlData.NonConsecutive..Login.length() > 0)))
             {
                 this.parseCalendar(xmlData.NonConsecutive, CalendarTypes.NON_CONSECUTIVE, xmlData.attribute("nonconCurDay"));
-            };
+            }
             if (((xmlData.hasOwnProperty("Consecutive")) && (xmlData.Consecutive..Login.length() > 0)))
             {
                 this.parseCalendar(xmlData.Consecutive, CalendarTypes.CONSECUTIVE, xmlData.attribute("conCurDay"));
-            };
+            }
             completeTask(true);
         }
 
@@ -105,17 +106,17 @@ package kabam.rotmg.dailyLogin.tasks
                     _local_6.claimKey = _local_5.key;
                     _local_4 = 0;
                     this.account.reportIntStat("NumStars", _local_4);
-                    if (_local_4 > 2)
+                    if (Parameters.data_.autoClaimCalendar)
                     {
-                        GameServerConnectionConcrete.claimkey = _local_5.key;
-                    };
-                };
+                        Parameters.dailyClaimKeys.push(_local_6.claimKey);
+                    }
+                }
                 this.dailyLoginModel.addDay(_local_6, _arg_2);
-            };
+            }
             if (_arg_3)
             {
                 this.dailyLoginModel.setCurrentDay(_arg_2, int(_arg_3));
-            };
+            }
             this.dailyLoginModel.setUserDay(_arg_1.attribute("days"), _arg_2);
             this.dailyLoginModel.calculateCalendar(_arg_2);
         }

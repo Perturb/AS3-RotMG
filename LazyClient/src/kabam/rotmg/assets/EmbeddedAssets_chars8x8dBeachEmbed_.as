@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_chars8x8dBeachEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

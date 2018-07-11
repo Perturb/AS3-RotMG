@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.PointUtil
 
 package com.company.util
 {
-    import flash.geom.Point;
+import flash.geom.Point;
 
-    public class PointUtil 
+public class PointUtil
     {
 
         public static const ORIGIN:Point = new Point(0, 0);

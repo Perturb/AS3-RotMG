@@ -5,10 +5,10 @@
 
 package kabam.lib.console.controller
 {
-    import kabam.lib.console.model.Console;
-    import kabam.lib.console.signals.ConsoleLogSignal;
+import kabam.lib.console.model.Console;
+import kabam.lib.console.signals.ConsoleLogSignal;
 
-    public final class ListActionsCommand 
+public final class ListActionsCommand 
     {
 
         [Inject]

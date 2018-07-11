@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.sound.SFX
 
 package com.company.assembleegameclient.sound
 {
-    import flash.media.SoundTransform;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class SFX 
+import flash.media.SoundTransform;
+
+public class SFX
     {
 
         private static var sfxTrans_:SoundTransform;

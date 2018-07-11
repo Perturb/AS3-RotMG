@@ -1,17 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.ParseCharListXmlCommand
 
 package kabam.rotmg.classes.control
 {
-    import kabam.rotmg.classes.model.ClassesModel;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.classes.model.CharacterSkinState;
+import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
 
-    public class ParseCharListXmlCommand 
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.classes.model.ClassesModel;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class ParseCharListXmlCommand 
     {
 
         [Inject]
@@ -20,6 +23,8 @@ package kabam.rotmg.classes.control
         public var model:ClassesModel;
         [Inject]
         public var logger:ILogger;
+        [Inject]
+        public var statsTracker:CharactersMetricsTracker;
 
 
         public function execute():void
@@ -27,6 +32,7 @@ package kabam.rotmg.classes.control
             this.parseMaxLevelsAchieved();
             this.parseItemCosts();
             this.parseOwnership();
+            this.statsTracker.parseCharListData(this.data);
         }
 
         private function parseMaxLevelsAchieved():void
@@ -38,7 +44,7 @@ package kabam.rotmg.classes.control
             {
                 _local_2 = this.model.getCharacterClass(_local_1.@classType);
                 _local_2.setMaxLevelAchieved(_local_1.@maxLevel);
-            };
+            }
         }
 
         private function parseItemCosts():void
@@ -56,13 +62,13 @@ package kabam.rotmg.classes.control
                     if (((!(Boolean(int(_local_1.@purchasable)))) && (!(_local_2.id == 0))))
                     {
                         _local_2.setState(CharacterSkinState.UNLISTED);
-                    };
+                    }
                 }
                 else
                 {
                     this.logger.warn("Cannot set Character Skin cost: type {0} not found", [_local_1.@type]);
-                };
-            };
+                }
+            }
         }
 
         private function parseOwnership():void
@@ -80,8 +86,8 @@ package kabam.rotmg.classes.control
                 else
                 {
                     this.logger.warn("Cannot set Character Skin ownership: type {0} not found", [_local_1]);
-                };
-            };
+                }
+            }
         }
 
 

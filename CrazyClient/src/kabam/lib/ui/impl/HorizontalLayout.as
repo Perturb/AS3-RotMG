@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.ui.impl.HorizontalLayout
 
 package kabam.lib.ui.impl
 {
-    import kabam.lib.ui.api.Layout;
-    import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
+import flash.display.DisplayObject;
 
-    public class HorizontalLayout implements Layout 
+import kabam.lib.ui.api.Layout;
+
+public class HorizontalLayout implements Layout 
     {
 
         private var padding:int = 0;
@@ -37,7 +37,7 @@ package kabam.lib.ui.impl
                 _local_3.x = _local_5;
                 _local_5 = (_local_5 + (_local_3.width + this.padding));
                 _local_4++;
-            };
+            }
         }
 
 

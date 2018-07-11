@@ -5,11 +5,11 @@
 
 package kabam.lib.ui.impl
 {
-    import kabam.lib.ui.api.Layout;
-    import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
+import flash.display.DisplayObject;
 
-    public class HorizontalLayout implements Layout 
+import kabam.lib.ui.api.Layout;
+
+public class HorizontalLayout implements Layout 
     {
 
         private var padding:int = 0;
@@ -37,7 +37,7 @@ package kabam.lib.ui.impl
                 _local_6.x = _local_3;
                 _local_3 = (_local_3 + (_local_6.width + this.padding));
                 _local_5++;
-            };
+            }
         }
 
 

@@ -1,29 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.graphic3D.Graphic3D
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.stage3D.proxies.TextureProxy;
-    import flash.geom.Matrix3D;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
-    import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
-    import flash.display.BitmapData;
-    import flash.geom.Matrix;
-    import flash.display3D.VertexBuffer3D;
-    import flash.display3D.IndexBuffer3D;
-    import kabam.rotmg.stage3D.GraphicsFillExtra;
-    import flash.geom.ColorTransform;
-    import flash.display3D.Context3DProgramType;
-    import flash.display.GraphicsBitmapFill;
-    import flash.display.GraphicsGradientFill;
-    import flash.display3D.Context3DVertexBufferFormat;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsGradientFill;
+import flash.display3D.Context3DProgramType;
+import flash.display3D.Context3DVertexBufferFormat;
+import flash.display3D.IndexBuffer3D;
+import flash.display3D.VertexBuffer3D;
+import flash.geom.ColorTransform;
+import flash.geom.Matrix;
+import flash.geom.Matrix3D;
 
-    public class Graphic3D 
+import kabam.rotmg.stage3D.GraphicsFillExtra;
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+import kabam.rotmg.stage3D.proxies.TextureProxy;
+import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
+
+public class Graphic3D
     {
 
         private static const gradientVertex:Vector.<Number> = Vector.<Number>([-0.5, 0.5, 0, 0, 0, 0, 0.01, 0, 1, 0.5, 0.5, 0, 0, 0, 0, 0.3, 1, 1, -0.5, -0.5, 0, 0, 0, 0, 0.1, 0, 0, 0.5, -0.5, 0, 0, 0, 0, 0.2, 1, 0]);
@@ -61,7 +60,7 @@ package kabam.rotmg.stage3D.graphic3D
             if (this.sinkLevel != 0)
             {
                 this.offsetMatrix = Vector.<Number>([0, -(this.sinkLevel), 0, 0]);
-            };
+            }
             this.transform();
             var _local_3:ColorTransform = GraphicsFillExtra.getColorTransform(this.bitmapData);
             _arg_2.GetContext3D().setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 2, Vector.<Number>([_local_3.redMultiplier, _local_3.greenMultiplier, _local_3.blueMultiplier, _local_3.alphaMultiplier]));
@@ -77,7 +76,7 @@ package kabam.rotmg.stage3D.graphic3D
                 this.gradientVB.uploadFromVector(gradientVertex, 0, 4);
                 this.gradientIB = _arg_2.GetContext3D().createIndexBuffer(6);
                 this.gradientIB.uploadFromVector(indices, 0, 6);
-            };
+            }
             this.shadowTransform(_arg_3, _arg_4);
         }
 
@@ -129,7 +128,7 @@ package kabam.rotmg.stage3D.graphic3D
                 _arg_1.GetContext3D().setProgramConstantsFromVector(Context3DProgramType.VERTEX, 4, this.offsetMatrix);
                 _arg_1.GetContext3D().setVertexBufferAt(2, null, 6, Context3DVertexBufferFormat.FLOAT_2);
                 _arg_1.drawTriangles(this.indexBuffer);
-            };
+            }
         }
 
         public function renderShadow(_arg_1:Context3DProxy):void

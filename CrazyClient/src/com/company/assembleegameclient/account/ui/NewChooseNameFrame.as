@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.NewChooseNameFrame
 
 package com.company.assembleegameclient.account.ui
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
+import flash.events.MouseEvent;
 
-    public class NewChooseNameFrame extends Frame 
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class NewChooseNameFrame extends Frame
     {
 
         public const choose:Signal = new Signal();

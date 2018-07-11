@@ -7,8 +7,6 @@ package kabam.rotmg.mysterybox.components
 	{
 		public function MysteryBoxSelectEntry_redBarEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

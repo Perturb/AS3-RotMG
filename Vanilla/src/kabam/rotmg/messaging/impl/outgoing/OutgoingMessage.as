@@ -5,10 +5,11 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import kabam.lib.net.impl.Message;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class OutgoingMessage extends Message 
+import kabam.lib.net.impl.Message;
+
+public class OutgoingMessage extends Message
     {
 
         public function OutgoingMessage(_arg_1:uint, _arg_2:Function)

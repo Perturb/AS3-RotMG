@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.net.impl.ClassHandlerProxy
 
 package kabam.lib.net.impl
 {
-    import kabam.lib.net.api.MessageHandlerProxy;
-    import org.swiftsuspenders.Injector;
+import kabam.lib.net.api.MessageHandlerProxy;
 
-    public class ClassHandlerProxy implements MessageHandlerProxy 
+import org.swiftsuspenders.Injector;
+
+public class ClassHandlerProxy implements MessageHandlerProxy
     {
 
         private var injector:Injector;
@@ -35,10 +36,10 @@ package kabam.lib.net.impl
 
         private function makeHandlerAndReturnExecute():Function
         {
-            if (!this.handlerType)
+            if ((!(this.handlerType)))
             {
                 return (null);
-            };
+            }
             this.handler = this.injector.getInstance(this.handlerType);
             return (this.handler.execute);
         }

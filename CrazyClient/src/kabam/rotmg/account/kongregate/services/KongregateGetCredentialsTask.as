@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.services.KongregateGetCredentialsTask
 
 package kabam.rotmg.account.kongregate.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.LoginTask;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
-    import kabam.rotmg.account.core.Account;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.BaseTask;
+import kabam.lib.tasks.Task;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.LoginTask;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
 
-    public class KongregateGetCredentialsTask extends BaseTask 
+public class KongregateGetCredentialsTask extends BaseTask 
     {
 
         [Inject]
@@ -33,7 +33,7 @@ package kabam.rotmg.account.kongregate.services
             else
             {
                 this.verifyCredentials();
-            };
+            }
         }
 
         private function verifyCredentials():void
@@ -49,7 +49,7 @@ package kabam.rotmg.account.kongregate.services
 
         private function updateGuestAccount():void
         {
-            this.account.updateUser(this.local.getGuestGUID(), "", "");
+            this.account.updateUser(this.local.getGuestGUID(), "", "", "");
             completeTask(true);
         }
 

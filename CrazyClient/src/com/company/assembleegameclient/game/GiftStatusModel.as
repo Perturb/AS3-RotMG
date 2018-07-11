@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.GiftStatusModel
 
 package com.company.assembleegameclient.game
 {
-    import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
+import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 
-    public class GiftStatusModel 
+public class GiftStatusModel
     {
 
         [Inject]

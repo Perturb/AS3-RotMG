@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.tooltips.controller.TooltipAbleMediator
 
 package kabam.rotmg.tooltips.controller
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.tooltips.TooltipAble;
 
-    public class TooltipAbleMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TooltipAbleMediator extends Mediator 
     {
 
         [Inject]

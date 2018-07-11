@@ -1,20 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebAccountDetailMediator
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.signals.SendConfirmEmailSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.SendConfirmEmailSignal;
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class WebAccountDetailMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebAccountDetailMediator extends Mediator
     {
 
         [Inject]
@@ -74,10 +75,10 @@ package kabam.rotmg.account.web.view
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void
         {
-            if (!_arg_1)
+            if ((!(_arg_1)))
             {
                 this.onError(_arg_2);
-            };
+            }
         }
 
         private function onError(_arg_1:String):void

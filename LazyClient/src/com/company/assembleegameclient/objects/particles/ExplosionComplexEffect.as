@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class ExplosionComplexEffect extends ParticleEffect 
+public class ExplosionComplexEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -54,7 +54,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_11 = new ExplosionComplexParticle(this.color_, 0.2, size_, this.maxLife_, _local_7, _local_8, _local_10);
                 map_.addObj(_local_11, x_, y_);
                 _local_4++;
-            };
+            }
             return (false);
         }
 
@@ -73,9 +73,10 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
+
 import flash.geom.Vector3D;
 
-class ExplosionComplexParticle extends Particle 
+class ExplosionComplexParticle extends Particle
 {
 
     public static var total_:int = 0;
@@ -104,9 +105,9 @@ class ExplosionComplexParticle extends Particle
             {
                 total_--;
                 this.deleted = true;
-            };
+            }
             return (false);
-        };
+        }
         x_ = (x_ + ((this.moveVec_.x * _arg_2) * 0.008));
         y_ = (y_ + ((this.moveVec_.y * _arg_2) * 0.008));
         z_ = (z_ + ((this.moveVec_.z * _arg_2) * 0.008));

@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.impl.FixedIPSetup
 
 package kabam.rotmg.application.impl
 {
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class FixedIPSetup implements ApplicationSetup 
+import kabam.rotmg.application.api.ApplicationSetup;
+
+public class FixedIPSetup implements ApplicationSetup 
     {
 
-        private const SERVER:String = "rotmgtesting.appspot.com";
+        private const SERVER:String = "test.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
         private const BUILD_LABEL:String = "<font color='#9900FF'>{IP}</font> #{VERSION}";
@@ -28,6 +29,11 @@ package kabam.rotmg.application.impl
         public function getAppEngineUrl(_arg_1:Boolean=false):String
         {
             return ((_arg_1) ? this.UNENCRYPTED : this.ENCRYPTED);
+        }
+
+        public function isServerLocal():Boolean
+        {
+            return (false);
         }
 
         public function getBuildLabel():String
@@ -69,6 +75,11 @@ package kabam.rotmg.application.impl
         public function isDebug():Boolean
         {
             return (false);
+        }
+
+        public function getServerDomain():String
+        {
+            return (this.SERVER);
         }
 
 

@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardTab
 
 package kabam.rotmg.arena.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.MouseEvent;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
 
-    public class ArenaLeaderboardTab extends Sprite 
+import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class ArenaLeaderboardTab extends Sprite 
     {
 
         private static const OVER_COLOR:int = 16567065;
@@ -73,10 +75,10 @@ package kabam.rotmg.arena.view
 
         private function onClick(_arg_1:MouseEvent):void
         {
-            if (!this.isSelected)
+            if ((!(this.isSelected)))
             {
                 this.selected.dispatch(this);
-            };
+            }
         }
 
         private function redraw():void
@@ -94,8 +96,8 @@ package kabam.rotmg.arena.view
                 else
                 {
                     this.label.setColor(OUT_COLOR);
-                };
-            };
+                }
+            }
         }
 
         private function onMouseUp(_arg_1:MouseEvent):void

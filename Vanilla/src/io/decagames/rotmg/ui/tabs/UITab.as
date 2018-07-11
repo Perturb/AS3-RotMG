@@ -5,21 +5,42 @@
 
 package io.decagames.rotmg.ui.tabs
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
+import flash.geom.Point;
 
-    public class UITab extends Sprite 
+import org.osflash.signals.Signal;
+
+public class UITab extends Sprite
     {
 
         private var _tabName:String;
+        private var _transparentBackgroundFix:Boolean;
+        private var _content:Sprite;
+        private var lastSize:Point = new Point(0, 0);
+        public var displaySignal:Signal = new Signal(Boolean);
 
-        public function UITab(_arg_1:String)
+        public function UITab(_arg_1:String, _arg_2:Boolean=false)
         {
             this._tabName = _arg_1;
+            this._transparentBackgroundFix = _arg_2;
         }
 
         public function addContent(_arg_1:Sprite):void
         {
-            addChild(_arg_1);
+            this._content = _arg_1;
+            addChild(this._content);
+        }
+
+        internal function drawTransparentBackground():void
+        {
+            if (((!(this.lastSize.x == this.content.width)) || (!(this.lastSize.y == this._content.height))))
+            {
+                this.content.graphics.clear();
+                this.content.graphics.beginFill(0xFF0000, 0);
+                this.content.graphics.drawRect(0, 0, this._content.width, this._content.height);
+                this.lastSize.x = this._content.width;
+                this.lastSize.y = this._content.height;
+            }
         }
 
         public function get tabName():String
@@ -34,6 +55,16 @@ package io.decagames.rotmg.ui.tabs
 
         public function dispose():void
         {
+        }
+
+        public function get transparentBackgroundFix():Boolean
+        {
+            return (this._transparentBackgroundFix);
+        }
+
+        public function get content():Sprite
+        {
+            return (this._content);
         }
 
 

@@ -5,9 +5,9 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class CharacterWindowBackground extends Sprite 
+public class CharacterWindowBackground extends Sprite
     {
 
         public function CharacterWindowBackground()

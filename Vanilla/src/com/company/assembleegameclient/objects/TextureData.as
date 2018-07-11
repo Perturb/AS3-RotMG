@@ -5,13 +5,13 @@
 
 package com.company.assembleegameclient.objects
 {
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import __AS3__.vec.Vector;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.util.AnimatedChar;
 
-    public class TextureData 
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
+
+public class TextureData
     {
 
         public var texture_:BitmapData = null;

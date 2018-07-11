@@ -5,14 +5,15 @@
 
 package com.company.assembleegameclient.ui.panels
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.IInteractiveObject;
-    import flash.events.Event;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.IInteractiveObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 
-    public class InteractPanel extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+public class InteractPanel extends Sprite
     {
 
         public static const MAX_DIST:Number = 1;
@@ -41,7 +42,7 @@ package com.company.assembleegameclient.ui.panels
             if (this.overridePanel_ != null)
             {
                 this.overridePanel_.removeEventListener(Event.COMPLETE, this.onComplete);
-            };
+            }
             this.overridePanel_ = _arg_1;
             this.overridePanel_.addEventListener(Event.COMPLETE, this.onComplete);
         }
@@ -60,7 +61,7 @@ package com.company.assembleegameclient.ui.panels
                 this.setPanel(this.overridePanel_);
                 this.currentPanel.draw();
                 return;
-            };
+            }
             _local_1 = this.requestInteractive();
             if (((this.currentPanel == null) || (!(_local_1 == this.currObj_))))
             {
@@ -73,13 +74,13 @@ package com.company.assembleegameclient.ui.panels
                 else
                 {
                     _local_2 = this.partyPanel_;
-                };
+                }
                 this.setPanel(_local_2);
-            };
+            }
             if (this.currentPanel)
             {
                 this.currentPanel.draw();
-            };
+            }
         }
 
         private function onComplete(_arg_1:Event):void
@@ -88,7 +89,7 @@ package com.company.assembleegameclient.ui.panels
             {
                 this.overridePanel_.removeEventListener(Event.COMPLETE, this.onComplete);
                 this.overridePanel_ = null;
-            };
+            }
             this.setPanel(null);
             this.draw();
         }
@@ -100,7 +101,7 @@ package com.company.assembleegameclient.ui.panels
                 ((this.currentPanel) && (removeChild(this.currentPanel)));
                 this.currentPanel = _arg_1;
                 ((this.currentPanel) && (this.positionPanelAndAdd()));
-            };
+            }
         }
 
         private function positionPanelAndAdd():void
@@ -114,7 +115,7 @@ package com.company.assembleegameclient.ui.panels
             {
                 this.currentPanel.x = 6;
                 this.currentPanel.y = 8;
-            };
+            }
             addChild(this.currentPanel);
         }
 

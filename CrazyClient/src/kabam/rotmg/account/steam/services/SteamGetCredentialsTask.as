@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamGetCredentialsTask
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.steam.SteamApi;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+import com.company.assembleegameclient.ui.dialogs.DebugDialog;
 
-    public class SteamGetCredentialsTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+public class SteamGetCredentialsTask extends BaseTask 
     {
 
         private static const ERROR_TEMPLATE:String = "Error: ${error}";
@@ -44,14 +45,14 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.onGetCredentialsError(_arg_2);
-            };
+            }
             completeTask(_arg_1, _arg_2);
         }
 
         private function onGetCredentialsDone(_arg_1:String):void
         {
             var _local_2:XML = new XML(_arg_1);
-            this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
+            this.account.updateUser(_local_2.GUID, _local_2.Secret, "", "");
             this.account.setPlatformToken(_local_2.PlatformToken);
         }
 

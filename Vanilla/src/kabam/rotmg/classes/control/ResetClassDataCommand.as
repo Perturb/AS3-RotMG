@@ -5,12 +5,12 @@
 
 package kabam.rotmg.classes.control
 {
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.classes.model.ClassesModel;
 
-    public class ResetClassDataCommand 
+public class ResetClassDataCommand
     {
 
         [Inject]
@@ -25,7 +25,7 @@ package kabam.rotmg.classes.control
             {
                 this.resetClass(this.classes.getClassAtIndex(_local_2));
                 _local_2++;
-            };
+            }
         }
 
         private function resetClass(_arg_1:CharacterClass):void
@@ -46,9 +46,9 @@ package kabam.rotmg.classes.control
                 if (_local_5 != _local_2)
                 {
                     this.resetSkin(_arg_1.skins.getSkinAt(_local_4));
-                };
+                }
                 _local_4++;
-            };
+            }
         }
 
         private function resetSkin(_arg_1:CharacterSkin):void

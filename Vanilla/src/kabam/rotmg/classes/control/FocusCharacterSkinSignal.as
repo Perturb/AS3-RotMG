@@ -5,10 +5,11 @@
 
 package kabam.rotmg.classes.control
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkin;
 
-    public class FocusCharacterSkinSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class FocusCharacterSkinSignal extends Signal
     {
 
         public function FocusCharacterSkinSignal()

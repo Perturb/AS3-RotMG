@@ -5,14 +5,17 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.StatusBar;
-    import com.company.assembleegameclient.ui.ExperienceBoostTimerPopup;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.events.Event;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.ExperienceBoostTimerPopup;
+import com.company.assembleegameclient.ui.StatusBar;
 
-    public class StatMetersView extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class StatMetersView extends Sprite
     {
 
         private var expBar_:StatusBar;
@@ -26,20 +29,20 @@ package kabam.rotmg.ui.view
 
         public function StatMetersView()
         {
-            this.expBar_ = new StatusBar(176, 16, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL);
-            this.fameBar_ = new StatusBar(176, 16, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME);
+            this.expBar_ = new StatusBar(176, 16, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL, false, true);
+            this.fameBar_ = new StatusBar(176, 16, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME, false, true);
             this.hpBar_ = new StatusBar(176, 16, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
-            //this.chpBar_ = new StatusBar(176, 12, 14693428, 0x545454, "CL");
+            this.chpBar_ = new StatusBar(176, 16, 14693428, 0x545454, "CL");
             this.mpBar_ = new StatusBar(176, 16, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
             this.hpBar_.y = 24;
-            //this.chpBar_.y = 34;
+            this.chpBar_.y = 36;
             this.mpBar_.y = 48;
             this.expBar_.visible = true;
             this.fameBar_.visible = false;
             addChild(this.expBar_);
             addChild(this.fameBar_);
             addChild(this.hpBar_);
-            //addChild(this.chpBar_);
+            addChild(this.chpBar_);
             addChild(this.mpBar_);
         }
 
@@ -51,12 +54,12 @@ package kabam.rotmg.ui.view
                 if (this.expTimer)
                 {
                     this.expTimer.update(_arg_1.xpTimer);
-                };
+                }
                 if (!this.expBar_.visible)
                 {
                     this.expBar_.visible = true;
                     this.fameBar_.visible = false;
-                };
+                }
                 this.expBar_.draw(_arg_1.exp_, _arg_1.nextLevelExp_, 0);
                 if (this.curXPBoost != _arg_1.xpBoost_)
                 {
@@ -68,8 +71,8 @@ package kabam.rotmg.ui.view
                     else
                     {
                         this.expBar_.hideMultiplierText();
-                    };
-                };
+                    }
+                }
                 if (_arg_1.xpTimer)
                 {
                     if (!this.areTempXpListenersAdded)
@@ -77,7 +80,7 @@ package kabam.rotmg.ui.view
                         this.expBar_.addEventListener("MULTIPLIER_OVER", this.onExpBarOver);
                         this.expBar_.addEventListener("MULTIPLIER_OUT", this.onExpBarOut);
                         this.areTempXpListenersAdded = true;
-                    };
+                    }
                 }
                 else
                 {
@@ -86,13 +89,13 @@ package kabam.rotmg.ui.view
                         this.expBar_.removeEventListener("MULTIPLIER_OVER", this.onExpBarOver);
                         this.expBar_.removeEventListener("MULTIPLIER_OUT", this.onExpBarOut);
                         this.areTempXpListenersAdded = false;
-                    };
+                    }
                     if (((this.expTimer) && (this.expTimer.parent)))
                     {
                         removeChild(this.expTimer);
                         this.expTimer = null;
-                    };
-                };
+                    }
+                }
             }
             else
             {
@@ -100,11 +103,11 @@ package kabam.rotmg.ui.view
                 {
                     this.fameBar_.visible = true;
                     this.expBar_.visible = false;
-                };
+                }
                 this.fameBar_.draw(_arg_1.currFame_, _arg_1.nextClassQuestFame_, 0);
-            };
+            }
+            chpBarManager(_arg_1);
             this.hpBar_.draw(_arg_1.hp_, _arg_1.maxHP_, _arg_1.maxHPBoost_, _arg_1.maxHPMax_, _arg_1.level_);
-            //this.chpBar_.draw(int(_arg_1.chp), _arg_1.cmaxhp, _arg_1.cmaxhpboost, _arg_1.maxHPMax_, _arg_1.level_);
             this.mpBar_.draw(_arg_1.mp_, _arg_1.maxMP_, _arg_1.maxMPBoost_, _arg_1.maxMPMax_, _arg_1.level_);
         }
 
@@ -119,7 +122,31 @@ package kabam.rotmg.ui.view
             {
                 removeChild(this.expTimer);
                 this.expTimer = null;
-            };
+            }
+        }
+
+        private function chpBarManager(_arg_1:Player):void
+        {
+            var _local_2:Boolean = this.contains(this.chpBar_);
+            if (Parameters.data_.autoNexusDebug)
+            {
+                if (!(_local_2))
+                {
+                    addChild(this.chpBar_);
+                }
+                if (this.hpBar_.y == 24) {
+                    this.hpBar_.y = 16;
+                }
+                this.chpBar_.draw(int(_arg_1.chp), _arg_1.chpMax, _arg_1.chpBoost, _arg_1.maxHPMax_, _arg_1.level_);
+            }
+            else
+            {
+                if (_local_2)
+                {
+                    this.hpBar_.y = 24;
+                    removeChild(this.chpBar_);
+                }
+            }
         }
 
 

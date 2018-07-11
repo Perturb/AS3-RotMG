@@ -5,34 +5,38 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import kabam.rotmg.editor.view.components.savedialog.TagsInputField;
-    import kabam.rotmg.account.core.Account;
-    import com.company.assembleegameclient.account.ui.CheckBoxField;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.lib.json.JsonParser;
-    import ru.inspirit.net.MultipartURLLoader;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import flash.events.IOErrorEvent;
-    import kabam.rotmg.fortune.components.TimerCallback;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
 
-    public class SubmitMapForm extends Frame 
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.MouseEvent;
+
+import kabam.lib.json.JsonParser;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.editor.view.components.savedialog.TagsInputField;
+import kabam.rotmg.fortune.components.TimerCallback;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+import ru.inspirit.net.MultipartURLLoader;
+
+public class SubmitMapForm extends Frame
     {
 
         public static var cancel:Signal;
 
-        internal var mapName:TextInputField;
-        internal var descr:TextInputField;
-        internal var tags:TagsInputField;
-        internal var mapjm:String;
-        internal var mapInfo:Object;
-        internal var account:Account;
-        internal var checkbox:CheckBoxField;
+        private var mapName:TextInputField;
+        private var descr:TextInputField;
+        private var tags:TagsInputField;
+        private var mapjm:String;
+        private var mapInfo:Object;
+        private var account:Account;
+        private var checkbox:CheckBoxField;
 
         public function SubmitMapForm(_arg_1:String, _arg_2:Object, _arg_3:Account)
         {
@@ -117,7 +121,7 @@ package com.company.assembleegameclient.mapeditor
             else
             {
                 this.enableButtons();
-            };
+            }
         }
 
         private function onCompleteException(_arg_1:IOErrorEvent):void
@@ -141,7 +145,7 @@ package com.company.assembleegameclient.mapeditor
                 _local_3 = _local_2.loader.data.match("<.*>(.*)</.*>");
                 _local_4 = ((_local_3.length > 1) ? _local_3[1] : _local_2.loader.data);
                 this.descr.setError(_local_4);
-            };
+            }
             this.enableButtons();
         }
 
@@ -151,7 +155,7 @@ package com.company.assembleegameclient.mapeditor
             if (parent)
             {
                 parent.removeChild(this);
-            };
+            }
         }
 
         private function onRemovedFromStage(_arg_1:Event):void
@@ -159,12 +163,12 @@ package com.company.assembleegameclient.mapeditor
             if (rightButton_)
             {
                 rightButton_.removeEventListener(MouseEvent.CLICK, this.onSubmit);
-            };
+            }
             if (cancel)
             {
                 cancel.removeAll();
                 cancel = null;
-            };
+            }
         }
 
         private function validated(_arg_1:Object):Boolean
@@ -173,12 +177,12 @@ package com.company.assembleegameclient.mapeditor
             {
                 this.mapName.setError("Map name length out of range (6-24 chars)");
                 return (false);
-            };
+            }
             if (((_arg_1["description"].length < 10) || (_arg_1["description"].length > 250)))
             {
                 this.descr.setError("Description length out of range (10-250 chars)");
                 return (false);
-            };
+            }
             return (this.isValidMap());
         }
 
@@ -188,12 +192,12 @@ package com.company.assembleegameclient.mapeditor
             {
                 this.descr.setError("Must have at least one User Dungeon End region drawn in this dungeon. (tmp)");
                 return (false);
-            };
+            }
             if (this.mapInfo.numEntries < 1)
             {
                 this.descr.setError("Must have at least one Spawn Region drawn in this dungeon. (tmp)");
                 return (false);
-            };
+            }
             return (true);
         }
 

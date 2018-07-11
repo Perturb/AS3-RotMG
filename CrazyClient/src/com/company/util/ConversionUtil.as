@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.ConversionUtil
 
 package com.company.util
 {
-    import __AS3__.vec.Vector;
-    import flash.geom.Rectangle;
-    import flash.geom.Point;
-    import flash.geom.Vector3D;
-    import __AS3__.vec.*;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+import flash.geom.Vector3D;
 
-    public class ConversionUtil 
+public class ConversionUtil
     {
 
         public function ConversionUtil(_arg_1:StaticEnforcer)
@@ -23,7 +21,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return ([]);
-            };
+            }
             return (_arg_1.toString().split(_arg_2).map(mapParseInt));
         }
 
@@ -32,7 +30,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return ([]);
-            };
+            }
             return (_arg_1.toString().split(_arg_2).map(mapParseFloat));
         }
 
@@ -41,7 +39,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Vector.<int>());
-            };
+            }
             return (Vector.<int>(_arg_1.toString().split(_arg_2).map(mapParseInt)));
         }
 
@@ -50,7 +48,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Vector.<Number>());
-            };
+            }
             return (Vector.<Number>(_arg_1.toString().split(_arg_2).map(mapParseFloat)));
         }
 
@@ -59,7 +57,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return ([]);
-            };
+            }
             return (_arg_1.toString().split(_arg_2));
         }
 
@@ -68,7 +66,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Rectangle());
-            };
+            }
             var _local_3:Array = _arg_1.toString().split(_arg_2).map(mapParseFloat);
             return (((_local_3 == null) || (_local_3.length < 4)) ? new Rectangle() : new Rectangle(_local_3[0], _local_3[1], _local_3[2], _local_3[3]));
         }
@@ -78,7 +76,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Point());
-            };
+            }
             var _local_3:Array = _arg_1.toString().split(_arg_2).map(ConversionUtil.mapParseFloat);
             return (((_local_3 == null) || (_local_3.length < 2)) ? new Point() : new Point(_local_3[0], _local_3[1]));
         }
@@ -91,14 +89,14 @@ package com.company.util
                 _local_3.push(new Point());
                 _local_3.push(new Point());
                 return (_local_3);
-            };
+            }
             var _local_4:Array = _arg_1.toString().split(_arg_2).map(ConversionUtil.mapParseFloat);
             if (((_local_4 == null) || (_local_4.length < 4)))
             {
                 _local_3.push(new Point());
                 _local_3.push(new Point());
                 return (_local_3);
-            };
+            }
             _local_3.push(new Point(_local_4[0], _local_4[1]));
             _local_3.push(new Point(_local_4[2], _local_4[3]));
             return (_local_3);
@@ -109,7 +107,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Vector3D());
-            };
+            }
             var _local_3:Array = _arg_1.toString().split(_arg_2).map(ConversionUtil.mapParseFloat);
             return (((_local_3 == null) || (_local_3.length < 3)) ? new Vector3D() : new Vector3D(_local_3[0], _local_3[1], _local_3[2]));
         }
@@ -119,7 +117,7 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return (new Vector.<int>());
-            };
+            }
             return (Vector.<int>(_arg_1.toString().split(_arg_2).map(mapParseCharCode)));
         }
 
@@ -129,12 +127,12 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return;
-            };
+            }
             var _local_5:Array = _arg_1.toString().split(_arg_3).map(mapParseFloat);
             for each (_local_4 in _local_5)
             {
                 _arg_2.push(_local_4);
-            };
+            }
         }
 
         public static function addToIntVector(_arg_1:Object, _arg_2:Vector.<int>, _arg_3:String=","):void
@@ -143,12 +141,12 @@ package com.company.util
             if (_arg_1 == null)
             {
                 return;
-            };
+            }
             var _local_5:Array = _arg_1.toString().split(_arg_3).map(mapParseFloat);
             for each (_local_4 in _local_5)
             {
                 _arg_2.push(_local_4);
-            };
+            }
         }
 
         public static function mapParseFloat(_arg_1:*, ... _args):Number

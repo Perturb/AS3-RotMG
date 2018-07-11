@@ -1,19 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ZombifyGameMediator
 
 package kabam.rotmg.death.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.death.control.ZombifySignal;
-    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.utils.Dictionary;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Player;
 
-    public class ZombifyGameMediator extends Mediator 
+import flash.utils.Dictionary;
+
+import kabam.rotmg.death.control.ZombifySignal;
+import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+import kabam.rotmg.messaging.impl.incoming.Death;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ZombifyGameMediator extends Mediator 
     {
 
         [Inject]

@@ -5,15 +5,16 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.editor.CommandMenu;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.util.KeyCodes;
-    import kabam.rotmg.application.DynamicSettings;
-    import com.company.assembleegameclient.editor.CommandEvent;
-    import com.company.assembleegameclient.editor.CommandMenuItem;
+import com.company.assembleegameclient.editor.CommandEvent;
+import com.company.assembleegameclient.editor.CommandMenu;
+import com.company.assembleegameclient.editor.CommandMenuItem;
+import com.company.util.KeyCodes;
 
-    public class MECommandMenu extends CommandMenu 
+import kabam.rotmg.application.DynamicSettings;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+
+public class MECommandMenu extends CommandMenu
     {
 
         public static const NONE_COMMAND:int = 0;
@@ -35,7 +36,7 @@ package com.company.assembleegameclient.mapeditor
             if (((!(_local_1 == null)) && (_local_1.isAdmin())))
             {
                 addCommandMenuItem("S(A)mple", KeyCodes.A, this.select, SAMPLE_COMMAND);
-            };
+            }
             addCommandMenuItem("(P)ick Up", KeyCodes.P, this.select, PICK_UP_COMMAND);
             addCommandMenuItem("Drop", -1, this.select, DROP_COMMAND);
             addCommandMenuItem("(U)ndo", KeyCodes.U, this.onUndo, NONE_COMMAND);
@@ -54,7 +55,7 @@ package com.company.assembleegameclient.mapeditor
             else
             {
                 addBreak();
-            };
+            }
         }
 
         private function select(_arg_1:CommandMenuItem):void

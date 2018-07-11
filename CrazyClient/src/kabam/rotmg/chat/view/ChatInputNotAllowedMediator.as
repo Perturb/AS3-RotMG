@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatInputNotAllowedMediator
 
 package kabam.rotmg.chat.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.ui.signals.HUDModelInitialized;
-    import flash.events.MouseEvent;
+import flash.events.MouseEvent;
 
-    public class ChatInputNotAllowedMediator extends Mediator 
+import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.signals.HUDModelInitialized;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChatInputNotAllowedMediator extends Mediator 
     {
 
         [Inject]
@@ -43,7 +45,7 @@ package kabam.rotmg.chat.view
             {
                 this.view.mouseEnabled = false;
                 this.view.mouseChildren = false;
-            };
+            }
         }
 
         override public function destroy():void

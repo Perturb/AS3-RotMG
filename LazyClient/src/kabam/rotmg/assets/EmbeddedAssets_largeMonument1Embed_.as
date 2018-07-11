@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_largeMonument1Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

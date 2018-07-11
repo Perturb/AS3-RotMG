@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.constants.ActivationType
@@ -40,6 +40,7 @@ package kabam.rotmg.constants
         public static const SMALL_DIG:String = "Small_Dig";
         public static const FILL:String = "Fill";
         public static const GENERIC_ACTIVATE:String = "GenericActivate";
+        public static const TELEPORT_LIMIT:String = "TeleportLimit";
 
 
     }

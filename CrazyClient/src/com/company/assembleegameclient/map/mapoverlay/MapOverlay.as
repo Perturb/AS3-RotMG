@@ -1,16 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.mapoverlay.MapOverlay
 
 package com.company.assembleegameclient.map.mapoverlay
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.game.view.components.QueuedStatusText;
-    import kabam.rotmg.game.view.components.QueuedStatusTextList;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
 
-    public class MapOverlay extends Sprite 
+import flash.display.Sprite;
+
+import kabam.rotmg.game.view.components.QueuedStatusText;
+import kabam.rotmg.game.view.components.QueuedStatusTextList;
+
+public class MapOverlay extends Sprite
     {
 
         private const speechBalloons:Object = {};
@@ -29,18 +33,26 @@ package com.company.assembleegameclient.map.mapoverlay
             if (((_local_3) && (contains(_local_3))))
             {
                 removeChild(_local_3);
-            };
+            }
             this.speechBalloons[_local_2] = _arg_1;
             addChild(_arg_1);
         }
 
         public function addStatusText(_arg_1:CharacterStatusText):void
         {
+            if ((((!(Options.hidden)) && (Parameters.lowCPUMode)) && (!(_arg_1.go_ == _arg_1.go_.map_.player_))))
+            {
+                return;
+            }
             addChild(_arg_1);
         }
 
         public function addQueuedText(_arg_1:QueuedStatusText):void
         {
+            if ((((!(Options.hidden)) && (Parameters.lowCPUMode)) && (!(_arg_1.go_ == _arg_1.go_.map_.player_))))
+            {
+                return;
+            }
             this.addStatusText((_arg_1 as CharacterStatusText));
         }
 
@@ -65,8 +77,8 @@ package com.company.assembleegameclient.map.mapoverlay
                 else
                 {
                     _local_3.dispose();
-                };
-            };
+                }
+            }
         }
 
 

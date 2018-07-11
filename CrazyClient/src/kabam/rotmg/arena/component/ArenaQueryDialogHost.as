@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.component.ArenaQueryDialogHost
 
 package kabam.rotmg.arena.component
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import kabam.rotmg.arena.view.HostQueryDialog;
-    import flash.display.BitmapData;
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
 
-    public class ArenaQueryDialogHost extends Sprite 
+import kabam.rotmg.arena.view.HostQueryDialog;
+
+public class ArenaQueryDialogHost extends Sprite 
     {
 
         private const speechBubble:HostQuerySpeechBubble = makeSpeechBubble();

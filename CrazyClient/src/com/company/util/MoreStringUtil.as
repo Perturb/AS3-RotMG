@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.MoreStringUtil
 
 package com.company.util
 {
-    import flash.utils.ByteArray;
+import flash.utils.ByteArray;
 
-    public class MoreStringUtil 
+public class MoreStringUtil
     {
 
 
@@ -19,7 +19,7 @@ package com.company.util
             {
                 _local_3.writeByte(parseInt(_arg_1.substr(_local_2, 2), 16));
                 _local_2 = (_local_2 + 2);
-            };
+            }
             return (_local_3);
         }
 

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.services.FortuneModel
 
 package kabam.rotmg.fortune.services
 {
-    import kabam.rotmg.fortune.model.FortuneInfo;
-    import org.osflash.signals.Signal;
+import kabam.rotmg.fortune.model.FortuneInfo;
 
-    public class FortuneModel 
+import org.osflash.signals.Signal;
+
+public class FortuneModel
     {
 
         public static var HAS_FORTUNES:Boolean = false;

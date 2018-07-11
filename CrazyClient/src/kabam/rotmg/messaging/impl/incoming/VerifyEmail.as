@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.VerifyEmail
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class VerifyEmail extends IncomingMessage 
+public class VerifyEmail extends IncomingMessage 
     {
 
         public function VerifyEmail(_arg_1:uint, _arg_2:Function)

@@ -5,16 +5,18 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.MakePaymentTask;
-    import kabam.rotmg.account.core.PaymentData;
-    import kabam.rotmg.account.core.model.OfferModel;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.PaymentMethod;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.PaymentMethod;
 
-    public class WebMakePaymentTask extends BaseTask implements MakePaymentTask 
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.PaymentData;
+import kabam.rotmg.account.core.model.OfferModel;
+import kabam.rotmg.account.core.services.MakePaymentTask;
+
+public class WebMakePaymentTask extends BaseTask implements MakePaymentTask 
     {
 
         [Inject]

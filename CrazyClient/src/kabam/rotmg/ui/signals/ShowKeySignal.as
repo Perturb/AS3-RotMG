@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.signals.ShowKeySignal
 
 package kabam.rotmg.ui.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.model.Key;
+import kabam.rotmg.ui.model.Key;
 
-    public class ShowKeySignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class ShowKeySignal extends Signal
     {
 
         public static var instance:ShowKeySignal;

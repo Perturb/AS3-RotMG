@@ -1,32 +1,35 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.PortalPanel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import com.company.assembleegameclient.objects.Portal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import flash.text.TextFormatAlign;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import flash.events.MouseEvent;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.tutorial.doneAction;
-    import com.company.assembleegameclient.tutorial.Tutorial;
-    import com.company.assembleegameclient.objects.PortalNameParser;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Portal;
+import com.company.assembleegameclient.objects.PortalNameParser;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.tutorial.Tutorial;
+import com.company.assembleegameclient.tutorial.doneAction;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
-    public class PortalPanel extends Panel 
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+import org.osflash.signals.Signal;
+
+public class PortalPanel extends Panel 
     {
 
         private const LOCKED:String = "Locked ";
@@ -90,7 +93,7 @@ package com.company.assembleegameclient.ui.panels
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.enterPortal();
-            };
+            }
         }
 
         private function enterPortal():void
@@ -115,8 +118,8 @@ package com.company.assembleegameclient.ui.panels
                 {
                     removeChild(this.enterButton_);
                     addChild(this.fullText_);
-                };
-            };
+                }
+            }
         }
 
         private function updateNameText():void
@@ -134,7 +137,7 @@ package com.company.assembleegameclient.ui.panels
             if (((this.owner_.lockedPortal_) && (_local_1.indexOf(this.LOCKED) == 0)))
             {
                 return (_local_1.substr(this.LOCKED.length));
-            };
+            }
             return (this.parseJson(_local_1));
         }
 

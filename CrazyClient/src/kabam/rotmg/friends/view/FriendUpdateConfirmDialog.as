@@ -1,21 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.friends.view.FriendUpdateConfirmDialog
 
 package kabam.rotmg.friends.view
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import com.company.assembleegameclient.ui.dialogs.DialogCloser;
-    import com.company.assembleegameclient.ui.dialogs.CloseDialogComponent;
-    import kabam.rotmg.friends.model.FriendRequestVO;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.friends.controller.FriendActionSignal;
-    import flash.events.Event;
-    import org.osflash.signals.Signal;
+import com.company.assembleegameclient.ui.dialogs.CloseDialogComponent;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.assembleegameclient.ui.dialogs.DialogCloser;
 
-    public class FriendUpdateConfirmDialog extends Dialog implements DialogCloser 
+import flash.events.Event;
+
+import io.decagames.rotmg.social.model.FriendRequestVO;
+import io.decagames.rotmg.social.signals.FriendActionSignal;
+
+import kabam.rotmg.core.StaticInjectorContext;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+public class FriendUpdateConfirmDialog extends Dialog implements DialogCloser
     {
 
         private const closeDialogComponent:CloseDialogComponent = new CloseDialogComponent();

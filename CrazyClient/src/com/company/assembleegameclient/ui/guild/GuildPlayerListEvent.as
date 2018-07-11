@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.GuildPlayerListEvent
 
 package com.company.assembleegameclient.ui.guild
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class GuildPlayerListEvent extends Event 
+public class GuildPlayerListEvent extends Event 
     {
 
         public static const SET_RANK:String = "SET_RANK";

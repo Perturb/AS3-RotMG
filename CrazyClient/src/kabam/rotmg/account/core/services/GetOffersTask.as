@@ -1,19 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.services.GetOffersTask
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.model.OfferModel;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.util.offer.Offers;
+import com.company.assembleegameclient.util.offer.Offers;
 
-    public class GetOffersTask extends BaseTask 
+import flash.utils.getTimer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.model.OfferModel;
+import kabam.rotmg.appengine.api.AppEngineClient;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetOffersTask extends BaseTask
     {
 
         [Inject]
@@ -43,7 +46,7 @@ package kabam.rotmg.account.core.services
             {
                 this.model.lastOfferRequestGUID = this.guid;
                 this.model.lastOfferRequestTime = _local_1;
-            };
+            }
         }
 
         private function sendGetOffersRequest():void
@@ -72,7 +75,7 @@ package kabam.rotmg.account.core.services
             else
             {
                 this.onTextError(_arg_2);
-            };
+            }
             completeTask(_arg_1);
         }
 

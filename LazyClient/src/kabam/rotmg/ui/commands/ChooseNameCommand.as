@@ -5,13 +5,15 @@
 
 package kabam.rotmg.ui.commands
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.account.ui.NewChooseNameFrame;
-    import kabam.rotmg.ui.view.ChooseNameRegisterDialog;
+import com.company.assembleegameclient.account.ui.NewChooseNameFrame;
 
-    public class ChooseNameCommand 
+import flash.display.Sprite;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.ui.view.ChooseNameRegisterDialog;
+
+public class ChooseNameCommand
     {
 
         [Inject]
@@ -30,7 +32,7 @@ package kabam.rotmg.ui.commands
             else
             {
                 _local_1 = new ChooseNameRegisterDialog();
-            };
+            }
             this.openDialog.dispatch(_local_1);
         }
 

@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.events.DeathEvent
 
 package com.company.assembleegameclient.game.events
 {
-    import flash.events.Event;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Player;
 
-    public class DeathEvent extends Event 
+import flash.display.BitmapData;
+import flash.events.Event;
+
+public class DeathEvent extends Event 
     {
 
         public static const DEATH:String = "DEATH";

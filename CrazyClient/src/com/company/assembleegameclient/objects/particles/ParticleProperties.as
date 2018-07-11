@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ParticleProperties
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.TextureData;
-    import com.company.assembleegameclient.objects.animation.AnimationsData;
-    import com.company.assembleegameclient.objects.TextureDataConcrete;
+import com.company.assembleegameclient.objects.TextureData;
+import com.company.assembleegameclient.objects.TextureDataConcrete;
+import com.company.assembleegameclient.objects.animation.AnimationsData;
 
-    public class ParticleProperties 
+public class ParticleProperties
     {
 
         public var id_:String;
@@ -26,19 +26,19 @@ package com.company.assembleegameclient.objects.particles
             if (_arg_1.hasOwnProperty("Size"))
             {
                 this.size_ = Number(_arg_1.Size);
-            };
+            }
             if (_arg_1.hasOwnProperty("Z"))
             {
                 this.z_ = Number(_arg_1.Z);
-            };
+            }
             if (_arg_1.hasOwnProperty("Duration"))
             {
                 this.duration_ = Number(_arg_1.Duration);
-            };
+            }
             if (_arg_1.hasOwnProperty("Animation"))
             {
                 this.animationsData_ = new AnimationsData(_arg_1);
-            };
+            }
         }
 
     }

@@ -1,56 +1,58 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.components.MysteryBoxRollModal
 
 package kabam.rotmg.mysterybox.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
-    import flash.display.Bitmap;
-    import kabam.rotmg.fortune.components.ItemWithTooltip;
-    import kabam.rotmg.pets.view.components.DialogCloseButton;
-    import kabam.rotmg.pets.util.PetsViewAssetFactory;
-    import com.company.assembleegameclient.map.ParticleModalMap;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import com.company.assembleegameclient.util.Currency;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.utils.Timer;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.assets.EmbeddedAssets;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import kabam.rotmg.util.components.UIAssetsHelper;
-    import flash.filters.GlowFilter;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.pets.view.components.PopupWindowBackground;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormatAlign;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.pets.view.dialogs.evolving.Spinner;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-    import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
-    import io.decagames.rotmg.shop.ShopConfiguration;
-    import io.decagames.rotmg.shop.ShopPopupView;
-    import com.gskinner.motion.GTween;
-    import com.gskinner.motion.easing.Sine;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.ParticleModalMap;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
+import com.company.assembleegameclient.util.Currency;
+import com.gskinner.motion.GTween;
+import com.gskinner.motion.easing.Sine;
 
-    public class MysteryBoxRollModal extends Sprite 
+import flash.display.Bitmap;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.filters.GlowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
+import flash.utils.Timer;
+
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+import io.decagames.rotmg.shop.ShopConfiguration;
+import io.decagames.rotmg.shop.ShopPopupView;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.assets.EmbeddedAssets;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.fortune.components.ItemWithTooltip;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
+import kabam.rotmg.pets.view.components.DialogCloseButton;
+import kabam.rotmg.pets.view.components.PopupWindowBackground;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+import kabam.rotmg.ui.view.components.Spinner;
+import kabam.rotmg.util.components.LegacyBuyButton;
+import kabam.rotmg.util.components.UIAssetsHelper;
+
+import org.swiftsuspenders.Injector;
+
+public class MysteryBoxRollModal extends Sprite
     {
 
         public static const WIDTH:int = 415;
@@ -135,7 +137,7 @@ package kabam.rotmg.mysterybox.components
             {
                 this.indexInRolls.push(0);
                 _local_4++;
-            };
+            }
             this.centerModal();
             this.configureRollByQuantity(_arg_2);
             this.sendRollRequest();
@@ -179,7 +181,7 @@ package kabam.rotmg.mysterybox.components
                     this.rollTarget = 1;
                     this.swapImageTimer.delay = 50;
                     this.totalRollTimer.delay = 2000;
-            };
+            }
             if (this.mbi.isOnSale())
             {
                 _local_2 = (this.mbi.saleAmount * this.quantity_);
@@ -189,7 +191,7 @@ package kabam.rotmg.mysterybox.components
             {
                 _local_2 = (this.mbi.priceAmount * this.quantity_);
                 _local_3 = this.mbi.priceCurrency;
-            };
+            }
             if (this.quantity_ == 1)
             {
                 this.boxButton.setPrice(_local_2, this.mbi.priceCurrency);
@@ -202,7 +204,7 @@ package kabam.rotmg.mysterybox.components
                     "cost":_local_2.toString(),
                     "repeat":this.quantity_.toString()
                 }));
-            };
+            }
         }
 
         public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean=false):TextFieldDisplayConcrete
@@ -217,7 +219,7 @@ package kabam.rotmg.mysterybox.components
             else
             {
                 _local_5.setStringBuilder(new LineBuilder().setParams(_arg_1));
-            };
+            }
             _local_5.setWordWrap(true);
             _local_5.setMultiLine(true);
             _local_5.setAutoSize(TextFieldAutoSize.CENTER);
@@ -261,10 +263,10 @@ package kabam.rotmg.mysterybox.components
 
         private function sendRollRequest():void
         {
-            if (!this.moneyCheckPass())
+            if ((!(this.moneyCheckPass())))
             {
                 return;
-            };
+            }
             this.state = this.ROLL_STATE;
             this.closeButton.visible = false;
             var _local_1:Object = this.account.getCredentials();
@@ -280,7 +282,7 @@ package kabam.rotmg.mysterybox.components
                 _local_1.quantity = this.quantity_;
                 _local_1.price = this.mbi.priceAmount;
                 _local_1.currency = this.mbi.priceCurrency;
-            };
+            }
             this.client.sendRequest("/account/purchaseMysteryBox", _local_1);
             this.titleText = this.getText(this.mbi.title, TEXT_MARGIN, 6, true).setSize(18);
             this.titleText.setColor(0xFFDE00);
@@ -305,7 +307,7 @@ package kabam.rotmg.mysterybox.components
                 _local_1 = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(this.mbi._rollsWithContentsUnique[this.indexInRolls[_local_2]], this.iconSize, true));
                 this.itemBitmaps.push(_local_1);
                 _local_2++;
-            };
+            }
             this.displayItems(this.itemBitmaps);
             this.swapImageTimer.addEventListener(TimerEvent.TIMER, this.swapItemImage);
             this.swapImageTimer.start();
@@ -318,7 +320,7 @@ package kabam.rotmg.mysterybox.components
             if (this.requestComplete)
             {
                 this.showReward();
-            };
+            }
             this.totalRollTimer.removeEventListener(TimerEvent.TIMER, this.onTotalRollTimeComplete);
         }
 
@@ -358,10 +360,10 @@ package kabam.rotmg.mysterybox.components
                 else
                 {
                     this.indexInRolls[_local_2] = 0;
-                };
+                }
                 this.itemBitmaps[_local_2].bitmapData = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(this.mbi._rollsWithContentsUnique[this.indexInRolls[_local_2]], this.iconSize, true)).bitmapData;
                 _local_2++;
-            };
+            }
             this.swapImageTimer.start();
         }
 
@@ -387,11 +389,11 @@ package kabam.rotmg.mysterybox.components
                     _arg_1[1].y = (_arg_1[1].y + (HEIGHT / 3));
                     _arg_1[2].x = (_arg_1[2].x + ((WIDTH / 2) + 60));
                     _arg_1[2].y = (_arg_1[2].y + (HEIGHT / 3));
-            };
+            }
             for each (_local_2 in _arg_1)
             {
                 addChild(_local_2);
-            };
+            }
         }
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void
@@ -417,16 +419,16 @@ package kabam.rotmg.mysterybox.components
                 for each (_local_4 in _local_3.elements("Awards"))
                 {
                     this.rewardsList.push(_local_4.toString());
-                };
+                }
                 this.lastReward = this.rewardsList[0];
                 if (this.timerComplete)
                 {
                     this.showReward();
-                };
+                }
                 if (((_local_3.hasOwnProperty("Left")) && (!(this.mbi.unitsLeft == -1))))
                 {
                     this.mbi.unitsLeft = int(_local_3.Left);
-                };
+                }
                 _local_5 = StaticInjectorContext.getInjector().getInstance(GameModel).player;
                 if (_local_5 != null)
                 {
@@ -439,8 +441,8 @@ package kabam.rotmg.mysterybox.components
                         if (_local_3.hasOwnProperty("Fame"))
                         {
                             _local_5.fame_ = _local_3.Fame;
-                        };
-                    };
+                        }
+                    }
                 }
                 else
                 {
@@ -456,10 +458,10 @@ package kabam.rotmg.mysterybox.components
                             if (_local_3.hasOwnProperty("Fame"))
                             {
                                 _local_6.setFame(int(_local_3.Fame));
-                            };
-                        };
-                    };
-                };
+                            }
+                        }
+                    }
+                }
             }
             else
             {
@@ -470,7 +472,7 @@ package kabam.rotmg.mysterybox.components
                 if (LineBuilder.getLocalizedStringFromKey(_arg_2) != "")
                 {
                     _local_8 = _arg_2;
-                };
+                }
                 if (_arg_2.indexOf("MysteryBoxError.soldOut") >= 0)
                 {
                     _local_12 = _arg_2.split("|");
@@ -487,9 +489,9 @@ package kabam.rotmg.mysterybox.components
                                 "left":this.mbi.unitsLeft,
                                 "box":((this.mbi.unitsLeft == 1) ? LineBuilder.getLocalizedStringFromKey("MysteryBoxError.box") : LineBuilder.getLocalizedStringFromKey("MysteryBoxError.boxes"))
                             });
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 if (_arg_2.indexOf("MysteryBoxError.maxPurchase") >= 0)
                 {
                     _local_14 = _arg_2.split("|");
@@ -503,17 +505,17 @@ package kabam.rotmg.mysterybox.components
                         else
                         {
                             _local_8 = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.maxPurchaseLeft", {"left":_local_15});
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 if (_arg_2.indexOf("blockedForUser") >= 0)
                 {
                     _local_16 = _arg_2.split("|");
                     if (_local_16.length == 2)
                     {
                         _local_8 = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser", {"date":_local_16[1]});
-                    };
-                };
+                    }
+                }
                 _local_9 = new Dialog("MysteryBoxRollModal.purchaseFailedString", _local_8, "MysteryBoxRollModal.okString", null, null);
                 _local_9.addEventListener(Dialog.LEFT_BUTTON, this.onErrorOk);
                 _local_7.dispatch(_local_9);
@@ -522,7 +524,7 @@ package kabam.rotmg.mysterybox.components
                 _local_11.clearLastRanBlock();
                 _local_11.start();
                 this.close(true);
-            };
+            }
         }
 
         private function onErrorOk(_arg_1:Event):void
@@ -549,7 +551,7 @@ package kabam.rotmg.mysterybox.components
             {
                 _local_1 = int(this.mbi.priceCurrency);
                 _local_2 = (int(this.mbi.priceAmount) * this.quantity_);
-            };
+            }
             var _local_5:Boolean = true;
             var _local_8:Player = StaticInjectorContext.getInjector().getInstance(GameModel).player;
             if (_local_8 != null)
@@ -564,8 +566,8 @@ package kabam.rotmg.mysterybox.components
                 {
                     _local_7 = _local_4.getCredits();
                     _local_6 = _local_4.getFame();
-                };
-            };
+                }
+            }
             if (((_local_1 == Currency.GOLD) && (_local_7 < _local_2)))
             {
                 _local_3 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
@@ -579,8 +581,8 @@ package kabam.rotmg.mysterybox.components
                     _local_3 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
                     _local_3.dispatch(new NotEnoughFameDialog());
                     _local_5 = false;
-                };
-            };
+                }
+            }
             return (_local_5);
         }
 
@@ -595,8 +597,8 @@ package kabam.rotmg.mysterybox.components
             if (this.state == this.ROLL_STATE)
             {
                 return;
-            };
-            if (!_arg_1)
+            }
+            if ((!(_arg_1)))
             {
                 _local_2 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
                 if (this.parentSelectModal != null)
@@ -613,9 +615,9 @@ package kabam.rotmg.mysterybox.components
                     else
                     {
                         _local_2.dispatch(new MysteryBoxSelectModal());
-                    };
-                };
-            };
+                    }
+                }
+            }
             open = false;
         }
 
@@ -636,7 +638,7 @@ package kabam.rotmg.mysterybox.components
             {
                 this.nextRollTimer.addEventListener(TimerEvent.TIMER, this.onNextRollTimerComplete);
                 this.nextRollTimer.start();
-            };
+            }
             this.closeButton.visible = true;
             var _local_4:String = this.rewardsList.shift();
             var _local_5:Array = _local_4.split(",");
@@ -653,16 +655,16 @@ package kabam.rotmg.mysterybox.components
                 addChild(_local_3);
                 this.descTexts.push(_local_3);
                 _local_6 = (_local_6 + 25);
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _local_5.length)
             {
                 if (_local_2 < this.itemBitmaps.length)
                 {
                     this.itemBitmaps[_local_2].bitmapData = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(int(_local_5[_local_2]), this.iconSize, true)).bitmapData;
-                };
+                }
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < this.itemBitmaps.length)
             {
@@ -674,7 +676,7 @@ package kabam.rotmg.mysterybox.components
                     "scaleY":1
                 });
                 _local_2++;
-            };
+            }
             this.boxButton.alpha = 0;
             addChild(this.boxButton);
             if (this.rollCount == this.rollTarget)
@@ -682,7 +684,7 @@ package kabam.rotmg.mysterybox.components
                 this.doEaseInAnimation(this.boxButton, {"alpha":0}, {"alpha":1});
                 this.doEaseInAnimation(this.minusNavSprite, {"alpha":0}, {"alpha":1});
                 this.doEaseInAnimation(this.plusNavSprite, {"alpha":0}, {"alpha":1});
-            };
+            }
             this.doEaseInAnimation(this.spinners, {"alpha":0}, {"alpha":1});
             this.isShowReward = true;
         }
@@ -707,18 +709,18 @@ package kabam.rotmg.mysterybox.components
             if (_local_8.length > 0)
             {
                 _local_1 = new ItemWithTooltip(int(_local_8[0]), 64);
-                _local_2 = int(((HEIGHT / 6) - 10));
+                _local_2 = int(int(((HEIGHT / 6) - 10)));
                 _local_3 = (WIDTH - 65);
                 _local_1.x = (5 + (_local_3 * int((this.rollCount / 5))));
                 _local_1.y = (80 + (_local_2 * (this.rollCount % 5)));
                 _local_4 = (((WIDTH / 2) - 40) + (this.itemBitmaps[0].width * 0.5));
-                _local_5 = int(((HEIGHT / 3) + (this.itemBitmaps[0].height * 0.5)));
+                _local_5 = int(int(((HEIGHT / 3) + (this.itemBitmaps[0].height * 0.5))));
                 _local_6 = (_local_1.x + (_local_1.height * 0.5));
                 _local_7 = int(((100 + (_local_2 * (this.rollCount % 5))) + (0.5 * ((HEIGHT / 6) - 20))));
                 this.particleModalMap.doLightning(_local_4, _local_5, _local_6, _local_7, 115, 15787660, 0.2);
                 addChild(_local_1);
                 this.rewardsArray.push(_local_1);
-            };
+            }
         }
 
         private function clearReward():void
@@ -732,20 +734,20 @@ package kabam.rotmg.mysterybox.components
             for each (_local_1 in this.descTexts)
             {
                 removeChild(_local_1);
-            };
+            }
             while (this.descTexts.length > 0)
             {
                 this.descTexts.pop();
-            };
+            }
             removeChild(this.boxButton);
             for each (_local_2 in this.itemBitmaps)
             {
                 removeChild(_local_2);
-            };
+            }
             while (this.itemBitmaps.length > 0)
             {
                 this.itemBitmaps.pop();
-            };
+            }
         }
 
         private function clearShelveReward():void
@@ -754,11 +756,11 @@ package kabam.rotmg.mysterybox.components
             for each (_local_1 in this.rewardsArray)
             {
                 removeChild(_local_1);
-            };
+            }
             while (this.rewardsArray.length > 0)
             {
                 this.rewardsArray.pop();
-            };
+            }
         }
 
         private function centerModal():void
@@ -778,7 +780,7 @@ package kabam.rotmg.mysterybox.components
                         break;
                     case 10:
                         this.configureRollByQuantity(5);
-                };
+                }
             }
             else
             {
@@ -791,9 +793,9 @@ package kabam.rotmg.mysterybox.components
                             return;
                         case 5:
                             this.configureRollByQuantity(10);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function onRollClick(_arg_1:MouseEvent):void

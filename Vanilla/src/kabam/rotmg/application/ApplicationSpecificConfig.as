@@ -5,12 +5,13 @@
 
 package kabam.rotmg.application
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.lib.console.ConsoleExtension;
+import kabam.lib.console.ConsoleExtension;
+import kabam.rotmg.application.api.ApplicationSetup;
 
-    public class ApplicationSpecificConfig implements IConfig 
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class ApplicationSpecificConfig implements IConfig
     {
 
         [Inject]
@@ -24,7 +25,7 @@ package kabam.rotmg.application
             if (this.applicationSetup.isDebug())
             {
                 this.context.extend(ConsoleExtension);
-            };
+            }
         }
 
 

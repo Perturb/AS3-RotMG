@@ -5,14 +5,16 @@
 
 package com.company.assembleegameclient.game
 {
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.events.MouseEvent;
-    import flash.events.KeyboardEvent;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class IdleWatcher 
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+
+public class IdleWatcher
     {
 
         private static const MINUTE_IN_MS:int = (60 * 1000);//60000
@@ -44,22 +46,22 @@ package com.company.assembleegameclient.game
             if (this.idleTime_ < (FIRST_WARNING_MINUTES * MINUTE_IN_MS))
             {
                 return (false);
-            };
+            }
             if (((this.idleTime_ >= (FIRST_WARNING_MINUTES * MINUTE_IN_MS)) && (_local_2 < (FIRST_WARNING_MINUTES * MINUTE_IN_MS))))
             {
                 this.addTextLine.dispatch(this.makeFirstWarning());
                 return (false);
-            };
+            }
             if (((this.idleTime_ >= (SECOND_WARNING_MINUTES * MINUTE_IN_MS)) && (_local_2 < (SECOND_WARNING_MINUTES * MINUTE_IN_MS))))
             {
                 this.addTextLine.dispatch(this.makeSecondWarning());
                 return (false);
-            };
+            }
             if (((this.idleTime_ >= (KICK_MINUTES * MINUTE_IN_MS)) && (_local_2 < (KICK_MINUTES * MINUTE_IN_MS))))
             {
                 this.addTextLine.dispatch(this.makeThirdWarning());
                 return (true);
-            };
+            }
             return (false);
         }
 

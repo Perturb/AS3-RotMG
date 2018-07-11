@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.signals.ConsoleWatchSignal
 
 package kabam.lib.console.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.lib.console.model.Watch;
+import kabam.lib.console.model.Watch;
 
-    public class ConsoleWatchSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class ConsoleWatchSignal extends Signal 
     {
 
         public function ConsoleWatchSignal()

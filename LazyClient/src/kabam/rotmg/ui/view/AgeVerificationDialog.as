@@ -5,25 +5,28 @@
 
 package kabam.rotmg.ui.view
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.ui.components.DateField;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.Event;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class AgeVerificationDialog extends Dialog 
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.ui.components.DateField;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class AgeVerificationDialog extends Dialog
     {
 
         private static const WIDTH:int = 300;
 
         private const BIRTH_DATE_BELOW_MINIMUM_ERROR:String = "AgeVerificationDialog.tooYoung";
         private const BIRTH_DATE_INVALID_ERROR:String = "AgeVerificationDialog.invalidBirthDate";
-        private const MINIMUM_AGE:uint = 13;
+        private const MINIMUM_AGE:uint = 16;
         public const response:Signal = new Signal(Boolean);
 
         private var ageVerificationField:DateField;
@@ -128,8 +131,8 @@ package kabam.rotmg.ui.view
                     _local_4 = "";
                     _local_3 = false;
                     this.response.dispatch(true);
-                };
-            };
+                }
+            }
             this.errorLabel.setStringBuilder(new LineBuilder().setParams(_local_4));
             this.ageVerificationField.setErrorHighlight(_local_3);
             drawButtonsAndBackground();
@@ -143,7 +146,7 @@ package kabam.rotmg.ui.view
             if (((_local_1.month > _local_2.month) || ((_local_1.month == _local_2.month) && (_local_1.date > _local_2.date))))
             {
                 _local_3--;
-            };
+            }
             return (_local_3);
         }
 

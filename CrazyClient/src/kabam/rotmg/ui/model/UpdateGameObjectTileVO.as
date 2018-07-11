@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.model.UpdateGameObjectTileVO
 
 package kabam.rotmg.ui.model
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class UpdateGameObjectTileVO 
+public class UpdateGameObjectTileVO
     {
 
         public var tileX:int;

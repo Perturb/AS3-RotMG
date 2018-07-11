@@ -5,9 +5,9 @@
 
 package 
 {
-    import mx.resources.ResourceBundle;
+import mx.resources.ResourceBundle;
 
-    public class en_US$formatters_properties extends ResourceBundle 
+public class en_US$formatters_properties extends ResourceBundle
     {
 
         public function en_US$formatters_properties()

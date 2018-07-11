@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.signals.PlayGameSignal
 
 package kabam.rotmg.game.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.game.model.GameInitData;
 
-    public class PlayGameSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class PlayGameSignal extends Signal 
     {
 
         public function PlayGameSignal()

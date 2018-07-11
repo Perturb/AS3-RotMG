@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.VentEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class VentEffect extends ParticleEffect 
+public class VentEffect extends ParticleEffect 
     {
 
         private static const BUBBLE_PERIOD:int = 50;
@@ -32,14 +32,14 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             if (this.lastUpdate_ < 0)
             {
                 this.lastUpdate_ = Math.max(0, (_arg_1 - 400));
-            };
+            }
             x_ = this.go_.x_;
             y_ = this.go_.y_;
-            var _local_9:int = int(int((this.lastUpdate_ / BUBBLE_PERIOD)));
+            var _local_9:int = int(int(int((this.lastUpdate_ / BUBBLE_PERIOD))));
             while (_local_9 < int((_arg_1 / BUBBLE_PERIOD)))
             {
                 _local_3 = (_local_9 * BUBBLE_PERIOD);
@@ -51,7 +51,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_8 = (this.go_.y_ + (_local_6 * Math.sin(_local_5)));
                 map_.addObj(_local_4, _local_7, _local_8);
                 _local_9++;
-            };
+            }
             this.lastUpdate_ = _arg_1;
             return (true);
         }

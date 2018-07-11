@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.display.BitmapData;
-    import com.company.util.BitmapUtil;
+import com.company.util.BitmapUtil;
 
-    public class MaskedImage 
+import flash.display.BitmapData;
+
+public class MaskedImage
     {
 
         public var image_:BitmapData;

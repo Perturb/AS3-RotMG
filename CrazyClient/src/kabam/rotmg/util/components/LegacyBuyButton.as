@@ -1,36 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.LegacyBuyButton
 
 package kabam.rotmg.util.components
 {
-    import kabam.rotmg.util.components.api.BuyButton;
-    import flash.display.BitmapData;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.util.Currency;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.Graphics;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.Currency;
+import com.company.util.GraphicsUtil;
+import com.company.util.MoreColorUtil;
 
-    public class LegacyBuyButton extends BuyButton 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.CapsStyle;
+import flash.display.Graphics;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.events.MouseEvent;
+import flash.filters.ColorMatrixFilter;
+
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+import kabam.rotmg.util.components.api.BuyButton;
+
+public class LegacyBuyButton extends BuyButton 
     {
 
         private static const BEVEL:int = 4;
@@ -91,7 +91,7 @@ package kabam.rotmg.util.components
                 _local_3 = ((this.prefix != "") ? this.lineBuilder.setParams(this.prefix, {"cost":_arg_1.toString()}) : this.staticStringBuilder.setString(_arg_1.toString()));
                 this.text.setStringBuilder(_local_3);
                 this.updateUI();
-            };
+            }
         }
 
         public function setStringBuilder(_arg_1:StringBuilder):void
@@ -118,7 +118,7 @@ package kabam.rotmg.util.components
                 mouseEnabled = _arg_1;
                 filters = ((_arg_1) ? [] : [grayfilter]);
                 this.draw();
-            };
+            }
         }
 
         override public function setWidth(_arg_1:int):void
@@ -159,7 +159,7 @@ package kabam.rotmg.util.components
                     break;
                 default:
                     this.icon.bitmapData = null;
-            };
+            }
             this.updateIconPosition();
         }
 
@@ -201,7 +201,7 @@ package kabam.rotmg.util.components
             if (this.withOutLine)
             {
                 this.drawOutline(graphics);
-            };
+            }
         }
 
         private function getWidth():int

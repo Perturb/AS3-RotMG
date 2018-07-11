@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.ChoiceOption
 
 package com.company.assembleegameclient.ui.options
 {
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import com.company.util.MoreColorUtil;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreColorUtil;
 
-    public class ChoiceOption extends BaseOption 
+import flash.events.Event;
+
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ChoiceOption extends BaseOption
     {
 
         private var callback_:Function;
@@ -55,12 +56,12 @@ package com.company.assembleegameclient.ui.options
             {
                 this.color = ((this.color == 0xFFFFFF) ? 0xFF0000 : 0xFFFFFF);
                 desc_.setColor(this.color);
-            };
+            }
             Parameters.data_[paramName_] = this.choiceBox_.value();
             if (this.callback_ != null)
             {
                 this.callback_();
-            };
+            }
             Parameters.save();
         }
 

@@ -556,6 +556,23 @@
          </Frame>
       </Animation>
    </Object>
+   <Object type="0x96f" id="Event Pinata">
+      <DisplayId>Pinata</DisplayId>
+      <Class>Character</Class>
+      <Enemy/>
+      <KeepDamageRecord/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x8b</Index>
+      </Texture>
+      <MaxHitPoints>60000</MaxHitPoints>
+      <Sound id="0">weapon/firework</Sound>
+      <Defense>0</Defense>
+      <Size>160</Size>
+      <Exp>1000</Exp>
+      <StasisImmune/>
+      <ParalyzeImmune/>
+   </Object>
    <Object type="0x744D" id="Event Chest">
       <DisplayId>Event Chest</DisplayId>
       <Class>Character</Class>
@@ -568,7 +585,7 @@
       <MaxHitPoints>60000</MaxHitPoints>
       <Defense>0</Defense>
       <Size>160</Size>
-      <XpMult>5.13</XpMult>
+      <Exp>1000</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x744F" id="Event Chest Portal">
@@ -582,7 +599,7 @@
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>0</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0xd8d" id="Quest Chest">
       <DisplayId>Quest Chest</DisplayId>
@@ -595,7 +612,7 @@
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>0</Defense>
       <Size>140</Size>
-      <XpMult>51.2821</XpMult>
+      <Exp>10000</Exp>
    </Object>
    <Object type="0xd8f" id="Epic Quest Chest">
       <DisplayId>Quest Chest</DisplayId>
@@ -608,7 +625,7 @@
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>0</Defense>
       <Size>140</Size>
-      <XpMult>153.8462</XpMult>
+      <Exp>30000</Exp>
    </Object>
    <Object type="0x7412" id="Nexus Anchor">
       <Class>Character</Class>
@@ -767,5 +784,56 @@
       <ShadowColor>0xff8271</ShadowColor>
       <Z>0.4</Z>
       <Flying/>
+   </Object>
+   <Object type="0x407" id="Potion Pinata">
+      <DisplayId>Potion Pinata</DisplayId>
+      <Enemy/>
+      <Class>Character</Class>
+      <Texture>
+         <File>santaWorkshopObjects8x8</File>
+         <Index>0x6b</Index>
+      </Texture>
+      <HitSound>monster/default_hit</HitSound>
+      <DeathSound>monster/default_death</DeathSound>
+      <Size>100</Size>
+      <ShadowSize>100</ShadowSize>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Defense>0</Defense>
+      <Exp>35</Exp>
+      <StasisImmune/>
+   </Object>
+   <Object type="0x408" id="Key Pinata">
+      <DisplayId>Key Pinata</DisplayId>
+      <Enemy/>
+      <Class>Character</Class>
+      <Texture>
+         <File>santaWorkshopObjects8x8</File>
+         <Index>0x6a</Index>
+      </Texture>
+      <HitSound>monster/default_hit</HitSound>
+      <DeathSound>monster/default_death</DeathSound>
+      <Size>100</Size>
+      <ShadowSize>100</ShadowSize>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Defense>0</Defense>
+      <Exp>35</Exp>
+      <StasisImmune/>
+   </Object>
+   <Object type="0x409" id="Food Pinata">
+      <DisplayId>Food Pinata</DisplayId>
+      <Enemy/>
+      <Class>Character</Class>
+      <Texture>
+         <File>santaWorkshopObjects8x8</File>
+         <Index>0x6c</Index>
+      </Texture>
+      <HitSound>monster/default_hit</HitSound>
+      <DeathSound>monster/default_death</DeathSound>
+      <Size>100</Size>
+      <ShadowSize>100</ShadowSize>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Defense>0</Defense>
+      <Exp>35</Exp>
+      <StasisImmune/>
    </Object>
 </Objects>

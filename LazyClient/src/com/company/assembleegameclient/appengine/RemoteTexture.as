@@ -5,20 +5,24 @@
 
 package com.company.assembleegameclient.appengine
 {
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
-    import kabam.rotmg.appengine.api.RetryLoader;
-    import flash.net.URLLoaderDataFormat;
-    import ion.utils.png.PNGDecoder;
-    import flash.display.BitmapData;
-    import flash.utils.ByteArray;
+import flash.display.BitmapData;
+import flash.net.URLLoaderDataFormat;
+import flash.utils.ByteArray;
 
-    public class RemoteTexture 
+import ion.utils.png.PNGDecoder;
+
+import kabam.rotmg.appengine.api.RetryLoader;
+import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
+import kabam.rotmg.core.StaticInjectorContext;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class RemoteTexture
     {
 
-        private static const URL_PATTERN:String = "http://{DOMAIN}/picture/get";
+        private static const URL_PATTERN:String = "https://{DOMAIN}/picture/get";
         private static const ERROR_PATTERN:String = "Remote Texture Error: {ERROR} (id:{ID}, instance:{INSTANCE})";
         private static const START_TIME:int = int(new Date().getTime());
 
@@ -38,7 +42,7 @@ package com.company.assembleegameclient.appengine
 
         public function run():void
         {
-            var _local_1:String = ((this.instance_ == "testing") ? "rotmghrdtesting.appspot.com" : "realmofthemadgodhrd.appspot.com");
+            var _local_1:String = ((this.instance_ == "testing") ? "test.realmofthemadgod.com" : "realmofthemadgod.com");
             var _local_2:String = URL_PATTERN.replace("{DOMAIN}", _local_1);
             var _local_3:Object = {};
             _local_3.id = this.id_;
@@ -58,7 +62,7 @@ package com.company.assembleegameclient.appengine
             else
             {
                 this.reportError(_arg_2);
-            };
+            }
         }
 
         public function makeTexture(_arg_1:ByteArray):void

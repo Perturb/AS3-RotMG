@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.services.PackageModel
 
 package kabam.rotmg.packages.services
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-    import kabam.rotmg.packages.model.*;
+import kabam.rotmg.packages.model.PackageInfo;
 
-    public class PackageModel 
+import org.osflash.signals.Signal;
+
+public class PackageModel
     {
 
         public var numSpammed:int = 0;
@@ -30,8 +28,8 @@ package kabam.rotmg.packages.services
                 if (_local_1.slot != 0)
                 {
                     _local_2[(_local_1.slot - 1)] = _local_1;
-                };
-            };
+                }
+            }
             return (_local_2);
         }
 
@@ -43,8 +41,8 @@ package kabam.rotmg.packages.services
                 if (_local_1.popupImage != "")
                 {
                     return (_local_1);
-                };
-            };
+                }
+            }
             return (null);
         }
 
@@ -70,7 +68,7 @@ package kabam.rotmg.packages.services
             for each (_local_2 in _arg_1)
             {
                 this.models[_local_2.id] = _local_2;
-            };
+            }
             this.initialized = true;
             this.dataChanged.dispatch();
         }
@@ -96,7 +94,7 @@ package kabam.rotmg.packages.services
             for each (_local_1 in this.models)
             {
                 return (true);
-            };
+            }
             return (false);
         }
 

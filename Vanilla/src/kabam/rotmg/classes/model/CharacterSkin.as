@@ -5,10 +5,11 @@
 
 package kabam.rotmg.classes.model
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.assets.model.CharacterTemplate;
+import kabam.rotmg.assets.model.CharacterTemplate;
 
-    public class CharacterSkin 
+import org.osflash.signals.Signal;
+
+public class CharacterSkin
     {
 
         public const changed:Signal = new Signal(CharacterSkin);
@@ -37,7 +38,7 @@ package kabam.rotmg.classes.model
             {
                 this.isSelected = _arg_1;
                 this.changed.dispatch(this);
-            };
+            }
         }
 
         public function getState():CharacterSkinState
@@ -51,7 +52,7 @@ package kabam.rotmg.classes.model
             {
                 this.state = _arg_1;
                 this.changed.dispatch(this);
-            };
+            }
         }
 
 

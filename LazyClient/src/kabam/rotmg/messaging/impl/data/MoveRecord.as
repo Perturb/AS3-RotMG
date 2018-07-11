@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.data
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class MoveRecord 
+public class MoveRecord
     {
 
         public var time_:int;

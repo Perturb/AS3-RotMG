@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.model.AddSpeechBalloonVO
 
 package kabam.rotmg.game.model
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class AddSpeechBalloonVO 
+public class AddSpeechBalloonVO 
     {
 
         public var go:GameObject;

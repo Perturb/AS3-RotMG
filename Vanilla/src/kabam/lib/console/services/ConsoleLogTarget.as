@@ -5,13 +5,14 @@
 
 package kabam.lib.console.services
 {
-    import robotlegs.bender.framework.api.ILogTarget;
-    import kabam.lib.console.signals.ConsoleLogSignal;
-    import robotlegs.bender.extensions.logging.impl.LogMessageParser;
-    import robotlegs.bender.framework.api.IContext;
-    import robotlegs.bender.framework.api.LogLevel;
+import kabam.lib.console.signals.ConsoleLogSignal;
 
-    public class ConsoleLogTarget implements ILogTarget 
+import robotlegs.bender.extensions.logging.impl.LogMessageParser;
+import robotlegs.bender.framework.api.IContext;
+import robotlegs.bender.framework.api.ILogTarget;
+import robotlegs.bender.framework.api.LogLevel;
+
+public class ConsoleLogTarget implements ILogTarget 
     {
 
         private var consoleLog:ConsoleLogSignal;

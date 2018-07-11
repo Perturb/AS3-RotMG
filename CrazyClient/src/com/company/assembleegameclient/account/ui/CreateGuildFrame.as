@@ -1,21 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.CreateGuildFrame
 
 package com.company.assembleegameclient.account.ui
 {
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.game.events.GuildResultEvent;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.game.model.GameModel;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.game.events.GuildResultEvent;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class CreateGuildFrame extends Frame 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class CreateGuildFrame extends Frame 
     {
 
         public const close:Signal = new Signal();
@@ -61,14 +64,14 @@ package com.company.assembleegameclient.account.ui
                 if (_local_2 != null)
                 {
                     _local_2.fame_ = (_local_2.fame_ - Parameters.GUILD_CREATION_PRICE);
-                };
+                }
                 this.close.dispatch();
             }
             else
             {
                 this.name_.setError(_arg_1.errorKey, _arg_1.errorTokens);
                 enable();
-            };
+            }
         }
 
 

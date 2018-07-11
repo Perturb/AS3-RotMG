@@ -5,9 +5,9 @@
 
 package kabam.lib.net.impl
 {
-    import kabam.lib.net.api.MessageHandlerProxy;
+import kabam.lib.net.api.MessageHandlerProxy;
 
-    public class MethodHandlerProxy implements MessageHandlerProxy 
+public class MethodHandlerProxy implements MessageHandlerProxy
     {
 
         private var method:Function;

@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.GuildChroniclePanel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
 
-    public class GuildChroniclePanel extends ButtonPanel 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class GuildChroniclePanel extends ButtonPanel 
     {
 
         public function GuildChroniclePanel(_arg_1:GameSprite)

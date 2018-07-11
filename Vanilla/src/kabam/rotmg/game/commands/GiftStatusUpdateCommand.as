@@ -5,10 +5,11 @@
 
 package kabam.rotmg.game.commands
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import com.company.assembleegameclient.game.GiftStatusModel;
+import com.company.assembleegameclient.game.GiftStatusModel;
 
-    public class GiftStatusUpdateCommand extends Command 
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class GiftStatusUpdateCommand extends Command 
     {
 
         [Inject]

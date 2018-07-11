@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.StatData
 
 package kabam.rotmg.messaging.impl.data
 {
-    import kabam.rotmg.text.model.TextKey;
-    import flash.utils.IDataInput;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataInput;
+import flash.utils.IDataOutput;
 
-    public class StatData 
+import kabam.rotmg.text.model.TextKey;
+
+public class StatData 
     {
 
         public static const MAX_HP_STAT:int = 0;
@@ -143,7 +144,7 @@ package kabam.rotmg.messaging.impl.data
                     return (TextKey.STAT_MODEL_WISDOM_LONG);
                 case DEXTERITY_STAT:
                     return (TextKey.STAT_MODEL_DEXTERITY_LONG);
-            };
+            }
             return (TextKey.STAT_DATA_UNKNOWN_STAT);
         }
 
@@ -158,42 +159,42 @@ package kabam.rotmg.messaging.impl.data
                 case ACCOUNT_ID_STAT:
                 case OWNER_ACCOUNT_ID_STAT:
                     return (true);
-            };
+            }
             return (false);
         }
 
         public function parseFromInput(_arg_1:IDataInput):void
         {
             this.statType_ = _arg_1.readUnsignedByte();
-            if (!this.isStringStat())
+            if ((!(this.isStringStat())))
             {
                 this.statValue_ = _arg_1.readInt();
             }
             else
             {
                 this.strStatValue_ = _arg_1.readUTF();
-            };
+            }
         }
 
         public function writeToOutput(_arg_1:IDataOutput):void
         {
             _arg_1.writeByte(this.statType_);
-            if (!this.isStringStat())
+            if ((!(this.isStringStat())))
             {
                 _arg_1.writeInt(this.statValue_);
             }
             else
             {
                 _arg_1.writeUTF(this.strStatValue_);
-            };
+            }
         }
 
         public function toString():String
         {
-            if (!this.isStringStat())
+            if ((!(this.isStringStat())))
             {
                 return (((("[" + this.statType_) + ": ") + this.statValue_) + "]");
-            };
+            }
             return (((("[" + this.statType_) + ': "') + this.strStatValue_) + '"]');
         }
 

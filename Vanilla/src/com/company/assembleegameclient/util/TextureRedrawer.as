@@ -5,21 +5,22 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.filters.GlowFilter;
-    import flash.filters.BitmapFilterQuality;
-    import flash.utils.Dictionary;
-    import flash.display.BitmapData;
-    import flash.utils.ByteArray;
-    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-    import flash.geom.Matrix;
-    import flash.geom.Rectangle;
-    import com.company.util.PointUtil;
-    import flash.geom.ColorTransform;
-    import com.company.util.AssetLibrary;
-    import flash.display.Shader;
-    import flash.filters.ShaderFilter;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.PointUtil;
 
-    public class TextureRedrawer 
+import flash.display.BitmapData;
+import flash.display.Shader;
+import flash.filters.BitmapFilterQuality;
+import flash.filters.GlowFilter;
+import flash.filters.ShaderFilter;
+import flash.geom.ColorTransform;
+import flash.geom.Matrix;
+import flash.geom.Rectangle;
+import flash.utils.ByteArray;
+import flash.utils.Dictionary;
+
+public class TextureRedrawer
     {
 
         public static const magic:int = 12;
@@ -36,25 +37,25 @@ package com.company.assembleegameclient.util
         private static var colorTexture2:BitmapData = new BitmapDataSpy(1, 1, false);
 
 
-        public static function redraw(_arg_1:BitmapData, _arg_2:int, _arg_3:Boolean, _arg_4:uint, _arg_5:Boolean=true, _arg_6:Number=5):BitmapData
+        public static function redraw(_arg_1:BitmapData, _arg_2:int, _arg_3:Boolean, _arg_4:uint, _arg_5:Boolean=true, _arg_6:Number=5, _arg_7:int=0):BitmapData
         {
-            var _local_7:String = getHash(_arg_2, _arg_3, _arg_4, _arg_6);
-            if (((_arg_5) && (isCached(_arg_1, _local_7))))
+            var _local_8:String = getHash(_arg_2, _arg_3, _arg_4, _arg_6, _arg_7);
+            if (((_arg_5) && (isCached(_arg_1, _local_8))))
             {
-                return (redrawCaches[_arg_1][_local_7]);
-            };
-            var _local_8:BitmapData = resize(_arg_1, null, _arg_2, _arg_3, 0, 0, _arg_6);
-            _local_8 = GlowRedrawer.outlineGlow(_local_8, _arg_4, 1.4, _arg_5);
+                return (redrawCaches[_arg_1][_local_8]);
+            }
+            var _local_9:BitmapData = resize(_arg_1, null, _arg_2, _arg_3, 0, 0, _arg_6);
+            _local_9 = GlowRedrawer.outlineGlow(_local_9, _arg_4, 1.4, _arg_5, _arg_7);
             if (_arg_5)
             {
-                cache(_arg_1, _local_7, _local_8);
-            };
-            return (_local_8);
+                cache(_arg_1, _local_8, _local_9);
+            }
+            return (_local_9);
         }
 
-        private static function getHash(_arg_1:int, _arg_2:Boolean, _arg_3:uint, _arg_4:Number):String
+        private static function getHash(_arg_1:int, _arg_2:Boolean, _arg_3:uint, _arg_4:Number, _arg_5:int):String
         {
-            return ((((((_arg_1.toString() + ",") + _arg_3.toString()) + ",") + _arg_2) + ",") + _arg_4);
+            return ((((((((_arg_1.toString() + ",") + _arg_3.toString()) + ",") + _arg_2) + ",") + _arg_4) + ",") + _arg_5);
         }
 
         private static function cache(_arg_1:BitmapData, _arg_2:String, _arg_3:BitmapData):void
@@ -62,7 +63,7 @@ package com.company.assembleegameclient.util
             if (!(_arg_1 in redrawCaches))
             {
                 redrawCaches[_arg_1] = {};
-            };
+            }
             redrawCaches[_arg_1][_arg_2] = _arg_3;
         }
 
@@ -73,8 +74,8 @@ package com.company.assembleegameclient.util
                 if ((_arg_2 in redrawCaches[_arg_1]))
                 {
                     return (true);
-                };
-            };
+                }
+            }
             return (false);
         }
 
@@ -84,7 +85,7 @@ package com.company.assembleegameclient.util
             {
                 _arg_1 = retexture(_arg_1, _arg_2, _arg_5, _arg_6);
                 _arg_3 = int((_arg_3 / 5));
-            };
+            }
             var _local_8:int = int(((_arg_7 * (_arg_3 / 100)) * _arg_1.width));
             var _local_9:int = int(((_arg_7 * (_arg_3 / 100)) * _arg_1.height));
             var _local_10:Matrix = new Matrix();
@@ -102,12 +103,12 @@ package com.company.assembleegameclient.util
             {
                 _local_3 = new Dictionary();
                 cache_[_arg_2] = _local_3;
-            };
+            }
             var _local_4:BitmapData = _local_3[_arg_1];
             if (_local_4 != null)
             {
                 return (_local_4);
-            };
+            }
             _local_4 = new BitmapDataSpy(((_arg_2 + 4) + 4), ((_arg_2 + 4) + 4), true, 0);
             _local_4.fillRect(new Rectangle(4, 4, _arg_2, _arg_2), (0xFF000000 | _arg_1));
             _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, OUTLINE_FILTER);
@@ -125,16 +126,16 @@ package com.company.assembleegameclient.util
                 for each (_local_1 in _local_2)
                 {
                     _local_1.dispose();
-                };
-            };
+                }
+            }
             cache_ = new Dictionary();
             for each (_local_3 in faceCache_)
             {
                 for each (_local_1 in _local_3)
                 {
                     _local_1.dispose();
-                };
-            };
+                }
+            }
             faceCache_ = new Dictionary();
         }
 
@@ -143,18 +144,18 @@ package com.company.assembleegameclient.util
             if (_arg_2 == 1)
             {
                 return (_arg_1);
-            };
+            }
             var _local_3:Dictionary = faceCache_[_arg_2];
             if (_local_3 == null)
             {
                 _local_3 = new Dictionary();
                 faceCache_[_arg_2] = _local_3;
-            };
+            }
             var _local_4:BitmapData = _local_3[_arg_1];
             if (_local_4 != null)
             {
                 return (_local_4);
-            };
+            }
             _local_4 = _arg_1.clone();
             _local_4.colorTransform(_local_4.rect, new ColorTransform(_arg_2, _arg_2, _arg_2));
             _local_3[_arg_1] = _local_4;
@@ -192,7 +193,7 @@ package com.company.assembleegameclient.util
                     break;
                 default:
                     _local_3 = _arg_2;
-            };
+            }
             return (_local_3);
         }
 

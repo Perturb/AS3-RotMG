@@ -1,55 +1,58 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.CoreConfig
 
 package kabam.rotmg.core
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import flash.display.DisplayObjectContainer;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import kabam.rotmg.startup.control.StartupSequence;
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.core.signals.SetupDomainSecuritySignal;
-    import kabam.rotmg.core.service.RequestAppInitTask;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.model.MapModel;
-    import kabam.rotmg.core.model.ScreenModel;
-    import kabam.rotmg.core.commands.SetupDomainSecurityCommand;
-    import kabam.rotmg.core.signals.InvalidateDataSignal;
-    import kabam.rotmg.core.commands.InvalidateDataCommand;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import kabam.rotmg.core.commands.SetScreenWithValidDataCommand;
-    import kabam.rotmg.core.signals.PurchaseCharacterSignal;
-    import kabam.rotmg.core.commands.PurchaseCharacterCommand;
-    import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
-    import kabam.rotmg.core.commands.ConfigurePaymentsWindowCommand;
-    import kabam.rotmg.account.core.signals.CharListDataSignal;
-    import kabam.rotmg.core.commands.UpdatePlayerModelCommand;
-    import kabam.rotmg.core.commands.UpdatePetsModelCommand;
-    import kabam.lib.json.JsonParser;
-    import kabam.lib.json.SoftwareJsonParser;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.core.service.PurchaseCharacterClassTask;
-    import kabam.rotmg.core.service.PurchaseCharacterErrorTask;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
-    import kabam.rotmg.core.signals.LaunchGameSignal;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-    import kabam.rotmg.core.signals.UpdateNewCharacterScreenSignal;
-    import kabam.rotmg.core.signals.BuyCharacterPendingSignal;
-    import kabam.rotmg.core.view.ScreensView;
-    import kabam.rotmg.core.view.ScreensMediator;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import kabam.rotmg.tooltips.controller.TooltipAbleMediator;
+import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
-    public class CoreConfig implements IConfig 
+import flash.display.DisplayObjectContainer;
+
+import kabam.lib.json.JsonParser;
+import kabam.lib.json.SoftwareJsonParser;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.account.core.signals.CharListDataSignal;
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.core.commands.ConfigurePaymentsWindowCommand;
+import kabam.rotmg.core.commands.InvalidateDataCommand;
+import kabam.rotmg.core.commands.SetScreenWithValidDataCommand;
+import kabam.rotmg.core.commands.SetupDomainSecurityCommand;
+import kabam.rotmg.core.commands.UpdatePetsModelCommand;
+import kabam.rotmg.core.commands.UpdatePlayerModelCommand;
+import kabam.rotmg.core.model.MapModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.model.ScreenModel;
+import kabam.rotmg.core.service.PurchaseCharacterClassTask;
+import kabam.rotmg.core.service.PurchaseCharacterErrorTask;
+import kabam.rotmg.core.service.RequestAppInitTask;
+import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
+import kabam.rotmg.core.signals.BuyCharacterPendingSignal;
+import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.InvalidateDataSignal;
+import kabam.rotmg.core.signals.LaunchGameSignal;
+import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.core.signals.SetupDomainSecuritySignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.core.signals.UpdateNewCharacterScreenSignal;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.core.view.ScreensMediator;
+import kabam.rotmg.core.view.ScreensView;
+import kabam.rotmg.startup.control.StartupSequence;
+import kabam.rotmg.tooltips.TooltipAble;
+import kabam.rotmg.tooltips.controller.TooltipAbleMediator;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class CoreConfig implements IConfig
     {
 
         [Inject]
@@ -93,7 +96,6 @@ package kabam.rotmg.core
             this.commandMap.map(SetupDomainSecuritySignal).toCommand(SetupDomainSecurityCommand);
             this.commandMap.map(InvalidateDataSignal).toCommand(InvalidateDataCommand);
             this.commandMap.map(SetScreenWithValidDataSignal).toCommand(SetScreenWithValidDataCommand);
-            this.commandMap.map(PurchaseCharacterSignal).toCommand(PurchaseCharacterCommand);
             this.commandMap.map(AppInitDataReceivedSignal).toCommand(ConfigurePaymentsWindowCommand);
             this.commandMap.map(CharListDataSignal).toCommand(UpdatePlayerModelCommand);
             this.commandMap.map(CharListDataSignal).toCommand(UpdatePetsModelCommand);
@@ -118,6 +120,7 @@ package kabam.rotmg.core
             this.injector.map(SetLoadingMessageSignal).asSingleton();
             this.injector.map(UpdateNewCharacterScreenSignal).asSingleton();
             this.injector.map(BuyCharacterPendingSignal).asSingleton();
+            this.injector.map(DisplayAreaChangedSignal).asSingleton();
         }
 
         private function configureViews():void

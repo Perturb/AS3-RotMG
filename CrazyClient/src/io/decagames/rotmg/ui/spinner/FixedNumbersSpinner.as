@@ -1,14 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.spinner.FixedNumbersSpinner
 
 package io.decagames.rotmg.ui.spinner
 {
-    import __AS3__.vec.Vector;
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
-    public class FixedNumbersSpinner extends NumberSpinner 
+public class FixedNumbersSpinner extends NumberSpinner
     {
 
         private var _numbers:Vector.<int>;
@@ -38,11 +37,11 @@ package io.decagames.rotmg.ui.spinner
             if (_value < 0)
             {
                 _value = 0;
-            };
+            }
             if (_value != _local_2)
             {
                 valueWasChanged.dispatch(this.value);
-            };
+            }
             this.updateLabel();
         }
 

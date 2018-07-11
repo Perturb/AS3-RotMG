@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class EditAccountList extends OutgoingMessage 
+public class EditAccountList extends OutgoingMessage
     {
 
         public var accountListId_:int;

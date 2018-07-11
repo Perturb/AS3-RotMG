@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageInfoDialog
 
 package kabam.rotmg.packages.view
 {
-    import flash.display.Sprite;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.text.TextFormatAlign;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.util.graphics.ButtonLayoutHelper;
+import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
-    public class PackageInfoDialog extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.text.TextFormatAlign;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.util.graphics.ButtonLayoutHelper;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class PackageInfoDialog extends Sprite
     {
 
         private static const TITLE_Y:int = 8;

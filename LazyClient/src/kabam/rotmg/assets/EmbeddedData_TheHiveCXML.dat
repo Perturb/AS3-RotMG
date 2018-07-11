@@ -24,7 +24,7 @@
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>120</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1.5</XpMult>
+      <Exp>18</Exp>
    </Object>
    <Object type="0x126" id="TH Small Bees">
       <DisplayId>Small Bee</DisplayId>
@@ -40,7 +40,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>125</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -112,7 +112,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>4300</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>1</XpMult>
       <Size>120</Size>
       <StasisImmune/>
       <Flying/>
@@ -146,7 +145,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <MaxHitPoints>120</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x12b" id="TH Maggot Egg2">
       <Class>Character</Class>
@@ -186,7 +185,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Damage>30</Damage>
@@ -256,7 +255,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>250</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -281,7 +280,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>250</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">

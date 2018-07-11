@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.service.RequestAppInitTask
 
 package kabam.rotmg.core.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.application.DynamicSettings;
-    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-    public class RequestAppInitTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.DynamicSettings;
+import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class RequestAppInitTask extends BaseTask
     {
 
         [Inject]
@@ -48,7 +50,7 @@ package kabam.rotmg.core.service
             else
             {
                 this.onPolicyError();
-            };
+            }
             completeTask(_arg_1, _arg_2);
         }
 
@@ -57,7 +59,7 @@ package kabam.rotmg.core.service
             if (_arg_1 != null)
             {
                 DynamicSettings.xml = _arg_1;
-            };
+            }
         }
 
         private function onPolicyError():void

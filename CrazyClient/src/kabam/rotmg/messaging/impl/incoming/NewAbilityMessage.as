@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.NewAbilityMessage
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.lib.net.impl.Message;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class NewAbilityMessage extends Message 
+import kabam.lib.net.impl.Message;
+
+public class NewAbilityMessage extends Message 
     {
 
         public var type:int;

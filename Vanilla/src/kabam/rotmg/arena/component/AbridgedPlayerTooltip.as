@@ -5,20 +5,21 @@
 
 package kabam.rotmg.arena.component
 {
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import com.company.assembleegameclient.ui.GuildText;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import com.company.assembleegameclient.ui.GuildText;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class AbridgedPlayerTooltip extends ToolTip 
+import flash.display.Bitmap;
+
+import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class AbridgedPlayerTooltip extends ToolTip 
     {
 
         public function AbridgedPlayerTooltip(_arg_1:ArenaLeaderboardEntry)
         {
-            var _local_3:StaticTextDisplay;
             var _local_5:GuildText;
             var _local_2:Bitmap = new Bitmap();
             _local_2.bitmapData = _arg_1.playerBitmap;
@@ -26,7 +27,7 @@ package kabam.rotmg.arena.component
             _local_2.scaleY = 0.75;
             _local_2.y = 5;
             addChild(_local_2);
-            _local_3 = new StaticTextDisplay();
+            var _local_3:StaticTextDisplay = new StaticTextDisplay();
             _local_3.setSize(14).setBold(true).setColor(0xFFFFFF);
             _local_3.setStringBuilder(new StaticStringBuilder(_arg_1.name));
             _local_3.x = 40;
@@ -38,7 +39,7 @@ package kabam.rotmg.arena.component
                 _local_5.x = 40;
                 _local_5.y = 20;
                 addChild(_local_5);
-            };
+            }
             super(0x363636, 0.5, 0xFFFFFF, 1);
             var _local_4:EquippedGrid = new EquippedGrid(null, _arg_1.slotTypes, null);
             _local_4.x = 5;

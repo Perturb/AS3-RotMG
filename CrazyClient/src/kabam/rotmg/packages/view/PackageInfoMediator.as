@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageInfoMediator
 
 package kabam.rotmg.packages.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class PackageInfoMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PackageInfoMediator extends Mediator
     {
 
         [Inject]

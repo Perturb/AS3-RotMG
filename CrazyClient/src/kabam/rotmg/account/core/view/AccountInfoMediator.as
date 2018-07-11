@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.AccountInfoMediator
 
 package kabam.rotmg.account.core.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.account.web.WebAccount;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.account.web.WebAccount;
 
-    public class AccountInfoMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class AccountInfoMediator extends Mediator 
     {
 
         [Inject]
@@ -37,8 +38,8 @@ package kabam.rotmg.account.core.view
                 if ((((!(_local_1 == null)) && (!(_local_1.userDisplayName == null))) && (_local_1.userDisplayName.length > 0)))
                 {
                     this.view.setInfo(_local_1.userDisplayName, this.account.isRegistered());
-                };
-            };
+                }
+            }
         }
 
         override public function destroy():void

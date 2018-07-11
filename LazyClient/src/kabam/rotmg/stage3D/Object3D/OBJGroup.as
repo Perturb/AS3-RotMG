@@ -5,11 +5,9 @@
 
 package kabam.rotmg.stage3D.Object3D
 {
-    import flash.display3D.IndexBuffer3D;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import flash.display3D.IndexBuffer3D;
 
-    public class OBJGroup 
+public class OBJGroup
     {
 
         public var name:String;
@@ -32,7 +30,7 @@ package kabam.rotmg.stage3D.Object3D
             {
                 this.indexBuffer.dispose();
                 this.indexBuffer = null;
-            };
+            }
             this._faces.length = 0;
             this._indices.length = 0;
         }

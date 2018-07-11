@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.dailyLogin.view.DailyLoginPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class DailyLoginRewards extends GameObject implements IInteractiveObject 
+import kabam.rotmg.dailyLogin.view.DailyLoginPanel;
+
+public class DailyLoginRewards extends GameObject implements IInteractiveObject
     {
 
         public function DailyLoginRewards(_arg_1:XML)

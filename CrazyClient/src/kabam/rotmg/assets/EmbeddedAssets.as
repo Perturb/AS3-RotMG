@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.assets.EmbeddedAssets
@@ -8,10 +8,10 @@ package kabam.rotmg.assets
     public class EmbeddedAssets 
     {
 
-        public static var particlesEmbed:Class = EmbeddedAssets_particlesEmbed;
+        public static const DarknessBackground:Class = EmbeddedAssets_DarknessBackground;
         public static const StarburstSpinner:Class = EmbeddedAssets_StarburstSpinner;
         public static const EvolveBackground:Class = EmbeddedAssets_EvolveBackground;
-        public static const DarknessBackground:Class = EmbeddedAssets_DarknessBackground;
+        public static var particlesEmbed:Class = EmbeddedAssets_particlesEmbed;
         public static var lofiCharEmbed_:Class = EmbeddedAssets_lofiCharEmbed_;
         public static var lofiChar2Embed_:Class = EmbeddedAssets_lofiChar2Embed_;
         public static var lofiCharBigEmbed_:Class = EmbeddedAssets_lofiCharBigEmbed_;
@@ -75,53 +75,53 @@ package kabam.rotmg.assets
         public static var outerMaskEmbed_:Class = EmbeddedAssets_outerMaskEmbed_;
         public static var innerP1MaskEmbed_:Class = EmbeddedAssets_innerP1MaskEmbed_;
         public static var innerP2MaskEmbed_:Class = EmbeddedAssets_innerP2MaskEmbed_;
-        private static var monsterTank1Embed_:Class = EmbeddedAssets_monsterTank1Embed_;
-        private static var monsterTank2Embed_:Class = EmbeddedAssets_monsterTank2Embed_;
-        private static var monsterTank3Embed_:Class = EmbeddedAssets_monsterTank3Embed_;
-        private static var monsterTank4Embed_:Class = EmbeddedAssets_monsterTank4Embed_;
-        private static var labTankEmbed_:Class = EmbeddedAssets_labTankEmbed_;
-        private static var teslaEmbed_:Class = EmbeddedAssets_teslaEmbed_;
-        private static var gasEmitter_:Class = EmbeddedAssets_gasEmitter_;
-        private static var cloningVatEmbed_:Class = EmbeddedAssets_cloningVatEmbed_;
-        private static var crateEmbed_:Class = EmbeddedAssets_crateEmbed_;
-        private static var threeSideCubeEmbed_:Class = EmbeddedAssets_threeSideCubeEmbed_;
-        private static var squatty3Side_:Class = EmbeddedAssets_squatty3Side_;
-        private static var cubeEmbed_:Class = EmbeddedAssets_cubeEmbed_;
-        private static var bigcubeEmbed_:Class = EmbeddedAssets_bigcubeEmbed_;
-        private static var icosahedronEmbed_:Class = EmbeddedAssets_icosahedronEmbed_;
-        private static var octahedronEmbed_:Class = EmbeddedAssets_octahedronEmbed_;
-        private static var pyramidEmbed_:Class = EmbeddedAssets_pyramidEmbed_;
-        private static var tetrahedronEmbed_:Class = EmbeddedAssets_tetrahedronEmbed_;
-        private static var dodecahedronEmbed_:Class = EmbeddedAssets_dodecahedronEmbed_;
-        private static var pillarEmbed_:Class = EmbeddedAssets_pillarEmbed_;
-        private static var brokenPillarEmbed_:Class = EmbeddedAssets_brokenPillarEmbed_;
-        private static var towerEmbed_:Class = EmbeddedAssets_towerEmbed_;
-        private static var obeliskEmbed_:Class = EmbeddedAssets_obeliskEmbed_;
-        private static var tableEmbed_:Class = EmbeddedAssets_tableEmbed_;
-        private static var tableEdgeEmbed_:Class = EmbeddedAssets_tableEdgeEmbed_;
-        private static var signEmbed_:Class = EmbeddedAssets_signEmbed_;
-        private static var webEmbed_:Class = EmbeddedAssets_webEmbed_;
-        private static var twoHighWall_:Class = EmbeddedAssets_twoHighWall_;
-        private static var columnOneAndHalfEmbed_:Class = EmbeddedAssets_columnOneAndHalfEmbed_;
-        private static var candyColBrokenEmbed_:Class = EmbeddedAssets_candyColBrokenEmbed_;
-        private static var candyColWholeEmbed_:Class = EmbeddedAssets_candyColWholeEmbed_;
-        private static var candyDoughnut1Embed_:Class = EmbeddedAssets_candyDoughnut1Embed_;
-        private static var candyDoughnut2Embed_:Class = EmbeddedAssets_candyDoughnut2Embed_;
-        private static var candyDoughnut3Embed_:Class = EmbeddedAssets_candyDoughnut3Embed_;
-        private static var candyDoughnut4Embed_:Class = EmbeddedAssets_candyDoughnut4Embed_;
-        private static var newGateEmbed_:Class = EmbeddedAssets_newGateEmbed_;
-        private static var newGateEntryEmbed_:Class = EmbeddedAssets_newGateEntryEmbed_;
-        private static var newGateEntry2Embed_:Class = EmbeddedAssets_newGateEntry2Embed_;
-        private static var newGateEnd1Embed_:Class = EmbeddedAssets_newGateEnd1Embed_;
-        private static var newGateEnd2Embed_:Class = EmbeddedAssets_newGateEnd2Embed_;
-        private static var newMonument1Embed_:Class = EmbeddedAssets_newMonument1Embed_;
-        private static var newMonument2Embed_:Class = EmbeddedAssets_newMonument2Embed_;
-        private static var newMonument3Embed_:Class = EmbeddedAssets_newMonument3Embed_;
-        private static var largeMonument1Embed_:Class = EmbeddedAssets_largeMonument1Embed_;
-        private static var largeMonument2Embed_:Class = EmbeddedAssets_largeMonument2Embed_;
-        private static var largeMonument3Embed_:Class = EmbeddedAssets_largeMonument3Embed_;
-        private static var jackoEmbed_:Class = EmbeddedAssets_jackoEmbed_;
-        private static var petUpgrader_:Class = EmbeddedAssets_petUpgrader_;
+        internal static var monsterTank1Embed_:Class = EmbeddedAssets_monsterTank1Embed_;
+        internal static var monsterTank2Embed_:Class = EmbeddedAssets_monsterTank2Embed_;
+        internal static var monsterTank3Embed_:Class = EmbeddedAssets_monsterTank3Embed_;
+        internal static var monsterTank4Embed_:Class = EmbeddedAssets_monsterTank4Embed_;
+        internal static var labTankEmbed_:Class = EmbeddedAssets_labTankEmbed_;
+        internal static var teslaEmbed_:Class = EmbeddedAssets_teslaEmbed_;
+        internal static var gasEmitter_:Class = EmbeddedAssets_gasEmitter_;
+        internal static var cloningVatEmbed_:Class = EmbeddedAssets_cloningVatEmbed_;
+        internal static var crateEmbed_:Class = EmbeddedAssets_crateEmbed_;
+        internal static var threeSideCubeEmbed_:Class = EmbeddedAssets_threeSideCubeEmbed_;
+        internal static var squatty3Side_:Class = EmbeddedAssets_squatty3Side_;
+        internal static var cubeEmbed_:Class = EmbeddedAssets_cubeEmbed_;
+        internal static var bigcubeEmbed_:Class = EmbeddedAssets_bigcubeEmbed_;
+        internal static var icosahedronEmbed_:Class = EmbeddedAssets_icosahedronEmbed_;
+        internal static var octahedronEmbed_:Class = EmbeddedAssets_octahedronEmbed_;
+        internal static var pyramidEmbed_:Class = EmbeddedAssets_pyramidEmbed_;
+        internal static var tetrahedronEmbed_:Class = EmbeddedAssets_tetrahedronEmbed_;
+        internal static var dodecahedronEmbed_:Class = EmbeddedAssets_dodecahedronEmbed_;
+        internal static var pillarEmbed_:Class = EmbeddedAssets_pillarEmbed_;
+        internal static var brokenPillarEmbed_:Class = EmbeddedAssets_brokenPillarEmbed_;
+        internal static var towerEmbed_:Class = EmbeddedAssets_towerEmbed_;
+        internal static var obeliskEmbed_:Class = EmbeddedAssets_obeliskEmbed_;
+        internal static var tableEmbed_:Class = EmbeddedAssets_tableEmbed_;
+        internal static var tableEdgeEmbed_:Class = EmbeddedAssets_tableEdgeEmbed_;
+        internal static var signEmbed_:Class = EmbeddedAssets_signEmbed_;
+        internal static var webEmbed_:Class = EmbeddedAssets_webEmbed_;
+        internal static var twoHighWall_:Class = EmbeddedAssets_twoHighWall_;
+        internal static var columnOneAndHalfEmbed_:Class = EmbeddedAssets_columnOneAndHalfEmbed_;
+        internal static var candyColBrokenEmbed_:Class = EmbeddedAssets_candyColBrokenEmbed_;
+        internal static var candyColWholeEmbed_:Class = EmbeddedAssets_candyColWholeEmbed_;
+        internal static var candyDoughnut1Embed_:Class = EmbeddedAssets_candyDoughnut1Embed_;
+        internal static var candyDoughnut2Embed_:Class = EmbeddedAssets_candyDoughnut2Embed_;
+        internal static var candyDoughnut3Embed_:Class = EmbeddedAssets_candyDoughnut3Embed_;
+        internal static var candyDoughnut4Embed_:Class = EmbeddedAssets_candyDoughnut4Embed_;
+        internal static var newGateEmbed_:Class = EmbeddedAssets_newGateEmbed_;
+        internal static var newGateEntryEmbed_:Class = EmbeddedAssets_newGateEntryEmbed_;
+        internal static var newGateEntry2Embed_:Class = EmbeddedAssets_newGateEntry2Embed_;
+        internal static var newGateEnd1Embed_:Class = EmbeddedAssets_newGateEnd1Embed_;
+        internal static var newGateEnd2Embed_:Class = EmbeddedAssets_newGateEnd2Embed_;
+        internal static var newMonument1Embed_:Class = EmbeddedAssets_newMonument1Embed_;
+        internal static var newMonument2Embed_:Class = EmbeddedAssets_newMonument2Embed_;
+        internal static var newMonument3Embed_:Class = EmbeddedAssets_newMonument3Embed_;
+        internal static var largeMonument1Embed_:Class = EmbeddedAssets_largeMonument1Embed_;
+        internal static var largeMonument2Embed_:Class = EmbeddedAssets_largeMonument2Embed_;
+        internal static var largeMonument3Embed_:Class = EmbeddedAssets_largeMonument3Embed_;
+        internal static var jackoEmbed_:Class = EmbeddedAssets_jackoEmbed_;
+        internal static var petUpgrader_:Class = EmbeddedAssets_petUpgrader_;
         public static var d1Chars8x8rEmbed_:Class = EmbeddedAssets_d1Chars8x8rEmbed_;
         public static var d1Chars16x16rEmbed_:Class = EmbeddedAssets_d1Chars16x16rEmbed_;
         public static var d1LofiObjEmbed_:Class = EmbeddedAssets_d1LofiObjEmbed_;
@@ -154,6 +154,10 @@ package kabam.rotmg.assets
         public static var oryxHordeChars16x16Embed_:Class = EmbeddedAssets_oryxHordeChars16x16Embed_;
         public static var oryxHordeObjects8x8Embed_:Class = EmbeddedAssets_oryxHordeObjects8x8Embed_;
         public static var oryxHordeObjects16x16Embed_:Class = EmbeddedAssets_oryxHordeObjects16x16Embed_;
+        public static var santaWorkshopChars8x8Embed_:Class = EmbeddedAssets_santaWorkshopChars8x8Embed_;
+        public static var santaWorkshopChars16x16Embed_:Class = EmbeddedAssets_santaWorkshopChars16x16Embed_;
+        public static var santaWorkshopObjects8x8Embed_:Class = EmbeddedAssets_santaWorkshopObjects8x8Embed_;
+        public static var santaWorkshopObjects16x16Embed_:Class = EmbeddedAssets_santaWorkshopObjects16x16Embed_;
         public static var Hanami8x8charsEmbed_:Class = EmbeddedAssets_Hanami8x8charsEmbed_;
         public static var SakuraEnvironment16x16Embed_:Class = EmbeddedAssets_SakuraEnvironment16x16Embed_;
         public static var SakuraEnvironment8x8Embed_:Class = EmbeddedAssets_SakuraEnvironment8x8Embed_;
@@ -174,10 +178,12 @@ package kabam.rotmg.assets
         public static var lostHallsObjects16x16Embed_:Class = EmbeddedAssets_lostHallsObjects16x16Embed_;
         public static var lostHallsChars16x16Embed_:Class = EmbeddedAssets_lostHallsChars16x16Embed_;
         public static var lostHallsChars8x8Embed_:Class = EmbeddedAssets_lostHallsChars8x8Embed_;
-        public static var santaWorkshopObjects8x8Embed_:Class = EmbeddedAssets_santaWorkshopObjects8x8Embed_;
-        public static var santaWorkshopObjects16x16Embed_:Class = EmbeddedAssets_santaWorkshopObjects16x16Embed_;
-        public static var santaWorkshopChars8x8Embed_:Class = EmbeddedAssets_santaWorkshopChars8x8Embed_;
-        public static var santaWorkshopChars16x16Embed_:Class = EmbeddedAssets_santaWorkshopChars16x16Embed_;
+        public static var magicWoodsChars8x8Embed_:Class = EmbeddedAssets_magicWoodsChars8x8Embed_;
+        public static var magicWoodsChars16x16Embed_:Class = EmbeddedAssets_magicWoodsChars16x16Embed_;
+        public static var magicWoodsObjects8x8Embed_:Class = EmbeddedAssets_magicWoodsObjects8x8Embed_;
+        public static var magicWoodsObjects16x16Embed_:Class = EmbeddedAssets_magicWoodsObjects16x16Embed_;
+        public static var cnidarianReefObjects8x8Embed_:Class = EmbeddedAssets_cnidarianReefObjects8x8Embed_;
+        public static var cnidarianReefObjects16x16Embed_:Class = EmbeddedAssets_cnidarianReefObjects16x16Embed_;
         public static var models_:Object = {
             "Monster Tank1":new monsterTank1Embed_(),
             "Monster Tank2":new monsterTank2Embed_(),

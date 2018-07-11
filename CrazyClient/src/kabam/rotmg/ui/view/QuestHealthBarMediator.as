@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.QuestHealthBarMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Player;
 
-    public class QuestHealthBarMediator extends Mediator 
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class QuestHealthBarMediator extends Mediator
     {
 
         [Inject]

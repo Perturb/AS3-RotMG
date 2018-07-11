@@ -7,8 +7,6 @@ package kabam.rotmg.fortune.components
 	{
 		public function FortuneModal_backgroundImageEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

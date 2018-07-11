@@ -1,23 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.services.GetAppEngineNewsTask
 
 package kabam.rotmg.news.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.language.model.LanguageModel;
-    import flash.utils.getTimer;
-    import kabam.rotmg.news.model.NewsCellVO;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.news.model.NewsCellLinkType;
-    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-    public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask 
+import flash.utils.getTimer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.language.model.LanguageModel;
+import kabam.rotmg.news.model.NewsCellLinkType;
+import kabam.rotmg.news.model.NewsCellVO;
+import kabam.rotmg.news.model.NewsModel;
+
+public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask 
     {
 
         private static const TEN_MINUTES:int = 600;
@@ -48,11 +48,11 @@ package kabam.rotmg.news.services
             {
                 completeTask(true);
                 reset();
-            };
+            }
             if ((((!("production".toLowerCase() == "dev")) && (!(this.updateCooldown == 0))) && (this.numUpdateAttempts >= 2)))
             {
                 this.updateCooldown = 0;
-            };
+            }
         }
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void
@@ -64,7 +64,7 @@ package kabam.rotmg.news.services
             else
             {
                 this.onNewsRequestError(_arg_2);
-            };
+            }
             completeTask(_arg_1, _arg_2);
             reset();
         }
@@ -77,7 +77,7 @@ package kabam.rotmg.news.services
             for each (_local_2 in _local_4)
             {
                 _local_3.push(this.returnNewsCellVO(_local_2));
-            };
+            }
             this.model.updateNews(_local_3);
         }
 

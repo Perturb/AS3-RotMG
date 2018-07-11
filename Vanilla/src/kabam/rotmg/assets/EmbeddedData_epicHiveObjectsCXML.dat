@@ -121,7 +121,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>17500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -192,7 +191,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>17500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -255,7 +253,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>17500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -317,7 +314,6 @@
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>12500</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1</XpMult>
       <StasisImmune/>
       <DontFaceAttacks/>
       <Projectile id="0">
@@ -359,9 +355,7 @@
       <Size>85</Size>
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
-      <MaxHitPoints>10000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>1.0</XpMult>
       <StasisImmune/>
    </Object>
    <Object type="0x1090" id="EH Small Bees">
@@ -378,7 +372,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>125</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>10</Exp>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -408,7 +402,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>0.7</XpMult>
+      <Exp>28</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Yellow Stinger Small</ObjectId>
@@ -436,7 +430,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>0.7</XpMult>
+      <Exp>28</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Red Stinger Small</ObjectId>
@@ -464,7 +458,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>0.7</XpMult>
+      <Exp>28</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Blue Stinger Small</ObjectId>
@@ -489,7 +483,7 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>300000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>28.205128205128205128205128205128</XpMult>
+      <Exp>5500</Exp>
       <Size>120</Size>
       <StasisImmune/>
       <ParalyzeImmune/>
@@ -709,7 +703,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x1095" id="EH Maggot Egg2">
       <Class>Character</Class>
@@ -724,7 +718,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x1096" id="EH Maggot Egg3">
       <Class>Character</Class>
@@ -739,7 +733,7 @@
       <DeathSound>monster/eggs_death</DeathSound>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x10b6" id="EH Queen Blue Hive">
       <Class>Character</Class>
@@ -756,7 +750,7 @@
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>400000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.53847</XpMult>
+      <Exp>300</Exp>
       <Size>80</Size>
       <DontFaceAttacks/>
       <Projectile id="0">
@@ -783,7 +777,7 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>400000</MaxHitPoints>
-      <XpMult>1.53847</XpMult>
+      <Exp>300</Exp>
       <Size>80</Size>
       <DontFaceAttacks/>
       <Projectile id="0">
@@ -810,7 +804,7 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>400000</MaxHitPoints>
-      <XpMult>1.53847</XpMult>
+      <Exp>300</Exp>
       <Size>100</Size>
       <DontFaceAttacks/>
       <Projectile id="0">
@@ -834,7 +828,6 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>1</XpMult>
       <NoMiniMap/>
       <StasisImmune/>
       <Size>100</Size>
@@ -859,7 +852,6 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>1</XpMult>
       <NoMiniMap/>
       <StasisImmune/>
       <Size>100</Size>
@@ -884,7 +876,6 @@
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>1</XpMult>
       <NoMiniMap/>
       <StasisImmune/>
       <Size>100</Size>
@@ -906,8 +897,6 @@
       </AnimatedTexture>
       <HitSound>monster/wooden_walls_hit</HitSound>
       <DeathSound>monster/wooden_walls_death</DeathSound>
-      <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>1</XpMult>
       <NoMiniMap/>
       <StasisImmune/>
       <Size>100</Size>
@@ -927,7 +916,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -962,7 +950,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -997,7 +984,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -1033,7 +1019,6 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1</XpMult>
       <Projectile id="0">
          <ObjectId>EH Blue Ball</ObjectId>
          <Damage>30</Damage>
@@ -1058,7 +1043,6 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1</XpMult>
       <Projectile id="0">
          <ObjectId>EH Red Ball</ObjectId>
          <Damage>35</Damage>
@@ -1083,7 +1067,6 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>1</XpMult>
       <Projectile id="0">
          <ObjectId>EH Yellow Ball</ObjectId>
          <Damage>30</Damage>
@@ -1268,7 +1251,7 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x10d3" id="EH Fake Destructible Wall">
@@ -1291,7 +1274,7 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x10c5" id="EH FloorChanger">
@@ -2745,7 +2728,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>40000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -2799,7 +2781,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>40000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -2855,7 +2836,6 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>40000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1</XpMult>
       <Flying/>
       <Z>0.24</Z>
       <Projectile id="0">
@@ -3085,7 +3065,7 @@
       <Size>120</Size>
       <HitSound>monster/dark_elves_hit</HitSound>
       <DeathSound>monster/dark_elves_death</DeathSound>
-      <XpMult>5.128205128205129</XpMult>
+      <Exp>1000</Exp>
       <Defense>35</Defense>
       <StasisImmune/>
       <ParalyzeImmune/>
@@ -3169,7 +3149,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>0.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Yellow Stinger Small</ObjectId>
@@ -3197,7 +3177,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>0.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Red Stinger Small</ObjectId>
@@ -3213,7 +3193,7 @@
       <Group>Secret Bees</Group>
       <DisplayId>Blue Killer Bee</DisplayId>
       <Enemy/>
-      <XpMult>0.75</XpMult>
+      <Exp>30</Exp>
       <Class>Character</Class>
       <AnimatedTexture>
          <File>epicHiveChars8x8</File>
@@ -3250,6 +3230,7 @@
       <StasisImmune/>
       <Enemy/>
       <Encounter/>
+      <Level>30</Level>
       <PerRealmMax>1</PerRealmMax>
    </Object>
    <Object type="0x08ac" id="EH Event Taunt Controller">
@@ -3297,7 +3278,7 @@
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>80000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>5.128205128205129</XpMult>
+      <Exp>1000</Exp>
       <StasisImmune/>
       <DontFaceAttacks/>
       <God/>
@@ -3611,7 +3592,6 @@
       <DeathSound>monster/wooden_walls_death</DeathSound>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <StasisImmune/>
       <DontFaceAttacks/>
       <Projectile id="0">
@@ -3685,7 +3665,7 @@
       <Size>0</Size>
       <ShadowSize>0</ShadowSize>
       <StasisImmune/>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>EH Hive Spiral Shot</ObjectId>
          <Damage>100</Damage>
@@ -3743,7 +3723,7 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>75000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>5.128205128205129</XpMult>
+      <Exp>1000</Exp>
       <Flying/>
       <God/>
       <KeepDamageRecord/>
@@ -3808,7 +3788,7 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>75000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>5.128205128205129</XpMult>
+      <Exp>1000</Exp>
       <Flying/>
       <Z>0.24</Z>
       <God/>
@@ -3864,7 +3844,7 @@
       <DeathSound>monster/snake_queen_death</DeathSound>
       <MaxHitPoints>75000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>5.128205128205129</XpMult>
+      <Exp>1000</Exp>
       <Flying/>
       <Z>0.24</Z>
       <God/>
@@ -3933,7 +3913,7 @@
       <Defense>25</Defense>
       <Flying/>
       <Z>0.24</Z>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Projectile id="0">
          <ObjectId>EH Yellow Stinger Small</ObjectId>
          <Damage>130</Damage>
@@ -3959,7 +3939,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Red Stinger Small</ObjectId>
@@ -3987,7 +3967,7 @@
       <Defense>25</Defense>
       <Flying/>
       <Z>0.24</Z>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Projectile id="0">
          <ObjectId>EH Blue Stinger Small</ObjectId>
          <Damage>100</Damage>
@@ -4015,7 +3995,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Yellow Stinger Small</ObjectId>
@@ -4043,7 +4023,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Red Stinger Small</ObjectId>
@@ -4072,7 +4052,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Defense>25</Defense>
       <Flying/>
-      <XpMult>.75</XpMult>
+      <Exp>30</Exp>
       <Z>0.24</Z>
       <Projectile id="0">
          <ObjectId>EH Blue Stinger Small</ObjectId>

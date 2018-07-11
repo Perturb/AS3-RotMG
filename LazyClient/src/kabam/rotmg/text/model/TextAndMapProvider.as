@@ -5,10 +5,11 @@
 
 package kabam.rotmg.text.model
 {
-    import flash.text.TextField;
-    import kabam.rotmg.language.model.StringMap;
+import flash.text.TextField;
 
-    public interface TextAndMapProvider 
+import kabam.rotmg.language.model.StringMap;
+
+public interface TextAndMapProvider
     {
 
         function getTextField():TextField;

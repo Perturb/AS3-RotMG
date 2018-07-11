@@ -5,19 +5,21 @@
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import com.company.assembleegameclient.ui.RankText;
-    import com.company.assembleegameclient.ui.GuildText;
-    import com.company.assembleegameclient.ui.StatusBar;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.GameObjectListItem;
+import com.company.assembleegameclient.ui.GuildText;
+import com.company.assembleegameclient.ui.RankText;
+import com.company.assembleegameclient.ui.StatusBar;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
 
-    public class PlayerToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class PlayerToolTip extends ToolTip
     {
 
         public var player_:Player;
@@ -49,7 +51,7 @@ package com.company.assembleegameclient.ui.tooltip
                 this.guildText_.y = (_local_2 - 2);
                 addChild(this.guildText_);
                 _local_2 = (_local_2 + 30);
-            };
+            }
             this.hpBar_ = new StatusBar(176, 16, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
             this.hpBar_.x = 6;
             this.hpBar_.y = _local_2;

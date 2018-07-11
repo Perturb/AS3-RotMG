@@ -5,17 +5,19 @@
 
 package kabam.rotmg.account.transfer.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
-    import kabam.lib.tasks.Task;
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
 
-    public class KabamLoginMediator extends Mediator 
+import kabam.lib.tasks.Task;
+import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class KabamLoginMediator extends Mediator 
     {
 
         [Inject]

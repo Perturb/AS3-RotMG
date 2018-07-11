@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.BasePopup
 
 package io.decagames.rotmg.ui.popups
 {
-    import flash.display.Sprite;
-    import flash.geom.Rectangle;
+import flash.display.Sprite;
+import flash.geom.Rectangle;
 
-    public class BasePopup extends Sprite 
+public class BasePopup extends Sprite
     {
 
         protected var _showOnFullScreen:Boolean;

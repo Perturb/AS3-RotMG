@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.controller.TextFieldDisplayMediator
 
 package kabam.rotmg.text.controller
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.text.view.TextFieldDisplay;
-    import kabam.rotmg.text.model.FontModel;
-    import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.model.TextAndMapProvider;
+import kabam.rotmg.text.view.TextFieldDisplay;
 
-    public class TextFieldDisplayMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TextFieldDisplayMediator extends Mediator 
     {
 
         [Inject]

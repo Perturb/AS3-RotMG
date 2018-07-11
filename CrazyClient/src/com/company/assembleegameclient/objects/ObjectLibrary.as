@@ -1,27 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.ObjectLibrary
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.objects.animation.AnimationsData;
-    import kabam.rotmg.assets.EmbeddedData;
-    import flash.utils.getDefinitionByName;
-    import flash.display.BitmapData;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.constants.GeneralConstants;
-    import com.company.util.ConversionUtil;
-    import kabam.rotmg.messaging.impl.data.StatData;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.animation.AnimationsData;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.ConditionEffect;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.ConversionUtil;
+import com.company.util.PointUtil;
 
-    public class ObjectLibrary 
+import flash.display.BitmapData;
+import flash.geom.Matrix;
+import flash.utils.Dictionary;
+import flash.utils.getDefinitionByName;
+
+import kabam.rotmg.assets.EmbeddedData;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.messaging.impl.data.StatData;
+
+public class ObjectLibrary
     {
 
         public static var textureDataFactory:TextureDataFactory = new TextureDataFactory();
@@ -41,6 +44,7 @@ package com.company.assembleegameclient.objects
         public static const typeToAnimationsData_:Dictionary = new Dictionary();
         public static const petXMLDataLibrary_:Dictionary = new Dictionary();
         public static const skinSetXMLDataLibrary_:Dictionary = new Dictionary();
+        public static const dungeonToPortalTextureData_:Dictionary = new Dictionary();
         public static const dungeonsXMLLibrary_:Dictionary = new Dictionary(true);
         public static const ENEMY_FILTER_LIST:Vector.<String> = new <String>["None", "Hp", "Defense"];
         public static const TILE_FILTER_LIST:Vector.<String> = new <String>["ALL", "Walkable", "Unwalkable", "Slow", "Speed=1"];
@@ -101,7 +105,7 @@ package com.company.assembleegameclient.objects
             {
                 dungeonsXMLLibrary_[currentDungeon][_arg_1] = _arg_2;
                 propsLibrary_[_arg_1].belonedDungeon = currentDungeon;
-            };
+            }
         }
 
         public static function parseFromXML(_arg_1:XML, _arg_2:Function=null):void
@@ -119,19 +123,19 @@ package com.company.assembleegameclient.objects
                 if (_local_3.hasOwnProperty("DisplayId"))
                 {
                     _local_5 = _local_3.DisplayId;
-                };
+                }
                 if (_local_3.hasOwnProperty("Group"))
                 {
                     if (_local_3.Group == "Hexable")
                     {
                         hexTransforms_.push(_local_3);
-                    };
-                };
+                    }
+                }
                 _local_6 = int(_local_3.@type);
                 if (_local_3.hasOwnProperty("SlotType"))
                 {
                     itemLib.push(_local_4);
-                };
+                }
                 if (((_local_3.hasOwnProperty("PetBehavior")) || (_local_3.hasOwnProperty("PetAbility"))))
                 {
                     petXMLDataLibrary_[_local_6] = _local_3;
@@ -145,7 +149,7 @@ package com.company.assembleegameclient.objects
                     if (_arg_2 != null)
                     {
                         (_arg_2(_local_6, _local_3));
-                    };
+                    }
                     if (String(_local_3.Class) == "Player")
                     {
                         playerClassAbbr_[_local_6] = String(_local_3.@id).substr(0, 2);
@@ -157,25 +161,29 @@ package com.company.assembleegameclient.objects
                             {
                                 playerChars_[_local_7] = _local_3;
                                 _local_8 = true;
-                            };
+                            }
                             _local_7++;
-                        };
-                        if (!_local_8)
+                        }
+                        if ((!(_local_8)))
                         {
                             playerChars_.push(_local_3);
-                        };
-                    };
+                        }
+                    }
                     typeToTextureData_[_local_6] = textureDataFactory.create(_local_3);
                     if (_local_3.hasOwnProperty("Top"))
                     {
                         typeToTopTextureData_[_local_6] = textureDataFactory.create(XML(_local_3.Top));
-                    };
+                    }
                     if (_local_3.hasOwnProperty("Animation"))
                     {
                         typeToAnimationsData_[_local_6] = new AnimationsData(_local_3);
-                    };
-                };
-            };
+                    }
+                    if (((_local_3.hasOwnProperty("IntergamePortal")) && (_local_3.hasOwnProperty("DungeonName"))))
+                    {
+                        dungeonToPortalTextureData_[String(_local_3.DungeonName)] = typeToTextureData_[_local_6];
+                    }
+                }
+            }
         }
 
         public static function getIdFromType(_arg_1:int):String
@@ -184,7 +192,7 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             return (String(_local_2.@id));
         }
 
@@ -195,12 +203,12 @@ package com.company.assembleegameclient.objects
             if (setLibrary_[_arg_1] != undefined)
             {
                 return (setLibrary_[_arg_1]);
-            };
+            }
             for each (_local_2 in EmbeddedData.skinsEquipmentSetsXML.EquipmentSet)
             {
                 _local_3 = int(_local_2.@type);
                 setLibrary_[_local_3] = _local_2;
-            };
+            }
             return (setLibrary_[_arg_1]);
         }
 
@@ -222,7 +230,7 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             var _local_3:String = _local_2.Class;
             var _local_4:Class = ((TYPE_MAP[_local_3]) || (makeClass(_local_3)));
             return (new _local_4(_local_2));
@@ -240,7 +248,7 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             return (_local_2.getTexture());
         }
 
@@ -251,7 +259,7 @@ package com.company.assembleegameclient.objects
             if (_local_3)
             {
                 return (_local_3);
-            };
+            }
             return (AssetLibrary.getImageFromSet(IMAGE_SET_NAME, IMAGE_ID));
         }
 
@@ -261,13 +269,13 @@ package com.company.assembleegameclient.objects
             if (Parameters.itemTypes16.indexOf(_arg_1) != -1)
             {
                 _arg_2 = (_arg_2 * 0.5);
-            };
+            }
             var _local_7:TextureData = typeToTextureData_[_arg_1];
             var _local_8:BitmapData = ((_local_7) ? _local_7.mask_ : null);
             if (_local_8 == null)
             {
                 return (TextureRedrawer.redraw(_local_6, _arg_2, _arg_3, 0, _arg_4, _arg_5));
-            };
+            }
             var _local_9:XML = xmlLibrary_[_arg_1];
             var _local_10:int = ((_local_9.hasOwnProperty("Tex1")) ? int(_local_9.Tex1) : 0);
             var _local_11:int = ((_local_9.hasOwnProperty("Tex2")) ? int(_local_9.Tex2) : 0);
@@ -278,20 +286,20 @@ package com.company.assembleegameclient.objects
         public static function getSizeFromType(_arg_1:int):int
         {
             var _local_2:XML = xmlLibrary_[_arg_1];
-            if (!_local_2.hasOwnProperty("Size"))
+            if ((!(_local_2.hasOwnProperty("Size"))))
             {
                 return (100);
-            };
+            }
             return (int(_local_2.Size));
         }
 
         public static function getSlotTypeFromType(_arg_1:int):int
         {
             var _local_2:XML = xmlLibrary_[_arg_1];
-            if (!_local_2.hasOwnProperty("SlotType"))
+            if ((!(_local_2.hasOwnProperty("SlotType"))))
             {
                 return (-1);
-            };
+            }
             return (int(_local_2.SlotType));
         }
 
@@ -301,7 +309,7 @@ package com.company.assembleegameclient.objects
             if (_arg_1 == ItemConstants.NO_ITEM)
             {
                 return (false);
-            };
+            }
             var _local_4:XML = xmlLibrary_[_arg_1];
             var _local_5:int = int(_local_4.SlotType.toString());
             while (_local_3 < GeneralConstants.NUM_EQUIPMENT_SLOTS)
@@ -309,9 +317,9 @@ package com.company.assembleegameclient.objects
                 if (_arg_2.slotTypes_[_local_3] == _local_5)
                 {
                     return (true);
-                };
+                }
                 _local_3++;
-            };
+            }
             return (false);
         }
 
@@ -330,10 +338,10 @@ package com.company.assembleegameclient.objects
                     if (_arg_2.slotTypes_[_local_5] == _local_4)
                     {
                         return (_local_5);
-                    };
+                    }
                     _local_5++;
-                };
-            };
+                }
+            }
             return (-1);
         }
 
@@ -343,25 +351,25 @@ package com.company.assembleegameclient.objects
             if (((_arg_2 == null) || (_arg_2.slotTypes_ == null)))
             {
                 return (true);
-            };
+            }
             var _local_4:XML = xmlLibrary_[_arg_1];
             if (((_local_4 == null) || (!(_local_4.hasOwnProperty("SlotType")))))
             {
                 return (false);
-            };
+            }
             var _local_5:int = _local_4.SlotType;
             if (((_local_5 == ItemConstants.POTION_TYPE) || (_local_5 == ItemConstants.EGG_TYPE)))
             {
                 return (true);
-            };
+            }
             while (_local_3 < _arg_2.slotTypes_.length)
             {
                 if (_arg_2.slotTypes_[_local_3] == _local_5)
                 {
                     return (true);
-                };
+                }
                 _local_3++;
-            };
+            }
             return (false);
         }
 
@@ -386,12 +394,12 @@ package com.company.assembleegameclient.objects
             if (((_local_5 == null) || (!(_local_5.hasOwnProperty("SlotType")))))
             {
                 return (null);
-            };
+            }
             var _local_6:int = _local_5.SlotType;
             if ((((_local_6 == ItemConstants.POTION_TYPE) || (_local_6 == ItemConstants.RING_TYPE)) || (_local_6 == ItemConstants.EGG_TYPE)))
             {
                 return (null);
-            };
+            }
             var _local_7:Vector.<String> = new Vector.<String>();
             for each (_local_2 in playerChars_)
             {
@@ -403,10 +411,10 @@ package com.company.assembleegameclient.objects
                     {
                         _local_7.push(typeToDisplayId_[int(_local_2.@type)]);
                         break;
-                    };
+                    }
                     _local_4++;
-                };
-            };
+                }
+            }
             return (_local_7);
         }
 
@@ -416,15 +424,15 @@ package com.company.assembleegameclient.objects
             if (_arg_2 == null)
             {
                 return (true);
-            };
+            }
             var _local_4:XML = xmlLibrary_[_arg_1];
             for each (_local_3 in _local_4.EquipRequirement)
             {
-                if (!playerMeetsRequirement(_local_3, _arg_2))
+                if ((!(playerMeetsRequirement(_local_3, _arg_2))))
                 {
                     return (false);
-                };
-            };
+                }
+            }
             return (true);
         }
 
@@ -454,14 +462,65 @@ package com.company.assembleegameclient.objects
                         return (_arg_2.wisdom_ >= _local_3);
                     case StatData.DEXTERITY_STAT:
                         return (_arg_2.dexterity_ >= _local_3);
-                };
-            };
+                }
+            }
             return (false);
         }
 
         public static function getPetDataXMLByType(_arg_1:int):XML
         {
             return (petXMLDataLibrary_[_arg_1]);
+        }
+
+        public static function getItemIcon(_arg_1:int):BitmapData
+        {
+            var _local_6:int;
+            var _local_9:int;
+            var _local_7:* = null;
+            var _local_3:* = null;
+            var _local_2:* = null;
+            var _local_8:* = null;
+            var _local_10:* = null;
+            var _local_4:* = null;
+            var _local_5:Matrix = new Matrix();
+            if (_arg_1 == -1)
+            {
+                _local_7 = scaleBitmapData(AssetLibrary.getImageFromSet("lofiInterface", 7), 2);
+                _local_5.translate(4, 4);
+                _local_3 = new BitmapData(22, 22, true, 0);
+                _local_3.draw(_local_7, _local_5);
+                return (_local_3);
+            }
+            _local_2 = xmlLibrary_[_arg_1];
+            _local_8 = typeToTextureData_[_arg_1];
+            _local_10 = ((_local_8) ? _local_8.mask_ : null);
+            _local_6 = (("Tex1" in _local_2) ? _local_2.Tex1 : 0);
+            _local_9 = (("Tex2" in _local_2) ? _local_2.Tex2 : 0);
+            _local_4 = getTextureFromType(_arg_1);
+            if ((((!(_local_6 == 0)) || (!(_local_9 == 0))) && ((!(_arg_1 == 317)) && (!(_arg_1 == 318)))))
+            {
+                _local_4 = TextureRedrawer.retextureNoSizeChange(_local_4, _local_10, _local_6, _local_9);
+                _local_5.scale(0.2, 0.2);
+            }
+            _local_7 = scaleBitmapData(_local_4, 2);
+            _local_5.translate(4, 4);
+            _local_3 = new BitmapData(22, 22, true, 0);
+            _local_3.draw(_local_7, _local_5);
+            _local_3 = GlowRedrawer.outlineGlow(_local_3, 0);
+            _local_3.applyFilter(_local_3, _local_3.rect, PointUtil.ORIGIN, ConditionEffect.GLOW_FILTER);
+            return (_local_3);
+        }
+
+        public static function scaleBitmapData(_arg_1:BitmapData, _arg_2:Number):BitmapData
+        {
+            _arg_2 = Math.abs(_arg_2);
+            var _local_4:int = ((_arg_1.width * _arg_2) || (1));
+            var _local_6:int = ((_arg_1.height * _arg_2) || (1));
+            var _local_3:BitmapData = new BitmapData(_local_4, _local_6, true, 0);
+            var _local_5:Matrix = new Matrix();
+            _local_5.scale(_arg_2, _arg_2);
+            _local_3.draw(_arg_1, _local_5);
+            return (_local_3);
         }
 
 

@@ -5,21 +5,23 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
-    import kabam.rotmg.pets.data.PetVO;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import kabam.rotmg.pets.view.petPanel.PetPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.MaskedImage;
 
-    public class Pet extends GameObject implements IInteractiveObject 
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.pets.panels.PetPanel;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
+import kabam.rotmg.text.model.TextKey;
+
+public class Pet extends GameObject implements IInteractiveObject
     {
 
         private var textPanelUpdateSignal:TextPanelMessageUpdateSignal;
@@ -65,7 +67,7 @@ package com.company.assembleegameclient.objects
             else
             {
                 this.skin = AnimatedChars.getAnimatedChar(_local_3, _local_4);
-            };
+            }
             this.isDefaultAnimatedChar = (this.skin == this.defaultSkin);
             _local_5 = this.skin.imageFromAngle(0, AnimatedChar.STAND, 0);
             animatedChar_ = this.skin;
@@ -80,7 +82,7 @@ package com.company.assembleegameclient.objects
             if (this.defaultSkin == null)
             {
                 return;
-            };
+            }
             _local_1 = this.defaultSkin.imageFromAngle(0, AnimatedChar.STAND, 0);
             this.isDefaultAnimatedChar = true;
             animatedChar_ = this.defaultSkin;

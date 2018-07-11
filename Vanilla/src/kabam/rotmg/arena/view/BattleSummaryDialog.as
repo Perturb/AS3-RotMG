@@ -5,18 +5,20 @@
 
 package kabam.rotmg.arena.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.arena.component.BattleSummaryText;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.editor.view.StaticTextButton;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.util.components.DialogBackground;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
 
-    public class BattleSummaryDialog extends Sprite 
+import kabam.rotmg.arena.component.BattleSummaryText;
+import kabam.rotmg.editor.view.StaticTextButton;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.util.components.DialogBackground;
+
+import org.osflash.signals.Signal;
+
+public class BattleSummaryDialog extends Sprite 
     {
 
         private const WIDTH:int = 264;
@@ -61,7 +63,7 @@ package kabam.rotmg.arena.view
             if (this.leftSummary)
             {
                 removeChild(this.leftSummary);
-            };
+            }
             this.leftSummary = new BattleSummaryText(TextKey.BATTLE_SUMMARY_CURRENT_SUBTITLE, _arg_1, _arg_2);
             this.leftSummary.y = ((60 - (this.leftSummary.height / 2)) + 132);
             this.leftSummary.x = ((this.WIDTH / 4) - (this.leftSummary.width / 2));
@@ -73,7 +75,7 @@ package kabam.rotmg.arena.view
             if (this.rightSummary)
             {
                 removeChild(this.rightSummary);
-            };
+            }
             this.rightSummary = new BattleSummaryText(TextKey.BATTLE_SUMMARY_BEST_SUBTITLE, _arg_1, _arg_2);
             this.rightSummary.y = ((60 - (this.rightSummary.height / 2)) + 132);
             this.rightSummary.x = (((this.WIDTH / 4) - (this.rightSummary.width / 2)) + (this.WIDTH / 2));

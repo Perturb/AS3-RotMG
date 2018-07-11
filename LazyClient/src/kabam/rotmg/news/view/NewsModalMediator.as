@@ -5,15 +5,15 @@
 
 package kabam.rotmg.news.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.news.services.GetAppEngineNewsTask;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.news.model.NewsCellVO;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
+import kabam.rotmg.news.model.NewsCellVO;
+import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.news.services.GetAppEngineNewsTask;
 
-    public class NewsModalMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewsModalMediator extends Mediator
     {
 
         public static var firstRun:Boolean = true;
@@ -35,7 +35,7 @@ package kabam.rotmg.news.view
             if (firstRun)
             {
                 firstRun = false;
-            };
+            }
         }
 
         override public function destroy():void

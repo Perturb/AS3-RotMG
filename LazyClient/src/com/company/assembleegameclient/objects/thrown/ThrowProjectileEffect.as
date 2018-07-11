@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.objects.thrown
 {
-    import com.company.assembleegameclient.objects.particles.ParticleEffect;
-    import flash.geom.Point;
+import com.company.assembleegameclient.objects.particles.ParticleEffect;
 
-    public class ThrowProjectileEffect extends ParticleEffect 
+import flash.geom.Point;
+
+public class ThrowProjectileEffect extends ParticleEffect
     {
 
         public var start_:Point;

@@ -7,8 +7,6 @@ package kabam.rotmg.arena.view
 	{
 		public function ImminentWaveCountdownClock_WaveAsset()
 		{
-			super();
-			return;
 		}
 	}
 }

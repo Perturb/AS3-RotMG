@@ -1,33 +1,38 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.TitleView
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import kabam.rotmg.ui.model.EnvironmentData;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import kabam.rotmg.ui.view.components.MapBackground;
-    import kabam.rotmg.ui.view.components.DarkLayer;
-    import com.company.rotmg.graphics.TitleScreenGraphic;
-    import com.company.assembleegameclient.screens.AccountScreen;
-    import com.company.assembleegameclient.ui.SoundIcon;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.transfer.view.KabamLoginView;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.screens.AccountScreen;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.assembleegameclient.ui.SoundIcon;
 
-    public class TitleView extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.transfer.view.KabamLoginView;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.model.EnvironmentData;
+import kabam.rotmg.ui.view.components.DarkLayer;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class TitleView extends Sprite
     {
 
+        internal static var TitleScreenGraphic:Class = TitleView_TitleScreenGraphic;
+        internal static var TitleScreenBackground:Class = TitleView_TitleScreenBackground;
         public static const MIDDLE_OF_BOTTOM_BAND:Number = 589.45;
         public static var queueEmailConfirmation:Boolean = false;
         public static var queuePasswordPrompt:Boolean = false;
@@ -56,7 +61,7 @@ package kabam.rotmg.ui.view
             this.menuOptionsBar = this.makeMenuOptionsBar();
             this.optionalButtonsAdded = new Signal();
             super();
-            addChild(new MapBackground());
+            addChild(new TitleScreenBackground());
             addChild(new DarkLayer());
             addChild(new TitleScreenGraphic());
             addChild(this.menuOptionsBar);
@@ -98,7 +103,7 @@ package kabam.rotmg.ui.view
             this.versionText.y = MIDDLE_OF_BOTTOM_BAND;
             addChild(this.versionText);
             this.copyrightText = this.makeText().setAutoSize(TextFieldAutoSize.RIGHT).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
-            this.copyrightText.setStringBuilder(new LineBuilder().setParams("w.f.b."));
+            this.copyrightText.setStringBuilder(new LineBuilder().setParams(TextKey.COPYRIGHT));
             this.copyrightText.filters = [new DropShadowFilter(0, 0, 0)];
             this.copyrightText.x = 800;
             this.copyrightText.y = MIDDLE_OF_BOTTOM_BAND;
@@ -107,8 +112,7 @@ package kabam.rotmg.ui.view
 
         public function makeText():TextFieldDisplayConcrete
         {
-            var _local_1:TextFieldDisplayConcrete;
-            _local_1 = new TextFieldDisplayConcrete().setSize(12).setColor(0x7F7F7F);
+            var _local_1:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(12).setColor(0x7F7F7F);
             _local_1.filters = [new DropShadowFilter(0, 0, 0)];
             return (_local_1);
         }
@@ -127,7 +131,7 @@ package kabam.rotmg.ui.view
 
         private function updateVersionText():void
         {
-            this.versionText.setStringBuilder(new StaticStringBuilder(((("CrazyClient " + Parameters.CRAZY_VERSION) + " ") + this.data.buildLabel.substr(6))));
+            this.versionText.setStringBuilder(new StaticStringBuilder(this.data.buildLabel));
         }
 
         private function handleOptionalButtons():void
@@ -149,6 +153,16 @@ package kabam.rotmg.ui.view
             var _local_1:TitleMenuOption = ButtonFactory.getEditorButton();
             this.menuOptionsBar.addButton(_local_1, MenuOptionsBar.RIGHT);
             this.editorClicked = _local_1.clicked;
+        }
+
+        private function makeMigrateButton():void
+        {
+            this.migrateButton = new TitleMenuOption("Want to migrate your Kabam.com account?", 16, false);
+            this.migrateButton.setAutoSize(TextFieldAutoSize.CENTER);
+            this.kabamTransferClicked = new NativeMappedSignal(this.migrateButton, MouseEvent.CLICK);
+            this.migrateButton.setTextKey("Want to migrate your Kabam.com account?");
+            this.migrateButton.x = 400;
+            this.migrateButton.y = 500;
         }
 
 

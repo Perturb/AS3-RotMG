@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.util.DateValidator
 
 package kabam.lib.util
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class DateValidator 
+public class DateValidator 
     {
 
         private static const DAYS_IN_MONTH:Vector.<int> = Vector.<int>([31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
@@ -36,7 +33,7 @@ package kabam.lib.util
             if (_arg_1 == -1)
             {
                 return (31);
-            };
+            }
             return ((_arg_1 == FEBRUARY) ? this.getDaysInFebruary(_arg_2) : DAYS_IN_MONTH[(_arg_1 - 1)]);
         }
 
@@ -45,7 +42,7 @@ package kabam.lib.util
             if (((_arg_1 == -1) || (this.isLeapYear(_arg_1))))
             {
                 return (29);
-            };
+            }
             return (28);
         }
 

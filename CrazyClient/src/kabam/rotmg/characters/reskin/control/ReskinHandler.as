@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.control.ReskinHandler
 
 package kabam.rotmg.characters.reskin.control
 {
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.messaging.impl.outgoing.Reskin;
+import com.company.assembleegameclient.objects.Player;
 
-    public class ReskinHandler 
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.messaging.impl.outgoing.Reskin;
+
+public class ReskinHandler 
     {
 
         [Inject]

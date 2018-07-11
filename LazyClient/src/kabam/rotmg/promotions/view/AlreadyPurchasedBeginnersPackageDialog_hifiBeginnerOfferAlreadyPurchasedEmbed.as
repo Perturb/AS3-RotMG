@@ -7,8 +7,6 @@ package kabam.rotmg.promotions.view
 	{
 		public function AlreadyPurchasedBeginnersPackageDialog_hifiBeginnerOfferAlreadyPurchasedEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

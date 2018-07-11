@@ -5,11 +5,9 @@
 
 package com.company.util
 {
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
 
-    public class ImageSet 
+public class ImageSet
     {
 
         public var images_:Vector.<BitmapData>;
@@ -42,9 +40,9 @@ package com.company.util
                 {
                     this.images_.push(BitmapUtil.cropToBitmapData(_arg_1, (_local_7 * _arg_2), (_local_6 * _arg_3), _arg_2, _arg_3));
                     _local_7++;
-                };
+                }
                 _local_6++;
-            };
+            }
         }
 
 

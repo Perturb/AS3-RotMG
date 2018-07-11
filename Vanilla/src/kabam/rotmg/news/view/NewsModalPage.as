@@ -5,16 +5,18 @@
 
 package kabam.rotmg.news.view
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import flash.text.TextField;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.model.FontModel;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.Scrollbar;
 
-    public class NewsModalPage extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.text.TextField;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+
+public class NewsModalPage extends Sprite
     {
 
         public static const TEXT_MARGIN:int = 22;
@@ -67,7 +69,7 @@ package kabam.rotmg.news.view
                 this.scrollBar_.y = TEXT_TOP_MARGIN_HTML;
                 this.scrollBar_.setIndicatorSize(HEIGHT, _local_4.height);
                 addChild(this.scrollBar_);
-            };
+            }
             this.addEventListener(Event.ADDED_TO_STAGE, this.onAddedHandler);
         }
 
@@ -88,7 +90,7 @@ package kabam.rotmg.news.view
             if (this.scrollBar_)
             {
                 this.scrollBar_.addEventListener(Event.CHANGE, this.onScrollBarChange);
-            };
+            }
         }
 
         private function onRemovedFromStage(_arg_1:Event):void
@@ -98,7 +100,7 @@ package kabam.rotmg.news.view
             if (this.scrollBar_)
             {
                 this.scrollBar_.removeEventListener(Event.CHANGE, this.onScrollBarChange);
-            };
+            }
         }
 
 

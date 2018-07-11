@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_lofiObjEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

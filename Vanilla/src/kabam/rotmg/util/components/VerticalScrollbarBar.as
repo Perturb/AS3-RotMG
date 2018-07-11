@@ -5,15 +5,16 @@
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.util.components.VerticalScrollbar;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.util.graphics.BevelRect;
-    import kabam.rotmg.util.graphics.GraphicsHelper;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
 
-    internal final class VerticalScrollbarBar extends Sprite 
+import kabam.rotmg.util.graphics.BevelRect;
+import kabam.rotmg.util.graphics.GraphicsHelper;
+
+import org.osflash.signals.Signal;
+
+internal final class VerticalScrollbarBar extends Sprite
     {
 
         public static const WIDTH:int = VerticalScrollbar.WIDTH;//20
@@ -53,8 +54,8 @@ package kabam.rotmg.util.components
                 if (WebMain.STAGE)
                 {
                     WebMain.STAGE.addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                };
-            };
+                }
+            }
         }
 
         protected function onMouseWheel(_arg_1:MouseEvent):void
@@ -68,8 +69,8 @@ package kabam.rotmg.util.components
                 if (_arg_1.delta < 0)
                 {
                     this.scrolling.dispatch(0.25);
-                };
-            };
+                }
+            }
         }
 
         public function removeMouseListeners():void
@@ -86,8 +87,8 @@ package kabam.rotmg.util.components
                 if (WebMain.STAGE)
                 {
                     WebMain.STAGE.removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                };
-            };
+                }
+            }
             this.onMouseUp();
         }
 
@@ -98,7 +99,7 @@ package kabam.rotmg.util.components
             if (stage != null)
             {
                 stage.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            };
+            }
             addEventListener(Event.ENTER_FRAME, this.iterate);
             this.redraw();
         }
@@ -109,7 +110,7 @@ package kabam.rotmg.util.components
             if (stage != null)
             {
                 stage.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            };
+            }
             removeEventListener(Event.ENTER_FRAME, this.iterate);
             this.redraw();
         }

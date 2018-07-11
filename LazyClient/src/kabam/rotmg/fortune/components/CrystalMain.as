@@ -5,18 +5,17 @@
 
 package kabam.rotmg.fortune.components
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import flash.events.Event;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
+import com.company.util.MoreColorUtil;
 
-    public class CrystalMain extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.ColorMatrixFilter;
+
+public class CrystalMain extends Sprite 
     {
 
         public static const ANIMATION_STAGE_PULSE:int = 0;
@@ -51,7 +50,7 @@ package kabam.rotmg.fortune.components
                 _local_3.filters = [new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix)];
                 this.crystalFrames.push(_local_3);
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 3)
             {
@@ -59,7 +58,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -67,7 +66,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -75,7 +74,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 5)
             {
@@ -83,7 +82,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < 8)
             {
@@ -91,7 +90,7 @@ package kabam.rotmg.fortune.components
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            };
+            }
             this.reset();
             _local_1 = AssetLibrary.getImageFromSet("lofiCharBig", 32);
             _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
@@ -169,7 +168,7 @@ package kabam.rotmg.fortune.components
                     return;
                 default:
                     this.setAnimation(13, 7);
-            };
+            }
         }
 
         private function onRemovedFromStage(_arg_1:Event):void

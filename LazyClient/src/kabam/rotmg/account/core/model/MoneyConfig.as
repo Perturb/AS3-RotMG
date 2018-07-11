@@ -5,10 +5,11 @@
 
 package kabam.rotmg.account.core.model
 {
-    import com.company.assembleegameclient.util.offer.Offer;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public interface MoneyConfig 
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public interface MoneyConfig
     {
 
         function showPaymentMethods():Boolean;

@@ -1,19 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.ConfigurePaymentsWindowCommand
 
 package kabam.rotmg.core.commands
 {
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-    import kabam.rotmg.account.core.commands.ExternalOpenMoneyWindowCommand;
-    import kabam.rotmg.account.core.commands.InternalOpenMoneyWindowCommand;
-    import kabam.rotmg.account.web.WebAccount;
-    import kabam.rotmg.account.kabam.KabamAccount;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.commands.ExternalOpenMoneyWindowCommand;
+import kabam.rotmg.account.core.commands.InternalOpenMoneyWindowCommand;
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.account.kabam.KabamAccount;
+import kabam.rotmg.account.web.WebAccount;
 
-    public class ConfigurePaymentsWindowCommand 
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+
+public class ConfigurePaymentsWindowCommand
     {
 
         [Inject]

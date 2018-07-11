@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Lighting3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import flash.geom.Vector3D;
+import flash.geom.Vector3D;
 
-    public class Lighting3D 
+public class Lighting3D
     {
 
         public static const LIGHT_VECTOR:Vector3D = createLightVector();

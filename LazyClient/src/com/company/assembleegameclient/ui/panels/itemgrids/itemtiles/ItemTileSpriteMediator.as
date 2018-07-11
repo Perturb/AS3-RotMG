@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.BitmapTextFactory;
 
-    public class ItemTileSpriteMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ItemTileSpriteMediator extends Mediator 
     {
 
         [Inject]

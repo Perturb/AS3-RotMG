@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.XMLEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class XMLEffect extends ParticleEffect 
+public class XMLEffect extends ParticleEffect 
     {
 
         private var go_:GameObject;
@@ -28,13 +28,13 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             var _local_3:Number = (_arg_2 / 1000);
             this.cooldownLeft_ = (this.cooldownLeft_ - _local_3);
             if (this.cooldownLeft_ >= 0)
             {
                 return (true);
-            };
+            }
             this.cooldownLeft_ = this.cooldown_;
             map_.addObj(new XMLParticle(this.partProps_), this.go_.x_, this.go_.y_);
             return (true);

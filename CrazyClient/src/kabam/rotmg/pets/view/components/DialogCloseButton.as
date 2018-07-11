@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.pets.view.components.DialogCloseButton
 
 package kabam.rotmg.pets.view.components
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.display.DisplayObject;
-    import flash.events.MouseEvent;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
 
-    public class DialogCloseButton extends Sprite 
+import org.osflash.signals.Signal;
+
+public class DialogCloseButton extends Sprite
     {
 
         public static var CloseButtonAsset:Class = DialogCloseButton_CloseButtonAsset;
@@ -34,7 +35,7 @@ package kabam.rotmg.pets.view.components
                 addChild(new CloseButtonLargeAsset());
                 scaleX = (scaleX * _arg_1);
                 scaleY = (scaleY * _arg_1);
-            };
+            }
             buttonMode = true;
             addEventListener(MouseEvent.CLICK, this.onClicked);
         }
@@ -49,7 +50,7 @@ package kabam.rotmg.pets.view.components
             else
             {
                 addEventListener(MouseEvent.CLICK, this.onClicked);
-            };
+            }
         }
 
         public function disableLegacyCloseBehavior():void
@@ -60,11 +61,11 @@ package kabam.rotmg.pets.view.components
 
         private function onClicked(_arg_1:MouseEvent):void
         {
-            if (!this.disabled)
+            if ((!(this.disabled)))
             {
                 this.clicked.dispatch();
                 removeEventListener(MouseEvent.CLICK, this.onClicked);
-            };
+            }
         }
 
 

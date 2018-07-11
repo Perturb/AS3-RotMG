@@ -5,17 +5,20 @@
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import com.company.assembleegameclient.map.Map;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
-    public class CreditDisplayMediator extends Mediator 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CreditDisplayMediator extends Mediator 
     {
 
         [Inject]
@@ -45,7 +48,7 @@ package kabam.rotmg.game.view
             else
             {
                 this.view.removeResourceButtons();
-            };
+            }
             if (((this.view.creditsButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.creditsButton.addEventListener(MouseEvent.CLICK, this.view.onCreditsClick, false, 0, true);
@@ -55,7 +58,7 @@ package kabam.rotmg.game.view
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.creditsButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            };
+            }
             if (((this.view.fameButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.fameButton.addEventListener(MouseEvent.CLICK, this.view.onFameClick);
@@ -65,7 +68,7 @@ package kabam.rotmg.game.view
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.fameButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            };
+            }
             this.view.displayFameTooltip.add(this.forceShowingTooltip);
         }
 
@@ -76,7 +79,7 @@ package kabam.rotmg.game.view
                 this.hoverTooltipDelegate.getDisplayObject().dispatchEvent(new MouseEvent(MouseEvent.MOUSE_OVER, true));
                 this.toolTip.x = 267;
                 this.toolTip.y = 41;
-            };
+            }
         }
 
         override public function destroy():void
@@ -87,11 +90,11 @@ package kabam.rotmg.game.view
             if (((this.view.fameButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.fameButton.removeEventListener(MouseEvent.CLICK, this.view.onFameClick);
-            };
+            }
             if (((this.view.creditsButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.creditsButton.removeEventListener(MouseEvent.CLICK, this.view.onCreditsClick);
-            };
+            }
             this.view.displayFameTooltip.remove(this.forceShowingTooltip);
         }
 

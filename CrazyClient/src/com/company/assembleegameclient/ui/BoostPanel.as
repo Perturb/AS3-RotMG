@@ -1,27 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.BoostPanel
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.utils.Timer;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.events.TimerEvent;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class BoostPanel extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.utils.Timer;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+import org.osflash.signals.Signal;
+
+public class BoostPanel extends Sprite
     {
 
         public const resized:Signal = new Signal();
@@ -66,8 +69,8 @@ package com.company.assembleegameclient.ui
                 {
                     this.destroyBoostTimers();
                     this.createBoostTimers();
-                };
-            };
+                }
+            }
         }
 
         private function createHeader():void
@@ -112,7 +115,7 @@ package com.company.assembleegameclient.ui
             else
             {
                 _local_1.complete.addOnce(this.createBackground);
-            };
+            }
         }
 
         private function addTierBoostIfAble(_arg_1:SignalWaiter):void
@@ -121,7 +124,7 @@ package com.company.assembleegameclient.ui
             {
                 this.tierBoostTimer = this.returnBoostTimer(new LineBuilder().setParams(TextKey.BOOSTPANEL_TIERLEVELINCREASED), this.player.tierBoost);
                 this.addTimer(_arg_1, this.tierBoostTimer);
-            };
+            }
         }
 
         private function addDropTimerIfAble(_arg_1:SignalWaiter):void
@@ -132,7 +135,7 @@ package com.company.assembleegameclient.ui
                 _local_2 = "1.5x";
                 this.dropBoostTimer = this.returnBoostTimer(new LineBuilder().setParams(TextKey.BOOSTPANEL_DROPRATE, {"rate":_local_2}), this.player.dropBoost);
                 this.addTimer(_arg_1, this.dropBoostTimer);
-            };
+            }
         }
 
         private function addTimer(_arg_1:SignalWaiter, _arg_2:BoostTimer):void
@@ -149,11 +152,11 @@ package com.company.assembleegameclient.ui
             if (((this.tierBoostTimer) && (this.tierBoostTimer.parent)))
             {
                 removeChild(this.tierBoostTimer);
-            };
+            }
             if (((this.dropBoostTimer) && (this.dropBoostTimer.parent)))
             {
                 removeChild(this.dropBoostTimer);
-            };
+            }
             this.tierBoostTimer = null;
             this.dropBoostTimer = null;
         }

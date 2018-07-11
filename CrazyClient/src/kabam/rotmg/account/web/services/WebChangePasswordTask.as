@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebChangePasswordTask
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.ChangePasswordTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.web.model.ChangePasswordData;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.ChangePasswordTask;
+import kabam.rotmg.account.web.model.ChangePasswordData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class WebChangePasswordTask extends BaseTask implements ChangePasswordTask 
+public class WebChangePasswordTask extends BaseTask implements ChangePasswordTask 
     {
 
         [Inject]
@@ -45,7 +45,7 @@ package kabam.rotmg.account.web.services
 
         private function onChangeDone():void
         {
-            this.account.updateUser(this.account.getUserId(), this.data.newPassword, this.account.getToken());
+            this.account.updateUser(this.account.getUserId(), this.data.newPassword, this.account.getToken(), this.account.getSecret());
             completeTask(true);
         }
 

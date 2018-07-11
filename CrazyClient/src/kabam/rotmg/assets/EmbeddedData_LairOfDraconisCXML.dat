@@ -278,8 +278,8 @@
       <Size>175</Size>
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -341,7 +341,7 @@
       <MaxHitPoints>45000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7499" id="NM Blue Dragon God Hardmode">
@@ -364,8 +364,8 @@
       <Size>225</Size>
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>75</Defense>
-      <XpMult>1.0</XpMult>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -436,7 +436,7 @@
       <MaxHitPoints>55000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7540" id="NM Blue Dragon Spawner">
@@ -470,7 +470,7 @@
       <Size>100</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>.001</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Dragon Attack Black Spin</ObjectId>
          <Speed>70</Speed>
@@ -528,8 +528,9 @@
       <Size>200</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>5.0</XpMult>
+      <Exp>975</Exp>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -627,7 +628,7 @@
       <MaxHitPoints>45000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7543" id="NM Red Dragon God Hardmode">
@@ -650,8 +651,8 @@
       <Size>225</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>1.0</XpMult>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -720,7 +721,7 @@
       <MaxHitPoints>55000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7544" id="NM Red Dragon Spawner">
@@ -765,7 +766,7 @@
       </AnimatedTexture>
       <Size>150</Size>
       <MaxHitPoints>5000</MaxHitPoints>
-      <XpMult>.001</XpMult>
+      <Exp>0</Exp>
       <Defense>20</Defense>
       <Z>.4</Z>
       <Flying/>
@@ -787,7 +788,7 @@
          <Index>0</Index>
       </Texture>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
    </Object>
    <Object type="0x7548" id="NM Red Dragon Lava Trigger">
@@ -799,7 +800,7 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>10</MaxHitPoints>
    </Object>
@@ -823,8 +824,9 @@
       <Size>175</Size>
       <MaxHitPoints>110000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>5.0</XpMult>
+      <Exp>975</Exp>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -892,7 +894,7 @@
       <MaxHitPoints>45000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7541" id="NM Green Dragon God Hardmode">
@@ -915,8 +917,8 @@
       <Size>225</Size>
       <MaxHitPoints>110000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>1.0</XpMult>
       <Level>20</Level>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -984,7 +986,7 @@
       <MaxHitPoints>55000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7542" id="NM Green Dragon Spawner">
@@ -1006,7 +1008,7 @@
       <Size>200</Size>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>.001</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Dragon Attack Black Spin</ObjectId>
          <Speed>90</Speed>
@@ -1047,7 +1049,7 @@
       <Size>100</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>.001</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Dragon Attack Green Ball</ObjectId>
          <Damage>40</Damage>
@@ -1109,7 +1111,8 @@
       <Size>240</Size>
       <MaxHitPoints>110000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>7.5</XpMult>
+      <Exp>1462</Exp>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -1207,7 +1210,7 @@
       <MaxHitPoints>45000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x751a" id="NM Black Dragon God Hardmode">
@@ -1235,7 +1238,8 @@
       <Size>240</Size>
       <MaxHitPoints>110000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>7.5</XpMult>
+      <Exp>1462</Exp>
+      <Quest/>
       <God/>
       <ParalyzeImmune/>
       <DazedImmune/>
@@ -1333,7 +1337,7 @@
       <MaxHitPoints>55000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x751c" id="NM Black Dragon Spawner">
@@ -1357,7 +1361,7 @@
       <Size>175</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Dragon Attack Black Bullet</ObjectId>
          <Speed>100</Speed>
@@ -1390,7 +1394,7 @@
       <Size>150</Size>
       <MaxHitPoints>7000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Speed>55</Speed>
@@ -1690,7 +1694,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>125000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>7.5</XpMult>
+      <Exp>1462</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -1749,7 +1753,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>70000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -1779,7 +1783,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>70000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -1809,7 +1813,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>70000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -1839,7 +1843,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>70000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -1868,7 +1872,7 @@
       <ShadowSize>40</ShadowSize>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <StasisImmune/>
       <StunImmune/>
       <ArmorBreakImmune/>
@@ -1914,7 +1918,7 @@
       <ShadowSize>40</ShadowSize>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <StunImmune/>
       <StasisImmune/>
       <AltTexture id="1">
@@ -1959,7 +1963,7 @@
       <ShadowSize>40</ShadowSize>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <ArmorBreakImmune/>
       <StunImmune/>
       <AltTexture id="1">
@@ -2004,7 +2008,7 @@
       <ShadowSize>40</ShadowSize>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <StasisImmune/>
       <StunImmune/>
       <AltTexture id="1">
@@ -2094,7 +2098,7 @@
       </Animation>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
       <ShadowSize>30</ShadowSize>
       <Z>0.26</Z>
@@ -2143,6 +2147,6 @@
       <MaxHitPoints>60000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
 </Objects>

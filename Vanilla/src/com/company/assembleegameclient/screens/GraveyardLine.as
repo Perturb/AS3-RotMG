@@ -5,17 +5,19 @@
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.display.Bitmap;
-    import com.company.ui.BaseSimpleText;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import flash.display.BitmapData;
-    import flash.net.navigateToURL;
-    import flash.net.URLRequest;
+import com.company.ui.BaseSimpleText;
 
-    public class GraveyardLine extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.net.URLRequest;
+import flash.net.navigateToURL;
+
+import org.osflash.signals.Signal;
+
+public class GraveyardLine extends Sprite 
     {
 
         public static const WIDTH:int = 415;
@@ -93,7 +95,7 @@ package com.company.assembleegameclient.screens
                 case "https":
                 default:
                     navigateToURL(new URLRequest(this.link), "_blank");
-            };
+            }
         }
 
         private function getTimeDiff(_arg_1:int):String
@@ -103,19 +105,19 @@ package com.company.assembleegameclient.screens
             if (_local_3 <= 0)
             {
                 return ("now");
-            };
+            }
             if (_local_3 < 60)
             {
                 return (_local_3 + " secs");
-            };
+            }
             if (_local_3 < (60 * 60))
             {
                 return (int((_local_3 / 60)) + " mins");
-            };
+            }
             if (_local_3 < ((60 * 60) * 24))
             {
                 return (int((_local_3 / (60 * 60))) + " hours");
-            };
+            }
             return (int((_local_3 / ((60 * 60) * 24))) + " days");
         }
 

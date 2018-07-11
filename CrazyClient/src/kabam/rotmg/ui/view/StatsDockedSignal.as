@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.StatsDockedSignal
 
 package kabam.rotmg.ui.view
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public class StatsDockedSignal extends Signal 
+public class StatsDockedSignal extends Signal
     {
 
 

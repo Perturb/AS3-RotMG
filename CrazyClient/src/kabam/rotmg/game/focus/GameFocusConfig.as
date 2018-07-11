@@ -1,23 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.focus.GameFocusConfig
 
 package kabam.rotmg.game.focus
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import kabam.rotmg.game.focus.control.AddGameFocusConsoleActionSignal;
-    import kabam.rotmg.game.focus.control.AddGameFocusConsoleActionCommand;
-    import com.company.assembleegameclient.game.GameSprite;
-    import kabam.rotmg.game.focus.view.GameFocusMediator;
-    import org.osflash.signals.Signal;
+import com.company.assembleegameclient.game.GameSprite;
 
-    public class GameFocusConfig implements IConfig 
+import kabam.rotmg.game.focus.control.AddGameFocusConsoleActionCommand;
+import kabam.rotmg.game.focus.control.AddGameFocusConsoleActionSignal;
+import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+import kabam.rotmg.game.focus.view.GameFocusMediator;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class GameFocusConfig implements IConfig
     {
 
         [Inject]

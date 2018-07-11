@@ -5,24 +5,23 @@
 
 package com.company.assembleegameclient.map.partyoverlay
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.menu.Menu;
-    import flash.display.DisplayObjectContainer;
-    import com.company.assembleegameclient.objects.GameObject;
-    import __AS3__.vec.Vector;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import flash.geom.Point;
-    import flash.events.MouseEvent;
-    import flash.filters.DropShadowFilter;
-    import flash.geom.Rectangle;
-    import com.company.util.RectangleUtil;
-    import com.company.util.Trig;
-    import com.company.assembleegameclient.map.Camera;
-    import flash.display.Graphics;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.ui.menu.Menu;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.util.RectangleUtil;
+import com.company.util.Trig;
 
-    public class GameObjectArrow extends Sprite 
+import flash.display.DisplayObjectContainer;
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+
+public class GameObjectArrow extends Sprite
     {
 
         public static const SMALL_SIZE:int = 8;
@@ -62,9 +61,9 @@ package com.company.assembleegameclient.map.partyoverlay
                 if (menu_.parent != null)
                 {
                     menu_.parent.removeChild(menu_);
-                };
+                }
                 menu_ = null;
-            };
+            }
         }
 
 
@@ -93,7 +92,7 @@ package com.company.assembleegameclient.map.partyoverlay
             {
                 addChild(this.tooltip_);
                 this.positionTooltip(this.tooltip_);
-            };
+            }
         }
 
         protected function removeTooltip():void
@@ -103,9 +102,9 @@ package com.company.assembleegameclient.map.partyoverlay
                 if (this.tooltip_.parent != null)
                 {
                     this.tooltip_.parent.removeChild(this.tooltip_);
-                };
+                }
                 this.tooltip_ = null;
-            };
+            }
         }
 
         protected function setMenu(_arg_1:Menu):void
@@ -120,12 +119,12 @@ package com.company.assembleegameclient.map.partyoverlay
             if (this.go_ != _arg_1)
             {
                 this.go_ = _arg_1;
-            };
+            }
             this.extraGOs_.length = 0;
             if (this.go_ == null)
             {
                 visible = false;
-            };
+            }
         }
 
         public function addGameObject(_arg_1:GameObject):void
@@ -142,7 +141,7 @@ package com.company.assembleegameclient.map.partyoverlay
             {
                 visible = false;
                 return;
-            };
+            }
             this.go_.computeSortVal(_arg_2);
             _local_3 = _arg_2.clipRect_;
             _local_4 = this.go_.posS_[0];
@@ -152,7 +151,7 @@ package com.company.assembleegameclient.map.partyoverlay
                 this.go_ = null;
                 visible = false;
                 return;
-            };
+            }
             x = this.tempPoint.x;
             y = this.tempPoint.y;
             var _local_6:Number = Trig.boundTo180((270 - (Trig.toDegrees * Math.atan2(_local_4, _local_5))));
@@ -161,11 +160,11 @@ package com.company.assembleegameclient.map.partyoverlay
                 if (_local_6 > 45)
                 {
                     _local_6 = 45;
-                };
+                }
                 if (_local_6 < -45)
                 {
                     _local_6 = -45;
-                };
+                }
             }
             else
             {
@@ -176,27 +175,27 @@ package com.company.assembleegameclient.map.partyoverlay
                         if (_local_6 < 135)
                         {
                             _local_6 = 135;
-                        };
+                        }
                     }
                     else
                     {
                         if (_local_6 > -135)
                         {
                             _local_6 = -135;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             if (this.tempPoint.y < (_local_3.top + 5))
             {
                 if (_local_6 < 45)
                 {
                     _local_6 = 45;
-                };
+                }
                 if (_local_6 > 135)
                 {
                     _local_6 = 135;
-                };
+                }
             }
             else
             {
@@ -205,18 +204,18 @@ package com.company.assembleegameclient.map.partyoverlay
                     if (_local_6 > -45)
                     {
                         _local_6 = -45;
-                    };
+                    }
                     if (_local_6 < -135)
                     {
                         _local_6 = -135;
-                    };
-                };
-            };
+                    }
+                }
+            }
             this.arrow_.rotation = _local_6;
             if (this.tooltip_ != null)
             {
                 this.positionTooltip(this.tooltip_);
-            };
+            }
             visible = true;
         }
 
@@ -258,9 +257,9 @@ package com.company.assembleegameclient.map.partyoverlay
                         _arg_1.x = (_local_4 - _local_6);
                         _local_9 = (_local_5 - (_local_7 * Math.tan((_local_2 * Trig.toRadians))));
                         _arg_1.y = (((_local_5 + _local_9) / 2) - (_local_7 / 2));
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function drawArrow():void

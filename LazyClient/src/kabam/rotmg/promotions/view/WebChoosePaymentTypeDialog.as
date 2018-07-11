@@ -5,15 +5,18 @@
 
 package kabam.rotmg.promotions.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.lib.ui.GroupMappedSignal;
-    import flash.events.MouseEvent;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import com.company.assembleegameclient.util.PaymentMethod;
-    import kabam.rotmg.promotions.view.components.TransparentButton;
+import com.company.assembleegameclient.util.PaymentMethod;
 
-    public class WebChoosePaymentTypeDialog extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+
+import kabam.lib.ui.GroupMappedSignal;
+import kabam.rotmg.promotions.view.components.TransparentButton;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebChoosePaymentTypeDialog extends Sprite
     {
 
         public static var hifiBeginnerOfferMoneyFrameEmbed:Class = WebChoosePaymentTypeDialog_hifiBeginnerOfferMoneyFrameEmbed;

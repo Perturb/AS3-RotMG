@@ -5,18 +5,19 @@
 
 package io.decagames.rotmg.ui.buttons
 {
-    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import flash.utils.Dictionary;
-    import flash.geom.Point;
-    import io.decagames.rotmg.utils.colors.Tint;
-    import flash.events.MouseEvent;
-    import flash.geom.ColorTransform;
-    import io.decagames.rotmg.utils.colors.GreyScale;
-    import flash.events.Event;
-    import io.decagames.rotmg.ui.texture.TextureParser;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.geom.Point;
+import flash.utils.Dictionary;
 
-    public class SliceScalingButton extends BaseButton 
+import io.decagames.rotmg.ui.labels.UILabel;
+import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+import io.decagames.rotmg.ui.texture.TextureParser;
+import io.decagames.rotmg.utils.colors.GreyScale;
+import io.decagames.rotmg.utils.colors.Tint;
+
+public class SliceScalingButton extends BaseButton
     {
 
         private var staticWidth:Boolean;
@@ -25,15 +26,15 @@ package io.decagames.rotmg.ui.buttons
         private var rollOverBitmap:SliceScalingBitmap;
         private var _label:UILabel;
         private var stateFactories:Dictionary;
-        protected var bitmap:SliceScalingBitmap;
+        private var _bitmap:SliceScalingBitmap;
         private var _autoDispose:Boolean;
         protected var _interactionEffects:Boolean = true;
         protected var labelMargin:Point = new Point();
 
         public function SliceScalingButton(_arg_1:SliceScalingBitmap, _arg_2:SliceScalingBitmap=null, _arg_3:SliceScalingBitmap=null)
         {
-            this.bitmap = _arg_1;
-            addChild(this.bitmap);
+            this._bitmap = _arg_1;
+            addChild(this._bitmap);
             this.rollOverBitmap = _arg_3;
             this.disableBitmap = _arg_2;
             this._label = new UILabel();
@@ -51,12 +52,12 @@ package io.decagames.rotmg.ui.buttons
         {
             if (((this._interactionEffects) && (!(_disabled))))
             {
-                Tint.add(this.bitmap, 0xFFFF, 0.1);
-                this.bitmap.scaleX = 1;
-                this.bitmap.scaleY = 1;
-                this.bitmap.x = 0;
-                this.bitmap.y = 0;
-            };
+                Tint.add(this._bitmap, 0xFFFF, 0.1);
+                this._bitmap.scaleX = 1;
+                this._bitmap.scaleY = 1;
+                this._bitmap.x = 0;
+                this._bitmap.y = 0;
+            }
             super.onRollOverHandler(_arg_1);
         }
 
@@ -64,11 +65,11 @@ package io.decagames.rotmg.ui.buttons
         {
             if (((this._interactionEffects) && (!(_disabled))))
             {
-                this.bitmap.scaleX = 0.9;
-                this.bitmap.scaleY = 0.9;
-                this.bitmap.x = ((this.bitmap.width * 0.1) / 2);
-                this.bitmap.y = ((this.bitmap.height * 0.1) / 2);
-            };
+                this._bitmap.scaleX = 0.9;
+                this._bitmap.scaleY = 0.9;
+                this._bitmap.x = ((this._bitmap.width * 0.1) / 2);
+                this._bitmap.y = ((this._bitmap.height * 0.1) / 2);
+            }
             super.onMouseDownHandler(_arg_1);
         }
 
@@ -76,11 +77,11 @@ package io.decagames.rotmg.ui.buttons
         {
             if (this._interactionEffects)
             {
-                this.bitmap.scaleX = 1;
-                this.bitmap.scaleY = 1;
-                this.bitmap.x = 0;
-                this.bitmap.y = 0;
-            };
+                this._bitmap.scaleX = 1;
+                this._bitmap.scaleY = 1;
+                this._bitmap.x = 0;
+                this._bitmap.y = 0;
+            }
             super.onClickHandler(_arg_1);
         }
 
@@ -88,12 +89,12 @@ package io.decagames.rotmg.ui.buttons
         {
             if (this._interactionEffects)
             {
-                this.bitmap.transform.colorTransform = new ColorTransform();
-                this.bitmap.scaleX = 1;
-                this.bitmap.scaleY = 1;
-                this.bitmap.x = 0;
-                this.bitmap.y = 0;
-            };
+                this._bitmap.transform.colorTransform = new ColorTransform();
+                this._bitmap.scaleX = 1;
+                this._bitmap.scaleY = 1;
+                this._bitmap.x = 0;
+                this._bitmap.y = 0;
+            }
             super.onRollOutHandler(_arg_1);
         }
 
@@ -101,21 +102,21 @@ package io.decagames.rotmg.ui.buttons
         {
             super.disabled = _arg_1;
             var _local_2:Function = this.stateFactories[ButtonStates.DISABLED];
-            if (_local_2)
+            if (_local_2 != null)
             {
                 (_local_2(this._label));
-            };
+            }
             if (this._interactionEffects)
             {
                 if (_arg_1)
                 {
-                    GreyScale.setGreyScale(this.bitmap.bitmapData);
+                    GreyScale.setGreyScale(this._bitmap.bitmapData);
                 }
                 else
                 {
-                    GreyScale.clear(this.bitmap.bitmapData);
-                };
-            };
+                    this.changeBitmap(this._bitmap.sourceBitmapName, new Point(this._bitmap.marginX, this._bitmap.marginY));
+                }
+            }
             this.render();
         }
 
@@ -123,14 +124,14 @@ package io.decagames.rotmg.ui.buttons
         {
             if (_arg_3 == ButtonStates.IDLE)
             {
-                if (_arg_2)
+                if (_arg_2 != null)
                 {
                     (_arg_2(this._label));
-                };
+                }
                 this._label.text = _arg_1;
                 addChild(this._label);
                 this.render();
-            };
+            }
             this.stateFactories[_arg_3] = _arg_2;
         }
 
@@ -152,37 +153,37 @@ package io.decagames.rotmg.ui.buttons
         {
             if (this.staticWidth)
             {
-                this.bitmap.width = this._bitmapWidth;
-            };
-            this._label.x = ((((this._bitmapWidth - this._label.textWidth) / 2) + this.bitmap.marginX) + this.labelMargin.y);
-            this._label.y = ((((this.bitmap.height - this._label.textHeight) / 2) + this.bitmap.marginY) + this.labelMargin.y);
+                this._bitmap.width = this._bitmapWidth;
+            }
+            this._label.x = ((((this._bitmapWidth - this._label.textWidth) / 2) + this._bitmap.marginX) + this.labelMargin.y);
+            this._label.y = ((((this._bitmap.height - this._label.textHeight) / 2) + this._bitmap.marginY) + this.labelMargin.y);
         }
 
         override public function dispose():void
         {
-            this.bitmap.dispose();
+            this._bitmap.dispose();
             if (this.disableBitmap)
             {
                 this.disableBitmap.dispose();
-            };
+            }
             if (this.rollOverBitmap)
             {
                 this.rollOverBitmap.dispose();
-            };
+            }
             super.dispose();
         }
 
         public function changeBitmap(_arg_1:String, _arg_2:Point=null):void
         {
-            removeChild(this.bitmap);
-            this.bitmap.dispose();
-            this.bitmap = TextureParser.instance.getSliceScalingBitmap("UI", _arg_1);
+            removeChild(this._bitmap);
+            this._bitmap.dispose();
+            this._bitmap = TextureParser.instance.getSliceScalingBitmap("UI", _arg_1);
             if (_arg_2 != null)
             {
-                this.bitmap.addMargin(_arg_2.x, _arg_2.y);
-            };
-            addChildAt(this.bitmap, 0);
-            this.bitmap.forceRenderInNextFrame = true;
+                this._bitmap.addMargin(_arg_2.x, _arg_2.y);
+            }
+            addChildAt(this._bitmap, 0);
+            this._bitmap.forceRenderInNextFrame = true;
             this.render();
         }
 
@@ -209,6 +210,16 @@ package io.decagames.rotmg.ui.buttons
         public function set interactionEffects(_arg_1:Boolean):void
         {
             this._interactionEffects = _arg_1;
+        }
+
+        public function get bitmapWidth():int
+        {
+            return (this._bitmapWidth);
+        }
+
+        public function get bitmap():SliceScalingBitmap
+        {
+            return (this._bitmap);
         }
 
 

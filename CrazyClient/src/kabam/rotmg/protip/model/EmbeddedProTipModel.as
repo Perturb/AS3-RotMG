@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.protip.model.EmbeddedProTipModel
 
 package kabam.rotmg.protip.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class EmbeddedProTipModel implements IProTipModel 
+public class EmbeddedProTipModel implements IProTipModel 
     {
 
         public static var protipsXML:Class = EmbeddedProTipModel_protipsXML;
@@ -40,7 +37,7 @@ package kabam.rotmg.protip.model
             for each (_local_1 in _local_2.Protip)
             {
                 this.tips.push(_local_1.toString());
-            };
+            }
             this.count = this.tips.length;
         }
 
@@ -52,12 +49,12 @@ package kabam.rotmg.protip.model
             {
                 _local_2.push(_local_1);
                 _local_1++;
-            };
+            }
             this.indices = new Vector.<int>(0);
             while (_local_1 > 0)
             {
                 this.indices.push(_local_2.splice(Math.floor((Math.random() * _local_1--)), 1)[0]);
-            };
+            }
             this.indices.fixed = true;
         }
 

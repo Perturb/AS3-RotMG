@@ -5,10 +5,10 @@
 
 package kabam.rotmg.account.steam
 {
-    import org.osflash.signals.Signal;
-    import org.osflash.signals.OnceSignal;
+import org.osflash.signals.OnceSignal;
+import org.osflash.signals.Signal;
 
-    public interface SteamApi 
+public interface SteamApi
     {
 
         function load(_arg_1:String):void;

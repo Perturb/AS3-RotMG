@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal
 
 package kabam.rotmg.promotions.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.core.PaymentData;
+import kabam.rotmg.account.core.PaymentData;
 
-    public class MakeBeginnersPackagePaymentSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class MakeBeginnersPackagePaymentSignal extends Signal 
     {
 
         public function MakeBeginnersPackagePaymentSignal()

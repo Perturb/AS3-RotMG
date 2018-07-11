@@ -5,20 +5,21 @@
 
 package io.decagames.rotmg.shop.mysteryBox
 {
-    import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
-    import io.decagames.rotmg.ui.gird.UIGrid;
-    import flash.geom.Point;
-    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import io.decagames.rotmg.shop.mysteryBox.contentPopup.UIItemContainer;
+import flash.geom.Point;
 
-    public class MysteryBoxTile extends GenericBoxTile 
+import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
+import io.decagames.rotmg.shop.mysteryBox.contentPopup.UIItemContainer;
+import io.decagames.rotmg.ui.gird.UIGrid;
+
+import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+
+public class MysteryBoxTile extends GenericBoxTile
     {
 
         private var displayedItemsGrid:UIGrid;
         private var maxResultHeight:int = 75;
         private var maxResultWidth:int;
         private var resultElementWidth:int;
-        private var resultGridMargin:* = 0;
         private var gridConfig:Point;
 
         public function MysteryBoxTile(_arg_1:MysteryBoxInfo)
@@ -48,7 +49,7 @@ package io.decagames.rotmg.shop.mysteryBox
             if (_arg_1 >= (_local_2.x * _local_2.y))
             {
                 return (_local_2);
-            };
+            }
             var _local_4:int = 11;
             while (_local_4 >= 1)
             {
@@ -73,15 +74,15 @@ package io.decagames.rotmg.shop.mysteryBox
                                     {
                                         _local_3 = _local_6;
                                         _local_2 = new Point(_local_4, _local_5);
-                                    };
-                                };
-                            };
-                        };
-                    };
+                                    }
+                                }
+                            }
+                        }
+                    }
                     _local_5--;
-                };
+                }
                 _local_4--;
-            };
+            }
             return (_local_2);
         }
 
@@ -91,11 +92,11 @@ package io.decagames.rotmg.shop.mysteryBox
             if ((_local_2 * _arg_1.x) > this.maxResultWidth)
             {
                 _local_2 = int(Math.floor((this.maxResultWidth / _arg_1.x)));
-            };
+            }
             if ((_local_2 * _arg_1.y) > this.maxResultHeight)
             {
                 return (-1);
-            };
+            }
             return (_local_2);
         }
 
@@ -107,11 +108,11 @@ package io.decagames.rotmg.shop.mysteryBox
             if (((_local_1.length == 0) || (MysteryBoxInfo(_boxInfo).displayedItems == "")))
             {
                 return;
-            };
+            }
             if (_infoButton)
             {
                 _infoButton.alpha = 0;
-            };
+            }
             switch (_local_1.length)
             {
                 case 1:
@@ -121,7 +122,7 @@ package io.decagames.rotmg.shop.mysteryBox
                     break;
                 case 3:
                     break;
-            };
+            }
             this.prepareResultGrid(_local_1.length);
             var _local_3:int;
             while (_local_3 < _local_1.length)
@@ -129,7 +130,7 @@ package io.decagames.rotmg.shop.mysteryBox
                 _local_4 = new UIItemContainer(_local_1[_local_3], 0, 0, this.resultElementWidth);
                 this.displayedItemsGrid.addGridElement(_local_4);
                 _local_3++;
-            };
+            }
         }
 
         override public function resize(_arg_1:int, _arg_2:int=-1):void
@@ -149,7 +150,7 @@ package io.decagames.rotmg.shop.mysteryBox
             if (this.displayedItemsGrid)
             {
                 this.displayedItemsGrid.x = (10 + Math.round(((this.maxResultWidth - (this.resultElementWidth * this.gridConfig.x)) / 2)));
-            };
+            }
             updateTimeEndString();
             updateSaleLabel();
             updateClickMask(_arg_1);
@@ -160,7 +161,7 @@ package io.decagames.rotmg.shop.mysteryBox
             if (this.displayedItemsGrid)
             {
                 this.displayedItemsGrid.dispose();
-            };
+            }
             super.dispose();
         }
 

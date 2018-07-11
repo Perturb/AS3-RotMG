@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.BuyingDialog
 
 package kabam.rotmg.account.core.view
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.text.model.TextKey;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class BuyingDialog extends Dialog 
+import kabam.rotmg.text.model.TextKey;
+
+public class BuyingDialog extends Dialog 
     {
 
         public function BuyingDialog()

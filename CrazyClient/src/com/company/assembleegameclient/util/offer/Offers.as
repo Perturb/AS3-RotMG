@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.offer.Offers
 
 package com.company.assembleegameclient.util.offer
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class Offers 
+public class Offers
     {
 
         private static const BEST_DEAL:String = "(Best deal)";
@@ -41,7 +38,7 @@ package com.company.assembleegameclient.util.offer
             for each (_local_2 in _arg_1.Offer)
             {
                 this.offerList.push(this.makeOffer(_local_2));
-            };
+            }
         }
 
         private function makeOffer(_arg_1:XML):Offer
@@ -69,7 +66,7 @@ package com.company.assembleegameclient.util.offer
             if (this.offerList.length == 0)
             {
                 return;
-            };
+            }
             var _local_5:int = this.offerList[0].realmGold_;
             var _local_6:int = this.offerList[0].price_;
             var _local_7:Number = (_local_5 / _local_6);
@@ -82,7 +79,7 @@ package com.company.assembleegameclient.util.offer
                 _local_4 = (_local_1 - _local_3);
                 this.offerList[_local_8].bonus = (_local_4 / _local_2);
                 _local_8++;
-            };
+            }
         }
 
         private function sortOffers(_arg_1:Offer, _arg_2:Offer):int
@@ -98,8 +95,8 @@ package com.company.assembleegameclient.util.offer
                 if (_local_1.price_ == 10)
                 {
                     _local_1.tagline = MOST_POPULAR;
-                };
-            };
+                }
+            }
         }
 
         private function defineBestDealTagline():void

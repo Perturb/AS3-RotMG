@@ -5,12 +5,14 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import com.company.assembleegameclient.util.RandomUtil;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.RandomUtil;
 
-    public class LightningEffect extends ParticleEffect 
+import flash.geom.Point;
+
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class LightningEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -19,7 +21,7 @@ package com.company.assembleegameclient.objects.particles
         public var particleSize_:int;
         public var lifetimeMultiplier_:Number;
 
-        public function LightningEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:int, _arg_4:int, _arg_5:*=1)
+        public function LightningEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:int, _arg_4:int, _arg_5:Number=1)
         {
             this.start_ = new Point(_arg_1.x_, _arg_1.y_);
             this.end_ = new Point(_arg_2.x_, _arg_2.y_);
@@ -45,7 +47,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_8 = Math.min(_local_5, (_local_4 - _local_5));
                 map_.addObj(_local_7, (_local_6.x + RandomUtil.plusMinus(((_local_3 / 200) * _local_8))), (_local_6.y + RandomUtil.plusMinus(((_local_3 / 200) * _local_8))));
                 _local_5++;
-            };
+            }
             return (false);
         }
 
@@ -67,7 +69,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_8 = Math.min(_local_5, (_local_4 - _local_5));
                 map_.addObj(_local_7, (_local_6.x + RandomUtil.plusMinus(((_local_3 / 200) * _local_8))), (_local_6.y + RandomUtil.plusMinus(((_local_3 / 200) * _local_8))));
                 _local_5++;
-            };
+            }
             return (false);
         }
 

@@ -5,10 +5,10 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class VortexEffect extends ParticleEffect 
+public class VortexEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -34,11 +34,11 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             if (this.lastUpdate_ < 0)
             {
                 this.lastUpdate_ = Math.max(0, (_arg_1 - 400));
-            };
+            }
             x_ = this.go_.x_;
             y_ = this.go_.y_;
             var _local_3:int = int((this.lastUpdate_ / 50));
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.objects.particles
                 map_.addObj(_local_5, (x_ + _local_7), (y_ + _local_8));
                 _local_5.restart(_local_4, _arg_1, x_, y_);
                 _local_3++;
-            };
+            }
             this.lastUpdate_ = _arg_1;
             return (true);
         }
@@ -63,10 +63,11 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Vector3D;
 import com.company.assembleegameclient.util.FreeList;
 
-class VortexParticle extends Particle 
+import flash.geom.Vector3D;
+
+class VortexParticle extends Particle
 {
 
     private static const G:Number = 4;
@@ -113,7 +114,7 @@ class VortexParticle extends Particle
         if (this.mSize > size_)
         {
             this.fSize = (this.fSize + (_arg_2 * 0.01));
-        };
+        }
         size_ = this.fSize;
         moveTo((x_ + (((_local_5 + this.initAccelX) * _arg_2) * 0.0006)), (y_ + (((_local_6 + this.initAccelY) * _arg_2) * 0.0006)));
         z_ = (z_ + ((-0.5 * _arg_2) * 0.0006));

@@ -5,14 +5,15 @@
 
 package kabam.rotmg.core.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
-    import kabam.rotmg.application.DynamicSettings;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.DynamicSettings;
+import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
 
-    public class RequestAppInitTask extends BaseTask 
+import robotlegs.bender.framework.api.ILogger;
+
+public class RequestAppInitTask extends BaseTask
     {
 
         [Inject]
@@ -45,7 +46,7 @@ package kabam.rotmg.core.service
             if (_arg_1 != null)
             {
                 DynamicSettings.xml = _arg_1;
-            };
+            }
         }
 
 

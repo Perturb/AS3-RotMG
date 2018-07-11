@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.NameChanger
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.game.view.NameChangerPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.ui.panels.Panel;
 
-    public class NameChanger extends GameObject implements IInteractiveObject 
+import kabam.rotmg.game.view.NameChangerPanel;
+
+public class NameChanger extends GameObject implements IInteractiveObject
     {
 
         public var rankRequired_:int = 0;

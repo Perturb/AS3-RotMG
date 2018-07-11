@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.components.MenuOptionsBar
 
 package kabam.rotmg.ui.view.components
 {
-    import flash.display.Sprite;
-    import com.company.rotmg.graphics.ScreenGraphic;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import flash.geom.Rectangle;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.rotmg.graphics.ScreenGraphic;
 
-    public class MenuOptionsBar extends Sprite 
+import flash.display.Sprite;
+import flash.geom.Rectangle;
+
+public class MenuOptionsBar extends Sprite 
     {
 
         private static const Y_POSITION:Number = 550;
@@ -55,7 +56,7 @@ package kabam.rotmg.ui.view.components
                     this.rightObjects.push(_arg_1);
                     _arg_1.changed.add(this.layoutRightButtons);
                     return;
-            };
+            }
         }
 
         private function layoutLeftButtons():void
@@ -65,7 +66,7 @@ package kabam.rotmg.ui.view.components
             {
                 this.layoutToLeftOf(this.leftObjects[(_local_1 - 1)], this.leftObjects[_local_1]);
                 _local_1++;
-            };
+            }
         }
 
         private function layoutToLeftOf(_arg_1:TitleMenuOption, _arg_2:TitleMenuOption):void
@@ -83,7 +84,7 @@ package kabam.rotmg.ui.view.components
             {
                 this.layoutToRightOf(this.rightObjects[(_local_1 - 1)], this.rightObjects[_local_1]);
                 _local_1++;
-            };
+            }
         }
 
         private function layoutToRightOf(_arg_1:TitleMenuOption, _arg_2:TitleMenuOption):void

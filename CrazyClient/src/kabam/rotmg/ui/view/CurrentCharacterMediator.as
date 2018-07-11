@@ -1,29 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CurrentCharacterMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.signals.PlayGameSignal;
-    import kabam.rotmg.ui.signals.ChooseNameSignal;
-    import kabam.rotmg.ui.signals.NameChangedSignal;
-    import kabam.rotmg.packages.control.InitPackagesSignal;
-    import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
-    import kabam.rotmg.packages.control.PackageAvailableSignal;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.assembleegameclient.screens.NewCharacterScreen;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.game.model.GameInitData;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+import com.company.assembleegameclient.screens.NewCharacterScreen;
 
-    public class CurrentCharacterMediator extends Mediator 
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.game.signals.PlayGameSignal;
+import kabam.rotmg.packages.control.InitPackagesSignal;
+import kabam.rotmg.ui.signals.ChooseNameSignal;
+import kabam.rotmg.ui.signals.NameChangedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CurrentCharacterMediator extends Mediator
     {
 
         [Inject]
@@ -43,12 +42,6 @@ package kabam.rotmg.ui.view
         [Inject]
         public var initPackages:InitPackagesSignal;
         [Inject]
-        public var beginnersPackageAvailable:BeginnersPackageAvailableSignal;
-        [Inject]
-        public var packageAvailable:PackageAvailableSignal;
-        [Inject]
-        public var beginnerModel:BeginnersPackageModel;
-        [Inject]
         public var openDialog:OpenDialogSignal;
 
 
@@ -61,24 +54,12 @@ package kabam.rotmg.ui.view
             this.view.chooseName.add(this.onChooseName);
             this.view.playGame.add(this.onPlayGame);
             this.nameChanged.add(this.onNameChanged);
-            this.beginnersPackageAvailable.add(this.onBeginner);
             this.initPackages.dispatch();
-        }
-
-        private function onPackage():void
-        {
-            this.view.showPackageButton();
-        }
-
-        private function onBeginner():void
-        {
-            this.view.showBeginnersOfferButton();
         }
 
         override public function destroy():void
         {
             this.nameChanged.remove(this.onNameChanged);
-            this.beginnersPackageAvailable.remove(this.onBeginner);
             this.view.close.remove(this.onClose);
             this.view.newCharacter.remove(this.onNewCharacter);
             this.view.chooseName.remove(this.onChooseName);

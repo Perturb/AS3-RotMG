@@ -5,18 +5,20 @@
 
 package kabam.rotmg.friends.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.tooltips.TooltipAble;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import com.company.rotmg.graphics.DeleteXGraphic;
-    import flash.events.MouseEvent;
-    import com.company.util.MoreColorUtil;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.rotmg.graphics.DeleteXGraphic;
+import com.company.util.MoreColorUtil;
 
-    public class FriendRemoveButton extends Sprite implements TooltipAble 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
+
+public class FriendRemoveButton extends Sprite implements TooltipAble
     {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
@@ -30,7 +32,7 @@ package kabam.rotmg.friends.view
             if (_arg_1 != "")
             {
                 this.setToolTipTitle(_arg_1, _arg_2, _arg_3);
-            };
+            }
         }
 
         public function destroy():void
@@ -38,7 +40,7 @@ package kabam.rotmg.friends.view
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
-            };
+            }
             this.toolTip_ = null;
             this.hoverTooltipDelegate.removeDisplayObject();
             this.hoverTooltipDelegate = null;

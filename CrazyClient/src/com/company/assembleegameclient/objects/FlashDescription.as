@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.FlashDescription
 
 package com.company.assembleegameclient.objects
 {
-    import flash.geom.ColorTransform;
-    import flash.display.BitmapData;
-    import kabam.rotmg.stage3D.GraphicsFillExtra;
+import flash.display.BitmapData;
+import flash.geom.ColorTransform;
 
-    public class FlashDescription 
+import kabam.rotmg.stage3D.GraphicsFillExtra;
+
+public class FlashDescription
     {
 
         public var startTime_:int;

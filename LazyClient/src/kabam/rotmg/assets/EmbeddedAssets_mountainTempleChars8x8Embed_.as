@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_mountainTempleChars8x8Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

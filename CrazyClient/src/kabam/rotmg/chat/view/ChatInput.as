@@ -1,22 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatInput
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.text.TextField;
-    import kabam.rotmg.chat.model.ChatModel;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import flash.events.KeyboardEvent;
-    import flash.events.FocusEvent;
-    import flash.text.TextFieldType;
-    import flash.filters.GlowFilter;
-    import flash.ui.Keyboard;
+import com.company.assembleegameclient.game.MapUserInput;
 
-    public class ChatInput extends Sprite 
+import flash.display.Sprite;
+import flash.events.FocusEvent;
+import flash.events.KeyboardEvent;
+import flash.filters.GlowFilter;
+import flash.text.TextField;
+import flash.text.TextFieldType;
+import flash.ui.Keyboard;
+
+import kabam.rotmg.chat.model.ChatModel;
+
+import org.osflash.signals.Signal;
+
+public class ChatInput extends Sprite
     {
 
         public const message:Signal = new Signal(String);
@@ -51,7 +54,7 @@ package kabam.rotmg.chat.view
             else
             {
                 this.input.text = this.oldText;
-            };
+            }
             var _local_3:int = ((_arg_1) ? _arg_1.length : 0);
             this.input.setSelection(_local_3, _local_3);
             if (_arg_2)
@@ -61,7 +64,7 @@ package kabam.rotmg.chat.view
             else
             {
                 this.activateDisabled();
-            };
+            }
             visible = true;
         }
 
@@ -131,9 +134,9 @@ package kabam.rotmg.chat.view
                 else
                 {
                     this.close.dispatch();
-                };
+                }
                 _arg_1.stopImmediatePropagation();
-            };
+            }
         }
 
 

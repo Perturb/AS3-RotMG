@@ -5,18 +5,20 @@
 
 package com.company.assembleegameclient.screens.charrects
 {
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.util.FameUtil;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import flash.display.BitmapData;
-    import com.company.util.BitmapUtil;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.util.BitmapUtil;
 
-    public class CreateNewCharacterRect extends CharacterRect 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class CreateNewCharacterRect extends CharacterRect 
     {
 
         private var bitmap_:Bitmap;
@@ -36,7 +38,7 @@ package com.company.assembleegameclient.screens.charrects
                 super.makeTaglineIcon();
                 super.makeTaglineText(new LineBuilder().setParams(TextKey.CREATE_NEW_CHARACTER_RECT_TAGLINE, {"remainingStars":_local_2}));
                 taglineText.x = (taglineText.x + taglineIcon.width);
-            };
+            }
         }
 
         public function makeBitmap():void

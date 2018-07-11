@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Goto
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class Goto extends IncomingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class Goto extends IncomingMessage 
     {
 
         public var objectId_:int;

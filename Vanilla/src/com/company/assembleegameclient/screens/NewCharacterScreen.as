@@ -5,30 +5,33 @@
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import com.company.rotmg.graphics.ScreenGraphic;
-    import com.company.assembleegameclient.constants.ScreenTypes;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.appengine.SavedCharactersList;
-    import com.company.googleanalytics.GA;
-    import kabam.rotmg.core.model.PlayerModel;
-    import flash.events.Event;
+import com.company.assembleegameclient.appengine.SavedCharactersList;
+import com.company.assembleegameclient.constants.ScreenTypes;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.rotmg.graphics.ScreenGraphic;
 
-    public class NewCharacterScreen extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+
+public class NewCharacterScreen extends Sprite 
     {
 
-        private var backButton_:TitleMenuOption;
-        private var creditDisplay_:CreditDisplay;
-        private var boxes_:Object = {};
         public var tooltip:Signal;
         public var close:Signal;
         public var selected:Signal;
-        public var buy:Signal;
+        private var backButton_:TitleMenuOption;
+        private var creditDisplay_:CreditDisplay;
+        private var boxes_:Object = {};
         private var isInitialized:Boolean = false;
 
         public function NewCharacterScreen()
@@ -36,7 +39,6 @@ package com.company.assembleegameclient.screens
             this.tooltip = new Signal(Sprite);
             this.selected = new Signal(int);
             this.close = new Signal();
-            this.buy = new Signal(int);
             addChild(new ScreenBase());
             addChild(new AccountScreen());
             addChild(new ScreenGraphic());
@@ -45,15 +47,15 @@ package com.company.assembleegameclient.screens
         public function initialize(_arg_1:PlayerModel):void
         {
             var _local_2:int;
-            var _local_3:XML;
-            var _local_4:int;
-            var _local_5:String;
-            var _local_6:Boolean;
-            var _local_7:CharacterBox;
+            var _local_4:XML;
+            var _local_5:int;
+            var _local_6:String;
+            var _local_7:Boolean;
+            var _local_8:CharacterBox;
             if (this.isInitialized)
             {
                 return;
-            };
+            }
             this.isInitialized = true;
             this.backButton_ = new TitleMenuOption(ScreenTypes.BACK, 36, false);
             this.backButton_.addEventListener(MouseEvent.CLICK, this.onBackClick);
@@ -65,33 +67,32 @@ package com.company.assembleegameclient.screens
             _local_2 = 0;
             while (_local_2 < ObjectLibrary.playerChars_.length)
             {
-                _local_3 = ObjectLibrary.playerChars_[_local_2];
-                _local_4 = int(_local_3.@type);
-                _local_5 = _local_3.@id;
-                if (!_arg_1.isClassAvailability(_local_5, SavedCharactersList.UNAVAILABLE))
+                _local_4 = ObjectLibrary.playerChars_[_local_2];
+                _local_5 = int(_local_4.@type);
+                _local_6 = _local_4.@id;
+                if (!_arg_1.isClassAvailability(_local_6, SavedCharactersList.UNAVAILABLE))
                 {
-                    _local_6 = _arg_1.isClassAvailability(_local_5, SavedCharactersList.UNRESTRICTED);
-                    _local_7 = new CharacterBox(_local_3, _arg_1.getCharStats()[_local_4], _arg_1, _local_6);
-                    _local_7.x = (((50 + (140 * int((_local_2 % 5)))) + 70) - (_local_7.width / 2));
-                    _local_7.y = (88 + (140 * int((_local_2 / 5))));
-                    this.boxes_[_local_4] = _local_7;
-                    _local_7.addEventListener(MouseEvent.ROLL_OVER, this.onCharBoxOver);
-                    _local_7.addEventListener(MouseEvent.ROLL_OUT, this.onCharBoxOut);
-                    _local_7.characterSelectClicked_.add(this.onCharBoxClick);
-                    _local_7.buyButtonClicked_.add(this.onBuyClicked);
-                    if (((_local_4 == 784) && (!(_local_7.available_))))
-                    {
-                        _local_7.setSale(75);
-                    };
-                    addChild(_local_7);
-                };
+                    _local_7 = _arg_1.isClassAvailability(_local_6, SavedCharactersList.UNRESTRICTED);
+                    _local_8 = new CharacterBox(_local_4, _arg_1.getCharStats()[_local_5], _arg_1, _local_7);
+                    _local_8.x = (((50 + (140 * int((_local_2 % 5)))) + 70) - (_local_8.width / 2));
+                    _local_8.y = (88 + (140 * int((_local_2 / 5))));
+                    this.boxes_[_local_5] = _local_8;
+                    _local_8.addEventListener(MouseEvent.ROLL_OVER, this.onCharBoxOver);
+                    _local_8.addEventListener(MouseEvent.ROLL_OUT, this.onCharBoxOut);
+                    _local_8.characterSelectClicked_.add(this.onCharBoxClick);
+                    addChild(_local_8);
+                }
                 _local_2++;
-            };
+            }
             this.backButton_.x = ((stage.stageWidth / 2) - (this.backButton_.width / 2));
             this.backButton_.y = 550;
             this.creditDisplay_.x = stage.stageWidth;
             this.creditDisplay_.y = 20;
-            GA.global().trackPageview("/newCharScreen");
+            var _local_3:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            if (_local_3)
+            {
+                _local_3.trackPageView("/newCharScreen");
+            }
         }
 
         private function onBackClick(_arg_1:Event):void
@@ -120,10 +121,13 @@ package com.company.assembleegameclient.screens
             if (!_local_2.available_)
             {
                 return;
-            };
+            }
             var _local_3:int = _local_2.objectType();
             var _local_4:String = ObjectLibrary.typeToDisplayId_[_local_3];
-            GA.global().trackEvent("character", "create", _local_4);
+            var _local_5:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            if (_local_5)
+            {
+            }
             this.selected.dispatch(_local_3);
         }
 
@@ -151,27 +155,14 @@ package com.company.assembleegameclient.screens
                     _local_7 = this.boxes_[_local_4];
                     if (_local_7)
                     {
-                        _local_7.setIsBuyButtonEnabled(true);
                         if (((_local_6) || (_arg_1.isLevelRequirementsMet(_local_4))))
                         {
                             _local_7.unlock();
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 _local_2++;
-            };
-        }
-
-        private function onBuyClicked(_arg_1:MouseEvent):void
-        {
-            var _local_3:int;
-            var _local_2:CharacterBox = (_arg_1.currentTarget.parent as CharacterBox);
-            if (((_local_2) && (!(_local_2.available_))))
-            {
-                _local_3 = int(_local_2.playerXML_.@type);
-                _local_2.setIsBuyButtonEnabled(false);
-                this.buy.dispatch(_local_3);
-            };
+            }
         }
 
 

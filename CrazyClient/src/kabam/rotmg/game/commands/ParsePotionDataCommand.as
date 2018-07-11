@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.ParsePotionDataCommand
 
 package kabam.rotmg.game.commands
 {
-    import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.model.PotionInventoryModel;
 
-    public class ParsePotionDataCommand 
+public class ParsePotionDataCommand 
     {
 
         [Inject]

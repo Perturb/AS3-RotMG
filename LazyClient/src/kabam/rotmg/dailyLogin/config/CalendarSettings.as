@@ -5,10 +5,10 @@
 
 package kabam.rotmg.dailyLogin.config
 {
-    import flash.geom.ColorTransform;
-    import flash.geom.Rectangle;
+import flash.geom.ColorTransform;
+import flash.geom.Rectangle;
 
-    public class CalendarSettings 
+public class CalendarSettings
     {
 
         public static const NUMBER_OF_COLUMNS:int = 7;

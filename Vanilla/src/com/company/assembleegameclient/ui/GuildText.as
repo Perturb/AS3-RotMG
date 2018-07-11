@@ -5,16 +5,18 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import com.company.util.SpriteUtil;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import com.company.assembleegameclient.util.GuildUtil;
+import com.company.util.SpriteUtil;
 
-    public class GuildText extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class GuildText extends Sprite
     {
 
         private var name_:String;
@@ -41,7 +43,7 @@ package com.company.assembleegameclient.ui
             if (((this.name_ == _arg_1) && (_arg_2 == _arg_2)))
             {
                 return;
-            };
+            }
             this.name_ = _arg_1;
             this.rank_ = _arg_2;
             if (((this.name_ == null) || (this.name_ == "")))
@@ -55,7 +57,7 @@ package com.company.assembleegameclient.ui
                 SpriteUtil.safeAddChild(this, this.icon_);
                 this.guildName_.setStringBuilder(new StaticStringBuilder(this.name_));
                 SpriteUtil.safeAddChild(this, this.guildName_);
-            };
+            }
         }
 
 

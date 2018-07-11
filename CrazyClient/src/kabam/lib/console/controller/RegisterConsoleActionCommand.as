@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.controller.RegisterConsoleActionCommand
 
 package kabam.lib.console.controller
 {
-    import kabam.lib.console.model.Console;
-    import kabam.lib.console.vo.ConsoleAction;
-    import org.osflash.signals.Signal;
+import kabam.lib.console.model.Console;
+import kabam.lib.console.vo.ConsoleAction;
 
-    public class RegisterConsoleActionCommand 
+import org.osflash.signals.Signal;
+
+public class RegisterConsoleActionCommand 
     {
 
         [Inject]

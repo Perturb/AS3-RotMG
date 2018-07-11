@@ -5,15 +5,17 @@
 
 package kabam.rotmg.ui.commands
 {
-    import kabam.rotmg.core.model.ScreenModel;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.core.signals.InvalidateDataSignal;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-    import flash.display.Sprite;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
-    public class RefreshScreenAfterLoginCommand 
+import flash.display.Sprite;
+
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.core.model.ScreenModel;
+import kabam.rotmg.core.signals.InvalidateDataSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+
+public class RefreshScreenAfterLoginCommand 
     {
 
         [Inject]
@@ -39,7 +41,7 @@ package kabam.rotmg.ui.commands
             if (((_local_1 == null) || (_local_1 == GameSprite)))
             {
                 _local_1 = CharacterSelectionAndNewsScreen;
-            };
+            }
             return (new (_local_1)());
         }
 

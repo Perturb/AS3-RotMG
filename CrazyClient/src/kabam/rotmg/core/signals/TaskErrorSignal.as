@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.signals.TaskErrorSignal
 
 package kabam.rotmg.core.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
 
-    public class TaskErrorSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class TaskErrorSignal extends Signal
     {
 
         public function TaskErrorSignal()

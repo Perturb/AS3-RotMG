@@ -6874,8 +6874,6 @@
             </Texture>
          </Frame>
       </Animation>
-      <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
       <Size>80</Size>
       <ShadowSize>0</ShadowSize>
       <ShadowColor>0xECFFB2</ShadowColor>
@@ -12769,7 +12767,7 @@
          </Texture>
       </RandomTexture>
       <MaxHitPoints>1</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Sound id="0">weapon/fire_wand</Sound>
       <ShadowSize>70</ShadowSize>
       <Size>0</Size>
@@ -14162,7 +14160,7 @@ A dubious candy that specially made by a certain witch. Contains strange ingredi
          </Texture>
       </RandomTexture>
       <MaxHitPoints>5000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
    </Object>
    <Object type="0x41ec" id="HN WH Cat">

@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.model.LoaderInfoKabamParameters
 
 package kabam.rotmg.account.kabam.model
 {
-    import flash.display.LoaderInfo;
-    import kabam.lib.json.JsonParser;
-    import kabam.lib.json.Base64Decoder;
-    import robotlegs.bender.framework.api.ILogger;
+import flash.display.LoaderInfo;
 
-    public class LoaderInfoKabamParameters implements KabamParameters 
+import kabam.lib.json.Base64Decoder;
+import kabam.lib.json.JsonParser;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class LoaderInfoKabamParameters implements KabamParameters 
     {
 
         [Inject]
@@ -41,7 +43,7 @@ package kabam.rotmg.account.kabam.model
                 if (requestDetails.length != 2)
                 {
                     throw (new Error("Invalid signed request"));
-                };
+                }
                 payload = this.base64UrlDecode(requestDetails[1]);
                 userSession = this.json.parse(payload);
             }
@@ -49,7 +51,7 @@ package kabam.rotmg.account.kabam.model
             {
                 logger.info(((("Failed to get user session: " + error.toString()) + ", signed request: ") + signedRequest));
                 userSession = null;
-            };
+            }
             return (userSession);
         }
 
@@ -61,7 +63,7 @@ package kabam.rotmg.account.kabam.model
             while (_local_4--)
             {
                 _arg_1 = (_arg_1 + "=");
-            };
+            }
             _arg_1 = _arg_1.replace(_local_2, "+").replace(_local_3, "/");
             return (this.decoder.decode(_arg_1));
         }

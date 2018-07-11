@@ -5,9 +5,9 @@
 
 package kabam.lib.net.api
 {
-    import kabam.lib.net.impl.MessagePool;
+import kabam.lib.net.impl.MessagePool;
 
-    public interface MessageMapping 
+public interface MessageMapping 
     {
 
         function setID(_arg_1:int):MessageMapping;

@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.background.Background
 
 package com.company.assembleegameclient.background
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
 
-    public class Background extends Sprite 
+import flash.display.Sprite;
+
+public class Background extends Sprite
     {
 
         public static const NO_BACKGROUND:int = 0;

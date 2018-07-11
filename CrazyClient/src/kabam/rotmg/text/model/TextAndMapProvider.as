@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.TextAndMapProvider
 
 package kabam.rotmg.text.model
 {
-    import flash.text.TextField;
-    import kabam.rotmg.language.model.StringMap;
+import flash.text.TextField;
 
-    public interface TextAndMapProvider 
+import kabam.rotmg.language.model.StringMap;
+
+public interface TextAndMapProvider
     {
 
         function getTextField():TextField;

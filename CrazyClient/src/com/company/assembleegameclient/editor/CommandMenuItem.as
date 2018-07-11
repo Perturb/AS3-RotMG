@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.editor.CommandMenuItem
 
 package com.company.assembleegameclient.editor
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import flash.events.MouseEvent;
+import com.company.ui.BaseSimpleText;
 
-    public class CommandMenuItem extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+
+public class CommandMenuItem extends Sprite
     {
 
         private static const WIDTH:int = 80;
@@ -80,8 +81,8 @@ package com.company.assembleegameclient.editor
                     graphics.drawRect(0, 0, WIDTH, HEIGHT);
                     graphics.endFill();
                     graphics.lineStyle();
-                };
-            };
+                }
+            }
         }
 
         private function onMouseOver(_arg_1:MouseEvent):void

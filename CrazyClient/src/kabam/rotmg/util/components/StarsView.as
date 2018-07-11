@@ -1,18 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.StarsView
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import __AS3__.vec.Vector;
-    import com.company.rotmg.graphics.StarGraphic;
-    import flash.display.Graphics;
-    import flash.geom.ColorTransform;
-    import __AS3__.vec.*;
+import com.company.rotmg.graphics.StarGraphic;
 
-    public class StarsView extends Sprite 
+import flash.display.Graphics;
+import flash.display.Sprite;
+import flash.geom.ColorTransform;
+
+public class StarsView extends Sprite 
     {
 
         private static const TOTAL:int = 5;
@@ -42,7 +41,7 @@ package kabam.rotmg.util.components
                 _local_2[_local_1] = new StarGraphic();
                 addChild(_local_2[_local_1]);
                 _local_1++;
-            };
+            }
             return (_local_2);
         }
 
@@ -54,7 +53,7 @@ package kabam.rotmg.util.components
                 _arg_1[_local_2].x = (MARGIN + (_arg_1[0].width * _local_2));
                 _arg_1[_local_2].y = MARGIN;
                 _local_2++;
-            };
+            }
         }
 
         private function makeBackground():Sprite
@@ -83,7 +82,7 @@ package kabam.rotmg.util.components
             {
                 this.updateStar(_local_2, _arg_1);
                 _local_2++;
-            };
+            }
         }
 
         private function updateStar(_arg_1:int, _arg_2:int):void

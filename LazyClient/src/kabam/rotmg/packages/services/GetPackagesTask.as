@@ -5,17 +5,20 @@
 
 package kabam.rotmg.packages.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import flash.utils.Timer;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.language.model.LanguageModel;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import com.company.assembleegameclient.util.TimeUtil;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class GetPackagesTask extends BaseTask 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.language.model.LanguageModel;
+import kabam.rotmg.packages.model.PackageInfo;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GetPackagesTask extends BaseTask
     {
 
         private static const HOUR:int = ((1000 * 60) * 60);//3600000
@@ -51,7 +54,7 @@ package kabam.rotmg.packages.services
             {
                 this.logger.warn("GetPackageTask.onComplete: Request failed.");
                 completeTask(true);
-            };
+            }
         }
 
         private function handleOkay(_arg_1:*):void
@@ -66,7 +69,7 @@ package kabam.rotmg.packages.services
             else
             {
                 this.parse(XML(_arg_1).child("Package"));
-            };
+            }
             completeTask(true);
         }
 
@@ -96,41 +99,42 @@ package kabam.rotmg.packages.services
                     _local_4.saleAmount = int(_local_3.Sale.attribute("price").toString());
                     _local_4.saleCurrency = int(_local_3.Sale.attribute("currency").toString());
                     _local_4.saleEnd = TimeUtil.parseUTCDate(_local_3.Sale.End.toString());
-                };
+                }
                 if (_local_3.hasOwnProperty("Left"))
                 {
                     _local_4.unitsLeft = _local_3.Left;
-                };
+                }
                 if (_local_3.hasOwnProperty("ShowOnLogin"))
                 {
                     _local_4.showOnLogin = (int(_local_3.ShowOnLogin) == 1);
-                };
+                }
                 if (_local_3.hasOwnProperty("Total"))
                 {
                     _local_4.totalUnits = _local_3.Total;
-                };
+                }
                 if (_local_3.hasOwnProperty("Slot"))
                 {
                     _local_4.slot = _local_3.Slot;
-                };
+                }
                 if (_local_3.hasOwnProperty("Tags"))
                 {
                     _local_4.tags = _local_3.Tags;
-                };
+                }
                 _local_4.startTime = TimeUtil.parseUTCDate(_local_3.StartTime.toString());
                 if (_local_3.EndTime.toString())
                 {
                     _local_4.endTime = TimeUtil.parseUTCDate(_local_3.EndTime.toString());
-                };
+                }
                 _local_4.image = _local_3.Image.toString();
                 _local_4.charSlot = int(_local_3.CharSlot.toString());
                 _local_4.vaultSlot = int(_local_3.VaultSlot.toString());
+                _local_4.gold = int(_local_3.Gold.toString());
                 if (_local_3.PopupImage.toString() != "")
                 {
                     _local_4.popupImage = _local_3.PopupImage.toString();
-                };
+                }
                 _local_2.push(_local_4);
-            };
+            }
             this.packageModel.setPackages(_local_2);
         }
 
@@ -145,8 +149,8 @@ package kabam.rotmg.packages.services
                 if (packageHistory)
                 {
                     numPurchased = int(packageHistory.Count);
-                };
-            };
+                }
+            }
             return (numPurchased);
         }
 

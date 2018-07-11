@@ -5,9 +5,9 @@
 
 package kabam.lib.console.view
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public final class ConsoleEvent extends Event 
+public final class ConsoleEvent extends Event
     {
 
         public static const INPUT:String = "ConsoleEvent.INPUT";

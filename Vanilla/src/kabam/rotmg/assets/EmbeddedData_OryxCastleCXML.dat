@@ -29,7 +29,7 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x0b70" id="Fortified Destructible Castle Wall">
@@ -52,7 +52,7 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x0b09" id="Destructible Castle Ice Wall">
@@ -75,7 +75,7 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x0b0a" id="Fortified Destructible Castle Ice Wall">
@@ -98,24 +98,22 @@
       <OccupySquare/>
       <EnemyOccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <BlocksSight/>
    </Object>
    <Object type="0x0d71" id="Suit of Armor">
       <Class>Character</Class>
       <Texture>
-         <File>d3LofiObjEmbed16</File>
-         <Index>0x18</Index>
+         <File>lofiChar216x16</File>
+         <Index>0x07</Index>
       </Texture>
-      <ShadowSize>80</ShadowSize>
-      <ShadowColor>0xa0cde9</ShadowColor>
       <HitSound>monster/stone_walls_hit</HitSound>
       <DeathSound>monster/stone_walls_death</DeathSound>
       <MaxHitPoints>4000</MaxHitPoints>
       <Size>80</Size>
       <StasisImmune/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d72" id="Suit of Armor Sm">
       <DisplayId>Suit of Armor</DisplayId>
@@ -131,7 +129,7 @@
       <Static/>
       <OccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d73" id="CastleArch Wall Flame">
       <DisplayId>Castle Arch Wall</DisplayId>
@@ -259,32 +257,33 @@
       <StunImmune/>
       <Quest/>
       <Level>20</Level>
+      <EventChestBoss/>
       <AnimatedTexture>
-         <File>d3Chars16x16rEmbed</File>
-         <Index>14</Index>
+         <File>chars16x16dEncounters</File>
+         <Index>20</Index>
       </AnimatedTexture>
       <AltTexture id="1">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>15</Index>
+            <File>chars16x16dEncounters</File>
+            <Index>21</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="2">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>16</Index>
+            <File>chars16x16dEncounters</File>
+            <Index>22</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="3">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>17</Index>
+            <File>chars16x16dEncounters</File>
+            <Index>23</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="4">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>18</Index>
+            <File>chars16x16dEncounters2</File>
+            <Index>0</Index>
          </AnimatedTexture>
       </AltTexture>
       <HitSound>monster/stone_walls_death</HitSound>
@@ -313,7 +312,7 @@
       </Projectile>
       <Size>120</Size>
       <Defense>80</Defense>
-      <XpMult>0.135</XpMult>
+      <Exp>26</Exp>
    </Object>
    <Object type="0x0d79" id="Oryx Stone Guardian Left">
       <DisplayId>Stone Guardian</DisplayId>
@@ -326,31 +325,31 @@
       <Quest/>
       <Level>20</Level>
       <AnimatedTexture>
-         <File>d3Chars16x16rEmbed</File>
-         <Index>19</Index>
+         <File>chars16x16dEncounters2</File>
+         <Index>2</Index>
       </AnimatedTexture>
       <AltTexture id="1">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>20</Index>
+            <File>chars16x16dEncounters2</File>
+            <Index>3</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="2">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>21</Index>
+            <File>chars16x16dEncounters2</File>
+            <Index>4</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="3">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>22</Index>
+            <File>chars16x16dEncounters2</File>
+            <Index>5</Index>
          </AnimatedTexture>
       </AltTexture>
       <AltTexture id="4">
          <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>23</Index>
+            <File>chars16x16dEncounters2</File>
+            <Index>6</Index>
          </AnimatedTexture>
       </AltTexture>
       <HitSound>monster/stone_walls_death</HitSound>
@@ -379,23 +378,16 @@
       </Projectile>
       <Size>120</Size>
       <Defense>80</Defense>
-      <XpMult>0.135</XpMult>
+      <Exp>26</Exp>
    </Object>
    <Object type="0x0d7a" id="Oryx Guardian TaskMaster">
       <Group>Oryx Minions</Group>
-      <Class>Character</Class>
-      <StasisImmune/>
-      <NoMiniMap/>
+      <Class>GameObject</Class>
       <Texture>
-         <File>invisible</File>
-         <Index>0</Index>
+         <File>lofiEnvironment</File>
+         <Index>0xa4</Index>
       </Texture>
-      <HitSound>monster/skeletons_hit</HitSound>
-      <DeathSound>monster/dwarves_death</DeathSound>
-      <MaxHitPoints>100</MaxHitPoints>
       <Size>0</Size>
-      <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x0d7c" id="Oryx Guardian Sword">
       <DisplayId>Stone Guardian Sword</DisplayId>
@@ -421,29 +413,16 @@
       </Projectile>
       <Size>120</Size>
       <Defense>40</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d7d" id="Oryx Armor Spawner">
       <Group>Oryx Minions</Group>
-      <Class>Character</Class>
-      <StasisImmune/>
-      <NoMiniMap/>
+      <Class>GameObject</Class>
       <AnimatedTexture>
          <File>chars8x8rEncounters</File>
          <Index>11</Index>
       </AnimatedTexture>
-      <AltTexture id="1">
-         <Texture>
-            <File>invisible</File>
-            <Index>0</Index>
-         </Texture>
-      </AltTexture>
-      <HitSound>monster/skeletons_hit</HitSound>
-      <DeathSound>monster/dwarves_death</DeathSound>
-      <MaxHitPoints>100</MaxHitPoints>
       <Size>0</Size>
-      <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
    </Object>
    <Object type="0x0d7e" id="Oryx Suit of Armor">
       <DisplayId>Haunted Armor</DisplayId>
@@ -485,7 +464,7 @@
       </Projectile>
       <Size>120</Size>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d7f" id="Oryx Insect Commander">
       <DisplayId>Commander of Oryx</DisplayId>
@@ -552,7 +531,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>10</Defense>
-      <XpMult>0.2</XpMult>
+      <Exp>10</Exp>
    </Object>
    <Object type="0x0d81" id="Oryx Eye Warrior">
       <DisplayId>Warrior of Oryx</DisplayId>
@@ -582,7 +561,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>20</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d82" id="Oryx Brute">
       <DisplayId>Brute of Oryx</DisplayId>
@@ -629,7 +608,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>30</Defense>
-      <XpMult>1.6</XpMult>
+      <Exp>312</Exp>
    </Object>
    <Object type="0x0d83" id="Oryx Knight">
       <DisplayId>Knight of Oryx</DisplayId>
@@ -700,7 +679,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>15</Defense>
-      <XpMult>0.2</XpMult>
+      <Exp>12</Exp>
    </Object>
    <Object type="0x0d85" id="Oryx's Living Floor Fire Down">
       <DisplayId>Oryx's Living Floor</DisplayId>
@@ -712,19 +691,19 @@
       <MaxHitPoints>2600</MaxHitPoints>
       <DrawOnGround/>
       <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x4d</Index>
+         <File>lofiEnvironment3</File>
+         <Index>0x1d</Index>
       </Texture>
       <AltTexture id="1">
          <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x4e</Index>
+            <File>lofiEnvironment3</File>
+            <Index>0x1e</Index>
          </Texture>
       </AltTexture>
       <AltTexture id="2">
          <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x4f</Index>
+            <File>lofiEnvironment3</File>
+            <Index>0x1f</Index>
          </Texture>
       </AltTexture>
       <Projectile id="0">
@@ -745,7 +724,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>90</Size>
       <Defense>0</Defense>
       <Texture>
@@ -786,19 +765,19 @@
       <MaxHitPoints>2600</MaxHitPoints>
       <DrawOnGround/>
       <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x4d</Index>
+         <File>lofiEnvironment3</File>
+         <Index>0x1d</Index>
       </Texture>
       <AltTexture id="1">
          <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x4e</Index>
+            <File>lofiEnvironment3</File>
+            <Index>0x1e</Index>
          </Texture>
       </AltTexture>
       <AltTexture id="2">
          <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x4f</Index>
+            <File>lofiEnvironment3</File>
+            <Index>0x1f</Index>
          </Texture>
       </AltTexture>
       <Projectile id="0">
@@ -852,7 +831,7 @@
       </Projectile>
       <Size>120</Size>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0d8b" id="Grey Pillar Snowy">
       <Class>GameObject</Class>

@@ -5,24 +5,24 @@
 
 package kabam.rotmg.game.view.components
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.ui.model.TabStripModel;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
-    import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
-    import kabam.rotmg.assets.services.IconFactory;
-    import com.company.assembleegameclient.objects.ImageFactory;
-    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-    import kabam.rotmg.ui.view.StatsDockedSignal;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.friends.view.FriendListView;
-    import kabam.rotmg.pets.view.components.PetsTabContentView;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.ImageFactory;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 
-    public class TabStripMediator extends Mediator 
+import io.decagames.rotmg.pets.components.guiTab.PetsTabContentView;
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
+
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.model.TabStripModel;
+import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+import kabam.rotmg.ui.view.StatsDockedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TabStripMediator extends Mediator 
     {
 
         [Inject]
@@ -51,8 +51,6 @@ package kabam.rotmg.game.view.components
         public var statsTabHotKeyInput:StatsTabHotKeyInputSignal;
         [Inject]
         public var petModel:PetsModel;
-        [Inject]
-        public var openDialog:OpenDialogSignal;
         private var doShowStats:Boolean = true;
 
 
@@ -66,7 +64,6 @@ package kabam.rotmg.game.view.components
             this.statsDocked.add(this.onStatsDocked);
             this.statsTabHotKeyInput.add(this.onTabHotkey);
             this.notifyActivePetUpdated.add(this.onNotifyActivePetUpdated);
-            this.view.initFriendList(this.imageFactory, this.iconButtonFactory, this.onFriendsBtnClicked);
         }
 
         private function onStatsUndocked(_arg_1:StatsView):void
@@ -95,12 +92,6 @@ package kabam.rotmg.game.view.components
         {
             this.view.tabSelected.remove(this.onTabSelected);
             this.updateBackpack.remove(this.onUpdateBackPack);
-            this.view.friendsBtn.removeEventListener(MouseEvent.CLICK, this.onFriendsBtnClicked);
-        }
-
-        private function onFriendsBtnClicked(_arg_1:MouseEvent):void
-        {
-            this.openDialog.dispatch(new FriendListView());
         }
 
         private function addTabs(_arg_1:Player):void
@@ -108,12 +99,12 @@ package kabam.rotmg.game.view.components
             if (!_arg_1)
             {
                 return;
-            };
+            }
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.INVENTORY_ICON_ID), new InventoryTabContent(_arg_1));
             if (this.doShowStats)
             {
                 this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.STATS_ICON_ID), new StatsTabContent(this.view.HEIGHT));
-            };
+            }
             if (_arg_1.hasBackpack_)
             {
                 this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.BACKPACK_ICON_ID), new BackpackTabContent(_arg_1));
@@ -121,11 +112,11 @@ package kabam.rotmg.game.view.components
             else
             {
                 this.updateBackpack.add(this.onUpdateBackPack);
-            };
+            }
             if (this.petModel.getActivePet())
             {
                 this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.PETS_ICON_ID), new PetsTabContentView());
-            };
+            }
         }
 
         private function clearTabs():void
@@ -146,7 +137,7 @@ package kabam.rotmg.game.view.components
                 _local_2 = this.hudModel.gameSprite.map.player_;
                 this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.BACKPACK_ICON_ID), new BackpackTabContent(_local_2));
                 this.updateBackpack.remove(this.onUpdateBackPack);
-            };
+            }
         }
 
         private function onNotifyActivePetUpdated():void

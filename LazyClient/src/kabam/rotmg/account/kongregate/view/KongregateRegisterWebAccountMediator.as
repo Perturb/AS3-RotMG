@@ -5,12 +5,13 @@
 
 package kabam.rotmg.account.kongregate.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
-    import kabam.rotmg.account.core.signals.RegisterAccountSignal;
-    import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.account.core.signals.RegisterAccountSignal;
+import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
+import kabam.rotmg.account.web.model.AccountData;
 
-    public class KongregateRegisterWebAccountMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class KongregateRegisterWebAccountMediator extends Mediator 
     {
 
         [Inject]

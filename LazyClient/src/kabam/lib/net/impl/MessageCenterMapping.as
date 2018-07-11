@@ -5,11 +5,12 @@
 
 package kabam.lib.net.impl
 {
-    import kabam.lib.net.api.MessageMapping;
-    import org.swiftsuspenders.Injector;
-    import kabam.lib.net.api.MessageHandlerProxy;
+import kabam.lib.net.api.MessageHandlerProxy;
+import kabam.lib.net.api.MessageMapping;
 
-    public class MessageCenterMapping implements MessageMapping 
+import org.swiftsuspenders.Injector;
+
+public class MessageCenterMapping implements MessageMapping
     {
 
         private const nullHandler:NullHandlerProxy = new NullHandlerProxy();
@@ -70,7 +71,7 @@ package kabam.lib.net.impl
 
 import kabam.lib.net.api.MessageHandlerProxy;
 
-class NullHandlerProxy implements MessageHandlerProxy 
+class NullHandlerProxy implements MessageHandlerProxy
 {
 
 

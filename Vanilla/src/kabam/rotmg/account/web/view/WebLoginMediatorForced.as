@@ -5,18 +5,19 @@
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.LoginSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.LoginSignal;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
 
-    public class WebLoginMediatorForced extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebLoginMediatorForced extends Mediator 
     {
 
         [Inject]
@@ -68,7 +69,7 @@ package kabam.rotmg.account.web.view
             {
                 this.view.email.setError(TextKey.WEBLOGINDIALOG_EMAIL_MATCH_ERROR);
                 this.view.enable();
-            };
+            }
         }
 
         private function onRegister():void
@@ -90,7 +91,7 @@ package kabam.rotmg.account.web.view
             else
             {
                 this.openDialog.dispatch(new WebChangePasswordDialogForced());
-            };
+            }
         }
 
         private function onLoginError(_arg_1:String):void

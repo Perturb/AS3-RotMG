@@ -5,13 +5,13 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.messaging.impl.data.TradeItem;
-    import com.company.assembleegameclient.util.FreeList;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class TradeStart extends IncomingMessage 
+import flash.utils.IDataInput;
+
+import kabam.rotmg.messaging.impl.data.TradeItem;
+
+public class TradeStart extends IncomingMessage
     {
 
         public var myItems_:Vector.<TradeItem> = new Vector.<TradeItem>();
@@ -32,18 +32,18 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 FreeList.deleteObject(this.myItems_[_local_2]);
                 _local_2++;
-            };
+            }
             this.myItems_.length = Math.min(_local_3, this.myItems_.length);
             while (this.myItems_.length < _local_3)
             {
                 this.myItems_.push((FreeList.newObject(TradeItem) as TradeItem));
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _local_3)
             {
                 this.myItems_[_local_2].parseFromInput(_arg_1);
                 _local_2++;
-            };
+            }
             this.yourName_ = _arg_1.readUTF();
             _local_3 = _arg_1.readShort();
             _local_2 = _local_3;
@@ -51,18 +51,18 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 FreeList.deleteObject(this.yourItems_[_local_2]);
                 _local_2++;
-            };
+            }
             this.yourItems_.length = Math.min(_local_3, this.yourItems_.length);
             while (this.yourItems_.length < _local_3)
             {
                 this.yourItems_.push((FreeList.newObject(TradeItem) as TradeItem));
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _local_3)
             {
                 this.yourItems_[_local_2].parseFromInput(_arg_1);
                 _local_2++;
-            };
+            }
         }
 
         override public function toString():String

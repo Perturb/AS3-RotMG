@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleMediator
 
 package kabam.lib.console.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.lib.console.signals.ToggleConsoleSignal;
-    import kabam.lib.console.signals.ShowConsoleSignal;
-    import kabam.lib.console.signals.HideConsoleSignal;
-    import kabam.lib.console.signals.RemoveConsoleSignal;
+import kabam.lib.console.signals.HideConsoleSignal;
+import kabam.lib.console.signals.RemoveConsoleSignal;
+import kabam.lib.console.signals.ShowConsoleSignal;
+import kabam.lib.console.signals.ToggleConsoleSignal;
 
-    public class ConsoleMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ConsoleMediator extends Mediator 
     {
 
         [Inject]

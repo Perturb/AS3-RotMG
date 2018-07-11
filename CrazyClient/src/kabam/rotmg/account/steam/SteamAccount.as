@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.SteamAccount
 
 package kabam.rotmg.account.steam
 {
-    import kabam.rotmg.account.core.Account;
-    import com.company.util.EmailValidator;
+import com.company.util.EmailValidator;
 
-    public class SteamAccount implements Account 
+import kabam.rotmg.account.core.Account;
+
+public class SteamAccount implements Account
     {
 
         public static const NETWORK_NAME:String = "steam";
@@ -21,7 +22,7 @@ package kabam.rotmg.account.steam
         private var platformToken:String;
 
 
-        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String):void
+        public function updateUser(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String):void
         {
             this.userId = _arg_1;
             this.password = _arg_2;
@@ -34,7 +35,9 @@ package kabam.rotmg.account.steam
 
         public function getUserId():String
         {
-            return (this.userId = ((this.userId) || ("")));
+            var _local_1:* = ((this.userId) || (""));
+            this.userId = _local_1;
+            return (_local_1);
         }
 
         public function getPassword():String
@@ -44,7 +47,9 @@ package kabam.rotmg.account.steam
 
         public function getSecret():String
         {
-            return (this.password = ((this.password) || ("")));
+            var _local_1:* = ((this.password) || (""));
+            this.password = _local_1;
+            return (_local_1);
         }
 
         public function getCredentials():Object
@@ -73,7 +78,7 @@ package kabam.rotmg.account.steam
 
         public function gameNetwork():String
         {
-            return (NETWORK_NAME);
+            return ("steam");
         }
 
         public function playPlatform():String

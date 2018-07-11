@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.BuyPackageCommand
 
 package kabam.rotmg.packages.control
 {
-    import kabam.rotmg.packages.services.BuyPackageTask;
-    import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.packages.services.BuyPackageTask;
 
-    public class BuyPackageCommand 
+public class BuyPackageCommand 
     {
 
         [Inject]

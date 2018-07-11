@@ -62,6 +62,8 @@ package io.decagames.rotmg.characterMetrics.data
         public static const PUPPET_ENCORE_COMPLETED:int = 50;
         public static const LAIR_OF_SHAITAN_COMPLETED:int = 51;
         public static const PARASITE_CHAMBERS_COMPLETED:int = 52;
+        public static const MAGIC_WOODS_COMPLETED:int = 53;
+        public static const CNIDARIAN_REEF_COMPLETED:int = 54;
 
 
     }

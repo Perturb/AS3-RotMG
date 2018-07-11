@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.signals.AddSpeechBalloonSignal
 
 package kabam.rotmg.game.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.game.model.AddSpeechBalloonVO;
+import kabam.rotmg.game.model.AddSpeechBalloonVO;
 
-    public class AddSpeechBalloonSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class AddSpeechBalloonSignal extends Signal 
     {
 
         public function AddSpeechBalloonSignal()

@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_buffedBunnyObjects8x8Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

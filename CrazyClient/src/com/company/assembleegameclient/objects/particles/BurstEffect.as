@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.BurstEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class BurstEffect extends ParticleEffect 
+import flash.geom.Point;
+
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class BurstEffect extends ParticleEffect
     {
 
         public var center_:Point;
@@ -41,7 +43,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_8, this.color_, (100 + (Math.random() * 200)), this.center_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 
@@ -63,7 +65,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_8, this.color_, (50 + (Math.random() * 20)), this.center_, _local_4);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 

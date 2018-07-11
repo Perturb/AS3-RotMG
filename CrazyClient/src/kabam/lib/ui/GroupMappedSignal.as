@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.ui.GroupMappedSignal
 
 package kabam.lib.ui
 {
-    import org.osflash.signals.Signal;
-    import flash.utils.Dictionary;
-    import flash.events.IEventDispatcher;
-    import flash.events.Event;
+import flash.events.Event;
+import flash.events.IEventDispatcher;
+import flash.utils.Dictionary;
 
-    public class GroupMappedSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class GroupMappedSignal extends Signal 
     {
 
         private var eventType:String;

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Objects>
+   <Object type="0x295c" id="St. Patricks Event 2018">
+      <DisplayId>Leprechaun</DisplayId>
+      <Enemy/>
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>stPatricksChars8x8</File>
+         <Index>0</Index>
+      </AnimatedTexture>
+      <HitSound>monster/dwarves_hit</HitSound>
+      <DeathSound>monster/dwarves_death</DeathSound>
+      <PerRealmMax>1</PerRealmMax>
+      <Size>20</Size>
+      <ShadowSize>60</ShadowSize>
+      <MaxHitPoints>25000</MaxHitPoints>
+      <Defense>25</Defense>
+      <Exp>487</Exp>
+      <Quest/>
+      <Level>20</Level>
+      <ParalyzeImmune/>
+   </Object>
    <Object type="0x1648" id="Rainbow Road">
       <DisplayId>Rainbow Portal</DisplayId>
       <Class>Portal</Class>
@@ -22,12 +42,13 @@
       </AnimatedTexture>
       <HitSound>monster/dwarves_hit</HitSound>
       <DeathSound>monster/dwarves_death</DeathSound>
+      <Terrain>MidForest</Terrain>
       <PerRealmMax>1</PerRealmMax>
       <Size>20</Size>
       <ShadowSize>60</ShadowSize>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <Quest/>
       <Level>20</Level>
       <ParalyzeImmune/>
@@ -44,9 +65,9 @@
       <DeathSound>monster/stone_walls_death</DeathSound>
       <Size>100</Size>
       <ShadowSize>100</ShadowSize>
-      <MaxHitPoints>120000</MaxHitPoints>
+      <MaxHitPoints>45000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x164e" id="Patty Coin1">
@@ -63,6 +84,8 @@
       </RandomTexture>
       <DrawOnGround/>
       <Static/>
+      <ProtectFromGroundDamage/>
+      <ProtectFromSink/>
    </Object>
    <Object type="0x164f" id="Patty Clover1">
       <Class>GameObject</Class>
@@ -159,20 +182,17 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>10</MaxHitPoints>
    </Object>
    <Object type="0x1655" id="Patty Coin Drop">
-      <Class>Character</Class>
-      <StasisImmune/>
+      <Class>GameObject</Class>
       <Texture>
-         <File>invisible</File>
-         <Index>0</Index>
+         <File>stPatricksObjects8x8</File>
+         <Index>5</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
       <Size>0</Size>
-      <MaxHitPoints>10</MaxHitPoints>
    </Object>
    <Object type="0x5b00" id="MotMG St Patricks Event Anchor">
       <Enemy/>
@@ -243,7 +263,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>150000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Quest/>
       <Level>20</Level>
       <ParalyzeImmune/>
@@ -262,7 +282,7 @@
       <ShadowSize>20</ShadowSize>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>2.5</XpMult>
+      <Exp>487</Exp>
       <Quest/>
       <Hero/>
       <Level>20</Level>
@@ -366,7 +386,7 @@
       <ShadowSize>100</ShadowSize>
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <StasisImmune/>
    </Object>
 </Objects>

@@ -5,18 +5,21 @@
 
 package kabam.rotmg.game.commands
 {
-    import kabam.rotmg.game.model.UseBuyPotionVO;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import kabam.rotmg.ui.model.HUDModel;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.ui.model.PotionModel;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import flash.utils.getTimer;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
-    public class UseBuyPotionCommand 
+import flash.utils.getTimer;
+
+import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.model.UseBuyPotionVO;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.model.PotionModel;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class UseBuyPotionCommand 
     {
 
         [Inject]
@@ -40,7 +43,7 @@ package kabam.rotmg.game.commands
             if (this.player == null)
             {
                 return;
-            };
+            }
             this.potionId = this.vo.objectId;
             this.count = this.player.getPotionCount(this.potionId);
             this.potion = this.potInventoryModel.getPotionModel(this.potionId);
@@ -51,7 +54,7 @@ package kabam.rotmg.game.commands
             else
             {
                 this.logger.info("Not safe to purchase potion");
-            };
+            }
         }
 
         private function canPurchasePotion():Boolean
@@ -71,7 +74,7 @@ package kabam.rotmg.game.commands
             {
                 this.sendServerRequest();
                 SoundEffectLibrary.play("use_potion");
-            };
+            }
         }
 
         private function isPlayerStatMaxed():Boolean
@@ -79,11 +82,11 @@ package kabam.rotmg.game.commands
             if (this.potionId == PotionInventoryModel.HEALTH_POTION_ID)
             {
                 return (this.player.hp_ >= this.player.maxHP_);
-            };
+            }
             if (this.potionId == PotionInventoryModel.MAGIC_POTION_ID)
             {
                 return (this.player.mp_ >= this.player.maxMP_);
-            };
+            }
             return (false);
         }
 
@@ -95,7 +98,7 @@ package kabam.rotmg.game.commands
             if (this.player.getPotionCount(this.vo.objectId) == 0)
             {
                 this.potInventoryModel.getPotionModel(this.vo.objectId).purchasedPot();
-            };
+            }
         }
 
 

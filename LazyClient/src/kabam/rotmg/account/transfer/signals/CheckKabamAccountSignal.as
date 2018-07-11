@@ -5,10 +5,11 @@
 
 package kabam.rotmg.account.transfer.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.account.transfer.model.TransferAccountData;
 
-    public class CheckKabamAccountSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class CheckKabamAccountSignal extends Signal 
     {
 
         public function CheckKabamAccountSignal()

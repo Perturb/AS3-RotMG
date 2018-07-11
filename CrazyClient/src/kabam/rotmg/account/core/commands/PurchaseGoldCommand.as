@@ -1,18 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.commands.PurchaseGoldCommand
 
 package kabam.rotmg.account.core.commands
 {
-    import kabam.rotmg.account.core.services.PurchaseGoldTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.PurchaseGoldTask;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class PurchaseGoldCommand 
+import robotlegs.bender.framework.api.ILogger;
+
+public class PurchaseGoldCommand 
     {
 
         [Inject]

@@ -5,12 +5,13 @@
 
 package com.company.assembleegameclient.ui.options
 {
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChoiceOption extends BaseOption 
+import flash.events.Event;
+
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class ChoiceOption extends BaseOption
     {
 
         private var callback_:Function;
@@ -43,7 +44,7 @@ package com.company.assembleegameclient.ui.options
             if (this.callback_ != null)
             {
                 this.callback_();
-            };
+            }
             Parameters.save();
         }
 

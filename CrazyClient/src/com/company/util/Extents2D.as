@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.Extents2D
@@ -23,19 +23,19 @@ package com.company.util
             if (_arg_1 < this.minX_)
             {
                 this.minX_ = _arg_1;
-            };
+            }
             if (_arg_2 < this.minY_)
             {
                 this.minY_ = _arg_2;
-            };
+            }
             if (_arg_1 > this.maxX_)
             {
                 this.maxX_ = _arg_1;
-            };
+            }
             if (_arg_2 > this.maxY_)
             {
                 this.maxY_ = _arg_2;
-            };
+            }
         }
 
         public function clear():void

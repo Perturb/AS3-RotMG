@@ -1,30 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.view.MapLoadingView
 
 package kabam.rotmg.maploading.view
 {
-    import flash.display.Sprite;
-    import flash.display.DisplayObjectContainer;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
-    import flash.display.DisplayObject;
-    import flash.display.MovieClip;
-    import kabam.rotmg.assets.model.Animation;
-    import flash.events.Event;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.ui.view.TitleView;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.core.view.ConfirmEmailModal;
-    import kabam.rotmg.account.web.view.WebLoginDialogForced;
-    import kabam.rotmg.account.web.view.WebRegisterDialog;
-    import com.gskinner.motion.GTween;
-    import __AS3__.vec.*;
+import com.gskinner.motion.GTween;
 
-    public class MapLoadingView extends Sprite 
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
+import flash.display.MovieClip;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.view.ConfirmEmailModal;
+import kabam.rotmg.account.web.view.WebLoginDialogForced;
+import kabam.rotmg.account.web.view.WebRegisterDialog;
+import kabam.rotmg.assets.model.Animation;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.TitleView;
+
+public class MapLoadingView extends Sprite
     {
 
         public static const MAX_DIFFICULTY:int = 5;
@@ -71,7 +71,7 @@ package kabam.rotmg.maploading.view
             {
                 this.indicators[(_local_2 - 1)] = this.diffRow.getChildByName(("indicator_" + _local_2));
                 _local_2++;
-            };
+            }
             addChild(this.screen);
             this.setValues();
         }
@@ -103,9 +103,9 @@ package kabam.rotmg.maploading.view
                     {
                         this.indicators[_local_1].visible = (_local_1 < this.difficulty);
                         _local_1++;
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public function showAnimation(_arg_1:Animation):void
@@ -154,10 +154,10 @@ package kabam.rotmg.maploading.view
                         {
                             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(new WebRegisterDialog());
                             TitleView.queueRegistrationPrompt = false;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             var _local_1:GTween = new GTween(this, FADE_OUT_TIME, {"alpha":0});
             _local_1.onComplete = this.onFadeOutComplete;
             mouseEnabled = false;

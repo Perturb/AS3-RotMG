@@ -1,29 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.OfferRadioButton
 
 package com.company.assembleegameclient.account.ui
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.account.ui.components.Selectable;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import com.company.assembleegameclient.util.offer.Offer;
-    import kabam.rotmg.account.core.model.MoneyConfig;
-    import com.company.assembleegameclient.account.ui.components.BackgroundBox;
-    import kabam.rotmg.util.components.RadioButton;
-    import flash.display.BitmapData;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.events.MouseEvent;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.util.BitmapUtil;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.account.ui.components.BackgroundBox;
+import com.company.assembleegameclient.account.ui.components.Selectable;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.offer.Offer;
+import com.company.util.AssetLibrary;
+import com.company.util.BitmapUtil;
 
-    public class OfferRadioButton extends Sprite implements Selectable 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.account.core.model.MoneyConfig;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+import kabam.rotmg.util.components.RadioButton;
+
+public class OfferRadioButton extends Sprite implements Selectable
     {
 
         private static const SELECTED_COLOR:int = 0x777777;
@@ -85,7 +87,7 @@ package com.company.assembleegameclient.account.ui
             if (this.bonusText)
             {
                 this.bonusText.visible = _arg_1;
-            };
+            }
         }
 
         private function makeBackgroundBox():void
@@ -140,10 +142,10 @@ package com.company.assembleegameclient.account.ui
 
         private function makeBonusText():void
         {
-            if (!this.hasBonus())
+            if ((!(this.hasBonus())))
             {
                 return;
-            };
+            }
             this.bonusText = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true);
             this.bonusText.setStringBuilder(new LineBuilder().setParams(TextKey.PAYMENTS_GOLD_BONUS, {"percent":this.offer.bonus}));
             this.bonusText.filters = [new DropShadowFilter(0, 0, 0)];
@@ -156,7 +158,7 @@ package com.company.assembleegameclient.account.ui
             if (this.hasTagline())
             {
                 this.makeTaglineText();
-            };
+            }
         }
 
         private function makeTaglineText():void
@@ -188,12 +190,12 @@ package com.company.assembleegameclient.account.ui
             {
                 this.bonusText.x = 280;
                 this.bonusText.y = ((this.coinBitmap.height / 2) - (this.bonusText.height / 2));
-            };
+            }
             if (((this.hasTagline()) && (!(this.taglineText == null))))
             {
                 this.taglineText.x = 400;
                 this.taglineText.y = ((this.coinBitmap.height / 2) - (this.taglineText.height / 2));
-            };
+            }
         }
 
         private function updateBackgroundColor():void

@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.AccountList
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
-    import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+import flash.utils.IDataInput;
 
-    public class AccountList extends IncomingMessage 
+public class AccountList extends IncomingMessage 
     {
 
         public var accountListId_:int;
@@ -32,7 +30,7 @@ package kabam.rotmg.messaging.impl.incoming
             {
                 this.accountIds_.push(_arg_1.readUTF());
                 _local_2++;
-            };
+            }
             this.lockAction_ = _arg_1.readInt();
         }
 

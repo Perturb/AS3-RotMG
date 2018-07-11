@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.TeleportMenuOption
 
 package com.company.assembleegameclient.ui.menu
 {
-    import flash.geom.ColorTransform;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Shape;
-    import com.company.util.AssetLibrary;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.objects.Player;
+import com.company.util.AssetLibrary;
 
-    public class TeleportMenuOption extends MenuOption 
+import flash.display.Shape;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TeleportMenuOption extends MenuOption
     {
 
         private static const inactiveCT:ColorTransform = new ColorTransform((84 / 0xFF), (84 / 0xFF), (84 / 0xFF));
@@ -65,12 +67,12 @@ package com.company.assembleegameclient.ui.menu
             if (_local_4 > 0)
             {
                 _local_2 = ((_local_4 <= Player.MS_BETWEEN_TELEPORT) ? int(Player.MS_BETWEEN_TELEPORT) : int(Player.MS_REALM_TELEPORT));
-                if (!contains(this.barText_))
+                if ((!(contains(this.barText_))))
                 {
                     addChild(this.barText_);
                     addChild(this.barMask);
                     this.barText_.mask = this.barMask;
-                };
+                }
                 _local_3 = (this.barTextOrigWidth_ * (1 - (_local_4 / _local_2)));
                 this.barMask.width = _local_3;
                 setColorTransform(inactiveCT);
@@ -80,7 +82,7 @@ package com.company.assembleegameclient.ui.menu
                 if (contains(this.barText_))
                 {
                     removeChild(this.barText_);
-                };
+                }
                 if (this.mouseOver_)
                 {
                     setColorTransform(mouseOverCT);
@@ -88,8 +90,8 @@ package com.company.assembleegameclient.ui.menu
                 else
                 {
                     setColorTransform(null);
-                };
-            };
+                }
+            }
         }
 
         override protected function onMouseOver(_arg_1:MouseEvent):void

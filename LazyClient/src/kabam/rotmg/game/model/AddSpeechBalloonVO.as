@@ -5,9 +5,9 @@
 
 package kabam.rotmg.game.model
 {
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class AddSpeechBalloonVO 
+public class AddSpeechBalloonVO
     {
 
         public var go:GameObject;

@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.model.DebugStringMap
 
 package kabam.rotmg.language.model
 {
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.text.model.DebugTextInfo;
-    import __AS3__.vec.*;
+import kabam.rotmg.text.model.DebugTextInfo;
 
-    public class DebugStringMap implements StringMap 
+public class DebugStringMap implements StringMap
     {
 
         [Inject]
@@ -29,7 +27,7 @@ package kabam.rotmg.language.model
             if (((!(_arg_1 == "")) && (this.isInvalid(_arg_1))))
             {
                 return (_arg_1);
-            };
+            }
             return (this.delegate.getValue(_arg_1));
         }
 

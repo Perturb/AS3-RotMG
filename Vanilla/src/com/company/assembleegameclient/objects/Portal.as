@@ -5,18 +5,19 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.view.BitmapTextFactory;
-    import flash.display.BitmapData;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import com.company.assembleegameclient.ui.panels.PortalPanel;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.ui.panels.PortalPanel;
 
-    public class Portal extends GameObject implements IInteractiveObject 
+import flash.display.BitmapData;
+import flash.display.IGraphicsData;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class Portal extends GameObject implements IInteractiveObject
     {
 
         private static const NAME_PARSER:RegExp = /(^\s+)\s\(([0-9]+)\/[0-9]+\)/;
@@ -47,7 +48,7 @@ package com.company.assembleegameclient.objects
             if (this.nexusPortal_)
             {
                 drawName(_arg_1, _arg_2);
-            };
+            }
         }
 
         public function getPanel(_arg_1:GameSprite):Panel

@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.IsPackageAffordableGuard
 
 package kabam.rotmg.packages.control
 {
-    import robotlegs.bender.framework.api.IGuard;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-    import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.packages.model.PackageInfo;
 
-    public class IsPackageAffordableGuard implements IGuard 
+import robotlegs.bender.framework.api.IGuard;
+
+public class IsPackageAffordableGuard implements IGuard
     {
 
         [Inject]
@@ -24,10 +25,10 @@ package kabam.rotmg.packages.control
         public function approve():Boolean
         {
             var _local_1:* = (this.playerModel.getCredits() >= this.packageInfo.priceAmount);
-            if (!_local_1)
+            if ((!(_local_1)))
             {
                 this.openMoneyWindow.dispatch();
-            };
+            }
             return (_local_1);
         }
 

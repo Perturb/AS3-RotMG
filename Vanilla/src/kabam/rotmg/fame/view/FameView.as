@@ -5,33 +5,36 @@
 
 package kabam.rotmg.fame.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import flash.display.DisplayObjectContainer;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.screens.ScoringBox;
-    import com.company.assembleegameclient.screens.ScoreTextLine;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.text.TextFieldAutoSize;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import com.gskinner.motion.GTween;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import flash.display.BitmapData;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.rotmg.graphics.FameIconBackgroundDesign;
-    import flash.geom.Rectangle;
-    import com.company.assembleegameclient.util.FameUtil;
-    import com.company.util.BitmapUtil;
-    import com.company.rotmg.graphics.ScreenGraphic;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.screens.ScoreTextLine;
+import com.company.assembleegameclient.screens.ScoringBox;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.rotmg.graphics.FameIconBackgroundDesign;
+import com.company.rotmg.graphics.ScreenGraphic;
+import com.company.util.BitmapUtil;
+import com.gskinner.motion.GTween;
 
-    public class FameView extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObjectContainer;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class FameView extends Sprite
     {
 
         public var closed:Signal;
@@ -82,7 +85,7 @@ package kabam.rotmg.fame.view
             if (this.isDataPopulated)
             {
                 this.makeContinueButton();
-            };
+            }
         }
 
         public function setCharacterInfo(_arg_1:String, _arg_2:int, _arg_3:int):void
@@ -117,7 +120,7 @@ package kabam.rotmg.fame.view
             else
             {
                 _local_3.setParams(TextKey.DEATH_INFO_SHORT, {"date":_arg_1});
-            };
+            }
             this.date.setStringBuilder(_local_3);
             this.date.x = (stage.stageWidth / 2);
             this.date.y = 272;
@@ -170,7 +173,7 @@ package kabam.rotmg.fame.view
                     case "lod cream tile":
                         _local_4 = "lod Cream Tile";
                         break;
-                };
+                }
             }
             else
             {
@@ -178,7 +181,7 @@ package kabam.rotmg.fame.view
                 _local_4 = _local_4.replace(/_/g, " ");
                 _local_4 = _local_4.replace(/APOS/g, "'");
                 _local_4 = _local_4.replace(/BANG/g, "!");
-            };
+            }
             if (ObjectLibrary.getPropsFromId(_local_4) != null)
             {
                 _local_4 = ObjectLibrary.getPropsFromId(_local_4).displayId_;
@@ -188,8 +191,8 @@ package kabam.rotmg.fame.view
                 if (GroundLibrary.getPropsFromId(_local_4) != null)
                 {
                     _local_4 = GroundLibrary.getPropsFromId(_local_4).displayId_;
-                };
-            };
+                }
+            }
             return (_local_4);
         }
 
@@ -226,7 +229,7 @@ package kabam.rotmg.fame.view
             if (((!(this.isAnimation)) || (this.isFadeComplete)))
             {
                 this.makeContinueButton();
-            };
+            }
         }
 
         private function makeContinueButton():void
@@ -242,7 +245,7 @@ package kabam.rotmg.fame.view
             else
             {
                 this.scoringBox.showScore();
-            };
+            }
         }
 
 

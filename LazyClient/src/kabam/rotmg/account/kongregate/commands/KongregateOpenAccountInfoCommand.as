@@ -5,12 +5,12 @@
 
 package kabam.rotmg.account.kongregate.commands
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class KongregateOpenAccountInfoCommand 
+public class KongregateOpenAccountInfoCommand 
     {
 
         [Inject]
@@ -30,7 +30,7 @@ package kabam.rotmg.account.kongregate.commands
             else
             {
                 this.api.showRegistrationDialog();
-            };
+            }
         }
 
 

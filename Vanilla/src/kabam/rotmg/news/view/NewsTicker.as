@@ -5,14 +5,17 @@
 
 package kabam.rotmg.news.view
 {
-    import flash.display.Sprite;
-    import flash.text.TextField;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.model.FontModel;
+import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
-    public class NewsTicker extends Sprite 
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.text.TextField;
+import flash.utils.Timer;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.FontModel;
+
+public class NewsTicker extends Sprite
     {
 
         private static var pendingScrollText:String = "";
@@ -39,7 +42,7 @@ package kabam.rotmg.news.view
             {
                 this.activateNewScrollText(NewsTicker.pendingScrollText);
                 NewsTicker.pendingScrollText = "";
-            };
+            }
         }
 
         public static function setPendingScrollText(_arg_1:String):void
@@ -53,11 +56,12 @@ package kabam.rotmg.news.view
             if (this.visible == false)
             {
                 this.visible = true;
+                StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
             }
             else
             {
                 return;
-            };
+            }
             this.scrollText.text = ((this.SCROLL_PREPEND + _arg_1) + this.SCROLL_APPEND);
             this.timer.addEventListener(TimerEvent.TIMER, this.scrollAnimation);
             this.currentRepeat = 1;
@@ -89,8 +93,9 @@ package kabam.rotmg.news.view
                     this.scrollText.scrollH = 0;
                     this.timer.removeEventListener(TimerEvent.TIMER, this.scrollAnimation);
                     this.visible = false;
-                };
-            };
+                    StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
+                }
+            }
         }
 
         private function align():void

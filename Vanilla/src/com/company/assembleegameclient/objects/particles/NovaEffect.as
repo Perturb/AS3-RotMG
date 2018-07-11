@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class NovaEffect extends ParticleEffect 
+import flash.geom.Point;
+
+public class NovaEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -40,7 +41,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_9 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_8);
                 map_.addObj(_local_9, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 
@@ -62,7 +63,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_9 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_8);
                 map_.addObj(_local_9, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 

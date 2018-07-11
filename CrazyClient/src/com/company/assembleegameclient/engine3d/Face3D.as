@@ -1,27 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Face3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import flash.display.GraphicsSolidFill;
-    import flash.display.BitmapData;
-    import __AS3__.vec.Vector;
-    import flash.display.GraphicsBitmapFill;
-    import flash.display.GraphicsPath;
-    import flash.geom.Vector3D;
-    import flash.display.GraphicsPathCommand;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import flash.geom.Utils3D;
-    import com.company.util.GraphicsUtil;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import com.company.util.Triangle;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.MapUserInput;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.GraphicsUtil;
+import com.company.util.Triangle;
 
-    public class Face3D 
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsPathCommand;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.geom.Utils3D;
+import flash.geom.Vector3D;
+
+public class Face3D
     {
 
         private static const blackOutFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
@@ -51,14 +50,14 @@ package com.company.assembleegameclient.engine3d
                 _local_6 = new Vector3D();
                 Plane3D.computeNormalVec(_arg_2, _local_6);
                 this.shade_ = Lighting3D.shadeValue(_local_6, 0.75);
-            };
+            }
             this.path_.commands.push(GraphicsPathCommand.MOVE_TO);
             var _local_7:int = 3;
             while (_local_7 < this.vin_.length)
             {
                 this.path_.commands.push(GraphicsPathCommand.LINE_TO);
                 _local_7 = (_local_7 + 3);
-            };
+            }
             this.path_.data = this.vout_;
         }
 
@@ -80,7 +79,7 @@ package com.company.assembleegameclient.engine3d
             if (this.origTexture_ == _arg_1)
             {
                 return;
-            };
+            }
             this.origTexture_ = _arg_1;
             this.needGen_ = true;
         }
@@ -101,9 +100,9 @@ package com.company.assembleegameclient.engine3d
                 if (this.vout_[(_local_1 + 1)] > _local_2)
                 {
                     _local_2 = this.vout_[(_local_1 + 1)];
-                };
+                }
                 _local_1 = (_local_1 + 2);
-            };
+            }
             return (_local_2);
         }
 
@@ -116,10 +115,11 @@ package com.company.assembleegameclient.engine3d
             var _local_7:Number;
             var _local_8:int;
             var _local_9:int;
+            var _local_14:Boolean;
             if (MapUserInput.skipRender == true)
             {
                 return (false);
-            };
+            }
             Utils3D.projectVectors(_arg_2.wToS_, this.vin_, this.vout_, this.uvt_);
             if (this.backfaceCull_)
             {
@@ -131,13 +131,12 @@ package com.company.assembleegameclient.engine3d
                 if (((_local_4 * _local_7) - (_local_5 * _local_6)) > 0)
                 {
                     return (false);
-                };
-            };
+                }
+            }
             var _local_10:Number = (_arg_2.clipRect_.x - 10);
             var _local_11:Number = (_arg_2.clipRect_.y - 10);
             var _local_12:Number = (_arg_2.clipRect_.right + 10);
             var _local_13:Number = (_arg_2.clipRect_.bottom + 10);
-            var _local_14:Boolean = true;
             var _local_15:int = this.vout_.length;
             while (_local_9 < _local_15)
             {
@@ -146,24 +145,24 @@ package com.company.assembleegameclient.engine3d
                 {
                     _local_14 = false;
                     break;
-                };
+                }
                 _local_9 = (_local_9 + 2);
-            };
+            }
             if (_local_14)
             {
                 return (false);
-            };
+            }
             if (this.blackOut_)
             {
                 _arg_1.push(blackOutFill_);
                 _arg_1.push(this.path_);
                 _arg_1.push(GraphicsUtil.END_FILL);
                 return (true);
-            };
+            }
             if (this.needGen_)
             {
                 this.generateTextureMatrix();
-            };
+            }
             this.textureMatrix_.calculateTextureMatrix(this.vout_);
             this.bitmapFill_.bitmapData = this.textureMatrix_.texture_;
             this.bitmapFill_.matrix = this.textureMatrix_.tToS_;
@@ -178,11 +177,11 @@ package com.company.assembleegameclient.engine3d
             if (Triangle.containsXY(this.vout_[0], this.vout_[1], this.vout_[2], this.vout_[3], this.vout_[4], this.vout_[5], _arg_1, _arg_2))
             {
                 return (true);
-            };
+            }
             if (((this.vout_.length == 8) && (Triangle.containsXY(this.vout_[0], this.vout_[1], this.vout_[4], this.vout_[5], this.vout_[6], this.vout_[7], _arg_1, _arg_2))))
             {
                 return (true);
-            };
+            }
             return (false);
         }
 
@@ -197,7 +196,7 @@ package com.company.assembleegameclient.engine3d
             {
                 this.textureMatrix_.texture_ = _local_1;
                 this.textureMatrix_.calculateUVMatrix(this.uvt_);
-            };
+            }
             this.needGen_ = false;
         }
 

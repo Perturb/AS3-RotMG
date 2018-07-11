@@ -5,20 +5,20 @@
 
 package kabam.rotmg.account.web.commands
 {
-    import kabam.rotmg.account.core.services.ChangePasswordTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import kabam.lib.tasks.BranchingTask;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-    import kabam.lib.tasks.Task;
-    import kabam.rotmg.core.service.TrackingData;
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.ChangePasswordTask;
+import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.core.signals.TrackEventSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class WebChangePasswordCommand 
+public class WebChangePasswordCommand 
     {
 
         [Inject]
@@ -45,7 +45,6 @@ package kabam.rotmg.account.web.commands
         private function makeSuccess():Task
         {
             var _local_1:TaskSequence = new TaskSequence();
-            _local_1.add(new DispatchSignalTask(this.track, this.makeTrackingData()));
             _local_1.add(new DispatchSignalTask(this.openDialog, new WebAccountDetailDialog()));
             return (_local_1);
         }

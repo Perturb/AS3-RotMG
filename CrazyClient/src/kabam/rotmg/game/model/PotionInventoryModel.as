@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.model.PotionInventoryModel
 
 package kabam.rotmg.game.model
 {
-    import flash.utils.Dictionary;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.model.PotionModel;
+import flash.utils.Dictionary;
 
-    public class PotionInventoryModel 
+import kabam.rotmg.ui.model.PotionModel;
+
+import org.osflash.signals.Signal;
+
+public class PotionInventoryModel 
     {
 
         public static const HEALTH_POTION_ID:int = 2594;
@@ -34,41 +36,41 @@ package kabam.rotmg.game.model
                     return (HEALTH_POTION_SLOT);
                 case MAGIC_POTION_ID:
                     return (MAGIC_POTION_SLOT);
-            };
+            }
             return (-1);
         }
 
 
         public function initializePotionModels(_arg_1:XML):void
         {
-            var _local_2:int;
-            var _local_3:PotionModel;
-            var _local_4:int = _arg_1.PotionPurchaseCooldown;
-            var _local_5:int = _arg_1.PotionPurchaseCostCooldown;
-            var _local_6:int = _arg_1.MaxStackablePotions;
-            var _local_7:Array = [];
-            for each (_local_2 in _arg_1.PotionPurchaseCosts.cost)
+            var _local_6:int;
+            var _local_7:PotionModel;
+            var _local_2:int = _arg_1.PotionPurchaseCooldown;
+            var _local_3:int = _arg_1.PotionPurchaseCostCooldown;
+            var _local_4:int = _arg_1.MaxStackablePotions;
+            var _local_5:Array = new Array();
+            for each (_local_6 in _arg_1.PotionPurchaseCosts.cost)
             {
-                _local_7.push(_local_2);
-            };
-            _local_3 = new PotionModel();
-            _local_3.purchaseCooldownMillis = _local_4;
-            _local_3.priceCooldownMillis = _local_5;
-            _local_3.maxPotionCount = _local_6;
-            _local_3.objectId = HEALTH_POTION_ID;
-            _local_3.position = 0;
-            _local_3.costs = _local_7;
-            this.potionModels[_local_3.position] = _local_3;
-            _local_3.update.add(this.update);
-            _local_3 = new PotionModel();
-            _local_3.purchaseCooldownMillis = _local_4;
-            _local_3.priceCooldownMillis = _local_5;
-            _local_3.maxPotionCount = _local_6;
-            _local_3.objectId = MAGIC_POTION_ID;
-            _local_3.position = 1;
-            _local_3.costs = _local_7;
-            this.potionModels[_local_3.position] = _local_3;
-            _local_3.update.add(this.update);
+                _local_5.push(_local_6);
+            }
+            _local_7 = new PotionModel();
+            _local_7.purchaseCooldownMillis = _local_2;
+            _local_7.priceCooldownMillis = _local_3;
+            _local_7.maxPotionCount = _local_4;
+            _local_7.objectId = HEALTH_POTION_ID;
+            _local_7.position = 0;
+            _local_7.costs = _local_5;
+            this.potionModels[_local_7.position] = _local_7;
+            _local_7.update.add(this.update);
+            _local_7 = new PotionModel();
+            _local_7.purchaseCooldownMillis = _local_2;
+            _local_7.priceCooldownMillis = _local_3;
+            _local_7.maxPotionCount = _local_4;
+            _local_7.objectId = MAGIC_POTION_ID;
+            _local_7.position = 1;
+            _local_7.costs = _local_5;
+            this.potionModels[_local_7.position] = _local_7;
+            _local_7.update.add(this.update);
         }
 
         public function getPotionModel(_arg_1:uint):PotionModel
@@ -79,8 +81,8 @@ package kabam.rotmg.game.model
                 if (this.potionModels[_local_2].objectId == _arg_1)
                 {
                     return (this.potionModels[_local_2]);
-                };
-            };
+                }
+            }
             return (null);
         }
 

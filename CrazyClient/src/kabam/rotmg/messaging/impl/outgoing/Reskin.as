@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.Reskin
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import com.company.assembleegameclient.objects.Player;
-    import flash.utils.IDataOutput;
+import com.company.assembleegameclient.objects.Player;
 
-    public class Reskin extends OutgoingMessage 
+import flash.utils.IDataOutput;
+
+public class Reskin extends OutgoingMessage 
     {
 
         public var skinID:int;

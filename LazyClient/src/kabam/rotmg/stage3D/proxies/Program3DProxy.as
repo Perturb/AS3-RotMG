@@ -5,10 +5,10 @@
 
 package kabam.rotmg.stage3D.proxies
 {
-    import flash.display3D.Program3D;
-    import flash.utils.ByteArray;
+import flash.display3D.Program3D;
+import flash.utils.ByteArray;
 
-    public class Program3DProxy 
+public class Program3DProxy
     {
 
         private var program3D:Program3D;

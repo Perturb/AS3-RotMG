@@ -7,8 +7,6 @@ package kabam.rotmg.fortune.components
 	{
 		public function FortuneModal_fortunePlatformEmbed()
 		{
-			super();
-			return;
 		}
 	}
 }

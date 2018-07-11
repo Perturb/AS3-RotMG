@@ -1,27 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.NewCharacterMediator
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.NewCharacterScreen;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.signals.PlayGameSignal;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.core.signals.HideTooltipsSignal;
-    import kabam.rotmg.core.signals.UpdateNewCharacterScreenSignal;
-    import kabam.rotmg.core.signals.BuyCharacterPendingSignal;
-    import kabam.rotmg.core.signals.PurchaseCharacterSignal;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-    import kabam.rotmg.classes.view.CharacterSkinView;
-    import flash.display.Sprite;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+import com.company.assembleegameclient.screens.NewCharacterScreen;
 
-    public class NewCharacterMediator extends Mediator 
+import flash.display.Sprite;
+
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.classes.view.CharacterSkinView;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.BuyCharacterPendingSignal;
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.core.signals.UpdateNewCharacterScreenSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.signals.PlayGameSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewCharacterMediator extends Mediator
     {
 
         [Inject]
@@ -41,8 +43,6 @@ package kabam.rotmg.ui.view
         [Inject]
         public var buyCharacterPending:BuyCharacterPendingSignal;
         [Inject]
-        public var purchaseCharacter:PurchaseCharacterSignal;
-        [Inject]
         public var classesModel:ClassesModel;
         [Inject]
         public var openDialog:OpenDialogSignal;
@@ -53,7 +53,6 @@ package kabam.rotmg.ui.view
             this.view.selected.add(this.onSelected);
             this.view.close.add(this.onClose);
             this.view.tooltip.add(this.onTooltip);
-            this.view.buy.add(this.onBuy);
             this.updateNewCharacterScreen.add(this.onUpdate);
             this.buyCharacterPending.add(this.onBuyCharacterPending);
             this.view.initialize(this.playerModel);
@@ -69,7 +68,6 @@ package kabam.rotmg.ui.view
             this.view.selected.remove(this.onSelected);
             this.view.close.remove(this.onClose);
             this.view.tooltip.remove(this.onTooltip);
-            this.view.buy.remove(this.onBuy);
             this.buyCharacterPending.remove(this.onBuyCharacterPending);
             this.updateNewCharacterScreen.remove(this.onUpdate);
         }
@@ -94,17 +92,12 @@ package kabam.rotmg.ui.view
             else
             {
                 this.hideTooltips.dispatch();
-            };
+            }
         }
 
         private function onUpdate():void
         {
             this.view.update(this.playerModel);
-        }
-
-        private function onBuy(_arg_1:int):void
-        {
-            this.purchaseCharacter.dispatch(_arg_1);
         }
 
 

@@ -15,7 +15,7 @@
       <MaxHitPoints>800</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>MidPlains</Terrain>
-      <XpMult>2.5</XpMult>
+      <Exp>200</Exp>
       <SpawnProb>0.04</SpawnProb>
    </Object>
    <Object type="0x5e48" id="MegaRototo">
@@ -230,7 +230,7 @@
       <ShadowSize>0</ShadowSize>
       <NoMiniMap/>
       <MaxHitPoints>10000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x5e42" id="Gumball Machine">
       <Class>Character</Class>
@@ -249,7 +249,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x5e41" id="Cupcake">
       <Group>Candy Creature</Group>
@@ -288,7 +288,7 @@
       <Size>140</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Projectile id="0">
          <ObjectId>Unicorn Horn</ObjectId>
          <Damage>70</Damage>
@@ -319,7 +319,7 @@
       <ShadowSize>60</ShadowSize>
       <MaxHitPoints>1300</MaxHitPoints>
       <Defense>18</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>78</Exp>
       <Projectile id="0">
          <ObjectId>Hard Candy Stake</ObjectId>
          <Damage>50</Damage>
@@ -397,7 +397,7 @@
       <ShadowSize>60</ShadowSize>
       <MaxHitPoints>4000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>117</Exp>
       <Projectile id="0">
          <ObjectId>Troll Hair Whip</ObjectId>
          <Damage>70</Damage>
@@ -422,7 +422,7 @@
       <Size>100</Size>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>60</Exp>
       <Projectile id="0">
          <ObjectId>Icecream Bullet</ObjectId>
          <Damage>36</Damage>
@@ -446,7 +446,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>2300</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>117</Exp>
       <Projectile id="0">
          <ObjectId>Cream Shot</ObjectId>
          <Damage>85</Damage>
@@ -476,7 +476,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>700</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.6</XpMult>
+      <Exp>42</Exp>
       <Projectile id="0">
          <ObjectId>Cream Bullet</ObjectId>
          <Damage>55</Damage>
@@ -507,7 +507,7 @@
       <ShadowSize>80</ShadowSize>
       <MaxHitPoints>1200</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Purple Rototo Blast</ObjectId>
          <Damage>40</Damage>
@@ -543,7 +543,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>2300</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <Projectile id="0">
          <ObjectId>Purple Rototo Blast</ObjectId>
          <Damage>120</Damage>
@@ -570,7 +570,7 @@
       <ShadowSize>0</ShadowSize>
       <NoMiniMap/>
       <MaxHitPoints>10000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x5e2f" id="Butterfly">
       <Enemy/>
@@ -594,7 +594,7 @@
          </Frame>
       </Animation>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Z>0.27</Z>
       <Flying/>
       <Size>80</Size>

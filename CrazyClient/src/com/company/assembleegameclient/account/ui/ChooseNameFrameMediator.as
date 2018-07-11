@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.ChooseNameFrameMediator
 
 package com.company.assembleegameclient.account.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.ui.signals.NameChangedSignal;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.assembleegameclient.game.events.NameResultEvent;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.events.NameResultEvent;
 
-    public class ChooseNameFrameMediator extends Mediator 
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.ui.signals.NameChangedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChooseNameFrameMediator extends Mediator
     {
 
         [Inject]
@@ -56,7 +58,7 @@ package com.company.assembleegameclient.account.ui
             else
             {
                 this.handleFailedNameChange(_arg_1.m_.errorText_);
-            };
+            }
         }
 
         private function handleSuccessfulNameChange():void

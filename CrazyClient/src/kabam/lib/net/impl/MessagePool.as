@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.net.impl.MessagePool
@@ -32,7 +32,7 @@ package kabam.lib.net.impl
                 ((this.tail) && (this.tail.next = _local_2));
                 _local_2.prev = this.tail;
                 this.tail = _local_2;
-            };
+            }
             return (this);
         }
 
@@ -50,7 +50,7 @@ package kabam.lib.net.impl
                 _local_1 = new this.type(this.id, this.callback);
                 _local_1.pool = this;
                 this.count++;
-            };
+            }
             return (_local_1);
         }
 

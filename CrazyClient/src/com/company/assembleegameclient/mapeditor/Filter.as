@@ -1,20 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.Filter
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.ui.dropdown.DropDown;
-    import com.company.ui.BaseSimpleText;
-    import flash.events.FocusEvent;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.events.Event;
-    import __AS3__.vec.Vector;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.ui.dropdown.DropDown;
+import com.company.ui.BaseSimpleText;
 
-    public class Filter extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.FocusEvent;
+
+public class Filter extends Sprite
     {
 
         private static const GAP:int = 2;
@@ -95,7 +95,7 @@ package com.company.assembleegameclient.mapeditor
             if (this._minInput.text() == "")
             {
                 return (0);
-            };
+            }
             return (Number(this._minInput.text()));
         }
 
@@ -104,7 +104,7 @@ package com.company.assembleegameclient.mapeditor
             if (this._maxInput.text() == "")
             {
                 return (-1);
-            };
+            }
             return (Number(this._maxInput.text()));
         }
 
@@ -170,7 +170,7 @@ package com.company.assembleegameclient.mapeditor
                     return;
                 case this._minInput:
                     this._minPrompt.visible = false;
-            };
+            }
         }
 
         private function onFocusOut(_arg_1:FocusEvent):void
@@ -181,20 +181,20 @@ package com.company.assembleegameclient.mapeditor
                     if (this._search.text() == "")
                     {
                         this._searchPrompt.visible = this._isSearchEnabled;
-                    };
+                    }
                     return;
                 case this._maxInput:
                     if (this._maxInput.text() == "")
                     {
                         this._maxPrompt.visible = this._isValueFilterEnabled;
-                    };
+                    }
                     return;
                 case this._minInput:
                     if (this._minInput.text() == "")
                     {
                         this._minPrompt.visible = this._isValueFilterEnabled;
-                    };
-            };
+                    }
+            }
         }
 
 

@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.console.controller.ListActionsCommand
 
 package kabam.lib.console.controller
 {
-    import kabam.lib.console.model.Console;
-    import kabam.lib.console.signals.ConsoleLogSignal;
+import kabam.lib.console.model.Console;
+import kabam.lib.console.signals.ConsoleLogSignal;
 
-    public final class ListActionsCommand 
+public final class ListActionsCommand 
     {
 
         [Inject]

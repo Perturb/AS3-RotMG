@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.FormField
 
 package kabam.rotmg.account.web.view
 {
-    import flash.display.Sprite;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import com.company.ui.BaseSimpleText;
+import com.company.ui.BaseSimpleText;
 
-    public class FormField extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+
+public class FormField extends Sprite 
     {
 
         protected static const BACKGROUND_COLOR:uint = 0x333333;

@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.model.BeginnersPackageModel
 
 package kabam.rotmg.promotions.model
 {
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.core.model.OfferModel;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.util.TimeUtil;
-    import com.company.assembleegameclient.util.offer.Offer;
+import com.company.assembleegameclient.util.TimeUtil;
+import com.company.assembleegameclient.util.offer.Offer;
 
-    public class BeginnersPackageModel 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.model.OfferModel;
+
+import org.osflash.signals.Signal;
+
+public class BeginnersPackageModel 
     {
 
         private static const REALM_GOLD_FOR_BEGINNERS_PKG:int = 2600;
@@ -61,17 +63,17 @@ package kabam.rotmg.promotions.model
         public function getOffer():Offer
         {
             var _local_1:Offer;
-            if (!this.model.offers)
+            if ((!(this.model.offers)))
             {
                 return (null);
-            };
+            }
             for each (_local_1 in this.model.offers.offerList)
             {
                 if (_local_1.realmGold_ == REALM_GOLD_FOR_BEGINNERS_PKG)
                 {
                     return (_local_1);
-                };
-            };
+                }
+            }
             return (null);
         }
 

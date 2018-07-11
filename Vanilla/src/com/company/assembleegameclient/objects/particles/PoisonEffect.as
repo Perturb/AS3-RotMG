@@ -5,10 +5,10 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.RandomUtil;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.RandomUtil;
 
-    public class PoisonEffect extends ParticleEffect 
+public class PoisonEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -25,7 +25,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             x_ = this.go_.x_;
             y_ = this.go_.y_;
             var _local_3:int = 10;
@@ -34,7 +34,7 @@ package com.company.assembleegameclient.objects.particles
             {
                 map_.addObj(new SparkParticle(100, this.color_, 400, 0.75, RandomUtil.plusMinus(4), RandomUtil.plusMinus(4)), x_, y_);
                 _local_4++;
-            };
+            }
             return (false);
         }
 

@@ -1,20 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemBox
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
-    import io.decagames.rotmg.ui.gird.UIGridElement;
-    import flash.display.Sprite;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import flash.display.Bitmap;
-    import flash.text.TextFieldAutoSize;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.display.BitmapData;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class ItemBox extends UIGridElement 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.text.TextFieldAutoSize;
+
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.gird.UIGridElement;
+import io.decagames.rotmg.ui.labels.UILabel;
+
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class ItemBox extends UIGridElement
     {
 
         private var _itemId:String;
@@ -55,7 +59,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
                 this.graphics.beginFill(0x2D2D2D);
                 this.graphics.drawRect(0, 0, _arg_3, (this.itemSize + (2 * this.itemMargin)));
                 this.graphics.endFill();
-            };
+            }
         }
 
         public function clearBackground():void
@@ -81,7 +85,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             this._itemBackground.addChild(this.imageBitmap);
             if (this.showFullName)
             {
-                this.label.text = ((_arg_2 + "x ") + ObjectLibrary.typeToDisplayId_[_arg_1]);
+                this.label.text = ((_arg_2 + "x ") + LineBuilder.getLocalizedStringFromKey(ObjectLibrary.typeToDisplayId_[_arg_1]));
                 this.label.x = 55;
             }
             else
@@ -89,7 +93,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
                 this.label.text = (_arg_2 + "x");
                 this.label.x = 10;
                 this._itemBackground.x = (this._itemBackground.x + (this.label.x + 10));
-            };
+            }
             addChild(this.label);
         }
 
@@ -106,10 +110,10 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
 
         override public function resize(_arg_1:int, _arg_2:int=-1):void
         {
-            if (!this.isBackgroundCleared)
+            if ((!(this.isBackgroundCleared)))
             {
                 this.drawBackground(this.bitmapName, this.isLastElement, _arg_1);
-            };
+            }
             this.targetWidth = _arg_1;
             this.resizeLabel();
         }
@@ -119,7 +123,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             if (this.imageBitmap)
             {
                 this.imageBitmap.bitmapData.dispose();
-            };
+            }
             super.dispose();
         }
 

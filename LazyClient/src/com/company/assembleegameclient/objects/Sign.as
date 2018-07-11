@@ -5,18 +5,20 @@
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.language.model.StringMap;
-    import kabam.rotmg.text.model.FontModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.text.TextField;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormat;
-    import flash.text.TextFormatAlign;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.util.TextureRedrawer;
 
-    public class Sign extends GameObject 
+import flash.display.BitmapData;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+import flash.text.TextFormatAlign;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.text.model.FontModel;
+
+public class Sign extends GameObject
     {
 
         private var stringMap:StringMap;
@@ -35,7 +37,7 @@ package com.company.assembleegameclient.objects
             if (texture_ != null)
             {
                 return (texture_);
-            };
+            }
             var _local_3:TextField = new TextField();
             _local_3.multiline = true;
             _local_3.wordWrap = false;
@@ -53,7 +55,7 @@ package com.company.assembleegameclient.objects
             if (_local_5 == null)
             {
                 _local_5 = ((name_ != null) ? name_ : "null");
-            };
+            }
             _local_3.text = _local_5.split("|").join("\n");
             var _local_6:BitmapData = new BitmapDataSpy(_local_3.width, _local_3.height, true, 0);
             _local_6.draw(_local_3);

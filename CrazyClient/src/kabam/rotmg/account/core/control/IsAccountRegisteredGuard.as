@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.control.IsAccountRegisteredGuard
 
 package kabam.rotmg.account.core.control
 {
-    import robotlegs.bender.framework.api.IGuard;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class IsAccountRegisteredGuard implements IGuard 
+import robotlegs.bender.framework.api.IGuard;
+
+public class IsAccountRegisteredGuard implements IGuard 
     {
 
         [Inject]

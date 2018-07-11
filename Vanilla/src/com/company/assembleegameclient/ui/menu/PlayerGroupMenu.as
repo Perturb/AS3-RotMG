@@ -5,17 +5,17 @@
 
 package com.company.assembleegameclient.ui.menu
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.ui.GameObjectListItem;
-    import com.company.assembleegameclient.map.AbstractMap;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.ui.LineBreakDesign;
-    import org.osflash.signals.Signal;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.AbstractMap;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.GameObjectListItem;
+import com.company.assembleegameclient.ui.LineBreakDesign;
 
-    public class PlayerGroupMenu extends Menu 
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import org.osflash.signals.Signal;
+
+public class PlayerGroupMenu extends Menu 
     {
 
         private var playerPanels_:Vector.<GameObjectListItem> = new Vector.<GameObjectListItem>();
@@ -48,7 +48,7 @@ package com.company.assembleegameclient.ui.menu
                 this.playerPanels_.push(_local_2);
                 _local_2.textReady.addOnce(this.onTextChanged);
                 this.posY = (this.posY + 32);
-            };
+            }
         }
 
         private function onTextChanged():void
@@ -58,7 +58,7 @@ package com.company.assembleegameclient.ui.menu
             for each (_local_1 in this.playerPanels_)
             {
                 _local_1.textReady.remove(this.onTextChanged);
-            };
+            }
         }
 
         private function createHeader():void
@@ -75,7 +75,7 @@ package com.company.assembleegameclient.ui.menu
                 this.lineBreakDesign_.y = 40;
                 addChild(this.lineBreakDesign_);
                 this.posY = 52;
-            };
+            }
         }
 
         private function onTeleport(_arg_1:Event):void
@@ -95,9 +95,9 @@ package com.company.assembleegameclient.ui.menu
                     else
                     {
                         break;
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (_local_3 != null)
             {
                 _local_2.teleportTo(_local_3);
@@ -105,7 +105,7 @@ package com.company.assembleegameclient.ui.menu
             else
             {
                 this.unableToTeleport.dispatch();
-            };
+            }
             remove();
         }
 

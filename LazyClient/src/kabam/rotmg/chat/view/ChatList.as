@@ -5,14 +5,15 @@
 
 package kabam.rotmg.chat.view
 {
-    import flash.display.Sprite;
-    import flash.utils.Timer;
-    import __AS3__.vec.Vector;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.chat.model.ChatModel;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChatList extends Sprite 
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.rotmg.chat.model.ChatModel;
+
+public class ChatList extends Sprite
     {
 
         private const timer:Timer = new Timer(1000);
@@ -21,6 +22,7 @@ package kabam.rotmg.chat.view
         private var listItems:Vector.<ChatListItem>;
         private var visibleItems:Vector.<ChatListItem>;
         private var visibleItemCount:int;
+        private var hackItemsCount:int;
         private var index:int;
         private var isCurrent:Boolean;
         private var ignoreTimeOuts:Boolean = false;
@@ -33,6 +35,7 @@ package kabam.rotmg.chat.view
             this.listItems = new Vector.<ChatListItem>();
             this.visibleItems = new Vector.<ChatListItem>();
             this.visibleItemCount = _arg_1;
+            this.hackItemsCount = 0;
             this.maxLength = _arg_2;
             this.index = 0;
             this.isCurrent = true;
@@ -53,8 +56,8 @@ package kabam.rotmg.chat.view
                 else
                 {
                     break;
-                };
-            };
+                }
+            }
             while (this.itemsToRemove.length > 0)
             {
                 this.onItemTimedOut(this.itemsToRemove.pop());
@@ -66,9 +69,9 @@ package kabam.rotmg.chat.view
                         this.addNewItem(_local_3);
                         this.isCurrent = (this.index == this.listItems.length);
                         this.positionItems();
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         public function setup(_arg_1:ChatModel):void
@@ -78,6 +81,7 @@ package kabam.rotmg.chat.view
 
         public function addMessage(_arg_1:ChatListItem):void
         {
+
             var _local_2:ChatListItem;
             if (this.listItems.length > this.maxLength)
             {
@@ -87,13 +91,17 @@ package kabam.rotmg.chat.view
                 if (((!(this.isCurrent)) && (this.index < this.visibleItemCount)))
                 {
                     this.pageDown();
-                };
-            };
+                }
+            }
             this.listItems.push(_arg_1);
+            if (_arg_1.playerObjectId == -2)
+            {
+                this.hackItemsCount++;
+            }
             if (this.isCurrent)
             {
                 this.displayNewItem(_arg_1);
-            };
+            }
         }
 
         private function onItemTimedOut(_arg_1:ChatListItem):void
@@ -104,11 +112,14 @@ package kabam.rotmg.chat.view
                 removeChild(_arg_1);
                 this.visibleItems.splice(_local_2, 1);
                 this.isCurrent = (this.index == this.listItems.length);
-            };
+            }
         }
 
         private function displayNewItem(_arg_1:ChatListItem):void
         {
+            if (_arg_1.playerObjectId == -3) {
+                return;
+            }
             this.index++;
             this.addNewItem(_arg_1);
             this.removeOldestVisibleIfNeeded();
@@ -124,7 +135,7 @@ package kabam.rotmg.chat.view
             else
             {
                 this.showAvailable();
-            };
+            }
             this.ignoreTimeOuts = true;
         }
 
@@ -140,9 +151,9 @@ package kabam.rotmg.chat.view
                 if (this.visibleItems.indexOf(_local_4) == -1)
                 {
                     this.addOldItem(_local_4);
-                };
+                }
                 _local_3--;
-            };
+            }
             this.positionItems();
         }
 
@@ -153,7 +164,7 @@ package kabam.rotmg.chat.view
                 this.ignoreTimeOuts = false;
                 this.scrollToCurrent();
                 this.onCheckTimeout(null);
-            };
+            }
             if (!this.isCurrent)
             {
                 this.scrollItemsDown();
@@ -163,8 +174,8 @@ package kabam.rotmg.chat.view
                 if (this.ignoreTimeOuts)
                 {
                     this.ignoreTimeOuts = false;
-                };
-            };
+                }
+            }
         }
 
         public function scrollToCurrent():void
@@ -172,11 +183,12 @@ package kabam.rotmg.chat.view
             while ((!(this.isCurrent)))
             {
                 this.scrollItemsDown();
-            };
+            }
         }
 
         public function pageUp():void
         {
+            this.filterHackMessages();
             var _local_1:int;
             if (!this.ignoreTimeOuts)
             {
@@ -195,14 +207,15 @@ package kabam.rotmg.chat.view
                     else
                     {
                         return;
-                    };
+                    }
                     _local_1++;
-                };
-            };
+                }
+            }
         }
 
         public function pageDown():void
         {
+            this.filterHackMessages();
             var _local_1:int;
             while (_local_1 < this.visibleItemCount)
             {
@@ -214,9 +227,9 @@ package kabam.rotmg.chat.view
                 {
                     this.ignoreTimeOuts = false;
                     return;
-                };
+                }
                 _local_1++;
-            };
+            }
         }
 
         private function addNewItem(_arg_1:ChatListItem):void
@@ -230,7 +243,7 @@ package kabam.rotmg.chat.view
             if (this.visibleItems.length > this.visibleItemCount)
             {
                 removeChild(this.visibleItems.shift());
-            };
+            }
         }
 
         private function canScrollUp():Boolean
@@ -252,7 +265,7 @@ package kabam.rotmg.chat.view
             if (this.index < 0)
             {
                 this.index = 0;
-            };
+            }
             var _local_1:ChatListItem = this.listItems[this.index];
             this.index++;
             this.addNewItem(_local_1);
@@ -272,7 +285,7 @@ package kabam.rotmg.chat.view
             if (this.visibleItems.length > this.visibleItemCount)
             {
                 removeChild(this.visibleItems.pop());
-            };
+            }
         }
 
         private function positionItems():void
@@ -285,7 +298,25 @@ package kabam.rotmg.chat.view
                 _local_3 = this.visibleItems[_local_2];
                 _local_3.y = _local_1;
                 _local_1 = (_local_1 - _local_3.height);
-            };
+            }
+        }
+
+        private function filterHackMessages():void
+        {
+            var _local_3:int;
+            if ((this.hackItemsCount > 0) && (!Parameters.data_.showHacks))
+            {
+                _local_3 = this.listItems.length;
+                while ((--_local_3 >= 0) && (this.hackItemsCount > 0))
+                {
+                    if (this.listItems[_local_3].playerObjectId == -2)
+                    {
+                        this.listItems.splice(_local_3, 1);
+                        this.hackItemsCount--;
+                        this.index--;
+                    }
+                }
+            }
         }
 
 

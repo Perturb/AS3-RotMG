@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ThrowEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
+import flash.geom.Point;
 
-    public class ThrowEffect extends ParticleEffect 
+public class ThrowEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -48,11 +48,12 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Point;
 import com.company.assembleegameclient.objects.particles.SparkParticle;
 import com.company.assembleegameclient.util.RandomUtil;
 
-class ThrowParticle extends Particle 
+import flash.geom.Point;
+
+class ThrowParticle extends Particle
 {
 
     public var lifetime_:int;
@@ -85,7 +86,7 @@ class ThrowParticle extends Particle
         if (this.timeLeft_ <= 0)
         {
             return (false);
-        };
+        }
         z_ = (Math.sin(((this.timeLeft_ / this.lifetime_) * Math.PI)) * 2);
         setSize(0);
         this.pathX_ = (this.pathX_ + (this.dx_ * _arg_2));

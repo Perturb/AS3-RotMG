@@ -5,31 +5,34 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import kabam.rotmg.ui.model.EnvironmentData;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import kabam.rotmg.ui.view.components.MapBackground;
-    import kabam.rotmg.ui.view.components.DarkLayer;
-    import com.company.assembleegameclient.screens.AccountScreen;
-    import com.company.assembleegameclient.ui.SoundIcon;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.transfer.view.KabamLoginView;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.screens.AccountScreen;
+import com.company.assembleegameclient.screens.TitleMenuOption;
+import com.company.assembleegameclient.ui.SoundIcon;
 
-    public class TitleView extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.transfer.view.KabamLoginView;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.model.EnvironmentData;
+import kabam.rotmg.ui.view.components.DarkLayer;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class TitleView extends Sprite
     {
 
         internal static var TitleScreenGraphic:Class = TitleView_TitleScreenGraphic;
+        internal static var TitleScreenBackground:Class = TitleView_TitleScreenBackground;
         public static const MIDDLE_OF_BOTTOM_BAND:Number = 589.45;
         public static var queueEmailConfirmation:Boolean = false;
         public static var queuePasswordPrompt:Boolean = false;
@@ -58,7 +61,7 @@ package kabam.rotmg.ui.view
             this.menuOptionsBar = this.makeMenuOptionsBar();
             this.optionalButtonsAdded = new Signal();
             super();
-            addChild(new MapBackground());
+            addChild(new TitleScreenBackground());
             addChild(new DarkLayer());
             addChild(new TitleScreenGraphic());
             addChild(this.menuOptionsBar);

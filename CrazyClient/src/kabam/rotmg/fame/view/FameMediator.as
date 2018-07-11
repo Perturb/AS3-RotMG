@@ -1,27 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.view.FameMediator
 
 package kabam.rotmg.fame.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.fame.model.FameModel;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
-    import kabam.rotmg.fame.service.RequestCharacterFameTask;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.TextureData;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import kabam.rotmg.legends.view.LegendsView;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.TextureData;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.MaskedImage;
+import com.company.assembleegameclient.util.TextureRedrawer;
 
-    public class FameMediator extends Mediator 
+import flash.display.BitmapData;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.fame.model.FameModel;
+import kabam.rotmg.fame.service.RequestCharacterFameTask;
+import kabam.rotmg.legends.view.LegendsView;
+import kabam.rotmg.messaging.impl.incoming.Death;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class FameMediator extends Mediator
     {
 
         [Inject]
@@ -65,7 +68,7 @@ package kabam.rotmg.fame.view
             if (((this.death) && (this.death.background)))
             {
                 this.view.setBackground(this.death.background);
-            };
+            }
         }
 
         private function requestFameData():void
@@ -90,7 +93,7 @@ package kabam.rotmg.fame.view
             if (((this.isFreshDeath) && (this.death.isZombie)))
             {
                 return (this.makeZombieTexture());
-            };
+            }
             return (this.makeNormalTexture());
         }
 
@@ -116,7 +119,7 @@ package kabam.rotmg.fame.view
             else
             {
                 this.gotoPrevious.dispatch();
-            };
+            }
         }
 
 

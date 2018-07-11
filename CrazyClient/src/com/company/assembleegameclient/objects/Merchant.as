@@ -1,28 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Merchant
 
 package com.company.assembleegameclient.objects
 {
-    import flash.geom.Matrix;
-    import flash.display.BitmapData;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.language.model.StringMap;
-    import com.company.util.IntPoint;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.game.model.AddSpeechBalloonVO;
-    import com.gskinner.motion.GTween;
-    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.ui.BaseSimpleText;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.ui.BaseSimpleText;
+import com.company.util.IntPoint;
+import com.gskinner.motion.GTween;
 
-    public class Merchant extends SellableObject implements IInteractiveObject 
+import flash.display.BitmapData;
+import flash.geom.ColorTransform;
+import flash.geom.Matrix;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.game.model.AddSpeechBalloonVO;
+import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+import kabam.rotmg.language.model.StringMap;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class Merchant extends SellableObject implements IInteractiveObject
     {
 
         private static const NONE_MESSAGE:int = 0;
@@ -71,10 +73,10 @@ package com.company.assembleegameclient.objects
 
         override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean
         {
-            if (!super.addTo(_arg_1, _arg_2, _arg_3))
+            if ((!(super.addTo(_arg_1, _arg_2, _arg_3))))
             {
                 return (false);
-            };
+            }
             _arg_1.merchLookup_[new IntPoint(x_, y_)] = this;
             return (true);
         }
@@ -85,7 +87,7 @@ package com.company.assembleegameclient.objects
             if (map_.merchLookup_[_local_1] == this)
             {
                 map_.merchLookup_[_local_1] = null;
-            };
+            }
             super.removeFromMap();
         }
 
@@ -117,8 +119,8 @@ package com.company.assembleegameclient.objects
                         else
                         {
                             _local_2 = new LineBuilder().setParams("Merchant.goingInNMinutes", {"minutes":this.minsLeft_});
-                        };
-                    };
+                        }
+                    }
                     _local_3 = 5973542;
                     _local_4 = 16549442;
                     _local_5 = 16549442;
@@ -137,7 +139,7 @@ package com.company.assembleegameclient.objects
                     break;
                 default:
                     return (null);
-            };
+            }
             _local_2.setStringMap(this.stringMap);
             return (new AddSpeechBalloonVO(this, _local_2.getString(), "", false, false, _local_3, 1, _local_4, 1, _local_5, 6, true, false));
         }
@@ -182,7 +184,7 @@ package com.company.assembleegameclient.objects
                 _local_1.text = String(_local_3.Doses);
                 _local_1.updateMetrics();
                 _local_2.draw(_local_1, DOSE_MATRIX);
-            };
+            }
             if (_local_3.hasOwnProperty("Quantity"))
             {
                 _local_2 = _local_2.clone();
@@ -190,7 +192,7 @@ package com.company.assembleegameclient.objects
                 _local_1.text = String(_local_3.Quantity);
                 _local_1.updateMetrics();
                 _local_2.draw(_local_1, DOSE_MATRIX);
-            };
+            }
             return (_local_2);
         }
 
@@ -200,11 +202,11 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (_arg_1);
-            };
+            }
             if (((_local_2.Activate == "Dye") && (_local_2.hasOwnProperty("Tex1"))))
             {
                 return (int(_local_2.Tex1));
-            };
+            }
             return (_arg_1);
         }
 
@@ -214,11 +216,11 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (_arg_1);
-            };
+            }
             if (((_local_2.Activate == "Dye") && (_local_2.hasOwnProperty("Tex2"))))
             {
                 return (int(_local_2.Tex2));
-            };
+            }
             return (_arg_1);
         }
 
@@ -227,13 +229,13 @@ package com.company.assembleegameclient.objects
             if (((this.alpha_ == 1) && (size_ == 100)))
             {
                 return (this.merchandiseTexture_);
-            };
+            }
             var _local_3:BitmapData = ObjectLibrary.getRedrawnTextureFromType(this.merchandiseType_, size_, false, false);
             if (this.alpha_ != 1)
             {
                 this.ct_.alphaMultiplier = this.alpha_;
                 _local_3.colorTransform(_local_3.rect, this.ct_);
-            };
+            }
             return (_local_3);
         }
 

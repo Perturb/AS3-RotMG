@@ -27,7 +27,7 @@
       <StasisImmune/>
       <Quest/>
       <Level>1</Level>
-      <XpMult>1.4</XpMult>
+      <Exp>273</Exp>
       <EventChestBoss/>
       <NoArticle/>
       <Projectile id="0">
@@ -277,7 +277,7 @@
       <Size>75</Size>
       <MaxHitPoints>150</MaxHitPoints>
       <Enemy/>
-      <XpMult>0.2</XpMult>
+      <Exp>3</Exp>
       <Projectile>
          <ObjectId>Green Magic</ObjectId>
          <Speed>50</Speed>

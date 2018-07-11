@@ -5,10 +5,10 @@
 
 package kabam.lib.net.impl
 {
-    import flash.utils.IDataInput;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataInput;
+import flash.utils.IDataOutput;
 
-    public class Message 
+public class Message
     {
 
         public var pool:MessagePool;
@@ -46,7 +46,7 @@ package kabam.lib.net.impl
             {
                 _local_3 = (_local_3 + ((((" " + _args[_local_4]) + '="') + this[_args[_local_4]]) + '"'));
                 _local_4++;
-            };
+            }
             return (_local_3 + "]");
         }
 

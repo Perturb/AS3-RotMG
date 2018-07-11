@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_newGateEnd1Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

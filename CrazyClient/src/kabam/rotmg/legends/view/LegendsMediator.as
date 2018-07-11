@@ -1,21 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.view.LegendsMediator
 
 package kabam.rotmg.legends.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.legends.model.LegendsModel;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.fame.control.ShowFameViewSignal;
-    import kabam.rotmg.legends.control.RequestFameListSignal;
-    import kabam.rotmg.legends.control.FameListUpdateSignal;
-    import kabam.rotmg.legends.control.ExitLegendsSignal;
-    import kabam.rotmg.legends.model.Timespan;
-    import kabam.rotmg.legends.model.Legend;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.fame.control.ShowFameViewSignal;
+import kabam.rotmg.legends.control.ExitLegendsSignal;
+import kabam.rotmg.legends.control.FameListUpdateSignal;
+import kabam.rotmg.legends.control.RequestFameListSignal;
+import kabam.rotmg.legends.model.Legend;
+import kabam.rotmg.legends.model.LegendsModel;
+import kabam.rotmg.legends.model.Timespan;
 
-    public class LegendsMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class LegendsMediator extends Mediator 
     {
 
         [Inject]
@@ -68,7 +69,7 @@ package kabam.rotmg.legends.view
             else
             {
                 this.showLoadingAndRequestFameList();
-            };
+            }
         }
 
         private function showLoadingAndRequestFameList():void

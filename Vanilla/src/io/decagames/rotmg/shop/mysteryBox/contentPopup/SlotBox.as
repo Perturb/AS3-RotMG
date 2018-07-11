@@ -5,21 +5,26 @@
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
-    import io.decagames.rotmg.ui.gird.UIGridElement;
-    import flash.display.Sprite;
-    import io.decagames.rotmg.ui.labels.UILabel;
-    import flash.display.Bitmap;
-    import flash.text.TextFieldAutoSize;
-    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import flash.display.Shape;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class SlotBox extends UIGridElement 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.text.TextFieldAutoSize;
+
+import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+import io.decagames.rotmg.ui.gird.UIGridElement;
+import io.decagames.rotmg.ui.labels.UILabel;
+
+import kabam.rotmg.assets.services.IconFactory;
+
+public class SlotBox extends UIGridElement 
     {
 
         public static const CHAR_SLOT:String = "CHAR_SLOT";
         public static const VAULT_SLOT:String = "VAULT_SLOT";
+        public static const GOLD_SLOT:String = "GOLD_SLOT";
 
         private var itemSize:int = 40;
         private var itemMargin:int = 2;
@@ -70,7 +75,9 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
 
         private function drawElement(_arg_1:int):void
         {
-            var _local_2:BitmapData;
+            var _local_2:String;
+            var _local_3:BitmapData;
+            var _local_4:BitmapData;
             this._itemBackground = new Sprite();
             this._itemBackground.graphics.clear();
             this._itemBackground.graphics.beginFill(0xFFFFFF, 0);
@@ -79,21 +86,32 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             addChild(this._itemBackground);
             this._itemBackground.x = 10;
             this._itemBackground.y = 4;
-            if (this._slotType == CHAR_SLOT)
+            switch (this._slotType)
             {
-                this._itemBackground.addChild(this.buildCharSlotIcon());
+                case CHAR_SLOT:
+                    _local_2 = (_arg_1.toString() + "x Character Slot");
+                    this._itemBackground.addChild(this.buildCharSlotIcon());
+                    break;
+                case VAULT_SLOT:
+                    _local_2 = (_arg_1.toString() + "x Vault Slot");
+                    _local_3 = ObjectLibrary.getRedrawnTextureFromType(ObjectLibrary.idToType_["Vault Chest"], (this._itemBackground.width * 2), true, false);
+                    this.imageBitmap = new Bitmap(_local_3);
+                    this.imageBitmap.x = -(Math.round(((this.imageBitmap.width - this.itemSize) / 2)));
+                    this.imageBitmap.y = -(Math.round(((this.imageBitmap.height - this.itemSize) / 2)));
+                    this._itemBackground.addChild(this.imageBitmap);
+                    break;
+                case GOLD_SLOT:
+                    _local_2 = (_arg_1.toString() + " Gold");
+                    _local_4 = IconFactory.makeCoin((this._itemBackground.width * 2));
+                    this.imageBitmap = new Bitmap(_local_4);
+                    this.imageBitmap.x = -(Math.round(((this.imageBitmap.width - this.itemSize) / 2)));
+                    this.imageBitmap.y = (-(Math.round(((this.imageBitmap.height - this.itemSize) / 2))) - 2);
+                    this._itemBackground.addChild(this.imageBitmap);
+                    break;
             }
-            else
-            {
-                _local_2 = ObjectLibrary.getRedrawnTextureFromType(ObjectLibrary.idToType_["Vault Chest"], (this._itemBackground.width * 2), true, false);
-                this.imageBitmap = new Bitmap(_local_2);
-                this.imageBitmap.x = -(Math.round(((this.imageBitmap.width - this.itemSize) / 2)));
-                this.imageBitmap.y = -(Math.round(((this.imageBitmap.height - this.itemSize) / 2)));
-                this._itemBackground.addChild(this.imageBitmap);
-            };
             if (this.showFullName)
             {
-                this.label.text = (_arg_1.toString() + ((this._slotType == CHAR_SLOT) ? "x Character Slot" : "x Vault Slot"));
+                this.label.text = _local_2;
                 this.label.x = 55;
             }
             else
@@ -101,7 +119,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
                 this.label.text = (_arg_1 + "x");
                 this.label.x = 10;
                 this._itemBackground.x = (this._itemBackground.x + (this.label.x + 10));
-            };
+            }
             addChild(this.label);
         }
 
@@ -116,7 +134,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             if (!this.isBackgroundCleared)
             {
                 this.drawBackground("", this.isLastElement, _arg_1);
-            };
+            }
             this.targetWidth = _arg_1;
             this.resizeLabel();
         }
@@ -126,7 +144,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
             if (this.imageBitmap)
             {
                 this.imageBitmap.bitmapData.dispose();
-            };
+            }
             super.dispose();
         }
 
@@ -148,7 +166,7 @@ package io.decagames.rotmg.shop.mysteryBox.contentPopup
                 this.graphics.beginFill(0x2D2D2D);
                 this.graphics.drawRect(0, 0, _arg_3, (this.itemSize + (2 * this.itemMargin)));
                 this.graphics.endFill();
-            };
+            }
         }
 
         public function get slotType():String

@@ -1,86 +1,94 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.MapUserInput
 
 package com.company.assembleegameclient.game
 {
-    import net.hires.debug.Stats;
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import kabam.rotmg.ui.model.TabStripModel;
-    import kabam.rotmg.ui.view.StatMetersView;
-    import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
-    import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
-    import kabam.rotmg.minimap.control.MiniMapZoomSignal;
-    import kabam.rotmg.game.signals.UseBuyPotionSignal;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.game.signals.ExitGameSignal;
-    import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
-    import kabam.rotmg.chat.control.ParseChatMessageSignal;
-    import flash.events.Event;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import flash.events.MouseEvent;
-    import flash.display.Stage;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.constants.UseType;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.geom.Point;
-    import flash.geom.Vector3D;
-    import kabam.rotmg.servers.api.Server;
-    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-    import com.company.util.KeyCodes;
-    import com.company.assembleegameclient.objects.GuildHallPortal;
-    import com.company.assembleegameclient.objects.Portal;
-    import kabam.rotmg.game.model.UseBuyPotionVO;
-    import kabam.rotmg.friends.view.FriendListView;
-    import kabam.rotmg.chat.control.TextHandler;
-    import com.company.assembleegameclient.ui.options.Options;
-    import kabam.rotmg.constants.GeneralConstants;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
+import com.company.assembleegameclient.game.events.ReconnectEvent;
+import com.company.assembleegameclient.map.Square;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.GuildHallPortal;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Portal;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.util.KeyCodes;
 
-    public class MapUserInput 
+import flash.display.Stage;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+import flash.geom.Vector3D;
+import flash.utils.getTimer;
+
+import io.decagames.rotmg.social.SocialPopupView;
+import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.chat.control.ParseChatMessageSignal;
+import kabam.rotmg.chat.control.TextHandler;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.constants.UseType;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.friends.view.FriendListView;
+import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.model.UseBuyPotionVO;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.game.signals.ExitGameSignal;
+import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
+import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
+import kabam.rotmg.game.signals.UseBuyPotionSignal;
+import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.minimap.control.MiniMapZoomSignal;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.ui.model.TabStripModel;
+
+import net.hires.debug.Stats;
+
+import org.swiftsuspenders.Injector;
+
+public class MapUserInput
     {
 
         private static var stats_:Stats = new Stats();
-        private static const MOUSE_DOWN_WAIT_PERIOD:uint = 175;
-        private static var arrowWarning_:Boolean = false;
         public static var reconRealm:ReconnectEvent;
-        public static var reconDung:ReconnectEvent;
         public static var reconVault:ReconnectEvent;
         public static var reconRandom:ReconnectEvent;
+        public static var reconDaily:ReconnectEvent;
+        public static var reconDung:ReconnectEvent;
         public static var dungTime:uint = 0;
         public static var skipRender:Boolean = false;
         public static var optionsOpen:Boolean = false;
         public static var inputting:Boolean = false;
 
-        public var lightSpeed:Boolean = false;
+        public var ninjaTapped:Boolean = false;
+        public var gs_:GameSprite;
+        public var mouseDown_:Boolean = false;
+        public var autofire_:Boolean = false;
+        public var specialKeyDown_:Boolean = false;
+        public var held:Boolean = false;
+        public var heldX:int = 0;
+        public var heldY:int = 0;
+        public var heldAngle:Number = 0;
         private var maxprism:Boolean = false;
         private var spaceSpam:int = 0;
-        public var ninjaTapped:Boolean = false;
         private var tabStripModel:TabStripModel;
-        public var gs_:GameSprite;
-        public var smv_:StatMetersView;
         private var moveLeft_:int = 0;
         private var moveRight_:int = 0;
         private var moveUp_:int = 0;
         private var moveDown_:int = 0;
         private var rotateLeft_:int = 0;
         private var rotateRight_:int = 0;
-        public var mouseDown_:Boolean = false;
-        public var autofire_:Boolean = false;
         private var currentString:String = "";
-        public var specialKeyDown_:Boolean = false;
         private var enablePlayerInput_:Boolean = true;
         private var giftStatusUpdateSignal:GiftStatusUpdateSignal;
         private var addTextLine:AddTextLineSignal;
@@ -91,10 +99,11 @@ package com.company.assembleegameclient.game
         private var potionInventoryModel:PotionInventoryModel;
         private var openDialogSignal:OpenDialogSignal;
         private var closeDialogSignal:CloseDialogsSignal;
+        private var closePopupByClassSignal:ClosePopupByClassSignal;
         private var layers:Layers;
         private var exitGame:ExitGameSignal;
         private var areFKeysAvailable:Boolean;
-        private var reskinPetFlowStart:ReskinPetFlowStartSignal;
+        private var isFriendsListOpen:Boolean;
         private var parseChatMessage:ParseChatMessageSignal;
 
         public function MapUserInput(_arg_1:GameSprite)
@@ -104,7 +113,6 @@ package com.company.assembleegameclient.game
             this.gs_.addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             var _local_2:Injector = StaticInjectorContext.getInjector();
             this.giftStatusUpdateSignal = _local_2.getInstance(GiftStatusUpdateSignal);
-            this.reskinPetFlowStart = _local_2.getInstance(ReskinPetFlowStartSignal);
             this.addTextLine = _local_2.getInstance(AddTextLineSignal);
             this.tabStripModel = _local_2.getInstance(TabStripModel);
             this.setTextBoxVisibility = _local_2.getInstance(SetTextBoxVisibilitySignal);
@@ -116,6 +124,7 @@ package com.company.assembleegameclient.game
             this.exitGame = _local_2.getInstance(ExitGameSignal);
             this.openDialogSignal = _local_2.getInstance(OpenDialogSignal);
             this.closeDialogSignal = _local_2.getInstance(CloseDialogsSignal);
+            this.closePopupByClassSignal = _local_2.getInstance(ClosePopupByClassSignal);
             this.parseChatMessage = _local_2.getInstance(ParseChatMessageSignal);
             var _local_3:ApplicationSetup = _local_2.getInstance(ApplicationSetup);
             this.areFKeysAvailable = _local_3.areDeveloperHotkeysEnabled();
@@ -137,7 +146,7 @@ package com.company.assembleegameclient.game
                 this.gs_.map.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
                 this.gs_.stage.addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
                 this.gs_.stage.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            };
+            }
         }
 
         public function clearInput():void
@@ -150,7 +159,6 @@ package com.company.assembleegameclient.game
             this.rotateRight_ = 0;
             this.mouseDown_ = false;
             this.autofire_ = false;
-            this.lightSpeed = false;
             this.maxprism = false;
             this.setPlayerMovement();
         }
@@ -161,7 +169,7 @@ package com.company.assembleegameclient.game
             {
                 this.enablePlayerInput_ = _arg_1;
                 this.clearInput();
-            };
+            }
         }
 
         private function onAddedToStage(_arg_1:Event):void
@@ -175,15 +183,8 @@ package com.company.assembleegameclient.game
             _local_2.addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             _local_2.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             _local_2.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-            _local_2.addEventListener(MouseEvent.RIGHT_CLICK, this.disableRightClick);
-        }
-
-        public function disableRightClick(_arg_1:MouseEvent):void
-        {
-            if ((((this.gs_) && (this.gs_.map)) && (this.gs_.map.player_)))
-            {
-                this.gs_.map.player_.mapLightSpeed = (!(this.gs_.map.player_.mapLightSpeed));
-            };
+            _local_2.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN, this.onRightMouseDown_forWorld);
+            _local_2.addEventListener(MouseEvent.RIGHT_MOUSE_UP, this.onRightMouseUp_forWorld);
         }
 
         private function onRemovedFromStage(_arg_1:Event):void
@@ -197,7 +198,8 @@ package com.company.assembleegameclient.game
             _local_2.removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             _local_2.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             _local_2.removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-            _local_2.removeEventListener(MouseEvent.RIGHT_CLICK, this.disableRightClick);
+            _local_2.removeEventListener(MouseEvent.RIGHT_MOUSE_DOWN, this.onRightMouseDown_forWorld);
+            _local_2.removeEventListener(MouseEvent.RIGHT_MOUSE_UP, this.onRightMouseUp_forWorld);
         }
 
         private function onActivate(_arg_1:Event):void
@@ -219,33 +221,33 @@ package com.company.assembleegameclient.game
             if (((!(this.gs_.hudView == null)) && (this.gs_.mouseX >= this.gs_.hudView.x)))
             {
                 return;
-            };
+            }
             if (optionsOpen)
             {
                 return;
-            };
+            }
             this.mouseDown_ = true;
             var _local_7:Player = this.gs_.map.player_;
             if (_local_7 == null)
             {
                 return;
-            };
-            if (!this.enablePlayerInput_)
+            }
+            if ((!(this.enablePlayerInput_)))
             {
                 return;
-            };
+            }
             if (_arg_1.shiftKey)
             {
                 _local_3 = _local_7.equipment_[1];
                 if (_local_3 == -1)
                 {
                     return;
-                };
+                }
                 _local_4 = ObjectLibrary.xmlLibrary_[_local_3];
                 if (((_local_4 == null) || (_local_4.hasOwnProperty("EndMpCost"))))
                 {
                     return;
-                };
+                }
                 if (_local_7.isUnstable())
                 {
                     _local_5 = ((Math.random() * 600) - 300);
@@ -255,20 +257,20 @@ package com.company.assembleegameclient.game
                 {
                     _local_5 = this.gs_.map.mouseX;
                     _local_6 = this.gs_.map.mouseY;
-                };
+                }
                 if (Parameters.isGpuRender())
                 {
                     if ((((_arg_1.currentTarget == _arg_1.target) || (_arg_1.target == this.gs_.map)) || (_arg_1.target == this.gs_)))
                     {
                         _local_7.useAltWeapon(_local_5, _local_6, UseType.START_USE);
-                    };
+                    }
                 }
                 else
                 {
                     _local_7.useAltWeapon(_local_5, _local_6, UseType.START_USE);
-                };
+                }
                 return;
-            };
+            }
             if (Parameters.isGpuRender())
             {
                 if (((((_arg_1.currentTarget == _arg_1.target) || (_arg_1.target == this.gs_.map)) || (_arg_1.target == this.gs_)) || (_arg_1.currentTarget == this.gs_.chatBox_.list)))
@@ -278,12 +280,12 @@ package com.company.assembleegameclient.game
                 else
                 {
                     return;
-                };
+                }
             }
             else
             {
                 _local_2 = Math.atan2(this.gs_.map.mouseY, this.gs_.map.mouseX);
-            };
+            }
             if (_local_7.isUnstable())
             {
                 _local_7.attemptAttackAngle((Math.random() * 360));
@@ -291,7 +293,7 @@ package com.company.assembleegameclient.game
             else
             {
                 _local_7.attemptAttackAngle(_local_2);
-            };
+            }
         }
 
         public function onMouseUp(_arg_1:MouseEvent):void
@@ -301,7 +303,7 @@ package com.company.assembleegameclient.game
             if (_local_2 == null)
             {
                 return;
-            };
+            }
             _local_2.isShooting = false;
         }
 
@@ -314,7 +316,7 @@ package com.company.assembleegameclient.game
             else
             {
                 this.miniMapZoom.dispatch(MiniMapZoomSignal.OUT);
-            };
+            }
         }
 
         private function onEnterFrame(_arg_1:Event):void
@@ -334,26 +336,26 @@ package com.company.assembleegameclient.game
                     {
                         _local_3 = Math.atan2(this.gs_.map.mouseY, this.gs_.map.mouseX);
                         _local_2.attemptAttackAngle(_local_3);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function handleAutoAbil(_arg_1:Player):Boolean
         {
-            if (!((((_arg_1.objectType_ == 0x0300) || (_arg_1.objectType_ == 797)) || (_arg_1.objectType_ == 799)) || ((_arg_1.objectType_ == 784) && (Parameters.data_.priestAA))))
+            if ((!((((_arg_1.objectType_ == 0x0300) || (_arg_1.objectType_ == 797)) || (_arg_1.objectType_ == 799)) || ((_arg_1.objectType_ == 784) && (Parameters.data_.priestAA)))))
             {
                 return (false);
-            };
+            }
             if (this.spaceSpam >= getTimer())
             {
                 if (_arg_1.mapAutoAbil)
                 {
                     _arg_1.mapAutoAbil = false;
                     _arg_1.notifyPlayer("Auto Ability: Disabled", 0xFF00, 1500);
-                };
+                }
                 return (true);
-            };
+            }
             this.spaceSpam = (getTimer() + 500);
             switch (_arg_1.equipment_[1])
             {
@@ -389,8 +391,8 @@ package com.company.assembleegameclient.game
                         _arg_1.mapAutoAbil = (!(_arg_1.mapAutoAbil));
                         _arg_1.notifyPlayer(((_arg_1.mapAutoAbil) ? "Auto Ability: Enabled" : "Auto Ability: Disabled"), 0xFF00, 1500);
                         return (true);
-                    };
-            };
+                    }
+            }
             return (false);
         }
 
@@ -402,15 +404,15 @@ package com.company.assembleegameclient.game
                 if (_arg_1 == _local_2)
                 {
                     return (true);
-                };
-            };
+                }
+            }
             if ((((Parameters.data_.tombHack) && (_arg_1 >= 3366)) && (_arg_1 <= 3368)))
             {
                 if (_arg_1 != Parameters.data_.curBoss)
                 {
                     return (true);
-                };
-            };
+                }
+            }
             return (false);
         }
 
@@ -431,9 +433,9 @@ package com.company.assembleegameclient.game
                     {
                         _local_6 = _local_4;
                         _local_2 = _local_3;
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (_local_2 == null)
             {
                 _arg_1.notifyPlayer("No targets nearby!", 0xFF00, 1500);
@@ -441,7 +443,7 @@ package com.company.assembleegameclient.game
             else
             {
                 _arg_1.notifyPlayer(ObjectLibrary.typeToDisplayId_[_local_2.objectType_], 0xFF00, 1500);
-                if (!Parameters.data_.perfectLead)
+                if ((!(Parameters.data_.perfectLead)))
                 {
                     this.aimAt(_arg_1, new Vector3D(_local_2.x_, _local_2.y_));
                 }
@@ -450,14 +452,14 @@ package com.company.assembleegameclient.game
                     if (((_arg_1.objectType_ == 798) || (_arg_1.equipment_[1] == 5139)))
                     {
                         _local_7 = 0.016;
-                    };
+                    }
                     if (_arg_1.equipment_[1] == 3395)
                     {
                         _local_7 = 0.014;
-                    };
+                    }
                     this.aimAt(_arg_1, _arg_1.leadPos(new Vector3D(_arg_1.x_, _arg_1.y_), new Vector3D(_local_2.x_, _local_2.y_), new Vector3D(_local_2.moveVec_.x, _local_2.moveVec_.y), _local_7));
-                };
-            };
+                }
+            }
         }
 
         private function aimAt(_arg_1:Player, _arg_2:Vector3D):void
@@ -466,7 +468,7 @@ package com.company.assembleegameclient.game
             {
                 _arg_2.x = (int(_arg_2.x) + 0.5);
                 _arg_2.y = (int(_arg_2.y) + 0.5);
-            };
+            }
             this.gs_.gsc_.useItem(getTimer(), _arg_1.objectId_, 1, _arg_1.equipment_[1], _arg_2.x, _arg_2.y, UseType.START_USE);
             _arg_1.doShoot(getTimer(), _arg_1.equipment_[1], ObjectLibrary.xmlLibrary_[_arg_1.equipment_[1]], Math.atan2((_arg_2.y - _arg_1.y_), (_arg_2.x - _arg_1.x_)), false);
         }
@@ -480,14 +482,14 @@ package com.company.assembleegameclient.game
             {
                 this.handlePerfectAim(_arg_1);
                 return (true);
-            };
-            if (!((_arg_1.objectType_ == 782) || (_arg_1.objectType_ == 800)))
+            }
+            if ((!((_arg_1.objectType_ == 782) || (_arg_1.objectType_ == 800))))
             {
                 return (false);
-            };
+            }
             for each (_local_3 in this.gs_.map.goDict_)
             {
-                if ((((_local_3.props_.isEnemy_) && (_local_3.maxHP_ >= 1000)) && (!(this.isIgnored(_local_3.objectType_)))))
+                if ((((_local_3.props_.isEnemy_) && (_local_3.maxHP_ >= Parameters.data_.spellThreshold)) && (!(this.isIgnored(_local_3.objectType_)))))
                 {
                     _local_4 = (((_local_3.x_ - _arg_1.x_) * (_local_3.x_ - _arg_1.x_)) + ((_local_3.y_ - _arg_1.y_) * (_local_3.y_ - _arg_1.y_)));
                     if (_local_4 < 225)
@@ -495,10 +497,10 @@ package com.company.assembleegameclient.game
                         if (((_local_2 == null) || (_local_3.maxHP_ > _local_2.maxHP_)))
                         {
                             _local_2 = _local_3;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             if (_local_2 == null)
             {
                 _arg_1.notifyPlayer("No targets nearby!", 0xFF00, 1500);
@@ -519,19 +521,19 @@ package com.company.assembleegameclient.game
                     else
                     {
                         this.gs_.gsc_.useItem(getTimer(), _arg_1.objectId_, 1, _arg_1.equipment_[1], _local_2.x_, _local_2.y_, UseType.START_USE);
-                    };
-                };
-            };
+                    }
+                }
+            }
             return (true);
         }
 
         private function handleCooldown(_arg_1:Player, _arg_2:XML):void
         {
-            var _local_3:* = 500;
+            var _local_3:Number = 500;
             if (_arg_2.hasOwnProperty("Cooldown"))
             {
                 _local_3 = (Number(_arg_2.Cooldown) * 1000);
-            };
+            }
             _arg_1.lastAltAttack_ = getTimer();
             _arg_1.nextAltAttack_ = (getTimer() + _local_3);
         }
@@ -541,7 +543,7 @@ package com.company.assembleegameclient.game
             if (_arg_1.objectType_ != 806)
             {
                 return (false);
-            };
+            }
             this.ninjaTapped = (!(this.ninjaTapped));
             if (this.ninjaTapped)
             {
@@ -550,7 +552,7 @@ package com.company.assembleegameclient.game
             else
             {
                 _arg_1.useAltWeapon(this.gs_.map.mouseX, this.gs_.map.mouseY, UseType.END_USE);
-            };
+            }
             return (true);
         }
 
@@ -563,40 +565,40 @@ package com.company.assembleegameclient.game
             if (_arg_1 == null)
             {
                 return;
-            };
+            }
             if (((Parameters.data_.autoAbil) && (this.handleAutoAbil(_arg_1))))
             {
                 return;
-            };
+            }
             if (_arg_1.nextAltAttack_ >= getTimer())
             {
                 return;
-            };
+            }
             if (int(_arg_2.MpCost) > _arg_1.mp_)
             {
                 return;
-            };
+            }
             if (((Parameters.data_.perfectBomb) && (this.handlePerfectBomb(_arg_1))))
             {
                 this.handleCooldown(_arg_1, _arg_2);
                 return;
-            };
+            }
             if (((Parameters.data_.ninjaTap) && (this.ninjaTap(_arg_1))))
             {
                 return;
-            };
+            }
             if (((this.maxprism) && ((_arg_1.objectType_ == 804) || (_arg_1.equipment_[1] == 2650))))
             {
                 _local_3 = Math.atan2(this.gs_.map.mouseX, this.gs_.map.mouseY);
                 if (_local_3 < 0)
                 {
                     _local_3 = (_local_3 + (Math.PI * 2));
-                };
+                }
                 _local_4 = ((13 * 50) * Math.sin(_local_3));
                 _local_5 = ((13 * 50) * Math.cos(_local_3));
                 _arg_1.useAltWeapon(_local_4, _local_5, UseType.START_USE);
                 return;
-            };
+            }
             if (((_arg_1.isUnstable()) && (Parameters.data_.dbUnstableAbil)))
             {
                 _arg_1.useAltWeapon(((Math.random() * 600) - 300), ((Math.random() * 600) - 325), UseType.START_USE);
@@ -604,7 +606,7 @@ package com.company.assembleegameclient.game
             else
             {
                 _arg_1.useAltWeapon(this.gs_.map.mouseX, this.gs_.map.mouseY, UseType.START_USE);
-            };
+            }
         }
 
         private function onKeyDown(_arg_1:KeyboardEvent):void
@@ -628,6 +630,9 @@ package com.company.assembleegameclient.game
             var _local_18:Server;
             var _local_19:ReconnectEvent;
             var _local_20:CloseAllPopupsSignal;
+            var _local_22:ShowPopupSignal;
+            var _local_23:Square;
+            var _local_24:OpenDialogSignal;
             var _local_21:Player = this.gs_.map.player_;
             switch (_arg_1.keyCode)
             {
@@ -650,8 +655,8 @@ package com.company.assembleegameclient.game
                     if (this.gs_.stage.focus != null)
                     {
                         return;
-                    };
-            };
+                    }
+            }
             switch (_arg_1.keyCode)
             {
                 case Parameters.data_.moveUp:
@@ -684,20 +689,20 @@ package com.company.assembleegameclient.game
                                 {
                                     _local_3 = _local_9;
                                     _local_8 = _local_2.name_;
-                                };
-                            };
-                        };
+                                }
+                            }
+                        }
                         if (_local_8 == _local_21.name_)
                         {
                             _local_21.notifyPlayer("You are the closest!", 0xFF00, 1500);
                             break;
-                        };
+                        }
                         this.gs_.gsc_.teleport(_local_8);
                     }
                     else
                     {
                         _local_21.notifyPlayer("You have no quest!", 0xFF00, 1500);
-                    };
+                    }
                     break;
                 case Parameters.data_.enterPortal:
                     _local_3 = int.MAX_VALUE;
@@ -711,84 +716,22 @@ package com.company.assembleegameclient.game
                             {
                                 _local_3 = _local_10;
                                 _local_5 = _local_2.objectId_;
-                            };
-                        };
-                    };
+                            }
+                        }
+                    }
                     if (_local_5 == -1)
                     {
                         _local_21.notifyPlayer("No portals to enter!", 0xFF00, 1500);
                         break;
-                    };
+                    }
                     this.gs_.gsc_.usePortal(_local_5);
                     break;
-                case Parameters.data_.incFinder:
-                    _local_6 = new Array();
-                    for each (_local_2 in this.gs_.map.goDict_)
-                    {
-                        if ((_local_2 is Player))
-                        {
-                            _local_11 = (_local_2 as Player);
-                            for each (_local_12 in _local_11.equipment_)
-                            {
-                                if (_local_12 == 1826)
-                                {
-                                    _local_6.push(_local_11.name_);
-                                    break;
-                                };
-                            };
-                        };
-                    };
-                    if (_local_6.length == 0)
-                    {
-                        _local_21.notifyPlayer("No one has an inc retard, nexus!", 0xFF00, 1500);
-                        break;
-                    };
-                    _local_13 = 0;
-                    _local_14 = "Inc Holders:\n";
-                    for each (_local_15 in _local_6)
-                    {
-                        _local_14 = ((_local_14 + _local_15) + "\n");
-                        _local_13++;
-                    };
-                    _local_21.notifyPlayer(_local_14, 0xFF00, (1000 + (500 * _local_13)));
-                    break;
-                case Parameters.data_.Beekey:
-                    _local_6 = new Array();
-                    for each (_local_2 in this.gs_.map.goDict_)
-                    {
-                        if ((_local_2 is Player))
-                        {
-                            _local_11 = (_local_2 as Player);
-                            for each (_local_12 in _local_11.equipment_)
-                            {
-                                if (_local_12 == Parameters.data_.keyFinderid)
-                                {
-                                    _local_6.push(_local_11.name_);
-                                    break;
-                                };
-                            };
-                        };
-                    };
-                    if (_local_6.length == 0)
-                    {
-                        _local_21.notifyPlayer("No one has what you're looking for!", 0xFF00, 1500);
-                        break;
-                    };
-                    _local_13 = 0;
-                    _local_14 = "Names:\n";
-                    for each (_local_15 in _local_6)
-                    {
-                        _local_14 = ((_local_14 + _local_15) + "\n");
-                        _local_13++;
-                    };
-                    _local_21.notifyPlayer(_local_14, 0xFF00, (1000 + (500 * _local_13)));
-                    break;
                 case Parameters.data_.rotateLeft:
-                    if (!Parameters.data_.allowRotation) break;
+                    if ((!(Parameters.data_.allowRotation))) break;
                     this.rotateLeft_ = 1;
                     break;
                 case Parameters.data_.rotateRight:
-                    if (!Parameters.data_.allowRotation) break;
+                    if ((!(Parameters.data_.allowRotation))) break;
                     this.rotateRight_ = 1;
                     break;
                 case Parameters.data_.resetToDefaultCameraAngle:
@@ -799,7 +742,13 @@ package com.company.assembleegameclient.game
                     _local_21.isShooting = (this.autofire_ = (!(this.autofire_)));
                     break;
                 case Parameters.data_.toggleHPBar:
-                    Parameters.data_.HPBar = (!(Parameters.data_.HPBar));
+                    Parameters.data_.HPBar = ((Parameters.data_.HPBar != 0) ? 0 : 1);
+                    break;
+                case Parameters.data_.toggleProjectiles:
+                    Parameters.data_.disableAllyShoot = ((Parameters.data_.disableAllyShoot != 0) ? 0 : 1);
+                    break;
+                case Parameters.data_.toggleMasterParticles:
+                    Parameters.data_.noParticlesMaster = (!(Parameters.data_.noParticlesMaster));
                     break;
                 case Parameters.data_.useInvSlot1:
                     this.useItem(4);
@@ -829,13 +778,13 @@ package com.company.assembleegameclient.game
                     if (this.potionInventoryModel.getPotionModel(PotionInventoryModel.HEALTH_POTION_ID).available)
                     {
                         this.useBuyPotionSignal.dispatch(new UseBuyPotionVO(PotionInventoryModel.HEALTH_POTION_ID, UseBuyPotionVO.CONTEXTBUY));
-                    };
+                    }
                     break;
                 case Parameters.data_.useMagicPotion:
                     if (this.potionInventoryModel.getPotionModel(PotionInventoryModel.MAGIC_POTION_ID).available)
                     {
                         this.useBuyPotionSignal.dispatch(new UseBuyPotionVO(PotionInventoryModel.MAGIC_POTION_ID, UseBuyPotionVO.CONTEXTBUY));
-                    };
+                    }
                     break;
                 case Parameters.data_.miniMapZoomOut:
                     this.miniMapZoom.dispatch(MiniMapZoomSignal.OUT);
@@ -854,15 +803,25 @@ package com.company.assembleegameclient.game
                     this.gs_.gsc_.escape();
                     break;
                 case Parameters.data_.friendList:
-                    Parameters.data_.friendListDisplayFlag = (!(Parameters.data_.friendListDisplayFlag));
-                    if (Parameters.data_.friendListDisplayFlag)
+                    this.isFriendsListOpen = (!(this.isFriendsListOpen));
+                    if (this.isFriendsListOpen)
                     {
-                        this.openDialogSignal.dispatch(new FriendListView());
+                        if (Parameters.USE_NEW_FRIENDS_UI)
+                        {
+                            _local_22 = StaticInjectorContext.getInjector().getInstance(ShowPopupSignal);
+                            _local_22.dispatch(new SocialPopupView());
+                        }
+                        else
+                        {
+                            _local_24 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+                            _local_24.dispatch(new FriendListView());
+                        }
                     }
                     else
                     {
                         this.closeDialogSignal.dispatch();
-                    };
+                        this.closePopupByClassSignal.dispatch(SocialPopupView);
+                    }
                     break;
                 case Parameters.data_.options:
                     _local_20 = StaticInjectorContext.getInjector().getInstance(CloseAllPopupsSignal);
@@ -876,14 +835,14 @@ package com.company.assembleegameclient.game
                 case Parameters.data_.switchTabs:
                     _local_20 = StaticInjectorContext.getInjector().getInstance(CloseAllPopupsSignal);
                     _local_20.dispatch();
-                    if (Parameters.data_.normalUI)
+                    if (((Parameters.data_.normalUI) || (Options.hidden)))
                     {
                         this.statsTabHotKeyInputSignal.dispatch();
                     }
                     else
                     {
                         this.gs_.hudView.toggleStats();
-                    };
+                    }
                     break;
                 case Parameters.data_.ReconRealm:
                     if (reconRealm != null)
@@ -899,7 +858,7 @@ package com.company.assembleegameclient.game
                         _local_16.setPort(2050);
                         _local_17 = new ReconnectEvent(_local_16, Parameters.data_.reconGID, false, this.gs_.gsc_.charId_, Parameters.data_.reconTime, Parameters.data_.reconKey, false);
                         this.gs_.dispatchEvent(_local_17);
-                    };
+                    }
                     break;
                 case Parameters.data_.ReconRandom:
                     if (reconVault != null)
@@ -907,9 +866,9 @@ package com.company.assembleegameclient.game
                         reconRandom = reconVault;
                         reconRandom.charId_ = this.gs_.gsc_.charId_;
                         reconRandom.server_.name = "Random";
-                        reconRandom.gameId_ = -3;
+                        reconRandom.gameId_ = Parameters.RANDOM_REALM_GAMEID;
                         this.gs_.dispatchEvent(reconRandom);
-                    };
+                    }
                 case Parameters.data_.ReconDung:
                     if (reconDung != null)
                     {
@@ -917,7 +876,7 @@ package com.company.assembleegameclient.game
                         {
                             reconDung.charId_ = this.gs_.gsc_.charId_;
                             this.gs_.dispatchEvent(reconDung);
-                        };
+                        }
                     }
                     else
                     {
@@ -929,24 +888,25 @@ package com.company.assembleegameclient.game
                             _local_18.setPort(2050);
                             _local_19 = new ReconnectEvent(_local_18, Parameters.data_.dreconGID, false, this.gs_.gsc_.charId_, Parameters.data_.dreconTime, Parameters.data_.dreconKey, false);
                             this.gs_.dispatchEvent(_local_19);
-                        };
-                    };
+                        }
+                    }
                     break;
                 case Parameters.data_.ReconVault:
                     if (reconVault != null)
                     {
                         reconVault.charId_ = this.gs_.gsc_.charId_;
                         this.gs_.dispatchEvent(reconVault);
-                    };
+                    }
+                    break;
+                case Parameters.data_.ReconDaily:
+                    if (reconDaily != null)
+                    {
+                        reconDaily.charId_ = this.gs_.gsc_.charId_;
+                        this.gs_.dispatchEvent(reconDaily);
+                    }
                     break;
                 case Parameters.data_.tpto:
                     this.gs_.gsc_.teleport(TextHandler.caller);
-                    break;
-                case Parameters.data_.TextPause:
-                    this.gs_.gsc_.playerText("/pause");
-                    break;
-                case Parameters.data_.TextThessal:
-                    this.gs_.gsc_.playerText("He lives and reigns and conquers the world");
                     break;
                 case Parameters.data_.msg1key:
                     if (Parameters.data_.msg1 == null) break;
@@ -960,6 +920,30 @@ package com.company.assembleegameclient.game
                     if (Parameters.data_.msg3 == null) break;
                     this.parseChatMessage.dispatch(Parameters.data_.msg3);
                     break;
+                case Parameters.data_.msg4key:
+                    if (Parameters.data_.msg4 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg4);
+                    break;
+                case Parameters.data_.msg5key:
+                    if (Parameters.data_.msg5 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg5);
+                    break;
+                case Parameters.data_.msg6key:
+                    if (Parameters.data_.msg6 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg6);
+                    break;
+                case Parameters.data_.msg7key:
+                    if (Parameters.data_.msg7 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg7);
+                    break;
+                case Parameters.data_.msg8key:
+                    if (Parameters.data_.msg8 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg8);
+                    break;
+                case Parameters.data_.msg9key:
+                    if (Parameters.data_.msg9 == null) break;
+                    this.parseChatMessage.dispatch(Parameters.data_.msg9);
+                    break;
                 case Parameters.data_.SkipRenderKey:
                     MapUserInput.skipRender = (!(MapUserInput.skipRender));
                     break;
@@ -967,11 +951,15 @@ package com.company.assembleegameclient.game
                     this.maxprism = (!(this.maxprism));
                     _local_21.notifyPlayer(((this.maxprism) ? "Max Prism: Enabled" : "Max Prism: Disabled"), 0xFF00, 1500);
                     break;
-                case Parameters.data_.Cam45DegInc:
+                case Parameters.data_.Cam90DegInc:
                     Parameters.data_.cameraAngle = (Parameters.data_.cameraAngle - (0.785398163397448 * 2));
                     Parameters.save();
                     break;
-                case Parameters.data_.Cam45DegDec:
+                case Parameters.data_.Cam4DegInc:
+                    Parameters.data_.cameraAngle = (Parameters.data_.cameraAngle + (0.033398163397448 * 2));
+                    Parameters.save();
+                    break;
+                case Parameters.data_.Cam90DegDec:
                     Parameters.data_.cameraAngle = (Parameters.data_.cameraAngle + (0.785398163397448 * 2));
                     Parameters.save();
                     break;
@@ -992,7 +980,7 @@ package com.company.assembleegameclient.game
                     if (Parameters.data_.curBoss > 3368)
                     {
                         Parameters.data_.curBoss = 3366;
-                    };
+                    }
                     Parameters.save();
                     _local_21.notifyPlayer(("Active boss: " + ObjectLibrary.typeToDisplayId_[Parameters.data_.curBoss]), 0xFF00, 1500);
                     break;
@@ -1091,8 +1079,51 @@ package com.company.assembleegameclient.game
                     Parameters.save();
                     _local_21.notifyPlayer(((Parameters.data_.PassesCover) ? "Proj No-Clip: On" : "Proj No-Clip: Off"), 0xFF00, 1500);
                     break;
-            };
+                case Parameters.data_.panicKey:
+                    Options.toggleHax();
+                    this.gs_.hudView.toggle();
+                    break;
+                case Parameters.data_.SafeWalkKey:
+                    Parameters.data_.SafeWalk = (!(Parameters.data_.SafeWalk));
+                    Parameters.save();
+                    _local_21.notifyPlayer(((Parameters.data_.SafeWalk) ? "Safe Walk: On" : "Safe Walk: Off"), 0xFF00, 1500);
+                    break;
+                case Parameters.data_.SelfTPHotkey:
+                    this.gs_.gsc_.teleportId(_local_21.objectId_);
+                    break;
+                case Parameters.data_.autoAbilKey:
+                    Parameters.data_.autoAbil = (!(Parameters.data_.autoAbil));
+                    _local_21.notifyPlayer(((Parameters.data_.autoAbil) ? "Auto Ability enabled" : "Auto Ability disabled"), 0xFF00, 1500);
+                    break;
+                case Parameters.data_.LowCPUModeHotKey:
+                    Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
+                    _local_21.notifyPlayer(((Parameters.lowCPUMode) ? "Low CPU enabled" : "Low CPU disabled"), 0xFF00, 1500);
+                    break;
+            }
             this.setPlayerMovement();
+        }
+
+        public function onRightMouseDown_forWorld(_arg_1:MouseEvent):void
+        {
+            if (Parameters.data_.rightClickOption == "Ability")
+            {
+                this.gs_.map.player_.sbAssist(this.gs_.map.mouseX, this.gs_.map.mouseY);
+            }
+            else
+            {
+                if (Parameters.data_.rightClickOption == "Camera")
+                {
+                    this.held = true;
+                    this.heldX = WebMain.STAGE.mouseX;
+                    this.heldY = WebMain.STAGE.mouseY;
+                    this.heldAngle = Parameters.data_.cameraAngle;
+                }
+            }
+        }
+
+        public function onRightMouseUp_forWorld(_arg_1:MouseEvent):void
+        {
+            this.held = false;
         }
 
         public function openOptions():void
@@ -1123,11 +1154,11 @@ package com.company.assembleegameclient.game
                     _local_5 = Parameters.data_.dbPre3[0];
                     _local_3 = Parameters.data_.dbPre3[1];
                     break;
-            };
+            }
             if (_local_3 == 0)
             {
                 return;
-            };
+            }
             if (_arg_2 == -1)
             {
                 switch (_arg_1)
@@ -1144,7 +1175,7 @@ package com.company.assembleegameclient.game
                         Parameters.data_.dbPre3[2] = (!(Parameters.data_.dbPre3[2]));
                         _local_4 = Parameters.data_.dbPre3[2];
                         break;
-                };
+                }
             }
             else
             {
@@ -1164,7 +1195,7 @@ package com.company.assembleegameclient.game
                             Parameters.data_.dbPre3[2] = false;
                             _local_4 = Parameters.data_.dbPre3[2];
                             break;
-                    };
+                    }
                 }
                 else
                 {
@@ -1184,10 +1215,10 @@ package com.company.assembleegameclient.game
                                 Parameters.data_.dbPre3[2] = true;
                                 _local_4 = Parameters.data_.dbPre3[2];
                                 break;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             while (_local_6 < 11)
             {
                 if ((_local_3 & (1 << _local_6)) != 0)
@@ -1227,15 +1258,15 @@ package com.company.assembleegameclient.game
                         case 10:
                             Parameters.data_.dbPetrify = _local_4;
                             break;
-                    };
-                };
+                    }
+                }
                 _local_6++;
-            };
+            }
             Parameters.save();
             if (_arg_2 != 0)
             {
                 this.gs_.map.player_.notifyPlayer(((_local_4) ? (_local_5 + ": On") : (_local_5 + ": Off")), ((_local_4) ? 0xFF0000 : 0xFF00), 1500);
-            };
+            }
         }
 
         private function selectAimMode():void
@@ -1249,7 +1280,7 @@ package com.company.assembleegameclient.game
             else
             {
                 _local_1 = ((Parameters.data_.aimMode + 1) % 3);
-            };
+            }
             switch (_local_1)
             {
                 case 1:
@@ -1260,7 +1291,7 @@ package com.company.assembleegameclient.game
                     break;
                 case 0:
                     _local_2 = "Aim Assist Mode: Closest to Cursor";
-            };
+            }
             this.gs_.map.player_.levelUpEffect(_local_2);
             Parameters.data_.aimMode = _local_1;
         }
@@ -1294,9 +1325,9 @@ package com.company.assembleegameclient.game
                     if (((!(Parameters.data_.ninjaTap)) && (!(inputting))))
                     {
                         this.gs_.map.player_.useAltWeapon(this.gs_.map.mouseX, this.gs_.map.mouseY, UseType.END_USE);
-                    };
+                    }
                     break;
-            };
+            }
             this.setPlayerMovement();
         }
 
@@ -1312,8 +1343,8 @@ package com.company.assembleegameclient.game
                 else
                 {
                     _local_1.setRelativeMovement(0, 0, 0);
-                };
-            };
+                }
+            }
         }
 
         private function useItem(_arg_1:int):void
@@ -1321,7 +1352,7 @@ package com.company.assembleegameclient.game
             if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK)
             {
                 _arg_1 = (_arg_1 + GeneralConstants.NUM_INVENTORY_SLOTS);
-            };
+            }
             GameServerConnection.instance.useItem_new(this.gs_.map.player_, _arg_1);
         }
 
@@ -1339,7 +1370,7 @@ package com.company.assembleegameclient.game
                 this.gs_.gsc_.enableJitterWatcher();
                 this.gs_.gsc_.jitterWatcher_.y = stats_.height;
                 this.gs_.addChild(this.gs_.gsc_.jitterWatcher_);
-            };
+            }
         }
 
         private function toggleScreenShotMode():void
@@ -1354,7 +1385,7 @@ package com.company.assembleegameclient.game
             {
                 this.gs_.hudView.visible = true;
                 this.setTextBoxVisibility.dispatch(true);
-            };
+            }
         }
 
 

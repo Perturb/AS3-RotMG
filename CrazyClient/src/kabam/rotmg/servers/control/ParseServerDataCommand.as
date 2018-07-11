@@ -1,17 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.servers.control.ParseServerDataCommand
 
 package kabam.rotmg.servers.control
 {
-    import kabam.rotmg.servers.api.ServerModel;
-    import kabam.rotmg.servers.api.Server;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ParseServerDataCommand 
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.servers.api.ServerModel;
+
+public class ParseServerDataCommand 
     {
 
         [Inject]
@@ -34,7 +33,7 @@ package kabam.rotmg.servers.control
             for each (_local_1 in _local_2)
             {
                 _local_3.push(this.makeServer(_local_1));
-            };
+            }
             return (_local_3);
         }
 

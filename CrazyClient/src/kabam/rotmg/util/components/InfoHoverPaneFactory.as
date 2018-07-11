@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.InfoHoverPaneFactory
 
 package kabam.rotmg.util.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.pets.view.components.PopupWindowBackground;
-    import flash.display.DisplayObject;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
 
-    public class InfoHoverPaneFactory extends Sprite 
+import kabam.rotmg.pets.view.components.PopupWindowBackground;
+
+public class InfoHoverPaneFactory extends Sprite 
     {
 
 
@@ -19,7 +20,7 @@ package kabam.rotmg.util.components
             if (_arg_1 == null)
             {
                 return (null);
-            };
+            }
             var _local_3:Sprite = new Sprite();
             var _local_4:int = 8;
             _arg_1.width = (291 - _local_4);

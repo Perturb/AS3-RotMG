@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.ui.guild
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class GuildPlayerListEvent extends Event 
+public class GuildPlayerListEvent extends Event
     {
 
         public static const SET_RANK:String = "SET_RANK";

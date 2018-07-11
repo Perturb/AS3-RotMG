@@ -1,22 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.BuyCharacterRect
 
 package com.company.assembleegameclient.screens.charrects
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.display.Bitmap;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.display.BitmapData;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.display.Shape;
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Shape;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
 
-    public class BuyCharacterRect extends CharacterRect 
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class BuyCharacterRect extends CharacterRect 
     {
 
         public static const BUY_CHARACTER_RECT_CLASS_NAME_TEXT:String = "BuyCharacterRect.classNameText";

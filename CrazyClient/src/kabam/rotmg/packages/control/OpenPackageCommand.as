@@ -1,17 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.OpenPackageCommand
 
 package kabam.rotmg.packages.control
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.packages.services.PackageModel;
-    import kabam.rotmg.packages.model.PackageInfo;
-    import kabam.rotmg.packages.view.PackageOfferDialog;
+import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
-    public class OpenPackageCommand extends Command 
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.packages.model.PackageInfo;
+import kabam.rotmg.packages.services.PackageModel;
+
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class OpenPackageCommand extends Command 
     {
 
         [Inject]
@@ -22,20 +25,17 @@ package kabam.rotmg.packages.control
         public var packageId:int;
         [Inject]
         public var alreadyBoughtPackage:AlreadyBoughtPackageSignal;
+        [Inject]
+        public var showPopupSignal:ShowPopupSignal;
 
 
         override public function execute():void
         {
-            var _local_1:PackageInfo;
-            if (this.packageModel.canPurchasePackage(this.packageId))
+            var _local_1:PackageInfo = this.packageModel.getPackageById(this.packageId);
+            if (((_local_1) && (!(_local_1.popupImage == ""))))
             {
-                _local_1 = this.packageModel.getPackageById(this.packageId);
-                this.openDialogSignal.dispatch(new PackageOfferDialog().setPackage(_local_1));
+                this.showPopupSignal.dispatch(new StartupPackage(_local_1));
             }
-            else
-            {
-                this.alreadyBoughtPackage.dispatch();
-            };
         }
 
 

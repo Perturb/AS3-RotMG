@@ -5,10 +5,10 @@
 
 package kabam.rotmg.account.kabam.commands
 {
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.kabam.view.KabamAccountDetailDialog;
+import kabam.rotmg.account.kabam.view.KabamAccountDetailDialog;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class KabamOpenAccountInfoCommand 
+public class KabamOpenAccountInfoCommand 
     {
 
         [Inject]

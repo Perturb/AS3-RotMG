@@ -5,9 +5,9 @@
 
 package kabam.rotmg.account.web.view
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public class ProgressBar extends Sprite 
+public class ProgressBar extends Sprite
     {
 
         private static const BEVEL:int = 4;

@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.view.KongregateAccountInfoView
 
 package kabam.rotmg.account.kongregate.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.account.core.view.AccountInfoView;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.screens.TitleMenuOption;
-    import flash.text.TextFieldAutoSize;
-    import flash.filters.DropShadowFilter;
-    import flash.events.MouseEvent;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.display.DisplayObject;
+import com.company.assembleegameclient.screens.TitleMenuOption;
 
-    public class KongregateAccountInfoView extends Sprite implements AccountInfoView 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.account.core.view.AccountInfoView;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class KongregateAccountInfoView extends Sprite implements AccountInfoView 
     {
 
         private static const REGISTER:String = TextKey.KONGREGATEACCOUNTINFOVIEW_REGISTER;//"KongregateAccountInfoView.register"
@@ -68,7 +71,7 @@ package kabam.rotmg.account.kongregate.view
             else
             {
                 this.refreshUnregisteredAccount();
-            };
+            }
         }
 
         private function removeUIElements():void
@@ -76,7 +79,7 @@ package kabam.rotmg.account.kongregate.view
             while (numChildren)
             {
                 removeChildAt(0);
-            };
+            }
         }
 
         public function get register():Signal
@@ -105,7 +108,7 @@ package kabam.rotmg.account.kongregate.view
             {
                 _local_2 = _args[_local_3];
                 addChild(_local_2);
-            };
+            }
         }
 
 

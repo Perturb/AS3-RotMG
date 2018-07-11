@@ -5,16 +5,18 @@
 
 package com.company.assembleegameclient.account.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import kabam.rotmg.ui.signals.NameChangedSignal;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import com.company.assembleegameclient.game.events.NameResultEvent;
-    import kabam.rotmg.core.service.TrackingData;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.events.NameResultEvent;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChooseNameFrameMediator extends Mediator 
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TrackEventSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.ui.signals.NameChangedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChooseNameFrameMediator extends Mediator 
     {
 
         [Inject]
@@ -61,7 +63,7 @@ package com.company.assembleegameclient.account.ui
             else
             {
                 this.handleFailedNameChange(_arg_1.m_.errorText_);
-            };
+            }
         }
 
         private function handleSuccessfulNameChange():void
@@ -69,7 +71,7 @@ package com.company.assembleegameclient.account.ui
             if (this.view.isPurchase)
             {
                 this.trackPurchase();
-            };
+            }
             this.gameSprite.model.setName(this.name);
             this.gameSprite.map.player_.name_ = this.name;
             this.closeDialogs.dispatch();
@@ -83,7 +85,6 @@ package com.company.assembleegameclient.account.ui
             _local_1.action = ((this.gameSprite.model.getConverted()) ? "buyConverted" : "buy");
             _local_1.label = "Name Change";
             _local_1.value = Parameters.NAME_CHANGE_PRICE;
-            this.trackEvent.dispatch(_local_1);
         }
 
         private function handleFailedNameChange(_arg_1:String):void

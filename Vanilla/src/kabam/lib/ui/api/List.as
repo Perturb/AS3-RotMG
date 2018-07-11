@@ -5,10 +5,9 @@
 
 package kabam.lib.ui.api
 {
-    import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
+import flash.display.DisplayObject;
 
-    public interface List 
+public interface List 
     {
 
         function addItem(_arg_1:DisplayObject):void;

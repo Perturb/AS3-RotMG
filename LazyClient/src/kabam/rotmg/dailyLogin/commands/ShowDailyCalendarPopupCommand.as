@@ -5,12 +5,12 @@
 
 package kabam.rotmg.dailyLogin.commands
 {
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import kabam.rotmg.dailyLogin.view.DailyLoginModal;
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+import kabam.rotmg.dailyLogin.view.DailyLoginModal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class ShowDailyCalendarPopupCommand 
+public class ShowDailyCalendarPopupCommand 
     {
 
         [Inject]
@@ -30,7 +30,7 @@ package kabam.rotmg.dailyLogin.commands
             else
             {
                 this.flushStartupQueue.dispatch();
-            };
+            }
         }
 
 

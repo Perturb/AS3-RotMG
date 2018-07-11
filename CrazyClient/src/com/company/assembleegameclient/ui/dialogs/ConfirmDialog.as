@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.ConfirmDialog
 
 package com.company.assembleegameclient.ui.dialogs
 {
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class ConfirmDialog extends StaticDialog 
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+public class ConfirmDialog extends StaticDialog
     {
 
         private var _callback:Function;

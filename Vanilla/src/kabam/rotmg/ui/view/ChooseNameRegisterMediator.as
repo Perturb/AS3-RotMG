@@ -5,10 +5,11 @@
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
 
-    public class ChooseNameRegisterMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChooseNameRegisterMediator extends Mediator
     {
 
         [Inject]

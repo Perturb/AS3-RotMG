@@ -5,10 +5,9 @@
 
 package com.company.assembleegameclient.objects
 {
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import __AS3__.vec.Vector;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
-    public class Character extends GameObject 
+public class Character extends GameObject
     {
 
         public var hurtSound_:String;
@@ -23,9 +22,9 @@ package com.company.assembleegameclient.objects
             SoundEffectLibrary.load(this.deathSound_);
         }
 
-        override public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile):void
+        override public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile, _arg_6:Boolean=false):void
         {
-            super.damage(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
+            super.damage(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6);
             if (dead_)
             {
                 SoundEffectLibrary.play(this.deathSound_);
@@ -35,8 +34,8 @@ package com.company.assembleegameclient.objects
                 if (((_arg_5) || (_arg_2 > 0)))
                 {
                     SoundEffectLibrary.play(this.hurtSound_);
-                };
-            };
+                }
+            }
         }
 
 

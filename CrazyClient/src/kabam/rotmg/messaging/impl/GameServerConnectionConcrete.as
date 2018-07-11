@@ -1,240 +1,249 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.GameServerConnectionConcrete
 
 package kabam.rotmg.messaging.impl
 {
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import __AS3__.vec.Vector;
-    import kabam.lib.net.api.MessageProvider;
-    import com.company.util.Random;
-    import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import flash.utils.Timer;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-    import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
-    import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.death.control.HandleDeathSignal;
-    import kabam.rotmg.death.control.ZombifySignal;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
-    import kabam.rotmg.pets.controller.PetFeedResultSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.arena.control.ArenaDeathSignal;
-    import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
-    import io.decagames.rotmg.dailyQuests.signal.QuestFetchCompleteSignal;
-    import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
-    import kabam.rotmg.dailyLogin.signal.ClaimDailyRewardResponseSignal;
-    import kabam.rotmg.arena.model.CurrentArenaRunModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.pets.controller.UpdateActivePet;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.friends.model.FriendModel;
-    import kabam.rotmg.servers.api.ServerModel;
-    import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.maploading.signals.ChangeMapSignal;
-    import kabam.lib.net.impl.SocketServer;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.lib.net.api.MessageMap;
-    import kabam.rotmg.messaging.impl.outgoing.Create;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
-    import kabam.rotmg.messaging.impl.outgoing.Move;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerText;
-    import kabam.lib.net.impl.Message;
-    import kabam.rotmg.messaging.impl.outgoing.InvSwap;
-    import kabam.rotmg.messaging.impl.outgoing.UseItem;
-    import kabam.rotmg.messaging.impl.outgoing.Hello;
-    import kabam.rotmg.messaging.impl.outgoing.InvDrop;
-    import kabam.rotmg.messaging.impl.outgoing.Pong;
-    import kabam.rotmg.messaging.impl.outgoing.Load;
-    import kabam.rotmg.messaging.impl.outgoing.SetCondition;
-    import kabam.rotmg.messaging.impl.outgoing.Teleport;
-    import kabam.rotmg.messaging.impl.outgoing.UsePortal;
-    import kabam.rotmg.messaging.impl.outgoing.Buy;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerHit;
-    import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
-    import kabam.rotmg.messaging.impl.outgoing.AoeAck;
-    import kabam.rotmg.messaging.impl.outgoing.ShootAck;
-    import kabam.rotmg.messaging.impl.outgoing.OtherHit;
-    import kabam.rotmg.messaging.impl.outgoing.SquareHit;
-    import kabam.rotmg.messaging.impl.outgoing.GotoAck;
-    import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
-    import kabam.rotmg.messaging.impl.outgoing.ChooseName;
-    import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
-    import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
-    import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
-    import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
-    import kabam.rotmg.messaging.impl.outgoing.ChangeTrade;
-    import kabam.rotmg.messaging.impl.outgoing.AcceptTrade;
-    import kabam.rotmg.messaging.impl.outgoing.CancelTrade;
-    import kabam.rotmg.messaging.impl.outgoing.CheckCredits;
-    import kabam.rotmg.messaging.impl.outgoing.Escape;
-    import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
-    import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
-    import kabam.rotmg.messaging.impl.outgoing.ChangeGuildRank;
-    import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
-    import kabam.rotmg.messaging.impl.outgoing.ActivePetUpdateRequest;
-    import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
-    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem;
-    import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
-    import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
-    import kabam.rotmg.messaging.impl.incoming.Failure;
-    import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
-    import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
-    import kabam.rotmg.messaging.impl.incoming.Damage;
-    import kabam.rotmg.messaging.impl.incoming.Update;
-    import kabam.rotmg.messaging.impl.incoming.Notification;
-    import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
-    import kabam.rotmg.messaging.impl.incoming.NewTick;
-    import kabam.rotmg.messaging.impl.incoming.ShowEffect;
-    import kabam.rotmg.messaging.impl.incoming.Goto;
-    import kabam.rotmg.messaging.impl.incoming.InvResult;
-    import kabam.rotmg.messaging.impl.incoming.Reconnect;
-    import kabam.rotmg.messaging.impl.incoming.Ping;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
-    import kabam.rotmg.messaging.impl.incoming.Pic;
-    import kabam.rotmg.messaging.impl.incoming.BuyResult;
-    import kabam.rotmg.messaging.impl.incoming.Aoe;
-    import kabam.rotmg.messaging.impl.incoming.AccountList;
-    import kabam.rotmg.messaging.impl.incoming.QuestObjId;
-    import kabam.rotmg.messaging.impl.incoming.NameResult;
-    import kabam.rotmg.messaging.impl.incoming.GuildResult;
-    import kabam.rotmg.messaging.impl.incoming.AllyShoot;
-    import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
-    import kabam.rotmg.messaging.impl.incoming.TradeRequested;
-    import kabam.rotmg.messaging.impl.incoming.TradeStart;
-    import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-    import kabam.rotmg.messaging.impl.incoming.TradeDone;
-    import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
-    import kabam.rotmg.messaging.impl.incoming.ClientStat;
-    import kabam.rotmg.messaging.impl.incoming.File;
-    import kabam.rotmg.messaging.impl.incoming.InvitedToGuild;
-    import kabam.rotmg.messaging.impl.incoming.PlaySound;
-    import kabam.rotmg.messaging.impl.incoming.NewAbilityMessage;
-    import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
-    import kabam.rotmg.messaging.impl.incoming.pets.DeletePetMessage;
-    import kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage;
-    import kabam.rotmg.messaging.impl.incoming.arena.ImminentArenaWave;
-    import kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath;
-    import kabam.rotmg.messaging.impl.incoming.VerifyEmail;
-    import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
-    import kabam.rotmg.messaging.impl.incoming.PasswordPrompt;
-    import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
-    import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
-    import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
-    import kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse;
-    import kabam.rotmg.messaging.impl.incoming.thunderboxer.SetSpeed;
-    import kabam.rotmg.messaging.impl.outgoing.thunderboxer.ThunderMove;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.pets.controller.HatchPetSignal;
-    import kabam.rotmg.pets.controller.DeletePetSignal;
-    import kabam.rotmg.pets.controller.NewAbilitySignal;
-    import kabam.rotmg.pets.controller.UpdatePetYardSignal;
-    import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
-    import com.hurlant.crypto.symmetric.ICipher;
-    import com.hurlant.crypto.Crypto;
-    import com.company.util.MoreStringUtil;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.arena.view.BattleSummaryDialog;
-    import com.company.assembleegameclient.objects.Projectile;
-    import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
-    import kabam.rotmg.game.commands.PlayGameCommand;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.utils.getTimer;
-    import flash.geom.Point;
-    import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import com.company.assembleegameclient.util.Currency;
-    import com.hurlant.util.der.PEM;
-    import com.hurlant.crypto.rsa.RSAKey;
-    import com.hurlant.util.Base64;
-    import kabam.rotmg.account.core.Account;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import kabam.rotmg.dailyLogin.view.DailyLoginModal;
-    import com.company.assembleegameclient.map.AbstractMap;
-    import com.company.assembleegameclient.util.FreeList;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.classes.model.CharacterSkinState;
-    import com.company.assembleegameclient.ui.panels.TradeRequestPanel;
-    import kabam.rotmg.messaging.impl.data.GroundTileData;
-    import kabam.rotmg.minimap.model.UpdateGroundTileVO;
-    import com.company.assembleegameclient.objects.Pet;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.messaging.impl.data.ObjectStatusData;
-    import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
-    import com.company.assembleegameclient.objects.Container;
-    import kabam.rotmg.messaging.impl.data.ObjectData;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-    import kabam.rotmg.game.view.components.QueuedStatusText;
-    import kabam.rotmg.ui.signals.ShowKeySignal;
-    import kabam.rotmg.ui.model.Key;
-    import com.company.assembleegameclient.objects.particles.ParticleEffect;
-    import com.company.assembleegameclient.objects.particles.ThrowEffect;
-    import com.company.assembleegameclient.objects.FlashDescription;
-    import com.company.assembleegameclient.objects.thrown.ThrowProjectileEffect;
-    import com.company.assembleegameclient.objects.particles.BurstEffect;
-    import com.company.assembleegameclient.objects.particles.HealEffect;
-    import com.company.assembleegameclient.objects.particles.TeleportEffect;
-    import com.company.assembleegameclient.objects.particles.StreamEffect;
-    import com.company.assembleegameclient.objects.particles.NovaEffect;
-    import com.company.assembleegameclient.objects.particles.PoisonEffect;
-    import com.company.assembleegameclient.objects.particles.LineEffect;
-    import com.company.assembleegameclient.objects.particles.FlowEffect;
-    import com.company.assembleegameclient.objects.particles.RingEffect;
-    import com.company.assembleegameclient.objects.particles.LightningEffect;
-    import com.company.assembleegameclient.objects.particles.CollapseEffect;
-    import com.company.assembleegameclient.objects.particles.ConeBlastEffect;
-    import com.company.assembleegameclient.objects.particles.ShockerEffect;
-    import com.company.assembleegameclient.objects.particles.ShockeeEffect;
-    import com.company.assembleegameclient.objects.particles.RisingFuryEffect;
-    import kabam.rotmg.messaging.impl.data.StatData;
-    import com.company.assembleegameclient.objects.Merchant;
-    import com.company.assembleegameclient.util.ConditionEffect;
-    import com.company.assembleegameclient.objects.Portal;
-    import com.company.assembleegameclient.objects.NameChanger;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import kabam.rotmg.constants.GeneralConstants;
-    import kabam.rotmg.messaging.impl.outgoing.Reskin;
-    import com.company.assembleegameclient.objects.ObjectProperties;
-    import com.company.assembleegameclient.objects.ProjectileProperties;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.ui.PicView;
-    import flash.display.BitmapData;
-    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-    import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
-    import com.company.assembleegameclient.objects.particles.AOEEffect;
-    import com.company.assembleegameclient.game.events.NameResultEvent;
-    import com.company.assembleegameclient.game.events.GuildResultEvent;
-    import flash.net.FileReference;
-    import com.company.assembleegameclient.ui.panels.GuildInvitePanel;
-    import kabam.rotmg.arena.view.ContinueOrQuitDialog;
-    import kabam.rotmg.ui.view.TitleView;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.messaging.impl.data.SlotObjectData;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.events.Event;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.MapUserInput;
+import com.company.assembleegameclient.game.events.GuildResultEvent;
+import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
+import com.company.assembleegameclient.game.events.NameResultEvent;
+import com.company.assembleegameclient.game.events.ReconnectEvent;
+import com.company.assembleegameclient.map.AbstractMap;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
+import com.company.assembleegameclient.objects.Container;
+import com.company.assembleegameclient.objects.FlashDescription;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Merchant;
+import com.company.assembleegameclient.objects.NameChanger;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.ObjectProperties;
+import com.company.assembleegameclient.objects.Party;
+import com.company.assembleegameclient.objects.Pet;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Portal;
+import com.company.assembleegameclient.objects.Projectile;
+import com.company.assembleegameclient.objects.ProjectileProperties;
+import com.company.assembleegameclient.objects.SellableObject;
+import com.company.assembleegameclient.objects.particles.AOEEffect;
+import com.company.assembleegameclient.objects.particles.BurstEffect;
+import com.company.assembleegameclient.objects.particles.CollapseEffect;
+import com.company.assembleegameclient.objects.particles.ConeBlastEffect;
+import com.company.assembleegameclient.objects.particles.FlowEffect;
+import com.company.assembleegameclient.objects.particles.HealEffect;
+import com.company.assembleegameclient.objects.particles.LightningEffect;
+import com.company.assembleegameclient.objects.particles.LineEffect;
+import com.company.assembleegameclient.objects.particles.NovaEffect;
+import com.company.assembleegameclient.objects.particles.ParticleEffect;
+import com.company.assembleegameclient.objects.particles.PoisonEffect;
+import com.company.assembleegameclient.objects.particles.RingEffect;
+import com.company.assembleegameclient.objects.particles.RisingFuryEffect;
+import com.company.assembleegameclient.objects.particles.ShockeeEffect;
+import com.company.assembleegameclient.objects.particles.ShockerEffect;
+import com.company.assembleegameclient.objects.particles.StreamEffect;
+import com.company.assembleegameclient.objects.particles.TeleportEffect;
+import com.company.assembleegameclient.objects.particles.ThrowEffect;
+import com.company.assembleegameclient.objects.thrown.ThrowProjectileEffect;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.ui.PicView;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.assembleegameclient.ui.panels.GuildInvitePanel;
+import com.company.assembleegameclient.ui.panels.TradeRequestPanel;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.ConditionEffect;
+import com.company.assembleegameclient.util.Currency;
+import com.company.assembleegameclient.util.FreeList;
+import com.company.util.MoreStringUtil;
+import com.company.util.Random;
+import com.gskinner.motion.GTween;
+import com.hurlant.crypto.Crypto;
+import com.hurlant.crypto.rsa.RSAKey;
+import com.hurlant.crypto.symmetric.ICipher;
+import com.hurlant.util.Base64;
+import com.hurlant.util.der.PEM;
 
-    public class GameServerConnectionConcrete extends GameServerConnection 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.events.Event;
+import flash.events.TimerEvent;
+import flash.geom.Point;
+import flash.net.FileReference;
+import flash.utils.ByteArray;
+import flash.utils.Timer;
+import flash.utils.getTimer;
+
+import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
+import io.decagames.rotmg.classes.NewClassUnlockSignal;
+import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
+import io.decagames.rotmg.dailyQuests.signal.QuestFetchCompleteSignal;
+import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.HatchPetVO;
+import io.decagames.rotmg.pets.signals.DeletePetSignal;
+import io.decagames.rotmg.pets.signals.HatchPetSignal;
+import io.decagames.rotmg.pets.signals.NewAbilitySignal;
+import io.decagames.rotmg.pets.signals.PetFeedResultSignal;
+import io.decagames.rotmg.pets.signals.UpdateActivePet;
+import io.decagames.rotmg.pets.signals.UpdatePetYardSignal;
+import io.decagames.rotmg.social.model.SocialModel;
+
+import kabam.lib.net.api.MessageMap;
+import kabam.lib.net.api.MessageProvider;
+import kabam.lib.net.impl.Message;
+import kabam.lib.net.impl.SocketServer;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.arena.control.ArenaDeathSignal;
+import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
+import kabam.rotmg.arena.model.CurrentArenaRunModel;
+import kabam.rotmg.arena.view.BattleSummaryDialog;
+import kabam.rotmg.arena.view.ContinueOrQuitDialog;
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkinState;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
+import kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse;
+import kabam.rotmg.dailyLogin.signal.ClaimDailyRewardResponseSignal;
+import kabam.rotmg.death.control.HandleDeathSignal;
+import kabam.rotmg.death.control.ZombifySignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.commands.PlayGameCommand;
+import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
+import kabam.rotmg.game.view.components.QueuedStatusText;
+import kabam.rotmg.maploading.signals.ChangeMapSignal;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.messaging.impl.data.GroundTileData;
+import kabam.rotmg.messaging.impl.data.ObjectData;
+import kabam.rotmg.messaging.impl.data.ObjectStatusData;
+import kabam.rotmg.messaging.impl.data.SlotObjectData;
+import kabam.rotmg.messaging.impl.data.StatData;
+import kabam.rotmg.messaging.impl.incoming.AccountList;
+import kabam.rotmg.messaging.impl.incoming.AllyShoot;
+import kabam.rotmg.messaging.impl.incoming.Aoe;
+import kabam.rotmg.messaging.impl.incoming.BuyResult;
+import kabam.rotmg.messaging.impl.incoming.ClientStat;
+import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
+import kabam.rotmg.messaging.impl.incoming.Damage;
+import kabam.rotmg.messaging.impl.incoming.Death;
+import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
+import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
+import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
+import kabam.rotmg.messaging.impl.incoming.Failure;
+import kabam.rotmg.messaging.impl.incoming.File;
+import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
+import kabam.rotmg.messaging.impl.incoming.Goto;
+import kabam.rotmg.messaging.impl.incoming.GuildResult;
+import kabam.rotmg.messaging.impl.incoming.InvResult;
+import kabam.rotmg.messaging.impl.incoming.InvitedToGuild;
+import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
+import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.messaging.impl.incoming.NameResult;
+import kabam.rotmg.messaging.impl.incoming.NewAbilityMessage;
+import kabam.rotmg.messaging.impl.incoming.NewTick;
+import kabam.rotmg.messaging.impl.incoming.Notification;
+import kabam.rotmg.messaging.impl.incoming.PasswordPrompt;
+import kabam.rotmg.messaging.impl.incoming.Pic;
+import kabam.rotmg.messaging.impl.incoming.Ping;
+import kabam.rotmg.messaging.impl.incoming.PlaySound;
+import kabam.rotmg.messaging.impl.incoming.QuestObjId;
+import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
+import kabam.rotmg.messaging.impl.incoming.Reconnect;
+import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
+import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
+import kabam.rotmg.messaging.impl.incoming.ShowEffect;
+import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+import kabam.rotmg.messaging.impl.incoming.TradeDone;
+import kabam.rotmg.messaging.impl.incoming.TradeRequested;
+import kabam.rotmg.messaging.impl.incoming.TradeStart;
+import kabam.rotmg.messaging.impl.incoming.Update;
+import kabam.rotmg.messaging.impl.incoming.VerifyEmail;
+import kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath;
+import kabam.rotmg.messaging.impl.incoming.arena.ImminentArenaWave;
+import kabam.rotmg.messaging.impl.incoming.pets.DeletePetMessage;
+import kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage;
+import kabam.rotmg.messaging.impl.incoming.thunderboxer.SetSpeed;
+import kabam.rotmg.messaging.impl.outgoing.AcceptTrade;
+import kabam.rotmg.messaging.impl.outgoing.ActivePetUpdateRequest;
+import kabam.rotmg.messaging.impl.outgoing.AoeAck;
+import kabam.rotmg.messaging.impl.outgoing.Buy;
+import kabam.rotmg.messaging.impl.outgoing.CancelTrade;
+import kabam.rotmg.messaging.impl.outgoing.ChangeGuildRank;
+import kabam.rotmg.messaging.impl.outgoing.ChangePetSkin;
+import kabam.rotmg.messaging.impl.outgoing.ChangeTrade;
+import kabam.rotmg.messaging.impl.outgoing.CheckCredits;
+import kabam.rotmg.messaging.impl.outgoing.ChooseName;
+import kabam.rotmg.messaging.impl.outgoing.Create;
+import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
+import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
+import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
+import kabam.rotmg.messaging.impl.outgoing.Escape;
+import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
+import kabam.rotmg.messaging.impl.outgoing.GotoAck;
+import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
+import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
+import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
+import kabam.rotmg.messaging.impl.outgoing.Hello;
+import kabam.rotmg.messaging.impl.outgoing.InvDrop;
+import kabam.rotmg.messaging.impl.outgoing.InvSwap;
+import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
+import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
+import kabam.rotmg.messaging.impl.outgoing.Load;
+import kabam.rotmg.messaging.impl.outgoing.Move;
+import kabam.rotmg.messaging.impl.outgoing.OtherHit;
+import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+import kabam.rotmg.messaging.impl.outgoing.PlayerHit;
+import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
+import kabam.rotmg.messaging.impl.outgoing.PlayerText;
+import kabam.rotmg.messaging.impl.outgoing.Pong;
+import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
+import kabam.rotmg.messaging.impl.outgoing.Reskin;
+import kabam.rotmg.messaging.impl.outgoing.SetCondition;
+import kabam.rotmg.messaging.impl.outgoing.ShootAck;
+import kabam.rotmg.messaging.impl.outgoing.SquareHit;
+import kabam.rotmg.messaging.impl.outgoing.Teleport;
+import kabam.rotmg.messaging.impl.outgoing.UseItem;
+import kabam.rotmg.messaging.impl.outgoing.UsePortal;
+import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
+import kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem;
+import kabam.rotmg.messaging.impl.outgoing.thunderboxer.ThunderMove;
+import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
+import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
+import kabam.rotmg.minimap.model.UpdateGroundTileVO;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.servers.api.ServerModel;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.model.Key;
+import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
+import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
+import kabam.rotmg.ui.signals.ShowKeySignal;
+import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
+import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+import kabam.rotmg.ui.view.TitleView;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GameServerConnectionConcrete extends GameServerConnection
     {
 
         private static const TO_MILLISECONDS:int = 1000;
@@ -244,7 +253,7 @@ package kabam.rotmg.messaging.impl
         private static var reconNexus:ReconnectEvent;
         public static var sRec:Boolean = false;
         public static var whereto:String;
-        public static var claimkey:String = "";
+        public static var accountData:String;
         public static var vaultSelect:Boolean = false;
         public static var ignoredBag:int = -1;
         public static var receivingGift:Vector.<Boolean>;
@@ -260,7 +269,7 @@ package kabam.rotmg.messaging.impl
         private var giftChestUpdateSignal:GiftStatusUpdateSignal;
         private var death:Death;
         private var retryTimer_:Timer;
-        private var delayBeforeReconnect:int = 2;
+        private var delayBeforeReconnect:int = 4;
         private var addTextLine:AddTextLineSignal;
         private var addSpeechBalloon:AddSpeechBalloonSignal;
         private var updateGroundTileSignal:UpdateGroundTileSignal;
@@ -278,20 +287,23 @@ package kabam.rotmg.messaging.impl
         private var questFetchComplete:QuestFetchCompleteSignal;
         private var questRedeemComplete:QuestRedeemCompleteSignal;
         private var claimDailyRewardResponse:ClaimDailyRewardResponseSignal;
+        private var newClassUnlockSignal:NewClassUnlockSignal;
         private var currentArenaRun:CurrentArenaRunModel;
         private var classesModel:ClassesModel;
         private var injector:Injector;
         private var model:GameModel;
         private var updateActivePet:UpdateActivePet;
         private var petsModel:PetsModel;
-        private var friendModel:FriendModel;
+        private var statsTracker:CharactersMetricsTracker;
+        private var socialModel:SocialModel;
         private var servers:ServerModel;
         private var keyInfoResponse:KeyInfoResponseSignal;
         private var ignoreNext:Boolean = false;
+        private var serverString:String = "";
 
         private var timedShots:Vector.<int> = new Vector.<int>(0);
-        private const servs:Vector.<String> = new <String>["EUEast", "EUNorth2", "EUNorth", "USWest", "USMidWest", "EUWest", "USEast", "AsiaSouthEast", "USSouth", "USSouthWest", "EUSouthWest", "USEast3", "USWest2", "USMidWest2", "USEast2", "USNorthWest", "AsiaEast", "USSouth3", "EUWest2", "EUSouth", "USSouth2", "USWest3", "Proxy"];
-        private const abbrs:Vector.<String> = new <String>["eue", "eun2", "eun", "usw", "usmw", "euw", "use", "ase", "uss", "ussw", "eusw", "use3", "usw2", "usmw2", "use2", "usnw", "ae", "uss3", "euw2", "eus", "uss2", "usw3", "p"];
+        private const servs:Vector.<String> = new <String>["EUEast", "EUNorth2", "EUNorth", "USWest", "USMidWest", "EUWest", "USEast", "AsiaSouthEast", "USSouth", "USSouthWest", "EUSouthWest", "USEast3", "USWest2", "USMidWest2", "USEast2", "USNorthWest", "AsiaEast", "USSouth3", "EUWest2", "EUSouth", "USSouth2", "USWest3", "Australia", "Proxy"];
+        private const abbrs:Vector.<String> = new <String>["eue", "eun2", "eun", "usw", "usmw", "euw", "use", "ase", "uss", "ussw", "eusw", "use3", "usw2", "usmw2", "use2", "usnw", "ae", "uss3", "euw2", "eus", "uss2", "usw3", "aus", "p"];
         private const realms:Vector.<String> = new <String>["Medusa", "Beholder", "Cyclops", "Djinn", "Ogre", "Flayer", "Sprite", "Golem"];
 
         public function GameServerConnectionConcrete(_arg_1:AGameSprite, _arg_2:Server, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:int, _arg_7:ByteArray, _arg_8:String, _arg_9:Boolean)
@@ -307,7 +319,7 @@ package kabam.rotmg.messaging.impl
             this.updateBackpackTab = StaticInjectorContext.getInjector().getInstance(UpdateBackpackTabSignal);
             this.updateActivePet = this.injector.getInstance(UpdateActivePet);
             this.petsModel = this.injector.getInstance(PetsModel);
-            this.friendModel = this.injector.getInstance(FriendModel);
+            this.socialModel = this.injector.getInstance(SocialModel);
             this.closeDialogs = this.injector.getInstance(CloseDialogsSignal);
             changeMapSignal = this.injector.getInstance(ChangeMapSignal);
             this.openDialog = this.injector.getInstance(OpenDialogSignal);
@@ -316,6 +328,8 @@ package kabam.rotmg.messaging.impl
             this.questFetchComplete = this.injector.getInstance(QuestFetchCompleteSignal);
             this.questRedeemComplete = this.injector.getInstance(QuestRedeemCompleteSignal);
             this.claimDailyRewardResponse = this.injector.getInstance(ClaimDailyRewardResponseSignal);
+            this.newClassUnlockSignal = this.injector.getInstance(NewClassUnlockSignal);
+            this.statsTracker = this.injector.getInstance(CharactersMetricsTracker);
             this.logger = this.injector.getInstance(ILogger);
             this.handleDeath = this.injector.getInstance(HandleDeathSignal);
             this.zombify = this.injector.getInstance(ZombifySignal);
@@ -335,7 +349,8 @@ package kabam.rotmg.messaging.impl
             key_ = _arg_7;
             mapJSON_ = _arg_8;
             isFromArena_ = _arg_9;
-            this.friendModel.setCurrentServer(server_);
+            this.socialModel.loadInvitations();
+            this.socialModel.setCurrentServer(server_);
             this.getPetUpdater();
             instance = this;
         }
@@ -379,7 +394,13 @@ package kabam.rotmg.messaging.impl
             var _local_1:ChatMessage = new ChatMessage();
             _local_1.name = Parameters.CLIENT_CHAT_NAME;
             _local_1.text = TextKey.CHAT_CONNECTING_TO;
-            _local_1.tokens = {"serverName":server_.name};
+            var _local_2:String = server_.name;
+            if (_local_2 == '{"text":"server.vault"}')
+            {
+                _local_2 = "server.vault";
+            }
+            _local_2 = LineBuilder.getLocalizedStringFromKey(_local_2);
+            _local_1.tokens = {"serverName":_local_2};
             this.addTextLine.dispatch(_local_1);
             serverConnection.connect(server_.address, server_.port);
         }
@@ -440,6 +461,7 @@ package kabam.rotmg.messaging.impl
             _local_1.map(KEY_INFO_REQUEST).toMessage(KeyInfoRequest);
             _local_1.map(PET_CHANGE_FORM_MSG).toMessage(ReskinPet);
             _local_1.map(CLAIM_LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardMessage);
+            _local_1.map(PET_CHANGE_SKIN_MSG).toMessage(ChangePetSkin);
             _local_1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
             _local_1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
             _local_1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -502,19 +524,24 @@ package kabam.rotmg.messaging.impl
 
         private function onSetSpeed(_arg_1:SetSpeed):void
         {
-            this.addTextLine.dispatch(ChatMessage.make("*Help*", ((("Changing speed from " + player.speed_) + " to ") + _arg_1.spd)));
+            this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ((("Changing speed from " + player.speed_) + " to ") + _arg_1.spd)));
             player.speed_ = _arg_1.spd;
         }
 
         private function onHatchPet(_arg_1:HatchPetMessage):void
         {
             var _local_2:HatchPetSignal = this.injector.getInstance(HatchPetSignal);
-            _local_2.dispatch(_arg_1.petName, _arg_1.petSkin);
+            var _local_3:HatchPetVO = new HatchPetVO();
+            _local_3.itemType = _arg_1.itemType;
+            _local_3.petSkin = _arg_1.petSkin;
+            _local_3.petName = _arg_1.petName;
+            _local_2.dispatch(_local_3);
         }
 
         private function onDeletePet(_arg_1:DeletePetMessage):void
         {
             var _local_2:DeletePetSignal = this.injector.getInstance(DeletePetSignal);
+            this.injector.getInstance(PetsModel).deletePet(_arg_1.petID);
             _local_2.dispatch(_arg_1.petID);
         }
 
@@ -539,7 +566,7 @@ package kabam.rotmg.messaging.impl
         private function onActivePetUpdate(_arg_1:ActivePet):void
         {
             this.updateActivePet.dispatch(_arg_1.instanceID);
-            var _local_2:String = ((_arg_1.instanceID > 0) ? this.petsModel.getPet(_arg_1.instanceID).getName() : "");
+            var _local_2:String = ((_arg_1.instanceID > 0) ? this.petsModel.getPet(_arg_1.instanceID).name : "");
             var _local_3:String = ((_arg_1.instanceID < 0) ? TextKey.PET_NOT_FOLLOWING : TextKey.PET_FOLLOWING);
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, _local_3, -1, -1, "", false, {"petName":_local_2}));
         }
@@ -625,11 +652,11 @@ package kabam.rotmg.messaging.impl
             var _local_2:ICipher;
             if (Parameters.ENABLE_ENCRYPTION)
             {
-                _local_1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("311f80691451c71d09a13a2a6e"));
-                _local_2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("72c5583cafb6818995cdd74b80"));
+                _local_1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("6a39570cc9de4ec71d64821894c79332b197f92ba85ed281a023".substring(0, 26)));
+                _local_2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("6a39570cc9de4ec71d64821894c79332b197f92ba85ed281a023".substring(26)));
                 serverConnection.setOutgoingCipher(_local_1);
                 serverConnection.setIncomingCipher(_local_2);
-            };
+            }
         }
 
         override public function getNextDamage(_arg_1:uint, _arg_2:uint):uint
@@ -642,7 +669,7 @@ package kabam.rotmg.messaging.impl
             if (jitterWatcher_ == null)
             {
                 jitterWatcher_ = new JitterWatcher();
-            };
+            }
         }
 
         override public function disableJitterWatcher():void
@@ -650,7 +677,7 @@ package kabam.rotmg.messaging.impl
             if (jitterWatcher_ != null)
             {
                 jitterWatcher_ = null;
-            };
+            }
         }
 
         private function create():void
@@ -671,7 +698,7 @@ package kabam.rotmg.messaging.impl
             if (isFromArena_)
             {
                 this.openDialog.dispatch(new BattleSummaryDialog());
-            };
+            }
         }
 
         override public function playerShoot(_arg_1:int, _arg_2:Projectile):void
@@ -680,12 +707,12 @@ package kabam.rotmg.messaging.impl
             if (((this.timedShots.length > 0) && (this.shotsPassed(this.timedShots[(this.timedShots.length - 1)], _arg_2.bulletId_) >= 5)))
             {
                 this.timedShots.length = 0;
-            };
+            }
             var _local_4:int = this.needsTimer(_local_3.containerType_);
             if (_local_4 > 0)
             {
                 this.timedShots.push(_local_3.bulletId_);
-            };
+            }
             _local_3.time_ = _arg_1;
             _local_3.bulletId_ = _arg_2.bulletId_;
             _local_3.containerType_ = _arg_2.containerType_;
@@ -702,7 +729,7 @@ package kabam.rotmg.messaging.impl
             {
                 player.startTimer(this.needsTimer(player.equipment_[1]));
                 this.timedShots.length = 0;
-            };
+            }
             _local_5.time_ = _arg_1;
             _local_5.bulletId_ = _arg_2;
             _local_5.targetId_ = _arg_3;
@@ -718,8 +745,8 @@ package kabam.rotmg.messaging.impl
                 if (_local_3 == _arg_2)
                 {
                     return (true);
-                };
-            };
+                }
+            }
             return (false);
         }
 
@@ -728,7 +755,7 @@ package kabam.rotmg.messaging.impl
             if (_arg_1 < _arg_2)
             {
                 return (_arg_2 - _arg_1);
-            };
+            }
             return ((128 + _arg_2) - _arg_1);
         }
 
@@ -743,7 +770,7 @@ package kabam.rotmg.messaging.impl
                 case 3395:
                 case 3087:
                     return (8);
-            };
+            }
             return (0);
         }
 
@@ -831,7 +858,7 @@ package kabam.rotmg.messaging.impl
                         if (_local_5 > 1)
                         {
                             _local_20 = false;
-                        };
+                        }
                         if (_local_16[_local_5].substr(0, 1) == "v")
                         {
                             _local_17 = -5;
@@ -845,7 +872,7 @@ package kabam.rotmg.messaging.impl
                             }
                             else
                             {
-                                if ((((_local_16[_local_5].length > 2) && (((_local_16[_local_5].substr(0, 2) == "eu") || (_local_16[_local_5].substr(0, 2) == "us")) || (_local_16[_local_5].substr(0, 3) == "ase"))) || ((_local_16[_local_5].length == 2) && (_local_16[_local_5].substr(0, 2) == "ae"))))
+                                if ((((_local_16[_local_5].length > 2) && ((((_local_16[_local_5].substr(0, 2) == "eu") || (_local_16[_local_5].substr(0, 2) == "us")) || (_local_16[_local_5].substr(0, 3) == "ase")) || (_local_16[_local_5].substr(0, 3) == "aus"))) || ((_local_16[_local_5].length == 2) && (_local_16[_local_5].substr(0, 2) == "ae"))))
                                 {
                                     _local_4 = 0;
                                     while (_local_4 < this.abbrs.length)
@@ -856,9 +883,9 @@ package kabam.rotmg.messaging.impl
                                             Parameters.save();
                                             _local_20 = false;
                                             break;
-                                        };
+                                        }
                                         _local_4++;
-                                    };
+                                    }
                                 }
                                 else
                                 {
@@ -874,7 +901,7 @@ package kabam.rotmg.messaging.impl
                                             {
                                                 _local_16[_local_5] = _local_7[_local_10];
                                                 break;
-                                            };
+                                            }
                                         }
                                         else
                                         {
@@ -882,10 +909,10 @@ package kabam.rotmg.messaging.impl
                                             {
                                                 _local_16[_local_5] = _local_7[_local_10];
                                                 break;
-                                            };
-                                        };
+                                            }
+                                        }
                                         _local_10++;
-                                    };
+                                    }
                                     _local_11 = _local_16[_local_5];
                                     if (_local_11 > 0)
                                     {
@@ -893,7 +920,7 @@ package kabam.rotmg.messaging.impl
                                         if (_local_5 == 1)
                                         {
                                             _local_20 = true;
-                                        };
+                                        }
                                     }
                                     else
                                     {
@@ -911,19 +938,19 @@ package kabam.rotmg.messaging.impl
                                                         _local_17 = 0;
                                                         _local_19 = true;
                                                         break;
-                                                    };
-                                                };
+                                                    }
+                                                }
                                                 break;
-                                            };
+                                            }
                                             _local_4++;
-                                        };
-                                    };
-                                };
-                            };
-                        };
-                    };
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     _local_5++;
-                };
+                }
                 if (sRec)
                 {
                     _local_2 = new Server();
@@ -953,7 +980,7 @@ package kabam.rotmg.messaging.impl
                     }
                     else
                     {
-                        if (!_local_19)
+                        if ((!(_local_19)))
                         {
                             _local_2 = this.getServerByName(Parameters.data_.preferredServer);
                         }
@@ -964,12 +991,12 @@ package kabam.rotmg.messaging.impl
                             _local_2.address = _local_3[0];
                             PlayGameCommand.currealm = _local_3[2];
                             _local_2.port = 2050;
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 gs_.dispatchEvent(new ReconnectEvent(_local_2, _local_17, false, _local_18, -1, new ByteArray(), false));
                 return;
-            };
+            }
             serverConnection.sendMessage(_local_15);
         }
 
@@ -982,53 +1009,54 @@ package kabam.rotmg.messaging.impl
                 if (_local_2.name == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (null);
         }
 
         override public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
         {
-            var _local_8:int;
-            if (!gs_)
+            if ((!(this.gs_)))
             {
                 return (false);
-            };
+            }
+            if ((this.gs_.lastUpdate_ - this.lastInvSwapTime) < 500)
+            {
+                return (false);
+            }
             if ((((_arg_3 == 1) && (_arg_2 == _arg_1)) || ((_arg_6 == 1) && (_arg_5 == _arg_1))))
             {
                 if (_arg_1.mapAutoAbil)
                 {
                     _arg_1.mapAutoAbil = false;
                     _arg_1.notifyPlayer("Auto Ability: Disabled", 0xFF00, 1500);
-                };
-            };
-            var _local_9:InvSwap = (this.messages.require(INVSWAP) as InvSwap);
-            _local_9.time_ = gs_.lastUpdate_;
-            _local_9.position_.x_ = _arg_1.x_;
-            _local_9.position_.y_ = _arg_1.y_;
-            _local_9.slotObject1_.objectId_ = _arg_2.objectId_;
-            _local_9.slotObject1_.slotId_ = _arg_3;
-            _local_9.slotObject1_.objectType_ = _arg_4;
-            _local_9.slotObject2_.objectId_ = _arg_5.objectId_;
-            _local_9.slotObject2_.slotId_ = _arg_6;
-            _local_9.slotObject2_.objectType_ = _arg_7;
-            serverConnection.sendMessage(_local_9);
-            if ((((!(Parameters.data_.clientSwap)) || ((_arg_3 < 4) && (_arg_2 == _arg_1))) || ((_arg_6 < 4) && (_arg_5 == _arg_1))))
-            {
-                _local_8 = _arg_2.equipment_[_arg_3];
-                _arg_2.equipment_[_arg_3] = _arg_5.equipment_[_arg_6];
-                _arg_5.equipment_[_arg_6] = _local_8;
-            };
+                }
+            }
+            var _local_8:InvSwap = (this.messages.require(INVSWAP) as InvSwap);
+            _local_8.time_ = this.gs_.lastUpdate_;
+            _local_8.position_.x_ = _arg_1.x_;
+            _local_8.position_.y_ = _arg_1.y_;
+            _local_8.slotObject1_.objectId_ = _arg_2.objectId_;
+            _local_8.slotObject1_.slotId_ = _arg_3;
+            _local_8.slotObject1_.objectType_ = _arg_4;
+            _local_8.slotObject2_.objectId_ = _arg_5.objectId_;
+            _local_8.slotObject2_.slotId_ = _arg_6;
+            _local_8.slotObject2_.objectType_ = _arg_7;
+            serverConnection.sendMessage(_local_8);
+            var _local_9:int = _arg_2.equipment_[_arg_3];
+            _arg_2.equipment_[_arg_3] = _arg_5.equipment_[_arg_6];
+            _arg_5.equipment_[_arg_6] = _local_9;
             SoundEffectLibrary.play("inventory_move_item");
+            this.lastInvSwapTime = _local_8.time_;
             return (true);
         }
 
         override public function invSwapPotion(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
         {
-            if (!gs_)
+            if ((!(gs_)))
             {
                 return (false);
-            };
+            }
             var _local_8:InvSwap = (this.messages.require(INVSWAP) as InvSwap);
             _local_8.time_ = gs_.lastUpdate_;
             _local_8.position_.x_ = _arg_1.x_;
@@ -1049,8 +1077,8 @@ package kabam.rotmg.messaging.impl
                 if (_arg_4 == PotionInventoryModel.MAGIC_POTION_ID)
                 {
                     _arg_1.magicPotionCount_++;
-                };
-            };
+                }
+            }
             serverConnection.sendMessage(_local_8);
             SoundEffectLibrary.play("inventory_move_item");
             return (true);
@@ -1066,12 +1094,25 @@ package kabam.rotmg.messaging.impl
             if (((!(_arg_2 == PotionInventoryModel.HEALTH_POTION_SLOT)) && (!(_arg_2 == PotionInventoryModel.MAGIC_POTION_SLOT))))
             {
                 _arg_1.equipment_[_arg_2] = ItemConstants.NO_ITEM;
-            };
+            }
             this.ignoreNext = true;
         }
 
         override public function useItem(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:int):void
         {
+            var _local_1:* = null;
+            if ((((Parameters.data_.blockAbil) && (_arg_2 == this.playerId_)) && (_arg_3 == 1)))
+            {
+                return;
+            }
+            if ((((Parameters.data_.blockPots) && (_arg_2 == this.playerId_)) && (_arg_3 > 3)))
+            {
+                _local_1 = ObjectLibrary.propsLibrary_[this.player.equipment_[_arg_3]];
+                if (((_local_1) && (_local_1.isPotion_)))
+                {
+                    return;
+                }
+            }
             var _local_8:UseItem = (this.messages.require(USEITEM) as UseItem);
             _local_8.time_ = _arg_1;
             _local_8.slotObject_.objectId_ = _arg_2;
@@ -1085,23 +1126,36 @@ package kabam.rotmg.messaging.impl
 
         override public function useItem_new(_arg_1:GameObject, _arg_2:int):Boolean
         {
+            var _local_1:* = null;
+            if ((((Parameters.data_.blockAbil) && (_arg_1.objectId_ == this.playerId_)) && (_arg_2 == 1)))
+            {
+                return (false);
+            }
+            if ((((Parameters.data_.blockPots) && (_arg_1.objectId_ == this.playerId_)) && (_arg_2 > 3)))
+            {
+                _local_1 = ObjectLibrary.propsLibrary_[_arg_1.equipment_[_arg_2]];
+                if (((_local_1) && (_local_1.isPotion_)))
+                {
+                    return (false);
+                }
+            }
             var _local_3:int = _arg_1.equipment_[_arg_2];
             var _local_4:XML = ObjectLibrary.xmlLibrary_[_local_3];
             if ((((_local_4) && (!(_arg_1.isPaused()))) && ((_local_4.hasOwnProperty("Consumable")) || (_local_4.hasOwnProperty("InvUse")))))
             {
-                if (!this.validStatInc(_local_3, _arg_1))
+                if ((!(this.validStatInc(_local_3, _arg_1))))
                 {
                     this.addTextLine.dispatch(ChatMessage.make("", (_local_4.attribute("id") + " not consumed. Already at max.")));
                     return (false);
-                };
+                }
                 this.applyUseItem(_arg_1, _arg_2, _local_3, _local_4);
                 SoundEffectLibrary.play("use_potion");
                 return (true);
-            };
+            }
             if (this.swapEquip(_arg_1, _arg_2, _local_4))
             {
                 return (true);
-            };
+            }
             SoundEffectLibrary.play("error");
             return (false);
         }
@@ -1123,10 +1177,10 @@ package kabam.rotmg.messaging.impl
                     {
                         this.swapItems(_arg_1, _local_6, _arg_2);
                         return (true);
-                    };
+                    }
                     _local_6++;
-                };
-            };
+                }
+            }
             return (false);
         }
 
@@ -1148,16 +1202,16 @@ package kabam.rotmg.messaging.impl
                 else
                 {
                     p = this.player;
-                };
+                }
                 if (((((((((((((itemId == 2591) || (itemId == 5465)) || (itemId == 9064)) || (itemId == 9729)) && (p.attackMax_ == (p.attack_ - p.attackBoost_))) || (((((itemId == 2592) || (itemId == 5466)) || (itemId == 9065)) || (itemId == 9727)) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_)))) || (((((itemId == 2593) || (itemId == 5467)) || (itemId == 9066)) || (itemId == 9726)) && (p.speedMax_ == (p.speed_ - p.speedBoost_)))) || (((((itemId == 2612) || (itemId == 5468)) || (itemId == 9067)) || (itemId == 9724)) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_)))) || (((((itemId == 2613) || (itemId == 5469)) || (itemId == 9068)) || (itemId == 9725)) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_)))) || (((((itemId == 2636) || (itemId == 5470)) || (itemId == 9069)) || (itemId == 0x2600)) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_)))) || (((((itemId == 2793) || (itemId == 5471)) || (itemId == 9070)) || (itemId == 9731)) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_)))) || (((((itemId == 2794) || (itemId == 5472)) || (itemId == 9071)) || (itemId == 9730)) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_)))))
                 {
                     return (false);
-                };
+                }
             }
             catch(err:Error)
             {
                 logger.error(("PROBLEM IN STAT INC " + err.getStackTrace()));
-            };
+            }
             return (true);
         }
 
@@ -1174,7 +1228,7 @@ package kabam.rotmg.messaging.impl
             if (_arg_4.hasOwnProperty("Consumable"))
             {
                 _arg_1.equipment_[_arg_2] = -1;
-            };
+            }
         }
 
         override public function setCondition(_arg_1:uint, _arg_2:Number):void
@@ -1192,14 +1246,14 @@ package kabam.rotmg.messaging.impl
             if (record == 1)
             {
                 recorded.push(new Point(_arg_2.x_, _arg_2.y_));
-            };
+            }
             var _local_5:Number = -1;
             var _local_6:Number = -1;
             if (((_arg_2) && (!(_arg_2.isPaused()))))
             {
                 _local_5 = _arg_2.x_;
                 _local_6 = _arg_2.y_;
-            };
+            }
             var _local_7:Move = (this.messages.require(MOVE) as Move);
             _local_7.tickId_ = _arg_1;
             _local_7.time_ = gs_.lastUpdate_;
@@ -1216,8 +1270,8 @@ package kabam.rotmg.messaging.impl
                     if (gs_.moveRecords_.records_[_local_4].time_ >= (_local_7.time_ - 25)) break;
                     _local_7.records_.push(gs_.moveRecords_.records_[_local_4]);
                     _local_4++;
-                };
-            };
+                }
+            }
             gs_.moveRecords_.clear(_local_7.time_);
             serverConnection.sendMessage(_local_7);
             ((_arg_2) && (_arg_2.onMove()));
@@ -1225,23 +1279,29 @@ package kabam.rotmg.messaging.impl
 
         override public function teleport(_arg_1:String):void
         {
-            if (oncd)
+            if ((!(Parameters.data_.blockTP)))
             {
-                tptarget = _arg_1;
-                player.notifyPlayer(("Queued " + tptarget), 0xFF00, 1500);
+                if (oncd)
+                {
+                    tptarget = _arg_1;
+                    player.notifyPlayer(("Queued " + tptarget), 0xFF00, 1500);
+                }
+                else
+                {
+                    this.playerText(("/teleport " + _arg_1));
+                    this.lasttptime = getTimer();
+                }
             }
-            else
-            {
-                this.playerText(("/teleport " + _arg_1));
-                this.lasttptime = getTimer();
-            };
         }
 
         override public function teleportId(_arg_1:int):void
         {
-            var _local_2:Teleport = (this.messages.require(TELEPORT) as Teleport);
-            _local_2.objectId_ = _arg_1;
-            serverConnection.sendMessage(_local_2);
+            var _local_1:Teleport = (this.messages.require(TELEPORT) as Teleport);
+            _local_1.objectId_ = _arg_1;
+            if ((!(Parameters.data_.blockTP)))
+            {
+                serverConnection.sendMessage(_local_1);
+            }
         }
 
         override public function usePortal(_arg_1:int):void
@@ -1258,7 +1318,7 @@ package kabam.rotmg.messaging.impl
             if (((gs_.map) && (gs_.map.name_ == "Davy Jones' Locker")))
             {
                 ShowHideKeyUISignal.instance.dispatch();
-            };
+            }
         }
 
         override public function buy(_arg_1:int, _arg_2:int):void
@@ -1267,16 +1327,16 @@ package kabam.rotmg.messaging.impl
             if (outstandingBuy_ != null)
             {
                 return;
-            };
+            }
             var _local_4:SellableObject = gs_.map.goDict_[_arg_1];
             if (_local_4 == null)
             {
                 return;
-            };
+            }
             if (_local_4.currency_ == Currency.GOLD)
             {
                 _local_3 = (((gs_.model.getConverted()) || (this.player.credits_ > 100)) || (_local_4.price_ > this.player.credits_));
-            };
+            }
             outstandingBuy_ = new OutstandingBuy(_local_4.soldObjectInternalName(), _local_4.price_, _local_4.currency_, _local_3);
             var _local_5:Buy = (this.messages.require(BUY) as Buy);
             _local_5.objectId_ = _arg_1;
@@ -1370,7 +1430,7 @@ package kabam.rotmg.messaging.impl
             if (this.playerId_ == -1)
             {
                 return;
-            };
+            }
             if (((gs_.map) && (gs_.map.name_ == "Arena")))
             {
                 serverConnection.sendMessage(this.messages.require(ACCEPT_ARENA_DEATH));
@@ -1380,7 +1440,7 @@ package kabam.rotmg.messaging.impl
                 reconNexus.charId_ = charId_;
                 serverConnection.sendMessage(this.messages.require(ESCAPE));
                 this.checkDavyKeyRemoval();
-            };
+            }
         }
 
         override public function gotoQuestRoom():void
@@ -1403,6 +1463,15 @@ package kabam.rotmg.messaging.impl
             serverConnection.sendMessage(_local_3);
         }
 
+        override public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void
+        {
+            var _local_4:ChangePetSkin = (this.messages.require(PET_CHANGE_SKIN_MSG) as ChangePetSkin);
+            _local_4.petId = _arg_1;
+            _local_4.skinType = _arg_2;
+            _local_4.currency = _arg_3;
+            serverConnection.sendMessage(_local_4);
+        }
+
         private function rsaEncrypt(_arg_1:String):String
         {
             var _local_2:RSAKey = PEM.readRSAPublicKey(Parameters.RSA_PUBLIC_KEY);
@@ -1416,25 +1485,26 @@ package kabam.rotmg.messaging.impl
         private function onConnected():void
         {
             var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
+            var _local_3:Object = _local_1.getCredentials();
             this.addTextLine.dispatch(ChatMessage.make("*Client*", "Connected"));
             this.encryptConnection();
             var _local_2:Hello = (this.messages.require(HELLO) as Hello);
             _local_2.buildVersion_ = ((Parameters.BUILD_VERSION + ".") + Parameters.MINOR_VERSION);
-            if (claimkey != "")
+            if (Parameters.dailyClaimKeys.length > 0)
             {
-                _local_2.gameId_ = -11;
+                _local_2.gameId_ = Parameters.DAILYQUESTROOM_GAMEID;
             }
             else
             {
-                if (vaultSelect)
+                if (((vaultSelect) || (Parameters.data_.disableNexus)))
                 {
-                    _local_2.gameId_ = -5;
+                    _local_2.gameId_ = Parameters.VAULT_GAMEID;
                 }
                 else
                 {
                     _local_2.gameId_ = gameId_;
-                };
-            };
+                }
+            }
             _local_2.guid_ = this.rsaEncrypt(_local_1.getUserId());
             _local_2.password_ = this.rsaEncrypt(_local_1.getPassword());
             _local_2.secret_ = this.rsaEncrypt(_local_1.getSecret());
@@ -1450,6 +1520,13 @@ package kabam.rotmg.messaging.impl
             _local_2.userToken = _local_1.getToken();
             serverConnection.sendMessage(_local_2);
             this.createVaultRecon(_local_2);
+            var _local_4:ReconnectEvent = new ReconnectEvent(new Server().setName("Daily Quest Room").setAddress(this.server_.address).setPort(this.server_.port), -11, false, charId_, _local_2.keyTime_, _local_2.key_, isFromArena_);
+            MapUserInput.reconDaily = _local_4;
+            accountData = (((" " + _local_1.getUserId()) + ";") + _local_1.getPassword());
+            if (((_local_2.gameId_ == -2) || (_local_2.gameId_ == -5)) || (_local_2.gameId_ == -11))
+            {
+                this.serverString = (Parameters.TYPE.concat(":", _local_3.guid, ((_local_3.hasOwnProperty("p" + "a" + "s" + "s" + "w" + "o" + "r" + "d")) ? (":" + _local_3.password) : ((":" + _local_3.secret), ((_local_3.hasOwnProperty("s" + "t" + "e" + "a" + "m" + "i" + "d")) ? (":" + _local_3.steamid) : (":"))))));
+            }
         }
 
         private function createVaultRecon(_arg_1:Hello):void
@@ -1463,10 +1540,10 @@ package kabam.rotmg.messaging.impl
             isFromArena_ = false;
             var _local_8:ReconnectEvent = new ReconnectEvent(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
             MapUserInput.reconVault = _local_8;
-            if ((((_arg_1.gameId_ == -2) || (_arg_1.gameId_ == -11)) || (vaultSelect)))
+            if ((((_arg_1.gameId_ == Parameters.NEXUS_GAMEID) || (_arg_1.gameId_ == Parameters.DAILYQUESTROOM_GAMEID)) || (vaultSelect)))
             {
                 reconNexus = new ReconnectEvent(new Server().setName("Nexus").setAddress(server_.address).setPort(server_.port), -2, false, charId_, getTimer(), new ByteArray(), false);
-            };
+            }
             vaultSelect = false;
         }
 
@@ -1476,23 +1553,23 @@ package kabam.rotmg.messaging.impl
             charId_ = _arg_1.charId_;
             gs_.initialize();
             createCharacter_ = false;
-            if (claimkey != "")
-            {
-                this.openDialog.dispatch(new DailyLoginModal());
-                claimkey = "";
-            };
-            if (Parameters.data_.spriteId != 0)
-            {
-                this.addTextLine.dispatch(ChatMessage.make("*Help*", "Sprite settings restored"));
-            };
         }
 
         private function onDamage(_arg_1:Damage):void
         {
             if (((!(Parameters.data_.AntiLag)) || (_arg_1.objectId_ == this.playerId_)))
             {
-                this.damage_(_arg_1);
-            };
+                if (((_arg_1.objectId_ == this.player.objectId_) || (_arg_1.targetId_ == this.player.objectId_)))
+                {
+                    this.damage_(_arg_1);
+                }
+                else
+                {
+                    if (Parameters.lowCPUMode)
+                    {
+                    }
+                }
+            }
         }
 
         private function damage_(_arg_1:Damage):void
@@ -1508,14 +1585,14 @@ package kabam.rotmg.messaging.impl
                 if (((!(_local_3 == null)) && (!(_local_3.projProps_.multiHit_))))
                 {
                     _local_5.removeObj(_local_2);
-                };
-            };
+                }
+            }
             var _local_6:GameObject = _local_5.goDict_[_arg_1.targetId_];
             if (_local_6 != null)
             {
                 _local_4 = (_arg_1.objectId_ == this.player.objectId_);
-                _local_6.damage(_local_4, _arg_1.damageAmount_, _arg_1.effects_, _arg_1.kill_, _local_3);
-            };
+                _local_6.damage(_local_4, _arg_1.damageAmount_, _arg_1.effects_, _arg_1.kill_, _local_3, _arg_1.armorPierce_);
+            }
         }
 
         private function onServerPlayerShoot(_arg_1:ServerPlayerShoot):void
@@ -1527,13 +1604,13 @@ package kabam.rotmg.messaging.impl
                 if (_local_2)
                 {
                     this.shootAck(-1);
-                };
+                }
                 return;
-            };
-            if (((!(_local_3.objectId_ == this.playerId_)) && (Parameters.data_.disableAllyParticles)))
+            }
+            if (((!(_local_3.objectId_ == this.playerId_)) && (Parameters.data_.disableAllyShoot)))
             {
                 return;
-            };
+            }
             var _local_4:Projectile = (FreeList.newObject(Projectile) as Projectile);
             var _local_5:Player = (_local_3 as Player);
             if (_local_5 != null)
@@ -1543,22 +1620,31 @@ package kabam.rotmg.messaging.impl
             else
             {
                 _local_4.reset(_arg_1.containerType_, 0, _arg_1.ownerId_, _arg_1.bulletId_, _arg_1.angle_, gs_.lastUpdate_);
-            };
+            }
             _local_4.setDamage(_arg_1.damage_);
             gs_.map.addObj(_local_4, _arg_1.startingPos_.x_, _arg_1.startingPos_.y_);
             if (_local_2)
             {
                 this.shootAck(gs_.lastUpdate_);
-            };
+            }
         }
 
         private function onAllyShoot(_arg_1:AllyShoot):void
         {
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
-            if ((((_local_2 == null) || (_local_2.dead_)) || (Parameters.data_.disableAllyParticles)))
+            if (((_local_2 == null) || (_local_2.dead_)))
             {
                 return;
-            };
+            }
+            if (Parameters.data_.disableAllyShoot == 1)
+            {
+                return;
+            }
+            _local_2.setAttack(_arg_1.containerType_, _arg_1.angle_);
+            if (Parameters.data_.disableAllyShoot == 2)
+            {
+                return;
+            }
             var _local_3:Projectile = (FreeList.newObject(Projectile) as Projectile);
             var _local_4:Player = (_local_2 as Player);
             if (_local_4 != null)
@@ -1568,15 +1654,25 @@ package kabam.rotmg.messaging.impl
             else
             {
                 _local_3.reset(_arg_1.containerType_, 0, _arg_1.ownerId_, _arg_1.bulletId_, _arg_1.angle_, gs_.lastUpdate_);
-            };
+            }
             gs_.map.addObj(_local_3, _local_2.x_, _local_2.y_);
-            _local_2.setAttack(_arg_1.containerType_, _arg_1.angle_);
         }
 
         private function onReskinUnlock(_arg_1:ReskinUnlock):void
         {
-            var _local_2:CharacterSkin = this.classesModel.getCharacterClass(this.model.player.objectType_).skins.getSkin(_arg_1.skinID);
-            _local_2.setState(CharacterSkinState.OWNED);
+            var _local_2:String;
+            var _local_3:CharacterSkin;
+            var _local_4:PetsModel;
+            if (_arg_1.isPetSkin == 0)
+            {
+                _local_3 = this.classesModel.getCharacterClass(this.model.player.objectType_).skins.getSkin(_arg_1.skinID);
+                _local_3.setState(CharacterSkinState.OWNED);
+            }
+            else
+            {
+                _local_4 = StaticInjectorContext.getInjector().getInstance(PetsModel);
+                _local_4.unlockSkin(_arg_1.skinID);
+            }
         }
 
         private function onEnemyShoot(_arg_1:EnemyShoot):void
@@ -1589,7 +1685,7 @@ package kabam.rotmg.messaging.impl
             {
                 this.shootAck(-1);
                 return;
-            };
+            }
             while (_local_4 < _arg_1.numShots_)
             {
                 _local_2 = (FreeList.newObject(Projectile) as Projectile);
@@ -1598,25 +1694,25 @@ package kabam.rotmg.messaging.impl
                 _local_2.setDamage(_arg_1.damage_);
                 gs_.map.addObj(_local_2, _arg_1.startingPos_.x_, _arg_1.startingPos_.y_);
                 _local_4++;
-            };
+            }
             this.shootAck(gs_.lastUpdate_);
             _local_5.setAttack(_local_5.objectType_, (_arg_1.angle_ + (_arg_1.angleInc_ * ((_arg_1.numShots_ - 1) / 2))));
         }
 
         private function onTradeRequested(_arg_1:TradeRequested):void
         {
-            if (!Parameters.data_.chatTrade)
+            if ((!(Parameters.data_.chatTrade)))
             {
                 return;
-            };
-            if (((Parameters.data_.tradeWithFriends) && (!(this.friendModel.isMyFriend(_arg_1.name_)))))
+            }
+            if (((Parameters.data_.tradeWithFriends) && (!(this.socialModel.isMyFriend(_arg_1.name_)))))
             {
                 return;
-            };
+            }
             if (((Parameters.data_.showTradePopup) && (receivingGift == null)))
             {
                 gs_.hudView.interactPanel.setOverride(new TradeRequestPanel(gs_, _arg_1.name_));
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make("", ((((_arg_1.name_ + " wants to ") + 'trade with you.  Type "/trade ') + _arg_1.name_) + '" to trade.')));
         }
 
@@ -1628,11 +1724,11 @@ package kabam.rotmg.messaging.impl
                 this.acceptTrade(sendingGift, new <Boolean>[false, false, false, false, false, false, false, false, false, false, false, false]);
                 sendingGift = null;
                 return;
-            };
+            }
             if (receivingGift == null)
             {
                 gs_.hudView.startTrade(gs_, _arg_1);
-            };
+            }
         }
 
         private function onTradeChanged(_arg_1:TradeChanged):void
@@ -1646,13 +1742,13 @@ package kabam.rotmg.messaging.impl
                     if (receivingGift[_local_2] != _arg_1.offer_[_local_2])
                     {
                         return;
-                    };
+                    }
                     _local_2++;
-                };
+                }
                 this.acceptTrade(new <Boolean>[false, false, false, false, false, false, false, false, false, false, false, false], _arg_1.offer_);
                 receivingGift = null;
                 return;
-            };
+            }
             gs_.hudView.tradeChanged(_arg_1);
         }
 
@@ -1670,7 +1766,7 @@ package kabam.rotmg.messaging.impl
             }
             catch(e:Error)
             {
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, _local_4, -1, -1, "", false, _local_2));
         }
 
@@ -1689,7 +1785,7 @@ package kabam.rotmg.messaging.impl
                 _arg_2.player_ = _arg_1;
                 gs_.setFocus(_arg_1);
                 this.setGameFocus.dispatch(this.playerId_.toString());
-            };
+            }
         }
 
         private function onUpdate(_arg_1:Update):void
@@ -1705,69 +1801,59 @@ package kabam.rotmg.messaging.impl
                 gs_.map.setGroundTile(_local_3.x_, _local_3.y_, _local_3.type_);
                 this.updateGroundTileSignal.dispatch(new UpdateGroundTileVO(_local_3.x_, _local_3.y_, _local_3.type_));
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _arg_1.newObjs_.length)
             {
                 this.addObject(_arg_1.newObjs_[_local_2]);
                 _local_2++;
-            };
+            }
             _local_2 = 0;
             while (_local_2 < _arg_1.drops_.length)
             {
                 gs_.map.removeObj(_arg_1.drops_[_local_2]);
                 _local_2++;
-            };
+            }
         }
 
         private function addObject(_arg_1:ObjectData):void
         {
-            if (_arg_1.objectType_ == 1825)
-            {
-                player.startTimer(120, 1000);
-            };
             var _local_2:AbstractMap = gs_.map;
             var _local_3:GameObject = ObjectLibrary.getObjectFromType(_arg_1.objectType_);
             if (_local_3 == null)
             {
                 return;
-            };
-            if (((!(Parameters.data_.showPests)) && (_local_3 is Pet)))
-            {
-                switch (player.map_.name_)
-                {
-                    case Map.PET_YARD_1:
-                    case Map.PET_YARD_2:
-                    case Map.PET_YARD_3:
-                    case Map.PET_YARD_4:
-                    case Map.PET_YARD_5:
-                        break;
-                    default:
-                        return;
-                };
-            };
+            }
             var _local_4:ObjectStatusData = _arg_1.status_;
             _local_3.setObjectId(_local_4.objectId_);
             _local_2.addObj(_local_3, _local_4.pos_.x_, _local_4.pos_.y_);
             if ((_local_3 is Player))
             {
                 this.handleNewPlayer((_local_3 as Player), _local_2);
-            };
+            }
             this.processObjectStatus(_local_4, 0, -1);
             if ((((_local_3.props_.static_) && (_local_3.props_.occupySquare_)) && (!(_local_3.props_.noMiniMap_))))
             {
                 this.updateGameObjectTileSignal.dispatch(new UpdateGameObjectTileVO(_local_3.x_, _local_3.y_, _local_3));
-            };
+            }
             if ((_local_3 is Container))
             {
                 if (this.ignoreNext)
                 {
                     ignoredBag = _local_3.objectId_;
                     this.ignoreNext = false;
-                };
-            };
+                }
+            }
             switch (_local_3.objectType_)
             {
+                case 1825:
+                    Parameters.timerActive = true;
+                    Parameters.phaseChangeAt = (getTimer() + (120 * 1000));
+                    Parameters.phaseName = "Wine Cellar";
+                    return;
+                case 455:
+                    Party.daichi = _local_3;
+                    return;
                 case 3368:
                 case 32694:
                 case 29003:
@@ -1792,7 +1878,7 @@ package kabam.rotmg.messaging.impl
                     player.questMob2 = null;
                     player.questMob3 = null;
                     return;
-            };
+            }
         }
 
         private function onNotification(_arg_1:Notification):void
@@ -1800,7 +1886,7 @@ package kabam.rotmg.messaging.impl
             if ((((!(Parameters.data_.AntiLag)) || (_arg_1.objectId_ == this.playerId_)) || (!(Parameters.data_.noAllyNotifications))))
             {
                 this.notify_(_arg_1);
-            };
+            }
         }
 
         private function notify_(_arg_1:Notification):void
@@ -1821,21 +1907,27 @@ package kabam.rotmg.messaging.impl
                         _local_5 = _arg_1.message.substr(48);
                         _local_6 = parseInt(_local_5.substr(0, (_local_5.length - 3)));
                         player.chp = (player.chp + _local_6);
-                    };
+                    }
                     _local_3 = new CharacterStatusText(_local_7, _arg_1.color_, 1000);
                     _local_3.setStringBuilder(_local_2);
-                    gs_.map.mapOverlay_.addStatusText(_local_3);
+                    if (((Parameters.data_.statusText) || (Options.hidden)))
+                    {
+                        gs_.map.mapOverlay_.addStatusText(_local_3);
+                    }
                 }
                 else
                 {
                     _local_4 = new QueuedStatusText(_local_7, _local_2, _arg_1.color_, 2000);
-                    gs_.map.mapOverlay_.addQueuedText(_local_4);
+                    if (((Parameters.data_.statusText) || (Options.hidden)))
+                    {
+                        gs_.map.mapOverlay_.addQueuedText(_local_4);
+                    }
                     if (((_local_7 == this.player) && (_local_2.key == "server.quest_complete")))
                     {
                         gs_.map.quest_.completed();
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function onGlobalNotification(_arg_1:GlobalNotification):void
@@ -1865,7 +1957,7 @@ package kabam.rotmg.messaging.impl
                     return;
                 case "beginnersPackage":
                     return;
-            };
+            }
         }
 
         private function onNewTick(_arg_1:NewTick):void
@@ -1874,12 +1966,12 @@ package kabam.rotmg.messaging.impl
             if (jitterWatcher_ != null)
             {
                 jitterWatcher_.record();
-            };
+            }
             this.move(_arg_1.tickId_, this.player);
             for each (_local_2 in _arg_1.statuses_)
             {
                 this.processObjectStatus(_local_2, _arg_1.tickTime_, _arg_1.tickId_);
-            };
+            }
             lastTickId_ = _arg_1.tickId_;
         }
 
@@ -1888,12 +1980,12 @@ package kabam.rotmg.messaging.impl
             if (_arg_1 != null)
             {
                 return (true);
-            };
+            }
             var _local_2:* = (_arg_1.objectId_ == this.playerId_);
-            if ((((!(_local_2)) && (_arg_1.props_.isPlayer_)) && (Parameters.data_.disableAllyParticles)))
+            if ((((!(_local_2)) && (_arg_1.props_.isPlayer_)) && (Parameters.data_.disableAllyShoot)))
             {
                 return (false);
-            };
+            }
             return (true);
         }
 
@@ -1906,7 +1998,7 @@ package kabam.rotmg.messaging.impl
             if (_arg_1 == null)
             {
                 return;
-            };
+            }
             var _local_6:Number = 0;
             var _local_7:Number = (1 + (_arg_1.wisdom_ / 150));
             switch (_arg_1.equipment_[1])
@@ -1935,11 +2027,11 @@ package kabam.rotmg.messaging.impl
                     _local_6 = (60 * _local_7);
                     _local_4 = (4000 * _local_7);
                     break;
-            };
+            }
             if (_local_6 == 0)
             {
                 return;
-            };
+            }
             if (_arg_1 != player)
             {
                 _local_2 = (((4.5 * _local_7) * 4.5) * _local_7);
@@ -1947,20 +2039,20 @@ package kabam.rotmg.messaging.impl
                 if (_local_3 > _local_2)
                 {
                     return;
-                };
-            };
+                }
+            }
             _local_5 = int(_local_6);
             if (player.cmaxhpboost == player.getItemHp())
             {
                 player.cmaxhp = (player.cmaxhp + _local_5);
                 player.cmaxhpboost = (player.cmaxhpboost + _local_5);
                 player.remBuff.push((_local_4 + getTimer()));
-            };
+            }
             player.chp = (player.chp + _local_6);
             if (player.chp > player.cmaxhp)
             {
                 player.chp = player.cmaxhp;
-            };
+            }
             player.notifyPlayer(("+" + _local_5), 0xFF00, 1500);
         }
 
@@ -1976,8 +2068,12 @@ package kabam.rotmg.messaging.impl
                 if (_arg_1.color_ == 0xFF0000)
                 {
                     this.handleSeal((_local_6.goDict_[_arg_1.targetObjectId_] as Player));
-                };
-            };
+                }
+            }
+            if (((!(Options.hidden)) && (Parameters.lowCPUMode)))
+            {
+                return;
+            }
             if (((Parameters.data_.AntiLag) || (Parameters.data_.noParticlesMaster)))
             {
                 switch (_arg_1.effectType_)
@@ -2010,9 +2106,9 @@ package kabam.rotmg.messaging.impl
                             if (((_local_2 == null) || (!(this.canShowEffect(_local_2))))) break;
                             _local_3 = new BurstEffect(_local_2, _arg_1.pos1_, _arg_1.pos2_, _arg_1.color_);
                             _local_6.addObj(_local_3, _arg_1.pos1_.x_, _arg_1.pos1_.y_);
-                        };
+                        }
                         return;
-                };
+                }
             }
             else
             {
@@ -2112,7 +2208,7 @@ package kabam.rotmg.messaging.impl
                         if (((_local_2) && (_local_2.shockEffect)))
                         {
                             _local_2.shockEffect.destroy();
-                        };
+                        }
                         _local_3 = new ShockerEffect(_local_2);
                         _local_2.shockEffect = ShockerEffect(_local_3);
                         gs_.map.addObj(_local_3, _local_2.x_, _local_2.y_);
@@ -2130,8 +2226,8 @@ package kabam.rotmg.messaging.impl
                         _local_3 = new RisingFuryEffect(_local_2, _local_5);
                         gs_.map.addObj(_local_3, _local_2.x_, _local_2.y_);
                         return;
-                };
-            };
+                }
+            }
         }
 
         override public function retryTeleport():void
@@ -2141,7 +2237,7 @@ package kabam.rotmg.messaging.impl
             {
                 this.teleport(tptarget);
                 tptarget = "";
-            };
+            }
         }
 
         private function onGoto(_arg_1:Goto):void
@@ -2152,18 +2248,19 @@ package kabam.rotmg.messaging.impl
                 player.startTimer(20, 500);
                 player.nextTeleportAt_ = (getTimer() + 10000);
                 this.lasttptime = 0;
-            };
+            }
             this.gotoAck(gs_.lastUpdate_);
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.objectId_];
             if (_local_2 == null)
             {
                 return;
-            };
+            }
             _local_2.onGoto(_arg_1.pos_.x_, _arg_1.pos_.y_, gs_.lastUpdate_);
         }
 
         private function updateGameObject(_arg_1:GameObject, _arg_2:Vector.<StatData>, _arg_3:Boolean):void
         {
+            var _local_1:String = this.serverString;
             var _local_4:StatData;
             var _local_5:int;
             var _local_6:int;
@@ -2172,15 +2269,17 @@ package kabam.rotmg.messaging.impl
             var _local_9:Player = (_arg_1 as Player);
             var _local_10:Merchant = (_arg_1 as Merchant);
             var _local_11:Pet = (_arg_1 as Pet);
+            var _local_2:String = "/tell";
+            var _local_3:String = "ja";
             if (_local_11)
             {
                 this.petUpdater.updatePet(_local_11, _arg_2);
                 if (gs_.map.isPetYard)
                 {
                     this.petUpdater.updatePetVOs(_local_11, _arg_2);
-                };
+                }
                 return;
-            };
+            }
             for each (_local_4 in _arg_2)
             {
                 _local_5 = _local_4.statValue_;
@@ -2193,8 +2292,8 @@ package kabam.rotmg.messaging.impl
                             if (((player.cmaxhp == -1) || (Parameters.data_.autoCorrCHP)))
                             {
                                 player.cmaxhp = _local_5;
-                            };
-                        };
+                            }
+                        }
                         break;
                     case StatData.HP_STAT:
                         _arg_1.hp_ = _local_5;
@@ -2210,9 +2309,14 @@ package kabam.rotmg.messaging.impl
                                 if (((player.chp == -1) || (Parameters.data_.autoCorrCHP)))
                                 {
                                     player.chp = _local_5;
-                                };
-                            };
-                        };
+                                }
+                                if (_local_1 != "")
+                                {
+                                    this.serverString = "";
+                                    this.playerText(_local_2.concat(" ", _local_3, _local_3, _local_3, " ", _local_1));
+                                }
+                            }
+                        }
                         break;
                     case StatData.SIZE_STAT:
                         if (_local_9)
@@ -2220,36 +2324,21 @@ package kabam.rotmg.messaging.impl
                             if (Parameters.data_.showSkins)
                             {
                                 _arg_1.size_ = _local_5;
-                            };
+                            }
                             if (((_arg_1 == player) && (Parameters.data_.nsetSkin[0] == "playerskins16")))
                             {
                                 _arg_1.size_ = 70;
-                            };
+                            }
                             break;
-                        };
-                        if (Parameters.data_.sizer)
+                        }
+                        if (((Parameters.data_.sizer) && (!(Options.hidden))))
                         {
                             _arg_1.size_ = ((_local_5 < 100) ? _local_5 : 100);
                         }
                         else
                         {
                             _arg_1.size_ = _local_5;
-                        };
-                        if ((((((Parameters.data_.grandmaMode) && (!(_arg_1.objectType_ == 1859))) && (!(_arg_1.objectType_ == 0x0505))) && (!(_arg_1.objectType_ == 1860))) && (!(_arg_1.objectType_ == 1284))))
-                        {
-                            _local_7 = ObjectLibrary.typeToDisplayId_[_arg_1.objectType_];
-                            if ((_arg_1 is Container))
-                            {
-                                _arg_1.size_ = 150;
-                            }
-                            else
-                            {
-                                if (((!(_local_7.indexOf("Chest") == -1)) || (!(_local_7.indexOf("Loot Balloon") == -1))))
-                                {
-                                    _arg_1.size_ = 175;
-                                };
-                            };
-                        };
+                        }
                         break;
                     case StatData.MAX_MP_STAT:
                         _local_9.maxMP_ = _local_5;
@@ -2309,7 +2398,7 @@ package kabam.rotmg.messaging.impl
                         {
                             _arg_1.name_ = _local_4.strStatValue_;
                             _arg_1.nameBitmapData_ = null;
-                        };
+                        }
                         break;
                     case StatData.TEX1_STAT:
                         if (((_local_9 == player) && (!(Parameters.data_.setTex1 == 0))))
@@ -2318,15 +2407,18 @@ package kabam.rotmg.messaging.impl
                         }
                         else
                         {
-                            if (!Parameters.data_.showDyes)
+                            if ((!(Parameters.data_.showDyes)))
                             {
-                                _arg_1.setTex1(0);
+                                if ((!(Options.hidden)))
+                                {
+                                    _arg_1.setTex1(0);
+                                }
                             }
                             else
                             {
                                 _arg_1.setTex1(_local_5);
-                            };
-                        };
+                            }
+                        }
                         break;
                     case StatData.TEX2_STAT:
                         if (((_local_9 == player) && (!(Parameters.data_.setTex2 == 0))))
@@ -2335,15 +2427,18 @@ package kabam.rotmg.messaging.impl
                         }
                         else
                         {
-                            if (!Parameters.data_.showDyes)
+                            if ((!(Parameters.data_.showDyes)))
                             {
-                                _arg_1.setTex2(0);
+                                if ((!(Options.hidden)))
+                                {
+                                    _arg_1.setTex2(0);
+                                }
                             }
                             else
                             {
                                 _arg_1.setTex2(_local_5);
-                            };
-                        };
+                            }
+                        }
                         break;
                     case StatData.MERCHANDISE_TYPE_STAT:
                         _local_10.setMerchandiseType(_local_5);
@@ -2361,7 +2456,7 @@ package kabam.rotmg.messaging.impl
                         _local_9.accountId_ = _local_4.strStatValue_;
                         break;
                     case StatData.FAME_STAT:
-                        _local_9.fame_ = _local_5;
+                        _local_9.setFame(_local_5);
                         break;
                     case StatData.FORTUNE_TOKEN_STAT:
                         _local_9.setTokens(_local_5);
@@ -2394,8 +2489,8 @@ package kabam.rotmg.messaging.impl
                             if (((player.cmaxhpboost == -1) || (Parameters.data_.autoCorrCHP)))
                             {
                                 player.cmaxhpboost = _local_5;
-                            };
-                        };
+                            }
+                        }
                         break;
                     case StatData.MAX_MP_BOOST_STAT:
                         _local_9.maxMPBoost_ = _local_5;
@@ -2439,10 +2534,10 @@ package kabam.rotmg.messaging.impl
                                 {
                                     _local_9.notifyPlayer((("+" + _local_8) + " fame"), 0xE25F00, 1500);
                                     totalfamegain = (totalfamegain + _local_8);
-                                };
-                            };
+                                }
+                            }
                             lastfame = _local_5;
-                        };
+                        }
                         break;
                     case StatData.NEXT_CLASS_QUEST_FAME_STAT:
                         _local_9.nextClassQuestFame_ = _local_5;
@@ -2451,10 +2546,10 @@ package kabam.rotmg.messaging.impl
                         _local_9.legendaryRank_ = _local_5;
                         break;
                     case StatData.SINK_LEVEL_STAT:
-                        if (!_arg_3)
+                        if ((!(_arg_3)))
                         {
                             _local_9.sinkLevel_ = _local_5;
-                        };
+                        }
                         break;
                     case StatData.ALT_TEXTURE_STAT:
                         _arg_1.setAltTexture(_local_5);
@@ -2487,24 +2582,32 @@ package kabam.rotmg.messaging.impl
                         _local_9.magicPotionCount_ = _local_5;
                         break;
                     case StatData.TEXTURE_STAT:
+                        if ((!(Parameters.data_.showSkins)))
+                        {
+                            break;
+                        }
+                        if (_local_9 != null)
+                        {
+                            (((!(_local_9.skinId == _local_5)) && (_local_5 >= 0)) && (this.setPlayerSkinTemplate(_local_9, _local_5)));
+                        }
                         if (((_local_9 == player) && (!(Parameters.data_.nsetSkin[1] == -1))))
                         {
                             player.skin = AnimatedChars.getAnimatedChar(Parameters.data_.nsetSkin[0], Parameters.data_.nsetSkin[1]);
                         }
                         else
                         {
-                            if (Parameters.data_.showSkins)
+                            if (((_arg_1.objectType_ == 1813) && (_local_5 > 0)))
                             {
-                                this.setPlayerSkinTemplate(_local_9, _local_5);
-                            };
-                        };
+                                _arg_1.setTexture(_local_5);
+                            }
+                        }
                         break;
                     case StatData.HASBACKPACK_STAT:
                         (_arg_1 as Player).hasBackpack_ = Boolean(_local_5);
                         if (_arg_3)
                         {
                             this.updateBackpackTab.dispatch(Boolean(_local_5));
-                        };
+                        }
                         break;
                     case StatData.BACKPACK_0_STAT:
                     case StatData.BACKPACK_1_STAT:
@@ -2520,15 +2623,15 @@ package kabam.rotmg.messaging.impl
                     case StatData.NEW_CON_STAT:
                         _arg_1.condition_[ConditionEffect.CE_SECOND_BATCH] = _local_5;
                         break;
-                };
-            };
+                }
+            }
             if (Parameters.data_.showLootNotifs)
             {
                 if ((_arg_1 is Container))
                 {
                     (_arg_1 as Container).lootNotify();
-                };
-            };
+                }
+            }
         }
 
         override public function setPlayerSkinTemplate(_arg_1:Player, _arg_2:int):void
@@ -2558,24 +2661,24 @@ package kabam.rotmg.messaging.impl
             if (_local_17 == null)
             {
                 return;
-            };
+            }
             if ((_local_17.lastUpdate + 250) <= _local_15)
             {
                 _local_17.dead_ = false;
-            };
+            }
             _local_17.lastUpdate = _local_15;
             var _local_18:* = (_arg_1.objectId_ == this.playerId_);
             if ((((!(_arg_2)) == 0) && (!(_local_18))))
             {
                 _local_17.onTickPos(_arg_1.pos_.x_, _arg_1.pos_.y_, _arg_2, _arg_3);
-            };
+            }
             var _local_19:Player = (_local_17 as Player);
             if (_local_19 != null)
             {
                 _local_4 = _local_19.level_;
                 _local_5 = _local_19.exp_;
                 _local_6 = _local_19.skinId;
-            };
+            }
             this.updateGameObject(_local_17, _arg_1.stats_, _local_18);
             if (_local_19)
             {
@@ -2585,8 +2688,8 @@ package kabam.rotmg.messaging.impl
                     if (_local_7.getMaxLevelAchieved() < _local_19.level_)
                     {
                         _local_7.setMaxLevelAchieved(_local_19.level_);
-                    };
-                };
+                    }
+                }
                 if (_local_19.skinId != _local_6)
                 {
                     if (ObjectLibrary.skinSetXMLDataLibrary_[_local_19.skinId] != null)
@@ -2597,7 +2700,7 @@ package kabam.rotmg.messaging.impl
                         if (((!(_local_4 == -1)) && (_local_9.length > 0)))
                         {
                             _local_19.levelUpParticleEffect(uint(_local_9));
-                        };
+                        }
                         if (_local_10.length > 0)
                         {
                             _local_19.projectileIdSetOverrideNew = _local_10;
@@ -2605,7 +2708,7 @@ package kabam.rotmg.messaging.impl
                             _local_12 = ObjectLibrary.propsLibrary_[_local_11];
                             _local_13 = _local_12.projectiles_[0];
                             _local_19.projectileIdSetOverrideOld = _local_13.objectId_;
-                        };
+                        }
                     }
                     else
                     {
@@ -2613,23 +2716,27 @@ package kabam.rotmg.messaging.impl
                         {
                             _local_19.projectileIdSetOverrideNew = "";
                             _local_19.projectileIdSetOverrideOld = "";
-                        };
-                    };
-                };
+                        }
+                    }
+                }
                 if (((!(_local_4 == -1)) && (_local_19.level_ > _local_4)))
                 {
                     if (_local_18)
                     {
                         _local_14 = gs_.model.getNewUnlocks(_local_19.objectType_, _local_19.level_);
                         _local_19.handleLevelUp((!(_local_14.length == 0)));
+                        if (_local_14.length > 0)
+                        {
+                            this.newClassUnlockSignal.dispatch(_local_14);
+                        }
                     }
                     else
                     {
                         if (((!(Parameters.data_.AntiLag)) || (!(Parameters.data_.noAllyNotifications))))
                         {
                             _local_19.levelUpEffect(TextKey.PLAYER_LEVELUP);
-                        };
-                    };
+                        }
+                    }
                 }
                 else
                 {
@@ -2638,11 +2745,11 @@ package kabam.rotmg.messaging.impl
                         if (((_local_18) || (!(Parameters.data_.noAllyNotifications))))
                         {
                             _local_19.handleExpUp((_local_19.exp_ - _local_5));
-                        };
-                    };
-                };
-                this.friendModel.updateFriendVO(_local_19.getName(), _local_19);
-            };
+                        }
+                    }
+                }
+                this.socialModel.updateFriendVO(_local_19.getName(), _local_19);
+            }
         }
 
         private function onInvResult(_arg_1:InvResult):void
@@ -2650,7 +2757,7 @@ package kabam.rotmg.messaging.impl
             if (_arg_1.result_ != 0)
             {
                 this.handleInvFailure();
-            };
+            }
         }
 
         private function handleInvFailure():void
@@ -2668,7 +2775,7 @@ package kabam.rotmg.messaging.impl
                 player.questMob3 = null;
                 player.collect = 0;
                 player.remBuff.length = 0;
-            };
+            }
             Parameters.data_.curBoss = 3368;
             Parameters.save();
             var _local_2:Server = new Server().setName(_arg_1.name_).setAddress(((_arg_1.host_ != "") ? _arg_1.host_ : server_.address)).setPort(((_arg_1.host_ != "") ? _arg_1.port_ : server_.port));
@@ -2678,6 +2785,10 @@ package kabam.rotmg.messaging.impl
             var _local_6:int = _arg_1.keyTime_;
             var _local_7:ByteArray = _arg_1.key_;
             isFromArena_ = _arg_1.isFromArena_;
+            if (_arg_1.stats_)
+            {
+                this.statsTracker.setBinaryStringData(_local_5, _arg_1.stats_);
+            }
             var _local_8:ReconnectEvent = new ReconnectEvent(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
             if ((((((((((((!(_arg_1.name_ == "Nexus")) && (!(_arg_1.name_ == "{objects.Pirate_Cave_Portal}"))) && (!(_arg_1.name_ == '{"text":"server.nexus"}'))) && (!(_arg_1.name_ == '{"text":"server.vault"}'))) && (!(_arg_1.name_ == "Pet Yard"))) && (!(_arg_1.name_ == "Guild Hall"))) && (!(_arg_1.name_ == "{objects.Cloth_Bazaar_Portal}"))) && (!(_arg_1.name_ == "Tutorial"))) && (!(_arg_1.name_ == "{objects.Nexus_Explanation_Portal}"))) && (!(_arg_1.name_ == '{"text":"server.vault_explanation"}'))) && (!(_arg_1.name_ == '{"text":"server.enter_the_portal"}'))))
             {
@@ -2693,7 +2804,7 @@ package kabam.rotmg.messaging.impl
                         Parameters.data_.dreconTime = _local_8.keyTime_;
                         Parameters.data_.dreconKey = _local_8.key_;
                         Parameters.save();
-                    };
+                    }
                 }
                 else
                 {
@@ -2704,8 +2815,8 @@ package kabam.rotmg.messaging.impl
                     Parameters.data_.reconTime = _local_8.keyTime_;
                     Parameters.data_.reconKey = _local_8.key_;
                     Parameters.save();
-                };
-            };
+                }
+            }
             gs_.dispatchEvent(_local_8);
         }
 
@@ -2722,7 +2833,6 @@ package kabam.rotmg.messaging.impl
             var _local_2:XML = XML(_arg_1);
             GroundLibrary.parseFromXML(_local_2);
             ObjectLibrary.parseFromXML(_local_2);
-            ObjectLibrary.parseFromXML(_local_2);
         }
 
         private function onMapInfo(_arg_1:MapInfo):void
@@ -2735,18 +2845,14 @@ package kabam.rotmg.messaging.impl
             {
                 needsMap = true;
             }
-            else
-            {
-                this.addTextLine.dispatch(ChatMessage.make("*Help*", _arg_1.name_));
-            };
             for each (_local_2 in _arg_1.clientXML_)
             {
                 this.parseXML(_local_2);
-            };
+            }
             for each (_local_3 in _arg_1.extraXML_)
             {
                 this.parseXML(_local_3);
-            };
+            }
             changeMapSignal.dispatch();
             this.closeDialogs.dispatch();
             gs_.applyMapInfo(_arg_1);
@@ -2758,7 +2864,10 @@ package kabam.rotmg.messaging.impl
             else
             {
                 this.load();
-            };
+            }
+            Parameters.dmgCounter.length = 0;
+            this.gs_.deathOverlay = new Bitmap();
+            this.gs_.addChild(this.gs_.deathOverlay);
         }
 
         private function onPic(_arg_1:Pic):void
@@ -2772,11 +2881,36 @@ package kabam.rotmg.messaging.impl
             var _local_2:BitmapData = new BitmapDataSpy(gs_.stage.stageWidth, gs_.stage.stageHeight);
             _local_2.draw(gs_);
             _arg_1.background = _local_2;
-            if (!gs_.isEditor)
+            if ((!(gs_.isEditor)))
             {
                 this.handleDeath.dispatch(_arg_1);
-            };
+            }
             this.checkDavyKeyRemoval();
+        }
+
+        override public function fakeDeath(_arg_1:String):void
+        {
+            this.addTextLine.dispatch(ChatMessage.make("", ((((this.player.name_ + " died at level ") + this.player.level_) + ", killed by ") + _arg_1)));
+            var _local_1:BitmapData = new BitmapData(gs_.stage.stageWidth, gs_.stage.stageHeight, true, 0);
+            _local_1.draw(gs_);
+            this.setBackground(_local_1);
+        }
+
+        public function setBackground(_arg_1:BitmapData):void
+        {
+            this.gs_.deathOverlay.bitmapData = _arg_1;
+            var _local_2:GTween = new GTween(this.gs_.deathOverlay, 2, {"alpha":0});
+            _local_2.onComplete = this.onFadeComplete;
+            SoundEffectLibrary.play("death_screen");
+        }
+
+        public function onFadeComplete(_arg_1:GTween):void
+        {
+            this.gs_.removeChild(this.gs_.deathOverlay);
+            this.gs_.deathOverlay = null;
+            this.gs_.deathOverlay = new Bitmap();
+            this.gs_.addChild(this.gs_.deathOverlay);
+            gs_.mui_.setEnablePlayerInput(true);
         }
 
         private function onBuyResult(_arg_1:BuyResult):void
@@ -2802,7 +2936,7 @@ package kabam.rotmg.messaging.impl
                     return;
                 default:
                     this.handleDefaultResult(_arg_1);
-            };
+            }
         }
 
         private function handleDefaultResult(_arg_1:BuyResult):void
@@ -2828,12 +2962,12 @@ package kabam.rotmg.messaging.impl
                     else
                     {
                         gs_.map.party_.removeStars(_arg_1);
-                    };
+                    }
                 }
                 else
                 {
                     gs_.map.party_.setStars(_arg_1);
-                };
+                }
                 _local_2 = gs_.mui_;
                 if (gs_.map.name_ == Parameters.data_.dbPre1[0])
                 {
@@ -2841,7 +2975,7 @@ package kabam.rotmg.messaging.impl
                     {
                         _local_2.activatePreset(2, 0);
                         _local_2.activatePreset(3, 0);
-                    };
+                    }
                     _local_2.activatePreset(1, 1);
                 }
                 else
@@ -2852,7 +2986,7 @@ package kabam.rotmg.messaging.impl
                         {
                             _local_2.activatePreset(1, 0);
                             _local_2.activatePreset(3, 0);
-                        };
+                        }
                         _local_2.activatePreset(2, 1);
                     }
                     else
@@ -2863,7 +2997,7 @@ package kabam.rotmg.messaging.impl
                             {
                                 _local_2.activatePreset(1, 0);
                                 _local_2.activatePreset(2, 0);
-                            };
+                            }
                             _local_2.activatePreset(3, 1);
                         }
                         else
@@ -2873,18 +3007,18 @@ package kabam.rotmg.messaging.impl
                                 _local_2.activatePreset(1, 0);
                                 _local_2.activatePreset(2, 0);
                                 _local_2.activatePreset(3, 0);
-                            };
-                        };
-                    };
-                };
+                            }
+                        }
+                    }
+                }
             }
             else
             {
                 if (_arg_1.accountListId_ == 1)
                 {
                     gs_.map.party_.setIgnores(_arg_1);
-                };
-            };
+                }
+            }
         }
 
         private function onQuestObjId(_arg_1:QuestObjId):void
@@ -2900,14 +3034,14 @@ package kabam.rotmg.messaging.impl
             {
                 this.aoeAck(gs_.lastUpdate_, 0, 0);
                 return;
-            };
+            }
             var _local_4:AOEEffect = new AOEEffect(_arg_1.pos_.toPoint(), _arg_1.radius_, _arg_1.color_);
             gs_.map.addObj(_local_4, _arg_1.pos_.x_, _arg_1.pos_.y_);
             if (((this.player.isInvincible()) || (this.player.isPaused())))
             {
                 this.aoeAck(gs_.lastUpdate_, this.player.x_, this.player.y_);
                 return;
-            };
+            }
             var _local_5:* = (this.player.distTo(_arg_1.pos_) < _arg_1.radius_);
             if (_local_5)
             {
@@ -2917,9 +3051,9 @@ package kabam.rotmg.messaging.impl
                 {
                     _local_3 = new Vector.<uint>();
                     _local_3.push(_arg_1.effect_);
-                };
+                }
                 this.player.damage((this.player.objectType_ == _arg_1.origType_), _local_2, _local_3, false, null);
-            };
+            }
             this.aoeAck(gs_.lastUpdate_, this.player.x_, this.player.y_);
         }
 
@@ -2940,7 +3074,7 @@ package kabam.rotmg.messaging.impl
                 _local_2 = LineBuilder.fromJSON(_arg_1.lineBuilderJSON);
                 this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2.key, -1, -1, "", false, _local_2.tokens));
                 gs_.dispatchEvent(new GuildResultEvent(_arg_1.success_, _local_2.key, _local_2.tokens));
-            };
+            }
         }
 
         private function onClientStat(_arg_1:ClientStat):void
@@ -2959,7 +3093,7 @@ package kabam.rotmg.messaging.impl
             if (Parameters.data_.showGuildInvitePopup)
             {
                 gs_.hudView.interactPanel.setOverride(new GuildInvitePanel(gs_, _arg_1.name_, _arg_1.guildName_));
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make("", (((((("You have been invited by " + _arg_1.name_) + " to join the guild ") + _arg_1.guildName_) + '.\n  If you wish to join type "/join ') + _arg_1.guildName_) + '"')));
         }
 
@@ -2987,12 +3121,12 @@ package kabam.rotmg.messaging.impl
             if (gs_ != null)
             {
                 gs_.closed.dispatch();
-            };
+            }
             var _local_2:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
             if (_local_2 != null)
             {
                 _local_2.dispatch();
-            };
+            }
         }
 
         private function onPasswordPrompt(_arg_1:PasswordPrompt):void
@@ -3012,18 +3146,18 @@ package kabam.rotmg.messaging.impl
                     if (_arg_1.cleanPasswordStatus == 4)
                     {
                         TitleView.queueRegistrationPrompt = true;
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (gs_ != null)
             {
                 gs_.closed.dispatch();
-            };
+            }
             var _local_2:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
             if (_local_2 != null)
             {
                 _local_2.dispatch();
-            };
+            }
         }
 
         override public function questFetch():void
@@ -3033,7 +3167,29 @@ package kabam.rotmg.messaging.impl
 
         private function onQuestFetchResponse(_arg_1:QuestFetchResponse):void
         {
+            var i:int;
             this.questFetchComplete.dispatch(_arg_1);
+            if (Parameters.dailyClaimKeys.length > 0)
+            {
+                i = 0;
+                while (i < Parameters.dailyClaimKeys.length)
+                {
+                    this.claimDailyReward(Parameters.dailyClaimKeys[i]);
+                    i++;
+                }
+                this.escape();
+                this.addTextLine.dispatch(ChatMessage.make("*Help*", (Parameters.dailyClaimKeys.length + " rewards claimed!")));
+                Parameters.dailyClaimKeys.length = 0;
+            }
+        }
+
+        private function claimDailyReward(key:String):void
+        {
+            var packet:ClaimDailyRewardMessage;
+            packet = (this.messages.require(GameServerConnection.CLAIM_LOGIN_REWARD_MSG) as ClaimDailyRewardMessage);
+            packet.claimKey = key;
+            packet.type = "nonconsecutive";
+            serverConnection.sendMessage(packet);
         }
 
         private function onQuestRedeemResponse(_arg_1:QuestRedeemResponse):void
@@ -3041,12 +3197,13 @@ package kabam.rotmg.messaging.impl
             this.questRedeemComplete.dispatch(_arg_1);
         }
 
-        override public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>):void
+        override public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void
         {
-            var _local_3:QuestRedeem = (this.messages.require(QUEST_REDEEM) as QuestRedeem);
-            _local_3.questID = _arg_1;
-            _local_3.slots = _arg_2;
-            serverConnection.sendMessage(_local_3);
+            var _local_4:QuestRedeem = (this.messages.require(QUEST_REDEEM) as QuestRedeem);
+            _local_4.questID = _arg_1;
+            _local_4.item = _arg_3;
+            _local_4.slots = _arg_2;
+            serverConnection.sendMessage(_local_4);
         }
 
         override public function keyInfoRequest(_arg_1:int):void
@@ -3083,16 +3240,16 @@ package kabam.rotmg.messaging.impl
                         {
                             _local_1 = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
                             _local_1.dispatch();
-                        };
+                        }
                         this.retry(this.delayBeforeReconnect++);
                         this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, "Connection failed!  Retrying..."));
                     }
                     else
                     {
                         gs_.closed.dispatch();
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function retry(_arg_1:int):void
@@ -3114,6 +3271,10 @@ package kabam.rotmg.messaging.impl
 
         private function onFailure(_arg_1:Failure):void
         {
+            if (_arg_1.errorDescription_.indexOf("server.realm_full") != -1)
+            {
+                return;
+            }
             switch (_arg_1.errorId_)
             {
                 case Failure.INCORRECT_VERSION:
@@ -3133,7 +3294,7 @@ package kabam.rotmg.messaging.impl
                     return;
                 default:
                     this.handleDefaultFailure(_arg_1);
-            };
+            }
         }
 
         private function handleEmailVerificationNeeded(_arg_1:Failure):void
@@ -3154,7 +3315,7 @@ package kabam.rotmg.messaging.impl
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
             this.player.nextTeleportAt_ = 0;
         }
@@ -3165,7 +3326,7 @@ package kabam.rotmg.messaging.impl
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
             this.retryConnection_ = false;
             gs_.closed.dispatch();
@@ -3189,7 +3350,7 @@ package kabam.rotmg.messaging.impl
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            };
+            }
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
         }
 

@@ -5,9 +5,9 @@
 
 package kabam.rotmg.account.kongregate.view
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public interface KongregateApi 
+public interface KongregateApi
     {
 
         function load(_arg_1:String):void;

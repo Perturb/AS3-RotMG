@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.services.VerifyAgeTask
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
 
-    public class VerifyAgeTask extends BaseTask 
+public class VerifyAgeTask extends BaseTask 
     {
 
         [Inject]
@@ -30,7 +30,7 @@ package kabam.rotmg.account.core.services
             else
             {
                 this.verifyUserAge();
-            };
+            }
         }
 
         private function sendVerifyToServer():void

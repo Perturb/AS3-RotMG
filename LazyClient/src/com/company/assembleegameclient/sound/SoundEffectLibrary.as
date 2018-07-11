@@ -5,18 +5,20 @@
 
 package com.company.assembleegameclient.sound
 {
-    import flash.utils.Dictionary;
-    import flash.media.Sound;
-    import flash.events.IOErrorEvent;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import flash.net.URLRequest;
-    import flash.media.SoundTransform;
-    import flash.media.SoundChannel;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class SoundEffectLibrary 
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.media.Sound;
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import flash.net.URLRequest;
+import flash.utils.Dictionary;
+
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class SoundEffectLibrary
     {
 
         private static var urlBase:String;
@@ -50,7 +52,7 @@ package com.company.assembleegameclient.sound
             catch(error:Error)
             {
                 base = "localhost";
-            };
+            }
             return (base);
         }
 
@@ -67,7 +69,7 @@ package com.company.assembleegameclient.sound
             var trans:SoundTransform;
             var channel:SoundChannel;
             var sound:Sound = load(name);
-            var volume:* = (Parameters.data_.SFXVolume * volumeMultiplier);
+            var volume:Number = (Parameters.data_.SFXVolume * volumeMultiplier);
             try
             {
                 actualVolume = ((((Parameters.data_.playSFX) && (isFX)) || ((!(isFX)) && (Parameters.data_.playPewPew))) ? volume : 0);
@@ -78,7 +80,7 @@ package com.company.assembleegameclient.sound
             }
             catch(error:Error)
             {
-            };
+            }
         }
 
         private static function onSoundComplete(_arg_1:Event):void
@@ -97,7 +99,7 @@ package com.company.assembleegameclient.sound
                 _local_3 = _local_2.soundTransform;
                 _local_3.volume = ((Parameters.data_.playSFX) ? activeSfxList_[_local_2] : 0);
                 _local_2.soundTransform = _local_3;
-            };
+            }
         }
 
         public static function updateTransform():void
@@ -109,7 +111,7 @@ package com.company.assembleegameclient.sound
                 _local_2 = _local_1.soundTransform;
                 _local_2.volume = ((Parameters.data_.playSFX) ? activeSfxList_[_local_1] : 0);
                 _local_1.soundTransform = _local_2;
-            };
+            }
         }
 
         public static function onIOError(_arg_1:IOErrorEvent):void

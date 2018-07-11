@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.focus.control.AddGameFocusConsoleActionCommand
 
 package kabam.rotmg.game.focus.control
 {
-    import kabam.lib.console.signals.RegisterConsoleActionSignal;
-    import kabam.lib.console.vo.ConsoleAction;
+import kabam.lib.console.signals.RegisterConsoleActionSignal;
+import kabam.lib.console.vo.ConsoleAction;
 
-    public class AddGameFocusConsoleActionCommand 
+public class AddGameFocusConsoleActionCommand 
     {
 
         [Inject]

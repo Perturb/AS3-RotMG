@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.tutorial.UIDrawBox
 
 package com.company.assembleegameclient.tutorial
 {
-    import flash.geom.Point;
-    import flash.geom.Rectangle;
-    import com.company.util.ConversionUtil;
-    import flash.display.Graphics;
+import com.company.util.ConversionUtil;
 
-    public class UIDrawBox 
+import flash.display.Graphics;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+
+public class UIDrawBox
     {
 
         public const ANIMATION_MS:int = 500;
@@ -42,7 +43,7 @@ package com.company.assembleegameclient.tutorial
             {
                 _local_4 = (this.rect_.x + (_arg_1 / 2));
                 _local_5 = (this.rect_.y + (_arg_1 / 2));
-            };
+            }
             _arg_2.lineStyle(_arg_1, this.color_);
             _arg_2.drawRect(_local_4, _local_5, _local_6, _local_7);
         }

@@ -5,9 +5,9 @@
 
 package kabam.lib.console.view
 {
-    import flash.display.Sprite;
+import flash.display.Sprite;
 
-    public final class ConsoleView extends Sprite 
+public final class ConsoleView extends Sprite 
     {
 
         public var output:ConsoleOutputView;
@@ -25,7 +25,7 @@ package kabam.lib.console.view
             if (((_arg_1) && (stage)))
             {
                 stage.focus = this.input;
-            };
+            }
         }
 
 

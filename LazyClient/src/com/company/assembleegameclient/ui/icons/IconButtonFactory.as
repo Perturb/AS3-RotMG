@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.ui.icons
 {
-    import flash.display.BitmapData;
+import flash.display.BitmapData;
 
-    public class IconButtonFactory 
+public class IconButtonFactory
     {
 
 

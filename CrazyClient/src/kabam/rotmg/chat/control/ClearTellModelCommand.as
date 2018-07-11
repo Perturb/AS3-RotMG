@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.control.ClearTellModelCommand
 
 package kabam.rotmg.chat.control
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.chat.model.TellModel;
+import kabam.rotmg.chat.model.TellModel;
 
-    public class ClearTellModelCommand extends Command 
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class ClearTellModelCommand extends Command 
     {
 
         [Inject]

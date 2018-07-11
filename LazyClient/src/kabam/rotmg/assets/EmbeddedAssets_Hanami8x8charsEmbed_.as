@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_Hanami8x8charsEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

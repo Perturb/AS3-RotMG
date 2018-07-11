@@ -1,19 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.impl.SimpleAppEngineClient
 
 package kabam.rotmg.appengine.impl
 {
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.appengine.api.RetryLoader;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.account.core.Account;
-    import flash.net.URLLoaderDataFormat;
-    import org.osflash.signals.OnceSignal;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class SimpleAppEngineClient implements AppEngineClient 
+import flash.net.URLLoaderDataFormat;
+
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.appengine.api.RetryLoader;
+import kabam.rotmg.application.api.ApplicationSetup;
+
+import org.osflash.signals.OnceSignal;
+
+public class SimpleAppEngineClient implements AppEngineClient
     {
 
         [Inject]
@@ -63,7 +66,7 @@ package kabam.rotmg.appengine.impl
             else
             {
                 _arg_2.gameClientVersion = ((Parameters.BUILD_VERSION + ".") + Parameters.MINOR_VERSION);
-            };
+            }
             if (_arg_2.guid)
             {
                 this.loader.sendRequest(this.makeURL(((_arg_1 + "?g=") + escape(_arg_2.guid))), _arg_2);
@@ -71,7 +74,7 @@ package kabam.rotmg.appengine.impl
             else
             {
                 this.loader.sendRequest(this.makeURL(_arg_1), _arg_2);
-            };
+            }
         }
 
         private function makeURL(_arg_1:String):String
@@ -79,7 +82,7 @@ package kabam.rotmg.appengine.impl
             if (_arg_1.charAt(0) != "/")
             {
                 _arg_1 = ("/" + _arg_1);
-            };
+            }
             return (this.setup.getAppEngineUrl() + _arg_1);
         }
 

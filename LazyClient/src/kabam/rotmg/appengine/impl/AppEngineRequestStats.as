@@ -5,9 +5,9 @@
 
 package kabam.rotmg.appengine.impl
 {
-    import kabam.lib.console.signals.ConsoleWatchSignal;
+import kabam.lib.console.signals.ConsoleWatchSignal;
 
-    public class AppEngineRequestStats 
+public class AppEngineRequestStats 
     {
 
         private const nameMap:Object = {};

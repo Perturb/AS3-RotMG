@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.RectangleUtil
 
 package com.company.util
 {
-    import flash.geom.Rectangle;
-    import flash.geom.Point;
-    import flash.geom.Matrix;
+import flash.geom.Matrix;
+import flash.geom.Point;
+import flash.geom.Rectangle;
 
-    public class RectangleUtil 
+public class RectangleUtil
     {
 
 
@@ -26,8 +26,8 @@ package com.company.util
                 if (_local_4 > _arg_1.right)
                 {
                     _local_4 = _arg_1.right;
-                };
-            };
+                }
+            }
             if (_local_5 < _arg_1.y)
             {
                 _local_5 = _arg_1.y;
@@ -37,12 +37,12 @@ package com.company.util
                 if (_local_5 > _arg_1.bottom)
                 {
                     _local_5 = _arg_1.bottom;
-                };
-            };
+                }
+            }
             if (((_local_4 == _arg_2) && (_local_5 == _arg_3)))
             {
                 return (0);
-            };
+            }
             return (PointUtil.distanceXY(_local_4, _local_5, _arg_2, _arg_3));
         }
 
@@ -59,8 +59,8 @@ package com.company.util
                 if (_local_4 > _arg_1.right)
                 {
                     _local_4 = _arg_1.right;
-                };
-            };
+                }
+            }
             if (_local_5 < _arg_1.y)
             {
                 _local_5 = _arg_1.y;
@@ -70,8 +70,8 @@ package com.company.util
                 if (_local_5 > _arg_1.bottom)
                 {
                     _local_5 = _arg_1.bottom;
-                };
-            };
+                }
+            }
             return (new Point(_local_4, _local_5));
         }
 
@@ -84,11 +84,11 @@ package com.company.util
             if ((((((_arg_1.left > _arg_2) && (_arg_1.left > _arg_4)) || ((_arg_1.right < _arg_2) && (_arg_1.right < _arg_4))) || ((_arg_1.top > _arg_3) && (_arg_1.top > _arg_5))) || ((_arg_1.bottom < _arg_3) && (_arg_1.bottom < _arg_5))))
             {
                 return (false);
-            };
+            }
             if ((((((_arg_1.left < _arg_2) && (_arg_2 < _arg_1.right)) && (_arg_1.top < _arg_3)) && (_arg_3 < _arg_1.bottom)) || ((((_arg_1.left < _arg_4) && (_arg_4 < _arg_1.right)) && (_arg_1.top < _arg_5)) && (_arg_5 < _arg_1.bottom))))
             {
                 return (true);
-            };
+            }
             var _local_10:Number = ((_arg_5 - _arg_3) / (_arg_4 - _arg_2));
             var _local_11:Number = (_arg_3 - (_local_10 * _arg_2));
             if (_local_10 > 0)
@@ -100,7 +100,7 @@ package com.company.util
             {
                 _local_6 = ((_local_10 * _arg_1.right) + _local_11);
                 _local_7 = ((_local_10 * _arg_1.left) + _local_11);
-            };
+            }
             if (_arg_3 < _arg_5)
             {
                 _local_9 = _arg_3;
@@ -110,7 +110,7 @@ package com.company.util
             {
                 _local_9 = _arg_5;
                 _local_8 = _arg_3;
-            };
+            }
             var _local_12:Number = ((_local_6 > _local_9) ? _local_6 : _local_9);
             var _local_13:Number = ((_local_7 < _local_8) ? _local_7 : _local_8);
             return ((_local_12 < _local_13) && (!((_local_13 < _arg_1.top) || (_local_12 > _arg_1.bottom))));
@@ -132,7 +132,7 @@ package com.company.util
                     _arg_6.x = _arg_1.x;
                     _arg_6.y = _local_9;
                     return (true);
-                };
+                }
             }
             else
             {
@@ -146,9 +146,9 @@ package com.company.util
                         _arg_6.x = (_arg_1.x + _arg_1.width);
                         _arg_6.y = _local_9;
                         return (true);
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (_arg_5 <= _arg_1.y)
             {
                 _local_7 = ((_arg_4 - _arg_2) / (_arg_5 - _arg_3));
@@ -159,7 +159,7 @@ package com.company.util
                     _arg_6.x = _local_10;
                     _arg_6.y = _arg_1.y;
                     return (true);
-                };
+                }
             }
             else
             {
@@ -173,9 +173,9 @@ package com.company.util
                         _arg_6.x = _local_10;
                         _arg_6.y = (_arg_1.y + _arg_1.height);
                         return (true);
-                    };
-                };
-            };
+                    }
+                }
+            }
             return (false);
         }
 
@@ -193,7 +193,7 @@ package com.company.util
                 if (((_local_6 >= _arg_1.y) && (_local_6 <= (_arg_1.y + _arg_1.height))))
                 {
                     return (new Point(_arg_1.x, _local_6));
-                };
+                }
             }
             else
             {
@@ -205,9 +205,9 @@ package com.company.util
                     if (((_local_6 >= _arg_1.y) && (_local_6 <= (_arg_1.y + _arg_1.height))))
                     {
                         return (new Point((_arg_1.x + _arg_1.width), _local_6));
-                    };
-                };
-            };
+                    }
+                }
+            }
             if (_arg_3.y() <= _arg_1.y)
             {
                 _local_4 = ((_arg_3.x() - _arg_2.x()) / (_arg_3.y() - _arg_2.y()));
@@ -216,7 +216,7 @@ package com.company.util
                 if (((_local_7 >= _arg_1.x) && (_local_7 <= (_arg_1.x + _arg_1.width))))
                 {
                     return (new Point(_local_7, _arg_1.y));
-                };
+                }
             }
             else
             {
@@ -228,9 +228,9 @@ package com.company.util
                     if (((_local_7 >= _arg_1.x) && (_local_7 <= (_arg_1.x + _arg_1.width))))
                     {
                         return (new Point(_local_7, (_arg_1.y + _arg_1.height)));
-                    };
-                };
-            };
+                    }
+                }
+            }
             return (null);
         }
 
@@ -255,9 +255,9 @@ package com.company.util
                     _local_6 = _local_9.transformPoint(_local_11);
                     _local_10.add(_local_6.x, _local_6.y);
                     _local_7++;
-                };
+                }
                 _local_8++;
-            };
+            }
             return (_local_10);
         }
 

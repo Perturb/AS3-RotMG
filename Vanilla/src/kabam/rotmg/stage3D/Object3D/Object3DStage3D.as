@@ -5,16 +5,17 @@
 
 package kabam.rotmg.stage3D.Object3D
 {
-    import flash.display.BitmapData;
-    import flash.geom.Matrix3D;
-    import flash.geom.Vector3D;
-    import flash.display3D.textures.Texture;
-    import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-    import flash.display3D.Context3DVertexBufferFormat;
-    import flash.display3D.Context3DTextureFormat;
-    import flash.display3D.Context3D;
+import flash.display.BitmapData;
+import flash.display3D.Context3D;
+import flash.display3D.Context3DTextureFormat;
+import flash.display3D.Context3DVertexBufferFormat;
+import flash.display3D.textures.Texture;
+import flash.geom.Matrix3D;
+import flash.geom.Vector3D;
 
-    public class Object3DStage3D 
+import kabam.rotmg.stage3D.graphic3D.TextureFactory;
+
+public class Object3DStage3D
     {
 
         public static const missingTextureBitmap:BitmapData = new BitmapData(1, 1, true, 0x888888FF);
@@ -53,7 +54,7 @@ package kabam.rotmg.stage3D.Object3D
             {
                 this.texture_.dispose();
                 this.texture_ = null;
-            };
+            }
             this.bitmapData = null;
             this.modelMatrix_ = null;
             this.modelView_ = null;
@@ -93,16 +94,16 @@ package kabam.rotmg.stage3D.Object3D
                     this.bitmapData = missingTextureBitmap;
                     this.texture_ = _arg_1.createTexture(this.bitmapData.width, this.bitmapData.height, Context3DTextureFormat.BGRA, false);
                     this.texture_.uploadFromBitmapData(this.bitmapData);
-                };
-            };
+                }
+            }
             _arg_1.setTextureAt(0, this.texture_);
             for each (_local_2 in this.model_.groups)
             {
                 if (_local_2.indexBuffer != null)
                 {
                     _arg_1.drawTriangles(_local_2.indexBuffer);
-                };
-            };
+                }
+            }
         }
 
 

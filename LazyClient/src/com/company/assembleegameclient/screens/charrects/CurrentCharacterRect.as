@@ -5,32 +5,37 @@
 
 package com.company.assembleegameclient.screens.charrects
 {
-    import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import org.osflash.signals.Signal;
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.appengine.CharacterStats;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import flash.display.DisplayObject;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import io.decagames.rotmg.fame.FameContentPopup;
-    import com.company.assembleegameclient.util.FameUtil;
-    import com.company.rotmg.graphics.DeleteXGraphic;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.assets.services.IconFactory;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.screens.events.DeleteCharacterEvent;
+import com.company.assembleegameclient.appengine.CharacterStats;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.screens.events.DeleteCharacterEvent;
+import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.rotmg.graphics.DeleteXGraphic;
 
-    public class CurrentCharacterRect extends CharacterRect 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import io.decagames.rotmg.fame.FameContentPopup;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+public class CurrentCharacterRect extends CharacterRect 
     {
 
         private static var toolTip_:MyPlayerToolTip = null;
@@ -67,7 +72,7 @@ package com.company.assembleegameclient.screens.charrects
                 "className":_local_5,
                 "level":_local_6
             });
-            this.setCharCon(_arg_2.name.toLowerCase(), this.char.charId());
+            this.setCharCon(_local_5.toLowerCase(), this.char.charId());
             super.color = 0x5C5C5C;
             super.overColor = 0x7F7F7F;
             super.init();
@@ -98,11 +103,11 @@ package com.company.assembleegameclient.screens.charrects
                         charnames.push(_arg_1);
                         charids.push(charids[_local_3]);
                         charids[_local_3] = _arg_2;
-                    };
+                    }
                     return;
-                };
+                }
                 _local_3++;
-            };
+            }
             charnames.push(_arg_1);
             charids.push(_arg_2);
         }
@@ -143,18 +148,18 @@ package com.company.assembleegameclient.screens.charrects
 
         private function makePetIcon():void
         {
-            var _local_1:* = this.char.getPetVO();
+            var _local_1:PetVO = this.char.getPetVO();
             if (_local_1)
             {
-                this.petIcon = _local_1.getSkin();
+                this.petIcon = _local_1.getSkinBitmap();
                 if (this.petIcon == null)
                 {
                     return;
-                };
+                }
                 this.petIcon.x = CharacterRectConstants.PET_ICON_POS_X;
                 this.petIcon.y = CharacterRectConstants.PET_ICON_POS_Y;
                 selectContainer.addChild(this.petIcon);
-            };
+            }
         }
 
         private function makeTagline():void
@@ -173,7 +178,7 @@ package com.company.assembleegameclient.screens.charrects
                 super.makeTaglineIcon();
                 super.makeTaglineText(new LineBuilder().setParams(TextKey.CURRENT_CHARACTER_TAGLINE_NOQUEST, {"fame":this.char.fame()}));
                 taglineText.x = (taglineText.x + taglineIcon.width);
-            };
+            }
         }
 
         private function getNextStarFame():int
@@ -197,7 +202,7 @@ package com.company.assembleegameclient.screens.charrects
             if (_local_1 >= 8)
             {
                 _local_2 = 0xFCDF00;
-            };
+            }
             this.statsMaxedText = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);
             this.statsMaxedText.setBold(true);
             this.statsMaxedText.setColor(_local_2);
@@ -226,35 +231,35 @@ package com.company.assembleegameclient.screens.charrects
             if (this.char.hp() == this.charType.hp.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.mp() == this.charType.mp.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.att() == this.charType.attack.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.def() == this.charType.defense.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.spd() == this.charType.speed.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.dex() == this.charType.dexterity.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.vit() == this.charType.hpRegeneration.max)
             {
                 _local_1++;
-            };
+            }
             if (this.char.wis() == this.charType.mpRegeneration.max)
             {
                 _local_1++;
-            };
+            }
             return (_local_1);
         }
 
@@ -272,7 +277,7 @@ package com.company.assembleegameclient.screens.charrects
                 toolTip_ = this.myPlayerToolTipFactory.create(this.charName, this.char.charXML_, this.charStats);
                 toolTip_.createUI();
                 this.showToolTip.dispatch(toolTip_);
-            };
+            }
         }
 
         override protected function onRollOut(_arg_1:MouseEvent):void

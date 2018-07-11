@@ -1,28 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.ConfirmBuyModal
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.pets.view.components.DialogCloseButton;
-    import kabam.rotmg.pets.util.PetsViewAssetFactory;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.util.Currency;
-    import org.osflash.signals.natives.NativeSignal;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.TextFieldConcreteBuilder;
-    import kabam.rotmg.fortune.components.ItemWithTooltip;
-    import flash.events.Event;
-    import kabam.rotmg.util.components.UIAssetsHelper;
-    import kabam.rotmg.pets.view.components.PopupWindowBackground;
-    import flash.events.MouseEvent;
+import com.company.assembleegameclient.objects.SellableObject;
+import com.company.assembleegameclient.util.Currency;
 
-    public class ConfirmBuyModal extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+
+import kabam.rotmg.fortune.components.ItemWithTooltip;
+import kabam.rotmg.pets.view.components.DialogCloseButton;
+import kabam.rotmg.pets.view.components.PopupWindowBackground;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldConcreteBuilder;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.util.components.LegacyBuyButton;
+import kabam.rotmg.util.components.UIAssetsHelper;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeSignal;
+
+public class ConfirmBuyModal extends Sprite
     {
 
         public static const WIDTH:int = 280;
@@ -30,7 +34,7 @@ package com.company.assembleegameclient.ui
         public static const TEXT_MARGIN:int = 20;
         public static var free:Boolean = true;
 
-        private const closeButton:DialogCloseButton = kabam.rotmg.pets.util.PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
+        private const closeButton:DialogCloseButton = PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
         private const buyButton:LegacyBuyButton = new LegacyBuyButton(TextKey.SELLABLEOBJECTPANEL_BUY, 16, 0, Currency.INVALID);
 
         private var buyButtonClicked:NativeSignal;
@@ -72,7 +76,7 @@ package com.company.assembleegameclient.ui
             if (this.owner_.getSellableType() != -1)
             {
                 _local_6 = new ItemWithTooltip(this.owner_.getSellableType(), 64);
-            };
+            }
             _local_6.x = (((WIDTH * 1) / 2) - (_local_6.width / 2));
             _local_6.y = 100;
             addChild(_local_6);
@@ -173,15 +177,15 @@ package com.company.assembleegameclient.ui
                     if (this.quantity_ < this.availableInventoryNumber)
                     {
                         this.quantity_ = (this.quantity_ + 1);
-                    };
+                    }
                     break;
                 case this.leftNavSprite:
                     if (this.quantity_ > 1)
                     {
                         this.quantity_--;
-                    };
+                    }
                     break;
-            };
+            }
             this.refreshNavDisable();
             var _local_2:int = (this.owner_.price_ * this.quantity_);
             this.buyButton.setPrice(_local_2, this.owner_.currency_);

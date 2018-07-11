@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardMediator
 
 package kabam.rotmg.arena.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.arena.control.ReloadLeaderboard;
-    import kabam.rotmg.arena.model.ArenaLeaderboardModel;
-    import kabam.rotmg.arena.service.GetArenaLeaderboardTask;
-    import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+import kabam.rotmg.arena.control.ReloadLeaderboard;
+import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+import kabam.rotmg.arena.model.ArenaLeaderboardModel;
+import kabam.rotmg.arena.service.GetArenaLeaderboardTask;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class ArenaLeaderboardMediator extends Mediator 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ArenaLeaderboardMediator extends Mediator
     {
 
         [Inject]
@@ -60,7 +62,7 @@ package kabam.rotmg.arena.view
                 _local_2 = this.injector.getInstance(GetArenaLeaderboardTask);
                 _local_2.filter = _arg_1;
                 _local_2.start();
-            };
+            }
         }
 
         private function requestComplete():void

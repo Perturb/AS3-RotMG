@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.friends.view.FListItem
 
 package kabam.rotmg.friends.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.friends.model.FriendVO;
+import flash.display.Sprite;
 
-    public class FListItem extends Sprite 
+import io.decagames.rotmg.social.model.FriendVO;
+
+import org.osflash.signals.Signal;
+
+public class FListItem extends Sprite
     {
 
         public var actionSignal:Signal = new Signal(String, String);

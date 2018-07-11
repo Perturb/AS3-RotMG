@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class PasswordPrompt extends IncomingMessage 
+public class PasswordPrompt extends IncomingMessage
     {
 
         public var cleanPasswordStatus:int;

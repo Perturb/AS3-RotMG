@@ -5,11 +5,12 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.ColorUtil;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.ColorUtil;
 
-    public class SnowflakeEffect extends ParticleEffect 
+import flash.geom.Point;
+
+public class SnowflakeEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -43,7 +44,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_8 = new SnowflakeParticle(size_, _local_6, this.maxLife_, _local_7, _local_4, true);
                 map_.addObj(_local_8, x_, y_);
                 _local_5++;
-            };
+            }
             return (false);
         }
 
@@ -62,11 +63,11 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import com.company.assembleegameclient.util.MathUtil;
 import com.company.assembleegameclient.objects.particles.SparkParticle;
+import com.company.assembleegameclient.util.MathUtil;
 import com.company.assembleegameclient.util.RandomUtil;
 
-class SnowflakeParticle extends Particle 
+class SnowflakeParticle extends Particle
 {
 
     private var timeLeft_:int;
@@ -95,14 +96,14 @@ class SnowflakeParticle extends Particle
         if (this.timeLeft_ <= 0)
         {
             return (false);
-        };
+        }
         moveTo((x_ + (this.dx_ * _arg_2)), (y_ + (this.dy_ * _arg_2)));
         if (((this.split_) && (this.timeLeft_ < this.timeSplit_)))
         {
             map_.addObj(new SnowflakeParticle(size_, color_, this.timeLeft_, (this.angle_ + (60 * MathUtil.TO_RAD)), (this.radius_ * 0.5)), x_, y_);
             map_.addObj(new SnowflakeParticle(size_, color_, this.timeLeft_, (this.angle_ - (60 * MathUtil.TO_RAD)), (this.radius_ * 0.5)), x_, y_);
             this.split_ = false;
-        };
+        }
         map_.addObj(new SparkParticle((100 * (z_ + 1)), color_, 600, z_, RandomUtil.plusMinus(1), RandomUtil.plusMinus(1)), x_, y_);
         return (true);
     }

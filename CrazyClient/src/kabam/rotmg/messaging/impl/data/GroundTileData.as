@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.GroundTileData
 
 package kabam.rotmg.messaging.impl.data
 {
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class GroundTileData 
+public class GroundTileData 
     {
 
         public var x_:int;

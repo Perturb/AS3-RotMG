@@ -5,12 +5,13 @@
 
 package kabam.rotmg.packages.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class PackageInfoMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class PackageInfoMediator extends Mediator 
     {
 
         [Inject]

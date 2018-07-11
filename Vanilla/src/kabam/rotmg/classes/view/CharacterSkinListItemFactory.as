@@ -5,20 +5,20 @@
 
 package kabam.rotmg.classes.view
 {
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import flash.display.DisplayObject;
-    import kabam.rotmg.classes.model.CharacterSkins;
-    import com.company.util.AssetLibrary;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import com.company.assembleegameclient.util.Currency;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.Currency;
+import com.company.util.AssetLibrary;
 
-    public class CharacterSkinListItemFactory 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.CharacterSkins;
+import kabam.rotmg.util.components.LegacyBuyButton;
+
+public class CharacterSkinListItemFactory
     {
 
         [Inject]
@@ -37,7 +37,7 @@ package kabam.rotmg.classes.view
             {
                 _local_4[_local_5] = this.makeCharacterSkinTile(_local_2[_local_5]);
                 _local_5++;
-            };
+            }
             return (_local_4);
         }
 

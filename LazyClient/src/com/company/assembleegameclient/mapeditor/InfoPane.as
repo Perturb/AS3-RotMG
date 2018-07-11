@@ -5,26 +5,25 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import com.company.ui.BaseSimpleText;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import flash.filters.DropShadowFilter;
-    import flash.events.Event;
-    import flash.geom.Rectangle;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.map.RegionLibrary;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.map.RegionLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.ui.BaseSimpleText;
+import com.company.util.GraphicsUtil;
 
-    public class InfoPane extends Sprite 
+import flash.display.CapsStyle;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
+
+public class InfoPane extends Sprite
     {
 
         public static const WIDTH:int = 134;
@@ -77,7 +76,7 @@ package com.company.assembleegameclient.mapeditor
             if (((_local_2.width > 1) || (_local_2.height > 1)))
             {
                 this.rectText_.text = (this.rectText_.text + ((("\nRect: " + _local_2.width) + ", ") + _local_2.height));
-            };
+            }
             this.rectText_.useTextDimensions();
             var _local_3:METile = this.meMap_.getTile(_local_2.x, _local_2.y);
             var _local_4:Vector.<int> = ((_local_3 == null) ? Layer.EMPTY_TILE : _local_3.types_);

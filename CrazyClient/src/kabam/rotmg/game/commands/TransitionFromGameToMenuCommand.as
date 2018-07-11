@@ -1,22 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.TransitionFromGameToMenuCommand
 
 package kabam.rotmg.game.commands
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.core.signals.InvalidateDataSignal;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-    import kabam.rotmg.fame.control.ShowFameViewSignal;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import kabam.rotmg.fame.model.SimpleFameVO;
-    import kabam.rotmg.fame.model.FameVO;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
-    public class TransitionFromGameToMenuCommand 
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.InvalidateDataSignal;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.fame.control.ShowFameViewSignal;
+import kabam.rotmg.fame.model.FameVO;
+import kabam.rotmg.fame.model.SimpleFameVO;
+import kabam.rotmg.messaging.impl.incoming.Death;
+
+public class TransitionFromGameToMenuCommand 
     {
 
         [Inject]
@@ -43,7 +44,7 @@ package kabam.rotmg.game.commands
             else
             {
                 this.showCurrentCharacterScreen();
-            };
+            }
         }
 
         private function showDeathView():void

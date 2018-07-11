@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.CollapseEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class CollapseEffect extends ParticleEffect 
+import flash.geom.Point;
+
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class CollapseEffect extends ParticleEffect
     {
 
         public var center_:Point;
@@ -42,7 +44,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_8, this.color_, _local_9, _local_4, this.center_);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 
@@ -65,7 +67,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_5 = new SparkerParticle(_local_8, this.color_, _local_9, _local_4, this.center_);
                 map_.addObj(_local_5, x_, y_);
                 _local_6++;
-            };
+            }
             return (false);
         }
 

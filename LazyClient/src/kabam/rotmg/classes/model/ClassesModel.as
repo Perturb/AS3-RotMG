@@ -5,11 +5,9 @@
 
 package kabam.rotmg.classes.model
 {
-    import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+import org.osflash.signals.Signal;
 
-    public class ClassesModel 
+public class ClassesModel
     {
 
         public static const WIZARD_ID:int = 782;
@@ -52,7 +50,7 @@ package kabam.rotmg.classes.model
                 ((this.selectedChar) && (this.selectedChar.setIsSelected(false)));
                 this.selectedChar = _arg_1;
                 this.selected.dispatch(_arg_1);
-            };
+            }
         }
 
         public function getSelected():CharacterClass
@@ -68,7 +66,7 @@ package kabam.rotmg.classes.model
             {
                 _local_2 = _local_3.skins.getSkin(_arg_1);
                 if (_local_2 != _local_3.skins.getDefaultSkin()) break;
-            };
+            }
             return (_local_2);
         }
 

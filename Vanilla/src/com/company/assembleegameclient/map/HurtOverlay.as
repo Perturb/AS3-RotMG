@@ -5,15 +5,15 @@
 
 package com.company.assembleegameclient.map
 {
-    import flash.display.Shape;
-    import flash.display.GraphicsGradientFill;
-    import flash.display.GradientType;
-    import com.company.util.GraphicsUtil;
-    import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
+import com.company.util.GraphicsUtil;
 
-    public class HurtOverlay extends Shape 
+import flash.display.GradientType;
+import flash.display.GraphicsGradientFill;
+import flash.display.GraphicsPath;
+import flash.display.IGraphicsData;
+import flash.display.Shape;
+
+public class HurtOverlay extends Shape
     {
 
         private const s:Number = (600 / Math.sin((Math.PI / 4)));

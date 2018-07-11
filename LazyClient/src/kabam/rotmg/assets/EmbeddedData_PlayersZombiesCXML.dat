@@ -15,7 +15,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Coral Arrow</ObjectId>
          <Damage>55</Damage>
@@ -38,7 +38,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Fire Bolt</ObjectId>
          <Damage>55</Damage>
@@ -61,7 +61,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Fire Missile</ObjectId>
          <Damage>55</Damage>
@@ -86,7 +86,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Rainbow Magic</ObjectId>
          <Damage>55</Damage>
@@ -109,7 +109,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Directed Explosion</ObjectId>
          <Damage>55</Damage>
@@ -132,7 +132,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Stone Slash</ObjectId>
          <Damage>55</Damage>
@@ -155,7 +155,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Aqua Slash</ObjectId>
          <Damage>55</Damage>
@@ -178,7 +178,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Aqua Missile</ObjectId>
          <Damage>55</Damage>
@@ -203,7 +203,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Black Arrow</ObjectId>
          <Damage>55</Damage>
@@ -226,7 +226,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Crystal Serpent Missile</ObjectId>
          <Damage>55</Damage>
@@ -251,7 +251,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Spirit Dagger Slash</ObjectId>
          <Damage>55</Damage>
@@ -274,7 +274,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
          <Damage>55</Damage>
@@ -297,7 +297,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Green Bolt</ObjectId>
          <Damage>55</Damage>
@@ -320,7 +320,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.105</XpMult>
+      <Exp>20</Exp>
       <Projectile id="0">
          <ObjectId>Jewel Slash</ObjectId>
          <Damage>55</Damage>

@@ -5,9 +5,9 @@
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
 
-    public interface PurchaseGoldTask extends Task 
+public interface PurchaseGoldTask extends Task 
     {
 
     }

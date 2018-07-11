@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_textile5x5Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

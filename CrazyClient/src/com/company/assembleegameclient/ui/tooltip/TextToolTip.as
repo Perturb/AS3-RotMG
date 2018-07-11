@@ -1,35 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.TextToolTip
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
 
-    public class TextToolTip extends ToolTip 
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class TextToolTip extends ToolTip
     {
 
         public var titleText_:TextFieldDisplayConcrete;
         public var tipText_:TextFieldDisplayConcrete;
 
-        public function TextToolTip(_arg_1:uint, _arg_2:uint, _arg_3:String, _arg_4:String, _arg_5:int, _arg_6:Object=null)
+        public function TextToolTip(_arg_1:uint, _arg_2:uint, _arg_3:String, _arg_4:String, _arg_5:int, _arg_6:Object=null, _arg_7:Boolean=true)
         {
-            super(_arg_1, 1, _arg_2, 1);
+            super(_arg_1, 1, _arg_2, 1, _arg_7);
             if (_arg_3 != null)
             {
                 this.titleText_ = new TextFieldDisplayConcrete().setSize(20).setColor(0xFFFFFF);
                 this.configureTextFieldDisplayAndAddChild(this.titleText_, _arg_5, _arg_3);
-            };
+            }
             if (_arg_4 != null)
             {
                 this.tipText_ = new TextFieldDisplayConcrete().setSize(14).setColor(0xB3B3B3);
                 this.configureTextFieldDisplayAndAddChild(this.tipText_, _arg_5, _arg_4, _arg_6);
-            };
+            }
         }
 
         override protected function alignUI():void

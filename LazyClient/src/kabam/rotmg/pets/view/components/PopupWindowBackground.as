@@ -5,14 +5,15 @@
 
 package kabam.rotmg.pets.view.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.util.graphics.BevelRect;
-    import kabam.rotmg.util.graphics.GraphicsHelper;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
+import flash.display.CapsStyle;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Sprite;
 
-    public class PopupWindowBackground extends Sprite 
+import kabam.rotmg.util.graphics.BevelRect;
+import kabam.rotmg.util.graphics.GraphicsHelper;
+
+public class PopupWindowBackground extends Sprite
     {
 
         public static const HORIZONTAL_DIVISION:String = "HORIZONTAL_DIVISION";
@@ -67,10 +68,10 @@ package kabam.rotmg.pets.view.components
                             graphics.beginFill(0);
                             _local_5.drawBevelRect(0, 0, _local_4, graphics);
                             graphics.endFill();
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
         }
 
         public function divide(_arg_1:String, _arg_2:int):void
@@ -84,8 +85,8 @@ package kabam.rotmg.pets.view.components
                 if (_arg_1 == VERTICAL_DIVISION)
                 {
                     this.divideVertically(_arg_2);
-                };
-            };
+                }
+            }
         }
 
         private function divideHorizontally(_arg_1:int):void

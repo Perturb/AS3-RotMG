@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.modal.ModalPopupMediator
 
 package io.decagames.rotmg.ui.popups.modal
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class ModalPopupMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ModalPopupMediator extends Mediator 
     {
 
         [Inject]
@@ -23,7 +24,7 @@ package io.decagames.rotmg.ui.popups.modal
                 this.lastContentHeight = this.view.contentContainer.height;
                 this.view.resize();
                 this.view.addEventListener(Event.ENTER_FRAME, this.checkForUpdates);
-            };
+            }
         }
 
         override public function destroy():void
@@ -38,7 +39,7 @@ package io.decagames.rotmg.ui.popups.modal
             {
                 this.lastContentHeight = this.view.contentContainer.height;
                 this.view.resize();
-            };
+            }
         }
 
 

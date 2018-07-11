@@ -7,8 +7,6 @@ package com.company.assembleegameclient.util
 	{
 		public function TextureRedrawer_textureShaderEmbed_()
 		{
-			super();
-			return;
 		}
 	}
 }

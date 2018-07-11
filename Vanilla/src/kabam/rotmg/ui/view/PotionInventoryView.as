@@ -5,10 +5,11 @@
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.components.PotionSlotView;
+import flash.display.Sprite;
 
-    public class PotionInventoryView extends Sprite 
+import kabam.rotmg.ui.view.components.PotionSlotView;
+
+public class PotionInventoryView extends Sprite 
     {
 
         private static const LEFT_BUTTON_CUTS:Array = [1, 0, 0, 1];
@@ -28,7 +29,7 @@ package kabam.rotmg.ui.view
                 _local_2.x = (_local_1 * (PotionSlotView.BUTTON_WIDTH + BUTTON_SPACE));
                 addChild(_local_2);
                 _local_1++;
-            };
+            }
         }
 
     }

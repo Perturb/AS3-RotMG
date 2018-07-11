@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.RegionTypeToolTip
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.ui.BaseSimpleText;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.ui.BaseSimpleText;
 
-    public class RegionTypeToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+
+public class RegionTypeToolTip extends ToolTip
     {
 
         private static const MAX_WIDTH:int = 180;

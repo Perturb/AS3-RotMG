@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.net.impl.SocketServer
 
 package kabam.lib.net.impl
 {
-    import org.osflash.signals.Signal;
-    import flash.utils.ByteArray;
-    import kabam.lib.net.api.MessageProvider;
-    import flash.net.Socket;
-    import flash.utils.Timer;
-    import com.hurlant.crypto.symmetric.ICipher;
-    import flash.events.Event;
-    import flash.events.ProgressEvent;
-    import flash.events.IOErrorEvent;
-    import flash.events.SecurityErrorEvent;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.hurlant.crypto.symmetric.ICipher;
 
-    public class SocketServer 
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
+import flash.events.SecurityErrorEvent;
+import flash.events.TimerEvent;
+import flash.net.Socket;
+import flash.utils.ByteArray;
+import flash.utils.Timer;
+
+import kabam.lib.net.api.MessageProvider;
+
+import org.osflash.signals.Signal;
+
+public class SocketServer
     {
 
         public static const MESSAGE_LENGTH_SIZE_IN_BYTES:int = 4;
@@ -70,7 +73,7 @@ package kabam.lib.net.impl
             else
             {
                 this.socket.connect(_arg_1, _arg_2);
-            };
+            }
         }
 
         private function addListeners():void
@@ -131,13 +134,13 @@ package kabam.lib.net.impl
                 {
                     this.outgoingCipher.encrypt(this.data);
                     this.data.position = 0;
-                };
+                }
                 this.socket.writeInt((this.data.bytesAvailable + 5));
                 this.socket.writeByte(_local_2.id);
                 this.socket.writeBytes(this.data);
                 _local_2.consume();
                 _local_2 = _local_2.next;
-            };
+            }
             this.socket.flush();
             this.unsentPlaceholder.next = null;
             this.unsentPlaceholder.prev = null;
@@ -165,7 +168,7 @@ package kabam.lib.net.impl
             else
             {
                 _local_2 = this.parseString("Socket-Server IO Error: {0}", [_arg_1.text]);
-            };
+            }
             this.error.dispatch(_local_2);
             this.closed.dispatch();
         }
@@ -199,8 +202,8 @@ package kabam.lib.net.impl
                         error.dispatch(errorMessage);
                         messageLen = -1;
                         return;
-                    };
-                };
+                    }
+                }
                 if (this.socket.bytesAvailable < (this.messageLen - MESSAGE_LENGTH_SIZE_IN_BYTES)) break;
                 messageId = this.socket.readUnsignedByte();
                 message = this.messages.require(messageId);
@@ -208,19 +211,19 @@ package kabam.lib.net.impl
                 if ((this.messageLen - 5) > 0)
                 {
                     this.socket.readBytes(data, 0, (this.messageLen - 5));
-                };
+                }
                 data.position = 0;
                 if (this.incomingCipher != null)
                 {
                     this.incomingCipher.decrypt(data);
                     data.position = 0;
-                };
+                }
                 this.messageLen = -1;
                 if (message == null)
                 {
                     this.logErrorAndClose("Socket-Server Protocol Error: Unknown message");
                     return;
-                };
+                }
                 try
                 {
                     message.parseFromInput(data);
@@ -229,9 +232,9 @@ package kabam.lib.net.impl
                 {
                     logErrorAndClose(("Socket-Server Protocol Error: {0} on packet " + messageId), [error.toString()]);
                     return;
-                };
+                }
                 message.consume();
-            };
+            }
         }
 
         private function logErrorAndClose(_arg_1:String, _arg_2:Array=null):void
@@ -248,7 +251,7 @@ package kabam.lib.net.impl
             {
                 _arg_1 = _arg_1.replace((("{" + _local_3) + "}"), _arg_2[_local_3]);
                 _local_3++;
-            };
+            }
             return (_arg_1);
         }
 

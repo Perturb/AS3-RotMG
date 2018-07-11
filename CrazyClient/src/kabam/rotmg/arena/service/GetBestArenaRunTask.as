@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.service.GetBestArenaRunTask
 
 package kabam.rotmg.arena.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.arena.model.BestArenaRunModel;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.arena.model.BestArenaRunModel;
 
-    public class GetBestArenaRunTask extends BaseTask 
+public class GetBestArenaRunTask extends BaseTask 
     {
 
         private static const REQUEST:String = "arena/getPersonalBest";

@@ -5,9 +5,9 @@
 
 package kabam.lib.tasks
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public interface Task 
+public interface Task 
     {
 
         function start():void;

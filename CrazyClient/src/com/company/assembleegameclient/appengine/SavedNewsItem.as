@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.appengine.SavedNewsItem
 
 package com.company.assembleegameclient.appengine
 {
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class SavedNewsItem 
+import flash.display.BitmapData;
+
+public class SavedNewsItem
     {
 
         private static const FAME:String = "fame";

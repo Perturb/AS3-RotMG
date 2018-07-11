@@ -5,14 +5,16 @@
 
 package kabam.rotmg.account.web.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import flash.events.MouseEvent;
-    import org.osflash.signals.natives.NativeMappedSignal;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
 
-    public class WebForgotPasswordDialog extends Frame 
+import flash.events.MouseEvent;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebForgotPasswordDialog extends Frame 
     {
 
         public var cancel:Signal;
@@ -40,7 +42,7 @@ package kabam.rotmg.account.web.view
             {
                 disable();
                 this.submit.dispatch(this.emailInput.text());
-            };
+            }
         }
 
         private function isEmailValid():Boolean
@@ -49,7 +51,7 @@ package kabam.rotmg.account.web.view
             if (!_local_1)
             {
                 this.emailInput.setError("Not a valid email address");
-            };
+            }
             return (_local_1);
         }
 

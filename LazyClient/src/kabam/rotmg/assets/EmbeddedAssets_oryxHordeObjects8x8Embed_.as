@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_oryxHordeObjects8x8Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

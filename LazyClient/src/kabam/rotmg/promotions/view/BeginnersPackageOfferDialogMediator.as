@@ -5,16 +5,17 @@
 
 package kabam.rotmg.promotions.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
-    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
 
-    public class BeginnersPackageOfferDialogMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class BeginnersPackageOfferDialogMediator extends Mediator
     {
 
         [Inject]
@@ -39,7 +40,6 @@ package kabam.rotmg.promotions.view
         {
             this.view.buy.add(this.onBuy);
             this.view.close.add(this.onClose);
-            this.view.setTimeRemaining(this.model.getDaysRemaining());
             this.view.centerOnScreen();
             this.setWorldInteraction.dispatch(false);
         }

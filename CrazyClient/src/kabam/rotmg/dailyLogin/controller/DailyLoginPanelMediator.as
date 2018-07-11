@@ -1,21 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.controller.DailyLoginPanelMediator
 
 package kabam.rotmg.dailyLogin.controller
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dailyLogin.view.DailyLoginPanel;
-    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import flash.events.MouseEvent;
-    import flash.events.KeyboardEvent;
-    import kabam.rotmg.dailyLogin.view.DailyLoginModal;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class DailyLoginPanelMediator extends Mediator 
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+import kabam.rotmg.dailyLogin.view.DailyLoginModal;
+import kabam.rotmg.dailyLogin.view.DailyLoginPanel;
+import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DailyLoginPanelMediator extends Mediator 
     {
 
         [Inject]
@@ -40,7 +43,7 @@ package kabam.rotmg.dailyLogin.controller
             else
             {
                 this.view.showNoCalendarButton();
-            };
+            }
         }
 
         private function showCalendarModal(_arg_1:MouseEvent):void
@@ -60,7 +63,7 @@ package kabam.rotmg.dailyLogin.controller
             if (((_arg_1.keyCode == Parameters.data_.interact) && (WebMain.STAGE.focus == null)))
             {
                 this.showCalendarModal(null);
-            };
+            }
         }
 
 

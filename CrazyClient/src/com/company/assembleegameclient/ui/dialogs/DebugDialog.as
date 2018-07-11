@@ -1,15 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.DebugDialog
 
 package com.company.assembleegameclient.ui.dialogs
 {
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class DebugDialog extends StaticDialog 
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
+public class DebugDialog extends StaticDialog
     {
 
         private var f:Function;
@@ -28,11 +29,11 @@ package com.company.assembleegameclient.ui.dialogs
             if (((!(this.parent == null)) && (this.parent.contains(this))))
             {
                 this.parent.removeChild(this);
-            };
+            }
             if (this.f != null)
             {
                 this.f();
-            };
+            }
         }
 
 

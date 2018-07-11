@@ -7,8 +7,6 @@ package kabam.rotmg.pets.view.components
 	{
 		public function DialogCloseButton_CloseButtonAsset()
 		{
-			super();
-			return;
 		}
 	}
 }

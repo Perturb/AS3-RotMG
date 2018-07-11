@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.service.PurchaseCharacterClassTask
 
 package kabam.rotmg.core.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.model.PlayerModel;
-    import robotlegs.bender.framework.api.ILogger;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.util.MoreObjectUtil;
-    import com.company.assembleegameclient.appengine.SavedCharactersList;
+import com.company.assembleegameclient.appengine.SavedCharactersList;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreObjectUtil;
 
-    public class PurchaseCharacterClassTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class PurchaseCharacterClassTask extends BaseTask
     {
 
         [Inject]

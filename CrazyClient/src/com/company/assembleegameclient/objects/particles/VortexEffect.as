@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.VortexEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.util.FreeList;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.util.FreeList;
 
-    public class VortexEffect extends ParticleEffect 
+public class VortexEffect extends ParticleEffect
     {
 
         public var go_:GameObject;
@@ -34,14 +34,14 @@ package com.company.assembleegameclient.objects.particles
             if (this.go_.map_ == null)
             {
                 return (false);
-            };
+            }
             if (this.lastUpdate_ < 0)
             {
                 this.lastUpdate_ = Math.max(0, (_arg_1 - 400));
-            };
+            }
             x_ = this.go_.x_;
             y_ = this.go_.y_;
-            var _local_8:int = int((this.lastUpdate_ / 50));
+            var _local_8:int = int(int((this.lastUpdate_ / 50)));
             while (_local_8 < (_arg_1 / 50))
             {
                 _local_3 = (_local_8 * 50);
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.objects.particles
                 map_.addObj(_local_4, (x_ + _local_6), (y_ + _local_7));
                 _local_4.restart(_local_3, _arg_1, x_, y_);
                 _local_8++;
-            };
+            }
             this.lastUpdate_ = _arg_1;
             return (true);
         }
@@ -63,23 +63,24 @@ package com.company.assembleegameclient.objects.particles
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Vector3D;
 import com.company.assembleegameclient.util.FreeList;
 
-class VortexParticle extends Particle 
+import flash.geom.Vector3D;
+
+class VortexParticle extends Particle
 {
 
-    /*private*/ static const G:Number = 4;
+    private static const G:Number = 4;
 
     public var startTime_:int;
     protected var moveVec_:Vector3D = new Vector3D();
-    /*private*/ var A:Number = (2.5 + (0.5 * Math.random()));
-    /*private*/ var mSize:Number = (3.5 + (2 * Math.random()));
-    /*private*/ var centerX_:Number;
-    /*private*/ var centerY_:Number;
-    /*private*/ var initAccelX:Number;
-    /*private*/ var initAccelY:Number;
-    /*private*/ var fSize:Number = 0;
+    private var A:Number = (2.5 + (0.5 * Math.random()));
+    private var mSize:Number = (3.5 + (2 * Math.random()));
+    private var centerX_:Number;
+    private var centerY_:Number;
+    private var initAccelX:Number;
+    private var initAccelY:Number;
+    private var fSize:Number = 0;
 
     public function VortexParticle(_arg_1:uint=0x270068)
     {
@@ -113,7 +114,7 @@ class VortexParticle extends Particle
         if (this.mSize > size_)
         {
             this.fSize = (this.fSize + (_arg_2 * 0.01));
-        };
+        }
         size_ = this.fSize;
         moveTo((x_ + (((_local_5 + this.initAccelX) * _arg_2) * 0.0006)), (y_ + (((_local_6 + this.initAccelY) * _arg_2) * 0.0006)));
         z_ = (z_ + ((-0.5 * _arg_2) * 0.0006));

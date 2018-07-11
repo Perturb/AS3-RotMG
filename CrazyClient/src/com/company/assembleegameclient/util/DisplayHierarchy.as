@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.DisplayHierarchy
 
 package com.company.assembleegameclient.util
 {
-    import flash.display.DisplayObject;
+import flash.display.DisplayObject;
 
-    public class DisplayHierarchy 
+public class DisplayHierarchy
     {
 
 
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.util
             while (((_arg_1) && (!(_arg_1 is _arg_2))))
             {
                 _arg_1 = _arg_1.parent;
-            };
+            }
             return (_arg_1);
         }
 
@@ -30,10 +30,10 @@ package com.company.assembleegameclient.util
                     if ((_arg_1 is _local_3))
                     {
                         return (_arg_1);
-                    };
-                };
+                    }
+                }
                 _arg_1 = _arg_1.parent;
-            };
+            }
             return (_arg_1);
         }
 

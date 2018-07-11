@@ -1,15 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElementMediator
 
 package io.decagames.rotmg.dailyQuests.view.list
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
-    import flash.events.MouseEvent;
+import flash.events.MouseEvent;
 
-    public class DailyQuestListElementMediator extends Mediator 
+import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DailyQuestListElementMediator extends Mediator 
     {
 
         [Inject]

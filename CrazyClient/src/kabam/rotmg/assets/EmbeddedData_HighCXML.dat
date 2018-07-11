@@ -16,7 +16,7 @@
       <Terrain>HighSand</Terrain>
       <God/>
       <SpawnProb>0.7</SpawnProb>
-      <XpMult>1.7</XpMult>
+      <Exp>144</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>52</Damage>
@@ -56,7 +56,7 @@
       <DeathSound>monster/flayers_death</DeathSound>
       <Size>100</Size>
       <MaxHitPoints>140</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Defense>8</Defense>
       <Terrain>HighSand</Terrain>
       <Projectile id="0">
@@ -78,7 +78,7 @@
       <DeathSound>monster/flayers_death</DeathSound>
       <Size>100</Size>
       <MaxHitPoints>280</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Defense>0</Defense>
       <Terrain>HighSand</Terrain>
       <Projectile id="0">
@@ -100,7 +100,7 @@
       <DeathSound>monster/flayers_death</DeathSound>
       <Size>100</Size>
       <MaxHitPoints>1400</MaxHitPoints>
-      <XpMult>2.0</XpMult>
+      <Exp>280</Exp>
       <Defense>12</Defense>
       <Terrain>HighSand</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -142,7 +142,7 @@
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <Defense>7</Defense>
-      <XpMult>0.4</XpMult>
+      <Exp>40</Exp>
       <SpawnProb>1.0</SpawnProb>
       <Terrain>HighSand</Terrain>
    </Object>
@@ -169,7 +169,7 @@
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <Defense>12</Defense>
-      <XpMult>0.05</XpMult>
+      <Exp>5</Exp>
       <Terrain>HighSand</Terrain>
    </Object>
    <Object type="0x63a" id="Undead Dwarf Warrior">
@@ -291,7 +291,7 @@
       <Size>90</Size>
       <MaxHitPoints>800</MaxHitPoints>
       <Defense>11</Defense>
-      <XpMult>2.0</XpMult>
+      <Exp>160</Exp>
       <Terrain>HighPlains</Terrain>
       <SpawnProb>1.0</SpawnProb>
       <Projectile id="0">
@@ -330,7 +330,7 @@
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>50</Exp>
       <Terrain>HighPlains</Terrain>
       <SpawnProb>1.0</SpawnProb>
    </Object>
@@ -356,7 +356,7 @@
       <MaxHitPoints>2000</MaxHitPoints>
       <Size>100</Size>
       <Defense>60</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Terrain>HighPlains</Terrain>
    </Object>
    <Object type="0x0902" id="Shield Orc Shield">
@@ -381,7 +381,7 @@
       <MaxHitPoints>5000</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Terrain>HighPlains</Terrain>
    </Object>
    <Object type="0x0957" id="Urgle">
@@ -398,7 +398,7 @@
       <MaxHitPoints>1600</MaxHitPoints>
       <Size>100</Size>
       <Defense>9</Defense>
-      <XpMult>0.5</XpMult>
+      <Exp>80</Exp>
       <SpawnProb>1.0</SpawnProb>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
@@ -790,7 +790,7 @@
       <DeathSound>monster/lizard_god_death</DeathSound>
       <Size>100</Size>
       <MaxHitPoints>900</MaxHitPoints>
-      <XpMult>2.0</XpMult>
+      <Exp>180</Exp>
       <Defense>12</Defense>
       <Terrain>HighForest</Terrain>
       <God/>
@@ -871,7 +871,7 @@
       <HitSound>monster/dragons_hit</HitSound>
       <DeathSound>monster/dragons_death</DeathSound>
       <MaxHitPoints>400</MaxHitPoints>
-      <XpMult>2.0</XpMult>
+      <Exp>80</Exp>
       <Terrain>HighForest</Terrain>
       <Enemy/>
       <Projectile>
@@ -902,7 +902,7 @@
       <Defense>10</Defense>
       <Terrain>HighForest</Terrain>
       <Level>15</Level>
-      <XpMult>1.4</XpMult>
+      <Exp>273</Exp>
       <SpawnProb>0.05</SpawnProb>
       <Projectile id="0">
          <ObjectId>Xmas Barrel</ObjectId>

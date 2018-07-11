@@ -5,10 +5,11 @@
 
 package kabam.rotmg.external.command
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.external.service.ExternalServiceHelper;
+import kabam.rotmg.external.service.ExternalServiceHelper;
 
-    public class MapExternalCallbacksCommand extends Command 
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class MapExternalCallbacksCommand extends Command
     {
 
         [Inject]

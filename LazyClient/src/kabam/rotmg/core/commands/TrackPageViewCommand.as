@@ -5,9 +5,9 @@
 
 package kabam.rotmg.core.commands
 {
-    import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.core.service.GoogleAnalytics;
 
-    public class TrackPageViewCommand 
+public class TrackPageViewCommand
     {
 
         [Inject]

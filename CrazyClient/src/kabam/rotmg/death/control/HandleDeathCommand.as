@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.control.HandleDeathCommand
 
 package kabam.rotmg.death.control
 {
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.messaging.impl.incoming.Death;
 
-    public class HandleDeathCommand 
+public class HandleDeathCommand 
     {
 
         [Inject]
@@ -39,7 +39,7 @@ package kabam.rotmg.death.control
             else
             {
                 this.updateModelAndHandleDeath();
-            };
+            }
         }
 
         private function isZombieDeathPending():Boolean
@@ -61,15 +61,15 @@ package kabam.rotmg.death.control
             }
             else
             {
-                if (!this.player.getHasPlayerDied())
+                if ((!(this.player.getHasPlayerDied())))
                 {
                     this.resurrect.dispatch(this.death);
                 }
                 else
                 {
                     this.normal.dispatch(this.death);
-                };
-            };
+                }
+            }
         }
 
 

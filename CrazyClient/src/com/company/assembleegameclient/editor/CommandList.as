@@ -1,14 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.editor.CommandList
 
 package com.company.assembleegameclient.editor
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class CommandList 
+public class CommandList
     {
 
         private var list_:Vector.<Command> = new Vector.<Command>();
@@ -30,7 +27,7 @@ package com.company.assembleegameclient.editor
             for each (_local_1 in this.list_)
             {
                 _local_1.execute();
-            };
+            }
         }
 
         public function unexecute():void
@@ -39,7 +36,7 @@ package com.company.assembleegameclient.editor
             for each (_local_1 in this.list_)
             {
                 _local_1.unexecute();
-            };
+            }
         }
 
 

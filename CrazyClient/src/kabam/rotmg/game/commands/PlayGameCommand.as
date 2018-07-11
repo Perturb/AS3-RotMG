@@ -1,32 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.PlayGameCommand
 
 package kabam.rotmg.game.commands
 {
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.model.GameInitData;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.servers.api.ServerModel;
-    import kabam.rotmg.account.core.services.GetCharListTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.lib.net.impl.SocketServerModel;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class PlayGameCommand 
+import flash.utils.ByteArray;
+import flash.utils.getTimer;
+
+import io.decagames.rotmg.pets.data.PetsModel;
+
+import kabam.lib.net.impl.SocketServerModel;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.rotmg.account.core.services.GetCharListTask;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.servers.api.ServerModel;
+
+public class PlayGameCommand
     {
 
-        public static const RECONNECT_DELAY:int = 250;
         public static var startTime:int = -1;
-        public static var visited:Array = new Array();
+        public static var visited:Array = [];
         private static var loaded:Boolean = false;
         public static var currealm:String = "Nexus";
         public static var curloc:String = "Nexus";
@@ -52,10 +53,10 @@ package kabam.rotmg.game.commands
 
         public function execute():void
         {
-            if (!this.data.isNewGame)
+            if ((!(this.data.isNewGame)))
             {
-                this.socketServerModel.connectDelayMS = PlayGameCommand.RECONNECT_DELAY;
-            };
+                this.socketServerModel.connectDelayMS = Parameters.RECONNECT_DELAY;
+            }
             this.recordCharacterUseInSharedObject();
             this.makeGameView();
             this.updatePet();
@@ -73,9 +74,9 @@ package kabam.rotmg.game.commands
                 if ((((this.model.currentCharId) && (this.petsModel.getActivePet())) && (!(this.data.isNewGame))))
                 {
                     return;
-                };
+                }
                 this.petsModel.setActivePet(null);
-            };
+            }
         }
 
         private function recordCharacterUseInSharedObject():void
@@ -90,16 +91,16 @@ package kabam.rotmg.game.commands
             var _local_2:String;
             var _local_3:Boolean;
             var _local_4:String;
-            if (!this.model.account.isRegistered())
+            if ((!(this.model.account.isRegistered())))
             {
                 return;
-            };
+            }
             _local_1 = ((this.data.server) || (this.servers.getServer()));
             var _local_5:Boolean = this.namedConnection(_local_1);
             if ((((Parameters.data_.preferredServer == null) && (!(Parameters.data_.bestServ == "Default"))) && (_local_5)))
             {
                 _local_1 = this.getServerByName(Parameters.data_.bestServ);
-            };
+            }
             var _local_6:String = Parameters.data_.preferredServer;
             if (((!(_local_6 == null)) && (!(_local_1.name.substring(0, _local_6.length) == _local_6))))
             {
@@ -194,10 +195,10 @@ package kabam.rotmg.game.commands
                                 case "{oryx.Wine_Cellar}":
                                     _local_1.name = "Wine Cellar";
                                     break;
-                            };
-                        };
-                    };
-                };
+                            }
+                        }
+                    }
+                }
                 _local_1.name = ((((_local_6 + " ") + currealm) + " ") + _local_1.name);
             }
             else
@@ -211,9 +212,9 @@ package kabam.rotmg.game.commands
                     if (_local_1.name == "Realm")
                     {
                         _local_1.name = "";
-                    };
-                };
-            };
+                    }
+                }
+            }
             var _local_7:int = ((this.data.isNewGame) ? this.getInitialGameId() : this.data.gameId);
             var _local_8:Boolean = this.data.createCharacter;
             var _local_9:int = this.data.charId;
@@ -223,7 +224,7 @@ package kabam.rotmg.game.commands
             if (startTime == -1)
             {
                 startTime = getTimer();
-            };
+            }
             if (_local_7 == 0)
             {
                 _local_2 = ((_local_1.address + " ") + _local_1.name);
@@ -234,13 +235,13 @@ package kabam.rotmg.game.commands
                     {
                         _local_3 = false;
                         break;
-                    };
-                };
+                    }
+                }
                 if (_local_3)
                 {
                     visited.push(_local_2);
-                };
-            };
+                }
+            }
             curloc = _local_1.name;
             curip = _local_1.address;
             this.setScreen.dispatch(new GameSprite(_local_1, _local_7, _local_8, _local_9, _local_10, _local_11, this.model, null, this.data.isFromArena));
@@ -255,8 +256,8 @@ package kabam.rotmg.game.commands
                 if (_local_2.name == _arg_1.name)
                 {
                     return (true);
-                };
-            };
+                }
+            }
             return (false);
         }
 
@@ -269,8 +270,8 @@ package kabam.rotmg.game.commands
                 if (_local_2.name == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (null);
         }
 

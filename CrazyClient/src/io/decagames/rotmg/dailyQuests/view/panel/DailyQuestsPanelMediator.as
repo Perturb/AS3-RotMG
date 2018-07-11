@@ -1,19 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.panel.DailyQuestsPanelMediator
 
 package io.decagames.rotmg.dailyQuests.view.panel
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
-    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
-    import flash.events.MouseEvent;
-    import flash.events.KeyboardEvent;
-    import io.decagames.rotmg.dailyQuests.view.DailyQuestWindow;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class DailyQuestsPanelMediator extends Mediator 
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
+import io.decagames.rotmg.dailyQuests.view.DailyQuestWindow;
+import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class DailyQuestsPanelMediator extends Mediator 
     {
 
         [Inject]
@@ -21,7 +25,9 @@ package io.decagames.rotmg.dailyQuests.view.panel
         [Inject]
         public var questModel:DailyQuestsModel;
         [Inject]
-        public var openNoModalDialog:OpenDialogNoModalSignal;
+        public var openDialogSignal:ShowPopupSignal;
+        [Inject]
+        public var closePopupByClassSignal:ClosePopupByClassSignal;
 
 
         override public function initialize():void
@@ -30,21 +36,22 @@ package io.decagames.rotmg.dailyQuests.view.panel
             {
                 this.view.feedButton.addEventListener(MouseEvent.CLICK, this.onButtonLeftClick);
                 WebMain.STAGE.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
-            };
+            }
         }
 
         override public function destroy():void
         {
             this.view.feedButton.removeEventListener(MouseEvent.CLICK, this.onButtonLeftClick);
             WebMain.STAGE.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
+            this.closePopupByClassSignal.dispatch(DailyQuestWindow);
         }
 
         protected function onButtonLeftClick(_arg_1:MouseEvent):void
         {
-            if (!this.questModel.isPopupOpened)
+            if ((!(this.questModel.isPopupOpened)))
             {
-                this.openNoModalDialog.dispatch(new DailyQuestWindow());
-            };
+                this.openDialogSignal.dispatch(new DailyQuestWindow());
+            }
         }
 
         private function onKeyDown(_arg_1:KeyboardEvent):void
@@ -52,7 +59,7 @@ package io.decagames.rotmg.dailyQuests.view.panel
             if (((_arg_1.keyCode == Parameters.data_.interact) && (WebMain.STAGE.focus == null)))
             {
                 this.onButtonLeftClick(null);
-            };
+            }
         }
 
 

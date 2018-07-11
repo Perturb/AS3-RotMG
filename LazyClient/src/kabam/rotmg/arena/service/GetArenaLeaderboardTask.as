@@ -5,16 +5,16 @@
 
 package kabam.rotmg.arena.service
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.arena.control.ReloadLeaderboard;
-    import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import com.company.util.MoreObjectUtil;
+import com.company.util.MoreObjectUtil;
 
-    public class GetArenaLeaderboardTask extends BaseTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.arena.control.ReloadLeaderboard;
+import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+
+public class GetArenaLeaderboardTask extends BaseTask
     {
 
         private static const REQUEST:String = "arena/getRecords";

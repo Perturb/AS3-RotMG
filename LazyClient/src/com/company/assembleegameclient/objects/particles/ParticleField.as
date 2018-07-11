@@ -5,14 +5,15 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.thrown.BitmapParticle;
-    import flash.display.Sprite;
-    import flash.utils.Timer;
-    import flash.display.BitmapData;
-    import flash.events.TimerEvent;
-    import flash.geom.Point;
+import com.company.assembleegameclient.objects.thrown.BitmapParticle;
 
-    public class ParticleField extends BitmapParticle 
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.geom.Point;
+import flash.utils.Timer;
+
+public class ParticleField extends BitmapParticle
     {
 
         private const SMALL:String = "SMALL";
@@ -66,7 +67,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.doDestroy)
             {
                 return (false);
-            };
+            }
             var _local_4:uint = this.squares.length;
             _local_3 = 0;
             while (_local_3 < _local_4)
@@ -74,9 +75,9 @@ package com.company.assembleegameclient.objects.particles
                 if (this.squares[_local_3])
                 {
                     this.squares[_local_3].move();
-                };
+                }
                 _local_3++;
-            };
+            }
             _bitmapData = new BitmapData(this.width, this.height, true, 0);
             _bitmapData.draw(this.spriteSource);
             return (true);
@@ -128,7 +129,7 @@ package com.company.assembleegameclient.objects.particles
                 this.timer.removeEventListener(TimerEvent.TIMER, this.onTimer);
                 this.timer.stop();
                 this.timer = null;
-            };
+            }
             this.spriteSource = null;
             this.squares = [];
             this.doDestroy = true;
@@ -140,9 +141,10 @@ package com.company.assembleegameclient.objects.particles
 
 import flash.display.Shape;
 import flash.geom.Point;
+
 import org.osflash.signals.Signal;
 
-class Square extends Shape 
+class Square extends Shape
 {
 
     public var start:Point;
@@ -179,7 +181,7 @@ class Square extends Shape
         if (!this.lifespan)
         {
             this.complete.dispatch(this);
-        };
+        }
     }
 
 

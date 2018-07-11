@@ -1,47 +1,51 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.HUDView
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import flash.geom.Point;
-    import kabam.rotmg.minimap.view.MiniMapImp;
-    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-    import kabam.rotmg.pets.view.components.PetsTabContentView;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.game.view.components.TabStripView;
-    import com.company.assembleegameclient.ui.panels.InteractPanel;
-    import com.company.assembleegameclient.ui.TradePanel;
-    import kabam.rotmg.game.view.components.StatsView;
-    import com.company.assembleegameclient.ui.icons.SimpleIconButton;
-    import flash.display.BitmapData;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import org.swiftsuspenders.Injector;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import com.company.util.GraphicsUtil;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import kabam.rotmg.messaging.impl.incoming.TradeStart;
-    import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-    import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
-    import com.company.util.SpriteUtil;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.friends.view.FriendListView;
-    import com.company.assembleegameclient.ui.board.HelpBoard;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.TradePanel;
+import com.company.assembleegameclient.ui.board.HelpBoard;
+import com.company.assembleegameclient.ui.icons.SimpleIconButton;
+import com.company.assembleegameclient.ui.options.Options;
+import com.company.assembleegameclient.ui.panels.InteractPanel;
+import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+import com.company.util.AssetLibrary;
+import com.company.util.GraphicsUtil;
+import com.company.util.SpriteUtil;
 
-    public class HUDView extends Sprite implements UnFocusAble 
+import flash.display.BitmapData;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+
+import io.decagames.rotmg.classes.NewClassUnlockNotification;
+import io.decagames.rotmg.pets.components.guiTab.PetsTabContentView;
+import io.decagames.rotmg.pets.data.PetsModel;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.friends.view.FriendListView;
+import kabam.rotmg.game.view.components.StatsView;
+import kabam.rotmg.game.view.components.TabStripView;
+import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+import kabam.rotmg.messaging.impl.incoming.TradeStart;
+import kabam.rotmg.minimap.view.MiniMapImp;
+
+import org.swiftsuspenders.Injector;
+
+public class HUDView extends Sprite implements UnFocusAble
     {
 
         private const BG_POSITION:Point = new Point(0, 0);
@@ -50,10 +54,11 @@ package kabam.rotmg.ui.view
         private const STAT_METERS_POSITION:Point = new Point(12, 230);
         private const EQUIPMENT_INVENTORY_POSITION:Point = new Point(14, 304);
         private const TAB_STRIP_POSITION:Point = new Point(7, 346);
-        private const INTERACT_PANEL_POSITION:Point = new Point(0, 496);
+        private const INTERACT_PANEL_POSITION:Point = new Point(0, 500);
 
         private var background:CharacterWindowBackground;
         public var miniMap:MiniMapImp;
+        private var newClassUnlockNotification:NewClassUnlockNotification;
         private var inventory:InventoryGrid;
         private var backpack:InventoryGrid;
         private var cdtimer:CooldownTimer;
@@ -95,10 +100,11 @@ package kabam.rotmg.ui.view
         {
             this.background = new CharacterWindowBackground();
             this.miniMap = new MiniMapImp(192, 192);
-            (this.tabStrip = new TabStripView()).visible = Parameters.data_.normalUI;
+            this.newClassUnlockNotification = new NewClassUnlockNotification();
+            (this.tabStrip = new TabStripView()).visible = ((Parameters.data_.normalUI) || (Options.hidden));
             this.characterDetails = new CharacterDetailsView();
             this.statMeters = new StatMetersView();
-            (this.potions = new PotionInventoryView()).visible = (!(Parameters.data_.normalUI));
+            (this.potions = new PotionInventoryView()).visible = ((!(Parameters.data_.normalUI)) && (!(Options.hidden)));
             this.stats = new StatsView();
             this.stats.visible = false;
             this.cdtimer = new CooldownTimer();
@@ -108,6 +114,7 @@ package kabam.rotmg.ui.view
         {
             addChild(this.background);
             addChild(this.miniMap);
+            addChild(this.newClassUnlockNotification);
             addChild(this.tabStrip);
             addChild(this.characterDetails);
             addChild(this.statMeters);
@@ -124,7 +131,7 @@ package kabam.rotmg.ui.view
                 this.pet.y = 354;
                 this.pet.visible = false;
                 addChild(this.pet);
-            };
+            }
         }
 
         private function createInventories():void
@@ -134,25 +141,25 @@ package kabam.rotmg.ui.view
             this.inventory.y = 392;
             if (this.player.hasBackpack_)
             {
-                this.characterDetails.visible = Parameters.data_.normalUI;
+                this.characterDetails.visible = ((Parameters.data_.normalUI) || (Options.hidden));
                 this.backpack = new InventoryGrid(this.player, this.player, 12);
                 this.inventory.x = 14;
                 this.inventory.y = 304;
                 this.backpack.x = 14;
                 this.backpack.y = 392;
                 addChild(this.backpack);
-                if (!Parameters.data_.normalUI)
+                if (((!(Parameters.data_.normalUI)) && (!(Options.hidden))))
                 {
                     this.equippedGrid.y = 198;
                     this.statMeters.y = 240;
                     this.cdtimer.y = 198;
                     this.cdtimer.visible = true;
-                };
+                }
                 this.stats.visible = false;
             }
             else
             {
-                if (!Parameters.data_.normalUI)
+                if (((!(Parameters.data_.normalUI)) && (!(Options.hidden))))
                 {
                     this.equippedGrid.y = 348;
                     this.stats.visible = true;
@@ -160,17 +167,17 @@ package kabam.rotmg.ui.view
                 else
                 {
                     this.stats.visible = false;
-                };
-            };
-            if (Parameters.data_.normalUI)
+                }
+            }
+            if (((Parameters.data_.normalUI) || (Options.hidden)))
             {
                 this.inventory.visible = false;
                 this.cdtimer.visible = false;
                 if (this.player.hasBackpack_)
                 {
                     this.backpack.visible = false;
-                };
-            };
+                }
+            }
             addChild(this.inventory);
         }
 
@@ -180,6 +187,8 @@ package kabam.rotmg.ui.view
             this.background.y = this.BG_POSITION.y;
             this.miniMap.x = this.MAP_POSITION.x;
             this.miniMap.y = this.MAP_POSITION.y;
+            this.newClassUnlockNotification.x = this.MAP_POSITION.x;
+            this.newClassUnlockNotification.y = this.MAP_POSITION.y;
             this.tabStrip.x = this.TAB_STRIP_POSITION.x;
             this.tabStrip.y = this.TAB_STRIP_POSITION.y;
             this.characterDetails.x = this.CHARACTER_DETAIL_PANEL_POSITION.x;
@@ -210,7 +219,7 @@ package kabam.rotmg.ui.view
         {
             this.interactPanel = new InteractPanel(_arg_1, this.player, 200, 100);
             this.interactPanel.x = this.INTERACT_PANEL_POSITION.x;
-            this.interactPanel.y = ((Parameters.data_.normalUI) ? 496 : 500);
+            this.interactPanel.y = this.INTERACT_PANEL_POSITION.y;
             addChild(this.interactPanel);
         }
 
@@ -231,10 +240,10 @@ package kabam.rotmg.ui.view
             _local_1 = new <IGraphicsData>[_local_2, _local_3, GraphicsUtil.END_FILL];
             GraphicsUtil.drawCutEdgeRect(0, 0, 178, 46, 6, [1, 1, 1, 1], _local_3);
             this.equippedGridBG = new Sprite();
-            if (!Parameters.data_.normalUI)
+            if (((!(Parameters.data_.normalUI)) && (!(Options.hidden))))
             {
                 this.equippedGridBG.visible = false;
-            };
+            }
             this.equippedGridBG.x = (this.EQUIPMENT_INVENTORY_POSITION.x - 3);
             this.equippedGridBG.y = (this.EQUIPMENT_INVENTORY_POSITION.y - 3);
             this.equippedGridBG.graphics.drawGraphicsData(_local_1);
@@ -246,33 +255,33 @@ package kabam.rotmg.ui.view
             if (this.equippedGrid)
             {
                 this.equippedGrid.draw();
-            };
+            }
             if (this.interactPanel)
             {
                 this.interactPanel.draw();
-            };
+            }
         }
 
         public function startTrade(_arg_1:AGameSprite, _arg_2:TradeStart):void
         {
-            if (!this.tradePanel)
+            if ((!(this.tradePanel)))
             {
                 this.tradePanel = new TradePanel(_arg_1, _arg_2);
                 this.tradePanel.y = 200;
                 this.tradePanel.addEventListener(Event.CANCEL, this.onTradeCancel);
                 addChild(this.tradePanel);
                 this.setNonTradePanelAssetsVisible(false);
-            };
+            }
         }
 
         private function setNonTradePanelAssetsVisible(_arg_1:Boolean):void
         {
-            if (((Parameters.data_.normalUI) || (!(this.player.hasBackpack_))))
+            if ((((Parameters.data_.normalUI) || (Options.hidden)) || (!(this.player.hasBackpack_))))
             {
                 this.characterDetails.visible = _arg_1;
-            };
+            }
             this.statMeters.visible = _arg_1;
-            if (Parameters.data_.normalUI)
+            if (((Parameters.data_.normalUI) || (Options.hidden)))
             {
                 this.tabStrip.visible = _arg_1;
                 this.equippedGridBG.visible = _arg_1;
@@ -294,12 +303,12 @@ package kabam.rotmg.ui.view
                 else
                 {
                     this.stats.visible = _arg_1;
-                };
-            };
+                }
+            }
             if (this.pet != null)
             {
                 this.pet.visible = false;
-            };
+            }
             this.mainView = true;
             this.equippedGrid.visible = _arg_1;
             this.interactPanel.visible = _arg_1;
@@ -315,7 +324,7 @@ package kabam.rotmg.ui.view
             if (this.tradePanel)
             {
                 this.tradePanel.setYourOffer(_arg_1.offer_);
-            };
+            }
         }
 
         public function tradeAccepted(_arg_1:TradeAccepted):void
@@ -323,7 +332,7 @@ package kabam.rotmg.ui.view
             if (this.tradePanel)
             {
                 this.tradePanel.youAccepted(_arg_1.myOffer_, _arg_1.yourOffer_);
-            };
+            }
         }
 
         private function onTradeCancel(_arg_1:Event):void
@@ -339,7 +348,7 @@ package kabam.rotmg.ui.view
                 this.tradePanel.removeEventListener(Event.CANCEL, this.onTradeCancel);
                 this.tradePanel = null;
                 this.setNonTradePanelAssetsVisible(true);
-            };
+            }
         }
 
         private function createButtons():void
@@ -368,7 +377,7 @@ package kabam.rotmg.ui.view
             this.showButton.scaleX = 2;
             this.showButton.scaleY = 2;
             this.showButton.addEventListener(MouseEvent.CLICK, this.toggleIcons);
-            this.showButton.visible = (!(Parameters.data_.normalUI));
+            this.showButton.visible = ((!(Parameters.data_.normalUI)) && (!(Options.hidden)));
             addChild(this.showButton);
         }
 
@@ -404,8 +413,8 @@ package kabam.rotmg.ui.view
             {
                 Parameters.data_.normalUI = (!(Parameters.data_.normalUI));
                 return;
-            };
-            var _local_1:Boolean = Parameters.data_.normalUI;
+            }
+            var _local_1:Boolean = ((Parameters.data_.normalUI) || (Options.hidden));
             var _local_2:Boolean = this.player.hasBackpack_;
             this.showButton.visible = (!(_local_1));
             if (_local_1)
@@ -413,19 +422,19 @@ package kabam.rotmg.ui.view
                 this.optButton.visible = false;
                 this.frButton.visible = false;
                 this.helpButton.visible = false;
-            };
+            }
             this.equippedGrid.visible = true;
             this.characterDetails.visible = ((_local_2) ? _local_1 : true);
             this.tabStrip.visible = _local_1;
             this.inventory.visible = (!(_local_1));
             this.potions.visible = (!(_local_1));
-            this.interactPanel.y = ((_local_1) ? 496 : 500);
+            this.interactPanel.y = this.INTERACT_PANEL_POSITION.y;
             this.stats.visible = ((!(_local_1)) && (!(_local_2)));
             this.cdtimer.visible = (!(_local_1));
             if (this.pet != null)
             {
                 this.pet.visible = false;
-            };
+            }
             this.mainView = true;
             this.equippedGrid.y = this.EQUIPMENT_INVENTORY_POSITION.y;
             this.statMeters.y = 230;
@@ -433,19 +442,19 @@ package kabam.rotmg.ui.view
             if (_local_2)
             {
                 this.backpack.visible = (!(_local_1));
-                if (!_local_1)
+                if ((!(_local_1)))
                 {
                     this.equippedGrid.y = 198;
                     this.statMeters.y = 240;
-                };
+                }
             }
             else
             {
-                if (!_local_1)
+                if ((!(_local_1)))
                 {
                     this.equippedGrid.y = 348;
-                };
-            };
+                }
+            }
             this.statMeters.toggle();
         }
 
@@ -462,7 +471,7 @@ package kabam.rotmg.ui.view
                 {
                     this.backpack.visible = this.mainView;
                     this.pet.visible = (!(this.mainView));
-                };
+                }
             }
             else
             {
@@ -471,8 +480,8 @@ package kabam.rotmg.ui.view
                     this.equippedGrid.visible = this.mainView;
                     this.inventory.visible = this.mainView;
                     this.pet.visible = (!(this.mainView));
-                };
-            };
+                }
+            }
         }
 
 

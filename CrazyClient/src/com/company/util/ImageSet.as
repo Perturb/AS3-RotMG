@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.ImageSet
 
 package com.company.util
 {
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import __AS3__.vec.*;
+import flash.display.BitmapData;
 
-    public class ImageSet 
+public class ImageSet
     {
 
         public var images_:Vector.<BitmapData>;
@@ -33,8 +31,8 @@ package com.company.util
         {
             var _local_4:int;
             var _local_5:int;
-            var _local_6:int = int((_arg_1.width / _arg_2));
-            var _local_7:int = int((_arg_1.height / _arg_3));
+            var _local_6:int = int(int((_arg_1.width / _arg_2)));
+            var _local_7:int = int(int((_arg_1.height / _arg_3)));
             while (_local_5 < _local_7)
             {
                 _local_4 = 0;
@@ -42,9 +40,9 @@ package com.company.util
                 {
                     this.images_.push(BitmapUtil.cropToBitmapData(_arg_1, (_local_4 * _arg_2), (_local_5 * _arg_3), _arg_2, _arg_3));
                     _local_4++;
-                };
+                }
                 _local_5++;
-            };
+            }
         }
 
 

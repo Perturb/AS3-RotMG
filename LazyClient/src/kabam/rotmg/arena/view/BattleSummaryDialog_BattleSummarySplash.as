@@ -7,8 +7,6 @@ package kabam.rotmg.arena.view
 	{
 		public function BattleSummaryDialog_BattleSummarySplash()
 		{
-			super();
-			return;
 		}
 	}
 }

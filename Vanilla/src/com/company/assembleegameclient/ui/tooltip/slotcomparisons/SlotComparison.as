@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-    import flash.utils.Dictionary;
-    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import flash.utils.Dictionary;
 
-    public class SlotComparison 
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+
+public class SlotComparison
     {
 
         internal static const BETTER_COLOR:uint = 0xFF00;
@@ -43,11 +44,11 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
             if (_arg_1 < 0)
             {
                 return (WORSE_COLOR);
-            };
+            }
             if (_arg_1 > 0)
             {
                 return (BETTER_COLOR);
-            };
+            }
             return (NO_DIFF_COLOR);
         }
 

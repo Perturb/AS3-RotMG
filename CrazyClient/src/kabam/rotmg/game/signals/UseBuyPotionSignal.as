@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.signals.UseBuyPotionSignal
 
 package kabam.rotmg.game.signals
 {
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.game.model.UseBuyPotionVO;
+import kabam.rotmg.game.model.UseBuyPotionVO;
 
-    public class UseBuyPotionSignal extends Signal 
+import org.osflash.signals.Signal;
+
+public class UseBuyPotionSignal extends Signal 
     {
 
         public function UseBuyPotionSignal()

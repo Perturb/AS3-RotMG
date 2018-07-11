@@ -5,15 +5,16 @@
 
 package kabam.rotmg.arena.component
 {
-    import flash.display.Sprite;
-    import flash.utils.Timer;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.TimerEvent;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.utils.Timer;
 
-    public class LeaderboardWeeklyResetTimer extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class LeaderboardWeeklyResetTimer extends Sprite
     {
 
         private const MONDAY:Number = 1;
@@ -61,7 +62,7 @@ package kabam.rotmg.arena.component
             else
             {
                 _local_6 = (((((_local_3 + " hours, ") + _local_4) + " minutes, ") + _local_5) + " seconds");
-            };
+            }
             return (_local_6);
         }
 
@@ -79,7 +80,7 @@ package kabam.rotmg.arena.component
             {
                 _local_1.setUTCHours((this.UTC_COUNTOFF_HOUR - _local_1.hoursUTC));
                 return (_local_1);
-            };
+            }
             _local_1.setUTCHours(7);
             _local_1.setUTCMinutes(0);
             _local_1.setUTCSeconds(0);
@@ -88,7 +89,7 @@ package kabam.rotmg.arena.component
             while (_local_1.dayUTC != this.MONDAY)
             {
                 _local_1.setUTCDate((_local_1.dateUTC + 1));
-            };
+            }
             return (_local_1);
         }
 

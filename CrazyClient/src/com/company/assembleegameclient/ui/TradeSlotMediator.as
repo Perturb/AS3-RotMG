@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TradeSlotMediator
 
 package com.company.assembleegameclient.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.BitmapTextFactory;
 
-    public class TradeSlotMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TradeSlotMediator extends Mediator
     {
 
         [Inject]

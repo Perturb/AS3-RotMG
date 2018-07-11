@@ -5,17 +5,19 @@
 
 package kabam.rotmg.arena.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.filters.DropShadowFilter;
+import flash.utils.Timer;
 
-    public class ImminentWaveCountdownClock extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import org.osflash.signals.Signal;
+
+public class ImminentWaveCountdownClock extends Sprite
     {
 
         private var count:int = 5;
@@ -87,7 +89,7 @@ package kabam.rotmg.arena.view
                 this.waveStartTimer.addEventListener(TimerEvent.TIMER, this.cleanup);
                 this.waveStartTimer.start();
                 this.center();
-            };
+            }
         }
 
         private function cleanup(_arg_1:TimerEvent):void

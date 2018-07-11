@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.resizing.ResizeExtension
 
 package kabam.lib.resizing
 {
-    import robotlegs.bender.framework.api.IExtension;
-    import robotlegs.bender.extensions.mediatorMap.MediatorMapExtension;
-    import robotlegs.bender.framework.api.IContext;
+import robotlegs.bender.extensions.mediatorMap.MediatorMapExtension;
+import robotlegs.bender.framework.api.IContext;
+import robotlegs.bender.framework.api.IExtension;
 
-    public class ResizeExtension implements IExtension 
+public class ResizeExtension implements IExtension 
     {
 
 

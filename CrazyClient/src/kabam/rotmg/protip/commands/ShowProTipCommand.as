@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.protip.commands.ShowProTipCommand
 
 package kabam.rotmg.protip.commands
 {
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.protip.view.ProTipView;
-    import kabam.rotmg.protip.model.IProTipModel;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.protip.model.IProTipModel;
+import kabam.rotmg.protip.view.ProTipView;
 
-    public class ShowProTipCommand 
+public class ShowProTipCommand 
     {
 
         [Inject]

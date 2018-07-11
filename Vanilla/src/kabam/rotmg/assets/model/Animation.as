@@ -5,15 +5,13 @@
 
 package kabam.rotmg.assets.model
 {
-    import flash.display.Sprite;
-    import flash.display.Bitmap;
-    import __AS3__.vec.Vector;
-    import flash.display.BitmapData;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
-    import __AS3__.vec.*;
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
-    public class Animation extends Sprite 
+public class Animation extends Sprite
     {
 
         private const DEFAULT_SPEED:int = 200;
@@ -59,7 +57,7 @@ package kabam.rotmg.assets.model
             for each (_local_2 in _args)
             {
                 this.count = this.frames.push(_local_2);
-            };
+            }
             if (this.started)
             {
                 this.start();
@@ -67,7 +65,7 @@ package kabam.rotmg.assets.model
             else
             {
                 this.iterate();
-            };
+            }
         }
 
         public function addFrame(_arg_1:BitmapData):void
@@ -82,7 +80,7 @@ package kabam.rotmg.assets.model
             {
                 this.timer.start();
                 this.iterate();
-            };
+            }
             this.started = true;
         }
 
@@ -109,7 +107,7 @@ package kabam.rotmg.assets.model
             for each (_local_1 in this.frames)
             {
                 _local_1.dispose();
-            };
+            }
         }
 
         public function isStarted():Boolean

@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedData_stPatricksObjectCXML()
 		{
-			super();
-			return;
 		}
 	}
 }

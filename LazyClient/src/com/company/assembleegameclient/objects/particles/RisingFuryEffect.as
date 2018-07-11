@@ -5,12 +5,13 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.Timer;
-    import flash.events.TimerEvent;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class RisingFuryEffect extends ParticleEffect 
+import flash.events.TimerEvent;
+import flash.geom.Point;
+import flash.utils.Timer;
+
+public class RisingFuryEffect extends ParticleEffect
     {
 
         public var start_:Point;
@@ -49,7 +50,7 @@ package com.company.assembleegameclient.objects.particles
             {
                 this.timer.stop();
                 this.particleField.destroy();
-            };
+            }
         }
 
         private function onChargingComplete(_arg_1:TimerEvent):void

@@ -1,23 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.ClassDetailMediator
 
 package kabam.rotmg.classes.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import flash.utils.Timer;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.control.FocusCharacterSkinSignal;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.util.FameUtil;
-    import kabam.rotmg.assets.model.Animation;
+import com.company.assembleegameclient.util.FameUtil;
 
-    public class ClassDetailMediator extends Mediator 
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import kabam.rotmg.assets.model.Animation;
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.control.FocusCharacterSkinSignal;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.model.PlayerModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ClassDetailMediator extends Mediator 
     {
 
         private const skins:Object = {};
@@ -85,7 +88,7 @@ package kabam.rotmg.classes.view
                 _local_2 = this.skins[_local_1];
                 _local_2.dispose();
                 delete this.skins[_local_1];
-            };
+            }
         }
 
 

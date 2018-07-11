@@ -34,7 +34,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>55000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <StasisImmune/>
       <EventChestBoss/>
       <Projectile id="0">
@@ -173,7 +173,7 @@
       <ShadowSize>75</ShadowSize>
       <MaxHitPoints>1000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Green Gas</ObjectId>
          <Damage>200</Damage>
@@ -199,7 +199,7 @@
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>10</Defense>
       <StasisImmune/>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Projectile id="0">
          <ObjectId>Science Fire Ball</ObjectId>
          <Damage>150</Damage>
@@ -221,7 +221,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>100</Size>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x188b" id="Lab Table">
@@ -237,7 +237,7 @@
       <Static/>
       <OccupySquare/>
       <Enemy/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0979" id="Mini Bot">
       <Enemy/>
@@ -277,7 +277,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>15</Exp>
       <Projectile id="0">
          <ObjectId>Purple Energy Shot</ObjectId>
          <Damage>80</Damage>
@@ -338,7 +338,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Projectile id="0">
          <ObjectId>Yellow Energy Shot</ObjectId>
          <Damage>80</Damage>
@@ -398,7 +398,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>2750</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Projectile id="0">
          <ObjectId>Robot Attack</ObjectId>
          <Damage>100</Damage>
@@ -593,7 +593,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>60000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.8</XpMult>
+      <Exp>156</Exp>
       <StasisImmune/>
       <Projectile id="1">
          <ObjectId>H Creation Wave</ObjectId>

@@ -1,4 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.util.Random
@@ -60,7 +60,7 @@ package com.company.util
             if (_local_2 > 2147483647)
             {
                 _local_2 = (_local_2 - 2147483647);
-            };
+            }
             return (this.seed = _local_2);
         }
 

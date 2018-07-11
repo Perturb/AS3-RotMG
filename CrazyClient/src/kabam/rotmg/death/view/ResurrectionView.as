@@ -1,20 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ResurrectionView
 
 package kabam.rotmg.death.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import flash.filters.ColorMatrixFilter;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class ResurrectionView extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.ColorMatrixFilter;
+
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class ResurrectionView extends Sprite 
     {
 
         public const showDialog:Signal = new Signal(Sprite);

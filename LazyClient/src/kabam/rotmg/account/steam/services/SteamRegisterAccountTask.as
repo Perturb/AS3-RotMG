@@ -5,15 +5,16 @@
 
 package kabam.rotmg.account.steam.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.steam.SteamApi;
-    import kabam.rotmg.account.web.model.AccountData;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class SteamRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+import robotlegs.bender.framework.api.ILogger;
+
+public class SteamRegisterAccountTask extends BaseTask implements RegisterAccountTask 
     {
 
         [Inject]
@@ -45,7 +46,7 @@ package kabam.rotmg.account.steam.services
             else
             {
                 this.onRegisterError(_arg_2);
-            };
+            }
         }
 
         private function makeDataPacket():Object

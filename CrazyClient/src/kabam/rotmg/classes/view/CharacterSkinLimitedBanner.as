@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinLimitedBanner
 
 package kabam.rotmg.classes.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import org.osflash.signals.Signal;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
 
-    public class CharacterSkinLimitedBanner extends Sprite 
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class CharacterSkinLimitedBanner extends Sprite
     {
 
         private const limitedText:TextFieldDisplayConcrete = makeText();

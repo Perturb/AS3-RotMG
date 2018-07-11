@@ -1,14 +1,12 @@
-package com.company.assembleegameclient.util
+﻿package com.company.assembleegameclient.util
 {
-	import mx.core.*;
+import mx.core.*;
 
-	[Embed(source="AssetLoader_chamber.dat", mimeType="application/octet-stream")]
-	public class AssetLoader_chamber extends mx.core.ByteArrayAsset
+[Embed(source="AssetLoader_chamber.dat", mimeType="application/octet-stream")]
+	public class AssetLoader_chamber extends ByteArrayAsset
 	{
 		public function AssetLoader_chamber()
 		{
-			super();
-			return;
 		}
 	}
 }

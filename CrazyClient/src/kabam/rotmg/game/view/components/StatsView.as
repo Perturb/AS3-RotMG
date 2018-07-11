@@ -1,21 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.StatsView
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.game.model.StatModel;
-    import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.Vector;
-    import org.osflash.signals.natives.NativeSignal;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.filters.GlowFilter;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.objects.Player;
 
-    public class StatsView extends Sprite 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.GlowFilter;
+
+import kabam.rotmg.game.model.StatModel;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.natives.NativeSignal;
+
+public class StatsView extends Sprite
     {
 
         private static const statsModel:Array = [new StatModel(TextKey.STAT_MODEL_ATTACK_SHORT, TextKey.STAT_MODEL_ATTACK_LONG, TextKey.STAT_MODEL_ATTACK_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_DEFENSE_SHORT, TextKey.STAT_MODEL_DEFENSE_LONG, TextKey.STAT_MODEL_DEFENSE_DESCRIPTION, false), new StatModel(TextKey.STAT_MODEL_SPEED_SHORT, TextKey.STAT_MODEL_SPEED_LONG, TextKey.STAT_MODEL_SPEED_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_DEXTERITY_SHORT, TextKey.STAT_MODEL_DEXTERITY_LONG, TextKey.STAT_MODEL_DEXTERITY_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_VITALITY_SHORT, TextKey.STAT_MODEL_VITALITY_LONG, TextKey.STAT_MODEL_VITALITY_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_WISDOM_SHORT, TextKey.STAT_MODEL_WISDOM_LONG, TextKey.STAT_MODEL_WISDOM_DESCRIPTION, true)];
@@ -64,7 +65,7 @@ package kabam.rotmg.game.view.components
                 this.containerSprite.addChild(_local_1);
                 _local_2 = (_local_2 + (_local_3 % 2));
                 _local_3++;
-            };
+            }
         }
 
         private function createStat(_arg_1:int, _arg_2:int):StatView
@@ -83,7 +84,7 @@ package kabam.rotmg.game.view.components
             {
                 this.setBackgroundVisibility();
                 this.drawStats(_arg_1);
-            };
+            }
             this.containerSprite.x = ((this.WIDTH - this.containerSprite.width) / 2);
         }
 
@@ -129,8 +130,8 @@ package kabam.rotmg.game.view.components
                 if (this.currentState == STATE_DOCKED)
                 {
                     this.background.alpha = 0;
-                };
-            };
+                }
+            }
         }
 
 

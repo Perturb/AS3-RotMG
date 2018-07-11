@@ -5,17 +5,17 @@
 
 package kabam.rotmg.startup.control
 {
-    import kabam.lib.tasks.BaseTask;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.startup.model.api.StartupDelegate;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.startup.model.impl.SignalTaskDelegate;
-    import kabam.rotmg.startup.model.impl.TaskDelegate;
-    import kabam.lib.tasks.Task;
-    import __AS3__.vec.*;
+import kabam.lib.tasks.BaseTask;
+import kabam.lib.tasks.Task;
+import kabam.rotmg.startup.model.api.StartupDelegate;
+import kabam.rotmg.startup.model.impl.SignalTaskDelegate;
+import kabam.rotmg.startup.model.impl.TaskDelegate;
 
-    public class StartupSequence extends BaseTask 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class StartupSequence extends BaseTask 
     {
 
         public static const LAST:int = int.MAX_VALUE;//2147483647
@@ -68,7 +68,7 @@ package kabam.rotmg.startup.control
             else
             {
                 completeTask(true);
-            };
+            }
         }
 
         private function isAnotherTask():Boolean
@@ -94,7 +94,7 @@ package kabam.rotmg.startup.control
             else
             {
                 completeTask(false, _arg_3);
-            };
+            }
         }
 
 

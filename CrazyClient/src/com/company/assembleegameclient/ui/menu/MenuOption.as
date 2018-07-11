@@ -1,23 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.MenuOption
 
 package com.company.assembleegameclient.ui.menu
 {
-    import flash.display.Sprite;
-    import flash.geom.ColorTransform;
-    import flash.display.BitmapData;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.MouseEvent;
-    import com.company.util.MoreColorUtil;
-    import com.company.util.CachingColorTransformer;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.CachingColorTransformer;
+import com.company.util.MoreColorUtil;
 
-    public class MenuOption extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class MenuOption extends Sprite
     {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
@@ -54,7 +56,7 @@ package com.company.assembleegameclient.ui.menu
             if (_arg_1 == this.ct_)
             {
                 return;
-            };
+            }
             this.ct_ = _arg_1;
             if (this.ct_ == null)
             {
@@ -67,7 +69,7 @@ package com.company.assembleegameclient.ui.menu
                 _local_2 = TextureRedrawer.redraw(_local_2, this.redrawSize(), true, 0);
                 this.icon_.bitmapData = _local_2;
                 this.text_.transform.colorTransform = this.ct_;
-            };
+            }
         }
 
         protected function onMouseOver(_arg_1:MouseEvent):void

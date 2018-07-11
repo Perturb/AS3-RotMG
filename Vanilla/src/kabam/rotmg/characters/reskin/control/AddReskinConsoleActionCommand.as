@@ -5,10 +5,10 @@
 
 package kabam.rotmg.characters.reskin.control
 {
-    import kabam.lib.console.signals.RegisterConsoleActionSignal;
-    import kabam.lib.console.vo.ConsoleAction;
+import kabam.lib.console.signals.RegisterConsoleActionSignal;
+import kabam.lib.console.vo.ConsoleAction;
 
-    public class AddReskinConsoleActionCommand 
+public class AddReskinConsoleActionCommand
     {
 
         [Inject]

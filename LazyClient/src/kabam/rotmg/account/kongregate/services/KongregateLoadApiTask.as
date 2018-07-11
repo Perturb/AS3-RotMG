@@ -5,17 +5,18 @@
 
 package kabam.rotmg.account.kongregate.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.LoadApiTask;
-    import flash.display.LoaderInfo;
-    import kabam.rotmg.account.kongregate.view.KongregateApi;
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import flash.system.Security;
-    import flash.display.DisplayObject;
+import flash.display.DisplayObject;
+import flash.display.LoaderInfo;
+import flash.system.Security;
 
-    public class KongregateLoadApiTask extends BaseTask implements LoadApiTask 
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.services.LoadApiTask;
+import kabam.rotmg.account.kongregate.view.KongregateApi;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+public class KongregateLoadApiTask extends BaseTask implements LoadApiTask
     {
 
         [Inject]

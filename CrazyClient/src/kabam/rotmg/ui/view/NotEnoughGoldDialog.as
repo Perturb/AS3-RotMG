@@ -1,16 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.NotEnoughGoldDialog
 
 package kabam.rotmg.ui.view
 {
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.natives.NativeMappedSignal;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
 
-    public class NotEnoughGoldDialog extends Dialog 
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class NotEnoughGoldDialog extends Dialog
     {
 
         public var cancel:Signal;

@@ -14,7 +14,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <DisplayId>{cave.Treasure_Thief}</DisplayId>
    </Object>
    <Object type="0x1e18" id="Treasure Dropper">
@@ -471,7 +471,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>500</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <DisplayId>{cave.Treasure_Pot}</DisplayId>
    </Object>
    <Object type="0x5e3d" id="Boulder">
@@ -536,7 +536,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>200</Size>
       <StasisImmune/>

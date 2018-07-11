@@ -5,22 +5,24 @@
 
 package kabam.rotmg.chat.control
 {
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.build.api.BuildData;
-    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.util.MoreObjectUtil;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.dialogs.model.PopupNamesConfig;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.MoreObjectUtil;
 
-    public class ParseChatMessageCommand 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+import kabam.rotmg.dialogs.model.PopupNamesConfig;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.ui.model.HUDModel;
+
+public class ParseChatMessageCommand 
     {
 
         [Inject]
@@ -39,6 +41,8 @@ package kabam.rotmg.chat.control
         public var dailyLoginModel:DailyLoginModel;
         [Inject]
         public var player:PlayerModel;
+        [Inject]
+        public var tracking:GoogleAnalytics;
 
 
         public function execute():void
@@ -48,7 +52,7 @@ package kabam.rotmg.chat.control
             var _local_3:uint;
             var _local_4:GameObject;
             var _local_5:String;
-            var _local_6:*;
+            var _local_6:String;
             switch (this.data)
             {
                 case "/resetDailyQuests":
@@ -57,8 +61,8 @@ package kabam.rotmg.chat.control
                         _local_1 = {};
                         MoreObjectUtil.addToObject(_local_1, this.account.getCredentials());
                         this.client.sendRequest("/dailyquest/resetDailyQuests", _local_1);
-                        this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, "Restarting daily quests..."));
-                    };
+                        this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, "Restarting daily quests. Please refresh game."));
+                    }
                     return;
                 case "/resetPackagePopup":
                     Parameters.data_[PopupNamesConfig.PACKAGES_OFFER_POPUP] = null;
@@ -78,18 +82,18 @@ package kabam.rotmg.chat.control
                         {
                             _local_2[_local_4.objectType_] = ((_local_2[_local_4.objectType_] != undefined) ? (_local_2[_local_4.objectType_] + 1) : uint(1));
                             _local_3++;
-                        };
-                    };
+                        }
+                    }
                     _local_5 = "";
                     for (_local_6 in _local_2)
                     {
                         _local_5 = (_local_5 + (((" " + ObjectLibrary.typeToDisplayId_[_local_6]) + ": ") + _local_2[_local_6]));
-                    };
+                    }
                     this.addTextLine.dispatch(ChatMessage.make("", ((("Classes online (" + _local_3) + "):") + _local_5)));
                     return;
                 default:
                     this.hudModel.gameSprite.gsc_.playerText(this.data);
-            };
+            }
         }
 
 

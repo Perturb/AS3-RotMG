@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.CharacterList
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import com.company.assembleegameclient.screens.charrects.CharacterRectList;
-    import kabam.rotmg.core.model.PlayerModel;
+import com.company.assembleegameclient.screens.charrects.CharacterRectList;
 
-    public class CharacterList extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+
+import kabam.rotmg.core.model.PlayerModel;
+
+public class CharacterList extends Sprite
     {
 
         public static const WIDTH:int = 760;
@@ -36,7 +38,7 @@ package com.company.assembleegameclient.screens
                     break;
                 default:
                     this.charRectList_ = new Sprite();
-            };
+            }
             addChild(this.charRectList_);
             if (height > 400)
             {
@@ -47,7 +49,7 @@ package com.company.assembleegameclient.screens
                 _local_4.endFill();
                 addChild(_local_3);
                 mask = _local_3;
-            };
+            }
         }
 
         public function setPos(_arg_1:Number):void

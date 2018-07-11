@@ -5,11 +5,13 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class CollapseEffect extends ParticleEffect 
+import flash.geom.Point;
+
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class CollapseEffect extends ParticleEffect
     {
 
         public var center_:Point;
@@ -42,7 +44,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_10 = new SparkerParticle(_local_4, this.color_, _local_5, _local_9, this.center_);
                 map_.addObj(_local_10, x_, y_);
                 _local_7++;
-            };
+            }
             return (false);
         }
 
@@ -65,7 +67,7 @@ package com.company.assembleegameclient.objects.particles
                 _local_10 = new SparkerParticle(_local_4, this.color_, _local_5, _local_9, this.center_);
                 map_.addObj(_local_10, x_, y_);
                 _local_7++;
-            };
+            }
             return (false);
         }
 

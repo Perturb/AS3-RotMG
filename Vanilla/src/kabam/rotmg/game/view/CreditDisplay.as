@@ -5,32 +5,36 @@
 
 package kabam.rotmg.game.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.game.GameSprite;
-    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.fortune.model.FortuneInfo;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.util.FameUtil;
-    import kabam.rotmg.fortune.services.FortuneModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import kabam.rotmg.assets.services.IconFactory;
-    import io.decagames.rotmg.ui.texture.TextureParser;
-    import flash.events.MouseEvent;
-    import org.swiftsuspenders.Injector;
-    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-    import io.decagames.rotmg.fame.FameContentPopup;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.util.TimeUtil;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TimeUtil;
+import com.company.util.AssetLibrary;
 
-    public class CreditDisplay extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+
+import io.decagames.rotmg.fame.FameContentPopup;
+import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+import io.decagames.rotmg.ui.texture.TextureParser;
+
+import kabam.rotmg.assets.services.IconFactory;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.fortune.model.FortuneInfo;
+import kabam.rotmg.fortune.services.FortuneModel;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+import org.osflash.signals.Signal;
+import org.swiftsuspenders.Injector;
+
+public class CreditDisplay extends Sprite
     {
 
         private static const FONT_SIZE:int = 18;
@@ -80,7 +84,7 @@ package kabam.rotmg.game.view
                 addChild(this.fameText_);
                 this.fameIcon_ = new Bitmap(FameUtil.getFameIcon());
                 addChild(this.fameIcon_);
-            };
+            }
             if (((this.displayFortune_) && (FortuneModel.HAS_FORTUNES)))
             {
                 _local_6 = StaticInjectorContext.getInjector().getInstance(FortuneModel).getFortune();
@@ -92,7 +96,7 @@ package kabam.rotmg.game.view
                     this.fortuneTimeText_.setStringBuilder(new StaticStringBuilder(this.getFortuneTimeLeftStr()));
                     addChild(this.fortuneTimeText_);
                     this.fortuneTimeText_.visible = false;
-                };
+                }
                 this.fortuneText_ = this.makeTextField(0xFFFFFF);
                 waiter.push(this.fortuneText_.textChanged);
                 addChild(this.fortuneText_);
@@ -102,7 +106,7 @@ package kabam.rotmg.game.view
             else
             {
                 this.displayFortune_ = false;
-            };
+            }
             this.draw(0, 0, 0);
             mouseEnabled = true;
             waiter.complete.add(this.onAlignHorizontal);
@@ -123,11 +127,11 @@ package kabam.rotmg.game.view
             if (this._creditsButton)
             {
                 removeChild(this._creditsButton);
-            };
+            }
             if (this._fameButton)
             {
                 removeChild(this._fameButton);
-            };
+            }
         }
 
         private function onAlignHorizontal():void
@@ -154,8 +158,8 @@ package kabam.rotmg.game.view
                 {
                     this._creditsButton.x = ((this.coinIcon_.x - this.creditsText_.width) - 16);
                     this._creditsButton.y = 7;
-                };
-            };
+                }
+            }
             if (this.displayFame_)
             {
                 this.fameIcon_.x = ((this.creditsText_.x - this.fameIcon_.width) - this.resourcePadding);
@@ -165,8 +169,8 @@ package kabam.rotmg.game.view
                 {
                     this._fameButton.x = ((this.fameIcon_.x - this.fameText_.width) - 16);
                     this._fameButton.y = 7;
-                };
-            };
+                }
+            }
         }
 
         public function onFameClick(_arg_1:MouseEvent):void
@@ -186,7 +190,7 @@ package kabam.rotmg.game.view
             if ((((!(this.gs)) || (this.gs.evalIsNotInCombatMapArea())) || (Parameters.data_.clickForGold == true)))
             {
                 this.openAccountDialog.dispatch();
-            };
+            }
         }
 
         public function makeTextField(_arg_1:uint=0xFFFFFF):TextFieldDisplayConcrete
@@ -213,9 +217,9 @@ package kabam.rotmg.game.view
                 {
                     this.fortuneTimeText_.setStringBuilder(new StaticStringBuilder(_local_1));
                     this.fortuneTimeLeftString = _local_1;
-                };
+                }
                 this.onAlignHorizontal();
-            };
+            }
         }
 
         public function draw(_arg_1:int, _arg_2:int, _arg_3:int=0):void
@@ -223,27 +227,27 @@ package kabam.rotmg.game.view
             if (this.displayFortune_)
             {
                 this.handleFortuneTimeTextUpdate();
-            };
+            }
             if ((((_arg_1 == this.credits_) && ((this.displayFame_) && (_arg_2 == this.fame_))) && ((this.displayFortune_) && (_arg_3 == this.fortune_))))
             {
                 return;
-            };
+            }
             this.credits_ = _arg_1;
             this.creditsText_.setStringBuilder(new StaticStringBuilder(this.credits_.toString()));
             if (this.displayFame_)
             {
                 this.fame_ = _arg_2;
                 this.fameText_.setStringBuilder(new StaticStringBuilder(this.fame_.toString()));
-            };
+            }
             if (this.displayFortune_)
             {
                 this.fortune_ = _arg_3;
                 this.fortuneText_.setStringBuilder(new StaticStringBuilder(this.fortune_.toString()));
-            };
+            }
             if (waiter.isEmpty())
             {
                 this.onAlignHorizontal();
-            };
+            }
         }
 
         public function getFortuneTimeLeftStr():String
@@ -282,11 +286,11 @@ package kabam.rotmg.game.view
                             else
                             {
                                 _local_1 = "Ended";
-                            };
-                        };
-                    };
-                };
-            };
+                            }
+                        }
+                    }
+                }
+            }
             return (_local_1);
         }
 

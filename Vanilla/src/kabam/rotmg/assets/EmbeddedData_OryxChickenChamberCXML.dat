@@ -15,7 +15,7 @@
       <EventChestBoss/>
       <MaxHitPoints>1100</MaxHitPoints>
       <Defense>35</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <ShadowSize>80</ShadowSize>
       <Projectile id="0">
          <ObjectId>Rainbow Magic</ObjectId>
@@ -92,9 +92,9 @@
       </AltTexture>
       <HitSound>monster/eggs_hit</HitSound>
       <DeathSound>monster/eggs_death</DeathSound>
-      <MaxHitPoints>650000</MaxHitPoints>
+      <MaxHitPoints>100000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>130</Size>
       <ShadowSize>100</ShadowSize>
    </Object>
@@ -106,16 +106,16 @@
          <File>chars16x16rEncounters</File>
          <Index>22</Index>
       </AnimatedTexture>
-      <MaxHitPoints>80000</MaxHitPoints>
-      <Defense>55</Defense>
-      <XpMult>0.35</XpMult>
       <Size>40</Size>
       <ShadowSize>80</ShadowSize>
+      <HitSound>monster/chicken_hit</HitSound>
+      <DeathSound>monster/chicken_death</DeathSound>
+      <MaxHitPoints>60000</MaxHitPoints>
+      <Defense>55</Defense>
+      <Exp>10000</Exp>
       <StasisImmune/>
       <StunImmune/>
       <ParalyzeImmune/>
-      <HitSound>monster/chicken_hit</HitSound>
-      <DeathSound>monster/chicken_death</DeathSound>
       <Projectile id="0">
          <ObjectId>Pink Dot</ObjectId>
          <Damage>100</Damage>

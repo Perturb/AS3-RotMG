@@ -23,7 +23,7 @@
       <Size>40</Size>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Fire Missile</ObjectId>
          <Damage>20</Damage>
@@ -47,7 +47,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>80</Damage>
@@ -89,7 +89,7 @@
       <Size>40</Size>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Yellow Magic</ObjectId>
          <Damage>0</Damage>
@@ -113,7 +113,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <Projectile id="0">
          <ObjectId>Yellow Magic</ObjectId>
          <Damage>40</Damage>
@@ -159,7 +159,7 @@
       <Size>40</Size>
       <MaxHitPoints>200</MaxHitPoints>
       <Defense>5</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Missile</ObjectId>
          <Damage>0</Damage>
@@ -183,7 +183,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <Projectile id="0">
          <ObjectId>Blue Magic</ObjectId>
          <Damage>60</Damage>
@@ -228,7 +228,7 @@
       <Size>100</Size>
       <MaxHitPoints>1400</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>80</Damage>
@@ -249,7 +249,7 @@
       <Size>100</Size>
       <MaxHitPoints>1800</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>120</Damage>
@@ -270,7 +270,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
          <Damage>100</Damage>
@@ -291,7 +291,7 @@
       <Size>120</Size>
       <MaxHitPoints>6000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>2.0</XpMult>
+      <Exp>390</Exp>
       <Projectile id="0">
          <ObjectId>Darkness Bolt</ObjectId>
          <Damage>140</Damage>
@@ -312,7 +312,7 @@
       <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.4</XpMult>
+      <Exp>273</Exp>
       <Projectile id="0">
          <ObjectId>Green Star</ObjectId>
          <Damage>30</Damage>
@@ -342,7 +342,7 @@
       <Size>60</Size>
       <MaxHitPoints>300</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Green Magic</ObjectId>
          <Damage>50</Damage>
@@ -369,7 +369,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Green Spinner</ObjectId>
          <Damage>90</Damage>
@@ -398,7 +398,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Green Spinner</ObjectId>
          <Damage>90</Damage>
@@ -427,7 +427,7 @@
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Green Spinner</ObjectId>
          <Damage>90</Damage>
@@ -456,7 +456,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -476,7 +476,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -496,7 +496,7 @@
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Black Missile</ObjectId>
          <Damage>190</Damage>
@@ -516,7 +516,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -537,7 +537,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -558,7 +558,7 @@
       <Size>120</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Beam</ObjectId>
          <Damage>50</Damage>
@@ -569,15 +569,16 @@
       </Projectile>
    </Object>
    <Object type="0x0d25" id="Tomb Boss Anchor">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
          <File>lofiChar216x16</File>
          <Index>0x0e</Index>
       </Texture>
       <Size>0</Size>
-      <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
-      <NoMiniMap/>
+      <Enemy/>
+      <MaxHitPoints>90000</MaxHitPoints>
+      <Exp>0</Exp>
+      <EventChestBoss/>
    </Object>
    <Object type="0x0d3d" id="Tomb Support Statue">
       <Group>Tomb Boss Statues</Group>
@@ -631,7 +632,6 @@
       <MaxHitPoints>80000</MaxHitPoints>
       <Size>140</Size>
       <Defense>15</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
       <Projectile id="0">
@@ -729,10 +729,8 @@
       <MaxHitPoints>90000</MaxHitPoints>
       <Size>140</Size>
       <Defense>30</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
-      <EventChestBoss/>
       <Projectile id="0">
          <ObjectId>Darkness Bolt</ObjectId>
          <Damage>280</Damage>
@@ -800,7 +798,6 @@
       <MaxHitPoints>100000</MaxHitPoints>
       <Size>140</Size>
       <Defense>50</Defense>
-      <XpMult>1</XpMult>
       <God/>
       <NoArticle/>
       <Projectile id="0">
@@ -863,7 +860,7 @@
       <Size>140</Size>
       <Defense>100</Defense>
       <StasisImmune/>
-      <XpMult>1.4</XpMult>
+      <Exp>273</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>Silver Shield</ObjectId>
@@ -889,7 +886,6 @@
       <MaxHitPoints>8000</MaxHitPoints>
       <Size>100</Size>
       <Defense>20</Defense>
-      <XpMult>1.0</XpMult>
       <God/>
       <Projectile id="0">
          <ObjectId>Purple Boomerang</ObjectId>
@@ -922,7 +918,6 @@
       <MaxHitPoints>7000</MaxHitPoints>
       <Size>100</Size>
       <Defense>15</Defense>
-      <XpMult>1.0</XpMult>
       <God/>
       <Projectile id="0">
          <ObjectId>Blue Boomerang</ObjectId>
@@ -955,7 +950,7 @@
       <MaxHitPoints>50000</MaxHitPoints>
       <Size>180</Size>
       <Defense>100</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <God/>
    </Object>
    <Object type="0x0d2d" id="Canopic Jar 1">
@@ -972,7 +967,7 @@
       <MaxHitPoints>1</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <God/>
    </Object>
    <Object type="0x0d2e" id="Canopic Jar 2">
@@ -989,7 +984,7 @@
       <MaxHitPoints>1</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <God/>
    </Object>
    <Object type="0x0d2f" id="Canopic Jar 3">
@@ -1006,7 +1001,7 @@
       <MaxHitPoints>1</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <God/>
    </Object>
    <Object type="0x0d30" id="Canopic Jar 4">
@@ -1023,7 +1018,7 @@
       <MaxHitPoints>1</MaxHitPoints>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <God/>
    </Object>
    <Object type="0x0d31" id="Tomb Fire Turret">
@@ -1239,7 +1234,7 @@
       <MaxHitPoints>4000</MaxHitPoints>
       <Size>120</Size>
       <Defense>35</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>Stick</ObjectId>
@@ -1276,7 +1271,7 @@
       <MaxHitPoints>2500</MaxHitPoints>
       <Size>120</Size>
       <Defense>5</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>Violet Missile</ObjectId>
@@ -1306,7 +1301,7 @@
       <MaxHitPoints>3200</MaxHitPoints>
       <Size>120</Size>
       <Defense>20</Defense>
-      <XpMult>1.2</XpMult>
+      <Exp>234</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>Indigo Arrow</ObjectId>

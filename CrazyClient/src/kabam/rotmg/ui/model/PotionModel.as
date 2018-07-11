@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.model.PotionModel
 
 package kabam.rotmg.ui.model
 {
-    import flash.utils.Timer;
-    import org.osflash.signals.natives.NativeSignal;
-    import org.osflash.signals.Signal;
-    import flash.events.TimerEvent;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
-    public class PotionModel 
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeSignal;
+
+public class PotionModel
     {
 
         public var objectId:uint;
@@ -39,7 +40,7 @@ package kabam.rotmg.ui.model
             if (((!(_arg_1 == null)) && (_arg_1.length > 0)))
             {
                 this.costIndex = 0;
-            };
+            }
         }
 
         public function get costs():Array
@@ -51,7 +52,7 @@ package kabam.rotmg.ui.model
         {
             this._priceCooldownMillis = _arg_1;
             this.costCoolDownTimer = new Timer(_arg_1, 0);
-            this.costTimerSignal = new NativeSignal(this.costCoolDownTimer, TimerEvent.TIMER, TimerEvent);
+            this.costTimerSignal = new NativeSignal(this.costCoolDownTimer, "timer", TimerEvent);
             this.costTimerSignal.add(this.coolDownPrice);
         }
 
@@ -59,7 +60,7 @@ package kabam.rotmg.ui.model
         {
             this._purchaseCooldownMillis = _arg_1;
             this.purchaseCoolDownTimer = new Timer(_arg_1, 0);
-            this.purchaseTimerSignal = new NativeSignal(this.purchaseCoolDownTimer, TimerEvent.TIMER, TimerEvent);
+            this.purchaseTimerSignal = new NativeSignal(this.purchaseCoolDownTimer, "timer", TimerEvent);
             this.purchaseTimerSignal.add(this.coolDownPurchase);
         }
 
@@ -75,9 +76,9 @@ package kabam.rotmg.ui.model
                 if (this.costIndex < (this.costs.length - 1))
                 {
                     this.costIndex++;
-                };
+                }
                 this.update.dispatch(this.position);
-            };
+            }
         }
 
         private function coolDownPurchase(_arg_1:TimerEvent):void
@@ -85,7 +86,7 @@ package kabam.rotmg.ui.model
             if (this.costIndex == 0)
             {
                 this.purchaseCoolDownTimer.stop();
-            };
+            }
             this.available = true;
             this.update.dispatch(this.position);
         }
@@ -96,7 +97,7 @@ package kabam.rotmg.ui.model
             if (this.costIndex == 0)
             {
                 this.costCoolDownTimer.stop();
-            };
+            }
             this.update.dispatch(this.position);
         }
 
@@ -106,7 +107,7 @@ package kabam.rotmg.ui.model
             if (_arg_1 <= 0)
             {
                 _local_2 = this.costs[this.costIndex];
-            };
+            }
             return (_local_2);
         }
 

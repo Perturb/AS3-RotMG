@@ -1,16 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
-// www.as3sorcerer.com
-
-//kabam.rotmg.fortune.model.FortuneInfo_chestImageEmbed
-
-package kabam.rotmg.fortune.model
+﻿package kabam.rotmg.fortune.model
 {
-    import mx.core.BitmapAsset;
+import mx.core.*;
 
-    public class FortuneInfo_chestImageEmbed extends BitmapAsset 
-    {
-
-
-    }
-}//package kabam.rotmg.fortune.model
-
+[Embed(source="FortuneInfo_chestImageEmbed.png")]
+	public class FortuneInfo_chestImageEmbed extends BitmapAsset
+	{
+		public function FortuneInfo_chestImageEmbed()
+		{
+		}
+	}
+}

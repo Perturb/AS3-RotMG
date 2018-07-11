@@ -5,19 +5,21 @@
 
 package kabam.rotmg.chat.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.text.model.TextAndMapProvider;
-    import kabam.rotmg.text.model.FontModel;
-    import kabam.rotmg.chat.control.ParseChatMessageSignal;
-    import kabam.rotmg.chat.control.ShowChatInputSignal;
-    import kabam.rotmg.chat.model.TellModel;
-    import kabam.rotmg.chat.model.ChatShortcutModel;
-    import flash.display.Stage;
-    import flash.events.KeyboardEvent;
-    import flash.text.TextField;
+import flash.display.Stage;
+import flash.events.KeyboardEvent;
+import flash.text.TextField;
 
-    public class ChatInputMediator extends Mediator 
+import kabam.rotmg.chat.control.ParseChatMessageSignal;
+import kabam.rotmg.chat.control.ShowChatInputSignal;
+import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.chat.model.ChatShortcutModel;
+import kabam.rotmg.chat.model.TellModel;
+import kabam.rotmg.text.model.FontModel;
+import kabam.rotmg.text.model.TextAndMapProvider;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChatInputMediator extends Mediator
     {
 
         [Inject]
@@ -78,11 +80,11 @@ package kabam.rotmg.chat.view
             else
             {
                 this.view.deactivate();
-            };
+            }
             if (!_arg_1)
             {
                 this.tellModel.resetRecipients();
-            };
+            }
         }
 
         private function makeTextfield():TextField
@@ -97,7 +99,7 @@ package kabam.rotmg.chat.view
             if (((this.view.visible) && ((_arg_1.keyCode == this.chatShortcutModel.getTellShortcut()) || ((this.stage.focus == null) || (this.viewDoesntHaveFocus())))))
             {
                 this.processKeyUp(_arg_1);
-            };
+            }
         }
 
         private function viewDoesntHaveFocus():Boolean
@@ -130,10 +132,10 @@ package kabam.rotmg.chat.view
                         if (_local_2 == this.chatShortcutModel.getTellShortcut())
                         {
                             this.handleTell();
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
         }
 
         private function handleTell():void
@@ -141,7 +143,7 @@ package kabam.rotmg.chat.view
             if (!this.view.hasEnteredText())
             {
                 this.view.activate((("/tell " + this.tellModel.getNext()) + " "), true);
-            };
+            }
         }
 
 

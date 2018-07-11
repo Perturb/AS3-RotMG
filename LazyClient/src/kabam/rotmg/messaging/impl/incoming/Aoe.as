@@ -5,10 +5,11 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class Aoe extends IncomingMessage 
+import kabam.rotmg.messaging.impl.data.WorldPosData;
+
+public class Aoe extends IncomingMessage
     {
 
         public var pos_:WorldPosData = new WorldPosData();

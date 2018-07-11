@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.KeysView
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import mx.core.BitmapAsset;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.ui.model.Key;
-    import __AS3__.vec.*;
+import flash.display.Sprite;
 
-    public class KeysView extends Sprite 
+import kabam.rotmg.ui.model.Key;
+
+import mx.core.BitmapAsset;
+
+public class KeysView extends Sprite
     {
 
         private static var keyBackgroundPng:Class = KeysView_keyBackgroundPng;
@@ -39,16 +39,16 @@ package kabam.rotmg.ui.view
                 this.keys[_local_1].x = (12 + (40 * _local_1));
                 this.keys[_local_1].y = 12;
                 _local_1++;
-            };
+            }
         }
 
         public function showKey(_arg_1:Key):void
         {
             var _local_2:BitmapAsset = this.keys[_arg_1.position];
-            if (!contains(_local_2))
+            if ((!(contains(_local_2))))
             {
                 addChild(_local_2);
-            };
+            }
         }
 
         public function hideKey(_arg_1:Key):void
@@ -57,7 +57,7 @@ package kabam.rotmg.ui.view
             if (contains(_local_2))
             {
                 removeChild(_local_2);
-            };
+            }
         }
 
 

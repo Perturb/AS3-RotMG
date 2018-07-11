@@ -5,22 +5,25 @@
 
 package kabam.rotmg.minimap.view
 {
-    import robotlegs.bender.extensions.mediatorMap.api.IMediator;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
-    import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
-    import kabam.rotmg.minimap.control.MiniMapZoomSignal;
-    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-    import kabam.rotmg.game.signals.ExitGameSignal;
-    import kabam.rotmg.core.view.Layers;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.Dictionary;
-    import kabam.rotmg.minimap.model.UpdateGroundTileVO;
-    import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
-    import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
 
-    public class MiniMapMediator implements IMediator 
+import flash.utils.Dictionary;
+
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+import kabam.rotmg.game.signals.ExitGameSignal;
+import kabam.rotmg.minimap.control.MiniMapZoomSignal;
+import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
+import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
+import kabam.rotmg.minimap.model.UpdateGroundTileVO;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediator;
+
+public class MiniMapMediator implements IMediator 
     {
 
         [Inject]
@@ -82,15 +85,15 @@ package kabam.rotmg.minimap.view
             if (_arg_1 == "")
             {
                 return (this.view.map.player_);
-            };
+            }
             var _local_2:Dictionary = this.view.map.goDict_;
             for each (_local_3 in _local_2)
             {
                 if (_local_3.name_ == _arg_1)
                 {
                     return (_local_3);
-                };
-            };
+                }
+            }
             return (this.view.map.player_);
         }
 
@@ -115,8 +118,8 @@ package kabam.rotmg.minimap.view
                 if (_arg_1 == MiniMapZoomSignal.OUT)
                 {
                     this.view.zoomOut();
-                };
-            };
+                }
+            }
         }
 
         private function onUpdateHUD(_arg_1:Player):void

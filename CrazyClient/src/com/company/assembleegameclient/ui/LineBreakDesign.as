@@ -1,20 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.LineBreakDesign
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Shape;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsPathWinding;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.util.GraphicsUtil;
-    import __AS3__.vec.*;
+import com.company.util.GraphicsUtil;
 
-    public class LineBreakDesign extends Shape 
+import flash.display.GraphicsPath;
+import flash.display.GraphicsPathWinding;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.display.Shape;
+
+public class LineBreakDesign extends Shape
     {
 
         private var designFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);

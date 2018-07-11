@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.util
 {
-    import flash.system.Capabilities;
+import flash.system.Capabilities;
 
-    public class GUID 
+public class GUID 
     {
 
         private static var counter:Number = 0;
@@ -67,7 +67,7 @@ package com.company.assembleegameclient.util
                     else
                     {
                         _local_3[_local_15] = rol((((_local_3[(_local_15 - 3)] ^ _local_3[(_local_15 - 8)]) ^ _local_3[(_local_15 - 14)]) ^ _local_3[(_local_15 - 16)]), 1);
-                    };
+                    }
                     _local_16 = safe_add(safe_add(rol(_local_4, 5), sha1_ft(_local_15, _local_5, _local_6, _local_7)), safe_add(safe_add(_local_8, _local_3[_local_15]), sha1_kt(_local_15)));
                     _local_8 = _local_7;
                     _local_7 = _local_6;
@@ -75,15 +75,15 @@ package com.company.assembleegameclient.util
                     _local_5 = _local_4;
                     _local_4 = _local_16;
                     _local_15++;
-                };
+                }
                 _local_4 = safe_add(_local_4, _local_10);
                 _local_5 = safe_add(_local_5, _local_11);
                 _local_6 = safe_add(_local_6, _local_12);
                 _local_7 = safe_add(_local_7, _local_13);
                 _local_8 = safe_add(_local_8, _local_14);
                 _local_9 = (_local_9 + 16);
-            };
-            return (new Array(_local_4, _local_5, _local_6, _local_7, _local_8));
+            }
+            return ([_local_4, _local_5, _local_6, _local_7, _local_8]);
         }
 
         private static function sha1_ft(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):Number
@@ -91,15 +91,15 @@ package com.company.assembleegameclient.util
             if (_arg_1 < 20)
             {
                 return ((_arg_2 & _arg_3) | ((~(_arg_2)) & _arg_4));
-            };
+            }
             if (_arg_1 < 40)
             {
                 return ((_arg_2 ^ _arg_3) ^ _arg_4);
-            };
+            }
             if (_arg_1 < 60)
             {
                 return (((_arg_2 & _arg_3) | (_arg_2 & _arg_4)) | (_arg_3 & _arg_4));
-            };
+            }
             return ((_arg_2 ^ _arg_3) ^ _arg_4);
         }
 
@@ -122,27 +122,27 @@ package com.company.assembleegameclient.util
 
         private static function str2binb(_arg_1:String):Array
         {
-            var _local_2:Array = new Array();
+            var _local_2:Array = [];
             var _local_3:Number = ((1 << 8) - 1);
             var _local_4:Number = 0;
             while (_local_4 < (_arg_1.length * 8))
             {
                 _local_2[(_local_4 >> 5)] = (_local_2[(_local_4 >> 5)] | ((_arg_1.charCodeAt((_local_4 / 8)) & _local_3) << (24 - (_local_4 % 32))));
                 _local_4 = (_local_4 + 8);
-            };
+            }
             return (_local_2);
         }
 
         private static function binb2hex(_arg_1:Array):String
         {
-            var _local_2:String = new String("");
-            var _local_3:String = new String("0123456789abcdef");
+            var _local_2:String = String("");
+            var _local_3:String = String("0123456789abcdef");
             var _local_4:Number = 0;
             while (_local_4 < (_arg_1.length * 4))
             {
                 _local_2 = (_local_2 + (_local_3.charAt(((_arg_1[(_local_4 >> 2)] >> (((3 - (_local_4 % 4)) * 8) + 4)) & 0x0F)) + _local_3.charAt(((_arg_1[(_local_4 >> 2)] >> ((3 - (_local_4 % 4)) * 8)) & 0x0F))));
                 _local_4++;
-            };
+            }
             return (_local_2);
         }
 

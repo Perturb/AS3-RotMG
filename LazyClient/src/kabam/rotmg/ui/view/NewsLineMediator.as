@@ -5,12 +5,14 @@
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.GraveyardLine;
-    import kabam.rotmg.fame.control.ShowFameViewSignal;
-    import kabam.rotmg.fame.model.SimpleFameVO;
+import com.company.assembleegameclient.screens.GraveyardLine;
 
-    public class NewsLineMediator extends Mediator 
+import kabam.rotmg.fame.control.ShowFameViewSignal;
+import kabam.rotmg.fame.model.SimpleFameVO;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewsLineMediator extends Mediator
     {
 
         [Inject]

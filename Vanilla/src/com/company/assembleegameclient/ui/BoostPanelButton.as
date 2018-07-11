@@ -5,16 +5,17 @@
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.display.Bitmap;
-    import com.company.util.AssetLibrary;
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
 
-    public class BoostPanelButton extends Sprite 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+public class BoostPanelButton extends Sprite 
     {
 
         public static const IMAGE_SET_NAME:String = "lofiInterfaceBig";
@@ -25,12 +26,10 @@ package com.company.assembleegameclient.ui
 
         public function BoostPanelButton(_arg_1:Player)
         {
-            var _local_4:Bitmap;
-            super();
             this.player = _arg_1;
             var _local_2:BitmapData = AssetLibrary.getImageFromSet(IMAGE_SET_NAME, IMAGE_ID);
             var _local_3:BitmapData = TextureRedrawer.redraw(_local_2, 20, true, 0);
-            _local_4 = new Bitmap(_local_3);
+            var _local_4:Bitmap = new Bitmap(_local_3);
             _local_4.x = -7;
             _local_4.y = -10;
             addChild(_local_4);
@@ -56,7 +55,7 @@ package com.company.assembleegameclient.ui
             if (this.boostPanel)
             {
                 removeChild(this.boostPanel);
-            };
+            }
         }
 
 

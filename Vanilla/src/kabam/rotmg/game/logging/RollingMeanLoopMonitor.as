@@ -5,9 +5,9 @@
 
 package kabam.rotmg.game.logging
 {
-    import kabam.lib.console.signals.ConsoleWatchSignal;
+import kabam.lib.console.signals.ConsoleWatchSignal;
 
-    public class RollingMeanLoopMonitor implements LoopMonitor 
+public class RollingMeanLoopMonitor implements LoopMonitor
     {
 
         [Inject]

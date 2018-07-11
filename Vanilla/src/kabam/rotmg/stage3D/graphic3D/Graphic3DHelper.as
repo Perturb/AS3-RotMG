@@ -5,11 +5,12 @@
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
-    import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
+import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
 
-    public class Graphic3DHelper 
+import org.swiftsuspenders.Injector;
+
+public class Graphic3DHelper
     {
 
 

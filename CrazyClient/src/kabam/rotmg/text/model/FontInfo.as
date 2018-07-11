@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.FontInfo
 
 package kabam.rotmg.text.model
 {
-    import flash.text.TextField;
-    import flash.display.BitmapData;
-    import flash.geom.Rectangle;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormat;
+import flash.display.BitmapData;
+import flash.geom.Rectangle;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
 
-    public class FontInfo 
+public class FontInfo
     {
 
         private static const renderingFontSize:Number = 200;

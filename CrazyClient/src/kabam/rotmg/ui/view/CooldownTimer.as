@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CooldownTimer
 
 package kabam.rotmg.ui.view
 {
-    import flash.display.Sprite;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.display.Graphics;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.Player;
 
-    public class CooldownTimer extends Sprite 
+import flash.display.Graphics;
+import flash.display.Sprite;
+import flash.utils.getTimer;
+
+public class CooldownTimer extends Sprite
     {
 
         private var percentage:Number = 1;
@@ -54,8 +55,8 @@ package kabam.rotmg.ui.view
                 {
                     this.cd = (Number(_local_2.Cooldown) * 1000);
                     _arg_1.lastAltAttack_ = (getTimer() - this.cd);
-                };
-            };
+                }
+            }
         }
 
         private function drawPieMask(graphics:Graphics, p:Number, radius:Number, x:Number=0, y:Number=0, rotation:Number=0, sides:int=6):void
@@ -66,7 +67,7 @@ package kabam.rotmg.ui.view
             if (sides < 3)
             {
                 sides = 3;
-            };
+            }
             radius = (radius / Math.cos(((1 / sides) * Math.PI)));
             var lineToRadians:Function = function (_arg_1:Number):void
             {
@@ -78,11 +79,11 @@ package kabam.rotmg.ui.view
             {
                 (lineToRadians((((i / sides) * (Math.PI * 2)) + rotation)));
                 i = (i + 1);
-            };
+            }
             if ((p * sides) != sidesToDraw)
             {
                 (lineToRadians(((p * (Math.PI * 2)) + rotation)));
-            };
+            }
         }
 
 

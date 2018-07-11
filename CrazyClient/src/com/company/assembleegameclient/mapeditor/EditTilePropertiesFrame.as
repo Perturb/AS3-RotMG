@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame
 
 package com.company.assembleegameclient.mapeditor
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import flash.events.MouseEvent;
-    import flash.events.Event;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
 
-    public class EditTilePropertiesFrame extends Frame 
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+public class EditTilePropertiesFrame extends Frame
     {
 
         public var objectName_:TextInputField;
@@ -22,7 +23,7 @@ package com.company.assembleegameclient.mapeditor
             if (_arg_1 != null)
             {
                 this.objectName_.inputText_.text = _arg_1;
-            };
+            }
             addTextInputField(this.objectName_);
             leftButton_.addEventListener(MouseEvent.CLICK, this.onCancel);
             rightButton_.addEventListener(MouseEvent.CLICK, this.onDone);

@@ -1,22 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebRegisterAccountCommand
 
 package kabam.rotmg.account.web.commands
 {
-    import kabam.rotmg.account.core.services.RegisterAccountTask;
-    import kabam.lib.tasks.TaskMonitor;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.lib.tasks.BranchingTask;
-    import kabam.lib.tasks.TaskSequence;
-    import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.BranchingTask;
+import kabam.lib.tasks.DispatchSignalTask;
+import kabam.lib.tasks.Task;
+import kabam.lib.tasks.TaskMonitor;
+import kabam.lib.tasks.TaskSequence;
+import kabam.rotmg.account.core.services.RegisterAccountTask;
+import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.ui.signals.EnterGameSignal;
 
-    public class WebRegisterAccountCommand 
+public class WebRegisterAccountCommand 
     {
 
         [Inject]
@@ -29,6 +30,8 @@ package kabam.rotmg.account.web.commands
         public var updateAccount:UpdateAccountInfoSignal;
         [Inject]
         public var openDialog:OpenDialogSignal;
+        [Inject]
+        public var enterGame:EnterGameSignal;
 
 
         public function execute():void
@@ -43,6 +46,7 @@ package kabam.rotmg.account.web.commands
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.updateAccount));
             _local_1.add(new DispatchSignalTask(this.openDialog, new WebAccountDetailDialog()));
+            _local_1.add(new DispatchSignalTask(this.enterGame));
             return (_local_1);
         }
 

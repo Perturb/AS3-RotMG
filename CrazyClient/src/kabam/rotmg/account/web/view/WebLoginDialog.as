@@ -1,24 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebLoginDialog
 
 package kabam.rotmg.account.web.view
 {
-    import com.company.assembleegameclient.account.ui.Frame;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-    import com.company.assembleegameclient.account.ui.CheckBoxField;
-    import kabam.rotmg.text.model.TextKey;
-    import org.osflash.signals.natives.NativeMappedSignal;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.account.web.model.AccountData;
-    import flash.events.KeyboardEvent;
-    import flash.events.Event;
-    import com.company.util.KeyCodes;
+import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.account.ui.Frame;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.ui.DeprecatedClickableText;
+import com.company.util.KeyCodes;
 
-    public class WebLoginDialog extends Frame 
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+import org.osflash.signals.natives.NativeMappedSignal;
+
+public class WebLoginDialog extends Frame
     {
 
         public var cancel:Signal;
@@ -27,6 +30,7 @@ package kabam.rotmg.account.web.view
         public var register:Signal;
         private var email:TextInputField;
         private var password:TextInputField;
+        private var secret:TextInputField;
         private var forgotText:DeprecatedClickableText;
         private var registerText:DeprecatedClickableText;
         private var rememberMeCheckbox:CheckBoxField;
@@ -47,6 +51,8 @@ package kabam.rotmg.account.web.view
             addTextInputField(this.email);
             this.password = new TextInputField(TextKey.WEB_LOGIN_DIALOG_PASSWORD, true);
             addTextInputField(this.password);
+            this.secret = new TextInputField("Secret (Kong/Steam)", true);
+            addTextInputField(this.secret);
             this.rememberMeCheckbox = new CheckBoxField("Remember me", false);
             this.rememberMeCheckbox.text_.y = 4;
             this.forgotText = new DeprecatedClickableText(12, false, TextKey.WEB_LOGIN_DIALOG_FORGOT);
@@ -69,7 +75,7 @@ package kabam.rotmg.account.web.view
             if (_arg_1.keyCode == KeyCodes.ENTER)
             {
                 this.onSignInSub();
-            };
+            }
         }
 
         private function onCancel(_arg_1:MouseEvent):void
@@ -90,27 +96,37 @@ package kabam.rotmg.account.web.view
                 _local_1 = new AccountData();
                 _local_1.username = this.email.text();
                 _local_1.password = this.password.text();
+                _local_1.secret = this.secret.text();
                 this.signIn.dispatch(_local_1);
-            };
+            }
         }
 
         private function isPasswordValid():Boolean
         {
             var _local_1:* = (!(this.password.text() == ""));
-            if (!_local_1)
+            var _local_2:* = (!(this.secret.text() == ""));
+            if (_local_1)
+            {
+                return (true);
+            }
+            if (_local_2)
+            {
+                return (true);
+            }
+            if ((!(_local_1)))
             {
                 this.password.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_ERROR);
-            };
+            }
             return (_local_1);
         }
 
         private function isEmailValid():Boolean
         {
             var _local_1:* = (!(this.email.text() == ""));
-            if (!_local_1)
+            if ((!(_local_1)))
             {
                 this.email.setError(TextKey.WEBLOGINDIALOG_EMAIL_ERROR);
-            };
+            }
             return (_local_1);
         }
 

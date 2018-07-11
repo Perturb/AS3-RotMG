@@ -5,17 +5,18 @@
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
 
-    public class WebChangePasswordMediatorForced extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebChangePasswordMediatorForced extends Mediator
     {
 
         [Inject]
@@ -61,7 +62,7 @@ package kabam.rotmg.account.web.view
                 _local_2.guid = this.account.getUserId();
                 _local_1.sendRequest("/account/changePassword", _local_2);
                 _local_1.complete.addOnce(this.onComplete);
-            };
+            }
         }
 
         private function isCurrentPasswordValid():Boolean
@@ -70,7 +71,7 @@ package kabam.rotmg.account.web.view
             if (!_local_1)
             {
                 this.view.password_.setError(TextKey.WEB_CHANGE_PASSWORD_INCORRECT);
-            };
+            }
             return (_local_1);
         }
 
@@ -80,7 +81,7 @@ package kabam.rotmg.account.web.view
             if (!_local_1)
             {
                 this.view.newPassword_.setError(TextKey.REGISTER_WEB_SHORT_ERROR);
-            };
+            }
             return (_local_1);
         }
 
@@ -90,7 +91,7 @@ package kabam.rotmg.account.web.view
             if (!_local_1)
             {
                 this.view.retypeNewPassword_.setError(TextKey.REGISTER_WEB_MATCH_ERROR);
-            };
+            }
             return (_local_1);
         }
 
@@ -104,7 +105,7 @@ package kabam.rotmg.account.web.view
             {
                 this.account.updateUser(this.account.getUserId(), this.newPassword, this.account.getToken());
                 this.closeDialogs.dispatch();
-            };
+            }
         }
 
         private function onError(_arg_1:String):void

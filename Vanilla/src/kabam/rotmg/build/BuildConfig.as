@@ -5,13 +5,15 @@
 
 package kabam.rotmg.build
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.build.impl.BuildEnvironments;
-    import kabam.rotmg.build.api.BuildData;
-    import kabam.rotmg.build.impl.CompileTimeBuildData;
+import kabam.rotmg.build.api.BuildData;
+import kabam.rotmg.build.impl.BuildEnvironments;
+import kabam.rotmg.build.impl.CompileTimeBuildData;
 
-    public class BuildConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class BuildConfig implements IConfig
     {
 
         [Inject]

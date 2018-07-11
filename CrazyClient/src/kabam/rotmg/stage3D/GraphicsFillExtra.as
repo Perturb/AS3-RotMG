@@ -1,24 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.GraphicsFillExtra
 
 package kabam.rotmg.stage3D
 {
-    import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.display.BitmapData;
-    import flash.geom.ColorTransform;
-    import flash.display.GraphicsBitmapFill;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-    import flash.display3D.VertexBuffer3D;
-    import flash.display3D.Context3DVertexBufferFormat;
-    import flash.display.GraphicsSolidFill;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class GraphicsFillExtra 
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsSolidFill;
+import flash.display3D.Context3DVertexBufferFormat;
+import flash.display3D.VertexBuffer3D;
+import flash.geom.ColorTransform;
+import flash.utils.Dictionary;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+
+public class GraphicsFillExtra
     {
 
         private static var textureOffsets:Dictionary = new Dictionary();
@@ -39,14 +39,14 @@ package kabam.rotmg.stage3D
 
         public static function setColorTransform(_arg_1:BitmapData, _arg_2:ColorTransform):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (colorTransforms[_arg_1] == null)
             {
                 colorTransformsSize++;
-            };
+            }
             colorTransforms[_arg_1] = _arg_2;
         }
 
@@ -63,16 +63,16 @@ package kabam.rotmg.stage3D
                 _local_2 = new ColorTransform();
                 colorTransforms[_arg_1] = _local_2;
                 colorTransformsSize++;
-            };
+            }
             return (_local_2);
         }
 
         public static function setOffsetUV(_arg_1:GraphicsBitmapFill, _arg_2:Number, _arg_3:Number):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             testOffsetUV(_arg_1);
             textureOffsets[_arg_1][0] = _arg_2;
             textureOffsets[_arg_1][1] = _arg_3;
@@ -83,33 +83,33 @@ package kabam.rotmg.stage3D
             if (textureOffsets[_arg_1] != null)
             {
                 return (textureOffsets[_arg_1]);
-            };
+            }
             return (DEFAULT_OFFSET);
         }
 
         private static function testOffsetUV(_arg_1:GraphicsBitmapFill):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (textureOffsets[_arg_1] == null)
             {
                 textureOffsetsSize++;
                 textureOffsets[_arg_1] = Vector.<Number>([0, 0, 0, 0]);
-            };
+            }
         }
 
         public static function setSinkLevel(_arg_1:GraphicsBitmapFill, _arg_2:Number):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (waterSinks[_arg_1] == null)
             {
                 waterSinksSize++;
-            };
+            }
             waterSinks[_arg_1] = _arg_2;
         }
 
@@ -118,16 +118,16 @@ package kabam.rotmg.stage3D
             if (((!(waterSinks[_arg_1] == null)) && (waterSinks[_arg_1] is Number)))
             {
                 return (waterSinks[_arg_1]);
-            };
+            }
             return (0);
         }
 
         public static function setVertexBuffer(_arg_1:GraphicsBitmapFill, _arg_2:Vector.<Number>):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             var _local_3:Context3DProxy = StaticInjectorContext.getInjector().getInstance(Context3DProxy);
             var _local_4:VertexBuffer3D = _local_3.GetContext3D().createVertexBuffer(4, 5);
             _local_4.uploadFromVector(_arg_2, 0, 4);
@@ -136,7 +136,7 @@ package kabam.rotmg.stage3D
             if (vertexBuffers[_arg_1] == null)
             {
                 vertexBuffersSize++;
-            };
+            }
             vertexBuffers[_arg_1] = _local_4;
         }
 
@@ -145,33 +145,33 @@ package kabam.rotmg.stage3D
             if (((!(vertexBuffers[_arg_1] == null)) && (vertexBuffers[_arg_1] is VertexBuffer3D)))
             {
                 return (vertexBuffers[_arg_1]);
-            };
+            }
             return (null);
         }
 
         public static function clearSink(_arg_1:GraphicsBitmapFill):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (waterSinks[_arg_1] != null)
             {
                 waterSinksSize--;
                 delete waterSinks[_arg_1];
-            };
+            }
         }
 
         public static function setSoftwareDraw(_arg_1:GraphicsBitmapFill, _arg_2:Boolean):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (softwareDraw[_arg_1] == null)
             {
                 softwareDrawSize++;
-            };
+            }
             softwareDraw[_arg_1] = _arg_2;
         }
 
@@ -180,20 +180,20 @@ package kabam.rotmg.stage3D
             if (((!(softwareDraw[_arg_1] == null)) && (softwareDraw[_arg_1] is Boolean)))
             {
                 return (softwareDraw[_arg_1]);
-            };
+            }
             return (false);
         }
 
         public static function setSoftwareDrawSolid(_arg_1:GraphicsSolidFill, _arg_2:Boolean):void
         {
-            if (!Parameters.isGpuRender())
+            if ((!(Parameters.isGpuRender())))
             {
                 return;
-            };
+            }
             if (softwareDrawSolid[_arg_1] == null)
             {
                 softwareDrawSolidSize++;
-            };
+            }
             softwareDrawSolid[_arg_1] = _arg_2;
         }
 
@@ -202,7 +202,7 @@ package kabam.rotmg.stage3D
             if (((!(softwareDrawSolid[_arg_1] == null)) && (softwareDrawSolid[_arg_1] is Boolean)))
             {
                 return (softwareDrawSolid[_arg_1]);
-            };
+            }
             return (false);
         }
 
@@ -228,7 +228,7 @@ package kabam.rotmg.stage3D
             for each (_local_1 in vertexBuffers)
             {
                 _local_1.dispose();
-            };
+            }
             vertexBuffers = new Dictionary();
         }
 
@@ -238,32 +238,32 @@ package kabam.rotmg.stage3D
             {
                 colorTransforms = new Dictionary();
                 colorTransformsSize = 0;
-            };
+            }
             if (textureOffsetsSize > 2000)
             {
                 textureOffsets = new Dictionary();
                 textureOffsetsSize = 0;
-            };
+            }
             if (waterSinksSize > 2000)
             {
                 waterSinks = new Dictionary();
                 waterSinksSize = 0;
-            };
+            }
             if (vertexBuffersSize > 1000)
             {
                 disposeVertexBuffers();
                 vertexBuffersSize = 0;
-            };
+            }
             if (softwareDrawSize > 2000)
             {
                 softwareDraw = new Dictionary();
                 softwareDrawSize = 0;
-            };
+            }
             if (softwareDrawSolidSize > 2000)
             {
                 softwareDrawSolid = new Dictionary();
                 softwareDrawSolidSize = 0;
-            };
+            }
         }
 
 

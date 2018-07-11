@@ -5,10 +5,11 @@
 
 package com.company.assembleegameclient.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.text.view.BitmapTextFactory;
+import kabam.rotmg.text.view.BitmapTextFactory;
 
-    public class TradeSlotMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class TradeSlotMediator extends Mediator
     {
 
         [Inject]

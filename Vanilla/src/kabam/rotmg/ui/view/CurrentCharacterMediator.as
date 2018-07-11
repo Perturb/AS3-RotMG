@@ -5,32 +5,31 @@
 
 package kabam.rotmg.ui.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.core.signals.TrackEventSignal;
-    import kabam.rotmg.core.signals.SetScreenSignal;
-    import kabam.rotmg.game.signals.PlayGameSignal;
-    import kabam.rotmg.ui.signals.ChooseNameSignal;
-    import kabam.rotmg.ui.signals.NameChangedSignal;
-    import kabam.rotmg.core.signals.TrackPageViewSignal;
-    import kabam.rotmg.packages.control.InitPackagesSignal;
-    import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
-    import kabam.rotmg.packages.control.PackageAvailableSignal;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-    import kabam.rotmg.core.service.TrackingData;
-    import com.company.util.MoreDateUtil;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.screens.NewCharacterScreen;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.game.model.GameInitData;
+import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+import com.company.assembleegameclient.screens.NewCharacterScreen;
+import com.company.util.MoreDateUtil;
 
-    public class CurrentCharacterMediator extends Mediator 
+import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.ClassesModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.SetScreenSignal;
+import kabam.rotmg.core.signals.TrackEventSignal;
+import kabam.rotmg.core.signals.TrackPageViewSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.model.GameInitData;
+import kabam.rotmg.game.signals.PlayGameSignal;
+import kabam.rotmg.packages.control.InitPackagesSignal;
+import kabam.rotmg.ui.signals.ChooseNameSignal;
+import kabam.rotmg.ui.signals.NameChangedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class CurrentCharacterMediator extends Mediator
     {
 
         [Inject]
@@ -54,12 +53,6 @@ package kabam.rotmg.ui.view
         [Inject]
         public var initPackages:InitPackagesSignal;
         [Inject]
-        public var beginnersPackageAvailable:BeginnersPackageAvailableSignal;
-        [Inject]
-        public var packageAvailable:PackageAvailableSignal;
-        [Inject]
-        public var beginnerModel:BeginnersPackageModel;
-        [Inject]
         public var openDialog:OpenDialogSignal;
         [Inject]
         public var securityQuestionsModel:SecurityQuestionsModel;
@@ -76,28 +69,16 @@ package kabam.rotmg.ui.view
             this.view.playGame.add(this.onPlayGame);
             this.trackPage.dispatch("/currentCharScreen");
             this.nameChanged.add(this.onNameChanged);
-            this.beginnersPackageAvailable.add(this.onBeginner);
             this.initPackages.dispatch();
             if (this.securityQuestionsModel.showSecurityQuestionsOnStartup)
             {
                 this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-            };
-        }
-
-        private function onPackage():void
-        {
-            this.view.showPackageButton();
-        }
-
-        private function onBeginner():void
-        {
-            this.view.showBeginnersOfferButton();
+            }
         }
 
         override public function destroy():void
         {
             this.nameChanged.remove(this.onNameChanged);
-            this.beginnersPackageAvailable.remove(this.onBeginner);
             this.view.close.remove(this.onClose);
             this.view.newCharacter.remove(this.onNewCharacter);
             this.view.chooseName.remove(this.onChooseName);
@@ -119,10 +100,9 @@ package kabam.rotmg.ui.view
                 _local_2 = new TrackingData();
                 _local_2.category = "joinDate";
                 _local_2.action = Parameters.data_.joinDate;
-                this.track.dispatch(_local_2);
                 Parameters.data_.lastDailyAnalytics = _local_1;
                 Parameters.save();
-            };
+            }
         }
 
         private function onNewCharacter():void
@@ -152,7 +132,6 @@ package kabam.rotmg.ui.view
             _local_3.action = "select";
             _local_3.label = _local_1.displayId();
             _local_3.value = _local_1.level();
-            this.track.dispatch(_local_3);
             var _local_4:GameInitData = new GameInitData();
             _local_4.createCharacter = false;
             _local_4.charId = _local_1.charId();

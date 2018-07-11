@@ -5,11 +5,12 @@
 
 package kabam.rotmg.game.view.components
 {
-    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class QueuedStatusText extends CharacterStatusText 
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class QueuedStatusText extends CharacterStatusText
     {
 
         public var list:QueuedStatusTextList;

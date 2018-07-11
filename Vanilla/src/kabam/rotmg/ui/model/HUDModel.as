@@ -5,10 +5,10 @@
 
 package kabam.rotmg.ui.model
 {
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class HUDModel 
+public class HUDModel 
     {
 
         public var gameSprite:GameSprite;

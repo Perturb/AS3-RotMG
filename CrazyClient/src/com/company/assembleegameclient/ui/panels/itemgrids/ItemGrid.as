@@ -1,27 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-    import com.company.assembleegameclient.ui.panels.Panel;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.Container;
-    import flash.events.MouseEvent;
-    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-    import __AS3__.vec.Vector;
+import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+import com.company.assembleegameclient.objects.Container;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.ui.panels.Panel;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-    public class ItemGrid extends Panel 
+import flash.events.MouseEvent;
+
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.text.model.TextKey;
+
+import org.osflash.signals.Signal;
+
+public class ItemGrid extends Panel
     {
 
         private static const NO_CUT:Array = [0, 0, 0, 0];
@@ -53,7 +55,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids
             if (((_arg_1 == _arg_2) || (_local_4)))
             {
                 this.interactive = true;
-            };
+            }
         }
 
         public function hideTooltip():void
@@ -63,7 +65,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                 this.tooltip.detachFromTarget();
                 this.tooltip = null;
                 this.tooltipFocusTile = null;
-            };
+            }
         }
 
         public function refreshTooltip():void
@@ -71,21 +73,21 @@ package com.company.assembleegameclient.ui.panels.itemgrids
             if ((((!(stage)) || (!(this.tooltip))) || (!(this.tooltip.stage))))
             {
                 return;
-            };
+            }
             if (this.tooltipFocusTile)
             {
                 this.tooltip.detachFromTarget();
                 this.tooltip = null;
                 this.addToolTipToTile(this.tooltipFocusTile);
-            };
+            }
         }
 
         private function onTileHover(_arg_1:MouseEvent):void
         {
-            if (!stage)
+            if ((!(stage)))
             {
                 return;
-            };
+            }
             var _local_2:ItemTile = (_arg_1.currentTarget as ItemTile);
             this.addToolTipToTile(_local_2);
             this.tooltipFocusTile = _local_2;
@@ -107,9 +109,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids
                 else
                 {
                     _local_2 = TextKey.ITEM;
-                };
+                }
                 this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, TextKey.ITEM_EMPTY_SLOT, 200, {"itemType":TextKey.wrapForTokenResolution(_local_2)});
-            };
+            }
             this.tooltip.attachToTarget(_arg_1);
             this.addToolTip.dispatch(this.tooltip);
         }
@@ -119,11 +121,11 @@ package com.company.assembleegameclient.ui.panels.itemgrids
             if (this.owner == this.curPlayer)
             {
                 return (InventoryOwnerTypes.CURRENT_PLAYER);
-            };
+            }
             if ((this.owner is Player))
             {
                 return (InventoryOwnerTypes.OTHER_PLAYER);
-            };
+            }
             return (InventoryOwnerTypes.NPC);
         }
 

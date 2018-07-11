@@ -109,7 +109,7 @@
       <Terrain>ShoreSand</Terrain>
       <Quest/>
       <Level>1</Level>
-      <XpMult>2</XpMult>
+      <Exp>20</Exp>
       <SpawnProb>0.75</SpawnProb>
    </Object>
    <Object type="0x0953" id="Bandit Leader">
@@ -128,7 +128,7 @@
       <Terrain>ShoreSand</Terrain>
       <Quest/>
       <Level>2</Level>
-      <XpMult>1.6</XpMult>
+      <Exp>44</Exp>
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>Blade</ObjectId>
@@ -190,7 +190,7 @@
          <Max>7</Max>
       </Spawn>
       <Cube/>
-      <XpMult>0.6</XpMult>
+      <Exp>4</Exp>
       <Projectile id="0">
          <ObjectId>Salmon Missile</ObjectId>
          <Damage>9</Damage>
@@ -220,7 +220,7 @@
          <Max>7</Max>
       </Spawn>
       <Cube/>
-      <XpMult>0.6</XpMult>
+      <Exp>4</Exp>
       <Projectile id="0">
          <ObjectId>Purple Magic</ObjectId>
          <Damage>12</Damage>
@@ -250,7 +250,7 @@
          <Max>7</Max>
       </Spawn>
       <Cube/>
-      <XpMult>0.6</XpMult>
+      <Exp>4</Exp>
       <Projectile id="0">
          <ObjectId>Green Magic</ObjectId>
          <Damage>10</Damage>

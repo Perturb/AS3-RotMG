@@ -5,74 +5,80 @@
 
 package com.company.assembleegameclient.game
 {
-    import flash.filters.ColorMatrixFilter;
-    import com.company.util.MoreColorUtil;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.Player;
-    import kabam.rotmg.chat.view.Chat;
-    import com.company.assembleegameclient.ui.RankText;
-    import com.company.assembleegameclient.ui.GuildText;
-    import kabam.rotmg.game.view.ShopDisplay;
-    import kabam.rotmg.game.view.CreditDisplay;
-    import kabam.rotmg.game.view.GiftStatusDisplay;
-    import kabam.rotmg.game.view.NewsModalButton;
-    import kabam.rotmg.news.view.NewsTicker;
-    import kabam.rotmg.arena.view.ArenaTimer;
-    import kabam.rotmg.arena.view.ArenaWaveCounter;
-    import kabam.rotmg.core.model.MapModel;
-    import kabam.rotmg.promotions.model.BeginnersPackageModel;
-    import kabam.rotmg.dialogs.model.DialogsModel;
-    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
-    import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.packages.services.PackageModel;
-    import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
-    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.display.DisplayObject;
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.ui.menu.PlayerMenu;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
-    import flash.events.MouseEvent;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.maploading.signals.MapLoadedSignal;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.ui.view.HUDView;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.protip.signals.ShowProTipSignal;
-    import kabam.rotmg.dialogs.model.PopupNamesConfig;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import com.company.util.MoreObjectUtil;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.ui.UIUtils;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.news.model.NewsModel;
-    import kabam.rotmg.promotions.view.BeginnersPackageButton;
-    import flash.external.ExternalInterface;
-    import com.company.assembleegameclient.tutorial.Tutorial;
-    import com.company.assembleegameclient.objects.IInteractiveObject;
-    import kabam.rotmg.constants.GeneralConstants;
-    import com.company.assembleegameclient.objects.Pet;
-    import com.company.util.PointUtil;
-    import kabam.rotmg.stage3D.Renderer;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.game.events.MoneyChangedEvent;
-    import flash.events.Event;
-    import kabam.lib.loopedprocs.LoopedProcess;
-    import kabam.lib.loopedprocs.LoopedCallback;
-    import com.company.util.CachingColorTransformer;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.assembleegameclient.objects.Projectile;
-    import com.company.googleanalytics.GA;
+import com.company.assembleegameclient.game.events.MoneyChangedEvent;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.IInteractiveObject;
+import com.company.assembleegameclient.objects.Pet;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.objects.Projectile;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.tutorial.Tutorial;
+import com.company.assembleegameclient.ui.GuildText;
+import com.company.assembleegameclient.ui.RankText;
+import com.company.assembleegameclient.ui.menu.PlayerMenu;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.CachingColorTransformer;
+import com.company.util.MoreColorUtil;
+import com.company.util.MoreObjectUtil;
+import com.company.util.PointUtil;
 
-    public class GameSprite extends AGameSprite 
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.external.ExternalInterface;
+import flash.filters.ColorMatrixFilter;
+import flash.utils.ByteArray;
+import flash.utils.getTimer;
+
+import kabam.lib.loopedprocs.LoopedCallback;
+import kabam.lib.loopedprocs.LoopedProcess;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.arena.view.ArenaTimer;
+import kabam.rotmg.arena.view.ArenaWaveCounter;
+import kabam.rotmg.chat.view.Chat;
+import kabam.rotmg.constants.GeneralConstants;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.MapModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.service.GoogleAnalytics;
+import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
+import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.dialogs.model.DialogsModel;
+import kabam.rotmg.dialogs.model.PopupNamesConfig;
+import kabam.rotmg.game.view.CreditDisplay;
+import kabam.rotmg.game.view.GiftStatusDisplay;
+import kabam.rotmg.game.view.NewsModalButton;
+import kabam.rotmg.game.view.ShopDisplay;
+import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.maploading.signals.MapLoadedSignal;
+import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
+import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.news.view.NewsTicker;
+import kabam.rotmg.packages.services.PackageModel;
+import kabam.rotmg.promotions.model.BeginnersPackageModel;
+import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+import kabam.rotmg.promotions.view.SpecialOfferButton;
+import kabam.rotmg.protip.signals.ShowProTipSignal;
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.stage3D.Renderer;
+import kabam.rotmg.ui.UIUtils;
+import kabam.rotmg.ui.view.HUDView;
+
+import org.osflash.signals.Signal;
+
+import robotlegs.bender.framework.api.ILogger;
+
+public class GameSprite extends AGameSprite
     {
 
+        public static const NON_COMBAT_MAPS:Vector.<String> = new <String>[Map.NEXUS, Map.VAULT, Map.GUILD_HALL, Map.CLOTH_BAZAAR, Map.NEXUS_EXPLANATION, Map.DAILY_QUEST_ROOM];
+        public static const DISPLAY_AREA_Y_SPACE:int = 32;
         protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 
         public const monitor:Signal = new Signal(String, int);
@@ -109,6 +115,8 @@ package com.company.assembleegameclient.game
         private var currentPackage:DisplayObject = new Sprite();
         private var packageY:Number;
         public var chatPlayerMenu:PlayerMenu;
+        private var googleAnalytics:GoogleAnalytics;
+        private var specialOfferButton:SpecialOfferButton;
 
         public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean)
         {
@@ -142,7 +150,7 @@ package com.company.assembleegameclient.game
             if (this.chatPlayerMenu != null)
             {
                 this.removeChatPlayerMenu();
-            };
+            }
             mui_.onMouseDown(_arg_1);
         }
 
@@ -176,10 +184,10 @@ package com.company.assembleegameclient.game
                     if (((_arg_4.length > 0) && (((_arg_4.charAt(0) == "#") || (_arg_4.charAt(0) == "*")) || (_arg_4.charAt(0) == "@"))))
                     {
                         return;
-                    };
+                    }
                     this.chatPlayerMenu.initDifferentServer(this, _arg_4, _arg_5);
-                };
-            };
+                }
+            }
             addChild(this.chatPlayerMenu);
             this.chatPlayerMenu.x = _arg_2;
             this.chatPlayerMenu.y = (_arg_3 - this.chatPlayerMenu.height);
@@ -191,7 +199,7 @@ package com.company.assembleegameclient.game
             {
                 removeChild(this.chatPlayerMenu);
                 this.chatPlayerMenu = null;
-            };
+            }
         }
 
         override public function applyMapInfo(_arg_1:MapInfo):void
@@ -216,26 +224,27 @@ package com.company.assembleegameclient.game
             if (this.evalIsNotInCombatMapArea())
             {
                 this.showSafeAreaDisplays();
-            };
+            }
             if (map.name_ == "Arena")
             {
                 this.showTimer();
                 this.showWaveCounter();
-            };
+            }
             _local_1 = StaticInjectorContext.getInjector().getInstance(Account);
+            this.googleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             if (map.name_ == Map.NEXUS)
             {
                 this.addToQueueSignal.dispatch(PopupNamesConfig.DAILY_LOGIN_POPUP, this.openDailyCalendarPopupSignal, -1, null);
-                if (this.beginnersPackageModel.isBeginnerAvailable())
+                if (this.beginnersPackageModel.status == BeginnersPackageModel.STATUS_CAN_BUY_SHOW_POP_UP)
                 {
                     this.addToQueueSignal.dispatch(PopupNamesConfig.BEGINNERS_OFFER_POPUP, this.showBeginnersPackage, 1, null);
                 }
                 else
                 {
                     this.addToQueueSignal.dispatch(PopupNamesConfig.PACKAGES_OFFER_POPUP, this.showPackage, 1, null);
-                };
+                }
                 this.flushQueueSignal.dispatch();
-            };
+            }
             this.isNexus_ = (map.name_ == Map.NEXUS);
             if (((this.isNexus_) || (map.name_ == Map.DAILY_QUEST_ROOM)))
             {
@@ -244,7 +253,7 @@ package com.company.assembleegameclient.game
             else
             {
                 this.creditDisplay_ = new CreditDisplay(this);
-            };
+            }
             this.creditDisplay_.x = 594;
             this.creditDisplay_.y = 0;
             addChild(this.creditDisplay_);
@@ -261,12 +270,12 @@ package com.company.assembleegameclient.game
                 this.callTracking('rotmg.Marketing.track("tutorialComplete")');
                 _local_3["fteStepCompleted"] = 9900;
                 _local_2.sendRequest("/log/logFteStep", _local_3);
-            };
+            }
             if (map.name_ == "Kitchen")
             {
                 _local_3["fteStepCompleted"] = 200;
                 _local_2.sendRequest("/log/logFteStep", _local_3);
-            };
+            }
             if (map.name_ == "Tutorial")
             {
                 if (Parameters.data_.needsTutorial == true)
@@ -275,7 +284,7 @@ package com.company.assembleegameclient.game
                     this.callTracking('rotmg.Marketing.track("install")');
                     _local_3["fteStepCompleted"] = 100;
                     _local_2.sendRequest("/log/logFteStep", _local_3);
-                };
+                }
                 this.startTutorial();
             }
             else
@@ -284,12 +293,12 @@ package com.company.assembleegameclient.game
                 {
                     _local_4 = StaticInjectorContext.getInjector().getInstance(ShowProTipSignal);
                     ((_local_4) && (_local_4.dispatch()));
-                };
-            };
+                }
+            }
             if (map.name_ == Map.DAILY_QUEST_ROOM)
             {
                 gsc_.questFetch();
-            };
+            }
             Parameters.save();
             hidePreloader();
         }
@@ -306,7 +315,7 @@ package com.company.assembleegameclient.game
 
         private function setDisplayPosY(_arg_1:Number):void
         {
-            var _local_2:* = (UIUtils.NOTIFICATION_SPACE * _arg_1);
+            var _local_2:Number = (UIUtils.NOTIFICATION_SPACE * _arg_1);
             if (_arg_1 != 0)
             {
                 this.displaysPosY = (4 + _local_2);
@@ -314,7 +323,31 @@ package com.company.assembleegameclient.game
             else
             {
                 this.displaysPosY = 2;
-            };
+            }
+        }
+
+        public function positionDynamicDisplays():void
+        {
+            var _local_1:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
+            var _local_2:int = 66;
+            if (((this.giftStatusDisplay) && (this.giftStatusDisplay.isOpen)))
+            {
+                this.giftStatusDisplay.y = _local_2;
+                _local_2 = (_local_2 + DISPLAY_AREA_Y_SPACE);
+            }
+            if (((this.newsModalButton) && ((NewsModalButton.showsHasUpdate) || (_local_1.hasValidModalNews()))))
+            {
+                this.newsModalButton.y = _local_2;
+                _local_2 = (_local_2 + DISPLAY_AREA_Y_SPACE);
+            }
+            if (((this.specialOfferButton) && (this.specialOfferButton.isSpecialOfferAvailable)))
+            {
+                this.specialOfferButton.y = _local_2;
+            }
+            if (((this.newsTicker) && (this.newsTicker.visible)))
+            {
+                this.newsTicker.y = _local_2;
+            }
         }
 
         private function showTimer():void
@@ -336,26 +369,23 @@ package com.company.assembleegameclient.game
         {
             this.newsTicker = new NewsTicker();
             this.newsTicker.x = (300 - (this.newsTicker.width / 2));
-            this.setDisplayPosY(4);
-            this.newsTicker.y = this.displaysPosY;
             addChild(this.newsTicker);
+            this.positionDynamicDisplays();
         }
 
         private function showGiftStatusDisplay():void
         {
             this.giftStatusDisplay = new GiftStatusDisplay();
             this.giftStatusDisplay.x = 6;
-            this.setDisplayPosY(2);
-            this.giftStatusDisplay.y = this.displaysPosY;
             addChild(this.giftStatusDisplay);
+            this.positionDynamicDisplays();
         }
 
         private function showShopDisplay():void
         {
             this.shopDisplay = new ShopDisplay((map.name_ == Map.NEXUS));
             this.shopDisplay.x = 6;
-            this.setDisplayPosY(1);
-            this.shopDisplay.y = this.displaysPosY;
+            this.shopDisplay.y = 34;
             addChild(this.shopDisplay);
         }
 
@@ -369,19 +399,15 @@ package com.company.assembleegameclient.game
             {
                 _local_2.debug("NEWS UPDATE -- making button - ok");
                 _local_4 = new NewsModalButton();
-                if (_arg_1)
-                {
-                };
                 if (this.newsModalButton != null)
                 {
                     removeChild(this.newsModalButton);
-                };
+                }
                 _local_4.x = 6;
-                this.setDisplayPosY(3);
-                _local_4.y = this.displaysPosY;
                 this.newsModalButton = _local_4;
                 addChild(this.newsModalButton);
-            };
+                this.positionDynamicDisplays();
+            }
         }
 
         public function refreshNewsUpdateButton():void
@@ -398,19 +424,22 @@ package com.company.assembleegameclient.game
             this.positionPackage();
         }
 
-        public function showBeginnersButtonIfSafe():void
+        public function showSpecialOfferIfSafe():void
         {
             if (this.evalIsNotInCombatMapArea())
             {
-                this.addAndPositionPackage(new BeginnersPackageButton());
-            };
+                this.specialOfferButton = new SpecialOfferButton();
+                this.specialOfferButton.x = 6;
+                addChild(this.specialOfferButton);
+                this.positionDynamicDisplays();
+            }
         }
 
         public function showPackageButtonIfSafe():void
         {
             if (this.evalIsNotInCombatMapArea())
             {
-            };
+            }
         }
 
         private function addAndPositionPackage(_arg_1:DisplayObject):void
@@ -431,8 +460,7 @@ package com.company.assembleegameclient.game
         {
             this.guildText_ = new GuildText("", -1);
             this.guildText_.x = 64;
-            this.setDisplayPosY(0);
-            this.guildText_.y = this.displaysPosY;
+            this.guildText_.y = 2;
             addChild(this.guildText_);
         }
 
@@ -440,8 +468,7 @@ package com.company.assembleegameclient.game
         {
             this.rankText_ = new RankText(-1, true, false);
             this.rankText_.x = 8;
-            this.setDisplayPosY(0);
-            this.rankText_.y = this.displaysPosY;
+            this.rankText_.y = 2;
             addChild(this.rankText_);
         }
 
@@ -450,14 +477,14 @@ package com.company.assembleegameclient.game
             if (ExternalInterface.available == false)
             {
                 return;
-            };
+            }
             try
             {
                 ExternalInterface.call(_arg_1);
             }
             catch(err:Error)
             {
-            };
+            }
         }
 
         private function startTutorial():void
@@ -474,7 +501,7 @@ package com.company.assembleegameclient.game
             if (((!(map)) || (!(map.player_))))
             {
                 return;
-            };
+            }
             var _local_1:Player = map.player_;
             var _local_2:Number = GeneralConstants.MAXIMUM_INTERACTION_DISTANCE;
             var _local_3:IInteractiveObject;
@@ -492,10 +519,10 @@ package com.company.assembleegameclient.game
                         {
                             _local_2 = _local_4;
                             _local_3 = _local_8;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             this.mapModel.currentInteractiveTarget = _local_3;
         }
 
@@ -516,7 +543,7 @@ package com.company.assembleegameclient.game
                 stage.addEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
                 stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
                 LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
-            };
+            }
         }
 
         public function disconnect():void
@@ -535,7 +562,7 @@ package com.company.assembleegameclient.game
                 TextureRedrawer.clearCache();
                 Projectile.dispose();
                 gsc_.disconnect();
-            };
+            }
         }
 
         private function onMoneyChanged(_arg_1:Event):void
@@ -545,7 +572,7 @@ package com.company.assembleegameclient.game
 
         override public function evalIsNotInCombatMapArea():Boolean
         {
-            return ((((((map.name_ == Map.NEXUS) || (map.name_ == Map.VAULT)) || (map.name_ == Map.GUILD_HALL)) || (map.name_ == Map.CLOTH_BAZAAR)) || (map.name_ == Map.NEXUS_EXPLANATION)) || (map.name_ == Map.DAILY_QUEST_ROOM));
+            return (!(NON_COMBAT_MAPS.indexOf(map.name_) == -1));
         }
 
         private function onEnterFrame(_arg_1:Event):void
@@ -557,17 +584,16 @@ package com.company.assembleegameclient.game
             {
                 closed.dispatch();
                 return;
-            };
+            }
             LoopedProcess.runProcesses(_local_2);
             this.frameTimeSum_ = (this.frameTimeSum_ + _local_3);
             this.frameTimeCount_ = (this.frameTimeCount_ + 1);
             if (this.frameTimeSum_ > 300000)
             {
                 _local_7 = int(Math.round(((1000 * this.frameTimeCount_) / this.frameTimeSum_)));
-                GA.global().trackEvent("performance", "frameRate", map.name_, _local_7);
                 this.frameTimeCount_ = 0;
                 this.frameTimeSum_ = 0;
-            };
+            }
             var _local_4:int = getTimer();
             map.update(_local_2, _local_3);
             this.monitor.dispatch("Map.update", (getTimer() - _local_4));
@@ -577,7 +603,7 @@ package com.company.assembleegameclient.game
             {
                 camera_.configureCamera(this.focus, ((_local_5) ? _local_5.isHallucinating() : false));
                 map.draw(camera_, _local_2);
-            };
+            }
             if (_local_5 != null)
             {
                 this.creditDisplay_.draw(_local_5.credits_, _local_5.fame_, _local_5.tokens_);
@@ -586,7 +612,7 @@ package com.company.assembleegameclient.game
                 {
                     this.rankText_.draw(_local_5.numStars_);
                     this.guildText_.draw(_local_5.guildName_, _local_5.guildRank_);
-                };
+                }
                 if (_local_5.isPaused())
                 {
                     map.filters = [PAUSED_FILTER];
@@ -606,10 +632,10 @@ package com.company.assembleegameclient.game
                         map.mouseChildren = true;
                         hudView.mouseEnabled = true;
                         hudView.mouseChildren = true;
-                    };
-                };
+                    }
+                }
                 moveRecords_.addRecord(_local_2, _local_5.x_, _local_5.y_);
-            };
+            }
             lastUpdate_ = _local_2;
             var _local_6:int = (getTimer() - _local_2);
             this.monitor.dispatch("GameSprite.loop", _local_6);

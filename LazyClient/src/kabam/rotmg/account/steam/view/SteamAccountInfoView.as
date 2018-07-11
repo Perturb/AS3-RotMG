@@ -5,15 +5,16 @@
 
 package kabam.rotmg.account.steam.view
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.account.core.view.AccountInfoView;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.filters.DropShadowFilter;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
+import flash.display.Sprite;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
 
-    public class SteamAccountInfoView extends Sprite implements AccountInfoView 
+import kabam.rotmg.account.core.view.AccountInfoView;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class SteamAccountInfoView extends Sprite implements AccountInfoView 
     {
 
         private static const FONT_SIZE:int = 18;

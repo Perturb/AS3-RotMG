@@ -1,31 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.MemberListLine
 
 package com.company.assembleegameclient.ui.guild
 {
-    import flash.display.Sprite;
-    import flash.geom.ColorTransform;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Bitmap;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.filters.DropShadowFilter;
-    import flash.text.TextFieldAutoSize;
-    import com.company.assembleegameclient.util.GuildUtil;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.MouseEvent;
-    import com.company.rotmg.graphics.DeleteXGraphic;
-    import flash.display.Graphics;
-    import com.company.util.MoreColorUtil;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import flash.events.Event;
+import com.company.assembleegameclient.ui.dialogs.Dialog;
+import com.company.assembleegameclient.util.GuildUtil;
+import com.company.rotmg.graphics.DeleteXGraphic;
+import com.company.util.MoreColorUtil;
 
-    public class MemberListLine extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Graphics;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class MemberListLine extends Sprite
     {
 
         public static const WIDTH:int = 756;
@@ -46,15 +48,13 @@ package com.company.assembleegameclient.ui.guild
 
         public function MemberListLine(_arg_1:int, _arg_2:String, _arg_3:int, _arg_4:int, _arg_5:Boolean, _arg_6:int)
         {
-            var _local_7:uint;
-            super();
             this.name_ = _arg_2;
             this.rank_ = _arg_3;
-            _local_7 = 0xB3B3B3;
+            var _local_7:uint = 0xB3B3B3;
             if (_arg_5)
             {
                 _local_7 = 16564761;
-            };
+            }
             this.placeText_ = new TextFieldDisplayConcrete().setSize(22).setColor(_local_7);
             this.placeText_.setStringBuilder(new StaticStringBuilder((_arg_1.toString() + ".")));
             this.placeText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
@@ -97,7 +97,7 @@ package com.company.assembleegameclient.ui.guild
                 this.promoteButton_.x = (670 + 6);
                 this.promoteButton_.y = (HEIGHT / 2);
                 addChild(this.promoteButton_);
-            };
+            }
             if (GuildUtil.canDemote(_arg_6, _arg_3))
             {
                 this.demoteButton_ = this.createArrow(false);
@@ -106,7 +106,7 @@ package com.company.assembleegameclient.ui.guild
                 this.demoteButton_.x = (700 + 6);
                 this.demoteButton_.y = (HEIGHT / 2);
                 addChild(this.demoteButton_);
-            };
+            }
             if (GuildUtil.canRemove(_arg_6, _arg_3))
             {
                 this.removeButton_ = new DeleteXGraphic();
@@ -115,7 +115,7 @@ package com.company.assembleegameclient.ui.guild
                 this.removeButton_.x = 730;
                 this.removeButton_.y = ((HEIGHT / 2) - (this.removeButton_.height / 2));
                 addChild(this.removeButton_);
-            };
+            }
         }
 
         private function createArrow(_arg_1:Boolean):Sprite
@@ -130,7 +130,7 @@ package com.company.assembleegameclient.ui.guild
             if (_arg_1)
             {
                 _local_2.rotation = 180;
-            };
+            }
             return (_local_2);
         }
 

@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.appengine.CharacterStats
 
 package com.company.assembleegameclient.appengine
 {
-    import com.company.assembleegameclient.util.FameUtil;
+import com.company.assembleegameclient.util.FameUtil;
 
-    public class CharacterStats 
+public class CharacterStats
     {
 
         public var charStatsXML_:XML;

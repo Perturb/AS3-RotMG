@@ -1,17 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.focus.view.GameFocusMediator
 
 package kabam.rotmg.game.focus.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.Dictionary;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.GameObject;
 
-    public class GameFocusMediator extends Mediator 
+import flash.utils.Dictionary;
+
+import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class GameFocusMediator extends Mediator 
     {
 
         [Inject]
@@ -41,15 +44,15 @@ package kabam.rotmg.game.focus.view
             if (_arg_1 == "")
             {
                 return (this.view.map.player_);
-            };
+            }
             var _local_3:Dictionary = this.view.map.goDict_;
             for each (_local_2 in _local_3)
             {
                 if (_local_2.name_ == _arg_1)
                 {
                     return (_local_2);
-                };
-            };
+                }
+            }
             return (this.view.map.player_);
         }
 

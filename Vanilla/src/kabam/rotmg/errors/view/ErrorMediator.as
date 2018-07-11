@@ -5,15 +5,17 @@
 
 package kabam.rotmg.errors.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import flash.display.DisplayObjectContainer;
-    import kabam.rotmg.errors.control.ErrorSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import flash.display.LoaderInfo;
-    import flash.events.IEventDispatcher;
-    import flash.events.ErrorEvent;
+import flash.display.DisplayObjectContainer;
+import flash.display.LoaderInfo;
+import flash.events.ErrorEvent;
+import flash.events.IEventDispatcher;
 
-    public class ErrorMediator extends Mediator 
+import kabam.rotmg.errors.control.ErrorSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+import robotlegs.bender.framework.api.ILogger;
+
+public class ErrorMediator extends Mediator 
     {
 
         private const UNCAUGHT_ERROR_EVENTS:String = "uncaughtErrorEvents";
@@ -34,7 +36,7 @@ package kabam.rotmg.errors.view
             if (this.canCatchGlobalErrors())
             {
                 this.addGlobalErrorListener();
-            };
+            }
         }
 
         override public function destroy():void
@@ -42,7 +44,7 @@ package kabam.rotmg.errors.view
             if (this.canCatchGlobalErrors())
             {
                 this.removeGlobalErrorListener();
-            };
+            }
         }
 
         private function canCatchGlobalErrors():Boolean

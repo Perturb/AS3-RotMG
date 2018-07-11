@@ -74,7 +74,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x724a" id="shtrs Abandoned Switch 2">
       <Class>GameObject</Class>
@@ -85,7 +85,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x724b" id="shtrs Abandoned Switch 3">
       <Class>GameObject</Class>
@@ -96,7 +96,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x724c" id="shtrs Abandoned Switch 4">
       <Class>GameObject</Class>
@@ -107,7 +107,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x724d" id="shtrs Abandoned Switch 5">
       <Class>GameObject</Class>
@@ -118,7 +118,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x724e" id="shtrs Abandoned Switch 6">
       <Class>GameObject</Class>
@@ -129,7 +129,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x727c" id="shtrs Abandoned Switch 7">
       <Class>GameObject</Class>
@@ -140,7 +140,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x727d" id="shtrs Abandoned Switch 8">
       <Class>GameObject</Class>
@@ -151,7 +151,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x736e" id="shtrs Abandoned Switch 10">
       <Class>GameObject</Class>
@@ -162,7 +162,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x736f" id="shtrs Abandoned Switch 9">
       <Class>GameObject</Class>
@@ -173,7 +173,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x717d" id="shtrs Unborken Column">
       <Class>GameObject</Class>
@@ -196,7 +196,7 @@
       </AltTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>200</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x726b" id="shtrs Bridge Titanum">
       <DisplayId>Titanum</DisplayId>
@@ -210,7 +210,7 @@
       <Size>150</Size>
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Destruction Star</ObjectId>
          <Speed>180</Speed>
@@ -308,7 +308,7 @@
       <ParalyzeImmune/>
       <StasisImmune/>
       <DazedImmune/>
-      <XpMult>0.2</XpMult>
+      <Exp>39</Exp>
       <AltTexture id="1">
          <Texture>
             <File>lofiObjBig</File>
@@ -410,7 +410,7 @@
       </AnimatedTexture>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StunImmune/>
       <ParalyzeImmune/>
       <Projectile id="0">
@@ -434,7 +434,7 @@
       <Size>150</Size>
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <StunImmune/>
       <Projectile id="0">
@@ -457,7 +457,7 @@
       <Size>150</Size>
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <StunImmune/>
       <Projectile id="0">
@@ -480,7 +480,7 @@
       <Size>150</Size>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>65</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>40</Speed>
@@ -501,7 +501,7 @@
       <Size>150</Size>
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <StunImmune/>
       <Projectile id="0">
@@ -524,7 +524,7 @@
       <Size>150</Size>
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <StunImmune/>
       <Projectile id="0">
@@ -547,7 +547,7 @@
       <Size>150</Size>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>65</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>40</Speed>
@@ -568,7 +568,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>3.077</XpMult>
+      <Exp>600</Exp>
       <God/>
       <StasisImmune/>
       <StunImmune/>
@@ -586,7 +586,7 @@
       <Size>150</Size>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>65</Defense>
-      <XpMult>3.077</XpMult>
+      <Exp>600</Exp>
       <God/>
       <StasisImmune/>
       <StunImmune/>
@@ -604,7 +604,7 @@
       <Size>125</Size>
       <MaxHitPoints>9000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <StunImmune/>
       <Projectile id="0">
          <ObjectId>Blue Boomerang</ObjectId>
@@ -628,7 +628,7 @@
       <Size>125</Size>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>1.0257</XpMult>
+      <Exp>200</Exp>
       <God/>
       <StunImmune/>
       <Projectile id="0">
@@ -661,7 +661,7 @@
       <Size>125</Size>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>1.2821</XpMult>
+      <Exp>250</Exp>
       <God/>
       <AltTexture id="1">
          <AnimatedTexture>
@@ -709,7 +709,7 @@
       <Size>120</Size>
       <MaxHitPoints>9000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.5129</XpMult>
+      <Exp>100</Exp>
       <ParalyzeImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -740,7 +740,7 @@
       <Size>125</Size>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.7693</XpMult>
+      <Exp>150</Exp>
       <God/>
       <ParalyzeImmune/>
       <Projectile id="0">
@@ -772,7 +772,7 @@
       <Size>125</Size>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>1.0257</XpMult>
+      <Exp>200</Exp>
       <God/>
       <ParalyzeImmune/>
       <Projectile id="0">
@@ -810,7 +810,7 @@
       <Size>140</Size>
       <MaxHitPoints>8000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Stone Slash</ObjectId>
          <Speed>50</Speed>
@@ -842,7 +842,7 @@
       <Size>140</Size>
       <MaxHitPoints>2500</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="1">
          <ObjectId>Silver Shield</ObjectId>
          <Damage>5</Damage>
@@ -867,7 +867,7 @@
       <Size>140</Size>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>65</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Darkness Bolt</ObjectId>
          <Damage>75</Damage>
@@ -885,7 +885,7 @@
       </Texture>
       <MaxHitPoints>1500</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ShadowSize>0</ShadowSize>
       <Projectile id="0">
          <ObjectId>Invisible</ObjectId>
@@ -907,7 +907,7 @@
       </AnimatedTexture>
       <MaxHitPoints>14000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Icey Magic Attack</ObjectId>
          <Speed>25</Speed>
@@ -935,7 +935,7 @@
       </Texture>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Ice Bullet</ObjectId>
          <Speed>30</Speed>
@@ -956,7 +956,7 @@
       </Texture>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
          <Speed>30</Speed>
@@ -978,7 +978,7 @@
       <Size>125</Size>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>1.0257</XpMult>
+      <Exp>200</Exp>
       <God/>
       <ParalyzeImmune/>
       <Projectile id="0">
@@ -1017,7 +1017,7 @@
       <Size>125</Size>
       <MaxHitPoints>12000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>1.2821</XpMult>
+      <Exp>250</Exp>
       <God/>
       <AltTexture id="1">
          <AnimatedTexture>
@@ -1064,7 +1064,7 @@
       <Size>150</Size>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Red Bullet</ObjectId>
          <Damage>150</Damage>
@@ -1093,7 +1093,7 @@
       <StunImmune/>
       <ParalyzeImmune/>
       <God/>
-      <XpMult>20.5129</XpMult>
+      <Exp>4000</Exp>
       <AltTexture id="1">
          <Texture>
             <File>lofiObjBig</File>
@@ -1169,7 +1169,7 @@
       <Size>150</Size>
       <MaxHitPoints>91000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>20.5129</XpMult>
+      <Exp>4000</Exp>
       <ShadowSize>40</ShadowSize>
       <StasisImmune/>
       <StunImmune/>
@@ -1255,7 +1255,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>2.5642</XpMult>
+      <Exp>500</Exp>
       <God/>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
@@ -1283,7 +1283,7 @@
       <Size>100</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>40</Speed>
@@ -1305,7 +1305,7 @@
       <Size>100</Size>
       <MaxHitPoints>150000</MaxHitPoints>
       <Defense>65</Defense>
-      <XpMult>35.8975</XpMult>
+      <Exp>7000</Exp>
       <EventChestBoss/>
       <AltTexture id="1">
          <AnimatedTexture>
@@ -1485,7 +1485,7 @@
          <MultiHit/>
       </Projectile>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>100</Size>
    </Object>
    <Object type="0x729d" id="shtrs Inferno">
@@ -1502,7 +1502,7 @@
       <ParalyzeImmune/>
       <StasisImmune/>
       <Defense>45</Defense>
-      <XpMult>5.1283</XpMult>
+      <Exp>1000</Exp>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
          <Speed>40</Speed>
@@ -1532,7 +1532,7 @@
       <StunImmune/>
       <ParalyzeImmune/>
       <Defense>100</Defense>
-      <XpMult>5.1283</XpMult>
+      <Exp>1000</Exp>
       <Projectile id="0">
          <ObjectId>Ice Bullet</ObjectId>
          <Speed>45</Speed>
@@ -1578,7 +1578,7 @@
       </AnimatedTexture>
       <MaxHitPoints>14000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Ice Bullet</ObjectId>
          <Speed>25</Speed>
@@ -1605,7 +1605,7 @@
       </Texture>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Ice Bullet</ObjectId>
          <Speed>30</Speed>
@@ -1626,7 +1626,7 @@
       </Texture>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
          <Speed>30</Speed>
@@ -1648,7 +1648,7 @@
       <Size>100</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>45</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <AltTexture id="1">
          <AnimatedTexture>
             <File>chars16x16dEncounters2</File>
@@ -1709,7 +1709,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x731f" id="shtrs Yellow Crystal">
       <DisplayId>Yellow Crystal</DisplayId>
@@ -1723,7 +1723,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Paralyze Bullet</ObjectId>
          <Speed>30</Speed>
@@ -1745,7 +1745,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x732b" id="shtrs Blue Crystal">
       <DisplayId>Blue Crystal</DisplayId>
@@ -1759,7 +1759,7 @@
       <Size>150</Size>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x732c" id="shtrs Crystal Check">
       <Class>GameObject</Class>
@@ -1795,7 +1795,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1814,7 +1814,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1833,7 +1833,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1852,7 +1852,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1871,7 +1871,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1890,7 +1890,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>100</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <Projectile id="0">
          <ObjectId>Fire Bullet</ObjectId>
@@ -1910,7 +1910,7 @@
       <Size>100</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>15</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Directed Explosion</ObjectId>
          <Speed>100</Speed>
@@ -1965,7 +1965,7 @@
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x737b" id="shtrs Loot Balloon Mage">
       <DisplayId>Mage Chest</DisplayId>
@@ -1979,7 +1979,7 @@
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x737c" id="shtrs Loot Balloon King">
       <DisplayId>King Chest</DisplayId>
@@ -1993,7 +1993,7 @@
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x7380" id="shtrs Pause Watcher">
       <Class>GameObject</Class>

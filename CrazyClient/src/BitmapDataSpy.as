@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //BitmapDataSpy
 
 package 
 {
-    import flash.display.BitmapData;
+import flash.display.BitmapData;
 
-    public class BitmapDataSpy extends BitmapData 
+public class BitmapDataSpy extends BitmapData
     {
 
         public function BitmapDataSpy(_arg_1:int, _arg_2:int, _arg_3:Boolean=true, _arg_4:uint=0)

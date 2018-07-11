@@ -5,11 +5,12 @@
 
 package kabam.rotmg.messaging.impl.data
 {
-    import kabam.rotmg.text.model.TextKey;
-    import flash.utils.IDataInput;
-    import flash.utils.IDataOutput;
+import flash.utils.IDataInput;
+import flash.utils.IDataOutput;
 
-    public class StatData 
+import kabam.rotmg.text.model.TextKey;
+
+public class StatData
     {
 
         public static const MAX_HP_STAT:int = 0;
@@ -143,7 +144,7 @@ package kabam.rotmg.messaging.impl.data
                     return (TextKey.STAT_MODEL_WISDOM_LONG);
                 case DEXTERITY_STAT:
                     return (TextKey.STAT_MODEL_DEXTERITY_LONG);
-            };
+            }
             return (TextKey.STAT_DATA_UNKNOWN_STAT);
         }
 
@@ -158,7 +159,7 @@ package kabam.rotmg.messaging.impl.data
                 case ACCOUNT_ID_STAT:
                 case OWNER_ACCOUNT_ID_STAT:
                     return (true);
-            };
+            }
             return (false);
         }
 
@@ -172,7 +173,7 @@ package kabam.rotmg.messaging.impl.data
             else
             {
                 this.strStatValue_ = _arg_1.readUTF();
-            };
+            }
         }
 
         public function writeToOutput(_arg_1:IDataOutput):void
@@ -185,7 +186,7 @@ package kabam.rotmg.messaging.impl.data
             else
             {
                 _arg_1.writeUTF(this.strStatValue_);
-            };
+            }
         }
 
         public function toString():String
@@ -193,7 +194,7 @@ package kabam.rotmg.messaging.impl.data
             if (!this.isStringStat())
             {
                 return (((("[" + this.statType_) + ": ") + this.statValue_) + "]");
-            };
+            }
             return (((("[" + this.statType_) + ': "') + this.strStatValue_) + '"]');
         }
 

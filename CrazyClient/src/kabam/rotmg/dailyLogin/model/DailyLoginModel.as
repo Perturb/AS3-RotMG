@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.model.DailyLoginModel
 
 package kabam.rotmg.dailyLogin.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
-
-    public class DailyLoginModel 
+public class DailyLoginModel 
     {
 
-        public static const DAY_IN_MILLISECONDS:Number = (((24 * 60) * 60) * 1000);//86400000
+        public static const DAY_IN_MILLISECONDS:Number = 86400000;
 
         public var shouldDisplayCalendarAtStartup:Boolean;
         public var currentDisplayedCaledar:String;
@@ -28,11 +25,11 @@ package kabam.rotmg.dailyLogin.model
             if (_arg_1.dayNumber < _arg_2.dayNumber)
             {
                 return (-1);
-            };
+            }
             if (_arg_1.dayNumber > _arg_2.dayNumber)
             {
                 return (1);
-            };
+            }
             return (0);
         };
 
@@ -68,7 +65,7 @@ package kabam.rotmg.dailyLogin.model
 
         public function getTimestampDay():int
         {
-            return (Math.floor((this.getServerTime().getTime() / DailyLoginModel.DAY_IN_MILLISECONDS)));
+            return (Math.floor((this.getServerTime().getTime() / 86400000)));
         }
 
         private function getDayCount(_arg_1:int, _arg_2:int):int
@@ -79,10 +76,10 @@ package kabam.rotmg.dailyLogin.model
 
         public function get daysLeftToCalendarEnd():int
         {
-            var _local_1:Date = this.getServerTime();
-            var _local_2:int = _local_1.getDate();
-            var _local_3:int = this.getDayCount(_local_1.fullYear, (_local_1.month + 1));
-            return (_local_3 - _local_2);
+            var _local_3:Date = this.getServerTime();
+            var _local_1:int = _local_3.getDate();
+            var _local_2:int = this.getDayCount(_local_3.fullYear, (_local_3.month + 1));
+            return (_local_2 - _local_1);
         }
 
         public function addDay(_arg_1:CalendarDayModel, _arg_2:String):void
@@ -98,23 +95,23 @@ package kabam.rotmg.dailyLogin.model
 
         public function calculateCalendar(_arg_1:String):void
         {
-            var _local_2:CalendarDayModel;
-            var _local_3:Vector.<CalendarDayModel> = this.sortCalendar(this.daysConfig[_arg_1]);
-            var _local_4:int = _local_3.length;
-            this.daysConfig[_arg_1] = _local_3;
-            this.maxDayConfig[_arg_1] = _local_3[(_local_4 - 1)].dayNumber;
+            var _local_4:CalendarDayModel;
+            var _local_2:Vector.<CalendarDayModel> = this.sortCalendar(this.daysConfig[_arg_1]);
+            var _local_3:int = _local_2.length;
+            this.daysConfig[_arg_1] = _local_2;
+            this.maxDayConfig[_arg_1] = _local_2[(_local_3 - 1)].dayNumber;
             var _local_5:Vector.<CalendarDayModel> = new Vector.<CalendarDayModel>();
             var _local_6:int = 1;
             while (_local_6 <= this.maxDayConfig[_arg_1])
             {
-                _local_2 = this.getDayByNumber(_arg_1, _local_6);
+                _local_4 = this.getDayByNumber(_arg_1, _local_6);
                 if (_local_6 == this.userDayConfig[_arg_1])
                 {
-                    _local_2.isCurrent = true;
-                };
-                _local_5.push(_local_2);
+                    _local_4.isCurrent = true;
+                }
+                _local_5.push(_local_4);
                 _local_6++;
-            };
+            }
             this.daysConfig[_arg_1] = _local_5;
         }
 
@@ -126,8 +123,8 @@ package kabam.rotmg.dailyLogin.model
                 if (_local_3.dayNumber == _arg_2)
                 {
                     return (_local_3);
-                };
-            };
+                }
+            }
             return (new CalendarDayModel(_arg_2, -1, 0, 0, false, _arg_1));
         }
 
@@ -150,8 +147,8 @@ package kabam.rotmg.dailyLogin.model
                 if (_local_1 > _local_2)
                 {
                     _local_2 = _local_1;
-                };
-            };
+                }
+            }
             return (_local_2);
         }
 
@@ -172,9 +169,9 @@ package kabam.rotmg.dailyLogin.model
 
         public function clear():void
         {
-            this.daysConfig[CalendarTypes.CONSECUTIVE] = new Vector.<CalendarDayModel>();
-            this.daysConfig[CalendarTypes.NON_CONSECUTIVE] = new Vector.<CalendarDayModel>();
-            this.daysConfig[CalendarTypes.UNLOCK] = new Vector.<CalendarDayModel>();
+            this.daysConfig["consecutive"] = new Vector.<CalendarDayModel>();
+            this.daysConfig["nonconsecutive"] = new Vector.<CalendarDayModel>();
+            this.daysConfig["unlock"] = new Vector.<CalendarDayModel>();
             this.shouldDisplayCalendarAtStartup = false;
         }
 

@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.GroundLibrary
 
 package com.company.assembleegameclient.map
 {
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.objects.TextureDataConcrete;
-    import flash.display.BitmapData;
-    import com.company.util.BitmapUtil;
+import com.company.assembleegameclient.objects.TextureDataConcrete;
+import com.company.util.BitmapUtil;
 
-    public class GroundLibrary 
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
+
+public class GroundLibrary
     {
 
         public static const propsLibrary_:Dictionary = new Dictionary();
@@ -33,7 +34,7 @@ package com.company.assembleegameclient.map
                 xmlLibrary_[_local_3] = _local_2;
                 typeToTextureData_[_local_3] = new TextureDataConcrete(_local_2);
                 idToType_[String(_local_2.@id)] = _local_3;
-            };
+            }
             defaultProps_ = propsLibrary_[0xFF];
         }
 
@@ -43,7 +44,7 @@ package com.company.assembleegameclient.map
             if (_local_2 == null)
             {
                 return (null);
-            };
+            }
             return (_local_2.id_);
         }
 
@@ -62,7 +63,7 @@ package com.company.assembleegameclient.map
             var _local_2:XML;
             var _local_3:uint;
             var _local_4:BitmapData;
-            if (!tileTypeColorDict_.hasOwnProperty(_arg_1))
+            if ((!(tileTypeColorDict_.hasOwnProperty(_arg_1))))
             {
                 _local_2 = xmlLibrary_[_arg_1];
                 if (_local_2.hasOwnProperty("Color"))
@@ -73,9 +74,9 @@ package com.company.assembleegameclient.map
                 {
                     _local_4 = getBitmapData(_arg_1);
                     _local_3 = BitmapUtil.mostCommonColor(_local_4);
-                };
+                }
                 tileTypeColorDict_[_arg_1] = _local_3;
-            };
+            }
             return (tileTypeColorDict_[_arg_1]);
         }
 

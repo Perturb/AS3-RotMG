@@ -1,27 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.ObjectFace3D
 
 package com.company.assembleegameclient.engine3d
 {
-    import flash.display.BitmapData;
-    import flash.display.GraphicsBitmapFill;
-    import __AS3__.vec.Vector;
-    import flash.geom.Vector3D;
-    import flash.display.GraphicsPath;
-    import flash.display.GraphicsSolidFill;
-    import flash.geom.Matrix;
-    import flash.display.GraphicsPathCommand;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import com.company.assembleegameclient.util.TextureRedrawer;
-    import com.company.util.GraphicsUtil;
-    import kabam.rotmg.stage3D.GraphicsFillExtra;
-    import flash.display.IGraphicsData;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.MapUserInput;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.GraphicsUtil;
 
-    public class ObjectFace3D 
+import flash.display.BitmapData;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsPath;
+import flash.display.GraphicsPathCommand;
+import flash.display.GraphicsSolidFill;
+import flash.display.IGraphicsData;
+import flash.geom.Matrix;
+import flash.geom.Vector3D;
+
+import kabam.rotmg.stage3D.GraphicsFillExtra;
+
+public class ObjectFace3D
     {
 
         public static const blackBitmap:BitmapData = new BitmapData(1, 1, true, 0xFF000000);
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.engine3d
             {
                 _local_5.push(((_local_4 == 0) ? GraphicsPathCommand.MOVE_TO : GraphicsPathCommand.LINE_TO));
                 _local_4++;
-            };
+            }
             var _local_6:Vector.<Number> = new Vector.<Number>();
             _local_6.length = (this.indices_.length * 2);
             this.path_ = new GraphicsPath(_local_5, _local_6);
@@ -75,7 +75,7 @@ package com.company.assembleegameclient.engine3d
             if (this.normalL_ != null)
             {
                 this.normalW_ = this.obj_.lToW_.deltaTransformVector(this.normalL_);
-            };
+            }
         }
 
         public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:uint, _arg_3:BitmapData):void
@@ -85,7 +85,7 @@ package com.company.assembleegameclient.engine3d
             if (MapUserInput.skipRender == true)
             {
                 return;
-            };
+            }
             var _local_6:int = (this.indices_[0] * 2);
             var _local_7:int = (this.indices_[1] * 2);
             var _local_8:int = (this.indices_[(this.indices_.length - 1)] * 2);
@@ -97,7 +97,7 @@ package com.company.assembleegameclient.engine3d
             if (((_local_10 * _local_13) - (_local_11 * _local_12)) < 0)
             {
                 return;
-            };
+            }
             if (((_arg_3 == null) && (Parameters.data_.GPURender)))
             {
                 _arg_3 = blackBitmap;
@@ -105,7 +105,7 @@ package com.company.assembleegameclient.engine3d
             else
             {
                 _arg_3 = TextureRedrawer.redrawFace(_arg_3, this.shade_);
-            };
+            }
             this.bitmapFill_.bitmapData = _arg_3;
             this.bitmapFill_.matrix = this.tToS(_arg_3);
             _arg_1.push(this.bitmapFill_);
@@ -115,13 +115,13 @@ package com.company.assembleegameclient.engine3d
                 this.path_.data[(_local_5 * 2)] = _local_9[(_local_4 * 2)];
                 this.path_.data[((_local_5 * 2) + 1)] = _local_9[((_local_4 * 2) + 1)];
                 _local_5++;
-            };
+            }
             _arg_1.push(this.path_);
             _arg_1.push(GraphicsUtil.END_FILL);
             if ((((this.softwareException_) && (Parameters.isGpuRender())) && (!(this.bitmapFill_ == null))))
             {
                 GraphicsFillExtra.setSoftwareDraw(this.bitmapFill_, true);
-            };
+            }
         }
 
         private function tToS(_arg_1:BitmapData):Matrix

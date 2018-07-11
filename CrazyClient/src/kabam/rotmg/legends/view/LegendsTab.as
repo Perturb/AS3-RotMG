@@ -1,18 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.view.LegendsTab
 
 package kabam.rotmg.legends.view
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.legends.model.Timespan;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.events.MouseEvent;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
 
-    public class LegendsTab extends Sprite 
+import kabam.rotmg.legends.model.Timespan;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+import org.osflash.signals.Signal;
+
+public class LegendsTab extends Sprite 
     {
 
         private static const OVER_COLOR:int = 16567065;
@@ -78,8 +80,8 @@ package kabam.rotmg.legends.view
                 else
                 {
                     this.label.setColor(OUT_COLOR);
-                };
-            };
+                }
+            }
         }
 
         public function setIsSelected(_arg_1:Boolean):void

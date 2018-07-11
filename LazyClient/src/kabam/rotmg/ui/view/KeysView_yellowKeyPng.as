@@ -7,8 +7,6 @@ package kabam.rotmg.ui.view
 	{
 		public function KeysView_yellowKeyPng()
 		{
-			super();
-			return;
 		}
 	}
 }

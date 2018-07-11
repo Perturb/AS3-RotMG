@@ -5,22 +5,24 @@
 
 package com.company.assembleegameclient.tutorial
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
-    import flash.display.Shape;
-    import flash.display.Graphics;
-    import kabam.rotmg.assets.EmbeddedData;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.events.Event;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.objects.GameObject;
-    import flash.utils.getTimer;
-    import flash.filters.BlurFilter;
-    import com.company.util.PointUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.util.PointUtil;
 
-    public class Tutorial extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.BlurFilter;
+import flash.utils.getTimer;
+
+import kabam.rotmg.assets.EmbeddedData;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.service.GoogleAnalytics;
+
+public class Tutorial extends Sprite
     {
 
         public static const NEXT_ACTION:String = "Next";
@@ -48,6 +50,9 @@ package com.company.assembleegameclient.tutorial
         private var boxesBack_:Shape = new Shape();
         private var boxes_:Shape = new Shape();
         private var tutorialMessage_:TutorialMessage = null;
+        private var tracker:GoogleAnalytics;
+        private var trackingStep:int = -1;
+        private var lastTrackingStepTimestamp:uint;
 
         public function Tutorial(_arg_1:GameSprite)
         {
@@ -55,10 +60,13 @@ package com.company.assembleegameclient.tutorial
             var _local_3:Graphics;
             super();
             this.gs_ = _arg_1;
+            this.lastTrackingStepTimestamp = getTimer();
             for each (_local_2 in EmbeddedData.tutorialXML.Step)
             {
                 this.steps_.push(new Step(_local_2));
-            };
+            }
+            this.tracker = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
+            this.tracker.trackEvent("tutorial", "started");
             addChild(this.boxesBack_);
             addChild(this.boxes_);
             _local_3 = this.darkBox_.graphics;
@@ -120,16 +128,16 @@ package com.company.assembleegameclient.tutorial
                                     {
                                         _local_11 = true;
                                         break;
-                                    };
-                                };
-                            };
+                                    }
+                                }
+                            }
                             if (!_local_11)
                             {
                                 _local_5 = false;
-                            };
+                            }
                             break;
-                    };
-                };
+                    }
+                }
                 if (!_local_5)
                 {
                     _local_4.satisfiedSince_ = 0;
@@ -139,21 +147,28 @@ package com.company.assembleegameclient.tutorial
                     if (_local_4.satisfiedSince_ == 0)
                     {
                         _local_4.satisfiedSince_ = getTimer();
-                    };
+                        if (this.trackingStep != _local_3){
+                            if (!_local_4.trackingSent){
+                                this.tracker.trackEvent("tutorial", "step", _local_3.toString(), (_local_4.satisfiedSince_ - this.lastTrackingStepTimestamp));
+                                this.lastTrackingStepTimestamp = getTimer();
+                            }
+                            this.trackingStep = _local_3;
+                        }
+                    }
                     _local_7 = (getTimer() - _local_4.satisfiedSince_);
                     for each (_local_8 in _local_4.uiDrawBoxes_)
                     {
                         _local_8.draw((5 * _local_2), this.boxes_.graphics, _local_7);
                         _local_8.draw((6 * _local_2), this.boxesBack_.graphics, _local_7);
-                    };
+                    }
                     for each (_local_9 in _local_4.uiDrawArrows_)
                     {
                         _local_9.draw((5 * _local_2), this.boxes_.graphics, _local_7);
                         _local_9.draw((6 * _local_2), this.boxesBack_.graphics, _local_7);
-                    };
-                };
+                    }
+                }
                 _local_3++;
-            };
+            }
         }
 
         internal function doneAction(_arg_1:String):void
@@ -166,12 +181,12 @@ package com.company.assembleegameclient.tutorial
             if (this.currStepId_ >= this.steps_.length)
             {
                 return;
-            };
+            }
             var _local_2:Step = this.steps_[this.currStepId_];
             if (_arg_1 != _local_2.action_)
             {
                 return;
-            };
+            }
             for each (_local_3 in _local_2.reqs_)
             {
                 _local_4 = this.gs_.map.player_;
@@ -188,22 +203,22 @@ package com.company.assembleegameclient.tutorial
                                 {
                                     _local_5 = true;
                                     break;
-                                };
-                            };
-                        };
+                                }
+                            }
+                        }
                         if (!_local_5)
                         {
                             return;
-                        };
+                        }
                         break;
                     case EQUIP_REQUIREMENT:
                         if (_local_4.equipment_[_local_3.slot_] != _local_3.objectType_)
                         {
                             return;
-                        };
+                        }
                         break;
-                };
-            };
+                }
+            }
             this.currStepId_++;
             this.draw();
         }

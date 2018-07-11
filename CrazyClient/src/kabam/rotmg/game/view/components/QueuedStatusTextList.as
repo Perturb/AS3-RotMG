@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.QueuedStatusTextList
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.DisplayObjectContainer;
+import flash.display.DisplayObjectContainer;
 
-    public class QueuedStatusTextList 
+public class QueuedStatusTextList
     {
 
         public var target:DisplayObjectContainer;
@@ -26,7 +26,7 @@ package kabam.rotmg.game.view.components
             else
             {
                 this.tail = null;
-            };
+            }
         }
 
         public function append(_arg_1:QueuedStatusText):void
@@ -41,7 +41,7 @@ package kabam.rotmg.game.view.components
             {
                 this.head = (this.tail = _arg_1);
                 this.target.addChild(_arg_1);
-            };
+            }
         }
 
 

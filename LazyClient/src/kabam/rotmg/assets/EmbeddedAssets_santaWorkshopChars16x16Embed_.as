@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_santaWorkshopChars16x16Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

@@ -1,22 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.AppEngineConfig
 
 package kabam.rotmg.appengine
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.appengine.api.RetryLoader;
-    import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
-    import kabam.rotmg.appengine.impl.AppEngineRequestStats;
-    import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.appengine.api.RetryLoader;
+import kabam.rotmg.appengine.impl.AppEngineRequestStats;
+import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
+import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
+import kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient;
+import kabam.rotmg.application.api.ApplicationSetup;
 
-    public class AppEngineConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class AppEngineConfig implements IConfig
     {
 
         [Inject]
@@ -37,7 +39,7 @@ package kabam.rotmg.appengine
             else
             {
                 this.configureForSimplicity();
-            };
+            }
         }
 
         private function configureCoreDependencies():void

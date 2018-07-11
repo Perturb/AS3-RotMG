@@ -1,20 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.SellableObjectPanelMediator
 
 package kabam.rotmg.game.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.game.model.GameModel;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.assembleegameclient.util.Currency;
-    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import com.company.assembleegameclient.objects.SellableObject;
+import com.company.assembleegameclient.util.Currency;
 
-    public class SellableObjectPanelMediator extends Mediator 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.view.RegisterPromptDialog;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class SellableObjectPanelMediator extends Mediator
     {
 
         public static const TEXT:String = "SellableObjectPanelMediator.text";
@@ -51,12 +53,12 @@ package kabam.rotmg.game.view
                 else
                 {
                     this.view.gs_.gsc_.buy(_arg_1.objectId_, _arg_1.getQuantity());
-                };
+                }
             }
             else
             {
                 this.openDialog.dispatch(this.makeRegisterDialog(_arg_1));
-            };
+            }
         }
 
         private function makeRegisterDialog(_arg_1:SellableObject):RegisterPromptDialog

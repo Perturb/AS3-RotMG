@@ -5,17 +5,18 @@
 
 package kabam.rotmg.account.web.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.signals.LoginSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.core.signals.TaskErrorSignal;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.web.WebAccount;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.signals.LoginSignal;
+import kabam.rotmg.account.web.WebAccount;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.core.signals.TaskErrorSignal;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-    public class WebLoginMediator extends Mediator 
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class WebLoginMediator extends Mediator
     {
 
         [Inject]
@@ -55,7 +56,7 @@ package kabam.rotmg.account.web.view
             if ((this.account is WebAccount))
             {
                 WebAccount(this.account).rememberMe = this.view.isRememberMeSelected();
-            };
+            }
             this.view.disable();
             this.login.dispatch(_arg_1);
         }

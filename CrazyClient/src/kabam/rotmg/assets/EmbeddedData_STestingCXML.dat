@@ -33,7 +33,7 @@
       <Size>100</Size>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Blue Star</ObjectId>
          <Speed>25</Speed>
@@ -68,7 +68,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>110000</MaxHitPoints>
       <Defense>40</Defense>
-      <XpMult>8.39</XpMult>
+      <Exp>1636</Exp>
       <Level>20</Level>
       <Quest/>
       <StasisImmune/>
@@ -130,7 +130,7 @@
       <ShadowSize>0</ShadowSize>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Level>20</Level>
       <StasisImmune/>
       <StunImmune/>
@@ -158,7 +158,7 @@
       <Size>75</Size>
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>60000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <NoMiniMap/>
    </Object>
    <Object type="0x7ff2" id="Pumpkin Huntress">
@@ -176,7 +176,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>45000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.5</XpMult>
+      <Exp>292</Exp>
       <Level>20</Level>
       <StasisImmune/>
       <StunImmune/>
@@ -209,7 +209,7 @@
       </Texture>
       <MaxHitPoints>30000</MaxHitPoints>
       <Defense>50</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Size>60</Size>
       <ShadowSize>90</ShadowSize>
       <StasisImmune/>
@@ -235,7 +235,7 @@
       <Size>75</Size>
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>60000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <NoMiniMap/>
    </Object>
    <Object type="0x7ff5" id="Pumpkin Trickster">
@@ -253,7 +253,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>40000</MaxHitPoints>
       <Defense>20</Defense>
-      <XpMult>1.5</XpMult>
+      <Exp>292</Exp>
       <Level>20</Level>
       <StasisImmune/>
       <StunImmune/>
@@ -289,7 +289,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>13500</MaxHitPoints>
       <Defense>10</Defense>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <Projectile id="0">
          <ObjectId>Spirit Bolt</ObjectId>
@@ -311,7 +311,7 @@
       <Size>75</Size>
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>60000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <NoMiniMap/>
    </Object>
    <Object type="0x7ff8" id="Pumpkin Confuse Puppet">
@@ -329,7 +329,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>40000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>2</XpMult>
+      <Exp>390</Exp>
       <Level>20</Level>
       <ParalyzeImmune/>
       <StasisImmune/>
@@ -375,7 +375,7 @@
       <Size>75</Size>
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>45000</MaxHitPoints>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <NoMiniMap/>
    </Object>
    <Object type="0x7ffa" id="Bleed Pumpkin Puppet">
@@ -393,7 +393,7 @@
       <ShadowSize>90</ShadowSize>
       <MaxHitPoints>50000</MaxHitPoints>
       <Defense>30</Defense>
-      <XpMult>2</XpMult>
+      <Exp>390</Exp>
       <Level>20</Level>
       <StasisImmune/>
       <StunImmune/>

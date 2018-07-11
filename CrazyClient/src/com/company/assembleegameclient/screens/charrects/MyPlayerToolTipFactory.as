@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.MyPlayerToolTipFactory
 
 package com.company.assembleegameclient.screens.charrects
 {
-    import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
-    import com.company.assembleegameclient.appengine.CharacterStats;
+import com.company.assembleegameclient.appengine.CharacterStats;
+import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
 
-    public class MyPlayerToolTipFactory 
+public class MyPlayerToolTipFactory
     {
 
 

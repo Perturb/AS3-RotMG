@@ -5,9 +5,9 @@
 
 package com.company.util
 {
-    import flash.geom.Point;
+import flash.geom.Point;
 
-    public class PointUtil 
+public class PointUtil
     {
 
         public static const ORIGIN:Point = new Point(0, 0);

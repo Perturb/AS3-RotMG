@@ -1,19 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.lib.net.NetConfig
 
 package kabam.lib.net
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import kabam.lib.net.impl.MessageCenter;
-    import flash.net.Socket;
-    import kabam.lib.net.api.MessageMap;
-    import kabam.lib.net.api.MessageProvider;
-    import kabam.lib.net.impl.SocketServer;
+import flash.net.Socket;
 
-    public class NetConfig implements IConfig 
+import kabam.lib.net.api.MessageMap;
+import kabam.lib.net.api.MessageProvider;
+import kabam.lib.net.impl.MessageCenter;
+import kabam.lib.net.impl.SocketServer;
+
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.framework.api.IConfig;
+
+public class NetConfig implements IConfig
     {
 
         [Inject]

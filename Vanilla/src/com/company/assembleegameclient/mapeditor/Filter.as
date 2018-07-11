@@ -5,16 +5,16 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import flash.display.Sprite;
-    import com.company.assembleegameclient.account.ui.TextInputField;
-    import com.company.assembleegameclient.ui.dropdown.DropDown;
-    import com.company.ui.BaseSimpleText;
-    import flash.events.FocusEvent;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.events.Event;
-    import __AS3__.vec.Vector;
+import com.company.assembleegameclient.account.ui.TextInputField;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.ui.dropdown.DropDown;
+import com.company.ui.BaseSimpleText;
 
-    public class Filter extends Sprite 
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.FocusEvent;
+
+public class Filter extends Sprite
     {
 
         private static const GAP:int = 2;
@@ -26,7 +26,7 @@ package com.company.assembleegameclient.mapeditor
         private var _filterTypeDropdown:DropDown;
         private var _minInput:TextInputField;
         private var _maxInput:TextInputField;
-        private var _dungeonDropDown:*;
+        private var _dungeonDropDown:DropDown;
         private var _searchPrompt:BaseSimpleText;
         private var _minPrompt:BaseSimpleText;
         private var _maxPrompt:BaseSimpleText;
@@ -49,7 +49,7 @@ package com.company.assembleegameclient.mapeditor
             this._filterTypeDropdown.y = this.curY;
             this._filterTypeDropdown.addEventListener(Event.CHANGE, this.onFilterTypeChange);
             addChild(this._filterTypeDropdown);
-            this._dungeonDropDown = new DropDown(GroupDivider.getDungeonsLabel(), Chooser.WIDTH, 26);
+            this._dungeonDropDown = new DropDown(GroupDivider.getDungeonsLabel(), 130, 22);
             this._dungeonDropDown.y = this.curY;
             this._dungeonDropDown.addEventListener(Event.CHANGE, this.onFilterTypeChange);
             addChild(this._dungeonDropDown);
@@ -95,7 +95,7 @@ package com.company.assembleegameclient.mapeditor
             if (this._minInput.text() == "")
             {
                 return (0);
-            };
+            }
             return (Number(this._minInput.text()));
         }
 
@@ -104,7 +104,7 @@ package com.company.assembleegameclient.mapeditor
             if (this._maxInput.text() == "")
             {
                 return (-1);
-            };
+            }
             return (Number(this._maxInput.text()));
         }
 
@@ -171,7 +171,7 @@ package com.company.assembleegameclient.mapeditor
                 case this._minInput:
                     this._minPrompt.visible = false;
                     return;
-            };
+            }
         }
 
         private function onFocusOut(_arg_1:FocusEvent):void
@@ -182,21 +182,21 @@ package com.company.assembleegameclient.mapeditor
                     if (this._search.text() == "")
                     {
                         this._searchPrompt.visible = this._isSearchEnabled;
-                    };
+                    }
                     return;
                 case this._maxInput:
                     if (this._maxInput.text() == "")
                     {
                         this._maxPrompt.visible = this._isValueFilterEnabled;
-                    };
+                    }
                     return;
                 case this._minInput:
                     if (this._minInput.text() == "")
                     {
                         this._minPrompt.visible = this._isValueFilterEnabled;
-                    };
+                    }
                     return;
-            };
+            }
         }
 
 

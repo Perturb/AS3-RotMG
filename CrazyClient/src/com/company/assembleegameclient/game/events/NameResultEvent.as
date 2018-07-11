@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.events.NameResultEvent
 
 package com.company.assembleegameclient.game.events
 {
-    import flash.events.Event;
-    import kabam.rotmg.messaging.impl.incoming.NameResult;
+import flash.events.Event;
 
-    public class NameResultEvent extends Event 
+import kabam.rotmg.messaging.impl.incoming.NameResult;
+
+public class NameResultEvent extends Event
     {
 
         public static const NAMERESULTEVENT:String = "NAMERESULTEVENT";

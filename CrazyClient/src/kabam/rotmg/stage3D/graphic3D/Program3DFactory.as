@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.graphic3D.Program3DFactory
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import kabam.rotmg.stage3D.proxies.Program3DProxy;
-    import kabam.rotmg.stage3D.shaders.VertextShader;
-    import kabam.rotmg.stage3D.shaders.FragmentShaderRepeat;
-    import kabam.rotmg.stage3D.shaders.FragmentShader;
-    import kabam.rotmg.stage3D.proxies.Context3DProxy;
+import kabam.rotmg.stage3D.proxies.Context3DProxy;
+import kabam.rotmg.stage3D.proxies.Program3DProxy;
+import kabam.rotmg.stage3D.shaders.FragmentShader;
+import kabam.rotmg.stage3D.shaders.FragmentShaderRepeat;
+import kabam.rotmg.stage3D.shaders.VertextShader;
 
-    public class Program3DFactory 
+public class Program3DFactory
     {
 
         private static var instance:Program3DFactory;
@@ -26,7 +26,7 @@ package kabam.rotmg.stage3D.graphic3D
             if (_arg_1 != "yoThisIsInternal")
             {
                 throw (new Error("Program3DFactory is a singleton. Use Program3DFactory.getInstance()"));
-            };
+            }
         }
 
         public static function getInstance():Program3DFactory
@@ -34,7 +34,7 @@ package kabam.rotmg.stage3D.graphic3D
             if (instance == null)
             {
                 instance = new Program3DFactory("yoThisIsInternal");
-            };
+            }
             return (instance);
         }
 
@@ -44,11 +44,11 @@ package kabam.rotmg.stage3D.graphic3D
             if (this.repeatProgram != null)
             {
                 this.repeatProgram.getProgram3D().dispose();
-            };
+            }
             if (this.noRepeatProgram != null)
             {
                 this.noRepeatProgram.getProgram3D().dispose();
-            };
+            }
             instance = null;
         }
 
@@ -62,7 +62,7 @@ package kabam.rotmg.stage3D.graphic3D
                     {
                         this.repeatProgram = _arg_1.createProgram();
                         this.repeatProgram.upload(new VertextShader().getVertexProgram(), new FragmentShaderRepeat().getVertexProgram());
-                    };
+                    }
                     _local_3 = this.repeatProgram;
                     break;
                 case TYPE_REPEAT_OFF:
@@ -70,7 +70,7 @@ package kabam.rotmg.stage3D.graphic3D
                     {
                         this.noRepeatProgram = _arg_1.createProgram();
                         this.noRepeatProgram.upload(new VertextShader().getVertexProgram(), new FragmentShader().getVertexProgram());
-                    };
+                    }
                     _local_3 = this.noRepeatProgram;
                     break;
                 default:
@@ -78,9 +78,9 @@ package kabam.rotmg.stage3D.graphic3D
                     {
                         this.repeatProgram = _arg_1.createProgram();
                         this.repeatProgram.upload(new VertextShader().getVertexProgram(), new FragmentShaderRepeat().getVertexProgram());
-                    };
+                    }
                     _local_3 = this.repeatProgram;
-            };
+            }
             return (_local_3);
         }
 

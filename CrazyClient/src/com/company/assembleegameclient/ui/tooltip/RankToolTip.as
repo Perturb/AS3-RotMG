@@ -1,23 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.RankToolTip
 
 package com.company.assembleegameclient.ui.tooltip
 {
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.rotmg.graphics.StarGraphic;
-    import com.company.assembleegameclient.ui.LineBreakDesign;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import kabam.rotmg.ui.view.SignalWaiter;
-    import flash.geom.ColorTransform;
-    import flash.geom.Rectangle;
-    import com.company.assembleegameclient.util.FameUtil;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.ui.LineBreakDesign;
+import com.company.assembleegameclient.util.FameUtil;
+import com.company.rotmg.graphics.StarGraphic;
 
-    public class RankToolTip extends ToolTip 
+import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+import flash.geom.Rectangle;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.SignalWaiter;
+
+public class RankToolTip extends ToolTip 
     {
 
         private static const PADDING_LEFT:int = 6;
@@ -72,7 +74,7 @@ package com.company.assembleegameclient.ui.tooltip
                 addChild(_local_1);
                 _local_2 = (_local_2 + _local_1.height);
                 _local_3++;
-            };
+            }
             _local_1 = new LegendLine(FameUtil.maxStars(), FameUtil.maxStars(), new ColorTransform());
             _local_1.x = PADDING_LEFT;
             _local_1.y = _local_2;
@@ -90,19 +92,21 @@ package com.company.assembleegameclient.ui.tooltip
     }
 }//package com.company.assembleegameclient.ui.tooltip
 
-import flash.display.Sprite;
 import com.company.rotmg.graphics.StarGraphic;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import flash.geom.ColorTransform;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 class LegendLine extends Sprite 
 {
 
-    /*private*/ var coloredStar_:StarGraphic;
-    /*private*/ var rangeText_:TextFieldDisplayConcrete;
-    /*private*/ var star_:StarGraphic;
+    private var coloredStar_:StarGraphic;
+    private var rangeText_:TextFieldDisplayConcrete;
+    private var star_:StarGraphic;
 
     public function LegendLine(_arg_1:int, _arg_2:int, _arg_3:ColorTransform)
     {
@@ -139,7 +143,7 @@ class LegendLine extends Sprite
         addChild(this.coloredStar_);
     }
 
-    /*private*/ function positionGreyStar():void
+    private function positionGreyStar():void
     {
         this.star_.x = (this.rangeText_.getBounds(this).right + 2);
         this.star_.y = 4;

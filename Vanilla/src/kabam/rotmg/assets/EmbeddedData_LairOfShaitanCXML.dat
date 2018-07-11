@@ -16,7 +16,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>90000</MaxHitPoints>
       <Defense>60</Defense>
-      <XpMult>1.3</XpMult>
+      <Exp>253</Exp>
       <ParalyzeImmune/>
       <DazedImmune/>
       <StasisImmune/>
@@ -102,7 +102,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <StasisImmune/>
       <AltTexture id="1">
@@ -162,7 +162,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <StasisImmune/>
       <Projectile id="0">
@@ -189,7 +189,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>25000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <StasisImmune/>
       <AltTexture id="1">
@@ -249,7 +249,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>20000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <StasisImmune/>
       <Projectile id="0">
@@ -270,7 +270,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
       <StunImmune/>
       <ParalyzeImmune/>
@@ -284,7 +284,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7420" id="md1 Governor">
@@ -296,7 +296,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7429" id="md1 LeftHandSmash">
@@ -308,7 +308,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x742a" id="md1 RightHandSmash">
@@ -320,7 +320,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7424" id="md1 Right Burst">
@@ -332,7 +332,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7425" id="md1 Mid Burst">
@@ -344,7 +344,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7426" id="md1 Left Burst">
@@ -356,7 +356,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7430" id="md1 Lava Makers">
@@ -368,7 +368,7 @@
       </Texture>
       <NoMiniMap/>
       <Size>0</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <StasisImmune/>
    </Object>
    <Object type="0x7421" id="md1 Right Hand of Shaitan fake">
@@ -387,7 +387,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>50000</MaxHitPoints>
       <Defense>70</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <DazedImmune/>
       <StasisImmune/>
@@ -427,7 +427,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>5000</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <ParalyzeImmune/>
       <DazedImmune/>
       <StasisImmune/>
@@ -465,7 +465,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>3600</MaxHitPoints>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Armor Pierce Bullet</ObjectId>
          <Speed>20</Speed>
@@ -490,7 +490,7 @@
       <ShadowSize>25</ShadowSize>
       <MaxHitPoints>10000</MaxHitPoints>
       <Defense>25</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="0">
          <ObjectId>Armor Pierce Bullet</ObjectId>
          <Speed>20</Speed>
@@ -510,7 +510,7 @@
       <MaxHitPoints>120000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0xaab3" id="Shaitan Portal Dropper">
       <Class>GameObject</Class>

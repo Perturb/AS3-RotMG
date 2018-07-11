@@ -1,17 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.UpdatePetsModelCommand
 
 package kabam.rotmg.core.commands
 {
-    import robotlegs.bender.bundles.mvcs.Command;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.pets.data.PetYardEnum;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import kabam.rotmg.pets.data.PetVO;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
-    public class UpdatePetsModelCommand extends Command 
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.pets.data.yard.PetYardEnum;
+
+import robotlegs.bender.bundles.mvcs.Command;
+
+public class UpdatePetsModelCommand extends Command
     {
 
         [Inject]
@@ -25,11 +27,11 @@ package kabam.rotmg.core.commands
             if (this.data.Account.hasOwnProperty("PetYardType"))
             {
                 this.model.setPetYardType(this.parseYardFromXML());
-            };
+            }
             if (this.data.hasOwnProperty("Pet"))
             {
                 this.model.setActivePet(this.parsePetFromXML());
-            };
+            }
         }
 
         private function parseYardFromXML():int

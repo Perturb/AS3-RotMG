@@ -1,30 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TradeButton
 
 package com.company.assembleegameclient.ui
 {
-    import flash.display.Sprite;
-    import flash.display.Shape;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import flash.utils.getTimer;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import com.company.util.GraphicsUtil;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.display.GraphicsSolidFill;
-    import flash.display.GraphicsStroke;
-    import flash.display.LineScaleMode;
-    import flash.display.CapsStyle;
-    import flash.display.JointStyle;
+import com.company.util.GraphicsUtil;
 
-    public class TradeButton extends BackgroundFilledText 
+import flash.display.CapsStyle;
+import flash.display.GraphicsSolidFill;
+import flash.display.GraphicsStroke;
+import flash.display.IGraphicsData;
+import flash.display.JointStyle;
+import flash.display.LineScaleMode;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.text.TextFieldAutoSize;
+import flash.utils.getTimer;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class TradeButton extends BackgroundFilledText
     {
 
         private const WAIT_TIME:int = 2999;
@@ -96,7 +97,7 @@ package com.company.assembleegameclient.ui
                         this.statusBar_.visible = true;
                         graphicsData_[0] = enabledFill_;
                         this.setText("Trade");
-                    };
+                    }
                     if (_local_1 >= this.WAIT_TIME)
                     {
                         this.state = 1;
@@ -104,7 +105,7 @@ package com.company.assembleegameclient.ui
                     else
                     {
                         this.drawCountDown((_local_1 / this.WAIT_TIME));
-                    };
+                    }
                     break;
                 case 1:
                     if (this.lastState != 1)
@@ -112,7 +113,7 @@ package com.company.assembleegameclient.ui
                         this.statusBar_.visible = false;
                         graphicsData_[0] = enabledFill_;
                         this.setText("Trade");
-                    };
+                    }
                     break;
                 case 2:
                     if (this.lastState != 2)
@@ -120,7 +121,7 @@ package com.company.assembleegameclient.ui
                         this.statusBar_.visible = false;
                         graphicsData_[0] = disabledFill_;
                         this.setText("Waiting");
-                    };
+                    }
                     break;
                 case 3:
                     if (this.lastState != 2)
@@ -128,9 +129,9 @@ package com.company.assembleegameclient.ui
                         this.statusBar_.visible = false;
                         graphicsData_[0] = disabledFill_;
                         this.setText("Trade");
-                    };
+                    }
                     break;
-            };
+            }
             this.lastState = this.state;
             graphics.clear();
             graphics.drawGraphicsData(graphicsData_);

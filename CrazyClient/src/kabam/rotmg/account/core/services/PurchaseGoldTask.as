@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.services.PurchaseGoldTask
 
 package kabam.rotmg.account.core.services
 {
-    import kabam.lib.tasks.Task;
+import kabam.lib.tasks.Task;
 
-    public interface PurchaseGoldTask extends Task 
+public interface PurchaseGoldTask extends Task
     {
 
     }

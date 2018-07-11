@@ -291,7 +291,7 @@
       <MaxHitPoints>2000</MaxHitPoints>
       <Size>70</Size>
       <Defense>20</Defense>
-      <XpMult>2.0</XpMult>
+      <Exp>390</Exp>
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.3</SpawnProb>
       <God/>
@@ -318,7 +318,7 @@
       <MaxHitPoints>2000</MaxHitPoints>
       <Size>70</Size>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Terrain>Mountains</Terrain>
    </Object>
    <Object type="0x0907" id="Steel Bot">
@@ -343,7 +343,7 @@
       <MaxHitPoints>2000</MaxHitPoints>
       <Size>70</Size>
       <Defense>20</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Terrain>Mountains</Terrain>
    </Object>
    <Object type="0x091a" id="Djinn">
@@ -393,7 +393,7 @@
       <Defense>0</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.025</SpawnProb>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <PerRealmMax>1</PerRealmMax>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
@@ -417,7 +417,7 @@
       <Defense>25</Defense>
       <God/>
       <StasisImmune/>
-      <XpMult>0.5</XpMult>
+      <Exp>97</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>80</Speed>
@@ -467,7 +467,7 @@
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>12</Defense>
       <Level>1</Level>
-      <XpMult>0.1</XpMult>
+      <Exp>19</Exp>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>70</Speed>
@@ -490,7 +490,7 @@
       <MaxHitPoints>6000</MaxHitPoints>
       <Defense>11</Defense>
       <Level>1</Level>
-      <XpMult>0.25</XpMult>
+      <Exp>48</Exp>
       <Projectile id="0">
          <ObjectId>Fire Bolt</ObjectId>
          <Speed>67</Speed>
@@ -547,7 +547,7 @@
       <Defense>20</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.045</SpawnProb>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <Projectile id="0">
          <ObjectId>Orange Pumpkin Blast</ObjectId>
          <Damage>85</Damage>
@@ -594,7 +594,7 @@
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.8</SpawnProb>
       <PerRealmMax>1</PerRealmMax>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Quest/>
       <Level>20</Level>
       <God/>
@@ -622,7 +622,7 @@
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.8</SpawnProb>
       <PerRealmMax>1</PerRealmMax>
-      <XpMult>0</XpMult>
+      <Exp>0</Exp>
       <Quest/>
       <Level>20</Level>
       <Flying/>

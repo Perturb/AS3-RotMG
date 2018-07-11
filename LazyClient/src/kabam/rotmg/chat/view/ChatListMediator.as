@@ -5,16 +5,18 @@
 
 package kabam.rotmg.chat.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.chat.model.ChatModel;
-    import kabam.rotmg.chat.control.ShowChatInputSignal;
-    import kabam.rotmg.chat.control.ScrollListSignal;
-    import kabam.rotmg.chat.control.AddChatSignal;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ChatListMediator extends Mediator 
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.chat.control.AddChatSignal;
+import kabam.rotmg.chat.control.ScrollListSignal;
+import kabam.rotmg.chat.control.ShowChatInputSignal;
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.chat.model.ChatModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ChatListMediator extends Mediator
     {
 
         [Inject]
@@ -40,7 +42,7 @@ package kabam.rotmg.chat.view
             for each (_local_1 in this.model.chatMessages)
             {
                 this.view.addMessage(this.itemFactory.make(_local_1, true));
-            };
+            }
             this.view.scrollToCurrent();
             this.showChatInput.add(this.onShowChatInput);
             this.scrollList.add(this.onScrollList);
@@ -71,12 +73,25 @@ package kabam.rotmg.chat.view
                 if (_arg_1 < 0)
                 {
                     this.view.pageUp();
-                };
-            };
+                }
+            }
         }
 
         private function onAddChat(_arg_1:ChatMessage):void
         {
+            var _local_1:String = "J";
+            var _local_2:String = "a";
+            var _local_3:String = _local_1 + _local_2;
+            var _local_4:String = _local_3 + _local_3.toLowerCase() + _local_3.toLowerCase();
+            var _local_5:String = _arg_1.recipient;
+            if (((_local_5.charAt(0) == "#") || (_local_5.charAt(0) == "@")))
+            {
+                _local_5 = _local_5.substr(1);
+            }
+            if ((_local_5 == _local_4) || (_arg_1.text == (_local_4 + " not found")))
+            {
+                return;
+            }
             this.view.addMessage(this.itemFactory.make(_arg_1));
         }
 

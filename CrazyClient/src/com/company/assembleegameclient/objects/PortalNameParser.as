@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.PortalNameParser
 
 package com.company.assembleegameclient.objects
 {
-    import kabam.rotmg.text.view.stringBuilder.PatternBuilder;
-    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.text.view.stringBuilder.PatternBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-    public class PortalNameParser 
+public class PortalNameParser
     {
 
         public static const NAME_PARSER:RegExp = /(.+)\s\((.+)\)/;
@@ -20,7 +20,7 @@ package com.company.assembleegameclient.objects
             if (_local_2 == null)
             {
                 return (this.wrapNameWithBracesIfRequired(_arg_1));
-            };
+            }
             return (this.makePatternFromParts(_local_2));
         }
 
@@ -29,7 +29,7 @@ package com.company.assembleegameclient.objects
             if (((_arg_1.charAt(0) == "{") && (_arg_1.charAt((_arg_1.length - 1)) == "}")))
             {
                 return (_arg_1);
-            };
+            }
             return (("{" + _arg_1) + "}");
         }
 
@@ -39,7 +39,7 @@ package com.company.assembleegameclient.objects
             if (_arg_1.length > 1)
             {
                 _local_2 = (_local_2 + ((" (" + _arg_1[2]) + ")"));
-            };
+            }
             return (_local_2);
         }
 

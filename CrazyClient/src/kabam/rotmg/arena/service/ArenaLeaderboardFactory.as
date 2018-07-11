@@ -1,22 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.service.ArenaLeaderboardFactory
 
 package kabam.rotmg.arena.service
 {
-    import kabam.rotmg.classes.model.ClassesModel;
-    import kabam.rotmg.assets.services.CharacterFactory;
-    import kabam.rotmg.arena.model.CurrentArenaRunModel;
-    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.pets.data.PetVO;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import com.company.util.ConversionUtil;
-    import __AS3__.vec.*;
+import com.company.util.ConversionUtil;
 
-    public class ArenaLeaderboardFactory 
+import io.decagames.rotmg.pets.data.vo.PetVO;
+
+import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+import kabam.rotmg.arena.model.CurrentArenaRunModel;
+import kabam.rotmg.assets.services.CharacterFactory;
+import kabam.rotmg.classes.model.CharacterClass;
+import kabam.rotmg.classes.model.CharacterSkin;
+import kabam.rotmg.classes.model.ClassesModel;
+
+public class ArenaLeaderboardFactory
     {
 
         [Inject]
@@ -36,7 +36,7 @@ package kabam.rotmg.arena.service
             {
                 _local_3.push(this.makeArenaEntry(_local_2, _local_4));
                 _local_4++;
-            };
+            }
             _local_3 = this.removeDuplicateUser(_local_3);
             return (this.addCurrentRun(_local_3));
         }
@@ -58,23 +58,23 @@ package kabam.rotmg.arena.service
                         this.currentRunModel.entry.rank = _local_4.rank;
                         _local_5.push(this.currentRunModel.entry);
                         _local_2 = true;
-                    };
+                    }
                     if (_local_4.isPersonalRecord)
                     {
                         _local_3 = true;
-                    };
+                    }
                     if (_local_2)
                     {
                         _local_4.rank++;
-                    };
+                    }
                     _local_5.push(_local_4);
-                };
+                }
                 if ((((_local_5.length < 20) && (!(_local_2))) && (!(_local_3))))
                 {
                     this.currentRunModel.entry.rank = (_local_5.length + 1);
                     _local_5.push(this.currentRunModel.entry);
-                };
-            };
+                }
+            }
             return ((_local_5.length > 0) ? _local_5 : _arg_1);
         }
 
@@ -100,14 +100,14 @@ package kabam.rotmg.arena.service
                         if (_local_2)
                         {
                             _local_4.rank--;
-                        };
-                    };
-                };
-            };
+                        }
+                    }
+                }
+            }
             if (_local_5 != -1)
             {
                 _arg_1.splice(_local_5, 1);
-            };
+            }
             return (_arg_1);
         }
 
@@ -138,7 +138,7 @@ package kabam.rotmg.arena.service
                 _local_4 = new XML(_arg_1.PlayData.Pet);
                 _local_3.apply(_local_4);
                 _local_5.pet = _local_3;
-            };
+            }
             return (_local_5);
         }
 

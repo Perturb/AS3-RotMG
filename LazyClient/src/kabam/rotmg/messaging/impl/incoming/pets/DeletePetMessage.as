@@ -5,10 +5,11 @@
 
 package kabam.rotmg.messaging.impl.incoming.pets
 {
-    import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
-    import flash.utils.IDataInput;
+import flash.utils.IDataInput;
 
-    public class DeletePetMessage extends IncomingMessage 
+import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
+
+public class DeletePetMessage extends IncomingMessage 
     {
 
         public var petID:int;

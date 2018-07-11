@@ -1,16 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.control.ZombifyCommand
 
 package kabam.rotmg.death.control
 {
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.death.view.ZombifyDialog;
+import kabam.rotmg.death.view.ZombifyDialog;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
 
-    public class ZombifyCommand 
+import robotlegs.bender.framework.api.ILogger;
+
+public class ZombifyCommand 
     {
 
         [Inject]

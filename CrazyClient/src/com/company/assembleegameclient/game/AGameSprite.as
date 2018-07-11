@@ -1,22 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.AGameSprite
 
 package com.company.assembleegameclient.game
 {
-    import flash.display.Sprite;
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.tutorial.Tutorial;
-    import com.company.assembleegameclient.map.AbstractMap;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.ui.view.HUDView;
-    import com.company.assembleegameclient.map.Camera;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import com.company.assembleegameclient.map.AbstractMap;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.tutorial.Tutorial;
 
-    public class AGameSprite extends Sprite 
+import flash.display.Bitmap;
+import flash.display.Sprite;
+
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.ui.view.HUDView;
+
+import org.osflash.signals.Signal;
+
+public class AGameSprite extends Sprite
     {
 
         public const closed:Signal = new Signal();
@@ -32,6 +36,7 @@ package com.company.assembleegameclient.game
         public var camera_:Camera = new Camera();
         public var gsc_:GameServerConnection;
         public var isSafeMap:Boolean;
+        public var deathOverlay:Bitmap;
 
 
         public function initialize():void
@@ -49,6 +54,10 @@ package com.company.assembleegameclient.game
         public function evalIsNotInCombatMapArea():Boolean
         {
             return (false);
+        }
+
+        public function showDailyLoginCalendar():void
+        {
         }
 
 

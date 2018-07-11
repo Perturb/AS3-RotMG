@@ -1,26 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.ServersScreen
 
 package com.company.assembleegameclient.screens
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import flash.display.Shape;
-    import com.company.assembleegameclient.ui.Scrollbar;
-    import __AS3__.vec.Vector;
-    import kabam.rotmg.servers.api.Server;
-    import org.osflash.signals.Signal;
-    import kabam.rotmg.ui.view.components.ScreenBase;
-    import flash.events.Event;
-    import kabam.rotmg.ui.view.components.MenuOptionsBar;
-    import kabam.rotmg.ui.view.ButtonFactory;
-    import flash.display.Graphics;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import flash.filters.DropShadowFilter;
+import com.company.assembleegameclient.ui.Scrollbar;
 
-    public class ServersScreen extends Sprite 
+import flash.display.Graphics;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.DropShadowFilter;
+
+import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.ui.view.ButtonFactory;
+import kabam.rotmg.ui.view.components.MenuOptionsBar;
+import kabam.rotmg.ui.view.components.ScreenBase;
+
+import org.osflash.signals.Signal;
+
+public class ServersScreen extends Sprite
     {
 
         private var selectServerText_:TextFieldDisplayConcrete;

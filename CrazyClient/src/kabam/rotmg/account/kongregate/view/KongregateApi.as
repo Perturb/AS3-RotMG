@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.view.KongregateApi
 
 package kabam.rotmg.account.kongregate.view
 {
-    import org.osflash.signals.Signal;
+import org.osflash.signals.Signal;
 
-    public interface KongregateApi 
+public interface KongregateApi 
     {
 
         function load(_arg_1:String):void;

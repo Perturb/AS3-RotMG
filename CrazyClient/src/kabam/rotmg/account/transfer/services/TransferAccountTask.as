@@ -1,21 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.services.TransferAccountTask
 
 package kabam.rotmg.account.transfer.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.MigrateAccountTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.account.transfer.model.TransferAccountData;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.application.model.PlatformModel;
-    import kabam.rotmg.application.model.PlatformType;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.MigrateAccountTask;
+import kabam.rotmg.account.transfer.model.TransferAccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.application.model.PlatformModel;
+import kabam.rotmg.application.model.PlatformType;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.core.model.PlayerModel;
 
-    public class TransferAccountTask extends BaseTask implements MigrateAccountTask 
+public class TransferAccountTask extends BaseTask implements MigrateAccountTask 
     {
 
         [Inject]
@@ -56,14 +56,14 @@ package kabam.rotmg.account.transfer.services
             var _local_3:PlatformModel = StaticInjectorContext.getInjector().getInstance(PlatformModel);
             if (_local_3.getPlatform() == PlatformType.WEB)
             {
-                this.account.updateUser(this.transferData.newEmail, this.transferData.newPassword, "");
+                this.account.updateUser(this.transferData.newEmail, this.transferData.newPassword, "", "");
             }
             else
             {
                 _local_2 = new XML(_arg_1);
-                this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
+                this.account.updateUser(_local_2.GUID, _local_2.Secret, "", "");
                 this.account.setPlatformToken(_local_2.PlatformToken);
-            };
+            }
         }
 
 

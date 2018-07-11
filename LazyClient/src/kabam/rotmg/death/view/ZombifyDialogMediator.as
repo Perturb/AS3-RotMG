@@ -5,14 +5,16 @@
 
 package kabam.rotmg.death.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.death.control.HandleNormalDeathSignal;
-    import kabam.rotmg.death.model.DeathModel;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import flash.display.BitmapData;
+import flash.display.BitmapData;
 
-    public class ZombifyDialogMediator extends Mediator 
+import kabam.rotmg.death.control.HandleNormalDeathSignal;
+import kabam.rotmg.death.model.DeathModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.messaging.impl.incoming.Death;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ZombifyDialogMediator extends Mediator
     {
 
         [Inject]

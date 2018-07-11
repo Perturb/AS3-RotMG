@@ -1,14 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.StatsTabContent
 
 package kabam.rotmg.game.view.components
 {
-    import flash.display.Sprite;
-    import kabam.rotmg.ui.model.TabStripModel;
+import flash.display.Sprite;
 
-    public class StatsTabContent extends Sprite 
+import kabam.rotmg.ui.model.TabStripModel;
+
+public class StatsTabContent extends Sprite
     {
 
         private var stats:StatsView = new StatsView();

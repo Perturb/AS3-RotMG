@@ -1,25 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.ExternalConfig
 
 package kabam.rotmg.external
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.rotmg.startup.control.StartupSequence;
-    import kabam.rotmg.external.service.RequestPlayerCreditsTask;
-    import kabam.rotmg.external.service.ExternalServiceHelper;
-    import kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal;
-    import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
-    import kabam.rotmg.external.command.RequestPlayerCreditsCommand;
-    import kabam.rotmg.external.command.MapExternalCallbacksSignal;
-    import kabam.rotmg.external.command.MapExternalCallbacksCommand;
+import kabam.rotmg.external.command.MapExternalCallbacksCommand;
+import kabam.rotmg.external.command.MapExternalCallbacksSignal;
+import kabam.rotmg.external.command.RequestPlayerCreditsCommand;
+import kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal;
+import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
+import kabam.rotmg.external.service.ExternalServiceHelper;
+import kabam.rotmg.external.service.RequestPlayerCreditsTask;
+import kabam.rotmg.startup.control.StartupSequence;
 
-    public class ExternalConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+import robotlegs.bender.framework.api.IContext;
+
+public class ExternalConfig implements IConfig
     {
 
         [Inject]

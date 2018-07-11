@@ -7,8 +7,6 @@ package kabam.rotmg.assets
 	{
 		public function EmbeddedAssets_autumnNexusObjects8x8Embed_()
 		{
-			super();
-			return;
 		}
 	}
 }

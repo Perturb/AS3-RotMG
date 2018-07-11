@@ -5,43 +5,42 @@
 
 package com.company.assembleegameclient.ui.panels.mediators
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-    import kabam.rotmg.core.model.MapModel;
-    import kabam.rotmg.core.model.PlayerModel;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.ui.model.TabStripModel;
-    import kabam.rotmg.core.signals.ShowTooltipSignal;
-    import kabam.rotmg.pets.data.PetSlotsState;
-    import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
-    import kabam.rotmg.pets.data.PetFormModel;
-    import kabam.rotmg.pets.data.PetsModel;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent;
-    import com.company.assembleegameclient.ui.tooltip.ToolTip;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
-    import kabam.rotmg.game.view.components.TabStripView;
-    import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
-    import com.company.assembleegameclient.util.DisplayHierarchy;
-    import com.company.assembleegameclient.map.Map;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import kabam.rotmg.constants.ItemConstants;
-    import com.company.assembleegameclient.objects.OneWayContainer;
-    import com.company.assembleegameclient.objects.Container;
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-    import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;
-    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import flash.utils.getTimer;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.map.Map;
+import com.company.assembleegameclient.objects.Container;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
+import com.company.assembleegameclient.objects.OneWayContainer;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent;
+import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.company.assembleegameclient.util.DisplayHierarchy;
 
-    public class ItemGridMediator extends Mediator 
+import flash.utils.getTimer;
+
+import io.decagames.rotmg.pets.data.PetsModel;
+
+import kabam.rotmg.chat.model.ChatMessage;
+import kabam.rotmg.constants.ItemConstants;
+import kabam.rotmg.core.model.MapModel;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
+import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.game.view.components.TabStripView;
+import kabam.rotmg.messaging.impl.GameServerConnection;
+import kabam.rotmg.ui.model.HUDModel;
+import kabam.rotmg.ui.model.TabStripModel;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class ItemGridMediator extends Mediator
     {
 
         [Inject]
@@ -58,12 +57,6 @@ package com.company.assembleegameclient.ui.panels.mediators
         public var tabStripModel:TabStripModel;
         [Inject]
         public var showToolTip:ShowTooltipSignal;
-        [Inject]
-        public var petSlotsState:PetSlotsState;
-        [Inject]
-        public var reskinPetFlowStart:ReskinPetFlowStartSignal;
-        [Inject]
-        public var reskinPetModel:PetFormModel;
         [Inject]
         public var petsModel:PetsModel;
         [Inject]
@@ -94,20 +87,17 @@ package com.company.assembleegameclient.ui.panels.mediators
             var _local_4:InteractiveItemTile;
             var _local_5:TabStripView;
             var _local_6:int;
-            var _local_7:FoodFeedFuseSlot;
-            var _local_8:int;
             var _local_2:InteractiveItemTile = _arg_1.tile;
-            if (this.swapTooSoon())
-            {
+            if (this.swapTooSoon()){
                 _local_2.resetItemPosition();
                 return;
-            };
-            var _local_3:* = DisplayHierarchy.getParentWithTypeArray(_local_2.getDropTarget(), TabStripView, InteractiveItemTile, FoodFeedFuseSlot, Map);
-            if (((_local_2.getItemId() == PotionInventoryModel.HEALTH_POTION_ID) || ((_local_2.getItemId() == PotionInventoryModel.MAGIC_POTION_ID) && (!(Boolean((_local_3 as FoodFeedFuseSlot)))))))
+            }
+            var _local_3:* = DisplayHierarchy.getParentWithTypeArray(_local_2.getDropTarget(), TabStripView, InteractiveItemTile, Map);
+            if (((_local_2.getItemId() == PotionInventoryModel.HEALTH_POTION_ID) || (_local_2.getItemId() == PotionInventoryModel.MAGIC_POTION_ID)))
             {
                 this.onPotionMove(_arg_1);
                 return;
-            };
+            }
             if ((_local_3 is InteractiveItemTile))
             {
                 _local_4 = (_local_3 as InteractiveItemTile);
@@ -116,12 +106,12 @@ package com.company.assembleegameclient.ui.panels.mediators
                     if (this.canSwapItems(_local_2, _local_4))
                     {
                         this.swapItemTiles(_local_2, _local_4);
-                    };
+                    }
                 }
                 else
                 {
                     this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, "You cannot put items into this slot right now."));
-                };
+                }
             }
             else
             {
@@ -134,34 +124,16 @@ package com.company.assembleegameclient.ui.panels.mediators
                         GameServerConnection.instance.invSwap(this.view.curPlayer, _local_2.ownerGrid.owner, _local_2.tileId, _local_2.itemSprite.itemId, this.view.curPlayer, _local_6, ItemConstants.NO_ITEM);
                         _local_2.setItem(ItemConstants.NO_ITEM);
                         _local_2.updateUseability(this.view.curPlayer);
-                    };
+                    }
                 }
                 else
                 {
-                    if ((_local_3 is FoodFeedFuseSlot))
+                    if (((_local_3 is Map) || (this.hudModel.gameSprite.map.mouseX < 300)))
                     {
-                        _local_7 = (_local_3 as FoodFeedFuseSlot);
-                        if (!_local_7.processing)
-                        {
-                            this.petSlotsState.rightSlotId = _local_2.tileId;
-                            this.petSlotsState.rightSlotOwnerId = _local_2.ownerGrid.owner.objectId_;
-                            _local_8 = _local_2.getItemId();
-                            _local_7.setItem(_local_8, _local_2.tileId, _local_2.ownerGrid.owner.objectId_, this.petFoodCancel(_local_2));
-                            _local_2.setItem(ItemConstants.NO_ITEM);
-                            _local_2.blockingItemUpdates = true;
-                            _local_2.updateUseability(this.view.curPlayer);
-                            _local_7.setItemPart2(_local_8);
-                        };
+                        this.dropItem(_local_2);
                     }
-                    else
-                    {
-                        if (((_local_3 is Map) || (this.hudModel.gameSprite.map.mouseX < 300)))
-                        {
-                            this.dropItem(_local_2);
-                        };
-                    };
-                };
-            };
+                }
+            }
             _local_2.resetItemPosition();
         }
 
@@ -186,8 +158,8 @@ package com.company.assembleegameclient.ui.panels.mediators
                 if (((_local_3 is Map) || (this.hudModel.gameSprite.map.mouseX < 300)))
                 {
                     this.dropItem(_local_2);
-                };
-            };
+                }
+            }
             _local_2.resetItemPosition();
         }
 
@@ -196,7 +168,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (((((!(GameServerConnection.instance)) || (!(this.view.interactive))) || (!(_arg_1))) || (this.potionInventoryModel.getPotionModel(_arg_1.getItemId()).maxPotionCount <= this.hudModel.gameSprite.map.player_.getPotionCount(_arg_1.getItemId()))))
             {
                 return;
-            };
+            }
             GameServerConnection.instance.invSwapPotion(this.view.curPlayer, this.view.owner, _arg_1.tileId, _arg_1.itemSprite.itemId, this.view.curPlayer, PotionInventoryModel.getPotionSlot(_arg_1.getItemId()), ItemConstants.NO_ITEM);
             _arg_1.setItem(ItemConstants.NO_ITEM);
             _arg_1.updateUseability(this.view.curPlayer);
@@ -207,19 +179,19 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (!_arg_1.canHoldItem(_arg_2.getItemId()))
             {
                 return (false);
-            };
+            }
             if (!_arg_2.canHoldItem(_arg_1.getItemId()))
             {
                 return (false);
-            };
+            }
             if ((ItemGrid(_arg_2.parent).owner is OneWayContainer))
             {
                 return (false);
-            };
+            }
             if (((_arg_1.blockingItemUpdates) || (_arg_2.blockingItemUpdates)))
             {
                 return (false);
-            };
+            }
             return (true);
         }
 
@@ -244,7 +216,7 @@ package com.company.assembleegameclient.ui.panels.mediators
                     {
                         if (_local_6[_local_8] < 0) break;
                         _local_8++;
-                    };
+                    }
                     if (_local_8 < _local_7)
                     {
                         this.dropWithoutDestTile(_arg_1, _local_5, _local_8);
@@ -252,20 +224,20 @@ package com.company.assembleegameclient.ui.panels.mediators
                     else
                     {
                         GameServerConnection.instance.invDrop(this.view.owner, _arg_1.tileId, _arg_1.getItemId());
-                    };
+                    }
                 }
                 else
                 {
                     GameServerConnection.instance.invDrop(this.view.owner, _arg_1.tileId, _arg_1.getItemId());
-                };
+                }
             }
             else
             {
                 if ((((_local_4.canHaveSoulbound_) && (_local_4.isLoot_)) && (_local_3)))
                 {
                     GameServerConnection.instance.invDrop(this.view.owner, _arg_1.tileId, _arg_1.getItemId());
-                };
-            };
+                }
+            }
             _arg_1.setItem(-1);
         }
 
@@ -274,7 +246,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (((((!(GameServerConnection.instance)) || (!(this.view.interactive))) || (!(_arg_1))) || (!(_arg_2))))
             {
                 return (false);
-            };
+            }
             GameServerConnection.instance.invSwap(this.view.curPlayer, this.view.owner, _arg_1.tileId, _arg_1.itemSprite.itemId, _arg_2.ownerGrid.owner, _arg_2.tileId, _arg_2.itemSprite.itemId);
             var _local_3:int = _arg_1.getItemId();
             _arg_1.setItem(_arg_2.getItemId());
@@ -289,7 +261,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (((((!(GameServerConnection.instance)) || (!(this.view.interactive))) || (!(_arg_1))) || (!(_arg_2))))
             {
                 return;
-            };
+            }
             GameServerConnection.instance.invSwap(this.view.curPlayer, this.view.owner, _arg_1.tileId, _arg_1.itemSprite.itemId, _arg_2, _arg_3, -1);
             _arg_1.setItem(ItemConstants.NO_ITEM);
         }
@@ -300,17 +272,16 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (((_local_2.ownerGrid is InventoryGrid) || (_local_2.ownerGrid is ContainerGrid)))
             {
                 GameServerConnection.instance.useItem_new(_local_2.ownerGrid.owner, _local_2.tileId);
-            };
+            }
         }
 
         private function onCtrlClick(_arg_1:ItemTileEvent):void
         {
             var _local_2:InteractiveItemTile;
             var _local_3:int;
-            if (this.swapTooSoon())
-            {
+            if (this.swapTooSoon()){
                 return;
-            };
+            }
             if (Parameters.data_.inventorySwap)
             {
                 _local_2 = _arg_1.tile;
@@ -322,66 +293,33 @@ package com.company.assembleegameclient.ui.panels.mediators
                         GameServerConnection.instance.invSwap(this.view.curPlayer, _local_2.ownerGrid.owner, _local_2.tileId, _local_2.itemSprite.itemId, this.view.curPlayer, _local_3, ItemConstants.NO_ITEM);
                         _local_2.setItem(ItemConstants.NO_ITEM);
                         _local_2.updateUseability(this.view.curPlayer);
-                    };
-                };
-            };
+                    }
+                }
+            }
         }
 
         private function onDoubleClick(_arg_1:ItemTileEvent):void
         {
-            if (this.swapTooSoon())
-            {
+            if (this.swapTooSoon()){
                 return;
-            };
+            }
             var _local_2:InteractiveItemTile = _arg_1.tile;
-            if (this.isPetFormStone(_local_2))
+            if (this.isStackablePotion(_local_2))
             {
-                this.handlePetFormStone(_local_2);
+                this.addToPotionStack(_local_2);
             }
             else
             {
-                if (this.isStackablePotion(_local_2))
+                if ((_local_2.ownerGrid is ContainerGrid))
                 {
-                    this.addToPotionStack(_local_2);
+                    this.equipOrUseContainer(_local_2);
                 }
                 else
                 {
-                    if ((_local_2.ownerGrid is ContainerGrid))
-                    {
-                        this.equipOrUseContainer(_local_2);
-                    }
-                    else
-                    {
-                        this.equipOrUseInventory(_local_2);
-                    };
-                };
-            };
+                    this.equipOrUseInventory(_local_2);
+                }
+            }
             this.view.refreshTooltip();
-        }
-
-        private function handlePetFormStone(_arg_1:InteractiveItemTile):void
-        {
-            if ((_arg_1.ownerGrid is ContainerGrid))
-            {
-                this.pickUpItem(_arg_1);
-            }
-            else
-            {
-                if (this.petsModel.isMapNameYardName(this.hudModel.gameSprite.map))
-                {
-                    this.reskinPetModel.setSlotObject(_arg_1);
-                    this.reskinPetFlowStart.dispatch();
-                }
-                else
-                {
-                    this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, "server.use_in_petyard"));
-                };
-            };
-        }
-
-        private function isPetFormStone(_arg_1:InteractiveItemTile):Boolean
-        {
-            return (_arg_1.getItemId() == 3321);
         }
 
         private function isStackablePotion(_arg_1:InteractiveItemTile):Boolean
@@ -395,7 +333,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             if (_local_2 != -1)
             {
                 GameServerConnection.instance.invSwap(this.view.curPlayer, this.view.owner, _arg_1.tileId, _arg_1.itemSprite.itemId, this.view.curPlayer, _local_2, ItemConstants.NO_ITEM);
-            };
+            }
         }
 
         private function equipOrUseContainer(_arg_1:InteractiveItemTile):void
@@ -410,7 +348,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             else
             {
                 GameServerConnection.instance.useItem_new(_local_2, _arg_1.tileId);
-            };
+            }
         }
 
         private function equipOrUseInventory(_arg_1:InteractiveItemTile):void
@@ -425,17 +363,15 @@ package com.company.assembleegameclient.ui.panels.mediators
             else
             {
                 GameServerConnection.instance.useItem_new(_local_2, _arg_1.tileId);
-            };
+            }
         }
 
-        private function swapTooSoon():Boolean
-        {
+        private function swapTooSoon():Boolean{
             var _local_1:int = getTimer();
-            if ((this.view.curPlayer.lastSwap_ + 500) > _local_1)
-            {
+            if ((this.view.curPlayer.lastSwap_ + 600) > _local_1){
                 SoundEffectLibrary.play("error");
                 return (true);
-            };
+            }
             this.view.curPlayer.lastSwap_ = _local_1;
             return (false);
         }

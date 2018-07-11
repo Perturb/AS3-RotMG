@@ -1,13 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.components.SelectionGroup
 
 package com.company.assembleegameclient.account.ui.components
 {
-    import __AS3__.vec.Vector;
-
-    public class SelectionGroup 
+public class SelectionGroup
     {
 
         private var selectables:Vector.<Selectable>;
@@ -27,8 +25,8 @@ package com.company.assembleegameclient.account.ui.components
                 {
                     this.replaceSelected(_local_2);
                     return;
-                };
-            };
+                }
+            }
         }
 
         public function getSelected():Selectable
@@ -41,7 +39,7 @@ package com.company.assembleegameclient.account.ui.components
             if (this.selected != null)
             {
                 this.selected.setSelected(false);
-            };
+            }
             this.selected = _arg_1;
             this.selected.setSelected(true);
         }

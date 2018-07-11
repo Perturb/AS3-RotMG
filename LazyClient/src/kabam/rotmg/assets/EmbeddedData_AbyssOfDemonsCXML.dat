@@ -14,7 +14,7 @@
       <Size>100</Size>
       <MaxHitPoints>900</MaxHitPoints>
       <Defense>7</Defense>
-      <XpMult>0.1</XpMult>
+      <Exp>9</Exp>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
          <Damage>50</Damage>
@@ -41,7 +41,7 @@
       <MaxHitPoints>4000</MaxHitPoints>
       <Size>140</Size>
       <Defense>30</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x090a" id="Archdemon Malphas">
       <Group>Demons</Group>
@@ -60,7 +60,7 @@
       <MaxHitPoints>10000</MaxHitPoints>
       <Size>100</Size>
       <Defense>20</Defense>
-      <XpMult>0.7</XpMult>
+      <Exp>136</Exp>
       <EventChestBoss/>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
@@ -121,7 +121,7 @@
       <MaxHitPoints>1000</MaxHitPoints>
       <Size>100</Size>
       <Defense>6</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x1733" id="Archdemon Summoner">
       <Class>Character</Class>
@@ -307,7 +307,7 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>10</MaxHitPoints>
    </Object>
@@ -319,7 +319,7 @@
          <Index>0x2c</Index>
       </Texture>
       <MaxHitPoints>25000</MaxHitPoints>
-      <XpMult>0.35</XpMult>
+      <Exp>68</Exp>
       <Size>120</Size>
       <StasisImmune/>
       <Defense>30</Defense>
@@ -357,7 +357,7 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>10</MaxHitPoints>
    </Object>
@@ -370,7 +370,7 @@
          <File>invisible</File>
          <Index>0</Index>
       </Texture>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
       <MaxHitPoints>10</MaxHitPoints>
    </Object>
@@ -384,7 +384,7 @@
          <Index>0</Index>
       </Texture>
       <MaxHitPoints>10</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>0</Size>
    </Object>
 </Objects>

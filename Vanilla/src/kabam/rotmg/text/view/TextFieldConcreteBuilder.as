@@ -5,13 +5,14 @@
 
 package kabam.rotmg.text.view
 {
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import flash.text.TextFieldAutoSize;
-    import flash.text.TextFormatAlign;
-    import flash.filters.DropShadowFilter;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormatAlign;
 
-    public class TextFieldConcreteBuilder 
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+
+public class TextFieldConcreteBuilder 
     {
 
         private var _containerWidth:int = -1;
@@ -55,8 +56,8 @@ package kabam.rotmg.text.view
                 if (((!(this.containerWidth == -1)) && (!(this.containerMargin == -1))))
                 {
                     _arg_1.setTextWidth((this.containerWidth - (this.containerMargin * 2)));
-                };
-            };
+                }
+            }
             _arg_1.setBold(true);
             _arg_1.setWordWrap(true);
             _arg_1.setMultiLine(true);
@@ -66,11 +67,11 @@ package kabam.rotmg.text.view
             if (_arg_2 != -1)
             {
                 _arg_1.x = _arg_2;
-            };
+            }
             if (_arg_3 != -1)
             {
                 _arg_1.y = _arg_3;
-            };
+            }
             return (_arg_1);
         }
 

@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterSkins
 
 package kabam.rotmg.classes.model
 {
-    import __AS3__.vec.Vector;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class CharacterSkins 
+public class CharacterSkins
     {
 
         private const skins:Vector.<CharacterSkin> = new Vector.<CharacterSkin>(0);
@@ -32,10 +30,10 @@ package kabam.rotmg.classes.model
 
         public function getSelectedSkin():CharacterSkin
         {
-            if (!Parameters.data_.showSkins)
+            if ((!(Parameters.data_.showSkins)))
             {
                 return (this.defaultSkin);
-            };
+            }
             return (this.selectedSkin);
         }
 
@@ -53,19 +51,19 @@ package kabam.rotmg.classes.model
             if (_arg_2)
             {
                 this.defaultSkin = _arg_1;
-                if (!this.selectedSkin)
+                if ((!(this.selectedSkin)))
                 {
                     this.selectedSkin = _arg_1;
                     _arg_1.setIsSelected(true);
-                };
+                }
             }
             else
             {
                 if (_arg_1.getIsSelected())
                 {
                     this.selectedSkin = _arg_1;
-                };
-            };
+                }
+            }
         }
 
         private function onSkinChanged(_arg_1:CharacterSkin):void
@@ -74,7 +72,7 @@ package kabam.rotmg.classes.model
             {
                 ((this.selectedSkin) && (this.selectedSkin.setIsSelected(false)));
                 this.selectedSkin = _arg_1;
-            };
+            }
         }
 
         public function updateSkins(_arg_1:int):void
@@ -84,12 +82,12 @@ package kabam.rotmg.classes.model
             for each (_local_2 in this.skins)
             {
                 this.updateSkinState(_local_2);
-            };
+            }
         }
 
         private function updateSkinState(_arg_1:CharacterSkin):void
         {
-            if (!_arg_1.skinSelectEnabled)
+            if ((!(_arg_1.skinSelectEnabled)))
             {
                 _arg_1.setState(CharacterSkinState.UNLISTED);
             }
@@ -98,20 +96,20 @@ package kabam.rotmg.classes.model
                 if (_arg_1.getState().isSkinStateDeterminedByLevel())
                 {
                     _arg_1.setState(this.getSkinState(_arg_1));
-                };
-            };
+                }
+            }
         }
 
         private function getSkinState(_arg_1:CharacterSkin):CharacterSkinState
         {
-            if (!_arg_1.skinSelectEnabled)
+            if ((!(_arg_1.skinSelectEnabled)))
             {
                 return (CharacterSkinState.UNLISTED);
-            };
+            }
             if (((this.maxLevelAchieved >= _arg_1.unlockLevel) && (_arg_1.unlockSpecial == null)))
             {
                 return (CharacterSkinState.PURCHASABLE);
-            };
+            }
             return (CharacterSkinState.LOCKED);
         }
 
@@ -129,8 +127,8 @@ package kabam.rotmg.classes.model
                 if (_local_1.getState() != CharacterSkinState.UNLISTED)
                 {
                     _local_2.push(_local_1);
-                };
-            };
+                }
+            }
             return (_local_2);
         }
 

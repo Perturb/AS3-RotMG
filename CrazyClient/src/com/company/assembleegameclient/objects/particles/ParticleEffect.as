@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ParticleEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.map.Camera;
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.parameters.Parameters;
 
-    public class ParticleEffect extends GameObject 
+import flash.display.IGraphicsData;
+
+public class ParticleEffect extends GameObject
     {
 
         public var reducedDrawEnabled:Boolean;
@@ -29,7 +29,7 @@ package com.company.assembleegameclient.objects.particles
             if (((((Parameters.data_["AntiLag"]) && (!(_arg_1.id == "Vent"))) && (!(_arg_1.id == "Vortex"))) || (((Parameters.data_["noParticlesMaster"]) && (!(_arg_1.id == "Vent"))) && (!(_arg_1.id == "Vortex")))))
             {
                 return (null);
-            };
+            }
             switch (_arg_1.id)
             {
                 case "Healing":
@@ -52,7 +52,7 @@ package com.company.assembleegameclient.objects.particles
                     return (new VortexEffect(_arg_2, _arg_1));
                 case "CustomParticles":
                     return (ParticleGenerator.attachParticleGenerator(_arg_1, _arg_2));
-            };
+            }
             return (null);
         }
 
@@ -62,7 +62,7 @@ package com.company.assembleegameclient.objects.particles
             if (this.reducedDrawEnabled)
             {
                 return (this.runEasyRendering(_arg_1, _arg_2));
-            };
+            }
             return (this.runNormalRendering(_arg_1, _arg_2));
         }
 

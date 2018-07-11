@@ -1,24 +1,25 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.model.MysteryBoxInfo
 
 package kabam.rotmg.mysterybox.model
 {
-    import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
-    import flash.display.DisplayObject;
-    import kabam.display.Loader.LoaderProxy;
-    import kabam.display.Loader.LoaderProxyConcrete;
-    import __AS3__.vec.Vector;
-    import flash.events.Event;
-    import flash.events.IOErrorEvent;
-    import flash.net.URLRequest;
-    import flash.utils.Dictionary;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.util.TimeUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.util.TimeUtil;
 
-    public class MysteryBoxInfo extends GenericBoxInfo 
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.net.URLRequest;
+import flash.utils.Dictionary;
+
+import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
+
+import kabam.display.Loader.LoaderProxy;
+import kabam.display.Loader.LoaderProxyConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
+public class MysteryBoxInfo extends GenericBoxInfo
     {
 
         public static var chestImageEmbed:Class = MysteryBoxInfo_chestImageEmbed;
@@ -34,6 +35,7 @@ package kabam.rotmg.mysterybox.model
         private var _rollsContents:Vector.<Vector.<int>> = new Vector.<Vector.<int>>();
         private var _rolls:int;
         private var _jackpots:String = "";
+        private var _displayedItems:String = "";
 
 
         public function get iconImageUrl():*
@@ -117,30 +119,30 @@ package kabam.rotmg.mysterybox.model
 
         public function parseContents():void
         {
-            var _local_1:String;
-            var _local_2:Vector.<int>;
-            var _local_3:Array;
             var _local_4:String;
-            var _local_7:int;
-            var _local_5:Array = _contents.split(";");
-            var _local_6:Dictionary = new Dictionary();
-            for each (_local_1 in _local_5)
+            var _local_5:Vector.<int>;
+            var _local_6:Array;
+            var _local_7:String;
+            var _local_3:int;
+            var _local_1:Array = _contents.split(";");
+            var _local_2:Dictionary = new Dictionary();
+            for each (_local_4 in _local_1)
             {
-                _local_2 = new Vector.<int>();
-                _local_3 = _local_1.split(",");
-                for each (_local_4 in _local_3)
+                _local_5 = new Vector.<int>();
+                _local_6 = _local_4.split(",");
+                for each (_local_7 in _local_6)
                 {
-                    if (_local_6[int(_local_4)] == null)
+                    if (_local_2[int(_local_7)] == null)
                     {
-                        _local_6[int(_local_4)] = true;
-                        this._rollsWithContentsUnique.push(int(_local_4));
-                    };
-                    _local_2.push(int(_local_4));
-                };
-                this._rollsWithContents.push(_local_2);
-                this._rollsContents[_local_7] = _local_2;
-                _local_7++;
-            };
+                        _local_2[int(_local_7)] = true;
+                        this._rollsWithContentsUnique.push(int(_local_7));
+                    }
+                    _local_5.push(int(_local_7));
+                }
+                this._rollsWithContents.push(_local_5);
+                this._rollsContents[_local_3] = _local_5;
+                _local_3++;
+            }
         }
 
         public function getSaleTimeLeftStringBuilder():LineBuilder
@@ -162,8 +164,8 @@ package kabam.rotmg.mysterybox.model
                 else
                 {
                     _local_4.setParams("MysteryBoxInfo.saleEndStringMinutes", {"amount":String(Math.ceil(TimeUtil.secondsToMins(_local_3)))});
-                };
-            };
+                }
+            }
             return (_local_4);
         }
 
@@ -175,9 +177,8 @@ package kabam.rotmg.mysterybox.model
                     return (LineBuilder.getLocalizedStringFromKey("Currency.gold").toLowerCase());
                 case "1":
                     return (LineBuilder.getLocalizedStringFromKey("Currency.fame").toLowerCase());
-                default:
-                    return ("");
-            };
+            }
+            return ("");
         }
 
         public function get infoImage():DisplayObject
@@ -233,6 +234,16 @@ package kabam.rotmg.mysterybox.model
         public function get rollsContents():Vector.<Vector.<int>>
         {
             return (this._rollsContents);
+        }
+
+        public function get displayedItems():String
+        {
+            return (this._displayedItems);
+        }
+
+        public function set displayedItems(_arg_1:String):void
+        {
+            this._displayedItems = _arg_1;
         }
 
 

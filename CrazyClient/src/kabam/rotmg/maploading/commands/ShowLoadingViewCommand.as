@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.commands.ShowLoadingViewCommand
 
 package kabam.rotmg.maploading.commands
 {
-    import kabam.rotmg.core.view.Layers;
-    import kabam.rotmg.maploading.view.MapLoadingView;
+import kabam.rotmg.core.view.Layers;
+import kabam.rotmg.maploading.view.MapLoadingView;
 
-    public class ShowLoadingViewCommand 
+public class ShowLoadingViewCommand
     {
 
         [Inject]

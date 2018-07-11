@@ -5,9 +5,9 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import flash.utils.IDataOutput;
+import flash.utils.IDataOutput;
 
-    public class Pong extends OutgoingMessage 
+public class Pong extends OutgoingMessage
     {
 
         public var serial_:int;

@@ -5,10 +5,11 @@
 
 package kabam.rotmg.characters.model
 {
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.assembleegameclient.appengine.SavedCharacter;
+import com.company.assembleegameclient.appengine.SavedCharacter;
 
-    public class LegacyCharacterModel implements CharacterModel 
+import kabam.rotmg.core.model.PlayerModel;
+
+public class LegacyCharacterModel implements CharacterModel
     {
 
         [Inject]
@@ -32,7 +33,7 @@ package kabam.rotmg.characters.model
             if (this.selected.charId() == _arg_1)
             {
                 this.selected = null;
-            };
+            }
         }
 
         public function select(_arg_1:SavedCharacter):void

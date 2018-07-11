@@ -1,19 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.view.SteamAccountDetailMediator
 
 package kabam.rotmg.account.steam.view
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.steam.SteamApi;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.util.EmailValidator;
-    import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
+import com.company.util.EmailValidator;
 
-    public class SteamAccountDetailMediator extends Mediator 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
+import kabam.rotmg.account.steam.SteamApi;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class SteamAccountDetailMediator extends Mediator 
     {
 
         [Inject]

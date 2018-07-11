@@ -1,21 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.deletion.DeletionConfig
 
 package kabam.rotmg.characters.deletion
 {
-    import robotlegs.bender.framework.api.IConfig;
-    import org.swiftsuspenders.Injector;
-    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-    import kabam.rotmg.characters.deletion.service.DeleteCharacterTask;
-    import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog;
-    import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterMediator;
-    import kabam.rotmg.characters.deletion.control.DeleteCharacterSignal;
-    import kabam.rotmg.characters.deletion.control.DeleteCharacterCommand;
+import kabam.rotmg.characters.deletion.control.DeleteCharacterCommand;
+import kabam.rotmg.characters.deletion.control.DeleteCharacterSignal;
+import kabam.rotmg.characters.deletion.service.DeleteCharacterTask;
+import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog;
+import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterMediator;
 
-    public class DeletionConfig implements IConfig 
+import org.swiftsuspenders.Injector;
+
+import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+import robotlegs.bender.framework.api.IConfig;
+
+public class DeletionConfig implements IConfig 
     {
 
         [Inject]

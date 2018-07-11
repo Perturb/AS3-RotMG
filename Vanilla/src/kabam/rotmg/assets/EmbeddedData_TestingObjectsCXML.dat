@@ -13,7 +13,7 @@
       <Description>A key which opens an entrance to FR Test FOREVER, AND EVER, AND EVER... \n\nKeys can only be used once you have 10 or more stars!</Description>
       <Sound>use_key</Sound>
       <Soulbound/>
-      <Activate id="FR Test Portal">CreatePortal</Activate>
+      <Activate id="FR Test Portal" cooldown="30">CreatePortal</Activate>
       <feedPower>200</feedPower>
       <BagType>8</BagType>
       <Track/>
@@ -32,42 +32,6 @@
       <Sound>use_key</Sound>
       <Soulbound/>
       <Activate id="FR God">Create</Activate>
-      <feedPower>200</feedPower>
-      <BagType>8</BagType>
-      <Track/>
-      <InvUse/>
-   </Object>
-   <Object type="0x2050" id="icpk">
-      <Class>Equipment</Class>
-      <Item/>
-      <DisplayId>Ice Cave Permakey</DisplayId>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x54E</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>It's cold in here FOREVER, AND EVER, AND EVER...\n\nKeys can only be used once you have 10 or more stars!</Description>
-      <Sound>use_key</Sound>
-      <Soulbound/>
-      <Activate id="Ice Cave Portal">CreatePortal</Activate>
-      <feedPower>200</feedPower>
-      <BagType>8</BagType>
-      <Track/>
-      <InvUse/>
-   </Object>
-   <Object type="0x2051" id="icpk2">
-      <Class>Equipment</Class>
-      <Item/>
-      <DisplayId>Inner Sanctum Permakey</DisplayId>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x54E</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bad puns FOREVER, AND EVER, AND EVER...\n\nKeys can only be used once you have 10 or more stars!</Description>
-      <Sound>use_key</Sound>
-      <Soulbound/>
-      <Activate id="Inner Sanctum Portal">CreatePortal</Activate>
       <feedPower>200</feedPower>
       <BagType>8</BagType>
       <Track/>
@@ -122,7 +86,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj</File>
@@ -135,7 +99,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiChar8x8</File>
@@ -148,7 +112,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj2</File>
@@ -161,7 +125,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -174,7 +138,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj2</File>
@@ -187,7 +151,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj2</File>
@@ -200,7 +164,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj2</File>
@@ -213,7 +177,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>200</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj2</File>
@@ -237,7 +201,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj</File>
@@ -250,7 +214,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj</File>
@@ -263,7 +227,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj</File>
@@ -276,7 +240,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>d3LofiObjEmbed</File>
@@ -289,7 +253,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>d2LofiObjEmbed</File>
@@ -302,7 +266,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>d2LofiObjEmbed</File>
@@ -343,7 +307,7 @@
       </Texture>
       <Size>0</Size>
       <MaxHitPoints>50000</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Projectile id="1">
          <ObjectId>Invisible</ObjectId>
          <Speed>0</Speed>
@@ -489,7 +453,7 @@
       </Projectile>
       <Size>100</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x023c" id="Test Chicken Minions">
       <Group>Test Chickens</Group>
@@ -517,7 +481,7 @@
       </Projectile>
       <Size>60</Size>
       <Defense>0</Defense>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
    </Object>
    <Object type="0x0940" id="XP Gift">
       <Group>Evaluators</Group>
@@ -532,7 +496,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>70</XpMult>
+      <Exp>4200</Exp>
    </Object>
    <Object type="0x0962" id="XP Gift A">
       <Group>Evaluators</Group>
@@ -547,7 +511,7 @@
       <MaxHitPoints>400</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>70</XpMult>
+      <Exp>2800</Exp>
    </Object>
    <Object type="0x0963" id="XP Gift B">
       <Group>Evaluators</Group>
@@ -562,7 +526,7 @@
       <MaxHitPoints>800</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>70</XpMult>
+      <Exp>5600</Exp>
    </Object>
    <Object type="0x0964" id="XP Gift C">
       <Group>Evaluators</Group>
@@ -577,7 +541,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>50</XpMult>
+      <Exp>3000</Exp>
    </Object>
    <Object type="0x0965" id="XP Gift D">
       <Group>Evaluators</Group>
@@ -592,7 +556,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>90</XpMult>
+      <Exp>5400</Exp>
    </Object>
    <Object type="0x0966" id="XP Gift E">
       <Group>Evaluators</Group>
@@ -607,7 +571,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>120</XpMult>
+      <Exp>7200</Exp>
    </Object>
    <Object type="0x0967" id="XP Gift F">
       <Group>Evaluators</Group>
@@ -622,7 +586,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>200</XpMult>
+      <Exp>12000</Exp>
    </Object>
    <Object type="0x0968" id="XP Gift G">
       <Group>Evaluators</Group>
@@ -637,7 +601,7 @@
       <MaxHitPoints>600</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>300</XpMult>
+      <Exp>18000</Exp>
    </Object>
    <Object type="0x0969" id="XP Gift H">
       <Group>Evaluators</Group>
@@ -652,7 +616,7 @@
       <MaxHitPoints>200</MaxHitPoints>
       <Size>180</Size>
       <Defense>0</Defense>
-      <XpMult>10000</XpMult>
+      <Exp>200000</Exp>
    </Object>
    <Object type="0x217" id="Lvl20 Chicken Spawner">
       <Class>Character</Class>
@@ -679,7 +643,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj4</File>
@@ -693,7 +657,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lostHallsObjects8x8</File>
@@ -707,7 +671,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -721,7 +685,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -735,7 +699,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -749,7 +713,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -779,7 +743,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -793,7 +757,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5</File>
@@ -807,7 +771,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -821,7 +785,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -831,17 +795,29 @@
    <Object type="0x23a" id="Testing Gift Dagger Tier">
       <Group>Testing Gifts Weapon</Group>
       <Class>Character</Class>
+      <StasisImmune/>
+      <Enemy/>
+      <NoMiniMap/>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Exp>0</Exp>
+      <Size>80</Size>
       <Texture>
-         <File>lofiObj3</File>
-         <Index>0x21c</Index>
+         <File>lofiObj5</File>
+         <Index>0x60</Index>
       </Texture>
    </Object>
    <Object type="0x15d" id="Testing Gift Dagger Vani">
       <Group>Testing Gifts Weapon</Group>
       <Class>Character</Class>
+      <StasisImmune/>
+      <Enemy/>
+      <NoMiniMap/>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Exp>0</Exp>
+      <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
-         <Index>0x21c</Index>
+         <Index>0x42c</Index>
       </Texture>
    </Object>
    <Object type="0x213" id="Testing Gift Sword">
@@ -851,7 +827,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -881,7 +857,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -895,7 +871,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5</File>
@@ -909,7 +885,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -923,7 +899,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj5new</File>
@@ -937,7 +913,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -951,7 +927,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -964,7 +940,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -980,7 +956,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -996,7 +972,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1012,7 +988,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1028,7 +1004,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1044,7 +1020,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1060,7 +1036,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1076,7 +1052,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1092,7 +1068,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1108,7 +1084,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1124,7 +1100,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1140,7 +1116,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1156,7 +1132,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1172,7 +1148,7 @@
       <StasisImmune/>
       <Enemy/>
       <NoMiniMap/>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <AnimatedTexture>
          <File>players</File>
@@ -1189,7 +1165,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1203,7 +1179,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1217,7 +1193,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1231,7 +1207,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1245,7 +1221,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1259,7 +1235,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1273,7 +1249,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1287,7 +1263,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1301,7 +1277,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1315,7 +1291,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1329,7 +1305,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1343,7 +1319,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1357,7 +1333,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj6</File>
@@ -1371,7 +1347,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>80</Size>
       <Texture>
          <File>lofiObj3</File>
@@ -1385,7 +1361,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1399,7 +1375,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1413,7 +1389,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1427,7 +1403,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1441,7 +1417,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1455,7 +1431,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1469,7 +1445,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1483,7 +1459,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1497,7 +1473,7 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
@@ -1511,11 +1487,39 @@
       <Enemy/>
       <NoMiniMap/>
       <MaxHitPoints>100</MaxHitPoints>
-      <XpMult>0.0</XpMult>
+      <Exp>0</Exp>
       <Size>40</Size>
       <AnimatedTexture>
          <File>playerskins16</File>
          <Index>16</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0xbde" id="Testing Gift ST Horrific">
+      <Group>Testing Gifts ST</Group>
+      <Class>Character</Class>
+      <StasisImmune/>
+      <Enemy/>
+      <NoMiniMap/>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Exp>0</Exp>
+      <Size>40</Size>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>17</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0xbdf" id="Testing Gift ST Flesh">
+      <Group>Testing Gifts ST</Group>
+      <Class>Character</Class>
+      <StasisImmune/>
+      <Enemy/>
+      <NoMiniMap/>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Exp>0</Exp>
+      <Size>40</Size>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>18</Index>
       </AnimatedTexture>
    </Object>
 </Objects>

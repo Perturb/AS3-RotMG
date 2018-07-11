@@ -1,26 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.92
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.ArenaPortalPanel
 
 package com.company.assembleegameclient.ui.panels
 {
-    import org.osflash.signals.Signal;
-    import com.company.assembleegameclient.objects.ArenaPortal;
-    import flash.display.Sprite;
-    import kabam.rotmg.text.view.StaticTextDisplay;
-    import kabam.rotmg.util.components.LegacyBuyButton;
-    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import com.company.assembleegameclient.objects.Player;
-    import com.company.assembleegameclient.util.Currency;
-    import flash.events.MouseEvent;
-    import flash.text.TextFieldAutoSize;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.rotmg.text.model.TextKey;
-    import flash.filters.DropShadowFilter;
-    import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.objects.ArenaPortal;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.util.Currency;
 
-    public class ArenaPortalPanel extends Panel 
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFieldAutoSize;
+
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.StaticTextDisplay;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.util.components.LegacyBuyButton;
+
+import org.osflash.signals.Signal;
+
+public class ArenaPortalPanel extends Panel 
     {
 
         public const purchase:Signal = new Signal(int);
@@ -43,7 +46,7 @@ package com.company.assembleegameclient.ui.panels
             if (((gs_.map == null) || (gs_.map.player_ == null)))
             {
                 return;
-            };
+            }
             var _local_3:Player = gs_.map.player_;
             this.nameText_ = this.makeTitle();
             this.openContainer.addChild(this.nameText_);
@@ -58,7 +61,7 @@ package com.company.assembleegameclient.ui.panels
             else
             {
                 this.fameButton.addEventListener(MouseEvent.CLICK, this.onFameClick);
-            };
+            }
             this.openContainer.addChild(this.fameButton);
             this.fameButton.readyForPlacement.addOnce(this.alignUI);
             this.closedText = new StaticTextDisplay();

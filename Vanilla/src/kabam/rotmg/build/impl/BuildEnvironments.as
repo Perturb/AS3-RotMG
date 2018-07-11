@@ -5,9 +5,9 @@
 
 package kabam.rotmg.build.impl
 {
-    import kabam.rotmg.build.api.BuildEnvironment;
+import kabam.rotmg.build.api.BuildEnvironment;
 
-    public final class BuildEnvironments 
+public final class BuildEnvironments 
     {
 
         public static const LOCALHOST:String = "localhost";
@@ -48,7 +48,7 @@ package kabam.rotmg.build.impl
                     return (BuildEnvironment.PRODTEST);
                 case PRODUCTION:
                     return (BuildEnvironment.PRODUCTION);
-            };
+            }
             return (null);
         }
 

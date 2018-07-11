@@ -5,15 +5,17 @@
 
 package com.company.assembleegameclient.ui.panels
 {
-    import kabam.rotmg.text.model.TextKey;
-    import flash.events.Event;
-    import com.company.assembleegameclient.game.GameSprite;
-    import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
-    import flash.events.MouseEvent;
-    import flash.events.KeyboardEvent;
-    import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
 
-    public class GuildChroniclePanel extends ButtonPanel 
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+
+import kabam.rotmg.text.model.TextKey;
+
+public class GuildChroniclePanel extends ButtonPanel
     {
 
         public function GuildChroniclePanel(_arg_1:GameSprite)
@@ -51,7 +53,7 @@ package com.company.assembleegameclient.ui.panels
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.openWindow();
-            };
+            }
         }
 
 

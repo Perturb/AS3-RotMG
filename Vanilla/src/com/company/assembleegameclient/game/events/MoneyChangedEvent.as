@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.game.events
 {
-    import flash.events.Event;
+import flash.events.Event;
 
-    public class MoneyChangedEvent extends Event 
+public class MoneyChangedEvent extends Event
     {
 
         public static const MONEY_CHANGED:String = "MONEY_CHANGED";

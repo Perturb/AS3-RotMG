@@ -5,13 +5,13 @@
 
 package kabam.rotmg.account.web.services
 {
-    import kabam.lib.tasks.BaseTask;
-    import kabam.rotmg.account.core.services.LoginTask;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.account.web.model.AccountData;
-    import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.LoginTask;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.appengine.api.AppEngineClient;
 
-    public class WebLoginTask extends BaseTask implements LoginTask 
+public class WebLoginTask extends BaseTask implements LoginTask 
     {
 
         [Inject]
@@ -36,7 +36,7 @@ package kabam.rotmg.account.web.services
             if (_arg_1)
             {
                 this.updateUser(_arg_2);
-            };
+            }
             completeTask(_arg_1, _arg_2);
         }
 

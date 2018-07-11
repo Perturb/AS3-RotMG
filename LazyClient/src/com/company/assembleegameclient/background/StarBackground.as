@@ -5,15 +5,14 @@
 
 package com.company.assembleegameclient.background
 {
-    import __AS3__.vec.Vector;
-    import flash.display.IGraphicsData;
-    import com.company.assembleegameclient.map.Camera;
-    import com.company.util.AssetLibrary;
-    import com.company.util.ImageSet;
-    import com.company.util.PointUtil;
-    import __AS3__.vec.*;
+import com.company.assembleegameclient.map.Camera;
+import com.company.util.AssetLibrary;
+import com.company.util.ImageSet;
+import com.company.util.PointUtil;
 
-    public class StarBackground extends Background 
+import flash.display.IGraphicsData;
+
+public class StarBackground extends Background 
     {
 
         public var stars_:Vector.<Star> = new Vector.<Star>();
@@ -27,7 +26,7 @@ package com.company.assembleegameclient.background
             {
                 this.tryAddStar();
                 _local_1++;
-            };
+            }
         }
 
         override public function draw(_arg_1:Camera, _arg_2:int):void
@@ -37,7 +36,7 @@ package com.company.assembleegameclient.background
             for each (_local_3 in this.stars_)
             {
                 _local_3.draw(this.graphicsData_, _arg_1, _arg_2);
-            };
+            }
             graphics.clear();
             graphics.drawGraphicsData(this.graphicsData_);
         }
@@ -52,8 +51,8 @@ package com.company.assembleegameclient.background
                 if (PointUtil.distanceXY(_local_2.x_, _local_2.y_, _local_3.x_, _local_3.y_) < 3)
                 {
                     return;
-                };
-            };
+                }
+            }
             this.stars_.push(_local_2);
         }
 
@@ -61,16 +60,15 @@ package com.company.assembleegameclient.background
     }
 }//package com.company.assembleegameclient.background
 
-import __AS3__.vec.Vector;
-import flash.display.GraphicsPathCommand;
-import flash.display.GraphicsEndFill;
+import com.company.assembleegameclient.map.Camera;
+
 import flash.display.BitmapData;
 import flash.display.GraphicsBitmapFill;
-import flash.geom.Matrix;
+import flash.display.GraphicsEndFill;
 import flash.display.GraphicsPath;
+import flash.display.GraphicsPathCommand;
 import flash.display.IGraphicsData;
-import com.company.assembleegameclient.map.Camera;
-import __AS3__.vec.*;
+import flash.geom.Matrix;
 
 class Star 
 {
@@ -85,7 +83,7 @@ class Star
     private var w_:Number;
     private var h_:Number;
     protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, new Matrix(), false, false);
-    protected var path_:GraphicsPath = new flash.display.GraphicsPath(sqCommands, new Vector.<Number>());
+    protected var path_:GraphicsPath = new GraphicsPath(sqCommands, new Vector.<Number>());
 
     public function Star(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:BitmapData):void
     {

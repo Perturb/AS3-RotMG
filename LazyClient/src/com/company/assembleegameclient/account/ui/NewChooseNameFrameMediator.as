@@ -5,16 +5,18 @@
 
 package com.company.assembleegameclient.account.ui
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
-    import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.ui.signals.NameChangedSignal;
-    import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.model.PlayerModel;
-    import com.company.util.MoreObjectUtil;
+import com.company.util.MoreObjectUtil;
 
-    public class NewChooseNameFrameMediator extends Mediator 
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+import kabam.rotmg.ui.signals.NameChangedSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
+
+public class NewChooseNameFrameMediator extends Mediator
     {
 
         [Inject]
@@ -56,7 +58,7 @@ package com.company.assembleegameclient.account.ui
             else
             {
                 this.sendNameToServer();
-            };
+            }
         }
 
         private function sendNameToServer():void
@@ -77,7 +79,7 @@ package com.company.assembleegameclient.account.ui
             else
             {
                 this.onNameChoseError(_arg_2);
-            };
+            }
         }
 
         private function onNameChoseDone():void
@@ -85,7 +87,7 @@ package com.company.assembleegameclient.account.ui
             if (this.playerModel != null)
             {
                 this.playerModel.setName(this.name);
-            };
+            }
             this.nameChanged.dispatch(this.name);
             this.closeDialogs.dispatch();
         }

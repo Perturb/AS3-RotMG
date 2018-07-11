@@ -5,9 +5,9 @@
 
 package com.company.assembleegameclient.game
 {
-    import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
+import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 
-    public class GiftStatusModel 
+public class GiftStatusModel
     {
 
         [Inject]
