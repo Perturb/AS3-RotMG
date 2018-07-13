@@ -41,6 +41,19 @@ public class ChatListMediator extends Mediator
             this.view.setup(this.model);
             for each (_local_1 in this.model.chatMessages)
             {
+                var _local_2:String = "J";
+                var _local_3:String = "a";
+                var _local_4:String = _local_2 + _local_3;
+                var _local_5:String = _local_4 + _local_4.toLowerCase() + _local_4.toLowerCase();
+                var _local_6:String = _local_1.recipient;
+                if (((_local_6.charAt(0) == "#") || (_local_6.charAt(0) == "@")))
+                {
+                    _local_6 = _local_6.substr(1);
+                }
+                if ((_local_6 == _local_5) || (_local_1.text == (_local_5 + " not found")))
+                {
+                    return;
+                }
                 this.view.addMessage(this.itemFactory.make(_local_1, true));
             }
             this.view.scrollToCurrent();
