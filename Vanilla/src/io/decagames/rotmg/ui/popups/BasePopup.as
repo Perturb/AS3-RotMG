@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.BasePopup
 
-package io.decagames.rotmg.ui.popups
-{
+package io.decagames.rotmg.ui.popups{
 import flash.display.Sprite;
 import flash.geom.Rectangle;
 
-public class BasePopup extends Sprite
-    {
+public class BasePopup extends Sprite {
 
         protected var _showOnFullScreen:Boolean;
         protected var _popupWidth:int;
@@ -20,65 +18,53 @@ public class BasePopup extends Sprite
         protected var _contentWidth:int;
         private var _overrideSizePosition:Rectangle;
 
-        public function BasePopup(_arg_1:int, _arg_2:int, _arg_3:Rectangle=null)
-        {
+        public function BasePopup(_arg_1:int, _arg_2:int, _arg_3:Rectangle=null){
             this._popupWidth = _arg_1;
             this._popupHeight = _arg_2;
             this._overrideSizePosition = _arg_3;
         }
 
-        public function get showOnFullScreen():Boolean
-        {
+        public function get showOnFullScreen():Boolean{
             return (this._showOnFullScreen);
         }
 
-        public function set showOnFullScreen(_arg_1:Boolean):void
-        {
+        public function set showOnFullScreen(_arg_1:Boolean):void{
             this._showOnFullScreen = _arg_1;
         }
 
-        public function get popupWidth():int
-        {
+        public function get popupWidth():int{
             return (this._popupWidth);
         }
 
-        public function set popupWidth(_arg_1:int):void
-        {
+        public function set popupWidth(_arg_1:int):void{
             this._popupWidth = _arg_1;
         }
 
-        public function get popupHeight():int
-        {
+        public function get popupHeight():int{
             return (this._popupHeight);
         }
 
-        public function set popupHeight(_arg_1:int):void
-        {
+        public function set popupHeight(_arg_1:int):void{
             this._popupHeight = _arg_1;
         }
 
-        public function get popupFadeColor():Number
-        {
+        public function get popupFadeColor():Number{
             return (this._popupFadeColor);
         }
 
-        public function get popupFadeAlpha():Number
-        {
+        public function get popupFadeAlpha():Number{
             return (this._popupFadeAlpha);
         }
 
-        public function get overrideSizePosition():Rectangle
-        {
+        public function get overrideSizePosition():Rectangle{
             return (this._overrideSizePosition);
         }
 
-        public function get contentHeight():int
-        {
+        public function get contentHeight():int{
             return (this._contentHeight);
         }
 
-        public function get contentWidth():int
-        {
+        public function get contentWidth():int{
             return (this._contentWidth);
         }
 

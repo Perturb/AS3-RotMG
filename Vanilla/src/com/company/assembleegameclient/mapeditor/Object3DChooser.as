@@ -1,34 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.Object3DChooser
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.util.MoreStringUtil;
 
 import flash.utils.Dictionary;
 
-public class Object3DChooser extends Chooser
-    {
+public class Object3DChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";
 
-        public function Object3DChooser()
-        {
+        public function Object3DChooser(){
             super(Layer.OBJECT);
             this.cache = new Dictionary();
         }
 
-        public function getLastSearch():String
-        {
+        public function getLastSearch():String{
             return (this.lastSearch);
         }
 
-        public function reloadObjects(_arg_1:String=""):void
-        {
+        public function reloadObjects(_arg_1:String=""):void{
             var _local_3:RegExp;
             var _local_5:String;
             var _local_6:XML;
@@ -40,7 +35,7 @@ public class Object3DChooser extends Chooser
             if (_arg_1 != "")
             {
                 _local_3 = new RegExp(_arg_1, "gix");
-            }
+            };
             var _local_4:Dictionary = GroupDivider.GROUPS["3D Objects"];
             for each (_local_6 in _local_4)
             {
@@ -48,8 +43,8 @@ public class Object3DChooser extends Chooser
                 if (((_local_3 == null) || (_local_5.search(_local_3) >= 0)))
                 {
                     _local_2.push(_local_5);
-                }
-            }
+                };
+            };
             _local_2.sort(MoreStringUtil.cmp);
             for each (_local_5 in _local_2)
             {
@@ -63,9 +58,9 @@ public class Object3DChooser extends Chooser
                 else
                 {
                     _local_8 = this.cache[_local_7];
-                }
+                };
                 addElement(_local_8);
-            }
+            };
             hasBeenLoaded = true;
             scrollBar_.setIndicatorSize(HEIGHT, elementContainer_.height, true);
         }

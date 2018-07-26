@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.focus.GameFocusConfig
 
-package kabam.rotmg.game.focus
-{
+package kabam.rotmg.game.focus{
 import com.company.assembleegameclient.game.GameSprite;
 
 import kabam.rotmg.game.focus.control.AddGameFocusConsoleActionCommand;
@@ -20,8 +19,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class GameFocusConfig implements IConfig 
-    {
+public class GameFocusConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -33,16 +31,14 @@ public class GameFocusConfig implements IConfig
         public var mediatorMap:IMediatorMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(SetGameFocusSignal).asSingleton();
             this.commandMap.map(AddGameFocusConsoleActionSignal).toCommand(AddGameFocusConsoleActionCommand);
             this.mediatorMap.map(GameSprite).toMediator(GameFocusMediator);
             this.context.lifecycle.afterInitializing(this.init);
         }
 
-        private function init():void
-        {
+        private function init():void{
             Signal(this.injector.getInstance(AddGameFocusConsoleActionSignal)).dispatch();
         }
 

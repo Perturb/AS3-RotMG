@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.services.KongregateLoadApiTask
 
-package kabam.rotmg.account.kongregate.services
-{
+package kabam.rotmg.account.kongregate.services{
 import flash.display.DisplayObject;
 import flash.display.LoaderInfo;
 import flash.system.Security;
@@ -16,8 +15,7 @@ import kabam.rotmg.core.view.Layers;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class KongregateLoadApiTask extends BaseTask implements LoadApiTask 
-    {
+public class KongregateLoadApiTask extends BaseTask implements LoadApiTask {
 
         [Inject]
         public var info:LoaderInfo;
@@ -33,8 +31,7 @@ public class KongregateLoadApiTask extends BaseTask implements LoadApiTask
         public var closeDialog:CloseDialogsSignal;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             var _local_1:String = this.info.parameters.kongregate_api_path;
             Security.allowDomain(_local_1);
             this.layers.api.addChild((this.api as DisplayObject));
@@ -42,8 +39,7 @@ public class KongregateLoadApiTask extends BaseTask implements LoadApiTask
             this.api.load(_local_1);
         }
 
-        private function onApiLoaded():void
-        {
+        private function onApiLoaded():void{
             completeTask(true);
         }
 

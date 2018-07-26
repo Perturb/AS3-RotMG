@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry
 
-package kabam.rotmg.mysterybox.components
-{
+package kabam.rotmg.mysterybox.components{
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 import com.company.assembleegameclient.util.Currency;
 
@@ -29,8 +28,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.util.components.LegacyBuyButton;
 import kabam.rotmg.util.components.UIAssetsHelper;
 
-public class MysteryBoxSelectEntry extends Sprite
-    {
+public class MysteryBoxSelectEntry extends Sprite {
 
         public static var redBarEmbed:Class = MysteryBoxSelectEntry_redBarEmbed;
 
@@ -55,8 +53,7 @@ public class MysteryBoxSelectEntry extends Sprite
         private var _quantity:int;
         private var title:TextFieldDisplayConcrete;
 
-        public function MysteryBoxSelectEntry(_arg_1:MysteryBoxInfo):void
-        {
+        public function MysteryBoxSelectEntry(_arg_1:MysteryBoxInfo):void{
             var _local_2:DisplayObject;
             super();
             this.redbar = new redBarEmbed();
@@ -90,8 +87,8 @@ public class MysteryBoxSelectEntry extends Sprite
                 else
                 {
                     this.buyButton.setPrice(this.mbi.priceAmount, this.mbi.priceCurrency);
-                }
-            }
+                };
+            };
             this.buyButton.x = (MysteryBoxSelectModal.modalWidth - 120);
             this.buyButton.y = 16;
             this.buyButton._width = 70;
@@ -99,7 +96,7 @@ public class MysteryBoxSelectEntry extends Sprite
             if (((this.mbi.unitsLeft > 0) || (this.mbi.unitsLeft == -1)))
             {
                 this.buyButton.addEventListener(MouseEvent.CLICK, this.onBoxBuy);
-            }
+            };
             addChild(this.buyButton);
             this.iconImage = this.mbi.iconImage;
             this.infoImage = this.mbi.infoImage;
@@ -110,7 +107,7 @@ public class MysteryBoxSelectEntry extends Sprite
             else
             {
                 this.addIconImageChild();
-            }
+            };
             if (this.infoImage == null)
             {
                 this.mbi.infoImageLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onInfoLoadComplete);
@@ -118,7 +115,7 @@ public class MysteryBoxSelectEntry extends Sprite
             else
             {
                 this.addInfoImageChild();
-            }
+            };
             this.mbi.quantity = this._quantity;
             if (((this.mbi.unitsLeft > 0) || (this.mbi.unitsLeft == -1)))
             {
@@ -132,32 +129,29 @@ public class MysteryBoxSelectEntry extends Sprite
                 this.rightNavSprite.y = ((this.buyButton.y + (this.buyButton.height / 2)) - 16);
                 this.rightNavSprite.addEventListener(MouseEvent.CLICK, this.onClick);
                 addChild(this.rightNavSprite);
-            }
+            };
             this.addUnitsLeftText();
             addEventListener(MouseEvent.ROLL_OVER, this.onHover);
             addEventListener(MouseEvent.ROLL_OUT, this.onRemoveHover);
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function updateTextPosition():void
-        {
+        private function updateTextPosition():void{
             this.title.y = Math.round(((this.redbar.height - (this.title.getTextHeight() + ((this.title.textField.numLines == 1) ? 8 : 10))) / 2));
             if ((((this.mbi.isNew()) || (this.mbi.isOnSale())) && (this.title.textField.numLines == 2)))
             {
                 this.title.y = (this.title.y + 6);
-            }
+            };
         }
 
-        public function updateContent():void
-        {
+        public function updateContent():void{
             if (this.left)
             {
                 this.left.setStringBuilder(new LineBuilder().setParams(((this.mbi.unitsLeft + " ") + LineBuilder.getLocalizedStringFromKey("MysteryBoxSelectEntry.left"))));
-            }
+            };
         }
 
-        private function addUnitsLeftText():void
-        {
+        private function addUnitsLeftText():void{
             var _local_1:uint;
             var _local_2:int;
             if (this.mbi.unitsLeft >= 0)
@@ -176,43 +170,39 @@ public class MysteryBoxSelectEntry extends Sprite
                     else
                     {
                         _local_1 = 0xFF00;
-                    }
-                }
+                    };
+                };
                 this.left = this.getText((this.mbi.unitsLeft + " left"), 20, 46, 11).setColor(_local_1);
                 addChild(this.left);
-            }
+            };
         }
 
-        private function markAsSold():void
-        {
+        private function markAsSold():void{
             this.buyButton.setPrice(0, Currency.INVALID);
             this.buyButton.setText(LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutButton"));
             if (((this.leftNavSprite) && (this.leftNavSprite.parent == this)))
             {
                 removeChild(this.leftNavSprite);
                 this.leftNavSprite.removeEventListener(MouseEvent.CLICK, this.onClick);
-            }
+            };
             if (((this.rightNavSprite) && (this.rightNavSprite.parent == this)))
             {
                 removeChild(this.rightNavSprite);
                 this.rightNavSprite.removeEventListener(MouseEvent.CLICK, this.onClick);
-            }
+            };
         }
 
-        private function onHover(_arg_1:MouseEvent):void
-        {
+        private function onHover(_arg_1:MouseEvent):void{
             this.hoverState = true;
             this.addInfoImageChild();
         }
 
-        private function onRemoveHover(_arg_1:MouseEvent):void
-        {
+        private function onRemoveHover(_arg_1:MouseEvent):void{
             this.hoverState = false;
             this.removeInfoImageChild();
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             switch (_arg_1.currentTarget)
             {
                 case this.rightNavSprite:
@@ -225,8 +215,8 @@ public class MysteryBoxSelectEntry extends Sprite
                         if (this._quantity < 10)
                         {
                             this._quantity = (this._quantity + 5);
-                        }
-                    }
+                        };
+                    };
                     break;
                 case this.leftNavSprite:
                     if (this._quantity == 10)
@@ -238,10 +228,10 @@ public class MysteryBoxSelectEntry extends Sprite
                         if (this._quantity > 1)
                         {
                             this._quantity = (this._quantity - 4);
-                        }
-                    }
+                        };
+                    };
                     break;
-            }
+            };
             this.mbi.quantity = this._quantity;
             if (this.mbi.isOnSale())
             {
@@ -250,40 +240,37 @@ public class MysteryBoxSelectEntry extends Sprite
             else
             {
                 this.buyButton.setPrice((this.mbi.priceAmount * this._quantity), this.mbi.priceCurrency);
-            }
+            };
         }
 
-        private function addNewText():void
-        {
+        private function addNewText():void{
             if (((this.mbi.isNew()) && (!(this.mbi.isOnSale()))))
             {
                 this.newText = this.getText(this.newString, 74, 0).setColor(0xFFDE00);
                 addChild(this.newText);
-            }
+            };
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             var _local_2:Number = (1.05 + (0.05 * Math.sin((getTimer() / 200))));
             if (this.sale)
             {
                 this.sale.scaleX = _local_2;
                 this.sale.scaleY = _local_2;
-            }
+            };
             if (this.newText)
             {
                 this.newText.scaleX = _local_2;
                 this.newText.scaleY = _local_2;
-            }
+            };
             if (((this.mbi.unitsLeft == 0) && (!(this.soldOut))))
             {
                 this.soldOut = true;
                 this.markAsSold();
-            }
+            };
         }
 
-        private function addSaleText():void
-        {
+        private function addSaleText():void{
             var _local_1:LineBuilder;
             var _local_2:TextFieldDisplayConcrete;
             var _local_3:TextFieldDisplayConcrete;
@@ -297,25 +284,22 @@ public class MysteryBoxSelectEntry extends Sprite
                 addChild(_local_2);
                 _local_3 = this.getText(((((LineBuilder.getLocalizedStringFromKey("MysteryBoxSelectEntry.was") + " ") + this.mbi.priceAmount) + " ") + this.mbi.currencyName), this.buyButton.x, (this.buyButton.y - 14), 10).setColor(0xFF0000);
                 addChild(_local_3);
-            }
+            };
         }
 
-        private function onImageLoadComplete(_arg_1:Event):void
-        {
+        private function onImageLoadComplete(_arg_1:Event):void{
             this.mbi.loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onImageLoadComplete);
             this.iconImage = DisplayObject(this.mbi.loader);
             this.addIconImageChild();
         }
 
-        private function onInfoLoadComplete(_arg_1:Event):void
-        {
+        private function onInfoLoadComplete(_arg_1:Event):void{
             this.mbi.infoImageLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onInfoLoadComplete);
             this.infoImage = DisplayObject(this.mbi.infoImageLoader);
             this.addInfoImageChild();
         }
 
-        public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int=12, _arg_5:Boolean=false):TextFieldDisplayConcrete
-        {
+        public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int=12, _arg_5:Boolean=false):TextFieldDisplayConcrete{
             var _local_6:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(_arg_4).setColor(0xFFFFFF).setTextWidth((MysteryBoxSelectModal.modalWidth - 185));
             _local_6.setBold(true);
             if (_arg_5)
@@ -325,7 +309,7 @@ public class MysteryBoxSelectEntry extends Sprite
             else
             {
                 _local_6.setStringBuilder(new LineBuilder().setParams(_arg_1));
-            }
+            };
             _local_6.setWordWrap(true);
             _local_6.setMultiLine(true);
             _local_6.setAutoSize(TextFieldAutoSize.LEFT);
@@ -336,12 +320,11 @@ public class MysteryBoxSelectEntry extends Sprite
             return (_local_6);
         }
 
-        private function addIconImageChild():void
-        {
+        private function addIconImageChild():void{
             if (this.iconImage == null)
             {
                 return;
-            }
+            };
             this.iconImage.width = 58;
             this.iconImage.height = 58;
             this.iconImage.x = 14;
@@ -352,18 +335,17 @@ public class MysteryBoxSelectEntry extends Sprite
             else
             {
                 this.iconImage.y = 1;
-            }
+            };
             addChild(this.iconImage);
         }
 
-        private function addInfoImageChild():void
-        {
+        private function addInfoImageChild():void{
             var _local_3:Array;
             var _local_4:ColorMatrixFilter;
             if (this.infoImage == null)
             {
                 return;
-            }
+            };
             var _local_1:int = 8;
             this.infoImage.width = (291 - _local_1);
             this.infoImage.height = ((598 - (_local_1 * 2)) - 2);
@@ -382,22 +364,20 @@ public class MysteryBoxSelectEntry extends Sprite
                 _local_3 = [3.0742, -1.8282, -0.246, 0, 50, -0.9258, 2.1718, -0.246, 0, 50, -0.9258, -1.8282, 3.754, 0, 50, 0, 0, 0, 1, 0];
                 _local_4 = new ColorMatrixFilter(_local_3);
                 this.redbar.filters = [_local_4];
-            }
+            };
         }
 
-        private function removeInfoImageChild():void
-        {
+        private function removeInfoImageChild():void{
             if (this.descriptionShowing)
             {
                 removeChild(this.infoImageBorder);
                 removeChild(this.infoImage);
                 this.descriptionShowing = false;
                 this.redbar.filters = [];
-            }
+            };
         }
 
-        private function onBoxBuy(_arg_1:MouseEvent):void
-        {
+        private function onBoxBuy(_arg_1:MouseEvent):void{
             var _local_2:OpenDialogSignal;
             var _local_3:String;
             var _local_4:Dialog;
@@ -418,7 +398,7 @@ public class MysteryBoxSelectEntry extends Sprite
                         "left":this.mbi.unitsLeft,
                         "box":((this.mbi.unitsLeft == 1) ? LineBuilder.getLocalizedStringFromKey("MysteryBoxError.box") : LineBuilder.getLocalizedStringFromKey("MysteryBoxError.boxes"))
                     });
-                }
+                };
                 _local_4 = new Dialog("MysteryBoxRollModal.purchaseFailedString", _local_3, "MysteryBoxRollModal.okString", null, null);
                 _local_4.addEventListener(Dialog.LEFT_BUTTON, this.onErrorOk);
                 _local_2.dispatch(_local_4);
@@ -432,12 +412,11 @@ public class MysteryBoxSelectEntry extends Sprite
                     _local_5.parentSelectModal = MysteryBoxSelectModal(parent.parent);
                     _local_7 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
                     _local_7.dispatch(_local_5);
-                }
-            }
+                };
+            };
         }
 
-        private function onErrorOk(_arg_1:Event):void
-        {
+        private function onErrorOk(_arg_1:Event):void{
             var _local_2:OpenDialogSignal;
             _local_2 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _local_2.dispatch(new MysteryBoxSelectModal());

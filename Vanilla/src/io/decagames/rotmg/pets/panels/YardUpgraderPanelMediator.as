@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.panels.YardUpgraderPanelMediator
 
-package io.decagames.rotmg.pets.panels
-{
+package io.decagames.rotmg.pets.panels{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.StageProxy;
 
@@ -21,8 +20,7 @@ import kabam.rotmg.account.core.Account;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class YardUpgraderPanelMediator extends Mediator
-    {
+public class YardUpgraderPanelMediator extends Mediator {
 
         [Inject]
         public var view:YardUpgraderPanel;
@@ -38,23 +36,20 @@ public class YardUpgraderPanelMediator extends Mediator
         private var open:Boolean;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.open = false;
             this.view.init(false);
             this.stageProxy = new StageProxy(this.view);
             this.setEventListeners();
         }
 
-        private function setEventListeners():void
-        {
+        private function setEventListeners():void{
             this.view.petsButton.addEventListener(MouseEvent.CLICK, this.onPets);
             this.stageProxy.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.view.infoButton.addEventListener(MouseEvent.CLICK, this.onButtonRightClick);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.petsButton.removeEventListener(MouseEvent.CLICK, this.onPets);
             this.stageProxy.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.view.infoButton.removeEventListener(MouseEvent.CLICK, this.onButtonRightClick);
@@ -62,26 +57,22 @@ public class YardUpgraderPanelMediator extends Mediator
             super.destroy();
         }
 
-        protected function onButtonRightClick(_arg_1:MouseEvent):void
-        {
+        protected function onButtonRightClick(_arg_1:MouseEvent):void{
             this.showPopupSignal.dispatch(new PetInfoDialog());
         }
 
-        protected function onPets(_arg_1:MouseEvent):void
-        {
+        protected function onPets(_arg_1:MouseEvent):void{
             this.openPets();
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (this.view.stage.focus == null)))
             {
                 this.openPets();
-            }
+            };
         }
 
-        private function openPets():void
-        {
+        private function openPets():void{
             this.showPopupSignal.dispatch(new PetYardWindow());
         }
 

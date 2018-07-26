@@ -1,26 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Pic
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.display.BitmapData;
 import flash.utils.ByteArray;
 import flash.utils.IDataInput;
 
-public class Pic extends IncomingMessage
-    {
+public class Pic extends IncomingMessage {
 
         public var bitmapData_:BitmapData = null;
 
-        public function Pic(_arg_1:uint, _arg_2:Function)
-        {
+        public function Pic(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             var _local_2:int = _arg_1.readInt();
             var _local_3:int = _arg_1.readInt();
             var _local_4:ByteArray = new ByteArray();
@@ -29,8 +25,7 @@ public class Pic extends IncomingMessage
             this.bitmapData_.setPixels(this.bitmapData_.rect, _local_4);
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("PIC", "bitmapData_"));
         }
 

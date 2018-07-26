@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid
 
-package com.company.assembleegameclient.ui.panels.itemgrids
-{
+package com.company.assembleegameclient.ui.panels.itemgrids{
 import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 import com.company.assembleegameclient.objects.Container;
 import com.company.assembleegameclient.objects.GameObject;
@@ -23,8 +22,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class ItemGrid extends Panel
-    {
+public class ItemGrid extends Panel {
 
         private static const NO_CUT:Array = [0, 0, 0, 0];
         private static const CutsByNum:Object = {
@@ -44,8 +42,7 @@ public class ItemGrid extends Panel
         protected var indexOffset:int;
         public var interactive:Boolean;
 
-        public function ItemGrid(_arg_1:GameObject, _arg_2:Player, _arg_3:int)
-        {
+        public function ItemGrid(_arg_1:GameObject, _arg_2:Player, _arg_3:int){
             super(null);
             this.owner = _arg_1;
             this.curPlayer = _arg_2;
@@ -54,46 +51,42 @@ public class ItemGrid extends Panel
             if (((_arg_1 == _arg_2) || (_local_4)))
             {
                 this.interactive = true;
-            }
+            };
         }
 
-        public function hideTooltip():void
-        {
+        public function hideTooltip():void{
             if (this.tooltip)
             {
                 this.tooltip.detachFromTarget();
                 this.tooltip = null;
                 this.tooltipFocusTile = null;
-            }
+            };
         }
 
-        public function refreshTooltip():void
-        {
+        public function refreshTooltip():void{
             if ((((!(stage)) || (!(this.tooltip))) || (!(this.tooltip.stage))))
             {
                 return;
-            }
+            };
             if (this.tooltipFocusTile)
             {
                 this.tooltip.detachFromTarget();
                 this.tooltip = null;
                 this.addToolTipToTile(this.tooltipFocusTile);
-            }
+            };
         }
 
-        private function onTileHover(_arg_1:MouseEvent):void
-        {
+        private function onTileHover(_arg_1:MouseEvent):void{
             if (!stage)
             {
                 return;
-            }
+            };
             var _local_2:ItemTile = (_arg_1.currentTarget as ItemTile);
             this.addToolTipToTile(_local_2);
             this.tooltipFocusTile = _local_2;
         }
 
-        private function addToolTipToTile(_arg_1:ItemTile):void
-        {
+        private function addToolTipToTile(_arg_1:ItemTile):void{
             var _local_2:String;
             if (_arg_1.itemSprite.itemId > 0)
             {
@@ -108,28 +101,26 @@ public class ItemGrid extends Panel
                 else
                 {
                     _local_2 = TextKey.ITEM;
-                }
+                };
                 this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, TextKey.ITEM_EMPTY_SLOT, 200, {"itemType":TextKey.wrapForTokenResolution(_local_2)});
-            }
+            };
             this.tooltip.attachToTarget(_arg_1);
             this.addToolTip.dispatch(this.tooltip);
         }
 
-        private function getCharacterType():String
-        {
+        private function getCharacterType():String{
             if (this.owner == this.curPlayer)
             {
                 return (InventoryOwnerTypes.CURRENT_PLAYER);
-            }
+            };
             if ((this.owner is Player))
             {
                 return (InventoryOwnerTypes.OTHER_PLAYER);
-            }
+            };
             return (InventoryOwnerTypes.NPC);
         }
 
-        protected function addToGrid(_arg_1:ItemTile, _arg_2:uint, _arg_3:uint):void
-        {
+        protected function addToGrid(_arg_1:ItemTile, _arg_2:uint, _arg_3:uint):void{
             _arg_1.drawBackground(CutsByNum[_arg_2][_arg_3]);
             _arg_1.addEventListener(MouseEvent.ROLL_OVER, this.onTileHover);
             _arg_1.x = (int((_arg_3 % this.rowLength)) * (ItemTile.WIDTH + this.padding));
@@ -137,17 +128,14 @@ public class ItemGrid extends Panel
             addChild(_arg_1);
         }
 
-        public function setItems(_arg_1:Vector.<int>, _arg_2:int=0):void
-        {
+        public function setItems(_arg_1:Vector.<int>, _arg_2:int=0):void{
         }
 
-        public function enableInteraction(_arg_1:Boolean):void
-        {
+        public function enableInteraction(_arg_1:Boolean):void{
             mouseEnabled = _arg_1;
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.setItems(this.owner.equipment_, this.indexOffset);
         }
 

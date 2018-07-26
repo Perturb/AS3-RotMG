@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.DoubleWall
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.engine3d.Face3D;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Square;
@@ -13,8 +12,7 @@ import com.company.util.BitmapUtil;
 import flash.display.BitmapData;
 import flash.display.IGraphicsData;
 
-public class DoubleWall extends GameObject
-    {
+public class DoubleWall extends GameObject {
 
         private static const UVT:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
         private static const UVTHEIGHT:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 2, 0];
@@ -25,39 +23,35 @@ public class DoubleWall extends GameObject
         private var topFace_:Face3D = null;
         private var topTexture_:BitmapData = null;
 
-        public function DoubleWall(_arg_1:XML)
-        {
+        public function DoubleWall(_arg_1:XML){
             super(_arg_1);
             hasShadow_ = false;
             var _local_2:TextureData = ObjectLibrary.typeToTopTextureData_[objectType_];
             this.topTexture_ = _local_2.getTexture(0);
         }
 
-        override public function setObjectId(_arg_1:int):void
-        {
+        override public function setObjectId(_arg_1:int):void{
             super.setObjectId(_arg_1);
             var _local_2:TextureData = ObjectLibrary.typeToTopTextureData_[objectType_];
             this.topTexture_ = _local_2.getTexture(_arg_1);
         }
 
-        override public function getColor():uint
-        {
+        override public function getColor():uint{
             return (BitmapUtil.mostCommonColor(this.topTexture_));
         }
 
-        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             var _local_6:BitmapData;
             var _local_7:Face3D;
             var _local_8:Square;
             if (texture_ == null)
             {
                 return;
-            }
+            };
             if (this.faces_.length == 0)
             {
                 this.rebuild3D();
-            }
+            };
             var _local_4:BitmapData = texture_;
             if (animations_ != null)
             {
@@ -65,8 +59,8 @@ public class DoubleWall extends GameObject
                 if (_local_6 != null)
                 {
                     _local_4 = _local_6;
-                }
-            }
+                };
+            };
             var _local_5:int;
             while (_local_5 < this.faces_.length)
             {
@@ -82,16 +76,15 @@ public class DoubleWall extends GameObject
                     if (animations_ != null)
                     {
                         _local_7.setTexture(_local_4);
-                    }
-                }
+                    };
+                };
                 _local_7.draw(_arg_1, _arg_2);
                 _local_5++;
-            }
+            };
             this.topFace_.draw(_arg_1, _arg_2);
         }
 
-        public function rebuild3D():void
-        {
+        public function rebuild3D():void{
             this.faces_.length = 0;
             var _local_1:int = x_;
             var _local_2:int = y_;
@@ -104,8 +97,7 @@ public class DoubleWall extends GameObject
             this.addWall(_local_1, (_local_2 + 1), 2, _local_1, _local_2, 2);
         }
 
-        private function addWall(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Number, _arg_6:Number):void
-        {
+        private function addWall(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Number, _arg_6:Number):void{
             var _local_7:Vector.<Number> = new <Number>[_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6, _arg_4, _arg_5, (_arg_6 - 2), _arg_1, _arg_2, (_arg_3 - 2)];
             var _local_8:Face3D = new Face3D(texture_, _local_7, UVTHEIGHT, true, true);
             _local_8.bitmapFill_.repeat = true;

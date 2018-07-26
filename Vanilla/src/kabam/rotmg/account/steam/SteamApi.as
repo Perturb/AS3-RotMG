@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.SteamApi
 
-package kabam.rotmg.account.steam
-{
+package kabam.rotmg.account.steam{
 import org.osflash.signals.OnceSignal;
 import org.osflash.signals.Signal;
 
-public interface SteamApi 
-    {
+public interface SteamApi {
 
         function load(_arg_1:String):void;
         function get loaded():Signal;

@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.FlashDescription
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import flash.display.BitmapData;
 import flash.geom.ColorTransform;
 
 import kabam.rotmg.stage3D.GraphicsFillExtra;
 
-public class FlashDescription
-    {
+public class FlashDescription {
 
         public var startTime_:int;
         public var color_:uint;
@@ -21,8 +19,7 @@ public class FlashDescription
         public var targetG:int;
         public var targetB:int;
 
-        public function FlashDescription(_arg_1:int, _arg_2:uint, _arg_3:Number, _arg_4:int)
-        {
+        public function FlashDescription(_arg_1:int, _arg_2:uint, _arg_3:Number, _arg_4:int){
             this.startTime_ = _arg_1;
             this.color_ = _arg_2;
             this.periodMS_ = (_arg_3 * 1000);
@@ -32,8 +29,7 @@ public class FlashDescription
             this.targetB = (_arg_2 & 0xFF);
         }
 
-        public function apply(_arg_1:BitmapData, _arg_2:int):BitmapData
-        {
+        public function apply(_arg_1:BitmapData, _arg_2:int):BitmapData{
             var _local_3:int = ((_arg_2 - this.startTime_) % this.periodMS_);
             var _local_4:Number = Math.sin(((_local_3 / this.periodMS_) * Math.PI));
             var _local_5:Number = (_local_4 * 0.5);
@@ -43,8 +39,7 @@ public class FlashDescription
             return (_local_7);
         }
 
-        public function applyGPUTextureColorTransform(_arg_1:BitmapData, _arg_2:int):void
-        {
+        public function applyGPUTextureColorTransform(_arg_1:BitmapData, _arg_2:int):void{
             var _local_3:int = ((_arg_2 - this.startTime_) % this.periodMS_);
             var _local_4:Number = Math.sin(((_local_3 / this.periodMS_) * Math.PI));
             var _local_5:Number = (_local_4 * 0.5);
@@ -52,8 +47,7 @@ public class FlashDescription
             GraphicsFillExtra.setColorTransform(_arg_1, _local_6);
         }
 
-        public function doneAt(_arg_1:int):Boolean
-        {
+        public function doneAt(_arg_1:int):Boolean{
             return (_arg_1 > (this.startTime_ + (this.periodMS_ * this.repeats_)));
         }
 

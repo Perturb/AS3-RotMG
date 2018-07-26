@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.BaseParticle
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.BasicObject;
 import com.company.util.GraphicsUtil;
@@ -15,8 +14,7 @@ import flash.display.GraphicsPath;
 import flash.display.IGraphicsData;
 import flash.geom.Matrix;
 
-public class BaseParticle extends BasicObject 
-    {
+public class BaseParticle extends BasicObject {
 
         public var timeLeft:Number = 0;
         public var spdX:Number;
@@ -27,14 +25,12 @@ public class BaseParticle extends BasicObject
         protected var path_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, null);
         protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, null, false, false);
 
-        public function BaseParticle(_arg_1:BitmapData)
-        {
+        public function BaseParticle(_arg_1:BitmapData){
             this.bitmapFill_.bitmapData = _arg_1;
             objectId_ = getNextFakeObjectId();
         }
 
-        public function initialize(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:int):void
-        {
+        public function initialize(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:int):void{
             this.timeLeft = _arg_1;
             this.spdX = _arg_2;
             this.spdY = _arg_3;
@@ -42,8 +38,7 @@ public class BaseParticle extends BasicObject
             z_ = _arg_5;
         }
 
-        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             var _local_4:Number = (this.bitmapFill_.bitmapData.width / 2);
             var _local_5:Number = (this.bitmapFill_.bitmapData.height / 2);
             this.vS_[6] = (this.vS_[0] = (posS_[3] - _local_4));
@@ -59,8 +54,7 @@ public class BaseParticle extends BasicObject
             _arg_1.push(GraphicsUtil.END_FILL);
         }
 
-        override public function removeFromMap():void
-        {
+        override public function removeFromMap():void{
             map_ = null;
             square_ = null;
         }

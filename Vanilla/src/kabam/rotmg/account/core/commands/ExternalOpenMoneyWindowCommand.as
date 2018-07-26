@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.commands.ExternalOpenMoneyWindowCommand
 
-package kabam.rotmg.account.core.commands
-{
+package kabam.rotmg.account.core.commands{
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
 import flash.external.ExternalInterface;
@@ -26,8 +25,7 @@ import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class ExternalOpenMoneyWindowCommand 
-    {
+public class ExternalOpenMoneyWindowCommand {
 
         private const TESTING_ERROR_MESSAGE:String = "You cannot purchase gold on the testing server";
         private const REGISTRATION_ERROR_MESSAGE:String = "You must be registered to buy gold";
@@ -54,8 +52,7 @@ public class ExternalOpenMoneyWindowCommand
         public var beginnersPackageModel:BeginnersPackageModel;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (((this.isGoldPurchaseEnabled()) && (this.account.isRegistered())))
             {
                 this.handleValidMoneyWindowRequest();
@@ -63,11 +60,10 @@ public class ExternalOpenMoneyWindowCommand
             else
             {
                 this.handleInvalidMoneyWindowRequest();
-            }
+            };
         }
 
-        private function handleInvalidMoneyWindowRequest():void
-        {
+        private function handleInvalidMoneyWindowRequest():void{
             if (!this.isGoldPurchaseEnabled())
             {
                 this.openDialogSignal.dispatch(new ErrorDialog(this.TESTING_ERROR_MESSAGE));
@@ -77,12 +73,11 @@ public class ExternalOpenMoneyWindowCommand
                 if (!this.account.isRegistered())
                 {
                     this.openDialogSignal.dispatch(new ErrorDialog(this.REGISTRATION_ERROR_MESSAGE));
-                }
-            }
+                };
+            };
         }
 
-        private function handleValidMoneyWindowRequest():void
-        {
+        private function handleValidMoneyWindowRequest():void{
             if (((this.account is WebAccount) && (WebAccount(this.account).paymentProvider == "paymentwall")))
             {
                 try
@@ -92,7 +87,7 @@ public class ExternalOpenMoneyWindowCommand
                 catch(e:Error)
                 {
                     openPaymentwallMoneyWindowFromStandalonePlayer(WebAccount(account).paymentData);
-                }
+                };
             }
             else
             {
@@ -103,12 +98,11 @@ public class ExternalOpenMoneyWindowCommand
                 catch(e:Error)
                 {
                     openKabamMoneyWindowFromStandalonePlayer();
-                }
-            }
+                };
+            };
         }
 
-        private function openKabamMoneyWindowFromStandalonePlayer():void
-        {
+        private function openKabamMoneyWindowFromStandalonePlayer():void{
             var _local_1:String = this.applicationSetup.getAppEngineUrl(true);
             var _local_2:URLVariables = new URLVariables();
             var _local_3:URLRequest = new URLRequest();
@@ -121,7 +115,7 @@ public class ExternalOpenMoneyWindowCommand
             else
             {
                 _local_2.createdat = 0;
-            }
+            };
             _local_3.url = (_local_1 + "/credits/kabamadd");
             _local_3.method = URLRequestMethod.POST;
             _local_3.data = _local_2;
@@ -129,8 +123,7 @@ public class ExternalOpenMoneyWindowCommand
             this.logger.debug("Opening window from standalone player");
         }
 
-        private function openPaymentwallMoneyWindowFromStandalonePlayer(_arg_1:String):void
-        {
+        private function openPaymentwallMoneyWindowFromStandalonePlayer(_arg_1:String):void{
             var _local_2:String = this.applicationSetup.getAppEngineUrl(true);
             var _local_3:URLVariables = new URLVariables();
             var _local_4:URLRequest = new URLRequest();
@@ -142,8 +135,7 @@ public class ExternalOpenMoneyWindowCommand
             this.logger.debug("Opening window from standalone player");
         }
 
-        private function initializeMoneyWindow():void
-        {
+        private function initializeMoneyWindow():void{
             var _local_1:Number;
             if (!this.moneyWindowModel.isInitialized)
             {
@@ -154,27 +146,24 @@ public class ExternalOpenMoneyWindowCommand
                 else
                 {
                     _local_1 = 0;
-                }
+                };
                 ExternalInterface.call(this.moneyConfig.jsInitializeFunction(), this.account.getMoneyUserId(), this.account.getMoneyAccessToken(), _local_1);
                 this.moneyWindowModel.isInitialized = true;
-            }
+            };
         }
 
-        private function openKabamMoneyWindowFromBrowser():void
-        {
+        private function openKabamMoneyWindowFromBrowser():void{
             this.initializeMoneyWindow();
             this.logger.debug("Attempting External Payments");
             ExternalInterface.call("rotmg.KabamPayment.displayPaymentWall");
         }
 
-        private function openPaymentwallMoneyWindowFromBrowser(_arg_1:String):void
-        {
+        private function openPaymentwallMoneyWindowFromBrowser(_arg_1:String):void{
             this.logger.debug("Attempting External Payments via Paymentwall");
             ExternalInterface.call("rotmg.Paymentwall.showPaymentwall", _arg_1);
         }
 
-        private function isGoldPurchaseEnabled():Boolean
-        {
+        private function isGoldPurchaseEnabled():Boolean{
             return ((!(this.buildData.getEnvironment() == BuildEnvironment.TESTING)) || (this.playerModel.isAdmin()));
         }
 

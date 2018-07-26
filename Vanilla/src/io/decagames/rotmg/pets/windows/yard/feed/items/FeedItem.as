@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.feed.items.FeedItem
 
-package io.decagames.rotmg.pets.windows.yard.feed.items
-{
+package io.decagames.rotmg.pets.windows.yard.feed.items{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
 
@@ -18,30 +17,26 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.view.BitmapTextFactory;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class FeedItem extends UIGridElement
-    {
+public class FeedItem extends UIGridElement {
 
         private var _item:InventoryTile;
         private var imageBitmap:Bitmap;
         private var _feedPower:int;
         private var _selected:Boolean;
 
-        public function FeedItem(_arg_1:InventoryTile)
-        {
+        public function FeedItem(_arg_1:InventoryTile){
             this._item = _arg_1;
             this.renderBackground(0x454545, 0.25);
             this.renderItem();
         }
 
-        private function renderBackground(_arg_1:uint, _arg_2:Number):void
-        {
+        private function renderBackground(_arg_1:uint, _arg_2:Number):void{
             graphics.clear();
             graphics.beginFill(_arg_1, _arg_2);
             graphics.drawRect(0, 0, 40, 40);
         }
 
-        private function renderItem():void
-        {
+        private function renderItem():void{
             var _local_4:BitmapData;
             var _local_5:Matrix;
             this.imageBitmap = new Bitmap();
@@ -56,34 +51,29 @@ public class FeedItem extends UIGridElement
                 _local_5 = new Matrix();
                 _local_5.translate(8, 7);
                 _local_1.draw(_local_4, _local_5);
-            }
+            };
             this.imageBitmap.bitmapData = _local_1;
             addChild(this.imageBitmap);
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             super.dispose();
             this.imageBitmap.bitmapData.dispose();
         }
 
-        public function get itemId():int
-        {
+        public function get itemId():int{
             return (this._item.getItemId());
         }
 
-        public function get feedPower():int
-        {
+        public function get feedPower():int{
             return (this._feedPower);
         }
 
-        public function get selected():Boolean
-        {
+        public function get selected():Boolean{
             return (this._selected);
         }
 
-        public function set selected(_arg_1:Boolean):void
-        {
+        public function set selected(_arg_1:Boolean):void{
             this._selected = _arg_1;
             if (_arg_1)
             {
@@ -92,11 +82,10 @@ public class FeedItem extends UIGridElement
             else
             {
                 this.renderBackground(0x454545, 0.25);
-            }
+            };
         }
 
-        public function get item():InventoryTile
-        {
+        public function get item():InventoryTile{
             return (this._item);
         }
 

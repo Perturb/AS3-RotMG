@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.guiTab.PetsTabContentMediator
 
-package io.decagames.rotmg.pets.components.guiTab
-{
+package io.decagames.rotmg.pets.components.guiTab{
 import io.decagames.rotmg.pets.data.PetsModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetsTabContentMediator extends Mediator 
-    {
+public class PetsTabContentMediator extends Mediator {
 
         [Inject]
         public var view:PetsTabContentView;
@@ -18,13 +16,11 @@ public class PetsTabContentMediator extends Mediator
         public var model:PetsModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.init(this.model.getActivePet());
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.components.CrystalMain
 
-package kabam.rotmg.fortune.components
-{
+package kabam.rotmg.fortune.components{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.MoreColorUtil;
@@ -15,8 +14,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.filters.ColorMatrixFilter;
 
-public class CrystalMain extends Sprite
-    {
+public class CrystalMain extends Sprite {
 
         public static const ANIMATION_STAGE_PULSE:int = 0;
         public static const ANIMATION_STAGE_BUZZING:int = 1;
@@ -34,8 +32,7 @@ public class CrystalMain extends Sprite
         private var numFramesofLoop_:Number;
         public var size_:int = 150;
 
-        public function CrystalMain()
-        {
+        public function CrystalMain(){
             var _local_1:BitmapData;
             var _local_2:uint;
             var _local_3:Bitmap;
@@ -50,7 +47,7 @@ public class CrystalMain extends Sprite
                 _local_3.filters = [new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix)];
                 this.crystalFrames.push(_local_3);
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 3)
             {
@@ -58,7 +55,7 @@ public class CrystalMain extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -66,7 +63,7 @@ public class CrystalMain extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -74,7 +71,7 @@ public class CrystalMain extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 5)
             {
@@ -82,7 +79,7 @@ public class CrystalMain extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 8)
             {
@@ -90,7 +87,7 @@ public class CrystalMain extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             this.reset();
             _local_1 = AssetLibrary.getImageFromSet("lofiCharBig", 32);
             _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, GLOW_COLOR, false);
@@ -99,51 +96,42 @@ public class CrystalMain extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        public function reset():void
-        {
+        public function reset():void{
             this.setAnimationStage(ANIMATION_STAGE_FLASH);
         }
 
-        public function setXPos(_arg_1:Number):void
-        {
+        public function setXPos(_arg_1:Number):void{
             this.x = (_arg_1 - (this.width / 2));
         }
 
-        public function setYPos(_arg_1:Number):void
-        {
+        public function setYPos(_arg_1:Number):void{
             this.y = (_arg_1 - (this.height / 2));
         }
 
-        public function getCenterX():Number
-        {
+        public function getCenterX():Number{
             return (this.x + (this.width / 2));
         }
 
-        public function getCenterY():Number
-        {
+        public function getCenterY():Number{
             return (this.y + (this.height / 2));
         }
 
-        public function drawAnimation(_arg_1:int, _arg_2:int):void
-        {
+        public function drawAnimation(_arg_1:int, _arg_2:int):void{
             removeChild(this.bigCrystal);
             this.bigCrystal = this.crystalFrames[(this.startFrame_ + uint(((_arg_1 / this.animationDuration_) % this.numFramesofLoop_)))];
             addChild(this.bigCrystal);
         }
 
-        public function setAnimationDuration(_arg_1:Number):void
-        {
+        public function setAnimationDuration(_arg_1:Number):void{
             this.animationDuration_ = _arg_1;
         }
 
-        public function setAnimation(_arg_1:Number, _arg_2:Number):void
-        {
+        public function setAnimation(_arg_1:Number, _arg_2:Number):void{
             this.startFrame_ = _arg_1;
             this.numFramesofLoop_ = _arg_2;
         }
 
-        public function setAnimationStage(_arg_1:int):void
-        {
+        public function setAnimationStage(_arg_1:int):void{
             switch (_arg_1)
             {
                 case ANIMATION_STAGE_PULSE:
@@ -168,11 +156,10 @@ public class CrystalMain extends Sprite
                     return;
                 default:
                     this.setAnimation(13, 7);
-            }
+            };
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this.bigCrystal = null;
             this.crystalFrames = null;

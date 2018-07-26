@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.fuse.FuseTabMediator
 
-package io.decagames.rotmg.pets.windows.yard.fuse
-{
+package io.decagames.rotmg.pets.windows.yard.fuse{
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.util.Currency;
 
@@ -38,8 +37,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class FuseTabMediator extends Mediator
-    {
+public class FuseTabMediator extends Mediator {
 
         [Inject]
         public var view:FuseTab;
@@ -72,8 +70,7 @@ public class FuseTabMediator extends Mediator
         private var fusePet:PetVO;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.petsList = new Vector.<PetItem>();
             this.renderFusePets(((this.model.activeUIVO) ? this.model.activeUIVO : this.model.getActivePet()));
             this.selectPetSignal.add(this.onPetSelected);
@@ -84,8 +81,7 @@ public class FuseTabMediator extends Mediator
             this.view.displaySignal.add(this.showHideSignal);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.clearGrid();
             this.view.fuseFameButton.clickSignal.remove(this.purchaseFame);
             this.view.fuseGoldButton.clickSignal.remove(this.purchaseGold);
@@ -95,8 +91,7 @@ public class FuseTabMediator extends Mediator
             this.view.displaySignal.remove(this.showHideSignal);
         }
 
-        private function showHideSignal(_arg_1:Boolean):void
-        {
+        private function showHideSignal(_arg_1:Boolean):void{
             var _local_2:PetItem;
             if (!_arg_1)
             {
@@ -105,54 +100,49 @@ public class FuseTabMediator extends Mediator
                 for each (_local_2 in this.petsList)
                 {
                     _local_2.selected = false;
-                }
-            }
+                };
+            };
         }
 
-        private function get currentGold():int
-        {
+        private function get currentGold():int{
             var _local_1:Player = this.gameModel.player;
             if (_local_1 != null)
             {
                 return (_local_1.credits_);
-            }
+            };
             if (this.playerModel != null)
             {
                 return (this.playerModel.getCredits());
-            }
+            };
             return (0);
         }
 
-        private function get currentFame():int
-        {
+        private function get currentFame():int{
             var _local_1:Player = this.gameModel.player;
             if (_local_1 != null)
             {
                 return (_local_1.fame_);
-            }
+            };
             if (this.playerModel != null)
             {
                 return (this.playerModel.getFame());
-            }
+            };
             return (0);
         }
 
-        private function evolvePetHandler(_arg_1:EvolvePetInfo):void
-        {
+        private function evolvePetHandler(_arg_1:EvolvePetInfo):void{
             this.evolvePetSignal.remove(this.evolvePetHandler);
             this.removeFade.dispatch();
             this.onPetSelected(null);
         }
 
-        private function abilityUnlocked(_arg_1:int):void
-        {
+        private function abilityUnlocked(_arg_1:int):void{
             this.newAbilityUnlocked.remove(this.abilityUnlocked);
             this.removeFade.dispatch();
             this.onPetSelected(this.currentSelectedPet);
         }
 
-        private function purchase(_arg_1:int, _arg_2:int):void
-        {
+        private function purchase(_arg_1:int, _arg_2:int):void{
             var _local_3:FusePetRequestVO;
             if (this.checkYardType())
             {
@@ -160,72 +150,66 @@ public class FuseTabMediator extends Mediator
                 {
                     this.showPopup.dispatch(new NotEnoughResources(300, Currency.GOLD));
                     return;
-                }
+                };
                 if (((_arg_1 == PetUpgradeRequest.FAME_PAYMENT_TYPE) && (this.currentFame < _arg_2)))
                 {
                     this.showPopup.dispatch(new NotEnoughResources(300, Currency.FAME));
                     return;
-                }
+                };
                 this.newAbilityUnlocked.add(this.abilityUnlocked);
                 this.evolvePetSignal.add(this.evolvePetHandler);
                 _local_3 = new FusePetRequestVO(this.currentSelectedPet.getID(), this.fusePet.getID(), _arg_1);
                 this.showFade.dispatch();
                 this.upgradePet.dispatch(_local_3);
-            }
+            };
         }
 
-        private function purchaseFame(_arg_1:BaseButton):void
-        {
+        private function purchaseFame(_arg_1:BaseButton):void{
             this.purchase(PetUpgradeRequest.FAME_PAYMENT_TYPE, this.view.fuseFameButton.price);
         }
 
-        private function purchaseGold(_arg_1:BaseButton):void
-        {
+        private function purchaseGold(_arg_1:BaseButton):void{
             this.purchase(PetUpgradeRequest.GOLD_PAYMENT_TYPE, this.view.fuseGoldButton.price);
         }
 
-        private function checkYardType():Boolean
-        {
+        private function checkYardType():Boolean{
             if ((this.currentSelectedPet.rarity.ordinal + 1) >= this.model.getPetYardType())
             {
                 this.showPopup.dispatch(new ErrorModal(350, "Fuse Pets", LineBuilder.getLocalizedStringFromKey("server.upgrade_petyard_first")));
                 return (false);
-            }
+            };
             return (true);
         }
 
-        private function onPetSelected(_arg_1:PetVO):void
-        {
+        private function onPetSelected(_arg_1:PetVO):void{
             this.clearGrid();
             this.renderFusePets(_arg_1);
             this.toggleButtons(false);
             this.view.setStrengthPercentage(-1, ((_arg_1) && (_arg_1.rarity.ordinal == PetRarityEnum.DIVINE.ordinal)));
         }
 
-        private function clearGrid():void
-        {
+        private function clearGrid():void{
             var _local_1:PetItem;
             for each (_local_1 in this.petsList)
             {
                 _local_1.removeEventListener(MouseEvent.CLICK, this.onFusePetSelected);
-            }
+            };
             this.view.clearGrid();
         }
 
-        private function renderFusePets(_arg_1:PetVO):void
-        {
+        private function renderFusePets(_arg_1:PetVO):void{
             var _local_2:PetVO;
             var _local_3:PetItem;
             if (_arg_1 == null)
             {
                 return;
-            }
+            };
             this.currentSelectedPet = _arg_1;
             if (_arg_1.rarity.ordinal == PetRarityEnum.DIVINE.ordinal)
             {
                 this.view.setStrengthPercentage(-1, (_arg_1.rarity.ordinal == PetRarityEnum.DIVINE.ordinal));
                 return;
-            }
+            };
             for each (_local_2 in this.model.getAllPets(_arg_1.family, _arg_1.rarity))
             {
                 if (_local_2 != _arg_1)
@@ -234,12 +218,11 @@ public class FuseTabMediator extends Mediator
                     _local_3.addEventListener(MouseEvent.CLICK, this.onFusePetSelected);
                     this.petsList.push(_local_3);
                     this.view.addPet(_local_3);
-                }
-            }
+                };
+            };
         }
 
-        private function onFusePetSelected(_arg_1:MouseEvent):void
-        {
+        private function onFusePetSelected(_arg_1:MouseEvent):void{
             var _local_2:PetItem = PetItem(_arg_1.currentTarget);
             this.selectFusePetSignal.dispatch(_local_2.getPetVO());
             this.selectPet(_local_2);
@@ -250,21 +233,19 @@ public class FuseTabMediator extends Mediator
             this.view.setStrengthPercentage(FusionCalculator.getStrengthPercentage(this.currentSelectedPet, _local_2.getPetVO()), ((this.currentSelectedPet) && (this.currentSelectedPet.rarity.ordinal == PetRarityEnum.DIVINE.ordinal)));
         }
 
-        private function toggleButtons(_arg_1:Boolean):void
-        {
+        private function toggleButtons(_arg_1:Boolean):void{
             this.view.fuseGoldButton.disabled = (!(_arg_1));
             this.view.fuseFameButton.disabled = (!(_arg_1));
             this.view.fuseFameButton.alpha = ((_arg_1) ? 1 : 0);
             this.view.fuseGoldButton.alpha = ((_arg_1) ? 1 : 0);
         }
 
-        private function selectPet(_arg_1:PetItem):void
-        {
+        private function selectPet(_arg_1:PetItem):void{
             var _local_2:PetItem;
             for each (_local_2 in this.petsList)
             {
                 _local_2.selected = (_local_2 == _arg_1);
-            }
+            };
         }
 
 

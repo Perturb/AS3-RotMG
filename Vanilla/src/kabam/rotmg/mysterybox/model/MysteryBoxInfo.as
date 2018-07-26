@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.model.MysteryBoxInfo
 
-package kabam.rotmg.mysterybox.model
-{
+package kabam.rotmg.mysterybox.model{
 import com.company.assembleegameclient.util.TimeUtil;
 
 import flash.display.DisplayObject;
@@ -19,8 +18,7 @@ import kabam.display.Loader.LoaderProxy;
 import kabam.display.Loader.LoaderProxyConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class MysteryBoxInfo extends GenericBoxInfo
-    {
+public class MysteryBoxInfo extends GenericBoxInfo {
 
         public static var chestImageEmbed:Class = MysteryBoxInfo_chestImageEmbed;
 
@@ -38,19 +36,16 @@ public class MysteryBoxInfo extends GenericBoxInfo
         private var _displayedItems:String = "";
 
 
-        public function get iconImageUrl():*
-        {
+        public function get iconImageUrl():*{
             return (this._iconImageUrl);
         }
 
-        public function set iconImageUrl(_arg_1:String):void
-        {
+        public function set iconImageUrl(_arg_1:String):void{
             this._iconImageUrl = _arg_1;
             this.loadIconImageFromUrl(this._iconImageUrl);
         }
 
-        private function loadIconImageFromUrl(_arg_1:String):void
-        {
+        private function loadIconImageFromUrl(_arg_1:String):void{
             ((this._loader) && (this._loader.unload()));
             this._loader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onComplete);
             this._loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onError);
@@ -59,13 +54,11 @@ public class MysteryBoxInfo extends GenericBoxInfo
             this._loader.load(new URLRequest(_arg_1));
         }
 
-        private function onError(_arg_1:IOErrorEvent):void
-        {
+        private function onError(_arg_1:IOErrorEvent):void{
             this._iconImage = new chestImageEmbed();
         }
 
-        private function onComplete(_arg_1:Event):void
-        {
+        private function onComplete(_arg_1:Event):void{
             this._loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onComplete);
             this._loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, this.onError);
             this._loader.contentLoaderInfo.removeEventListener(IOErrorEvent.DISK_ERROR, this.onError);
@@ -73,29 +66,24 @@ public class MysteryBoxInfo extends GenericBoxInfo
             this._iconImage = DisplayObject(this._loader);
         }
 
-        public function get iconImage():DisplayObject
-        {
+        public function get iconImage():DisplayObject{
             return (this._iconImage);
         }
 
-        public function get infoImageUrl():*
-        {
+        public function get infoImageUrl():*{
             return (this._infoImageUrl);
         }
 
-        public function set infoImageUrl(_arg_1:String):void
-        {
+        public function set infoImageUrl(_arg_1:String):void{
             this._infoImageUrl = _arg_1;
             this.loadInfomageFromUrl(this._infoImageUrl);
         }
 
-        private function loadInfomageFromUrl(_arg_1:String):void
-        {
+        private function loadInfomageFromUrl(_arg_1:String):void{
             this.loadImageFromUrl(_arg_1, this._infoImageLoader);
         }
 
-        private function loadImageFromUrl(_arg_1:String, _arg_2:LoaderProxy):void
-        {
+        private function loadImageFromUrl(_arg_1:String, _arg_2:LoaderProxy):void{
             ((_arg_2) && (_arg_2.unload()));
             _arg_2.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onInfoComplete);
             _arg_2.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onInfoError);
@@ -104,12 +92,10 @@ public class MysteryBoxInfo extends GenericBoxInfo
             _arg_2.load(new URLRequest(_arg_1));
         }
 
-        private function onInfoError(_arg_1:IOErrorEvent):void
-        {
+        private function onInfoError(_arg_1:IOErrorEvent):void{
         }
 
-        private function onInfoComplete(_arg_1:Event):void
-        {
+        private function onInfoComplete(_arg_1:Event):void{
             this._infoImageLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onInfoComplete);
             this._infoImageLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, this.onInfoError);
             this._infoImageLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.DISK_ERROR, this.onInfoError);
@@ -117,8 +103,7 @@ public class MysteryBoxInfo extends GenericBoxInfo
             this._infoImage = DisplayObject(this._infoImageLoader);
         }
 
-        public function parseContents():void
-        {
+        public function parseContents():void{
             var _local_4:String;
             var _local_5:Vector.<int>;
             var _local_6:Array;
@@ -136,17 +121,16 @@ public class MysteryBoxInfo extends GenericBoxInfo
                     {
                         _local_2[int(_local_7)] = true;
                         this._rollsWithContentsUnique.push(int(_local_7));
-                    }
+                    };
                     _local_5.push(int(_local_7));
-                }
+                };
                 this._rollsWithContents.push(_local_5);
                 this._rollsContents[_local_3] = _local_5;
                 _local_3++;
-            }
+            };
         }
 
-        public function getSaleTimeLeftStringBuilder():LineBuilder
-        {
+        public function getSaleTimeLeftStringBuilder():LineBuilder{
             var _local_1:Date = new Date();
             var _local_2:* = "";
             var _local_3:Number = ((_saleEnd.time - _local_1.time) / 1000);
@@ -164,85 +148,71 @@ public class MysteryBoxInfo extends GenericBoxInfo
                 else
                 {
                     _local_4.setParams("MysteryBoxInfo.saleEndStringMinutes", {"amount":String(Math.ceil(TimeUtil.secondsToMins(_local_3)))});
-                }
-            }
+                };
+            };
             return (_local_4);
         }
 
-        public function get currencyName():String
-        {
+        public function get currencyName():String{
             switch (_priceCurrency)
             {
                 case "0":
                     return (LineBuilder.getLocalizedStringFromKey("Currency.gold").toLowerCase());
                 case "1":
                     return (LineBuilder.getLocalizedStringFromKey("Currency.fame").toLowerCase());
-            }
+            };
             return ("");
         }
 
-        public function get infoImage():DisplayObject
-        {
+        public function get infoImage():DisplayObject{
             return (this._infoImage);
         }
 
-        public function set infoImage(_arg_1:DisplayObject):void
-        {
+        public function set infoImage(_arg_1:DisplayObject):void{
             this._infoImage = _arg_1;
         }
 
-        public function get loader():LoaderProxy
-        {
+        public function get loader():LoaderProxy{
             return (this._loader);
         }
 
-        public function set loader(_arg_1:LoaderProxy):void
-        {
+        public function set loader(_arg_1:LoaderProxy):void{
             this._loader = _arg_1;
         }
 
-        public function get infoImageLoader():LoaderProxy
-        {
+        public function get infoImageLoader():LoaderProxy{
             return (this._infoImageLoader);
         }
 
-        public function set infoImageLoader(_arg_1:LoaderProxy):void
-        {
+        public function set infoImageLoader(_arg_1:LoaderProxy):void{
             this._infoImageLoader = _arg_1;
         }
 
-        public function get jackpots():String
-        {
+        public function get jackpots():String{
             return (this._jackpots);
         }
 
-        public function set jackpots(_arg_1:String):void
-        {
+        public function set jackpots(_arg_1:String):void{
             this._jackpots = _arg_1;
         }
 
-        public function get rolls():int
-        {
+        public function get rolls():int{
             return (this._rolls);
         }
 
-        public function set rolls(_arg_1:int):void
-        {
+        public function set rolls(_arg_1:int):void{
             this._rolls = _arg_1;
         }
 
-        public function get rollsContents():Vector.<Vector.<int>>
-        {
+        public function get rollsContents():Vector.<Vector.<int>>{
             return (this._rollsContents);
         }
 
-        public function get displayedItems():String
-        {
+        public function get displayedItems():String{
             return (this._displayedItems);
         }
 
-        public function set displayedItems(_arg_1:String):void
-        {
+        public function set displayedItems(_arg_1:String):void{
             this._displayedItems = _arg_1;
         }
 

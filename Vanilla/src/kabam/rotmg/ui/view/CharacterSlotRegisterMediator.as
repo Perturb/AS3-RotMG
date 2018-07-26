@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterSlotRegisterMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CharacterSlotRegisterMediator extends Mediator 
-    {
+public class CharacterSlotRegisterMediator extends Mediator {
 
         [Inject]
         public var view:CharacterSlotRegisterDialog;
@@ -21,25 +19,21 @@ public class CharacterSlotRegisterMediator extends Mediator
         public var close:CloseDialogsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.cancel.add(this.onCancel);
             this.view.register.add(this.onRegister);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.cancel.remove(this.onCancel);
             this.view.register.remove(this.onRegister);
         }
 
-        private function onRegister():void
-        {
+        private function onRegister():void{
             this.openAccountManagement.dispatch();
         }
 
-        private function onCancel():void
-        {
+        private function onCancel():void{
             this.close.dispatch();
         }
 

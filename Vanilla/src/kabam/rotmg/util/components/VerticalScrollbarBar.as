@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.VerticalScrollbarBar
 
-package kabam.rotmg.util.components
-{
+package kabam.rotmg.util.components{
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
@@ -14,8 +13,7 @@ import kabam.rotmg.util.graphics.GraphicsHelper;
 
 import org.osflash.signals.Signal;
 
-internal final class VerticalScrollbarBar extends Sprite
-    {
+internal final class VerticalScrollbarBar extends Sprite {
 
         public static const WIDTH:int = VerticalScrollbar.WIDTH;//20
         public static const BEVEL:int = VerticalScrollbar.BEVEL;//4
@@ -31,8 +29,7 @@ internal final class VerticalScrollbarBar extends Sprite
         private var isDown:Boolean;
 
 
-        public function redraw():void
-        {
+        public function redraw():void{
             var _local_1:int = (((this.isOver) || (this.isDown)) ? 16767876 : 0xCCCCCC);
             graphics.clear();
             graphics.beginFill(_local_1);
@@ -40,8 +37,7 @@ internal final class VerticalScrollbarBar extends Sprite
             graphics.endFill();
         }
 
-        public function addMouseListeners():void
-        {
+        public function addMouseListeners():void{
             addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
@@ -54,12 +50,11 @@ internal final class VerticalScrollbarBar extends Sprite
                 if (WebMain.STAGE)
                 {
                     WebMain.STAGE.addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                }
-            }
+                };
+            };
         }
 
-        protected function onMouseWheel(_arg_1:MouseEvent):void
-        {
+        protected function onMouseWheel(_arg_1:MouseEvent):void{
             if (_arg_1.delta > 0)
             {
                 this.scrolling.dispatch(-0.25);
@@ -69,12 +64,11 @@ internal final class VerticalScrollbarBar extends Sprite
                 if (_arg_1.delta < 0)
                 {
                     this.scrolling.dispatch(0.25);
-                }
-            }
+                };
+            };
         }
 
-        public function removeMouseListeners():void
-        {
+        public function removeMouseListeners():void{
             removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
@@ -87,48 +81,43 @@ internal final class VerticalScrollbarBar extends Sprite
                 if (WebMain.STAGE)
                 {
                     WebMain.STAGE.removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                }
-            }
+                };
+            };
             this.onMouseUp();
         }
 
-        private function onMouseDown(_arg_1:MouseEvent=null):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent=null):void{
             this.isDown = true;
             this.downOffset = (parent.mouseY - y);
             if (stage != null)
             {
                 stage.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            }
+            };
             addEventListener(Event.ENTER_FRAME, this.iterate);
             this.redraw();
         }
 
-        private function onMouseUp(_arg_1:MouseEvent=null):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent=null):void{
             this.isDown = false;
             if (stage != null)
             {
                 stage.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            }
+            };
             removeEventListener(Event.ENTER_FRAME, this.iterate);
             this.redraw();
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.isOver = true;
             this.redraw();
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             this.isOver = false;
             this.redraw();
         }
 
-        private function iterate(_arg_1:Event):void
-        {
+        private function iterate(_arg_1:Event):void{
             this.dragging.dispatch(int((parent.mouseY - this.downOffset)));
         }
 

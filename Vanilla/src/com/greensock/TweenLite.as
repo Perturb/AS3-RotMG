@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.TweenLite
 
-package com.greensock
-{
+package com.greensock{
 import com.greensock.core.Animation;
 import com.greensock.core.PropTween;
 import com.greensock.core.SimpleTimeline;
@@ -14,8 +13,7 @@ import flash.display.Shape;
 import flash.events.Event;
 import flash.utils.Dictionary;
 
-public class TweenLite extends Animation
-    {
+public class TweenLite extends Animation {
 
         public static const version:String = "12.1.5";
         public static var defaultEase:Ease = new Ease(null, null, 1, 1);
@@ -77,14 +75,13 @@ public class TweenLite extends Animation
         protected var _startAt:TweenLite;
         protected var _easePower:int;
 
-        public function TweenLite(_arg_1:Object, _arg_2:Number, _arg_3:Object)
-        {
+        public function TweenLite(_arg_1:Object, _arg_2:Number, _arg_3:Object){
             var _local_4:int;
             super(_arg_2, _arg_3);
             if (_arg_1 == null)
             {
                 throw (new Error(((("Cannot tween a null object. Duration: " + _arg_2) + ", data: ") + this.data)));
-            }
+            };
             if (!_overwriteLookup)
             {
                 _overwriteLookup = {
@@ -98,7 +95,7 @@ public class TweenLite extends Animation
                     "false":0
                 };
                 ticker.addEventListener("enterFrame", _dumpGarbage, false, -1, true);
-            }
+            };
             ratio = 0;
             this.target = _arg_1;
             _ease = defaultEase;
@@ -117,9 +114,9 @@ public class TweenLite extends Animation
                         if (_siblings[_local_4].length > 1)
                         {
                             _applyOverwrite(_targets[_local_4], this, null, 1, _siblings[_local_4]);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
             }
             else
             {
@@ -135,17 +132,16 @@ public class TweenLite extends Animation
                     if (_overwrite == 1)
                     {
                         _applyOverwrite(_arg_1, this, null, 1, _siblings);
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (((this.vars.immediateRender) || (((_arg_2 == 0) && (_delay == 0)) && (!(this.vars.immediateRender == false)))))
             {
                 render(-(_delay), false, true);
-            }
+            };
         }
 
-        public static function fromTo(_arg_1:Object, _arg_2:Number, _arg_3:Object, _arg_4:Object):TweenLite
-        {
+        public static function fromTo(_arg_1:Object, _arg_2:Number, _arg_3:Object, _arg_4:Object):TweenLite{
             _arg_4 = _prepVars(_arg_4, true);
             _arg_3 = _prepVars(_arg_3);
             _arg_4.startAt = _arg_3;
@@ -153,8 +149,7 @@ public class TweenLite extends Animation
             return (new TweenLite(_arg_1, _arg_2, _arg_4));
         }
 
-        public static function getTweensOf(_arg_1:*, _arg_2:Boolean=false):Array
-        {
+        public static function getTweensOf(_arg_1:*, _arg_2:Boolean=false):Array{
             var _local_3:int;
             var _local_4:Array;
             var _local_5:int;
@@ -166,7 +161,7 @@ public class TweenLite extends Animation
                 while (--_local_3 > -1)
                 {
                     _local_4 = _local_4.concat(getTweensOf(_arg_1[_local_3], _arg_2));
-                }
+                };
                 _local_3 = _local_4.length;
                 while (--_local_3 > -1)
                 {
@@ -177,9 +172,9 @@ public class TweenLite extends Animation
                         if (_local_6 === _local_4[_local_5])
                         {
                             _local_4.splice(_local_3, 1);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
             }
             else
             {
@@ -190,20 +185,19 @@ public class TweenLite extends Animation
                     if (((_local_4[_local_3]._gc) || ((_arg_2) && (!(_local_4[_local_3].isActive())))))
                     {
                         _local_4.splice(_local_3, 1);
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (_local_4);
         }
 
-        protected static function _register(_arg_1:Object, _arg_2:TweenLite=null, _arg_3:Boolean=false):Array
-        {
+        protected static function _register(_arg_1:Object, _arg_2:TweenLite=null, _arg_3:Boolean=false):Array{
             var _local_5:int;
             var _local_4:Array = _tweenLookup[_arg_1];
             if (_local_4 == null)
             {
                 _local_4 = (_tweenLookup[_arg_1] = []);
-            }
+            };
             if (_arg_2)
             {
                 _local_5 = _local_4.length;
@@ -215,15 +209,14 @@ public class TweenLite extends Animation
                         if (_local_4[_local_5] === _arg_2)
                         {
                             _local_4.splice(_local_5, 1);
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             return (_local_4);
         }
 
-        protected static function _applyOverwrite(_arg_1:Object, _arg_2:TweenLite, _arg_3:Object, _arg_4:int, _arg_5:Array):Boolean
-        {
+        protected static function _applyOverwrite(_arg_1:Object, _arg_2:TweenLite, _arg_3:Object, _arg_4:int, _arg_5:Array):Boolean{
             var _local_6:int;
             var _local_7:Boolean;
             var _local_8:TweenLite;
@@ -243,17 +236,17 @@ public class TweenLite extends Animation
                             if (_local_8._enabled(false, false))
                             {
                                 _local_7 = true;
-                            }
-                        }
+                            };
+                        };
                     }
                     else
                     {
                         if (_arg_4 == 5) break;
-                    }
+                    };
                     _local_6++;
-                }
+                };
                 return (_local_7);
-            }
+            };
             var _local_9:Number = (_arg_2._startTime + 1E-10);
             var _local_10:Array = [];
             var _local_11:int;
@@ -271,7 +264,7 @@ public class TweenLite extends Animation
                         {
                             var _local_15:* = _local_11++;
                             _local_10[_local_15] = _local_8;
-                        }
+                        };
                     }
                     else
                     {
@@ -283,12 +276,12 @@ public class TweenLite extends Animation
                                 {
                                     _local_15 = _local_11++;
                                     _local_10[_local_15] = _local_8;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                                };
+                            };
+                        };
+                    };
+                };
+            };
             _local_6 = _local_11;
             while (--_local_6 > -1)
             {
@@ -298,49 +291,46 @@ public class TweenLite extends Animation
                     if (_local_8._kill(_arg_3, _arg_1))
                     {
                         _local_7 = true;
-                    }
-                }
+                    };
+                };
                 if (((!(_arg_4 === 2)) || ((!(_local_8._firstPT)) && (_local_8._initted))))
                 {
                     if (_local_8._enabled(false, false))
                     {
                         _local_7 = true;
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (_local_7);
         }
 
-        public static function killTweensOf(_arg_1:*, _arg_2:*=false, _arg_3:Object=null):void
-        {
+        public static function killTweensOf(_arg_1:*, _arg_2:*=false, _arg_3:Object=null):void{
             if (typeof(_arg_2) === "object")
             {
                 _arg_3 = _arg_2;
                 _arg_2 = false;
-            }
+            };
             var _local_4:Array = TweenLite.getTweensOf(_arg_1, _arg_2);
             var _local_5:int = _local_4.length;
             while (--_local_5 > -1)
             {
                 _local_4[_local_5]._kill(_arg_3, _arg_1);
-            }
+            };
         }
 
-        protected static function _prepVars(_arg_1:Object, _arg_2:Boolean=false):Object
-        {
+        protected static function _prepVars(_arg_1:Object, _arg_2:Boolean=false):Object{
             if (_arg_1._isGSVars)
             {
                 _arg_1 = _arg_1.vars;
-            }
+            };
             if (((_arg_2) && (!("immediateRender" in _arg_1))))
             {
                 _arg_1.immediateRender = true;
-            }
+            };
             return (_arg_1);
         }
 
-        public static function delayedCall(_arg_1:Number, _arg_2:Function, _arg_3:Array=null, _arg_4:Boolean=false):TweenLite
-        {
+        public static function delayedCall(_arg_1:Number, _arg_2:Function, _arg_3:Array=null, _arg_4:Boolean=false):TweenLite{
             return (new TweenLite(_arg_2, 0, {
                 "delay":_arg_1,
                 "onComplete":_arg_2,
@@ -353,25 +343,21 @@ public class TweenLite extends Animation
             }));
         }
 
-        public static function from(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenLite
-        {
+        public static function from(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenLite{
             _arg_3 = _prepVars(_arg_3, true);
             _arg_3.runBackwards = true;
             return (new TweenLite(_arg_1, _arg_2, _arg_3));
         }
 
-        public static function killDelayedCallsTo(_arg_1:Function):void
-        {
+        public static function killDelayedCallsTo(_arg_1:Function):void{
             killTweensOf(_arg_1);
         }
 
-        public static function set(_arg_1:Object, _arg_2:Object):TweenLite
-        {
+        public static function set(_arg_1:Object, _arg_2:Object):TweenLite{
             return (new TweenLite(_arg_1, 0, _arg_2));
         }
 
-        private static function _dumpGarbage(_arg_1:Event):void
-        {
+        private static function _dumpGarbage(_arg_1:Event):void{
             var _local_2:int;
             var _local_3:Array;
             var _local_4:Object;
@@ -386,23 +372,21 @@ public class TweenLite extends Animation
                         if (_local_3[_local_2]._gc)
                         {
                             _local_3.splice(_local_2, 1);
-                        }
-                    }
+                        };
+                    };
                     if (_local_3.length === 0)
                     {
                         delete _tweenLookup[_local_4];
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        public static function to(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenLite
-        {
+        public static function to(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenLite{
             return (new TweenLite(_arg_1, _arg_2, _arg_3));
         }
 
-        private static function _checkOverlap(_arg_1:Animation, _arg_2:Number, _arg_3:Boolean):Number
-        {
+        private static function _checkOverlap(_arg_1:Animation, _arg_2:Number, _arg_3:Boolean):Number{
             var _local_4:SimpleTimeline = _arg_1._timeline;
             var _local_5:Number = _local_4._timeScale;
             var _local_6:Number = _arg_1._startTime;
@@ -414,16 +398,15 @@ public class TweenLite extends Animation
                 if (_local_4._paused)
                 {
                     return (-100);
-                }
+                };
                 _local_4 = _local_4._timeline;
-            }
+            };
             _local_6 = (_local_6 / _local_5);
             return ((_local_6 > _arg_2) ? (_local_6 - _arg_2) : ((((_arg_3) && (_local_6 == _arg_2)) || ((!(_arg_1._initted)) && ((_local_6 - _arg_2) < (2 * _local_7)))) ? _local_7 : (((_local_6 = (_local_6 + ((_arg_1.totalDuration() / _arg_1._timeScale) / _local_5))) > (_arg_2 + _local_7)) ? 0 : ((_local_6 - _arg_2) - _local_7))));
         }
 
 
-        protected function _initProps(_arg_1:Object, _arg_2:Object, _arg_3:Array, _arg_4:Object):Boolean
-        {
+        protected function _initProps(_arg_1:Object, _arg_2:Object, _arg_3:Array, _arg_4:Object):Boolean{
             var _local_6:String;
             var _local_7:int;
             var _local_8:Boolean;
@@ -433,7 +416,7 @@ public class TweenLite extends Animation
             if (_arg_1 == null)
             {
                 return (false);
-            }
+            };
             for (_local_6 in _local_5)
             {
                 _local_10 = _local_5[_local_6];
@@ -444,8 +427,8 @@ public class TweenLite extends Animation
                         if (_local_10.join("").indexOf("{self}") !== -1)
                         {
                             _local_5[_local_6] = _swapSelfInParams((_local_10 as Array));
-                        }
-                    }
+                        };
+                    };
                 }
                 else
                 {
@@ -456,31 +439,31 @@ public class TweenLite extends Animation
                         while (--_local_7 > -1)
                         {
                             _arg_2[_local_9._overwriteProps[_local_7]] = _firstPT;
-                        }
+                        };
                         if (((_local_9._priority) || ("_onInitAllProps" in _local_9)))
                         {
                             _local_8 = true;
-                        }
+                        };
                         if ((("_onDisable" in _local_9) || ("_onEnable" in _local_9)))
                         {
                             _notifyPluginsOfEnabled = true;
-                        }
+                        };
                     }
                     else
                     {
                         _firstPT = (_arg_2[_local_6] = new PropTween(_arg_1, _local_6, 0, 1, _local_6, false, _firstPT));
                         _firstPT.s = ((_firstPT.f) ? _arg_1[(((_local_6.indexOf("set")) || (!(("get" + _local_6.substr(3)) in _arg_1))) ? _local_6 : ("get" + _local_6.substr(3)))]() : Number(_arg_1[_local_6]));
                         _firstPT.c = ((typeof(_local_10) === "number") ? (Number(_local_10) - _firstPT.s) : (((typeof(_local_10) === "string") && (_local_10.charAt(1) === "=")) ? (int((_local_10.charAt(0) + "1")) * Number(_local_10.substr(2))) : ((Number(_local_10)) || (0))));
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (_arg_4)
             {
                 if (_kill(_arg_4, _arg_1))
                 {
                     return (_initProps(_arg_1, _arg_2, _arg_3, _arg_4));
-                }
-            }
+                };
+            };
             if (_overwrite > 1)
             {
                 if (_firstPT != null)
@@ -491,15 +474,14 @@ public class TweenLite extends Animation
                         {
                             _kill(_arg_2, _arg_1);
                             return (_initProps(_arg_1, _arg_2, _arg_3, _arg_4));
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             return (_local_8);
         }
 
-        override public function _enabled(_arg_1:Boolean, _arg_2:Boolean=false):Boolean
-        {
+        override public function _enabled(_arg_1:Boolean, _arg_2:Boolean=false):Boolean{
             var _local_3:int;
             if (((_arg_1) && (_gc)))
             {
@@ -509,26 +491,25 @@ public class TweenLite extends Animation
                     while (--_local_3 > -1)
                     {
                         _siblings[_local_3] = _register(_targets[_local_3], this, true);
-                    }
+                    };
                 }
                 else
                 {
                     _siblings = _register(target, this, true);
-                }
-            }
+                };
+            };
             super._enabled(_arg_1, _arg_2);
             if (_notifyPluginsOfEnabled)
             {
                 if (_firstPT != null)
                 {
                     return (_onPluginEvent(((_arg_1) ? "_onEnable" : "_onDisable"), this));
-                }
-            }
+                };
+            };
             return (false);
         }
 
-        override public function render(_arg_1:Number, _arg_2:Boolean=false, _arg_3:Boolean=false):void
-        {
+        override public function render(_arg_1:Number, _arg_2:Boolean=false, _arg_3:Boolean=false):void{
             var _local_4:Boolean;
             var _local_5:String;
             var _local_6:PropTween;
@@ -543,14 +524,14 @@ public class TweenLite extends Animation
                 {
                     _local_4 = true;
                     _local_5 = "onComplete";
-                }
+                };
                 if (_duration == 0)
                 {
                     _local_7 = _rawPrevTime;
                     if (_startTime === _timeline._duration)
                     {
                         _arg_1 = 0;
-                    }
+                    };
                     if ((((_arg_1 === 0) || (_local_7 < 0)) || (_local_7 === _tinyNum)))
                     {
                         if (_local_7 !== _arg_1)
@@ -559,11 +540,11 @@ public class TweenLite extends Animation
                             if (((_local_7 > 0) && (!(_local_7 === _tinyNum))))
                             {
                                 _local_5 = "onReverseComplete";
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     _rawPrevTime = (_local_7 = ((((!(_arg_2)) || (!(_arg_1 === 0))) || (_rawPrevTime === _arg_1)) ? _arg_1 : _tinyNum));
-                }
+                };
             }
             else
             {
@@ -575,7 +556,7 @@ public class TweenLite extends Animation
                     {
                         _local_5 = "onReverseComplete";
                         _local_4 = _reversed;
-                    }
+                    };
                     if (_arg_1 < 0)
                     {
                         _active = false;
@@ -584,17 +565,17 @@ public class TweenLite extends Animation
                             if (_rawPrevTime >= 0)
                             {
                                 _arg_3 = true;
-                            }
+                            };
                             _rawPrevTime = (_local_7 = ((((!(_arg_2)) || (!(_arg_1 === 0))) || (_rawPrevTime === _arg_1)) ? _arg_1 : _tinyNum));
-                        }
+                        };
                     }
                     else
                     {
                         if (!_initted)
                         {
                             _arg_3 = true;
-                        }
-                    }
+                        };
+                    };
                 }
                 else
                 {
@@ -605,11 +586,11 @@ public class TweenLite extends Animation
                         if (((_easeType == 1) || ((_easeType == 3) && (_local_9 >= 0.5))))
                         {
                             _local_9 = (1 - _local_9);
-                        }
+                        };
                         if (_easeType == 3)
                         {
                             _local_9 = (_local_9 * 2);
-                        }
+                        };
                         if (_easePower == 1)
                         {
                             _local_9 = (_local_9 * _local_9);
@@ -631,10 +612,10 @@ public class TweenLite extends Animation
                                     if (_easePower == 4)
                                     {
                                         _local_9 = (_local_9 * (((_local_9 * _local_9) * _local_9) * _local_9));
-                                    }
-                                }
-                            }
-                        }
+                                    };
+                                };
+                            };
+                        };
                         if (_easeType == 1)
                         {
                             ratio = (1 - _local_9);
@@ -654,27 +635,27 @@ public class TweenLite extends Animation
                                 else
                                 {
                                     ratio = (1 - (_local_9 / 2));
-                                }
-                            }
-                        }
+                                };
+                            };
+                        };
                     }
                     else
                     {
                         ratio = _ease.getRatio((_arg_1 / _duration));
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (((_time == _local_8) && (!(_arg_3))))
             {
                 return;
-            }
+            };
             if (!_initted)
             {
                 _init();
                 if (((!(_initted)) || (_gc)))
                 {
                     return;
-                }
+                };
                 if (((_time) && (!(_local_4))))
                 {
                     ratio = _ease.getRatio((_time / _duration));
@@ -684,16 +665,16 @@ public class TweenLite extends Animation
                     if (((_local_4) && (_ease._calcEnd)))
                     {
                         ratio = _ease.getRatio(((_time === 0) ? 0 : 1));
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (!_active)
             {
                 if ((((!(_paused)) && (!(_time === _local_8))) && (_arg_1 >= 0)))
                 {
                     _active = true;
-                }
-            }
+                };
+            };
             if (_local_8 == 0)
             {
                 if (_startAt != null)
@@ -707,9 +688,9 @@ public class TweenLite extends Animation
                         if (!_local_5)
                         {
                             _local_5 = "_dummyGS";
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 if (vars.onStart)
                 {
                     if (((!(_time == 0)) || (_duration == 0)))
@@ -717,10 +698,10 @@ public class TweenLite extends Animation
                         if (!_arg_2)
                         {
                             vars.onStart.apply(null, vars.onStartParams);
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             _local_6 = _firstPT;
             while (_local_6)
             {
@@ -732,23 +713,23 @@ public class TweenLite extends Animation
                 else
                 {
                     _local_6.t[_local_6.p] = ((_local_6.c * ratio) + _local_6.s);
-                }
+                };
                 _local_6 = _local_6._next;
-            }
+            };
             if (_onUpdate != null)
             {
                 if ((((_arg_1 < 0) && (!(_startAt == null))) && (!(_startTime == 0))))
                 {
                     _startAt.render(_arg_1, _arg_2, _arg_3);
-                }
+                };
                 if (!_arg_2)
                 {
                     if (((!(_time === _local_8)) || (_local_4)))
                     {
                         _onUpdate.apply(null, vars.onUpdateParams);
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (_local_5)
             {
                 if (!_gc)
@@ -756,32 +737,31 @@ public class TweenLite extends Animation
                     if (((((_arg_1 < 0) && (!(_startAt == null))) && (_onUpdate == null)) && (!(_startTime == 0))))
                     {
                         _startAt.render(_arg_1, _arg_2, _arg_3);
-                    }
+                    };
                     if (_local_4)
                     {
                         if (_timeline.autoRemoveChildren)
                         {
                             _enabled(false, false);
-                        }
+                        };
                         _active = false;
-                    }
+                    };
                     if (!_arg_2)
                     {
                         if (vars[_local_5])
                         {
                             vars[_local_5].apply(null, vars[(_local_5 + "Params")]);
-                        }
-                    }
+                        };
+                    };
                     if ((((_duration === 0) && (_rawPrevTime === _tinyNum)) && (!(_local_7 === _tinyNum))))
                     {
                         _rawPrevTime = 0;
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        protected function _init():void
-        {
+        protected function _init():void{
             var _local_2:int;
             var _local_3:Boolean;
             var _local_4:PropTween;
@@ -793,7 +773,7 @@ public class TweenLite extends Animation
                 if (_startAt != null)
                 {
                     _startAt.render(-1, true);
-                }
+                };
                 vars.startAt.overwrite = 0;
                 vars.startAt.immediateRender = true;
                 _startAt = new TweenLite(target, 0, vars.startAt);
@@ -808,9 +788,9 @@ public class TweenLite extends Animation
                         if (_duration !== 0)
                         {
                             return;
-                        }
-                    }
-                }
+                        };
+                    };
+                };
             }
             else
             {
@@ -829,8 +809,8 @@ public class TweenLite extends Animation
                             if (!(_local_5 in _reservedProps))
                             {
                                 _local_6[_local_5] = vars[_local_5];
-                            }
-                        }
+                            };
+                        };
                         _local_6.overwrite = 0;
                         _local_6.data = "isFromStart";
                         _startAt = TweenLite.to(target, 0, _local_6);
@@ -843,11 +823,11 @@ public class TweenLite extends Animation
                             if (_time === 0)
                             {
                                 return;
-                            }
-                        }
-                    }
-                }
-            }
+                            };
+                        };
+                    };
+                };
+            };
             if ((vars.ease is Ease))
             {
                 _ease = ((vars.easeParams is Array) ? vars.ease.config.apply(vars.ease, vars.easeParams) : vars.ease);
@@ -861,8 +841,8 @@ public class TweenLite extends Animation
                 else
                 {
                     _ease = defaultEase;
-                }
-            }
+                };
+            };
             _easeType = _ease._type;
             _easePower = _ease._power;
             _firstPT = null;
@@ -874,17 +854,17 @@ public class TweenLite extends Animation
                     if (_initProps(_targets[_local_2], (_propLookup[_local_2] = {}), _siblings[_local_2], ((_overwrittenProps) ? _overwrittenProps[_local_2] : null)))
                     {
                         _local_3 = true;
-                    }
-                }
+                    };
+                };
             }
             else
             {
                 _local_3 = _initProps(target, _propLookup, _siblings, _overwrittenProps);
-            }
+            };
             if (_local_3)
             {
                 _onPluginEvent("_onInitAllProps", this);
-            }
+            };
             if (_overwrittenProps)
             {
                 if (_firstPT == null)
@@ -892,9 +872,9 @@ public class TweenLite extends Animation
                     if (typeof(target) !== "function")
                     {
                         _enabled(false, false);
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (vars.runBackwards)
             {
                 _local_4 = _firstPT;
@@ -903,18 +883,17 @@ public class TweenLite extends Animation
                     _local_4.s = (_local_4.s + _local_4.c);
                     _local_4.c = -(_local_4.c);
                     _local_4 = _local_4._next;
-                }
-            }
+                };
+            };
             _onUpdate = vars.onUpdate;
             _initted = true;
         }
 
-        override public function invalidate():*
-        {
+        override public function invalidate():*{
             if (_notifyPluginsOfEnabled)
             {
                 _onPluginEvent("_onDisable", this);
-            }
+            };
             _firstPT = null;
             _overwrittenProps = null;
             _onUpdate = null;
@@ -924,8 +903,7 @@ public class TweenLite extends Animation
             return (this);
         }
 
-        override public function _kill(_arg_1:Object=null, _arg_2:Object=null):Boolean
-        {
+        override public function _kill(_arg_1:Object=null, _arg_2:Object=null):Boolean{
             var _local_3:int;
             var _local_4:Object;
             var _local_5:String;
@@ -937,14 +915,14 @@ public class TweenLite extends Animation
             if (_arg_1 === "all")
             {
                 _arg_1 = null;
-            }
+            };
             if (_arg_1 == null)
             {
                 if (((_arg_2 == null) || (_arg_2 == this.target)))
                 {
                     return (_enabled(false, false));
-                }
-            }
+                };
+            };
             _arg_2 = (((_arg_2) || (_targets)) || (this.target));
             if (((_arg_2 is Array) && (typeof(_arg_2[0]) === "object")))
             {
@@ -954,8 +932,8 @@ public class TweenLite extends Animation
                     if (_kill(_arg_1, _arg_2[_local_3]))
                     {
                         _local_8 = true;
-                    }
-                }
+                    };
+                };
             }
             else
             {
@@ -970,18 +948,18 @@ public class TweenLite extends Animation
                             _overwrittenProps = ((_overwrittenProps) || ([]));
                             _local_4 = (_overwrittenProps[_local_3] = ((_arg_1) ? ((_overwrittenProps[_local_3]) || ({})) : "all"));
                             break;
-                        }
-                    }
+                        };
+                    };
                 }
                 else
                 {
                     if (_arg_2 !== this.target)
                     {
                         return (false);
-                    }
+                    };
                     _local_7 = _propLookup;
                     _local_4 = (_overwrittenProps = ((_arg_1) ? ((_overwrittenProps) || ({})) : "all"));
-                }
+                };
                 if (_local_7)
                 {
                     _local_9 = ((_arg_1) || (_local_7));
@@ -994,7 +972,7 @@ public class TweenLite extends Animation
                             if (((_local_6.pg) && (_local_6.t._kill(_local_9))))
                             {
                                 _local_8 = true;
-                            }
+                            };
                             if (((!(_local_6.pg)) || (_local_6.t._overwriteProps.length === 0)))
                             {
                                 if (_local_6._prev)
@@ -1006,27 +984,27 @@ public class TweenLite extends Animation
                                     if (_local_6 == _firstPT)
                                     {
                                         _firstPT = _local_6._next;
-                                    }
-                                }
+                                    };
+                                };
                                 if (_local_6._next)
                                 {
                                     _local_6._next._prev = _local_6._prev;
-                                }
+                                };
                                 _local_6._next = (_local_6._prev = null);
-                            }
+                            };
                             delete _local_7[_local_5];
-                        }
+                        };
                         if (_local_10)
                         {
                             _local_4[_local_5] = 1;
-                        }
-                    }
+                        };
+                    };
                     if (((_firstPT == null) && (_initted)))
                     {
                         _enabled(false, false);
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (_local_8);
         }
 

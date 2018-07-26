@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.NewCharacterMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 import com.company.assembleegameclient.screens.NewCharacterScreen;
 
@@ -25,8 +24,7 @@ import kabam.rotmg.game.signals.PlayGameSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class NewCharacterMediator extends Mediator
-    {
+public class NewCharacterMediator extends Mediator {
 
         [Inject]
         public var view:NewCharacterScreen;
@@ -52,8 +50,7 @@ public class NewCharacterMediator extends Mediator
         public var securityQuestionsModel:SecurityQuestionsModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.selected.add(this.onSelected);
             this.view.close.add(this.onClose);
             this.view.tooltip.add(this.onTooltip);
@@ -63,16 +60,14 @@ public class NewCharacterMediator extends Mediator
             if (this.securityQuestionsModel.showSecurityQuestionsOnStartup)
             {
                 this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-            }
+            };
         }
 
-        private function onBuyCharacterPending(_arg_1:int):void
-        {
+        private function onBuyCharacterPending(_arg_1:int):void{
             this.view.updateCreditsAndFame(this.playerModel.getCredits(), this.playerModel.getFame());
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.selected.remove(this.onSelected);
             this.view.close.remove(this.onClose);
             this.view.tooltip.remove(this.onTooltip);
@@ -80,19 +75,16 @@ public class NewCharacterMediator extends Mediator
             this.updateNewCharacterScreen.remove(this.onUpdate);
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.setScreen.dispatch(new CharacterSelectionAndNewsScreen());
         }
 
-        private function onSelected(_arg_1:int):void
-        {
+        private function onSelected(_arg_1:int):void{
             this.classesModel.getCharacterClass(_arg_1).setIsSelected(true);
             this.setScreen.dispatch(new CharacterSkinView());
         }
 
-        private function onTooltip(_arg_1:Sprite):void
-        {
+        private function onTooltip(_arg_1:Sprite):void{
             if (_arg_1)
             {
                 this.showTooltip.dispatch(_arg_1);
@@ -100,11 +92,10 @@ public class NewCharacterMediator extends Mediator
             else
             {
                 this.hideTooltips.dispatch();
-            }
+            };
         }
 
-        private function onUpdate():void
-        {
+        private function onUpdate():void{
             this.view.update(this.playerModel);
         }
 

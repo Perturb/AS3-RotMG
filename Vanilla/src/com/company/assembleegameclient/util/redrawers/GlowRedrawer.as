@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.redrawers.GlowRedrawer
 
-package com.company.assembleegameclient.util.redrawers
-{
+package com.company.assembleegameclient.util.redrawers{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.PointUtil;
@@ -19,8 +18,7 @@ import flash.filters.GlowFilter;
 import flash.geom.Matrix;
 import flash.utils.Dictionary;
 
-public class GlowRedrawer
-    {
+public class GlowRedrawer {
 
         private static const GRADIENT_MAX_SUB:uint = 0x282828;
         private static const GLOW_FILTER:GlowFilter = new GlowFilter(0, 0.3, 12, 12, 2, BitmapFilterQuality.LOW, false, false);
@@ -30,13 +28,12 @@ public class GlowRedrawer
         private static var glowHashes:Dictionary = new Dictionary();
 
 
-        public static function outlineGlow(_arg_1:BitmapData, _arg_2:uint, _arg_3:Number=1.4, _arg_4:Boolean=false, _arg_5:int=0):BitmapData
-        {
+        public static function outlineGlow(_arg_1:BitmapData, _arg_2:uint, _arg_3:Number=1.4, _arg_4:Boolean=false, _arg_5:int=0):BitmapData{
             var _local_6:String = getHash(_arg_2, _arg_3, _arg_5);
             if (((_arg_4) && (isCached(_arg_1, _local_6))))
             {
                 return (glowHashes[_arg_1][_local_6]);
-            }
+            };
             var _local_7:BitmapData = _arg_1.clone();
             tempMatrix_.identity();
             tempMatrix_.scale((_arg_1.width / 0x0100), (_arg_1.height / 0x0100));
@@ -58,17 +55,16 @@ public class GlowRedrawer
                 {
                     GLOW_FILTER.color = _arg_2;
                     _local_7.applyFilter(_local_7, _local_7.rect, PointUtil.ORIGIN, GLOW_FILTER);
-                }
-            }
+                };
+            };
             if (_arg_4)
             {
                 cache(_arg_1, _arg_2, _arg_3, _local_7, _arg_5);
-            }
+            };
             return (_local_7);
         }
 
-        private static function cache(_arg_1:BitmapData, _arg_2:uint, _arg_3:Number, _arg_4:BitmapData, _arg_5:int):void
-        {
+        private static function cache(_arg_1:BitmapData, _arg_2:uint, _arg_3:Number, _arg_4:BitmapData, _arg_5:int):void{
             var _local_7:Object;
             var _local_6:String = getHash(_arg_2, _arg_3, _arg_5);
             if ((_arg_1 in glowHashes))
@@ -80,11 +76,10 @@ public class GlowRedrawer
                 _local_7 = {};
                 _local_7[_local_6] = _arg_4;
                 glowHashes[_arg_1] = _local_7;
-            }
+            };
         }
 
-        private static function isCached(_arg_1:BitmapData, _arg_2:String):Boolean
-        {
+        private static function isCached(_arg_1:BitmapData, _arg_2:String):Boolean{
             var _local_3:Object;
             if ((_arg_1 in glowHashes))
             {
@@ -92,18 +87,16 @@ public class GlowRedrawer
                 if ((_arg_2 in _local_3))
                 {
                     return (true);
-                }
-            }
+                };
+            };
             return (false);
         }
 
-        private static function getHash(_arg_1:uint, _arg_2:Number, _arg_3:int):String
-        {
+        private static function getHash(_arg_1:uint, _arg_2:Number, _arg_3:int):String{
             return ((int((_arg_2 * 10)).toString() + _arg_1) + _arg_3);
         }
 
-        private static function getGradient():Shape
-        {
+        private static function getGradient():Shape{
             var _local_1:Shape = new Shape();
             var _local_2:Matrix = new Matrix();
             _local_2.createGradientBox(0x0100, 0x0100, (Math.PI / 2), 0, 0);

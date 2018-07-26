@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import kabam.rotmg.arena.control.ReloadLeaderboard;
 import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
 import kabam.rotmg.arena.model.ArenaLeaderboardModel;
@@ -15,8 +14,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ArenaLeaderboardMediator extends Mediator 
-    {
+public class ArenaLeaderboardMediator extends Mediator {
 
         [Inject]
         public var injector:Injector;
@@ -30,28 +28,24 @@ public class ArenaLeaderboardMediator extends Mediator
         public var arenaLeaderboardModel:ArenaLeaderboardModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.reloadLeaderboard.add(this.requestComplete);
             this.view.requestData.add(this.onRequestData);
             this.view.close.add(this.onClose);
             this.view.init();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.arenaLeaderboardModel.clearFilters();
             this.reloadLeaderboard.remove(this.requestComplete);
             this.view.destroy();
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.closeDialogs.dispatch();
         }
 
-        private function onRequestData(_arg_1:ArenaLeaderboardFilter):void
-        {
+        private function onRequestData(_arg_1:ArenaLeaderboardFilter):void{
             var _local_2:GetArenaLeaderboardTask;
             if (_arg_1.hasEntries())
             {
@@ -62,11 +56,10 @@ public class ArenaLeaderboardMediator extends Mediator
                 _local_2 = this.injector.getInstance(GetArenaLeaderboardTask);
                 _local_2.filter = _arg_1;
                 _local_2.start();
-            }
+            };
         }
 
-        private function requestComplete():void
-        {
+        private function requestComplete():void{
             this.view.reloadList();
         }
 

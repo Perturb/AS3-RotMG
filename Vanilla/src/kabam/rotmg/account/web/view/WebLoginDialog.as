@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebLoginDialog
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import com.company.assembleegameclient.account.ui.CheckBoxField;
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.account.ui.TextInputField;
@@ -21,8 +20,7 @@ import kabam.rotmg.text.model.TextKey;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class WebLoginDialog extends Frame 
-    {
+public class WebLoginDialog extends Frame {
 
         public var cancel:Signal;
         public var signIn:Signal;
@@ -34,8 +32,7 @@ public class WebLoginDialog extends Frame
         private var registerText:DeprecatedClickableText;
         private var rememberMeCheckbox:CheckBoxField;
 
-        public function WebLoginDialog()
-        {
+        public function WebLoginDialog(){
             super(TextKey.WEB_LOGIN_DIALOG_TITLE, TextKey.WEB_LOGIN_DIALOG_LEFT, TextKey.WEB_LOGIN_DIALOG_RIGHT, "/signIn");
             this.makeUI();
             this.forgot = new NativeMappedSignal(this.forgotText, MouseEvent.CLICK);
@@ -44,8 +41,7 @@ public class WebLoginDialog extends Frame
             this.signIn = new Signal(AccountData);
         }
 
-        private function makeUI():void
-        {
+        private function makeUI():void{
             this.email = new TextInputField(TextKey.WEB_LOGIN_DIALOG_EMAIL, false);
             addTextInputField(this.email);
             this.password = new TextInputField(TextKey.WEB_LOGIN_DIALOG_PASSWORD, true);
@@ -61,32 +57,27 @@ public class WebLoginDialog extends Frame
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (_arg_1.keyCode == KeyCodes.ENTER)
             {
                 this.onSignInSub();
-            }
+            };
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.cancel.dispatch();
         }
 
-        private function onSignIn(_arg_1:MouseEvent):void
-        {
+        private function onSignIn(_arg_1:MouseEvent):void{
             this.onSignInSub();
         }
 
-        private function onSignInSub():void
-        {
+        private function onSignInSub():void{
             var _local_1:AccountData;
             if (((this.isEmailValid()) && (this.isPasswordValid())))
             {
@@ -94,41 +85,36 @@ public class WebLoginDialog extends Frame
                 _local_1.username = this.email.text();
                 _local_1.password = this.password.text();
                 this.signIn.dispatch(_local_1);
-            }
+            };
         }
 
-        private function isPasswordValid():Boolean
-        {
+        private function isPasswordValid():Boolean{
             var _local_1:* = (!(this.password.text() == ""));
             if (!_local_1)
             {
                 this.password.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        private function isEmailValid():Boolean
-        {
+        private function isEmailValid():Boolean{
             var _local_1:* = (!(this.email.text() == ""));
             if (!_local_1)
             {
                 this.email.setError(TextKey.WEBLOGINDIALOG_EMAIL_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        public function isRememberMeSelected():Boolean
-        {
+        public function isRememberMeSelected():Boolean{
             return (true);
         }
 
-        public function setError(_arg_1:String):void
-        {
+        public function setError(_arg_1:String):void{
             this.password.setError(_arg_1);
         }
 
-        public function setEmail(_arg_1:String):void
-        {
+        public function setEmail(_arg_1:String):void{
             this.email.inputText_.text = _arg_1;
         }
 

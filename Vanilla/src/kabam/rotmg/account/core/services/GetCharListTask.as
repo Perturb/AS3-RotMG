@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.services.GetCharListTask
 
-package kabam.rotmg.account.core.services
-{
+package kabam.rotmg.account.core.services{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.util.MoreObjectUtil;
 
@@ -29,8 +28,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GetCharListTask extends BaseTask 
-    {
+public class GetCharListTask extends BaseTask {
 
         private static const ONE_SECOND_IN_MS:int = 1000;
         private static const MAX_RETRIES:int = 7;
@@ -59,22 +57,19 @@ public class GetCharListTask extends BaseTask
         private var fromMigration:Boolean = false;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.info("GetUserDataTask start");
             this.requestData = this.makeRequestData();
             this.sendRequest();
             Parameters.sendLogin_ = false;
         }
 
-        private function sendRequest():void
-        {
+        private function sendRequest():void{
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/char/list", this.requestData);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onListComplete(_arg_2);
@@ -82,11 +77,10 @@ public class GetCharListTask extends BaseTask
             else
             {
                 this.onTextError(_arg_2);
-            }
+            };
         }
 
-        public function makeRequestData():Object
-        {
+        public function makeRequestData():Object{
             var _local_1:Object = {};
             _local_1.game_net_user_id = this.account.gameNetworkUserId();
             _local_1.game_net = this.account.gameNetwork();
@@ -96,8 +90,7 @@ public class GetCharListTask extends BaseTask
             return (_local_1);
         }
 
-        private function onListComplete(_arg_1:String):void
-        {
+        private function onListComplete(_arg_1:String):void{
             var _local_3:Number;
             var _local_4:MigrationDialog;
             var _local_5:XML;
@@ -108,7 +101,7 @@ public class GetCharListTask extends BaseTask
                 if (_local_3 == 5)
                 {
                     this.sendRequest();
-                }
+                };
                 _local_4 = new MigrationDialog(this.account, _local_3);
                 this.fromMigration = true;
                 _local_4.done.addOnce(this.sendRequest);
@@ -126,8 +119,8 @@ public class GetCharListTask extends BaseTask
                         if (_local_2.Account[0].hasOwnProperty("PaymentData"))
                         {
                             WebAccount(this.account).paymentData = _local_2.Account[0].PaymentData;
-                        }
-                    }
+                        };
+                    };
                     if (_local_2.Account[0].hasOwnProperty("SecurityQuestions"))
                     {
                         this.securityQuestionsModel.showSecurityQuestionsOnStartup = (_local_2.Account[0].SecurityQuestions[0].ShowSecurityQuestionsDialog[0] == "1");
@@ -135,20 +128,19 @@ public class GetCharListTask extends BaseTask
                         for each (_local_5 in _local_2.Account[0].SecurityQuestions[0].SecurityQuestionsKeys[0].SecurityQuestionsKey)
                         {
                             this.securityQuestionsModel.addSecurityQuestion(_local_5.toString());
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 this.charListData.dispatch(XML(_arg_1));
                 completeTask(true);
-            }
+            };
             if (this.retryTimer != null)
             {
                 this.stopRetryTimer();
-            }
+            };
         }
 
-        private function onTextError(_arg_1:String):void
-        {
+        private function onTextError(_arg_1:String):void{
             var _local_2:WebLoginDialog;
             this.setLoadingMessage.dispatch("error.loadError");
             if (_arg_1 == "Account credentials not valid")
@@ -159,7 +151,7 @@ public class GetCharListTask extends BaseTask
                     _local_2.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_INVALID);
                     _local_2.setEmail(this.account.getUserId());
                     StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(_local_2);
-                }
+                };
                 this.clearAccountAndReloadCharacters();
             }
             else
@@ -172,12 +164,11 @@ public class GetCharListTask extends BaseTask
                 else
                 {
                     this.waitForASecondThenRetryRequest();
-                }
-            }
+                };
+            };
         }
 
-        private function clearAccountAndReloadCharacters():void
-        {
+        private function clearAccountAndReloadCharacters():void{
             this.logger.info("GetUserDataTask invalid credentials");
             this.account.clear();
             this.client.complete.addOnce(this.onComplete);
@@ -185,23 +176,20 @@ public class GetCharListTask extends BaseTask
             this.client.sendRequest("/char/list", this.requestData);
         }
 
-        private function waitForASecondThenRetryRequest():void
-        {
+        private function waitForASecondThenRetryRequest():void{
             this.logger.info("GetUserDataTask error - retrying");
             this.retryTimer = new Timer(ONE_SECOND_IN_MS, 1);
             this.retryTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.onRetryTimer);
             this.retryTimer.start();
         }
 
-        private function stopRetryTimer():void
-        {
+        private function stopRetryTimer():void{
             this.retryTimer.stop();
             this.retryTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.onRetryTimer);
             this.retryTimer = null;
         }
 
-        private function onRetryTimer(_arg_1:TimerEvent):void
-        {
+        private function onRetryTimer(_arg_1:TimerEvent):void{
             this.stopRetryTimer();
             if (this.numRetries < MAX_RETRIES)
             {
@@ -212,7 +200,7 @@ public class GetCharListTask extends BaseTask
             {
                 this.clearAccountAndReloadCharacters();
                 this.setLoadingMessage.dispatch("LoginError.tooManyFails");
-            }
+            };
         }
 
 

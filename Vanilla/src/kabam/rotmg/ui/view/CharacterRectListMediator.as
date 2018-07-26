@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterRectListMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.screens.NewCharacterScreen;
 import com.company.assembleegameclient.screens.charrects.CharacterRectList;
 
@@ -13,8 +12,7 @@ import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CharacterRectListMediator extends Mediator
-    {
+public class CharacterRectListMediator extends Mediator {
 
         [Inject]
         public var view:CharacterRectList;
@@ -24,25 +22,21 @@ public class CharacterRectListMediator extends Mediator
         public var buyCharacterSlotSignal:BuyCharacterSlotSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.newCharacter.add(this.onNewCharacter);
             this.view.buyCharacterSlot.add(this.onBuyCharacterSlot);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.newCharacter.remove(this.onNewCharacter);
             this.view.buyCharacterSlot.remove(this.onBuyCharacterSlot);
         }
 
-        private function onNewCharacter():void
-        {
+        private function onNewCharacter():void{
             this.setScreenWithValidData.dispatch(new NewCharacterScreen());
         }
 
-        private function onBuyCharacterSlot(_arg_1:int):void
-        {
+        private function onBuyCharacterSlot(_arg_1:int):void{
             this.buyCharacterSlotSignal.dispatch(_arg_1);
         }
 

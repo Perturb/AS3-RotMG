@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.build.api.BuildEnvironment
 
-package kabam.rotmg.build.api
-{
-    public class BuildEnvironment 
-    {
+package kabam.rotmg.build.api{
+    public class BuildEnvironment {
 
         public static const FIXED_IP:BuildEnvironment = new (BuildEnvironment)();
         public static const LOCALHOST:BuildEnvironment = new (BuildEnvironment)();

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.console.controller.AddDefaultConsoleActionsCommand
 
-package kabam.lib.console.controller
-{
+package kabam.lib.console.controller{
 import kabam.lib.console.signals.ClearConsoleSignal;
 import kabam.lib.console.signals.CopyConsoleTextSignal;
 import kabam.lib.console.signals.ListActionsSignal;
@@ -12,8 +11,7 @@ import kabam.lib.console.signals.RegisterConsoleActionSignal;
 import kabam.lib.console.signals.RemoveConsoleSignal;
 import kabam.lib.console.vo.ConsoleAction;
 
-public class AddDefaultConsoleActionsCommand 
-    {
+public class AddDefaultConsoleActionsCommand {
 
         [Inject]
         public var register:RegisterConsoleActionSignal;
@@ -27,8 +25,7 @@ public class AddDefaultConsoleActionsCommand
         public var copyConsoleText:CopyConsoleTextSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:ConsoleAction;
             _local_1 = new ConsoleAction();
             _local_1.name = "list";

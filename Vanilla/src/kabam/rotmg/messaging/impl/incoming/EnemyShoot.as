@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.EnemyShoot
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.IDataInput;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class EnemyShoot extends IncomingMessage
-    {
+public class EnemyShoot extends IncomingMessage {
 
         public var bulletId_:uint;
         public var ownerId_:int;
@@ -21,13 +19,11 @@ public class EnemyShoot extends IncomingMessage
         public var numShots_:int;
         public var angleInc_:Number;
 
-        public function EnemyShoot(_arg_1:uint, _arg_2:Function)
-        {
+        public function EnemyShoot(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.bulletId_ = _arg_1.readUnsignedByte();
             this.ownerId_ = _arg_1.readInt();
             this.bulletType_ = _arg_1.readUnsignedByte();
@@ -43,11 +39,10 @@ public class EnemyShoot extends IncomingMessage
             {
                 this.numShots_ = 1;
                 this.angleInc_ = 0;
-            }
+            };
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("SHOOT", "bulletId_", "ownerId_", "bulletType_", "startingPos_", "angle_", "damage_", "numShots_", "angleInc_"));
         }
 

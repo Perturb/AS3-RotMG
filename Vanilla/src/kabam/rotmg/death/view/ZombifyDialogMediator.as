@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ZombifyDialogMediator
 
-package kabam.rotmg.death.view
-{
+package kabam.rotmg.death.view{
 import flash.display.BitmapData;
 
 import kabam.rotmg.death.control.HandleNormalDeathSignal;
@@ -14,8 +13,7 @@ import kabam.rotmg.messaging.impl.incoming.Death;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ZombifyDialogMediator extends Mediator 
-    {
+public class ZombifyDialogMediator extends Mediator {
 
         [Inject]
         public var view:ZombifyDialog;
@@ -27,13 +25,11 @@ public class ZombifyDialogMediator extends Mediator
         public var death:DeathModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.closed.addOnce(this.onClosed);
         }
 
-        private function onClosed():void
-        {
+        private function onClosed():void{
             var _local_1:Death;
             _local_1 = this.death.getLastDeath();
             var _local_2:BitmapData = new BitmapDataSpy(this.view.stage.width, this.view.stage.height);

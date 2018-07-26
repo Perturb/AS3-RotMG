@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.control.ScrollListSignal
 
-package kabam.rotmg.chat.control
-{
+package kabam.rotmg.chat.control{
 import org.osflash.signals.Signal;
 
-public class ScrollListSignal extends Signal 
-    {
+public class ScrollListSignal extends Signal {
 
-        public function ScrollListSignal()
-        {
+        public function ScrollListSignal(){
             super(int);
         }
 

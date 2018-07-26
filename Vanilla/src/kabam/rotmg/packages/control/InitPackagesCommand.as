@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.InitPackagesCommand
 
-package kabam.rotmg.packages.control
-{
+package kabam.rotmg.packages.control{
 import kabam.rotmg.packages.services.PackageModel;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
-public class InitPackagesCommand 
-    {
+public class InitPackagesCommand {
 
         [Inject]
         public var beginnersPackageModel:BeginnersPackageModel;
@@ -21,8 +19,7 @@ public class InitPackagesCommand
         public var packageAvailable:PackageAvailableSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.beginnersPackageModel.isBeginnerAvailable())
             {
                 this.beginnersPackageAvailable.dispatch();
@@ -32,8 +29,8 @@ public class InitPackagesCommand
                 if (this.packageModel.hasPackages())
                 {
                     this.packageAvailable.dispatch();
-                }
-            }
+                };
+            };
         }
 
 

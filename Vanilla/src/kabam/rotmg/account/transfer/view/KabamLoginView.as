@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.view.KabamLoginView
 
-package kabam.rotmg.account.transfer.view
-{
+package kabam.rotmg.account.transfer.view{
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.account.ui.TextInputField;
 import com.company.assembleegameclient.ui.DeprecatedClickableText;
@@ -23,8 +22,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class KabamLoginView extends Frame 
-    {
+public class KabamLoginView extends Frame {
 
         public var cancel:Signal;
         public var signIn:Signal;
@@ -34,8 +32,7 @@ public class KabamLoginView extends Frame
         private var headerText:TextFieldDisplayConcrete;
         private var forgotText:DeprecatedClickableText;
 
-        public function KabamLoginView()
-        {
+        public function KabamLoginView(){
             super("Kabam.com account transfer", TextKey.WEB_LOGIN_DIALOG_LEFT, TextKey.WEB_LOGIN_DIALOG_RIGHT, "/signIn");
             this.makeUI();
             this.forgot = new NativeMappedSignal(this.forgotText, MouseEvent.CLICK);
@@ -43,8 +40,7 @@ public class KabamLoginView extends Frame
             this.signIn = new Signal(TransferAccountData);
         }
 
-        private function makeUI():void
-        {
+        private function makeUI():void{
             this.headerText = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
             this.headerText.setStringBuilder(new StaticStringBuilder("Please login to Kabam.com"));
             this.headerText.filters = [new DropShadowFilter(0, 0, 0)];
@@ -64,32 +60,27 @@ public class KabamLoginView extends Frame
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (_arg_1.keyCode == KeyCodes.ENTER)
             {
                 this.onSignInSub();
-            }
+            };
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.cancel.dispatch();
         }
 
-        private function onSignIn(_arg_1:MouseEvent):void
-        {
+        private function onSignIn(_arg_1:MouseEvent):void{
             this.onSignInSub();
         }
 
-        private function onSignInSub():void
-        {
+        private function onSignInSub():void{
             var _local_1:TransferAccountData;
             if (((this.isEmailValid()) && (this.isPasswordValid())))
             {
@@ -97,36 +88,32 @@ public class KabamLoginView extends Frame
                 _local_1.currentEmail = this.email.text();
                 _local_1.currentPassword = this.password.text();
                 this.signIn.dispatch(_local_1);
-            }
+            };
         }
 
-        private function isPasswordValid():Boolean
-        {
+        private function isPasswordValid():Boolean{
             var _local_1:* = (!(this.password.text() == ""));
             if (!_local_1)
             {
                 this.password.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        private function isEmailValid():Boolean
-        {
+        private function isEmailValid():Boolean{
             var _local_1:* = (!(this.email.text() == ""));
             if (!_local_1)
             {
                 this.email.setError(TextKey.WEBLOGINDIALOG_EMAIL_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        public function setError(_arg_1:String):void
-        {
+        public function setError(_arg_1:String):void{
             this.password.setError(_arg_1);
         }
 
-        public function setEmail(_arg_1:String):void
-        {
+        public function setEmail(_arg_1:String):void{
             this.email.inputText_.text = _arg_1;
         }
 

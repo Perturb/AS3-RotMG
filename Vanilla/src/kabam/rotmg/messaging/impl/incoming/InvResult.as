@@ -1,29 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.InvResult
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.IDataInput;
 
-public class InvResult extends IncomingMessage
-    {
+public class InvResult extends IncomingMessage {
 
         public var result_:int;
 
-        public function InvResult(_arg_1:uint, _arg_2:Function)
-        {
+        public function InvResult(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.result_ = _arg_1.readInt();
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("INVRESULT", "result_"));
         }
 

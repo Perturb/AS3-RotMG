@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.control.OpenReskinDialogCommand
 
-package kabam.rotmg.characters.reskin.control
-{
+package kabam.rotmg.characters.reskin.control{
 import flash.display.DisplayObject;
 
 import kabam.lib.console.signals.HideConsoleSignal;
@@ -15,8 +14,7 @@ import kabam.rotmg.classes.view.CharacterSkinListItemFactory;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class OpenReskinDialogCommand
-    {
+public class OpenReskinDialogCommand {
 
         [Inject]
         public var openDialog:OpenDialogSignal;
@@ -30,14 +28,12 @@ public class OpenReskinDialogCommand
         public var factory:CharacterSkinListItemFactory;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.hideConsole.dispatch();
             this.openDialog.dispatch(this.makeView());
         }
 
-        private function makeView():ReskinCharacterView
-        {
+        private function makeView():ReskinCharacterView{
             var _local_1:ReskinCharacterView = new ReskinCharacterView();
             _local_1.setList(this.makeList());
             _local_1.x = int(((800 - _local_1.width) * 0.5));
@@ -45,14 +41,12 @@ public class OpenReskinDialogCommand
             return (_local_1);
         }
 
-        private function makeList():Vector.<DisplayObject>
-        {
+        private function makeList():Vector.<DisplayObject>{
             var _local_1:CharacterSkins = this.getCharacterSkins();
             return (this.factory.make(_local_1));
         }
 
-        private function getCharacterSkins():CharacterSkins
-        {
+        private function getCharacterSkins():CharacterSkins{
             return (this.model.getSelected().skins);
         }
 

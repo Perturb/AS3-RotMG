@@ -1,23 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.utils.FeedFuseCostModel
 
-package io.decagames.rotmg.pets.utils
-{
+package io.decagames.rotmg.pets.utils{
 import flash.utils.Dictionary;
 
 import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
 
-public class FeedFuseCostModel 
-    {
+public class FeedFuseCostModel {
 
         private static const feedCosts:Dictionary = makeFeedDictionary();
         private static const fuseCosts:Dictionary = makeFuseDictionary();
 
 
-        private static function makeFuseDictionary():Dictionary
-        {
+        private static function makeFuseDictionary():Dictionary{
             var _local_1:Dictionary = new Dictionary();
             _local_1[PetRarityEnum.COMMON] = {
                 "gold":100,
@@ -38,8 +35,7 @@ public class FeedFuseCostModel
             return (_local_1);
         }
 
-        private static function makeFeedDictionary():Dictionary
-        {
+        private static function makeFeedDictionary():Dictionary{
             var _local_1:Dictionary = new Dictionary();
             _local_1[PetRarityEnum.COMMON] = {
                 "gold":5,
@@ -64,23 +60,19 @@ public class FeedFuseCostModel
             return (_local_1);
         }
 
-        public static function getFuseGoldCost(_arg_1:PetRarityEnum):int
-        {
+        public static function getFuseGoldCost(_arg_1:PetRarityEnum):int{
             return ((fuseCosts[_arg_1]) ? fuseCosts[_arg_1].gold : 0);
         }
 
-        public static function getFuseFameCost(_arg_1:PetRarityEnum):int
-        {
+        public static function getFuseFameCost(_arg_1:PetRarityEnum):int{
             return ((fuseCosts[_arg_1]) ? fuseCosts[_arg_1].fame : 0);
         }
 
-        public static function getFeedGoldCost(_arg_1:PetRarityEnum):int
-        {
+        public static function getFeedGoldCost(_arg_1:PetRarityEnum):int{
             return (feedCosts[_arg_1].gold);
         }
 
-        public static function getFeedFameCost(_arg_1:PetRarityEnum):int
-        {
+        public static function getFeedFameCost(_arg_1:PetRarityEnum):int{
             return (feedCosts[_arg_1].fame);
         }
 

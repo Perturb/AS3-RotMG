@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.util.TimeWriter
 
-package kabam.lib.util
-{
-    public class TimeWriter 
-    {
+package kabam.lib.util{
+    public class TimeWriter {
 
         private var timeStringStarted:Boolean = false;
         private var seconds:int;
@@ -16,8 +14,7 @@ package kabam.lib.util
         private var textValues:Array;
 
 
-        public function parseTime(_arg_1:Number):String
-        {
+        public function parseTime(_arg_1:Number):String{
             this.seconds = Math.floor((_arg_1 / 1000));
             this.minutes = Math.floor((this.seconds / 60));
             this.hours = Math.floor((this.minutes / 60));
@@ -35,25 +32,24 @@ package kabam.lib.util
             return (this.textValues.join(" "));
         }
 
-        private function formatUnit(_arg_1:int, _arg_2:String, _arg_3:int=-1):void
-        {
+        private function formatUnit(_arg_1:int, _arg_2:String, _arg_3:int=-1):void{
             if (((_arg_1 == 0) && (!(this.timeStringStarted))))
             {
                 return;
-            }
+            };
             this.timeStringStarted = true;
             var _local_4:String = _arg_1.toString();
             if (_arg_3 == -1)
             {
                 _arg_3 = _local_4.length;
-            }
+            };
             var _local_5:* = "";
             var _local_6:int = _local_4.length;
             while (_local_6 < _arg_3)
             {
                 _local_5 = (_local_5 + "0");
                 _local_6++;
-            }
+            };
             _local_4 = ((_local_5 + _local_4) + _arg_2);
             this.textValues.push(_local_4);
         }

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.AnimateProperties
 
-package com.company.assembleegameclient.map
-{
-    public class AnimateProperties 
-    {
+package com.company.assembleegameclient.map{
+    public class AnimateProperties {
 
         public static const NO_ANIMATE:int = 0;
         public static const WAVE_ANIMATE:int = 1;
@@ -17,8 +15,7 @@ package com.company.assembleegameclient.map
         public var dy_:Number = 0;
 
 
-        public function parseXML(_arg_1:XML):void
-        {
+        public function parseXML(_arg_1:XML):void{
             switch (String(_arg_1))
             {
                 case "Wave":
@@ -27,7 +24,7 @@ package com.company.assembleegameclient.map
                 case "Flow":
                     this.type_ = FLOW_ANIMATE;
                     break;
-            }
+            };
             this.dx_ = _arg_1.@dx;
             this.dy_ = _arg_1.@dy;
         }

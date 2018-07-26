@@ -1,29 +1,24 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.model.SimpleFameVO
 
-package kabam.rotmg.fame.model
-{
-    public class SimpleFameVO implements FameVO 
-    {
+package kabam.rotmg.fame.model{
+    public class SimpleFameVO implements FameVO {
 
         private var accountId:String;
         private var characterId:int;
 
-        public function SimpleFameVO(_arg_1:String, _arg_2:int)
-        {
+        public function SimpleFameVO(_arg_1:String, _arg_2:int){
             this.accountId = _arg_1;
             this.characterId = _arg_2;
         }
 
-        public function getAccountId():String
-        {
+        public function getAccountId():String{
             return (this.accountId);
         }
 
-        public function getCharacterId():int
-        {
+        public function getCharacterId():int{
             return (this.characterId);
         }
 

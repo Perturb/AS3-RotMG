@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.Dialog
 
-package com.company.assembleegameclient.ui.dialogs
-{
+package com.company.assembleegameclient.ui.dialogs{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.util.StageProxy;
 import com.company.util.GraphicsUtil;
@@ -31,8 +30,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class Dialog extends Sprite
-    {
+public class Dialog extends Sprite {
 
         public static const LEFT_BUTTON:String = "dialogLeftButton";
         public static const RIGHT_BUTTON:String = "dialogRightButton";
@@ -65,8 +63,7 @@ public class Dialog extends Sprite
         protected const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
         protected var uiWaiter:SignalWaiter = new SignalWaiter();
 
-        public function Dialog(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:String, _arg_6:Object=null)
-        {
+        public function Dialog(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:String, _arg_6:Object=null){
             this.replaceTokens = _arg_6;
             this.leftButtonKey = _arg_3;
             this.rightButtonKey = _arg_4;
@@ -79,45 +76,37 @@ public class Dialog extends Sprite
             addChild(this.box_);
         }
 
-        public function getLeftButtonKey():String
-        {
+        public function getLeftButtonKey():String{
             return (this.leftButtonKey);
         }
 
-        public function getRightButtonKey():String
-        {
+        public function getRightButtonKey():String{
             return (this.rightButtonKey);
         }
 
-        public function setTextParams(_arg_1:String, _arg_2:Object):void
-        {
+        public function setTextParams(_arg_1:String, _arg_2:Object):void{
             this.textText_.setStringBuilder(new LineBuilder().setParams(_arg_1, _arg_2));
         }
 
-        public function setTitleStringBuilder(_arg_1:StringBuilder):void
-        {
+        public function setTitleStringBuilder(_arg_1:StringBuilder):void{
             this.titleText_.setStringBuilder(_arg_1);
         }
 
-        protected function setDialogWidth():int
-        {
+        protected function setDialogWidth():int{
             return (WIDTH);
         }
 
-        private function _makeUIAndAdd(_arg_1:String, _arg_2:String):void
-        {
+        private function _makeUIAndAdd(_arg_1:String, _arg_2:String):void{
             this.initText(_arg_1);
             this.addTextFieldDisplay(this.textText_);
             this.initNonNullTitleAndAdd(_arg_2);
             this.makeNonNullButtons();
         }
 
-        protected function makeUIAndAdd():void
-        {
+        protected function makeUIAndAdd():void{
         }
 
-        protected function initText(_arg_1:String):void
-        {
+        protected function initText(_arg_1:String):void{
             this.textText_ = new TextFieldDisplayConcrete().setSize(14).setColor(GREY);
             this.textText_.setTextWidth((this.dialogWidth - 40));
             this.textText_.x = 20;
@@ -127,20 +116,18 @@ public class Dialog extends Sprite
             if (this.replaceTokens)
             {
                 _local_2.setParams(_arg_1, this.replaceTokens);
-            }
+            };
             this.textText_.setStringBuilder(_local_2);
             this.textText_.mouseEnabled = true;
             this.textText_.filters = [new DropShadowFilter(0, 0, 0, 1, 6, 6, 1)];
         }
 
-        private function addTextFieldDisplay(_arg_1:TextFieldDisplayConcrete):void
-        {
+        private function addTextFieldDisplay(_arg_1:TextFieldDisplayConcrete):void{
             this.box_.addChild(_arg_1);
             this.uiWaiter.push(_arg_1.textChanged);
         }
 
-        private function initNonNullTitleAndAdd(_arg_1:String):void
-        {
+        private function initNonNullTitleAndAdd(_arg_1:String):void{
             if (_arg_1 != null)
             {
                 this.titleText_ = new TextFieldDisplayConcrete().setSize(18).setColor(5746018);
@@ -149,41 +136,37 @@ public class Dialog extends Sprite
                 this.titleText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8, 1)];
                 this.titleText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
                 this.addTextFieldDisplay(this.titleText_);
-            }
+            };
         }
 
-        private function makeNonNullButtons():void
-        {
+        private function makeNonNullButtons():void{
             if (this.leftButtonKey != null)
             {
                 this.leftButton = new DeprecatedTextButton(16, this.leftButtonKey, 120);
                 this.leftButton.addEventListener(MouseEvent.CLICK, this.onLeftButtonClick);
-            }
+            };
             if (this.rightButtonKey != null)
             {
                 this.rightButton = new DeprecatedTextButton(16, this.rightButtonKey, 120);
                 this.rightButton.addEventListener(MouseEvent.CLICK, this.onRightButtonClick);
-            }
+            };
         }
 
-        private function onComplete():void
-        {
+        private function onComplete():void{
             this.draw();
             this.positionDialogAndTryAnalytics();
         }
 
-        private function positionDialogAndTryAnalytics():void
-        {
+        private function positionDialogAndTryAnalytics():void{
             this.box_.x = ((this.offsetX + (this.stageProxy.getStageWidth() / 2)) - (this.box_.width / 2));
             this.box_.y = ((this.offsetY + (this.stageProxy.getStageHeight() / 2)) - (this.getBoxHeight() / 2));
             if (this.analyticsPageName_ != null)
             {
                 this.tryAnalytics();
-            }
+            };
         }
 
-        private function tryAnalytics():void
-        {
+        private function tryAnalytics():void{
             var _local_1:GoogleAnalytics;
             try
             {
@@ -191,30 +174,27 @@ public class Dialog extends Sprite
                 if (_local_1)
                 {
                     _local_1.trackPageView(this.analyticsPageName_);
-                }
+                };
             }
             catch(error:Error)
             {
-            }
+            };
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             this.drawTitleAndText();
             this.drawAdditionalUI();
             this.drawButtonsAndBackground();
         }
 
-        protected function drawAdditionalUI():void
-        {
+        protected function drawAdditionalUI():void{
         }
 
-        protected function drawButtonsAndBackground():void
-        {
+        protected function drawButtonsAndBackground():void{
             if (this.box_.contains(this.rect_))
             {
                 this.box_.removeChild(this.rect_);
-            }
+            };
             this.removeButtonsIfAlreadyAdded();
             this.addButtonsAndLayout();
             this.drawBackground();
@@ -223,12 +203,10 @@ public class Dialog extends Sprite
             this.box_.filters = [new DropShadowFilter(0, 0, 0, 1, 16, 16, 1)];
         }
 
-        protected function drawGraphicsTemplate():void
-        {
+        protected function drawGraphicsTemplate():void{
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             GraphicsUtil.clearPath(this.path_);
             GraphicsUtil.drawCutEdgeRect(0, 0, this.dialogWidth, (this.getBoxHeight() + this.bottomSpace), 4, [1, 1, 1, 1], this.path_);
             var _local_1:Graphics = this.rect_.graphics;
@@ -236,13 +214,11 @@ public class Dialog extends Sprite
             _local_1.drawGraphicsData(this.graphicsData_);
         }
 
-        protected function getBoxHeight():Number
-        {
+        protected function getBoxHeight():Number{
             return (this.box_.height);
         }
 
-        private function addButtonsAndLayout():void
-        {
+        private function addButtonsAndLayout():void{
             var _local_1:int;
             if (this.leftButton != null)
             {
@@ -259,12 +235,11 @@ public class Dialog extends Sprite
                     this.box_.addChild(this.rightButton);
                     this.rightButton.x = (((3 * this.dialogWidth) / 4) - (this.rightButton.width / 2));
                     this.rightButton.y = _local_1;
-                }
-            }
+                };
+            };
         }
 
-        private function drawTitleAndText():void
-        {
+        private function drawTitleAndText():void{
             if (this.titleText_ != null)
             {
                 this.titleText_.x = (this.dialogWidth / 2);
@@ -274,28 +249,25 @@ public class Dialog extends Sprite
             else
             {
                 this.textText_.y = 4;
-            }
+            };
         }
 
-        private function removeButtonsIfAlreadyAdded():void
-        {
+        private function removeButtonsIfAlreadyAdded():void{
             if (((this.leftButton) && (this.box_.contains(this.leftButton))))
             {
                 this.box_.removeChild(this.leftButton);
-            }
+            };
             if (((this.rightButton) && (this.box_.contains(this.rightButton))))
             {
                 this.box_.removeChild(this.rightButton);
-            }
+            };
         }
 
-        protected function onLeftButtonClick(_arg_1:MouseEvent):void
-        {
+        protected function onLeftButtonClick(_arg_1:MouseEvent):void{
             dispatchEvent(new Event(LEFT_BUTTON));
         }
 
-        protected function onRightButtonClick(_arg_1:Event):void
-        {
+        protected function onRightButtonClick(_arg_1:Event):void{
             dispatchEvent(new Event(RIGHT_BUTTON));
         }
 

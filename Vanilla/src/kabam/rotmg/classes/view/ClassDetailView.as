@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.ClassDetailView
 
-package kabam.rotmg.classes.view
-{
+package kabam.rotmg.classes.view{
 import flash.display.Bitmap;
 import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
@@ -18,8 +17,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 import kabam.rotmg.util.components.StarsView;
 
-public class ClassDetailView extends Sprite 
-    {
+public class ClassDetailView extends Sprite {
 
         private static const RIGHT_JUSTIFICATION_STATS:int = 205;
         private static const WIDTH:int = 344;
@@ -42,8 +40,7 @@ public class ClassDetailView extends Sprite
         private var animContainer:Sprite;
         private var animation:Animation;
 
-        public function ClassDetailView()
-        {
+        public function ClassDetailView(){
             var _local_1:DropShadowFilter;
             super();
             this.waiter.complete.add(this.layout);
@@ -98,16 +95,14 @@ public class ClassDetailView extends Sprite
             addChild(this.questCompletedStars);
         }
 
-        public function setData(_arg_1:String, _arg_2:String, _arg_3:int, _arg_4:int, _arg_5:int):void
-        {
+        public function setData(_arg_1:String, _arg_2:String, _arg_3:int, _arg_4:int, _arg_5:int):void{
             this.classNameText.setStringBuilder(new LineBuilder().setParams(_arg_1));
             this.classDescriptionText.setStringBuilder(new LineBuilder().setParams(_arg_2));
             this.levelText.setStringBuilder(new StaticStringBuilder(String(_arg_4)));
             this.fameText.setStringBuilder(new StaticStringBuilder(String(_arg_5)));
         }
 
-        public function setNextGoal(_arg_1:String, _arg_2:int):void
-        {
+        public function setNextGoal(_arg_1:String, _arg_2:int):void{
             this.showNextGoal = (!(_arg_2 == -1));
             if (this.showNextGoal)
             {
@@ -119,31 +114,27 @@ public class ClassDetailView extends Sprite
                 this.nextGoalDetailText.x = ((WIDTH / 2) - (this.nextGoalDetailText.width / 2));
                 this.waiter.push(this.nextGoalDetailText.textChanged);
                 this.waiter.push(this.nextGoalText.textChanged);
-            }
+            };
         }
 
-        public function setWalkingAnimation(_arg_1:Animation):void
-        {
+        public function setWalkingAnimation(_arg_1:Animation):void{
             ((this.animation) && (this.removeAnimation(this.animation)));
             this.animation = _arg_1;
             ((this.animation) && (this.addAnimation(this.animation)));
             this.layout();
         }
 
-        private function removeAnimation(_arg_1:Animation):void
-        {
+        private function removeAnimation(_arg_1:Animation):void{
             _arg_1.stop();
             this.animContainer.removeChild(_arg_1);
         }
 
-        private function addAnimation(_arg_1:Animation):void
-        {
+        private function addAnimation(_arg_1:Animation):void{
             this.animContainer.addChild(_arg_1);
             _arg_1.start();
         }
 
-        private function layout():void
-        {
+        private function layout():void{
             this.classNameText.x = ((WIDTH / 2) - (this.classNameText.width / 2));
             this.classNameText.y = 110;
             this.classDescriptionText.y = ((this.classNameText.y + this.classNameText.height) + 5);

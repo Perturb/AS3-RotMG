@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.errors.ErrorConfig
 
-package kabam.rotmg.errors
-{
+package kabam.rotmg.errors{
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.errors.control.ErrorSignal;
 import kabam.rotmg.errors.control.LogErrorCommand;
@@ -17,8 +16,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class ErrorConfig implements IConfig 
-    {
+public class ErrorConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -30,14 +28,12 @@ public class ErrorConfig implements IConfig
         public var setup:ApplicationSetup;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mediatorMap.map(WebMain).toMediator(ErrorMediator);
             this.mapErrorCommand();
         }
 
-        private function mapErrorCommand():void
-        {
+        private function mapErrorCommand():void{
             if (this.setup.areErrorsReported())
             {
                 this.commandMap.map(ErrorSignal).toCommand(ReportErrorToAppEngineCommand);
@@ -45,7 +41,7 @@ public class ErrorConfig implements IConfig
             else
             {
                 this.commandMap.map(ErrorSignal).toCommand(LogErrorCommand);
-            }
+            };
         }
 
 

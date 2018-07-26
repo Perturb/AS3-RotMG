@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.components.CrystalSmall
 
-package kabam.rotmg.fortune.components
-{
+package kabam.rotmg.fortune.components{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.TextureRedrawer;
@@ -27,8 +26,7 @@ import flash.ui.Mouse;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class CrystalSmall extends Sprite
-    {
+public class CrystalSmall extends Sprite {
 
         public static const ANIM_PULSE:int = 1;
         public static const ANIM_HOVER:int = 2;
@@ -67,8 +65,7 @@ public class CrystalSmall extends Sprite
         private var pulsePolarity:Boolean = false;
         private var glowFilter:GlowFilter;
 
-        public function CrystalSmall()
-        {
+        public function CrystalSmall(){
             var _local_1:BitmapData;
             var _local_2:uint;
             super();
@@ -80,7 +77,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 3)
             {
@@ -88,7 +85,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -96,7 +93,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 7)
             {
@@ -104,7 +101,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 5)
             {
@@ -112,7 +109,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_2 = 0;
             while (_local_2 < 8)
             {
@@ -120,7 +117,7 @@ public class CrystalSmall extends Sprite
                 _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0xFFFFFF, true);
                 this.crystalFrames.push(new Bitmap(_local_1));
                 _local_2++;
-            }
+            };
             _local_1 = AssetLibrary.getImageFromSet("lofiCharBig", 0x0100);
             _local_1 = TextureRedrawer.redraw(_local_1, this.size_, true, 0, true);
             this.crystal = new Bitmap(_local_1);
@@ -138,48 +135,39 @@ public class CrystalSmall extends Sprite
             this.setInactive();
         }
 
-        public function setXPos(_arg_1:Number):void
-        {
+        public function setXPos(_arg_1:Number):void{
             this.x = (_arg_1 - (this.width / 2));
         }
 
-        public function setYPos(_arg_1:Number):void
-        {
+        public function setYPos(_arg_1:Number):void{
             this.y = (_arg_1 - (this.height / 2));
         }
 
-        private function calculateXPos(_arg_1:Number):Number
-        {
+        private function calculateXPos(_arg_1:Number):Number{
             return (_arg_1 - (this.width / 2));
         }
 
-        private function calculateYPos(_arg_1:Number):Number
-        {
+        private function calculateYPos(_arg_1:Number):Number{
             return (_arg_1 - (this.height / 2));
         }
 
-        public function getCenterX():Number
-        {
+        public function getCenterX():Number{
             return (this.x + (this.width / 2));
         }
 
-        public function getCenterY():Number
-        {
+        public function getCenterY():Number{
             return (this.y + (this.height / 2));
         }
 
-        public function returnCenterX():Number
-        {
+        public function returnCenterX():Number{
             return (this.returnX + (this.width / 2));
         }
 
-        public function returnCenterY():Number
-        {
+        public function returnCenterY():Number{
             return (this.returnY + (this.width / 2));
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this.removeItemReveal();
             this.crystal = null;
@@ -188,21 +176,19 @@ public class CrystalSmall extends Sprite
             this.crystalFrames = null;
         }
 
-        public function setGlowState(_arg_1:int):void
-        {
+        public function setGlowState(_arg_1:int):void{
             this.glowState = _arg_1;
             if (this.glowState == GLOW_STATE_PULSE)
             {
                 this.glowFilter.alpha = 1;
-            }
+            };
         }
 
-        public function doItemReveal(_arg_1:int):void
-        {
+        public function doItemReveal(_arg_1:int):void{
             if (((this.parent == null) || (this.parent.parent == null)))
             {
                 return;
-            }
+            };
             this.removeItemReveal();
             this.item = new ItemWithTooltip(_arg_1);
             this.item.itemBitmap.alpha = 1;
@@ -219,24 +205,22 @@ public class CrystalSmall extends Sprite
             this.setInactive();
         }
 
-        public function removeItemReveal():void
-        {
+        public function removeItemReveal():void{
             if (((!(this.item == null)) && (this.item.parent)))
             {
                 parent.removeChild(this.item);
-            }
+            };
             if (((!(this.itemNameField == null)) && (this.itemNameField.parent)))
             {
                 parent.removeChild(this.itemNameField);
-            }
+            };
         }
 
-        public function doItemShow(_arg_1:int):void
-        {
+        public function doItemShow(_arg_1:int):void{
             if (((this.parent == null) || (this.parent.parent == null)))
             {
                 return;
-            }
+            };
             this.removeItemReveal();
             var _local_2:TextFormat = new TextFormat();
             _local_2.size = 18;
@@ -272,8 +256,7 @@ public class CrystalSmall extends Sprite
             this.setActive();
         }
 
-        public function doItemCenter(_arg_1:Number, _arg_2:Number):void
-        {
+        public function doItemCenter(_arg_1:Number, _arg_2:Number):void{
             this.returnX = this.x;
             this.returnY = this.y;
             var _local_3:Number = this.calculateXPos(_arg_1);
@@ -284,16 +267,14 @@ public class CrystalSmall extends Sprite
             });
         }
 
-        public function saveReturnPotion():void
-        {
+        public function saveReturnPotion():void{
             this.returnX = this.x;
             this.returnY = this.y;
             this.originX = this.returnCenterX();
             this.originY = this.returnCenterY();
         }
 
-        public function doItemReturn():void
-        {
+        public function doItemReturn():void{
             var _local_1:GTween = new GTween(this, 0.12, {
                 "x":this.returnX,
                 "y":this.returnY
@@ -302,40 +283,36 @@ public class CrystalSmall extends Sprite
             this.setGlowState(GLOW_STATE_PULSE);
         }
 
-        public function setActive():void
-        {
+        public function setActive():void{
             if (!this.active)
             {
                 this.crystal.alpha = 0;
                 this.crystalGrey.alpha = 1;
                 this.setAnimation(0, 3);
                 this.setAnimationDuration(100);
-            }
+            };
             this.active = true;
         }
 
-        public function setActive2():void
-        {
+        public function setActive2():void{
         }
 
-        public function setInactive():void
-        {
+        public function setInactive():void{
             if (this.active)
             {
                 if (this.crystal != null)
                 {
                     this.crystal.alpha = 1;
-                }
+                };
                 if (this.crystalGrey != null)
                 {
                     this.crystalGrey.alpha = 0;
-                }
-            }
+                };
+            };
             this.active = false;
         }
 
-        public function update(_arg_1:int, _arg_2:int):void
-        {
+        public function update(_arg_1:int, _arg_2:int):void{
             var _local_3:int;
             var _local_4:Number;
             if (this.active)
@@ -349,7 +326,7 @@ public class CrystalSmall extends Sprite
                 {
                     this.crystalGrey.alpha = 0;
                     this.crystal.alpha = 1;
-                }
+                };
             }
             else
             {
@@ -362,8 +339,8 @@ public class CrystalSmall extends Sprite
                 {
                     this.crystalGrey.alpha = 1;
                     this.crystal.alpha = 0;
-                }
-            }
+                };
+            };
             if (this.glowState == GLOW_STATE_FADE)
             {
                 this.glowFilter.alpha = (this.glowFilter.alpha - 0.07);
@@ -371,7 +348,7 @@ public class CrystalSmall extends Sprite
                 if (this.glowFilter.alpha <= 0.03)
                 {
                     this.filters = [];
-                }
+                };
             }
             else
             {
@@ -386,13 +363,13 @@ public class CrystalSmall extends Sprite
                         if (((this.glowFilter.alpha <= 0.5) && (!(this.pulsePolarity))))
                         {
                             this.pulsePolarity = true;
-                        }
-                    }
+                        };
+                    };
                     _local_3 = ((this.pulsePolarity) ? 1 : -1);
                     this.glowFilter.alpha = (this.glowFilter.alpha + (0.01 * _local_3));
                     this.filters = [this.glowFilter];
-                }
-            }
+                };
+            };
             if (this.isTrackingMouse_)
             {
                 _local_4 = this.squareDistanceTo(FortuneModal.fMouseX, FortuneModal.fMouseY);
@@ -401,7 +378,7 @@ public class CrystalSmall extends Sprite
                     if (this.currentAnimation != ANIM_HOVER)
                     {
                         this.setAnimationHover();
-                    }
+                    };
                     this.animationDuration_ = Math.max((_local_4 / 8), 70);
                     this.animationDuration_ = Math.min(this.animationDuration_, 170);
                 }
@@ -410,9 +387,9 @@ public class CrystalSmall extends Sprite
                     if (this.currentAnimation != ANIM_PULSE)
                     {
                         this.setAnimationPulse();
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (this.shake)
             {
                 this.setXPos((this.originX + ((Math.random() * 6) - 3)));
@@ -422,18 +399,16 @@ public class CrystalSmall extends Sprite
                 {
                     this.shake = false;
                     this.shakeCount = 0;
-                }
-            }
+                };
+            };
             this.drawAnimation(_arg_1, _arg_2);
         }
 
-        public function setShake(_arg_1:Boolean):void
-        {
+        public function setShake(_arg_1:Boolean):void{
             this.shake = _arg_1;
         }
 
-        public function drawAnimation(_arg_1:int, _arg_2:int):void
-        {
+        public function drawAnimation(_arg_1:int, _arg_2:int):void{
             if (this.active)
             {
                 removeChild(this.crystal);
@@ -448,8 +423,8 @@ public class CrystalSmall extends Sprite
                     if (this.frameOffset_ > this.numFramesofLoop_)
                     {
                         this.frameOffset_ = 0;
-                    }
-                }
+                    };
+                };
                 this.crystal = this.crystalFrames[(this.startFrame_ + this.frameOffset_)];
                 if (this.currentAnimation == ANIM_CLICKED)
                 {
@@ -464,46 +439,39 @@ public class CrystalSmall extends Sprite
                     {
                         this.scaleX = 0.01;
                         this.scaleY = 0.01;
-                    }
-                }
+                    };
+                };
                 addChild(this.crystal);
-            }
+            };
         }
 
-        public function setAnimationDuration(_arg_1:Number):void
-        {
+        public function setAnimationDuration(_arg_1:Number):void{
             this.animationDuration_ = _arg_1;
         }
 
-        public function onMouseOver(_arg_1:MouseEvent):void
-        {
+        public function onMouseOver(_arg_1:MouseEvent):void{
             Mouse.cursor = "hand";
         }
 
-        private function onMouseOutClip(_arg_1:MouseEvent):void
-        {
+        private function onMouseOutClip(_arg_1:MouseEvent):void{
             Mouse.cursor = Parameters.data_.cursorSelect;
         }
 
-        public function setMouseTracking(_arg_1:Boolean):void
-        {
+        public function setMouseTracking(_arg_1:Boolean):void{
             this.isTrackingMouse_ = _arg_1;
         }
 
-        private function squareDistanceTo(_arg_1:Number, _arg_2:Number):Number
-        {
+        private function squareDistanceTo(_arg_1:Number, _arg_2:Number):Number{
             return (((this.getCenterX() - _arg_1) * (this.getCenterX() - _arg_1)) + ((this.getCenterY() - _arg_2) * (this.getCenterY() - _arg_2)));
         }
 
-        public function reset():void
-        {
+        public function reset():void{
             this.active = false;
             this.animationDuration_ = 50;
             this.isTrackingMouse_ = false;
         }
 
-        public function setAnimation(_arg_1:Number, _arg_2:Number):void
-        {
+        public function setAnimation(_arg_1:Number, _arg_2:Number):void{
             this.startFrame_ = _arg_1;
             this.frameOffset_ = 0;
             this.dtBuildup_ = 0;
@@ -511,29 +479,25 @@ public class CrystalSmall extends Sprite
             this.currentAnimation = -1;
         }
 
-        public function setAnimationPulse():void
-        {
+        public function setAnimationPulse():void{
             this.setAnimation(0, 3);
             this.animationDuration_ = 250;
             this.currentAnimation = ANIM_PULSE;
         }
 
-        public function setAnimationHover():void
-        {
+        public function setAnimationHover():void{
             this.setAnimation(20, 13);
             this.currentAnimation = ANIM_HOVER;
         }
 
-        public function setAnimationClicked():void
-        {
+        public function setAnimationClicked():void{
             this.setAnimation(3, 3);
             this.animationDuration_ = 20;
             this.currentAnimation = ANIM_CLICKED;
             this.setMouseTracking(false);
         }
 
-        public function resetVars():void
-        {
+        public function resetVars():void{
             this.active = false;
             this.frameOffset_ = 0;
             this.currentAnimation = -1;

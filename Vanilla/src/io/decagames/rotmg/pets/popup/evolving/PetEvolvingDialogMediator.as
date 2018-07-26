@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.evolving.PetEvolvingDialogMediator
 
-package io.decagames.rotmg.pets.popup.evolving
-{
+package io.decagames.rotmg.pets.popup.evolving{
 import io.decagames.rotmg.ui.buttons.BaseButton;
 import io.decagames.rotmg.ui.buttons.SliceScalingButton;
 import io.decagames.rotmg.ui.popups.header.PopupHeader;
@@ -13,8 +12,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetEvolvingDialogMediator extends Mediator 
-    {
+public class PetEvolvingDialogMediator extends Mediator {
 
         [Inject]
         public var view:PetEvolvingDialog;
@@ -23,23 +21,20 @@ public class PetEvolvingDialogMediator extends Mediator
         private var closeButton:SliceScalingButton;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
             this.closeButton.clickSignal.addOnce(this.onClose);
             this.view.header.addButton(this.closeButton, PopupHeader.RIGHT_BUTTON);
             this.view.okButton.clickSignal.addOnce(this.onClose);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.closeButton.clickSignal.remove(this.onClose);
             this.closeButton.dispose();
             this.view.okButton.clickSignal.remove(this.onClose);
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 

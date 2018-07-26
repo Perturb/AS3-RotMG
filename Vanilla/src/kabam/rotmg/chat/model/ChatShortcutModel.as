@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.model.ChatShortcutModel
 
-package kabam.rotmg.chat.model
-{
+package kabam.rotmg.chat.model{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.options.Options;
 
-public class ChatShortcutModel 
-    {
+public class ChatShortcutModel {
 
         private var commandShortcut:int = 191;
         private var chatShortcut:int = 13;
@@ -19,33 +17,27 @@ public class ChatShortcutModel
         private var scrollDown:uint = 34;
 
 
-        public function getCommandShortcut():int
-        {
+        public function getCommandShortcut():int{
             return (Parameters.data_[Options.CHAT_COMMAND]);
         }
 
-        public function getChatShortcut():int
-        {
+        public function getChatShortcut():int{
             return (Parameters.data_[Options.CHAT]);
         }
 
-        public function getTellShortcut():int
-        {
+        public function getTellShortcut():int{
             return (Parameters.data_[Options.TELL]);
         }
 
-        public function getGuildShortcut():int
-        {
+        public function getGuildShortcut():int{
             return (Parameters.data_[Options.GUILD_CHAT]);
         }
 
-        public function getScrollUp():uint
-        {
+        public function getScrollUp():uint{
             return (Parameters.data_[Options.SCROLL_CHAT_UP]);
         }
 
-        public function getScrollDown():uint
-        {
+        public function getScrollDown():uint{
             return (Parameters.data_[Options.SCROLL_CHAT_DOWN]);
         }
 

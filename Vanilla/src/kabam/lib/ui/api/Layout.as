@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.ui.api.Layout
 
-package kabam.lib.ui.api
-{
+package kabam.lib.ui.api{
 import flash.display.DisplayObject;
 
-public interface Layout 
-    {
+public interface Layout {
 
         function getPadding():int;
         function setPadding(_arg_1:int):void;

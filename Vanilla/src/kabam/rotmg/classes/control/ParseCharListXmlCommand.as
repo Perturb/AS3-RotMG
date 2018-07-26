@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.ParseCharListXmlCommand
 
-package kabam.rotmg.classes.control
-{
+package kabam.rotmg.classes.control{
 import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
 
 import kabam.rotmg.classes.model.CharacterClass;
@@ -14,8 +13,7 @@ import kabam.rotmg.classes.model.ClassesModel;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class ParseCharListXmlCommand
-    {
+public class ParseCharListXmlCommand {
 
         [Inject]
         public var data:XML;
@@ -27,16 +25,14 @@ public class ParseCharListXmlCommand
         public var statsTracker:CharactersMetricsTracker;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.parseMaxLevelsAchieved();
             this.parseItemCosts();
             this.parseOwnership();
             this.statsTracker.parseCharListData(this.data);
         }
 
-        private function parseMaxLevelsAchieved():void
-        {
+        private function parseMaxLevelsAchieved():void{
             var _local_2:XML;
             var _local_3:CharacterClass;
             var _local_1:XMLList = this.data.MaxClassLevelList.MaxClassLevel;
@@ -44,11 +40,10 @@ public class ParseCharListXmlCommand
             {
                 _local_3 = this.model.getCharacterClass(_local_2.@classType);
                 _local_3.setMaxLevelAchieved(_local_2.@maxLevel);
-            }
+            };
         }
 
-        private function parseItemCosts():void
-        {
+        private function parseItemCosts():void{
             var _local_2:XML;
             var _local_3:CharacterSkin;
             var _local_1:XMLList = this.data.ItemCosts.ItemCost;
@@ -62,17 +57,16 @@ public class ParseCharListXmlCommand
                     if (((!(Boolean(int(_local_2.@purchasable)))) && (!(_local_3.id == 0))))
                     {
                         _local_3.setState(CharacterSkinState.UNLISTED);
-                    }
+                    };
                 }
                 else
                 {
                     this.logger.warn("Cannot set Character Skin cost: type {0} not found", [_local_2.@type]);
-                }
-            }
+                };
+            };
         }
 
-        private function parseOwnership():void
-        {
+        private function parseOwnership():void{
             var _local_2:int;
             var _local_3:CharacterSkin;
             var _local_1:Array = ((this.data.OwnedSkins.length()) ? this.data.OwnedSkins.split(",") : []);
@@ -86,8 +80,8 @@ public class ParseCharListXmlCommand
                 else
                 {
                     this.logger.warn("Cannot set Character Skin ownership: type {0} not found", [_local_2]);
-                }
-            }
+                };
+            };
         }
 
 

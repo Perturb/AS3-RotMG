@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.CreditDisplayMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
@@ -18,8 +17,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CreditDisplayMediator extends Mediator 
-    {
+public class CreditDisplayMediator extends Mediator {
 
         [Inject]
         public var view:CreditDisplay;
@@ -35,8 +33,7 @@ public class CreditDisplayMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.model.creditsChanged.add(this.onCreditsChanged);
             this.model.fameChanged.add(this.onFameChanged);
             this.model.tokensChanged.add(this.onTokensChanged);
@@ -48,7 +45,7 @@ public class CreditDisplayMediator extends Mediator
             else
             {
                 this.view.removeResourceButtons();
-            }
+            };
             if (((this.view.creditsButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.creditsButton.addEventListener(MouseEvent.CLICK, this.view.onCreditsClick, false, 0, true);
@@ -58,7 +55,7 @@ public class CreditDisplayMediator extends Mediator
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.creditsButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            }
+            };
             if (((this.view.fameButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.fameButton.addEventListener(MouseEvent.CLICK, this.view.onFameClick);
@@ -68,53 +65,47 @@ public class CreditDisplayMediator extends Mediator
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.fameButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            }
+            };
             this.view.displayFameTooltip.add(this.forceShowingTooltip);
         }
 
-        private function forceShowingTooltip():void
-        {
+        private function forceShowingTooltip():void{
             if (this.toolTip)
             {
                 this.hoverTooltipDelegate.getDisplayObject().dispatchEvent(new MouseEvent(MouseEvent.MOUSE_OVER, true));
                 this.toolTip.x = 267;
                 this.toolTip.y = 41;
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.model.creditsChanged.remove(this.onCreditsChanged);
             this.model.fameChanged.remove(this.onFameChanged);
             this.view.openAccountDialog.remove(this.onOpenAccountDialog);
             if (((this.view.fameButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.fameButton.removeEventListener(MouseEvent.CLICK, this.view.onFameClick);
-            }
+            };
             if (((this.view.creditsButton) && ((!(this.view.gs == null)) && (this.view.gs.map.name_ == Map.NEXUS))))
             {
                 this.view.creditsButton.removeEventListener(MouseEvent.CLICK, this.view.onCreditsClick);
-            }
+            };
             this.view.displayFameTooltip.remove(this.forceShowingTooltip);
         }
 
-        private function onCreditsChanged(_arg_1:int):void
-        {
+        private function onCreditsChanged(_arg_1:int):void{
             this.view.draw(_arg_1, this.model.getFame());
         }
 
-        private function onFameChanged(_arg_1:int):void
-        {
+        private function onFameChanged(_arg_1:int):void{
             this.view.draw(this.model.getCredits(), _arg_1);
         }
 
-        private function onTokensChanged(_arg_1:int):void
-        {
+        private function onTokensChanged(_arg_1:int):void{
             this.view.draw(this.model.getCredits(), this.model.getFame(), _arg_1);
         }
 
-        private function onOpenAccountDialog():void
-        {
+        private function onOpenAccountDialog():void{
             this.openMoneyWindow.dispatch();
         }
 

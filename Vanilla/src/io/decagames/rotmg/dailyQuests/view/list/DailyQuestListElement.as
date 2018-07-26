@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElement
 
-package io.decagames.rotmg.dailyQuests.view.list
-{
+package io.decagames.rotmg.dailyQuests.view.list{
 import flash.display.Bitmap;
 import flash.display.Sprite;
 import flash.filters.BitmapFilterQuality;
@@ -15,8 +14,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class DailyQuestListElement extends Sprite 
-    {
+public class DailyQuestListElement extends Sprite {
 
         private var _id:String;
         private var _questName:String;
@@ -29,8 +27,7 @@ public class DailyQuestListElement extends Sprite
         private var questNameTextfield:UILabel;
         private var category:int;
 
-        public function DailyQuestListElement(_arg_1:String, _arg_2:String, _arg_3:Boolean, _arg_4:Boolean, _arg_5:int)
-        {
+        public function DailyQuestListElement(_arg_1:String, _arg_2:String, _arg_3:Boolean, _arg_4:Boolean, _arg_5:int){
             this._id = _arg_1;
             this._questName = _arg_2;
             this._completed = _arg_3;
@@ -39,14 +36,12 @@ public class DailyQuestListElement extends Sprite
             this.setElements();
         }
 
-        public function set isSelected(_arg_1:Boolean):void
-        {
+        public function set isSelected(_arg_1:Boolean):void{
             this._isSelected = _arg_1;
             this.draw();
         }
 
-        private function setElements():void
-        {
+        private function setElements():void{
             this.selectedBorder = new Sprite();
             this.background = TextureParser.instance.getSliceScalingBitmap("UI", "daily_quest_list_element_grey", 190);
             this.icon = TextureParser.instance.getTexture("UI", "daily_quest_list_element_available_icon");
@@ -65,8 +60,7 @@ public class DailyQuestListElement extends Sprite
             this.draw();
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             removeChild(this.icon);
             removeChild(this.background);
             if (this._completed)
@@ -82,8 +76,8 @@ public class DailyQuestListElement extends Sprite
                 else
                 {
                     this.icon = TextureParser.instance.getTexture("UI", "daily_quest_list_element_available_icon");
-                }
-            }
+                };
+            };
             this.icon.x = 5;
             this.icon.y = 5;
             if (this._isSelected)
@@ -99,8 +93,8 @@ public class DailyQuestListElement extends Sprite
                 else
                 {
                     this.background = TextureParser.instance.getSliceScalingBitmap("UI", "daily_quest_list_element_grey", 190);
-                }
-            }
+                };
+            };
             DefaultLabelFormat.questNameListLabel(this.questNameTextfield, ((this.category == 3) ? 2201331 : (((this._completed) || (this._isSelected)) ? 0xFFFFFF : 0xCFCFCF)));
             this.questNameTextfield.alpha = (((this._completed) || (this._isSelected)) ? 1 : 0.5);
             this.background.height = 30;
@@ -109,8 +103,7 @@ public class DailyQuestListElement extends Sprite
             addChild(this.questNameTextfield);
         }
 
-        public function get id():String
-        {
+        public function get id():String{
             return (this._id);
         }
 

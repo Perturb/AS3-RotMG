@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.RankText
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.assembleegameclient.util.FameUtil;
 
 import flash.display.Sprite;
@@ -16,8 +15,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class RankText extends Sprite
-    {
+public class RankText extends Sprite {
 
         public var background:Sprite = null;
         public var largeText_:Boolean;
@@ -26,8 +24,7 @@ public class RankText extends Sprite
         private var waiter:SignalWaiter = new SignalWaiter();
         private var icon:Sprite;
 
-        public function RankText(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean)
-        {
+        public function RankText(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean){
             this.largeText_ = _arg_2;
             if (_arg_3)
             {
@@ -36,14 +33,13 @@ public class RankText extends Sprite
                 this.prefix_.filters = [new DropShadowFilter(0, 0, 0)];
                 this.prefix_.textChanged.addOnce(this.position);
                 addChild(this.prefix_);
-            }
+            };
             mouseEnabled = false;
             mouseChildren = false;
             this.draw(_arg_1);
         }
 
-        public function makeText():TextFieldDisplayConcrete
-        {
+        public function makeText():TextFieldDisplayConcrete{
             var _local_1:int = ((this.largeText_) ? 18 : 16);
             var _local_2:TextFieldDisplayConcrete = new TextFieldDisplayConcrete();
             _local_2.setSize(_local_1).setColor(0xB3B3B3);
@@ -51,12 +47,10 @@ public class RankText extends Sprite
             return (_local_2);
         }
 
-        public function draw(numStars:int):void
-        {
+        public function draw(numStars:int):void{
             var text:TextFieldDisplayConcrete;
             var onTextChanged:Function;
-            onTextChanged = function ():void
-            {
+            onTextChanged = function ():void{
                 text.y = text.height;
                 icon.x = (text.width + 2);
                 icon.y = (text.y - icon.height);
@@ -71,16 +65,16 @@ public class RankText extends Sprite
             if (numStars == this.numStars_)
             {
                 return;
-            }
+            };
             this.numStars_ = numStars;
             if (((!(this.background == null)) && (contains(this.background))))
             {
                 removeChild(this.background);
-            }
+            };
             if (this.numStars_ < 0)
             {
                 return;
-            }
+            };
             this.background = new Sprite();
             text = this.makeText();
             text.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
@@ -94,11 +88,10 @@ public class RankText extends Sprite
             if (this.prefix_ != null)
             {
                 this.positionWhenTextIsReady();
-            }
+            };
         }
 
-        private function positionWhenTextIsReady():void
-        {
+        private function positionWhenTextIsReady():void{
             if (this.waiter.isEmpty())
             {
                 this.position();
@@ -106,16 +99,15 @@ public class RankText extends Sprite
             else
             {
                 this.waiter.complete.addOnce(this.position);
-            }
+            };
         }
 
-        private function position():void
-        {
+        private function position():void{
             if (this.prefix_)
             {
                 this.background.x = this.prefix_.width;
                 this.prefix_.y = (this.icon.y - 3);
-            }
+            };
         }
 
 

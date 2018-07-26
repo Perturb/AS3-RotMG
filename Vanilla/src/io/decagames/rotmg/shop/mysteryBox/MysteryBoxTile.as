@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.MysteryBoxTile
 
-package io.decagames.rotmg.shop.mysteryBox
-{
+package io.decagames.rotmg.shop.mysteryBox{
 import flash.geom.Point;
 
 import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
@@ -13,8 +12,7 @@ import io.decagames.rotmg.ui.gird.UIGrid;
 
 import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
-public class MysteryBoxTile extends GenericBoxTile
-    {
+public class MysteryBoxTile extends GenericBoxTile {
 
         private var displayedItemsGrid:UIGrid;
         private var maxResultHeight:int = 75;
@@ -22,14 +20,12 @@ public class MysteryBoxTile extends GenericBoxTile
         private var resultElementWidth:int;
         private var gridConfig:Point;
 
-        public function MysteryBoxTile(_arg_1:MysteryBoxInfo)
-        {
+        public function MysteryBoxTile(_arg_1:MysteryBoxInfo){
             buyButtonBitmapBackground = "shop_box_button_background";
             super(_arg_1);
         }
 
-        private function prepareResultGrid(_arg_1:int):void
-        {
+        private function prepareResultGrid(_arg_1:int):void{
             this.maxResultWidth = 160;
             this.gridConfig = this.calculateGrid(_arg_1);
             this.resultElementWidth = this.calculateElementSize(this.gridConfig);
@@ -40,8 +36,7 @@ public class MysteryBoxTile extends GenericBoxTile
             addChild(this.displayedItemsGrid);
         }
 
-        private function calculateGrid(_arg_1:int):Point
-        {
+        private function calculateGrid(_arg_1:int):Point{
             var _local_5:int;
             var _local_6:int;
             var _local_2:Point = new Point(11, 4);
@@ -49,7 +44,7 @@ public class MysteryBoxTile extends GenericBoxTile
             if (_arg_1 >= (_local_2.x * _local_2.y))
             {
                 return (_local_2);
-            }
+            };
             var _local_4:int = 11;
             while (_local_4 >= 1)
             {
@@ -74,45 +69,43 @@ public class MysteryBoxTile extends GenericBoxTile
                                     {
                                         _local_3 = _local_6;
                                         _local_2 = new Point(_local_4, _local_5);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                                    };
+                                };
+                            };
+                        };
+                    };
                     _local_5--;
-                }
+                };
                 _local_4--;
-            }
+            };
             return (_local_2);
         }
 
-        private function calculateElementSize(_arg_1:Point):int
-        {
+        private function calculateElementSize(_arg_1:Point):int{
             var _local_2:int = int(Math.floor((this.maxResultHeight / _arg_1.y)));
             if ((_local_2 * _arg_1.x) > this.maxResultWidth)
             {
                 _local_2 = int(Math.floor((this.maxResultWidth / _arg_1.x)));
-            }
+            };
             if ((_local_2 * _arg_1.y) > this.maxResultHeight)
             {
                 return (-1);
-            }
+            };
             return (_local_2);
         }
 
-        override protected function createBoxBackground():void
-        {
+        override protected function createBoxBackground():void{
             var _local_2:int;
             var _local_4:UIItemContainer;
             var _local_1:Array = MysteryBoxInfo(_boxInfo).displayedItems.split(",");
             if (((_local_1.length == 0) || (MysteryBoxInfo(_boxInfo).displayedItems == "")))
             {
                 return;
-            }
+            };
             if (_infoButton)
             {
                 _infoButton.alpha = 0;
-            }
+            };
             switch (_local_1.length)
             {
                 case 1:
@@ -122,7 +115,7 @@ public class MysteryBoxTile extends GenericBoxTile
                     break;
                 case 3:
                     break;
-            }
+            };
             this.prepareResultGrid(_local_1.length);
             var _local_3:int;
             while (_local_3 < _local_1.length)
@@ -130,11 +123,10 @@ public class MysteryBoxTile extends GenericBoxTile
                 _local_4 = new UIItemContainer(_local_1[_local_3], 0, 0, this.resultElementWidth);
                 this.displayedItemsGrid.addGridElement(_local_4);
                 _local_3++;
-            }
+            };
         }
 
-        override public function resize(_arg_1:int, _arg_2:int=-1):void
-        {
+        override public function resize(_arg_1:int, _arg_2:int=-1):void{
             background.width = _arg_1;
             backgroundTitle.width = _arg_1;
             backgroundButton.width = _arg_1;
@@ -150,18 +142,17 @@ public class MysteryBoxTile extends GenericBoxTile
             if (this.displayedItemsGrid)
             {
                 this.displayedItemsGrid.x = (10 + Math.round(((this.maxResultWidth - (this.resultElementWidth * this.gridConfig.x)) / 2)));
-            }
+            };
             updateTimeEndString();
             updateSaleLabel();
             updateClickMask(_arg_1);
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             if (this.displayedItemsGrid)
             {
                 this.displayedItemsGrid.dispose();
-            }
+            };
             super.dispose();
         }
 

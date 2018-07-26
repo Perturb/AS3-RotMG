@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.MEMap
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.adobe.images.PNGEncoder;
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.map.RegionLibrary;
@@ -28,8 +27,7 @@ import flash.ui.Keyboard;
 import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 
-internal class MEMap extends Sprite
-    {
+internal class MEMap extends Sprite {
 
         private static var transbackgroundEmbed_:Class = MEMap_transbackgroundEmbed_;
         private static var transbackgroundBD_:BitmapData = new transbackgroundEmbed_().bitmapData;
@@ -58,8 +56,7 @@ internal class MEMap extends Sprite
         private var ifShowGroundLayer_:Boolean = true;
         private var ifShowRegionLayer_:Boolean = true;
 
-        public function MEMap()
-        {
+        public function MEMap(){
             graphics.beginBitmapFill(transbackgroundBD_, null, true);
             graphics.drawRect(0, 0, SIZE, SIZE);
             addChild(new Bitmap(this.map_));
@@ -72,34 +69,28 @@ internal class MEMap extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private static function minZoom():Number
-        {
+        private static function minZoom():Number{
             return ((SQUARE_SIZE / NUM_SQUARES) * 2);
         }
 
-        private static function maxZoom():Number
-        {
+        private static function maxZoom():Number{
             return (SQUARE_SIZE);
         }
 
 
-        public function set ifShowObjectLayer(_arg_1:Boolean):void
-        {
+        public function set ifShowObjectLayer(_arg_1:Boolean):void{
             this.ifShowObjectLayer_ = _arg_1;
         }
 
-        public function set ifShowGroundLayer(_arg_1:Boolean):void
-        {
+        public function set ifShowGroundLayer(_arg_1:Boolean):void{
             this.ifShowGroundLayer_ = _arg_1;
         }
 
-        public function set ifShowRegionLayer(_arg_1:Boolean):void
-        {
+        public function set ifShowRegionLayer(_arg_1:Boolean):void{
             this.ifShowRegionLayer_ = _arg_1;
         }
 
-        public function resize(_arg_1:Number):void
-        {
+        public function resize(_arg_1:Number):void{
             var _local_4:METile;
             var _local_5:int;
             var _local_6:int;
@@ -129,34 +120,31 @@ internal class MEMap extends Sprite
                     if (((_local_6 < NUM_SQUARES) && (_local_7 < NUM_SQUARES)))
                     {
                         this.setTile(_local_6, _local_7, _local_4);
-                    }
-                }
-            }
+                    };
+                };
+            };
             _local_2 = null;
         }
 
-        public function getType(_arg_1:int, _arg_2:int, _arg_3:int):int
-        {
+        public function getType(_arg_1:int, _arg_2:int, _arg_3:int):int{
             var _local_4:METile = this.getTile(_arg_1, _arg_2);
             if (_local_4 == null)
             {
                 return (-1);
-            }
+            };
             return (_local_4.types_[_arg_3]);
         }
 
-        public function getTile(_arg_1:int, _arg_2:int):METile
-        {
+        public function getTile(_arg_1:int, _arg_2:int):METile{
             return (this.tileDict_[(_arg_1 + (_arg_2 * NUM_SQUARES))]);
         }
 
-        public function modifyTile(x:int, y:int, layer:int, type:int):void
-        {
+        public function modifyTile(x:int, y:int, layer:int, type:int):void{
             var tile:METile = this.getOrCreateTile(x, y);
             if (tile.types_[layer] == type)
             {
                 return;
-            }
+            };
             tile.types_[layer] = type;
             try
             {
@@ -165,27 +153,24 @@ internal class MEMap extends Sprite
             catch(error:Error)
             {
                 throw (new Error((((((("Invalid type: 0x" + type.toString(16)) + " at location: ") + x) + " x, ") + y) + " y")));
-            }
+            };
         }
 
-        public function getObjectName(_arg_1:int, _arg_2:int):String
-        {
+        public function getObjectName(_arg_1:int, _arg_2:int):String{
             var _local_3:METile = this.getTile(_arg_1, _arg_2);
             if (_local_3 == null)
             {
                 return (null);
-            }
+            };
             return (_local_3.objName_);
         }
 
-        public function modifyObjectName(_arg_1:int, _arg_2:int, _arg_3:String):void
-        {
+        public function modifyObjectName(_arg_1:int, _arg_2:int, _arg_3:String):void{
             var _local_4:METile = this.getOrCreateTile(_arg_1, _arg_2);
             _local_4.objName_ = _arg_3;
         }
 
-        public function getAllTiles():Vector.<IntPoint>
-        {
+        public function getAllTiles():Vector.<IntPoint>{
             var _local_2:String;
             var _local_3:int;
             var _local_1:Vector.<IntPoint> = new Vector.<IntPoint>();
@@ -193,41 +178,36 @@ internal class MEMap extends Sprite
             {
                 _local_3 = int(_local_2);
                 _local_1.push(new IntPoint((_local_3 % NUM_SQUARES), (_local_3 / NUM_SQUARES)));
-            }
+            };
             return (_local_1);
         }
 
-        public function setTile(_arg_1:int, _arg_2:int, _arg_3:METile):void
-        {
+        public function setTile(_arg_1:int, _arg_2:int, _arg_3:METile):void{
             _arg_3 = _arg_3.clone();
             this.tileDict_[(_arg_1 + (_arg_2 * NUM_SQUARES))] = _arg_3;
             this.drawTile(_arg_1, _arg_2, _arg_3);
             _arg_3 = null;
         }
 
-        public function eraseTile(_arg_1:int, _arg_2:int):void
-        {
+        public function eraseTile(_arg_1:int, _arg_2:int):void{
             this.clearTile(_arg_1, _arg_2);
             this.drawTile(_arg_1, _arg_2, null);
         }
 
-        public function toggleLayers(_arg_1:Array):void
-        {
+        public function toggleLayers(_arg_1:Array):void{
         }
 
-        public function clear():void
-        {
+        public function clear():void{
             var _local_1:String;
             var _local_2:int;
             for (_local_1 in this.tileDict_)
             {
                 _local_2 = int(_local_1);
                 this.eraseTile((_local_2 % NUM_SQUARES), (_local_2 / NUM_SQUARES));
-            }
+            };
         }
 
-        public function getTileBounds():Rectangle
-        {
+        public function getTileBounds():Rectangle{
             var _local_5:String;
             var _local_6:METile;
             var _local_7:int;
@@ -248,59 +228,55 @@ internal class MEMap extends Sprite
                     if (_local_8 < _local_1)
                     {
                         _local_1 = _local_8;
-                    }
+                    };
                     if (_local_9 < _local_2)
                     {
                         _local_2 = _local_9;
-                    }
+                    };
                     if ((_local_8 + 1) > _local_3)
                     {
                         _local_3 = (_local_8 + 1);
-                    }
+                    };
                     if ((_local_9 + 1) > _local_4)
                     {
                         _local_4 = (_local_9 + 1);
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (_local_1 > _local_3)
             {
                 return (null);
-            }
+            };
             return (new Rectangle(_local_1, _local_2, (_local_3 - _local_1), (_local_4 - _local_2)));
         }
 
-        private function sizeInTiles():int
-        {
+        private function sizeInTiles():int{
             return (SIZE / (SQUARE_SIZE * this.zoom_));
         }
 
-        private function modifyZoom(_arg_1:Number):void
-        {
+        private function modifyZoom(_arg_1:Number):void{
             if ((((_arg_1 > 1) && (this.zoom_ >= maxZoom())) || ((_arg_1 < 1) && (this.zoom_ <= minZoom()))))
             {
                 return;
-            }
+            };
             var _local_2:IntPoint = this.mousePosT();
             this.zoom_ = (this.zoom_ * _arg_1);
             var _local_3:IntPoint = this.mousePosT();
             this.movePosT((_local_2.x_ - _local_3.x_), (_local_2.y_ - _local_3.y_));
         }
 
-        private function setZoom(_arg_1:Number):void
-        {
+        private function setZoom(_arg_1:Number):void{
             if (((_arg_1 > maxZoom()) || (_arg_1 < minZoom())))
             {
                 return;
-            }
+            };
             var _local_2:IntPoint = this.mousePosT();
             this.zoom_ = _arg_1;
             var _local_3:IntPoint = this.mousePosT();
             this.movePosT((_local_2.x_ - _local_3.x_), (_local_2.y_ - _local_3.y_));
         }
 
-        public function setMinZoom(_arg_1:Number=0):void
-        {
+        public function setMinZoom(_arg_1:Number=0):void{
             if (_arg_1 != 0)
             {
                 this.setZoom(_arg_1);
@@ -308,111 +284,98 @@ internal class MEMap extends Sprite
             else
             {
                 this.setZoom(minZoom());
-            }
+            };
         }
 
-        private function canMove():Boolean
-        {
+        private function canMove():Boolean{
             return ((this.mouseRectAnchorT_ == null) && (this.mouseMoveAnchorT_ == null));
         }
 
-        private function increaseZoom():void
-        {
+        private function increaseZoom():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.modifyZoom(2);
             this.draw();
         }
 
-        private function decreaseZoom():void
-        {
+        private function decreaseZoom():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.modifyZoom(0.5);
             this.draw();
         }
 
-        private function moveLeft():void
-        {
+        private function moveLeft():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.movePosT(-1, 0);
             this.draw();
         }
 
-        private function moveRight():void
-        {
+        private function moveRight():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.movePosT(1, 0);
             this.draw();
         }
 
-        private function moveUp():void
-        {
+        private function moveUp():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.movePosT(0, -1);
             this.draw();
         }
 
-        private function moveDown():void
-        {
+        private function moveDown():void{
             if (!this.canMove())
             {
                 return;
-            }
+            };
             this.movePosT(0, 1);
             this.draw();
         }
 
-        private function movePosT(_arg_1:int, _arg_2:int):void
-        {
+        private function movePosT(_arg_1:int, _arg_2:int):void{
             var _local_3:int;
             var _local_4:int = (NUM_SQUARES - this.sizeInTiles());
             this.posT_.x_ = Math.max(_local_3, Math.min(_local_4, (this.posT_.x_ + _arg_1)));
             this.posT_.y_ = Math.max(_local_3, Math.min(_local_4, (this.posT_.y_ + _arg_2)));
         }
 
-        private function mousePosT():IntPoint
-        {
+        private function mousePosT():IntPoint{
             var _local_1:int = Math.max(0, Math.min((SIZE - 1), mouseX));
             var _local_2:int = Math.max(0, Math.min((SIZE - 1), mouseY));
             return (new IntPoint((this.posT_.x_ + (_local_1 / (SQUARE_SIZE * this.zoom_))), (this.posT_.y_ + (_local_2 / (SQUARE_SIZE * this.zoom_)))));
         }
 
-        public function mouseRectT():Rectangle
-        {
+        public function mouseRectT():Rectangle{
             var _local_1:IntPoint = this.mousePosT();
             if (this.mouseRectAnchorT_ == null)
             {
                 return (new Rectangle(_local_1.x_, _local_1.y_, 1, 1));
-            }
+            };
             return (new Rectangle(Math.min(_local_1.x_, this.mouseRectAnchorT_.x_), Math.min(_local_1.y_, this.mouseRectAnchorT_.y_), (Math.abs((_local_1.x_ - this.mouseRectAnchorT_.x_)) + 1), (Math.abs((_local_1.y_ - this.mouseRectAnchorT_.y_)) + 1)));
         }
 
-        private function posTToPosP(_arg_1:IntPoint):IntPoint
-        {
+        private function posTToPosP(_arg_1:IntPoint):IntPoint{
             return (new IntPoint((((_arg_1.x_ - this.posT_.x_) * SQUARE_SIZE) * this.zoom_), (((_arg_1.y_ - this.posT_.y_) * SQUARE_SIZE) * this.zoom_)));
         }
 
-        private function sizeTToSizeP(_arg_1:int):Number
-        {
+        private function sizeTToSizeP(_arg_1:int):Number{
             return ((_arg_1 * this.zoom_) * SQUARE_SIZE);
         }
 
-        private function mouseRectP():Rectangle
-        {
+        private function mouseRectP():Rectangle{
             var _local_1:Rectangle = this.mouseRectT();
             var _local_2:IntPoint = this.posTToPosP(new IntPoint(_local_1.x, _local_1.y));
             _local_1.x = _local_2.x_;
@@ -422,8 +385,7 @@ internal class MEMap extends Sprite
             return (_local_1);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
             addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
@@ -432,8 +394,7 @@ internal class MEMap extends Sprite
             stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
             removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
@@ -441,8 +402,7 @@ internal class MEMap extends Sprite
             stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             switch (_arg_1.keyCode)
             {
                 case Keyboard.SHIFT:
@@ -473,11 +433,10 @@ internal class MEMap extends Sprite
                 case KeyCodes.EQUAL:
                     this.increaseZoom();
                     return;
-            }
+            };
         }
 
-        private function onKeyUp(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyUp(_arg_1:KeyboardEvent):void{
             switch (_arg_1.keyCode)
             {
                 case Keyboard.SHIFT:
@@ -488,21 +447,18 @@ internal class MEMap extends Sprite
                     this.mouseMoveAnchorT_ = null;
                     this.draw();
                     return;
-            }
+            };
         }
 
-        public function clearSelectRect():void
-        {
+        public function clearSelectRect():void{
             this.mouseRectAnchorT_ = null;
             this.anchorLock = false;
         }
 
-        private function onMouseRightClick(_arg_1:MouseEvent):void
-        {
+        private function onMouseRightClick(_arg_1:MouseEvent):void{
         }
 
-        private function onMouseWheel(_arg_1:MouseEvent):void
-        {
+        private function onMouseWheel(_arg_1:MouseEvent):void{
             if (_arg_1.delta > 0)
             {
                 this.increaseZoom();
@@ -512,12 +468,11 @@ internal class MEMap extends Sprite
                 if (_arg_1.delta < 0)
                 {
                     this.decreaseZoom();
-                }
-            }
+                };
+            };
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             var _local_7:int;
             var _local_2:Rectangle = this.mouseRectT();
             var _local_3:Vector.<IntPoint> = new Vector.<IntPoint>();
@@ -531,27 +486,24 @@ internal class MEMap extends Sprite
                 {
                     _local_3.push(new IntPoint(_local_6, _local_7));
                     _local_7++;
-                }
+                };
                 _local_6++;
-            }
+            };
             dispatchEvent(new TilesEvent(_local_3));
         }
 
-        public function freezeSelect():void
-        {
+        public function freezeSelect():void{
             var _local_1:Rectangle = this.mouseRectT();
             this.rectWidthOverride = _local_1.width;
             this.rectHeightOverride = _local_1.height;
         }
 
-        public function clearSelect():void
-        {
+        public function clearSelect():void{
             this.rectHeightOverride = 0;
             this.rectWidthOverride = 0;
         }
 
-        private function onMouseMove(_arg_1:MouseEvent):void
-        {
+        private function onMouseMove(_arg_1:MouseEvent):void{
             var _local_2:IntPoint;
             if (!_arg_1.shiftKey)
             {
@@ -562,8 +514,8 @@ internal class MEMap extends Sprite
                 if (this.mouseRectAnchorT_ == null)
                 {
                     this.mouseRectAnchorT_ = this.mousePosT();
-                }
-            }
+                };
+            };
             if (!_arg_1.ctrlKey)
             {
                 this.mouseMoveAnchorT_ = null;
@@ -573,12 +525,12 @@ internal class MEMap extends Sprite
                 if (this.mouseMoveAnchorT_ == null)
                 {
                     this.mouseMoveAnchorT_ = this.mousePosT();
-                }
-            }
+                };
+            };
             if (_arg_1.buttonDown)
             {
                 dispatchEvent(new TilesEvent(new <IntPoint>[this.mousePosT()]));
-            }
+            };
             if (this.mouseMoveAnchorT_ != null)
             {
                 _local_2 = this.mousePosT();
@@ -588,29 +540,26 @@ internal class MEMap extends Sprite
             else
             {
                 this.drawOverlay();
-            }
+            };
         }
 
-        private function getOrCreateTile(_arg_1:int, _arg_2:int):METile
-        {
+        private function getOrCreateTile(_arg_1:int, _arg_2:int):METile{
             var _local_3:int = (_arg_1 + (_arg_2 * NUM_SQUARES));
             var _local_4:METile = this.tileDict_[_local_3];
             if (_local_4 != null)
             {
                 return (_local_4);
-            }
+            };
             _local_4 = new METile();
             this.tileDict_[_local_3] = _local_4;
             return (_local_4);
         }
 
-        private function clearTile(_arg_1:int, _arg_2:int):void
-        {
+        private function clearTile(_arg_1:int, _arg_2:int):void{
             delete this.tileDict_[(_arg_1 + (_arg_2 * NUM_SQUARES))];
         }
 
-        private function drawTile(_arg_1:int, _arg_2:int, _arg_3:METile):void
-        {
+        private function drawTile(_arg_1:int, _arg_2:int, _arg_3:METile):void{
             var _local_5:BitmapData;
             var _local_6:BitmapData;
             var _local_7:uint;
@@ -624,12 +573,12 @@ internal class MEMap extends Sprite
                 this.groundLayer_.erase(_local_4);
                 this.objectLayer_.erase(_local_4);
                 return;
-            }
+            };
             if (_arg_3.types_[Layer.GROUND] != -1)
             {
                 _local_5 = GroundLibrary.getBitmapData(_arg_3.types_[Layer.GROUND]);
                 this.groundLayer_.copyTo(_local_5, _local_5.rect, _local_4);
-            }
+            };
             if (_arg_3.types_[Layer.OBJECT] != -1)
             {
                 _local_6 = ObjectLibrary.getTextureFromType(_arg_3.types_[Layer.OBJECT]);
@@ -640,17 +589,16 @@ internal class MEMap extends Sprite
                 else
                 {
                     this.objectLayer_.copyTo(_local_6, _local_6.rect, _local_4);
-                }
-            }
+                };
+            };
             if (_arg_3.types_[Layer.REGION] != -1)
             {
                 _local_7 = RegionLibrary.getColor(_arg_3.types_[Layer.REGION]);
                 this.regionMap_.setPixel32(_arg_1, _arg_2, (0x5F000000 | _local_7));
-            }
+            };
         }
 
-        private function drawOverlay():void
-        {
+        private function drawOverlay():void{
             var _local_1:Rectangle = this.mouseRectP();
             var _local_2:Graphics = this.overlay_.graphics;
             _local_2.clear();
@@ -661,8 +609,7 @@ internal class MEMap extends Sprite
             _local_2.lineStyle();
         }
 
-        public function draw():void
-        {
+        public function draw():void{
             var _local_2:Matrix;
             var _local_3:int;
             var _local_4:BitmapData;
@@ -671,11 +618,11 @@ internal class MEMap extends Sprite
             if (this.ifShowGroundLayer_)
             {
                 this.groundLayer_.copyFrom(new Rectangle((this.posT_.x_ * SQUARE_SIZE), (this.posT_.y_ * SQUARE_SIZE), _local_1, _local_1), this.map_, this.map_.rect);
-            }
+            };
             if (this.ifShowObjectLayer_)
             {
                 this.objectLayer_.copyFrom(new Rectangle((this.posT_.x_ * SQUARE_SIZE), (this.posT_.y_ * SQUARE_SIZE), _local_1, _local_1), this.map_, this.map_.rect);
-            }
+            };
             if (this.ifShowRegionLayer_)
             {
                 _local_2 = new Matrix();
@@ -693,13 +640,12 @@ internal class MEMap extends Sprite
                     _local_2.translate(-(this.posT_.x_), -(this.posT_.y_));
                     _local_2.scale(_local_3, _local_3);
                     this.map_.draw(this.regionMap_, _local_2, null, null, this.map_.rect);
-                }
-            }
+                };
+            };
             this.drawOverlay();
         }
 
-        private function generateThumbnail():ByteArray
-        {
+        private function generateThumbnail():ByteArray{
             var _local_1:Rectangle = this.getTileBounds();
             var _local_2:int = 8;
             var _local_3:BitmapData = new BitmapData((_local_1.width * _local_2), (_local_1.height * _local_2));
@@ -713,8 +659,7 @@ internal class MEMap extends Sprite
             return (PNGEncoder.encode(_local_3));
         }
 
-        public function getMapStatistics():Object
-        {
+        public function getMapStatistics():Object{
             var _local_6:METile;
             var _local_1:int;
             var _local_2:int;
@@ -727,23 +672,23 @@ internal class MEMap extends Sprite
                 if (_local_6.types_[Layer.GROUND] != -1)
                 {
                     _local_1++;
-                }
+                };
                 if (_local_6.types_[Layer.OBJECT] != -1)
                 {
                     _local_2++;
-                }
+                };
                 if (_local_6.types_[Layer.REGION] != -1)
                 {
                     if (_local_6.types_[Layer.REGION] == RegionLibrary.EXIT_REGION_TYPE)
                     {
                         _local_3++;
-                    }
+                    };
                     if (_local_6.types_[Layer.REGION] == RegionLibrary.ENTRY_REGION_TYPE)
                     {
                         _local_4++;
-                    }
-                }
-            }
+                    };
+                };
+            };
             return ({
                 "numObjects":_local_2,
                 "numGrounds":_local_1,

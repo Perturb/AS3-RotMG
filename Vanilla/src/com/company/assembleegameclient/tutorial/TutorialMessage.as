@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.tutorial.TutorialMessage
 
-package com.company.assembleegameclient.tutorial
-{
+package com.company.assembleegameclient.tutorial{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.util.GraphicsUtil;
 
@@ -24,8 +23,7 @@ import flash.utils.getTimer;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class TutorialMessage extends Sprite
-    {
+public class TutorialMessage extends Sprite {
 
         public static const BORDER:int = 8;
 
@@ -40,8 +38,7 @@ public class TutorialMessage extends Sprite
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, fill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-        public function TutorialMessage(_arg_1:Tutorial, _arg_2:String, _arg_3:Boolean, _arg_4:Rectangle)
-        {
+        public function TutorialMessage(_arg_1:Tutorial, _arg_2:String, _arg_3:Boolean, _arg_4:Rectangle){
             this.tutorial_ = _arg_1;
             this.rect_ = _arg_4.clone();
             x = this.rect_.x;
@@ -58,13 +55,12 @@ public class TutorialMessage extends Sprite
                 this.nextButton_.addEventListener(MouseEvent.CLICK, this.onNextButton);
                 this.nextButton_.x = ((this.rect_.width - this.nextButton_.width) - 20);
                 this.nextButton_.y = ((this.rect_.height - this.nextButton_.height) - 10);
-            }
+            };
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function drawRect():void
-        {
+        private function drawRect():void{
             var _local_1:Number = Math.min(1, (0.1 + ((0.9 * (getTimer() - this.startTime_)) / 200)));
             if (_local_1 == 1)
             {
@@ -72,9 +68,9 @@ public class TutorialMessage extends Sprite
                 if (this.nextButton_ != null)
                 {
                     addChild(this.nextButton_);
-                }
+                };
                 removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-            }
+            };
             var _local_2:Rectangle = this.rect_.clone();
             _local_2.inflate(((-(1 - _local_1) * this.rect_.width) / 2), ((-(1 - _local_1) * this.rect_.height) / 2));
             GraphicsUtil.clearPath(this.path_);
@@ -83,24 +79,20 @@ public class TutorialMessage extends Sprite
             graphics.drawGraphicsData(this.graphicsData_);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             this.startTime_ = getTimer();
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             this.drawRect();
         }
 
-        private function onNextButton(_arg_1:MouseEvent):void
-        {
+        private function onNextButton(_arg_1:MouseEvent):void{
             this.tutorial_.doneAction(Tutorial.NEXT_ACTION);
         }
 

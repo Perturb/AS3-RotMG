@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.FormField
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import com.company.ui.BaseSimpleText;
 
 import flash.display.CapsStyle;
@@ -12,8 +11,7 @@ import flash.display.JointStyle;
 import flash.display.LineScaleMode;
 import flash.display.Sprite;
 
-public class FormField extends Sprite
-    {
+public class FormField extends Sprite {
 
         protected static const BACKGROUND_COLOR:uint = 0x333333;
         protected static const ERROR_BORDER_COLOR:uint = 16549442;
@@ -21,13 +19,11 @@ public class FormField extends Sprite
         protected static const TEXT_COLOR:uint = 0xB3B3B3;
 
 
-        public function getHeight():Number
-        {
+        public function getHeight():Number{
             return (0);
         }
 
-        protected function drawSimpleTextBackground(_arg_1:BaseSimpleText, _arg_2:int, _arg_3:int, _arg_4:Boolean):void
-        {
+        protected function drawSimpleTextBackground(_arg_1:BaseSimpleText, _arg_2:int, _arg_3:int, _arg_4:Boolean):void{
             var _local_5:uint = ((_arg_4) ? ERROR_BORDER_COLOR : NORMAL_BORDER_COLOR);
             graphics.lineStyle(2, _local_5, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
             graphics.beginFill(BACKGROUND_COLOR, 1);

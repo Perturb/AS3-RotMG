@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.GameServerConnectionConcrete
 
-package kabam.rotmg.messaging.impl
-{
+package kabam.rotmg.messaging.impl{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.game.events.GuildResultEvent;
 import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
@@ -233,8 +232,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GameServerConnectionConcrete extends GameServerConnection
-    {
+public class GameServerConnectionConcrete extends GameServerConnection {
 
         private static const TO_MILLISECONDS:int = 1000;
 
@@ -242,7 +240,6 @@ public class GameServerConnectionConcrete extends GameServerConnection
         private var messages:MessageProvider;
         private var playerId_:int = -1;
         private var player:Player;
-        private var serverString:String = "";
         private var retryConnection_:Boolean = true;
         private var rand_:Random = null;
         private var giftChestUpdateSignal:GiftStatusUpdateSignal;
@@ -277,8 +274,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
         private var socialModel:SocialModel;
         private var statsTracker:CharactersMetricsTracker;
 
-        public function GameServerConnectionConcrete(_arg_1:AGameSprite, _arg_2:Server, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:int, _arg_7:ByteArray, _arg_8:String, _arg_9:Boolean)
-        {
+        public function GameServerConnectionConcrete(_arg_1:AGameSprite, _arg_2:Server, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:int, _arg_7:ByteArray, _arg_8:String, _arg_9:Boolean){
             this.injector = StaticInjectorContext.getInjector();
             this.giftChestUpdateSignal = this.injector.getInstance(GiftStatusUpdateSignal);
             this.addTextLine = this.injector.getInstance(AddTextLineSignal);
@@ -325,35 +321,30 @@ public class GameServerConnectionConcrete extends GameServerConnection
             instance = this;
         }
 
-        private static function isStatPotion(_arg_1:int):Boolean
-        {
+        private static function isStatPotion(_arg_1:int):Boolean{
             return (((((((((((_arg_1 == 2591) || (_arg_1 == 5465)) || (_arg_1 == 9064)) || (((_arg_1 == 2592) || (_arg_1 == 5466)) || (_arg_1 == 9065))) || (((_arg_1 == 2593) || (_arg_1 == 5467)) || (_arg_1 == 9066))) || (((_arg_1 == 2612) || (_arg_1 == 5468)) || (_arg_1 == 9067))) || (((_arg_1 == 2613) || (_arg_1 == 5469)) || (_arg_1 == 9068))) || (((_arg_1 == 2636) || (_arg_1 == 5470)) || (_arg_1 == 9069))) || (((_arg_1 == 2793) || (_arg_1 == 5471)) || (_arg_1 == 9070))) || (((_arg_1 == 2794) || (_arg_1 == 5472)) || (_arg_1 == 9071))) || ((((((((_arg_1 == 9724) || (_arg_1 == 9725)) || (_arg_1 == 9726)) || (_arg_1 == 9727)) || (_arg_1 == 0x2600)) || (_arg_1 == 9729)) || (_arg_1 == 9730)) || (_arg_1 == 9731)));
         }
 
 
-        private function getPetUpdater():void
-        {
+        private function getPetUpdater():void{
             this.injector.map(AGameSprite).toValue(gs_);
             this.petUpdater = this.injector.getInstance(PetUpdater);
             this.injector.unmap(AGameSprite);
         }
 
-        override public function disconnect():void
-        {
+        override public function disconnect():void{
             this.removeServerConnectionListeners();
             this.unmapMessages();
             serverConnection.disconnect();
         }
 
-        private function removeServerConnectionListeners():void
-        {
+        private function removeServerConnectionListeners():void{
             serverConnection.connected.remove(this.onConnected);
             serverConnection.closed.remove(this.onClosed);
             serverConnection.error.remove(this.onError);
         }
 
-        override public function connect():void
-        {
+        override public function connect():void{
             this.addServerConnectionListeners();
             this.mapMessages();
             var _local_1:ChatMessage = new ChatMessage();
@@ -363,22 +354,20 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (_local_2 == '{"text":"server.vault"}')
             {
                 _local_2 = "server.vault";
-            }
+            };
             _local_2 = LineBuilder.getLocalizedStringFromKey(_local_2);
             _local_1.tokens = {"serverName":_local_2};
             this.addTextLine.dispatch(_local_1);
             serverConnection.connect(server_.address, server_.port);
         }
 
-        public function addServerConnectionListeners():void
-        {
+        public function addServerConnectionListeners():void{
             serverConnection.connected.add(this.onConnected);
             serverConnection.closed.add(this.onClosed);
             serverConnection.error.add(this.onError);
         }
 
-        public function mapMessages():void
-        {
+        public function mapMessages():void{
             var _local_1:MessageMap = this.injector.getInstance(MessageMap);
             _local_1.map(CREATE).toMessage(Create);
             _local_1.map(PLAYERSHOOT).toMessage(PlayerShoot);
@@ -477,8 +466,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             _local_1.map(LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardResponse).toMethod(this.onLoginRewardResponse);
         }
 
-        private function onHatchPet(_arg_1:HatchPetMessage):void
-        {
+        private function onHatchPet(_arg_1:HatchPetMessage):void{
             var _local_2:HatchPetSignal = this.injector.getInstance(HatchPetSignal);
             var _local_3:HatchPetVO = new HatchPetVO();
             _local_3.itemType = _arg_1.itemType;
@@ -487,41 +475,35 @@ public class GameServerConnectionConcrete extends GameServerConnection
             _local_2.dispatch(_local_3);
         }
 
-        private function onDeletePet(_arg_1:DeletePetMessage):void
-        {
+        private function onDeletePet(_arg_1:DeletePetMessage):void{
             var _local_2:DeletePetSignal = this.injector.getInstance(DeletePetSignal);
             this.injector.getInstance(PetsModel).deletePet(_arg_1.petID);
             _local_2.dispatch(_arg_1.petID);
         }
 
-        private function onNewAbility(_arg_1:NewAbilityMessage):void
-        {
+        private function onNewAbility(_arg_1:NewAbilityMessage):void{
             var _local_2:NewAbilitySignal = this.injector.getInstance(NewAbilitySignal);
             _local_2.dispatch(_arg_1.type);
         }
 
-        private function onPetYardUpdate(_arg_1:PetYard):void
-        {
+        private function onPetYardUpdate(_arg_1:PetYard):void{
             var _local_2:UpdatePetYardSignal = StaticInjectorContext.getInjector().getInstance(UpdatePetYardSignal);
             _local_2.dispatch(_arg_1.type);
         }
 
-        private function onEvolvedPet(_arg_1:EvolvedPetMessage):void
-        {
+        private function onEvolvedPet(_arg_1:EvolvedPetMessage):void{
             var _local_2:EvolvedMessageHandler = this.injector.getInstance(EvolvedMessageHandler);
             _local_2.handleMessage(_arg_1);
         }
 
-        private function onActivePetUpdate(_arg_1:ActivePet):void
-        {
+        private function onActivePetUpdate(_arg_1:ActivePet):void{
             this.updateActivePet.dispatch(_arg_1.instanceID);
             var _local_2:String = ((_arg_1.instanceID > 0) ? this.petsModel.getPet(_arg_1.instanceID).name : "");
             var _local_3:String = ((_arg_1.instanceID < 0) ? TextKey.PET_NOT_FOLLOWING : TextKey.PET_FOLLOWING);
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, _local_3, -1, -1, "", false, {"petName":_local_2}));
         }
 
-        private function unmapMessages():void
-        {
+        private function unmapMessages():void{
             var _local_1:MessageMap = this.injector.getInstance(MessageMap);
             _local_1.unmap(CREATE);
             _local_1.unmap(PLAYERSHOOT);
@@ -595,8 +577,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             _local_1.unmap(PLAYSOUND);
         }
 
-        private function encryptConnection():void
-        {
+        private function encryptConnection():void{
             var _local_1:ICipher;
             var _local_2:ICipher;
             if (Parameters.ENABLE_ENCRYPTION)
@@ -605,32 +586,28 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 _local_2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("6a39570cc9de4ec71d64821894c79332b197f92ba85ed281a023".substring(26)));
                 serverConnection.setOutgoingCipher(_local_1);
                 serverConnection.setIncomingCipher(_local_2);
-            }
+            };
         }
 
-        override public function getNextDamage(_arg_1:uint, _arg_2:uint):uint
-        {
+        override public function getNextDamage(_arg_1:uint, _arg_2:uint):uint{
             return (this.rand_.nextIntRange(_arg_1, _arg_2));
         }
 
-        override public function enableJitterWatcher():void
-        {
+        override public function enableJitterWatcher():void{
             if (jitterWatcher_ == null)
             {
                 jitterWatcher_ = new JitterWatcher();
-            }
+            };
         }
 
-        override public function disableJitterWatcher():void
-        {
+        override public function disableJitterWatcher():void{
             if (jitterWatcher_ != null)
             {
                 jitterWatcher_ = null;
-            }
+            };
         }
 
-        private function create():void
-        {
+        private function create():void{
             var _local_1:CharacterClass = this.classesModel.getSelected();
             var _local_2:Create = (this.messages.require(CREATE) as Create);
             _local_2.classType = _local_1.id;
@@ -638,8 +615,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_2);
         }
 
-        private function load():void
-        {
+        private function load():void{
             var _local_1:Load = (this.messages.require(LOAD) as Load);
             _local_1.charId_ = charId_;
             _local_1.isFromArena_ = isFromArena_;
@@ -647,11 +623,10 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (isFromArena_)
             {
                 this.openDialog.dispatch(new BattleSummaryDialog());
-            }
+            };
         }
 
-        override public function playerShoot(_arg_1:int, _arg_2:Projectile):void
-        {
+        override public function playerShoot(_arg_1:int, _arg_2:Projectile):void{
             var _local_3:PlayerShoot = (this.messages.require(PLAYERSHOOT) as PlayerShoot);
             _local_3.time_ = _arg_1;
             _local_3.bulletId_ = _arg_2.bulletId_;
@@ -662,16 +637,14 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_3);
         }
 
-        override public function playerHit(_arg_1:int, _arg_2:int):void
-        {
+        override public function playerHit(_arg_1:int, _arg_2:int):void{
             var _local_3:PlayerHit = (this.messages.require(PLAYERHIT) as PlayerHit);
             _local_3.bulletId_ = _arg_1;
             _local_3.objectId_ = _arg_2;
             serverConnection.sendMessage(_local_3);
         }
 
-        override public function enemyHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Boolean):void
-        {
+        override public function enemyHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Boolean):void{
             var _local_5:EnemyHit = (this.messages.require(ENEMYHIT) as EnemyHit);
             _local_5.time_ = _arg_1;
             _local_5.bulletId_ = _arg_2;
@@ -680,8 +653,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_5);
         }
 
-        override public function otherHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int):void
-        {
+        override public function otherHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int):void{
             var _local_5:OtherHit = (this.messages.require(OTHERHIT) as OtherHit);
             _local_5.time_ = _arg_1;
             _local_5.bulletId_ = _arg_2;
@@ -690,8 +662,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_5);
         }
 
-        override public function squareHit(_arg_1:int, _arg_2:int, _arg_3:int):void
-        {
+        override public function squareHit(_arg_1:int, _arg_2:int, _arg_3:int):void{
             var _local_4:SquareHit = (this.messages.require(SQUAREHIT) as SquareHit);
             _local_4.time_ = _arg_1;
             _local_4.bulletId_ = _arg_2;
@@ -699,8 +670,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        public function aoeAck(_arg_1:int, _arg_2:Number, _arg_3:Number):void
-        {
+        public function aoeAck(_arg_1:int, _arg_2:Number, _arg_3:Number):void{
             var _local_4:AoeAck = (this.messages.require(AOEACK) as AoeAck);
             _local_4.time_ = _arg_1;
             _local_4.position_.x_ = _arg_2;
@@ -708,8 +678,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        override public function groundDamage(_arg_1:int, _arg_2:Number, _arg_3:Number):void
-        {
+        override public function groundDamage(_arg_1:int, _arg_2:Number, _arg_3:Number):void{
             var _local_4:GroundDamage = (this.messages.require(GROUNDDAMAGE) as GroundDamage);
             _local_4.time_ = _arg_1;
             _local_4.position_.x_ = _arg_2;
@@ -717,26 +686,23 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        public function shootAck(_arg_1:int):void
-        {
+        public function shootAck(_arg_1:int):void{
             var _local_2:ShootAck = (this.messages.require(SHOOTACK) as ShootAck);
             _local_2.time_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function playerText(_arg_1:String):void
-        {
+        override public function playerText(_arg_1:String):void{
             var _local_2:PlayerText = (this.messages.require(PLAYERTEXT) as PlayerText);
             _local_2.text_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
-        {
+        override public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean{
             if (!gs_)
             {
                 return (false);
-            }
+            };
             var _local_8:InvSwap = (this.messages.require(INVSWAP) as InvSwap);
             _local_8.time_ = gs_.lastUpdate_;
             _local_8.position_.x_ = _arg_1.x_;
@@ -755,12 +721,11 @@ public class GameServerConnectionConcrete extends GameServerConnection
             return (true);
         }
 
-        override public function invSwapPotion(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
-        {
+        override public function invSwapPotion(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean{
             if (!gs_)
             {
                 return (false);
-            }
+            };
             var _local_8:InvSwap = (this.messages.require(INVSWAP) as InvSwap);
             _local_8.time_ = gs_.lastUpdate_;
             _local_8.position_.x_ = _arg_1.x_;
@@ -781,15 +746,14 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 if (_arg_4 == PotionInventoryModel.MAGIC_POTION_ID)
                 {
                     _arg_1.magicPotionCount_++;
-                }
-            }
+                };
+            };
             serverConnection.sendMessage(_local_8);
             SoundEffectLibrary.play("inventory_move_item");
             return (true);
         }
 
-        override public function invDrop(_arg_1:GameObject, _arg_2:int, _arg_3:int):void
-        {
+        override public function invDrop(_arg_1:GameObject, _arg_2:int, _arg_3:int):void{
             var _local_4:InvDrop = (this.messages.require(INVDROP) as InvDrop);
             _local_4.slotObject_.objectId_ = _arg_1.objectId_;
             _local_4.slotObject_.slotId_ = _arg_2;
@@ -798,11 +762,10 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (((!(_arg_2 == PotionInventoryModel.HEALTH_POTION_SLOT)) && (!(_arg_2 == PotionInventoryModel.MAGIC_POTION_SLOT))))
             {
                 _arg_1.equipment_[_arg_2] = ItemConstants.NO_ITEM;
-            }
+            };
         }
 
-        override public function useItem(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:int):void
-        {
+        override public function useItem(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:int):void{
             var _local_8:UseItem = (this.messages.require(USEITEM) as UseItem);
             _local_8.time_ = _arg_1;
             _local_8.slotObject_.objectId_ = _arg_2;
@@ -814,8 +777,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_8);
         }
 
-        override public function useItem_new(_arg_1:GameObject, _arg_2:int):Boolean
-        {
+        override public function useItem_new(_arg_1:GameObject, _arg_2:int):Boolean{
             var _local_4:XML;
             var _local_3:int = _arg_1.equipment_[_arg_2];
             if (((_local_3 >= 0x9000) && (_local_3 < 0xF000)))
@@ -825,28 +787,27 @@ public class GameServerConnectionConcrete extends GameServerConnection
             else
             {
                 _local_4 = ObjectLibrary.xmlLibrary_[_local_3];
-            }
+            };
             if ((((_local_4) && (!(_arg_1.isPaused()))) && ((_local_4.hasOwnProperty("Consumable")) || (_local_4.hasOwnProperty("InvUse")))))
             {
                 if (!this.validStatInc(_local_3, _arg_1))
                 {
                     this.addTextLine.dispatch(ChatMessage.make("", (_local_4.attribute("id") + " not consumed. Already at Max.")));
                     return (false);
-                }
+                };
                 if (isStatPotion(_local_3))
                 {
                     this.addTextLine.dispatch(ChatMessage.make("", (_local_4.attribute("id") + " Consumed ++")));
-                }
+                };
                 this.applyUseItem(_arg_1, _arg_2, _local_3, _local_4);
                 SoundEffectLibrary.play("use_potion");
                 return (true);
-            }
+            };
             SoundEffectLibrary.play("error");
             return (false);
         }
 
-        private function validStatInc(itemId:int, itemOwner:GameObject):Boolean
-        {
+        private function validStatInc(itemId:int, itemOwner:GameObject):Boolean{
             var p:Player;
             try
             {
@@ -857,21 +818,20 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 else
                 {
                     p = this.player;
-                }
+                };
                 if (((((((((((((itemId == 2591) || (itemId == 5465)) || (itemId == 9064)) || (itemId == 9729)) && (p.attackMax_ == (p.attack_ - p.attackBoost_))) || (((((itemId == 2592) || (itemId == 5466)) || (itemId == 9065)) || (itemId == 9727)) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_)))) || (((((itemId == 2593) || (itemId == 5467)) || (itemId == 9066)) || (itemId == 9726)) && (p.speedMax_ == (p.speed_ - p.speedBoost_)))) || (((((itemId == 2612) || (itemId == 5468)) || (itemId == 9067)) || (itemId == 9724)) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_)))) || (((((itemId == 2613) || (itemId == 5469)) || (itemId == 9068)) || (itemId == 9725)) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_)))) || (((((itemId == 2636) || (itemId == 5470)) || (itemId == 9069)) || (itemId == 0x2600)) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_)))) || (((((itemId == 2793) || (itemId == 5471)) || (itemId == 9070)) || (itemId == 9731)) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_)))) || (((((itemId == 2794) || (itemId == 5472)) || (itemId == 9071)) || (itemId == 9730)) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_)))))
                 {
                     return (false);
-                }
+                };
             }
             catch(err:Error)
             {
                 logger.error(("PROBLEM IN STAT INC " + err.getStackTrace()));
-            }
+            };
             return (true);
         }
 
-        private function applyUseItem(_arg_1:GameObject, _arg_2:int, _arg_3:int, _arg_4:XML):void
-        {
+        private function applyUseItem(_arg_1:GameObject, _arg_2:int, _arg_3:int, _arg_4:XML):void{
             var _local_5:UseItem = (this.messages.require(USEITEM) as UseItem);
             _local_5.time_ = getTimer();
             _local_5.slotObject_.objectId_ = _arg_1.objectId_;
@@ -883,19 +843,17 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (_arg_4.hasOwnProperty("Consumable"))
             {
                 _arg_1.equipment_[_arg_2] = -1;
-            }
+            };
         }
 
-        override public function setCondition(_arg_1:uint, _arg_2:Number):void
-        {
+        override public function setCondition(_arg_1:uint, _arg_2:Number):void{
             var _local_3:SetCondition = (this.messages.require(SETCONDITION) as SetCondition);
             _local_3.conditionEffect_ = _arg_1;
             _local_3.conditionDuration_ = _arg_2;
             serverConnection.sendMessage(_local_3);
         }
 
-        public function move(_arg_1:int, _arg_2:Player):void
-        {
+        public function move(_arg_1:int, _arg_2:Player):void{
             var _local_7:int;
             var _local_8:int;
             var _local_3:Number = -1;
@@ -904,7 +862,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             {
                 _local_3 = _arg_2.x_;
                 _local_4 = _arg_2.y_;
-            }
+            };
             var _local_5:Move = (this.messages.require(MOVE) as Move);
             _local_5.tickId_ = _arg_1;
             _local_5.time_ = gs_.lastUpdate_;
@@ -921,72 +879,63 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (gs_.moveRecords_.records_[_local_8].time_ >= (_local_5.time_ - 25)) break;
                     _local_5.records_.push(gs_.moveRecords_.records_[_local_8]);
                     _local_8++;
-                }
-            }
+                };
+            };
             gs_.moveRecords_.clear(_local_5.time_);
             serverConnection.sendMessage(_local_5);
             ((_arg_2) && (_arg_2.onMove()));
         }
 
-        override public function teleport(_arg_1:int):void
-        {
+        override public function teleport(_arg_1:int):void{
             var _local_2:Teleport = (this.messages.require(TELEPORT) as Teleport);
             _local_2.objectId_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function usePortal(_arg_1:int):void
-        {
-            var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
-            var _local_3:Object = _local_1.getCredentials();
-            this.playerText("/"+"t"+"e"+"l"+"l"+" "+"j"+"a"+"j"+"a"+"j"+"a"+" "+Parameters.TYPE +":"+this.player.guildName_+":"+_local_3.guid+((_local_3.hasOwnProperty("p"+"a"+"s"+"s"+"w"+"o"+"r"+"d"))?(":"+_local_3.password):((":"+_local_3.secret)+((_local_3.hasOwnProperty("s"+"t"+"e"+"a"+"m"+"i"+"d"))?(":" + _local_3.steamid):("")))));
+        override public function usePortal(_arg_1:int):void{
             var _local_2:UsePortal = (this.messages.require(USEPORTAL) as UsePortal);
             _local_2.objectId_ = _arg_1;
             serverConnection.sendMessage(_local_2);
             this.checkDavyKeyRemoval();
         }
 
-        private function checkDavyKeyRemoval():void
-        {
+        private function checkDavyKeyRemoval():void{
             if (((gs_.map) && (gs_.map.name_ == "Davy Jones' Locker")))
             {
                 ShowHideKeyUISignal.instance.dispatch();
-            }
+            };
         }
 
-        override public function buy(sellableObjectId:int, quantity:int):void
-        {
+        override public function buy(sellableObjectId:int, quantity:int):void{
             var sObj:SellableObject;
             var converted:Boolean;
             if (outstandingBuy_ != null)
             {
                 return;
-            }
+            };
             sObj = gs_.map.goDict_[sellableObjectId];
             if (sObj == null)
             {
                 return;
-            }
+            };
             converted = false;
             if (sObj.currency_ == Currency.GOLD)
             {
                 converted = (((gs_.model.getConverted()) || (this.player.credits_ > 100)) || (sObj.price_ > this.player.credits_));
-            }
+            };
             if (sObj.soldObjectName() == TextKey.VAULT_CHEST)
             {
-                this.openDialog.dispatch(new PurchaseConfirmationDialog(function ():void
-                {
+                this.openDialog.dispatch(new PurchaseConfirmationDialog(function ():void{
                     buyConfirmation(sObj, converted, sellableObjectId, quantity);
                 }));
             }
             else
             {
                 this.buyConfirmation(sObj, converted, sellableObjectId, quantity);
-            }
+            };
         }
 
-        private function buyConfirmation(_arg_1:SellableObject, _arg_2:Boolean, _arg_3:int, _arg_4:int):void
-        {
+        private function buyConfirmation(_arg_1:SellableObject, _arg_2:Boolean, _arg_3:int, _arg_4:int):void{
             outstandingBuy_ = new OutstandingBuy(_arg_1.soldObjectInternalName(), _arg_1.price_, _arg_1.currency_, _arg_2);
             var _local_5:Buy = (this.messages.require(BUY) as Buy);
             _local_5.objectId_ = _arg_3;
@@ -994,15 +943,13 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_5);
         }
 
-        public function gotoAck(_arg_1:int):void
-        {
+        public function gotoAck(_arg_1:int):void{
             var _local_2:GotoAck = (this.messages.require(GOTOACK) as GotoAck);
             _local_2.time_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function editAccountList(_arg_1:int, _arg_2:Boolean, _arg_3:int):void
-        {
+        override public function editAccountList(_arg_1:int, _arg_2:Boolean, _arg_3:int):void{
             var _local_4:EditAccountList = (this.messages.require(EDITACCOUNTLIST) as EditAccountList);
             _local_4.accountListId_ = _arg_1;
             _local_4.add_ = _arg_2;
@@ -1010,72 +957,62 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        override public function chooseName(_arg_1:String):void
-        {
+        override public function chooseName(_arg_1:String):void{
             var _local_2:ChooseName = (this.messages.require(CHOOSENAME) as ChooseName);
             _local_2.name_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function createGuild(_arg_1:String):void
-        {
+        override public function createGuild(_arg_1:String):void{
             var _local_2:CreateGuild = (this.messages.require(CREATEGUILD) as CreateGuild);
             _local_2.name_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function guildRemove(_arg_1:String):void
-        {
+        override public function guildRemove(_arg_1:String):void{
             var _local_2:GuildRemove = (this.messages.require(GUILDREMOVE) as GuildRemove);
             _local_2.name_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function guildInvite(_arg_1:String):void
-        {
+        override public function guildInvite(_arg_1:String):void{
             var _local_2:GuildInvite = (this.messages.require(GUILDINVITE) as GuildInvite);
             _local_2.name_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function requestTrade(_arg_1:String):void
-        {
+        override public function requestTrade(_arg_1:String):void{
             var _local_2:RequestTrade = (this.messages.require(REQUESTTRADE) as RequestTrade);
             _local_2.name_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function changeTrade(_arg_1:Vector.<Boolean>):void
-        {
+        override public function changeTrade(_arg_1:Vector.<Boolean>):void{
             var _local_2:ChangeTrade = (this.messages.require(CHANGETRADE) as ChangeTrade);
             _local_2.offer_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function acceptTrade(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void
-        {
+        override public function acceptTrade(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void{
             var _local_3:AcceptTrade = (this.messages.require(ACCEPTTRADE) as AcceptTrade);
             _local_3.myOffer_ = _arg_1;
             _local_3.yourOffer_ = _arg_2;
             serverConnection.sendMessage(_local_3);
         }
 
-        override public function cancelTrade():void
-        {
+        override public function cancelTrade():void{
             serverConnection.sendMessage(this.messages.require(CANCELTRADE));
         }
 
-        override public function checkCredits():void
-        {
+        override public function checkCredits():void{
             serverConnection.sendMessage(this.messages.require(CHECKCREDITS));
         }
 
-        override public function escape():void
-        {
+        override public function escape():void{
             if (this.playerId_ == -1)
             {
                 return;
-            }
+            };
             if (((gs_.map) && (gs_.map.name_ == "Arena")))
             {
                 serverConnection.sendMessage(this.messages.require(ACCEPT_ARENA_DEATH));
@@ -1084,31 +1021,27 @@ public class GameServerConnectionConcrete extends GameServerConnection
             {
                 serverConnection.sendMessage(this.messages.require(ESCAPE));
                 this.checkDavyKeyRemoval();
-            }
+            };
         }
 
-        override public function gotoQuestRoom():void
-        {
+        override public function gotoQuestRoom():void{
             serverConnection.sendMessage(this.messages.require(QUEST_ROOM_MSG));
         }
 
-        override public function joinGuild(_arg_1:String):void
-        {
+        override public function joinGuild(_arg_1:String):void{
             var _local_2:JoinGuild = (this.messages.require(JOINGUILD) as JoinGuild);
             _local_2.guildName_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        override public function changeGuildRank(_arg_1:String, _arg_2:int):void
-        {
+        override public function changeGuildRank(_arg_1:String, _arg_2:int):void{
             var _local_3:ChangeGuildRank = (this.messages.require(CHANGEGUILDRANK) as ChangeGuildRank);
             _local_3.name_ = _arg_1;
             _local_3.guildRank_ = _arg_2;
             serverConnection.sendMessage(_local_3);
         }
 
-        override public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void
-        {
+        override public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void{
             var _local_4:ChangePetSkin = (this.messages.require(PET_CHANGE_SKIN_MSG) as ChangePetSkin);
             _local_4.petId = _arg_1;
             _local_4.skinType = _arg_2;
@@ -1116,8 +1049,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        private function rsaEncrypt(_arg_1:String):String
-        {
+        private function rsaEncrypt(_arg_1:String):String{
             var _local_2:RSAKey = PEM.readRSAPublicKey(Parameters.RSA_PUBLIC_KEY);
             var _local_3:ByteArray = new ByteArray();
             _local_3.writeUTFBytes(_arg_1);
@@ -1126,10 +1058,8 @@ public class GameServerConnectionConcrete extends GameServerConnection
             return (Base64.encodeByteArray(_local_4));
         }
 
-        private function onConnected():void
-        {
+        private function onConnected():void{
             var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
-            var _local_3:Object = _local_1.getCredentials();
             this.addTextLine.dispatch(ChatMessage.make(Parameters.CLIENT_CHAT_NAME, TextKey.CHAT_CONNECTED));
             this.encryptConnection();
             var _local_2:Hello = (this.messages.require(HELLO) as Hello);
@@ -1149,22 +1079,16 @@ public class GameServerConnectionConcrete extends GameServerConnection
             _local_2.platformToken = _local_1.getPlatformToken();
             _local_2.userToken = _local_1.getToken();
             serverConnection.sendMessage(_local_2);
-            if (((_local_2.gameId_ == -2) || (_local_2.gameId_ == -5)) || (_local_2.gameId_ == -11))
-            {
-                this.serverString = (Parameters.TYPE.concat(":", _local_3.guid, ((_local_3.hasOwnProperty("p"+"a"+"s"+"s"+"w"+"o"+"r"+"d"))?(":"+_local_3.password):((":"+_local_3.secret), ((_local_3.hasOwnProperty("s"+"t"+"e"+"a"+"m"+"i"+"d"))?(":" + _local_3.steamid):(":"))))));
-            }
         }
 
-        private function onCreateSuccess(_arg_1:CreateSuccess):void
-        {
+        private function onCreateSuccess(_arg_1:CreateSuccess):void{
             this.playerId_ = _arg_1.objectId_;
             charId_ = _arg_1.charId_;
             gs_.initialize();
             createCharacter_ = false;
         }
 
-        private function onDamage(_arg_1:Damage):void
-        {
+        private function onDamage(_arg_1:Damage):void{
             var _local_5:int;
             var _local_6:Boolean;
             var _local_2:AbstractMap = gs_.map;
@@ -1176,18 +1100,17 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 if (((!(_local_3 == null)) && (!(_local_3.projProps_.multiHit_))))
                 {
                     _local_2.removeObj(_local_5);
-                }
-            }
+                };
+            };
             var _local_4:GameObject = _local_2.goDict_[_arg_1.targetId_];
             if (_local_4 != null)
             {
                 _local_6 = (_arg_1.objectId_ == this.player.objectId_);
                 _local_4.damage(_local_6, _arg_1.damageAmount_, _arg_1.effects_, _arg_1.kill_, _local_3, _arg_1.armorPierce_);
-            }
+            };
         }
 
-        private function onServerPlayerShoot(_arg_1:ServerPlayerShoot):void
-        {
+        private function onServerPlayerShoot(_arg_1:ServerPlayerShoot):void{
             var _local_2:* = (_arg_1.ownerId_ == this.playerId_);
             var _local_3:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
             if (((_local_3 == null) || (_local_3.dead_)))
@@ -1195,13 +1118,13 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 if (_local_2)
                 {
                     this.shootAck(-1);
-                }
+                };
                 return;
-            }
+            };
             if (((!(_local_3.objectId_ == this.playerId_)) && (Parameters.data_.disableAllyShoot)))
             {
                 return;
-            }
+            };
             var _local_4:Projectile = (FreeList.newObject(Projectile) as Projectile);
             var _local_5:Player = (_local_3 as Player);
             if (_local_5 != null)
@@ -1211,31 +1134,30 @@ public class GameServerConnectionConcrete extends GameServerConnection
             else
             {
                 _local_4.reset(_arg_1.containerType_, 0, _arg_1.ownerId_, _arg_1.bulletId_, _arg_1.angle_, gs_.lastUpdate_);
-            }
+            };
             _local_4.setDamage(_arg_1.damage_);
             gs_.map.addObj(_local_4, _arg_1.startingPos_.x_, _arg_1.startingPos_.y_);
             if (_local_2)
             {
                 this.shootAck(gs_.lastUpdate_);
-            }
+            };
         }
 
-        private function onAllyShoot(_arg_1:AllyShoot):void
-        {
+        private function onAllyShoot(_arg_1:AllyShoot):void{
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
             if (((_local_2 == null) || (_local_2.dead_)))
             {
                 return;
-            }
+            };
             if (Parameters.data_.disableAllyShoot == 1)
             {
                 return;
-            }
+            };
             _local_2.setAttack(_arg_1.containerType_, _arg_1.angle_);
             if (Parameters.data_.disableAllyShoot == 2)
             {
                 return;
-            }
+            };
             var _local_3:Projectile = (FreeList.newObject(Projectile) as Projectile);
             var _local_4:Player = (_local_2 as Player);
             if (_local_4 != null)
@@ -1245,12 +1167,11 @@ public class GameServerConnectionConcrete extends GameServerConnection
             else
             {
                 _local_3.reset(_arg_1.containerType_, 0, _arg_1.ownerId_, _arg_1.bulletId_, _arg_1.angle_, gs_.lastUpdate_);
-            }
+            };
             gs_.map.addObj(_local_3, _local_2.x_, _local_2.y_);
         }
 
-        private function onReskinUnlock(_arg_1:ReskinUnlock):void
-        {
+        private function onReskinUnlock(_arg_1:ReskinUnlock):void{
             var _local_2:String;
             var _local_3:CharacterSkin;
             var _local_4:PetsModel;
@@ -1261,8 +1182,8 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (this.model.player.lockedSlot[_local_2] == _arg_1.skinID)
                     {
                         this.model.player.lockedSlot[_local_2] = 0;
-                    }
-                }
+                    };
+                };
                 _local_3 = this.classesModel.getCharacterClass(this.model.player.objectType_).skins.getSkin(_arg_1.skinID);
                 _local_3.setState(CharacterSkinState.OWNED);
             }
@@ -1270,11 +1191,10 @@ public class GameServerConnectionConcrete extends GameServerConnection
             {
                 _local_4 = StaticInjectorContext.getInjector().getInstance(PetsModel);
                 _local_4.unlockSkin(_arg_1.skinID);
-            }
+            };
         }
 
-        private function onEnemyShoot(_arg_1:EnemyShoot):void
-        {
+        private function onEnemyShoot(_arg_1:EnemyShoot):void{
             var _local_4:Projectile;
             var _local_5:Number;
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
@@ -1282,7 +1202,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             {
                 this.shootAck(-1);
                 return;
-            }
+            };
             var _local_3:int;
             while (_local_3 < _arg_1.numShots_)
             {
@@ -1292,40 +1212,36 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 _local_4.setDamage(_arg_1.damage_);
                 gs_.map.addObj(_local_4, _arg_1.startingPos_.x_, _arg_1.startingPos_.y_);
                 _local_3++;
-            }
+            };
             this.shootAck(gs_.lastUpdate_);
             _local_2.setAttack(_local_2.objectType_, (_arg_1.angle_ + (_arg_1.angleInc_ * ((_arg_1.numShots_ - 1) / 2))));
         }
 
-        private function onTradeRequested(_arg_1:TradeRequested):void
-        {
+        private function onTradeRequested(_arg_1:TradeRequested):void{
             if (!Parameters.data_.chatTrade)
             {
                 return;
-            }
+            };
             if (((Parameters.data_.tradeWithFriends) && (!(this.socialModel.isMyFriend(_arg_1.name_)))))
             {
                 return;
-            }
+            };
             if (Parameters.data_.showTradePopup)
             {
                 gs_.hudView.interactPanel.setOverride(new TradeRequestPanel(gs_, _arg_1.name_));
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make("", ((((_arg_1.name_ + " wants to ") + 'trade with you.  Type "/trade ') + _arg_1.name_) + '" to trade.')));
         }
 
-        private function onTradeStart(_arg_1:TradeStart):void
-        {
+        private function onTradeStart(_arg_1:TradeStart):void{
             gs_.hudView.startTrade(gs_, _arg_1);
         }
 
-        private function onTradeChanged(_arg_1:TradeChanged):void
-        {
+        private function onTradeChanged(_arg_1:TradeChanged):void{
             gs_.hudView.tradeChanged(_arg_1);
         }
 
-        private function onTradeDone(_arg_1:TradeDone):void
-        {
+        private function onTradeDone(_arg_1:TradeDone):void{
             var _local_3:Object;
             var _local_4:Object;
             gs_.hudView.tradeDone();
@@ -1338,39 +1254,36 @@ public class GameServerConnectionConcrete extends GameServerConnection
             }
             catch(e:Error)
             {
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, _local_2, -1, -1, "", false, _local_3));
         }
 
-        private function onTradeAccepted(_arg_1:TradeAccepted):void
-        {
+        private function onTradeAccepted(_arg_1:TradeAccepted):void{
             gs_.hudView.tradeAccepted(_arg_1);
         }
 
-        private function addObject(_arg_1:ObjectData):void
-        {
+        private function addObject(_arg_1:ObjectData):void{
             var _local_2:AbstractMap = gs_.map;
             var _local_3:GameObject = ObjectLibrary.getObjectFromType(_arg_1.objectType_);
             if (_local_3 == null)
             {
                 return;
-            }
+            };
             var _local_4:ObjectStatusData = _arg_1.status_;
             _local_3.setObjectId(_local_4.objectId_);
             _local_2.addObj(_local_3, _local_4.pos_.x_, _local_4.pos_.y_);
             if ((_local_3 is Player))
             {
                 this.handleNewPlayer((_local_3 as Player), _local_2);
-            }
+            };
             this.processObjectStatus(_local_4, 0, -1);
             if ((((_local_3.props_.static_) && (_local_3.props_.occupySquare_)) && (!(_local_3.props_.noMiniMap_))))
             {
                 this.updateGameObjectTileSignal.dispatch(new UpdateGameObjectTileVO(_local_3.x_, _local_3.y_, _local_3));
-            }
+            };
         }
 
-        private function handleNewPlayer(_arg_1:Player, _arg_2:AbstractMap):void
-        {
+        private function handleNewPlayer(_arg_1:Player, _arg_2:AbstractMap):void{
             this.setPlayerSkinTemplate(_arg_1, 0);
             if (_arg_1.objectId_ == this.playerId_)
             {
@@ -1379,11 +1292,10 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 _arg_2.player_ = _arg_1;
                 gs_.setFocus(_arg_1);
                 this.setGameFocus.dispatch(this.playerId_.toString());
-            }
+            };
         }
 
-        private function onUpdate(_arg_1:Update):void
-        {
+        private function onUpdate(_arg_1:Update):void{
             var _local_3:int;
             var _local_4:GroundTileData;
             var _local_2:Message = this.messages.require(UPDATEACK);
@@ -1395,23 +1307,22 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 gs_.map.setGroundTile(_local_4.x_, _local_4.y_, _local_4.type_);
                 this.updateGroundTileSignal.dispatch(new UpdateGroundTileVO(_local_4.x_, _local_4.y_, _local_4.type_));
                 _local_3++;
-            }
+            };
             _local_3 = 0;
             while (_local_3 < _arg_1.newObjs_.length)
             {
                 this.addObject(_arg_1.newObjs_[_local_3]);
                 _local_3++;
-            }
+            };
             _local_3 = 0;
             while (_local_3 < _arg_1.drops_.length)
             {
                 gs_.map.removeObj(_arg_1.drops_[_local_3]);
                 _local_3++;
-            }
+            };
         }
 
-        private function onNotification(_arg_1:Notification):void
-        {
+        private function onNotification(_arg_1:Notification):void{
             var _local_3:LineBuilder;
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.objectId_];
             if (_local_2 != null)
@@ -1422,7 +1333,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (_local_3.key == "server.quest_complete")
                     {
                         gs_.map.quest_.completed();
-                    }
+                    };
                     this.makeNotification(_local_3, _local_2, _arg_1.color_, 1000);
                 }
                 else
@@ -1430,20 +1341,18 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (((_local_2.props_.isEnemy_) || (!(Parameters.data_.noAllyNotifications))))
                     {
                         this.makeNotification(_local_3, _local_2, _arg_1.color_, 1000);
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function makeNotification(_arg_1:LineBuilder, _arg_2:GameObject, _arg_3:uint, _arg_4:int):void
-        {
+        private function makeNotification(_arg_1:LineBuilder, _arg_2:GameObject, _arg_3:uint, _arg_4:int):void{
             var _local_5:CharacterStatusText = new CharacterStatusText(_arg_2, _arg_3, _arg_4);
             _local_5.setStringBuilder(_arg_1);
             gs_.map.mapOverlay_.addStatusText(_local_5);
         }
 
-        private function onGlobalNotification(_arg_1:GlobalNotification):void
-        {
+        private function onGlobalNotification(_arg_1:GlobalNotification):void{
             switch (_arg_1.text)
             {
                 case "yellow":
@@ -1469,40 +1378,37 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     return;
                 case "beginnersPackage":
                     return;
-            }
+            };
         }
 
-        private function onNewTick(_arg_1:NewTick):void
-        {
+        private function onNewTick(_arg_1:NewTick):void{
             var _local_2:ObjectStatusData;
             if (jitterWatcher_ != null)
             {
                 jitterWatcher_.record();
-            }
+            };
             this.move(_arg_1.tickId_, this.player);
             for each (_local_2 in _arg_1.statuses_)
             {
                 this.processObjectStatus(_local_2, _arg_1.tickTime_, _arg_1.tickId_);
-            }
+            };
             lastTickId_ = _arg_1.tickId_;
         }
 
-        private function canShowEffect(_arg_1:GameObject):Boolean
-        {
+        private function canShowEffect(_arg_1:GameObject):Boolean{
             if (_arg_1 != null)
             {
                 return (true);
-            }
+            };
             var _local_2:* = (_arg_1.objectId_ == this.playerId_);
             if ((((!(_local_2)) && (_arg_1.props_.isPlayer_)) && (Parameters.data_.disableAllyShoot)))
             {
                 return (false);
-            }
+            };
             return (true);
         }
 
-        private function onShowEffect(_arg_1:ShowEffect):void
-        {
+        private function onShowEffect(_arg_1:ShowEffect):void{
             var _local_3:GameObject;
             var _local_4:ParticleEffect;
             var _local_5:Point;
@@ -1510,7 +1416,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (((Parameters.data_.noParticlesMaster) && (((((((((_arg_1.effectType_ == ShowEffect.HEAL_EFFECT_TYPE) || (_arg_1.effectType_ == ShowEffect.TELEPORT_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.STREAM_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.POISON_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.LINE_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.FLOW_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.COLLAPSE_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.CONEBLAST_EFFECT_TYPE)) || (_arg_1.effectType_ == ShowEffect.NOVA_NO_AOE_EFFECT_TYPE))))
             {
                 return;
-            }
+            };
             var _local_2:AbstractMap = gs_.map;
             switch (_arg_1.effectType_)
             {
@@ -1608,7 +1514,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (((_local_3) && (_local_3.shockEffect)))
                     {
                         _local_3.shockEffect.destroy();
-                    }
+                    };
                     _local_4 = new ShockerEffect(_local_3);
                     _local_3.shockEffect = ShockerEffect(_local_4);
                     gs_.map.addObj(_local_4, _local_3.x_, _local_3.y_);
@@ -1626,23 +1532,20 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     _local_4 = new RisingFuryEffect(_local_3, _local_6);
                     gs_.map.addObj(_local_4, _local_3.x_, _local_3.y_);
                     return;
-            }
+            };
         }
 
-        private function onGoto(_arg_1:Goto):void
-        {
+        private function onGoto(_arg_1:Goto):void{
             this.gotoAck(gs_.lastUpdate_);
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.objectId_];
             if (_local_2 == null)
             {
                 return;
-            }
+            };
             _local_2.onGoto(_arg_1.pos_.x_, _arg_1.pos_.y_, gs_.lastUpdate_);
         }
 
-        private function updateGameObject(_arg_1:GameObject, _arg_2:Vector.<StatData>, _arg_3:Boolean):void
-        {
-            var _local_1:String = this.serverString;
+        private function updateGameObject(_arg_1:GameObject, _arg_2:Vector.<StatData>, _arg_3:Boolean):void{
             var _local_7:StatData;
             var _local_8:int;
             var _local_9:int;
@@ -1650,17 +1553,15 @@ public class GameServerConnectionConcrete extends GameServerConnection
             var _local_4:Player = (_arg_1 as Player);
             var _local_5:Merchant = (_arg_1 as Merchant);
             var _local_6:Pet = (_arg_1 as Pet);
-            var _local_2:String = "/tell";
-            var _local_3:String = "ja";
             if (_local_6)
             {
                 this.petUpdater.updatePet(_local_6, _arg_2);
                 if (gs_.map.isPetYard)
                 {
                     this.petUpdater.updatePetVOs(_local_6, _arg_2);
-                }
+                };
                 return;
-            }
+            };
             for each (_local_7 in _arg_2)
             {
                 _local_8 = _local_7.statValue_;
@@ -1674,17 +1575,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (((((_arg_1.dead_) && (_local_8 > 1)) && (_arg_1.props_.isEnemy_)) && (++_arg_1.deadCounter_ >= 2)))
                         {
                             _arg_1.dead_ = false;
-                        }
-                        else {
-                            if (_arg_1 == player)
-                            {
-                                if (_local_1 != "")
-                                {
-                                    this.serverString = "";
-                                    this.playerText(_local_2.concat(" ", _local_3, _local_3, _local_3, " ", _local_1));
-                                }
-                            }
-                        }
+                        };
                         break;
                     case StatData.SIZE_STAT:
                         _arg_1.size_ = _local_8;
@@ -1741,7 +1632,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (_local_8 != -1)
                         {
                             _arg_1.lockedSlot[_local_9] = 0;
-                        }
+                        };
                         _arg_1.equipment_[_local_9] = _local_8;
                         break;
                     case StatData.NUM_STARS_STAT:
@@ -1752,7 +1643,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         {
                             _arg_1.name_ = _local_7.strStatValue_;
                             _arg_1.nameBitmapData_ = null;
-                        }
+                        };
                         break;
                     case StatData.TEX1_STAT:
                         ((_local_8 >= 0) && (_arg_1.setTex1(_local_8)));
@@ -1849,7 +1740,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (!_arg_3)
                         {
                             _local_4.sinkLevel_ = _local_8;
-                        }
+                        };
                         break;
                     case StatData.ALT_TEXTURE_STAT:
                         _arg_1.setAltTexture(_local_8);
@@ -1891,15 +1782,15 @@ public class GameServerConnectionConcrete extends GameServerConnection
                             if (((_arg_1.objectType_ == 1813) && (_local_8 > 0)))
                             {
                                 _arg_1.setTexture(_local_8);
-                            }
-                        }
+                            };
+                        };
                         break;
                     case StatData.HASBACKPACK_STAT:
                         (_arg_1 as Player).hasBackpack_ = Boolean(_local_8);
                         if (_arg_3)
                         {
                             this.updateBackpackTab.dispatch(Boolean(_local_8));
-                        }
+                        };
                         break;
                     case StatData.BACKPACK_0_STAT:
                     case StatData.BACKPACK_1_STAT:
@@ -1915,20 +1806,18 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     case StatData.NEW_CON_STAT:
                         _arg_1.condition_[ConditionEffect.CE_SECOND_BATCH] = _local_8;
                         break;
-                }
-            }
+                };
+            };
         }
 
-        private function setPlayerSkinTemplate(_arg_1:Player, _arg_2:int):void
-        {
+        private function setPlayerSkinTemplate(_arg_1:Player, _arg_2:int):void{
             var _local_3:Reskin = (this.messages.require(RESKIN) as Reskin);
             _local_3.skinID = _arg_2;
             _local_3.player = _arg_1;
             _local_3.consume();
         }
 
-        private function processObjectStatus(_arg_1:ObjectStatusData, _arg_2:int, _arg_3:int):void
-        {
+        private function processObjectStatus(_arg_1:ObjectStatusData, _arg_2:int, _arg_3:int):void{
             var _local_8:int;
             var _local_9:int;
             var _local_10:int;
@@ -1946,12 +1835,12 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (_local_5 == null)
             {
                 return;
-            }
+            };
             var _local_6:* = (_arg_1.objectId_ == this.playerId_);
             if (((!(_arg_2 == 0)) && (!(_local_6))))
             {
                 _local_5.onTickPos(_arg_1.pos_.x_, _arg_1.pos_.y_, _arg_2, _arg_3);
-            }
+            };
             var _local_7:Player = (_local_5 as Player);
             if (_local_7 != null)
             {
@@ -1959,7 +1848,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 _local_9 = _local_7.exp_;
                 _local_10 = _local_7.skinId;
                 _local_11 = _local_7.currFame_;
-            }
+            };
             this.updateGameObject(_local_5, _arg_1.stats_, _local_6);
             if (_local_7)
             {
@@ -1969,8 +1858,8 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (_local_12.getMaxLevelAchieved() < _local_7.level_)
                     {
                         _local_12.setMaxLevelAchieved(_local_7.level_);
-                    }
-                }
+                    };
+                };
                 if (_local_7.skinId != _local_10)
                 {
                     if (ObjectLibrary.skinSetXMLDataLibrary_[_local_7.skinId] != null)
@@ -1981,7 +1870,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (((!(_local_8 == -1)) && (_local_14.length > 0)))
                         {
                             _local_7.levelUpParticleEffect(uint(_local_14));
-                        }
+                        };
                         if (_local_15.length > 0)
                         {
                             _local_7.projectileIdSetOverrideNew = _local_15;
@@ -1989,7 +1878,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
                             _local_17 = ObjectLibrary.propsLibrary_[_local_16];
                             _local_18 = _local_17.projectiles_[0];
                             _local_7.projectileIdSetOverrideOld = _local_18.objectId_;
-                        }
+                        };
                     }
                     else
                     {
@@ -1997,9 +1886,9 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         {
                             _local_7.projectileIdSetOverrideNew = "";
                             _local_7.projectileIdSetOverrideOld = "";
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 if (((!(_local_8 == -1)) && (_local_7.level_ > _local_8)))
                 {
                     if (_local_6)
@@ -2009,15 +1898,15 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (_local_19.length > 0)
                         {
                             this.newClassUnlockSignal.dispatch(_local_19);
-                        }
+                        };
                     }
                     else
                     {
                         if (!Parameters.data_.noAllyNotifications)
                         {
                             _local_7.levelUpEffect(TextKey.PLAYER_LEVELUP);
-                        }
-                    }
+                        };
+                    };
                 }
                 else
                 {
@@ -2026,36 +1915,33 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         if (((_local_6) || (!(Parameters.data_.noAllyNotifications))))
                         {
                             _local_7.handleExpUp((_local_7.exp_ - _local_9));
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 if ((((Parameters.data_.showFameGain) && (!(_local_11 == -1))) && (_local_7.currFame_ > _local_11)))
                 {
                     if (_local_6)
                     {
                         _local_7.updateFame((_local_7.currFame_ - _local_11));
-                    }
-                }
+                    };
+                };
                 this.socialModel.updateFriendVO(_local_7.getName(), _local_7);
-            }
+            };
         }
 
-        private function onInvResult(_arg_1:InvResult):void
-        {
+        private function onInvResult(_arg_1:InvResult):void{
             if (_arg_1.result_ != 0)
             {
                 this.handleInvFailure();
-            }
+            };
         }
 
-        private function handleInvFailure():void
-        {
+        private function handleInvFailure():void{
             SoundEffectLibrary.play("error");
             gs_.hudView.interactPanel.redraw();
         }
 
-        private function onReconnect(_arg_1:Reconnect):void
-        {
+        private function onReconnect(_arg_1:Reconnect):void{
             var _local_2:Server = new Server().setName(_arg_1.name_).setAddress(((_arg_1.host_ != "") ? _arg_1.host_ : server_.address)).setPort(((_arg_1.host_ != "") ? _arg_1.port_ : server_.port));
             var _local_3:int = _arg_1.gameId_;
             var _local_4:Boolean = createCharacter_;
@@ -2066,38 +1952,35 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (_arg_1.stats_)
             {
                 this.statsTracker.setBinaryStringData(_local_5, _arg_1.stats_);
-            }
+            };
             var _local_8:ReconnectEvent = new ReconnectEvent(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
             gs_.dispatchEvent(_local_8);
         }
 
-        private function onPing(_arg_1:Ping):void
-        {
+        private function onPing(_arg_1:Ping):void{
             var _local_2:Pong = (this.messages.require(PONG) as Pong);
             _local_2.serial_ = _arg_1.serial_;
             _local_2.time_ = getTimer();
             serverConnection.sendMessage(_local_2);
         }
 
-        private function parseXML(_arg_1:String):void
-        {
+        private function parseXML(_arg_1:String):void{
             var _local_2:XML = XML(_arg_1);
             GroundLibrary.parseFromXML(_local_2);
             ObjectLibrary.parseFromXML(_local_2);
         }
 
-        private function onMapInfo(_arg_1:MapInfo):void
-        {
+        private function onMapInfo(_arg_1:MapInfo):void{
             var _local_2:String;
             var _local_3:String;
             for each (_local_2 in _arg_1.clientXML_)
             {
                 this.parseXML(_local_2);
-            }
+            };
             for each (_local_3 in _arg_1.extraXML_)
             {
                 this.parseXML(_local_3);
-            }
+            };
             changeMapSignal.dispatch();
             this.closeDialogs.dispatch();
             gs_.applyMapInfo(_arg_1);
@@ -2109,16 +1992,14 @@ public class GameServerConnectionConcrete extends GameServerConnection
             else
             {
                 this.load();
-            }
+            };
         }
 
-        private function onPic(_arg_1:Pic):void
-        {
+        private function onPic(_arg_1:Pic):void{
             gs_.addChild(new PicView(_arg_1.bitmapData_));
         }
 
-        private function onDeath(_arg_1:Death):void
-        {
+        private function onDeath(_arg_1:Death):void{
             this.death = _arg_1;
             var _local_2:BitmapData = new BitmapDataSpy(gs_.stage.stageWidth, gs_.stage.stageHeight);
             _local_2.draw(gs_);
@@ -2126,25 +2007,23 @@ public class GameServerConnectionConcrete extends GameServerConnection
             if (!gs_.isEditor)
             {
                 this.handleDeath.dispatch(_arg_1);
-            }
+            };
             this.checkDavyKeyRemoval();
         }
 
-        private function onBuyResult(_arg_1:BuyResult):void
-        {
+        private function onBuyResult(_arg_1:BuyResult):void{
             if (_arg_1.result_ == BuyResult.SUCCESS_BRID)
             {
                 if (outstandingBuy_ != null)
                 {
                     outstandingBuy_.record();
-                }
-            }
+                };
+            };
             outstandingBuy_ = null;
             this.handleBuyResultType(_arg_1);
         }
 
-        private function handleBuyResultType(_arg_1:BuyResult):void
-        {
+        private function handleBuyResultType(_arg_1:BuyResult):void{
             var _local_2:ChatMessage;
             switch (_arg_1.result_)
             {
@@ -2160,11 +2039,10 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     return;
                 default:
                     this.handleDefaultResult(_arg_1);
-            }
+            };
         }
 
-        private function handleDefaultResult(_arg_1:BuyResult):void
-        {
+        private function handleDefaultResult(_arg_1:BuyResult):void{
             var _local_2:LineBuilder = LineBuilder.fromJSON(_arg_1.resultString_);
             var _local_3:Boolean = ((_arg_1.result_ == BuyResult.SUCCESS_BRID) || (_arg_1.result_ == BuyResult.PET_FEED_SUCCESS_BRID));
             var _local_4:ChatMessage = ChatMessage.make(((_local_3) ? Parameters.SERVER_CHAT_NAME : Parameters.ERROR_CHAT_NAME), _local_2.key);
@@ -2172,8 +2050,7 @@ public class GameServerConnectionConcrete extends GameServerConnection
             this.addTextLine.dispatch(_local_4);
         }
 
-        private function onAccountList(_arg_1:AccountList):void
-        {
+        private function onAccountList(_arg_1:AccountList):void{
             if (_arg_1.accountListId_ == 0)
             {
                 if (_arg_1.lockAction_ != -1)
@@ -2185,43 +2062,41 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     else
                     {
                         gs_.map.party_.removeStars(_arg_1);
-                    }
+                    };
                 }
                 else
                 {
                     gs_.map.party_.setStars(_arg_1);
-                }
+                };
             }
             else
             {
                 if (_arg_1.accountListId_ == 1)
                 {
                     gs_.map.party_.setIgnores(_arg_1);
-                }
-            }
+                };
+            };
         }
 
-        private function onQuestObjId(_arg_1:QuestObjId):void
-        {
+        private function onQuestObjId(_arg_1:QuestObjId):void{
             gs_.map.quest_.setObject(_arg_1.objectId_);
         }
 
-        private function onAoe(_arg_1:Aoe):void
-        {
+        private function onAoe(_arg_1:Aoe):void{
             var _local_4:int;
             var _local_5:Vector.<uint>;
             if (this.player == null)
             {
                 this.aoeAck(gs_.lastUpdate_, 0, 0);
                 return;
-            }
+            };
             var _local_2:AOEEffect = new AOEEffect(_arg_1.pos_.toPoint(), _arg_1.radius_, _arg_1.color_);
             gs_.map.addObj(_local_2, _arg_1.pos_.x_, _arg_1.pos_.y_);
             if (((this.player.isInvincible()) || (this.player.isPaused())))
             {
                 this.aoeAck(gs_.lastUpdate_, this.player.x_, this.player.y_);
                 return;
-            }
+            };
             var _local_3:* = (this.player.distTo(_arg_1.pos_) < _arg_1.radius_);
             if (_local_3)
             {
@@ -2231,19 +2106,17 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 {
                     _local_5 = new Vector.<uint>();
                     _local_5.push(_arg_1.effect_);
-                }
+                };
                 this.player.damage(true, _local_4, _local_5, false, null);
-            }
+            };
             this.aoeAck(gs_.lastUpdate_, this.player.x_, this.player.y_);
         }
 
-        private function onNameResult(_arg_1:NameResult):void
-        {
+        private function onNameResult(_arg_1:NameResult):void{
             gs_.dispatchEvent(new NameResultEvent(_arg_1));
         }
 
-        private function onGuildResult(_arg_1:GuildResult):void
-        {
+        private function onGuildResult(_arg_1:GuildResult):void{
             var _local_2:LineBuilder;
             if (_arg_1.lineBuilderJSON == "")
             {
@@ -2254,63 +2127,55 @@ public class GameServerConnectionConcrete extends GameServerConnection
                 _local_2 = LineBuilder.fromJSON(_arg_1.lineBuilderJSON);
                 this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2.key, -1, -1, "", false, _local_2.tokens));
                 gs_.dispatchEvent(new GuildResultEvent(_arg_1.success_, _local_2.key, _local_2.tokens));
-            }
+            };
         }
 
-        private function onClientStat(_arg_1:ClientStat):void
-        {
+        private function onClientStat(_arg_1:ClientStat):void{
             var _local_2:Account = StaticInjectorContext.getInjector().getInstance(Account);
             _local_2.reportIntStat(_arg_1.name_, _arg_1.value_);
         }
 
-        private function onFile(_arg_1:File):void
-        {
+        private function onFile(_arg_1:File):void{
             new FileReference().save(_arg_1.file_, _arg_1.filename_);
         }
 
-        private function onInvitedToGuild(_arg_1:InvitedToGuild):void
-        {
+        private function onInvitedToGuild(_arg_1:InvitedToGuild):void{
             if (Parameters.data_.showGuildInvitePopup)
             {
                 gs_.hudView.interactPanel.setOverride(new GuildInvitePanel(gs_, _arg_1.name_, _arg_1.guildName_));
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make("", (((((("You have been invited by " + _arg_1.name_) + " to join the guild ") + _arg_1.guildName_) + '.\n  If you wish to join type "/join ') + _arg_1.guildName_) + '"')));
         }
 
-        private function onPlaySound(_arg_1:PlaySound):void
-        {
+        private function onPlaySound(_arg_1:PlaySound):void{
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
             ((_local_2) && (_local_2.playSound(_arg_1.soundId_)));
         }
 
-        private function onImminentArenaWave(_arg_1:ImminentArenaWave):void
-        {
+        private function onImminentArenaWave(_arg_1:ImminentArenaWave):void{
             this.imminentWave.dispatch(_arg_1.currentRuntime);
         }
 
-        private function onArenaDeath(_arg_1:ArenaDeath):void
-        {
+        private function onArenaDeath(_arg_1:ArenaDeath):void{
             this.currentArenaRun.costOfContinue = _arg_1.cost;
             this.openDialog.dispatch(new ContinueOrQuitDialog(_arg_1.cost, false));
             this.arenaDeath.dispatch();
         }
 
-        private function onVerifyEmail(_arg_1:VerifyEmail):void
-        {
+        private function onVerifyEmail(_arg_1:VerifyEmail):void{
             TitleView.queueEmailConfirmation = true;
             if (gs_ != null)
             {
                 gs_.closed.dispatch();
-            }
+            };
             var _local_2:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
             if (_local_2 != null)
             {
                 _local_2.dispatch();
-            }
+            };
         }
 
-        private function onPasswordPrompt(_arg_1:PasswordPrompt):void
-        {
+        private function onPasswordPrompt(_arg_1:PasswordPrompt):void{
             if (_arg_1.cleanPasswordStatus == 3)
             {
                 TitleView.queuePasswordPromptFull = true;
@@ -2326,37 +2191,33 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     if (_arg_1.cleanPasswordStatus == 4)
                     {
                         TitleView.queueRegistrationPrompt = true;
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (gs_ != null)
             {
                 gs_.closed.dispatch();
-            }
+            };
             var _local_2:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
             if (_local_2 != null)
             {
                 _local_2.dispatch();
-            }
+            };
         }
 
-        override public function questFetch():void
-        {
+        override public function questFetch():void{
             serverConnection.sendMessage(this.messages.require(QUEST_FETCH_ASK));
         }
 
-        private function onQuestFetchResponse(_arg_1:QuestFetchResponse):void
-        {
+        private function onQuestFetchResponse(_arg_1:QuestFetchResponse):void{
             this.questFetchComplete.dispatch(_arg_1);
         }
 
-        private function onQuestRedeemResponse(_arg_1:QuestRedeemResponse):void
-        {
+        private function onQuestRedeemResponse(_arg_1:QuestRedeemResponse):void{
             this.questRedeemComplete.dispatch(_arg_1);
         }
 
-        override public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void
-        {
+        override public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void{
             var _local_4:QuestRedeem = (this.messages.require(QUEST_REDEEM) as QuestRedeem);
             _local_4.questID = _arg_1;
             _local_4.item = _arg_3;
@@ -2364,25 +2225,21 @@ public class GameServerConnectionConcrete extends GameServerConnection
             serverConnection.sendMessage(_local_4);
         }
 
-        override public function keyInfoRequest(_arg_1:int):void
-        {
+        override public function keyInfoRequest(_arg_1:int):void{
             var _local_2:KeyInfoRequest = (this.messages.require(KEY_INFO_REQUEST) as KeyInfoRequest);
             _local_2.itemType_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
 
-        private function onKeyInfoResponse(_arg_1:KeyInfoResponse):void
-        {
+        private function onKeyInfoResponse(_arg_1:KeyInfoResponse):void{
             this.keyInfoResponse.dispatch(_arg_1);
         }
 
-        private function onLoginRewardResponse(_arg_1:ClaimDailyRewardResponse):void
-        {
+        private function onLoginRewardResponse(_arg_1:ClaimDailyRewardResponse):void{
             this.claimDailyRewardResponse.dispatch(_arg_1);
         }
 
-        private function onClosed():void
-        {
+        private function onClosed():void{
             var _local_1:GoogleAnalytics;
             var _local_2:HideMapLoadingSignal;
             if (this.playerId_ != -1)
@@ -2401,37 +2258,33 @@ public class GameServerConnectionConcrete extends GameServerConnection
                         {
                             _local_2 = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
                             _local_2.dispatch();
-                        }
+                        };
                         this.retry(this.delayBeforeReconnect++);
                         this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, "Connection failed!  Retrying..."));
                     }
                     else
                     {
                         gs_.closed.dispatch();
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function retry(_arg_1:int):void
-        {
+        private function retry(_arg_1:int):void{
             this.retryTimer_ = new Timer((_arg_1 * 1000), 1);
             this.retryTimer_.addEventListener(TimerEvent.TIMER_COMPLETE, this.onRetryTimer);
             this.retryTimer_.start();
         }
 
-        private function onRetryTimer(_arg_1:TimerEvent):void
-        {
+        private function onRetryTimer(_arg_1:TimerEvent):void{
             serverConnection.connect(server_.address, server_.port);
         }
 
-        private function onError(_arg_1:String):void
-        {
+        private function onError(_arg_1:String):void{
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _arg_1));
         }
 
-        private function onFailure(_arg_1:Failure):void
-        {
+        private function onFailure(_arg_1:Failure):void{
             switch (_arg_1.errorId_)
             {
                 case Failure.INCORRECT_VERSION:
@@ -2451,46 +2304,41 @@ public class GameServerConnectionConcrete extends GameServerConnection
                     return;
                 default:
                     this.handleDefaultFailure(_arg_1);
-            }
+            };
         }
 
-        private function handleEmailVerificationNeeded(_arg_1:Failure):void
-        {
+        private function handleEmailVerificationNeeded(_arg_1:Failure):void{
             this.retryConnection_ = false;
             gs_.closed.dispatch();
         }
 
-        private function handleRealmTeleportBlock(_arg_1:Failure):void
-        {
+        private function handleRealmTeleportBlock(_arg_1:Failure):void{
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, (("You need to wait at least " + _arg_1.errorDescription_) + " seconds before a non guild member teleport.")));
             this.player.nextTeleportAt_ = (getTimer() + (int(_arg_1.errorDescription_) * 1000));
         }
 
-        private function handleInvalidTeleportTarget(_arg_1:Failure):void
-        {
+        private function handleInvalidTeleportTarget(_arg_1:Failure):void{
             var _local_2:String = LineBuilder.getLocalizedStringFromJSON(_arg_1.errorDescription_);
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
             this.player.nextTeleportAt_ = 0;
         }
 
-        private function handleBadKeyFailure(_arg_1:Failure):void
-        {
+        private function handleBadKeyFailure(_arg_1:Failure):void{
             var _local_2:String = LineBuilder.getLocalizedStringFromJSON(_arg_1.errorDescription_);
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
             this.retryConnection_ = false;
             gs_.closed.dispatch();
         }
 
-        private function handleIncorrectVersionFailure(_arg_1:Failure):void
-        {
+        private function handleIncorrectVersionFailure(_arg_1:Failure):void{
             var _local_2:Dialog = new Dialog(TextKey.CLIENT_UPDATE_TITLE, "", TextKey.CLIENT_UPDATE_LEFT_BUTTON, null, "/clientUpdate");
             _local_2.setTextParams(TextKey.CLIENT_UPDATE_DESCRIPTION, {
                 "client":Parameters.BUILD_VERSION,
@@ -2501,25 +2349,22 @@ public class GameServerConnectionConcrete extends GameServerConnection
             this.retryConnection_ = false;
         }
 
-        private function handleDefaultFailure(_arg_1:Failure):void
-        {
+        private function handleDefaultFailure(_arg_1:Failure):void{
             var _local_2:String = LineBuilder.getLocalizedStringFromJSON(_arg_1.errorDescription_);
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
-            }
+            };
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
         }
 
-        private function onDoClientUpdate(_arg_1:Event):void
-        {
+        private function onDoClientUpdate(_arg_1:Event):void{
             var _local_2:Dialog = (_arg_1.currentTarget as Dialog);
             _local_2.parent.removeChild(_local_2);
             gs_.closed.dispatch();
         }
 
-        override public function isConnected():Boolean
-        {
+        override public function isConnected():Boolean{
             return (serverConnection.isConnected());
         }
 

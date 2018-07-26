@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.DailyLoginPanel
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
 import com.company.assembleegameclient.ui.panels.Panel;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class DailyLoginPanel extends Panel
-    {
+public class DailyLoginPanel extends Panel {
 
         private const titleText:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 18, true);
 
@@ -28,8 +26,7 @@ public class DailyLoginPanel extends Panel
         private var objectType:int;
         public var calendarButton:DeprecatedTextButtonStatic;
 
-        public function DailyLoginPanel(_arg_1:GameSprite)
-        {
+        public function DailyLoginPanel(_arg_1:GameSprite){
             super(_arg_1);
             this.icon = PetsViewAssetFactory.returnBitmap(5978);
             this.icon.x = -4;
@@ -42,26 +39,22 @@ public class DailyLoginPanel extends Panel
             addChild(this.titleText);
         }
 
-        public function showCalendarButton():void
-        {
+        public function showCalendarButton():void{
             this.calendarButton = new DeprecatedTextButtonStatic(16, this.showCalendarText);
             this.calendarButton.textChanged.addOnce(this.alignButton);
             addChild(this.calendarButton);
         }
 
-        public function showNoCalendarButton():void
-        {
+        public function showNoCalendarButton():void{
             this.calendarButton = new DeprecatedTextButtonStatic(16, this.noCalendarText);
             this.calendarButton.textChanged.addOnce(this.alignButton);
             addChild(this.calendarButton);
         }
 
-        public function init():void
-        {
+        public function init():void{
         }
 
-        private function alignButton():void
-        {
+        private function alignButton():void{
             this.calendarButton.x = ((WIDTH / 2) - (this.calendarButton.width / 2));
             this.calendarButton.y = ((HEIGHT - this.calendarButton.height) - 4);
         }

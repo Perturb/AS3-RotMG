@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.model.TabStripModel
 
-package kabam.rotmg.ui.model
-{
-    public class TabStripModel 
-    {
+package kabam.rotmg.ui.model{
+    public class TabStripModel {
 
         public static const MAIN_INVENTORY:String = "Main Inventory";
         public static const STATS:String = "Stats";

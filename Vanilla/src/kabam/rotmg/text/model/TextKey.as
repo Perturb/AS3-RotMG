@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.TextKey
 
-package kabam.rotmg.text.model
-{
-    public class TextKey 
-    {
+package kabam.rotmg.text.model{
+    public class TextKey {
 
         public static const LOADING_TEXT:String = "Loading.text";
         public static const EMPTY_LEGENDS_LIST:String = "Legends.EmptyList";
@@ -718,13 +716,11 @@ package kabam.rotmg.text.model
         public static const SECURITY_QUESTIONS_CONFIRM_RIGHT_BUTTON:String = "SecurityQuestionsConfirmDialog.rightButton";
 
 
-        public static function wrapForTokenResolution(_arg_1:String):String
-        {
+        public static function wrapForTokenResolution(_arg_1:String):String{
             return (("{" + _arg_1) + "}");
         }
 
-        public static function stripCurlyBrackets(_arg_1:String):String
-        {
+        public static function stripCurlyBrackets(_arg_1:String):String{
             var _local_2:Boolean = (((!(_arg_1 == null)) && (_arg_1.charAt(0) == "{")) && (_arg_1.charAt((_arg_1.length - 1)) == "}"));
             return ((_local_2) ? _arg_1.substr(1, (_arg_1.length - 2)) : _arg_1);
         }

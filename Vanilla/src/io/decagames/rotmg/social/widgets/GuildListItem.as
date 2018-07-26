@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.widgets.GuildListItem
 
-package io.decagames.rotmg.social.widgets
-{
+package io.decagames.rotmg.social.widgets{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.icons.IconButton;
 import com.company.assembleegameclient.util.GuildUtil;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.social.model.GuildMemberVO;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class GuildListItem extends BaseListItem
-    {
+public class GuildListItem extends BaseListItem {
 
         public var promoteButton:IconButton;
         public var demoteButton:IconButton;
@@ -31,8 +29,7 @@ public class GuildListItem extends BaseListItem
         private var _isMe:Boolean;
         private var _isOnline:Boolean;
 
-        public function GuildListItem(_arg_1:GuildMemberVO, _arg_2:int, _arg_3:int)
-        {
+        public function GuildListItem(_arg_1:GuildMemberVO, _arg_2:int, _arg_3:int){
             super(_arg_2);
             this._guildMemberVO = _arg_1;
             this._myRank = _arg_3;
@@ -41,8 +38,7 @@ public class GuildListItem extends BaseListItem
             this.init();
         }
 
-        override protected function init():void
-        {
+        override protected function init():void{
             super.init();
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             this._guildMemberRank = this._guildMemberVO.rank;
@@ -51,14 +47,13 @@ public class GuildListItem extends BaseListItem
                 hoverTooltipDelegate.setDisplayObject(_characterContainer);
                 setToolTipTitle("Last Seen:");
                 setToolTipText((TimeUtil.humanReadableTime(this._guildMemberVO.lastLogin) + " ago!"));
-            }
+            };
             this.createButtons();
             createListLabel(this._guildMemberVO.name);
             createListPortrait(this._guildMemberVO.player.getPortrait());
         }
 
-        private function onRemoved(_arg_1:Event):void
-        {
+        private function onRemoved(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             ((this.teleportButton) && (this.teleportButton.destroy()));
             ((this.messageButton) && (this.messageButton.destroy()));
@@ -68,8 +63,7 @@ public class GuildListItem extends BaseListItem
             ((this.guildRank) && (this.guildRank.destroy()));
         }
 
-        private function createButtons():void
-        {
+        private function createButtons():void{
             var _local_3:String;
             var _local_4:String;
             var _local_5:String;
@@ -88,17 +82,16 @@ public class GuildListItem extends BaseListItem
                 this.teleportButton.enabled = ((this._isOnline) && (!(_local_4 == _local_3)));
                 this.messageButton = addButton("lofiInterfaceBig", 21, 0xFF, 12, TextKey.PLAYERMENU_PM);
                 this.messageButton.enabled = this._isOnline;
-            }
+            };
             var _local_2:String = ((this._isMe) ? "Leave Guild" : "Remove member");
             this.removeButton = addButton("lofiInterfaceBig", 12, 280, 12, _local_2);
             if (!this._isMe)
             {
                 this.removeButton.enabled = GuildUtil.canRemove(this._myRank, this._guildMemberRank);
-            }
+            };
         }
 
-        public function get guildMemberVO():GuildMemberVO
-        {
+        public function get guildMemberVO():GuildMemberVO{
             return (this._guildMemberVO);
         }
 

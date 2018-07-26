@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.leaveYard.LeavePetYardDialog
 
-package io.decagames.rotmg.pets.popup.leaveYard
-{
+package io.decagames.rotmg.pets.popup.leaveYard{
 import io.decagames.rotmg.ui.buttons.BaseButton;
 import io.decagames.rotmg.ui.buttons.SliceScalingButton;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
@@ -15,13 +14,11 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class LeavePetYardDialog extends TextModal 
-    {
+public class LeavePetYardDialog extends TextModal {
 
         private var _leaveButton:SliceScalingButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "generic_green_button"));
 
-        public function LeavePetYardDialog()
-        {
+        public function LeavePetYardDialog(){
             var _local_1:Vector.<BaseButton>;
             _local_1 = new Vector.<BaseButton>();
             this._leaveButton.width = 100;
@@ -31,8 +28,7 @@ public class LeavePetYardDialog extends TextModal
             super(300, LineBuilder.getLocalizedStringFromKey("LeavePetYardDialog.title"), LineBuilder.getLocalizedStringFromKey("LeavePetYardDialog.text"), _local_1);
         }
 
-        public function get leaveButton():SliceScalingButton
-        {
+        public function get leaveButton():SliceScalingButton{
             return (this._leaveButton);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.ViewBoard
 
-package com.company.assembleegameclient.ui.board
-{
+package com.company.assembleegameclient.ui.board{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.ui.BaseSimpleText;
@@ -26,8 +25,7 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.text.model.TextKey;
 
-internal class ViewBoard extends Sprite 
-    {
+internal class ViewBoard extends Sprite {
 
         public static const TEXT_WIDTH:int = 400;
         public static const TEXT_HEIGHT:int = 400;
@@ -48,8 +46,7 @@ internal class ViewBoard extends Sprite
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-        public function ViewBoard(_arg_1:String, _arg_2:Boolean)
-        {
+        public function ViewBoard(_arg_1:String, _arg_2:Boolean){
             this.text_ = _arg_1;
             this.mainSprite_ = new Sprite();
             var _local_3:Shape = new Shape();
@@ -79,7 +76,7 @@ internal class ViewBoard extends Sprite
                 this.scrollBar_.setIndicatorSize(400, this.boardText_.height);
                 this.scrollBar_.addEventListener(Event.CHANGE, this.onScrollBarChange);
                 addChild(this.scrollBar_);
-            }
+            };
             this.w_ = (TEXT_WIDTH + ((_local_6) ? 26 : 0));
             this.editButton_ = new DeprecatedTextButton(14, TextKey.VIEW_GUILD_BOARD_EDIT, 120);
             this.editButton_.x = 4;
@@ -95,8 +92,7 @@ internal class ViewBoard extends Sprite
             addChild(this.closeButton_);
         }
 
-        private function layoutBackground():void
-        {
+        private function layoutBackground():void{
             this.h_ = ((TEXT_HEIGHT + this.closeButton_.height) + 8);
             x = ((800 / 2) - (this.w_ / 2));
             y = ((600 / 2) - (this.h_ / 2));
@@ -106,18 +102,15 @@ internal class ViewBoard extends Sprite
             graphics.drawGraphicsData(this.graphicsData_);
         }
 
-        private function onScrollBarChange(_arg_1:Event):void
-        {
+        private function onScrollBarChange(_arg_1:Event):void{
             this.boardText_.y = (-(this.scrollBar_.pos()) * (this.boardText_.height - 400));
         }
 
-        private function onEdit(_arg_1:Event):void
-        {
+        private function onEdit(_arg_1:Event):void{
             dispatchEvent(new Event(Event.CHANGE));
         }
 
-        private function onClose(_arg_1:Event):void
-        {
+        private function onClose(_arg_1:Event):void{
             dispatchEvent(new Event(Event.COMPLETE));
         }
 

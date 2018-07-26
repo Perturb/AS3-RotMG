@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollectionMediator
 
-package io.decagames.rotmg.pets.components.petSkinsCollection
-{
+package io.decagames.rotmg.pets.components.petSkinsCollection{
 import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
 import io.decagames.rotmg.pets.data.PetsModel;
 import io.decagames.rotmg.pets.data.family.PetFamilyKeys;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetSkinsCollectionMediator extends Mediator 
-    {
+public class PetSkinsCollectionMediator extends Mediator {
 
         [Inject]
         public var view:PetSkinsCollection;
@@ -22,13 +20,11 @@ public class PetSkinsCollectionMediator extends Mediator
         public var petIconFactory:PetIconFactory;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.drawCollection();
         }
 
-        private function drawCollection():void
-        {
+        private function drawCollection():void{
             this.view.addPetSkins(PetFamilyKeys.KEYS.Aquatic, this.model.getPetsSkinsFromFamily("Aquatic"));
             this.view.addPetSkins(PetFamilyKeys.KEYS.Automaton, this.model.getPetsSkinsFromFamily("Automaton"));
             this.view.addPetSkins(PetFamilyKeys.KEYS.Avian, this.model.getPetsSkinsFromFamily("Avian"));

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.components.MysteryBoxSelectModal
 
-package kabam.rotmg.mysterybox.components
-{
+package kabam.rotmg.mysterybox.components{
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.swiftsuspenders.Injector;
 
-public class MysteryBoxSelectModal extends Sprite
-    {
+public class MysteryBoxSelectModal extends Sprite {
 
         public static var modalWidth:int;
         public static var modalHeight:int;
@@ -40,8 +38,7 @@ public class MysteryBoxSelectModal extends Sprite
         private var titleString:String = "MysteryBoxSelectModal.titleString";
         private var selectEntries:Vector.<MysteryBoxSelectEntry>;
 
-        public function MysteryBoxSelectModal():void
-        {
+        public function MysteryBoxSelectModal():void{
             modalWidth = 385;
             modalHeight = 60;
             aMysteryBoxHeight = 77;
@@ -56,21 +53,18 @@ public class MysteryBoxSelectModal extends Sprite
             open = true;
         }
 
-        public static function getRightBorderX():int
-        {
+        public static function getRightBorderX():int{
             return (300 + (modalWidth / 2));
         }
 
-        private static function makeModalBackground(_arg_1:int, _arg_2:int):PopupWindowBackground
-        {
+        private static function makeModalBackground(_arg_1:int, _arg_2:int):PopupWindowBackground{
             var _local_3:PopupWindowBackground = new PopupWindowBackground();
             _local_3.draw(_arg_1, _arg_2, PopupWindowBackground.TYPE_TRANSPARENT_WITH_HEADER);
             return (_local_3);
         }
 
 
-        public function getText(_arg_1:String, _arg_2:int, _arg_3:int):TextFieldDisplayConcrete
-        {
+        public function getText(_arg_1:String, _arg_2:int, _arg_3:int):TextFieldDisplayConcrete{
             var _local_4:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth((modalWidth - (TEXT_MARGIN * 2)));
             _local_4.setBold(true);
             _local_4.setStringBuilder(new LineBuilder().setParams(_arg_1));
@@ -84,14 +78,12 @@ public class MysteryBoxSelectModal extends Sprite
             return (_local_4);
         }
 
-        private function positionAndStuff():void
-        {
+        private function positionAndStuff():void{
             this.box_.x = ((600 / 2) - (modalWidth / 2));
             this.box_.y = ((WebMain.STAGE.stageHeight / 2) - (modalHeight / 2));
         }
 
-        private function addBoxChildren():void
-        {
+        private function addBoxChildren():void{
             var _local_1:MysteryBoxInfo;
             var _local_2:DisplayObject;
             var _local_4:Number;
@@ -100,7 +92,7 @@ public class MysteryBoxSelectModal extends Sprite
             for each (_local_1 in this.mysteryData)
             {
                 modalHeight = (modalHeight + aMysteryBoxHeight);
-            }
+            };
             _local_2 = new backgroundImageEmbed();
             _local_2.width = (modalWidth + 1);
             _local_2.height = (modalHeight - 25);
@@ -124,20 +116,18 @@ public class MysteryBoxSelectModal extends Sprite
                 this.box_.addChild(_local_6);
                 this.selectEntries.push(_local_6);
                 _local_5++;
-            }
+            };
         }
 
-        public function updateContent():void
-        {
+        public function updateContent():void{
             var _local_1:MysteryBoxSelectEntry;
             for each (_local_1 in this.selectEntries)
             {
                 _local_1.updateContent();
-            }
+            };
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             open = false;
         }
 

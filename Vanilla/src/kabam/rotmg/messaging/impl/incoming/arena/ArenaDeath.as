@@ -1,31 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath
 
-package kabam.rotmg.messaging.impl.incoming.arena
-{
+package kabam.rotmg.messaging.impl.incoming.arena{
 import flash.utils.IDataInput;
 
 import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
 
-public class ArenaDeath extends IncomingMessage
-    {
+public class ArenaDeath extends IncomingMessage {
 
         public var cost:int;
 
-        public function ArenaDeath(_arg_1:uint, _arg_2:Function)
-        {
+        public function ArenaDeath(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.cost = _arg_1.readInt();
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("ARENADEATH", "cost"));
         }
 

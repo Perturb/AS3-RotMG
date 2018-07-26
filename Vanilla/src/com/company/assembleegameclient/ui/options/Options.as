@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.Options
 
-package com.company.assembleegameclient.ui.options
-{
+package com.company.assembleegameclient.ui.options{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.screens.TitleMenuOption;
@@ -43,8 +42,7 @@ import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.UIUtils;
 import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 
-public class Options extends Sprite
-    {
+public class Options extends Sprite {
 
         private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND, TextKey.OPTIONS_FRIEND, TextKey.OPTIONS_MISC];
         public static const Y_POSITION:int = 550;
@@ -64,8 +62,7 @@ public class Options extends Sprite
         private var selected_:OptionsTabTitle = null;
         private var options_:Vector.<Sprite> = new Vector.<Sprite>();
 
-        public function Options(_arg_1:GameSprite)
-        {
+        public function Options(_arg_1:GameSprite){
             var _local_2:TextFieldDisplayConcrete;
             var _local_6:int;
             var _local_7:OptionsTabTitle;
@@ -108,7 +105,7 @@ public class Options extends Sprite
                 if (TABS.indexOf("Experimental") == -1)
                 {
                     TABS.push("Experimental");
-                }
+                };
             }
             else
             {
@@ -116,8 +113,8 @@ public class Options extends Sprite
                 if (_local_6 != -1)
                 {
                     TABS.pop();
-                }
-            }
+                };
+            };
             var _local_3:int = 14;
             var _local_4:int;
             while (_local_4 < TABS.length)
@@ -130,86 +127,71 @@ public class Options extends Sprite
                 this.tabs_.push(_local_7);
                 _local_3 = (_local_3 + ((UIUtils.SHOW_EXPERIMENTAL_MENU) ? 90 : 108));
                 _local_4++;
-            }
+            };
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             var _local_5:CloseDialogsSignal = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             _local_5.dispatch();
         }
 
-        private static function makePotionBuy():ChoiceOption
-        {
+        private static function makePotionBuy():ChoiceOption{
             return (new ChoiceOption("contextualPotionBuy", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CONTEXTUAL_POTION_BUY, TextKey.OPTIONS_CONTEXTUAL_POTION_BUY_DESC, null));
         }
 
-        private static function makeOnOffLabels():Vector.<StringBuilder>
-        {
+        private static function makeOnOffLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_ON), makeLineBuilder(TextKey.OPTIONS_OFF)]);
         }
 
-        private static function makeHighLowLabels():Vector.<StringBuilder>
-        {
+        private static function makeHighLowLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("High"), new StaticStringBuilder("Low")]);
         }
 
-        private static function makeHpBarLabels():Vector.<StringBuilder>
-        {
+        private static function makeHpBarLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Enemy"), new StaticStringBuilder("Self & En."), new StaticStringBuilder("Self"), new StaticStringBuilder("Ally")]);
         }
 
-        private static function makeForceExpLabels():Vector.<StringBuilder>
-        {
+        private static function makeForceExpLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("On"), new StaticStringBuilder("Self")]);
         }
 
-        private static function makeAllyShootLabels():Vector.<StringBuilder>
-        {
+        private static function makeAllyShootLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Proj")]);
         }
 
-        private static function makeBarTextLabels():Vector.<StringBuilder>
-        {
+        private static function makeBarTextLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Fame"), new StaticStringBuilder("HP/MP")]);
         }
 
-        private static function makeStarSelectLabels():Vector.<StringBuilder>
-        {
+        private static function makeStarSelectLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("5"), new StaticStringBuilder("10")]);
         }
 
-        private static function makeCursorSelectLabels():Vector.<StringBuilder>
-        {
+        private static function makeCursorSelectLabels():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Chusto1"), new StaticStringBuilder("Chusto2")]);
         }
 
-        private static function makeLineBuilder(_arg_1:String):LineBuilder
-        {
+        private static function makeLineBuilder(_arg_1:String):LineBuilder{
             return (new LineBuilder().setParams(_arg_1));
         }
 
-        private static function makeClickForGold():ChoiceOption
-        {
+        private static function makeClickForGold():ChoiceOption{
             return (new ChoiceOption("clickForGold", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CLICK_FOR_GOLD, TextKey.OPTIONS_CLICK_FOR_GOLD_DESC, null));
         }
 
-        private static function onUIQualityToggle():void
-        {
+        private static function onUIQualityToggle():void{
             UIUtils.toggleQuality(Parameters.data_.uiQuality);
         }
 
-        private static function onBarTextToggle():void
-        {
+        private static function onBarTextToggle():void{
             StatusBar.barTextSignal.dispatch(Parameters.data_.toggleBarText);
         }
 
-        private static function onToMaxTextToggle():void
-        {
+        private static function onToMaxTextToggle():void{
             StatusBar.barTextSignal.dispatch(Parameters.data_.toggleBarText);
             StatView.toMaxTextSignal.dispatch(Parameters.data_.toggleToMaxText);
         }
 
-        public static function refreshCursor():void
-        {
+        public static function refreshCursor():void{
             var _local_1:MouseCursorData;
             var _local_2:Vector.<BitmapData>;
             if (((!(Parameters.data_.cursorSelect == MouseCursor.AUTO)) && (registeredCursors.indexOf(Parameters.data_.cursorSelect) == -1)))
@@ -221,29 +203,25 @@ public class Options extends Sprite
                 _local_1.data = _local_2;
                 Mouse.registerCursor(Parameters.data_.cursorSelect, _local_1);
                 registeredCursors.push(Parameters.data_.cursorSelect);
-            }
+            };
             Mouse.cursor = Parameters.data_.cursorSelect;
         }
 
-        private static function makeDegreeOptions():Vector.<StringBuilder>
-        {
+        private static function makeDegreeOptions():Vector.<StringBuilder>{
             return (new <StringBuilder>[new StaticStringBuilder("45°"), new StaticStringBuilder("0°")]);
         }
 
-        private static function onDefaultCameraAngleChange():void
-        {
+        private static function onDefaultCameraAngleChange():void{
             Parameters.data_.cameraAngle = Parameters.data_.defaultCameraAngle;
             Parameters.save();
         }
 
 
-        private function onContinueClick(_arg_1:MouseEvent):void
-        {
+        private function onContinueClick(_arg_1:MouseEvent):void{
             this.close();
         }
 
-        private function onResetToDefaultsClick(_arg_1:MouseEvent):void
-        {
+        private function onResetToDefaultsClick(_arg_1:MouseEvent):void{
             var _local_3:BaseOption;
             var _local_2:int;
             while (_local_2 < this.options_.length)
@@ -252,36 +230,33 @@ public class Options extends Sprite
                 if (_local_3 != null)
                 {
                     delete Parameters.data_[_local_3.paramName_];
-                }
+                };
                 _local_2++;
-            }
+            };
             Parameters.setDefaults();
             Parameters.save();
             this.refresh();
         }
 
-        private function onHomeClick(_arg_1:MouseEvent):void
-        {
+        private function onHomeClick(_arg_1:MouseEvent):void{
             this.close();
             this.gs_.closed.dispatch();
         }
 
-        private function onTabClick(_arg_1:MouseEvent):void
-        {
+        private function onTabClick(_arg_1:MouseEvent):void{
             var _local_2:OptionsTabTitle = (_arg_1.currentTarget as OptionsTabTitle);
             this.setSelected(_local_2);
         }
 
-        private function setSelected(_arg_1:OptionsTabTitle):void
-        {
+        private function setSelected(_arg_1:OptionsTabTitle):void{
             if (_arg_1 == this.selected_)
             {
                 return;
-            }
+            };
             if (this.selected_ != null)
             {
                 this.selected_.setSelected(false);
-            }
+            };
             this.selected_ = _arg_1;
             this.selected_.setSelected(true);
             this.removeOptions();
@@ -311,11 +286,10 @@ public class Options extends Sprite
                 case "Experimental":
                     this.addExperimentalOptions();
                     return;
-            }
+            };
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             this.continueButton_.x = (stage.stageWidth / 2);
             this.continueButton_.y = Y_POSITION;
             this.resetToDefaultsButton_.x = 20;
@@ -326,56 +300,50 @@ public class Options extends Sprite
             {
                 Parameters.data_.fullscreenMode = (stage.displayState == "fullScreenInteractive");
                 Parameters.save();
-            }
+            };
             this.setSelected(this.tabs_[0]);
             stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false, 1);
             stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false, 1);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false);
             stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((Capabilities.playerType == "Desktop") && (_arg_1.keyCode == KeyCodes.ESCAPE)))
             {
                 Parameters.data_.fullscreenMode = false;
                 Parameters.save();
                 this.refresh();
-            }
+            };
             if (_arg_1.keyCode == Parameters.data_.options)
             {
                 this.close();
-            }
+            };
             _arg_1.stopImmediatePropagation();
         }
 
-        private function close():void
-        {
+        private function close():void{
             stage.focus = null;
             parent.removeChild(this);
         }
 
-        private function onKeyUp(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyUp(_arg_1:KeyboardEvent):void{
             _arg_1.stopImmediatePropagation();
         }
 
-        private function removeOptions():void
-        {
+        private function removeOptions():void{
             var _local_1:Sprite;
             for each (_local_1 in this.options_)
             {
                 removeChild(_local_1);
-            }
+            };
             this.options_.length = 0;
         }
 
-        private function addControlsOptions():void
-        {
+        private function addControlsOptions():void{
             this.addOptionAndPosition(new KeyMapper("moveUp", TextKey.OPTIONS_MOVE_UP, TextKey.OPTIONS_MOVE_UP_DESC));
             this.addOptionAndPosition(new KeyMapper("moveLeft", TextKey.OPTIONS_MOVE_LEFT, TextKey.OPTIONS_MOVE_LEFT_DESC));
             this.addOptionAndPosition(new KeyMapper("moveDown", TextKey.OPTIONS_MOVE_DOWN, TextKey.OPTIONS_MOVE_DOWN_DESC));
@@ -395,18 +363,15 @@ public class Options extends Sprite
             this.addOptionAndPosition(makePotionBuy());
         }
 
-        private function makeAllowCameraRotation():ChoiceOption
-        {
+        private function makeAllowCameraRotation():ChoiceOption{
             return (new ChoiceOption("allowRotation", makeOnOffLabels(), [true, false], TextKey.OPTIONS_ALLOW_ROTATION, TextKey.OPTIONS_ALLOW_ROTATION_DESC, this.onAllowRotationChange));
         }
 
-        private function makeAllowMiniMapRotation():ChoiceOption
-        {
+        private function makeAllowMiniMapRotation():ChoiceOption{
             return (new ChoiceOption("allowMiniMapRotation", makeOnOffLabels(), [true, false], TextKey.OPTIONS_ALLOW_MINIMAP_ROTATION, TextKey.OPTIONS_ALLOW_MINIMAP_ROTATION_DESC, null));
         }
 
-        private function onAllowRotationChange():void
-        {
+        private function onAllowRotationChange():void{
             var _local_2:KeyMapper;
             var _local_1:int;
             while (_local_1 < this.options_.length)
@@ -417,14 +382,13 @@ public class Options extends Sprite
                     if (((_local_2.paramName_ == "rotateLeft") || (_local_2.paramName_ == "rotateRight")))
                     {
                         _local_2.setDisabled((!(Parameters.data_.allowRotation)));
-                    }
-                }
+                    };
+                };
                 _local_1++;
-            }
+            };
         }
 
-        private function addHotKeysOptions():void
-        {
+        private function addHotKeysOptions():void{
             this.addOptionAndPosition(new KeyMapper("useHealthPotion", TextKey.OPTIONS_USE_BUY_HEALTH, TextKey.OPTIONS_USE_BUY_HEALTH_DESC));
             this.addOptionAndPosition(new KeyMapper("useMagicPotion", TextKey.OPTIONS_USE_BUY_MAGIC, TextKey.OPTIONS_USE_BUY_MAGIC_DESC));
             this.addInventoryOptions();
@@ -438,24 +402,21 @@ public class Options extends Sprite
             if (this.isAirApplication())
             {
                 this.addOptionAndPosition(new KeyMapper("toggleFullscreen", TextKey.OPTIONS_TOGGLE_FULLSCREEN, TextKey.OPTIONS_TOGGLE_FULLSCREEN_DESC));
-            }
+            };
         }
 
-        public function isAirApplication():Boolean
-        {
+        public function isAirApplication():Boolean{
             return (Capabilities.playerType == "Desktop");
         }
 
-        public function addOptionsChoiceOption():void
-        {
+        public function addOptionsChoiceOption():void{
             var _local_1:String = ((Capabilities.os.split(" ")[0] == "Mac") ? "Command" : "Ctrl");
             var _local_2:ChoiceOption = new ChoiceOption("inventorySwap", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SWITCH_ITEM_IN_BACKPACK, "", null);
             _local_2.setTooltipText(new LineBuilder().setParams(TextKey.OPTIONS_SWITCH_ITEM_IN_BACKPACK_DESC, {"key":_local_1}));
             this.addOptionAndPosition(_local_2);
         }
 
-        public function addInventoryOptions():void
-        {
+        public function addInventoryOptions():void{
             var _local_2:KeyMapper;
             var _local_1:int = 1;
             while (_local_1 <= 8)
@@ -465,11 +426,10 @@ public class Options extends Sprite
                 _local_2.setTooltipText(new LineBuilder().setParams(TextKey.OPTIONS_INVENTORY_SLOT_N_DESC, {"n":_local_1}));
                 this.addOptionAndPosition(_local_2);
                 _local_1++;
-            }
+            };
         }
 
-        private function addChatOptions():void
-        {
+        private function addChatOptions():void{
             this.addOptionAndPosition(new KeyMapper(CHAT, TextKey.OPTIONS_ACTIVATE_CHAT, TextKey.OPTIONS_ACTIVATE_CHAT_DESC));
             this.addOptionAndPosition(new KeyMapper(CHAT_COMMAND, TextKey.OPTIONS_START_CHAT, TextKey.OPTIONS_START_CHAT_DESC));
             this.addOptionAndPosition(new KeyMapper(TELL, TextKey.OPTIONS_BEGIN_TELL, TextKey.OPTIONS_BEGIN_TELL_DESC));
@@ -486,8 +446,7 @@ public class Options extends Sprite
             this.addOptionAndPosition(new ChoiceOption("chatTrade", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CHAT_TRADE, TextKey.OPTIONS_CHAT_TRADE_DESC, null));
         }
 
-        private function onAllChatDisabled():void
-        {
+        private function onAllChatDisabled():void{
             var _local_2:ChoiceOption;
             Parameters.data_.chatAll = false;
             var _local_1:int;
@@ -501,14 +460,13 @@ public class Options extends Sprite
                         case "chatAll":
                             _local_2.refreshNoCallback();
                             break;
-                    }
-                }
+                    };
+                };
                 _local_1++;
-            }
+            };
         }
 
-        private function onAllChatEnabled():void
-        {
+        private function onAllChatEnabled():void{
             var _local_2:ChoiceOption;
             Parameters.data_.hidePlayerChat = false;
             Parameters.data_.chatWhisper = true;
@@ -528,14 +486,13 @@ public class Options extends Sprite
                         case "chatFriend":
                             _local_2.refreshNoCallback();
                             break;
-                    }
-                }
+                    };
+                };
                 _local_1++;
-            }
+            };
         }
 
-        private function addExperimentalOptions():void
-        {
+        private function addExperimentalOptions():void{
             this.addOptionAndPosition(new ChoiceOption("disableEnemyParticles", makeOnOffLabels(), [true, false], "Disable Enemy Particles", "Disable enemy hit and death particles.", null));
             this.addOptionAndPosition(new ChoiceOption("disableAllyShoot", makeAllyShootLabels(), [0, 1, 2], "Disable Ally Shoot", "Disable showing shooting animations and projectiles shot by allies or only projectiles.", null));
             this.addOptionAndPosition(new ChoiceOption("disablePlayersHitParticles", makeOnOffLabels(), [true, false], "Disable Players Hit Particles", "Disable player and ally hit particles.", null));
@@ -550,8 +507,7 @@ public class Options extends Sprite
             this.addOptionAndPosition(new ChoiceOption("curseIndication", makeOnOffLabels(), [true, false], "Curse Indication", "Makes enemies inflicted by Curse glow red.", null));
         }
 
-        private function addGraphicsOptions():void
-        {
+        private function addGraphicsOptions():void{
             var _local_1:String;
             var _local_2:Number;
             this.addOptionAndPosition(new ChoiceOption("defaultCameraAngle", makeDegreeOptions(), [((7 * Math.PI) / 4), 0], TextKey.OPTIONS_DEFAULT_CAMERA_ANGLE, TextKey.OPTIONS_DEFAULT_CAMERA_ANGLE_DESC, onDefaultCameraAngleChange));
@@ -572,12 +528,12 @@ public class Options extends Sprite
             {
                 _local_1 = TextKey.OPTIONS_HARDWARE_ACC_DESC_ERROR;
                 _local_2 = 16724787;
-            }
+            };
             this.addOptionAndPosition(new ChoiceOption("GPURender", makeOnOffLabels(), [true, false], TextKey.OPTIONS_HARDWARE_ACC_TITLE, _local_1, null, _local_2));
             if (Capabilities.playerType == "Desktop")
             {
                 this.addOptionAndPosition(new ChoiceOption("fullscreenMode", makeOnOffLabels(), [true, false], TextKey.OPTIONS_FULLSCREEN_MODE, TextKey.OPTIONS_FULLSCREEN_MODE_DESC, this.onFullscreenChange));
-            }
+            };
             this.addOptionAndPosition(new ChoiceOption("toggleBarText", makeBarTextLabels(), [0, 1, 2, 3], "Toggle Fame and HP/MP Text", "Always show text value for Fame, remaining HP/MP, or both", onBarTextToggle));
             this.addOptionAndPosition(new ChoiceOption("particleEffect", makeHighLowLabels(), [true, false], TextKey.OPTIONS_TOGGLE_PARTICLE_EFFECT, TextKey.OPTIONS_TOGGLE_PARTICLE_EFFECT_DESC, null));
             this.addOptionAndPosition(new ChoiceOption("uiQuality", makeHighLowLabels(), [true, false], TextKey.OPTIONS_TOGGLE_UI_QUALITY, TextKey.OPTIONS_TOGGLE_UI_QUALITY_DESC, onUIQualityToggle));
@@ -587,26 +543,22 @@ public class Options extends Sprite
             this.addOptionAndPosition(new KeyMapper("toggleMasterParticles", "Toggle Particles", "This key will toggle rendering of nonessential particles (Particles Master option)"));
         }
 
-        private function onToggleTierTag():void
-        {
+        private function onToggleTierTag():void{
             StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data_.showTierTag);
         }
 
-        private function onShowQuestPortraitsChange():void
-        {
+        private function onShowQuestPortraitsChange():void{
             if (((((!(this.gs_ == null)) && (!(this.gs_.map == null))) && (!(this.gs_.map.partyOverlay_ == null))) && (!(this.gs_.map.partyOverlay_.questArrow_ == null))))
             {
                 this.gs_.map.partyOverlay_.questArrow_.refreshToolTip();
-            }
+            };
         }
 
-        private function onFullscreenChange():void
-        {
+        private function onFullscreenChange():void{
             stage.displayState = ((Parameters.data_.fullscreenMode) ? "fullScreenInteractive" : StageDisplayState.NORMAL);
         }
 
-        private function addSoundOptions():void
-        {
+        private function addSoundOptions():void{
             this.addOptionAndPosition(new ChoiceOption("playMusic", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_MUSIC, TextKey.OPTIONS_PLAY_MUSIC_DESC, this.onPlayMusicChange));
             this.addOptionAndPosition(new SliderOption("musicVolume", this.onMusicVolumeChange), -120, 15);
             this.addOptionAndPosition(new ChoiceOption("playSFX", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_SOUND_EFFECTS, TextKey.OPTIONS_PLAY_SOUND_EFFECTS_DESC, this.onPlaySoundEffectsChange));
@@ -614,24 +566,21 @@ public class Options extends Sprite
             this.addOptionAndPosition(new ChoiceOption("playPewPew", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_WEAPON_SOUNDS, TextKey.OPTIONS_PLAY_WEAPON_SOUNDS_DESC, null));
         }
 
-        private function addMiscOptions():void
-        {
+        private function addMiscOptions():void{
             this.addOptionAndPosition(new ChoiceOption("showProtips", new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW), makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW)], [Parameters.data_.showProtips, Parameters.data_.showProtips], TextKey.OPTIONS_LEGAL_PRIVACY, TextKey.OPTIONS_LEGAL_PRIVACY_DESC, this.onLegalPrivacyClick));
             this.addOptionAndPosition(new NullOption());
             this.addOptionAndPosition(new ChoiceOption("showProtips", new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW), makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW)], [Parameters.data_.showProtips, Parameters.data_.showProtips], TextKey.OPTIONS_LEGAL_TOS, TextKey.OPTIONS_LEGAL_TOS_DESC, this.onLegalTOSClick));
             this.addOptionAndPosition(new NullOption());
         }
 
-        private function addFriendOptions():void
-        {
+        private function addFriendOptions():void{
             this.addOptionAndPosition(new ChoiceOption("tradeWithFriends", makeOnOffLabels(), [true, false], TextKey.OPTIONS_TRADE_FRIEND, TextKey.OPTIONS_TRADE_FRIEND_DESC, this.onPlaySoundEffectsChange));
             this.addOptionAndPosition(new KeyMapper("friendList", TextKey.OPTIONS_SHOW_FRIEND_LIST, TextKey.OPTIONS_SHOW_FRIEND_LIST_DESC));
             this.addOptionAndPosition(new ChoiceOption("chatFriend", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CHAT_FRIEND, TextKey.OPTIONS_CHAT_FRIEND_DESC, null));
             this.addOptionAndPosition(new ChoiceOption("friendStarRequirement", makeStarSelectLabels(), [0, 1, 2, 3, 5, 10], TextKey.OPTIONS_STAR_REQ, TextKey.OPTIONS_FRIEND_STAR_REQ_DESC, null));
         }
 
-        private function onPlayMusicChange():void
-        {
+        private function onPlayMusicChange():void{
             Music.setPlayMusic(Parameters.data_.playMusic);
             if (Parameters.data_.playMusic)
             {
@@ -640,12 +589,11 @@ public class Options extends Sprite
             else
             {
                 Music.setMusicVolume(0);
-            }
+            };
             this.refresh();
         }
 
-        private function onPlaySoundEffectsChange():void
-        {
+        private function onPlaySoundEffectsChange():void{
             SFX.setPlaySFX(Parameters.data_.playSFX);
             if (((Parameters.data_.playSFX) || (Parameters.data_.playPewPew)))
             {
@@ -654,41 +602,35 @@ public class Options extends Sprite
             else
             {
                 SFX.setSFXVolume(0);
-            }
+            };
             this.refresh();
         }
 
-        private function onMusicVolumeChange(_arg_1:Number):void
-        {
+        private function onMusicVolumeChange(_arg_1:Number):void{
             Music.setMusicVolume(_arg_1);
         }
 
-        private function onSoundEffectsVolumeChange(_arg_1:Number):void
-        {
+        private function onSoundEffectsVolumeChange(_arg_1:Number):void{
             SFX.setSFXVolume(_arg_1);
         }
 
-        private function onLegalPrivacyClick():void
-        {
+        private function onLegalPrivacyClick():void{
             var _local_1:URLRequest = new URLRequest();
             _local_1.url = Parameters.PRIVACY_POLICY_URL;
             _local_1.method = URLRequestMethod.GET;
             navigateToURL(_local_1, "_blank");
         }
 
-        private function onLegalTOSClick():void
-        {
+        private function onLegalTOSClick():void{
             var _local_1:URLRequest = new URLRequest();
             _local_1.url = Parameters.TERMS_OF_USE_URL;
             _local_1.method = URLRequestMethod.GET;
             navigateToURL(_local_1, "_blank");
         }
 
-        private function addOptionAndPosition(option:Option, offsetX:Number=0, offsetY:Number=0):void
-        {
+        private function addOptionAndPosition(option:Option, offsetX:Number=0, offsetY:Number=0):void{
             var positionOption:Function;
-            positionOption = function ():void
-            {
+            positionOption = function ():void{
                 option.x = ((((options_.length % 2) == 0) ? 20 : 415) + offsetX);
                 option.y = (((int((options_.length / 2)) * 44) + 122) + offsetY);
             };
@@ -696,20 +638,17 @@ public class Options extends Sprite
             this.addOption(option);
         }
 
-        private function addOption(_arg_1:Option):void
-        {
+        private function addOption(_arg_1:Option):void{
             addChild(_arg_1);
             _arg_1.addEventListener(Event.CHANGE, this.onChange);
             this.options_.push(_arg_1);
         }
 
-        private function onChange(_arg_1:Event):void
-        {
+        private function onChange(_arg_1:Event):void{
             this.refresh();
         }
 
-        private function refresh():void
-        {
+        private function refresh():void{
             var _local_2:BaseOption;
             var _local_1:int;
             while (_local_1 < this.options_.length)
@@ -718,9 +657,9 @@ public class Options extends Sprite
                 if (_local_2 != null)
                 {
                     _local_2.refresh();
-                }
+                };
                 _local_1++;
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.GameObjectListItem;
 
@@ -14,15 +13,13 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PlayerGroupToolTip extends ToolTip
-    {
+public class PlayerGroupToolTip extends ToolTip {
 
         public var players_:Vector.<Player> = null;
         private var playerPanels_:Vector.<GameObjectListItem> = new Vector.<GameObjectListItem>();
         private var clickMessage_:TextFieldDisplayConcrete;
 
-        public function PlayerGroupToolTip(_arg_1:Vector.<Player>, _arg_2:Boolean=true)
-        {
+        public function PlayerGroupToolTip(_arg_1:Vector.<Player>, _arg_2:Boolean=true){
             super(0x363636, 0.5, 0xFFFFFF, 1, _arg_2);
             this.clickMessage_ = new TextFieldDisplayConcrete().setSize(12).setColor(0xB3B3B3);
             this.clickMessage_.setStringBuilder(new LineBuilder().setParams(TextKey.PLAYER_TOOL_TIP_CLICK_MESSAGE));
@@ -32,12 +29,11 @@ public class PlayerGroupToolTip extends ToolTip
             if (!_arg_2)
             {
                 filters = [];
-            }
+            };
             waiter.push(this.clickMessage_.textChanged);
         }
 
-        public function setPlayers(_arg_1:Vector.<Player>):void
-        {
+        public function setPlayers(_arg_1:Vector.<Player>):void{
             var _local_3:Player;
             var _local_4:GameObjectListItem;
             this.clear();
@@ -45,7 +41,7 @@ public class PlayerGroupToolTip extends ToolTip
             if (((this.players_ == null) || (this.players_.length == 0)))
             {
                 return;
-            }
+            };
             var _local_2:int;
             for each (_local_3 in _arg_1)
             {
@@ -56,31 +52,29 @@ public class PlayerGroupToolTip extends ToolTip
                 this.playerPanels_.push(_local_4);
                 _local_4.textReady.addOnce(this.onTextChanged);
                 _local_2 = (_local_2 + 32);
-            }
+            };
             this.clickMessage_.x = ((width / 2) - (this.clickMessage_.width / 2));
             this.clickMessage_.y = _local_2;
             draw();
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             var _local_1:GameObjectListItem;
             this.clickMessage_.x = ((width / 2) - (this.clickMessage_.width / 2));
             draw();
             for each (_local_1 in this.playerPanels_)
             {
                 _local_1.textReady.remove(this.onTextChanged);
-            }
+            };
         }
 
-        private function clear():void
-        {
+        private function clear():void{
             var _local_1:GameObjectListItem;
             graphics.clear();
             for each (_local_1 in this.playerPanels_)
             {
                 removeChild(_local_1);
-            }
+            };
             this.playerPanels_.length = 0;
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog
 
-package kabam.rotmg.account.kongregate.view
-{
+package kabam.rotmg.account.kongregate.view{
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.ui.DeprecatedClickableText;
 
@@ -19,8 +18,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class KongregateAccountDetailDialog extends Sprite 
-    {
+public class KongregateAccountDetailDialog extends Sprite {
 
         public var done:Signal;
         public var register:Signal;
@@ -31,14 +29,12 @@ public class KongregateAccountDetailDialog extends Sprite
         private var emailText_:TextFieldDisplayConcrete;
         private var register_:DeprecatedClickableText;
 
-        public function KongregateAccountDetailDialog()
-        {
+        public function KongregateAccountDetailDialog(){
             this.done = new Signal();
             this.register = new Signal();
         }
 
-        public function setInfo(_arg_1:String, _arg_2:String, _arg_3:Boolean):void
-        {
+        public function setInfo(_arg_1:String, _arg_2:String, _arg_3:Boolean):void{
             var _local_4:Frame;
             _local_4 = new Frame(TextKey.KONGREGATEACCOUNTDETAILDIALOG_TITLE, "", TextKey.KONGREGATEACCOUNTDETAILDIALOG_RIGHTBUTTON, "/kongregateCurrentLogin");
             addChild(_local_4);
@@ -76,17 +72,15 @@ public class KongregateAccountDetailDialog extends Sprite
             {
                 this.register_ = new DeprecatedClickableText(12, false, TextKey.KONGREGATEACCOUNTDETAILDIALOG_REGISTER);
                 this.register_.addEventListener(MouseEvent.CLICK, this.onRegister);
-            }
+            };
             _local_4.rightButton_.addEventListener(MouseEvent.CLICK, this.onContinue);
         }
 
-        private function onContinue(_arg_1:MouseEvent):void
-        {
+        private function onContinue(_arg_1:MouseEvent):void{
             this.done.dispatch();
         }
 
-        public function onRegister(_arg_1:MouseEvent):void
-        {
+        public function onRegister(_arg_1:MouseEvent):void{
             this.register.dispatch();
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.SetScreenWithValidDataCommand
 
-package kabam.rotmg.core.commands
-{
+package kabam.rotmg.core.commands{
 import com.company.assembleegameclient.screens.LoadingScreen;
 
 import flash.display.Sprite;
@@ -19,8 +18,7 @@ import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
 
-public class SetScreenWithValidDataCommand
-    {
+public class SetScreenWithValidDataCommand {
 
         [Inject]
         public var model:PlayerModel;
@@ -38,8 +36,7 @@ public class SetScreenWithValidDataCommand
         public var petSkinsTask:GetOwnedPetSkinsTask;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.model.isInvalidated)
             {
                 this.reloadDataThenSetScreen();
@@ -47,11 +44,10 @@ public class SetScreenWithValidDataCommand
             else
             {
                 this.setScreen.dispatch(this.view);
-            }
+            };
         }
 
-        private function reloadDataThenSetScreen():void
-        {
+        private function reloadDataThenSetScreen():void{
             this.setScreen.dispatch(new LoadingScreen());
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.task);

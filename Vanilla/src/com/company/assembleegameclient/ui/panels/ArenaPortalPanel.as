@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.ArenaPortalPanel
 
-package com.company.assembleegameclient.ui.panels
-{
+package com.company.assembleegameclient.ui.panels{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.objects.ArenaPortal;
 import com.company.assembleegameclient.objects.Player;
@@ -23,8 +22,7 @@ import kabam.rotmg.util.components.LegacyBuyButton;
 
 import org.osflash.signals.Signal;
 
-public class ArenaPortalPanel extends Panel
-    {
+public class ArenaPortalPanel extends Panel {
 
         public const purchase:Signal = new Signal(int);
 
@@ -37,8 +35,7 @@ public class ArenaPortalPanel extends Panel
         private var closeNameText:TextFieldDisplayConcrete;
         private var closedText:StaticTextDisplay;
 
-        public function ArenaPortalPanel(_arg_1:AGameSprite, _arg_2:ArenaPortal)
-        {
+        public function ArenaPortalPanel(_arg_1:AGameSprite, _arg_2:ArenaPortal){
             super(_arg_1);
             this.owner_ = _arg_2;
             addChild(this.openContainer);
@@ -46,7 +43,7 @@ public class ArenaPortalPanel extends Panel
             if (((gs_.map == null) || (gs_.map.player_ == null)))
             {
                 return;
-            }
+            };
             var _local_3:Player = gs_.map.player_;
             this.nameText_ = this.makeTitle();
             this.openContainer.addChild(this.nameText_);
@@ -61,7 +58,7 @@ public class ArenaPortalPanel extends Panel
             else
             {
                 this.fameButton.addEventListener(MouseEvent.CLICK, this.onFameClick);
-            }
+            };
             this.openContainer.addChild(this.fameButton);
             this.fameButton.readyForPlacement.addOnce(this.alignUI);
             this.closedText = new StaticTextDisplay();
@@ -74,32 +71,27 @@ public class ArenaPortalPanel extends Panel
             this.closeContainer.addChild(this.closeNameText);
         }
 
-        private function alignUI():void
-        {
+        private function alignUI():void{
             this.goldButton.x = ((WIDTH * 0.25) - (this.goldButton.width / 2));
             this.goldButton.y = ((HEIGHT - this.goldButton.height) - 4);
             this.fameButton.x = ((WIDTH * 0.75) - (this.fameButton.width / 2));
             this.fameButton.y = ((HEIGHT - this.fameButton.height) - 4);
         }
 
-        private function onGoldClick(_arg_1:MouseEvent):void
-        {
+        private function onGoldClick(_arg_1:MouseEvent):void{
             this.purchase.dispatch(Currency.GOLD);
         }
 
-        private function onFameClick(_arg_1:MouseEvent):void
-        {
+        private function onFameClick(_arg_1:MouseEvent):void{
             this.purchase.dispatch(Currency.FAME);
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.openContainer.visible = this.owner_.active_;
             this.closeContainer.visible = (!(this.owner_.active_));
         }
 
-        private function makeTitle():StaticTextDisplay
-        {
+        private function makeTitle():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setSize(18).setColor(0xFFFFFF).setTextWidth(WIDTH).setWordWrap(true).setMultiLine(true).setAutoSize(TextFieldAutoSize.CENTER).setBold(true).setHTML(true);

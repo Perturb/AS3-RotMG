@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.StatData
 
-package kabam.rotmg.messaging.impl.data
-{
+package kabam.rotmg.messaging.impl.data{
 import flash.utils.IDataInput;
 import flash.utils.IDataOutput;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class StatData
-    {
+public class StatData {
 
         public static const MAX_HP_STAT:int = 0;
         public static const HP_STAT:int = 1;
@@ -114,8 +112,7 @@ public class StatData
         public var strStatValue_:String;
 
 
-        public static function statToName(_arg_1:int):String
-        {
+        public static function statToName(_arg_1:int):String{
             switch (_arg_1)
             {
                 case MAX_HP_STAT:
@@ -144,13 +141,12 @@ public class StatData
                     return (TextKey.STAT_MODEL_WISDOM_LONG);
                 case DEXTERITY_STAT:
                     return (TextKey.STAT_MODEL_DEXTERITY_LONG);
-            }
+            };
             return (TextKey.STAT_DATA_UNKNOWN_STAT);
         }
 
 
-        public function isStringStat():Boolean
-        {
+        public function isStringStat():Boolean{
             switch (this.statType_)
             {
                 case NAME_STAT:
@@ -159,12 +155,11 @@ public class StatData
                 case ACCOUNT_ID_STAT:
                 case OWNER_ACCOUNT_ID_STAT:
                     return (true);
-            }
+            };
             return (false);
         }
 
-        public function parseFromInput(_arg_1:IDataInput):void
-        {
+        public function parseFromInput(_arg_1:IDataInput):void{
             this.statType_ = _arg_1.readUnsignedByte();
             if (!this.isStringStat())
             {
@@ -173,11 +168,10 @@ public class StatData
             else
             {
                 this.strStatValue_ = _arg_1.readUTF();
-            }
+            };
         }
 
-        public function writeToOutput(_arg_1:IDataOutput):void
-        {
+        public function writeToOutput(_arg_1:IDataOutput):void{
             _arg_1.writeByte(this.statType_);
             if (!this.isStringStat())
             {
@@ -186,15 +180,14 @@ public class StatData
             else
             {
                 _arg_1.writeUTF(this.strStatValue_);
-            }
+            };
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             if (!this.isStringStat())
             {
                 return (((("[" + this.statType_) + ": ") + this.statValue_) + "]");
-            }
+            };
             return (((("[" + this.statType_) + ': "') + this.strStatValue_) + '"]');
         }
 

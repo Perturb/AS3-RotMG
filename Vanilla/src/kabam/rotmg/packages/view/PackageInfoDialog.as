@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageInfoDialog
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import flash.display.DisplayObject;
@@ -21,8 +20,7 @@ import kabam.rotmg.util.graphics.ButtonLayoutHelper;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class PackageInfoDialog extends Sprite 
-    {
+public class PackageInfoDialog extends Sprite {
 
         private static const TITLE_Y:int = 8;
         private static const BUTTON_WIDTH:int = 120;
@@ -40,40 +38,34 @@ public class PackageInfoDialog extends Sprite
         private const close:DeprecatedTextButton = makeCloseButton();
         public const closed:Signal = new NativeMappedSignal(close, MouseEvent.CLICK);
 
-        public function PackageInfoDialog():void
-        {
+        public function PackageInfoDialog():void{
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             x = ((stage.stageWidth - width) / 2);
             y = ((stage.stageHeight - height) / 2);
         }
 
-        public function setTitle(_arg_1:String):PackageInfoDialog
-        {
+        public function setTitle(_arg_1:String):PackageInfoDialog{
             this.title.setStringBuilder(new LineBuilder().setParams(_arg_1));
             return (this);
         }
 
-        public function setBody(_arg_1:String, _arg_2:String):PackageInfoDialog
-        {
+        public function setBody(_arg_1:String, _arg_2:String):PackageInfoDialog{
             this.messageTitle.setStringBuilder(new LineBuilder().setParams(_arg_1));
             this.messageBody.setStringBuilder(new LineBuilder().setParams(_arg_2));
             return (this);
         }
 
-        private function makeBackground():DisplayObject
-        {
+        private function makeBackground():DisplayObject{
             var _local_1:PackageBackground = new PackageBackground();
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeTitle():TextFieldDisplayConcrete
-        {
+        private function makeTitle():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(18).setColor(0xB6B6B6).setTextWidth(DIALOG_WIDTH).setAutoSize(TextFormatAlign.CENTER).setBold(true);
             _local_1.y = TITLE_Y;
@@ -81,8 +73,7 @@ public class PackageInfoDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeMessageTitle():TextFieldDisplayConcrete
-        {
+        private function makeMessageTitle():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(14).setColor(14864077).setTextWidth(INNER_WIDTH).setAutoSize(TextFormatAlign.CENTER).setBold(true);
             _local_1.x = ((DIALOG_WIDTH - INNER_WIDTH) * 0.5);
@@ -91,8 +82,7 @@ public class PackageInfoDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeMessageBody():TextFieldDisplayConcrete
-        {
+        private function makeMessageBody():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(14).setColor(10914439).setTextWidth(INNER_WIDTH).setAutoSize(TextFormatAlign.CENTER);
             _local_1.x = ((DIALOG_WIDTH - INNER_WIDTH) * 0.5);
@@ -101,8 +91,7 @@ public class PackageInfoDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeCloseButton():DeprecatedTextButton
-        {
+        private function makeCloseButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton;
             _local_1 = new DeprecatedTextButton(BUTTON_FONT, TextKey.CLOSE, BUTTON_WIDTH);
             _local_1.textChanged.addOnce(this.layoutButton);
@@ -111,8 +100,7 @@ public class PackageInfoDialog extends Sprite
             return (_local_1);
         }
 
-        private function layoutButton():void
-        {
+        private function layoutButton():void{
             new ButtonLayoutHelper().layout(DIALOG_WIDTH, this.close);
         }
 

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.config.AnimationConfig
 
-package io.decagames.rotmg.pets.config
-{
-    public class AnimationConfig 
-    {
+package io.decagames.rotmg.pets.config{
+    public class AnimationConfig {
 
         public static const FLASH_ANIMATION_DURATION:Number = 0.3;
         public static const SPIN_ANIMATION_DURATION:Number = 1.5;

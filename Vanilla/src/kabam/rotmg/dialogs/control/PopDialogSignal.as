@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.control.PopDialogSignal
 
-package kabam.rotmg.dialogs.control
-{
+package kabam.rotmg.dialogs.control{
 import org.osflash.signals.Signal;
 
-public class PopDialogSignal extends Signal 
-    {
+public class PopDialogSignal extends Signal {
 
 
     }

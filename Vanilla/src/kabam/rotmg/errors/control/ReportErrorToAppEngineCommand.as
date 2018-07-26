@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.errors.control.ReportErrorToAppEngineCommand
 
-package kabam.rotmg.errors.control
-{
+package kabam.rotmg.errors.control{
 import com.company.util.CapabilitiesUtil;
 
 import flash.events.ErrorEvent;
@@ -13,8 +12,7 @@ import kabam.rotmg.account.core.Account;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.application.api.ApplicationSetup;
 
-public class ReportErrorToAppEngineCommand 
-    {
+public class ReportErrorToAppEngineCommand {
 
         [Inject]
         public var account:Account;
@@ -27,8 +25,7 @@ public class ReportErrorToAppEngineCommand
         private var error:*;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.event.preventDefault();
             this.error = this.event["error"];
             this.getMessage();
@@ -44,25 +41,23 @@ public class ReportErrorToAppEngineCommand
             });
         }
 
-        private function getMessage():String
-        {
+        private function getMessage():String{
             if ((this.error is Error))
             {
                 return (this.error.message);
-            }
+            };
             if (this.event != null)
             {
                 return (this.event.text);
-            }
+            };
             if (this.error != null)
             {
                 return (this.error.toString());
-            }
+            };
             return ("(empty)");
         }
 
-        private function getStackTrace():String
-        {
+        private function getStackTrace():String{
             return ((this.error is Error) ? Error(this.error).getStackTrace() : "(empty)");
         }
 

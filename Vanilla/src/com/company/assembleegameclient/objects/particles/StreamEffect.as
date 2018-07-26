@@ -1,30 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.StreamEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import flash.geom.Point;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class StreamEffect extends ParticleEffect
-    {
+public class StreamEffect extends ParticleEffect {
 
         public var start_:Point;
         public var end_:Point;
         public var color_:int;
 
-        public function StreamEffect(_arg_1:WorldPosData, _arg_2:WorldPosData, _arg_3:int)
-        {
+        public function StreamEffect(_arg_1:WorldPosData, _arg_2:WorldPosData, _arg_3:int){
             this.start_ = new Point(_arg_1.x_, _arg_1.y_);
             this.end_ = new Point(_arg_2.x_, _arg_2.y_);
             this.color_ = _arg_3;
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:int;
             var _local_6:StreamParticle;
             x_ = this.start_.x;
@@ -37,7 +33,7 @@ public class StreamEffect extends ParticleEffect
                 _local_6 = new StreamParticle(1.85, _local_5, this.color_, (1500 + (Math.random() * 3000)), (0.1 + (Math.random() * 0.1)), this.start_, this.end_);
                 map_.addObj(_local_6, x_, y_);
                 _local_4++;
-            }
+            };
             return (false);
         }
 
@@ -50,8 +46,7 @@ import com.company.assembleegameclient.objects.particles.Particle;
 import flash.geom.Point;
 import flash.geom.Vector3D;
 
-class StreamParticle extends Particle
-{
+class StreamParticle extends Particle {
 
     public var timeLeft_:int;
     protected var moveVec_:Vector3D = new Vector3D();
@@ -65,8 +60,7 @@ class StreamParticle extends Particle
     public var yDeflect_:Number;
     public var period_:Number;
 
-    public function StreamParticle(_arg_1:Number, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Point, _arg_7:Point)
-    {
+    public function StreamParticle(_arg_1:Number, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Point, _arg_7:Point){
         super(_arg_3, _arg_1, _arg_2);
         this.moveVec_.z = _arg_5;
         this.timeLeft_ = _arg_4;
@@ -83,13 +77,12 @@ class StreamParticle extends Particle
         this.period_ = (0.25 + (Math.random() * 0.5));
     }
 
-    override public function update(_arg_1:int, _arg_2:int):Boolean
-    {
+    override public function update(_arg_1:int, _arg_2:int):Boolean{
         this.timeLeft_ = (this.timeLeft_ - _arg_2);
         if (this.timeLeft_ <= 0)
         {
             return (false);
-        }
+        };
         this.pathX_ = (this.pathX_ + (this.dx_ * _arg_2));
         this.pathY_ = (this.pathY_ + (this.dy_ * _arg_2));
         var _local_3:Number = Math.sin(((this.timeLeft_ / 1000) / this.period_));

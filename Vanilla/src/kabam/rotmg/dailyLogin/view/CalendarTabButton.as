@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.CalendarTabButton
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.util.GraphicsUtil;
 
 import flash.display.CapsStyle;
@@ -22,8 +21,7 @@ import kabam.rotmg.dailyLogin.config.CalendarSettings;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class CalendarTabButton extends Sprite 
-    {
+public class CalendarTabButton extends Sprite {
 
         public static const STATE_SELECTED:String = "selected";
         public static const STATE_IDLE:String = "idle";
@@ -42,8 +40,7 @@ public class CalendarTabButton extends Sprite
         private var hintText:String;
         private var tooltip:DailyCalendarInfoIcon;
 
-        public function CalendarTabButton(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:int)
-        {
+        public function CalendarTabButton(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:int){
             this._calendarType = _arg_3;
             this.tabName = _arg_1;
             this.hintText = _arg_2;
@@ -51,33 +48,30 @@ public class CalendarTabButton extends Sprite
             this.addEventListener(Event.ADDED, this.onAddedHandler);
         }
 
-        private function onAddedHandler(_arg_1:Event):void
-        {
+        private function onAddedHandler(_arg_1:Event):void{
             this.removeEventListener(Event.ADDED, this.onAddedHandler);
             this.addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function drawTab():void
-        {
+        private function drawTab():void{
             if (this.background)
             {
                 removeChild(this.background);
-            }
+            };
             if (this.tooltip)
             {
                 removeChild(this.tooltip);
-            }
+            };
             this.background = CalendarDayBox.drawRectangleWithCuts([1, 1, 0, 0], CalendarSettings.TABS_WIDTH, CalendarSettings.TABS_HEIGHT, 0x363636, 1, ((this.state_ == STATE_IDLE) ? this.graphicsDataBackgroundIdle : this.graphicsDataBackground), this.path_);
             this.addChild(this.background);
             if (this.tabNameTxt)
             {
                 removeChild(this.tabNameTxt);
-            }
+            };
             this.tabNameTxt = new TextFieldDisplayConcrete().setSize(CalendarSettings.TABS_FONT_SIZE).setColor(((this.state_ == STATE_IDLE) ? 0xFFFFFF : 0xFFDE00)).setTextWidth(CalendarSettings.TABS_WIDTH).setAutoSize(TextFieldAutoSize.CENTER);
             this.tabNameTxt.setStringBuilder(new StaticStringBuilder(this.tabName));
             this.tabNameTxt.y = ((CalendarSettings.TABS_HEIGHT - CalendarSettings.TABS_FONT_SIZE) / 2);
@@ -88,21 +82,19 @@ public class CalendarTabButton extends Sprite
             if (this.state_ == STATE_IDLE)
             {
                 this.tabNameTxt.alpha = 0.5;
-            }
+            };
             this.addChild(this.tabNameTxt);
         }
 
-        public function set state(_arg_1:String):void
-        {
+        public function set state(_arg_1:String):void{
             if (_arg_1 != this.state_)
             {
                 this.state_ = _arg_1;
                 this.drawTab();
-            }
+            };
         }
 
-        public function get calendarType():String
-        {
+        public function get calendarType():String{
             return (this._calendarType);
         }
 

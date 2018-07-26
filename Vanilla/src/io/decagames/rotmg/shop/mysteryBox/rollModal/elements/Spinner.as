@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner
 
-package io.decagames.rotmg.shop.mysteryBox.rollModal.elements
-{
+package io.decagames.rotmg.shop.mysteryBox.rollModal.elements{
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.utils.colors.Tint;
 
 import kabam.rotmg.assets.EmbeddedAssets;
 
-public class Spinner extends Sprite
-    {
+public class Spinner extends Sprite {
 
         public const graphic:DisplayObject = new EmbeddedAssets.StarburstSpinner();
 
@@ -36,8 +34,7 @@ public class Spinner extends Sprite
         private var gFinal:Number = -1;
         private var bFinal:Number = -1;
 
-        public function Spinner(_arg_1:int, _arg_2:Boolean=false)
-        {
+        public function Spinner(_arg_1:int, _arg_2:Boolean=false){
             this._degreesPerSecond = _arg_1;
             this.multicolor = _arg_2;
             this.secondsElapsed = 0;
@@ -48,67 +45,59 @@ public class Spinner extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
         }
 
-        private function addGraphic():void
-        {
+        private function addGraphic():void{
             addChild(this.graphic);
             this.graphic.x = ((-1 * width) / 2);
             this.graphic.y = ((-1 * height) / 2);
         }
 
-        private function onRemoved(_arg_1:Event):void
-        {
+        private function onRemoved(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        public function pause():void
-        {
+        public function pause():void{
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             this.previousSeconds = 0;
         }
 
-        public function resume():void
-        {
+        public function resume():void{
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             this.updateTimeElapsed();
             var _local_2:Number = ((this._degreesPerSecond * this.secondsElapsed) % 360);
             rotation = _local_2;
             this.applyColor((_local_2 / 360));
         }
 
-        private function applyColor(_arg_1:Number):void
-        {
+        private function applyColor(_arg_1:Number):void{
             if (!this.multicolor)
             {
                 return;
-            }
+            };
             if (_arg_1 < this.previousProgress)
             {
                 this.direction = (!(this.direction));
-            }
+            };
             this.previousProgress = _arg_1;
             if (this.direction)
             {
                 _arg_1 = (1 - _arg_1);
-            }
+            };
             var _local_2:uint = this.getColorByProgress(_arg_1);
             Tint.add(this.graphic, _local_2, 1);
         }
 
-        private function getColorByProgress(_arg_1:Number):uint
-        {
+        private function getColorByProgress(_arg_1:Number):uint{
             var _local_2:Number = (this.rStart + ((this.rFinal - this.rStart) * _arg_1));
             var _local_3:Number = (this.gStart + ((this.gFinal - this.gStart) * _arg_1));
             var _local_4:Number = (this.bStart + ((this.bFinal - this.bStart) * _arg_1));
             return (RGB.fromRGB(_local_2, _local_3, _local_4));
         }
 
-        private function setupStartAndFinalColors():void
-        {
+        private function setupStartAndFinalColors():void{
             var _local_1:RandomColorGenerator = new RandomColorGenerator();
             var _local_2:Array = _local_1.randomColor();
             var _local_3:Array = _local_1.randomColor();
@@ -120,18 +109,16 @@ public class Spinner extends Sprite
             this.bFinal = _local_3[2];
         }
 
-        private function updateTimeElapsed():void
-        {
+        private function updateTimeElapsed():void{
             var _local_1:Number = (getTimer() / 1000);
             if (this.previousSeconds)
             {
                 this.secondsElapsed = (this.secondsElapsed + (_local_1 - this.previousSeconds));
-            }
+            };
             this.previousSeconds = _local_1;
         }
 
-        public function get degreesPerSecond():int
-        {
+        public function get degreesPerSecond():int{
             return (this._degreesPerSecond);
         }
 

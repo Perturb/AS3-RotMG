@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.TransformMatrixPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
 import flash.geom.Matrix;
 import flash.geom.Transform;
 
-public class TransformMatrixPlugin extends TweenPlugin 
-    {
+public class TransformMatrixPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         private static const _DEG2RAD:Number = (Math.PI / 180);//0.0174532925199433
@@ -32,13 +30,11 @@ public class TransformMatrixPlugin extends TweenPlugin
         protected var _dStart:Number;
         protected var _bStart:Number;
 
-        public function TransformMatrixPlugin()
-        {
+        public function TransformMatrixPlugin(){
             super("transformMatrix,x,y,scaleX,scaleY,rotation,width,height,transformAroundPoint,transformAroundCenter");
         }
 
-        override public function setRatio(_arg_1:Number):void
-        {
+        override public function setRatio(_arg_1:Number):void{
             var _local_2:Number;
             var _local_3:Number;
             var _local_4:Number;
@@ -57,14 +53,13 @@ public class TransformMatrixPlugin extends TweenPlugin
                 _matrix.b = ((_local_4 * _local_3) + (_matrix.b * _local_2));
                 _matrix.c = ((_local_5 * _local_2) - (_matrix.d * _local_3));
                 _matrix.d = ((_local_5 * _local_3) + (_matrix.d * _local_2));
-            }
+            };
             _matrix.tx = (_txStart + (_arg_1 * _txChange));
             _matrix.ty = (_tyStart + (_arg_1 * _tyChange));
             _transform.matrix = _matrix;
         }
 
-        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean
-        {
+        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean{
             var _local_5:Number;
             var _local_6:Number;
             var _local_7:Number;
@@ -97,8 +92,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                 else
                 {
                     _txChange = 0;
-                }
-            }
+                };
+            };
             if (("y" in _arg_2))
             {
                 _tyChange = ((typeof(_arg_2.y) == "number") ? (_arg_2.y - _tyStart) : Number(_arg_2.y.split("=").join("")));
@@ -112,8 +107,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                 else
                 {
                     _tyChange = 0;
-                }
-            }
+                };
+            };
             _aChange = (("a" in _arg_2) ? (_arg_2.a - _aStart) : 0);
             _bChange = (("b" in _arg_2) ? (_arg_2.b - _bStart) : 0);
             _cChange = (("c" in _arg_2) ? (_arg_2.c - _cStart) : 0);
@@ -130,8 +125,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                     if (((_local_4.a < 0) && (_local_4.d > 0)))
                     {
                         _local_7 = -(_local_7);
-                    }
-                }
+                    };
+                };
                 _local_8 = Math.sqrt(((_local_4.c * _local_4.c) + (_local_4.d * _local_4.d)));
                 if (_local_8 == 0)
                 {
@@ -142,13 +137,13 @@ public class TransformMatrixPlugin extends TweenPlugin
                     if (((_local_4.d < 0) && (_local_4.a > 0)))
                     {
                         _local_8 = -(_local_8);
-                    }
-                }
+                    };
+                };
                 _local_9 = Math.atan2(_local_4.b, _local_4.a);
                 if (((_local_4.a < 0) && (_local_4.d >= 0)))
                 {
                     _local_9 = (_local_9 + ((_local_9 <= 0) ? Math.PI : -(Math.PI)));
-                }
+                };
                 _local_10 = (Math.atan2(-(_matrix.c), _matrix.d) - _local_9);
                 _local_11 = _local_9;
                 if (("shortRotation" in _arg_2))
@@ -163,8 +158,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                         if (_local_13 < -(Math.PI))
                         {
                             _local_13 = (_local_13 + (Math.PI * 2));
-                        }
-                    }
+                        };
+                    };
                     _local_11 = (_local_11 + _local_13);
                 }
                 else
@@ -172,15 +167,15 @@ public class TransformMatrixPlugin extends TweenPlugin
                     if (("rotation" in _arg_2))
                     {
                         _local_11 = ((typeof(_arg_2.rotation) == "number") ? (_arg_2.rotation * _DEG2RAD) : ((Number(_arg_2.rotation.split("=").join("")) * _DEG2RAD) + _local_9));
-                    }
-                }
+                    };
+                };
                 _local_12 = (("skewX" in _arg_2) ? ((typeof(_arg_2.skewX) == "number") ? (Number(_arg_2.skewX) * _DEG2RAD) : ((Number(_arg_2.skewX.split("=").join("")) * _DEG2RAD) + _local_10)) : 0);
                 if (("skewY" in _arg_2))
                 {
                     _local_14 = ((typeof(_arg_2.skewY) == "number") ? (_arg_2.skewY * _DEG2RAD) : ((Number(_arg_2.skewY.split("=").join("")) * _DEG2RAD) - _local_10));
                     _local_11 = (_local_11 + (_local_14 + _local_10));
                     _local_12 = (_local_12 - _local_14);
-                }
+                };
                 if (_local_11 != _local_9)
                 {
                     if ((("rotation" in _arg_2) || ("shortRotation" in _arg_2)))
@@ -191,8 +186,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                     else
                     {
                         _local_4.rotate((_local_11 - _local_9));
-                    }
-                }
+                    };
+                };
                 if (("scale" in _arg_2))
                 {
                     _local_5 = (Number(_arg_2.scale) / _local_7);
@@ -201,7 +196,7 @@ public class TransformMatrixPlugin extends TweenPlugin
                     {
                         _local_5 = (_local_5 + 1);
                         _local_6 = (_local_6 + 1);
-                    }
+                    };
                 }
                 else
                 {
@@ -211,22 +206,22 @@ public class TransformMatrixPlugin extends TweenPlugin
                         if (typeof(_arg_2.scaleX) != "number")
                         {
                             _local_5 = (_local_5 + 1);
-                        }
-                    }
+                        };
+                    };
                     if (("scaleY" in _arg_2))
                     {
                         _local_6 = (Number(_arg_2.scaleY) / _local_8);
                         if (typeof(_arg_2.scaleY) != "number")
                         {
                             _local_6 = (_local_6 + 1);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 if (_local_12 != _local_10)
                 {
                     _local_4.c = (-(_local_8) * Math.sin((_local_12 + _local_11)));
                     _local_4.d = (_local_8 * Math.cos((_local_12 + _local_11)));
-                }
+                };
                 if (("skewX2" in _arg_2))
                 {
                     if (typeof(_arg_2.skewX2) == "number")
@@ -236,8 +231,8 @@ public class TransformMatrixPlugin extends TweenPlugin
                     else
                     {
                         _local_4.c = (_local_4.c + Math.tan((0 - (Number(_arg_2.skewX2) * _DEG2RAD))));
-                    }
-                }
+                    };
+                };
                 if (("skewY2" in _arg_2))
                 {
                     if (typeof(_arg_2.skewY2) == "number")
@@ -247,23 +242,23 @@ public class TransformMatrixPlugin extends TweenPlugin
                     else
                     {
                         _local_4.b = (_local_4.b + Math.tan((Number(_arg_2.skewY2) * _DEG2RAD)));
-                    }
-                }
+                    };
+                };
                 if (((_local_5) || (_local_5 == 0)))
                 {
                     _local_4.a = (_local_4.a * _local_5);
                     _local_4.b = (_local_4.b * _local_5);
-                }
+                };
                 if (((_local_6) || (_local_6 == 0)))
                 {
                     _local_4.c = (_local_4.c * _local_6);
                     _local_4.d = (_local_4.d * _local_6);
-                }
+                };
                 _aChange = (_local_4.a - _aStart);
                 _bChange = (_local_4.b - _bStart);
                 _cChange = (_local_4.c - _cStart);
                 _dChange = (_local_4.d - _dStart);
-            }
+            };
             return (true);
         }
 

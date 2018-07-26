@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.TitleMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.mapeditor.MapEditor;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.screens.ServersScreen;
@@ -38,8 +37,7 @@ import kabam.rotmg.ui.signals.EnterGameSignal;
 import robotlegs.bender.bundles.mvcs.Mediator;
 import robotlegs.bender.framework.api.ILogger;
 
-public class TitleMediator extends Mediator 
-    {
+public class TitleMediator extends Mediator {
 
         private static var supportCalledBefore:Boolean = false;
 
@@ -75,8 +73,7 @@ public class TitleMediator extends Mediator
         public var tracking:GoogleAnalytics;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.optionalButtonsAdded.add(this.onOptionalButtonsAdded);
             this.view.initialize(this.makeEnvironmentData());
             this.view.playClicked.add(this.handleIntentionToPlay);
@@ -87,26 +84,24 @@ public class TitleMediator extends Mediator
             if (this.playerModel.isNewToEditing())
             {
                 this.view.putNoticeTagToOption(ButtonFactory.getEditorButton(), "new");
-            }
+            };
             if (this.securityQuestionsModel.showSecurityQuestionsOnStartup)
             {
                 this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-            }
+            };
             if (!Parameters.sessionStarted)
             {
                 Parameters.sessionStarted = true;
-            }
+            };
         }
 
-        private function openSupportPage():void
-        {
+        private function openSupportPage():void{
             var _local_1:URLRequest = new URLRequest();
             _local_1.url = "https://decagames.desk.com";
             navigateToURL(_local_1, "_blank");
         }
 
-        private function onSupportVerifyComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onSupportVerifyComplete(_arg_1:Boolean, _arg_2:*):void{
             var _local_3:XML;
             if (_arg_1)
             {
@@ -114,12 +109,11 @@ public class TitleMediator extends Mediator
                 if (((_local_3.hasOwnProperty("mp")) && (_local_3.hasOwnProperty("sg"))))
                 {
                     this.toSupportPage(_local_3.mp, _local_3.sg);
-                }
-            }
+                };
+            };
         }
 
-        private function toSupportPage(_arg_1:String, _arg_2:String):void
-        {
+        private function toSupportPage(_arg_1:String, _arg_2:String):void{
             var _local_3:URLVariables = new URLVariables();
             var _local_4:URLRequest = new URLRequest();
             var _local_5:Boolean;
@@ -128,7 +122,7 @@ public class TitleMediator extends Mediator
             if (((DynamicSettings.settingExists("SalesforceMobile")) && (DynamicSettings.getSettingValue("SalesforceMobile") == 1)))
             {
                 _local_5 = true;
-            }
+            };
             var _local_6:String = this.playerModel.getSalesForceData();
             if (((_local_6 == "unavailable") || (!(_local_5))))
             {
@@ -149,7 +143,7 @@ public class TitleMediator extends Mediator
                     else
                     {
                         ExternalInterface.call("reopenSalesForce");
-                    }
+                    };
                 }
                 else
                 {
@@ -158,18 +152,16 @@ public class TitleMediator extends Mediator
                     _local_4.method = URLRequestMethod.GET;
                     _local_4.data = _local_3;
                     navigateToURL(_local_4, "_blank");
-                }
-            }
+                };
+            };
         }
 
-        private function onOptionalButtonsAdded():void
-        {
+        private function onOptionalButtonsAdded():void{
             ((this.view.editorClicked) && (this.view.editorClicked.add(this.showMapEditor)));
             ((this.view.quitClicked) && (this.view.quitClicked.add(this.attemptToCloseClient)));
         }
 
-        private function makeEnvironmentData():EnvironmentData
-        {
+        private function makeEnvironmentData():EnvironmentData{
             var _local_1:EnvironmentData = new EnvironmentData();
             _local_1.isDesktop = (Capabilities.playerType == "Desktop");
             _local_1.canMapEdit = ((this.playerModel.isAdmin()) || (this.playerModel.mapEditor()));
@@ -177,8 +169,7 @@ public class TitleMediator extends Mediator
             return (_local_1);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.playClicked.remove(this.handleIntentionToPlay);
             this.view.serversClicked.remove(this.showServersScreen);
             this.view.accountClicked.remove(this.handleIntentionToReviewAccount);
@@ -189,8 +180,7 @@ public class TitleMediator extends Mediator
             ((this.view.quitClicked) && (this.view.quitClicked.remove(this.attemptToCloseClient)));
         }
 
-        private function handleIntentionToPlay():void
-        {
+        private function handleIntentionToPlay():void{
             if (this.account.isRegistered())
             {
                 this.enterGame.dispatch();
@@ -198,31 +188,26 @@ public class TitleMediator extends Mediator
             else
             {
                 this.openAccountInfo.dispatch(false);
-            }
+            };
         }
 
-        private function showServersScreen():void
-        {
+        private function showServersScreen():void{
             this.setScreen.dispatch(new ServersScreen());
         }
 
-        private function handleIntentionToReviewAccount():void
-        {
+        private function handleIntentionToReviewAccount():void{
             this.openAccountInfo.dispatch(false);
         }
 
-        private function showLegendsScreen():void
-        {
+        private function showLegendsScreen():void{
             this.setScreen.dispatch(new LegendsView());
         }
 
-        private function showMapEditor():void
-        {
+        private function showMapEditor():void{
             this.setScreen.dispatch(new MapEditor());
         }
 
-        private function attemptToCloseClient():void
-        {
+        private function attemptToCloseClient():void{
             dispatch(new Event("APP_CLOSE_EVENT"));
         }
 

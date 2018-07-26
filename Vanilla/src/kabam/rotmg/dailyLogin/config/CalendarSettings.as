@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.config.CalendarSettings
 
-package kabam.rotmg.dailyLogin.config
-{
+package kabam.rotmg.dailyLogin.config{
 import flash.geom.ColorTransform;
 import flash.geom.Rectangle;
 
-public class CalendarSettings 
-    {
+public class CalendarSettings {
 
         public static const NUMBER_OF_COLUMNS:int = 7;
         public static const BOX_WIDTH:int = 70;
@@ -28,14 +26,12 @@ public class CalendarSettings
         public static const GREEN_COLOR_TRANSFORM:ColorTransform = new ColorTransform(0, (198 / 0xFF), (6 / 0xFF));
 
 
-        public static function getCalendarModalRectangle(_arg_1:int, _arg_2:Boolean):Rectangle
-        {
+        public static function getCalendarModalRectangle(_arg_1:int, _arg_2:Boolean):Rectangle{
             var _local_3:int = int(Math.ceil((_arg_1 / NUMBER_OF_COLUMNS)));
             return (new Rectangle(0, 0, ((((2 * DAILY_LOGIN_MODAL_PADDING) + (2 * DAILY_LOGIN_TABS_PADDING)) + (BOX_WIDTH * NUMBER_OF_COLUMNS)) + ((NUMBER_OF_COLUMNS - 1) * BOX_MARGIN)), ((((((TABS_HEIGHT + (2 * DAILY_LOGIN_TABS_PADDING)) + (2 * DAILY_LOGIN_MODAL_PADDING)) + (BOX_HEIGHT * _local_3)) + ((_local_3 - 1) * BOX_MARGIN)) + DAILY_LOGIN_MODAL_HEIGHT_MARGIN) + ((_arg_2) ? 20 : 0))));
         }
 
-        public static function getTabsRectangle(_arg_1:int):Rectangle
-        {
+        public static function getTabsRectangle(_arg_1:int):Rectangle{
             var _local_2:int = int(Math.ceil((_arg_1 / NUMBER_OF_COLUMNS)));
             return (new Rectangle(0, 0, (((BOX_WIDTH * NUMBER_OF_COLUMNS) + ((NUMBER_OF_COLUMNS - 1) * BOX_MARGIN)) + (2 * DAILY_LOGIN_TABS_PADDING)), (((BOX_HEIGHT * _local_2) + ((_local_2 - 1) * BOX_MARGIN)) + (2 * DAILY_LOGIN_TABS_PADDING))));
         }

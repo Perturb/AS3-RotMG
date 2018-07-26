@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.build.impl.CompileTimeBuildData
 
-package kabam.rotmg.build.impl
-{
+package kabam.rotmg.build.impl{
 import flash.display.LoaderInfo;
 import flash.net.LocalConnection;
 import flash.system.Capabilities;
@@ -12,8 +11,7 @@ import flash.system.Capabilities;
 import kabam.rotmg.build.api.BuildData;
 import kabam.rotmg.build.api.BuildEnvironment;
 
-public class CompileTimeBuildData implements BuildData 
-    {
+public class CompileTimeBuildData implements BuildData {
 
         private static const DESKTOP:String = "Desktop";
         private static const ROTMG:String = "www.realmofthemadgod.com";
@@ -31,25 +29,21 @@ public class CompileTimeBuildData implements BuildData
         private var environment:BuildEnvironment;
 
 
-        public function getEnvironmentString():String
-        {
+        public function getEnvironmentString():String{
             return ("production".toLowerCase());
         }
 
-        public function getEnvironment():BuildEnvironment
-        {
+        public function getEnvironment():BuildEnvironment{
             ((this.isParsed) || (this.parseEnvironment()));
             return (this.environment);
         }
 
-        private function parseEnvironment():void
-        {
+        private function parseEnvironment():void{
             this.isParsed = true;
             this.setEnvironmentValue(this.getEnvironmentString());
         }
 
-        private function setEnvironmentValue(_arg_1:String):void
-        {
+        private function setEnvironmentValue(_arg_1:String):void{
             var _local_3:LocalConnection;
             var _local_2:Boolean = this.conditionsRequireTesting(_arg_1);
             if (_local_2)
@@ -64,38 +58,33 @@ public class CompileTimeBuildData implements BuildData
                     if (_local_3.domain == ROTMG_TESTING2)
                     {
                         this.environment = BuildEnvironment.TESTING2;
-                    }
-                }
+                    };
+                };
             }
             else
             {
                 this.environment = this.environments.getEnvironment(_arg_1);
-            }
+            };
         }
 
-        private function conditionsRequireTesting(_arg_1:String):Boolean
-        {
+        private function conditionsRequireTesting(_arg_1:String):Boolean{
             return ((_arg_1 == BuildEnvironments.PRODUCTION) && (!(this.isMarkedAsProductionRelease())));
         }
 
-        private function isMarkedAsProductionRelease():Boolean
-        {
+        private function isMarkedAsProductionRelease():Boolean{
             return ((this.isDesktopPlayer()) ? this.isSteamProductionDeployment() : this.isHostedOnProductionServers());
         }
 
-        private function isDesktopPlayer():Boolean
-        {
+        private function isDesktopPlayer():Boolean{
             return (Capabilities.playerType == DESKTOP);
         }
 
-        private function isSteamProductionDeployment():Boolean
-        {
+        private function isSteamProductionDeployment():Boolean{
             var _local_1:Object = this.loaderInfo.parameters;
             return (_local_1.deployment == STEAM_PRODUCTION_CONFIG);
         }
 
-        private function isHostedOnProductionServers():Boolean
-        {
+        private function isHostedOnProductionServers():Boolean{
             var _local_1:LocalConnection = new LocalConnection();
             return ((_local_1.domain == ROTMG) || (_local_1.domain == ROTMG_APPSPOT));
         }

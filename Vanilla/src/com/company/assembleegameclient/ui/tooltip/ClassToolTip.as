@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.ClassToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.appengine.CharacterStats;
 import com.company.assembleegameclient.appengine.SavedCharactersList;
 import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -37,8 +36,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class ClassToolTip extends ToolTip
-    {
+public class ClassToolTip extends ToolTip {
 
         public static const CLASS_TOOL_TIP_WIDTH:int = 210;
         public static const FULL_STAR:ColorTransform = new ColorTransform(0.8, 0.8, 0.8);
@@ -68,8 +66,7 @@ public class ClassToolTip extends ToolTip
         private var _lineColor:Number;
         private var _nextStarFame:int;
 
-        public function ClassToolTip(_arg_1:XML, _arg_2:PlayerModel, _arg_3:CharacterStats)
-        {
+        public function ClassToolTip(_arg_1:XML, _arg_2:PlayerModel, _arg_3:CharacterStats){
             this._playerXML = _arg_1;
             this._playerModel = _arg_2;
             this._charStats = _arg_3;
@@ -84,19 +81,17 @@ public class ClassToolTip extends ToolTip
                 this._backgroundColor = 0x363636;
                 this._borderColor = 0xFFFFFF;
                 this._lineColor = 0x1C1C1C;
-            }
+            };
             super(this._backgroundColor, 1, this._borderColor, 1);
             this.init();
         }
 
-        public static function getDisplayId(_arg_1:XML):String
-        {
+        public static function getDisplayId(_arg_1:XML):String{
             return ((_arg_1.DisplayId == undefined) ? _arg_1.@id : _arg_1.DisplayId);
         }
 
 
-        private function init():void
-        {
+        private function init():void{
             this._numberOfStars = ((this._charStats == null) ? 0 : this._charStats.numStars());
             this.createCharacter();
             this.createEquipmentTypes();
@@ -119,12 +114,11 @@ public class ClassToolTip extends ToolTip
                 {
                     this.lineBreakTwo = new LineBreakDesign((CLASS_TOOL_TIP_WIDTH - 6), this._lineColor);
                     addChild(this.lineBreakTwo);
-                }
-            }
+                };
+            };
         }
 
-        private function createCharacter():void
-        {
+        private function createCharacter():void{
             var _local_1:AnimatedChar = AnimatedChars.getAnimatedChar(String(this._playerXML.AnimatedTexture.File), int(this._playerXML.AnimatedTexture.Index));
             var _local_2:MaskedImage = _local_1.imageFromDir(AnimatedChar.RIGHT, AnimatedChar.STAND, 0);
             var _local_3:int = int(((4 / _local_2.width()) * 100));
@@ -132,7 +126,7 @@ public class ClassToolTip extends ToolTip
             if (this.showUnlockRequirements)
             {
                 _local_4 = CachingColorTransformer.transformBitmapData(_local_4, new ColorTransform(0, 0, 0, 0.5, 0, 0, 0, 0));
-            }
+            };
             this.portrait_ = new Bitmap();
             this.portrait_.bitmapData = _local_4;
             this.portrait_.x = -4;
@@ -140,8 +134,7 @@ public class ClassToolTip extends ToolTip
             addChild(this.portrait_);
         }
 
-        private function createEquipmentTypes():void
-        {
+        private function createEquipmentTypes():void{
             var _local_4:int;
             var _local_5:BitmapData;
             var _local_6:Bitmap;
@@ -170,14 +163,13 @@ public class ClassToolTip extends ToolTip
                         _local_7.x = (12 + (_local_3 * 22));
                         _local_7.filters = FilterUtil.getDarkGreyColorFilter();
                         this._equipmentContainer.addChild(_local_7);
-                    }
-                }
+                    };
+                };
                 _local_3++;
-            }
+            };
         }
 
-        private function createCharacterName():void
-        {
+        private function createCharacterName():void{
             this.nameText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xFFFFFF);
             this.nameText_.setBold(true);
             this.nameText_.setStringBuilder(new LineBuilder().setParams(getDisplayId(this._playerXML)));
@@ -191,8 +183,7 @@ public class ClassToolTip extends ToolTip
             addChild(this.descriptionText_);
         }
 
-        private function createClassQuest():void
-        {
+        private function createClassQuest():void{
             this.classQuestText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xFFFFFF);
             this.classQuestText_.setBold(true);
             this.classQuestText_.setStringBuilder(new LineBuilder().setParams("Class Quest"));
@@ -201,8 +192,7 @@ public class ClassToolTip extends ToolTip
             addChild(this.classQuestText_);
         }
 
-        private function createQuestText():void
-        {
+        private function createQuestText():void{
             this._nextStarFame = FameUtil.nextStarFame(((this._charStats == null) ? 0 : this._charStats.bestFame()), 0);
             if (this._nextStarFame > 0)
             {
@@ -217,15 +207,14 @@ public class ClassToolTip extends ToolTip
                 else
                 {
                     this.nextClassQuest_.setStringBuilder(new LineBuilder().setParams("Earn 20 Fame with {typeToDisplay} to unlock the first star", {"typeToDisplay":getDisplayId(this._playerXML)}));
-                }
+                };
                 this.nextClassQuest_.filters = [new DropShadowFilter(0, 0, 0)];
                 waiter.push(this.nextClassQuest_.textChanged);
                 addChild(this.nextClassQuest_);
-            }
+            };
         }
 
-        private function createStarProgress():void
-        {
+        private function createStarProgress():void{
             var _local_1:Graphics;
             var _local_6:int;
             var _local_7:int;
@@ -281,17 +270,16 @@ public class ClassToolTip extends ToolTip
                             {
                                 _local_13 = int((((_local_7 - _local_3[(_local_5 - 1)]) / (_local_6 - _local_3[(_local_5 - 1)])) * _local_10));
                                 _local_1.drawRect(_local_2, 31, _local_13, 4);
-                            }
-                        }
-                    }
-                }
+                            };
+                        };
+                    };
+                };
                 _local_2 = (_local_2 + (1 + _local_10));
                 _local_5++;
-            }
+            };
         }
 
-        private function createBestLevelAndFame():void
-        {
+        private function createBestLevelAndFame():void{
             this._bestContainer = new Sprite();
             addChild(this._bestContainer);
             var _local_1:UILabel = new UILabel();
@@ -322,8 +310,7 @@ public class ClassToolTip extends ToolTip
             this._bestContainer.addChild(_local_6);
         }
 
-        private function createClassUnlockTitle():void
-        {
+        private function createClassUnlockTitle():void{
             this.classUnlockText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xFFFFFF);
             this.classUnlockText_.setBold(true);
             this.classUnlockText_.setStringBuilder(new LineBuilder().setParams("Class Unlocks"));
@@ -333,8 +320,7 @@ public class ClassToolTip extends ToolTip
             addChild(this.classUnlockText_);
         }
 
-        private function createClassUnlocks():void
-        {
+        private function createClassUnlocks():void{
             var _local_7:XML;
             var _local_8:String;
             var _local_9:XML;
@@ -368,17 +354,16 @@ public class ClassToolTip extends ToolTip
                                 _local_12.y = _local_5;
                                 this._classUnlockContainer.addChild(_local_12);
                                 _local_5 = (_local_5 + 14);
-                            }
-                        }
-                    }
-                }
+                            };
+                        };
+                    };
+                };
                 _local_6++;
-            }
+            };
             addChild(this._classUnlockContainer);
         }
 
-        private function createUnlockRequirements():void
-        {
+        private function createUnlockRequirements():void{
             var _local_2:XML;
             var _local_3:int;
             var _local_4:int;
@@ -405,17 +390,16 @@ public class ClassToolTip extends ToolTip
                             "unlockLevel":_local_4,
                             "typeToDisplay":ObjectLibrary.typeToDisplayId_[_local_3]
                         });
-                    }
-                }
-            }
+                    };
+                };
+            };
             this.unlockText_.setStringBuilder(_local_1);
             this.unlockText_.filters = [new DropShadowFilter(0, 0, 0)];
             waiter.push(this.unlockText_.textChanged);
             addChild(this.unlockText_);
         }
 
-        override protected function alignUI():void
-        {
+        override protected function alignUI():void{
             this.nameText_.x = 32;
             this.nameText_.y = 6;
             this.descriptionText_.x = 8;
@@ -437,7 +421,7 @@ public class ClassToolTip extends ToolTip
                 {
                     this.nextClassQuest_.x = 8;
                     this.nextClassQuest_.y = (height - 4);
-                }
+                };
                 this._progressContainer.x = 10;
                 this._progressContainer.y = (height - 2);
                 this._bestContainer.x = 6;
@@ -451,21 +435,19 @@ public class ClassToolTip extends ToolTip
                     this.classUnlockText_.y = height;
                     this._classUnlockContainer.x = 6;
                     this._classUnlockContainer.y = (height - 6);
-                }
-            }
+                };
+            };
             this.draw();
             position();
         }
 
-        private function shouldShowUnlockRequirements(_arg_1:PlayerModel, _arg_2:XML):Boolean
-        {
+        private function shouldShowUnlockRequirements(_arg_1:PlayerModel, _arg_2:XML):Boolean{
             var _local_3:Boolean = _arg_1.isClassAvailability(String(_arg_2.@id), SavedCharactersList.UNRESTRICTED);
             var _local_4:Boolean = _arg_1.isLevelRequirementsMet(int(_arg_2.@type));
             return ((!(_local_3)) && (!(_local_4)));
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.lineBreakOne.setWidthColor(CLASS_TOOL_TIP_WIDTH, this._lineColor);
             ((this.lineBreakTwo) && (this.lineBreakTwo.setWidthColor(CLASS_TOOL_TIP_WIDTH, this._lineColor)));
             this._equipmentContainer.x = ((CLASS_TOOL_TIP_WIDTH - this._equipmentContainer.width) + 10);

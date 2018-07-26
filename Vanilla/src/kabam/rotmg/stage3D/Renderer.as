@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.Renderer
 
-package kabam.rotmg.stage3D
-{
+package kabam.rotmg.stage3D{
 import com.adobe.utils.AGALMiniAssembler;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -35,8 +34,7 @@ import kabam.rotmg.stage3D.proxies.Context3DProxy;
 
 import org.swiftsuspenders.Injector;
 
-public class Renderer 
-    {
+public class Renderer {
 
         public static const STAGE3D_FILTER_PAUSE:uint = 1;
         public static const STAGE3D_FILTER_BLIND:uint = 2;
@@ -80,15 +78,13 @@ public class Renderer
         protected var _fragmentShader:String = ["tex oc, v2, fs0 <2d,clamp>"].join("\n");
         protected var blurFragmentConstants_:Vector.<Number> = Vector.<Number>([0.4, 0.6, 0.4, 1.5]);
 
-        public function Renderer(_arg_1:Render3D)
-        {
+        public function Renderer(_arg_1:Render3D){
             Renderer.inGame = false;
             this.setTranslationToTitle();
             _arg_1.add(this.onRender);
         }
 
-        public function init(_arg_1:Context3D):void
-        {
+        public function init(_arg_1:Context3D):void{
             this._projection = Util.perspectiveProjection(56, 1, 0.1, 0x0800);
             var _local_2:AGALMiniAssembler = new AGALMiniAssembler();
             _local_2.assemble(Context3DProgramType.VERTEX, this._vertexShader);
@@ -129,8 +125,7 @@ public class Renderer
             this.graphic3D_ = this.injector.getInstance(Graphic3D);
         }
 
-        private function UpdateCameraMatrix(_arg_1:Camera):void
-        {
+        private function UpdateCameraMatrix(_arg_1:Camera):void{
             var _local_2:Number = -(_arg_1.angleRad_);
             this.f_.x = 0;
             this.f_.y = 0;
@@ -166,13 +161,12 @@ public class Renderer
             this.cameraMatrix_.append(_local_3);
         }
 
-        private function onRender(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector.<Object3DStage3D>, _arg_3:Number, _arg_4:Number, _arg_5:Camera, _arg_6:uint):void
-        {
+        private function onRender(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector.<Object3DStage3D>, _arg_3:Number, _arg_4:Number, _arg_5:Camera, _arg_6:uint):void{
             WebMain.STAGE.scaleMode = StageScaleMode.NO_SCALE;
             if (((!(((WebMain.STAGE.stageWidth * 3) / 4) == this.stageWidth)) || (!(WebMain.STAGE.stageHeight == this.stageHeight))))
             {
                 this.resizeStage3DBackBuffer();
-            }
+            };
             if (Renderer.inGame == true)
             {
                 this.setTranslationToGame();
@@ -180,7 +174,7 @@ public class Renderer
             else
             {
                 this.setTranslationToTitle();
-            }
+            };
             if (_arg_6 > 0)
             {
                 this.renderWithPostEffect(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6);
@@ -188,25 +182,23 @@ public class Renderer
             else
             {
                 this.renderScene(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
-            }
+            };
             this.context3D.present();
             WebMain.STAGE.scaleMode = StageScaleMode.EXACT_FIT;
         }
 
-        private function resizeStage3DBackBuffer():void
-        {
+        private function resizeStage3DBackBuffer():void{
             if (((((WebMain.STAGE.stageWidth * 3) / 4) < 1) || (WebMain.STAGE.stageHeight < 1)))
             {
                 return;
-            }
+            };
             var _local_1:Stage3D = WebMain.STAGE.stage3Ds[0];
             _local_1.context3D.configureBackBuffer(((WebMain.STAGE.stageWidth * 3) / 4), WebMain.STAGE.stageHeight, 2, false);
             this.stageWidth = ((WebMain.STAGE.stageWidth * 3) / 4);
             this.stageHeight = WebMain.STAGE.stageHeight;
         }
 
-        private function renderWithPostEffect(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector.<Object3DStage3D>, _arg_3:Number, _arg_4:Number, _arg_5:Camera, _arg_6:uint):void
-        {
+        private function renderWithPostEffect(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector.<Object3DStage3D>, _arg_3:Number, _arg_4:Number, _arg_5:Camera, _arg_6:uint):void{
             this.context3D.GetContext3D().setRenderToTexture(this.sceneTexture_, true);
             this.renderScene(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
             this.context3D.GetContext3D().setRenderToBackBuffer();
@@ -227,7 +219,7 @@ public class Renderer
                     this.context3D.GetContext3D().setVertexBufferAt(0, this.postFilterVertexBuffer_, 0, Context3DVertexBufferFormat.FLOAT_2);
                     this.context3D.GetContext3D().setVertexBufferAt(1, this.postFilterVertexBuffer_, 2, Context3DVertexBufferFormat.FLOAT_2);
                     break;
-            }
+            };
             this.context3D.GetContext3D().setVertexBufferAt(2, null);
             switch (_arg_6)
             {
@@ -243,18 +235,17 @@ public class Renderer
                     if (((this.blurFragmentConstants_[3] <= 0.2) || (this.blurFragmentConstants_[3] >= 1.8)))
                     {
                         this.blurFactor = (this.blurFactor * -1);
-                    }
+                    };
                     this.blurFragmentConstants_[3] = (this.blurFragmentConstants_[3] + this.blurFactor);
                     this.context3D.setProgramConstantsFromMatrix(Context3DProgramType.VERTEX, 0, new Matrix3D());
                     this.context3D.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, this.blurFragmentConstants_, (this.blurFragmentConstants_.length / 4));
                     break;
-            }
+            };
             this.context3D.GetContext3D().clear(0, 0, 0, 1);
             this.context3D.GetContext3D().drawTriangles(this.postFilterIndexBuffer_);
         }
 
-        private function renderScene(graphicsDatas:Vector.<IGraphicsData>, grahpicsData3d:Vector.<Object3DStage3D>, mapWidth:Number, mapHeight:Number, camera:Camera):void
-        {
+        private function renderScene(graphicsDatas:Vector.<IGraphicsData>, grahpicsData3d:Vector.<Object3DStage3D>, mapWidth:Number, mapHeight:Number, camera:Camera):void{
             var test:int;
             var graphicsData:IGraphicsData;
             this.context3D.clear();
@@ -275,7 +266,7 @@ public class Renderer
                     catch(e:Error)
                     {
                         continue;
-                    }
+                    };
                     this.graphic3D_.setGraphic(GraphicsBitmapFill(graphicsData), this.context3D);
                     finalTransform.identity();
                     finalTransform.append(this.graphic3D_.getMatrix3D());
@@ -283,7 +274,7 @@ public class Renderer
                     finalTransform.appendTranslation((this.tX / Stage3DConfig.WIDTH), (this.tY / Stage3DConfig.HEIGHT), 0);
                     this.context3D.setProgramConstantsFromMatrix(Context3DProgramType.VERTEX, 0, finalTransform, true);
                     this.graphic3D_.render(this.context3D);
-                }
+                };
                 if ((graphicsData is GraphicsGradientFill))
                 {
                     this.context3D.GetContext3D().setProgram(this.shadowProgram_);
@@ -294,7 +285,7 @@ public class Renderer
                     this.context3D.setProgramConstantsFromMatrix(Context3DProgramType.VERTEX, 0, finalTransform, true);
                     this.context3D.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 4, Vector.<Number>([0.5, 0.25, 0, 0]));
                     this.graphic3D_.renderShadow(this.context3D);
-                }
+                };
                 if (((graphicsData == null) && (!(grahpicsData3d.length == 0))))
                 {
                     try
@@ -314,19 +305,17 @@ public class Renderer
                     }
                     catch(e:Error)
                     {
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function setTranslationToGame():void
-        {
+        private function setTranslationToGame():void{
             this.tX = 0;
             this.tY = ((Parameters.data_.centerOnPlayer) ? -50 : ((Camera.OFFSET_SCREEN_RECT.y + (Camera.CENTER_SCREEN_RECT.height / 2)) * 2));
         }
 
-        private function setTranslationToTitle():void
-        {
+        private function setTranslationToTitle():void{
             this.tX = (this.tY = 0);
         }
 

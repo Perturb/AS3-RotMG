@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.widgets.GuildInfoItem
 
-package io.decagames.rotmg.social.widgets
-{
+package io.decagames.rotmg.social.widgets{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
@@ -15,28 +14,24 @@ import flash.display.Sprite;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 
-public class GuildInfoItem extends BaseInfoItem 
-    {
+public class GuildInfoItem extends BaseInfoItem {
 
         private var _gName:String;
         private var _gFame:int;
 
-        public function GuildInfoItem(_arg_1:String, _arg_2:int)
-        {
+        public function GuildInfoItem(_arg_1:String, _arg_2:int){
             super(332, 70);
             this._gName = _arg_1;
             this._gFame = _arg_2;
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.createGuildName();
             this.createGuildFame();
         }
 
-        private function createGuildName():void
-        {
+        private function createGuildName():void{
             var _local_1:UILabel;
             _local_1 = new UILabel();
             _local_1.text = this._gName;
@@ -46,8 +41,7 @@ public class GuildInfoItem extends BaseInfoItem
             addChild(_local_1);
         }
 
-        private function createGuildFame():void
-        {
+        private function createGuildFame():void{
             var _local_1:Sprite;
             var _local_3:Bitmap;
             var _local_4:UILabel;

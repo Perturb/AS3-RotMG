@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.ShopDisplayMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
@@ -18,8 +17,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ShopDisplayMediator extends Mediator 
-    {
+public class ShopDisplayMediator extends Mediator {
 
         [Inject]
         public var view:ShopDisplay;
@@ -33,8 +31,7 @@ public class ShopDisplayMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_3:PackageInfo;
             if (((this.view.shopButton) && (this.view.isOnNexus)))
             {
@@ -45,7 +42,7 @@ public class ShopDisplayMediator extends Mediator
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.shopButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            }
+            };
             var _local_1:Vector.<PackageInfo> = this.packageBoxModel.getBoxesForGrid();
             var _local_2:Date = new Date();
             _local_2.setTime(Parameters.data_["packages_indicator"]);
@@ -56,9 +53,9 @@ public class ShopDisplayMediator extends Mediator
                     if (((_local_3.isNew()) && ((_local_3.startTime.getTime() > _local_2.getTime()) || (!(Parameters.data_["packages_indicator"])))))
                     {
                         this.view.newIndicator(true);
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.mapoverlay.SpeechBalloon
 
-package com.company.assembleegameclient.map.mapoverlay
-{
+package com.company.assembleegameclient.map.mapoverlay{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
@@ -30,8 +29,7 @@ import flash.text.TextFormat;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class SpeechBalloon extends Sprite implements IMapOverlayElement
-    {
+public class SpeechBalloon extends Sprite implements IMapOverlayElement {
 
         public var go_:GameObject;
         public var lifetime_:int;
@@ -49,8 +47,7 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-        public function SpeechBalloon(_arg_1:GameObject, _arg_2:String, _arg_3:String, _arg_4:Boolean, _arg_5:Boolean, _arg_6:uint, _arg_7:Number, _arg_8:uint, _arg_9:Number, _arg_10:uint, _arg_11:int, _arg_12:Boolean, _arg_13:Boolean)
-        {
+        public function SpeechBalloon(_arg_1:GameObject, _arg_2:String, _arg_3:String, _arg_4:Boolean, _arg_5:Boolean, _arg_6:uint, _arg_7:Number, _arg_8:uint, _arg_9:Number, _arg_10:uint, _arg_11:int, _arg_12:Boolean, _arg_13:Boolean){
             this.go_ = _arg_1;
             this.senderName = _arg_3;
             this.isTrade = _arg_4;
@@ -92,8 +89,7 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement
             addEventListener(MouseEvent.RIGHT_CLICK, this.onSpeechBalloonRightClicked);
         }
 
-        private function onSpeechBalloonRightClicked(e:MouseEvent):void
-        {
+        private function onSpeechBalloonRightClicked(e:MouseEvent):void{
             var hmod:HUDModel;
             var aPlayer:Player;
             var playerObjectId:int = this.go_.objectId_;
@@ -116,49 +112,46 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement
                         if (((((this.isTrade) && (!(this.senderName == null))) && (!(this.senderName == ""))) && (!(hmod.gameSprite.map.player_.name_ == this.senderName))))
                         {
                             hmod.gameSprite.addChatPlayerMenu(null, e.stageX, e.stageY, this.senderName, false, true);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
             }
             catch(e:Error)
             {
-            }
+            };
         }
 
-        public function draw(_arg_1:Camera, _arg_2:int):Boolean
-        {
+        public function draw(_arg_1:Camera, _arg_2:int):Boolean{
             if (this.startTime_ == 0)
             {
                 this.startTime_ = _arg_2;
-            }
+            };
             var _local_3:int = (_arg_2 - this.startTime_);
             if (((_local_3 > this.lifetime_) || ((!(this.go_ == null)) && (this.go_.map_ == null))))
             {
                 return (false);
-            }
+            };
             if (((this.go_ == null) || (!(this.go_.drawn_))))
             {
                 visible = false;
                 return (true);
-            }
+            };
             if (((this.hideable_) && (!(Parameters.data_.textBubbles))))
             {
                 visible = false;
                 return (true);
-            }
+            };
             visible = true;
             x = int((this.go_.posS_[0] + this.offset_.x));
             y = int((this.go_.posS_[1] + this.offset_.y));
             return (true);
         }
 
-        public function getGameObject():GameObject
-        {
+        public function getGameObject():GameObject{
             return (this.go_);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             parent.removeChild(this);
         }
 

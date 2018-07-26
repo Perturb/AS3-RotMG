@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.ChooseNameFrame
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import com.company.assembleegameclient.game.AGameSprite;
 
 import flash.events.MouseEvent;
@@ -13,8 +12,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class ChooseNameFrame extends Frame 
-    {
+public class ChooseNameFrame extends Frame {
 
         public const cancel:Signal = new Signal();
         public const choose:Signal = new Signal(String);
@@ -23,8 +21,7 @@ public class ChooseNameFrame extends Frame
         public var isPurchase:Boolean;
         private var nameInput:TextInputField;
 
-        public function ChooseNameFrame(_arg_1:AGameSprite, _arg_2:Boolean)
-        {
+        public function ChooseNameFrame(_arg_1:AGameSprite, _arg_2:Boolean){
             super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE, "/chooseName");
             this.gameSprite = _arg_1;
             this.isPurchase = _arg_2;
@@ -40,19 +37,16 @@ public class ChooseNameFrame extends Frame
             rightButton_.addEventListener(MouseEvent.CLICK, this.onChoose);
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.cancel.dispatch();
         }
 
-        private function onChoose(_arg_1:MouseEvent):void
-        {
+        private function onChoose(_arg_1:MouseEvent):void{
             this.choose.dispatch(this.nameInput.text());
             disable();
         }
 
-        public function setError(_arg_1:String):void
-        {
+        public function setError(_arg_1:String):void{
             this.nameInput.setError(_arg_1);
         }
 

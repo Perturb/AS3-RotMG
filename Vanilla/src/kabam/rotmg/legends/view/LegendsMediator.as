@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.view.LegendsMediator
 
-package kabam.rotmg.legends.view
-{
+package kabam.rotmg.legends.view{
 import kabam.rotmg.core.signals.TrackPageViewSignal;
 import kabam.rotmg.death.model.DeathModel;
 import kabam.rotmg.fame.control.ShowFameViewSignal;
@@ -17,8 +16,7 @@ import kabam.rotmg.legends.model.Timespan;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class LegendsMediator extends Mediator 
-    {
+public class LegendsMediator extends Mediator {
 
         [Inject]
         public var view:LegendsView;
@@ -38,8 +36,7 @@ public class LegendsMediator extends Mediator
         public var track:TrackPageViewSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.track.dispatch("/legendsScreen");
             this.view.close.add(this.onClose);
             this.view.timespanChanged.add(this.onTimespanChanged);
@@ -48,13 +45,11 @@ public class LegendsMediator extends Mediator
             this.onTimespanChanged(this.model.getTimespan());
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.exit.dispatch();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.close.remove(this.onClose);
             this.view.timespanChanged.remove(this.onTimespanChanged);
             this.view.showDetail.remove(this.onShowCharacter);
@@ -63,8 +58,7 @@ public class LegendsMediator extends Mediator
             this.model.clear();
         }
 
-        private function onTimespanChanged(_arg_1:Timespan):void
-        {
+        private function onTimespanChanged(_arg_1:Timespan):void{
             this.model.setTimespan(_arg_1);
             if (this.model.hasLegendList())
             {
@@ -73,25 +67,22 @@ public class LegendsMediator extends Mediator
             else
             {
                 this.showLoadingAndRequestFameList();
-            }
+            };
         }
 
-        private function showLoadingAndRequestFameList():void
-        {
+        private function showLoadingAndRequestFameList():void{
             this.view.clear();
             this.view.showLoading();
             this.requestFameList.dispatch(this.model.getTimespan());
         }
 
-        private function updateLegendList(_arg_1:Timespan=null):void
-        {
+        private function updateLegendList(_arg_1:Timespan=null):void{
             _arg_1 = ((_arg_1) || (this.model.getTimespan()));
             this.view.hideLoading();
             this.view.setLegendsList(_arg_1, this.model.getLegendList());
         }
 
-        private function onShowCharacter(_arg_1:Legend):void
-        {
+        private function onShowCharacter(_arg_1:Legend):void{
             this.showFameDetail.dispatch(_arg_1);
         }
 

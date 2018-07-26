@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.LabeledField
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import com.company.ui.BaseSimpleText;
 
 import flash.filters.DropShadowFilter;
@@ -14,15 +13,13 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class LabeledField extends FormField
-    {
+public class LabeledField extends FormField {
 
         public var nameText_:TextFieldDisplayConcrete;
         public var inputText_:BaseSimpleText;
         public var isHighlighted:Boolean;
 
-        public function LabeledField(_arg_1:String, _arg_2:Boolean, _arg_3:uint=238, _arg_4:uint=30)
-        {
+        public function LabeledField(_arg_1:String, _arg_2:Boolean, _arg_3:uint=238, _arg_4:uint=30){
             this.nameText_ = new TextFieldDisplayConcrete().setSize(18).setColor(TEXT_COLOR);
             this.nameText_.setBold(true);
             this.nameText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
@@ -38,23 +35,19 @@ public class LabeledField extends FormField
             this.setErrorHighlight(false);
         }
 
-        public function text():String
-        {
+        public function text():String{
             return (this.inputText_.text);
         }
 
-        override public function getHeight():Number
-        {
+        override public function getHeight():Number{
             return (68);
         }
 
-        public function textChanged():Signal
-        {
+        public function textChanged():Signal{
             return (this.nameText_.textChanged);
         }
 
-        public function setErrorHighlight(_arg_1:Boolean):void
-        {
+        public function setErrorHighlight(_arg_1:Boolean):void{
             this.isHighlighted = _arg_1;
             drawSimpleTextBackground(this.inputText_, 0, 0, _arg_1);
         }

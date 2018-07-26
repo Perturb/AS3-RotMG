@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CurrentCharacterMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
@@ -29,8 +28,7 @@ import kabam.rotmg.ui.signals.NameChangedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CurrentCharacterMediator extends Mediator
-    {
+public class CurrentCharacterMediator extends Mediator {
 
         [Inject]
         public var view:CharacterSelectionAndNewsScreen;
@@ -58,8 +56,7 @@ public class CurrentCharacterMediator extends Mediator
         public var securityQuestionsModel:SecurityQuestionsModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.trackSomething();
             this.view.initialize(this.playerModel);
             this.view.close.add(this.onClose);
@@ -73,11 +70,10 @@ public class CurrentCharacterMediator extends Mediator
             if (this.securityQuestionsModel.showSecurityQuestionsOnStartup)
             {
                 this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.nameChanged.remove(this.onNameChanged);
             this.view.close.remove(this.onClose);
             this.view.newCharacter.remove(this.onNewCharacter);
@@ -86,13 +82,11 @@ public class CurrentCharacterMediator extends Mediator
             this.view.playGame.remove(this.onPlayGame);
         }
 
-        private function onNameChanged(_arg_1:String):void
-        {
+        private function onNameChanged(_arg_1:String):void{
             this.view.setName(_arg_1);
         }
 
-        private function trackSomething():void
-        {
+        private function trackSomething():void{
             var _local_2:TrackingData;
             var _local_1:String = MoreDateUtil.getDayStringInPT();
             if (Parameters.data_.lastDailyAnalytics != _local_1)
@@ -102,26 +96,22 @@ public class CurrentCharacterMediator extends Mediator
                 _local_2.action = Parameters.data_.joinDate;
                 Parameters.data_.lastDailyAnalytics = _local_1;
                 Parameters.save();
-            }
+            };
         }
 
-        private function onNewCharacter():void
-        {
+        private function onNewCharacter():void{
             this.setScreen.dispatch(new NewCharacterScreen());
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.setScreen.dispatch(new TitleView());
         }
 
-        private function onChooseName():void
-        {
+        private function onChooseName():void{
             this.chooseName.dispatch();
         }
 
-        private function onPlayGame():void
-        {
+        private function onPlayGame():void{
             var _local_1:SavedCharacter = this.playerModel.getCharacterByIndex(0);
             this.playerModel.currentCharId = _local_1.charId();
             var _local_2:CharacterClass = this.classesModel.getCharacterClass(_local_1.objectType());

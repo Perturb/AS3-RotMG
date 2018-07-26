@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TradePanel
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.assembleegameclient.game.AGameSprite;
 
 import flash.display.Sprite;
@@ -14,8 +13,7 @@ import flash.events.MouseEvent;
 import kabam.rotmg.messaging.impl.incoming.TradeStart;
 import kabam.rotmg.text.model.TextKey;
 
-public class TradePanel extends Sprite 
-    {
+public class TradePanel extends Sprite {
 
         public static const WIDTH:int = 200;
         public static const HEIGHT:int = 400;
@@ -26,8 +24,7 @@ public class TradePanel extends Sprite
         private var cancelButton_:DeprecatedTextButton;
         private var tradeButton_:TradeButton;
 
-        public function TradePanel(_arg_1:AGameSprite, _arg_2:TradeStart)
-        {
+        public function TradePanel(_arg_1:AGameSprite, _arg_2:TradeStart){
             this.gs_ = _arg_1;
             var _local_3:String = this.gs_.map.player_.name_;
             this.myInv_ = new TradeInventory(_arg_1, _local_3, _arg_2.myItems_, true);
@@ -52,62 +49,52 @@ public class TradePanel extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onCancelTextChanged():void
-        {
+        private function onCancelTextChanged():void{
             this.cancelButton_.x = ((WIDTH / 4) - (this.cancelButton_.bWidth / 2));
             this.cancelButton_.y = ((HEIGHT - this.cancelButton_.height) - 10);
             this.tradeButton_.y = this.cancelButton_.y;
         }
 
-        public function setYourOffer(_arg_1:Vector.<Boolean>):void
-        {
+        public function setYourOffer(_arg_1:Vector.<Boolean>):void{
             this.yourInv_.setOffer(_arg_1);
             this.checkTrade();
         }
 
-        public function youAccepted(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void
-        {
+        public function youAccepted(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void{
             if (((this.myInv_.isOffer(_arg_1)) && (this.yourInv_.isOffer(_arg_2))))
             {
                 this.yourInv_.setMessage(TradeInventory.TRADEACCEPTED_MESSAGE);
-            }
+            };
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             stage.addEventListener(Event.ACTIVATE, this.onActivate);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(Event.ACTIVATE, this.onActivate);
         }
 
-        private function onActivate(_arg_1:Event):void
-        {
+        private function onActivate(_arg_1:Event):void{
             this.tradeButton_.reset();
         }
 
-        private function onMyInvChange(_arg_1:Event):void
-        {
+        private function onMyInvChange(_arg_1:Event):void{
             this.gs_.gsc_.changeTrade(this.myInv_.getOffer());
             this.checkTrade();
         }
 
-        private function onCancelClick(_arg_1:MouseEvent):void
-        {
+        private function onCancelClick(_arg_1:MouseEvent):void{
             this.gs_.gsc_.cancelTrade();
             dispatchEvent(new Event(Event.CANCEL));
         }
 
-        private function onTradeClick(_arg_1:MouseEvent):void
-        {
+        private function onTradeClick(_arg_1:MouseEvent):void{
             this.gs_.gsc_.acceptTrade(this.myInv_.getOffer(), this.yourInv_.getOffer());
             this.myInv_.setMessage(TradeInventory.TRADEACCEPTED_MESSAGE);
         }
 
-        public function checkTrade():void
-        {
+        public function checkTrade():void{
             var _local_1:int = this.myInv_.numIncluded();
             var _local_2:int = this.myInv_.numEmpty();
             var _local_3:int = this.yourInv_.numIncluded();
@@ -121,7 +108,7 @@ public class TradePanel extends Sprite
             else
             {
                 this.myInv_.setMessage(TradeInventory.CLICKITEMS_MESSAGE);
-            }
+            };
             if (((_local_1 - _local_3) - _local_4) > 0)
             {
                 this.yourInv_.setMessage(TradeInventory.NOTENOUGHSPACE_MESSAGE);
@@ -130,7 +117,7 @@ public class TradePanel extends Sprite
             else
             {
                 this.yourInv_.setMessage(TradeInventory.TRADEWAITING_MESSAGE);
-            }
+            };
             if (_local_5)
             {
                 this.tradeButton_.reset();
@@ -138,7 +125,7 @@ public class TradePanel extends Sprite
             else
             {
                 this.tradeButton_.disable();
-            }
+            };
         }
 
 

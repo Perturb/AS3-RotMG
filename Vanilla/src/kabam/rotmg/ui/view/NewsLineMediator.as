@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.NewsLineMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.screens.GraveyardLine;
 
 import kabam.rotmg.fame.control.ShowFameViewSignal;
@@ -12,8 +11,7 @@ import kabam.rotmg.fame.model.SimpleFameVO;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class NewsLineMediator extends Mediator 
-    {
+public class NewsLineMediator extends Mediator {
 
         [Inject]
         public var view:GraveyardLine;
@@ -21,18 +19,15 @@ public class NewsLineMediator extends Mediator
         public var showFameView:ShowFameViewSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.viewCharacterFame.add(this.onViewFame);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.viewCharacterFame.remove(this.onViewFame);
         }
 
-        private function onViewFame(_arg_1:int):void
-        {
+        private function onViewFame(_arg_1:int):void{
             this.showFameView.dispatch(new SimpleFameVO(this.view.accountId, _arg_1));
         }
 

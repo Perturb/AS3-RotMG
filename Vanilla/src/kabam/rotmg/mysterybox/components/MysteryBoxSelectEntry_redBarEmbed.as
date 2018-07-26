@@ -1,4 +1,4 @@
-package kabam.rotmg.mysterybox.components
+﻿package kabam.rotmg.mysterybox.components
 {
 import mx.core.*;
 

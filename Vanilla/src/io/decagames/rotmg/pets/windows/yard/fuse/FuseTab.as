@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.fuse.FuseTab
 
-package io.decagames.rotmg.pets.windows.yard.fuse
-{
+package io.decagames.rotmg.pets.windows.yard.fuse{
 import com.company.assembleegameclient.util.Currency;
 
 import io.decagames.rotmg.pets.components.petItem.PetItem;
@@ -18,8 +17,7 @@ import io.decagames.rotmg.ui.tabs.UITab;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class FuseTab extends UITab
-    {
+public class FuseTab extends UITab {
 
         public static const MAXED_COLOR:uint = 6735914;
         public static const BAD_COLOR:uint = 0xE41800;
@@ -39,8 +37,7 @@ public class FuseTab extends UITab
         private var _fuseFameButton:ShopBuyButton;
         private var fuseButtonsMargin:int = 20;
 
-        public function FuseTab(_arg_1:int)
-        {
+        public function FuseTab(_arg_1:int){
             var _local_2:int;
             super("Fuse");
             this.petsGrid = new UIGrid(220, 5, 5, 85, 5);
@@ -64,44 +61,40 @@ public class FuseTab extends UITab
             addChild(this._fuseFameButton);
         }
 
-        private static function getKeyFor(_arg_1:Number):String
-        {
+        private static function getKeyFor(_arg_1:Number):String{
             if (isMaxed(_arg_1))
             {
                 return (MAXED);
-            }
+            };
             if (_arg_1 > 0.8)
             {
                 return (FANTASTIC);
-            }
+            };
             if (_arg_1 > 0.6)
             {
                 return (GREAT);
-            }
+            };
             if (_arg_1 > 0.4)
             {
                 return (GOOD);
-            }
+            };
             if (_arg_1 > 0.2)
             {
                 return (LOW);
-            }
+            };
             return (BAD);
         }
 
-        private static function isMaxed(_arg_1:Number):Boolean
-        {
+        private static function isMaxed(_arg_1:Number):Boolean{
             return (Math.abs((_arg_1 - 1)) < 0.001);
         }
 
-        private static function isBad(_arg_1:Number):Boolean
-        {
+        private static function isBad(_arg_1:Number):Boolean{
             return (_arg_1 < 0.2);
         }
 
 
-        public function setStrengthPercentage(_arg_1:Number, _arg_2:Boolean=false):void
-        {
+        public function setStrengthPercentage(_arg_1:Number, _arg_2:Boolean=false):void{
             var _local_3:String;
             if (_arg_2)
             {
@@ -118,42 +111,37 @@ public class FuseTab extends UITab
                     _local_3 = LineBuilder.getLocalizedStringFromKey(getKeyFor(_arg_1));
                     this.fusionStrengthLabel.text = (_local_3 + " Fusion");
                     DefaultLabelFormat.fusionStrengthLabel(this.fusionStrengthLabel, this.colorText(_arg_1), _local_3.length);
-                }
-            }
+                };
+            };
         }
 
-        public function clearGrid():void
-        {
+        public function clearGrid():void{
             this.petsGrid.clearGrid();
         }
 
-        public function addPet(_arg_1:PetItem):void
-        {
+        public function addPet(_arg_1:PetItem):void{
             var _local_2:UIGridElement = new UIGridElement();
             _local_2.addChild(_arg_1);
             this.petsGrid.addGridElement(_local_2);
         }
 
-        public function get fuseGoldButton():ShopBuyButton
-        {
+        public function get fuseGoldButton():ShopBuyButton{
             return (this._fuseGoldButton);
         }
 
-        public function get fuseFameButton():ShopBuyButton
-        {
+        public function get fuseFameButton():ShopBuyButton{
             return (this._fuseFameButton);
         }
 
-        private function colorText(_arg_1:Number):uint
-        {
+        private function colorText(_arg_1:Number):uint{
             if (isMaxed(_arg_1))
             {
                 return (MAXED_COLOR);
-            }
+            };
             if (isBad(_arg_1))
             {
                 return (BAD_COLOR);
-            }
+            };
             return (DEFAULT_COLOR);
         }
 

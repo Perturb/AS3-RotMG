@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.ShowTitleUICommand
 
-package kabam.rotmg.ui.commands
-{
+package kabam.rotmg.ui.commands{
 import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
 import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.ui.view.TitleView;
 
-public class ShowTitleUICommand 
-    {
+public class ShowTitleUICommand {
 
         [Inject]
         public var setScreen:SetScreenSignal;
@@ -18,8 +16,7 @@ public class ShowTitleUICommand
         public var updateAccount:UpdateAccountInfoSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.setScreen.dispatch(new TitleView());
             this.updateAccount.dispatch();
         }

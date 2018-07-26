@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.signals.UpdateBackpackTabSignal
 
-package kabam.rotmg.ui.signals
-{
+package kabam.rotmg.ui.signals{
 import org.osflash.signals.Signal;
 
-public class UpdateBackpackTabSignal extends Signal 
-    {
+public class UpdateBackpackTabSignal extends Signal {
 
-        public function UpdateBackpackTabSignal()
-        {
+        public function UpdateBackpackTabSignal(){
             super(Boolean);
         }
 

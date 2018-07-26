@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.TransitionFromGameToMenuCommand
 
-package kabam.rotmg.game.commands
-{
+package kabam.rotmg.game.commands{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
 import kabam.rotmg.core.model.PlayerModel;
@@ -17,8 +16,7 @@ import kabam.rotmg.fame.model.FameVO;
 import kabam.rotmg.fame.model.SimpleFameVO;
 import kabam.rotmg.messaging.impl.incoming.Death;
 
-public class TransitionFromGameToMenuCommand 
-    {
+public class TransitionFromGameToMenuCommand {
 
         [Inject]
         public var player:PlayerModel;
@@ -34,8 +32,7 @@ public class TransitionFromGameToMenuCommand
         public var showFameView:ShowFameViewSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.invalidate.dispatch();
             if (this.model.getIsDeathViewPending())
             {
@@ -44,18 +41,16 @@ public class TransitionFromGameToMenuCommand
             else
             {
                 this.showCurrentCharacterScreen();
-            }
+            };
         }
 
-        private function showDeathView():void
-        {
+        private function showDeathView():void{
             var _local_1:Death = this.model.getLastDeath();
             var _local_2:FameVO = new SimpleFameVO(this.player.getAccountId(), _local_1.charId_);
             this.showFameView.dispatch(_local_2);
         }
 
-        private function showCurrentCharacterScreen():void
-        {
+        private function showCurrentCharacterScreen():void{
             this.setScreenWithValidData.dispatch(new CharacterSelectionAndNewsScreen());
         }
 

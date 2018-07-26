@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.control.ImminentArenaWaveCommand
 
-package kabam.rotmg.arena.control
-{
+package kabam.rotmg.arena.control{
 import kabam.rotmg.arena.model.CurrentArenaRunModel;
 import kabam.rotmg.arena.view.ImminentWaveCountdownClock;
 import kabam.rotmg.core.view.Layers;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class ImminentArenaWaveCommand extends Command 
-    {
+public class ImminentArenaWaveCommand extends Command {
 
         [Inject]
         public var runtime:int;
@@ -22,8 +20,7 @@ public class ImminentArenaWaveCommand extends Command
         public var layers:Layers;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             this.model.incrementWave();
             this.model.entry.runtime = this.runtime;
             this.layers.mouseDisabledTop.addChild(new ImminentWaveCountdownClock());

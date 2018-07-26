@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.ClassesConfig
 
-package kabam.rotmg.classes
-{
+package kabam.rotmg.classes{
 import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
 import kabam.rotmg.account.core.signals.CharListDataSignal;
 import kabam.rotmg.account.core.signals.LogoutSignal;
@@ -36,8 +35,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class ClassesConfig implements IConfig 
-    {
+public class ClassesConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -49,8 +47,7 @@ public class ClassesConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(ClassesModel).asSingleton();
             this.injector.map(CharacterSkinListItemFactory).asSingleton();
             this.injector.map(FocusCharacterSkinSignal).asSingleton();
@@ -67,8 +64,7 @@ public class ClassesConfig implements IConfig
             this.context.lifecycle.afterInitializing(this.init);
         }
 
-        private function init():void
-        {
+        private function init():void{
             var _local_1:XML = XML(new EmbeddedData.PlayersCXML());
             var _local_2:ParseClassesXMLSignal = this.injector.getInstance(ParseClassesXMLSignal);
             _local_2.dispatch(_local_1);

@@ -1,26 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.AccountList
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.IDataInput;
 
-public class AccountList extends IncomingMessage
-    {
+public class AccountList extends IncomingMessage {
 
         public var accountListId_:int;
         public var accountIds_:Vector.<String> = new Vector.<String>();
         public var lockAction_:int = -1;
 
-        public function AccountList(_arg_1:uint, _arg_2:Function)
-        {
+        public function AccountList(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             var _local_2:int;
             this.accountListId_ = _arg_1.readInt();
             this.accountIds_.length = 0;
@@ -30,12 +26,11 @@ public class AccountList extends IncomingMessage
             {
                 this.accountIds_.push(_arg_1.readUTF());
                 _local_2++;
-            }
+            };
             this.lockAction_ = _arg_1.readInt();
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("ACCOUNTLIST", "accountListId_", "accountIds_", "lockAction_"));
         }
 

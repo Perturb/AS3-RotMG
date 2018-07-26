@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.commands.ShowLoadingViewCommand
 
-package kabam.rotmg.maploading.commands
-{
+package kabam.rotmg.maploading.commands{
 import kabam.rotmg.core.view.Layers;
 import kabam.rotmg.maploading.view.MapLoadingView;
 
-public class ShowLoadingViewCommand 
-    {
+public class ShowLoadingViewCommand {
 
         [Inject]
         public var layers:Layers;
@@ -17,8 +15,7 @@ public class ShowLoadingViewCommand
         public var view:MapLoadingView;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.layers.top.addChild(this.view);
         }
 

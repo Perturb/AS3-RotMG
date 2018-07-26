@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.offer.Offer
 
-package com.company.assembleegameclient.util.offer
-{
-    public class Offer 
-    {
+package com.company.assembleegameclient.util.offer{
+    public class Offer {
 
         public var id_:String;
         public var price_:Number;
@@ -17,8 +15,7 @@ package com.company.assembleegameclient.util.offer
         public var tagline:String;
         public var bonus:int;
 
-        public function Offer(_arg_1:String, _arg_2:Number, _arg_3:int, _arg_4:String, _arg_5:String, _arg_6:String=null):void
-        {
+        public function Offer(_arg_1:String, _arg_2:Number, _arg_3:int, _arg_4:String, _arg_5:String, _arg_6:String=null):void{
             this.id_ = _arg_1;
             this.price_ = _arg_2;
             this.realmGold_ = _arg_3;

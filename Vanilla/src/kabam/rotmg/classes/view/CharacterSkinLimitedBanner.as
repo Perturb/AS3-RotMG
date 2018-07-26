@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinLimitedBanner
 
-package kabam.rotmg.classes.view
-{
+package kabam.rotmg.classes.view{
 import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
 
@@ -14,8 +13,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class CharacterSkinLimitedBanner extends Sprite
-    {
+public class CharacterSkinLimitedBanner extends Sprite {
 
         private var LimitedBanner:Class = CharacterSkinLimitedBanner_LimitedBanner;
         private const limitedText:TextFieldDisplayConcrete = makeText();
@@ -23,8 +21,7 @@ public class CharacterSkinLimitedBanner extends Sprite
         public const readyForPositioning:Signal = new Signal();
 
 
-        private function makeText():TextFieldDisplayConcrete
-        {
+        private function makeText():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(16).setColor(0xB3B3B3).setBold(true);
             _local_1.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
@@ -34,15 +31,13 @@ public class CharacterSkinLimitedBanner extends Sprite
             return (_local_1);
         }
 
-        private function makeLimitedBanner():*
-        {
+        private function makeLimitedBanner():*{
             var _local_1:* = new this.LimitedBanner();
             addChild(_local_1);
             return (_local_1);
         }
 
-        public function layout():void
-        {
+        public function layout():void{
             this.limitedText.y = (((height / 2) - (this.limitedText.height / 2)) + 1);
             this.limitedBanner.x = (this.limitedText.x + this.limitedText.width);
             this.readyForPositioning.dispatch();

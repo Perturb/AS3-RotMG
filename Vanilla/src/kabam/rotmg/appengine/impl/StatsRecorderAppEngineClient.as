@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient
 
-package kabam.rotmg.appengine.impl
-{
+package kabam.rotmg.appengine.impl{
 import flash.events.EventDispatcher;
 import flash.utils.getTimer;
 
@@ -12,8 +11,7 @@ import kabam.rotmg.appengine.api.AppEngineClient;
 
 import org.osflash.signals.OnceSignal;
 
-public class StatsRecorderAppEngineClient extends EventDispatcher implements AppEngineClient
-    {
+public class StatsRecorderAppEngineClient extends EventDispatcher implements AppEngineClient {
 
         [Inject]
         public var stats:AppEngineRequestStats;
@@ -23,41 +21,34 @@ public class StatsRecorderAppEngineClient extends EventDispatcher implements App
         private var target:String;
 
 
-        public function get complete():OnceSignal
-        {
+        public function get complete():OnceSignal{
             return (this.wrapped.complete);
         }
 
-        public function setDataFormat(_arg_1:String):void
-        {
+        public function setDataFormat(_arg_1:String):void{
             this.wrapped.setDataFormat(_arg_1);
         }
 
-        public function setSendEncrypted(_arg_1:Boolean):void
-        {
+        public function setSendEncrypted(_arg_1:Boolean):void{
             this.wrapped.setSendEncrypted(_arg_1);
         }
 
-        public function setMaxRetries(_arg_1:int):void
-        {
+        public function setMaxRetries(_arg_1:int):void{
             this.wrapped.setMaxRetries(_arg_1);
         }
 
-        public function sendRequest(_arg_1:String, _arg_2:Object):void
-        {
+        public function sendRequest(_arg_1:String, _arg_2:Object):void{
             this.timeAtRequest = getTimer();
             this.target = _arg_1;
             this.wrapped.complete.addOnce(this.onComplete);
             this.wrapped.sendRequest(_arg_1, _arg_2);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             this.stats.recordStats(this.target, _arg_1, (getTimer() - this.timeAtRequest));
         }
 
-        public function requestInProgress():Boolean
-        {
+        public function requestInProgress():Boolean{
             return (false);
         }
 

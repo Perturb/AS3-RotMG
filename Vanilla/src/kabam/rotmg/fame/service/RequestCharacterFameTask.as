@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.service.RequestCharacterFameTask
 
-package kabam.rotmg.fame.service
-{
+package kabam.rotmg.fame.service{
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 import com.company.util.DateFormatterReplacement;
 
@@ -19,8 +18,7 @@ import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class RequestCharacterFameTask extends BaseTask 
-    {
+public class RequestCharacterFameTask extends BaseTask {
 
         [Inject]
         public var client:AppEngineClient;
@@ -45,14 +43,12 @@ public class RequestCharacterFameTask extends BaseTask
         private var errorRetry:Boolean = false;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.timer.addEventListener(TimerEvent.TIMER, this.sendFameRequest);
             this.timer.start();
         }
 
-        private function sendFameRequest(_arg_1:TimerEvent):void
-        {
+        private function sendFameRequest(_arg_1:TimerEvent):void{
             this.client.setMaxRetries(8);
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("char/fame", this.getDataPacket());
@@ -61,16 +57,14 @@ public class RequestCharacterFameTask extends BaseTask
             this.timer = null;
         }
 
-        private function getDataPacket():Object
-        {
+        private function getDataPacket():Object{
             var _local_1:Object = {};
             _local_1.accountId = this.accountId;
             _local_1.charId = ((this.accountId == "") ? -1 : this.charId);
             return (_local_1);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.parseFameData(_arg_2);
@@ -78,18 +72,16 @@ public class RequestCharacterFameTask extends BaseTask
             else
             {
                 this.onFameError(_arg_2);
-            }
+            };
         }
 
-        private function parseFameData(_arg_1:String):void
-        {
+        private function parseFameData(_arg_1:String):void{
             this.xml = new XML(_arg_1);
             this.parseXML();
             completeTask(true);
         }
 
-        private function parseXML():void
-        {
+        private function parseXML():void{
             var charXml:XML;
             var char:CharacterClass;
             var skin:CharacterSkin;
@@ -108,8 +100,7 @@ public class RequestCharacterFameTask extends BaseTask
             this.size = ((skin.is16x16) ? 140 : 250);
         }
 
-        private function getDeathDate():String
-        {
+        private function getDeathDate():String{
             var _local_1:Number = (Number(this.xml.CreatedOn) * 1000);
             var _local_2:Date = new Date(_local_1);
             var _local_3:DateFormatterReplacement = new DateFormatterReplacement();
@@ -117,8 +108,7 @@ public class RequestCharacterFameTask extends BaseTask
             return (_local_3.format(_local_2));
         }
 
-        private function onFameError(_arg_1:String):void
-        {
+        private function onFameError(_arg_1:String):void{
             if (this.errorRetry == false)
             {
                 this.errorRetry = true;
@@ -130,7 +120,7 @@ public class RequestCharacterFameTask extends BaseTask
             {
                 this.errorRetry = false;
                 this.openDialog.dispatch(new ErrorDialog(_arg_1));
-            }
+            };
         }
 
 

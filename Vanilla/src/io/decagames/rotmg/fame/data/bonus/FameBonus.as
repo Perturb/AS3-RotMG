@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.fame.data.bonus.FameBonus
 
-package io.decagames.rotmg.fame.data.bonus
-{
-    public class FameBonus 
-    {
+package io.decagames.rotmg.fame.data.bonus{
+    public class FameBonus {
 
         private var _added:int;
         private var _numAdded:int;
@@ -16,8 +14,7 @@ package io.decagames.rotmg.fame.data.bonus
         private var _name:String;
         private var _tooltip:String;
 
-        public function FameBonus(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:String, _arg_6:String)
-        {
+        public function FameBonus(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:String, _arg_6:String){
             this._added = _arg_2;
             this._numAdded = _arg_3;
             this._level = _arg_4;
@@ -26,43 +23,35 @@ package io.decagames.rotmg.fame.data.bonus
             this._tooltip = _arg_6;
         }
 
-        public function get added():int
-        {
+        public function get added():int{
             return (this._added);
         }
 
-        public function get numAdded():int
-        {
+        public function get numAdded():int{
             return (this._numAdded);
         }
 
-        public function get level():int
-        {
+        public function get level():int{
             return (this._level);
         }
 
-        public function get fameAdded():int
-        {
+        public function get fameAdded():int{
             return (this._fameAdded);
         }
 
-        public function set fameAdded(_arg_1:int):void
-        {
+        public function set fameAdded(_arg_1:int):void{
             this._fameAdded = _arg_1;
         }
 
-        public function get id():int
-        {
+        public function get id():int{
             return (this._id);
         }
 
-        public function get name():String
-        {
+        public function get name():String{
             return (this._name);
         }
 
-        public function get tooltip():String
-        {
+        public function get tooltip():String{
             return (this._tooltip);
         }
 

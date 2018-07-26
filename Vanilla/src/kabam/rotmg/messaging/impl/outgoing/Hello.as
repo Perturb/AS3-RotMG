@@ -1,24 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.Hello
 
-package kabam.rotmg.messaging.impl.outgoing
-{
+package kabam.rotmg.messaging.impl.outgoing{
 import flash.utils.ByteArray;
 import flash.utils.IDataOutput;
 
-public class Hello extends OutgoingMessage
-    {
+public class Hello extends OutgoingMessage {
 
-        public var buildVersion_:String;
+        public var buildVersion_:String = new String();
         public var gameId_:int = 0;
-        public var guid_:String;
-        public var password_:String;
-        public var secret_:String;
+        public var guid_:String = new String();
+        public var password_:String = new String();
+        public var secret_:String = new String();
         public var keyTime_:int = 0;
         public var key_:ByteArray = new ByteArray();
-        public var mapJSON_:String;
+        public var mapJSON_:String = new String();
         public var entrytag_:String = "";
         public var gameNet:String = "";
         public var gameNetUserId:String = "";
@@ -26,13 +24,11 @@ public class Hello extends OutgoingMessage
         public var platformToken:String = "";
         public var userToken:String = "";
 
-        public function Hello(_arg_1:uint, _arg_2:Function)
-        {
+        public function Hello(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function writeToOutput(_arg_1:IDataOutput):void
-        {
+        override public function writeToOutput(_arg_1:IDataOutput):void{
             _arg_1.writeUTF(this.buildVersion_);
             _arg_1.writeInt(this.gameId_);
             _arg_1.writeUTF(this.guid_);
@@ -53,8 +49,7 @@ public class Hello extends OutgoingMessage
             _arg_1.writeUTF(this.userToken);
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("HELLO", "buildVersion_", "gameId_", "guid_", "password_", "secret_"));
         }
 

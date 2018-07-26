@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.model.TransferAccountData
 
-package kabam.rotmg.account.transfer.model
-{
-    public class TransferAccountData 
-    {
+package kabam.rotmg.account.transfer.model{
+    public class TransferAccountData {
 
         public var currentEmail:String;
         public var newEmail:String;

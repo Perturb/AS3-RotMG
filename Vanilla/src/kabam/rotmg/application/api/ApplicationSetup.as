@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.api.ApplicationSetup
 
-package kabam.rotmg.application.api
-{
-    public interface ApplicationSetup extends DebugSetup 
-    {
+package kabam.rotmg.application.api{
+    public interface ApplicationSetup extends DebugSetup {
 
         function getBuildLabel():String;
         function getAppEngineUrl(_arg_1:Boolean=false):String;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.PetInfoDialog
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import flash.display.Bitmap;
 
 import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.ui.popups.modal.ModalPopup;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PetInfoDialog extends ModalPopup 
-    {
+public class PetInfoDialog extends ModalPopup {
 
         private var icon:Bitmap;
         private var contentInset:SliceScalingBitmap;
@@ -26,8 +24,7 @@ public class PetInfoDialog extends ModalPopup
         private var infoLabel:UILabel;
         private var infoGrid:UIGrid;
 
-        public function PetInfoDialog()
-        {
+        public function PetInfoDialog(){
             super(280, 320, "Yard Caretaker");
             this.contentInset = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", 280);
             addChild(this.contentInset);
@@ -43,8 +40,7 @@ public class PetInfoDialog extends ModalPopup
             this.createGrid();
         }
 
-        private function createInfo():void
-        {
+        private function createInfo():void{
             this.icon = PetsViewAssetFactory.returnCaretakerBitmap(6465);
             addChild(this.icon);
             this.icon.x = -10;
@@ -67,15 +63,13 @@ public class PetInfoDialog extends ModalPopup
             this.infoLabel.x = 65;
         }
 
-        public function addInfoItem(_arg_1:PetInfoItem):void
-        {
+        public function addInfoItem(_arg_1:PetInfoItem):void{
             var _local_2:UIGridElement = new UIGridElement();
             _local_2.addChild(_arg_1);
             this.infoGrid.addGridElement(_local_2);
         }
 
-        private function createGrid():void
-        {
+        private function createGrid():void{
             this.infoGrid = new UIGrid(260, 1, 5);
             this.infoGrid.x = 10;
             this.infoGrid.y = 90;

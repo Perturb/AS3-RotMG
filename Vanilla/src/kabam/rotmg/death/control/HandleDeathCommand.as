@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.control.HandleDeathCommand
 
-package kabam.rotmg.death.control
-{
+package kabam.rotmg.death.control{
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.death.model.DeathModel;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.messaging.impl.incoming.Death;
 
-public class HandleDeathCommand 
-    {
+public class HandleDeathCommand {
 
         [Inject]
         public var death:Death;
@@ -29,8 +27,7 @@ public class HandleDeathCommand
         public var normal:HandleNormalDeathSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.closeDialogs.dispatch();
             if (this.isZombieDeathPending())
             {
@@ -39,21 +36,18 @@ public class HandleDeathCommand
             else
             {
                 this.updateModelAndHandleDeath();
-            }
+            };
         }
 
-        private function isZombieDeathPending():Boolean
-        {
+        private function isZombieDeathPending():Boolean{
             return (this.model.getIsDeathViewPending());
         }
 
-        private function passPreviousDeathToFameView():void
-        {
+        private function passPreviousDeathToFameView():void{
             this.normal.dispatch(this.model.getLastDeath());
         }
 
-        private function updateModelAndHandleDeath():void
-        {
+        private function updateModelAndHandleDeath():void{
             this.model.setLastDeath(this.death);
             if (this.death.isZombie)
             {
@@ -68,8 +62,8 @@ public class HandleDeathCommand
                 else
                 {
                     this.normal.dispatch(this.death);
-                }
-            }
+                };
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.fame.FameContentPopup
 
-package io.decagames.rotmg.fame
-{
+package io.decagames.rotmg.fame{
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
@@ -23,8 +22,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import kabam.rotmg.assets.services.IconFactory;
 
-public class FameContentPopup extends ModalPopup
-    {
+public class FameContentPopup extends ModalPopup {
 
         private var characterDecorationBG:SliceScalingBitmap;
         private var contentTabs:SliceScalingBitmap;
@@ -45,8 +43,7 @@ public class FameContentPopup extends ModalPopup
         public var characterId:int;
         private var tabs:UITabs;
 
-        public function FameContentPopup(_arg_1:int=-1)
-        {
+        public function FameContentPopup(_arg_1:int=-1){
             super(340, 505, "Fame Overview", DefaultLabelFormat.defaultSmallPopupTitle, new Rectangle(0, 0, 340, 565));
             this.characterId = _arg_1;
             this.infoButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "info_button"));
@@ -104,8 +101,7 @@ public class FameContentPopup extends ModalPopup
             addChild(this.fameOnDeathLabel);
         }
 
-        private function createStatsTab():UITab
-        {
+        private function createStatsTab():UITab{
             var _local_1:UITab;
             var _local_4:Sprite;
             _local_1 = new UITab("Statistics", true);
@@ -132,8 +128,7 @@ public class FameContentPopup extends ModalPopup
             return (_local_1);
         }
 
-        private function createDungeonTab():UITab
-        {
+        private function createDungeonTab():UITab{
             var _local_1:UITab = new UITab("Dungeons", true);
             var _local_2:Sprite = new Sprite();
             this.dungeonContainer = new Sprite();
@@ -158,8 +153,7 @@ public class FameContentPopup extends ModalPopup
             return (_local_1);
         }
 
-        public function set fameOnDeath(_arg_1:int):void
-        {
+        public function set fameOnDeath(_arg_1:int):void{
             this.fameOnDeathTitle.text = "Fame on Death:";
             this.fameOnDeathTitle.x = 0;
             this.fameOnDeathTitle.y = 485;
@@ -170,8 +164,7 @@ public class FameContentPopup extends ModalPopup
             this.fameBitmap.y = this.fameOnDeathLabel.y;
         }
 
-        public function setCharacterData(_arg_1:int, _arg_2:String, _arg_3:int, _arg_4:String, _arg_5:String, _arg_6:BitmapData):void
-        {
+        public function setCharacterData(_arg_1:int, _arg_2:String, _arg_3:int, _arg_4:String, _arg_5:String, _arg_6:BitmapData):void{
             this.totalFame.text = _arg_1.toString();
             this.totalFame.x = 75;
             this.totalFame.y = 60;
@@ -186,8 +179,7 @@ public class FameContentPopup extends ModalPopup
             addChild(_local_7);
         }
 
-        public function addDungeonLine(_arg_1:StatsLine):void
-        {
+        public function addDungeonLine(_arg_1:StatsLine):void{
             var _local_2:int;
             if (this.dungeonLinesPosition >= 1)
             {
@@ -196,26 +188,25 @@ public class FameContentPopup extends ModalPopup
             else
             {
                 _local_2 = 0;
-            }
+            };
             _arg_1.x = 6;
             _arg_1.y = ((this.dungeonLinesPosition * 27) - _local_2);
             this.dungeonContainer.addChild(_arg_1);
             if ((this.dungeonLinesPosition % 2) == 1)
             {
                 _arg_1.drawBrightBackground();
-            }
+            };
             this.dungeonLinesPosition++;
         }
 
-        public function addStatLine(_arg_1:StatsLine):void
-        {
+        public function addStatLine(_arg_1:StatsLine):void{
             _arg_1.x = 6;
             _arg_1.y = (this.statsLinesPosition * 22);
             this.statsContainer.addChild(_arg_1);
             if ((this.statsLinesPosition % 2) == 1)
             {
                 _arg_1.drawBrightBackground();
-            }
+            };
             this.statsLinesPosition++;
         }
 

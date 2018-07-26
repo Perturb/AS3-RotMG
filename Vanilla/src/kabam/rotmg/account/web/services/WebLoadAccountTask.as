@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebLoadAccountTask
 
-package kabam.rotmg.account.web.services
-{
+package kabam.rotmg.account.web.services{
 import com.company.assembleegameclient.util.GUID;
 
 import flash.net.SharedObject;
@@ -15,8 +14,7 @@ import kabam.rotmg.account.core.services.LoadAccountTask;
 import kabam.rotmg.account.web.model.AccountData;
 import kabam.rotmg.appengine.api.AppEngineClient;
 
-public class WebLoadAccountTask extends BaseTask implements LoadAccountTask 
-    {
+public class WebLoadAccountTask extends BaseTask implements LoadAccountTask {
 
         [Inject]
         public var account:Account;
@@ -25,8 +23,7 @@ public class WebLoadAccountTask extends BaseTask implements LoadAccountTask
         private var data:AccountData;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.getAccountData();
             if (this.data.username)
             {
@@ -35,11 +32,10 @@ public class WebLoadAccountTask extends BaseTask implements LoadAccountTask
             else
             {
                 this.setGuestPasswordAndComplete();
-            }
+            };
         }
 
-        private function getAccountData():void
-        {
+        private function getAccountData():void{
             var rotmg:SharedObject;
             this.data = new AccountData();
             try
@@ -51,24 +47,22 @@ public class WebLoadAccountTask extends BaseTask implements LoadAccountTask
                 if (rotmg.data.hasOwnProperty("Name"))
                 {
                     this.data.name = rotmg.data["Name"];
-                }
+                };
             }
             catch(error:Error)
             {
                 data.username = null;
                 data.password = null;
-            }
+            };
         }
 
-        private function setAccountDataThenComplete():void
-        {
+        private function setAccountDataThenComplete():void{
             this.account.updateUser(this.data.username, this.data.password, this.data.token);
             this.account.verify(false);
             completeTask(true);
         }
 
-        private function setGuestPasswordAndComplete():void
-        {
+        private function setGuestPasswordAndComplete():void{
             this.account.updateUser(GUID.create(), null, "");
             completeTask(true);
         }

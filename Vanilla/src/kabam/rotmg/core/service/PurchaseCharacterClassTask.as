@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.service.PurchaseCharacterClassTask
 
-package kabam.rotmg.core.service
-{
+package kabam.rotmg.core.service{
 import com.company.assembleegameclient.appengine.SavedCharactersList;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.util.MoreObjectUtil;
@@ -16,8 +15,7 @@ import kabam.rotmg.core.model.PlayerModel;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class PurchaseCharacterClassTask extends BaseTask
-    {
+public class PurchaseCharacterClassTask extends BaseTask {
 
         [Inject]
         public var classType:int;
@@ -31,15 +29,13 @@ public class PurchaseCharacterClassTask extends BaseTask
         public var logger:ILogger;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.info("PurchaseCharacterClassTask.startTask: Started ");
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/char/purchaseClassUnlock", this.makeRequestPacket());
         }
 
-        public function makeRequestPacket():Object
-        {
+        public function makeRequestPacket():Object{
             var _local_1:Object = {};
             _local_1.game_net_user_id = this.account.gameNetworkUserId();
             _local_1.game_net = this.account.gameNetwork();
@@ -50,15 +46,13 @@ public class PurchaseCharacterClassTask extends BaseTask
             return (_local_1);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             this.logger.info("PurchaseCharacterClassTask.onComplete: Ended ");
             ((_arg_1) && (this.onReceiveResponseFromClassPurchase()));
             completeTask(_arg_1, _arg_2);
         }
 
-        private function onReceiveResponseFromClassPurchase():void
-        {
+        private function onReceiveResponseFromClassPurchase():void{
             this.playerModel.setClassAvailability(this.classType, SavedCharactersList.UNRESTRICTED);
             completeTask(true);
         }

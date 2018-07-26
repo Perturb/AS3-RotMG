@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.ScoreTextLine
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import flash.display.DisplayObject;
@@ -26,8 +25,7 @@ import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 
-public class ScoreTextLine extends Sprite implements TooltipAble 
-    {
+public class ScoreTextLine extends Sprite implements TooltipAble {
 
         public static var textTooltip_:TextToolTip = new TextToolTip(0x363636, 0x9B9B9B, null, "", 150);
 
@@ -42,8 +40,7 @@ public class ScoreTextLine extends Sprite implements TooltipAble
         private var numberText_:TextFieldDisplayConcrete;
         private var unitIcon_:DisplayObject;
 
-        public function ScoreTextLine(_arg_1:int, _arg_2:uint, _arg_3:uint, _arg_4:String, _arg_5:String, _arg_6:int, _arg_7:int, _arg_8:String, _arg_9:String, _arg_10:DisplayObject):void
-        {
+        public function ScoreTextLine(_arg_1:int, _arg_2:uint, _arg_3:uint, _arg_4:String, _arg_5:String, _arg_6:int, _arg_7:int, _arg_8:String, _arg_9:String, _arg_10:DisplayObject):void{
             this.name = _arg_4;
             this.description = _arg_5;
             this.level = _arg_6;
@@ -57,7 +54,7 @@ public class ScoreTextLine extends Sprite implements TooltipAble
             if (_arg_8 == "+")
             {
                 _local_11.setPrefix("Bonus: ");
-            }
+            };
             this.nameText_.setStringBuilder(_local_11);
             this.nameText_.x = 410;
             this.nameText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
@@ -70,24 +67,23 @@ public class ScoreTextLine extends Sprite implements TooltipAble
                 this.numberText_.x = 450;
                 this.numberText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
                 addChild(this.numberText_);
-            }
+            };
             if (_arg_10 != null)
             {
                 this.unitIcon_ = _arg_10;
                 this.nameText_.textChanged.addOnce(this.onTextChanged);
                 addChild(this.unitIcon_);
-            }
+            };
             this.hoverTooltipDelegate.setDisplayObject(this);
             if (_arg_5)
             {
                 this.hoverTooltipDelegate.tooltip = textTooltip_;
-            }
+            };
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             if (this.numberText_ != null)
             {
                 this.unitIcon_.x = ((this.numberText_.x + this.numberText_.width) - 4);
@@ -97,52 +93,44 @@ public class ScoreTextLine extends Sprite implements TooltipAble
             {
                 this.unitIcon_.x = 450;
                 this.unitIcon_.y = (((this.nameText_.height / 2) - (this.unitIcon_.height / 2)) + 2);
-            }
+            };
         }
 
-        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
-        {
+        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void{
             this.hoverTooltipDelegate.setShowToolTipSignal(_arg_1);
         }
 
-        public function getShowToolTip():ShowTooltipSignal
-        {
+        public function getShowToolTip():ShowTooltipSignal{
             return (this.hoverTooltipDelegate.getShowToolTip());
         }
 
-        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void
-        {
+        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void{
             this.hoverTooltipDelegate.setHideToolTipsSignal(_arg_1);
         }
 
-        public function getHideToolTips():HideTooltipsSignal
-        {
+        public function getHideToolTips():HideTooltipsSignal{
             return (this.hoverTooltipDelegate.getHideToolTips());
         }
 
-        public function skip():void
-        {
+        public function skip():void{
             this.startTime_ = -1000000;
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             if (this.startTime_ == 0)
             {
                 this.startTime_ = getTimer();
-            }
+            };
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
         }
 
-        public function onEnterFrame(_arg_1:Event):void
-        {
+        public function onEnterFrame(_arg_1:Event):void{
             var _local_3:int;
             var _local_2:Number = Math.min(1, ((getTimer() - this.startTime_) / 500));
             if (this.numberText_ != null)
@@ -153,25 +141,23 @@ public class ScoreTextLine extends Sprite implements TooltipAble
                 {
                     this.unitIcon_.x = ((this.numberText_.x + this.numberText_.width) - 4);
                     this.unitIcon_.y = (((this.numberText_.height / 2) - (this.unitIcon_.height / 2)) + 2);
-                }
-            }
+                };
+            };
             if (_local_2 == 1)
             {
                 removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-            }
+            };
         }
 
-        public function onMouseOver(_arg_1:Event):void
-        {
+        public function onMouseOver(_arg_1:Event):void{
             if (this.description != null)
             {
                 textTooltip_.setText(this.makeDescription());
                 stage.addChild(textTooltip_);
-            }
+            };
         }
 
-        private function makeDescription():StringBuilder
-        {
+        private function makeDescription():StringBuilder{
             var _local_1:AppendingLineBuilder = new AppendingLineBuilder();
             _local_1.setDelimiter("");
             _local_1.pushParams(this.description);
@@ -180,7 +166,7 @@ public class ScoreTextLine extends Sprite implements TooltipAble
                 _local_1.pushParams(TextKey.BLANK, {"data":" \n("});
                 _local_1.pushParams("FameBonus.LevelRequirement", {"level":this.level});
                 _local_1.pushParams(TextKey.BLANK, {"data":")"});
-            }
+            };
             return (_local_1);
         }
 

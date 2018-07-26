@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.NewsModalButton
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.util.TextureRedrawer;
@@ -25,8 +24,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.UIUtils;
 
-public class NewsModalButton extends Sprite
-    {
+public class NewsModalButton extends Sprite {
 
         public static const IMAGE_NAME:String = "lofiObj2";
         public static const IMAGE_ID:int = 345;
@@ -38,8 +36,7 @@ public class NewsModalButton extends Sprite
         private var icon:BitmapData;
         private var text:TextFieldDisplayConcrete;
 
-        public function NewsModalButton()
-        {
+        public function NewsModalButton(){
             mouseChildren = false;
             this.icon = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
             this.bitmap = new Bitmap(this.icon);
@@ -59,15 +56,13 @@ public class NewsModalButton extends Sprite
             addEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        public function onClick(_arg_1:MouseEvent):void
-        {
+        public function onClick(_arg_1:MouseEvent):void{
             var _local_2:OpenDialogSignal = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _local_2.dispatch(new NewsModal());
             SoundEffectLibrary.play("button_click");
         }
 
-        public function drawAsOpen():void
-        {
+        public function drawAsOpen():void{
             var _local_1:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
             if (_local_1.hasUpdates())
             {
@@ -81,7 +76,7 @@ public class NewsModalButton extends Sprite
                 showsHasUpdate = false;
                 StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
                 addChild(this.background2);
-            }
+            };
             addChild(this.bitmap);
         }
 

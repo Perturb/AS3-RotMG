@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.view.MapLoadingView
 
-package kabam.rotmg.maploading.view
-{
+package kabam.rotmg.maploading.view{
 import com.gskinner.motion.GTween;
 
 import flash.display.DisplayObject;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.TitleView;
 
-public class MapLoadingView extends Sprite 
-    {
+public class MapLoadingView extends Sprite {
 
         public static const MAX_DIFFICULTY:int = 5;
         public static const FADE_OUT_TIME:Number = 0.58;
@@ -38,15 +36,13 @@ public class MapLoadingView extends Sprite
         private var difficulty:int;
         private var animation:Animation;
 
-        public function MapLoadingView():void
-        {
+        public function MapLoadingView():void{
             this.addBackground();
             this.makeLoadingScreen();
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function addBackground():void
-        {
+        private function addBackground():void{
             var _local_1:Sprite = new Sprite();
             _local_1.graphics.beginFill(0);
             _local_1.graphics.drawRect(0, 0, 800, 600);
@@ -54,8 +50,7 @@ public class MapLoadingView extends Sprite
             addChild(_local_1);
         }
 
-        private function makeLoadingScreen():void
-        {
+        private function makeLoadingScreen():void{
             this.screen = new MapLoadingScreen();
             var _local_1:MovieClip = (this.screen.getChildByName("mapNameContainer") as MovieClip);
             this.mapNameField = new TextFieldDisplayConcrete().setSize(30).setColor(0xFFFFFF);
@@ -71,20 +66,18 @@ public class MapLoadingView extends Sprite
             {
                 this.indicators[(_local_2 - 1)] = this.diffRow.getChildByName(("indicator_" + _local_2));
                 _local_2++;
-            }
+            };
             addChild(this.screen);
             this.setValues();
         }
 
-        public function showMap(_arg_1:String, _arg_2:int):void
-        {
+        public function showMap(_arg_1:String, _arg_2:int):void{
             this.mapName = ((_arg_1) ? _arg_1 : "");
             this.difficulty = _arg_2;
             this.setValues();
         }
 
-        private function setValues():void
-        {
+        private function setValues():void{
             var _local_1:int;
             if (this.screen)
             {
@@ -103,13 +96,12 @@ public class MapLoadingView extends Sprite
                     {
                         this.indicators[_local_1].visible = (_local_1 < this.difficulty);
                         _local_1++;
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        public function showAnimation(_arg_1:Animation):void
-        {
+        public function showAnimation(_arg_1:Animation):void{
             this.animation = _arg_1;
             addChild(_arg_1);
             _arg_1.start();
@@ -117,18 +109,15 @@ public class MapLoadingView extends Sprite
             _arg_1.y = (245.85 - (_arg_1.height * 0.5));
         }
 
-        public function disable():void
-        {
+        public function disable():void{
             this.beginFadeOut();
         }
 
-        public function disableNoFadeOut():void
-        {
+        public function disableNoFadeOut():void{
             ((parent) && (parent.removeChild(this)));
         }
 
-        private function beginFadeOut():void
-        {
+        private function beginFadeOut():void{
             if (TitleView.queueEmailConfirmation)
             {
                 StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(new ConfirmEmailModal());
@@ -154,23 +143,21 @@ public class MapLoadingView extends Sprite
                         {
                             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(new WebRegisterDialog());
                             TitleView.queueRegistrationPrompt = false;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             var _local_1:GTween = new GTween(this, FADE_OUT_TIME, {"alpha":0});
             _local_1.onComplete = this.onFadeOutComplete;
             mouseEnabled = false;
             mouseChildren = false;
         }
 
-        private function onFadeOutComplete(_arg_1:GTween):void
-        {
+        private function onFadeOutComplete(_arg_1:GTween):void{
             ((parent) && (parent.removeChild(this)));
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.animation.dispose();
         }
 

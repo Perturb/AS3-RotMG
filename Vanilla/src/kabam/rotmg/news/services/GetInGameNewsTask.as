@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.services.GetInGameNewsTask
 
-package kabam.rotmg.news.services
-{
+package kabam.rotmg.news.services{
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
@@ -16,8 +15,7 @@ import kabam.rotmg.news.view.NewsModal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GetInGameNewsTask extends BaseTask 
-    {
+public class GetInGameNewsTask extends BaseTask {
 
         [Inject]
         public var logger:ILogger;
@@ -32,26 +30,22 @@ public class GetInGameNewsTask extends BaseTask
         private var requestData:Object;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.info("GetInGameNewsTask start");
             this.requestData = this.makeRequestData();
             this.sendRequest();
         }
 
-        public function makeRequestData():Object
-        {
+        public function makeRequestData():Object{
             return ({});
         }
 
-        private function sendRequest():void
-        {
+        private function sendRequest():void{
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/inGameNews/getNews", this.requestData);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             this.logger.info(("String response from GetInGameNewsTask: " + _arg_2));
             if (_arg_1)
             {
@@ -60,11 +54,10 @@ public class GetInGameNewsTask extends BaseTask
             else
             {
                 completeTask(true);
-            }
+            };
         }
 
-        private function parseNews(_arg_1:String):void
-        {
+        private function parseNews(_arg_1:String):void{
             var _local_3:Object;
             var _local_4:Object;
             var _local_5:InGameNews;
@@ -84,16 +77,16 @@ public class GetInGameNewsTask extends BaseTask
                     _local_5.platform = _local_4.platform;
                     _local_5.weight = _local_4.weight;
                     this.model.addInGameNews(_local_5);
-                }
+                };
             }
             catch(e:Error)
             {
-            }
+            };
             var _local_2:InGameNews = this.model.getFirstNews();
             if ((((_local_2) && (_local_2.showAtStartup)) && (this.model.hasUpdates())))
             {
                 this.addToQueueSignal.dispatch(PopupNamesConfig.NEWS_POPUP, this.openDialogSignal, -1, new NewsModal(true));
-            }
+            };
             completeTask(true);
         }
 

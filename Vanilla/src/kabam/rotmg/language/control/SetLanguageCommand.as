@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.control.SetLanguageCommand
 
-package kabam.rotmg.language.control
-{
+package kabam.rotmg.language.control{
 import kabam.lib.console.signals.HideConsoleSignal;
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.TaskMonitor;
@@ -15,8 +14,7 @@ import kabam.rotmg.ui.signals.ShowLoadingUISignal;
 
 import org.swiftsuspenders.Injector;
 
-public class SetLanguageCommand
-    {
+public class SetLanguageCommand {
 
         [Inject]
         public var language:String;
@@ -36,8 +34,7 @@ public class SetLanguageCommand
         public var monitor:TaskMonitor;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.model.setLanguage(this.language);
             this.loading.dispatch();
             var _local_1:TaskSequence = new TaskSequence();

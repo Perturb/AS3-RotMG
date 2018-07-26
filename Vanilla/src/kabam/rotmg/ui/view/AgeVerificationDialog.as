@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.AgeVerificationDialog
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
@@ -19,8 +18,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class AgeVerificationDialog extends Dialog
-    {
+public class AgeVerificationDialog extends Dialog {
 
         private static const WIDTH:int = 300;
 
@@ -32,34 +30,29 @@ public class AgeVerificationDialog extends Dialog
         private var ageVerificationField:DateField;
         private var errorLabel:TextFieldDisplayConcrete;
 
-        public function AgeVerificationDialog()
-        {
+        public function AgeVerificationDialog(){
             super(TextKey.AGE_VERIFICATION_DIALOG_TITLE, "", TextKey.AGE_VERIFICATION_DIALOG_LEFT, TextKey.AGE_VERIFICATION_DIALOG_RIGHT, "/ageVerificationDialog");
             addEventListener(Dialog.LEFT_BUTTON, this.onCancel);
             addEventListener(Dialog.RIGHT_BUTTON, this.onVerify);
         }
 
-        override protected function makeUIAndAdd():void
-        {
+        override protected function makeUIAndAdd():void{
             this.makeAgeVerificationAndErrorLabel();
             this.addChildren();
         }
 
-        private function makeAgeVerificationAndErrorLabel():void
-        {
+        private function makeAgeVerificationAndErrorLabel():void{
             this.makeAgeVerificationField();
             this.makeErrorLabel();
         }
 
-        private function addChildren():void
-        {
+        private function addChildren():void{
             uiWaiter.pushArgs(this.ageVerificationField.getTextChanged());
             box_.addChild(this.ageVerificationField);
             box_.addChild(this.errorLabel);
         }
 
-        override protected function initText(_arg_1:String):void
-        {
+        override protected function initText(_arg_1:String):void{
             textText_ = new TextFieldDisplayConcrete().setSize(14).setColor(0xB3B3B3);
             textText_.setTextWidth((WIDTH - 40));
             textText_.x = 20;
@@ -70,8 +63,7 @@ public class AgeVerificationDialog extends Dialog
             this.setText();
         }
 
-        private function setText():void
-        {
+        private function setText():void{
             var _local_1:* = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
             var _local_2:* = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
             var _local_3:* = "</a></font>";
@@ -83,34 +75,29 @@ public class AgeVerificationDialog extends Dialog
             }));
         }
 
-        override protected function drawAdditionalUI():void
-        {
+        override protected function drawAdditionalUI():void{
             this.ageVerificationField.y = (textText_.getBounds(box_).bottom + 8);
             this.ageVerificationField.x = 20;
             this.errorLabel.y = ((this.ageVerificationField.y + this.ageVerificationField.height) + 8);
             this.errorLabel.x = 20;
         }
 
-        private function makeAgeVerificationField():void
-        {
+        private function makeAgeVerificationField():void{
             this.ageVerificationField = new DateField();
             this.ageVerificationField.setTitle(TextKey.BIRTHDAY);
         }
 
-        private function makeErrorLabel():void
-        {
+        private function makeErrorLabel():void{
             this.errorLabel = new TextFieldDisplayConcrete().setSize(12).setColor(16549442);
             this.errorLabel.setMultiLine(true);
             this.errorLabel.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
         }
 
-        private function onCancel(_arg_1:Event):void
-        {
+        private function onCancel(_arg_1:Event):void{
             this.response.dispatch(false);
         }
 
-        private function onVerify(_arg_1:Event):void
-        {
+        private function onVerify(_arg_1:Event):void{
             var _local_3:Boolean;
             var _local_2:uint = this.getPlayerAge();
             var _local_4:* = "";
@@ -131,27 +118,25 @@ public class AgeVerificationDialog extends Dialog
                     _local_4 = "";
                     _local_3 = false;
                     this.response.dispatch(true);
-                }
-            }
+                };
+            };
             this.errorLabel.setStringBuilder(new LineBuilder().setParams(_local_4));
             this.ageVerificationField.setErrorHighlight(_local_3);
             drawButtonsAndBackground();
         }
 
-        private function getPlayerAge():uint
-        {
+        private function getPlayerAge():uint{
             var _local_1:Date = new Date(this.getBirthDate());
             var _local_2:Date = new Date();
             var _local_3:uint = (Number(_local_2.fullYear) - Number(_local_1.fullYear));
             if (((_local_1.month > _local_2.month) || ((_local_1.month == _local_2.month) && (_local_1.date > _local_2.date))))
             {
                 _local_3--;
-            }
+            };
             return (_local_3);
         }
 
-        private function getBirthDate():Number
-        {
+        private function getBirthDate():Number{
             return (Date.parse(this.ageVerificationField.getDate()));
         }
 

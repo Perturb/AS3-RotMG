@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.parameters.Parameters
 
-package com.company.assembleegameclient.parameters
-{
+package com.company.assembleegameclient.parameters{
 import com.company.assembleegameclient.map.Map;
 import com.company.util.KeyCodes;
 import com.company.util.MoreDateUtil;
@@ -15,11 +14,10 @@ import flash.net.SharedObject;
 import flash.system.Capabilities;
 import flash.utils.Dictionary;
 
-public class Parameters
-    {
+public class Parameters {
 
         public static const BUILD_VERSION:String = "X27.0";
-        public static const MINOR_VERSION:String = "1";
+        public static const MINOR_VERSION:String = "2";
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = false;
@@ -34,7 +32,6 @@ public class Parameters
         public static const ERROR_CHAT_NAME:String = "*Error*";
         public static const HELP_CHAT_NAME:String = "*Help*";
         public static const GUILD_CHAT_NAME:String = "*Guild*";
-        public static const TYPE:String = "VN";
         public static const NEWS_TIMESTAMP_DEFAULT:Number = 1.1;
         public static const NAME_CHANGE_PRICE:int = 1000;
         public static const GUILD_CREATION_PRICE:int = 1000;
@@ -64,8 +61,7 @@ public class Parameters
         private static var keyNames_:Dictionary = new Dictionary();
 
 
-        public static function load():void
-        {
+        public static function load():void{
             try
             {
                 savedOptions_ = SharedObject.getLocal("AssembleeGameClientOptions", "/");
@@ -74,72 +70,64 @@ public class Parameters
             catch(error:Error)
             {
                 data_ = {};
-            }
+            };
             setDefaults();
             save();
         }
 
-        public static function save():void
-        {
+        public static function save():void{
             try
             {
                 if (savedOptions_ != null)
                 {
                     savedOptions_.flush();
-                }
+                };
             }
             catch(error:Error)
             {
-            }
+            };
         }
 
-        private static function setDefaultKey(_arg_1:String, _arg_2:uint):void
-        {
+        private static function setDefaultKey(_arg_1:String, _arg_2:uint):void{
             if (!data_.hasOwnProperty(_arg_1))
             {
                 data_[_arg_1] = _arg_2;
-            }
+            };
             keyNames_[_arg_1] = true;
         }
 
-        public static function setKey(_arg_1:String, _arg_2:uint):void
-        {
+        public static function setKey(_arg_1:String, _arg_2:uint):void{
             var _local_3:String;
             for (_local_3 in keyNames_)
             {
                 if (data_[_local_3] == _arg_2)
                 {
                     data_[_local_3] = KeyCodes.UNSET;
-                }
-            }
+                };
+            };
             data_[_arg_1] = _arg_2;
         }
 
-        private static function setDefault(_arg_1:String, _arg_2:*):void
-        {
+        private static function setDefault(_arg_1:String, _arg_2:*):void{
             if (!data_.hasOwnProperty(_arg_1))
             {
                 data_[_arg_1] = _arg_2;
-            }
+            };
         }
 
-        public static function isGpuRender():Boolean
-        {
+        public static function isGpuRender():Boolean{
             return (((!(GPURenderError)) && (data_.GPURender)) && (!(Map.forceSoftwareRender)));
         }
 
-        public static function clearGpuRenderEvent(_arg_1:Event):void
-        {
+        public static function clearGpuRenderEvent(_arg_1:Event):void{
             clearGpuRender();
         }
 
-        public static function clearGpuRender():void
-        {
+        public static function clearGpuRender():void{
             GPURenderError = true;
         }
 
-        public static function setDefaults():void
-        {
+        public static function setDefaults():void{
             setDefaultKey("moveLeft", KeyCodes.A);
             setDefaultKey("moveRight", KeyCodes.D);
             setDefaultKey("moveUp", KeyCodes.W);
@@ -229,7 +217,7 @@ public class Parameters
             else
             {
                 setDefault("GPURender", false);
-            }
+            };
             setDefault("forceChatQuality", false);
             setDefault("hidePlayerChat", false);
             setDefault("chatStarRequirement", 2);
@@ -247,7 +235,7 @@ public class Parameters
             else
             {
                 setDefault("musicVolume", 0);
-            }
+            };
             if (((data_.hasOwnProperty("playSFX")) && (data_.playMusic == true)))
             {
                 setDefault("SFXVolume", 1);
@@ -255,7 +243,7 @@ public class Parameters
             else
             {
                 setDefault("SFXVolume", 0);
-            }
+            };
             setDefault("friendList", KeyCodes.UNSET);
             setDefault("tradeWithFriends", false);
             setDefault("chatFriend", false);
@@ -300,8 +288,8 @@ public class Parameters
                         data_.playTimeLeftTillSurvey = (2 * 60);
                         data_.surveyGroup = "2WeekRealtime";
                         return;
-                }
-            }
+                };
+            };
         }
 
 

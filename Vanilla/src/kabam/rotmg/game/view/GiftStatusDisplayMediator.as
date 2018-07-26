@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.GiftStatusDisplayMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GiftStatusModel;
 import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
 import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 
-public class GiftStatusDisplayMediator 
-    {
+public class GiftStatusDisplayMediator {
 
         [Inject]
         public var updateGiftStatusDisplay:UpdateGiftStatusDisplaySignal;
@@ -23,14 +21,12 @@ public class GiftStatusDisplayMediator
         public var displayAreaChangedSignal:DisplayAreaChangedSignal;
 
 
-        public function initialize():void
-        {
+        public function initialize():void{
             this.updateGiftStatusDisplay.add(this.onGiftChestUpdate);
             this.onGiftChestUpdate();
         }
 
-        private function onGiftChestUpdate():void
-        {
+        private function onGiftChestUpdate():void{
             if (this.giftStatusModel.hasGift)
             {
                 this.view.drawAsOpen();
@@ -38,7 +34,7 @@ public class GiftStatusDisplayMediator
             else
             {
                 this.view.drawAsClosed();
-            }
+            };
             this.displayAreaChangedSignal.dispatch();
         }
 

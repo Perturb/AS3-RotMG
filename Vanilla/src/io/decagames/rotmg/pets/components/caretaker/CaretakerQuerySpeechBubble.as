@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQuerySpeechBubble
 
-package io.decagames.rotmg.pets.components.caretaker
-{
+package io.decagames.rotmg.pets.components.caretaker{
 import flash.display.Shape;
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
@@ -16,29 +15,25 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.util.graphics.BevelRect;
 import kabam.rotmg.util.graphics.GraphicsHelper;
 
-public class CaretakerQuerySpeechBubble extends Sprite 
-    {
+public class CaretakerQuerySpeechBubble extends Sprite {
 
         private const WIDTH:int = 380;
         private const HEIGHT:int = 42;
         private const BEVEL:int = 4;
         private const POINT:int = 6;
 
-        public function CaretakerQuerySpeechBubble(_arg_1:String)
-        {
+        public function CaretakerQuerySpeechBubble(_arg_1:String){
             addChild(this.makeBubble());
             addChild(this.makeText(_arg_1));
         }
 
-        private function makeBubble():Shape
-        {
+        private function makeBubble():Shape{
             var _local_1:Shape = new Shape();
             this.drawBubble(_local_1);
             return (_local_1);
         }
 
-        private function drawBubble(_arg_1:Shape):void
-        {
+        private function drawBubble(_arg_1:Shape):void{
             var _local_2:GraphicsHelper = new GraphicsHelper();
             var _local_3:BevelRect = new BevelRect(this.WIDTH, this.HEIGHT, this.BEVEL);
             var _local_4:int = int((this.HEIGHT / 2));
@@ -52,8 +47,7 @@ public class CaretakerQuerySpeechBubble extends Sprite
             _arg_1.graphics.endFill();
         }
 
-        private function makeText(_arg_1:String):TextFieldDisplayConcrete
-        {
+        private function makeText(_arg_1:String):TextFieldDisplayConcrete{
             var _local_2:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(16).setAutoSize(TextFieldAutoSize.CENTER).setVerticalAlign(VerticalAlign.MIDDLE).setPosition((this.WIDTH / 2), (this.HEIGHT / 2));
             _local_2.setStringBuilder(new LineBuilder().setParams(_arg_1));
             return (_local_2);

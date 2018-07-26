@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.DebugTextInfo
 
-package kabam.rotmg.text.model
-{
-    public class DebugTextInfo 
-    {
+package kabam.rotmg.text.model{
+    public class DebugTextInfo {
 
         public var hasKey:Boolean;
         public var key:String;

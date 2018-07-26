@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.servers.ServersConfig
 
-package kabam.rotmg.servers
-{
+package kabam.rotmg.servers{
 import kabam.rotmg.account.core.signals.CharListDataSignal;
 import kabam.rotmg.build.api.BuildData;
 import kabam.rotmg.build.api.BuildEnvironment;
@@ -19,8 +18,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class ServersConfig implements IConfig 
-    {
+public class ServersConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -30,8 +28,7 @@ public class ServersConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             var _local_1:BuildEnvironment = this.data.getEnvironment();
             switch (_local_1)
             {
@@ -44,26 +41,22 @@ public class ServersConfig implements IConfig
                     return;
                 default:
                     this.configureLiveServers();
-            }
+            };
         }
 
-        private function configureLocalhost():void
-        {
+        private function configureLocalhost():void{
             this.injector.map(ServerModel).toSingleton(LocalhostServerModel);
         }
 
-        private function configureFixedIP():void
-        {
+        private function configureFixedIP():void{
             this.injector.map(ServerModel).toValue(this.makeFixedIPServerModel());
         }
 
-        private function makeFixedIPServerModel():FixedIPServerModel
-        {
+        private function makeFixedIPServerModel():FixedIPServerModel{
             return (new FixedIPServerModel().setIP(this.data.getEnvironmentString()));
         }
 
-        private function configureLiveServers():void
-        {
+        private function configureLiveServers():void{
             this.injector.map(ServerModel).toSingleton(LiveServerModel);
             this.commandMap.map(CharListDataSignal).toCommand(ParseServerDataCommand);
         }

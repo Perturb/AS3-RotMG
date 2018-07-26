@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.appengine.SavedCharacter
 
-package com.company.assembleegameclient.appengine
-{
+package com.company.assembleegameclient.appengine{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -30,15 +29,13 @@ import kabam.rotmg.core.StaticInjectorContext;
 
 import org.swiftsuspenders.Injector;
 
-public class SavedCharacter
-    {
+public class SavedCharacter {
 
         public var charXML_:XML;
         public var name_:String = null;
         private var pet:PetVO;
 
-        public function SavedCharacter(_arg_1:XML, _arg_2:String)
-        {
+        public function SavedCharacter(_arg_1:XML, _arg_2:String){
             var _local_3:XML;
             var _local_4:int;
             var _local_5:PetVO;
@@ -52,11 +49,10 @@ public class SavedCharacter
                 _local_5 = StaticInjectorContext.getInjector().getInstance(PetsModel).getPetVO(_local_4);
                 _local_5.apply(_local_3);
                 this.setPetVO(_local_5);
-            }
+            };
         }
 
-        public static function getImage(_arg_1:SavedCharacter, _arg_2:XML, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Boolean, _arg_7:Boolean):BitmapData
-        {
+        public static function getImage(_arg_1:SavedCharacter, _arg_2:XML, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Boolean, _arg_7:Boolean):BitmapData{
             var _local_8:AnimatedChar = AnimatedChars.getAnimatedChar(String(_arg_2.AnimatedTexture.File), int(_arg_2.AnimatedTexture.Index));
             var _local_9:MaskedImage = _local_8.imageFromDir(_arg_3, _arg_4, _arg_5);
             var _local_10:int = ((_arg_1 != null) ? _arg_1.tex1() : null);
@@ -72,30 +68,27 @@ public class SavedCharacter
                 if (!_arg_7)
                 {
                     _local_12 = CachingColorTransformer.transformBitmapData(_local_12, new ColorTransform(0.75, 0.75, 0.75, 1, 0, 0, 0, 0));
-                }
-            }
+                };
+            };
             return (_local_12);
         }
 
-        public static function compare(_arg_1:SavedCharacter, _arg_2:SavedCharacter):Number
-        {
+        public static function compare(_arg_1:SavedCharacter, _arg_2:SavedCharacter):Number{
             var _local_3:Number = ((Parameters.data_.charIdUseMap.hasOwnProperty(_arg_1.charId())) ? Parameters.data_.charIdUseMap[_arg_1.charId()] : 0);
             var _local_4:Number = ((Parameters.data_.charIdUseMap.hasOwnProperty(_arg_2.charId())) ? Parameters.data_.charIdUseMap[_arg_2.charId()] : 0);
             if (_local_3 != _local_4)
             {
                 return (_local_4 - _local_3);
-            }
+            };
             return (_arg_2.xp() - _arg_1.xp());
         }
 
 
-        public function charId():int
-        {
+        public function charId():int{
             return (int(this.charXML_.@id));
         }
 
-        public function fameBonus():int
-        {
+        public function fameBonus():int{
             var _local_4:int;
             var _local_5:XML;
             var _local_1:Player = Player.fromPlayerXML("", this.charXML_);
@@ -112,101 +105,83 @@ public class SavedCharacter
                         if (((!(_local_5 == null)) && (_local_5.hasOwnProperty("FameBonus"))))
                         {
                             _local_2 = (_local_2 + int(_local_5.FameBonus));
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 _local_3++;
-            }
+            };
             return (_local_2);
         }
 
-        public function name():String
-        {
+        public function name():String{
             return (this.name_);
         }
 
-        public function objectType():int
-        {
+        public function objectType():int{
             return (int(this.charXML_.ObjectType));
         }
 
-        public function skinType():int
-        {
+        public function skinType():int{
             return (int(this.charXML_.Texture));
         }
 
-        public function level():int
-        {
+        public function level():int{
             return (int(this.charXML_.Level));
         }
 
-        public function tex1():int
-        {
+        public function tex1():int{
             return (int(this.charXML_.Tex1));
         }
 
-        public function tex2():int
-        {
+        public function tex2():int{
             return (int(this.charXML_.Tex2));
         }
 
-        public function xp():int
-        {
+        public function xp():int{
             return (int(this.charXML_.Exp));
         }
 
-        public function fame():int
-        {
+        public function fame():int{
             return (int(this.charXML_.CurrentFame));
         }
 
-        public function hp():int
-        {
+        public function hp():int{
             return (int(this.charXML_.MaxHitPoints));
         }
 
-        public function mp():int
-        {
+        public function mp():int{
             return (int(this.charXML_.MaxMagicPoints));
         }
 
-        public function att():int
-        {
+        public function att():int{
             return (int(this.charXML_.Attack));
         }
 
-        public function def():int
-        {
+        public function def():int{
             return (int(this.charXML_.Defense));
         }
 
-        public function spd():int
-        {
+        public function spd():int{
             return (int(this.charXML_.Speed));
         }
 
-        public function dex():int
-        {
+        public function dex():int{
             return (int(this.charXML_.Dexterity));
         }
 
-        public function vit():int
-        {
+        public function vit():int{
             return (int(this.charXML_.HpRegen));
         }
 
-        public function wis():int
-        {
+        public function wis():int{
             return (int(this.charXML_.MpRegen));
         }
 
-        public function displayId():String
-        {
+        public function displayId():String{
             return (ObjectLibrary.typeToDisplayId_[this.objectType()]);
         }
 
-        public function getIcon(_arg_1:int=100):BitmapData
-        {
+        public function getIcon(_arg_1:int=100):BitmapData{
             var _local_2:Injector = StaticInjectorContext.getInjector();
             var _local_3:ClassesModel = _local_2.getInstance(ClassesModel);
             var _local_4:CharacterFactory = _local_2.getInstance(CharacterFactory);
@@ -216,22 +191,19 @@ public class SavedCharacter
             return (_local_7);
         }
 
-        public function bornOn():String
-        {
+        public function bornOn():String{
             if (!this.charXML_.hasOwnProperty("CreationDate"))
             {
                 return ("Unknown");
-            }
+            };
             return (this.charXML_.CreationDate);
         }
 
-        public function getPetVO():PetVO
-        {
+        public function getPetVO():PetVO{
             return (this.pet);
         }
 
-        public function setPetVO(_arg_1:PetVO):void
-        {
+        public function setPetVO(_arg_1:PetVO):void{
             this.pet = _arg_1;
         }
 

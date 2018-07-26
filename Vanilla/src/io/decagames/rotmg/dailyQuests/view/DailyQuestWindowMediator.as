@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.DailyQuestWindowMediator
 
-package io.decagames.rotmg.dailyQuests.view
-{
+package io.decagames.rotmg.dailyQuests.view{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import flash.events.Event;
@@ -32,8 +31,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class DailyQuestWindowMediator extends Mediator 
-    {
+public class DailyQuestWindowMediator extends Mediator {
 
         [Inject]
         public var view:DailyQuestWindow;
@@ -63,8 +61,7 @@ public class DailyQuestWindowMediator extends Mediator
         private var redeemPopup:DailyQuestRedeemPopup;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
             this.infoButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "info_button"));
             this.view.header.setTitle("The Tinkerer", 450, DefaultLabelFormat.defaultPopupTitle);
@@ -82,8 +79,7 @@ public class DailyQuestWindowMediator extends Mediator
             this.setToolTipTitle("The Tinkerer", 'Complete the quests to earn great rewards!\n\nYou can select a quest from the list to display the quest requirements. Bring the items back to me to complete the quest and rewards will be sent directly to your Gift Chest.\n\nItems will be directly consumed from your inventory or backpack when you press "Complete!".\n\nYou can complete each quest only once per day but the Tinkerer will offer you new quests everyday!');
         }
 
-        private function setToolTipTitle(_arg_1:String, _arg_2:String):void
-        {
+        private function setToolTipTitle(_arg_1:String, _arg_2:String):void{
             this.toolTip = new TextToolTip(0x363636, 0x9B9B9B, _arg_1, _arg_2, 300, null);
             this.hoverTooltipDelegate.setDisplayObject(this.infoButton);
             this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipsSignal);
@@ -91,8 +87,7 @@ public class DailyQuestWindowMediator extends Mediator
             this.hoverTooltipDelegate.tooltip = this.toolTip;
         }
 
-        private function updateTimeHandler(_arg_1:Event):void
-        {
+        private function updateTimeHandler(_arg_1:Event):void{
             var _local_2:Date = this.dailyLoginModel.getServerTime();
             var _local_3:Date = new Date();
             _local_3.setTime((_local_2.valueOf() + 86400000));
@@ -105,8 +100,7 @@ public class DailyQuestWindowMediator extends Mediator
             this.view.setQuestRefreshHeader(_local_5);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.lockScreen.remove(this.onLockScreen);
             this.redeemCompleteSignal.remove(this.onRedeemComplete);
             this.closeRedeem.remove(this.onRedeemClose);
@@ -117,8 +111,7 @@ public class DailyQuestWindowMediator extends Mediator
             this.hoverTooltipDelegate = null;
         }
 
-        private function onRedeemComplete(_arg_1:QuestRedeemResponse):void
-        {
+        private function onRedeemComplete(_arg_1:QuestRedeemResponse):void{
             var _local_2:String;
             if (_arg_1.ok)
             {
@@ -131,22 +124,19 @@ public class DailyQuestWindowMediator extends Mediator
                 this.view.hideFade();
                 this.view.showFade(0x151515, (this.dailyQuestsModel.numberOfCompletedQuests == this.dailyQuestsModel.numberOfActiveQuests));
                 this.showPopupSignal.dispatch(this.redeemPopup);
-            }
+            };
         }
 
-        private function onLockScreen():void
-        {
+        private function onLockScreen():void{
             this.view.showFade();
         }
 
-        private function onRedeemClose():void
-        {
+        private function onRedeemClose():void{
             this.view.hideFade();
             this.closePopupSignal.dispatch(this.redeemPopup);
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 

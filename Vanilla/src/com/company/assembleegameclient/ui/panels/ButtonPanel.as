@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.ButtonPanel
 
-package com.company.assembleegameclient.ui.panels
-{
+package com.company.assembleegameclient.ui.panels{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
@@ -15,14 +14,12 @@ import flash.text.TextFieldAutoSize;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class ButtonPanel extends Panel
-    {
+public class ButtonPanel extends Panel {
 
         private var titleText_:TextFieldDisplayConcrete;
         protected var button_:DeprecatedTextButton;
 
-        public function ButtonPanel(_arg_1:GameSprite, _arg_2:String, _arg_3:String)
-        {
+        public function ButtonPanel(_arg_1:GameSprite, _arg_2:String, _arg_3:String){
             super(_arg_1);
             this.titleText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(WIDTH).setHTML(true).setWordWrap(true).setMultiLine(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.titleText_.setBold(true);
@@ -36,14 +33,12 @@ public class ButtonPanel extends Panel
             addChild(this.button_);
         }
 
-        private function alignButton():void
-        {
+        private function alignButton():void{
             this.button_.x = int(((WIDTH / 2) - (this.button_.width / 2)));
             this.button_.y = ((HEIGHT - this.button_.height) - 4);
         }
 
-        protected function onButtonClick(_arg_1:MouseEvent):void
-        {
+        protected function onButtonClick(_arg_1:MouseEvent):void{
         }
 
 

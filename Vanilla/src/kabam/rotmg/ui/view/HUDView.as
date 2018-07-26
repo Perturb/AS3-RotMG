@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.HUDView
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.Player;
@@ -29,8 +28,7 @@ import kabam.rotmg.messaging.impl.incoming.TradeChanged;
 import kabam.rotmg.messaging.impl.incoming.TradeStart;
 import kabam.rotmg.minimap.view.MiniMapImp;
 
-public class HUDView extends Sprite implements UnFocusAble
-    {
+public class HUDView extends Sprite implements UnFocusAble {
 
         private const BG_POSITION:Point = new Point(0, 0);
         private const MAP_POSITION:Point = new Point(4, 4);
@@ -52,15 +50,13 @@ public class HUDView extends Sprite implements UnFocusAble
         public var interactPanel:InteractPanel;
         public var tradePanel:TradePanel;
 
-        public function HUDView()
-        {
+        public function HUDView(){
             this.createAssets();
             this.addAssets();
             this.positionAssets();
         }
 
-        private function createAssets():void
-        {
+        private function createAssets():void{
             this.background = new CharacterWindowBackground();
             this.miniMap = new MiniMapImp(192, 192);
             this.newClassUnlockNotification = new NewClassUnlockNotification();
@@ -69,8 +65,7 @@ public class HUDView extends Sprite implements UnFocusAble
             this.statMeters = new StatMetersView();
         }
 
-        private function addAssets():void
-        {
+        private function addAssets():void{
             addChild(this.background);
             addChild(this.miniMap);
             addChild(this.newClassUnlockNotification);
@@ -79,8 +74,7 @@ public class HUDView extends Sprite implements UnFocusAble
             addChild(this.statMeters);
         }
 
-        private function positionAssets():void
-        {
+        private function positionAssets():void{
             this.background.x = this.BG_POSITION.x;
             this.background.y = this.BG_POSITION.y;
             this.miniMap.x = this.MAP_POSITION.x;
@@ -95,32 +89,28 @@ public class HUDView extends Sprite implements UnFocusAble
             this.statMeters.y = this.STAT_METERS_POSITION.y;
         }
 
-        public function setPlayerDependentAssets(_arg_1:GameSprite):void
-        {
+        public function setPlayerDependentAssets(_arg_1:GameSprite):void{
             this.player = _arg_1.map.player_;
             this.createEquippedGridBackground();
             this.createEquippedGrid();
             this.createInteractPanel(_arg_1);
         }
 
-        private function createInteractPanel(_arg_1:GameSprite):void
-        {
+        private function createInteractPanel(_arg_1:GameSprite):void{
             this.interactPanel = new InteractPanel(_arg_1, this.player, 200, 100);
             this.interactPanel.x = this.INTERACT_PANEL_POSITION.x;
             this.interactPanel.y = this.INTERACT_PANEL_POSITION.y;
             addChild(this.interactPanel);
         }
 
-        private function createEquippedGrid():void
-        {
+        private function createEquippedGrid():void{
             this.equippedGrid = new EquippedGrid(this.player, this.player.slotTypes_, this.player);
             this.equippedGrid.x = this.EQUIPMENT_INVENTORY_POSITION.x;
             this.equippedGrid.y = this.EQUIPMENT_INVENTORY_POSITION.y;
             addChild(this.equippedGrid);
         }
 
-        private function createEquippedGridBackground():void
-        {
+        private function createEquippedGridBackground():void{
             var _local_3:Vector.<IGraphicsData>;
             var _local_1:GraphicsSolidFill = new GraphicsSolidFill(0x676767, 1);
             var _local_2:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
@@ -133,20 +123,18 @@ public class HUDView extends Sprite implements UnFocusAble
             addChild(this.equippedGridBG);
         }
 
-        public function draw():void
-        {
+        public function draw():void{
             if (this.equippedGrid)
             {
                 this.equippedGrid.draw();
-            }
+            };
             if (this.interactPanel)
             {
                 this.interactPanel.draw();
-            }
+            };
         }
 
-        public function startTrade(_arg_1:AGameSprite, _arg_2:TradeStart):void
-        {
+        public function startTrade(_arg_1:AGameSprite, _arg_2:TradeStart):void{
             if (!this.tradePanel)
             {
                 this.tradePanel = new TradePanel(_arg_1, _arg_2);
@@ -154,11 +142,10 @@ public class HUDView extends Sprite implements UnFocusAble
                 this.tradePanel.addEventListener(Event.CANCEL, this.onTradeCancel);
                 addChild(this.tradePanel);
                 this.setNonTradePanelAssetsVisible(false);
-            }
+            };
         }
 
-        private function setNonTradePanelAssetsVisible(_arg_1:Boolean):void
-        {
+        private function setNonTradePanelAssetsVisible(_arg_1:Boolean):void{
             this.characterDetails.visible = _arg_1;
             this.statMeters.visible = _arg_1;
             this.tabStrip.visible = _arg_1;
@@ -167,41 +154,36 @@ public class HUDView extends Sprite implements UnFocusAble
             this.interactPanel.visible = _arg_1;
         }
 
-        public function tradeDone():void
-        {
+        public function tradeDone():void{
             this.removeTradePanel();
         }
 
-        public function tradeChanged(_arg_1:TradeChanged):void
-        {
+        public function tradeChanged(_arg_1:TradeChanged):void{
             if (this.tradePanel)
             {
                 this.tradePanel.setYourOffer(_arg_1.offer_);
-            }
+            };
         }
 
-        public function tradeAccepted(_arg_1:TradeAccepted):void
-        {
+        public function tradeAccepted(_arg_1:TradeAccepted):void{
             if (this.tradePanel)
             {
                 this.tradePanel.youAccepted(_arg_1.myOffer_, _arg_1.yourOffer_);
-            }
+            };
         }
 
-        private function onTradeCancel(_arg_1:Event):void
-        {
+        private function onTradeCancel(_arg_1:Event):void{
             this.removeTradePanel();
         }
 
-        private function removeTradePanel():void
-        {
+        private function removeTradePanel():void{
             if (this.tradePanel)
             {
                 SpriteUtil.safeRemoveChild(this, this.tradePanel);
                 this.tradePanel.removeEventListener(Event.CANCEL, this.onTradeCancel);
                 this.tradePanel = null;
                 this.setNonTradePanelAssetsVisible(true);
-            }
+            };
         }
 
 

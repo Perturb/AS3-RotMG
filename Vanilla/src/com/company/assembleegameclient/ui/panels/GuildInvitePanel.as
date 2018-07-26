@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.GuildInvitePanel
 
-package com.company.assembleegameclient.ui.panels
-{
+package com.company.assembleegameclient.ui.panels{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
@@ -21,8 +20,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class GuildInvitePanel extends Panel
-    {
+public class GuildInvitePanel extends Panel {
 
         private const waiter:SignalWaiter = new SignalWaiter();
 
@@ -34,8 +32,7 @@ public class GuildInvitePanel extends Panel
         private var acceptButton_:DeprecatedTextButton;
         private var timer_:Timer;
 
-        public function GuildInvitePanel(_arg_1:AGameSprite, _arg_2:String, _arg_3:String)
-        {
+        public function GuildInvitePanel(_arg_1:AGameSprite, _arg_2:String, _arg_3:String){
             super(_arg_1);
             this.name_ = _arg_2;
             this.guildName_ = _arg_3;
@@ -63,26 +60,22 @@ public class GuildInvitePanel extends Panel
             this.waiter.complete.addOnce(this.alignUI);
         }
 
-        private function alignUI():void
-        {
+        private function alignUI():void{
             this.rejectButton_.x = ((WIDTH / 4) - (this.rejectButton_.width / 2));
             this.rejectButton_.y = ((HEIGHT - this.rejectButton_.height) - 4);
             this.acceptButton_.x = (((3 * WIDTH) / 4) - (this.acceptButton_.width / 2));
             this.acceptButton_.y = ((HEIGHT - this.acceptButton_.height) - 4);
         }
 
-        private function onTimer(_arg_1:TimerEvent):void
-        {
+        private function onTimer(_arg_1:TimerEvent):void{
             dispatchEvent(new Event(Event.COMPLETE));
         }
 
-        private function onRejectClick(_arg_1:MouseEvent):void
-        {
+        private function onRejectClick(_arg_1:MouseEvent):void{
             dispatchEvent(new Event(Event.COMPLETE));
         }
 
-        private function onAcceptClick(_arg_1:MouseEvent):void
-        {
+        private function onAcceptClick(_arg_1:MouseEvent):void{
             gs_.gsc_.joinGuild(this.guildName_);
             dispatchEvent(new Event(Event.COMPLETE));
         }

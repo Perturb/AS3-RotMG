@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.signals.RefreshScreenAfterLoginSignal
 
-package kabam.rotmg.ui.signals
-{
+package kabam.rotmg.ui.signals{
 import org.osflash.signals.Signal;
 
-public class RefreshScreenAfterLoginSignal extends Signal 
-    {
+public class RefreshScreenAfterLoginSignal extends Signal {
 
 
     }

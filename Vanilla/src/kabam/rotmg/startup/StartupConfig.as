@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.startup.StartupConfig
 
-package kabam.rotmg.startup
-{
+package kabam.rotmg.startup{
 import kabam.rotmg.startup.control.StartupCommand;
 import kabam.rotmg.startup.control.StartupSequence;
 import kabam.rotmg.startup.control.StartupSignal;
@@ -14,8 +13,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class StartupConfig implements IConfig
-    {
+public class StartupConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -23,8 +21,7 @@ public class StartupConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(StartupSequence).asSingleton();
             this.commandMap.map(StartupSignal).toCommand(StartupCommand);
         }

@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.OrbComparison
 
-package com.company.assembleegameclient.ui.tooltip.slotcomparisons
-{
+package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class OrbComparison extends SlotComparison
-    {
+public class OrbComparison extends SlotComparison {
 
 
-        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void
-        {
+        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void{
             var _local_3:XML;
             var _local_4:XML;
             var _local_5:int;
@@ -33,18 +30,16 @@ public class OrbComparison extends SlotComparison
                 comparisonStringBuilder.pushParams(TextKey.STASIS_GROUP, {"stasis":new LineBuilder().setParams(TextKey.SEC_COUNT, {"duration":_local_5}).setPrefix(TooltipHelper.getOpenTag(_local_7)).setPostfix(TooltipHelper.getCloseTag())});
                 processedTags[_local_3.toXMLString()] = true;
                 this.handleExceptions(_arg_1);
-            }
+            };
         }
 
-        private function getStasisBlastTag(orbXML:XML):XML
-        {
+        private function getStasisBlastTag(orbXML:XML):XML{
             var matches:XMLList;
             matches = orbXML.Activate.(text() == "StasisBlast");
             return ((matches.length() == 1) ? matches[0] : null);
         }
 
-        private function handleExceptions(itemXML:XML):void
-        {
+        private function handleExceptions(itemXML:XML):void{
             var selfTags:XMLList;
             var speedy:XML;
             var damaging:XML;
@@ -65,7 +60,7 @@ public class OrbComparison extends SlotComparison
                 }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                 processedTags[speedy.toXMLString()] = true;
                 processedTags[damaging.toXMLString()] = true;
-            }
+            };
         }
 
 

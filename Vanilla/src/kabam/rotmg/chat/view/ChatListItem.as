@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatListItem
 
-package kabam.rotmg.chat.view
-{
+package kabam.rotmg.chat.view{
 import com.company.assembleegameclient.objects.Player;
 
 import flash.display.DisplayObject;
@@ -16,8 +15,7 @@ import flash.utils.getTimer;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class ChatListItem extends Sprite 
-    {
+public class ChatListItem extends Sprite {
 
         private static const CHAT_ITEM_TIMEOUT:uint = 20000;
 
@@ -32,8 +30,7 @@ public class ChatListItem extends Sprite
         public var fromGuild:Boolean = false;
         public var isTrade:Boolean = false;
 
-        public function ChatListItem(_arg_1:Vector.<DisplayObject>, _arg_2:int, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:String, _arg_7:Boolean, _arg_8:Boolean)
-        {
+        public function ChatListItem(_arg_1:Vector.<DisplayObject>, _arg_2:int, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:String, _arg_7:Boolean, _arg_8:Boolean){
             mouseEnabled = true;
             this.itemWidth = _arg_2;
             this.layoutHeight = _arg_3;
@@ -50,8 +47,7 @@ public class ChatListItem extends Sprite
             addEventListener(MouseEvent.RIGHT_MOUSE_DOWN, this.onRightMouseDown);
         }
 
-        public function onRightMouseDown(e:MouseEvent):void
-        {
+        public function onRightMouseDown(e:MouseEvent):void{
             var hmod:HUDModel;
             var aPlayer:Player;
             try
@@ -73,22 +69,20 @@ public class ChatListItem extends Sprite
                         if (((((this.isTrade) && (!(this.playerName == null))) && (!(this.playerName == ""))) && (!(hmod.gameSprite.map.player_.name_ == this.playerName))))
                         {
                             hmod.gameSprite.addChatPlayerMenu(null, e.stageX, e.stageY, this.playerName, false, true);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
             }
             catch(e:Error)
             {
-            }
+            };
         }
 
-        public function isTimedOut():Boolean
-        {
+        public function isTimedOut():Boolean{
             return ((getTimer() > (this.creationTime + CHAT_ITEM_TIMEOUT)) || (this.timedOutOverride));
         }
 
-        private function layoutItems():void
-        {
+        private function layoutItems():void{
             var _local_1:int;
             var _local_3:DisplayObject;
             var _local_4:Rectangle;
@@ -110,20 +104,19 @@ public class ChatListItem extends Sprite
                     {
                         this.list[_local_5].y = (this.list[_local_5].y - this.layoutHeight);
                         _local_5++;
-                    }
-                }
+                    };
+                };
                 _local_1 = (_local_1 + _local_4.width);
                 _local_2++;
-            }
+            };
         }
 
-        private function addItems():void
-        {
+        private function addItems():void{
             var _local_1:DisplayObject;
             for each (_local_1 in this.list)
             {
                 addChild(_local_1);
-            }
+            };
         }
 
 

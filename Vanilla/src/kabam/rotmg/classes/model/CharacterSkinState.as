@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterSkinState
 
-package kabam.rotmg.classes.model
-{
-    public class CharacterSkinState 
-    {
+package kabam.rotmg.classes.model{
+    public class CharacterSkinState {
 
         public static const OWNED:CharacterSkinState = new CharacterSkinState(false, "OWNED", false);
         public static const UNLISTED:CharacterSkinState = new CharacterSkinState(true, "UNLISTED", false);
@@ -19,25 +17,21 @@ package kabam.rotmg.classes.model
         private var _skinStateDeterminedByLevel:Boolean;
         private var name:String;
 
-        public function CharacterSkinState(_arg_1:Boolean, _arg_2:String, _arg_3:Boolean)
-        {
+        public function CharacterSkinState(_arg_1:Boolean, _arg_2:String, _arg_3:Boolean){
             this._isDisabled = _arg_1;
             this._skinStateDeterminedByLevel = _arg_3;
             this.name = _arg_2;
         }
 
-        public function isDisabled():Boolean
-        {
+        public function isDisabled():Boolean{
             return (this._isDisabled);
         }
 
-        public function isSkinStateDeterminedByLevel():Boolean
-        {
+        public function isSkinStateDeterminedByLevel():Boolean{
             return (this._skinStateDeterminedByLevel);
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             return ("[CharacterSkinState {NAME}]".replace("{NAME}", this.name));
         }
 

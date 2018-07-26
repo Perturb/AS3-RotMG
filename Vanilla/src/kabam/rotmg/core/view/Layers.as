@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.Layers
 
-package kabam.rotmg.core.view
-{
+package kabam.rotmg.core.view{
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 
@@ -13,8 +12,7 @@ import io.decagames.rotmg.ui.popups.PopupView;
 import kabam.rotmg.dialogs.view.DialogsView;
 import kabam.rotmg.tooltips.view.TooltipsView;
 
-public class Layers extends Sprite
-    {
+public class Layers extends Sprite {
 
         private var menu:ScreensView;
         public var overlay:DisplayObjectContainer;
@@ -26,8 +24,7 @@ public class Layers extends Sprite
         public var api:DisplayObjectContainer;
         public var console:DisplayObjectContainer;
 
-        public function Layers()
-        {
+        public function Layers(){
             addChild((this.menu = new ScreensView()));
             addChild((this.overlay = new Sprite()));
             addChild((this.top = new Sprite()));

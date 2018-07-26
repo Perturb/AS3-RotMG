@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.MapLoadingConfig
 
-package kabam.rotmg.maploading
-{
+package kabam.rotmg.maploading{
 import kabam.rotmg.maploading.commands.ShowLoadingViewCommand;
 import kabam.rotmg.maploading.signals.ChangeMapSignal;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
@@ -19,8 +18,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class MapLoadingConfig implements IConfig 
-    {
+public class MapLoadingConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -30,8 +28,7 @@ public class MapLoadingConfig implements IConfig
         public var mediatorMap:IMediatorMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(HideMapLoadingSignal).asSingleton();
             this.injector.map(ChangeMapSignal).asSingleton();
             this.injector.map(MapLoadedSignal).asSingleton();

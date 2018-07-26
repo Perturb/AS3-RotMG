@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.AccountLoadingScreen
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.rotmg.graphics.ScreenGraphic;
 
 import flash.display.Sprite;
@@ -18,14 +17,12 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class AccountLoadingScreen extends Sprite 
-    {
+public class AccountLoadingScreen extends Sprite {
 
         private var loadingText_:TextFieldDisplayConcrete;
         private var setMessage:SetLoadingMessageSignal;
 
-        public function AccountLoadingScreen()
-        {
+        public function AccountLoadingScreen(){
             addChild(new ScreenGraphic());
             this.loadingText_ = new TextFieldDisplayConcrete().setSize(30).setColor(0xFFFFFF).setBold(true);
             this.loadingText_.setStringBuilder(new LineBuilder().setParams(TextKey.LOADING_TEXT));
@@ -38,19 +35,16 @@ public class AccountLoadingScreen extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onSetMessage(_arg_1:String):void
-        {
+        private function onSetMessage(_arg_1:String):void{
             this.loadingText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
         }
 
-        protected function onRemovedFromStage(_arg_1:Event):void
-        {
+        protected function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this.setMessage.remove(this.onSetMessage);
         }
 
-        protected function onAddedToStage(_arg_1:Event):void
-        {
+        protected function onAddedToStage(_arg_1:Event):void{
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             this.loadingText_.x = (stage.stageWidth / 2);
             this.loadingText_.y = 550;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.FameUtil
 
-package com.company.assembleegameclient.util
-{
+package com.company.assembleegameclient.util{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.rotmg.graphics.StarGraphic;
 import com.company.util.AssetLibrary;
@@ -14,8 +13,7 @@ import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
 import flash.geom.ColorTransform;
 
-public class FameUtil 
-    {
+public class FameUtil {
 
         public static const MAX_STARS:int = 70;
         public static const STARS:Vector.<int> = new <int>[20, 150, 400, 800, 2000];
@@ -27,23 +25,20 @@ public class FameUtil
         public static const COLORS:Vector.<ColorTransform> = new <ColorTransform>[lightBlueCT, darkBlueCT, redCT, orangeCT, yellowCT];
 
 
-        public static function maxStars():int
-        {
+        public static function maxStars():int{
             return (ObjectLibrary.playerChars_.length * STARS.length);
         }
 
-        public static function numStars(_arg_1:int):int
-        {
+        public static function numStars(_arg_1:int):int{
             var _local_2:int;
             while (((_local_2 < STARS.length) && (_arg_1 >= STARS[_local_2])))
             {
                 _local_2++;
-            }
+            };
             return (_local_2);
         }
 
-        public static function nextStarFame(_arg_1:int, _arg_2:int):int
-        {
+        public static function nextStarFame(_arg_1:int, _arg_2:int):int{
             var _local_3:int = Math.max(_arg_1, _arg_2);
             var _local_4:int;
             while (_local_4 < STARS.length)
@@ -51,14 +46,13 @@ public class FameUtil
                 if (STARS[_local_4] > _local_3)
                 {
                     return (STARS[_local_4]);
-                }
+                };
                 _local_4++;
-            }
+            };
             return (-1);
         }
 
-        public static function numAllTimeStars(_arg_1:int, _arg_2:int, _arg_3:XML):int
-        {
+        public static function numAllTimeStars(_arg_1:int, _arg_2:int, _arg_3:XML):int{
             var _local_6:XML;
             var _local_4:int;
             var _local_5:int;
@@ -71,14 +65,13 @@ public class FameUtil
                 else
                 {
                     _local_4 = (_local_4 + FameUtil.numStars(_local_6.BestFame));
-                }
-            }
+                };
+            };
             _local_4 = (_local_4 + FameUtil.numStars(Math.max(_local_5, _arg_2)));
             return (_local_4);
         }
 
-        public static function numStarsToBigImage(_arg_1:int):Sprite
-        {
+        public static function numStarsToBigImage(_arg_1:int):Sprite{
             var _local_2:Sprite = numStarsToImage(_arg_1);
             _local_2.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
             _local_2.scaleX = 1.4;
@@ -86,8 +79,7 @@ public class FameUtil
             return (_local_2);
         }
 
-        public static function numStarsToImage(_arg_1:int):Sprite
-        {
+        public static function numStarsToImage(_arg_1:int):Sprite{
             var _local_2:Sprite = new StarGraphic();
             if (_arg_1 < ObjectLibrary.playerChars_.length)
             {
@@ -116,16 +108,15 @@ public class FameUtil
                             if (_arg_1 < (ObjectLibrary.playerChars_.length * 5))
                             {
                                 _local_2.transform.colorTransform = yellowCT;
-                            }
-                        }
-                    }
-                }
-            }
+                            };
+                        };
+                    };
+                };
+            };
             return (_local_2);
         }
 
-        public static function numStarsToIcon(_arg_1:int):Sprite
-        {
+        public static function numStarsToIcon(_arg_1:int):Sprite{
             var _local_2:Sprite;
             _local_2 = numStarsToImage(_arg_1);
             var _local_3:Sprite = new Sprite();
@@ -140,8 +131,7 @@ public class FameUtil
             return (_local_3);
         }
 
-        public static function getFameIcon():BitmapData
-        {
+        public static function getFameIcon():BitmapData{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiObj3", 224);
             return (TextureRedrawer.redraw(_local_1, 40, true, 0));
         }

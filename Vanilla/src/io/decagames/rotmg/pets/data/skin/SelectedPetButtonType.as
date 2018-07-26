@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.skin.SelectedPetButtonType
 
-package io.decagames.rotmg.pets.data.skin
-{
-    public class SelectedPetButtonType 
-    {
+package io.decagames.rotmg.pets.data.skin{
+    public class SelectedPetButtonType {
 
         public static const NONE:int = 1;
         public static const SKIN:int = 2;

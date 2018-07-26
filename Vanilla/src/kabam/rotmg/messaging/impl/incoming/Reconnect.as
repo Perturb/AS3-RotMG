@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Reconnect
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.ByteArray;
 import flash.utils.IDataInput;
 
-public class Reconnect extends IncomingMessage
-    {
+public class Reconnect extends IncomingMessage {
 
         public var name_:String;
         public var host_:String;
@@ -20,13 +18,11 @@ public class Reconnect extends IncomingMessage
         public var isFromArena_:Boolean;
         public var stats_:String;
 
-        public function Reconnect(_arg_1:uint, _arg_2:Function)
-        {
+        public function Reconnect(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.name_ = _arg_1.readUTF();
             this.host_ = _arg_1.readUTF();
             this.stats_ = _arg_1.readUTF();
@@ -39,8 +35,7 @@ public class Reconnect extends IncomingMessage
             _arg_1.readBytes(this.key_, 0, _local_2);
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("RECONNECT", "name_", "host_", "port_", "gameId_", "keyTime_", "key_", "isFromArena_"));
         }
 

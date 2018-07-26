@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Failure
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.IDataInput;
 
-public class Failure extends IncomingMessage
-    {
+public class Failure extends IncomingMessage {
 
         public static const INCORRECT_VERSION:int = 4;
         public static const BAD_KEY:int = 5;
@@ -19,19 +17,16 @@ public class Failure extends IncomingMessage
         public var errorId_:int;
         public var errorDescription_:String;
 
-        public function Failure(_arg_1:uint, _arg_2:Function)
-        {
+        public function Failure(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.errorId_ = _arg_1.readInt();
             this.errorDescription_ = _arg_1.readUTF();
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("FAILURE", "errorId_", "errorDescription_"));
         }
 

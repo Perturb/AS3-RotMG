@@ -1,40 +1,34 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.RoundPropsPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 import com.greensock.core.PropTween;
 
-public class RoundPropsPlugin extends TweenPlugin
-    {
+public class RoundPropsPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 
         protected var _tween:TweenLite;
 
-        public function RoundPropsPlugin()
-        {
+        public function RoundPropsPlugin(){
             super("roundProps", -1);
             _overwriteProps.length = 0;
         }
 
-        public function _add(_arg_1:Object, _arg_2:String, _arg_3:Number, _arg_4:Number):void
-        {
+        public function _add(_arg_1:Object, _arg_2:String, _arg_3:Number, _arg_4:Number):void{
             _addTween(_arg_1, _arg_2, _arg_3, (_arg_3 + _arg_4), _arg_2, true);
             _overwriteProps[_overwriteProps.length] = _arg_2;
         }
 
-        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean
-        {
+        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean{
             _tween = _arg_3;
             return (true);
         }
 
-        public function _onInitAllProps():Boolean
-        {
+        public function _onInitAllProps():Boolean{
             var _local_5:String;
             var _local_6:PropTween;
             var _local_7:PropTween;
@@ -45,7 +39,7 @@ public class RoundPropsPlugin extends TweenPlugin
             while (--_local_2 > -1)
             {
                 _local_3[_local_1[_local_2]] = 1;
-            }
+            };
             _local_2 = _local_1.length;
             while (--_local_2 > -1)
             {
@@ -66,7 +60,7 @@ public class RoundPropsPlugin extends TweenPlugin
                             if (_local_7)
                             {
                                 _local_7._prev = _local_6._prev;
-                            }
+                            };
                             if (_local_6._prev)
                             {
                                 _local_6._prev._next = _local_7;
@@ -76,15 +70,15 @@ public class RoundPropsPlugin extends TweenPlugin
                                 if (_tween._firstPT == _local_6)
                                 {
                                     _tween._firstPT = _local_7;
-                                }
-                            }
+                                };
+                            };
                             _local_6._next = (_local_6._prev = null);
                             _tween._propLookup[_local_5] = _local_4;
-                        }
-                    }
+                        };
+                    };
                     _local_6 = _local_7;
-                }
-            }
+                };
+            };
             return (false);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.Particle
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Square;
 import com.company.assembleegameclient.objects.BasicObject;
@@ -17,8 +16,7 @@ import flash.display.GraphicsPath;
 import flash.display.IGraphicsData;
 import flash.geom.Matrix;
 
-public class Particle extends BasicObject
-    {
+public class Particle extends BasicObject {
 
         public var size_:int;
         public var color_:uint;
@@ -27,52 +25,45 @@ public class Particle extends BasicObject
         protected var vS_:Vector.<Number> = new Vector.<Number>();
         protected var fillMatrix_:Matrix = new Matrix();
 
-        public function Particle(_arg_1:uint, _arg_2:Number, _arg_3:int)
-        {
+        public function Particle(_arg_1:uint, _arg_2:Number, _arg_3:int){
             objectId_ = getNextFakeObjectId();
             this.setZ(_arg_2);
             this.setColor(_arg_1);
             this.setSize(_arg_3);
         }
 
-        public function moveTo(_arg_1:Number, _arg_2:Number):Boolean
-        {
+        public function moveTo(_arg_1:Number, _arg_2:Number):Boolean{
             var _local_3:Square;
             _local_3 = map_.getSquare(_arg_1, _arg_2);
             if (_local_3 == null)
             {
                 return (false);
-            }
+            };
             x_ = _arg_1;
             y_ = _arg_2;
             square_ = _local_3;
             return (true);
         }
 
-        public function moveToInModal(_arg_1:Number, _arg_2:Number):Boolean
-        {
+        public function moveToInModal(_arg_1:Number, _arg_2:Number):Boolean{
             x_ = _arg_1;
             y_ = _arg_2;
             return (true);
         }
 
-        public function setColor(_arg_1:uint):void
-        {
+        public function setColor(_arg_1:uint):void{
             this.color_ = _arg_1;
         }
 
-        public function setZ(_arg_1:Number):void
-        {
+        public function setZ(_arg_1:Number):void{
             z_ = _arg_1;
         }
 
-        public function setSize(_arg_1:int):void
-        {
+        public function setSize(_arg_1:int):void{
             this.size_ = ((_arg_1 / 100) * 5);
         }
 
-        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             var _local_4:BitmapData = TextureRedrawer.redrawSolidSquare(this.color_, this.size_);
             var _local_5:int = _local_4.width;
             var _local_6:int = _local_4.height;

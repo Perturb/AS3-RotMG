@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.BattleSummaryDialogMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
@@ -16,8 +15,7 @@ import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class BattleSummaryDialogMediator extends Mediator 
-    {
+public class BattleSummaryDialogMediator extends Mediator {
 
         [Inject]
         public var view:BattleSummaryDialog;
@@ -32,8 +30,7 @@ public class BattleSummaryDialogMediator extends Mediator
         private var fadeOutTimer:Timer = new Timer(800, 1);
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.visible = false;
             this.view.positionThis();
             this.view.setCurrentRun(this.currentRunModel.entry.currentWave, this.currentRunModel.entry.runtime);
@@ -44,25 +41,21 @@ public class BattleSummaryDialogMediator extends Mediator
             this.closeMapLoading.addOnce(this.startTimer);
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.openDialog.dispatch(new ArenaLeaderboard());
         }
 
-        private function startTimer():void
-        {
+        private function startTimer():void{
             this.fadeOutTimer.addEventListener(TimerEvent.TIMER, this.showBattleSummaryDialog);
             this.fadeOutTimer.start();
         }
 
-        private function showBattleSummaryDialog(_arg_1:TimerEvent):void
-        {
+        private function showBattleSummaryDialog(_arg_1:TimerEvent):void{
             this.fadeOutTimer.removeEventListener(TimerEvent.TIMER, this.showBattleSummaryDialog);
             this.view.visible = true;
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.close.remove(this.onClose);
         }
 

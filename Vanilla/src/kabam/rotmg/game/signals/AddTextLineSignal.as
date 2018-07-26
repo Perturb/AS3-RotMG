@@ -1,18 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.signals.AddTextLineSignal
 
-package kabam.rotmg.game.signals
-{
+package kabam.rotmg.game.signals{
 import kabam.lib.signals.DeferredQueueSignal;
 import kabam.rotmg.chat.model.ChatMessage;
 
-public class AddTextLineSignal extends DeferredQueueSignal
-    {
+public class AddTextLineSignal extends DeferredQueueSignal {
 
-        public function AddTextLineSignal()
-        {
+        public function AddTextLineSignal(){
             super(ChatMessage);
         }
 

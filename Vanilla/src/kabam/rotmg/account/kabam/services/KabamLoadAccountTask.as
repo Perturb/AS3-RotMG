@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.services.KabamLoadAccountTask
 
-package kabam.rotmg.account.kabam.services
-{
+package kabam.rotmg.account.kabam.services{
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.services.LoadAccountTask;
@@ -14,8 +13,7 @@ import kabam.rotmg.account.kabam.view.AccountLoadErrorDialog;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask 
-    {
+public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask {
 
         [Inject]
         public var account:Account;
@@ -28,8 +26,7 @@ public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask
         private var kabam:KabamAccount;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.kabam = (this.account as KabamAccount);
             this.kabam.signedRequest = this.parameters.getSignedRequest();
             this.kabam.userSession = this.parameters.getUserSession();
@@ -41,11 +38,10 @@ public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask
             else
             {
                 this.sendRequest();
-            }
+            };
         }
 
-        private function sendRequest():void
-        {
+        private function sendRequest():void{
             var _local_1:Object = {
                 "signedRequest":this.kabam.signedRequest,
                 "entrytag":this.account.getEntryTag()
@@ -55,14 +51,12 @@ public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask
             this.client.sendRequest("/kabam/getcredentials", _local_1);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             ((_arg_1) && (this.onGetCredentialsDone(_arg_2)));
             completeTask(_arg_1, _arg_2);
         }
 
-        private function onGetCredentialsDone(_arg_1:String):void
-        {
+        private function onGetCredentialsDone(_arg_1:String):void{
             var _local_2:XML = new XML(_arg_1);
             this.account.updateUser(_local_2.GUID, _local_2.Secret, "");
             this.account.setPlatformToken(_local_2.PlatformToken);

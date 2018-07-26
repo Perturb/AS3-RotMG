@@ -1,22 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //en_US$formatters_properties
 
-package 
-{
+package {
 import mx.resources.ResourceBundle;
 
-public class en_US$formatters_properties extends ResourceBundle
-    {
+public class en_US$formatters_properties extends ResourceBundle {
 
-        public function en_US$formatters_properties()
-        {
+        public function en_US$formatters_properties(){
             super("en_US", "formatters");
         }
 
-        override protected function getContent():Object
-        {
+        override protected function getContent():Object{
             return ({
                 "zipCodeFormat":"#####",
                 "useNegativeSignInCurrency":"true",

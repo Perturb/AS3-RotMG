@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.LoadingScreen
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.rotmg.graphics.ScreenGraphic;
 
 import flash.display.Sprite;
@@ -17,13 +16,11 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.components.ScreenBase;
 
-public class LoadingScreen extends Sprite 
-    {
+public class LoadingScreen extends Sprite {
 
         private var text:TextFieldDisplayConcrete = new TextFieldDisplayConcrete();
 
-        public function LoadingScreen()
-        {
+        public function LoadingScreen(){
             addChild(new ScreenBase());
             addChild(new ScreenGraphic());
             this.text.setSize(30).setColor(0xFFFFFF).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE).setAutoSize(TextFieldAutoSize.CENTER).setBold(true);
@@ -34,14 +31,12 @@ public class LoadingScreen extends Sprite
             addChild(this.text);
         }
 
-        private function onAdded(_arg_1:Event):void
-        {
+        private function onAdded(_arg_1:Event):void{
             removeEventListener(Event.ADDED_TO_STAGE, this.onAdded);
             this.text.x = (stage.stageWidth / 2);
         }
 
-        public function setTextKey(_arg_1:String):void
-        {
+        public function setTextKey(_arg_1:String):void{
             this.text.setStringBuilder(new LineBuilder().setParams(_arg_1));
         }
 

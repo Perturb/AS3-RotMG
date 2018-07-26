@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.background.StarBackground
 
-package com.company.assembleegameclient.background
-{
+package com.company.assembleegameclient.background{
 import com.company.assembleegameclient.map.Camera;
 import com.company.util.AssetLibrary;
 import com.company.util.ImageSet;
@@ -12,37 +11,33 @@ import com.company.util.PointUtil;
 
 import flash.display.IGraphicsData;
 
-public class StarBackground extends Background 
-    {
+public class StarBackground extends Background {
 
         public var stars_:Vector.<Star> = new Vector.<Star>();
         protected var graphicsData_:Vector.<IGraphicsData> = new Vector.<IGraphicsData>();
 
-        public function StarBackground()
-        {
+        public function StarBackground(){
             visible = true;
             var _local_1:int;
             while (_local_1 < 100)
             {
                 this.tryAddStar();
                 _local_1++;
-            }
+            };
         }
 
-        override public function draw(_arg_1:Camera, _arg_2:int):void
-        {
+        override public function draw(_arg_1:Camera, _arg_2:int):void{
             var _local_3:Star;
             this.graphicsData_.length = 0;
             for each (_local_3 in this.stars_)
             {
                 _local_3.draw(this.graphicsData_, _arg_1, _arg_2);
-            }
+            };
             graphics.clear();
             graphics.drawGraphicsData(this.graphicsData_);
         }
 
-        private function tryAddStar():void
-        {
+        private function tryAddStar():void{
             var _local_3:Star;
             var _local_1:ImageSet = AssetLibrary.getImageSet("stars");
             var _local_2:Star = new Star(((Math.random() * 1000) - 500), ((Math.random() * 1000) - 500), (4 * (0.5 + (0.5 * Math.random()))), _local_1.images_[int((_local_1.images_.length * Math.random()))]);
@@ -51,8 +46,8 @@ public class StarBackground extends Background
                 if (PointUtil.distanceXY(_local_2.x_, _local_2.y_, _local_3.x_, _local_3.y_) < 3)
                 {
                     return;
-                }
-            }
+                };
+            };
             this.stars_.push(_local_2);
         }
 
@@ -70,8 +65,7 @@ import flash.display.GraphicsPathCommand;
 import flash.display.IGraphicsData;
 import flash.geom.Matrix;
 
-class Star 
-{
+class Star {
 
     protected static const sqCommands:Vector.<int> = new <int>[GraphicsPathCommand.MOVE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO];
     protected static const END_FILL:GraphicsEndFill = new GraphicsEndFill();
@@ -85,8 +79,7 @@ class Star
     protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, new Matrix(), false, false);
     protected var path_:GraphicsPath = new GraphicsPath(sqCommands, new Vector.<Number>());
 
-    public function Star(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:BitmapData):void
-    {
+    public function Star(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:BitmapData):void{
         this.x_ = _arg_1;
         this.y_ = _arg_2;
         this.scale_ = _arg_3;
@@ -95,8 +88,7 @@ class Star
         this.h_ = (this.bitmap_.height * this.scale_);
     }
 
-    public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-    {
+    public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
         var _local_4:Number = ((this.x_ * Math.cos(-(_arg_2.angleRad_))) - (this.y_ * Math.sin(-(_arg_2.angleRad_))));
         var _local_5:Number = ((this.x_ * Math.sin(-(_arg_2.angleRad_))) + (this.y_ * Math.cos(-(_arg_2.angleRad_))));
         var _local_6:Matrix = this.bitmapFill_.matrix;

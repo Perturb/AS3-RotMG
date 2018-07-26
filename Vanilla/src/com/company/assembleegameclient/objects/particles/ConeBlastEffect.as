@@ -1,34 +1,30 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ConeBlastEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 
 import flash.geom.Point;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class ConeBlastEffect extends ParticleEffect
-    {
+public class ConeBlastEffect extends ParticleEffect {
 
         public var start_:Point;
         public var target_:WorldPosData;
         public var blastRadius_:Number;
         public var color_:int;
 
-        public function ConeBlastEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:Number, _arg_4:int)
-        {
+        public function ConeBlastEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:Number, _arg_4:int){
             this.start_ = new Point(_arg_1.x_, _arg_1.y_);
             this.target_ = _arg_2;
             this.blastRadius_ = _arg_3;
             this.color_ = _arg_4;
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_9:Number;
             var _local_10:Point;
             var _local_11:Particle;
@@ -47,12 +43,11 @@ public class ConeBlastEffect extends ParticleEffect
                 _local_11 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_10);
                 map_.addObj(_local_11, x_, y_);
                 _local_8++;
-            }
+            };
             return (false);
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_9:Number;
             var _local_10:Point;
             var _local_11:Particle;
@@ -71,7 +66,7 @@ public class ConeBlastEffect extends ParticleEffect
                 _local_11 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_10);
                 map_.addObj(_local_11, x_, y_);
                 _local_8++;
-            }
+            };
             return (false);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.controller.UnFocusAbleMediator
 
-package kabam.rotmg.ui.controller
-{
+package kabam.rotmg.ui.controller{
 import com.company.assembleegameclient.util.StageProxy;
 
 import flash.events.MouseEvent;
@@ -13,8 +12,7 @@ import kabam.rotmg.ui.view.UnFocusAble;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class UnFocusAbleMediator extends Mediator 
-    {
+public class UnFocusAbleMediator extends Mediator {
 
         [Inject]
         public var unFocusAble:UnFocusAble;
@@ -22,18 +20,15 @@ public class UnFocusAbleMediator extends Mediator
         public var stageProxy:StageProxy;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.unFocusAble.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
         }
 
-        private function onMouseUp(_arg_1:MouseEvent):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent):void{
             this.stageProxy.setFocus(null);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.unFocusAble.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
         }
 

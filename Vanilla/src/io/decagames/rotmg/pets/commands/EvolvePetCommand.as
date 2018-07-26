@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.commands.EvolvePetCommand
 
-package io.decagames.rotmg.pets.commands
-{
+package io.decagames.rotmg.pets.commands{
 import com.company.assembleegameclient.editor.Command;
 
 import io.decagames.rotmg.pets.data.PetsModel;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
 import kabam.rotmg.messaging.impl.EvolvePetInfo;
 
-public class EvolvePetCommand extends Command
-    {
+public class EvolvePetCommand extends Command {
 
         [Inject]
         public var openDialog:ShowPopupSignal;
@@ -25,8 +23,7 @@ public class EvolvePetCommand extends Command
         public var model:PetsModel;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             var _local_1:SkinVO = this.model.getSkinVOById(this.evolvePetInfo.finalPet.skinType);
             var _local_2:Boolean = _local_1.isOwned;
             this.model.unlockSkin(this.evolvePetInfo.finalPet.skinType);

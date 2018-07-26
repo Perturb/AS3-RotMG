@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.StatView
 
-package kabam.rotmg.game.view.components
-{
+package kabam.rotmg.game.view.components{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
@@ -20,8 +19,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeSignal;
 
-public class StatView extends Sprite
-    {
+public class StatView extends Sprite {
 
         public static var toMaxTextSignal:Signal = new Signal(Boolean);
 
@@ -39,8 +37,7 @@ public class StatView extends Sprite
         public var mouseOver:NativeSignal;
         public var mouseOut:NativeSignal;
 
-        public function StatView(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:Boolean)
-        {
+        public function StatView(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:Boolean){
             this.fullName_ = _arg_2;
             this.description_ = _arg_3;
             this.nameText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
@@ -55,38 +52,34 @@ public class StatView extends Sprite
             toMaxTextSignal.add(this.setNewText);
         }
 
-        public function configureTextAndAdd(_arg_1:TextFieldDisplayConcrete):void
-        {
+        public function configureTextAndAdd(_arg_1:TextFieldDisplayConcrete):void{
             _arg_1.setAutoSize(TextFieldAutoSize.LEFT);
             _arg_1.filters = [new DropShadowFilter(0, 0, 0)];
             addChild(_arg_1);
         }
 
-        public function addTooltip():void
-        {
+        public function addTooltip():void{
             this.toolTip_.setTitle(new LineBuilder().setParams(this.fullName_));
             this.toolTip_.setText(new LineBuilder().setParams(this.description_));
             if (!stage.contains(this.toolTip_))
             {
                 stage.addChild(this.toolTip_);
-            }
+            };
         }
 
-        public function removeTooltip():void
-        {
+        public function removeTooltip():void{
             if (this.toolTip_.parent != null)
             {
                 this.toolTip_.parent.removeChild(this.toolTip_);
-            }
+            };
         }
 
-        public function draw(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int=0):void
-        {
+        public function draw(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int=0):void{
             var _local_5:uint;
             if ((((_arg_4 == this.level_) && (_arg_1 == this.val_)) && (_arg_2 == this.boost_)))
             {
                 return;
-            }
+            };
             this.val_ = _arg_1;
             this.boost_ = _arg_2;
             this.max_ = _arg_3;
@@ -110,19 +103,18 @@ public class StatView extends Sprite
                     else
                     {
                         _local_5 = 0xB3B3B3;
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (this.valColor_ != _local_5)
             {
                 this.valColor_ = _local_5;
                 this.valText_.setColor(this.valColor_);
-            }
+            };
             this.setNewText(Parameters.data_.toggleToMaxText);
         }
 
-        public function setNewText(_arg_1:Boolean):void
-        {
+        public function setNewText(_arg_1:Boolean):void{
             var _local_3:int;
             var _local_2:String = this.val_.toString();
             if (_arg_1)
@@ -131,12 +123,12 @@ public class StatView extends Sprite
                 if (((this.level_ >= 20) && (_local_3 > 0)))
                 {
                     _local_2 = (_local_2 + ("|" + _local_3.toString()));
-                }
-            }
+                };
+            };
             if (this.boost_ != 0)
             {
                 _local_2 = (_local_2 + (((" (" + ((this.boost_ > 0) ? "+" : "")) + this.boost_.toString()) + ")"));
-            }
+            };
             this.valText_.setStringBuilder(new StaticStringBuilder(_local_2));
             this.valText_.x = 24;
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.panels.YardUpgraderPanel
 
-package io.decagames.rotmg.pets.panels
-{
+package io.decagames.rotmg.pets.panels{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.panels.Panel;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class YardUpgraderPanel extends Panel
-    {
+public class YardUpgraderPanel extends Panel {
 
         private const titleText:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
 
@@ -31,28 +29,24 @@ public class YardUpgraderPanel extends Panel
         private var petsButtonString:String = "Pets";
         internal var type:uint;
 
-        public function YardUpgraderPanel(_arg_1:GameSprite, _arg_2:uint)
-        {
+        public function YardUpgraderPanel(_arg_1:GameSprite, _arg_2:uint){
             this.type = _arg_2;
             super(_arg_1);
         }
 
-        private function handleInfoButton():void
-        {
+        private function handleInfoButton():void{
             this.infoButton = new DeprecatedTextButton(16, this.infoButtonString);
             this.infoButton.textChanged.addOnce(this.alignButton);
             addChild(this.infoButton);
         }
 
-        private function handlePetsButton():void
-        {
+        private function handlePetsButton():void{
             this.petsButton = new DeprecatedTextButton(16, this.petsButtonString);
             this.petsButton.textChanged.addOnce(this.alignButton);
             addChild(this.petsButton);
         }
 
-        private function handleTitleText():void
-        {
+        private function handleTitleText():void{
             this.icon.x = -25;
             this.icon.y = -36;
             this.titleText.setStringBuilder(new LineBuilder().setParams(this.title));
@@ -61,15 +55,13 @@ public class YardUpgraderPanel extends Panel
             addChild(this.titleText);
         }
 
-        private function handleUpgradeYardButton():void
-        {
+        private function handleUpgradeYardButton():void{
             this.upgradeYardButton = new DeprecatedTextButton(16, this.upgradeYardButtonString);
             this.upgradeYardButton.textChanged.addOnce(this.alignButton);
             addChild(this.upgradeYardButton);
         }
 
-        public function init(_arg_1:Boolean):void
-        {
+        public function init(_arg_1:Boolean):void{
             this.handleIcon();
             this.handleTitleText();
             this.handleInfoButton();
@@ -77,18 +69,16 @@ public class YardUpgraderPanel extends Panel
             if (_arg_1)
             {
                 this.handleUpgradeYardButton();
-            }
+            };
         }
 
-        private function handleIcon():void
-        {
+        private function handleIcon():void{
             this.icon = PetsViewAssetFactory.returnCaretakerBitmap(this.type);
             addChild(this.icon);
             this.icon.x = 5;
         }
 
-        private function alignButton():void
-        {
+        private function alignButton():void{
             if (((this.upgradeYardButton) && (contains(this.upgradeYardButton))))
             {
                 this.upgradeYardButton.x = (((WIDTH / 4) * 3) - (this.upgradeYardButton.width / 2));
@@ -104,8 +94,8 @@ public class YardUpgraderPanel extends Panel
                 {
                     this.petsButton.x = (((WIDTH / 4) * 2.75) - (this.petsButton.width / 2));
                     this.petsButton.y = ((HEIGHT - this.petsButton.height) - 4);
-                }
-            }
+                };
+            };
         }
 
 

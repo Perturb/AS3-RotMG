@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.CharacterRectList
 
-package com.company.assembleegameclient.screens.charrects
-{
+package com.company.assembleegameclient.screens.charrects{
 import com.company.assembleegameclient.appengine.CharacterStats;
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -26,8 +25,7 @@ import kabam.rotmg.core.model.PlayerModel;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class CharacterRectList extends Sprite 
-    {
+public class CharacterRectList extends Sprite {
 
         private var classes:ClassesModel;
         private var model:PlayerModel;
@@ -35,8 +33,7 @@ public class CharacterRectList extends Sprite
         public var newCharacter:Signal;
         public var buyCharacterSlot:Signal;
 
-        public function CharacterRectList()
-        {
+        public function CharacterRectList(){
             var _local_5:SavedCharacter;
             var _local_6:BuyCharacterRect;
             var _local_7:CharacterClass;
@@ -66,11 +63,11 @@ public class CharacterRectList extends Sprite
                 else
                 {
                     _local_9.setIcon(this.getIcon(_local_5, 100));
-                }
+                };
                 _local_9.y = _local_3;
                 addChild(_local_9);
                 _local_3 = (_local_3 + (CharacterRect.HEIGHT + 4));
-            }
+            };
             if (this.model.hasAvailableCharSlot())
             {
                 _local_10 = 0;
@@ -82,29 +79,26 @@ public class CharacterRectList extends Sprite
                     addChild(_local_11);
                     _local_3 = (_local_3 + (CharacterRect.HEIGHT + 4));
                     _local_10++;
-                }
-            }
+                };
+            };
             _local_6 = new BuyCharacterRect(this.model);
             _local_6.addEventListener(MouseEvent.MOUSE_DOWN, this.onBuyCharSlot);
             _local_6.y = _local_3;
             addChild(_local_6);
         }
 
-        private function getIcon(_arg_1:SavedCharacter, _arg_2:int=100):DisplayObject
-        {
+        private function getIcon(_arg_1:SavedCharacter, _arg_2:int=100):DisplayObject{
             var _local_3:CharacterClass = this.classes.getCharacterClass(_arg_1.objectType());
             var _local_4:CharacterSkin = ((_local_3.skins.getSkin(_arg_1.skinType())) || (_local_3.skins.getDefaultSkin()));
             var _local_5:BitmapData = this.assetFactory.makeIcon(_local_4.template, _arg_2, _arg_1.tex1(), _arg_1.tex2());
             return (new Bitmap(_local_5));
         }
 
-        private function onNewChar(_arg_1:Event):void
-        {
+        private function onNewChar(_arg_1:Event):void{
             this.newCharacter.dispatch();
         }
 
-        private function onBuyCharSlot(_arg_1:Event):void
-        {
+        private function onBuyCharSlot(_arg_1:Event):void{
             this.buyCharacterSlot.dispatch(this.model.getNextCharSlotPrice());
         }
 

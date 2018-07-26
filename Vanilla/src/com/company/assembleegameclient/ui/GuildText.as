@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.GuildText
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.assembleegameclient.util.GuildUtil;
 import com.company.util.SpriteUtil;
 
@@ -16,16 +15,14 @@ import flash.text.TextFieldAutoSize;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class GuildText extends Sprite
-    {
+public class GuildText extends Sprite {
 
         private var name_:String;
         private var rank_:int;
         private var icon_:Bitmap;
         private var guildName_:TextFieldDisplayConcrete;
 
-        public function GuildText(_arg_1:String, _arg_2:int, _arg_3:int=0)
-        {
+        public function GuildText(_arg_1:String, _arg_2:int, _arg_3:int=0){
             this.icon_ = new Bitmap(null);
             this.icon_.y = -8;
             this.icon_.x = -8;
@@ -38,12 +35,11 @@ public class GuildText extends Sprite
             this.draw(_arg_1, _arg_2);
         }
 
-        public function draw(_arg_1:String, _arg_2:int):void
-        {
+        public function draw(_arg_1:String, _arg_2:int):void{
             if (((this.name_ == _arg_1) && (_arg_2 == _arg_2)))
             {
                 return;
-            }
+            };
             this.name_ = _arg_1;
             this.rank_ = _arg_2;
             if (((this.name_ == null) || (this.name_ == "")))
@@ -57,7 +53,7 @@ public class GuildText extends Sprite
                 SpriteUtil.safeAddChild(this, this.icon_);
                 this.guildName_.setStringBuilder(new StaticStringBuilder(this.name_));
                 SpriteUtil.safeAddChild(this, this.guildName_);
-            }
+            };
         }
 
 

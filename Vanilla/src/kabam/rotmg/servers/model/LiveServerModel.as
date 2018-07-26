@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.servers.model.LiveServerModel
 
-package kabam.rotmg.servers.model
-{
+package kabam.rotmg.servers.model{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.core.model.PlayerModel;
@@ -12,8 +11,7 @@ import kabam.rotmg.servers.api.LatLong;
 import kabam.rotmg.servers.api.Server;
 import kabam.rotmg.servers.api.ServerModel;
 
-public class LiveServerModel implements ServerModel 
-    {
+public class LiveServerModel implements ServerModel {
 
         private const servers:Vector.<Server> = new Vector.<Server>(0);
 
@@ -22,25 +20,22 @@ public class LiveServerModel implements ServerModel
         private var _descendingFlag:Boolean;
 
 
-        public function setServers(_arg_1:Vector.<Server>):void
-        {
+        public function setServers(_arg_1:Vector.<Server>):void{
             var _local_2:Server;
             this.servers.length = 0;
             for each (_local_2 in _arg_1)
             {
                 this.servers.push(_local_2);
-            }
+            };
             this._descendingFlag = false;
             this.servers.sort(this.compareServerName);
         }
 
-        public function getServers():Vector.<Server>
-        {
+        public function getServers():Vector.<Server>{
             return (this.servers);
         }
 
-        public function getServer():Server
-        {
+        public function getServer():Server{
             var _local_6:Server;
             var _local_7:int;
             var _local_8:Number;
@@ -56,7 +51,7 @@ public class LiveServerModel implements ServerModel
                     if (_local_6.name == Parameters.data_.preferredServer)
                     {
                         return (_local_6);
-                    }
+                    };
                     _local_7 = _local_6.priority();
                     _local_8 = LatLong.distance(_local_2, _local_6.latLong);
                     if (((_local_7 < _local_5) || ((_local_7 == _local_5) && (_local_8 < _local_4))))
@@ -66,40 +61,37 @@ public class LiveServerModel implements ServerModel
                         _local_5 = _local_7;
                         Parameters.data_.bestServer = _local_3.name;
                         Parameters.save();
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (_local_3);
         }
 
-        public function getServerNameByAddress(_arg_1:String):String
-        {
+        public function getServerNameByAddress(_arg_1:String):String{
             var _local_2:Server;
             for each (_local_2 in this.servers)
             {
                 if (_local_2.address == _arg_1)
                 {
                     return (_local_2.name);
-                }
-            }
+                };
+            };
             return ("");
         }
 
-        public function isServerAvailable():Boolean
-        {
+        public function isServerAvailable():Boolean{
             return (this.servers.length > 0);
         }
 
-        private function compareServerName(_arg_1:Server, _arg_2:Server):int
-        {
+        private function compareServerName(_arg_1:Server, _arg_2:Server):int{
             if (_arg_1.name < _arg_2.name)
             {
                 return ((this._descendingFlag) ? -1 : 1);
-            }
+            };
             if (_arg_1.name > _arg_2.name)
             {
                 return ((this._descendingFlag) ? 1 : -1);
-            }
+            };
             return (0);
         }
 

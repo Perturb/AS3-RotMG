@@ -1,4 +1,4 @@
-package kabam.rotmg.promotions.view
+﻿package kabam.rotmg.promotions.view
 {
 import mx.core.*;
 

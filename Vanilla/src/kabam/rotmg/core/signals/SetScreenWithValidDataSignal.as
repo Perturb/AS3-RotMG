@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.signals.SetScreenWithValidDataSignal
 
-package kabam.rotmg.core.signals
-{
+package kabam.rotmg.core.signals{
 import flash.display.Sprite;
 
 import org.osflash.signals.Signal;
 
-public class SetScreenWithValidDataSignal extends Signal 
-    {
+public class SetScreenWithValidDataSignal extends Signal {
 
-        public function SetScreenWithValidDataSignal()
-        {
+        public function SetScreenWithValidDataSignal(){
             super(Sprite);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.TransformAroundPointPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
 import flash.display.DisplayObject;
@@ -14,8 +13,7 @@ import flash.geom.Point;
 import flash.geom.Rectangle;
 import flash.utils.getDefinitionByName;
 
-public class TransformAroundPointPlugin extends TweenPlugin 
-    {
+public class TransformAroundPointPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         private static var _classInitted:Boolean;
@@ -32,13 +30,11 @@ public class TransformAroundPointPlugin extends TweenPlugin
         protected var _proxySizeData:Object;
         protected var _shortRotation:ShortRotationPlugin;
 
-        public function TransformAroundPointPlugin()
-        {
+        public function TransformAroundPointPlugin(){
             super("transformAroundPoint,transformAroundCenter,x,y", -1);
         }
 
-        private static function _applyMatrix(_arg_1:Point, _arg_2:Matrix):Point
-        {
+        private static function _applyMatrix(_arg_1:Point, _arg_2:Matrix):Point{
             var _local_5:Number;
             var _local_3:Number = (((_arg_1.x * _arg_2.a) + (_arg_1.y * _arg_2.c)) + _arg_2.tx);
             var _local_4:Number = (((_arg_1.x * _arg_2.b) + (_arg_1.y * _arg_2.d)) + _arg_2.ty);
@@ -48,21 +44,19 @@ public class TransformAroundPointPlugin extends TweenPlugin
         }
 
 
-        override public function _kill(_arg_1:Object):Boolean
-        {
+        override public function _kill(_arg_1:Object):Boolean{
             if (_shortRotation != null)
             {
                 _shortRotation._kill(_arg_1);
                 if (_shortRotation._overwriteProps.length == 0)
                 {
                     _arg_1.shortRotation = true;
-                }
-            }
+                };
+            };
             return (super._kill(_arg_1));
         }
 
-        override public function setRatio(_arg_1:Number):void
-        {
+        override public function setRatio(_arg_1:Number):void{
             var _local_2:Point;
             var _local_3:Matrix;
             var _local_4:Number;
@@ -78,16 +72,16 @@ public class TransformAroundPointPlugin extends TweenPlugin
                 else
                 {
                     _proxy.parent.addChild(_target.parent);
-                }
-            }
+                };
+            };
             if (_pointIsLocal)
             {
                 _local_2 = _applyMatrix(_local, _target.transform.matrix);
                 if (((Math.abs((_local_2.x - _point.x)) > 0.5) || (Math.abs((_local_2.y - _point.y)) > 0.5)))
                 {
                     _point = _local_2;
-                }
-            }
+                };
+            };
             super.setRatio(_arg_1);
             _local_3 = _target.transform.matrix;
             _local_4 = (((_local.x * _local_3.a) + (_local.y * _local_3.c)) + _local_3.tx);
@@ -101,11 +95,11 @@ public class TransformAroundPointPlugin extends TweenPlugin
                 if (_proxySizeData.width != null)
                 {
                     _proxy.width = (_target.width = _proxySizeData.width);
-                }
+                };
                 if (_proxySizeData.height != null)
                 {
                     _proxy.height = (_target.height = _proxySizeData.height);
-                }
+                };
                 _proxy.rotation = (_target.rotation = _local_7);
                 _local_3 = _target.transform.matrix;
                 _local_4 = (((_local.x * _local_3.a) + (_local.y * _local_3.c)) + _local_3.tx);
@@ -121,13 +115,12 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     else
                     {
                         _proxy.parent.removeChild(_target.parent);
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        override public function _roundProps(_arg_1:Object, _arg_2:Boolean=true):void
-        {
+        override public function _roundProps(_arg_1:Object, _arg_2:Boolean=true):void{
             if (("transformAroundPoint" in _arg_1))
             {
                 _xRound = (_yRound = _arg_2);
@@ -143,13 +136,12 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     if (("y" in _arg_1))
                     {
                         _yRound = _arg_2;
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        override public function _onInitTween(target:Object, value:*, tween:TweenLite):Boolean
-        {
+        override public function _onInitTween(target:Object, value:*, tween:TweenLite):Boolean{
             var matrixCopy:Matrix;
             var p:String;
             var short:ShortRotationPlugin;
@@ -164,7 +156,7 @@ public class TransformAroundPointPlugin extends TweenPlugin
             if (!(value.point is Point))
             {
                 return (false);
-            }
+            };
             _target = (target as DisplayObject);
             var m:Matrix = _target.transform.matrix;
             if (value.pointIsLocal == true)
@@ -179,7 +171,7 @@ public class TransformAroundPointPlugin extends TweenPlugin
                 matrixCopy = m.clone();
                 matrixCopy.invert();
                 _local = _applyMatrix(_point, matrixCopy);
-            }
+            };
             if (!_classInitted)
             {
                 try
@@ -189,9 +181,9 @@ public class TransformAroundPointPlugin extends TweenPlugin
                 catch(e:Error)
                 {
                     _isFlex = false;
-                }
+                };
                 _classInitted = true;
-            }
+            };
             if ((((!(isNaN(value.width))) || (!(isNaN(value.height)))) && (!(_target.parent == null))))
             {
                 point = _target.parent.globalToLocal(_target.localToGlobal(new Point(100, 100)));
@@ -204,11 +196,11 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     if (!isNaN(value.width))
                     {
                         _addTween(_proxySizeData, "width", (_target.width / 2), value.width, "width");
-                    }
+                    };
                     if (!isNaN(value.height))
                     {
                         _addTween(_proxySizeData, "height", _target.height, value.height, "height");
-                    }
+                    };
                     b = _target.getBounds(_target);
                     s = new Sprite();
                     container = ((_isFlex) ? new (getDefinitionByName("mx.core.UIComponent"))() : new Sprite());
@@ -222,7 +214,7 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     else
                     {
                         _proxy.parent.addChild(container);
-                    }
+                    };
                     _target = s;
                     s.graphics.beginFill(0xFF, 0.4);
                     s.graphics.drawRect(b.x, b.y, b.width, b.height);
@@ -234,8 +226,8 @@ public class TransformAroundPointPlugin extends TweenPlugin
                 {
                     _target.width = (_target.width / 2);
                     _target.transform.matrix = m;
-                }
-            }
+                };
+            };
             for (p in value)
             {
                 if (!((p == "point") || (p == "pointIsLocal")))
@@ -248,7 +240,7 @@ public class TransformAroundPointPlugin extends TweenPlugin
                         for (sp in value[p])
                         {
                             _overwriteProps[_overwriteProps.length] = sp;
-                        }
+                        };
                     }
                     else
                     {
@@ -271,12 +263,12 @@ public class TransformAroundPointPlugin extends TweenPlugin
                                 {
                                     _addTween(_target, p, _target[p], value[p], p);
                                     _overwriteProps[_overwriteProps.length] = p;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                                };
+                            };
+                        };
+                    };
+                };
+            };
             if (tween != null)
             {
                 enumerables = tween.vars;
@@ -285,11 +277,11 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     if (("x" in enumerables))
                     {
                         endX = ((typeof(enumerables.x) == "number") ? enumerables.x : (_target.x + Number(enumerables.x.split("=").join(""))));
-                    }
+                    };
                     if (("y" in enumerables))
                     {
                         endY = ((typeof(enumerables.y) == "number") ? enumerables.y : (_target.y + Number(enumerables.y.split("=").join(""))));
-                    }
+                    };
                     tween._kill({
                         "x":true,
                         "y":true,
@@ -299,14 +291,14 @@ public class TransformAroundPointPlugin extends TweenPlugin
                     if (!isNaN(endX))
                     {
                         _addTween(_point, "x", _point.x, (_point.x + (endX - _target.x)), "x");
-                    }
+                    };
                     if (!isNaN(endY))
                     {
                         _addTween(_point, "y", _point.y, (_point.y + (endY - _target.y)), "y");
-                    }
+                    };
                     this.setRatio(0);
-                }
-            }
+                };
+            };
             return (true);
         }
 

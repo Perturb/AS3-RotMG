@@ -1,34 +1,29 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.WardrobeTooltip
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 
-public class WardrobeTooltip extends ToolTip 
-    {
+public class WardrobeTooltip extends ToolTip {
 
         private var title:UILabel;
         private var topDesc:UILabel;
 
-        public function WardrobeTooltip()
-        {
+        public function WardrobeTooltip(){
             super(0x363636, 1, 0x9B9B9B, 1);
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.createTitle();
         }
 
-        private function createTitle():void
-        {
+        private function createTitle():void{
             this.title = new UILabel();
             DefaultLabelFormat.petNameLabel(this.title, 0xFFFFFF);
             addChild(this.title);

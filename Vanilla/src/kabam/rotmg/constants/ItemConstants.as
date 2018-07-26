@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.constants.ItemConstants
 
-package kabam.rotmg.constants
-{
+package kabam.rotmg.constants{
 import com.company.util.AssetLibrary;
 
 import flash.display.BitmapData;
 
-public class ItemConstants 
-    {
+public class ItemConstants {
 
         public static const NO_ITEM:int = -1;
         public static const ALL_TYPE:int = 0;
@@ -43,8 +41,7 @@ public class ItemConstants
         public static const NEW_ABIL_TYPE:int = 27;
 
 
-        public static function itemTypeToName(_arg_1:int):String
-        {
+        public static function itemTypeToName(_arg_1:int):String{
             switch (_arg_1)
             {
                 case ALL_TYPE:
@@ -103,12 +100,11 @@ public class ItemConstants
                     return ("EquipmentType.Any");
                 case NEW_ABIL_TYPE:
                     return ("EquipmentType.NewAbil");
-            }
+            };
             return ("EquipmentType.InvalidType");
         }
 
-        public static function itemTypeToBaseSprite(_arg_1:int):BitmapData
-        {
+        public static function itemTypeToBaseSprite(_arg_1:int):BitmapData{
             var _local_2:BitmapData;
             switch (_arg_1)
             {
@@ -189,7 +185,7 @@ public class ItemConstants
                 case NEW_ABIL_TYPE:
                     _local_2 = AssetLibrary.getImageFromSet("lofiObj2", 122);
                     break;
-            }
+            };
             return (_local_2);
         }
 

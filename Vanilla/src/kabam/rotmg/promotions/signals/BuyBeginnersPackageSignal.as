@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal
 
-package kabam.rotmg.promotions.signals
-{
+package kabam.rotmg.promotions.signals{
 import org.osflash.signals.Signal;
 
-public class BuyBeginnersPackageSignal extends Signal
-    {
+public class BuyBeginnersPackageSignal extends Signal {
 
 
     }

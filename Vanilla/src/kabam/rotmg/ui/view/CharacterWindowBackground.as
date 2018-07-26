@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterWindowBackground
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import flash.display.Sprite;
 
-public class CharacterWindowBackground extends Sprite
-    {
+public class CharacterWindowBackground extends Sprite {
 
-        public function CharacterWindowBackground()
-        {
+        public function CharacterWindowBackground(){
             var _local_1:Sprite = new Sprite();
             _local_1.graphics.beginFill(0x363636);
             _local_1.graphics.drawRect(0, 0, 200, 600);

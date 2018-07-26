@@ -1,21 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.TierUtil
 
-package com.company.assembleegameclient.util
-{
+package com.company.assembleegameclient.util{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 
-public class TierUtil 
-    {
+public class TierUtil {
 
 
-        public static function getTierTag(_arg_1:XML, _arg_2:int=12):UILabel
-        {
+        public static function getTierTag(_arg_1:XML, _arg_2:int=12):UILabel{
             var _local_9:UILabel;
             var _local_10:Number;
             var _local_11:String;
@@ -44,17 +41,16 @@ public class TierUtil
                     {
                         _local_10 = TooltipHelper.UNTIERED_COLOR;
                         _local_11 = "UT";
-                    }
-                }
+                    };
+                };
                 _local_9.text = _local_11;
                 DefaultLabelFormat.tierLevelLabel(_local_9, _arg_2, _local_10);
                 return (_local_9);
-            }
+            };
             return (null);
         }
 
-        public static function isPet(itemDataXML:XML):Boolean
-        {
+        public static function isPet(itemDataXML:XML):Boolean{
             var activateTags:XMLList;
             activateTags = itemDataXML.Activate.(text() == "PermaPet");
             return (activateTags.length() >= 1);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.view.LegendListItem
 
-package kabam.rotmg.legends.view
-{
+package kabam.rotmg.legends.view{
 import com.company.assembleegameclient.ui.Slot;
 import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class LegendListItem extends Sprite 
-    {
+public class LegendListItem extends Sprite {
 
         private static const FONT_SIZE:int = 22;
         public static const WIDTH:int = 756;
@@ -42,8 +40,7 @@ public class LegendListItem extends Sprite
         private var fameIcon:Bitmap;
         private var isOver:Boolean;
 
-        public function LegendListItem(_arg_1:Legend)
-        {
+        public function LegendListItem(_arg_1:Legend){
             this.legend = _arg_1;
             this.makePlaceText();
             this.makeCharacterBitmap();
@@ -55,8 +52,7 @@ public class LegendListItem extends Sprite
             this.draw();
         }
 
-        private function makePlaceText():void
-        {
+        private function makePlaceText():void{
             this.placeText = new TextFieldDisplayConcrete().setSize(FONT_SIZE).setColor(this.getTextColor());
             var _local_1:String = ((this.legend.place == -1) ? "---" : (this.legend.place.toString() + "."));
             this.placeText.setBold((!(this.legend.place == -1)));
@@ -67,16 +63,14 @@ public class LegendListItem extends Sprite
             addChild(this.placeText);
         }
 
-        private function makeCharacterBitmap():void
-        {
+        private function makeCharacterBitmap():void{
             this.characterBitmap = new Bitmap(this.legend.character);
             this.characterBitmap.x = (104 + 12);
             this.characterBitmap.y = (((HEIGHT / 2) - (this.characterBitmap.height / 2)) - 2);
             addChild(this.characterBitmap);
         }
 
-        private function makeNameText():void
-        {
+        private function makeNameText():void{
             this.nameText = new TextFieldDisplayConcrete().setSize(FONT_SIZE).setColor(this.getTextColor());
             this.nameText.setBold(true);
             this.nameText.setStringBuilder(new StaticStringBuilder(this.legend.name));
@@ -86,8 +80,7 @@ public class LegendListItem extends Sprite
             addChild(this.nameText);
         }
 
-        private function makeInventory():void
-        {
+        private function makeInventory():void{
             var _local_2:InteractiveItemTile;
             this.inventoryGrid = new EquippedGrid(null, this.legend.equipmentSlots, null);
             var _local_1:IIterator = this.inventoryGrid.createInteractiveItemTileIterator();
@@ -95,15 +88,14 @@ public class LegendListItem extends Sprite
             {
                 _local_2 = InteractiveItemTile(_local_1.next());
                 _local_2.setInteractive(false);
-            }
+            };
             this.inventoryGrid.setItems(this.legend.equipment);
             this.inventoryGrid.x = 400;
             this.inventoryGrid.y = ((HEIGHT / 2) - (Slot.HEIGHT / 2));
             addChild(this.inventoryGrid);
         }
 
-        private function makeTotalFame():void
-        {
+        private function makeTotalFame():void{
             this.totalFameText = new TextFieldDisplayConcrete().setSize(FONT_SIZE).setColor(this.getTextColor());
             this.totalFameText.setBold(true);
             this.totalFameText.setStringBuilder(new StaticStringBuilder(this.legend.totalFame.toString()));
@@ -113,8 +105,7 @@ public class LegendListItem extends Sprite
             addChild(this.totalFameText);
         }
 
-        private function makeFameIcon():void
-        {
+        private function makeFameIcon():void{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiObj3", 224);
             this.fameIcon = new Bitmap(TextureRedrawer.redraw(_local_1, 40, true, 0));
             this.fameIcon.x = 630;
@@ -122,8 +113,7 @@ public class LegendListItem extends Sprite
             addChild(this.fameIcon);
         }
 
-        private function getTextColor():uint
-        {
+        private function getTextColor():uint{
             var _local_1:uint;
             if (this.legend.isOwnLegend)
             {
@@ -138,37 +128,32 @@ public class LegendListItem extends Sprite
                 else
                 {
                     _local_1 = 0xFFFFFF;
-                }
-            }
+                };
+            };
             return (_local_1);
         }
 
-        private function addMouseListeners():void
-        {
+        private function addMouseListeners():void{
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             addEventListener(MouseEvent.ROLL_OUT, this.onRollOut);
             addEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.isOver = true;
             this.draw();
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             this.isOver = false;
             this.draw();
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             this.selected.dispatch(this.legend);
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             graphics.clear();
             graphics.beginFill(0, ((this.isOver) ? 0.4 : 0.001));
             graphics.drawRect(0, 0, WIDTH, HEIGHT);

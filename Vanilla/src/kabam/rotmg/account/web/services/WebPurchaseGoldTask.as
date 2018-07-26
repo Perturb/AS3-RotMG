@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebPurchaseGoldTask
 
-package kabam.rotmg.account.web.services
-{
+package kabam.rotmg.account.web.services{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.PaymentMethod;
 import com.company.assembleegameclient.util.offer.Offer;
@@ -18,8 +17,7 @@ import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.model.OfferModel;
 import kabam.rotmg.account.core.services.PurchaseGoldTask;
 
-public class WebPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
-    {
+public class WebPurchaseGoldTask extends BaseTask implements PurchaseGoldTask {
 
         [Inject]
         public var account:Account;
@@ -31,8 +29,7 @@ public class WebPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
         public var paymentMethod:String;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             Parameters.data_.paymentMethod = this.paymentMethod;
             Parameters.save();
             var _local_1:Offers = this.offersModel.offers;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.panels.PetPanelMediator
 
-package io.decagames.rotmg.pets.panels
-{
+package io.decagames.rotmg.pets.panels{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 import com.company.assembleegameclient.util.StageProxy;
@@ -29,8 +28,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetPanelMediator extends Mediator
-    {
+public class PetPanelMediator extends Mediator {
 
         [Inject]
         public var view:PetPanel;
@@ -55,8 +53,7 @@ public class PetPanelMediator extends Mediator
         private var stageProxy:StageProxy;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.setState(this.returnButtonState());
             this.view.addToolTip.add(this.onAddToolTip);
             this.stageProxy = new StageProxy(this.view);
@@ -64,58 +61,50 @@ public class PetPanelMediator extends Mediator
             this.notifyActivePetUpdated.add(this.onNotifyActivePetUpdated);
         }
 
-        private function setEventListeners():void
-        {
+        private function setEventListeners():void{
             this.view.followButton.addEventListener(MouseEvent.CLICK, this.onButtonClick);
             this.view.releaseButton.addEventListener(MouseEvent.CLICK, this.onReleaseClick);
             this.view.unFollowButton.addEventListener(MouseEvent.CLICK, this.onButtonClick);
             this.stageProxy.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.followButton.removeEventListener(MouseEvent.CLICK, this.onButtonClick);
             this.view.releaseButton.removeEventListener(MouseEvent.CLICK, this.onReleaseClick);
             this.view.unFollowButton.removeEventListener(MouseEvent.CLICK, this.onButtonClick);
             this.stageProxy.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        private function onReleaseClick(_arg_1:MouseEvent):void
-        {
+        private function onReleaseClick(_arg_1:MouseEvent):void{
             this.injector.map(PetVO).toValue(this.view.petVO);
             this.showPopupSignal.dispatch(new ReleasePetDialog(this.view.petVO.getID()));
         }
 
-        private function onNotifyActivePetUpdated():void
-        {
+        private function onNotifyActivePetUpdated():void{
             var _local_1:PetVO = this.petModel.getActivePet();
             this.view.toggleButtons((!(_local_1)));
         }
 
-        private function returnButtonState():uint
-        {
+        private function returnButtonState():uint{
             if (this.isPanelPetSameAsActivePet())
             {
                 return (PetsConstants.FOLLOWING);
-            }
+            };
             return (PetsConstants.INTERACTING);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (this.view.stage.focus == null)))
             {
                 this.followPet();
-            }
+            };
         }
 
-        protected function onButtonClick(_arg_1:MouseEvent):void
-        {
+        protected function onButtonClick(_arg_1:MouseEvent):void{
             this.followPet();
         }
 
-        private function followPet():void
-        {
+        private function followPet():void{
             if (this.isPanelPetSameAsActivePet())
             {
                 this.deactivatePet.dispatch(this.view.petVO.getID());
@@ -123,16 +112,14 @@ public class PetPanelMediator extends Mediator
             else
             {
                 this.activatePet.dispatch(this.view.petVO.getID());
-            }
+            };
         }
 
-        private function onAddToolTip(_arg_1:ToolTip):void
-        {
+        private function onAddToolTip(_arg_1:ToolTip):void{
             this.showToolTip.dispatch(_arg_1);
         }
 
-        private function isPanelPetSameAsActivePet():Boolean
-        {
+        private function isPanelPetSameAsActivePet():Boolean{
             return ((this.petModel.getActivePet()) ? (this.petModel.getActivePet().getID() == this.view.petVO.getID()) : false);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.upgradeYard.PetYardUpgradeDialog
 
-package io.decagames.rotmg.pets.popup.upgradeYard
-{
+package io.decagames.rotmg.pets.popup.upgradeYard{
 import com.company.assembleegameclient.util.Currency;
 
 import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
@@ -17,15 +16,13 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PetYardUpgradeDialog extends ModalPopup 
-    {
+public class PetYardUpgradeDialog extends ModalPopup {
 
         private var _upgradeGoldButton:ShopBuyButton;
         private var _upgradeFameButton:ShopBuyButton;
         private var upgradeButtonsMargin:int = 20;
 
-        public function PetYardUpgradeDialog(_arg_1:PetRarityEnum, _arg_2:int, _arg_3:int)
-        {
+        public function PetYardUpgradeDialog(_arg_1:PetRarityEnum, _arg_2:int, _arg_3:int){
             var _local_4:SliceScalingBitmap;
             var _local_5:UILabel;
             var _local_6:UILabel;
@@ -59,13 +56,11 @@ public class PetYardUpgradeDialog extends ModalPopup
             addChild(this._upgradeFameButton);
         }
 
-        public function get upgradeGoldButton():ShopBuyButton
-        {
+        public function get upgradeGoldButton():ShopBuyButton{
             return (this._upgradeGoldButton);
         }
 
-        public function get upgradeFameButton():ShopBuyButton
-        {
+        public function get upgradeFameButton():ShopBuyButton{
             return (this._upgradeFameButton);
         }
 

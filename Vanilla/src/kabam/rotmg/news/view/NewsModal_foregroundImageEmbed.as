@@ -1,4 +1,4 @@
-package kabam.rotmg.news.view
+﻿package kabam.rotmg.news.view
 {
 import mx.core.*;
 

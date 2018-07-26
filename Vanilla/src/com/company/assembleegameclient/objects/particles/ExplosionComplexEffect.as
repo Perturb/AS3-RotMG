@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ExplosionComplexEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 
-public class ExplosionComplexEffect extends ParticleEffect 
-    {
+public class ExplosionComplexEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var color_:uint;
@@ -21,8 +19,7 @@ public class ExplosionComplexEffect extends ParticleEffect
         public var speed_:Number;
         public var bInitialized_:Boolean = false;
 
-        public function ExplosionComplexEffect(_arg_1:GameObject, _arg_2:EffectProperties)
-        {
+        public function ExplosionComplexEffect(_arg_1:GameObject, _arg_2:EffectProperties){
             this.go_ = _arg_1;
             this.color_ = _arg_2.color;
             this.rise_ = _arg_2.rise;
@@ -33,8 +30,7 @@ public class ExplosionComplexEffect extends ParticleEffect
             size_ = _arg_2.size;
         }
 
-        private function run(_arg_1:int, _arg_2:int, _arg_3:int):Boolean
-        {
+        private function run(_arg_1:int, _arg_2:int, _arg_3:int):Boolean{
             var _local_5:Number;
             var _local_6:Number;
             var _local_7:Number;
@@ -54,17 +50,15 @@ public class ExplosionComplexEffect extends ParticleEffect
                 _local_11 = new ExplosionComplexParticle(this.color_, 0.2, size_, this.maxLife_, _local_7, _local_8, _local_10);
                 map_.addObj(_local_11, x_, y_);
                 _local_4++;
-            }
+            };
             return (false);
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             return (this.run(_arg_1, _arg_2, this.amount_));
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             return (this.run(_arg_1, _arg_2, (this.amount_ / 6)));
         }
 
@@ -76,8 +70,7 @@ import com.company.assembleegameclient.objects.particles.Particle;
 
 import flash.geom.Vector3D;
 
-class ExplosionComplexParticle extends Particle 
-{
+class ExplosionComplexParticle extends Particle {
 
     public static var total_:int = 0;
 
@@ -86,8 +79,7 @@ class ExplosionComplexParticle extends Particle
     protected var moveVec_:Vector3D = new Vector3D();
     private var deleted:Boolean = false;
 
-    public function ExplosionComplexParticle(_arg_1:uint, _arg_2:Number, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:Number)
-    {
+    public function ExplosionComplexParticle(_arg_1:uint, _arg_2:Number, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:Number){
         super(_arg_1, _arg_2, _arg_3);
         this.timeLeft_ = (this.lifetime_ = _arg_4);
         this.moveVec_.x = _arg_5;
@@ -96,8 +88,7 @@ class ExplosionComplexParticle extends Particle
         total_++;
     }
 
-    override public function update(_arg_1:int, _arg_2:int):Boolean
-    {
+    override public function update(_arg_1:int, _arg_2:int):Boolean{
         this.timeLeft_ = (this.timeLeft_ - _arg_2);
         if (this.timeLeft_ <= 0)
         {
@@ -105,9 +96,9 @@ class ExplosionComplexParticle extends Particle
             {
                 total_--;
                 this.deleted = true;
-            }
+            };
             return (false);
-        }
+        };
         x_ = (x_ + ((this.moveVec_.x * _arg_2) * 0.008));
         y_ = (y_ + ((this.moveVec_.y * _arg_2) * 0.008));
         z_ = (z_ + ((this.moveVec_.z * _arg_2) * 0.008));

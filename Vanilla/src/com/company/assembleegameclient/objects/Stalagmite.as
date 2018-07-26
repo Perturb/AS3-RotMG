@@ -1,21 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Stalagmite
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.engine3d.Object3D;
 import com.company.assembleegameclient.engine3d.ObjectFace3D;
 
-public class Stalagmite extends GameObject
-    {
+public class Stalagmite extends GameObject {
 
         private static const bs:Number = (Math.PI / 6);//0.523598775598299
         private static const cs:Number = (Math.PI / 3);//1.0471975511966
 
-        public function Stalagmite(_arg_1:XML)
-        {
+        public function Stalagmite(_arg_1:XML){
             super(_arg_1);
             var _local_2:Number = (bs + (cs * Math.random()));
             var _local_3:Number = (((2 * cs) + bs) + (cs * Math.random()));

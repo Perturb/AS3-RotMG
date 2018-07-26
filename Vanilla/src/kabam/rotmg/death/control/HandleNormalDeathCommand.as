@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.control.HandleNormalDeathCommand
 
-package kabam.rotmg.death.control
-{
+package kabam.rotmg.death.control{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.parameters.Parameters;
 
@@ -20,8 +19,7 @@ import kabam.rotmg.fame.model.FameVO;
 import kabam.rotmg.fame.model.SimpleFameVO;
 import kabam.rotmg.messaging.impl.incoming.Death;
 
-public class HandleNormalDeathCommand 
-    {
+public class HandleNormalDeathCommand {
 
         [Inject]
         public var death:Death;
@@ -38,16 +36,14 @@ public class HandleNormalDeathCommand
         private var fameVO:FameVO;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.fameVO = new SimpleFameVO(this.death.accountId_, this.death.charId_);
             this.trackDeath();
             this.updateParameters();
             this.gotoFameView();
         }
 
-        private function trackDeath():void
-        {
+        private function trackDeath():void{
             var _local_1:SavedCharacter = this.player.getCharById(this.death.charId_);
             var _local_2:int = ((_local_1) ? _local_1.level() : 0);
             var _local_3:TrackingData = new TrackingData();
@@ -56,14 +52,12 @@ public class HandleNormalDeathCommand
             _local_3.value = _local_2;
         }
 
-        private function updateParameters():void
-        {
+        private function updateParameters():void{
             Parameters.data_.needsRandomRealm = false;
             Parameters.save();
         }
 
-        private function gotoFameView():void
-        {
+        private function gotoFameView():void{
             if (this.player.getAccountId() == "")
             {
                 this.gotoFameViewOnceDataIsLoaded();
@@ -71,11 +65,10 @@ public class HandleNormalDeathCommand
             else
             {
                 this.showFame.dispatch(this.fameVO);
-            }
+            };
         }
 
-        private function gotoFameViewOnceDataIsLoaded():void
-        {
+        private function gotoFameViewOnceDataIsLoaded():void{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.task);
             _local_1.add(new DispatchSignalTask(this.showFame, this.fameVO));

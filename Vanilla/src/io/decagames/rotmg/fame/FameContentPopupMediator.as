@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.fame.FameContentPopupMediator
 
-package io.decagames.rotmg.fame
-{
+package io.decagames.rotmg.fame{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
@@ -39,8 +38,7 @@ import mx.formatters.DateFormatter;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class FameContentPopupMediator extends Mediator
-    {
+public class FameContentPopupMediator extends Mediator {
 
         [Inject]
         public var view:FameContentPopup;
@@ -67,8 +65,7 @@ public class FameContentPopupMediator extends Mediator
         private var characterID:int;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_2:DateFormatter;
             var _local_3:Player;
             var _local_4:SavedCharacter;
@@ -89,7 +86,7 @@ public class FameContentPopupMediator extends Mediator
             else
             {
                 _local_1 = this.player.getCharacterById(this.characterID).bornOn();
-            }
+            };
             this.showInfo();
             this.view.fameOnDeath = this.totalFame.currentFame;
             if (this.view.characterId == -1)
@@ -101,7 +98,7 @@ public class FameContentPopupMediator extends Mediator
             {
                 _local_4 = this.player.getCharacterById(this.characterID);
                 this.view.setCharacterData(this.totalFame.baseFame, _local_4.name(), _local_4.level(), ObjectLibrary.typeToDisplayId_[_local_4.objectType()], _local_1, _local_4.getIcon(100));
-            }
+            };
             this.toolTip = new TextToolTip(0x363636, 0x9B9B9B, "Fame calculation", "Refreshes when returning to the Nexus or main menu.", 230);
             this.hoverTooltipDelegate = new HoverTooltipDelegate();
             this.hoverTooltipDelegate.setShowToolTipSignal(this.showTooltipSignal);
@@ -112,51 +109,45 @@ public class FameContentPopupMediator extends Mediator
             Parameters.data_["clicked_on_fame_ui"] = true;
         }
 
-        private function onShowTooltip(_arg_1:TextToolTip):void
-        {
+        private function onShowTooltip(_arg_1:TextToolTip):void{
             var _local_2:StringBuilder = _arg_1.titleText_.getStringBuilder();
             if ((((this.fameTracker.metrics.lastUpdate) && (_local_2 is LineBuilder)) && (LineBuilder(_local_2).key == "Fame calculation")))
             {
                 _arg_1.setTitle(new StaticStringBuilder((("Updated " + TimeSpan.distanceOfTimeInWords(this.fameTracker.metrics.lastUpdate, new Date(), true)) + ".")));
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.closeButton.dispose();
             this.hoverTooltipDelegate = null;
             this.toolTip = null;
             this.showTooltipSignal.remove(this.onShowTooltip);
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 
-        public function getTotalDungeonCompleted():int
-        {
+        public function getTotalDungeonCompleted():int{
             var _local_1:int;
             var _local_2:int = 21;
             while (_local_2 <= 52)
             {
                 _local_1 = (_local_1 + this.metrics.getCharacterStat(this.characterID, _local_2));
                 _local_2++;
-            }
+            };
             return ((((((this.metrics.getCharacterStat(this.characterID, MetricsID.PIRATE_CAVES_COMPLETED) + this.metrics.getCharacterStat(this.characterID, MetricsID.UNDEAD_LAIRS_COMPLETED)) + this.metrics.getCharacterStat(this.characterID, MetricsID.ABYSS_OF_DEMONS_COMPLETED)) + this.metrics.getCharacterStat(this.characterID, MetricsID.SNAKE_PITS_COMPLETED)) + this.metrics.getCharacterStat(this.characterID, MetricsID.SPIDER_DENS_COMPLETED)) + this.metrics.getCharacterStat(this.characterID, MetricsID.SPRITE_WORLDS_COMPLETED)) + _local_1);
         }
 
-        private function getBonusValue(_arg_1:int):int
-        {
+        private function getBonusValue(_arg_1:int):int{
             if (!this.totalFame.bonuses[_arg_1])
             {
                 return (0);
-            }
+            };
             return (this.totalFame.bonuses[_arg_1].fameAdded);
         }
 
-        private function showCompletedDungeons():void
-        {
+        private function showCompletedDungeons():void{
             var _local_2:StatsLine;
             var _local_1:Vector.<StatsLine> = new Vector.<StatsLine>();
             this.view.addDungeonLine(new StatsLine("Dungeons", "", "", StatsLine.TYPE_TITLE));
@@ -202,25 +193,23 @@ public class FameContentPopupMediator extends Mediator
             for each (_local_2 in _local_1)
             {
                 this.view.addDungeonLine(_local_2);
-            }
+            };
         }
 
-        private function dungeonNameSort(_arg_1:StatsLine, _arg_2:StatsLine):int
-        {
+        private function dungeonNameSort(_arg_1:StatsLine, _arg_2:StatsLine):int{
             if (_arg_1.labelText > _arg_2.labelText)
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        private function showStats():void
-        {
+        private function showStats():void{
             var _local_1:Number = 0;
             if (((this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS_THAT_DAMAGE) > 0) && (this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS) > 0)))
             {
                 _local_1 = ((this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS_THAT_DAMAGE) / this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS)) * 100);
-            }
+            };
             this.view.addStatLine(new StatsLine("Statistics", "", "", StatsLine.TYPE_TITLE));
             this.view.addStatLine(new StatsLine("Shots Fired", this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS).toString(), "The total number of shots fired by this character.", StatsLine.TYPE_STAT));
             this.view.addStatLine(new StatsLine("Shots Hit", this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS_THAT_DAMAGE).toString(), "The total number of enemy hitting shots fired by this character.", StatsLine.TYPE_STAT));
@@ -241,26 +230,23 @@ public class FameContentPopupMediator extends Mediator
             this.view.addStatLine(new StatsLine("Minutes Active", this.metrics.getCharacterStat(this.characterID, MetricsID.MINUTES_ACTIVE).toString(), "Time spent actively defeating Oryx's minions.", StatsLine.TYPE_STAT));
         }
 
-        private function sortBonusesByLevel(_arg_1:FameBonus, _arg_2:FameBonus):int
-        {
+        private function sortBonusesByLevel(_arg_1:FameBonus, _arg_2:FameBonus):int{
             if (_arg_1.level > _arg_2.level)
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        private function sortBonusesByFame(_arg_1:FameBonus, _arg_2:FameBonus):int
-        {
+        private function sortBonusesByFame(_arg_1:FameBonus, _arg_2:FameBonus):int{
             if (_arg_1.fameAdded > _arg_2.fameAdded)
             {
                 return (-1);
-            }
+            };
             return (1);
         }
 
-        private function showBonuses():void
-        {
+        private function showBonuses():void{
             var bonusConfig:FameBonus;
             var level:int;
             var bonus:FameBonus;
@@ -275,9 +261,9 @@ public class FameContentPopupMediator extends Mediator
                 else
                 {
                     this.bonusesList.push(bonusConfig);
-                }
+                };
                 i = (i + 1);
-            }
+            };
             bonusConfig = this.totalFame.bonuses[16];
             if (bonusConfig == null)
             {
@@ -286,7 +272,7 @@ public class FameContentPopupMediator extends Mediator
             else
             {
                 this.bonusesList.push(bonusConfig);
-            }
+            };
             i = 18;
             while (i <= 22)
             {
@@ -298,9 +284,9 @@ public class FameContentPopupMediator extends Mediator
                 else
                 {
                     this.bonusesList.push(bonusConfig);
-                }
+                };
                 i = (i + 1);
-            }
+            };
             if (this.view.characterId == -1)
             {
                 level = this.hudModel.gameSprite.map.player_.level_;
@@ -308,15 +294,13 @@ public class FameContentPopupMediator extends Mediator
             else
             {
                 level = this.player.getCharacterById(this.characterID).level();
-            }
+            };
             this.bonusesList = this.bonusesList.sort(this.sortBonusesByLevel);
-            var unlocked:Vector.<FameBonus> = this.bonusesList.filter(function (_arg_1:FameBonus, _arg_2:int, _arg_3:Vector.<FameBonus>):Boolean
-            {
+            var unlocked:Vector.<FameBonus> = this.bonusesList.filter(function (_arg_1:FameBonus, _arg_2:int, _arg_3:Vector.<FameBonus>):Boolean{
                 return (level >= _arg_1.level);
             });
             unlocked = unlocked.sort(this.sortBonusesByFame);
-            var locked:Vector.<FameBonus> = this.bonusesList.filter(function (_arg_1:FameBonus, _arg_2:int, _arg_3:Vector.<FameBonus>):Boolean
-            {
+            var locked:Vector.<FameBonus> = this.bonusesList.filter(function (_arg_1:FameBonus, _arg_2:int, _arg_3:Vector.<FameBonus>):Boolean{
                 return (level < _arg_1.level);
             });
             this.bonusesList = unlocked.concat(locked);
@@ -324,11 +308,10 @@ public class FameContentPopupMediator extends Mediator
             for each (bonus in this.bonusesList)
             {
                 this.view.addStatLine(new StatsLine(LineBuilder.getLocalizedStringFromKey(("FameBonus." + bonus.name)), bonus.fameAdded.toString(), ((LineBuilder.getLocalizedStringFromKey((("FameBonus." + bonus.name) + "Description")) + "\n") + LineBuilder.getLocalizedStringFromKey("FameBonus.LevelRequirement", {"level":bonus.level})), StatsLine.TYPE_BONUS, (level < bonus.level)));
-            }
+            };
         }
 
-        private function showInfo():void
-        {
+        private function showInfo():void{
             this.showStats();
             this.showBonuses();
             this.showCompletedDungeons();

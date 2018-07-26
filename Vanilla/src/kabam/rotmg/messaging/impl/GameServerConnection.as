@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.GameServerConnection
 
-package kabam.rotmg.messaging.impl
-{
+package kabam.rotmg.messaging.impl{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
@@ -18,8 +17,7 @@ import kabam.rotmg.servers.api.Server;
 
 import org.osflash.signals.Signal;
 
-public class GameServerConnection
-    {
+public class GameServerConnection {
 
         public static const FAILURE:int = 0;
         public static const CREATE_SUCCESS:int = 44;
@@ -136,169 +134,129 @@ public class GameServerConnection
         public var outstandingBuy_:OutstandingBuy = null;
 
 
-        public function chooseName(_arg_1:String):void
-        {
+        public function chooseName(_arg_1:String):void{
         }
 
-        public function createGuild(_arg_1:String):void
-        {
+        public function createGuild(_arg_1:String):void{
         }
 
-        public function connect():void
-        {
+        public function connect():void{
         }
 
-        public function disconnect():void
-        {
+        public function disconnect():void{
         }
 
-        public function checkCredits():void
-        {
+        public function checkCredits():void{
         }
 
-        public function escape():void
-        {
+        public function escape():void{
         }
 
-        public function useItem(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:int):void
-        {
+        public function useItem(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:Number, _arg_7:int):void{
         }
 
-        public function useItem_new(_arg_1:GameObject, _arg_2:int):Boolean
-        {
+        public function useItem_new(_arg_1:GameObject, _arg_2:int):Boolean{
             return (false);
         }
 
-        public function enableJitterWatcher():void
-        {
+        public function enableJitterWatcher():void{
         }
 
-        public function disableJitterWatcher():void
-        {
+        public function disableJitterWatcher():void{
         }
 
-        public function editAccountList(_arg_1:int, _arg_2:Boolean, _arg_3:int):void
-        {
+        public function editAccountList(_arg_1:int, _arg_2:Boolean, _arg_3:int):void{
         }
 
-        public function guildRemove(_arg_1:String):void
-        {
+        public function guildRemove(_arg_1:String):void{
         }
 
-        public function guildInvite(_arg_1:String):void
-        {
+        public function guildInvite(_arg_1:String):void{
         }
 
-        public function requestTrade(_arg_1:String):void
-        {
+        public function requestTrade(_arg_1:String):void{
         }
 
-        public function changeTrade(_arg_1:Vector.<Boolean>):void
-        {
+        public function changeTrade(_arg_1:Vector.<Boolean>):void{
         }
 
-        public function acceptTrade(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void
-        {
+        public function acceptTrade(_arg_1:Vector.<Boolean>, _arg_2:Vector.<Boolean>):void{
         }
 
-        public function cancelTrade():void
-        {
+        public function cancelTrade():void{
         }
 
-        public function joinGuild(_arg_1:String):void
-        {
+        public function joinGuild(_arg_1:String):void{
         }
 
-        public function changeGuildRank(_arg_1:String, _arg_2:int):void
-        {
+        public function changeGuildRank(_arg_1:String, _arg_2:int):void{
         }
 
-        public function isConnected():Boolean
-        {
+        public function isConnected():Boolean{
             return (false);
         }
 
-        public function teleport(_arg_1:int):void
-        {
+        public function teleport(_arg_1:int):void{
         }
 
-        public function usePortal(_arg_1:int):void
-        {
+        public function usePortal(_arg_1:int):void{
         }
 
-        public function getNextDamage(_arg_1:uint, _arg_2:uint):uint
-        {
+        public function getNextDamage(_arg_1:uint, _arg_2:uint):uint{
             return (0);
         }
 
-        public function groundDamage(_arg_1:int, _arg_2:Number, _arg_3:Number):void
-        {
+        public function groundDamage(_arg_1:int, _arg_2:Number, _arg_3:Number):void{
         }
 
-        public function playerShoot(_arg_1:int, _arg_2:Projectile):void
-        {
+        public function playerShoot(_arg_1:int, _arg_2:Projectile):void{
         }
 
-        public function playerHit(_arg_1:int, _arg_2:int):void
-        {
+        public function playerHit(_arg_1:int, _arg_2:int):void{
         }
 
-        public function enemyHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Boolean):void
-        {
+        public function enemyHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Boolean):void{
         }
 
-        public function otherHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int):void
-        {
+        public function otherHit(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int):void{
         }
 
-        public function squareHit(_arg_1:int, _arg_2:int, _arg_3:int):void
-        {
+        public function squareHit(_arg_1:int, _arg_2:int, _arg_3:int):void{
         }
 
-        public function playerText(_arg_1:String):void
-        {
+        public function playerText(_arg_1:String):void{
         }
 
-        public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
-        {
+        public function invSwap(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean{
             return (false);
         }
 
-        public function invSwapPotion(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean
-        {
+        public function invSwapPotion(_arg_1:Player, _arg_2:GameObject, _arg_3:int, _arg_4:int, _arg_5:GameObject, _arg_6:int, _arg_7:int):Boolean{
             return (false);
         }
 
-        public function invDrop(_arg_1:GameObject, _arg_2:int, _arg_3:int):void
-        {
+        public function invDrop(_arg_1:GameObject, _arg_2:int, _arg_3:int):void{
         }
 
-        public function setCondition(_arg_1:uint, _arg_2:Number):void
-        {
+        public function setCondition(_arg_1:uint, _arg_2:Number):void{
         }
 
-        public function buy(_arg_1:int, _arg_2:int):void
-        {
+        public function buy(_arg_1:int, _arg_2:int):void{
         }
 
-        public function questFetch():void
-        {
+        public function questFetch():void{
         }
 
-        public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void
-        {
+        public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void{
         }
 
-        public function keyInfoRequest(_arg_1:int):void
-        {
+        public function keyInfoRequest(_arg_1:int):void{
         }
 
-        public function gotoQuestRoom():void
-        {
+        public function gotoQuestRoom():void{
         }
 
-        public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void
-        {
+        public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void{
         }
 
 

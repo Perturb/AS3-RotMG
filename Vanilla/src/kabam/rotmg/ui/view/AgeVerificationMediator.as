@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.AgeVerificationMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import kabam.rotmg.account.core.signals.VerifyAgeSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class AgeVerificationMediator extends Mediator
-    {
+public class AgeVerificationMediator extends Mediator {
 
         [Inject]
         public var view:AgeVerificationDialog;
@@ -21,18 +19,15 @@ public class AgeVerificationMediator extends Mediator
         public var closeDialogs:CloseDialogsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.response.add(this.onResponse);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.response.remove(this.onResponse);
         }
 
-        private function onResponse(_arg_1:Boolean):void
-        {
+        private function onResponse(_arg_1:Boolean):void{
             if (_arg_1)
             {
                 this.handleAccepted();
@@ -40,17 +35,15 @@ public class AgeVerificationMediator extends Mediator
             else
             {
                 this.handleRejected();
-            }
+            };
         }
 
-        private function handleAccepted():void
-        {
+        private function handleAccepted():void{
             this.verifyAge.dispatch();
             this.closeDialogs.dispatch();
         }
 
-        private function handleRejected():void
-        {
+        private function handleRejected():void{
             this.closeDialogs.dispatch();
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.UpdatePetsModelCommand
 
-package kabam.rotmg.core.commands
-{
+package kabam.rotmg.core.commands{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 
 import io.decagames.rotmg.pets.data.PetsModel;
@@ -13,8 +12,7 @@ import io.decagames.rotmg.pets.data.yard.PetYardEnum;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class UpdatePetsModelCommand extends Command
-    {
+public class UpdatePetsModelCommand extends Command {
 
         [Inject]
         public var model:PetsModel;
@@ -22,27 +20,24 @@ public class UpdatePetsModelCommand extends Command
         public var data:XML;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             if (this.data.Account.hasOwnProperty("PetYardType"))
             {
                 this.model.setPetYardType(this.parseYardFromXML());
-            }
+            };
             if (this.data.hasOwnProperty("Pet"))
             {
                 this.model.setActivePet(this.parsePetFromXML());
-            }
+            };
         }
 
-        private function parseYardFromXML():int
-        {
+        private function parseYardFromXML():int{
             var _local_1:String = PetYardEnum.selectByOrdinal(this.data.Account.PetYardType).value;
             var _local_2:XML = ObjectLibrary.getXMLfromId(_local_1);
             return (_local_2.@type);
         }
 
-        private function parsePetFromXML():PetVO
-        {
+        private function parsePetFromXML():PetVO{
             var _local_1:XMLList = this.data.Pet;
             var _local_2:PetVO = this.model.getPetVO(_local_1.@instanceId);
             _local_2.apply(_local_1[0]);

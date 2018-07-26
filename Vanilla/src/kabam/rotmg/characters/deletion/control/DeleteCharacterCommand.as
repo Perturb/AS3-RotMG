@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.deletion.control.DeleteCharacterCommand
 
-package kabam.rotmg.characters.deletion.control
-{
+package kabam.rotmg.characters.deletion.control{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
 import kabam.lib.tasks.BranchingTask;
@@ -18,8 +17,7 @@ import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class DeleteCharacterCommand
-    {
+public class DeleteCharacterCommand {
 
         [Inject]
         public var task:DeleteCharacterTask;
@@ -33,8 +31,7 @@ public class DeleteCharacterCommand
         public var setScreen:SetScreenSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.openDialog, new DeletingCharacterView()));
             _local_1.add(new BranchingTask(this.task, this.onSuccess(), this.onFailure()));
@@ -42,16 +39,14 @@ public class DeleteCharacterCommand
             _local_1.start();
         }
 
-        private function onSuccess():Task
-        {
+        private function onSuccess():Task{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.setScreen, new CharacterSelectionAndNewsScreen()));
             _local_1.add(new DispatchSignalTask(this.closeDialogs));
             return (_local_1);
         }
 
-        private function onFailure():Task
-        {
+        private function onFailure():Task{
             return (new DispatchSignalTask(this.openDialog, "Unable to delete character"));
         }
 

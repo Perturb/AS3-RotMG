@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile
 
-package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
-{
+package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles{
 import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 
 import flash.display.DisplayObject;
@@ -14,8 +13,7 @@ import flash.events.TimerEvent;
 import flash.geom.Point;
 import flash.utils.Timer;
 
-public class InteractiveItemTile extends ItemTile
-    {
+public class InteractiveItemTile extends ItemTile {
 
         private static const DOUBLE_CLICK_PAUSE:uint = 250;
         private static const DRAG_DIST:int = 3;
@@ -25,8 +23,7 @@ public class InteractiveItemTile extends ItemTile
         private var pendingSecondClick:Boolean;
         private var isDragging:Boolean;
 
-        public function InteractiveItemTile(_arg_1:int, _arg_2:ItemGrid, _arg_3:Boolean)
-        {
+        public function InteractiveItemTile(_arg_1:int, _arg_2:ItemGrid, _arg_3:Boolean){
             super(_arg_1, _arg_2);
             mouseChildren = false;
             this.doubleClickTimer = new Timer(DOUBLE_CLICK_PAUSE, 1);
@@ -34,8 +31,7 @@ public class InteractiveItemTile extends ItemTile
             this.setInteractive(_arg_3);
         }
 
-        public function setInteractive(_arg_1:Boolean):void
-        {
+        public function setInteractive(_arg_1:Boolean):void{
             if (_arg_1)
             {
                 addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
@@ -48,33 +44,28 @@ public class InteractiveItemTile extends ItemTile
                 removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
                 removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
                 removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
-            }
+            };
         }
 
-        public function getDropTarget():DisplayObject
-        {
+        public function getDropTarget():DisplayObject{
             return (itemSprite.dropTarget);
         }
 
-        protected function beginDragCallback():void
-        {
+        protected function beginDragCallback():void{
         }
 
-        protected function endDragCallback():void
-        {
+        protected function endDragCallback():void{
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             this.setPendingDoubleClick(false);
         }
 
-        private function onMouseUp(_arg_1:MouseEvent):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent):void{
             if (this.isDragging)
             {
                 return;
-            }
+            };
             if (_arg_1.shiftKey)
             {
                 this.setPendingDoubleClick(false);
@@ -97,22 +88,20 @@ public class InteractiveItemTile extends ItemTile
                     {
                         this.setPendingDoubleClick(false);
                         dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_DOUBLE_CLICK, this));
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             if (getItemId() == -1)
             {
                 return;
-            }
+            };
             this.beginDragCheck(_arg_1);
         }
 
-        private function setPendingDoubleClick(_arg_1:Boolean):void
-        {
+        private function setPendingDoubleClick(_arg_1:Boolean):void{
             this.pendingSecondClick = _arg_1;
             if (this.pendingSecondClick)
             {
@@ -122,26 +111,23 @@ public class InteractiveItemTile extends ItemTile
             else
             {
                 this.doubleClickTimer.stop();
-            }
+            };
         }
 
-        private function beginDragCheck(_arg_1:MouseEvent):void
-        {
+        private function beginDragCheck(_arg_1:MouseEvent):void{
             this.dragStart = new Point(_arg_1.stageX, _arg_1.stageY);
             addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
             addEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
             addEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
         }
 
-        private function cancelDragCheck(_arg_1:MouseEvent):void
-        {
+        private function cancelDragCheck(_arg_1:MouseEvent):void{
             removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
             removeEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
             removeEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
         }
 
-        private function onMouseMoveCheckDrag(_arg_1:MouseEvent):void
-        {
+        private function onMouseMoveCheckDrag(_arg_1:MouseEvent):void{
             var _local_2:Number = (_arg_1.stageX - this.dragStart.x);
             var _local_3:Number = (_arg_1.stageY - this.dragStart.y);
             var _local_4:Number = Math.sqrt(((_local_2 * _local_2) + (_local_3 * _local_3)));
@@ -150,17 +136,15 @@ public class InteractiveItemTile extends ItemTile
                 this.cancelDragCheck(null);
                 this.setPendingDoubleClick(false);
                 this.beginDrag(_arg_1);
-            }
+            };
         }
 
-        private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void
-        {
+        private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void{
             this.setPendingDoubleClick(false);
             dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_CLICK, this));
         }
 
-        private function beginDrag(_arg_1:MouseEvent):void
-        {
+        private function beginDrag(_arg_1:MouseEvent):void{
             this.isDragging = true;
             toggleDragState(false);
             stage.addChild(itemSprite);
@@ -171,8 +155,7 @@ public class InteractiveItemTile extends ItemTile
             this.beginDragCallback();
         }
 
-        private function endDrag(_arg_1:MouseEvent):void
-        {
+        private function endDrag(_arg_1:MouseEvent):void{
             this.isDragging = false;
             toggleDragState(true);
             itemSprite.stopDrag();
@@ -181,34 +164,31 @@ public class InteractiveItemTile extends ItemTile
             this.endDragCallback();
         }
 
-        override public function setItem(_arg_1:int):Boolean
-        {
+        override public function setItem(_arg_1:int):Boolean{
             var _local_2:Boolean = super.setItem(_arg_1);
             if (_local_2)
             {
                 this.stopDragging();
-            }
+            };
             return (_local_2);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.setPendingDoubleClick(false);
             this.cancelDragCheck(null);
             this.stopDragging();
         }
 
-        private function stopDragging():void
-        {
+        private function stopDragging():void{
             if (this.isDragging)
             {
                 itemSprite.stopDrag();
                 if (stage.contains(itemSprite))
                 {
                     stage.removeChild(itemSprite);
-                }
+                };
                 this.isDragging = false;
-            }
+            };
         }
 
 

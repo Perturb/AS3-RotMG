@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatList
 
-package kabam.rotmg.chat.view
-{
+package kabam.rotmg.chat.view{
 import flash.display.Sprite;
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
 import kabam.rotmg.chat.model.ChatModel;
 
-public class ChatList extends Sprite
-    {
+public class ChatList extends Sprite {
 
         private const timer:Timer = new Timer(1000);
         private const itemsToRemove:Vector.<ChatListItem> = new Vector.<ChatListItem>();
@@ -25,8 +23,7 @@ public class ChatList extends Sprite
         private var ignoreTimeOuts:Boolean = false;
         private var maxLength:int;
 
-        public function ChatList(_arg_1:int=7, _arg_2:uint=150)
-        {
+        public function ChatList(_arg_1:int=7, _arg_2:uint=150){
             mouseEnabled = true;
             mouseChildren = true;
             this.listItems = new Vector.<ChatListItem>();
@@ -39,8 +36,7 @@ public class ChatList extends Sprite
             this.timer.start();
         }
 
-        private function onCheckTimeout(_arg_1:TimerEvent):void
-        {
+        private function onCheckTimeout(_arg_1:TimerEvent):void{
             var _local_2:ChatListItem;
             var _local_3:ChatListItem;
             for each (_local_2 in this.visibleItems)
@@ -52,8 +48,8 @@ public class ChatList extends Sprite
                 else
                 {
                     break;
-                }
-            }
+                };
+            };
             while (this.itemsToRemove.length > 0)
             {
                 this.onItemTimedOut(this.itemsToRemove.pop());
@@ -65,18 +61,16 @@ public class ChatList extends Sprite
                         this.addNewItem(_local_3);
                         this.isCurrent = (this.index == this.listItems.length);
                         this.positionItems();
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        public function setup(_arg_1:ChatModel):void
-        {
+        public function setup(_arg_1:ChatModel):void{
             this.visibleItemCount = _arg_1.visibleItemCount;
         }
 
-        public function addMessage(_arg_1:ChatListItem):void
-        {
+        public function addMessage(_arg_1:ChatListItem):void{
             var _local_2:ChatListItem;
             if (this.listItems.length > this.maxLength)
             {
@@ -86,36 +80,33 @@ public class ChatList extends Sprite
                 if (((!(this.isCurrent)) && (this.index < this.visibleItemCount)))
                 {
                     this.pageDown();
-                }
-            }
+                };
+            };
             this.listItems.push(_arg_1);
             if (this.isCurrent)
             {
                 this.displayNewItem(_arg_1);
-            }
+            };
         }
 
-        private function onItemTimedOut(_arg_1:ChatListItem):void
-        {
+        private function onItemTimedOut(_arg_1:ChatListItem):void{
             var _local_2:int = this.visibleItems.indexOf(_arg_1);
             if (_local_2 != -1)
             {
                 removeChild(_arg_1);
                 this.visibleItems.splice(_local_2, 1);
                 this.isCurrent = (this.index == this.listItems.length);
-            }
+            };
         }
 
-        private function displayNewItem(_arg_1:ChatListItem):void
-        {
+        private function displayNewItem(_arg_1:ChatListItem):void{
             this.index++;
             this.addNewItem(_arg_1);
             this.removeOldestVisibleIfNeeded();
             this.positionItems();
         }
 
-        public function scrollUp():void
-        {
+        public function scrollUp():void{
             if (((this.ignoreTimeOuts) && (this.canScrollUp())))
             {
                 this.scrollItemsUp();
@@ -123,12 +114,11 @@ public class ChatList extends Sprite
             else
             {
                 this.showAvailable();
-            }
+            };
             this.ignoreTimeOuts = true;
         }
 
-        public function showAvailable():void
-        {
+        public function showAvailable():void{
             var _local_4:ChatListItem;
             var _local_1:int = ((this.index - this.visibleItems.length) - 1);
             var _local_2:int = Math.max(0, ((this.index - this.visibleItemCount) - 1));
@@ -139,20 +129,19 @@ public class ChatList extends Sprite
                 if (this.visibleItems.indexOf(_local_4) == -1)
                 {
                     this.addOldItem(_local_4);
-                }
+                };
                 _local_3--;
-            }
+            };
             this.positionItems();
         }
 
-        public function scrollDown():void
-        {
+        public function scrollDown():void{
             if (this.ignoreTimeOuts)
             {
                 this.ignoreTimeOuts = false;
                 this.scrollToCurrent();
                 this.onCheckTimeout(null);
-            }
+            };
             if (!this.isCurrent)
             {
                 this.scrollItemsDown();
@@ -162,20 +151,18 @@ public class ChatList extends Sprite
                 if (this.ignoreTimeOuts)
                 {
                     this.ignoreTimeOuts = false;
-                }
-            }
+                };
+            };
         }
 
-        public function scrollToCurrent():void
-        {
+        public function scrollToCurrent():void{
             while ((!(this.isCurrent)))
             {
                 this.scrollItemsDown();
-            }
+            };
         }
 
-        public function pageUp():void
-        {
+        public function pageUp():void{
             var _local_1:int;
             if (!this.ignoreTimeOuts)
             {
@@ -194,14 +181,13 @@ public class ChatList extends Sprite
                     else
                     {
                         return;
-                    }
+                    };
                     _local_1++;
-                }
-            }
+                };
+            };
         }
 
-        public function pageDown():void
-        {
+        public function pageDown():void{
             var _local_1:int;
             while (_local_1 < this.visibleItemCount)
             {
@@ -213,32 +199,28 @@ public class ChatList extends Sprite
                 {
                     this.ignoreTimeOuts = false;
                     return;
-                }
+                };
                 _local_1++;
-            }
+            };
         }
 
-        private function addNewItem(_arg_1:ChatListItem):void
-        {
+        private function addNewItem(_arg_1:ChatListItem):void{
             this.visibleItems.push(_arg_1);
             addChild(_arg_1);
         }
 
-        private function removeOldestVisibleIfNeeded():void
-        {
+        private function removeOldestVisibleIfNeeded():void{
             if (this.visibleItems.length > this.visibleItemCount)
             {
                 removeChild(this.visibleItems.shift());
-            }
+            };
         }
 
-        private function canScrollUp():Boolean
-        {
+        private function canScrollUp():Boolean{
             return (this.index > this.visibleItemCount);
         }
 
-        private function scrollItemsUp():void
-        {
+        private function scrollItemsUp():void{
             var _local_1:ChatListItem = this.listItems[(--this.index - this.visibleItemCount)];
             this.addOldItem(_local_1);
             this.removeNewestVisibleIfNeeded();
@@ -246,12 +228,11 @@ public class ChatList extends Sprite
             this.isCurrent = false;
         }
 
-        private function scrollItemsDown():void
-        {
+        private function scrollItemsDown():void{
             if (this.index < 0)
             {
                 this.index = 0;
-            }
+            };
             var _local_1:ChatListItem = this.listItems[this.index];
             this.index++;
             this.addNewItem(_local_1);
@@ -260,22 +241,19 @@ public class ChatList extends Sprite
             this.positionItems();
         }
 
-        private function addOldItem(_arg_1:ChatListItem):void
-        {
+        private function addOldItem(_arg_1:ChatListItem):void{
             this.visibleItems.unshift(_arg_1);
             addChild(_arg_1);
         }
 
-        private function removeNewestVisibleIfNeeded():void
-        {
+        private function removeNewestVisibleIfNeeded():void{
             if (this.visibleItems.length > this.visibleItemCount)
             {
                 removeChild(this.visibleItems.pop());
-            }
+            };
         }
 
-        private function positionItems():void
-        {
+        private function positionItems():void{
             var _local_3:ChatListItem;
             var _local_1:int;
             var _local_2:int = this.visibleItems.length;
@@ -284,7 +262,7 @@ public class ChatList extends Sprite
                 _local_3 = this.visibleItems[_local_2];
                 _local_3.y = _local_1;
                 _local_1 = (_local_1 - _local_3.height);
-            }
+            };
         }
 
 

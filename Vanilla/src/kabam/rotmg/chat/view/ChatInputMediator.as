@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatInputMediator
 
-package kabam.rotmg.chat.view
-{
+package kabam.rotmg.chat.view{
 import flash.display.Stage;
 import flash.events.KeyboardEvent;
 import flash.text.TextField;
@@ -19,8 +18,7 @@ import kabam.rotmg.text.model.TextAndMapProvider;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ChatInputMediator extends Mediator 
-    {
+public class ChatInputMediator extends Mediator {
 
         [Inject]
         public var view:ChatInput;
@@ -41,8 +39,7 @@ public class ChatInputMediator extends Mediator
         public var stage:Stage;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.stage = this.view.stage;
             this.stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
             this.view.setup(this.model, this.makeTextfield());
@@ -51,28 +48,24 @@ public class ChatInputMediator extends Mediator
             this.showChatInput.add(this.onShowChatInput);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.message.remove(this.onMessage);
             this.view.close.remove(this.onDeactivate);
             this.showChatInput.remove(this.onShowChatInput);
             this.stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
         }
 
-        private function onDeactivate():void
-        {
+        private function onDeactivate():void{
             this.showChatInput.dispatch(false, "");
             this.tellModel.resetRecipients();
         }
 
-        private function onMessage(_arg_1:String):void
-        {
+        private function onMessage(_arg_1:String):void{
             this.parseChatMessage.dispatch(_arg_1);
             this.showChatInput.dispatch(false, "");
         }
 
-        private function onShowChatInput(_arg_1:Boolean, _arg_2:String):void
-        {
+        private function onShowChatInput(_arg_1:Boolean, _arg_2:String):void{
             if (_arg_1)
             {
                 this.view.activate(_arg_2, true);
@@ -80,35 +73,31 @@ public class ChatInputMediator extends Mediator
             else
             {
                 this.view.deactivate();
-            }
+            };
             if (!_arg_1)
             {
                 this.tellModel.resetRecipients();
-            }
+            };
         }
 
-        private function makeTextfield():TextField
-        {
+        private function makeTextfield():TextField{
             var _local_1:TextField = this.textAndMapProvider.getTextField();
             this.fontModel.apply(_local_1, 14, 0xFFFFFF, true);
             return (_local_1);
         }
 
-        private function onKeyUp(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyUp(_arg_1:KeyboardEvent):void{
             if (((this.view.visible) && ((_arg_1.keyCode == this.chatShortcutModel.getTellShortcut()) || ((this.stage.focus == null) || (this.viewDoesntHaveFocus())))))
             {
                 this.processKeyUp(_arg_1);
-            }
+            };
         }
 
-        private function viewDoesntHaveFocus():Boolean
-        {
+        private function viewDoesntHaveFocus():Boolean{
             return ((!(this.stage.focus.parent == this.view)) && (!(this.stage.focus == this.view)));
         }
 
-        private function processKeyUp(_arg_1:KeyboardEvent):void
-        {
+        private function processKeyUp(_arg_1:KeyboardEvent):void{
             _arg_1.stopImmediatePropagation();
             var _local_2:uint = _arg_1.keyCode;
             if (_local_2 == this.chatShortcutModel.getCommandShortcut())
@@ -132,18 +121,17 @@ public class ChatInputMediator extends Mediator
                         if (_local_2 == this.chatShortcutModel.getTellShortcut())
                         {
                             this.handleTell();
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
         }
 
-        private function handleTell():void
-        {
+        private function handleTell():void{
             if (!this.view.hasEnteredText())
             {
                 this.view.activate((("/tell " + this.tellModel.getNext()) + " "), true);
-            }
+            };
         }
 
 

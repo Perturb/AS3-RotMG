@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.GroundChooser
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.util.MoreStringUtil;
@@ -12,31 +11,26 @@ import com.company.util.MoreStringUtil;
 import flash.events.Event;
 import flash.utils.Dictionary;
 
-internal class GroundChooser extends Chooser
-    {
+internal class GroundChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";
 
-        public function GroundChooser()
-        {
+        public function GroundChooser(){
             super(Layer.GROUND);
             this._init();
         }
 
-        private function _init():void
-        {
+        private function _init():void{
             this.cache = new Dictionary();
             addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
         }
 
-        public function getLastSearch():String
-        {
+        public function getLastSearch():String{
             return (this.lastSearch);
         }
 
-        public function reloadObjects(_arg_1:String, _arg_2:String="ALL"):void
-        {
+        public function reloadObjects(_arg_1:String, _arg_2:String="ALL"):void{
             var _local_4:RegExp;
             var _local_6:String;
             var _local_7:XML;
@@ -48,7 +42,7 @@ internal class GroundChooser extends Chooser
             if (_arg_1 != "")
             {
                 _local_4 = new RegExp(_arg_1, "gix");
-            }
+            };
             var _local_5:Dictionary = GroupDivider.GROUPS["Ground"];
             for each (_local_7 in _local_5)
             {
@@ -58,9 +52,9 @@ internal class GroundChooser extends Chooser
                     if (((_local_4 == null) || (_local_6.search(_local_4) >= 0)))
                     {
                         _local_3.push(_local_6);
-                    }
-                }
-            }
+                    };
+                };
+            };
             _local_3.sort(MoreStringUtil.cmp);
             for each (_local_6 in _local_3)
             {
@@ -74,15 +68,14 @@ internal class GroundChooser extends Chooser
                 else
                 {
                     _local_9 = this.cache[_local_8];
-                }
+                };
                 addElement(_local_9);
-            }
+            };
             hasBeenLoaded = true;
             scrollBar_.setIndicatorSize(HEIGHT, elementContainer_.height, true);
         }
 
-        private function runFilter(_arg_1:XML, _arg_2:String):Boolean
-        {
+        private function runFilter(_arg_1:XML, _arg_2:String):Boolean{
             var _local_3:int;
             switch (_arg_2)
             {
@@ -94,7 +87,7 @@ internal class GroundChooser extends Chooser
                     return ((_arg_1.hasOwnProperty("Speed")) && (Number(_arg_1.elements("Speed")) < 1));
                 case ObjectLibrary.TILE_FILTER_LIST[4]:
                     return ((!(_arg_1.hasOwnProperty("Speed"))) || (Number(_arg_1.elements("Speed")) >= 1));
-            }
+            };
             return (true);
         }
 

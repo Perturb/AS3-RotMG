@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.commands.PlayGameCommand
 
-package kabam.rotmg.game.commands
-{
+package kabam.rotmg.game.commands{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -22,8 +21,7 @@ import kabam.rotmg.game.model.GameInitData;
 import kabam.rotmg.servers.api.Server;
 import kabam.rotmg.servers.api.ServerModel;
 
-public class PlayGameCommand 
-    {
+public class PlayGameCommand {
 
         public static const RECONNECT_DELAY:int = 2000;
 
@@ -45,19 +43,17 @@ public class PlayGameCommand
         public var socketServerModel:SocketServerModel;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (!this.data.isNewGame)
             {
                 this.socketServerModel.connectDelayMS = PlayGameCommand.RECONNECT_DELAY;
-            }
+            };
             this.recordCharacterUseInSharedObject();
             this.makeGameView();
             this.updatePet();
         }
 
-        private function updatePet():void
-        {
+        private function updatePet():void{
             var _local_1:SavedCharacter = this.model.getCharacterById(this.model.currentCharId);
             if (_local_1)
             {
@@ -68,19 +64,17 @@ public class PlayGameCommand
                 if ((((this.model.currentCharId) && (this.petsModel.getActivePet())) && (!(this.data.isNewGame))))
                 {
                     return;
-                }
+                };
                 this.petsModel.setActivePet(null);
-            }
+            };
         }
 
-        private function recordCharacterUseInSharedObject():void
-        {
+        private function recordCharacterUseInSharedObject():void{
             Parameters.data_.charIdUseMap[this.data.charId] = new Date().getTime();
             Parameters.save();
         }
 
-        private function makeGameView():void
-        {
+        private function makeGameView():void{
             var _local_1:Server = ((this.data.server) || (this.servers.getServer()));
             var _local_2:int = ((this.data.isNewGame) ? this.getInitialGameId() : this.data.gameId);
             var _local_3:Boolean = this.data.createCharacter;
@@ -91,8 +85,7 @@ public class PlayGameCommand
             this.setScreen.dispatch(new GameSprite(_local_1, _local_2, _local_3, _local_4, _local_5, _local_6, this.model, null, this.data.isFromArena));
         }
 
-        private function getInitialGameId():int
-        {
+        private function getInitialGameId():int{
             var _local_1:int;
             if (Parameters.data_.needsTutorial)
             {
@@ -107,8 +100,8 @@ public class PlayGameCommand
                 else
                 {
                     _local_1 = Parameters.NEXUS_GAMEID;
-                }
-            }
+                };
+            };
             return (_local_1);
         }
 

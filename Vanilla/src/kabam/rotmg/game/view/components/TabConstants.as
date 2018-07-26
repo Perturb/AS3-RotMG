@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.TabConstants
 
-package kabam.rotmg.game.view.components
-{
-    public class TabConstants 
-    {
+package kabam.rotmg.game.view.components{
+    public class TabConstants {
 
         public static const BACKGROUND_COLOR:uint = 2368034;
         public static const TAB_COLOR:uint = 7039594;

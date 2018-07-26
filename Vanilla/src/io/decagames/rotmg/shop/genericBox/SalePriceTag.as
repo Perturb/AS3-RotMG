@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.genericBox.SalePriceTag
 
-package io.decagames.rotmg.shop.genericBox
-{
+package io.decagames.rotmg.shop.genericBox{
 import com.company.assembleegameclient.util.Currency;
 
 import flash.display.Bitmap;
@@ -16,13 +15,11 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 import kabam.rotmg.assets.services.IconFactory;
 
-public class SalePriceTag extends Sprite
-    {
+public class SalePriceTag extends Sprite {
 
         private var coinBitmap:Bitmap;
 
-        public function SalePriceTag(_arg_1:int, _arg_2:int)
-        {
+        public function SalePriceTag(_arg_1:int, _arg_2:int){
             var _local_4:Sprite;
             super();
             var _local_3:UILabel = new UILabel();
@@ -41,8 +38,7 @@ public class SalePriceTag extends Sprite
             _local_4.y = ((_local_3.textHeight + 2) / 2);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.coinBitmap.bitmapData.dispose();
         }
 

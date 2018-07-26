@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.PetsTooltip
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
 import flash.display.Sprite;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PetsTooltip extends ToolTip 
-    {
+public class PetsTooltip extends ToolTip {
 
         private var title:UILabel;
         private var topDesc:UILabel;
@@ -28,14 +26,12 @@ public class PetsTooltip extends ToolTip
         private var tableContainer:Sprite;
         private var botDesc:UILabel;
 
-        public function PetsTooltip()
-        {
+        public function PetsTooltip(){
             super(0x363636, 1, 0x9B9B9B, 1);
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.createTitle();
             this.createHatchIcons();
             this.createMiddle();
@@ -43,8 +39,7 @@ public class PetsTooltip extends ToolTip
             this.createBottom();
         }
 
-        private function createTitle():void
-        {
+        private function createTitle():void{
             this.title = new UILabel();
             DefaultLabelFormat.petNameLabel(this.title, 0xFFFFFF);
             addChild(this.title);
@@ -61,8 +56,7 @@ public class PetsTooltip extends ToolTip
             this.topDesc.x = 0;
         }
 
-        private function createHatchIcons():void
-        {
+        private function createHatchIcons():void{
             this.hatchIconContainer = new Sprite();
             addChild(this.hatchIconContainer);
             this.hatchIcon = TextureParser.instance.getSliceScalingBitmap("UI", "PetsTooltip", 280);
@@ -75,8 +69,7 @@ public class PetsTooltip extends ToolTip
             this.hatchIconContainer.x = 10;
         }
 
-        private function createMiddle():void
-        {
+        private function createMiddle():void{
             this.midDesc = new UILabel();
             DefaultLabelFormat.infoTooltipText(this.midDesc, 0xAAAAAA);
             addChild(this.midDesc);
@@ -87,8 +80,7 @@ public class PetsTooltip extends ToolTip
             this.midDesc.x = 0;
         }
 
-        private function createTable():void
-        {
+        private function createTable():void{
             this.tableContainer = new Sprite();
             addChild(this.tableContainer);
             this.tableLeft = new UILabel();
@@ -136,8 +128,7 @@ public class PetsTooltip extends ToolTip
             this.tableContainer.x = 0;
         }
 
-        private function createBottom():void
-        {
+        private function createBottom():void{
             this.botDesc = new UILabel();
             DefaultLabelFormat.infoTooltipText(this.botDesc, 0xAAAAAA);
             addChild(this.botDesc);

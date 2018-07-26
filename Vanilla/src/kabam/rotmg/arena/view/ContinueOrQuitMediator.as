@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ContinueOrQuitMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.SocketServer;
 import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
@@ -18,8 +17,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ContinueOrQuitMediator extends Mediator 
-    {
+public class ContinueOrQuitMediator extends Mediator {
 
         [Inject]
         public var view:ContinueOrQuitDialog;
@@ -41,29 +39,25 @@ public class ContinueOrQuitMediator extends Mediator
         public var openMoneyWindow:OpenMoneyWindowSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.requestPlayerCreditsComplete.add(this.onRequestPlayerCreditsComplete);
             this.view.quit.add(this.onQuit);
             this.view.buyContinue.add(this.onContinue);
             this.view.init(this.currentRunModel.entry.currentWave, this.gameModel.player.credits_);
         }
 
-        private function onRequestPlayerCreditsComplete():void
-        {
+        private function onRequestPlayerCreditsComplete():void{
             this.view.setProcessing(false);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.requestPlayerCreditsComplete.remove(this.onRequestPlayerCreditsComplete);
             this.view.quit.remove(this.onQuit);
             this.view.buyContinue.remove(this.onContinue);
             this.view.destroy();
         }
 
-        private function onContinue(_arg_1:int, _arg_2:int):void
-        {
+        private function onContinue(_arg_1:int, _arg_2:int):void{
             var _local_3:EnterArena;
             if (this.gameModel.player.credits_ >= _arg_2)
             {
@@ -76,11 +70,10 @@ public class ContinueOrQuitMediator extends Mediator
             {
                 this.view.setProcessing(true);
                 this.openMoneyWindow.dispatch();
-            }
+            };
         }
 
-        private function onQuit():void
-        {
+        private function onQuit():void{
             this.closeDialogs.dispatch();
             this.hudModel.gameSprite.gsc_.escape();
         }

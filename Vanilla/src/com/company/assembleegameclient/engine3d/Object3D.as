@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Object3D
 
-package com.company.assembleegameclient.engine3d
-{
+package com.company.assembleegameclient.engine3d{
 import com.company.assembleegameclient.map.Camera;
 
 import flash.display.BitmapData;
@@ -13,8 +12,7 @@ import flash.geom.Matrix3D;
 import flash.geom.Utils3D;
 import flash.geom.Vector3D;
 
-public class Object3D
-    {
+public class Object3D {
 
         public var model_:Model3D = null;
         public var vL_:Vector.<Number>;
@@ -24,8 +22,7 @@ public class Object3D
         public var vW_:Vector.<Number> = new Vector.<Number>();
         public var lToW_:Matrix3D = new Matrix3D();
 
-        public function Object3D(_arg_1:Model3D=null)
-        {
+        public function Object3D(_arg_1:Model3D=null){
             var _local_2:ModelFace3D;
             super();
             if (_arg_1 != null)
@@ -36,32 +33,30 @@ public class Object3D
                 for each (_local_2 in this.model_.faces_)
                 {
                     this.faces_.push(new ObjectFace3D(this, _local_2.indicies_, _local_2.useTexture_));
-                }
+                };
             }
             else
             {
                 this.vL_ = new Vector.<Number>();
                 this.uvts_ = new Vector.<Number>();
-            }
+            };
             this.setPosition(0, 0, 0, 0);
         }
 
-        public static function getObject(_arg_1:String):Object3D
-        {
+        public static function getObject(_arg_1:String):Object3D{
             var _local_2:Model3D = Model3D.getModel(_arg_1);
             return (new Object3D(_local_2));
         }
 
 
-        public function dispose():void
-        {
+        public function dispose():void{
             var _local_1:ObjectFace3D;
             this.vL_ = null;
             this.uvts_ = null;
             for each (_local_1 in this.faces_)
             {
                 _local_1.dispose();
-            }
+            };
             this.faces_.length = 0;
             this.faces_ = null;
             this.vS_ = null;
@@ -69,8 +64,7 @@ public class Object3D
             this.lToW_ = null;
         }
 
-        public function setPosition(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):void
-        {
+        public function setPosition(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):void{
             var _local_5:ObjectFace3D;
             this.lToW_.identity();
             this.lToW_.appendRotation(_arg_4, Vector3D.Z_AXIS);
@@ -79,27 +73,25 @@ public class Object3D
             for each (_local_5 in this.faces_)
             {
                 _local_5.computeLighting();
-            }
+            };
         }
 
-        public function getVecW(_arg_1:int):Vector3D
-        {
+        public function getVecW(_arg_1:int):Vector3D{
             var _local_2:int = (_arg_1 * 3);
             if (_local_2 >= this.vW_.length)
             {
                 return (null);
-            }
+            };
             return (new Vector3D(this.vW_[_local_2], this.vW_[(_local_2 + 1)], this.vW_[(_local_2 + 2)]));
         }
 
-        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:uint, _arg_4:BitmapData):void
-        {
+        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:uint, _arg_4:BitmapData):void{
             var _local_5:ObjectFace3D;
             Utils3D.projectVectors(_arg_2.wToS_, this.vW_, this.vS_, this.uvts_);
             for each (_local_5 in this.faces_)
             {
                 _local_5.draw(_arg_1, _arg_3, _arg_4);
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.evolving.PetEvolvingDialog
 
-package io.decagames.rotmg.pets.popup.evolving
-{
+package io.decagames.rotmg.pets.popup.evolving{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.AnimatedChar;
 import com.company.assembleegameclient.util.AnimatedChars;
@@ -32,8 +31,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 import kabam.rotmg.messaging.impl.EvolvePetInfo;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PetEvolvingDialog extends ModalPopup
-    {
+public class PetEvolvingDialog extends ModalPopup {
 
         private var contentInset:SliceScalingBitmap;
         private var info:EvolvePetInfo;
@@ -43,8 +41,7 @@ public class PetEvolvingDialog extends ModalPopup
         private var animationTimeline:TimelineMax;
         private var _okButton:SliceScalingButton;
 
-        public function PetEvolvingDialog(info:EvolvePetInfo, unlockedSkin:Boolean)
-        {
+        public function PetEvolvingDialog(info:EvolvePetInfo, unlockedSkin:Boolean){
             var animationSpiral:SliceScalingBitmap;
             var maskImage:SliceScalingBitmap;
             var whiteRectangle:Sprite;
@@ -98,8 +95,7 @@ public class PetEvolvingDialog extends ModalPopup
             this.animationTimeline.to(this.initialPetImage, 0, {"tint":0xFFFFFF});
             this.animationTimeline.to(this.initialPetImage, 0.3, {
                 "tint":null,
-                "onComplete":function ():void
-                {
+                "onComplete":function ():void{
                     animationContainer.addChild(finalPetImage);
                     animationContainer.removeChild(initialPetImage);
                     animationContainer.addChild(whiteRectangle);
@@ -112,8 +108,7 @@ public class PetEvolvingDialog extends ModalPopup
             this.animationTimeline.to(whiteRectangle, 0.1, {
                 "alpha":1,
                 "ease":Sine.easeIn,
-                "onComplete":function ():void
-                {
+                "onComplete":function ():void{
                     var textInfo:* = undefined;
                     TweenLite.to(whiteRectangle, flashDuration, {
                         "alpha":0,
@@ -142,7 +137,7 @@ public class PetEvolvingDialog extends ModalPopup
                         textInfo.wordWrap = true;
                         textInfo.text = "New Pet Skin added to your Wardrobe!";
                         animationContainer.addChild(textInfo);
-                    }
+                    };
                     animationContainer.addChild(whiteRectangle);
                     TweenLite.to(animationSpiral, spinDuration, {
                         "transformAroundCenter":{"rotation":spinAngle},
@@ -153,8 +148,7 @@ public class PetEvolvingDialog extends ModalPopup
                         "delay":(spinDuration - 0.2),
                         "overwrite":false,
                         "ease":Sine.easeIn,
-                        "onComplete":function ():void
-                        {
+                        "onComplete":function ():void{
                             animationContainer.removeChild(whiteRectangle);
                             animationContainer.removeChild(animationSpiral);
                         }
@@ -170,13 +164,11 @@ public class PetEvolvingDialog extends ModalPopup
             addChild(this._okButton);
         }
 
-        public function get okButton():SliceScalingButton
-        {
+        public function get okButton():SliceScalingButton{
             return (this._okButton);
         }
 
-        private function getTypeBitmap(_arg_1:int, _arg_2:int):Bitmap
-        {
+        private function getTypeBitmap(_arg_1:int, _arg_2:int):Bitmap{
             var _local_3:String = ObjectLibrary.getIdFromType(_arg_1);
             var _local_4:XML = ObjectLibrary.getXMLfromId(_local_3);
             var _local_5:String = _local_4.AnimatedTexture.File;

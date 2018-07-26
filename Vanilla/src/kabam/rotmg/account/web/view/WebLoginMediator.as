@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebLoginMediator
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import kabam.lib.tasks.Task;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.signals.LoginSignal;
@@ -16,8 +15,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class WebLoginMediator extends Mediator 
-    {
+public class WebLoginMediator extends Mediator {
 
         [Inject]
         public var view:WebLoginDialog;
@@ -33,8 +31,7 @@ public class WebLoginMediator extends Mediator
         public var account:Account;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.signIn.add(this.onSignIn);
             this.view.register.add(this.onRegister);
             this.view.cancel.add(this.onCancel);
@@ -42,8 +39,7 @@ public class WebLoginMediator extends Mediator
             this.loginError.add(this.onLoginError);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.signIn.remove(this.onSignIn);
             this.view.register.remove(this.onRegister);
             this.view.cancel.remove(this.onCancel);
@@ -51,33 +47,28 @@ public class WebLoginMediator extends Mediator
             this.loginError.remove(this.onLoginError);
         }
 
-        private function onSignIn(_arg_1:AccountData):void
-        {
+        private function onSignIn(_arg_1:AccountData):void{
             if ((this.account is WebAccount))
             {
                 WebAccount(this.account).rememberMe = this.view.isRememberMeSelected();
-            }
+            };
             this.view.disable();
             this.login.dispatch(_arg_1);
         }
 
-        private function onRegister():void
-        {
+        private function onRegister():void{
             this.openDialog.dispatch(new WebRegisterDialog());
         }
 
-        private function onCancel():void
-        {
+        private function onCancel():void{
             this.closeDialog.dispatch();
         }
 
-        private function onForgot():void
-        {
+        private function onForgot():void{
             this.openDialog.dispatch(new WebForgotPasswordDialog());
         }
 
-        private function onLoginError(_arg_1:Task):void
-        {
+        private function onLoginError(_arg_1:Task):void{
             this.view.setError(_arg_1.error);
             this.view.enable();
         }

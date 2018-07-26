@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.choosePet.ChoosePetPopupMediator
 
-package io.decagames.rotmg.pets.popup.choosePet
-{
+package io.decagames.rotmg.pets.popup.choosePet{
 import flash.events.MouseEvent;
 
 import io.decagames.rotmg.pets.components.petItem.PetItem;
@@ -21,8 +20,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ChoosePetPopupMediator extends Mediator
-    {
+public class ChoosePetPopupMediator extends Mediator {
 
         [Inject]
         public var view:ChoosePetPopup;
@@ -40,8 +38,7 @@ public class ChoosePetPopupMediator extends Mediator
         private var closeButton:SliceScalingButton;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_1:PetVO;
             var _local_2:PetItem;
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
@@ -54,30 +51,27 @@ public class ChoosePetPopupMediator extends Mediator
                 _local_2.addEventListener(MouseEvent.CLICK, this.onPetSelected);
                 this.petsList.push(_local_2);
                 this.view.addPet(_local_2);
-            }
+            };
         }
 
-        private function onPetSelected(_arg_1:MouseEvent):void
-        {
+        private function onPetSelected(_arg_1:MouseEvent):void{
             var _local_2:PetItem = PetItem(_arg_1.currentTarget);
             this.activatePet.dispatch(_local_2.getPetVO().getID());
             this.selectPetSignal.dispatch(_local_2.getPetVO());
             this.closePopupSignal.dispatch(this.view);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             var _local_1:PetItem;
             this.closeButton.dispose();
             for each (_local_1 in this.petsList)
             {
                 _local_1.removeEventListener(MouseEvent.CLICK, this.onPetSelected);
-            }
+            };
             this.petsList = new Vector.<PetItem>();
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 

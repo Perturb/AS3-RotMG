@@ -1,31 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.ChangeGuildRank
 
-package kabam.rotmg.messaging.impl.outgoing
-{
+package kabam.rotmg.messaging.impl.outgoing{
 import flash.utils.IDataOutput;
 
-public class ChangeGuildRank extends OutgoingMessage
-    {
+public class ChangeGuildRank extends OutgoingMessage {
 
         public var name_:String;
         public var guildRank_:int;
 
-        public function ChangeGuildRank(_arg_1:uint, _arg_2:Function)
-        {
+        public function ChangeGuildRank(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function writeToOutput(_arg_1:IDataOutput):void
-        {
+        override public function writeToOutput(_arg_1:IDataOutput):void{
             _arg_1.writeUTF(this.name_);
             _arg_1.writeInt(this.guildRank_);
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("CHANGEGUILDRANK", "name_", "guildRank_"));
         }
 

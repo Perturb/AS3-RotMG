@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.model.Key
 
-package kabam.rotmg.ui.model
-{
-    public class Key 
-    {
+package kabam.rotmg.ui.model{
+    public class Key {
 
         public static const PURPLE:Key = new Key(0);
         public static const GREEN:Key = new Key(1);
@@ -15,8 +13,7 @@ package kabam.rotmg.ui.model
 
         public var position:int;
 
-        public function Key(_arg_1:int)
-        {
+        public function Key(_arg_1:int){
             this.position = _arg_1;
         }
 

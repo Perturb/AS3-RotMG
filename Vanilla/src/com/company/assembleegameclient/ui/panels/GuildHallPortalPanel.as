@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.GuildHallPortalPanel
 
-package com.company.assembleegameclient.ui.panels
-{
+package com.company.assembleegameclient.ui.panels{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.objects.GuildHallPortal;
 import com.company.assembleegameclient.objects.Player;
@@ -23,8 +22,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class GuildHallPortalPanel extends Panel
-    {
+public class GuildHallPortalPanel extends Panel {
 
         private const waiter:SignalWaiter = new SignalWaiter();
 
@@ -34,8 +32,7 @@ public class GuildHallPortalPanel extends Panel
         private var enterButton_:DeprecatedTextButton;
         private var noGuildText_:TextFieldDisplayConcrete;
 
-        public function GuildHallPortalPanel(_arg_1:AGameSprite, _arg_2:GuildHallPortal)
-        {
+        public function GuildHallPortalPanel(_arg_1:AGameSprite, _arg_2:GuildHallPortal){
             var _local_3:Player;
             super(_arg_1);
             this.stageProxy = new StageProxy(this);
@@ -43,7 +40,7 @@ public class GuildHallPortalPanel extends Panel
             if (((gs_.map == null) || (gs_.map.player_ == null)))
             {
                 return;
-            }
+            };
             _local_3 = gs_.map.player_;
             this.nameText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(WIDTH).setWordWrap(true).setMultiLine(true).setAutoSize(TextFieldAutoSize.CENTER).setBold(true).setHTML(true);
             this.nameText_.setStringBuilder(new LineBuilder().setParams(TextKey.GUILD_HALL_PORTAL_TITLE).setPrefix('<p align="center">').setPostfix("</p>"));
@@ -65,49 +62,43 @@ public class GuildHallPortalPanel extends Panel
                 this.noGuildText_.filters = [new DropShadowFilter(0, 0, 0)];
                 this.waiter.push(this.noGuildText_.textChanged);
                 addChild(this.noGuildText_);
-            }
+            };
             this.waiter.complete.addOnce(this.alignUI);
         }
 
-        private function alignUI():void
-        {
+        private function alignUI():void{
             if (this.noGuildText_)
             {
                 this.noGuildText_.y = ((HEIGHT - this.noGuildText_.height) - 12);
-            }
+            };
             if (this.enterButton_)
             {
                 this.enterButton_.x = ((WIDTH / 2) - (this.enterButton_.width / 2));
                 this.enterButton_.y = ((HEIGHT - this.enterButton_.height) - 4);
-            }
+            };
         }
 
-        private function onAdded(_arg_1:Event):void
-        {
+        private function onAdded(_arg_1:Event):void{
             this.stageProxy.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
         }
 
-        private function onRemoved(_arg_1:Event):void
-        {
+        private function onRemoved(_arg_1:Event):void{
             this.stageProxy.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        private function onEnterSpriteClick(_arg_1:MouseEvent):void
-        {
+        private function onEnterSpriteClick(_arg_1:MouseEvent):void{
             this.enterPortal();
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.enterPortal();
-            }
+            };
         }
 
-        private function enterPortal():void
-        {
+        private function enterPortal():void{
             gs_.gsc_.usePortal(this.owner_.objectId_);
         }
 

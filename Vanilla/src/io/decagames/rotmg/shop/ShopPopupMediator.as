@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.ShopPopupMediator
 
-package io.decagames.rotmg.shop
-{
+package io.decagames.rotmg.shop{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
@@ -35,8 +34,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ShopPopupMediator extends Mediator 
-    {
+public class ShopPopupMediator extends Mediator {
 
         [Inject]
         public var view:ShopPopupView;
@@ -64,8 +62,7 @@ public class ShopPopupMediator extends Mediator
         private var packageTab:TabButton;
 
 
-        private function createPackageBoxTab():UITab
-        {
+        private function createPackageBoxTab():UITab{
             var _local_2:PackageInfo;
             var _local_3:UITab;
             this.packageBoxesGrid = new UIGrid(550, 2, 11);
@@ -77,15 +74,14 @@ public class ShopPopupMediator extends Mediator
                 if (((!(_local_2 == null)) && ((!(_local_2.endTime)) || (_local_2.getSecondsToEnd() > 0))))
                 {
                     this.packageBoxesGrid.addGridElement(this.createBoxTile(_local_2, PackageBoxTile));
-                }
-            }
+                };
+            };
             _local_3 = new UITab("Packages");
             _local_3.addContent(this.packageBoxesGrid);
             return (_local_3);
         }
 
-        private function createMysteryBoxTab():UITab
-        {
+        private function createMysteryBoxTab():UITab{
             var _local_3:MysteryBoxInfo;
             var _local_1:UITab = new UITab("Mystery Boxes", true);
             this.mysteryBoxesGrid = new UIGrid(550, 3, 6, 384, 3, _local_1);
@@ -97,19 +93,17 @@ public class ShopPopupMediator extends Mediator
                 if (((!(_local_3 == null)) && ((!(_local_3.endTime)) || (_local_3.getSecondsToEnd() > 0))))
                 {
                     this.mysteryBoxesGrid.addGridElement(this.createBoxTile(_local_3, MysteryBoxTile));
-                }
-            }
+                };
+            };
             _local_1.addContent(this.mysteryBoxesGrid);
             return (_local_1);
         }
 
-        private function createBoxTile(_arg_1:GenericBoxInfo, _arg_2:Class):GenericBoxTile
-        {
+        private function createBoxTile(_arg_1:GenericBoxInfo, _arg_2:Class):GenericBoxTile{
             return (new _arg_2(_arg_1));
         }
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_4:PackageInfo;
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
             this.addButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "add_button"));
@@ -137,15 +131,15 @@ public class ShopPopupMediator extends Mediator
                     if (((_local_4.isNew()) && ((_local_4.startTime.getTime() > _local_2.getTime()) || (!(Parameters.data_["packages_indicator"])))))
                     {
                         _local_3 = true;
-                    }
-                }
-            }
+                    };
+                };
+            };
             this.packageTab = this.tabs.getTabButtonByLabel("Packages");
             if (this.packageTab)
             {
                 this.packageTab.showIndicator = _local_3;
                 this.packageTab.clickSignal.add(this.onPackageClick);
-            }
+            };
             this.gameModel.player.creditsWereChanged.add(this.refreshCoins);
             this.gameModel.player.fameWasChanged.add(this.refreshFame);
             this.toolTip = new TextToolTip(0x363636, 0x9B9B9B, "Buy Gold", "Click to buy more Realm Gold!", 200);
@@ -156,17 +150,15 @@ public class ShopPopupMediator extends Mediator
             this.hoverTooltipDelegate.tooltip = this.toolTip;
         }
 
-        private function onPackageClick(_arg_1:BaseButton):void
-        {
+        private function onPackageClick(_arg_1:BaseButton):void{
             if (TabButton(_arg_1).hasIndicator)
             {
                 Parameters.data_["packages_indicator"] = new Date().getTime();
                 TabButton(_arg_1).showIndicator = false;
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.dispose();
             this.closeButton.dispose();
             this.addButton.dispose();
@@ -181,26 +173,22 @@ public class ShopPopupMediator extends Mediator
             if (this.packageTab)
             {
                 this.packageTab.clickSignal.remove(this.onPackageClick);
-            }
+            };
         }
 
-        private function refreshCoins():void
-        {
+        private function refreshCoins():void{
             this.view.header.showCoins(132).coinsAmount = this.gameModel.player.credits_;
         }
 
-        private function refreshFame():void
-        {
+        private function refreshFame():void{
             this.view.header.showFame(132).fameAmount = this.gameModel.player.fame_;
         }
 
-        private function onAdd(_arg_1:BaseButton):void
-        {
+        private function onAdd(_arg_1:BaseButton):void{
             this.openMoneyWindow.dispatch();
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 

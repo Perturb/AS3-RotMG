@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.InteractionInfo
 
-package io.decagames.rotmg.pets.windows.yard
-{
+package io.decagames.rotmg.pets.windows.yard{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.pets.windows.yard.feed.FeedTab;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.tabs.UITabs;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class InteractionInfo extends Sprite 
-    {
+public class InteractionInfo extends Sprite {
 
         public static var INFO_WIDTH:int = 275;
         public static const INFO_HEIGHT:int = 207;
@@ -25,8 +23,7 @@ public class InteractionInfo extends Sprite
         private var tabs:UITabs;
         private var feedGrid:UIGrid;
 
-        public function InteractionInfo()
-        {
+        public function InteractionInfo(){
             this.feedGrid = new UIGrid((INFO_WIDTH - 100), 4, 5);
             this.contentTabs = TextureParser.instance.getSliceScalingBitmap("UI", "tab_inset_content_background", INFO_WIDTH);
             addChild(this.contentTabs);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.Point3D
 
-package com.company.assembleegameclient.engine3d
-{
+package com.company.assembleegameclient.engine3d{
 import com.company.assembleegameclient.map.Camera;
 import com.company.util.Trig;
 
@@ -20,8 +19,7 @@ import flash.geom.Matrix3D;
 import flash.geom.Utils3D;
 import flash.geom.Vector3D;
 
-public class Point3D
-    {
+public class Point3D {
 
         private static const commands_:Vector.<int> = new <int>[GraphicsPathCommand.MOVE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO];
         private static const END_FILL:GraphicsEndFill = new GraphicsEndFill();
@@ -34,18 +32,15 @@ public class Point3D
         public var size_:Number;
         public var posS_:Vector3D;
 
-        public function Point3D(_arg_1:Number)
-        {
+        public function Point3D(_arg_1:Number){
             this.size_ = _arg_1;
         }
 
-        public function setSize(_arg_1:Number):void
-        {
+        public function setSize(_arg_1:Number):void{
             this.size_ = _arg_1;
         }
 
-        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector3D, _arg_3:Number, _arg_4:Matrix3D, _arg_5:Camera, _arg_6:BitmapData, _arg_7:uint=0):void
-        {
+        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Vector3D, _arg_3:Number, _arg_4:Matrix3D, _arg_5:Camera, _arg_6:BitmapData, _arg_7:uint=0):void{
             var _local_10:Number;
             var _local_11:Number;
             var _local_12:Matrix;
@@ -53,7 +48,7 @@ public class Point3D
             if (this.posS_.w < 0)
             {
                 return;
-            }
+            };
             var _local_8:Number = (this.posS_.w * Math.sin(((_arg_5.pp_.fieldOfView / 2) * Trig.toRadians)));
             var _local_9:Number = (this.size_ / _local_8);
             this.data_.length = 0;
@@ -66,7 +61,7 @@ public class Point3D
                 _local_10 = Math.cos(_arg_3);
                 _local_11 = Math.sin(_arg_3);
                 this.data_.push((this.posS_.x + ((_local_10 * -(_local_9)) + (_local_11 * -(_local_9)))), (this.posS_.y + ((_local_11 * -(_local_9)) - (_local_10 * -(_local_9)))), (this.posS_.x + ((_local_10 * _local_9) + (_local_11 * -(_local_9)))), (this.posS_.y + ((_local_11 * _local_9) - (_local_10 * -(_local_9)))), (this.posS_.x + ((_local_10 * _local_9) + (_local_11 * _local_9))), (this.posS_.y + ((_local_11 * _local_9) - (_local_10 * _local_9))), (this.posS_.x + ((_local_10 * -(_local_9)) + (_local_11 * _local_9))), (this.posS_.y + ((_local_11 * -(_local_9)) - (_local_10 * _local_9))));
-            }
+            };
             if (_arg_6 != null)
             {
                 this.bitmapFill_.bitmapData = _arg_6;
@@ -82,7 +77,7 @@ public class Point3D
             {
                 this.solidFill_.color = _arg_7;
                 _arg_1.push(this.solidFill_);
-            }
+            };
             _arg_1.push(this.path_);
             _arg_1.push(END_FILL);
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.SlotBoxMediator
 
-package io.decagames.rotmg.shop.mysteryBox.contentPopup
-{
+package io.decagames.rotmg.shop.mysteryBox.contentPopup{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import kabam.rotmg.core.signals.HideTooltipsSignal;
@@ -15,8 +14,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class SlotBoxMediator extends Mediator 
-    {
+public class SlotBoxMediator extends Mediator {
 
         [Inject]
         public var view:SlotBox;
@@ -30,8 +28,7 @@ public class SlotBoxMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             if (this.view.slotType == SlotBox.VAULT_SLOT)
             {
                 this.toolTip = new TextToolTip(0x363636, 0x9B9B9B, TextKey.VAULT_CHEST, TextKey.VAULT_CHEST_DESCRIPTION, 200);
@@ -40,11 +37,10 @@ public class SlotBoxMediator extends Mediator
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
         }
 
 

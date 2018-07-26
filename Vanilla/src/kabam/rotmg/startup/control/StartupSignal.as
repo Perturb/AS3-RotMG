@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.startup.control.StartupSignal
 
-package kabam.rotmg.startup.control
-{
+package kabam.rotmg.startup.control{
 import org.osflash.signals.Signal;
 
-public class StartupSignal extends Signal
-    {
+public class StartupSignal extends Signal {
 
 
     }

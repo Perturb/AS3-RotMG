@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.NewsConfig
 
-package kabam.rotmg.news
-{
+package kabam.rotmg.news{
 import kabam.rotmg.game.view.NewsModalButton;
 import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
 import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
@@ -28,8 +27,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class NewsConfig implements IConfig 
-    {
+public class NewsConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -43,8 +41,7 @@ public class NewsConfig implements IConfig
         public var startupSequence:StartupSequence;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(OpenSkinSignal).asSingleton();
             this.injector.map(NewsDataUpdatedSignal).asSingleton();
             this.injector.map(NewsButtonRefreshSignal).asSingleton();

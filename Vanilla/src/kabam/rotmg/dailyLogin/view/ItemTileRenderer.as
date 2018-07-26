@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.ItemTileRenderer
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
@@ -30,13 +29,11 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.swiftsuspenders.Injector;
 
-public class ItemTileRenderer extends Sprite 
-    {
+public class ItemTileRenderer extends Sprite {
 
         protected static const DIM_FILTER:Array = [new ColorMatrixFilter([0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 1, 0])];
         private static const IDENTITY_MATRIX:Matrix = new Matrix();
-        private static const DOSE_MATRIX:Matrix = (function ():Matrix
-        {
+        private static const DOSE_MATRIX:Matrix = (function ():Matrix{
             var _local_1:* = new Matrix();
             _local_1.translate(10, 5);
             return (_local_1);
@@ -47,8 +44,7 @@ public class ItemTileRenderer extends Sprite
         private var tooltip:ToolTip;
         private var itemBitmap:Bitmap;
 
-        public function ItemTileRenderer(_arg_1:int)
-        {
+        public function ItemTileRenderer(_arg_1:int){
             this.itemId = _arg_1;
             this.itemBitmap = new Bitmap();
             addChild(this.itemBitmap);
@@ -57,25 +53,22 @@ public class ItemTileRenderer extends Sprite
             this.addEventListener(MouseEvent.MOUSE_OUT, this.onTileOut);
         }
 
-        private function onTileOut(_arg_1:MouseEvent):void
-        {
+        private function onTileOut(_arg_1:MouseEvent):void{
             var _local_2:Injector = StaticInjectorContext.getInjector();
             var _local_3:HideTooltipsSignal = _local_2.getInstance(HideTooltipsSignal);
             _local_3.dispatch();
         }
 
-        private function onTileHover(_arg_1:MouseEvent):void
-        {
+        private function onTileHover(_arg_1:MouseEvent):void{
             if (!stage)
             {
                 return;
-            }
+            };
             var _local_2:ItemTile = (_arg_1.currentTarget as ItemTile);
             this.addToolTipToTile(_local_2);
         }
 
-        private function addToolTipToTile(_arg_1:ItemTile):void
-        {
+        private function addToolTipToTile(_arg_1:ItemTile):void{
             var _local_4:String;
             if (this.itemId > 0)
             {
@@ -90,17 +83,16 @@ public class ItemTileRenderer extends Sprite
                 else
                 {
                     _local_4 = TextKey.ITEM;
-                }
+                };
                 this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, TextKey.ITEM_EMPTY_SLOT, 200, {"itemType":TextKey.wrapForTokenResolution(_local_4)});
-            }
+            };
             this.tooltip.attachToTarget(_arg_1);
             var _local_2:Injector = StaticInjectorContext.getInjector();
             var _local_3:ShowTooltipSignal = _local_2.getInstance(ShowTooltipSignal);
             _local_3.dispatch(this.tooltip);
         }
 
-        public function drawTile():void
-        {
+        public function drawTile():void{
             var _local_2:BitmapData;
             var _local_3:XML;
             var _local_4:BitmapData;
@@ -111,7 +103,7 @@ public class ItemTileRenderer extends Sprite
                 if (((_local_1 >= 0x9000) && (_local_1 < 0xF000)))
                 {
                     _local_1 = 36863;
-                }
+                };
                 _local_2 = ObjectLibrary.getRedrawnTextureFromType(_local_1, CalendarSettings.ITEM_SIZE, true);
                 _local_3 = ObjectLibrary.xmlLibrary_[_local_1];
                 if ((((_local_3) && (_local_3.hasOwnProperty("Doses"))) && (this.bitmapFactory)))
@@ -119,13 +111,13 @@ public class ItemTileRenderer extends Sprite
                     _local_2 = _local_2.clone();
                     _local_4 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_3.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_2.draw(_local_4, DOSE_MATRIX);
-                }
+                };
                 if ((((_local_3) && (_local_3.hasOwnProperty("Quantity"))) && (this.bitmapFactory)))
                 {
                     _local_2 = _local_2.clone();
                     _local_5 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_3.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                     _local_2.draw(_local_5, DOSE_MATRIX);
-                }
+                };
                 this.itemBitmap.bitmapData = _local_2;
                 this.itemBitmap.x = (-(_local_2.width) / 2);
                 this.itemBitmap.y = (-(_local_2.width) / 2);
@@ -134,7 +126,7 @@ public class ItemTileRenderer extends Sprite
             else
             {
                 visible = false;
-            }
+            };
         }
 
 

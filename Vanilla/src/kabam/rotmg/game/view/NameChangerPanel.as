@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.NameChangerPanel
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -28,16 +27,14 @@ import kabam.rotmg.util.components.LegacyBuyButton;
 
 import org.osflash.signals.Signal;
 
-public class NameChangerPanel extends Panel
-    {
+public class NameChangerPanel extends Panel {
 
         public var chooseName:Signal = new Signal();
         public var buy_:Boolean;
         private var title_:TextFieldDisplayConcrete;
         private var button_:Sprite;
 
-        public function NameChangerPanel(_arg_1:GameSprite, _arg_2:int)
-        {
+        public function NameChangerPanel(_arg_1:GameSprite, _arg_2:int){
             var _local_3:Player;
             var _local_4:String;
             super(_arg_1);
@@ -59,28 +56,25 @@ public class NameChangerPanel extends Panel
                     else
                     {
                         this.handleNoName();
-                    }
-                }
-            }
+                    };
+                };
+            };
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             if (this.button_)
             {
                 stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
-            }
+            };
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function hasMapAndPlayer():Boolean
-        {
+        private function hasMapAndPlayer():Boolean{
             return ((gs_.map) && (gs_.map.player_));
         }
 
-        private function createNameText():String
-        {
+        private function createNameText():String{
             var _local_1:String;
             _local_1 = gs_.model.getName();
             this.title_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(WIDTH);
@@ -89,8 +83,7 @@ public class NameChangerPanel extends Panel
             return (_local_1);
         }
 
-        private function handleAlreadyHasName(_arg_1:String):void
-        {
+        private function handleAlreadyHasName(_arg_1:String):void{
             this.title_.setStringBuilder(this.makeNameText(_arg_1));
             this.title_.y = 0;
             addChild(this.title_);
@@ -105,18 +98,16 @@ public class NameChangerPanel extends Panel
             else
             {
                 this.addListeners();
-            }
+            };
             addChild(this.button_);
         }
 
-        private function positionButton():void
-        {
+        private function positionButton():void{
             this.button_.x = ((WIDTH / 2) - (this.button_.width / 2));
             this.button_.y = ((HEIGHT - (this.button_.height / 2)) - 17);
         }
 
-        private function handleNoName():void
-        {
+        private function handleNoName():void{
             this.title_.setStringBuilder(new LineBuilder().setParams(TextKey.NAME_CHANGER_TEXT));
             this.title_.y = 6;
             addChild(this.title_);
@@ -127,19 +118,16 @@ public class NameChangerPanel extends Panel
             this.addListeners();
         }
 
-        private function positionTextButton():void
-        {
+        private function positionTextButton():void{
             this.button_.x = ((WIDTH / 2) - (this.button_.width / 2));
             this.button_.y = ((HEIGHT - this.button_.height) - 4);
         }
 
-        private function addListeners():void
-        {
+        private function addListeners():void{
             this.button_.addEventListener(MouseEvent.CLICK, this.onButtonClick);
         }
 
-        private function handleInsufficientRank(_arg_1:int):void
-        {
+        private function handleInsufficientRank(_arg_1:int):void{
             var _local_2:Sprite;
             var _local_3:TextFieldDisplayConcrete;
             var _local_4:Sprite;
@@ -160,36 +148,30 @@ public class NameChangerPanel extends Panel
             addChild(_local_2);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        private function makeNameText(_arg_1:String):StringBuilder
-        {
+        private function makeNameText(_arg_1:String):StringBuilder{
             return (new LineBuilder().setParams(TextKey.NAME_CHANGER_NAME_IS, {"name":_arg_1}));
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.performAction();
-            }
+            };
         }
 
-        private function onButtonClick(_arg_1:MouseEvent):void
-        {
+        private function onButtonClick(_arg_1:MouseEvent):void{
             this.performAction();
         }
 
-        private function performAction():void
-        {
+        private function performAction():void{
             this.chooseName.dispatch();
         }
 
-        public function updateName(_arg_1:String):void
-        {
+        public function updateName(_arg_1:String):void{
             this.title_.setStringBuilder(this.makeNameText(_arg_1));
             this.title_.y = 0;
         }

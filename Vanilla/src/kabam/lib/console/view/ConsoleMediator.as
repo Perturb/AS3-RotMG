@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleMediator
 
-package kabam.lib.console.view
-{
+package kabam.lib.console.view{
 import kabam.lib.console.signals.HideConsoleSignal;
 import kabam.lib.console.signals.RemoveConsoleSignal;
 import kabam.lib.console.signals.ShowConsoleSignal;
@@ -12,8 +11,7 @@ import kabam.lib.console.signals.ToggleConsoleSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ConsoleMediator extends Mediator 
-    {
+public class ConsoleMediator extends Mediator {
 
         [Inject]
         public var view:ConsoleView;
@@ -27,8 +25,7 @@ public class ConsoleMediator extends Mediator
         public var remove:RemoveConsoleSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.remove.add(this.onRemoveConsole);
             this.toggle.add(this.onToggleConsole);
             this.show.add(this.onShowConsole);
@@ -36,31 +33,26 @@ public class ConsoleMediator extends Mediator
             this.view.visible = false;
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.remove.remove(this.onRemoveConsole);
             this.toggle.remove(this.onToggleConsole);
             this.show.remove(this.onShowConsole);
             this.hide.remove(this.onHideConsole);
         }
 
-        private function onRemoveConsole():void
-        {
+        private function onRemoveConsole():void{
             this.view.parent.removeChild(this.view);
         }
 
-        private function onToggleConsole():void
-        {
+        private function onToggleConsole():void{
             this.view.visible = (!(this.view.visible));
         }
 
-        private function onShowConsole():void
-        {
+        private function onShowConsole():void{
             this.view.visible = true;
         }
 
-        private function onHideConsole():void
-        {
+        private function onHideConsole():void{
             this.view.visible = false;
         }
 

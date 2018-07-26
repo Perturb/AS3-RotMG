@@ -1,4 +1,4 @@
-package com.company.rotmg.graphics
+﻿package com.company.rotmg.graphics
 {
 import flash.display.MovieClip;
 

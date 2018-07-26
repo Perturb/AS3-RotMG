@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.model.PopupNamesConfig
 
-package kabam.rotmg.dialogs.model
-{
-    public class PopupNamesConfig 
-    {
+package kabam.rotmg.dialogs.model{
+    public class PopupNamesConfig {
 
         public static const DAILY_LOGIN_POPUP:String = "daily_login_popup";
         public static const BEGINNERS_OFFER_POPUP:String = "beginners_offer_popup";

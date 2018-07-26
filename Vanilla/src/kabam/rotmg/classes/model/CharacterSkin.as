@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterSkin
 
-package kabam.rotmg.classes.model
-{
+package kabam.rotmg.classes.model{
 import kabam.rotmg.assets.model.CharacterTemplate;
 
 import org.osflash.signals.Signal;
 
-public class CharacterSkin
-    {
+public class CharacterSkin {
 
         public const changed:Signal = new Signal(CharacterSkin);
 
@@ -27,32 +25,28 @@ public class CharacterSkin
         private var isSelected:Boolean;
 
 
-        public function getIsSelected():Boolean
-        {
+        public function getIsSelected():Boolean{
             return (this.isSelected);
         }
 
-        public function setIsSelected(_arg_1:Boolean):void
-        {
+        public function setIsSelected(_arg_1:Boolean):void{
             if (this.isSelected != _arg_1)
             {
                 this.isSelected = _arg_1;
                 this.changed.dispatch(this);
-            }
+            };
         }
 
-        public function getState():CharacterSkinState
-        {
+        public function getState():CharacterSkinState{
             return (this.state);
         }
 
-        public function setState(_arg_1:CharacterSkinState):void
-        {
+        public function setState(_arg_1:CharacterSkinState):void{
             if (this.state != _arg_1)
             {
                 this.state = _arg_1;
                 this.changed.dispatch(this);
-            }
+            };
         }
 
 

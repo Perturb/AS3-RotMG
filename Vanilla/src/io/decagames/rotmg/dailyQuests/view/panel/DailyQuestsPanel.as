@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.panel.DailyQuestsPanel
 
-package io.decagames.rotmg.dailyQuests.view.panel
-{
+package io.decagames.rotmg.dailyQuests.view.panel{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
 import com.company.assembleegameclient.ui.panels.Panel;
@@ -18,8 +17,7 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class DailyQuestsPanel extends Panel
-    {
+public class DailyQuestsPanel extends Panel {
 
         private static var questDataExists:Boolean = false;
 
@@ -32,8 +30,7 @@ public class DailyQuestsPanel extends Panel
         private var objectType:int;
         internal var feedButton:DeprecatedTextButtonStatic;
 
-        public function DailyQuestsPanel(_arg_1:GameSprite)
-        {
+        public function DailyQuestsPanel(_arg_1:GameSprite){
             super(_arg_1);
             this.icon = PetsViewAssetFactory.returnBitmap(5972);
             this.icon.x = -4;
@@ -51,31 +48,27 @@ public class DailyQuestsPanel extends Panel
             else
             {
                 this.addCheckBackLaterButton();
-            }
+            };
         }
 
-        public function addSeeOffersButton():void
-        {
+        public function addSeeOffersButton():void{
             this.feedButton = new DeprecatedTextButtonStatic(16, this.feedPetText);
             this.feedButton.textChanged.addOnce(this.alignButton);
             addChild(this.feedButton);
         }
 
-        public function addCheckBackLaterButton():void
-        {
+        public function addCheckBackLaterButton():void{
             this.feedButton = new DeprecatedTextButtonStatic(16, this.checkBackLaterText);
             this.feedButton.textChanged.addOnce(this.alignButton);
             addChild(this.feedButton);
         }
 
-        private function hasQuests():Boolean
-        {
+        private function hasQuests():Boolean{
             var _local_1:DailyQuestsModel = StaticInjectorContext.getInjector().getInstance(DailyQuestsModel);
             return (_local_1.hasQuests());
         }
 
-        private function alignButton():void
-        {
+        private function alignButton():void{
             this.feedButton.x = ((WIDTH / 2) - (this.feedButton.width / 2));
             this.feedButton.y = ((HEIGHT - this.feedButton.height) - 4);
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.view.SteamAccountDetailDialog
 
-package kabam.rotmg.account.steam.view
-{
+package kabam.rotmg.account.steam.view{
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.ui.DeprecatedClickableText;
 
@@ -19,8 +18,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class SteamAccountDetailDialog extends Sprite 
-    {
+public class SteamAccountDetailDialog extends Sprite {
 
         public var done:Signal;
         public var register:Signal;
@@ -31,14 +29,12 @@ public class SteamAccountDetailDialog extends Sprite
         private var emailText_:TextFieldDisplayConcrete;
         private var register_:DeprecatedClickableText;
 
-        public function SteamAccountDetailDialog()
-        {
+        public function SteamAccountDetailDialog(){
             this.done = new Signal();
             this.register = new Signal();
         }
 
-        public function setInfo(_arg_1:String, _arg_2:String, _arg_3:Boolean):void
-        {
+        public function setInfo(_arg_1:String, _arg_2:String, _arg_3:Boolean):void{
             var _local_4:Frame;
             _local_4 = new Frame(TextKey.DETAIL_DIALOG_TITLE, "", TextKey.STEAM_ACCOUNT_DETAIL_DIALOG_RIGHTBUTTON, "/steamworksCurrentLogin");
             addChild(_local_4);
@@ -78,17 +74,15 @@ public class SteamAccountDetailDialog extends Sprite
                 this.register_ = new DeprecatedClickableText(12, false, TextKey.STEAM_ACCOUNT_DETAIL_DIALOG_REGISTER);
                 this.register_.addEventListener(MouseEvent.CLICK, this.onRegister);
                 _local_4.addNavigationText(this.register_);
-            }
+            };
             _local_4.rightButton_.addEventListener(MouseEvent.CLICK, this.onContinue);
         }
 
-        private function onContinue(_arg_1:MouseEvent):void
-        {
+        private function onContinue(_arg_1:MouseEvent):void{
             this.done.dispatch();
         }
 
-        public function onRegister(_arg_1:MouseEvent):void
-        {
+        public function onRegister(_arg_1:MouseEvent):void{
             this.register.dispatch();
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamPurchaseGoldTask
 
-package kabam.rotmg.account.steam.services
-{
+package kabam.rotmg.account.steam.services{
 import com.company.assembleegameclient.ui.dialogs.DebugDialog;
 import com.company.assembleegameclient.util.offer.Offer;
 
@@ -21,8 +20,7 @@ import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
-    {
+public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask {
 
         [Inject]
         public var account:Account;
@@ -46,8 +44,7 @@ public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
         public var requestPlayerCredits:RequestPlayerCreditsSignal;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             if (!this.steam.isOverlayEnabled)
             {
                 this.logger.debug("isOverlayEnabled false!");
@@ -63,11 +60,10 @@ public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
                     "steamid":this.steam.getSteamId(),
                     "data":this.offer.data_
                 });
-            }
+            };
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onPurchaseOfferComplete();
@@ -75,20 +71,17 @@ public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
             else
             {
                 this.reportError(_arg_2);
-            }
+            };
         }
 
-        private function onPurchaseOfferComplete():void
-        {
+        private function onPurchaseOfferComplete():void{
             this.logger.debug("SteamPurchaseGoldTask purchaseOffer confirmed by AppEngine");
-            setTimeout(function ():void
-            {
+            setTimeout(function ():void{
                 moneyFrameEnableCancelSignal.dispatch();
             }, 1100);
         }
 
-        private function onPaymentAuthorized(_arg_1:uint, _arg_2:String, _arg_3:Boolean):void
-        {
+        private function onPaymentAuthorized(_arg_1:uint, _arg_2:String, _arg_3:Boolean):void{
             if (_arg_3 == false)
             {
                 this.logger.debug("SteamPurchaseGoldTask payment canceled by user");
@@ -110,11 +103,10 @@ public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
                     "orderid":_arg_2,
                     "authorized":((_arg_3) ? 1 : 0)
                 });
-            }
+            };
         }
 
-        private function onAuthorized(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onAuthorized(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onPurchaseFinalizeComplete();
@@ -122,18 +114,16 @@ public class SteamPurchaseGoldTask extends BaseTask implements PurchaseGoldTask
             else
             {
                 this.reportError(_arg_2);
-            }
+            };
         }
 
-        private function onPurchaseFinalizeComplete():void
-        {
+        private function onPurchaseFinalizeComplete():void{
             this.logger.debug("SteamPurchaseGoldTask purchase finalized");
             this.requestPlayerCredits.dispatch();
             completeTask(true);
         }
 
-        private function reportError(_arg_1:String):void
-        {
+        private function reportError(_arg_1:String):void{
             var _local_2:String = ("Error: " + _arg_1);
             this.logger.debug("finalize error {0}", [_local_2]);
             this.openDialog.dispatch(new DebugDialog(_local_2));

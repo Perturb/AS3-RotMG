@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ParticleGenerator
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
 import flash.display.BitmapData;
 
-public class ParticleGenerator extends ParticleEffect 
-    {
+public class ParticleGenerator extends ParticleEffect {
 
         private var particlePool:Vector.<BaseParticle>;
         private var liveParticles:Vector.<BaseParticle>;
@@ -23,8 +21,7 @@ public class ParticleGenerator extends ParticleEffect
         private var bitmapData:BitmapData;
         private var friction:Number;
 
-        public function ParticleGenerator(_arg_1:EffectProperties, _arg_2:GameObject)
-        {
+        public function ParticleGenerator(_arg_1:EffectProperties, _arg_2:GameObject){
             this.targetGO = _arg_2;
             this.particlePool = new Vector.<BaseParticle>();
             this.liveParticles = new Vector.<BaseParticle>();
@@ -37,17 +34,15 @@ public class ParticleGenerator extends ParticleEffect
             else
             {
                 this.bitmapData = TextureRedrawer.redrawSolidSquare(this.effectProps.color, this.effectProps.size);
-            }
+            };
         }
 
-        public static function attachParticleGenerator(_arg_1:EffectProperties, _arg_2:GameObject):ParticleGenerator
-        {
+        public static function attachParticleGenerator(_arg_1:EffectProperties, _arg_2:GameObject):ParticleGenerator{
             return (new ParticleGenerator(_arg_1, _arg_2));
         }
 
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             var _local_4:Number;
             var _local_9:BaseParticle;
             var _local_10:BaseParticle;
@@ -56,7 +51,7 @@ public class ParticleGenerator extends ParticleEffect
             if (this.targetGO.map_ == null)
             {
                 return (false);
-            }
+            };
             x_ = this.targetGO.x_;
             y_ = this.targetGO.y_;
             z_ = (this.targetGO.z_ + this.effectProps.zOffset);
@@ -73,12 +68,12 @@ public class ParticleGenerator extends ParticleEffect
                 else
                 {
                     _local_9 = new BaseParticle(this.bitmapData);
-                }
+                };
                 _local_9.initialize((this.effectProps.life + (this.effectProps.lifeVariance * ((2 * Math.random()) - 1))), (this.effectProps.speed + (this.effectProps.speedVariance * ((2 * Math.random()) - 1))), (this.effectProps.speed + (this.effectProps.speedVariance * ((2 * Math.random()) - 1))), (this.effectProps.rise + (this.effectProps.riseVariance * ((2 * Math.random()) - 1))), z_);
                 map_.addObj(_local_9, (x_ + (this.effectProps.rangeX * ((2 * Math.random()) - 1))), (y_ + (this.effectProps.rangeY * ((2 * Math.random()) - 1))));
                 this.liveParticles.push(_local_9);
                 _local_7++;
-            }
+            };
             this.generatedParticles = (this.generatedParticles + _local_6);
             var _local_8:int;
             while (_local_8 < this.liveParticles.length)
@@ -98,19 +93,18 @@ public class ParticleGenerator extends ParticleEffect
                     _local_10.x_ = (_local_10.x_ + (_local_10.spdX * _local_4));
                     _local_10.y_ = (_local_10.y_ + (_local_10.spdY * _local_4));
                     _local_10.z_ = (_local_10.z_ + (_local_10.spdZ * _local_4));
-                }
+                };
                 _local_8++;
-            }
+            };
             return (true);
         }
 
-        override public function removeFromMap():void
-        {
+        override public function removeFromMap():void{
             var _local_1:BaseParticle;
             for each (_local_1 in this.liveParticles)
             {
                 map_.removeObj(_local_1.objectId_);
-            }
+            };
             this.liveParticles = null;
             this.particlePool = null;
             super.removeFromMap();

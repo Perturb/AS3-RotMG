@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebForgotPasswordDialog
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.account.ui.TextInputField;
 import com.company.assembleegameclient.ui.DeprecatedClickableText;
@@ -14,8 +13,7 @@ import flash.events.MouseEvent;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class WebForgotPasswordDialog extends Frame 
-    {
+public class WebForgotPasswordDialog extends Frame {
 
         public var cancel:Signal;
         public var submit:Signal;
@@ -23,8 +21,7 @@ public class WebForgotPasswordDialog extends Frame
         private var emailInput:TextInputField;
         private var registerText:DeprecatedClickableText;
 
-        public function WebForgotPasswordDialog()
-        {
+        public function WebForgotPasswordDialog(){
             super("WebForgotPasswordDialog.title", "WebForgotPasswordDialog.leftButton", "WebForgotPasswordDialog.rightButton", "/forgotPassword");
             this.emailInput = new TextInputField("WebForgotPasswordDialog.email", false);
             addTextInputField(this.emailInput);
@@ -36,27 +33,24 @@ public class WebForgotPasswordDialog extends Frame
             this.submit = new Signal(String);
         }
 
-        private function onSubmit(_arg_1:MouseEvent):void
-        {
+        private function onSubmit(_arg_1:MouseEvent):void{
             if (this.isEmailValid())
             {
                 disable();
                 this.submit.dispatch(this.emailInput.text());
-            }
+            };
         }
 
-        private function isEmailValid():Boolean
-        {
+        private function isEmailValid():Boolean{
             var _local_1:* = (!(this.emailInput.text() == ""));
             if (!_local_1)
             {
                 this.emailInput.setError("Not a valid email address");
-            }
+            };
             return (_local_1);
         }
 
-        public function showError(_arg_1:String):void
-        {
+        public function showError(_arg_1:String):void{
             this.emailInput.setError(_arg_1);
         }
 

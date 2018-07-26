@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.popup.DailyQuestRedeemPopup
 
-package io.decagames.rotmg.dailyQuests.view.popup
-{
+package io.decagames.rotmg.dailyQuests.view.popup{
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
 
@@ -19,8 +18,7 @@ import io.decagames.rotmg.ui.popups.modal.ModalPopup;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class DailyQuestRedeemPopup extends ModalPopup 
-    {
+public class DailyQuestRedeemPopup extends ModalPopup {
 
         private var w_:int = 326;
         private var h_:int = 238;
@@ -28,8 +26,7 @@ public class DailyQuestRedeemPopup extends ModalPopup
         private var slots:Vector.<DailyQuestItemSlot>;
         private var slotContainerPosition:int = 15;
 
-        public function DailyQuestRedeemPopup(_arg_1:DailyQuest, _arg_2:int=-1)
-        {
+        public function DailyQuestRedeemPopup(_arg_1:DailyQuest, _arg_2:int=-1){
             super(this.w_, this.h_, "Quest Complete");
             var _local_3:SliceScalingBitmap = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", this.w_);
             _local_3.height = 117;
@@ -54,7 +51,7 @@ public class DailyQuestRedeemPopup extends ModalPopup
             else
             {
                 SlotsRendered.renderSlots(_arg_1.rewards, new Vector.<int>(), DailyQuestItemSlotType.REWARD, _local_5, this.slotContainerPosition, 4, this.w_, this.slots);
-            }
+            };
             var _local_6:UILabel = new UILabel();
             DefaultLabelFormat.questRefreshLabel(_local_6);
             _local_6.width = this.w_;
@@ -64,8 +61,7 @@ public class DailyQuestRedeemPopup extends ModalPopup
             addChild(_local_6);
         }
 
-        public function get thanksButton():SliceScalingButton
-        {
+        public function get thanksButton():SliceScalingButton{
             return (this._thanksButton);
         }
 

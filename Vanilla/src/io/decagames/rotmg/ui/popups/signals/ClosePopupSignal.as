@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.signals.ClosePopupSignal
 
-package io.decagames.rotmg.ui.popups.signals
-{
+package io.decagames.rotmg.ui.popups.signals{
 import io.decagames.rotmg.ui.popups.BasePopup;
 
 import org.osflash.signals.Signal;
 
-public class ClosePopupSignal extends Signal
-    {
+public class ClosePopupSignal extends Signal {
 
-        public function ClosePopupSignal()
-        {
+        public function ClosePopupSignal(){
             super(BasePopup);
         }
 

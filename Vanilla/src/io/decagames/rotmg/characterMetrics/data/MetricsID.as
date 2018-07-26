@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.characterMetrics.data.MetricsID
 
-package io.decagames.rotmg.characterMetrics.data
-{
-    public class MetricsID 
-    {
+package io.decagames.rotmg.characterMetrics.data{
+    public class MetricsID {
 
         public static const INVALID:int = -1;
         public static const SHOTS:int = 0;

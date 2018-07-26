@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.FuseTooltip
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
 import flash.display.Sprite;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class FuseTooltip extends ToolTip 
-    {
+public class FuseTooltip extends ToolTip {
 
         private var title:UILabel;
         private var topDesc:UILabel;
@@ -23,21 +21,18 @@ public class FuseTooltip extends ToolTip
         private var imageContainer:Sprite;
         private var botDesc:UILabel;
 
-        public function FuseTooltip()
-        {
+        public function FuseTooltip(){
             super(0x363636, 1, 0x9B9B9B, 1);
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.createTitle();
             this.createImage();
             this.createBottom();
         }
 
-        private function createTitle():void
-        {
+        private function createTitle():void{
             this.title = new UILabel();
             DefaultLabelFormat.petNameLabel(this.title, 0xFFFFFF);
             addChild(this.title);
@@ -54,8 +49,7 @@ public class FuseTooltip extends ToolTip
             this.topDesc.x = 0;
         }
 
-        private function createImage():void
-        {
+        private function createImage():void{
             this.imageContainer = new Sprite();
             addChild(this.imageContainer);
             this.fuseIcon = TextureParser.instance.getSliceScalingBitmap("UI", "FuseTooltip", 280);
@@ -68,8 +62,7 @@ public class FuseTooltip extends ToolTip
             this.imageContainer.x = 20;
         }
 
-        private function createBottom():void
-        {
+        private function createBottom():void{
             this.botDesc = new UILabel();
             DefaultLabelFormat.infoTooltipText(this.botDesc, 0xAAAAAA);
             addChild(this.botDesc);

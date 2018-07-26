@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.startup.control.StartupSequence
 
-package kabam.rotmg.startup.control
-{
+package kabam.rotmg.startup.control{
 import kabam.lib.tasks.BaseTask;
 import kabam.lib.tasks.Task;
 import kabam.rotmg.startup.model.api.StartupDelegate;
@@ -15,8 +14,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class StartupSequence extends BaseTask
-    {
+public class StartupSequence extends BaseTask {
 
         public static const LAST:int = int.MAX_VALUE;//2147483647
 
@@ -29,8 +27,7 @@ public class StartupSequence extends BaseTask
         private var index:int = 0;
 
 
-        public function addSignal(_arg_1:Class, _arg_2:int=0):void
-        {
+        public function addSignal(_arg_1:Class, _arg_2:int=0):void{
             var _local_3:SignalTaskDelegate = new SignalTaskDelegate();
             _local_3.injector = this.injector;
             _local_3.signalClass = _arg_1;
@@ -38,8 +35,7 @@ public class StartupSequence extends BaseTask
             this.list.push(_local_3);
         }
 
-        public function addTask(_arg_1:Class, _arg_2:int=0):void
-        {
+        public function addTask(_arg_1:Class, _arg_2:int=0):void{
             var _local_3:TaskDelegate = new TaskDelegate();
             _local_3.injector = this.injector;
             _local_3.taskClass = _arg_1;
@@ -47,20 +43,17 @@ public class StartupSequence extends BaseTask
             this.list.push(_local_3);
         }
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.list.sort(this.priorityComparison);
             this.index = 0;
             this.doNextTaskOrComplete();
         }
 
-        private function priorityComparison(_arg_1:StartupDelegate, _arg_2:StartupDelegate):int
-        {
+        private function priorityComparison(_arg_1:StartupDelegate, _arg_2:StartupDelegate):int{
             return (_arg_1.getPriority() - _arg_2.getPriority());
         }
 
-        private function doNextTaskOrComplete():void
-        {
+        private function doNextTaskOrComplete():void{
             if (this.isAnotherTask())
             {
                 this.doNextTask();
@@ -68,24 +61,21 @@ public class StartupSequence extends BaseTask
             else
             {
                 completeTask(true);
-            }
+            };
         }
 
-        private function isAnotherTask():Boolean
-        {
+        private function isAnotherTask():Boolean{
             return (this.index < this.list.length);
         }
 
-        private function doNextTask():void
-        {
+        private function doNextTask():void{
             var _local_1:Task = this.list[this.index++].make();
             _local_1.lastly.addOnce(this.onTaskFinished);
             this.logger.info("StartupSequence start:{0}", [_local_1]);
             _local_1.start();
         }
 
-        private function onTaskFinished(_arg_1:Task, _arg_2:Boolean, _arg_3:String):void
-        {
+        private function onTaskFinished(_arg_1:Task, _arg_2:Boolean, _arg_3:String):void{
             this.logger.info("StartupSequence finish:{0} (isOK: {1})", [_arg_1, _arg_2]);
             if (_arg_2)
             {
@@ -94,7 +84,7 @@ public class StartupSequence extends BaseTask
             else
             {
                 completeTask(false, _arg_3);
-            }
+            };
         }
 
 

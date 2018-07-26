@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.view.RegisterWebAccountDialog
 
-package kabam.rotmg.account.core.view
-{
+package kabam.rotmg.account.core.view{
 import com.company.assembleegameclient.account.ui.CheckBoxField;
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.account.ui.TextInputField;
@@ -19,8 +18,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class RegisterWebAccountDialog extends Frame
-    {
+public class RegisterWebAccountDialog extends Frame {
 
         public var register:Signal = new Signal(AccountData);
         public var cancel:Signal = new Signal();
@@ -29,22 +27,19 @@ public class RegisterWebAccountDialog extends Frame
         private var retypePasswordInput:TextInputField;
         private var checkbox:CheckBoxField;
 
-        public function RegisterWebAccountDialog()
-        {
+        public function RegisterWebAccountDialog(){
             super(TextKey.REGISTER_WEB_ACCOUNT_DIALOG_TITLE, TextKey.REGISTER_WEB_ACCOUNT_DIALOG_LEFTBUTTON, TextKey.REGISTER_WEB_ACCOUNT_DIALOG_RIGHTBUTTON, "/kongregateRegisterAccount");
             this.createAssets();
             this.enableForTabBehavior();
             this.addEventListeners();
         }
 
-        private function addEventListeners():void
-        {
+        private function addEventListeners():void{
             leftButton_.addEventListener(MouseEvent.CLICK, this.onCancel);
             rightButton_.addEventListener(MouseEvent.CLICK, this.onRegister);
         }
 
-        private function createAssets():void
-        {
+        private function createAssets():void{
             this.emailInput = new TextInputField(TextKey.REGISTER_WEB_ACCOUNT_EMAIL, false);
             addTextInputField(this.emailInput);
             this.passwordInput = new TextInputField(TextKey.REGISTER_WEB_ACCOUNT_PASSWORD, true);
@@ -61,8 +56,7 @@ public class RegisterWebAccountDialog extends Frame
             addCheckBox(this.checkbox);
         }
 
-        private function enableForTabBehavior():void
-        {
+        private function enableForTabBehavior():void{
             this.emailInput.inputText_.tabIndex = 1;
             this.passwordInput.inputText_.tabIndex = 2;
             this.retypePasswordInput.inputText_.tabIndex = 3;
@@ -77,13 +71,11 @@ public class RegisterWebAccountDialog extends Frame
             rightButton_.tabEnabled = true;
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.cancel.dispatch();
         }
 
-        private function onRegister(_arg_1:MouseEvent):void
-        {
+        private function onRegister(_arg_1:MouseEvent):void{
             var _local_2:AccountData;
             if (((((this.isEmailValid()) && (this.isPasswordValid())) && (this.isPasswordVerified())) && (this.isCheckboxChecked())))
             {
@@ -91,51 +83,46 @@ public class RegisterWebAccountDialog extends Frame
                 _local_2.username = this.emailInput.text();
                 _local_2.password = this.passwordInput.text();
                 this.register.dispatch(_local_2);
-            }
+            };
         }
 
-        private function isCheckboxChecked():Boolean
-        {
+        private function isCheckboxChecked():Boolean{
             var _local_1:Boolean = this.checkbox.isChecked();
             if (!_local_1)
             {
                 this.checkbox.setError(TextKey.REGISTER_WEB_ACCOUNT_CHECK_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        private function isEmailValid():Boolean
-        {
+        private function isEmailValid():Boolean{
             var _local_1:Boolean = EmailValidator.isValidEmail(this.emailInput.text());
             if (!_local_1)
             {
                 this.emailInput.setError(TextKey.INVALID_EMAIL_ADDRESS);
-            }
+            };
             return (_local_1);
         }
 
-        private function isPasswordValid():Boolean
-        {
+        private function isPasswordValid():Boolean{
             var _local_1:* = (this.passwordInput.text().length >= 5);
             if (!_local_1)
             {
                 this.passwordInput.setError(TextKey.REGISTER_WEB_SHORT_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        private function isPasswordVerified():Boolean
-        {
+        private function isPasswordVerified():Boolean{
             var _local_1:* = (this.passwordInput.text() == this.retypePasswordInput.text());
             if (!_local_1)
             {
                 this.retypePasswordInput.setError(TextKey.REGISTER_WEB_MATCH_ERROR);
-            }
+            };
             return (_local_1);
         }
 
-        public function showError(_arg_1:String):void
-        {
+        public function showError(_arg_1:String):void{
             this.emailInput.setError(_arg_1);
         }
 

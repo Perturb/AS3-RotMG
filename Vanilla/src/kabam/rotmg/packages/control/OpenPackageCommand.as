@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.OpenPackageCommand
 
-package kabam.rotmg.packages.control
-{
+package kabam.rotmg.packages.control{
 import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
 import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
@@ -14,8 +13,7 @@ import kabam.rotmg.packages.services.PackageModel;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class OpenPackageCommand extends Command 
-    {
+public class OpenPackageCommand extends Command {
 
         [Inject]
         public var openDialogSignal:OpenDialogSignal;
@@ -29,13 +27,12 @@ public class OpenPackageCommand extends Command
         public var showPopupSignal:ShowPopupSignal;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             var _local_1:PackageInfo = this.packageModel.getPackageById(this.packageId);
             if (((_local_1) && (!(_local_1.popupImage == ""))))
             {
                 this.showPopupSignal.dispatch(new StartupPackage(_local_1));
-            }
+            };
         }
 
 

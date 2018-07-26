@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.view.ReskinPanelMediator
 
-package kabam.rotmg.characters.reskin.view
-{
+package kabam.rotmg.characters.reskin.view{
 import kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ReskinPanelMediator extends Mediator
-    {
+public class ReskinPanelMediator extends Mediator {
 
         [Inject]
         public var view:ReskinPanel;
@@ -18,18 +16,15 @@ public class ReskinPanelMediator extends Mediator
         public var openReskinDialog:OpenReskinDialogSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.reskin.add(this.onReskin);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.reskin.remove(this.onReskin);
         }
 
-        private function onReskin():void
-        {
+        private function onReskin():void{
             this.openReskinDialog.dispatch();
         }
 

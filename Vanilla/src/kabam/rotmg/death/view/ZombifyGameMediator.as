@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ZombifyGameMediator
 
-package kabam.rotmg.death.view
-{
+package kabam.rotmg.death.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.Player;
 
@@ -16,8 +15,7 @@ import kabam.rotmg.messaging.impl.incoming.Death;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ZombifyGameMediator extends Mediator 
-    {
+public class ZombifyGameMediator extends Mediator {
 
         [Inject]
         public var view:GameSprite;
@@ -27,32 +25,27 @@ public class ZombifyGameMediator extends Mediator
         public var setWorldInteraction:SetWorldInteractionSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.zombify.add(this.onZombify);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.zombify.remove(this.onZombify);
         }
 
-        private function onZombify(_arg_1:Death):void
-        {
+        private function onZombify(_arg_1:Death):void{
             this.removePlayer();
             this.setZombieAsViewFocus(_arg_1);
             this.setWorldInteraction.dispatch(false);
         }
 
-        private function removePlayer():void
-        {
+        private function removePlayer():void{
             var _local_1:Player = this.view.map.player_;
             ((_local_1) && (this.view.map.removeObj(_local_1.objectId_)));
             this.view.map.player_ = null;
         }
 
-        private function setZombieAsViewFocus(_arg_1:Death):void
-        {
+        private function setZombieAsViewFocus(_arg_1:Death):void{
             var _local_2:Dictionary = this.view.map.goDict_;
             ((_local_2) && (this.view.setFocus(_local_2[_arg_1.zombieId])));
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.Filter
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.account.ui.TextInputField;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.ui.dropdown.DropDown;
@@ -14,8 +13,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.FocusEvent;
 
-public class Filter extends Sprite
-    {
+public class Filter extends Sprite {
 
         private static const GAP:int = 2;
 
@@ -31,8 +29,7 @@ public class Filter extends Sprite
         private var _minPrompt:BaseSimpleText;
         private var _maxPrompt:BaseSimpleText;
 
-        public function Filter()
-        {
+        public function Filter(){
             this.curY = 0;
             this._isSearchEnabled = true;
             this._isValueFilterEnabled = true;
@@ -80,66 +77,56 @@ public class Filter extends Sprite
             this.enableValueFilter(this._isValueFilterEnabled);
         }
 
-        public function get searchStr():String
-        {
+        public function get searchStr():String{
             return (this._search.text());
         }
 
-        public function get filterType():String
-        {
+        public function get filterType():String{
             return (this._filterTypeDropdown.getValue());
         }
 
-        public function get minValue():Number
-        {
+        public function get minValue():Number{
             if (this._minInput.text() == "")
             {
                 return (0);
-            }
+            };
             return (Number(this._minInput.text()));
         }
 
-        public function get maxValue():Number
-        {
+        public function get maxValue():Number{
             if (this._maxInput.text() == "")
             {
                 return (-1);
-            }
+            };
             return (Number(this._maxInput.text()));
         }
 
-        public function get dungeon():String
-        {
+        public function get dungeon():String{
             return (this._dungeonDropDown.getValue());
         }
 
-        public function setSearch(_arg_1:String):void
-        {
+        public function setSearch(_arg_1:String):void{
             this._search.inputText_.text = _arg_1;
         }
 
-        public function setFilterType(_arg_1:Vector.<String>):void
-        {
+        public function setFilterType(_arg_1:Vector.<String>):void{
             this._filterTypeDropdown.setListItems(_arg_1);
             this._filterTypeDropdown.setIndex(0);
         }
 
-        public function enableSearch(_arg_1:Boolean):void
-        {
+        public function enableSearch(_arg_1:Boolean):void{
             this._isSearchEnabled = _arg_1;
             this._search.visible = this._isSearchEnabled;
             this._searchPrompt.visible = this._isSearchEnabled;
         }
 
-        public function enableDropDownFilter(_arg_1:Boolean):void
-        {
+        public function enableDropDownFilter(_arg_1:Boolean):void{
             this._isValueFilterEnabled = _arg_1;
             this._filterTypeDropdown.visible = this._isValueFilterEnabled;
             this._filterTypeDropdown.setIndex(0);
         }
 
-        public function enableValueFilter(_arg_1:Boolean):void
-        {
+        public function enableValueFilter(_arg_1:Boolean):void{
             this._maxInput.visible = _arg_1;
             this._maxInput.inputText_.text = "";
             this._maxPrompt.visible = _arg_1;
@@ -148,18 +135,15 @@ public class Filter extends Sprite
             this._minPrompt.visible = _arg_1;
         }
 
-        public function enableDungeonFilter(_arg_1:Boolean):void
-        {
+        public function enableDungeonFilter(_arg_1:Boolean):void{
             this._dungeonDropDown.visible = _arg_1;
         }
 
-        private function onFilterTypeChange(_arg_1:Event):void
-        {
+        private function onFilterTypeChange(_arg_1:Event):void{
             dispatchEvent(new Event(Event.CHANGE));
         }
 
-        private function onFocusIn(_arg_1:Event):void
-        {
+        private function onFocusIn(_arg_1:Event):void{
             switch (_arg_1.currentTarget)
             {
                 case this._search:
@@ -171,32 +155,31 @@ public class Filter extends Sprite
                 case this._minInput:
                     this._minPrompt.visible = false;
                     return;
-            }
+            };
         }
 
-        private function onFocusOut(_arg_1:FocusEvent):void
-        {
+        private function onFocusOut(_arg_1:FocusEvent):void{
             switch (_arg_1.currentTarget)
             {
                 case this._search:
                     if (this._search.text() == "")
                     {
                         this._searchPrompt.visible = this._isSearchEnabled;
-                    }
+                    };
                     return;
                 case this._maxInput:
                     if (this._maxInput.text() == "")
                     {
                         this._maxPrompt.visible = this._isValueFilterEnabled;
-                    }
+                    };
                     return;
                 case this._minInput:
                     if (this._minInput.text() == "")
                     {
                         this._minPrompt.visible = this._isValueFilterEnabled;
-                    }
+                    };
                     return;
-            }
+            };
         }
 
 

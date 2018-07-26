@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.Slot
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.util.GraphicsUtil;
 import com.company.util.MoreColorUtil;
 
@@ -23,8 +22,7 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.view.BitmapTextFactory;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class Slot extends Sprite 
-    {
+public class Slot extends Sprite {
 
         public static const IDENTITY_MATRIX:Matrix = new Matrix();
         public static const WIDTH:int = 40;
@@ -40,16 +38,14 @@ public class Slot extends Sprite
         protected var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private var graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[fill_, path_, GraphicsUtil.END_FILL];
 
-        public function Slot(_arg_1:int, _arg_2:int, _arg_3:Array)
-        {
+        public function Slot(_arg_1:int, _arg_2:int, _arg_3:Array){
             this.type_ = _arg_1;
             this.hotkey_ = _arg_2;
             this.cuts_ = _arg_3;
             this.drawBackground();
         }
 
-        protected function offsets(_arg_1:int, _arg_2:int, _arg_3:Boolean):Point
-        {
+        protected function offsets(_arg_1:int, _arg_2:int, _arg_3:Boolean):Point{
             var _local_4:Point = new Point();
             switch (_arg_2)
             {
@@ -60,12 +56,11 @@ public class Slot extends Sprite
                 case ItemConstants.SPELL_TYPE:
                     _local_4.y = -2;
                     break;
-            }
+            };
             return (_local_4);
         }
 
-        protected function drawBackground():void
-        {
+        protected function drawBackground():void{
             var _local_2:Point;
             var _local_3:BitmapTextFactory;
             GraphicsUtil.clearPath(this.path_);
@@ -96,9 +91,9 @@ public class Slot extends Sprite
                         this.backgroundImage_.x = ((WIDTH / 2) - (_local_1.width / 2));
                         this.backgroundImage_.y = ((HEIGHT / 2) - 18);
                         addChild(this.backgroundImage_);
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
 

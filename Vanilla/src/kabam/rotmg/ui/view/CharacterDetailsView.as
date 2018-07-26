@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterDetailsView
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.objects.ImageFactory;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.BoostPanelButton;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.model.TextKey;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeSignal;
 
-public class CharacterDetailsView extends Sprite
-    {
+public class CharacterDetailsView extends Sprite {
 
         public static const NEXUS_BUTTON:String = "NEXUS_BUTTON";
         public static const OPTIONS_BUTTON:String = "OPTIONS_BUTTON";
@@ -48,8 +46,7 @@ public class CharacterDetailsView extends Sprite
         private var indicator:Sprite;
 
 
-        public function init(_arg_1:String, _arg_2:String):void
-        {
+        public function init(_arg_1:String, _arg_2:String):void{
             this.indicator = new Sprite();
             this.indicator.graphics.beginFill(823807);
             this.indicator.graphics.drawCircle(0, 0, 4);
@@ -61,8 +58,7 @@ public class CharacterDetailsView extends Sprite
             this.createButton(_arg_2);
         }
 
-        private function createButton(_arg_1:String):void
-        {
+        private function createButton(_arg_1:String):void{
             if (_arg_1 == NEXUS_BUTTON)
             {
                 this.button = this.iconButtonFactory.create(this.imageFactory.getImageFromSet(IMAGE_SET_NAME, NEXUS_IMAGE_ID), "", TextKey.CHARACTER_DETAILS_VIEW_NEXUS, "escapeToNexus", 6);
@@ -76,31 +72,28 @@ public class CharacterDetailsView extends Sprite
                     this.button = this.iconButtonFactory.create(this.imageFactory.getImageFromSet(IMAGE_SET_NAME, OPTIONS_IMAGE_ID), "", TextKey.CHARACTER_DETAILS_VIEW_OPTIONS, "options", 6);
                     this.optionsClicked = new NativeSignal(this.button, MouseEvent.CLICK, MouseEvent);
                     this.optionsClicked.add(this.onOptionsClick);
-                }
-            }
+                };
+            };
             this.button.x = 172;
             this.button.y = 12;
             addChild(this.button);
         }
 
-        public function addInvitationIndicator():void
-        {
+        public function addInvitationIndicator():void{
             if (this.friendsBtn)
             {
                 this.friendsBtn.addChild(this.indicator);
-            }
+            };
         }
 
-        public function clearInvitationIndicator():void
-        {
+        public function clearInvitationIndicator():void{
             if (((this.indicator) && (this.indicator.parent)))
             {
                 this.indicator.parent.removeChild(this.indicator);
-            }
+            };
         }
 
-        public function initFriendList(_arg_1:ImageFactory, _arg_2:IconButtonFactory, _arg_3:Function, _arg_4:Boolean):void
-        {
+        public function initFriendList(_arg_1:ImageFactory, _arg_2:IconButtonFactory, _arg_3:Function, _arg_4:Boolean):void{
             this.friendsBtn = _arg_2.create(_arg_1.getImageFromSet("lofiInterfaceBig", 13), "", "Social", "", 6);
             this.friendsBtn.x = 146;
             this.friendsBtn.y = 12;
@@ -109,18 +102,16 @@ public class CharacterDetailsView extends Sprite
             if (_arg_4)
             {
                 this.addInvitationIndicator();
-            }
+            };
         }
 
-        private function createPortrait():void
-        {
+        private function createPortrait():void{
             this.portrait_.x = -2;
             this.portrait_.y = -8;
             addChild(this.portrait_);
         }
 
-        private function createNameText(_arg_1:String):void
-        {
+        private function createNameText(_arg_1:String):void{
             this.nameText_ = new UILabel();
             this.nameText_.x = 35;
             this.nameText_.y = 6;
@@ -128,28 +119,26 @@ public class CharacterDetailsView extends Sprite
             addChild(this.nameText_);
         }
 
-        public function update(_arg_1:Player):void
-        {
+        public function update(_arg_1:Player):void{
             this.portrait_.bitmapData = _arg_1.getPortrait();
         }
 
-        public function draw(_arg_1:Player):void
-        {
+        public function draw(_arg_1:Player):void{
             if (this.expTimer)
             {
                 this.expTimer.update(_arg_1.xpTimer);
-            }
+            };
             if (((_arg_1.tierBoost) || (_arg_1.dropBoost)))
             {
                 this.boostPanelButton = ((this.boostPanelButton) || (new BoostPanelButton(_arg_1)));
                 if (this.portrait_)
                 {
                     this.portrait_.x = 13;
-                }
+                };
                 if (this.nameText_)
                 {
                     this.nameText_.x = 47;
-                }
+                };
                 this.boostPanelButton.x = 6;
                 this.boostPanelButton.y = 5;
                 addChild(this.boostPanelButton);
@@ -162,22 +151,19 @@ public class CharacterDetailsView extends Sprite
                     this.boostPanelButton = null;
                     this.portrait_.x = -2;
                     this.nameText_.x = 36;
-                }
-            }
+                };
+            };
         }
 
-        private function onNexusClick(_arg_1:MouseEvent):void
-        {
+        private function onNexusClick(_arg_1:MouseEvent):void{
             this.gotoNexus.dispatch();
         }
 
-        private function onOptionsClick(_arg_1:MouseEvent):void
-        {
+        private function onOptionsClick(_arg_1:MouseEvent):void{
             this.gotoOptions.dispatch();
         }
 
-        public function setName(_arg_1:String):void
-        {
+        public function setName(_arg_1:String):void{
             this.nameText_.text = _arg_1;
             DefaultLabelFormat.characterViewNameLabel(this.nameText_);
         }

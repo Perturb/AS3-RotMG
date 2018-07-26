@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.MoneyChangerPanelMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
 import kabam.rotmg.account.core.view.RegisterPromptDialog;
@@ -13,8 +12,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class MoneyChangerPanelMediator extends Mediator 
-    {
+public class MoneyChangerPanelMediator extends Mediator {
 
         [Inject]
         public var account:Account;
@@ -26,18 +24,15 @@ public class MoneyChangerPanelMediator extends Mediator
         public var openMoneyWindow:OpenMoneyWindowSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.triggered.add(this.onTriggered);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.triggered.remove(this.onTriggered);
         }
 
-        private function onTriggered():void
-        {
+        private function onTriggered():void{
             if (this.account.isRegistered())
             {
                 this.openMoneyWindow.dispatch();
@@ -45,7 +40,7 @@ public class MoneyChangerPanelMediator extends Mediator
             else
             {
                 this.openDialog.dispatch(new RegisterPromptDialog(TextKey.MONEY_GOLD_NEED_REGISTRATION));
-            }
+            };
         }
 
 

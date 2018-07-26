@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.tasks.Task
 
-package kabam.lib.tasks
-{
+package kabam.lib.tasks{
 import org.osflash.signals.Signal;
 
-public interface Task 
-    {
+public interface Task {
 
         function start():void;
         function reset():void;

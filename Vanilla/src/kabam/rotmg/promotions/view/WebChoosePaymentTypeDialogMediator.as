@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.WebChoosePaymentTypeDialogMediator
 
-package kabam.rotmg.promotions.view
-{
+package kabam.rotmg.promotions.view{
 import kabam.rotmg.account.core.PaymentData;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
@@ -12,8 +11,7 @@ import kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class WebChoosePaymentTypeDialogMediator extends Mediator
-    {
+public class WebChoosePaymentTypeDialogMediator extends Mediator {
 
         [Inject]
         public var view:WebChoosePaymentTypeDialog;
@@ -25,26 +23,22 @@ public class WebChoosePaymentTypeDialogMediator extends Mediator
         public var makePayment:MakeBeginnersPackagePaymentSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.close.add(this.onClose);
             this.view.select.add(this.onSelect);
             this.view.centerOnScreen();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.close.remove(this.onClose);
             this.view.select.remove(this.onSelect);
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.closeDialogs.dispatch();
         }
 
-        private function onSelect(_arg_1:String):void
-        {
+        private function onSelect(_arg_1:String):void{
             var _local_2:PaymentData = new PaymentData();
             _local_2.offer = this.model.getOffer();
             _local_2.paymentMethod = _arg_1;

@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.build.impl.BuildEnvironments
 
-package kabam.rotmg.build.impl
-{
+package kabam.rotmg.build.impl{
 import kabam.rotmg.build.api.BuildEnvironment;
 
-public final class BuildEnvironments 
-    {
+public final class BuildEnvironments {
 
         public static const LOCALHOST:String = "localhost";
         public static const PRIVATE:String = "private";
@@ -20,18 +18,15 @@ public final class BuildEnvironments
         private static const IP_MATCHER:RegExp = /[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/;
 
 
-        public function getEnvironment(_arg_1:String):BuildEnvironment
-        {
+        public function getEnvironment(_arg_1:String):BuildEnvironment{
             return ((this.isFixedIP(_arg_1)) ? BuildEnvironment.FIXED_IP : this.getEnvironmentFromName(_arg_1));
         }
 
-        private function isFixedIP(_arg_1:String):Boolean
-        {
+        private function isFixedIP(_arg_1:String):Boolean{
             return (!(_arg_1.match(IP_MATCHER) == null));
         }
 
-        private function getEnvironmentFromName(_arg_1:String):BuildEnvironment
-        {
+        private function getEnvironmentFromName(_arg_1:String):BuildEnvironment{
             switch (_arg_1)
             {
                 case LOCALHOST:
@@ -48,7 +43,7 @@ public final class BuildEnvironments
                     return (BuildEnvironment.PRODTEST);
                 case PRODUCTION:
                     return (BuildEnvironment.PRODUCTION);
-            }
+            };
             return (null);
         }
 

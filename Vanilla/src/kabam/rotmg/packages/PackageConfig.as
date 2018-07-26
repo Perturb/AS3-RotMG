@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.PackageConfig
 
-package kabam.rotmg.packages
-{
+package kabam.rotmg.packages{
 import kabam.lib.resizing.view.Resizable;
 import kabam.lib.resizing.view.ResizableMediator;
 import kabam.rotmg.packages.control.AlreadyBoughtPackageCommand;
@@ -35,8 +34,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class PackageConfig implements IConfig 
-    {
+public class PackageConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -48,8 +46,7 @@ public class PackageConfig implements IConfig
         public var sequence:StartupSequence;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(PackageModel).asSingleton();
             this.injector.map(PackageAvailableSignal).asSingleton();
             this.injector.map(GetPackagesTask);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.list.PetYardListMediator
 
-package io.decagames.rotmg.pets.windows.yard.list
-{
+package io.decagames.rotmg.pets.windows.yard.list{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import flash.events.MouseEvent;
@@ -31,8 +30,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetYardListMediator extends Mediator
-    {
+public class PetYardListMediator extends Mediator {
 
         [Inject]
         public var view:PetYardList;
@@ -63,8 +61,7 @@ public class PetYardListMediator extends Mediator
         private var petsList:Vector.<PetItem>;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.model.activeUIVO = null;
             this.refreshPetsList();
             this.selectPetVO(this.model.getActivePet());
@@ -82,56 +79,50 @@ public class PetYardListMediator extends Mediator
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.upgradeButton);
                 this.hoverTooltipDelegate.tooltip = this.toolTip;
-            }
+            };
             this.release.add(this.onRelease);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.clearList();
             this.newAbilityUnlocked.remove(this.abilityUnlocked);
             this.evolvePetSignal.remove(this.evolvePetHandler);
             if (this.view.upgradeButton)
             {
                 this.view.upgradeButton.clickSignal.add(this.upgradeYard);
-            }
+            };
             this.release.remove(this.onRelease);
         }
 
-        private function upgradeYard(_arg_1:BaseButton):void
-        {
+        private function upgradeYard(_arg_1:BaseButton):void{
             this.showDialog.dispatch(new PetYardUpgradeDialog(PetRarityEnum.selectByOrdinal(this.model.getPetYardType()), this.model.getPetYardUpgradeGoldPrice(), this.model.getPetYardUpgradeFamePrice()));
         }
 
-        private function selectPetVO(_arg_1:PetVO):void
-        {
+        private function selectPetVO(_arg_1:PetVO):void{
             var _local_2:PetItem;
             this.model.activeUIVO = _arg_1;
             for each (_local_2 in this.petsList)
             {
                 _local_2.selected = (_local_2.getPetVO() == _arg_1);
-            }
+            };
         }
 
-        private function onPetSelected(_arg_1:MouseEvent):void
-        {
+        private function onPetSelected(_arg_1:MouseEvent):void{
             var _local_2:PetItem = PetItem(_arg_1.currentTarget);
             this.selectPetSignal.dispatch(_local_2.getPetVO());
             this.selectPetVO(_local_2.getPetVO());
         }
 
-        private function clearList():void
-        {
+        private function clearList():void{
             var _local_1:PetItem;
             for each (_local_1 in this.petsList)
             {
                 _local_1.removeEventListener(MouseEvent.CLICK, this.onPetSelected);
-            }
+            };
             this.petsList = new Vector.<PetItem>();
         }
 
-        private function refreshPetsList():void
-        {
+        private function refreshPetsList():void{
             var _local_2:PetVO;
             var _local_3:PetItem;
             this.clearList();
@@ -145,45 +136,40 @@ public class PetYardListMediator extends Mediator
                 _local_3.addEventListener(MouseEvent.CLICK, this.onPetSelected);
                 this.petsList.push(_local_3);
                 this.view.addPet(_local_3);
-            }
+            };
         }
 
-        private function sortByPower(_arg_1:PetVO, _arg_2:PetVO):int
-        {
+        private function sortByPower(_arg_1:PetVO, _arg_2:PetVO):int{
             if (_arg_1.totalAbilitiesLevel() < _arg_2.totalAbilitiesLevel())
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        private function sortByFamily(_arg_1:PetVO, _arg_2:PetVO):int
-        {
+        private function sortByFamily(_arg_1:PetVO, _arg_2:PetVO):int{
             if (_arg_1.family == _arg_2.family)
             {
                 return (this.sortByPower(_arg_1, _arg_2));
-            }
+            };
             if (_arg_1.family > _arg_2.family)
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        private function abilityUnlocked(_arg_1:int):void
-        {
+        private function abilityUnlocked(_arg_1:int):void{
             this.refreshPetsList();
             this.selectPetVO(((this.model.activeUIVO) ? this.model.activeUIVO : this.model.getActivePet()));
         }
 
-        private function evolvePetHandler(_arg_1:EvolvePetInfo):void
-        {
+        private function evolvePetHandler(_arg_1:EvolvePetInfo):void{
             this.refreshPetsList();
             this.selectPetVO(((this.model.activeUIVO) ? this.model.activeUIVO : this.model.getActivePet()));
         }
 
-        private function onRelease(_arg_1:int):void
-        {
+        private function onRelease(_arg_1:int):void{
             this.model.deletePet(_arg_1);
             this.refreshPetsList();
         }

@@ -1,25 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.outgoing.AcceptTrade
 
-package kabam.rotmg.messaging.impl.outgoing
-{
+package kabam.rotmg.messaging.impl.outgoing{
 import flash.utils.IDataOutput;
 
-public class AcceptTrade extends OutgoingMessage
-    {
+public class AcceptTrade extends OutgoingMessage {
 
         public var myOffer_:Vector.<Boolean> = new Vector.<Boolean>();
         public var yourOffer_:Vector.<Boolean> = new Vector.<Boolean>();
 
-        public function AcceptTrade(_arg_1:uint, _arg_2:Function)
-        {
+        public function AcceptTrade(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function writeToOutput(_arg_1:IDataOutput):void
-        {
+        override public function writeToOutput(_arg_1:IDataOutput):void{
             var _local_2:int;
             _arg_1.writeShort(this.myOffer_.length);
             _local_2 = 0;
@@ -27,18 +23,17 @@ public class AcceptTrade extends OutgoingMessage
             {
                 _arg_1.writeBoolean(this.myOffer_[_local_2]);
                 _local_2++;
-            }
+            };
             _arg_1.writeShort(this.yourOffer_.length);
             _local_2 = 0;
             while (_local_2 < this.yourOffer_.length)
             {
                 _arg_1.writeBoolean(this.yourOffer_[_local_2]);
                 _local_2++;
-            }
+            };
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("ACCEPTTRADE", "myOffer_", "yourOffer_"));
         }
 

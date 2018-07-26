@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.BezierPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
 import flash.geom.Point;
 
-public class BezierPlugin extends TweenPlugin
-    {
+public class BezierPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         protected static const _RAD2DEG:Number = (180 / Math.PI);//57.2957795130823
@@ -41,16 +39,14 @@ public class BezierPlugin extends TweenPlugin
         protected var _s1:Number;
         protected var _segments:Array;
 
-        public function BezierPlugin()
-        {
+        public function BezierPlugin(){
             super("bezier");
             this._overwriteProps.pop();
             this._func = {};
             this._round = {};
         }
 
-        protected static function _parseLengthData(_arg_1:Object, _arg_2:uint=6):Object
-        {
+        protected static function _parseLengthData(_arg_1:Object, _arg_2:uint=6):Object{
             var _local_10:String;
             var _local_11:int;
             var _local_12:int;
@@ -65,7 +61,7 @@ public class BezierPlugin extends TweenPlugin
             for (_local_10 in _arg_1)
             {
                 _addCubicLengths(_arg_1[_local_10], _local_3, _arg_2);
-            }
+            };
             _local_12 = _local_3.length;
             _local_11 = 0;
             while (_local_11 < _local_12)
@@ -81,9 +77,9 @@ public class BezierPlugin extends TweenPlugin
                     _local_4[_local_13] = _local_6;
                     _local_5 = 0;
                     _local_9 = [];
-                }
+                };
                 _local_11++;
-            }
+            };
             return ({
                 "length":_local_6,
                 "lengths":_local_4,
@@ -91,8 +87,7 @@ public class BezierPlugin extends TweenPlugin
             });
         }
 
-        public static function bezierThrough(_arg_1:Array, _arg_2:Number=1, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:String="x,y,z", _arg_6:Object=null):Object
-        {
+        public static function bezierThrough(_arg_1:Array, _arg_2:Number=1, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:String="x,y,z", _arg_6:Object=null):Object{
             var _local_9:Array;
             var _local_10:int;
             var _local_11:String;
@@ -115,8 +110,8 @@ public class BezierPlugin extends TweenPlugin
                 for (_local_11 in _local_8)
                 {
                     _local_9.push(_local_11);
-                }
-            }
+                };
+            };
             if (_arg_1.length > 1)
             {
                 _local_17 = _arg_1[(_arg_1.length - 1)];
@@ -129,19 +124,19 @@ public class BezierPlugin extends TweenPlugin
                     {
                         _local_16 = false;
                         break;
-                    }
-                }
+                    };
+                };
                 if (_local_16)
                 {
                     _arg_1 = _arg_1.concat();
                     if (_arg_6)
                     {
                         _arg_1.unshift(_arg_6);
-                    }
+                    };
                     _arg_1.push(_arg_1[1]);
                     _arg_6 = _arg_1[(_arg_1.length - 3)];
-                }
-            }
+                };
+            };
             _r1.length = (_r2.length = (_r3.length = 0));
             _local_10 = _local_9.length;
             while (--_local_10 > -1)
@@ -149,13 +144,13 @@ public class BezierPlugin extends TweenPlugin
                 _local_11 = _local_9[_local_10];
                 _corProps[_local_11] = (!(_arg_5.indexOf((("," + _local_11) + ",")) === -1));
                 _local_7[_local_11] = _parseAnchors(_arg_1, _local_11, _corProps[_local_11], _arg_6);
-            }
+            };
             _local_10 = _r1.length;
             while (--_local_10 > -1)
             {
                 _r1[_local_10] = Math.sqrt(_r1[_local_10]);
                 _r2[_local_10] = Math.sqrt(_r2[_local_10]);
-            }
+            };
             if (!_arg_4)
             {
                 _local_10 = _local_9.length;
@@ -171,15 +166,15 @@ public class BezierPlugin extends TweenPlugin
                             _local_15 = ((_local_13[(_local_12 + 1)].da / _r2[_local_12]) + (_local_13[_local_12].da / _r1[_local_12]));
                             _r3[_local_12] = (((_r3[_local_12]) || (0)) + (_local_15 * _local_15));
                             _local_12++;
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 _local_10 = _r3.length;
                 while (--_local_10 > -1)
                 {
                     _r3[_local_10] = Math.sqrt(_r3[_local_10]);
-                }
-            }
+                };
+            };
             _local_10 = _local_9.length;
             _local_12 = ((_arg_3) ? 4 : 1);
             while (--_local_10 > -1)
@@ -191,13 +186,12 @@ public class BezierPlugin extends TweenPlugin
                 {
                     _local_13.splice(0, _local_12);
                     _local_13.splice((_local_13.length - _local_12), _local_12);
-                }
-            }
+                };
+            };
             return (_local_7);
         }
 
-        private static function _addCubicLengths(_arg_1:Array, _arg_2:Array, _arg_3:uint=6):void
-        {
+        private static function _addCubicLengths(_arg_1:Array, _arg_2:Array, _arg_3:uint=6):void{
             var _local_6:Number;
             var _local_7:Number;
             var _local_8:Number;
@@ -228,12 +222,11 @@ public class BezierPlugin extends TweenPlugin
                     _local_16 = (((_local_5 * _arg_3) + _local_13) - 1);
                     _arg_2[_local_16] = (((_arg_2[_local_16]) || (0)) + (_local_6 * _local_6));
                     _local_13++;
-                }
-            }
+                };
+            };
         }
 
-        protected static function _parseAnchors(_arg_1:Array, _arg_2:String, _arg_3:Boolean, _arg_4:Object):Array
-        {
+        protected static function _parseAnchors(_arg_1:Array, _arg_2:String, _arg_3:Boolean, _arg_4:Object):Array{
             var _local_6:int;
             var _local_7:int;
             var _local_8:Number;
@@ -252,16 +245,16 @@ public class BezierPlugin extends TweenPlugin
                         if (_local_11.charAt(1) === "=")
                         {
                             _arg_1[_local_7][_arg_2] = (_arg_4[_arg_2] + Number((_local_11.charAt(0) + _local_11.substr(2))));
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             _local_6 = (_arg_1.length - 2);
             if (_local_6 < 0)
             {
                 _local_5[0] = new Segment(_arg_1[0][_arg_2], 0, 0, _arg_1[((_local_6 < -1) ? 0 : 1)][_arg_2]);
                 return (_local_5);
-            }
+            };
             _local_7 = 0;
             while (_local_7 < _local_6)
             {
@@ -273,15 +266,14 @@ public class BezierPlugin extends TweenPlugin
                     _local_10 = _arg_1[(_local_7 + 2)][_arg_2];
                     _r1[_local_7] = (((_r1[_local_7]) || (0)) + ((_local_9 - _local_8) * (_local_9 - _local_8)));
                     _r2[_local_7] = (((_r2[_local_7]) || (0)) + ((_local_10 - _local_9) * (_local_10 - _local_9)));
-                }
+                };
                 _local_7++;
-            }
+            };
             _local_5[_local_7] = new Segment(_arg_1[_local_7][_arg_2], 0, 0, _arg_1[(_local_7 + 1)][_arg_2]);
             return (_local_5);
         }
 
-        public static function cubicToQuadratic(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):Array
-        {
+        public static function cubicToQuadratic(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):Array{
             var _local_5:Object = {"a":_arg_1};
             var _local_6:Object = {};
             var _local_7:Object = {};
@@ -302,13 +294,11 @@ public class BezierPlugin extends TweenPlugin
             return ([_local_5, _local_6, _local_7, _local_8]);
         }
 
-        public static function quadraticToCubic(_arg_1:Number, _arg_2:Number, _arg_3:Number):Object
-        {
+        public static function quadraticToCubic(_arg_1:Number, _arg_2:Number, _arg_3:Number):Object{
             return (new Segment(_arg_1, (((2 * _arg_2) + _arg_1) / 3), (((2 * _arg_2) + _arg_3) / 3), _arg_3));
         }
 
-        protected static function _calculateControlPoints(_arg_1:Array, _arg_2:Number=1, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:Boolean=false):void
-        {
+        protected static function _calculateControlPoints(_arg_1:Array, _arg_2:Number=1, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:Boolean=false):void{
             var _local_9:int;
             var _local_10:Number;
             var _local_11:Number;
@@ -346,7 +336,7 @@ public class BezierPlugin extends TweenPlugin
                     _local_14 = (_local_11 - (((_local_11 - _local_10) * _arg_2) * 0.5));
                     _local_15 = (_local_11 + (((_local_12 - _local_11) * _arg_2) * 0.5));
                     _local_16 = (_local_11 - ((_local_14 + _local_15) / 2));
-                }
+                };
                 _local_14 = (_local_14 + _local_16);
                 _local_15 = (_local_15 + _local_16);
                 _local_13.c = (_local_17 = _local_14);
@@ -357,7 +347,7 @@ public class BezierPlugin extends TweenPlugin
                 else
                 {
                     _local_13.b = (_local_8 = (_local_13.a + ((_local_13.c - _local_13.a) * 0.6)));
-                }
+                };
                 _local_13.da = (_local_11 - _local_10);
                 _local_13.ca = (_local_17 - _local_10);
                 _local_13.ba = (_local_8 - _local_10);
@@ -370,10 +360,10 @@ public class BezierPlugin extends TweenPlugin
                 else
                 {
                     _local_7++;
-                }
+                };
                 _local_8 = _local_15;
                 _local_9++;
-            }
+            };
             _local_13 = _arg_1[_local_7];
             _local_13.b = _local_8;
             _local_13.c = (_local_8 + ((_local_13.d - _local_8) * 0.4));
@@ -384,11 +374,10 @@ public class BezierPlugin extends TweenPlugin
             {
                 _local_18 = cubicToQuadratic(_local_13.a, _local_8, _local_13.c, _local_13.d);
                 _arg_1.splice(_local_7, 1, _local_18[0], _local_18[1], _local_18[2], _local_18[3]);
-            }
+            };
         }
 
-        public static function _parseBezierData(_arg_1:Array, _arg_2:String, _arg_3:Object=null):Object
-        {
+        public static function _parseBezierData(_arg_1:Array, _arg_2:String, _arg_3:Object=null):Object{
             var _local_7:Number;
             var _local_8:Number;
             var _local_9:Number;
@@ -408,11 +397,11 @@ public class BezierPlugin extends TweenPlugin
             if (((_local_6) && (_arg_3)))
             {
                 _arg_1 = [_arg_3].concat(_arg_1);
-            }
+            };
             if (((_arg_1 == null) || (_arg_1.length < (_local_5 + 1))))
             {
                 throw (new Error("invalid Bezier data"));
-            }
+            };
             if ((_arg_1[1] is Point))
             {
                 _local_12 = ["x", "y"];
@@ -423,8 +412,8 @@ public class BezierPlugin extends TweenPlugin
                 for (_local_16 in _arg_1[0])
                 {
                     _local_12.push(_local_16);
-                }
-            }
+                };
+            };
             _local_13 = _local_12.length;
             while (--_local_13 > -1)
             {
@@ -444,13 +433,13 @@ public class BezierPlugin extends TweenPlugin
                             {
                                 var _local_19:* = _local_17++;
                                 _local_11[_local_19] = ((_local_7 + _local_11[(_local_17 - 2)]) / 2);
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     _local_19 = _local_17++;
                     _local_11[_local_19] = _local_7;
                     _local_14++;
-                }
+                };
                 _local_15 = ((_local_17 - _local_5) + 1);
                 _local_17 = 0;
                 _local_14 = 0;
@@ -463,15 +452,14 @@ public class BezierPlugin extends TweenPlugin
                     _local_19 = _local_17++;
                     _local_11[_local_19] = ((_local_5 === 3) ? new Segment(_local_7, _local_8, _local_9, _local_10) : new Segment(_local_7, (((2 * _local_8) + _local_7) / 3), (((2 * _local_8) + _local_9) / 3), _local_9));
                     _local_14 = (_local_14 + _local_5);
-                }
+                };
                 _local_11.length = _local_17;
-            }
+            };
             return (_local_4);
         }
 
 
-        override public function _kill(_arg_1:Object):Boolean
-        {
+        override public function _kill(_arg_1:Object):Boolean{
             var _local_3:String;
             var _local_4:int;
             var _local_2:Array = this._props;
@@ -487,15 +475,14 @@ public class BezierPlugin extends TweenPlugin
                         if (_local_2[_local_4] === _local_3)
                         {
                             _local_2.splice(_local_4, 1);
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             return (super._kill(_arg_1));
         }
 
-        override public function setRatio(_arg_1:Number):void
-        {
+        override public function setRatio(_arg_1:Number):void{
             var _local_6:int;
             var _local_7:Number;
             var _local_8:int;
@@ -554,14 +541,14 @@ public class BezierPlugin extends TweenPlugin
                         else
                         {
                             _local_8++;
-                        }
+                        };
                         this._l2 = _local_14[_local_8];
                         this._li = _local_8;
                         this._curSeg = (_local_15 = this._segments[_local_8]);
                         this._s1 = ((_local_15[((this._si = (_local_15.length - 1)) - 1)]) || (0));
                         this._s2 = _local_15[this._si];
-                    }
-                }
+                    };
+                };
                 _local_6 = _local_8;
                 _arg_1 = (_arg_1 - this._l1);
                 _local_8 = this._si;
@@ -588,13 +575,13 @@ public class BezierPlugin extends TweenPlugin
                         else
                         {
                             _local_8++;
-                        }
+                        };
                         this._s2 = _local_15[_local_8];
                         this._si = _local_8;
-                    }
-                }
+                    };
+                };
                 _local_11 = ((_local_8 + ((_arg_1 - this._s1) / (this._s2 - this._s1))) * this._prec);
-            }
+            };
             _local_7 = (1 - _local_11);
             _local_8 = this._props.length;
             while (--_local_8 > -1)
@@ -605,7 +592,7 @@ public class BezierPlugin extends TweenPlugin
                 if (this._round[_local_9])
                 {
                     _local_12 = ((_local_12 + ((_local_12 > 0) ? 0.5 : -0.5)) >> 0);
-                }
+                };
                 if (_local_3[_local_9])
                 {
                     var _local_24:* = _local_4;
@@ -614,8 +601,8 @@ public class BezierPlugin extends TweenPlugin
                 else
                 {
                     _local_4[_local_9] = _local_12;
-                }
-            }
+                };
+            };
             if (this._autoRotate != null)
             {
                 _local_16 = this._autoRotate;
@@ -644,13 +631,12 @@ public class BezierPlugin extends TweenPlugin
                     else
                     {
                         _local_4[_local_9] = _local_12;
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean
-        {
+        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean{
             var _local_9:String;
             var _local_10:Boolean;
             var _local_11:int;
@@ -676,8 +662,8 @@ public class BezierPlugin extends TweenPlugin
                 for (_local_9 in _local_7)
                 {
                     this._props.push(_local_9);
-                }
-            }
+                };
+            };
             _local_11 = this._props.length;
             while (--_local_11 > -1)
             {
@@ -690,9 +676,9 @@ public class BezierPlugin extends TweenPlugin
                     if (_local_6[_local_9] !== _local_5[0][_local_9])
                     {
                         _local_14 = _local_6;
-                    }
-                }
-            }
+                    };
+                };
+            };
             this._beziers = ((((!(_local_4.type === "cubic")) && (!(_local_4.type === "quadratic"))) && (!(_local_4.type === "soft"))) ? bezierThrough(_local_5, ((isNaN(_local_4.curviness)) ? 1 : _local_4.curviness), false, (_local_4.type === "thruBasic"), ((_local_4.correlate) || ("x,y,z")), _local_14) : _parseBezierData(_local_5, _local_4.type, _local_6));
             this._segCount = this._beziers[_local_9].length;
             if (this._timeRes)
@@ -706,14 +692,14 @@ public class BezierPlugin extends TweenPlugin
                 this._curSeg = this._segments[0];
                 this._s2 = this._curSeg[0];
                 this._prec = (1 / this._curSeg.length);
-            }
+            };
             if ((_local_13 = this._autoRotate))
             {
                 this._initialRotations = [];
                 if (!(_local_13[0] is Array))
                 {
                     this._autoRotate = (_local_13 = [_local_13]);
-                }
+                };
                 _local_11 = _local_13.length;
                 while (--_local_11 > -1)
                 {
@@ -723,17 +709,16 @@ public class BezierPlugin extends TweenPlugin
                         _local_9 = _local_13[_local_11][_local_12];
                         this._func[_local_9] = ((_arg_1[_local_9] is Function) ? _arg_1[(((_local_9.indexOf("set")) || (!(("get" + _local_9.substr(3)) in _arg_1))) ? _local_9 : ("get" + _local_9.substr(3)))] : false);
                         _local_12++;
-                    }
+                    };
                     _local_9 = _local_13[_local_11][2];
                     this._initialRotations[_local_11] = ((this._func[_local_9]) ? this._func[_local_9]() : this._target[_local_9]);
-                }
-            }
+                };
+            };
             _startRatio = ((_arg_3.vars.runBackwards) ? 1 : 0);
             return (true);
         }
 
-        override public function _roundProps(_arg_1:Object, _arg_2:Boolean=true):void
-        {
+        override public function _roundProps(_arg_1:Object, _arg_2:Boolean=true):void{
             var _local_3:Array = this._overwriteProps;
             var _local_4:int = _local_3.length;
             while (--_local_4 > -1)
@@ -741,16 +726,15 @@ public class BezierPlugin extends TweenPlugin
                 if ((((_local_3[_local_4] in _arg_1) || ("bezier" in _arg_1)) || ("bezierThrough" in _arg_1)))
                 {
                     this._round[_local_3[_local_4]] = _arg_2;
-                }
-            }
+                };
+            };
         }
 
 
     }
 }//package com.greensock.plugins
 
-class Segment 
-{
+class Segment {
 
     public var a:Number;
     public var c:Number;
@@ -760,8 +744,7 @@ class Segment
     public var ca:Number;
     public var ba:Number;
 
-    public function Segment(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number)
-    {
+    public function Segment(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number){
         this.a = _arg_1;
         this.b = _arg_2;
         this.c = _arg_3;

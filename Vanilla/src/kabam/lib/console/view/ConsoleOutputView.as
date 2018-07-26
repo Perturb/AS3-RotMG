@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleOutputView
 
-package kabam.lib.console.view
-{
+package kabam.lib.console.view{
 import com.junkbyte.console.Console;
 import com.junkbyte.console.ConsoleConfig;
 
@@ -18,8 +17,7 @@ import flash.text.TextFormat;
 import kabam.lib.console.model.Watch;
 import kabam.lib.resizing.view.Resizable;
 
-public final class ConsoleOutputView extends Sprite implements Resizable 
-    {
+public final class ConsoleOutputView extends Sprite implements Resizable {
 
         private static const DEFAULT_OUTPUT:String = "kabam.lib/console";
 
@@ -33,8 +31,7 @@ public final class ConsoleOutputView extends Sprite implements Resizable
         private const watched:Array = [];
         private const watchMap:Object = {};
 
-        public function ConsoleOutputView()
-        {
+        public function ConsoleOutputView(){
             alpha = 0.8;
             blendMode = BlendMode.LAYER;
             addChild(this.watchTextField);
@@ -52,50 +49,44 @@ public final class ConsoleOutputView extends Sprite implements Resizable
             addChild(this.logConsole);
         }
 
-        public function watch(_arg_1:Watch):void
-        {
+        public function watch(_arg_1:Watch):void{
             var _local_2:Watch = (this.watchMap[_arg_1.name] = ((this.watchMap[_arg_1.name]) || (this.makeWatch(_arg_1.name))));
             _local_2.data = _arg_1.data.replace(this.PATTERN, this.HTML_TEMPLATE);
             this.updateOutputText();
         }
 
-        public function unwatch(_arg_1:String):void
-        {
+        public function unwatch(_arg_1:String):void{
             var _local_2:Watch = this.watchMap[_arg_1];
             if (_local_2)
             {
                 delete this.watchMap[_arg_1];
                 this.watched.splice(this.watched.indexOf(_local_2), 1);
-            }
+            };
         }
 
-        private function makeWatch(_arg_1:String):Watch
-        {
+        private function makeWatch(_arg_1:String):Watch{
             var _local_2:Watch = new Watch(_arg_1);
             this.watched.push(_local_2);
             return (_local_2);
         }
 
-        public function log(_arg_1:String):void
-        {
+        public function log(_arg_1:String):void{
             var _local_2:String = _arg_1.replace(this.PATTERN, this.HTML_TEMPLATE);
             this.logged.push(_local_2);
             this.logConsole.addHTML(_local_2);
         }
 
-        public function clear():void
-        {
+        public function clear():void{
             var _local_1:String;
             this.logged.length = 0;
             this.watched.length = 0;
             for (_local_1 in this.watchMap)
             {
                 delete this.watchMap[_local_1];
-            }
+            };
         }
 
-        public function resize(_arg_1:Rectangle):void
-        {
+        public function resize(_arg_1:Rectangle):void{
             this.watchBottom = (_arg_1.height - ConsoleInputView.HEIGHT);
             x = _arg_1.x;
             y = _arg_1.y;
@@ -104,19 +95,16 @@ public final class ConsoleOutputView extends Sprite implements Resizable
             this.snapWatchTextToInputView();
         }
 
-        private function snapWatchTextToInputView():void
-        {
+        private function snapWatchTextToInputView():void{
             this.watchTextField.y = (this.watchBottom - this.watchTextField.height);
         }
 
-        private function updateOutputText():void
-        {
+        private function updateOutputText():void{
             this.watchTextField.htmlText = this.watched.join("\n");
             this.snapWatchTextToInputView();
         }
 
-        public function getText():String
-        {
+        public function getText():String{
             return (this.logged.join("\r"));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo
 
-package io.decagames.rotmg.dailyQuests.view.info
-{
+package io.decagames.rotmg.dailyQuests.view.info{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.dailyQuests.data.DailyQuestItemSlotType;
@@ -16,8 +15,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class DailyQuestInfo extends Sprite
-    {
+public class DailyQuestInfo extends Sprite {
 
         public static var INFO_WIDTH:int = 328;
         public static const INFO_HEIGHT:int = 434;
@@ -40,8 +38,7 @@ public class DailyQuestInfo extends Sprite
         private var _completeButton:DailyQuestCompleteButton;
         private var playerEquipment:Vector.<int>;
 
-        public function DailyQuestInfo()
-        {
+        public function DailyQuestInfo(){
             this.contentInset = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", 325);
             addChild(this.contentInset);
             this.contentInset.height = 425;
@@ -99,8 +96,7 @@ public class DailyQuestInfo extends Sprite
             this._completeButton.y = 370;
         }
 
-        public static function hasAllItems(_arg_1:Vector.<int>, _arg_2:Vector.<int>):Boolean
-        {
+        public static function hasAllItems(_arg_1:Vector.<int>, _arg_2:Vector.<int>):Boolean{
             var _local_4:int;
             var _local_5:int;
             var _local_3:Vector.<int> = _arg_1.concat();
@@ -110,24 +106,22 @@ public class DailyQuestInfo extends Sprite
                 if (_local_5 >= 0)
                 {
                     _local_3.splice(_local_5, 1);
-                }
-            }
+                };
+            };
             return (_local_3.length == 0);
         }
 
 
-        public function clear():void
-        {
+        public function clear():void{
             var _local_1:DailyQuestItemSlot;
             for each (_local_1 in this.slots)
             {
                 _local_1.parent.removeChild(_local_1);
-            }
+            };
             this.slots = new Vector.<DailyQuestItemSlot>();
         }
 
-        public function show(_arg_1:DailyQuest, _arg_2:Vector.<int>):void
-        {
+        public function show(_arg_1:DailyQuest, _arg_2:Vector.<int>):void{
             this.playerEquipment = _arg_2.concat();
             if (_arg_1.itemOfChoice)
             {
@@ -136,7 +130,7 @@ public class DailyQuestInfo extends Sprite
             else
             {
                 this.rewardsChoice.visible = false;
-            }
+            };
             this.questName.text = _arg_1.name;
             this.questDescription.text = _arg_1.description;
             SlotsRendered.renderSlots(_arg_1.requirements, this.playerEquipment, DailyQuestItemSlotType.REQUIREMENT, this.requirementsContainer, this.requirementsTopMargin, this.slotMargin, INFO_WIDTH, this.slots);
@@ -146,8 +140,7 @@ public class DailyQuestInfo extends Sprite
             addChild(this._completeButton);
         }
 
-        public function get completeButton():DailyQuestCompleteButton
-        {
+        public function get completeButton():DailyQuestCompleteButton{
             return (this._completeButton);
         }
 

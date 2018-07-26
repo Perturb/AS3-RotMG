@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.widgets.BaseListItem
 
-package io.decagames.rotmg.social.widgets
-{
+package io.decagames.rotmg.social.widgets{
 import com.company.assembleegameclient.ui.icons.IconButton;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
@@ -27,8 +26,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 
-public class BaseListItem extends Sprite implements TooltipAble
-    {
+public class BaseListItem extends Sprite implements TooltipAble {
 
         protected const LIST_ITEM_WIDTH:int = 310;
         protected const LIST_ITEM_HEIGHT:int = 40;
@@ -44,18 +42,15 @@ public class BaseListItem extends Sprite implements TooltipAble
         protected var listPortrait:Bitmap;
         private var toolTip_:TextToolTip;
 
-        public function BaseListItem(_arg_1:int)
-        {
+        public function BaseListItem(_arg_1:int){
             this._state = _arg_1;
         }
 
-        public function getLabelText():String
-        {
+        public function getLabelText():String{
             return (this.listLabel.text);
         }
 
-        public function setToolTipTitle(_arg_1:String, _arg_2:Object=null):void
-        {
+        public function setToolTipTitle(_arg_1:String, _arg_2:Object=null):void{
             if (_arg_1 != "")
             {
                 if (this.toolTip_ == null)
@@ -63,13 +58,12 @@ public class BaseListItem extends Sprite implements TooltipAble
                     this.toolTip_ = new TextToolTip(0x363636, 0x9B9B9B, "", "", 200);
                     this.hoverTooltipDelegate.setDisplayObject(this._characterContainer);
                     this.hoverTooltipDelegate.tooltip = this.toolTip_;
-                }
+                };
                 this.toolTip_.setTitle(new LineBuilder().setParams(_arg_1, _arg_2));
-            }
+            };
         }
 
-        public function setToolTipText(_arg_1:String, _arg_2:Object=null):void
-        {
+        public function setToolTipText(_arg_1:String, _arg_2:Object=null):void{
             if (_arg_1 != "")
             {
                 if (this.toolTip_ == null)
@@ -77,13 +71,12 @@ public class BaseListItem extends Sprite implements TooltipAble
                     this.toolTip_ = new TextToolTip(0x363636, 0x9B9B9B, "", "", 200);
                     this.hoverTooltipDelegate.setDisplayObject(this._characterContainer);
                     this.hoverTooltipDelegate.tooltip = this.toolTip_;
-                }
+                };
                 this.toolTip_.setText(new LineBuilder().setParams(_arg_1, _arg_2));
-            }
+            };
         }
 
-        protected function init():void
-        {
+        protected function init():void{
             this._iconButtonFactory = StaticInjectorContext.getInjector().getInstance(IconButtonFactory);
             this.hoverTooltipDelegate = new HoverTooltipDelegate();
             this.setBaseItemState();
@@ -91,8 +84,7 @@ public class BaseListItem extends Sprite implements TooltipAble
             addChild(this._characterContainer);
         }
 
-        private function setBaseItemState():void
-        {
+        private function setBaseItemState():void{
             switch (this._state)
             {
                 case SocialItemState.ONLINE:
@@ -107,13 +99,12 @@ public class BaseListItem extends Sprite implements TooltipAble
                     this.listBackground = TextureParser.instance.getSliceScalingBitmap("UI", "listitem_content_background_indicator");
                     addChild(this.listBackground);
                     break;
-            }
+            };
             this.listBackground.height = this.LIST_ITEM_HEIGHT;
             this.listBackground.width = this.LIST_ITEM_WIDTH;
         }
 
-        protected function createListLabel(_arg_1:String):void
-        {
+        protected function createListLabel(_arg_1:String):void{
             this.listLabel = new UILabel();
             this.listLabel.x = 40;
             this.listLabel.y = 12;
@@ -122,19 +113,17 @@ public class BaseListItem extends Sprite implements TooltipAble
             this._characterContainer.addChild(this.listLabel);
         }
 
-        protected function createListPortrait(_arg_1:BitmapData):void
-        {
+        protected function createListPortrait(_arg_1:BitmapData):void{
             this.listPortrait = new Bitmap(_arg_1);
             this.listPortrait.x = (-(Math.round((this.listPortrait.width / 2))) + 22);
             this.listPortrait.y = (-(Math.round((this.listPortrait.height / 2))) + 20);
             if (this.listPortrait)
             {
                 this._characterContainer.addChild(this.listPortrait);
-            }
+            };
         }
 
-        protected function setLabelColorByState(_arg_1:UILabel):void
-        {
+        protected function setLabelColorByState(_arg_1:UILabel):void{
             switch (this._state)
             {
                 case SocialItemState.ONLINE:
@@ -145,11 +134,10 @@ public class BaseListItem extends Sprite implements TooltipAble
                     return;
                 default:
                     DefaultLabelFormat.defaultSmallPopupTitle(_arg_1);
-            }
+            };
         }
 
-        protected function addButton(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:String, _arg_6:String=""):IconButton
-        {
+        protected function addButton(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:String, _arg_6:String=""):IconButton{
             var _local_7:IconButton;
             _local_7 = this._iconButtonFactory.create(AssetLibrary.getImageFromSet(_arg_1, _arg_2), "", "", "");
             _local_7.setToolTipTitle(_arg_5);
@@ -160,23 +148,19 @@ public class BaseListItem extends Sprite implements TooltipAble
             return (_local_7);
         }
 
-        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
-        {
+        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void{
             this.hoverTooltipDelegate.setShowToolTipSignal(_arg_1);
         }
 
-        public function getShowToolTip():ShowTooltipSignal
-        {
+        public function getShowToolTip():ShowTooltipSignal{
             return (this.hoverTooltipDelegate.getShowToolTip());
         }
 
-        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void
-        {
+        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void{
             this.hoverTooltipDelegate.setHideToolTipsSignal(_arg_1);
         }
 
-        public function getHideToolTips():HideTooltipsSignal
-        {
+        public function getHideToolTips():HideTooltipsSignal{
             return (this.hoverTooltipDelegate.getHideToolTips());
         }
 

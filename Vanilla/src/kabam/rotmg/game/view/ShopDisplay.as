@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.ShopDisplay
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
@@ -26,8 +25,7 @@ import kabam.rotmg.ui.UIUtils;
 
 import org.swiftsuspenders.Injector;
 
-public class ShopDisplay extends Sprite
-    {
+public class ShopDisplay extends Sprite {
 
         public static const IMAGE_NAME:String = "lofiObj4";
         public static const IMAGE_ID:int = 216;
@@ -43,8 +41,7 @@ public class ShopDisplay extends Sprite
         private var _isOnNexus:Boolean;
         protected var _shopMask:Sprite;
 
-        public function ShopDisplay(_arg_1:Boolean)
-        {
+        public function ShopDisplay(_arg_1:Boolean){
             this._isOnNexus = _arg_1;
             this.icon = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
             this.background = UIUtils.makeHUDBackground(NOTIFICATION_BACKGROUND_WIDTH, NOTIFICATION_BACKGROUND_HEIGHT);
@@ -71,16 +68,14 @@ public class ShopDisplay extends Sprite
             if (!_arg_1)
             {
                 GreyScale.greyScaleToDisplayObject(this, true);
-            }
+            };
         }
 
-        public function get hasIndicator():Boolean
-        {
+        public function get hasIndicator():Boolean{
             return ((this.indicator) && (this.indicator.parent));
         }
 
-        public function newIndicator(_arg_1:Boolean):void
-        {
+        public function newIndicator(_arg_1:Boolean):void{
             if (_arg_1)
             {
                 this.addIndicator();
@@ -88,48 +83,42 @@ public class ShopDisplay extends Sprite
             else
             {
                 this.resetIndicator();
-            }
+            };
         }
 
-        public function addIndicator():void
-        {
+        public function addIndicator():void{
             this.background.graphics.clear();
             this.background.graphics.beginFill(823807, 0.8);
             this.background.graphics.drawRoundRect(0, 0, NOTIFICATION_BACKGROUND_WIDTH, NOTIFICATION_BACKGROUND_HEIGHT, 12, 12);
             this.background.graphics.endFill();
         }
 
-        private function resetIndicator():void
-        {
+        private function resetIndicator():void{
             this.background.graphics.clear();
             this.background.graphics.beginFill(0, 0.4);
             this.background.graphics.drawRoundRect(0, 0, NOTIFICATION_BACKGROUND_WIDTH, NOTIFICATION_BACKGROUND_HEIGHT, 12, 12);
             this.background.graphics.endFill();
         }
 
-        public function onShopClick(_arg_1:MouseEvent):void
-        {
+        public function onShopClick(_arg_1:MouseEvent):void{
             if (this._isOnNexus)
             {
                 this.openShop();
                 this.newIndicator(false);
-            }
+            };
         }
 
-        private function openShop():void
-        {
+        private function openShop():void{
             var _local_1:Injector = StaticInjectorContext.getInjector();
             var _local_2:ShowPopupSignal = _local_1.getInstance(ShowPopupSignal);
             _local_2.dispatch(new ShopPopupView());
         }
 
-        public function get shopButton():Sprite
-        {
+        public function get shopButton():Sprite{
             return (this._shopMask);
         }
 
-        public function get isOnNexus():Boolean
-        {
+        public function get isOnNexus():Boolean{
             return (this._isOnNexus);
         }
 

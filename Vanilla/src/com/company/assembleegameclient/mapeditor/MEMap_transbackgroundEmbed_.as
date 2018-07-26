@@ -1,4 +1,4 @@
-package com.company.assembleegameclient.mapeditor
+﻿package com.company.assembleegameclient.mapeditor
 {
 import mx.core.*;
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot
 
-package io.decagames.rotmg.pets.components.petInfoSlot
-{
+package io.decagames.rotmg.pets.components.petInfoSlot{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.pets.components.petPortrait.PetPortrait;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.gird.UIGrid;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PetInfoSlot extends Sprite
-    {
+public class PetInfoSlot extends Sprite {
 
         public static const INFO_HEIGHT:int = 207;
         public static const STATS_WIDTH:int = 150;
@@ -32,8 +30,7 @@ public class PetInfoSlot extends Sprite
         private var _showFeedPower:Boolean;
         private var statsGrid:UIGrid;
 
-        public function PetInfoSlot(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean, _arg_4:Boolean, _arg_5:Boolean=false, _arg_6:Boolean=false, _arg_7:Boolean=false, _arg_8:Boolean=false)
-        {
+        public function PetInfoSlot(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean, _arg_4:Boolean, _arg_5:Boolean=false, _arg_6:Boolean=false, _arg_7:Boolean=false, _arg_8:Boolean=false){
             this._switchable = _arg_2;
             this._slotWidth = _arg_1;
             this._showFeedPower = _arg_8;
@@ -49,8 +46,7 @@ public class PetInfoSlot extends Sprite
             _local_9.y = 0;
         }
 
-        public function showPetInfo(_arg_1:IPetVO, _arg_2:Boolean=true):void
-        {
+        public function showPetInfo(_arg_1:IPetVO, _arg_2:Boolean=true):void{
             this._petVO = _arg_1;
             if (!this.petPortrait)
             {
@@ -61,32 +57,29 @@ public class PetInfoSlot extends Sprite
             else
             {
                 this.petPortrait.petVO = _arg_1;
-            }
+            };
             if (this.isRarityLabelHidden)
             {
                 this.petPortrait.hideRarityLabel();
-            }
+            };
             if (((this.showStats) && (_arg_2)))
             {
                 this.statsGrid = new PetStatsGrid(STATS_WIDTH, _arg_1);
                 addChild(this.statsGrid);
                 this.statsGrid.y = 130;
                 this.statsGrid.x = Math.round(((this._slotWidth - STATS_WIDTH) / 2));
-            }
+            };
         }
 
-        public function get slotWidth():int
-        {
+        public function get slotWidth():int{
             return (this._slotWidth);
         }
 
-        public function get showCurrentPet():Boolean
-        {
+        public function get showCurrentPet():Boolean{
             return (this._showCurrentPet);
         }
 
-        public function get petVO():IPetVO
-        {
+        public function get petVO():IPetVO{
             return (this._petVO);
         }
 

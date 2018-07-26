@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Projectile
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.engine3d.Point3D;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Map;
@@ -31,8 +30,7 @@ import flash.geom.Point;
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
 
-public class Projectile extends BasicObject
-    {
+public class Projectile extends BasicObject {
 
         private static var objBullIdToObjId_:Dictionary = new Dictionary();
 
@@ -60,31 +58,26 @@ public class Projectile extends BasicObject
         protected var shadowPath_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
 
 
-        public static function findObjId(_arg_1:int, _arg_2:uint):int
-        {
+        public static function findObjId(_arg_1:int, _arg_2:uint):int{
             return (objBullIdToObjId_[((_arg_2 << 24) | _arg_1)]);
         }
 
-        public static function getNewObjId(_arg_1:int, _arg_2:uint):int
-        {
+        public static function getNewObjId(_arg_1:int, _arg_2:uint):int{
             var _local_3:int = getNextFakeObjectId();
             objBullIdToObjId_[((_arg_2 << 24) | _arg_1)] = _local_3;
             return (_local_3);
         }
 
-        public static function removeObjId(_arg_1:int, _arg_2:uint):void
-        {
+        public static function removeObjId(_arg_1:int, _arg_2:uint):void{
             delete objBullIdToObjId_[((_arg_2 << 24) | _arg_1)];
         }
 
-        public static function dispose():void
-        {
+        public static function dispose():void{
             objBullIdToObjId_ = new Dictionary();
         }
 
 
-        public function reset(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:int, _arg_7:String="", _arg_8:String=""):void
-        {
+        public function reset(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Number, _arg_6:int, _arg_7:String="", _arg_8:String=""):void{
             var _local_11:Number;
             clear();
             this.containerType_ = _arg_1;
@@ -113,25 +106,23 @@ public class Projectile extends BasicObject
             else
             {
                 _local_11 = ObjectLibrary.getSizeFromType(this.containerType_);
-            }
+            };
             this.p_.setSize((8 * (_local_11 / 100)));
             this.damage_ = 0;
         }
 
-        public function setDamage(_arg_1:int):void
-        {
+        public function setDamage(_arg_1:int):void{
             this.damage_ = _arg_1;
         }
 
-        override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean
-        {
+        override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean{
             var _local_4:Player;
             this.startX_ = _arg_2;
             this.startY_ = _arg_3;
             if (!super.addTo(_arg_1, _arg_2, _arg_3))
             {
                 return (false);
-            }
+            };
             if (((!(this.containerProps_.flying_)) && (square_.sink_)))
             {
                 z_ = 0.1;
@@ -142,34 +133,31 @@ public class Projectile extends BasicObject
                 if (((!(_local_4 == null)) && (_local_4.sinkLevel_ > 0)))
                 {
                     z_ = (0.5 - (0.4 * (_local_4.sinkLevel_ / Parameters.MAX_SINK_LEVEL)));
-                }
-            }
+                };
+            };
             return (true);
         }
 
-        public function moveTo(_arg_1:Number, _arg_2:Number):Boolean
-        {
+        public function moveTo(_arg_1:Number, _arg_2:Number):Boolean{
             var _local_3:Square = map_.getSquare(_arg_1, _arg_2);
             if (_local_3 == null)
             {
                 return (false);
-            }
+            };
             x_ = _arg_1;
             y_ = _arg_2;
             square_ = _local_3;
             return (true);
         }
 
-        override public function removeFromMap():void
-        {
+        override public function removeFromMap():void{
             super.removeFromMap();
             removeObjId(this.ownerId_, this.bulletId_);
             this.multiHitDict_ = null;
             FreeList.deleteObject(this);
         }
 
-        private function positionAt(_arg_1:int, _arg_2:Point):void
-        {
+        private function positionAt(_arg_1:int, _arg_2:Point):void{
             var _local_5:Number;
             var _local_6:Number;
             var _local_7:Number;
@@ -212,8 +200,8 @@ public class Projectile extends BasicObject
                         if (_local_3 > _local_13)
                         {
                             _local_3 = (_local_13 - (_local_3 - _local_13));
-                        }
-                    }
+                        };
+                    };
                     _arg_2.x = (_arg_2.x + (_local_3 * Math.cos(this.angle_)));
                     _arg_2.y = (_arg_2.y + (_local_3 * Math.sin(this.angle_)));
                     if (this.projProps_.amplitude_ != 0)
@@ -221,13 +209,12 @@ public class Projectile extends BasicObject
                         _local_14 = (this.projProps_.amplitude_ * Math.sin((_local_4 + ((((_arg_1 / this.projProps_.lifetime_) * this.projProps_.frequency_) * 2) * Math.PI))));
                         _arg_2.x = (_arg_2.x + (_local_14 * Math.cos((this.angle_ + (Math.PI / 2)))));
                         _arg_2.y = (_arg_2.y + (_local_14 * Math.sin((this.angle_ + (Math.PI / 2)))));
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:Vector.<uint>;
             var _local_7:Player;
             var _local_8:Boolean;
@@ -239,7 +226,7 @@ public class Projectile extends BasicObject
             if (_local_3 > this.projProps_.lifetime_)
             {
                 return (false);
-            }
+            };
             var _local_4:Point = this.staticPoint_;
             this.positionAt(_local_3, _local_4);
             if (((!(this.moveTo(_local_4.x, _local_4.y))) || (square_.tileType_ == 0xFFFF)))
@@ -256,11 +243,11 @@ public class Projectile extends BasicObject
                         {
                             _local_5 = BloodComposition.getColors(this.texture_);
                             map_.addObj(new HitEffect(_local_5, 100, 3, this.angle_, this.projProps_.speed_), _local_4.x, _local_4.y);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 return (false);
-            }
+            };
             if ((((!(square_.obj_ == null)) && ((!(square_.obj_.props_.isEnemy_)) || (!(this.damagesEnemies_)))) && ((square_.obj_.props_.enemyOccupySquare_) || ((!(this.projProps_.passesCover_)) && (square_.obj_.props_.occupySquare_)))))
             {
                 if (this.damagesPlayers_)
@@ -273,10 +260,10 @@ public class Projectile extends BasicObject
                     {
                         _local_5 = BloodComposition.getColors(this.texture_);
                         map_.addObj(new HitEffect(_local_5, 100, 3, this.angle_, this.projProps_.speed_), _local_4.x, _local_4.y);
-                    }
-                }
+                    };
+                };
                 return (false);
-            }
+            };
             var _local_6:GameObject = this.getHit(_local_4.x, _local_4.y);
             if (_local_6 != null)
             {
@@ -294,8 +281,8 @@ public class Projectile extends BasicObject
                         if (_local_6.props_.isEnemy_)
                         {
                             doneAction(map_.gs_, Tutorial.KILL_ACTION);
-                        }
-                    }
+                        };
+                    };
                     if (_local_6 == _local_7)
                     {
                         map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
@@ -313,10 +300,10 @@ public class Projectile extends BasicObject
                             if (!this.projProps_.multiHit_)
                             {
                                 map_.gs_.gsc_.otherHit(_arg_1, this.bulletId_, this.ownerId_, _local_6.objectId_);
-                            }
-                        }
-                    }
-                }
+                            };
+                        };
+                    };
+                };
                 if (this.projProps_.multiHit_)
                 {
                     this.multiHitDict_[_local_6] = true;
@@ -324,13 +311,12 @@ public class Projectile extends BasicObject
                 else
                 {
                     return (false);
-                }
-            }
+                };
+            };
             return (true);
         }
 
-        public function getHit(_arg_1:Number, _arg_2:Number):GameObject
-        {
+        public function getHit(_arg_1:Number, _arg_2:Number):GameObject{
             var _local_5:GameObject;
             var _local_6:Number;
             var _local_7:Number;
@@ -357,26 +343,25 @@ public class Projectile extends BasicObject
                                         if (_local_5 == map_.player_)
                                         {
                                             return (_local_5);
-                                        }
+                                        };
                                         _local_8 = Math.sqrt(((_local_6 * _local_6) + (_local_7 * _local_7)));
                                         _local_9 = ((_local_6 * _local_6) + (_local_7 * _local_7));
                                         if (_local_9 < _local_3)
                                         {
                                             _local_3 = _local_9;
                                             _local_4 = _local_5;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
             return (_local_4);
         }
 
-        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             var _local_8:uint;
             var _local_9:uint;
             var _local_10:int;
@@ -384,7 +369,7 @@ public class Projectile extends BasicObject
             if (!Parameters.drawProj_)
             {
                 return;
-            }
+            };
             var _local_4:BitmapData = this.texture_;
             if (Parameters.projColorType_ != 0)
             {
@@ -414,9 +399,9 @@ public class Projectile extends BasicObject
                         _local_8 = 0;
                         _local_9 = 0;
                         break;
-                }
+                };
                 _local_4 = TextureRedrawer.redraw(_local_4, 120, true, _local_9);
-            }
+            };
             var _local_5:Number = ((this.props_.rotation_ == 0) ? 0 : (_arg_3 / this.props_.rotation_));
             this.staticVector3D_.x = x_;
             this.staticVector3D_.y = y_;
@@ -433,14 +418,13 @@ public class Projectile extends BasicObject
                     if( (!((!(map_ == null)) && (!(map_.player_.objectId_ == this.ownerId_)))) || (!((this.projProps_.particleTrailIntensity_ == -1) && ((Math.random() * 100) > this.projProps_.particleTrailIntensity_))) )
                     {
                         map_.addObj(new SparkParticle(100, this.projProps_.particleTrailColor_, _local_10, 0.5, RandomUtil.plusMinus(3), RandomUtil.plusMinus(3)), x_, y_);
-                    }
+                    };
                     _local_11++;
-                }
-            }
+                };
+            };
         }
 
-        private function getDirectionAngle(_arg_1:Number):Number
-        {
+        private function getDirectionAngle(_arg_1:Number):Number{
             var _local_2:int = (_arg_1 - this.startTime_);
             var _local_3:Point = new Point();
             this.positionAt((_local_2 + 16), _local_3);
@@ -449,12 +433,11 @@ public class Projectile extends BasicObject
             return (Math.atan2(_local_5, _local_4));
         }
 
-        override public function drawShadow(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        override public function drawShadow(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             if (!Parameters.drawProj_)
             {
                 return;
-            }
+            };
             var _local_4:Number = (this.props_.shadowSize_ / 400);
             var _local_5:Number = (30 * _local_4);
             var _local_6:Number = (15 * _local_4);

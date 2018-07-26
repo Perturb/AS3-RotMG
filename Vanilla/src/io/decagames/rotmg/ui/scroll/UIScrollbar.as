@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.scroll.UIScrollbar
 
-package io.decagames.rotmg.ui.scroll
-{
+package io.decagames.rotmg.ui.scroll{
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class UIScrollbar extends Sprite
-    {
+public class UIScrollbar extends Sprite {
 
         public static const SCROLL_SLIDER_MINIMUM_HEIGHT:int = 39;
         public static const SCROLL_SLIDER_WIDTH:int = 17;
@@ -28,8 +26,7 @@ public class UIScrollbar extends Sprite
         private var initalPosition:int = 0;
         private var _mouseRollSpeedFactor:Number = 1.3;
 
-        public function UIScrollbar(_arg_1:int)
-        {
+        public function UIScrollbar(_arg_1:int){
             this.contentHeight = _arg_1;
             this.background = TextureParser.instance.getSliceScalingBitmap("UI", "scrollbar_background", SCROLL_SLIDER_WIDTH);
             this.background.height = _arg_1;
@@ -43,15 +40,13 @@ public class UIScrollbar extends Sprite
             addChild(this._slider);
         }
 
-        public function set content(_arg_1:DisplayObject):void
-        {
+        public function set content(_arg_1:DisplayObject):void{
             this._content = _arg_1;
             this.initalPosition = this._content.y;
             this.update();
         }
 
-        public function update():void
-        {
+        public function update():void{
             var _local_1:int;
             if (this._content.height <= this.contentHeight)
             {
@@ -65,66 +60,58 @@ public class UIScrollbar extends Sprite
                 if (_local_1 < SCROLL_SLIDER_MINIMUM_HEIGHT)
                 {
                     _local_1 = SCROLL_SLIDER_MINIMUM_HEIGHT;
-                }
+                };
                 this.sliderAsset.height = _local_1;
-            }
+            };
         }
 
-        public function updatePosition(_arg_1:Number):void
-        {
+        public function updatePosition(_arg_1:Number):void{
             this._slider.y = (this._slider.y + Math.round(_arg_1));
             if (this._slider.y < 0)
             {
                 this._slider.y = 0;
-            }
+            };
             var _local_2:int = (this.contentHeight - this._slider.height);
             if (this._slider.y > _local_2)
             {
                 this._slider.y = _local_2;
-            }
+            };
             if (_local_2 > 0)
             {
                 this._content.y = (this.initalPosition + -(Math.round((((this._content.height - this.contentHeight) * this._slider.y) / _local_2))));
-            }
+            };
         }
 
-        public function get content():DisplayObject
-        {
+        public function get content():DisplayObject{
             return (this._content);
         }
 
-        public function get slider():Sprite
-        {
+        public function get slider():Sprite{
             return (this._slider);
         }
 
-        public function get scrollObject():DisplayObject
-        {
+        public function get scrollObject():DisplayObject{
             if (this._scrollObject)
             {
                 return (this._scrollObject);
-            }
+            };
             return (this._content);
         }
 
-        public function set scrollObject(_arg_1:DisplayObject):void
-        {
+        public function set scrollObject(_arg_1:DisplayObject):void{
             this._scrollObject = _arg_1;
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.background.dispose();
             this.sliderAsset.dispose();
         }
 
-        public function get mouseRollSpeedFactor():Number
-        {
+        public function get mouseRollSpeedFactor():Number{
             return (this._mouseRollSpeedFactor);
         }
 
-        public function set mouseRollSpeedFactor(_arg_1:Number):void
-        {
+        public function set mouseRollSpeedFactor(_arg_1:Number):void{
             this._mouseRollSpeedFactor = _arg_1;
         }
 

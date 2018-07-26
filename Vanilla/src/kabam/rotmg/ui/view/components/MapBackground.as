@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.components.MapBackground
 
-package kabam.rotmg.ui.view.components
-{
+package kabam.rotmg.ui.view.components{
 import com.company.assembleegameclient.background.Background;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Map;
@@ -17,8 +16,7 @@ import flash.geom.Rectangle;
 import flash.utils.ByteArray;
 import flash.utils.getTimer;
 
-public class MapBackground extends Sprite
-    {
+public class MapBackground extends Sprite {
 
         private static const BORDER:int = 10;
         private static const RECTANGLE:Rectangle = new Rectangle(-400, -300, 800, 600);
@@ -34,39 +32,34 @@ public class MapBackground extends Sprite
         private var lastUpdate:int;
         private var time:Number;
 
-        public function MapBackground()
-        {
+        public function MapBackground(){
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             addChildAt((backgroundMap = ((backgroundMap) || (this.makeMap()))), 0);
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             this.lastUpdate = getTimer();
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             this.time = getTimer();
             xVal = (xVal + ((this.time - this.lastUpdate) * TO_MILLISECONDS));
             if (xVal > (mapSize.x_ + BORDER))
             {
                 xVal = (xVal - mapSize.x_);
-            }
+            };
             camera.configure(xVal, yVal, 12, ANGLE, RECTANGLE);
             backgroundMap.draw(camera, this.time);
             this.lastUpdate = this.time;
         }
 
-        private function makeMap():Map
-        {
+        private function makeMap():Map{
             var _local_1:ByteArray = new EMBEDDED_BACKGROUNDMAP();
             var _local_2:String = _local_1.readUTFBytes(_local_1.length);
             mapSize = MapDecoder.getSize(_local_2);

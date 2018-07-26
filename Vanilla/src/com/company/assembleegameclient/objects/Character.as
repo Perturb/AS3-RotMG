@@ -1,20 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Character
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
-public class Character extends GameObject
-    {
+public class Character extends GameObject {
 
         public var hurtSound_:String;
         public var deathSound_:String;
 
-        public function Character(_arg_1:XML)
-        {
+        public function Character(_arg_1:XML){
             super(_arg_1);
             this.hurtSound_ = ((_arg_1.hasOwnProperty("HitSound")) ? String(_arg_1.HitSound) : "monster/default_hit");
             SoundEffectLibrary.load(this.hurtSound_);
@@ -22,8 +19,7 @@ public class Character extends GameObject
             SoundEffectLibrary.load(this.deathSound_);
         }
 
-        override public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile, _arg_6:Boolean=false):void
-        {
+        override public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile, _arg_6:Boolean=false):void{
             super.damage(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6);
             if (dead_)
             {
@@ -34,8 +30,8 @@ public class Character extends GameObject
                 if (((_arg_5) || (_arg_2 > 0)))
                 {
                     SoundEffectLibrary.play(this.hurtSound_);
-                }
-            }
+                };
+            };
         }
 
 

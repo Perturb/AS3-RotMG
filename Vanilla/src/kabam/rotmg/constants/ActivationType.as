@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.constants.ActivationType
 
-package kabam.rotmg.constants
-{
-    public class ActivationType 
-    {
+package kabam.rotmg.constants{
+    public class ActivationType {
 
         public static const UNLOCK_PORTAL:String = "UnlockPortal";
         public static const SHOOT:String = "Shoot";

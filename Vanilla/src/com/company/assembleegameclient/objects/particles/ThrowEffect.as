@@ -1,30 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ThrowEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import flash.geom.Point;
 
-public class ThrowEffect extends ParticleEffect
-    {
+public class ThrowEffect extends ParticleEffect {
 
         public var start_:Point;
         public var end_:Point;
         public var color_:int;
         public var duration_:int;
 
-        public function ThrowEffect(_arg_1:Point, _arg_2:Point, _arg_3:int, _arg_4:int=1500)
-        {
+        public function ThrowEffect(_arg_1:Point, _arg_2:Point, _arg_3:int, _arg_4:int=1500){
             this.start_ = _arg_1;
             this.end_ = _arg_2;
             this.color_ = _arg_3;
             this.duration_ = _arg_4;
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             x_ = this.start_.x;
             y_ = this.start_.y;
             var _local_3:* = 200;
@@ -33,8 +29,7 @@ public class ThrowEffect extends ParticleEffect
             return (false);
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             x_ = this.start_.x;
             y_ = this.start_.y;
             var _local_3:int = 10;
@@ -53,8 +48,7 @@ import com.company.assembleegameclient.util.RandomUtil;
 
 import flash.geom.Point;
 
-class ThrowParticle extends Particle
-{
+class ThrowParticle extends Particle {
 
     public var lifetime_:int;
     public var timeLeft_:int;
@@ -66,8 +60,7 @@ class ThrowParticle extends Particle
     public var pathX_:Number;
     public var pathY_:Number;
 
-    public function ThrowParticle(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Point, _arg_5:Point)
-    {
+    public function ThrowParticle(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Point, _arg_5:Point){
         super(_arg_2, 0, _arg_1);
         this.lifetime_ = (this.timeLeft_ = _arg_3);
         this.initialSize_ = _arg_1;
@@ -80,13 +73,12 @@ class ThrowParticle extends Particle
         this.pathY_ = (y_ = this.start_.y);
     }
 
-    override public function update(_arg_1:int, _arg_2:int):Boolean
-    {
+    override public function update(_arg_1:int, _arg_2:int):Boolean{
         this.timeLeft_ = (this.timeLeft_ - _arg_2);
         if (this.timeLeft_ <= 0)
         {
             return (false);
-        }
+        };
         z_ = (Math.sin(((this.timeLeft_ / this.lifetime_) * Math.PI)) * 2);
         setSize(0);
         this.pathX_ = (this.pathX_ + (this.dx_ * _arg_2));

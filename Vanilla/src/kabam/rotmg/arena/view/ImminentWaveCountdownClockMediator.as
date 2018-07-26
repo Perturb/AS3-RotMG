@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ImminentWaveCountdownClockMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
@@ -16,8 +15,7 @@ import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ImminentWaveCountdownClockMediator extends Mediator 
-    {
+public class ImminentWaveCountdownClockMediator extends Mediator {
 
         [Inject]
         public var view:ImminentWaveCountdownClock;
@@ -34,8 +32,7 @@ public class ImminentWaveCountdownClockMediator extends Mediator
         private var fadeOutTimer:Timer = new Timer(800, 1);
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.fadeOutTimer.addEventListener(TimerEvent.TIMER, this.onShow);
             this.showMapLoading.add(this.removeView);
             this.gameClosed.add(this.removeView);
@@ -49,38 +46,33 @@ public class ImminentWaveCountdownClockMediator extends Mediator
             else
             {
                 this.view.show();
-            }
+            };
         }
 
-        private function removeView():void
-        {
+        private function removeView():void{
             this.view.destroy();
             this.onClose();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.fadeOutTimer.removeEventListener(TimerEvent.TIMER, this.onShow);
             this.showMapLoading.remove(this.removeView);
             this.gameClosed.remove(this.removeView);
         }
 
-        private function initView():void
-        {
+        private function initView():void{
             this.fadeOutTimer.start();
         }
 
-        private function onShow(_arg_1:TimerEvent):void
-        {
+        private function onShow(_arg_1:TimerEvent):void{
             this.view.show();
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             if (this.layers.mouseDisabledTop.contains(this.view))
             {
                 this.layers.mouseDisabledTop.removeChild(this.view);
-            }
+            };
         }
 
 

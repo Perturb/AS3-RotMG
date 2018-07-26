@@ -1,27 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.utils.colors.RandomColorGenerator
 
-package io.decagames.rotmg.utils.colors
-{
+package io.decagames.rotmg.utils.colors{
 import flash.utils.Dictionary;
 
-public class RandomColorGenerator 
-    {
+public class RandomColorGenerator {
 
         private var colorDictionary:Dictionary;
         private var seed:int = -1;
 
-        public function RandomColorGenerator(_arg_1:int=-1)
-        {
+        public function RandomColorGenerator(_arg_1:int=-1){
             this.seed = _arg_1;
             this.colorDictionary = new Dictionary();
             this.loadColorBounds();
         }
 
-        public function randomColor(_arg_1:String=""):Array
-        {
+        public function randomColor(_arg_1:String=""):Array{
             var _local_2:int = this.pickHue();
             var _local_3:int = this.pickSaturation(_local_2, _arg_1);
             var _local_4:int = this.pickBrightness(_local_2, _local_3, _arg_1);
@@ -29,17 +25,16 @@ public class RandomColorGenerator
             return (_local_5);
         }
 
-        private function HSVtoRGB(_arg_1:Array):Array
-        {
+        private function HSVtoRGB(_arg_1:Array):Array{
             var _local_2:Number = _arg_1[0];
             if (_local_2 === 0)
             {
                 _local_2 = 1;
-            }
+            };
             if (_local_2 === 360)
             {
                 _local_2 = 359;
-            }
+            };
             _local_2 = (_local_2 / 360);
             var _local_3:Number = (_arg_1[1] / 100);
             var _local_4:Number = (_arg_1[2] / 100);
@@ -83,12 +78,11 @@ public class RandomColorGenerator
                     _local_11 = _local_7;
                     _local_12 = _local_8;
                     break;
-            }
+            };
             return ([Math.floor((_local_10 * 0xFF)), Math.floor((_local_11 * 0xFF)), Math.floor((_local_12 * 0xFF))]);
         }
 
-        private function pickSaturation(_arg_1:int, _arg_2:String):int
-        {
+        private function pickSaturation(_arg_1:int, _arg_2:String):int{
             var _local_3:Array = this.getSaturationRange(_arg_1);
             var _local_4:int = _local_3[0];
             var _local_5:int = _local_3[1];
@@ -103,36 +97,33 @@ public class RandomColorGenerator
                 case "light":
                     _local_5 = 55;
                     break;
-            }
+            };
             return (this.randomWithin([_local_4, _local_5]));
         }
 
-        private function getColorInfo(_arg_1:int):Object
-        {
+        private function getColorInfo(_arg_1:int):Object{
             var _local_2:String;
             var _local_3:Object;
             if (((_arg_1 >= 334) && (_arg_1 <= 360)))
             {
                 _arg_1 = (_arg_1 - 360);
-            }
+            };
             for (_local_2 in this.colorDictionary)
             {
                 _local_3 = this.colorDictionary[_local_2];
                 if ((((_local_3.hueRange) && (_arg_1 >= _local_3.hueRange[0])) && (_arg_1 <= _local_3.hueRange[1])))
                 {
                     return (this.colorDictionary[_local_2]);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        private function getSaturationRange(_arg_1:int):Array
-        {
+        private function getSaturationRange(_arg_1:int):Array{
             return (this.getColorInfo(_arg_1).saturationRange);
         }
 
-        private function pickBrightness(_arg_1:int, _arg_2:int, _arg_3:String):int
-        {
+        private function pickBrightness(_arg_1:int, _arg_2:int, _arg_3:String):int{
             var _local_4:int = this.getMinimumBrightness(_arg_1, _arg_2);
             var _local_5:int = 100;
             switch (_arg_3)
@@ -147,12 +138,11 @@ public class RandomColorGenerator
                     _local_4 = 0;
                     _local_5 = 100;
                     break;
-            }
+            };
             return (this.randomWithin([_local_4, _local_5]));
         }
 
-        private function getMinimumBrightness(_arg_1:int, _arg_2:int):int
-        {
+        private function getMinimumBrightness(_arg_1:int, _arg_2:int):int{
             var _local_5:int;
             var _local_6:int;
             var _local_7:int;
@@ -172,21 +162,20 @@ public class RandomColorGenerator
                     _local_9 = ((_local_8 - _local_6) / (_local_7 - _local_5));
                     _local_10 = (_local_6 - (_local_9 * _local_5));
                     return ((_local_9 * _arg_2) + _local_10);
-                }
+                };
                 _local_4++;
-            }
+            };
             return (0);
         }
 
-        private function randomWithin(_arg_1:Array):int
-        {
+        private function randomWithin(_arg_1:Array):int{
             var _local_2:Number;
             var _local_3:Number;
             var _local_4:Number;
             if (this.seed == -1)
             {
                 return (Math.floor((_arg_1[0] + (Math.random() * ((_arg_1[1] + 1) - _arg_1[0])))));
-            }
+            };
             _local_2 = ((_arg_1[1]) || (1));
             _local_3 = ((_arg_1[0]) || (0));
             this.seed = (((this.seed * 9301) + 49297) % 233280);
@@ -194,28 +183,25 @@ public class RandomColorGenerator
             return (Math.floor((_local_3 + (_local_4 * (_local_2 - _local_3)))));
         }
 
-        private function pickHue(_arg_1:int=-1):int
-        {
+        private function pickHue(_arg_1:int=-1):int{
             var _local_2:Array = this.getHueRange(_arg_1);
             var _local_3:int = this.randomWithin(_local_2);
             if (_local_3 < 0)
             {
                 _local_3 = (360 + _local_3);
-            }
+            };
             return (_local_3);
         }
 
-        private function getHueRange(_arg_1:int):Array
-        {
+        private function getHueRange(_arg_1:int):Array{
             if (((_arg_1 < 360) && (_arg_1 > 0)))
             {
                 return ([_arg_1, _arg_1]);
-            }
+            };
             return ([0, 360]);
         }
 
-        private function defineColor(_arg_1:String, _arg_2:Array, _arg_3:Array):void
-        {
+        private function defineColor(_arg_1:String, _arg_2:Array, _arg_3:Array):void{
             var _local_4:int = _arg_3[0][0];
             var _local_5:int = _arg_3[(_arg_3.length - 1)][0];
             var _local_6:int = _arg_3[(_arg_3.length - 1)][1];
@@ -228,8 +214,7 @@ public class RandomColorGenerator
             };
         }
 
-        private function loadColorBounds():void
-        {
+        private function loadColorBounds():void{
             this.defineColor("monochrome", null, [[0, 0], [100, 0]]);
             this.defineColor("red", [-26, 18], [[20, 100], [30, 92], [40, 89], [50, 85], [60, 78], [70, 70], [80, 60], [90, 55], [100, 50]]);
             this.defineColor("orange", [19, 46], [[20, 100], [30, 93], [40, 88], [50, 86], [60, 85], [70, 70], [100, 70]]);

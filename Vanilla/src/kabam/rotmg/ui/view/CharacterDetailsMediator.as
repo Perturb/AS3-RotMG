@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterDetailsMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.objects.ImageFactory;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -29,8 +28,7 @@ import kabam.rotmg.ui.signals.UpdateHUDSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CharacterDetailsMediator extends Mediator
-    {
+public class CharacterDetailsMediator extends Mediator {
 
         [Inject]
         public var view:CharacterDetailsView;
@@ -56,8 +54,7 @@ public class CharacterDetailsMediator extends Mediator
         public var openDialog:OpenDialogSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.injectFactories();
             this.view.init(this.hudModel.getPlayerName(), this.hudModel.getButtonType());
             this.updateHUD.addOnce(this.onUpdateHUD);
@@ -69,17 +66,15 @@ public class CharacterDetailsMediator extends Mediator
             {
                 this.socialModel.noInvitationSignal.add(this.clearFriendsIndicator);
                 this.socialModel.socialDataSignal.add(this.onFriendsData);
-            }
+            };
             this.view.initFriendList(this.imageFactory, this.iconButtonFactory, this.onFriendsBtnClicked, ((Parameters.USE_NEW_FRIENDS_UI) && (this.socialModel.hasInvitations)));
         }
 
-        private function clearFriendsIndicator():void
-        {
+        private function clearFriendsIndicator():void{
             this.view.clearInvitationIndicator();
         }
 
-        private function onFriendsBtnClicked(_arg_1:MouseEvent):void
-        {
+        private function onFriendsBtnClicked(_arg_1:MouseEvent):void{
             if (Parameters.USE_NEW_FRIENDS_UI)
             {
                 this.showPopupSignal.dispatch(new SocialPopupView());
@@ -87,11 +82,10 @@ public class CharacterDetailsMediator extends Mediator
             else
             {
                 this.openDialog.dispatch(new FriendListView());
-            }
+            };
         }
 
-        private function onFriendsData(_arg_1:String, _arg_2:Boolean, _arg_3:String):void
-        {
+        private function onFriendsData(_arg_1:String, _arg_2:Boolean, _arg_3:String):void{
             if (_arg_2)
             {
                 if (this.socialModel.hasInvitations)
@@ -101,18 +95,16 @@ public class CharacterDetailsMediator extends Mediator
                 else
                 {
                     this.view.clearInvitationIndicator();
-                }
-            }
+                };
+            };
         }
 
-        private function injectFactories():void
-        {
+        private function injectFactories():void{
             this.view.iconButtonFactory = this.iconButtonFactory;
             this.view.imageFactory = this.imageFactory;
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.updateHUD.remove(this.onDraw);
             this.nameChanged.remove(this.onNameChange);
             this.view.gotoNexus.remove(this.onGotoNexus);
@@ -122,43 +114,38 @@ public class CharacterDetailsMediator extends Mediator
             {
                 this.socialModel.noInvitationSignal.remove(this.clearFriendsIndicator);
                 this.socialModel.socialDataSignal.remove(this.onFriendsData);
-            }
+            };
         }
 
-        private function onGotoNexus():void
-        {
+        private function onGotoNexus():void{
             this.tellModel.clearRecipients();
             this.hudModel.gameSprite.gsc_.escape();
             var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             if (_local_1)
             {
-            }
+            };
             Parameters.data_.needsRandomRealm = false;
             Parameters.save();
         }
 
-        private function onGotoOptions():void
-        {
+        private function onGotoOptions():void{
             this.hudModel.gameSprite.mui_.clearInput();
             var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             if (_local_1)
             {
-            }
+            };
             this.hudModel.gameSprite.addChild(new Options(this.hudModel.gameSprite));
         }
 
-        private function onUpdateHUD(_arg_1:Player):void
-        {
+        private function onUpdateHUD(_arg_1:Player):void{
             this.view.update(_arg_1);
         }
 
-        private function onDraw(_arg_1:Player):void
-        {
+        private function onDraw(_arg_1:Player):void{
             this.view.draw(_arg_1);
         }
 
-        private function onNameChange(_arg_1:String):void
-        {
+        private function onNameChange(_arg_1:String):void{
             this.view.setName(_arg_1);
         }
 

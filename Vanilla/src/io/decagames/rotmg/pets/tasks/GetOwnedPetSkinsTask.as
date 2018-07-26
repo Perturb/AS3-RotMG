@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask
 
-package io.decagames.rotmg.pets.tasks
-{
+package io.decagames.rotmg.pets.tasks{
 import com.company.util.MoreObjectUtil;
 
 import io.decagames.rotmg.pets.data.PetsModel;
@@ -15,8 +14,7 @@ import kabam.rotmg.appengine.api.AppEngineClient;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GetOwnedPetSkinsTask extends BaseTask
-    {
+public class GetOwnedPetSkinsTask extends BaseTask {
 
         [Inject]
         public var account:Account;
@@ -28,8 +26,7 @@ public class GetOwnedPetSkinsTask extends BaseTask
         public var petModel:PetsModel;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.info("GetOwnedPetSkinsTask start");
             if (!this.account.isRegistered())
             {
@@ -40,18 +37,16 @@ public class GetOwnedPetSkinsTask extends BaseTask
             {
                 this.client.complete.addOnce(this.onComplete);
                 this.client.sendRequest("/account/getOwnedPetSkins", this.makeDataPacket());
-            }
+            };
         }
 
-        private function makeDataPacket():Object
-        {
+        private function makeDataPacket():Object{
             var _local_1:Object = {};
             MoreObjectUtil.addToObject(_local_1, this.account.getCredentials());
             return (_local_1);
         }
 
-        private function onComplete(isOK:Boolean, data:*):void
-        {
+        private function onComplete(isOK:Boolean, data:*):void{
             isOK = ((isOK) || (data == "<Success/>"));
             if (isOK)
             {
@@ -62,9 +57,9 @@ public class GetOwnedPetSkinsTask extends BaseTask
                 catch(e:Error)
                 {
                     logger.error(((e.message + " ") + e.getStackTrace()));
-                }
+                };
                 this.petModel.parsePetsData();
-            }
+            };
             completeTask(isOK, data);
         }
 

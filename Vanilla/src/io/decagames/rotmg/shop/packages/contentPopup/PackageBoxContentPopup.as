@@ -1,24 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.packages.contentPopup.PackageBoxContentPopup
 
-package io.decagames.rotmg.shop.packages.contentPopup
-{
+package io.decagames.rotmg.shop.packages.contentPopup{
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.popups.modal.ModalPopup;
 
 import kabam.rotmg.packages.model.PackageInfo;
 
-public class PackageBoxContentPopup extends ModalPopup 
-    {
+public class PackageBoxContentPopup extends ModalPopup {
 
         private var _info:PackageInfo;
         private var _infoLabel:UILabel;
 
-        public function PackageBoxContentPopup(_arg_1:PackageInfo)
-        {
+        public function PackageBoxContentPopup(_arg_1:PackageInfo){
             this._info = _arg_1;
             super(280, 0, _arg_1.title, DefaultLabelFormat.defaultSmallPopupTitle);
             this._infoLabel = new UILabel();
@@ -31,13 +28,11 @@ public class PackageBoxContentPopup extends ModalPopup
             addChild(this._infoLabel);
         }
 
-        public function get info():PackageInfo
-        {
+        public function get info():PackageInfo{
             return (this._info);
         }
 
-        public function get infoLabel():UILabel
-        {
+        public function get infoLabel():UILabel{
             return (this._infoLabel);
         }
 

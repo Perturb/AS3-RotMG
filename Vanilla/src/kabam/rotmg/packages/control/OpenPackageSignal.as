@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.OpenPackageSignal
 
-package kabam.rotmg.packages.control
-{
+package kabam.rotmg.packages.control{
 import org.osflash.signals.Signal;
 
-public class OpenPackageSignal extends Signal 
-    {
+public class OpenPackageSignal extends Signal {
 
-        public function OpenPackageSignal()
-        {
+        public function OpenPackageSignal(){
             super(int);
         }
 

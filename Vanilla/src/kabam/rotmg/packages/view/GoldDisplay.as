@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.GoldDisplay
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
@@ -16,15 +15,13 @@ import flash.display.Sprite;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class GoldDisplay extends Sprite
-    {
+public class GoldDisplay extends Sprite {
 
         internal var graphic:DisplayObject;
         internal var text:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);
 
 
-        public function init():void
-        {
+        public function init():void{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiObj3", 225);
             _local_1 = TextureRedrawer.redraw(_local_1, 40, true, 0);
             this.graphic = new Bitmap(_local_1);
@@ -35,14 +32,12 @@ public class GoldDisplay extends Sprite
             this.text.textChanged.add(this.onTextChanged);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             this.text.x = ((this.graphic.x - this.text.width) + 4);
             this.text.y = ((-(this.text.height) / 2) - 6);
         }
 
-        public function setGold(_arg_1:int):void
-        {
+        public function setGold(_arg_1:int):void{
             this.text.setStringBuilder(new StaticStringBuilder(String(_arg_1)));
         }
 

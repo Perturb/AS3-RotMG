@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.control.ResurrectPlayerCommand
 
-package kabam.rotmg.death.control
-{
+package kabam.rotmg.death.control{
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.death.model.DeathModel;
@@ -12,8 +11,7 @@ import kabam.rotmg.death.view.ResurrectionView;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class ResurrectPlayerCommand 
-    {
+public class ResurrectPlayerCommand {
 
         [Inject]
         public var model:PlayerModel;
@@ -25,8 +23,7 @@ public class ResurrectPlayerCommand
         public var logger:ILogger;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.logger.info("Resurrect Player");
             this.deathModel.clearPendingDeathView();
             this.model.setHasPlayerDied(true);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.partyoverlay.QuestArrow
 
-package com.company.assembleegameclient.map.partyoverlay
-{
+package com.company.assembleegameclient.map.partyoverlay{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.map.Quest;
@@ -18,65 +17,57 @@ import com.greensock.TweenMax;
 import flash.events.MouseEvent;
 import flash.utils.getTimer;
 
-public class QuestArrow extends GameObjectArrow
-    {
+public class QuestArrow extends GameObjectArrow {
 
         public var map_:Map;
         private var questArrowTween:TweenMax;
 
-        public function QuestArrow(_arg_1:Map)
-        {
+        public function QuestArrow(_arg_1:Map){
             super(16352321, 12919330, true);
             this.map_ = _arg_1;
         }
 
-        public function refreshToolTip():void
-        {
+        public function refreshToolTip():void{
             if (TweenMax.isTweening(this))
             {
                 TweenMax.killTweensOf(this);
                 this.questArrowTween.pause(0);
-            }
+            };
             setToolTip(this.getToolTip(go_, getTimer()));
         }
 
-        override protected function onMouseOver(_arg_1:MouseEvent):void
-        {
+        override protected function onMouseOver(_arg_1:MouseEvent):void{
             super.onMouseOver(_arg_1);
             this.refreshToolTip();
         }
 
-        override protected function onMouseOut(_arg_1:MouseEvent):void
-        {
+        override protected function onMouseOut(_arg_1:MouseEvent):void{
             super.onMouseOut(_arg_1);
             this.refreshToolTip();
         }
 
-        private function getToolTip(_arg_1:GameObject, _arg_2:int):ToolTip
-        {
+        private function getToolTip(_arg_1:GameObject, _arg_2:int):ToolTip{
             if (((_arg_1 == null) || (_arg_1.texture_ == null)))
             {
                 return (null);
-            }
+            };
             if (this.shouldShowFullQuest(_arg_2))
             {
                 return (new QuestToolTip(go_));
-            }
+            };
             if (Parameters.data_.showQuestPortraits)
             {
                 return (new PortraitToolTip(_arg_1));
-            }
+            };
             return (null);
         }
 
-        private function shouldShowFullQuest(_arg_1:int):Boolean
-        {
+        private function shouldShowFullQuest(_arg_1:int):Boolean{
             var _local_2:Quest = this.map_.quest_;
             return ((mouseOver_) || (_local_2.isNew(_arg_1)));
         }
 
-        override public function draw(_arg_1:int, _arg_2:Camera):void
-        {
+        override public function draw(_arg_1:int, _arg_2:Camera):void{
             var _local_4:Boolean;
             var _local_5:Boolean;
             var _local_3:GameObject = this.map_.quest_.getObject(_arg_1);
@@ -96,7 +87,7 @@ public class QuestArrow extends GameObjectArrow
                 else
                 {
                     this.questArrowTween.play(0);
-                }
+                };
             }
             else
             {
@@ -107,9 +98,9 @@ public class QuestArrow extends GameObjectArrow
                     if (_local_4 != _local_5)
                     {
                         setToolTip(this.getToolTip(_local_3, _arg_1));
-                    }
-                }
-            }
+                    };
+                };
+            };
             super.draw(_arg_1, _arg_2);
         }
 

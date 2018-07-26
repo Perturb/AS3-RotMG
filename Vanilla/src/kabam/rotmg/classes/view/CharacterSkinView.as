@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinView
 
-package kabam.rotmg.classes.view
-{
+package kabam.rotmg.classes.view{
 import com.company.assembleegameclient.constants.ScreenTypes;
 import com.company.assembleegameclient.screens.AccountScreen;
 import com.company.assembleegameclient.screens.TitleMenuOption;
@@ -25,8 +24,7 @@ import kabam.rotmg.ui.view.components.ScreenBase;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class CharacterSkinView extends Sprite
-    {
+public class CharacterSkinView extends Sprite {
 
         private const base:ScreenBase = makeScreenBase();
         private const account:AccountScreen = makeAccountScreen();
@@ -42,37 +40,33 @@ public class CharacterSkinView extends Sprite
         public const waiter:SignalWaiter = makeSignalWaiter();
 
 
-        private function makeScreenBase():ScreenBase
-        {
+        private function makeScreenBase():ScreenBase{
             var _local_1:ScreenBase = new ScreenBase();
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeAccountScreen():AccountScreen
-        {
+        private function makeAccountScreen():AccountScreen{
             var _local_1:AccountScreen = new AccountScreen();
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeCreditDisplay():CreditDisplay
-        {
+        private function makeCreditDisplay():CreditDisplay{
             var _local_1:CreditDisplay;
             _local_1 = new CreditDisplay(null, true, true);
             var _local_2:PlayerModel = StaticInjectorContext.getInjector().getInstance(PlayerModel);
             if (_local_2 != null)
             {
                 _local_1.draw(_local_2.getCredits(), _local_2.getFame(), _local_2.getTokens());
-            }
+            };
             _local_1.x = 800;
             _local_1.y = 20;
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeLines():Shape
-        {
+        private function makeLines():Shape{
             var _local_1:Shape = new Shape();
             _local_1.graphics.clear();
             _local_1.graphics.lineStyle(2, 0x545454);
@@ -84,15 +78,13 @@ public class CharacterSkinView extends Sprite
             return (_local_1);
         }
 
-        private function makeScreenGraphic():ScreenGraphic
-        {
+        private function makeScreenGraphic():ScreenGraphic{
             var _local_1:ScreenGraphic = new ScreenGraphic();
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makePlayButton():TitleMenuOption
-        {
+        private function makePlayButton():TitleMenuOption{
             var _local_1:TitleMenuOption;
             _local_1 = new TitleMenuOption(ScreenTypes.PLAY, 36, false);
             _local_1.setAutoSize(TextFieldAutoSize.CENTER);
@@ -103,8 +95,7 @@ public class CharacterSkinView extends Sprite
             return (_local_1);
         }
 
-        private function makeBackButton():TitleMenuOption
-        {
+        private function makeBackButton():TitleMenuOption{
             var _local_1:TitleMenuOption;
             _local_1 = new TitleMenuOption(ScreenTypes.BACK, 22, false);
             _local_1.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
@@ -114,8 +105,7 @@ public class CharacterSkinView extends Sprite
             return (_local_1);
         }
 
-        private function makeListView():CharacterSkinListView
-        {
+        private function makeListView():CharacterSkinListView{
             var _local_1:CharacterSkinListView;
             _local_1 = new CharacterSkinListView();
             _local_1.x = 351;
@@ -124,8 +114,7 @@ public class CharacterSkinView extends Sprite
             return (_local_1);
         }
 
-        private function makeClassDetailView():ClassDetailView
-        {
+        private function makeClassDetailView():ClassDetailView{
             var _local_1:ClassDetailView;
             _local_1 = new ClassDetailView();
             _local_1.x = 5;
@@ -134,24 +123,21 @@ public class CharacterSkinView extends Sprite
             return (_local_1);
         }
 
-        public function setPlayButtonEnabled(_arg_1:Boolean):void
-        {
+        public function setPlayButtonEnabled(_arg_1:Boolean):void{
             if (!_arg_1)
             {
                 this.playBtn.deactivate();
-            }
+            };
         }
 
-        private function makeSignalWaiter():SignalWaiter
-        {
+        private function makeSignalWaiter():SignalWaiter{
             var _local_1:SignalWaiter = new SignalWaiter();
             _local_1.push(this.playBtn.changed);
             _local_1.complete.add(this.positionOptions);
             return (_local_1);
         }
 
-        private function positionOptions():void
-        {
+        private function positionOptions():void{
             this.playBtn.x = (stage.stageWidth / 2);
         }
 

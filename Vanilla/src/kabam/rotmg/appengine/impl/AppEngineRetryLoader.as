@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.impl.AppEngineRetryLoader
 
-package kabam.rotmg.appengine.impl
-{
+package kabam.rotmg.appengine.impl{
 import flash.events.Event;
 import flash.events.IOErrorEvent;
 import flash.events.SecurityErrorEvent;
@@ -20,8 +19,7 @@ import kabam.rotmg.appengine.api.RetryLoader;
 
 import org.osflash.signals.OnceSignal;
 
-public class AppEngineRetryLoader implements RetryLoader
-    {
+public class AppEngineRetryLoader implements RetryLoader {
 
         private const _complete:OnceSignal = new OnceSignal(Boolean);
 
@@ -34,35 +32,29 @@ public class AppEngineRetryLoader implements RetryLoader
         private var retriesLeft:int;
         private var inProgress:Boolean;
 
-        public function AppEngineRetryLoader()
-        {
+        public function AppEngineRetryLoader(){
             this.inProgress = false;
             this.maxRetries = 0;
             this.dataFormat = URLLoaderDataFormat.TEXT;
         }
 
-        public function get complete():OnceSignal
-        {
+        public function get complete():OnceSignal{
             return (this._complete);
         }
 
-        public function isInProgress():Boolean
-        {
+        public function isInProgress():Boolean{
             return (this.inProgress);
         }
 
-        public function setDataFormat(_arg_1:String):void
-        {
+        public function setDataFormat(_arg_1:String):void{
             this.dataFormat = _arg_1;
         }
 
-        public function setMaxRetries(_arg_1:int):void
-        {
+        public function setMaxRetries(_arg_1:int):void{
             this.maxRetries = _arg_1;
         }
 
-        public function sendRequest(_arg_1:String, _arg_2:Object):void
-        {
+        public function sendRequest(_arg_1:String, _arg_2:Object):void{
             this.url = _arg_1;
             this.params = _arg_2;
             this.retriesLeft = this.maxRetries;
@@ -70,36 +62,32 @@ public class AppEngineRetryLoader implements RetryLoader
             this.internalSendRequest();
         }
 
-        private function internalSendRequest():void
-        {
+        private function internalSendRequest():void{
             this.cancelPendingRequest();
             this.urlRequest = this.makeUrlRequest();
             this.urlLoader = this.makeUrlLoader();
             this.urlLoader.load(this.urlRequest);
         }
 
-        private function makeUrlRequest():URLRequest
-        {
+        private function makeUrlRequest():URLRequest{
             var _local_1:URLRequest = new URLRequest(this.url);
             _local_1.method = URLRequestMethod.POST;
             _local_1.data = this.makeUrlVariables();
             return (_local_1);
         }
 
-        private function makeUrlVariables():URLVariables
-        {
+        private function makeUrlVariables():URLVariables{
             var _local_2:String;
             var _local_1:URLVariables = new URLVariables();
             _local_1.ignore = getTimer();
             for (_local_2 in this.params)
             {
                 _local_1[_local_2] = this.params[_local_2];
-            }
+            };
             return (_local_1);
         }
 
-        private function makeUrlLoader():URLLoader
-        {
+        private function makeUrlLoader():URLLoader{
             var _local_1:URLLoader = new URLLoader();
             _local_1.dataFormat = this.dataFormat;
             _local_1.addEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
@@ -108,25 +96,22 @@ public class AppEngineRetryLoader implements RetryLoader
             return (_local_1);
         }
 
-        private function onIOError(_arg_1:IOErrorEvent):void
-        {
+        private function onIOError(_arg_1:IOErrorEvent):void{
             this.inProgress = false;
             var _local_2:String = this.urlLoader.data;
             if (_local_2.length == 0)
             {
                 _local_2 = "Unable to contact server";
-            }
+            };
             this.retryOrReportError(_local_2);
         }
 
-        private function onSecurityError(_arg_1:SecurityErrorEvent):void
-        {
+        private function onSecurityError(_arg_1:SecurityErrorEvent):void{
             this.inProgress = false;
             this.cleanUpAndComplete(false, "Security Error");
         }
 
-        private function retryOrReportError(_arg_1:String):void
-        {
+        private function retryOrReportError(_arg_1:String):void{
             if (this.retriesLeft-- > 0)
             {
                 this.internalSendRequest();
@@ -134,11 +119,10 @@ public class AppEngineRetryLoader implements RetryLoader
             else
             {
                 this.cleanUpAndComplete(false, _arg_1);
-            }
+            };
         }
 
-        private function onComplete(_arg_1:Event):void
-        {
+        private function onComplete(_arg_1:Event):void{
             this.inProgress = false;
             if (this.dataFormat == URLLoaderDataFormat.TEXT)
             {
@@ -147,11 +131,10 @@ public class AppEngineRetryLoader implements RetryLoader
             else
             {
                 this.cleanUpAndComplete(true, ByteArray(this.urlLoader.data));
-            }
+            };
         }
 
-        private function handleTextResponse(_arg_1:String):void
-        {
+        private function handleTextResponse(_arg_1:String):void{
             if (_arg_1.substring(0, 7) == "<Error>")
             {
                 this.retryOrReportError(_arg_1);
@@ -165,28 +148,25 @@ public class AppEngineRetryLoader implements RetryLoader
                 else
                 {
                     this.cleanUpAndComplete(true, _arg_1);
-                }
-            }
+                };
+            };
         }
 
-        private function cleanUpAndComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function cleanUpAndComplete(_arg_1:Boolean, _arg_2:*):void{
             if (((!(_arg_1)) && (_arg_2 is String)))
             {
                 _arg_2 = this.parseXML(_arg_2);
-            }
+            };
             this.cancelPendingRequest();
             this._complete.dispatch(_arg_1, _arg_2);
         }
 
-        private function parseXML(_arg_1:String):String
-        {
+        private function parseXML(_arg_1:String):String{
             var _local_2:Array = _arg_1.match("<.*>(.*)</.*>");
             return (((_local_2) && (_local_2.length > 1)) ? _local_2[1] : _arg_1);
         }
 
-        private function cancelPendingRequest():void
-        {
+        private function cancelPendingRequest():void{
             if (this.urlLoader)
             {
                 this.urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
@@ -194,18 +174,17 @@ public class AppEngineRetryLoader implements RetryLoader
                 this.urlLoader.removeEventListener(Event.COMPLETE, this.onComplete);
                 this.closeLoader();
                 this.urlLoader = null;
-            }
+            };
         }
 
-        private function closeLoader():void
-        {
+        private function closeLoader():void{
             try
             {
                 this.urlLoader.close();
             }
             catch(e:Error)
             {
-            }
+            };
         }
 
 

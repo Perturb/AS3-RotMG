@@ -1,25 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dropdown.DropDownItem
 
-package com.company.assembleegameclient.ui.dropdown
-{
+package com.company.assembleegameclient.ui.dropdown{
 import com.company.ui.BaseSimpleText;
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 
-public class DropDownItem extends Sprite
-    {
+public class DropDownItem extends Sprite {
 
         public var w_:int;
         public var h_:int;
         private var nameText_:BaseSimpleText;
 
-        public function DropDownItem(_arg_1:String, _arg_2:int, _arg_3:int)
-        {
+        public function DropDownItem(_arg_1:String, _arg_2:int, _arg_3:int){
             this.w_ = _arg_2;
             this.h_ = _arg_3;
             this.nameText_ = new BaseSimpleText(13, 0xB3B3B3, false, 0, 0);
@@ -35,23 +32,19 @@ public class DropDownItem extends Sprite
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
         }
 
-        public function getValue():String
-        {
+        public function getValue():String{
             return (this.nameText_.text);
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.drawBackground(0x565656);
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             this.drawBackground(0x363636);
         }
 
-        private function drawBackground(_arg_1:uint):void
-        {
+        private function drawBackground(_arg_1:uint):void{
             graphics.clear();
             graphics.lineStyle(1, 0xB3B3B3);
             graphics.beginFill(_arg_1, 1);

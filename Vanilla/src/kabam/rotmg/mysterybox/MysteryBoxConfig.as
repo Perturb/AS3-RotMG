@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.MysteryBoxConfig
 
-package kabam.rotmg.mysterybox
-{
+package kabam.rotmg.mysterybox{
 import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
 import kabam.rotmg.mysterybox.services.MysteryBoxModel;
 import kabam.rotmg.startup.control.StartupSequence;
@@ -15,8 +14,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class MysteryBoxConfig implements IConfig 
-    {
+public class MysteryBoxConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -28,8 +26,7 @@ public class MysteryBoxConfig implements IConfig
         public var sequence:StartupSequence;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(MysteryBoxModel).asSingleton();
             this.injector.map(GetMysteryBoxesTask).asSingleton();
             this.sequence.addTask(GetMysteryBoxesTask);

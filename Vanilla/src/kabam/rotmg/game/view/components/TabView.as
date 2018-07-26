@@ -1,24 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.TabView
 
-package kabam.rotmg.game.view.components
-{
+package kabam.rotmg.game.view.components{
 import flash.display.Sprite;
 
-public class TabView extends Sprite 
-    {
+public class TabView extends Sprite {
 
         public var index:int;
 
-        public function TabView(_arg_1:int):void
-        {
+        public function TabView(_arg_1:int):void{
             this.index = _arg_1;
         }
 
-        public function setSelected(_arg_1:Boolean):void
-        {
+        public function setSelected(_arg_1:Boolean):void{
         }
 
 

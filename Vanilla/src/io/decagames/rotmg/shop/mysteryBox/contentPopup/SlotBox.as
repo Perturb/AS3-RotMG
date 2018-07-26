@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.SlotBox
 
-package io.decagames.rotmg.shop.mysteryBox.contentPopup
-{
+package io.decagames.rotmg.shop.mysteryBox.contentPopup{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 
 import flash.display.Bitmap;
@@ -19,8 +18,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 import kabam.rotmg.assets.services.IconFactory;
 
-public class SlotBox extends UIGridElement 
-    {
+public class SlotBox extends UIGridElement {
 
         public static const CHAR_SLOT:String = "CHAR_SLOT";
         public static const VAULT_SLOT:String = "VAULT_SLOT";
@@ -38,8 +36,7 @@ public class SlotBox extends UIGridElement
         private var _slotType:String;
         private var imageBitmap:Bitmap;
 
-        public function SlotBox(_arg_1:String, _arg_2:int, _arg_3:Boolean, _arg_4:String="", _arg_5:Boolean=false)
-        {
+        public function SlotBox(_arg_1:String, _arg_2:int, _arg_3:Boolean, _arg_4:String="", _arg_5:Boolean=false){
             this.isLastElement = _arg_5;
             this.amount = _arg_2;
             this.showFullName = _arg_3;
@@ -54,8 +51,7 @@ public class SlotBox extends UIGridElement
             this.resizeLabel();
         }
 
-        private function buildCharSlotIcon():Shape
-        {
+        private function buildCharSlotIcon():Shape{
             var _local_1:Shape = new Shape();
             _local_1.graphics.beginFill(3880246);
             _local_1.graphics.lineStyle(1, 4603457);
@@ -73,8 +69,7 @@ public class SlotBox extends UIGridElement
             return (_local_1);
         }
 
-        private function drawElement(_arg_1:int):void
-        {
+        private function drawElement(_arg_1:int):void{
             var _local_2:String;
             var _local_3:BitmapData;
             var _local_4:BitmapData;
@@ -108,7 +103,7 @@ public class SlotBox extends UIGridElement
                     this.imageBitmap.y = (-(Math.round(((this.imageBitmap.height - this.itemSize) / 2))) - 2);
                     this._itemBackground.addChild(this.imageBitmap);
                     break;
-            }
+            };
             if (this.showFullName)
             {
                 this.label.text = _local_2;
@@ -119,58 +114,51 @@ public class SlotBox extends UIGridElement
                 this.label.text = (_arg_1 + "x");
                 this.label.x = 10;
                 this._itemBackground.x = (this._itemBackground.x + (this.label.x + 10));
-            }
+            };
             addChild(this.label);
         }
 
-        private function resizeLabel():void
-        {
+        private function resizeLabel():void{
             this.label.width = ((this.targetWidth - (this.itemSize + (2 * this.itemMargin))) - 16);
             this.label.y = (((height - this.label.textHeight) - 4) / 2);
         }
 
-        override public function resize(_arg_1:int, _arg_2:int=-1):void
-        {
+        override public function resize(_arg_1:int, _arg_2:int=-1):void{
             if (!this.isBackgroundCleared)
             {
                 this.drawBackground("", this.isLastElement, _arg_1);
-            }
+            };
             this.targetWidth = _arg_1;
             this.resizeLabel();
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             if (this.imageBitmap)
             {
                 this.imageBitmap.bitmapData.dispose();
-            }
+            };
             super.dispose();
         }
 
-        public function get itemId():String
-        {
+        public function get itemId():String{
             return ("Vault Chest");
         }
 
-        public function get itemBackground():Sprite
-        {
+        public function get itemBackground():Sprite{
             return (this._itemBackground);
         }
 
-        private function drawBackground(_arg_1:String, _arg_2:Boolean, _arg_3:int):void
-        {
+        private function drawBackground(_arg_1:String, _arg_2:Boolean, _arg_3:int):void{
             if (_arg_1 == "")
             {
                 this.graphics.clear();
                 this.graphics.beginFill(0x2D2D2D);
                 this.graphics.drawRect(0, 0, _arg_3, (this.itemSize + (2 * this.itemMargin)));
                 this.graphics.endFill();
-            }
+            };
         }
 
-        public function get slotType():String
-        {
+        public function get slotType():String{
             return (this._slotType);
         }
 

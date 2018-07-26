@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDialog
 
-package io.decagames.rotmg.pets.components.caretaker
-{
+package io.decagames.rotmg.pets.components.caretaker{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import flash.display.BitmapData;
@@ -24,8 +23,7 @@ import kabam.rotmg.util.graphics.ButtonLayoutHelper;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class CaretakerQueryDialog extends Sprite 
-    {
+public class CaretakerQueryDialog extends Sprite {
 
         public static const WIDTH:int = 480;
         public static const HEIGHT:int = 428;
@@ -64,22 +62,19 @@ public class CaretakerQueryDialog extends Sprite
         public const closed:Signal = new NativeMappedSignal(closeButton, MouseEvent.CLICK);
 
 
-        private function makeDeferredLayout():SignalWaiter
-        {
+        private function makeDeferredLayout():SignalWaiter{
             var _local_1:SignalWaiter = new SignalWaiter();
             _local_1.complete.addOnce(this.onLayout);
             return (_local_1);
         }
 
-        private function onLayout():void
-        {
+        private function onLayout():void{
             var _local_1:ButtonLayoutHelper = new ButtonLayoutHelper();
             _local_1.layout(WIDTH, this.closeButton);
             _local_1.layout(WIDTH, this.backButton);
         }
 
-        private function makeContainer():DisplayObjectContainer
-        {
+        private function makeContainer():DisplayObjectContainer{
             var _local_1:Sprite;
             _local_1 = new Sprite();
             _local_1.x = ((800 - WIDTH) / 2);
@@ -88,8 +83,7 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeBackground():PopupWindowBackground
-        {
+        private function makeBackground():PopupWindowBackground{
             var _local_1:PopupWindowBackground = new PopupWindowBackground();
             _local_1.draw(WIDTH, HEIGHT);
             _local_1.divide(PopupWindowBackground.HORIZONTAL_DIVISION, 34);
@@ -97,8 +91,7 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeCaretaker():CaretakerQueryDialogCaretaker
-        {
+        private function makeCaretaker():CaretakerQueryDialogCaretaker{
             var _local_1:CaretakerQueryDialogCaretaker;
             _local_1 = new CaretakerQueryDialogCaretaker();
             _local_1.x = 20;
@@ -107,8 +100,7 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeTitle():TextFieldDisplayConcrete
-        {
+        private function makeTitle():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 18, true);
             _local_1.setStringBuilder(new LineBuilder().setParams(TITLE));
@@ -119,8 +111,7 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeBackButton():DeprecatedTextButton
-        {
+        private function makeBackButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton = new DeprecatedTextButton(16, BACK, 80);
             _local_1.y = 382;
             _local_1.visible = false;
@@ -130,16 +121,14 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function onBack(_arg_1:MouseEvent):void
-        {
+        private function onBack(_arg_1:MouseEvent):void{
             this.caretaker.showSpeech();
             this.categories.visible = true;
             this.closeButton.visible = true;
             this.backButton.visible = false;
         }
 
-        private function makeCloseButton():DeprecatedTextButton
-        {
+        private function makeCloseButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton = new DeprecatedTextButton(16, CLOSE, 110);
             _local_1.y = 382;
             this.container.addChild(_local_1);
@@ -147,8 +136,7 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeCategoryList():CaretakerQueryDialogCategoryList
-        {
+        private function makeCategoryList():CaretakerQueryDialogCategoryList{
             var _local_1:CaretakerQueryDialogCategoryList = new CaretakerQueryDialogCategoryList(CATEGORIES);
             _local_1.x = 20;
             _local_1.y = 110;
@@ -158,16 +146,14 @@ public class CaretakerQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function onCategorySelected(_arg_1:String):void
-        {
+        private function onCategorySelected(_arg_1:String):void{
             this.categories.visible = false;
             this.closeButton.visible = false;
             this.backButton.visible = true;
             this.caretaker.showDetail(_arg_1);
         }
 
-        public function setCaretakerIcon(_arg_1:BitmapData):void
-        {
+        public function setCaretakerIcon(_arg_1:BitmapData):void{
             this.caretaker.setCaretakerIcon(_arg_1);
         }
 

@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.vo.AbilityVO
 
-package io.decagames.rotmg.pets.data.vo
-{
+package io.decagames.rotmg.pets.data.vo{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 
 import org.osflash.signals.Signal;
 
-public class AbilityVO 
-    {
+public class AbilityVO {
 
         public const updated:Signal = new Signal(AbilityVO);
 
@@ -23,26 +21,22 @@ public class AbilityVO
         private var unlocked:Boolean;
 
 
-        public function set type(_arg_1:uint):void
-        {
+        public function set type(_arg_1:uint):void{
             this._type = _arg_1;
             this._staticData = ObjectLibrary.getPetDataXMLByType(this._type);
             this.name = ((this._staticData.DisplayId == undefined) ? this._staticData.@id : this._staticData.DisplayId);
             this.description = this._staticData.Description;
         }
 
-        public function setUnlocked(_arg_1:Boolean):void
-        {
+        public function setUnlocked(_arg_1:Boolean):void{
             this.unlocked = _arg_1;
         }
 
-        public function getUnlocked():Boolean
-        {
+        public function getUnlocked():Boolean{
             return (this.unlocked);
         }
 
-        public function clone():AbilityVO
-        {
+        public function clone():AbilityVO{
             var _local_1:AbilityVO = new AbilityVO();
             _local_1.type = this._type;
             _local_1.level = this.level;
@@ -51,8 +45,7 @@ public class AbilityVO
             return (_local_1);
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             return ((((("[AbilityVO] Name: " + this.name) + ", level:") + this.level) + ", unlocked? ") + ((this.getUnlocked()) ? "yes" : "no"));
         }
 

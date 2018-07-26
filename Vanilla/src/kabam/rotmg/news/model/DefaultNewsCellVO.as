@@ -1,15 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.model.DefaultNewsCellVO
 
-package kabam.rotmg.news.model
-{
-    public class DefaultNewsCellVO extends NewsCellVO 
-    {
+package kabam.rotmg.news.model{
+    public class DefaultNewsCellVO extends NewsCellVO {
 
-        public function DefaultNewsCellVO(_arg_1:int)
-        {
+        public function DefaultNewsCellVO(_arg_1:int){
             imageURL = "";
             linkDetail = ((_arg_1 == 0) ? "https://www.reddit.com/r/RotMG/search?sort=new&restrict_sr=on&q=flair%3AOfficial%2BDeca" : "https://goo.gl/DXwAbW");
             headline = ((_arg_1 == 0) ? "Official Deca Posts on Reddit" : "Join us on Facebook!");

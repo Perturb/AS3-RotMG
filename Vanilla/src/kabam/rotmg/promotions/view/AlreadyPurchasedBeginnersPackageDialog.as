@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog
 
-package kabam.rotmg.promotions.view
-{
+package kabam.rotmg.promotions.view{
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.geom.Rectangle;
@@ -14,26 +13,22 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 
-public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable
-    {
+public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable {
 
         public static var hifiBeginnerOfferAlreadyPurchasedEmbed:Class = AlreadyPurchasedBeginnersPackageDialog_hifiBeginnerOfferAlreadyPurchasedEmbed;
 
         private var closeBtn:Sprite;
 
-        public function AlreadyPurchasedBeginnersPackageDialog()
-        {
+        public function AlreadyPurchasedBeginnersPackageDialog(){
             this.addBackground();
             this.makeCloseButton();
         }
 
-        private function addBackground():void
-        {
+        private function addBackground():void{
             addChild(new hifiBeginnerOfferAlreadyPurchasedEmbed());
         }
 
-        private function makeCloseButton():void
-        {
+        private function makeCloseButton():void{
             this.closeBtn = new Sprite();
             this.closeBtn.graphics.beginFill(0xFF0000, 0);
             this.closeBtn.graphics.drawRect(0, 0, 30, 30);
@@ -45,8 +40,7 @@ public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Re
             addChild(this.closeBtn);
         }
 
-        private function onClose(_arg_1:MouseEvent):void
-        {
+        private function onClose(_arg_1:MouseEvent):void{
             removeEventListener(MouseEvent.CLICK, this.onClose);
             var _local_2:CloseDialogsSignal = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             _local_2.dispatch();
@@ -54,8 +48,7 @@ public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Re
             _local_3.dispatch();
         }
 
-        public function resize(_arg_1:Rectangle):void
-        {
+        public function resize(_arg_1:Rectangle):void{
             x = ((_arg_1.width - width) / 2);
             y = ((_arg_1.height - height) / 2);
         }

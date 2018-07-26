@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.VolumeSliderBar
 
-package com.company.assembleegameclient.ui.options
-{
+package com.company.assembleegameclient.ui.options{
 import flash.display.Shape;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -16,8 +15,7 @@ import flash.text.TextFieldAutoSize;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class VolumeSliderBar extends Sprite
-    {
+public class VolumeSliderBar extends Sprite {
 
         private const MIN:Number = 0;
         private const MAX:Number = 1;
@@ -29,8 +27,7 @@ public class VolumeSliderBar extends Sprite
         private var _mousePoint:Point = new Point(0, 0);
         private var _localPoint:Point = new Point(0, 0);
 
-        public function VolumeSliderBar(_arg_1:Number, _arg_2:Number=0xFFFFFF)
-        {
+        public function VolumeSliderBar(_arg_1:Number, _arg_2:Number=0xFFFFFF){
             this.init();
             this.currentVolume = _arg_1;
             this.draw(0x9B9B9B);
@@ -39,8 +36,7 @@ public class VolumeSliderBar extends Sprite
             this.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
         }
 
-        private function init():void
-        {
+        private function init():void{
             this._label = new TextFieldDisplayConcrete().setSize(14).setColor(0xABABAB);
             this._label.setAutoSize(TextFieldAutoSize.CENTER).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
             this._label.setStringBuilder(new StaticStringBuilder("Vol:"));
@@ -55,20 +51,17 @@ public class VolumeSliderBar extends Sprite
             graphics.endFill();
         }
 
-        public function get currentVolume():Number
-        {
+        public function get currentVolume():Number{
             return (this._currentVolume);
         }
 
-        public function set currentVolume(_arg_1:Number):void
-        {
+        public function set currentVolume(_arg_1:Number):void{
             _arg_1 = ((_arg_1 > this.MAX) ? this.MAX : ((_arg_1 < this.MIN) ? this.MIN : _arg_1));
             this._currentVolume = _arg_1;
             this.draw();
         }
 
-        private function draw(_arg_1:uint=0x9B9B9B):void
-        {
+        private function draw(_arg_1:uint=0x9B9B9B):void{
             var _local_2:Number = (this._currentVolume * 100);
             var _local_3:Number = (_local_2 * -0.2);
             this.bar.graphics.clear();
@@ -87,8 +80,7 @@ public class VolumeSliderBar extends Sprite
             this.bar.graphics.endFill();
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             this._isMouseDown = true;
             this.currentVolume = (_arg_1.localX / 100);
             dispatchEvent(new Event(Event.CHANGE, true));
@@ -96,24 +88,22 @@ public class VolumeSliderBar extends Sprite
             {
                 stage.addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
                 stage.addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
-            }
+            };
         }
 
-        private function onMouseUp(_arg_1:MouseEvent):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent):void{
             this._isMouseDown = false;
             if (stage)
             {
                 stage.removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMove);
-            }
+            };
         }
 
-        private function onMouseMove(_arg_1:MouseEvent):void
-        {
+        private function onMouseMove(_arg_1:MouseEvent):void{
             if (!this._isMouseDown)
             {
                 return;
-            }
+            };
             this._mousePoint.x = _arg_1.currentTarget.mouseX;
             this._localPoint = this.globalToLocal(this._mousePoint);
             this.currentVolume = (this._localPoint.x / 100);

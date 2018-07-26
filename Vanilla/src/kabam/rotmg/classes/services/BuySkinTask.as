@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.services.BuySkinTask
 
-package kabam.rotmg.classes.services
-{
+package kabam.rotmg.classes.services{
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
 import kabam.lib.tasks.BaseTask;
@@ -15,8 +14,7 @@ import kabam.rotmg.classes.model.CharacterSkinState;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class BuySkinTask extends BaseTask 
-    {
+public class BuySkinTask extends BaseTask {
 
         [Inject]
         public var skin:CharacterSkin;
@@ -30,23 +28,20 @@ public class BuySkinTask extends BaseTask
         public var openDialog:OpenDialogSignal;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.skin.setState(CharacterSkinState.PURCHASING);
             this.player.changeCredits(-(this.skin.cost));
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("account/purchaseSkin", this.makeCredentials());
         }
 
-        private function makeCredentials():Object
-        {
+        private function makeCredentials():Object{
             var _local_1:Object = this.account.getCredentials();
             _local_1.skinType = this.skin.id;
             return (_local_1);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.completePurchase();
@@ -54,18 +49,16 @@ public class BuySkinTask extends BaseTask
             else
             {
                 this.abandonPurchase(_arg_2);
-            }
+            };
             completeTask(_arg_1, _arg_2);
         }
 
-        private function completePurchase():void
-        {
+        private function completePurchase():void{
             this.skin.setState(CharacterSkinState.OWNED);
             this.skin.setIsSelected(true);
         }
 
-        private function abandonPurchase(_arg_1:String):void
-        {
+        private function abandonPurchase(_arg_1:String):void{
             var _local_2:ErrorDialog = new ErrorDialog(_arg_1);
             this.openDialog.dispatch(_local_2);
             this.skin.setState(CharacterSkinState.PURCHASABLE);

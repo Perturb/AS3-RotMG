@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.ExternalConfig
 
-package kabam.rotmg.external
-{
+package kabam.rotmg.external{
 import kabam.rotmg.external.command.MapExternalCallbacksCommand;
 import kabam.rotmg.external.command.MapExternalCallbacksSignal;
 import kabam.rotmg.external.command.RequestPlayerCreditsCommand;
@@ -21,8 +20,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class ExternalConfig implements IConfig 
-    {
+public class ExternalConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -36,8 +34,7 @@ public class ExternalConfig implements IConfig
         public var startupSequence:StartupSequence;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(RequestPlayerCreditsTask);
             this.injector.map(ExternalServiceHelper).asSingleton();
             this.injector.map(RequestPlayerCreditsCompleteSignal).asSingleton();

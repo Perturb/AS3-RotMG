@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.BigBitmapData
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.geom.Matrix;
 import flash.geom.Rectangle;
 
-public class BigBitmapData
-    {
+public class BigBitmapData {
 
         private static const CHUNK_SIZE:int = 0x0100;
 
@@ -23,8 +21,7 @@ public class BigBitmapData
         private var maxChunkY_:int;
         private var chunks_:Vector.<BitmapData>;
 
-        public function BigBitmapData(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:uint)
-        {
+        public function BigBitmapData(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:uint){
             var _local_6:int;
             var _local_7:int;
             var _local_8:int;
@@ -45,13 +42,12 @@ public class BigBitmapData
                     _local_8 = Math.min(CHUNK_SIZE, (this.height_ - (_local_6 * CHUNK_SIZE)));
                     this.chunks_[(_local_5 + (_local_6 * this.maxChunkX_))] = new BitmapDataSpy(_local_7, _local_8, _arg_3, this.fillColor_);
                     _local_6++;
-                }
+                };
                 _local_5++;
-            }
+            };
         }
 
-        public function copyTo(_arg_1:BitmapData, _arg_2:Rectangle, _arg_3:Rectangle):void
-        {
+        public function copyTo(_arg_1:BitmapData, _arg_2:Rectangle, _arg_3:Rectangle):void{
             var _local_12:int;
             var _local_13:BitmapData;
             var _local_14:Rectangle;
@@ -75,13 +71,12 @@ public class BigBitmapData
                     _local_14 = new Rectangle((_arg_3.x - (_local_11 * CHUNK_SIZE)), (_arg_3.y - (_local_12 * CHUNK_SIZE)), _arg_3.width, _arg_3.height);
                     _local_13.draw(_arg_1, _local_10, null, null, _local_14, false);
                     _local_12++;
-                }
+                };
                 _local_11++;
-            }
+            };
         }
 
-        public function copyFrom(_arg_1:Rectangle, _arg_2:BitmapData, _arg_3:Rectangle):void
-        {
+        public function copyFrom(_arg_1:Rectangle, _arg_2:BitmapData, _arg_3:Rectangle):void{
             var _local_13:int;
             var _local_14:BitmapData;
             var _local_4:Number = (_arg_3.width / _arg_1.width);
@@ -104,13 +99,12 @@ public class BigBitmapData
                     _local_11.scale(_local_4, _local_5);
                     _arg_2.draw(_local_14, _local_11, null, null, _arg_3, false);
                     _local_13++;
-                }
+                };
                 _local_12++;
-            }
+            };
         }
 
-        public function erase(_arg_1:Rectangle):void
-        {
+        public function erase(_arg_1:Rectangle):void{
             var _local_8:int;
             var _local_9:BitmapData;
             var _local_2:int = int(int((_arg_1.x / CHUNK_SIZE)));
@@ -131,13 +125,12 @@ public class BigBitmapData
                     _local_6.bottom = (_arg_1.bottom - (_local_8 * CHUNK_SIZE));
                     _local_9.fillRect(_local_6, this.fillColor_);
                     _local_8++;
-                }
+                };
                 _local_7++;
-            }
+            };
         }
 
-        public function getDebugSprite():Sprite
-        {
+        public function getDebugSprite():Sprite{
             var _local_3:int;
             var _local_4:BitmapData;
             var _local_5:Bitmap;
@@ -154,9 +147,9 @@ public class BigBitmapData
                     _local_5.y = (_local_3 * CHUNK_SIZE);
                     _local_1.addChild(_local_5);
                     _local_3++;
-                }
+                };
                 _local_2++;
-            }
+            };
             return (_local_1);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.control.ExitLegendsCommand
 
-package kabam.rotmg.legends.control
-{
+package kabam.rotmg.legends.control{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
 import kabam.rotmg.core.signals.InvalidateDataSignal;
@@ -12,8 +11,7 @@ import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
 import kabam.rotmg.death.model.DeathModel;
 import kabam.rotmg.ui.view.TitleView;
 
-public class ExitLegendsCommand 
-    {
+public class ExitLegendsCommand {
 
         [Inject]
         public var model:DeathModel;
@@ -23,8 +21,7 @@ public class ExitLegendsCommand
         public var setScreen:SetScreenWithValidDataSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.model.getIsDeathViewPending())
             {
                 this.clearRecentlyDeceasedAndGotoCharacterView();
@@ -32,18 +29,16 @@ public class ExitLegendsCommand
             else
             {
                 this.gotoTitleView();
-            }
+            };
         }
 
-        private function clearRecentlyDeceasedAndGotoCharacterView():void
-        {
+        private function clearRecentlyDeceasedAndGotoCharacterView():void{
             this.model.clearPendingDeathView();
             this.invalidate.dispatch();
             this.setScreen.dispatch(new CharacterSelectionAndNewsScreen());
         }
 
-        private function gotoTitleView():void
-        {
+        private function gotoTitleView():void{
             this.setScreen.dispatch(new TitleView());
         }
 

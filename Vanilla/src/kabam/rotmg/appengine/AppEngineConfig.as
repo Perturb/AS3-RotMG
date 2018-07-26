@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.AppEngineConfig
 
-package kabam.rotmg.appengine
-{
+package kabam.rotmg.appengine{
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.appengine.api.RetryLoader;
 import kabam.rotmg.appengine.impl.AppEngineRequestStats;
@@ -19,8 +18,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class AppEngineConfig implements IConfig
-    {
+public class AppEngineConfig implements IConfig {
 
         private const TRACK_APP_ENGINE_CALLS:Boolean = true;
 
@@ -32,8 +30,7 @@ public class AppEngineConfig implements IConfig
         public var injector:Injector;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.configureCoreDependencies();
             if (this.setup.isToolingEnabled())
             {
@@ -48,30 +45,26 @@ public class AppEngineConfig implements IConfig
                 else
                 {
                     this.configureForSimplicity();
-                }
-            }
+                };
+            };
         }
 
-        private function configureCoreDependencies():void
-        {
+        private function configureCoreDependencies():void{
             this.injector.map(RetryLoader).toType(AppEngineRetryLoader);
         }
 
-        private function configureForTesting():void
-        {
+        private function configureForTesting():void{
             this.injector.map(AppEngineRequestStats).asSingleton();
             this.injector.map(SimpleAppEngineClient);
             this.injector.map(AppEngineClient).toType(StatsRecorderAppEngineClient);
         }
 
-        private function configureForTracking():void
-        {
+        private function configureForTracking():void{
             this.injector.map(SimpleAppEngineClient);
             this.injector.map(AppEngineClient).toType(TrackingAppEngineClient);
         }
 
-        private function configureForSimplicity():void
-        {
+        private function configureForSimplicity():void{
             this.injector.map(AppEngineClient).toType(SimpleAppEngineClient);
         }
 

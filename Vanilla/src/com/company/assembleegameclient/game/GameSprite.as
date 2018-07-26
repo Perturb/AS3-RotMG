@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.GameSprite
 
-package com.company.assembleegameclient.game
-{
+package com.company.assembleegameclient.game{
 import com.company.assembleegameclient.game.events.MoneyChangedEvent;
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.objects.GameObject;
@@ -74,8 +73,7 @@ import org.osflash.signals.Signal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GameSprite extends AGameSprite
-    {
+public class GameSprite extends AGameSprite {
 
         public static const NON_COMBAT_MAPS:Vector.<String> = new <String>[Map.NEXUS, Map.VAULT, Map.GUILD_HALL, Map.CLOTH_BAZAAR, Map.NEXUS_EXPLANATION, Map.DAILY_QUEST_ROOM];
         public static const DISPLAY_AREA_Y_SPACE:int = 32;
@@ -118,8 +116,7 @@ public class GameSprite extends AGameSprite
         private var googleAnalytics:GoogleAnalytics;
         private var specialOfferButton:SpecialOfferButton;
 
-        public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean)
-        {
+        public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean){
             this.model = _arg_7;
             map = new Map(this);
             addChild(map);
@@ -132,41 +129,35 @@ public class GameSprite extends AGameSprite
             this.idleWatcher_ = new IdleWatcher();
         }
 
-        public static function dispatchMapLoaded(_arg_1:MapInfo):void
-        {
+        public static function dispatchMapLoaded(_arg_1:MapInfo):void{
             var _local_2:MapLoadedSignal = StaticInjectorContext.getInjector().getInstance(MapLoadedSignal);
             ((_local_2) && (_local_2.dispatch(_arg_1)));
         }
 
-        private static function hidePreloader():void
-        {
+        private static function hidePreloader():void{
             var _local_1:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
             ((_local_1) && (_local_1.dispatch()));
         }
 
 
-        public function onChatDown(_arg_1:MouseEvent):void
-        {
+        public function onChatDown(_arg_1:MouseEvent):void{
             if (this.chatPlayerMenu != null)
             {
                 this.removeChatPlayerMenu();
-            }
+            };
             mui_.onMouseDown(_arg_1);
         }
 
-        public function onChatUp(_arg_1:MouseEvent):void
-        {
+        public function onChatUp(_arg_1:MouseEvent):void{
             mui_.onMouseUp(_arg_1);
         }
 
-        override public function setFocus(_arg_1:GameObject):void
-        {
+        override public function setFocus(_arg_1:GameObject):void{
             _arg_1 = ((_arg_1) || (map.player_));
             this.focus = _arg_1;
         }
 
-        public function addChatPlayerMenu(_arg_1:Player, _arg_2:Number, _arg_3:Number, _arg_4:String=null, _arg_5:Boolean=false, _arg_6:Boolean=false):void
-        {
+        public function addChatPlayerMenu(_arg_1:Player, _arg_2:Number, _arg_3:Number, _arg_4:String=null, _arg_5:Boolean=false, _arg_6:Boolean=false):void{
             this.removeChatPlayerMenu();
             this.chatPlayerMenu = new PlayerMenu();
             if (_arg_4 == null)
@@ -184,39 +175,35 @@ public class GameSprite extends AGameSprite
                     if (((_arg_4.length > 0) && (((_arg_4.charAt(0) == "#") || (_arg_4.charAt(0) == "*")) || (_arg_4.charAt(0) == "@"))))
                     {
                         return;
-                    }
+                    };
                     this.chatPlayerMenu.initDifferentServer(this, _arg_4, _arg_5);
-                }
-            }
+                };
+            };
             addChild(this.chatPlayerMenu);
             this.chatPlayerMenu.x = _arg_2;
             this.chatPlayerMenu.y = (_arg_3 - this.chatPlayerMenu.height);
         }
 
-        public function removeChatPlayerMenu():void
-        {
+        public function removeChatPlayerMenu():void{
             if (((!(this.chatPlayerMenu == null)) && (!(this.chatPlayerMenu.parent == null))))
             {
                 removeChild(this.chatPlayerMenu);
                 this.chatPlayerMenu = null;
-            }
+            };
         }
 
-        override public function applyMapInfo(_arg_1:MapInfo):void
-        {
+        override public function applyMapInfo(_arg_1:MapInfo):void{
             map.setProps(_arg_1.width_, _arg_1.height_, _arg_1.name_, _arg_1.background_, _arg_1.allowPlayerTeleport_, _arg_1.showDisplays_);
             dispatchMapLoaded(_arg_1);
         }
 
-        public function hudModelInitialized():void
-        {
+        public function hudModelInitialized():void{
             hudView = new HUDView();
             hudView.x = 600;
             addChild(hudView);
         }
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_1:Account;
             var _local_4:ShowProTipSignal;
             map.initialize();
@@ -224,12 +211,12 @@ public class GameSprite extends AGameSprite
             if (this.evalIsNotInCombatMapArea())
             {
                 this.showSafeAreaDisplays();
-            }
+            };
             if (map.name_ == "Arena")
             {
                 this.showTimer();
                 this.showWaveCounter();
-            }
+            };
             _local_1 = StaticInjectorContext.getInjector().getInstance(Account);
             this.googleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             if (map.name_ == Map.NEXUS)
@@ -242,9 +229,9 @@ public class GameSprite extends AGameSprite
                 else
                 {
                     this.addToQueueSignal.dispatch(PopupNamesConfig.PACKAGES_OFFER_POPUP, this.showPackage, 1, null);
-                }
+                };
                 this.flushQueueSignal.dispatch();
-            }
+            };
             this.isNexus_ = (map.name_ == Map.NEXUS);
             if (((this.isNexus_) || (map.name_ == Map.DAILY_QUEST_ROOM)))
             {
@@ -253,7 +240,7 @@ public class GameSprite extends AGameSprite
             else
             {
                 this.creditDisplay_ = new CreditDisplay(this);
-            }
+            };
             this.creditDisplay_.x = 594;
             this.creditDisplay_.y = 0;
             addChild(this.creditDisplay_);
@@ -270,12 +257,12 @@ public class GameSprite extends AGameSprite
                 this.callTracking('rotmg.Marketing.track("tutorialComplete")');
                 _local_3["fteStepCompleted"] = 9900;
                 _local_2.sendRequest("/log/logFteStep", _local_3);
-            }
+            };
             if (map.name_ == "Kitchen")
             {
                 _local_3["fteStepCompleted"] = 200;
                 _local_2.sendRequest("/log/logFteStep", _local_3);
-            }
+            };
             if (map.name_ == "Tutorial")
             {
                 if (Parameters.data_.needsTutorial == true)
@@ -284,7 +271,7 @@ public class GameSprite extends AGameSprite
                     this.callTracking('rotmg.Marketing.track("install")');
                     _local_3["fteStepCompleted"] = 100;
                     _local_2.sendRequest("/log/logFteStep", _local_3);
-                }
+                };
                 this.startTutorial();
             }
             else
@@ -293,18 +280,17 @@ public class GameSprite extends AGameSprite
                 {
                     _local_4 = StaticInjectorContext.getInjector().getInstance(ShowProTipSignal);
                     ((_local_4) && (_local_4.dispatch()));
-                }
-            }
+                };
+            };
             if (map.name_ == Map.DAILY_QUEST_ROOM)
             {
                 gsc_.questFetch();
-            }
+            };
             Parameters.save();
             hidePreloader();
         }
 
-        private function showSafeAreaDisplays():void
-        {
+        private function showSafeAreaDisplays():void{
             this.showRankText();
             this.showGuildText();
             this.showShopDisplay();
@@ -313,8 +299,7 @@ public class GameSprite extends AGameSprite
             this.showNewsTicker();
         }
 
-        private function setDisplayPosY(_arg_1:Number):void
-        {
+        private function setDisplayPosY(_arg_1:Number):void{
             var _local_2:Number = (UIUtils.NOTIFICATION_SPACE * _arg_1);
             if (_arg_1 != 0)
             {
@@ -323,74 +308,67 @@ public class GameSprite extends AGameSprite
             else
             {
                 this.displaysPosY = 2;
-            }
+            };
         }
 
-        public function positionDynamicDisplays():void
-        {
+        public function positionDynamicDisplays():void{
             var _local_1:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
             var _local_2:int = 66;
             if (((this.giftStatusDisplay) && (this.giftStatusDisplay.isOpen)))
             {
                 this.giftStatusDisplay.y = _local_2;
                 _local_2 = (_local_2 + DISPLAY_AREA_Y_SPACE);
-            }
+            };
             if (((this.newsModalButton) && ((NewsModalButton.showsHasUpdate) || (_local_1.hasValidModalNews()))))
             {
                 this.newsModalButton.y = _local_2;
                 _local_2 = (_local_2 + DISPLAY_AREA_Y_SPACE);
-            }
+            };
             if (((this.specialOfferButton) && (this.specialOfferButton.isSpecialOfferAvailable)))
             {
                 this.specialOfferButton.y = _local_2;
-            }
+            };
             if (((this.newsTicker) && (this.newsTicker.visible)))
             {
                 this.newsTicker.y = _local_2;
-            }
+            };
         }
 
-        private function showTimer():void
-        {
+        private function showTimer():void{
             this.arenaTimer = new ArenaTimer();
             this.arenaTimer.y = 5;
             addChild(this.arenaTimer);
         }
 
-        private function showWaveCounter():void
-        {
+        private function showWaveCounter():void{
             this.arenaWaveCounter = new ArenaWaveCounter();
             this.arenaWaveCounter.y = 5;
             this.arenaWaveCounter.x = 5;
             addChild(this.arenaWaveCounter);
         }
 
-        private function showNewsTicker():void
-        {
+        private function showNewsTicker():void{
             this.newsTicker = new NewsTicker();
             this.newsTicker.x = (300 - (this.newsTicker.width / 2));
             addChild(this.newsTicker);
             this.positionDynamicDisplays();
         }
 
-        private function showGiftStatusDisplay():void
-        {
+        private function showGiftStatusDisplay():void{
             this.giftStatusDisplay = new GiftStatusDisplay();
             this.giftStatusDisplay.x = 6;
             addChild(this.giftStatusDisplay);
             this.positionDynamicDisplays();
         }
 
-        private function showShopDisplay():void
-        {
+        private function showShopDisplay():void{
             this.shopDisplay = new ShopDisplay((map.name_ == Map.NEXUS));
             this.shopDisplay.x = 6;
             this.shopDisplay.y = 34;
             addChild(this.shopDisplay);
         }
 
-        private function showNewsUpdate(_arg_1:Boolean=true):void
-        {
+        private function showNewsUpdate(_arg_1:Boolean=true):void{
             var _local_4:NewsModalButton;
             var _local_2:ILogger = StaticInjectorContext.getInjector().getInstance(ILogger);
             var _local_3:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
@@ -402,106 +380,95 @@ public class GameSprite extends AGameSprite
                 if (this.newsModalButton != null)
                 {
                     removeChild(this.newsModalButton);
-                }
+                };
                 _local_4.x = 6;
                 this.newsModalButton = _local_4;
                 addChild(this.newsModalButton);
                 this.positionDynamicDisplays();
-            }
+            };
         }
 
-        public function refreshNewsUpdateButton():void
-        {
+        public function refreshNewsUpdateButton():void{
             var _local_1:ILogger = StaticInjectorContext.getInjector().getInstance(ILogger);
             _local_1.debug("NEWS UPDATE -- refreshing button, update noticed");
             this.showNewsUpdate(false);
         }
 
-        private function setYAndPositionPackage():void
-        {
+        private function setYAndPositionPackage():void{
             this.packageY = (this.displaysPosY + 2);
             this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
             this.positionPackage();
         }
 
-        public function showSpecialOfferIfSafe():void
-        {
+        public function showSpecialOfferIfSafe():void{
             if (this.evalIsNotInCombatMapArea())
             {
                 this.specialOfferButton = new SpecialOfferButton();
                 this.specialOfferButton.x = 6;
                 addChild(this.specialOfferButton);
                 this.positionDynamicDisplays();
-            }
+            };
         }
 
-        public function showPackageButtonIfSafe():void
-        {
+        public function showPackageButtonIfSafe():void{
             if (this.evalIsNotInCombatMapArea())
             {
-            }
+            };
         }
 
-        private function addAndPositionPackage(_arg_1:DisplayObject):void
-        {
+        private function addAndPositionPackage(_arg_1:DisplayObject):void{
             this.currentPackage = _arg_1;
             addChild(this.currentPackage);
             this.positionPackage();
         }
 
-        private function positionPackage():void
-        {
+        private function positionPackage():void{
             this.currentPackage.x = 80;
             this.setDisplayPosY(1);
             this.currentPackage.y = this.displaysPosY;
         }
 
-        private function showGuildText():void
-        {
+        private function showGuildText():void{
             this.guildText_ = new GuildText("", -1);
             this.guildText_.x = 64;
             this.guildText_.y = 2;
             addChild(this.guildText_);
         }
 
-        private function showRankText():void
-        {
+        private function showRankText():void{
             this.rankText_ = new RankText(-1, true, false);
             this.rankText_.x = 8;
             this.rankText_.y = 2;
             addChild(this.rankText_);
         }
 
-        private function callTracking(_arg_1:String):void
-        {
+        private function callTracking(_arg_1:String):void{
             if (ExternalInterface.available == false)
             {
                 return;
-            }
+            };
             try
             {
                 ExternalInterface.call(_arg_1);
             }
             catch(err:Error)
             {
-            }
+            };
         }
 
-        private function startTutorial():void
-        {
+        private function startTutorial():void{
             tutorial_ = new Tutorial(this);
             addChild(tutorial_);
         }
 
-        private function updateNearestInteractive():void
-        {
+        private function updateNearestInteractive():void{
             var _local_4:Number;
             var _local_7:GameObject;
             var _local_8:IInteractiveObject;
             if (((!(map)) || (!(map.player_))))
             {
                 return;
-            }
+            };
             var _local_1:Player = map.player_;
             var _local_2:Number = GeneralConstants.MAXIMUM_INTERACTION_DISTANCE;
             var _local_3:IInteractiveObject;
@@ -519,20 +486,18 @@ public class GameSprite extends AGameSprite
                         {
                             _local_2 = _local_4;
                             _local_3 = _local_8;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             this.mapModel.currentInteractiveTarget = _local_3;
         }
 
-        private function isPetMap():Boolean
-        {
+        private function isPetMap():Boolean{
             return (true);
         }
 
-        public function connect():void
-        {
+        public function connect():void{
             if (!this.isGameStarted)
             {
                 this.isGameStarted = true;
@@ -543,11 +508,10 @@ public class GameSprite extends AGameSprite
                 stage.addEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
                 stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
                 LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
-            }
+            };
         }
 
-        public function disconnect():void
-        {
+        public function disconnect():void{
             if (this.isGameStarted)
             {
                 this.isGameStarted = false;
@@ -562,21 +526,18 @@ public class GameSprite extends AGameSprite
                 TextureRedrawer.clearCache();
                 Projectile.dispose();
                 gsc_.disconnect();
-            }
+            };
         }
 
-        private function onMoneyChanged(_arg_1:Event):void
-        {
+        private function onMoneyChanged(_arg_1:Event):void{
             gsc_.checkCredits();
         }
 
-        override public function evalIsNotInCombatMapArea():Boolean
-        {
+        override public function evalIsNotInCombatMapArea():Boolean{
             return (!(NON_COMBAT_MAPS.indexOf(map.name_) == -1));
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             var _local_7:Number;
             var _local_2:int = getTimer();
             var _local_3:int = (_local_2 - lastUpdate_);
@@ -584,7 +545,7 @@ public class GameSprite extends AGameSprite
             {
                 closed.dispatch();
                 return;
-            }
+            };
             LoopedProcess.runProcesses(_local_2);
             this.frameTimeSum_ = (this.frameTimeSum_ + _local_3);
             this.frameTimeCount_ = (this.frameTimeCount_ + 1);
@@ -593,7 +554,7 @@ public class GameSprite extends AGameSprite
                 _local_7 = int(Math.round(((1000 * this.frameTimeCount_) / this.frameTimeSum_)));
                 this.frameTimeCount_ = 0;
                 this.frameTimeSum_ = 0;
-            }
+            };
             var _local_4:int = getTimer();
             map.update(_local_2, _local_3);
             this.monitor.dispatch("Map.update", (getTimer() - _local_4));
@@ -603,7 +564,7 @@ public class GameSprite extends AGameSprite
             {
                 camera_.configureCamera(this.focus, ((_local_5) ? _local_5.isHallucinating() : false));
                 map.draw(camera_, _local_2);
-            }
+            };
             if (_local_5 != null)
             {
                 this.creditDisplay_.draw(_local_5.credits_, _local_5.fame_, _local_5.tokens_);
@@ -612,7 +573,7 @@ public class GameSprite extends AGameSprite
                 {
                     this.rankText_.draw(_local_5.numStars_);
                     this.guildText_.draw(_local_5.guildName_, _local_5.guildRank_);
-                }
+                };
                 if (_local_5.isPaused())
                 {
                     map.filters = [PAUSED_FILTER];
@@ -632,17 +593,16 @@ public class GameSprite extends AGameSprite
                         map.mouseChildren = true;
                         hudView.mouseEnabled = true;
                         hudView.mouseChildren = true;
-                    }
-                }
+                    };
+                };
                 moveRecords_.addRecord(_local_2, _local_5.x_, _local_5.y_);
-            }
+            };
             lastUpdate_ = _local_2;
             var _local_6:int = (getTimer() - _local_2);
             this.monitor.dispatch("GameSprite.loop", _local_6);
         }
 
-        public function showPetToolTip(_arg_1:Boolean):void
-        {
+        public function showPetToolTip(_arg_1:Boolean):void{
         }
 
 

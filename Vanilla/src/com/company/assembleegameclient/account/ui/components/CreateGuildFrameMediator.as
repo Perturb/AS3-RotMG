@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.components.CreateGuildFrameMediator
 
-package com.company.assembleegameclient.account.ui.components
-{
+package com.company.assembleegameclient.account.ui.components{
 import com.company.assembleegameclient.account.ui.CreateGuildFrame;
 
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CreateGuildFrameMediator extends Mediator 
-    {
+public class CreateGuildFrameMediator extends Mediator {
 
         [Inject]
         public var view:CreateGuildFrame;
@@ -20,18 +18,15 @@ public class CreateGuildFrameMediator extends Mediator
         public var closeDialog:CloseDialogsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.close.add(this.onClose);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.close.remove(this.onClose);
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.closeDialog.dispatch();
         }
 

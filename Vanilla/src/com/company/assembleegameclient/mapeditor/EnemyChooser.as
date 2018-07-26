@@ -1,24 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.EnemyChooser
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.util.MoreStringUtil;
 
 import flash.utils.Dictionary;
 
-internal class EnemyChooser extends Chooser
-    {
+internal class EnemyChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";
         private var filterTypes:Dictionary = new Dictionary(true);
 
-        public function EnemyChooser()
-        {
+        public function EnemyChooser(){
             super(Layer.OBJECT);
             this.cache = new Dictionary();
             this.filterTypes[ObjectLibrary.ENEMY_FILTER_LIST[0]] = "";
@@ -26,13 +23,11 @@ internal class EnemyChooser extends Chooser
             this.filterTypes[ObjectLibrary.ENEMY_FILTER_LIST[2]] = ObjectLibrary.ENEMY_FILTER_LIST[2];
         }
 
-        public function getLastSearch():String
-        {
+        public function getLastSearch():String{
             return (this.lastSearch);
         }
 
-        public function reloadObjects(_arg_1:String, _arg_2:String="", _arg_3:Number=0, _arg_4:Number=-1):void
-        {
+        public function reloadObjects(_arg_1:String, _arg_2:String="", _arg_3:Number=0, _arg_4:Number=-1):void{
             var _local_7:XML;
             var _local_10:RegExp;
             var _local_12:String;
@@ -47,11 +42,11 @@ internal class EnemyChooser extends Chooser
             if (_arg_1 != "")
             {
                 _local_10 = new RegExp(_arg_1, "gix");
-            }
+            };
             if (_arg_2 != "")
             {
                 _arg_2 = this.filterTypes[_arg_2];
-            }
+            };
             var _local_11:Dictionary = GroupDivider.GROUPS["Enemies"];
             for each (_local_7 in _local_11)
             {
@@ -64,13 +59,13 @@ internal class EnemyChooser extends Chooser
                         if (_local_8 < 0) continue;
                         _local_5 = (_local_8 >= _arg_3);
                         _local_6 = (!((_arg_4 > 0) && (_local_8 > _arg_4)));
-                    }
+                    };
                     if (((_local_5) && (_local_6)))
                     {
                         _local_9.push(_local_12);
-                    }
-                }
-            }
+                    };
+                };
+            };
             _local_9.sort(MoreStringUtil.cmp);
             for each (_local_12 in _local_9)
             {
@@ -83,9 +78,9 @@ internal class EnemyChooser extends Chooser
                 else
                 {
                     _local_14 = this.cache[_local_13];
-                }
+                };
                 addElement(_local_14);
-            }
+            };
             hasBeenLoaded = true;
             scrollBar_.setIndicatorSize(HEIGHT, elementContainer_.height, true);
         }

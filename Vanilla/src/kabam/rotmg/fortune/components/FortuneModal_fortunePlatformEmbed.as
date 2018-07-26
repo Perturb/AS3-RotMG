@@ -1,4 +1,4 @@
-package kabam.rotmg.fortune.components
+﻿package kabam.rotmg.fortune.components
 {
 import mx.core.*;
 

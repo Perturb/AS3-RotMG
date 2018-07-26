@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.Object3D.Util
 
-package kabam.rotmg.stage3D.Object3D
-{
+package kabam.rotmg.stage3D.Object3D{
 import flash.geom.Matrix3D;
 import flash.utils.ByteArray;
 
-public class Util 
-    {
+public class Util {
 
 
-        public static function perspectiveProjection(_arg_1:Number=90, _arg_2:Number=1, _arg_3:Number=1, _arg_4:Number=0x0800):Matrix3D
-        {
+        public static function perspectiveProjection(_arg_1:Number=90, _arg_2:Number=1, _arg_3:Number=1, _arg_4:Number=0x0800):Matrix3D{
             var _local_5:Number = (_arg_3 * Math.tan(((_arg_1 * Math.PI) / 360)));
             var _local_6:Number = -(_local_5);
             var _local_7:Number = (_local_6 * _arg_2);
@@ -27,8 +24,7 @@ public class Util
             return (new Matrix3D(Vector.<Number>([_local_9, 0, 0, 0, 0, _local_10, 0, 0, _local_11, _local_12, _local_13, -1, 0, 0, _local_14, 0])));
         }
 
-        public static function readString(_arg_1:ByteArray, _arg_2:int):String
-        {
+        public static function readString(_arg_1:ByteArray, _arg_2:int):String{
             var _local_5:uint;
             var _local_3:* = "";
             var _local_4:int;
@@ -39,15 +35,14 @@ public class Util
                 {
                     _arg_1.position = (_arg_1.position + Math.max(0, (_arg_2 - (_local_4 + 1))));
                     break;
-                }
+                };
                 _local_3 = (_local_3 + String.fromCharCode(_local_5));
                 _local_4++;
-            }
+            };
             return (_local_3);
         }
 
-        public static function upperPowerOfTwo(_arg_1:uint):uint
-        {
+        public static function upperPowerOfTwo(_arg_1:uint):uint{
             _arg_1--;
             _arg_1 = (_arg_1 | (_arg_1 >> 1));
             _arg_1 = (_arg_1 | (_arg_1 >> 2));

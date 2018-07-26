@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.EditTileProperties
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.util.IntPoint;
 
 import flash.display.Graphics;
@@ -12,15 +11,13 @@ import flash.display.Shape;
 import flash.display.Sprite;
 import flash.events.Event;
 
-public class EditTileProperties extends Sprite
-    {
+public class EditTileProperties extends Sprite {
 
         public var tiles_:Vector.<IntPoint>;
         private var darkBox_:Shape;
         private var frame_:EditTilePropertiesFrame;
 
-        public function EditTileProperties(_arg_1:Vector.<IntPoint>, _arg_2:String)
-        {
+        public function EditTileProperties(_arg_1:Vector.<IntPoint>, _arg_2:String){
             this.tiles_ = _arg_1;
             this.darkBox_ = new Shape();
             var _local_3:Graphics = this.darkBox_.graphics;
@@ -35,23 +32,20 @@ public class EditTileProperties extends Sprite
             addChild(this.frame_);
         }
 
-        public function getObjectName():String
-        {
+        public function getObjectName():String{
             if (this.frame_.objectName_.text() == "")
             {
                 return (null);
-            }
+            };
             return (this.frame_.objectName_.text());
         }
 
-        public function onComplete(_arg_1:Event):void
-        {
+        public function onComplete(_arg_1:Event):void{
             dispatchEvent(new Event(Event.COMPLETE));
             parent.removeChild(this);
         }
 
-        public function onCancel(_arg_1:Event):void
-        {
+        public function onCancel(_arg_1:Event):void{
             parent.removeChild(this);
         }
 

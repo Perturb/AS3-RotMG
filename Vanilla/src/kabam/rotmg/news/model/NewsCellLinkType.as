@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.model.NewsCellLinkType
 
-package kabam.rotmg.news.model
-{
-    public class NewsCellLinkType 
-    {
+package kabam.rotmg.news.model{
+    public class NewsCellLinkType {
 
         public static const OPENS_LINK:NewsCellLinkType = new NewsCellLinkType(1);
         public static const OPENS_PACKAGE:NewsCellLinkType = new NewsCellLinkType(2);
@@ -19,19 +17,16 @@ package kabam.rotmg.news.model
 
         private var index:int;
 
-        public function NewsCellLinkType(_arg_1:int)
-        {
+        public function NewsCellLinkType(_arg_1:int){
             this.index = _arg_1;
         }
 
-        public static function parse(_arg_1:int):NewsCellLinkType
-        {
+        public static function parse(_arg_1:int):NewsCellLinkType{
             return (types[_arg_1]);
         }
 
 
-        public function getIndex():int
-        {
+        public function getIndex():int{
             return (this.index);
         }
 

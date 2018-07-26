@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsCell
 
-package kabam.rotmg.news.view
-{
+package kabam.rotmg.news.view{
 import flash.display.Loader;
 import flash.display.Shape;
 import flash.display.Sprite;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class NewsCell extends Sprite 
-    {
+public class NewsCell extends Sprite {
 
         internal static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
         internal static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;
@@ -46,8 +44,7 @@ public class NewsCell extends Sprite
         public var clickSignal:Signal = new Signal(NewsCellVO);
         private var injector:Injector;
 
-        public function NewsCell(_arg_1:Number, _arg_2:Number)
-        {
+        public function NewsCell(_arg_1:Number, _arg_2:Number){
             this.injector = StaticInjectorContext.getInjector();
             this.setSize(_arg_1, _arg_2);
             this.initImageContainer();
@@ -55,8 +52,7 @@ public class NewsCell extends Sprite
             this.initBox();
         }
 
-        private function setSize(_arg_1:Number, _arg_2:Number):void
-        {
+        private function setSize(_arg_1:Number, _arg_2:Number):void{
             this.w = _arg_1;
             this.h = _arg_2;
             if (((_arg_1 == 306) && (_arg_2 == 194)))
@@ -68,32 +64,28 @@ public class NewsCell extends Sprite
                 if (((_arg_1 == 151) && (_arg_2 == 189)))
                 {
                     this.size = SMALL;
-                }
-            }
+                };
+            };
         }
 
-        public function init(_arg_1:NewsCellVO):void
-        {
+        public function init(_arg_1:NewsCellVO):void{
             this._vo = _arg_1;
             this.updateTextField();
             addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             buttonMode = true;
         }
 
-        private function addDisplayAssets():void
-        {
+        private function addDisplayAssets():void{
             addChild((this.maskShape = new Shape()));
             addChild((this.boxShape = new Shape()));
         }
 
-        private function initImageContainer():void
-        {
+        private function initImageContainer():void{
             this.imageContainer = new Sprite();
             addChild(this.imageContainer);
         }
 
-        private function initMask():void
-        {
+        private function initMask():void{
             this.maskShape = new Shape();
             this.maskShape.graphics.beginFill(0xFF00FF);
             this.maskShape.graphics.drawRect(0, 0, this.w, this.h);
@@ -101,16 +93,14 @@ public class NewsCell extends Sprite
             addChild(this.maskShape);
         }
 
-        private function initBox():void
-        {
+        private function initBox():void{
             this.boxShape = new Shape();
             this.boxShape.graphics.beginFill(0, 0.8);
             this.boxShape.graphics.drawRect(0, (this.h - BOX_HEIGHT), this.w, BOX_HEIGHT);
             addChild(this.boxShape);
         }
 
-        private function updateTextField():void
-        {
+        private function updateTextField():void{
             this.textField = this.injector.getInstance(TextDisplay).setSize(this.textSize).setColor(0xFFFFFF);
             addChild(this.textField);
             this.textField.setBold(true).setAutoSize(TextFieldAutoSize.CENTER).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
@@ -121,31 +111,27 @@ public class NewsCell extends Sprite
             this.textField.filters = [new DropShadowFilter(0, 0, 0)];
         }
 
-        private function resizeTextField():void
-        {
+        private function resizeTextField():void{
             if (this.textField.width > (this.w - 10))
             {
                 this.textSize = (this.textSize - 2);
                 this.textField.setSize(this.textSize).setColor(0xFFFFFF);
                 this.resizeTextField();
-            }
+            };
         }
 
-        public function load():void
-        {
+        public function load():void{
             this._loader = new Loader();
             this._loader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onComplete);
             this._loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
             this._loader.load(new URLRequest(this._vo.imageURL));
         }
 
-        private function onComplete(_arg_1:Event):void
-        {
+        private function onComplete(_arg_1:Event):void{
             this.imageContainer.addChild(this._loader);
         }
 
-        private function onIOError(_arg_1:IOErrorEvent):void
-        {
+        private function onIOError(_arg_1:IOErrorEvent):void{
             switch (this.size)
             {
                 case LARGE:
@@ -154,11 +140,10 @@ public class NewsCell extends Sprite
                 case SMALL:
                     this.imageContainer.addChild(new DefaultGraphicSmall());
                     return;
-            }
+            };
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             this.clickSignal.dispatch(this._vo);
         }
 

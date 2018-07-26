@@ -1,40 +1,34 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.WorldPosData
 
-package kabam.rotmg.messaging.impl.data
-{
+package kabam.rotmg.messaging.impl.data{
 import flash.geom.Point;
 import flash.utils.IDataInput;
 import flash.utils.IDataOutput;
 
-public class WorldPosData
-    {
+public class WorldPosData {
 
         public var x_:Number;
         public var y_:Number;
 
 
-        public function toPoint():Point
-        {
+        public function toPoint():Point{
             return (new Point(this.x_, this.y_));
         }
 
-        public function parseFromInput(_arg_1:IDataInput):void
-        {
+        public function parseFromInput(_arg_1:IDataInput):void{
             this.x_ = _arg_1.readFloat();
             this.y_ = _arg_1.readFloat();
         }
 
-        public function writeToOutput(_arg_1:IDataOutput):void
-        {
+        public function writeToOutput(_arg_1:IDataOutput):void{
             _arg_1.writeFloat(this.x_);
             _arg_1.writeFloat(this.y_);
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             return ((("x_: " + this.x_) + " y_: ") + this.y_);
         }
 

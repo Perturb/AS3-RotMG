@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsModalPage
 
-package kabam.rotmg.news.view
-{
+package kabam.rotmg.news.view{
 import com.company.assembleegameclient.ui.Scrollbar;
 
 import flash.display.Sprite;
@@ -16,8 +15,7 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 
-public class NewsModalPage extends Sprite
-    {
+public class NewsModalPage extends Sprite {
 
         public static const TEXT_MARGIN:int = 22;
         public static const TEXT_MARGIN_HTML:int = 26;
@@ -30,8 +28,7 @@ public class NewsModalPage extends Sprite
         private var innerModalWidth:int;
         private var htmlText:TextField;
 
-        public function NewsModalPage(_arg_1:String, _arg_2:String)
-        {
+        public function NewsModalPage(_arg_1:String, _arg_2:String){
             var _local_4:Sprite;
             var _local_5:Sprite;
             super();
@@ -69,38 +66,34 @@ public class NewsModalPage extends Sprite
                 this.scrollBar_.y = TEXT_TOP_MARGIN_HTML;
                 this.scrollBar_.setIndicatorSize(HEIGHT, _local_4.height);
                 addChild(this.scrollBar_);
-            }
+            };
             this.addEventListener(Event.ADDED_TO_STAGE, this.onAddedHandler);
         }
 
-        private static function disableMouseOnText(_arg_1:TextField):void
-        {
+        private static function disableMouseOnText(_arg_1:TextField):void{
             _arg_1.mouseWheelEnabled = false;
         }
 
 
-        protected function onScrollBarChange(_arg_1:Event):void
-        {
+        protected function onScrollBarChange(_arg_1:Event):void{
             this.htmlText.y = (-(this.scrollBar_.pos()) * (this.htmlText.height - HEIGHT));
         }
 
-        private function onAddedHandler(_arg_1:Event):void
-        {
+        private function onAddedHandler(_arg_1:Event):void{
             this.addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             if (this.scrollBar_)
             {
                 this.scrollBar_.addEventListener(Event.CHANGE, this.onScrollBarChange);
-            }
+            };
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this.removeEventListener(Event.ADDED_TO_STAGE, this.onAddedHandler);
             if (this.scrollBar_)
             {
                 this.scrollBar_.removeEventListener(Event.CHANGE, this.onScrollBarChange);
-            }
+            };
         }
 
 

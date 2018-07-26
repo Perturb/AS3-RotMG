@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.AccountConfig
 
-package kabam.rotmg.account
-{
+package kabam.rotmg.account{
 import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
 
 import flash.display.DisplayObjectContainer;
@@ -48,8 +47,7 @@ import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.ILogger;
 
-public class AccountConfig implements IConfig
-    {
+public class AccountConfig implements IConfig {
 
         [Inject]
         public var root:DisplayObjectContainer;
@@ -67,15 +65,13 @@ public class AccountConfig implements IConfig
         public var logger:ILogger;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.configureCommonFunctionality();
             this.configureAccountSpecificFunctionality();
             this.context.lifecycle.afterInitializing(this.init);
         }
 
-        private function configureCommonFunctionality():void
-        {
+        private function configureCommonFunctionality():void{
             this.injector.map(TaskErrorSignal).asSingleton();
             this.injector.map(UpdateAccountInfoSignal).asSingleton();
             this.injector.map(VerifyAgeTask);
@@ -95,8 +91,7 @@ public class AccountConfig implements IConfig
             this.commandMap.map(SaveSecurityQuestionsSignal).toCommand(SaveSecurityQuestionsCommand);
         }
 
-        private function configureAccountSpecificFunctionality():void
-        {
+        private function configureAccountSpecificFunctionality():void{
             if (this.isKongregate())
             {
                 this.context.configure(KongregateAccountConfig);
@@ -116,29 +111,25 @@ public class AccountConfig implements IConfig
                     else
                     {
                         this.context.configure(WebAccountConfig);
-                    }
-                }
-            }
+                    };
+                };
+            };
             this.context.configure(TransferAccountConfig);
         }
 
-        private function isKongregate():Boolean
-        {
+        private function isKongregate():Boolean{
             return (!(this.info.parameters.kongregate_api_path == null));
         }
 
-        private function isSteam():Boolean
-        {
+        private function isSteam():Boolean{
             return (!(this.info.parameters.steam_api_path == null));
         }
 
-        private function isKabam():Boolean
-        {
+        private function isKabam():Boolean{
             return (!(this.info.parameters.kabam_signed_request == null));
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.logger.info("isKongregate {0}", [this.isKongregate()]);
             this.logger.info("isSteam {0}", [this.isSteam()]);
             this.logger.info("isKabam {0}", [this.isKabam()]);

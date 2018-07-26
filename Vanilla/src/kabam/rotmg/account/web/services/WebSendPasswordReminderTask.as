@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebSendPasswordReminderTask
 
-package kabam.rotmg.account.web.services
-{
+package kabam.rotmg.account.web.services{
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.account.core.services.SendPasswordReminderTask;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.core.service.TrackingData;
 import kabam.rotmg.core.signals.TrackEventSignal;
 
-public class WebSendPasswordReminderTask extends BaseTask implements SendPasswordReminderTask 
-    {
+public class WebSendPasswordReminderTask extends BaseTask implements SendPasswordReminderTask {
 
         [Inject]
         public var email:String;
@@ -22,14 +20,12 @@ public class WebSendPasswordReminderTask extends BaseTask implements SendPasswor
         public var client:AppEngineClient;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/account/forgotPassword", {"guid":this.email});
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onForgotDone();
@@ -37,24 +33,21 @@ public class WebSendPasswordReminderTask extends BaseTask implements SendPasswor
             else
             {
                 this.onForgotError(_arg_2);
-            }
+            };
         }
 
-        private function onForgotDone():void
-        {
+        private function onForgotDone():void{
             this.trackPasswordReminder();
             completeTask(true);
         }
 
-        private function trackPasswordReminder():void
-        {
+        private function trackPasswordReminder():void{
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "account";
             _local_1.action = "passwordSent";
         }
 
-        private function onForgotError(_arg_1:String):void
-        {
+        private function onForgotError(_arg_1:String):void{
             completeTask(false, _arg_1);
         }
 

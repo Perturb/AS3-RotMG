@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.GuildPlayerList
 
-package com.company.assembleegameclient.ui.guild
-{
+package com.company.assembleegameclient.ui.guild{
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.assembleegameclient.util.GuildUtil;
 import com.company.ui.BaseSimpleText;
@@ -25,8 +24,7 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class GuildPlayerList extends Sprite 
-    {
+public class GuildPlayerList extends Sprite {
 
         private var num_:int;
         private var offset_:int;
@@ -43,8 +41,7 @@ public class GuildPlayerList extends Sprite
         private var openSlotsText_:TextFieldDisplayConcrete;
         private var scrollBar_:Scrollbar;
 
-        public function GuildPlayerList(_arg_1:int, _arg_2:int, _arg_3:String="", _arg_4:int=0)
-        {
+        public function GuildPlayerList(_arg_1:int, _arg_2:int, _arg_3:String="", _arg_4:int=0){
             this.num_ = _arg_1;
             this.offset_ = _arg_2;
             this.myName_ = _arg_3;
@@ -69,8 +66,7 @@ public class GuildPlayerList extends Sprite
             this.listClient_.sendRequest("/guild/listMembers", _local_6);
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onGenericData(_arg_2);
@@ -78,20 +74,17 @@ public class GuildPlayerList extends Sprite
             else
             {
                 this.onTextError(_arg_2);
-            }
+            };
         }
 
-        private function onGenericData(_arg_1:String):void
-        {
+        private function onGenericData(_arg_1:String):void{
             this.build(XML(_arg_1));
         }
 
-        private function onTextError(_arg_1:String):void
-        {
+        private function onTextError(_arg_1:String):void{
         }
 
-        private function build(_arg_1:XML):void
-        {
+        private function build(_arg_1:XML):void{
             var _local_2:Graphics;
             var _local_5:XML;
             var _local_6:int;
@@ -147,7 +140,7 @@ public class GuildPlayerList extends Sprite
                 _local_9.y = (_local_4 * MemberListLine.HEIGHT);
                 this.listSprite_.addChild(_local_9);
                 _local_4++;
-            }
+            };
             _local_6 = (GuildUtil.MAX_MEMBERS - (this.offset_ + _local_4));
             this.openSlotsText_ = new TextFieldDisplayConcrete().setSize(22).setColor(0xB3B3B3);
             this.openSlotsText_.setStringBuilder(new LineBuilder().setParams(TextKey.GUILD_PLAYER_LIST_OPENSLOTS, {"openSlots":_local_6}));
@@ -165,11 +158,10 @@ public class GuildPlayerList extends Sprite
                 this.scrollBar_.setIndicatorSize(400, this.listSprite_.height);
                 this.scrollBar_.addEventListener(Event.CHANGE, this.onScrollBarChange);
                 addChild(this.scrollBar_);
-            }
+            };
         }
 
-        private function onScrollBarChange(_arg_1:Event):void
-        {
+        private function onScrollBarChange(_arg_1:Event):void{
             this.listSprite_.y = (-(this.scrollBar_.pos()) * (this.listSprite_.height - 400));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow
 
-package io.decagames.rotmg.pets.windows.wardrobe
-{
+package io.decagames.rotmg.pets.windows.wardrobe{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot;
@@ -14,8 +13,7 @@ import io.decagames.rotmg.ui.popups.UIPopup;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PetWardrobeWindow extends UIPopup 
-    {
+public class PetWardrobeWindow extends UIPopup {
 
         private var _closeButton:Sprite;
         private var _contentContainer:Sprite;
@@ -23,8 +21,7 @@ public class PetWardrobeWindow extends UIPopup
         private var selectedPet:SelectedPetSkinInfo;
         private var petCollection:PetSkinsCollection;
 
-        public function PetWardrobeWindow()
-        {
+        public function PetWardrobeWindow(){
             super(600, 600);
             this._contentContainer = new Sprite();
             this._contentContainer.y = 120;
@@ -32,8 +29,7 @@ public class PetWardrobeWindow extends UIPopup
             addChild(this._contentContainer);
         }
 
-        public function renderCurrentPet():void
-        {
+        public function renderCurrentPet():void{
             this.currentPet = new PetInfoSlot(195, true, true, true, true);
             this.currentPet.x = 20;
             this.currentPet.y = 130;
@@ -48,29 +44,25 @@ public class PetWardrobeWindow extends UIPopup
             this.currentPet.mask = _local_1;
         }
 
-        public function renderSelectedPet():void
-        {
+        public function renderSelectedPet():void{
             this.selectedPet = new SelectedPetSkinInfo(195, true);
             this.selectedPet.x = 20;
             this.selectedPet.y = 348;
             addChild(this.selectedPet);
         }
 
-        public function renderCollection(_arg_1:int, _arg_2:int):void
-        {
+        public function renderCollection(_arg_1:int, _arg_2:int):void{
             this.petCollection = new PetSkinsCollection(_arg_1, _arg_2);
             this.petCollection.x = 222;
             this.petCollection.y = 130;
             addChild(this.petCollection);
         }
 
-        public function get closeButton():Sprite
-        {
+        public function get closeButton():Sprite{
             return (this._closeButton);
         }
 
-        public function get contentContainer():Sprite
-        {
+        public function get contentContainer():Sprite{
             return (this._contentContainer);
         }
 

@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.tasks.GuildDataRequestTask
 
-package io.decagames.rotmg.social.tasks
-{
+package io.decagames.rotmg.social.tasks{
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.appengine.api.AppEngineClient;
 
-public class GuildDataRequestTask extends BaseTask implements ISocialTask
-    {
+public class GuildDataRequestTask extends BaseTask implements ISocialTask {
 
         [Inject]
         public var client:AppEngineClient;
@@ -20,15 +18,13 @@ public class GuildDataRequestTask extends BaseTask implements ISocialTask
         private var _xml:XML;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.client.setMaxRetries(8);
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest(this._requestURL, this.account.getCredentials());
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this._xml = new XML(_arg_2);
@@ -37,26 +33,22 @@ public class GuildDataRequestTask extends BaseTask implements ISocialTask
             else
             {
                 completeTask(false, _arg_2);
-            }
+            };
         }
 
-        public function get requestURL():String
-        {
+        public function get requestURL():String{
             return (this._requestURL);
         }
 
-        public function set requestURL(_arg_1:String):void
-        {
+        public function set requestURL(_arg_1:String):void{
             this._requestURL = _arg_1;
         }
 
-        public function get xml():XML
-        {
+        public function get xml():XML{
             return (this._xml);
         }
 
-        public function set xml(_arg_1:XML):void
-        {
+        public function set xml(_arg_1:XML):void{
             this._xml = _arg_1;
         }
 

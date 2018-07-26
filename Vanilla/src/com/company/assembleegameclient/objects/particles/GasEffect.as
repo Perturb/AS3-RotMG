@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.GasEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.util.RandomUtil;
 
-public class GasEffect extends ParticleEffect 
-    {
+public class GasEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var props:EffectProperties;
@@ -17,16 +15,14 @@ public class GasEffect extends ParticleEffect
         public var rate:Number;
         public var type:String;
 
-        public function GasEffect(_arg_1:GameObject, _arg_2:EffectProperties)
-        {
+        public function GasEffect(_arg_1:GameObject, _arg_2:EffectProperties){
             this.go_ = _arg_1;
             this.color_ = _arg_2.color;
             this.rate = _arg_2.rate;
             this.props = _arg_2;
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:Number;
             var _local_6:Number;
             var _local_7:Number;
@@ -36,7 +32,7 @@ public class GasEffect extends ParticleEffect
             if (this.go_.map_ == null)
             {
                 return (false);
-            }
+            };
             x_ = this.go_.x_;
             y_ = this.go_.y_;
             var _local_3:int = 20;
@@ -51,7 +47,7 @@ public class GasEffect extends ParticleEffect
                 _local_10 = new GasParticle(_local_5, this.color_, _local_9, this.props.spread, 0.75, _local_7, _local_8);
                 map_.addObj(_local_10, x_, y_);
                 _local_4++;
-            }
+            };
             return (true);
         }
 

@@ -1,18 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.graphics.GraphicsHelper
 
-package kabam.rotmg.util.graphics
-{
+package kabam.rotmg.util.graphics{
 import flash.display.Graphics;
 
-public class GraphicsHelper
-    {
+public class GraphicsHelper {
 
 
-        public function drawBevelRect(_arg_1:int, _arg_2:int, _arg_3:BevelRect, _arg_4:Graphics):void
-        {
+        public function drawBevelRect(_arg_1:int, _arg_2:int, _arg_3:BevelRect, _arg_4:Graphics):void{
             var _local_5:int = (_arg_1 + _arg_3.width);
             var _local_6:int = (_arg_2 + _arg_3.height);
             var _local_7:int = _arg_3.bevel;
@@ -24,7 +21,7 @@ public class GraphicsHelper
             else
             {
                 _arg_4.moveTo(_arg_1, _arg_2);
-            }
+            };
             if (_arg_3.topRightBevel)
             {
                 _arg_4.lineTo((_local_5 - _local_7), _arg_2);
@@ -33,7 +30,7 @@ public class GraphicsHelper
             else
             {
                 _arg_4.lineTo(_local_5, _arg_2);
-            }
+            };
             if (_arg_3.bottomRightBevel)
             {
                 _arg_4.lineTo(_local_5, (_local_6 - _local_7));
@@ -42,7 +39,7 @@ public class GraphicsHelper
             else
             {
                 _arg_4.lineTo(_local_5, _local_6);
-            }
+            };
             if (_arg_3.bottomLeftBevel)
             {
                 _arg_4.lineTo((_arg_1 + _local_7), _local_6);
@@ -51,7 +48,7 @@ public class GraphicsHelper
             else
             {
                 _arg_4.lineTo(_arg_1, _local_6);
-            }
+            };
         }
 
 

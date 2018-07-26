@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison
 
-package com.company.assembleegameclient.ui.tooltip.slotcomparisons
-{
+package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import kabam.rotmg.constants.*;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
-public class CloakComparison extends SlotComparison
-    {
+public class CloakComparison extends SlotComparison {
 
 
-        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void
-        {
+        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void{
             var _local_3:XML;
             var _local_4:XML;
             var _local_5:Number;
@@ -30,23 +27,21 @@ public class CloakComparison extends SlotComparison
                 _local_6 = Number(_local_4.@duration);
                 this.appendDurationText(_local_5, _local_6);
                 processedTags[_local_3.toXMLString()] = true;
-            }
+            };
             this.handleExceptions(_arg_1);
         }
 
-        private function handleExceptions(itemXML:XML):void
-        {
+        private function handleExceptions(itemXML:XML):void{
             var teleportTag:XML;
             if (itemXML.@id == "Cloak of the Planewalker")
             {
                 comparisonStringBuilder.pushParams(TextKey.TELEPORT_TO_TARGET, {}, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                 teleportTag = XML(itemXML.Activate.(text() == ActivationType.TELEPORT))[0];
                 processedTags[teleportTag.toXMLString()] = true;
-            }
+            };
         }
 
-        private function getInvisibleTag(xml:XML):XML
-        {
+        private function getInvisibleTag(xml:XML):XML{
             var matches:XMLList;
             var conditionTag:XML;
             matches = xml.Activate.(text() == ActivationType.COND_EFFECT_SELF);
@@ -55,13 +50,12 @@ public class CloakComparison extends SlotComparison
                 if (conditionTag.(@effect == "Invisible"))
                 {
                     return (conditionTag);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        private function appendDurationText(_arg_1:Number, _arg_2:Number):void
-        {
+        private function appendDurationText(_arg_1:Number, _arg_2:Number):void{
             var _local_3:uint = getTextColor((_arg_1 - _arg_2));
             comparisonStringBuilder.pushParams(TextKey.EFFECT_ON_SELF, {"effect":""});
             comparisonStringBuilder.pushParams(TextKey.EFFECT_FOR_DURATION, {

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.friends.view.FriendTabView
 
-package kabam.rotmg.friends.view
-{
+package kabam.rotmg.friends.view{
 import com.company.ui.BaseSimpleText;
 import com.company.util.GraphicsUtil;
 
@@ -21,8 +20,7 @@ import kabam.rotmg.game.view.components.TabView;
 
 import org.osflash.signals.Signal;
 
-public class FriendTabView extends Sprite
-    {
+public class FriendTabView extends Sprite {
 
         public const tabSelected:Signal = new Signal(String);
         private const TAB_WIDTH:int = 120;
@@ -37,8 +35,7 @@ public class FriendTabView extends Sprite
         private var _height:Number;
         private var contents:Vector.<Sprite> = new Vector.<Sprite>();
 
-        public function FriendTabView(_arg_1:Number, _arg_2:Number)
-        {
+        public function FriendTabView(_arg_1:Number, _arg_2:Number){
             this._width = _arg_1;
             this._height = _arg_2;
             this.tabSprite.addEventListener(MouseEvent.CLICK, this.onTabClicked);
@@ -47,19 +44,17 @@ public class FriendTabView extends Sprite
             addChild(this.containerSprite);
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
-            }
+            };
             this.tabSprite.removeEventListener(MouseEvent.CLICK, this.onTabClicked);
             this.tabs = null;
             this.contents = null;
         }
 
-        public function addTab(_arg_1:BaseSimpleText, _arg_2:Sprite):void
-        {
+        public function addTab(_arg_1:BaseSimpleText, _arg_2:Sprite):void{
             var _local_3:int = this.tabs.length;
             var _local_4:TabView = this.addTextTab(_local_3, (_arg_1 as BaseSimpleText));
             this.tabs.push(_local_4);
@@ -76,11 +71,10 @@ public class FriendTabView extends Sprite
                 _local_4.setSelected(true);
                 this.showContent(0);
                 this.tabSelected.dispatch(_arg_2.name);
-            }
+            };
         }
 
-        public function clearTabs():void
-        {
+        public function clearTabs():void{
             var _local_1:uint;
             this.currentTabIndex = 0;
             var _local_2:uint = this.tabs.length;
@@ -90,33 +84,28 @@ public class FriendTabView extends Sprite
                 this.tabSprite.removeChild(this.tabs[_local_1]);
                 this.containerSprite.removeChild(this.contents[_local_1]);
                 _local_1++;
-            }
+            };
             this.tabs = new Vector.<TabView>();
             this.contents = new Vector.<Sprite>();
         }
 
-        public function removeTab():void
-        {
+        public function removeTab():void{
         }
 
-        public function setSelectedTab(_arg_1:uint):void
-        {
+        public function setSelectedTab(_arg_1:uint):void{
             this.selectTab(this.tabs[_arg_1]);
         }
 
-        public function showTabBadget(_arg_1:uint, _arg_2:int):void
-        {
+        public function showTabBadget(_arg_1:uint, _arg_2:int):void{
             var _local_3:TabView = this.tabs[_arg_1];
             (_local_3 as TabTextView).setBadge(_arg_2);
         }
 
-        private function onTabClicked(_arg_1:MouseEvent):void
-        {
+        private function onTabClicked(_arg_1:MouseEvent):void{
             this.selectTab((_arg_1.target.parent as TabView));
         }
 
-        private function selectTab(_arg_1:TabView):void
-        {
+        private function selectTab(_arg_1:TabView):void{
             var _local_2:TabView;
             if (_arg_1)
             {
@@ -127,12 +116,11 @@ public class FriendTabView extends Sprite
                     _arg_1.setSelected(true);
                     this.showContent(_arg_1.index);
                     this.tabSelected.dispatch(this.contents[_arg_1.index].name);
-                }
-            }
+                };
+            };
         }
 
-        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView
-        {
+        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView{
             var _local_4:TabTextView;
             var _local_3:Sprite = new TabBackground(this.TAB_WIDTH, this.TAB_HEIGHT);
             _local_4 = new TabTextView(_arg_1, _local_3, _arg_2);
@@ -141,8 +129,7 @@ public class FriendTabView extends Sprite
             return (_local_4);
         }
 
-        private function showContent(_arg_1:int):void
-        {
+        private function showContent(_arg_1:int):void{
             var _local_2:Sprite;
             var _local_3:Sprite;
             if (_arg_1 != this.currentTabIndex)
@@ -152,11 +139,10 @@ public class FriendTabView extends Sprite
                 _local_2.visible = false;
                 _local_3.visible = true;
                 this.currentTabIndex = _arg_1;
-            }
+            };
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             var _local_1:GraphicsSolidFill = new GraphicsSolidFill(TabConstants.BACKGROUND_COLOR, 1);
             var _local_2:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
             var _local_3:Vector.<IGraphicsData> = new <IGraphicsData>[_local_1, _local_2, GraphicsUtil.END_FILL];

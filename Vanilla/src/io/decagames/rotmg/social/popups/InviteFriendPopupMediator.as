@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.popups.InviteFriendPopupMediator
 
-package io.decagames.rotmg.social.popups
-{
+package io.decagames.rotmg.social.popups{
 import io.decagames.rotmg.social.config.FriendsActions;
 import io.decagames.rotmg.social.model.FriendRequestVO;
 import io.decagames.rotmg.social.signals.FriendActionSignal;
@@ -22,8 +21,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class InviteFriendPopupMediator extends Mediator
-    {
+public class InviteFriendPopupMediator extends Mediator {
 
         [Inject]
         public var view:InviteFriendPopup;
@@ -40,33 +38,28 @@ public class InviteFriendPopupMediator extends Mediator
         private var closeButton:SliceScalingButton;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
             this.closeButton.clickSignal.addOnce(this.onClose);
             this.view.sendButton.clickSignal.add(this.onSendButtonClick);
             this.view.header.addButton(this.closeButton, PopupHeader.RIGHT_BUTTON);
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.sendButton.clickSignal.remove(this.onSendButtonClick);
         }
 
-        private function onSendButtonClick(_arg_1:BaseButton):void
-        {
+        private function onSendButtonClick(_arg_1:BaseButton):void{
             this.showFade.dispatch();
             var _local_2:FriendRequestVO = new FriendRequestVO(FriendsActions.INVITE, this.view.search.text, this.onSearchCallback);
             this.friendsAction.dispatch(_local_2);
         }
 
-        private function onSearchCallback(_arg_1:Boolean, _arg_2:Object, _arg_3:String):void
-        {
+        private function onSearchCallback(_arg_1:Boolean, _arg_2:Object, _arg_3:String):void{
             if (_arg_1)
             {
                 this.removeFade.dispatch();
@@ -76,7 +69,7 @@ public class InviteFriendPopupMediator extends Mediator
             {
                 this.showPopup.dispatch(new ErrorModal(350, "Friends List Error", LineBuilder.getLocalizedStringFromKey(String(_arg_2))));
                 this.removeFade.dispatch();
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.mapoverlay.CharacterStatusText
 
-package com.company.assembleegameclient.map.mapoverlay
-{
+package com.company.assembleegameclient.map.mapoverlay{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.GameObject;
 
@@ -18,8 +17,7 @@ import flash.geom.Point;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class CharacterStatusText extends Sprite implements IMapOverlayElement
-    {
+public class CharacterStatusText extends Sprite implements IMapOverlayElement {
 
         public const MAX_DRIFT:int = 40;
 
@@ -31,8 +29,7 @@ public class CharacterStatusText extends Sprite implements IMapOverlayElement
         private var startTime_:int = 0;
         private var textDisplay:TextFieldDisplayConcrete;
 
-        public function CharacterStatusText(_arg_1:GameObject, _arg_2:uint, _arg_3:int, _arg_4:int=0)
-        {
+        public function CharacterStatusText(_arg_1:GameObject, _arg_2:uint, _arg_3:int, _arg_4:int=0){
             this.go_ = _arg_1;
             this.offset_ = new Point(0, (((-(_arg_1.texture_.height) * (_arg_1.size_ / 100)) * 5) - 20));
             this.color_ = _arg_2;
@@ -44,27 +41,26 @@ public class CharacterStatusText extends Sprite implements IMapOverlayElement
             visible = false;
         }
 
-        public function draw(_arg_1:Camera, _arg_2:int):Boolean
-        {
+        public function draw(_arg_1:Camera, _arg_2:int):Boolean{
             if (this.startTime_ == 0)
             {
                 this.startTime_ = (_arg_2 + this.offsetTime_);
-            }
+            };
             if (_arg_2 < this.startTime_)
             {
                 visible = false;
                 return (true);
-            }
+            };
             var _local_3:int = (_arg_2 - this.startTime_);
             if (((_local_3 > this.lifetime_) || ((!(this.go_ == null)) && (this.go_.map_ == null))))
             {
                 return (false);
-            }
+            };
             if (((this.go_ == null) || (!(this.go_.drawn_))))
             {
                 visible = false;
                 return (true);
-            }
+            };
             visible = true;
             x = (((this.go_ != null) ? this.go_.posS_[0] : 0) + ((this.offset_ != null) ? this.offset_.x : 0));
             var _local_4:Number = ((_local_3 / this.lifetime_) * this.MAX_DRIFT);
@@ -72,24 +68,20 @@ public class CharacterStatusText extends Sprite implements IMapOverlayElement
             return (true);
         }
 
-        public function getGameObject():GameObject
-        {
+        public function getGameObject():GameObject{
             return (this.go_);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             parent.removeChild(this);
         }
 
-        public function setStringBuilder(_arg_1:StringBuilder):void
-        {
+        public function setStringBuilder(_arg_1:StringBuilder):void{
             this.textDisplay.textChanged.add(this.onTextChanged);
             this.textDisplay.setStringBuilder(_arg_1);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             var _local_2:Bitmap;
             var _local_1:BitmapData = new BitmapData(this.textDisplay.width, this.textDisplay.height, true, 0);
             _local_2 = new Bitmap(_local_1);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.net.NetConfig
 
-package kabam.lib.net
-{
+package kabam.lib.net{
 import flash.net.Socket;
 
 import kabam.lib.net.api.MessageMap;
@@ -16,16 +15,14 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.IConfig;
 
-public class NetConfig implements IConfig
-    {
+public class NetConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
         private var messageCenter:MessageCenter;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.messageCenter = new MessageCenter().setInjector(this.injector);
             this.injector.map(Socket);
             this.injector.map(MessageMap).toValue(this.messageCenter);

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.CharacterRectConstants
 
-package com.company.assembleegameclient.screens.charrects
-{
-    public class CharacterRectConstants 
-    {
+package com.company.assembleegameclient.screens.charrects{
+    public class CharacterRectConstants {
 
         public static const ICON_POS_X:int = 8;
         public static const ICON_POS_Y:int = 4;

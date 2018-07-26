@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.model.ChatMessage
 
-package kabam.rotmg.chat.model
-{
-    public class ChatMessage 
-    {
+package kabam.rotmg.chat.model{
+    public class ChatMessage {
 
         public var name:String;
         public var text:String;
@@ -18,8 +16,7 @@ package kabam.rotmg.chat.model
         public var tokens:Object;
 
 
-        public static function make(_arg_1:String, _arg_2:String, _arg_3:int=-1, _arg_4:int=-1, _arg_5:String="", _arg_6:Boolean=false, _arg_7:Object=null, _arg_8:Boolean=false):ChatMessage
-        {
+        public static function make(_arg_1:String, _arg_2:String, _arg_3:int=-1, _arg_4:int=-1, _arg_5:String="", _arg_6:Boolean=false, _arg_7:Object=null, _arg_8:Boolean=false):ChatMessage{
             var _local_9:ChatMessage = new (ChatMessage)();
             _local_9.name = _arg_1;
             _local_9.text = _arg_2;

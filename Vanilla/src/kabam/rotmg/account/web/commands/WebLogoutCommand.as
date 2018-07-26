@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebLogoutCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
 import flash.display.Sprite;
@@ -19,8 +18,7 @@ import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
 import kabam.rotmg.fame.view.FameView;
 import kabam.rotmg.packages.services.GetPackagesTask;
 
-public class WebLogoutCommand 
-    {
+public class WebLogoutCommand {
 
         [Inject]
         public var account:Account;
@@ -36,8 +34,7 @@ public class WebLogoutCommand
         public var petsModel:PetsModel;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.account.clear();
             this.invalidate.dispatch();
             this.petsModel.clearPets();
@@ -45,17 +42,15 @@ public class WebLogoutCommand
             this.getPackageTask.start();
         }
 
-        private function onFinished(_arg_1:BaseTask, _arg_2:Boolean, _arg_3:String):void
-        {
+        private function onFinished(_arg_1:BaseTask, _arg_2:Boolean, _arg_3:String):void{
             this.setScreenWithValidData.dispatch(this.makeScreen());
         }
 
-        private function makeScreen():Sprite
-        {
+        private function makeScreen():Sprite{
             if (this.screenModel.getCurrentScreenType() == FameView)
             {
                 return (new CharacterSelectionAndNewsScreen());
-            }
+            };
             return (new (((this.screenModel.getCurrentScreenType()) || (CharacterSelectionAndNewsScreen)))());
         }
 

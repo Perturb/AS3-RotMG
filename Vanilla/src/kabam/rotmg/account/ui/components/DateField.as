@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.ui.components.DateField
 
-package kabam.rotmg.account.ui.components
-{
+package kabam.rotmg.account.ui.components{
 import com.company.ui.BaseSimpleText;
 
 import flash.display.CapsStyle;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class DateField extends Sprite 
-    {
+public class DateField extends Sprite {
 
         private static const BACKGROUND_COLOR:uint = 0x333333;
         private static const ERROR_BORDER_COLOR:uint = 16549442;
@@ -44,8 +42,7 @@ public class DateField extends Sprite
         private var thisYear:int;
         private var validator:DateValidator;
 
-        public function DateField()
-        {
+        public function DateField(){
             this.validator = new DateValidator();
             this.thisYear = new Date().getFullYear();
             this.label = new TextFieldDisplayConcrete().setSize(18).setColor(0xB3B3B3);
@@ -95,20 +92,17 @@ public class DateField extends Sprite
             this.setErrorHighlight(false);
         }
 
-        public function setTitle(_arg_1:String):void
-        {
+        public function setTitle(_arg_1:String):void{
             this.label.setStringBuilder(new LineBuilder().setParams(_arg_1));
         }
 
-        public function setErrorHighlight(_arg_1:Boolean):void
-        {
+        public function setErrorHighlight(_arg_1:Boolean):void{
             this.drawSimpleTextBackground(this.months, 0, 0, _arg_1);
             this.drawSimpleTextBackground(this.days, 0, 0, _arg_1);
             this.drawSimpleTextBackground(this.years, 0, 0, _arg_1);
         }
 
-        private function drawSimpleTextBackground(_arg_1:BaseSimpleText, _arg_2:int, _arg_3:int, _arg_4:Boolean):void
-        {
+        private function drawSimpleTextBackground(_arg_1:BaseSimpleText, _arg_2:int, _arg_3:int, _arg_4:Boolean):void{
             var _local_5:uint = ((_arg_4) ? ERROR_BORDER_COLOR : NORMAL_BORDER_COLOR);
             graphics.lineStyle(2, _local_5, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
             graphics.beginFill(BACKGROUND_COLOR, 1);
@@ -117,8 +111,7 @@ public class DateField extends Sprite
             graphics.lineStyle();
         }
 
-        private function createFormatHint(_arg_1:BaseSimpleText, _arg_2:String):TextFieldDisplayConcrete
-        {
+        private function createFormatHint(_arg_1:BaseSimpleText, _arg_2:String):TextFieldDisplayConcrete{
             var _local_3:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(16).setColor(FORMAT_HINT_COLOR);
             _local_3.setTextWidth((_arg_1.width + 4)).setTextHeight(_arg_1.height);
             _local_3.x = (_arg_1.x - 6);
@@ -128,105 +121,92 @@ public class DateField extends Sprite
             return (_local_3);
         }
 
-        private function onMonthInput(_arg_1:TextEvent):void
-        {
+        private function onMonthInput(_arg_1:TextEvent):void{
             var _local_2:String = (this.months.text + _arg_1.text);
             var _local_3:int = int(_local_2);
             if (((!(_local_2 == "0")) && (!(this.validator.isValidMonth(_local_3)))))
             {
                 _arg_1.preventDefault();
-            }
+            };
         }
 
-        private function onMonthFocusOut(_arg_1:FocusEvent):void
-        {
+        private function onMonthFocusOut(_arg_1:FocusEvent):void{
             var _local_2:int = int(this.months.text);
             if (((_local_2 < 10) && (!(this.days.text == ""))))
             {
                 this.months.text = ("0" + _local_2.toString());
-            }
+            };
         }
 
-        private function onEditMonth(_arg_1:Event):void
-        {
+        private function onEditMonth(_arg_1:Event):void{
             this.monthFormatText.visible = (!(this.months.text));
         }
 
-        private function onDayInput(_arg_1:TextEvent):void
-        {
+        private function onDayInput(_arg_1:TextEvent):void{
             var _local_2:String = (this.days.text + _arg_1.text);
             var _local_3:int = int(_local_2);
             if (((!(_local_2 == "0")) && (!(this.validator.isValidDay(_local_3)))))
             {
                 _arg_1.preventDefault();
-            }
+            };
         }
 
-        private function onDayFocusOut(_arg_1:FocusEvent):void
-        {
+        private function onDayFocusOut(_arg_1:FocusEvent):void{
             var _local_2:int = int(this.days.text);
             if (((_local_2 < 10) && (!(this.days.text == ""))))
             {
                 this.days.text = ("0" + _local_2.toString());
-            }
+            };
         }
 
-        private function onEditDay(_arg_1:Event):void
-        {
+        private function onEditDay(_arg_1:Event):void{
             this.dayFormatText.visible = (!(this.days.text));
         }
 
-        private function onYearInput(_arg_1:TextEvent):void
-        {
+        private function onYearInput(_arg_1:TextEvent):void{
             var _local_2:String = (this.years.text + _arg_1.text);
             var _local_3:int = this.getEarliestYear(_local_2);
             if (_local_3 > this.thisYear)
             {
                 _arg_1.preventDefault();
-            }
+            };
         }
 
-        private function getEarliestYear(_arg_1:String):int
-        {
+        private function getEarliestYear(_arg_1:String):int{
             while (_arg_1.length < 4)
             {
                 _arg_1 = (_arg_1 + "0");
-            }
+            };
             return (int(_arg_1));
         }
 
-        private function onEditYear(_arg_1:Event):void
-        {
+        private function onEditYear(_arg_1:Event):void{
             this.yearFormatText.visible = (!(this.years.text));
         }
 
-        public function isValidDate():Boolean
-        {
+        public function isValidDate():Boolean{
             var _local_1:int = int(this.months.text);
             var _local_2:int = int(this.days.text);
             var _local_3:int = int(this.years.text);
             return (this.validator.isValidDate(_local_1, _local_2, _local_3, 100));
         }
 
-        public function getDate():String
-        {
+        public function getDate():String{
             var _local_1:String = this.getFixedLengthString(this.months.text, 2);
             var _local_2:String = this.getFixedLengthString(this.days.text, 2);
             var _local_3:String = this.getFixedLengthString(this.years.text, 4);
             return ((((_local_1 + "/") + _local_2) + "/") + _local_3);
         }
 
-        private function getFixedLengthString(_arg_1:String, _arg_2:int):String
-        {
+        private function getFixedLengthString(_arg_1:String, _arg_2:int):String{
             while (_arg_1.length < _arg_2)
             {
                 _arg_1 = ("0" + _arg_1);
-            }
+            };
             return (_arg_1);
         }
 
-        public function getTextChanged():Signal
-        {
+        public function getTextChanged():Signal{
             return (this.label.textChanged);
         }
 

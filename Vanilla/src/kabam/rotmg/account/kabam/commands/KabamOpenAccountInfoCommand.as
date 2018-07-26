@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.commands.KabamOpenAccountInfoCommand
 
-package kabam.rotmg.account.kabam.commands
-{
+package kabam.rotmg.account.kabam.commands{
 import kabam.rotmg.account.kabam.view.KabamAccountDetailDialog;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class KabamOpenAccountInfoCommand 
-    {
+public class KabamOpenAccountInfoCommand {
 
         [Inject]
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.openDialog.dispatch(new KabamAccountDetailDialog());
         }
 

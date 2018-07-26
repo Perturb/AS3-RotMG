@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.CharacterBox
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.assembleegameclient.appengine.CharacterStats;
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.ui.tooltip.ClassToolTip;
@@ -31,8 +30,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.natives.NativeSignal;
 
-public class CharacterBox extends Sprite 
-    {
+public class CharacterBox extends Sprite {
 
         private static const fullCT:ColorTransform = new ColorTransform(0.8, 0.8, 0.8);
         private static const emptyCT:ColorTransform = new ColorTransform(0.2, 0.2, 0.2);
@@ -50,8 +48,7 @@ public class CharacterBox extends Sprite
         private var lock_:Bitmap;
         private var unlockedText_:TextFieldDisplayConcrete;
 
-        public function CharacterBox(_arg_1:XML, _arg_2:CharacterStats, _arg_3:PlayerModel, _arg_4:Boolean=false)
-        {
+        public function CharacterBox(_arg_1:XML, _arg_2:CharacterStats, _arg_3:PlayerModel, _arg_4:Boolean=false){
             var _local_5:Sprite;
             super();
             this.model = _arg_3;
@@ -65,7 +62,7 @@ public class CharacterBox extends Sprite
             else
             {
                 this.graphic_ = new FullCharBoxGraphic();
-            }
+            };
             this.graphicContainer_ = new Sprite();
             addChild(this.graphicContainer_);
             this.graphicContainer_.addChild(this.graphic_);
@@ -97,16 +94,14 @@ public class CharacterBox extends Sprite
                 addChild(this.lock_);
                 addChild(this.statusText_);
                 this.classNameText_.y = 78;
-            }
+            };
         }
 
-        public function objectType():int
-        {
+        public function objectType():int{
             return (int(this.playerXML_.@type));
         }
 
-        public function unlock():void
-        {
+        public function unlock():void{
             var _local_1:Sprite;
             var _local_2:GTween;
             if (this.available_ == false)
@@ -121,11 +116,11 @@ public class CharacterBox extends Sprite
                 if (contains(this.statusText_))
                 {
                     removeChild(this.statusText_);
-                }
+                };
                 if (((this.lock_) && (contains(this.lock_))))
                 {
                     removeChild(this.lock_);
-                }
+                };
                 _local_1 = this.getStars(FameUtil.numStars(this.model.getBestFame(this.objectType())), FameUtil.STARS.length);
                 _local_1.y = 60;
                 _local_1.x = ((this.graphic_.width / 2) - (_local_1.width / 2));
@@ -135,27 +130,25 @@ public class CharacterBox extends Sprite
                 if (!this.unlockedText_)
                 {
                     this.getCharacterUnlockText();
-                }
+                };
                 addChild(this.unlockedText_);
                 _local_2 = new GTween(this.unlockedText_, 2.5, {
                     "alpha":0,
                     "y":-30
                 });
                 _local_2.onComplete = this.removeUnlockText;
-            }
+            };
         }
 
-        public function getTooltip():ToolTip
-        {
+        public function getTooltip():ToolTip{
             return (new ClassToolTip(this.playerXML_, this.model, this.charStats_));
         }
 
-        public function setOver(_arg_1:Boolean):void
-        {
+        public function setOver(_arg_1:Boolean):void{
             if (!this.available_)
             {
                 return;
-            }
+            };
             if (_arg_1)
             {
                 transform.colorTransform = new ColorTransform(1.2, 1.2, 1.2);
@@ -163,22 +156,19 @@ public class CharacterBox extends Sprite
             else
             {
                 transform.colorTransform = new ColorTransform(1, 1, 1);
-            }
+            };
         }
 
-        private function removeUnlockText(_arg_1:GTween):void
-        {
+        private function removeUnlockText(_arg_1:GTween):void{
             removeChild(this.unlockedText_);
         }
 
-        private function setImage(_arg_1:int, _arg_2:int, _arg_3:Number):void
-        {
+        private function setImage(_arg_1:int, _arg_2:int, _arg_3:Number):void{
             this.bitmap_.bitmapData = SavedCharacter.getImage(null, this.playerXML_, _arg_1, _arg_2, _arg_3, this.available_, false);
             this.bitmap_.x = ((this.graphic_.width / 2) - (this.bitmap_.bitmapData.width / 2));
         }
 
-        private function getStars(_arg_1:int, _arg_2:int):Sprite
-        {
+        private function getStars(_arg_1:int, _arg_2:int):Sprite{
             var _local_5:Sprite;
             var _local_3:Sprite = new Sprite();
             var _local_4:int;
@@ -191,7 +181,7 @@ public class CharacterBox extends Sprite
                 _local_3.addChild(_local_5);
                 _local_6 = (_local_6 + _local_5.width);
                 _local_4++;
-            }
+            };
             while (_local_4 < _arg_2)
             {
                 _local_5 = new StarGraphic();
@@ -200,20 +190,18 @@ public class CharacterBox extends Sprite
                 _local_3.addChild(_local_5);
                 _local_6 = (_local_6 + _local_5.width);
                 _local_4++;
-            }
+            };
             return (_local_3);
         }
 
-        private function setStatusButton():void
-        {
+        private function setStatusButton():void{
             this.statusText_ = new TextFieldDisplayConcrete().setSize(14).setColor(0xFF0000).setAutoSize(TextFieldAutoSize.CENTER).setBold(true).setTextWidth(this.graphic_.width);
             this.statusText_.setStringBuilder(new LineBuilder().setParams(TextKey.LOCKED));
             this.statusText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4)];
             this.statusText_.y = 58;
         }
 
-        private function getCharacterUnlockText():void
-        {
+        private function getCharacterUnlockText():void{
             this.unlockedText_ = new TextFieldDisplayConcrete().setSize(14).setColor(0xFF00).setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.unlockedText_.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4)];
             this.unlockedText_.setStringBuilder(new LineBuilder().setParams(TextKey.UNLOCK_CLASS));

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.PetInfoItem
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import flash.display.Sprite;
 import flash.events.Event;
 
@@ -14,22 +13,19 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PetInfoItem extends UIGridElement 
-    {
+public class PetInfoItem extends UIGridElement {
 
         private var listBackground:SliceScalingBitmap;
         private var infoTitle:UILabel;
         public var titleText:String;
         protected var hoverMask:Sprite;
 
-        public function PetInfoItem(_arg_1:String)
-        {
+        public function PetInfoItem(_arg_1:String){
             this.titleText = _arg_1;
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             this.listBackground = TextureParser.instance.getSliceScalingBitmap("UI", "listitem_content_background");
             addChild(this.listBackground);
@@ -48,18 +44,15 @@ public class PetInfoItem extends UIGridElement
             addChild(this.hoverMask);
         }
 
-        private function onRemoved(_arg_1:Event):void
-        {
+        private function onRemoved(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
         }
 
-        public function get titel():String
-        {
+        public function get titel():String{
             return (this.titleText);
         }
 
-        public function get background():Sprite
-        {
+        public function get background():Sprite{
             return (this.hoverMask);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.tooltip.PetTooltip
 
-package io.decagames.rotmg.pets.components.tooltip
-{
+package io.decagames.rotmg.pets.components.tooltip{
 import com.company.assembleegameclient.ui.LineBreakDesign;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
@@ -25,8 +24,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.model.TabStripModel;
 
-public class PetTooltip extends ToolTip
-    {
+public class PetTooltip extends ToolTip {
 
         private const petsContent:Sprite = new Sprite();
         private const titleTextField:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
@@ -37,35 +35,31 @@ public class PetTooltip extends ToolTip
         private var petBitmap:Bitmap;
         private var petVO:IPetVO;
 
-        public function PetTooltip(_arg_1:IPetVO)
-        {
+        public function PetTooltip(_arg_1:IPetVO){
             this.petVO = _arg_1;
             super(0x363636, 1, 0xFFFFFF, 1, true);
             this.petsContent.name = TabStripModel.PETS;
         }
 
-        public function init():void
-        {
+        public function init():void{
             this.petBitmap = this.petVO.getSkinBitmap();
             this.addChildren();
             if (this.hasAbilities)
             {
                 this.addAbilities();
-            }
+            };
             this.positionChildren();
             this.updateTextFields();
         }
 
-        private function updateTextFields():void
-        {
+        private function updateTextFields():void{
             this.titleTextField.setColor(this.petVO.rarity.color);
             this.titleTextField.setStringBuilder(new LineBuilder().setParams(this.petVO.name));
             this.petRarityTextField.setStringBuilder(new LineBuilder().setParams(this.petVO.rarity.rarityKey));
             this.petFamilyTextField.setStringBuilder(new LineBuilder().setParams(PetFamilyKeys.getTranslationKey(this.petVO.family))).setColor(PetFamilyColors.getColorByFamilyKey(this.petVO.family));
         }
 
-        private function addChildren():void
-        {
+        private function addChildren():void{
             this.clearChildren();
             this.petsContent.graphics.beginFill(0, 0);
             this.petsContent.graphics.drawRect(0, 0, PetsConstants.TOOLTIP_WIDTH, ((this.hasAbilities) ? PetsConstants.TOOLTIP_HEIGHT : PetsConstants.TOOLTIP_HEIGHT_NO_ABILITIES));
@@ -76,37 +70,34 @@ public class PetTooltip extends ToolTip
             if (this.hasAbilities)
             {
                 this.petsContent.addChild(this.lineBreak);
-            }
+            };
             if (!contains(this.petsContent))
             {
                 addChild(this.petsContent);
-            }
+            };
         }
 
-        private function clearChildren():void
-        {
+        private function clearChildren():void{
             this.petsContent.graphics.clear();
             while (this.petsContent.numChildren > 0)
             {
                 this.petsContent.removeChildAt(0);
-            }
+            };
         }
 
-        private function get hasAbilities():Boolean
-        {
+        private function get hasAbilities():Boolean{
             var _local_1:AbilityVO;
             for each (_local_1 in this.petVO.abilityList)
             {
                 if (((_local_1.getUnlocked()) && (_local_1.level > 0)))
                 {
                     return (true);
-                }
-            }
+                };
+            };
             return (false);
         }
 
-        private function addAbilities():void
-        {
+        private function addAbilities():void{
             var _local_1:UIGrid;
             _local_1 = new PetStatsGrid(178, this.petVO);
             this.petsContent.addChild(_local_1);
@@ -114,18 +105,16 @@ public class PetTooltip extends ToolTip
             _local_1.x = 2;
         }
 
-        private function getNumAbilities():uint
-        {
+        private function getNumAbilities():uint{
             var _local_1:Boolean = ((this.petVO.rarity.rarityKey == PetRarityEnum.DIVINE.rarityKey) || (this.petVO.rarity.rarityKey == PetRarityEnum.LEGENDARY.rarityKey));
             if (_local_1)
             {
                 return (2);
-            }
+            };
             return (3);
         }
 
-        private function positionChildren():void
-        {
+        private function positionChildren():void{
             this.titleTextField.x = 55;
             this.titleTextField.y = 21;
             this.petRarityTextField.x = 55;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.ApplicationConfig
 
-package kabam.rotmg.application
-{
+package kabam.rotmg.application{
 import flash.display.DisplayObjectContainer;
 import flash.display.LoaderInfo;
 
@@ -25,8 +24,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.IConfig;
 
-public class ApplicationConfig implements IConfig
-    {
+public class ApplicationConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -40,16 +38,14 @@ public class ApplicationConfig implements IConfig
         public var domainModel:DomainModel;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             var _local_1:ApplicationSetup = this.makeTestingSetup();
             this.injector.map(DebugSetup).toValue(_local_1);
             this.injector.map(ApplicationSetup).toValue(_local_1);
             this.injector.map(PlatformModel).asSingleton();
         }
 
-        private function makeTestingSetup():ApplicationSetup
-        {
+        private function makeTestingSetup():ApplicationSetup{
             var _local_1:BuildEnvironment = this.data.getEnvironment();
             switch (_local_1)
             {
@@ -65,11 +61,10 @@ public class ApplicationConfig implements IConfig
                     return (new Testing2Setup());
                 default:
                     return (new ProductionSetup());
-            }
+            };
         }
 
-        private function makeFixedIPSetup():FixedIPSetup
-        {
+        private function makeFixedIPSetup():FixedIPSetup{
             return (new FixedIPSetup().setAddress(this.data.getEnvironmentString()));
         }
 

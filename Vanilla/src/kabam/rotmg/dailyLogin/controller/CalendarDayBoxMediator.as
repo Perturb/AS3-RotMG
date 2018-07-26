@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.controller.CalendarDayBoxMediator
 
-package kabam.rotmg.dailyLogin.controller
-{
+package kabam.rotmg.dailyLogin.controller{
 import com.company.assembleegameclient.map.Map;
 
 import flash.events.MouseEvent;
@@ -20,8 +19,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CalendarDayBoxMediator extends Mediator 
-    {
+public class CalendarDayBoxMediator extends Mediator {
 
         [Inject]
         public var view:CalendarDayBox;
@@ -37,19 +35,16 @@ public class CalendarDayBoxMediator extends Mediator
         public var model:DailyLoginModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.addEventListener(MouseEvent.CLICK, this.onClickHandler);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.removeEventListener(MouseEvent.CLICK, this.onClickHandler);
             super.destroy();
         }
 
-        private function onClickHandler(_arg_1:MouseEvent):void
-        {
+        private function onClickHandler(_arg_1:MouseEvent):void{
             var _local_2:ClaimDailyRewardMessage;
             this.view.removeEventListener(MouseEvent.CLICK, this.onClickHandler);
             if ((((this.hudModel.gameSprite.map.name_ == Map.DAILY_QUEST_ROOM) && (!(this.view.day.claimKey == ""))) && (!(this.view.day.isClaimed))))
@@ -60,7 +55,7 @@ public class CalendarDayBoxMediator extends Mediator
                 this.socketServer.sendMessage(_local_2);
                 this.view.markAsClaimed();
                 this.model.markAsClaimed(this.view.getDay().dayNumber, this.view.getDay().calendarType);
-            }
+            };
         }
 
 

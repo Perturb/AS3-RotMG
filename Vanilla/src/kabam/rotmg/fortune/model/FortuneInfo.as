@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.model.FortuneInfo
 
-package kabam.rotmg.fortune.model
-{
+package kabam.rotmg.fortune.model{
 import flash.display.DisplayObject;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
@@ -14,8 +13,7 @@ import flash.utils.Dictionary;
 import kabam.display.Loader.LoaderProxy;
 import kabam.display.Loader.LoaderProxyConcrete;
 
-public class FortuneInfo
-    {
+public class FortuneInfo {
 
         public static var chestImageEmbed:Class = FortuneInfo_chestImageEmbed;
 
@@ -39,99 +37,80 @@ public class FortuneInfo
         public var _rollsWithContentsUnique:Vector.<int> = new Vector.<int>();
 
 
-        public function get id():*
-        {
+        public function get id():*{
             return (this._id);
         }
 
-        public function set id(_arg_1:String):void
-        {
+        public function set id(_arg_1:String):void{
             this._id = _arg_1;
         }
 
-        public function get title():*
-        {
+        public function get title():*{
             return (this._title);
         }
 
-        public function set title(_arg_1:String):void
-        {
+        public function set title(_arg_1:String):void{
             this._title = _arg_1;
         }
 
-        public function get description():*
-        {
+        public function get description():*{
             return (this._description);
         }
 
-        public function set description(_arg_1:String):void
-        {
+        public function set description(_arg_1:String):void{
             this._description = _arg_1;
         }
 
-        public function get weight():*
-        {
+        public function get weight():*{
             return (this._weight);
         }
 
-        public function set weight(_arg_1:String):void
-        {
+        public function set weight(_arg_1:String):void{
             this._weight = _arg_1;
         }
 
-        public function get contents():*
-        {
+        public function get contents():*{
             return (this._contents);
         }
 
-        public function set contents(_arg_1:String):void
-        {
+        public function set contents(_arg_1:String):void{
             this._contents = _arg_1;
         }
 
-        public function get priceFirstInGold():String
-        {
+        public function get priceFirstInGold():String{
             return (this._priceFirstInGold);
         }
 
-        public function set priceFirstInGold(_arg_1:String):void
-        {
+        public function set priceFirstInGold(_arg_1:String):void{
             this._priceFirstInGold = _arg_1;
         }
 
-        public function get priceFirstInToken():String
-        {
+        public function get priceFirstInToken():String{
             return (this._priceFirstInToken);
         }
 
-        public function set priceFirstInToken(_arg_1:String):void
-        {
+        public function set priceFirstInToken(_arg_1:String):void{
             this._priceFirstInToken = _arg_1;
         }
 
-        public function get priceSecondInGold():String
-        {
+        public function get priceSecondInGold():String{
             return (this._priceSecondInGold);
         }
 
-        public function set priceSecondInGold(_arg_1:String):void
-        {
+        public function set priceSecondInGold(_arg_1:String):void{
             this._priceSecondInGold = _arg_1;
         }
 
-        public function get iconImageUrl():*
-        {
+        public function get iconImageUrl():*{
             return (this._iconImageUrl);
         }
 
-        public function set iconImageUrl(_arg_1:String):void
-        {
+        public function set iconImageUrl(_arg_1:String):void{
             this._iconImageUrl = _arg_1;
             this.loadIconImageFromUrl(this._iconImageUrl);
         }
 
-        private function loadIconImageFromUrl(_arg_1:String):void
-        {
+        private function loadIconImageFromUrl(_arg_1:String):void{
             ((this._loader) && (this._loader.unload()));
             this._loader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onComplete);
             this._loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onError);
@@ -140,13 +119,11 @@ public class FortuneInfo
             this._loader.load(new URLRequest(_arg_1));
         }
 
-        private function onError(_arg_1:IOErrorEvent):void
-        {
+        private function onError(_arg_1:IOErrorEvent):void{
             this._iconImage = new chestImageEmbed();
         }
 
-        private function onComplete(_arg_1:Event):void
-        {
+        private function onComplete(_arg_1:Event):void{
             this._loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onComplete);
             this._loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, this.onError);
             this._loader.contentLoaderInfo.removeEventListener(IOErrorEvent.DISK_ERROR, this.onError);
@@ -154,29 +131,24 @@ public class FortuneInfo
             this._iconImage = DisplayObject(this._loader);
         }
 
-        public function get iconImage():DisplayObject
-        {
+        public function get iconImage():DisplayObject{
             return (this._iconImage);
         }
 
-        public function get infoImageUrl():*
-        {
+        public function get infoImageUrl():*{
             return (this._infoImageUrl);
         }
 
-        public function set infoImageUrl(_arg_1:String):void
-        {
+        public function set infoImageUrl(_arg_1:String):void{
             this._infoImageUrl = _arg_1;
             this.loadInfomageFromUrl(this._infoImageUrl);
         }
 
-        private function loadInfomageFromUrl(_arg_1:String):void
-        {
+        private function loadInfomageFromUrl(_arg_1:String):void{
             this.loadImageFromUrl(_arg_1, this._infoImageLoader);
         }
 
-        private function loadImageFromUrl(_arg_1:String, _arg_2:LoaderProxy):void
-        {
+        private function loadImageFromUrl(_arg_1:String, _arg_2:LoaderProxy):void{
             ((_arg_2) && (_arg_2.unload()));
             _arg_2.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onInfoComplete);
             _arg_2.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onInfoError);
@@ -185,12 +157,10 @@ public class FortuneInfo
             _arg_2.load(new URLRequest(_arg_1));
         }
 
-        private function onInfoError(_arg_1:IOErrorEvent):void
-        {
+        private function onInfoError(_arg_1:IOErrorEvent):void{
         }
 
-        private function onInfoComplete(_arg_1:Event):void
-        {
+        private function onInfoComplete(_arg_1:Event):void{
             this._infoImageLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, this.onInfoComplete);
             this._infoImageLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, this.onInfoError);
             this._infoImageLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.DISK_ERROR, this.onInfoError);
@@ -198,28 +168,23 @@ public class FortuneInfo
             this._infoImage = DisplayObject(this._infoImageLoader);
         }
 
-        public function get startTime():*
-        {
+        public function get startTime():*{
             return (this._startTime);
         }
 
-        public function set startTime(_arg_1:Date):void
-        {
+        public function set startTime(_arg_1:Date):void{
             this._startTime = _arg_1;
         }
 
-        public function get endTime():*
-        {
+        public function get endTime():*{
             return (this._endTime);
         }
 
-        public function set endTime(_arg_1:Date):void
-        {
+        public function set endTime(_arg_1:Date):void{
             this._endTime = _arg_1;
         }
 
-        public function parseContents():void
-        {
+        public function parseContents():void{
             var _local_3:String;
             var _local_4:Vector.<int>;
             var _local_5:Array;
@@ -236,40 +201,34 @@ public class FortuneInfo
                     {
                         _local_2[int(_local_6)] = true;
                         this._rollsWithContentsUnique.push(int(_local_6));
-                    }
+                    };
                     _local_4.push(int(_local_6));
-                }
+                };
                 this._rollsWithContents.push(_local_4);
-            }
+            };
         }
 
-        public function get infoImage():DisplayObject
-        {
+        public function get infoImage():DisplayObject{
             return (this._infoImage);
         }
 
-        public function set infoImage(_arg_1:DisplayObject):void
-        {
+        public function set infoImage(_arg_1:DisplayObject):void{
             this._infoImage = _arg_1;
         }
 
-        public function get loader():LoaderProxy
-        {
+        public function get loader():LoaderProxy{
             return (this._loader);
         }
 
-        public function set loader(_arg_1:LoaderProxy):void
-        {
+        public function set loader(_arg_1:LoaderProxy):void{
             this._loader = _arg_1;
         }
 
-        public function get infoImageLoader():LoaderProxy
-        {
+        public function get infoImageLoader():LoaderProxy{
             return (this._infoImageLoader);
         }
 
-        public function set infoImageLoader(_arg_1:LoaderProxy):void
-        {
+        public function set infoImageLoader(_arg_1:LoaderProxy):void{
             this._infoImageLoader = _arg_1;
         }
 

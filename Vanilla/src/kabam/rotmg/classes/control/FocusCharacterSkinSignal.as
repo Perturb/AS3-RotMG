@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.FocusCharacterSkinSignal
 
-package kabam.rotmg.classes.control
-{
+package kabam.rotmg.classes.control{
 import kabam.rotmg.classes.model.CharacterSkin;
 
 import org.osflash.signals.Signal;
 
-public class FocusCharacterSkinSignal extends Signal
-    {
+public class FocusCharacterSkinSignal extends Signal {
 
-        public function FocusCharacterSkinSignal()
-        {
+        public function FocusCharacterSkinSignal(){
             super(CharacterSkin);
         }
 

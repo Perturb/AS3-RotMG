@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.view.DialogsMediator
 
-package kabam.rotmg.dialogs.view
-{
+package kabam.rotmg.dialogs.view{
 import flash.display.Sprite;
 
 import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
@@ -22,8 +21,7 @@ import org.osflash.signals.Signal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class DialogsMediator extends Mediator 
-    {
+public class DialogsMediator extends Mediator {
 
         [Inject]
         public var view:DialogsView;
@@ -47,8 +45,7 @@ public class DialogsMediator extends Mediator
         public var dialogsModel:DialogsModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.showDialogBackground.add(this.onShowDialogBackground);
             this.openDialog.add(this.onOpenDialog);
             this.openDialogNoModal.add(this.onOpenDialogNoModal);
@@ -59,8 +56,7 @@ public class DialogsMediator extends Mediator
             this.flushStartupQueue.add(this.onFlushQueue);
         }
 
-        private function onFlushQueue():void
-        {
+        private function onFlushQueue():void{
             var _local_1:PopupQueueEntry = this.dialogsModel.flushStartupQueue();
             if (_local_1 != null)
             {
@@ -71,27 +67,23 @@ public class DialogsMediator extends Mediator
                 else
                 {
                     _local_1.signal.dispatch();
-                }
-            }
+                };
+            };
         }
 
-        private function onAddToQueue(_arg_1:String, _arg_2:Signal, _arg_3:int, _arg_4:Object):void
-        {
+        private function onAddToQueue(_arg_1:String, _arg_2:Signal, _arg_3:int, _arg_4:Object):void{
             this.dialogsModel.addPopupToStartupQueue(_arg_1, _arg_2, _arg_3, _arg_4);
         }
 
-        private function onPushDialog(_arg_1:Sprite):void
-        {
+        private function onPushDialog(_arg_1:Sprite):void{
             this.view.push(_arg_1);
         }
 
-        private function onPopDialog():void
-        {
+        private function onPopDialog():void{
             this.view.pop();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.showDialogBackground.remove(this.onShowDialogBackground);
             this.openDialog.remove(this.onOpenDialog);
             this.openDialogNoModal.remove(this.onOpenDialogNoModal);
@@ -100,23 +92,19 @@ public class DialogsMediator extends Mediator
             this.popDialogSignal.remove(this.onPopDialog);
         }
 
-        private function onShowDialogBackground(_arg_1:int=0x151515):void
-        {
+        private function onShowDialogBackground(_arg_1:int=0x151515):void{
             this.view.showBackground(_arg_1);
         }
 
-        private function onOpenDialog(_arg_1:Sprite):void
-        {
+        private function onOpenDialog(_arg_1:Sprite):void{
             this.view.show(_arg_1, true);
         }
 
-        private function onOpenDialogNoModal(_arg_1:Sprite):void
-        {
+        private function onOpenDialogNoModal(_arg_1:Sprite):void{
             this.view.show(_arg_1, false);
         }
 
-        private function onCloseDialog():void
-        {
+        private function onCloseDialog():void{
             this.view.stage.focus = null;
             this.view.hideAll();
         }

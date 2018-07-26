@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.SetupAnalyticsCommand
 
-package kabam.rotmg.core.commands
-{
+package kabam.rotmg.core.commands{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.core.service.GoogleAnalytics;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class SetupAnalyticsCommand
-    {
+public class SetupAnalyticsCommand {
 
         [Inject]
         public var setup:ApplicationSetup;
@@ -24,8 +22,7 @@ public class SetupAnalyticsCommand
         public var logger:ILogger;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.analytics.init(this.setup.getAnalyticsCode(), this.setup.getServerDomain());
         }
 

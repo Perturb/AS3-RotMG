@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.vo.HatchPetVO
 
-package io.decagames.rotmg.pets.data.vo
-{
-    public class HatchPetVO 
-    {
+package io.decagames.rotmg.pets.data.vo{
+    public class HatchPetVO {
 
         public var petName:String;
         public var petSkin:int;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.sound.SoundEffectLibrary
 
-package com.company.assembleegameclient.sound
-{
+package com.company.assembleegameclient.sound{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.events.Event;
@@ -18,8 +17,7 @@ import flash.utils.Dictionary;
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.core.StaticInjectorContext;
 
-public class SoundEffectLibrary
-    {
+public class SoundEffectLibrary {
 
         private static var urlBase:String;
         private static const URL_PATTERN:String = "{URLBASE}/sfx/{NAME}.mp3";
@@ -27,21 +25,18 @@ public class SoundEffectLibrary
         private static var activeSfxList_:Dictionary = new Dictionary(true);
 
 
-        public static function load(_arg_1:String):Sound
-        {
+        public static function load(_arg_1:String):Sound{
             return (nameMap_[_arg_1] = ((nameMap_[_arg_1]) || (makeSound(_arg_1))));
         }
 
-        public static function makeSound(_arg_1:String):Sound
-        {
+        public static function makeSound(_arg_1:String):Sound{
             var _local_2:Sound = new Sound();
             _local_2.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
             _local_2.load(makeSoundRequest(_arg_1));
             return (_local_2);
         }
 
-        private static function getUrlBase():String
-        {
+        private static function getUrlBase():String{
             var setup:ApplicationSetup;
             var base:String = "";
             try
@@ -52,19 +47,17 @@ public class SoundEffectLibrary
             catch(error:Error)
             {
                 base = "localhost";
-            }
+            };
             return (base);
         }
 
-        private static function makeSoundRequest(_arg_1:String):URLRequest
-        {
+        private static function makeSoundRequest(_arg_1:String):URLRequest{
             urlBase = ((urlBase) || (getUrlBase()));
             var _local_2:String = URL_PATTERN.replace("{URLBASE}", urlBase).replace("{NAME}", _arg_1);
             return (new URLRequest(_local_2));
         }
 
-        public static function play(name:String, volumeMultiplier:Number=1, isFX:Boolean=true):void
-        {
+        public static function play(name:String, volumeMultiplier:Number=1, isFX:Boolean=true):void{
             var actualVolume:Number;
             var trans:SoundTransform;
             var channel:SoundChannel;
@@ -80,17 +73,15 @@ public class SoundEffectLibrary
             }
             catch(error:Error)
             {
-            }
+            };
         }
 
-        private static function onSoundComplete(_arg_1:Event):void
-        {
+        private static function onSoundComplete(_arg_1:Event):void{
             var _local_2:SoundChannel = (_arg_1.target as SoundChannel);
             delete activeSfxList_[_local_2];
         }
 
-        public static function updateVolume(_arg_1:Number):void
-        {
+        public static function updateVolume(_arg_1:Number):void{
             var _local_2:SoundChannel;
             var _local_3:SoundTransform;
             for each (_local_2 in activeSfxList_)
@@ -99,11 +90,10 @@ public class SoundEffectLibrary
                 _local_3 = _local_2.soundTransform;
                 _local_3.volume = ((Parameters.data_.playSFX) ? activeSfxList_[_local_2] : 0);
                 _local_2.soundTransform = _local_3;
-            }
+            };
         }
 
-        public static function updateTransform():void
-        {
+        public static function updateTransform():void{
             var _local_1:SoundChannel;
             var _local_2:SoundTransform;
             for each (_local_1 in activeSfxList_)
@@ -111,11 +101,10 @@ public class SoundEffectLibrary
                 _local_2 = _local_1.soundTransform;
                 _local_2.volume = ((Parameters.data_.playSFX) ? activeSfxList_[_local_1] : 0);
                 _local_1.soundTransform = _local_2;
-            }
+            };
         }
 
-        public static function onIOError(_arg_1:IOErrorEvent):void
-        {
+        public static function onIOError(_arg_1:IOErrorEvent):void{
         }
 
 

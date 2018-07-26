@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.CreateGuildFrame
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.game.events.GuildResultEvent;
 import com.company.assembleegameclient.objects.Player;
@@ -18,16 +17,14 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class CreateGuildFrame extends Frame 
-    {
+public class CreateGuildFrame extends Frame {
 
         public const close:Signal = new Signal();
 
         private var name_:TextInputField;
         private var gs_:GameSprite;
 
-        public function CreateGuildFrame(_arg_1:GameSprite)
-        {
+        public function CreateGuildFrame(_arg_1:GameSprite){
             super(TextKey.GUILD_TITLE, TextKey.FRAME_CANCEL, TextKey.GUILD_CREATE, "/createGuild");
             this.gs_ = _arg_1;
             this.name_ = new TextInputField(TextKey.GUILD_NAME, false);
@@ -42,20 +39,17 @@ public class CreateGuildFrame extends Frame
             rightButton_.addEventListener(MouseEvent.CLICK, this.onCreate);
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.close.dispatch();
         }
 
-        private function onCreate(_arg_1:MouseEvent):void
-        {
+        private function onCreate(_arg_1:MouseEvent):void{
             this.gs_.addEventListener(GuildResultEvent.EVENT, this.onResult);
             this.gs_.gsc_.createGuild(this.name_.text());
             disable();
         }
 
-        private function onResult(_arg_1:GuildResultEvent):void
-        {
+        private function onResult(_arg_1:GuildResultEvent):void{
             var _local_2:Player;
             this.gs_.removeEventListener(GuildResultEvent.EVENT, this.onResult);
             if (_arg_1.success_)
@@ -64,14 +58,14 @@ public class CreateGuildFrame extends Frame
                 if (_local_2 != null)
                 {
                     _local_2.fame_ = (_local_2.fame_ - Parameters.GUILD_CREATION_PRICE);
-                }
+                };
                 this.close.dispatch();
             }
             else
             {
                 this.name_.setError(_arg_1.errorKey, _arg_1.errorTokens);
                 enable();
-            }
+            };
         }
 
 

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.Layer
 
-package com.company.assembleegameclient.mapeditor
-{
-public class Layer
-    {
+package com.company.assembleegameclient.mapeditor{
+public class Layer {
 
         public static const GROUND:int = 0;
         public static const OBJECT:int = 1;

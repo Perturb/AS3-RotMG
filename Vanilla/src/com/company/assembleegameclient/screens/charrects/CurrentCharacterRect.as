@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.CurrentCharacterRect
 
-package com.company.assembleegameclient.screens.charrects
-{
+package com.company.assembleegameclient.screens.charrects{
 import com.company.assembleegameclient.appengine.CharacterStats;
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.screens.events.DeleteCharacterEvent;
@@ -35,8 +34,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class CurrentCharacterRect extends CharacterRect 
-    {
+public class CurrentCharacterRect extends CharacterRect {
 
         private static var toolTip_:MyPlayerToolTip = null;
         private static var fameToolTip:TextToolTip = null;
@@ -58,8 +56,7 @@ public class CurrentCharacterRect extends CharacterRect
         private var fameBitmapContainer:Sprite;
         protected var statsMaxedText:TextFieldDisplayConcrete;
 
-        public function CurrentCharacterRect(_arg_1:String, _arg_2:CharacterClass, _arg_3:SavedCharacter, _arg_4:CharacterStats)
-        {
+        public function CurrentCharacterRect(_arg_1:String, _arg_2:CharacterClass, _arg_3:SavedCharacter, _arg_4:CharacterStats){
             this.charName = _arg_1;
             this.charType = _arg_2;
             this.char = _arg_3;
@@ -81,33 +78,28 @@ public class CurrentCharacterRect extends CharacterRect
             this.addEventListeners();
         }
 
-        private function addEventListeners():void
-        {
+        private function addEventListeners():void{
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             selectContainer.addEventListener(MouseEvent.CLICK, this.onSelect);
             this.fameBitmapContainer.addEventListener(MouseEvent.CLICK, this.onFameClick);
             this.deleteButton.addEventListener(MouseEvent.CLICK, this.onDelete);
         }
 
-        private function onSelect(_arg_1:MouseEvent):void
-        {
+        private function onSelect(_arg_1:MouseEvent):void{
             this.selected.dispatch(this.char);
         }
 
-        private function onFameClick(_arg_1:MouseEvent):void
-        {
+        private function onFameClick(_arg_1:MouseEvent):void{
             var _local_2:Injector = StaticInjectorContext.getInjector();
             var _local_3:ShowPopupSignal = _local_2.getInstance(ShowPopupSignal);
             _local_3.dispatch(new FameContentPopup(this.char.charId()));
         }
 
-        private function onDelete(_arg_1:MouseEvent):void
-        {
+        private function onDelete(_arg_1:MouseEvent):void{
             this.deleteCharacter.dispatch(this.char);
         }
 
-        public function setIcon(_arg_1:DisplayObject):void
-        {
+        public function setIcon(_arg_1:DisplayObject):void{
             ((this.icon) && (selectContainer.removeChild(this.icon)));
             this.icon = _arg_1;
             this.icon.x = CharacterRectConstants.ICON_POS_X;
@@ -115,8 +107,7 @@ public class CurrentCharacterRect extends CharacterRect
             ((this.icon) && (selectContainer.addChild(this.icon)));
         }
 
-        private function makePetIcon():void
-        {
+        private function makePetIcon():void{
             var _local_1:PetVO = this.char.getPetVO();
             if (_local_1)
             {
@@ -124,15 +115,14 @@ public class CurrentCharacterRect extends CharacterRect
                 if (this.petIcon == null)
                 {
                     return;
-                }
+                };
                 this.petIcon.x = CharacterRectConstants.PET_ICON_POS_X;
                 this.petIcon.y = CharacterRectConstants.PET_ICON_POS_Y;
                 selectContainer.addChild(this.petIcon);
-            }
+            };
         }
 
-        private function makeTagline():void
-        {
+        private function makeTagline():void{
             if (this.getNextStarFame() > 0)
             {
                 super.makeTaglineIcon();
@@ -147,16 +137,14 @@ public class CurrentCharacterRect extends CharacterRect
                 super.makeTaglineIcon();
                 super.makeTaglineText(new LineBuilder().setParams(TextKey.CURRENT_CHARACTER_TAGLINE_NOQUEST, {"fame":this.char.fame()}));
                 taglineText.x = (taglineText.x + taglineIcon.width);
-            }
+            };
         }
 
-        private function getNextStarFame():int
-        {
+        private function getNextStarFame():int{
             return (FameUtil.nextStarFame(((this.charStats == null) ? 0 : this.charStats.bestFame()), this.char.fame()));
         }
 
-        private function makeDeleteButton():void
-        {
+        private function makeDeleteButton():void{
             this.deleteButton = new DeleteXGraphic();
             this.deleteButton.addEventListener(MouseEvent.MOUSE_DOWN, this.onDeleteDown);
             this.deleteButton.x = (WIDTH - 30);
@@ -164,14 +152,13 @@ public class CurrentCharacterRect extends CharacterRect
             addChild(this.deleteButton);
         }
 
-        private function makeStatsMaxedText():void
-        {
+        private function makeStatsMaxedText():void{
             var _local_1:int = this.getMaxedStats();
             var _local_2:uint = 0xB3B3B3;
             if (_local_1 >= 8)
             {
                 _local_2 = 0xFCDF00;
-            }
+            };
             this.statsMaxedText = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);
             this.statsMaxedText.setBold(true);
             this.statsMaxedText.setColor(_local_2);
@@ -182,8 +169,7 @@ public class CurrentCharacterRect extends CharacterRect
             selectContainer.addChild(this.statsMaxedText);
         }
 
-        private function makeFameUIIcon():void
-        {
+        private function makeFameUIIcon():void{
             var _local_1:BitmapData = IconFactory.makeFame();
             this.fameBitmap = new Bitmap(_local_1);
             this.fameBitmapContainer = new Sprite();
@@ -194,46 +180,44 @@ public class CurrentCharacterRect extends CharacterRect
             addChild(this.fameBitmapContainer);
         }
 
-        private function getMaxedStats():int
-        {
+        private function getMaxedStats():int{
             var _local_1:int;
             if (this.char.hp() == this.charType.hp.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.mp() == this.charType.mp.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.att() == this.charType.attack.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.def() == this.charType.defense.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.spd() == this.charType.speed.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.dex() == this.charType.dexterity.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.vit() == this.charType.hpRegeneration.max)
             {
                 _local_1++;
-            }
+            };
             if (this.char.wis() == this.charType.mpRegeneration.max)
             {
                 _local_1++;
-            }
+            };
             return (_local_1);
         }
 
-        override protected function onMouseOver(_arg_1:MouseEvent):void
-        {
+        override protected function onMouseOver(_arg_1:MouseEvent):void{
             super.onMouseOver(_arg_1);
             this.removeToolTip();
             if (_arg_1.target.name == "fame_ui")
@@ -246,30 +230,26 @@ public class CurrentCharacterRect extends CharacterRect
                 toolTip_ = this.myPlayerToolTipFactory.create(this.charName, this.char.charXML_, this.charStats);
                 toolTip_.createUI();
                 this.showToolTip.dispatch(toolTip_);
-            }
+            };
         }
 
-        override protected function onRollOut(_arg_1:MouseEvent):void
-        {
+        override protected function onRollOut(_arg_1:MouseEvent):void{
             super.onRollOut(_arg_1);
             this.removeToolTip();
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.removeToolTip();
             selectContainer.removeEventListener(MouseEvent.CLICK, this.onSelect);
             this.fameBitmapContainer.removeEventListener(MouseEvent.CLICK, this.onFameClick);
             this.deleteButton.removeEventListener(MouseEvent.CLICK, this.onDelete);
         }
 
-        private function removeToolTip():void
-        {
+        private function removeToolTip():void{
             this.hideTooltip.dispatch();
         }
 
-        private function onDeleteDown(_arg_1:MouseEvent):void
-        {
+        private function onDeleteDown(_arg_1:MouseEvent):void{
             _arg_1.stopImmediatePropagation();
             dispatchEvent(new DeleteCharacterEvent(this.char));
         }

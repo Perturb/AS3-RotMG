@@ -1,41 +1,36 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.ScreensView
 
-package kabam.rotmg.core.view
-{
+package kabam.rotmg.core.view{
 import flash.display.Sprite;
 
-public class ScreensView extends Sprite
-    {
+public class ScreensView extends Sprite {
 
         private var current:Sprite;
         private var previous:Sprite;
 
 
-        public function setScreen(_arg_1:Sprite):void
-        {
+        public function setScreen(_arg_1:Sprite):void{
             if (this.current == _arg_1)
             {
                 return;
-            }
+            };
             this.removePrevious();
             this.current = _arg_1;
             addChild(_arg_1);
         }
 
-        private function removePrevious():void
-        {
+        private function removePrevious():void{
             if (((this.current) && (contains(this.current))))
             {
                 this.previous = this.current;
                 removeChild(this.current);
-            }
+            };
         }
 
-        public function getPrevious():Sprite
-        {
+        public function getPrevious():Sprite{
             return (this.previous);
         }
 

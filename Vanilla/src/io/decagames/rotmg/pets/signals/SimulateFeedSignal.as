@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.signals.SimulateFeedSignal
 
-package io.decagames.rotmg.pets.signals
-{
+package io.decagames.rotmg.pets.signals{
 import org.osflash.signals.Signal;
 
-public class SimulateFeedSignal extends Signal
-    {
+public class SimulateFeedSignal extends Signal {
 
-        public function SimulateFeedSignal()
-        {
+        public function SimulateFeedSignal(){
             super(int);
         }
 

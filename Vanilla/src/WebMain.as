@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //WebMain
 
-package 
-{
+package {
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.AssetLoader;
 import com.company.assembleegameclient.util.StageProxy;
@@ -65,16 +64,14 @@ import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.LogLevel;
 
-public class WebMain extends Sprite
-    {
+public class WebMain extends Sprite {
 
         public static var STAGE:Stage;
         public static var USER_AGENT:String = "None";
 
         protected var context:IContext;
 
-        public function WebMain()
-        {
+        public function WebMain(){
             if (stage)
             {
                 this.setup();
@@ -82,17 +79,15 @@ public class WebMain extends Sprite
             else
             {
                 addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
-            }
+            };
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             this.setup();
         }
 
-        private function setup():void
-        {
+        private function setup():void{
             STAGE = stage;
             this.hackParameters();
             this.createContext();
@@ -103,13 +98,11 @@ public class WebMain extends Sprite
             UIUtils.toggleQuality(Parameters.data_.uiQuality);
         }
 
-        private function hackParameters():void
-        {
+        private function hackParameters():void{
             Parameters.root = stage.root;
         }
 
-        private function createContext():void
-        {
+        private function createContext():void{
             this.context = new StaticInjectorContext();
             this.context.injector.map(LoaderInfo).toValue(root.stage.root.loaderInfo);
             var _local_1:StageProxy = new StageProxy(this);
@@ -118,13 +111,12 @@ public class WebMain extends Sprite
             this.context.logLevel = LogLevel.DEBUG;
         }
 
-        private function configureForAirIfDesktopPlayer():void
-        {
+        private function configureForAirIfDesktopPlayer():void{
             if (Capabilities.playerType == "Desktop")
             {
                 Parameters.data_.fullscreenMode = false;
                 Parameters.save();
-            }
+            };
         }
 
 

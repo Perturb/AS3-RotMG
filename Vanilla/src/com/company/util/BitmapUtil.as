@@ -1,30 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.util.BitmapUtil
 
-package com.company.util
-{
+package com.company.util{
 import flash.display.BitmapData;
 import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;
 import flash.utils.Dictionary;
 
-public class BitmapUtil
-    {
+public class BitmapUtil {
 
-        public function BitmapUtil(_arg_1:StaticEnforcer)
-        {
+        public function BitmapUtil(_arg_1:StaticEnforcer){
         }
 
-        public static function mirror(_arg_1:BitmapData, _arg_2:int=0):BitmapData
-        {
+        public static function mirror(_arg_1:BitmapData, _arg_2:int=0):BitmapData{
             var _local_5:int;
             if (_arg_2 == 0)
             {
                 _arg_2 = _arg_1.width;
-            }
+            };
             var _local_3:BitmapData = new BitmapData(_arg_1.width, _arg_1.height, true, 0);
             var _local_4:int;
             while (_local_4 < _arg_2)
@@ -34,14 +30,13 @@ public class BitmapUtil
                 {
                     _local_3.setPixel32(((_arg_2 - _local_4) - 1), _local_5, _arg_1.getPixel32(_local_4, _local_5));
                     _local_5++;
-                }
+                };
                 _local_4++;
-            }
+            };
             return (_local_3);
         }
 
-        public static function rotateBitmapData(_arg_1:BitmapData, _arg_2:int):BitmapData
-        {
+        public static function rotateBitmapData(_arg_1:BitmapData, _arg_2:int):BitmapData{
             var _local_3:Matrix = new Matrix();
             _local_3.translate((-(_arg_1.width) / 2), (-(_arg_1.height) / 2));
             _local_3.rotate(((_arg_2 * Math.PI) / 2));
@@ -51,15 +46,13 @@ public class BitmapUtil
             return (_local_4);
         }
 
-        public static function cropToBitmapData(_arg_1:BitmapData, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:int):BitmapData
-        {
+        public static function cropToBitmapData(_arg_1:BitmapData, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:int):BitmapData{
             var _local_6:BitmapData = new BitmapData(_arg_4, _arg_5);
             _local_6.copyPixels(_arg_1, new Rectangle(_arg_2, _arg_3, _arg_4, _arg_5), new Point(0, 0));
             return (_local_6);
         }
 
-        public static function amountTransparent(_arg_1:BitmapData):Number
-        {
+        public static function amountTransparent(_arg_1:BitmapData):Number{
             var _local_4:int;
             var _local_5:int;
             var _local_2:int;
@@ -73,16 +66,15 @@ public class BitmapUtil
                     if (_local_5 == 0)
                     {
                         _local_2++;
-                    }
+                    };
                     _local_4++;
-                }
+                };
                 _local_3++;
-            }
+            };
             return (_local_2 / (_arg_1.width * _arg_1.height));
         }
 
-        public static function mostCommonColor(_arg_1:BitmapData):uint
-        {
+        public static function mostCommonColor(_arg_1:BitmapData):uint{
             var _local_3:uint;
             var _local_7:String;
             var _local_8:int;
@@ -104,12 +96,12 @@ public class BitmapUtil
                         else
                         {
                             _local_2[_local_3]++;
-                        }
-                    }
+                        };
+                    };
                     _local_8++;
-                }
+                };
                 _local_4++;
-            }
+            };
             var _local_5:uint;
             var _local_6:uint;
             for (_local_7 in _local_2)
@@ -120,13 +112,12 @@ public class BitmapUtil
                 {
                     _local_5 = _local_3;
                     _local_6 = _local_9;
-                }
-            }
+                };
+            };
             return (_local_5);
         }
 
-        public static function lineOfSight(_arg_1:BitmapData, _arg_2:IntPoint, _arg_3:IntPoint):Boolean
-        {
+        public static function lineOfSight(_arg_1:BitmapData, _arg_2:IntPoint, _arg_3:IntPoint):Boolean{
             var _local_11:int;
             var _local_19:int;
             var _local_20:int;
@@ -149,7 +140,7 @@ public class BitmapUtil
                 _local_11 = _local_4;
                 _local_4 = _local_5;
                 _local_5 = _local_11;
-            }
+            };
             if (_local_6 > _local_8)
             {
                 _local_11 = _local_6;
@@ -158,7 +149,7 @@ public class BitmapUtil
                 _local_11 = _local_7;
                 _local_7 = _local_9;
                 _local_9 = _local_11;
-            }
+            };
             var _local_12:int = (_local_8 - _local_6);
             var _local_13:int = ((_local_7 > _local_9) ? (_local_7 - _local_9) : (_local_9 - _local_7));
             var _local_14:int = int((-(_local_12 + 1) / 2));
@@ -174,9 +165,9 @@ public class BitmapUtil
                     _local_19 = int(((_local_14 / _local_12) + 1));
                     _local_17 = (_local_17 + (_local_15 * _local_19));
                     _local_14 = (_local_14 - (_local_19 * _local_12));
-                }
+                };
                 _local_18 = 0;
-            }
+            };
             if ((((_local_15 > 0) && (_local_17 < 0)) || ((_local_15 < 0) && (_local_17 >= _local_5))))
             {
                 _local_20 = ((_local_15 > 0) ? (-(_local_17) - 1) : (_local_17 - _local_5));
@@ -185,7 +176,7 @@ public class BitmapUtil
                 _local_18 = (_local_18 + _local_21);
                 _local_14 = (_local_14 + (_local_21 * _local_13));
                 _local_17 = (_local_17 + (_local_20 * _local_15));
-            }
+            };
             while (_local_18 <= _local_16)
             {
                 if ((((_local_15 > 0) && (_local_17 >= _local_5)) || ((_local_15 < 0) && (_local_17 < 0)))) break;
@@ -194,23 +185,23 @@ public class BitmapUtil
                     if ((((_local_17 >= 0) && (_local_17 < _local_5)) && (_arg_1.getPixel(_local_17, _local_18) == 0)))
                     {
                         return (false);
-                    }
+                    };
                 }
                 else
                 {
                     if ((((_local_17 >= 0) && (_local_17 < _local_5)) && (_arg_1.getPixel(_local_18, _local_17) == 0)))
                     {
                         return (false);
-                    }
-                }
+                    };
+                };
                 _local_14 = (_local_14 + _local_13);
                 if (_local_14 >= 0)
                 {
                     _local_17 = (_local_17 + _local_15);
                     _local_14 = (_local_14 - _local_12);
-                }
+                };
                 _local_18++;
-            }
+            };
             return (true);
         }
 
@@ -218,8 +209,7 @@ public class BitmapUtil
     }
 }//package com.company.util
 
-class StaticEnforcer 
-{
+class StaticEnforcer {
 
 
 }

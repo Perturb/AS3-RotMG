@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.services.FortuneModel
 
-package kabam.rotmg.fortune.services
-{
+package kabam.rotmg.fortune.services{
 import kabam.rotmg.fortune.model.FortuneInfo;
 
 import org.osflash.signals.Signal;
 
-public class FortuneModel
-    {
+public class FortuneModel {
 
         public static var HAS_FORTUNES:Boolean = false;
 
@@ -20,36 +18,30 @@ public class FortuneModel
         public var initializedSignal:Signal = new Signal();
 
 
-        public function getFortune():FortuneInfo
-        {
+        public function getFortune():FortuneInfo{
             return (this.fortune);
         }
 
-        public function setFortune(_arg_1:FortuneInfo):void
-        {
+        public function setFortune(_arg_1:FortuneInfo):void{
             this.fortune = _arg_1;
             this.initialized = true;
             HAS_FORTUNES = true;
             this.initializedSignal.dispatch();
         }
 
-        public function isInitialized():Boolean
-        {
+        public function isInitialized():Boolean{
             return (this.initialized);
         }
 
-        public function setInitialized(_arg_1:Boolean):void
-        {
+        public function setInitialized(_arg_1:Boolean):void{
             this.initialized = _arg_1;
         }
 
-        public function get isNew():Boolean
-        {
+        public function get isNew():Boolean{
             return (this._isNew);
         }
 
-        public function set isNew(_arg_1:Boolean):void
-        {
+        public function set isNew(_arg_1:Boolean):void{
             this._isNew = _arg_1;
         }
 

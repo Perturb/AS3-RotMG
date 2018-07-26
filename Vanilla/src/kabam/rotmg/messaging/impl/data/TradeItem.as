@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.data.TradeItem
 
-package kabam.rotmg.messaging.impl.data
-{
+package kabam.rotmg.messaging.impl.data{
 import flash.utils.IDataInput;
 
-public class TradeItem
-    {
+public class TradeItem {
 
         public var item_:int;
         public var slotType_:int;
@@ -16,16 +14,14 @@ public class TradeItem
         public var included_:Boolean;
 
 
-        public function parseFromInput(_arg_1:IDataInput):void
-        {
+        public function parseFromInput(_arg_1:IDataInput):void{
             this.item_ = _arg_1.readInt();
             this.slotType_ = _arg_1.readInt();
             this.tradeable_ = _arg_1.readBoolean();
             this.included_ = _arg_1.readBoolean();
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             return ((((((("item: " + this.item_) + " slotType: ") + this.slotType_) + " tradeable: ") + this.tradeable_) + " included:") + this.included_);
         }
 

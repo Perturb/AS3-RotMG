@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.AGameSprite
 
-package com.company.assembleegameclient.game
-{
+package com.company.assembleegameclient.game{
 import com.company.assembleegameclient.map.AbstractMap;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.GameObject;
@@ -19,8 +18,7 @@ import kabam.rotmg.ui.view.HUDView;
 
 import org.osflash.signals.Signal;
 
-public class AGameSprite extends Sprite
-    {
+public class AGameSprite extends Sprite {
 
         public const closed:Signal = new Signal();
 
@@ -36,20 +34,16 @@ public class AGameSprite extends Sprite
         public var gsc_:GameServerConnection;
 
 
-        public function initialize():void
-        {
+        public function initialize():void{
         }
 
-        public function setFocus(_arg_1:GameObject):void
-        {
+        public function setFocus(_arg_1:GameObject):void{
         }
 
-        public function applyMapInfo(_arg_1:MapInfo):void
-        {
+        public function applyMapInfo(_arg_1:MapInfo):void{
         }
 
-        public function evalIsNotInCombatMapArea():Boolean
-        {
+        public function evalIsNotInCombatMapArea():Boolean{
             return (false);
         }
 

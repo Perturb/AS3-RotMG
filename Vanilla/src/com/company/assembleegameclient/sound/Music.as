@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.sound.Music
 
-package com.company.assembleegameclient.sound
-{
+package com.company.assembleegameclient.sound{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.media.Sound;
@@ -16,8 +15,7 @@ import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.core.service.GoogleAnalytics;
 
-public class Music
-    {
+public class Music {
 
         private static var music_:Sound = null;
         private static var musicVolumeTransform:SoundTransform;
@@ -25,8 +23,7 @@ public class Music
         private static var volume:Number = 0.3;
 
 
-        public static function load():void
-        {
+        public static function load():void{
             var _local_1:ApplicationSetup = StaticInjectorContext.getInjector().getInstance(ApplicationSetup);
             var _local_2:* = (_local_1.getAppEngineUrl(true) + "/music/sorc.mp3");
             volume = Parameters.data_.musicVolume;
@@ -36,26 +33,24 @@ public class Music
             musicChannel_ = music_.play(0, int.MAX_VALUE, musicVolumeTransform);
         }
 
-        public static function setPlayMusic(_arg_1:Boolean):void
-        {
+        public static function setPlayMusic(_arg_1:Boolean):void{
             var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             if (_local_2)
             {
-            }
+            };
             Parameters.data_.playMusic = _arg_1;
             Parameters.save();
             musicVolumeTransform.volume = ((Parameters.data_.playMusic) ? volume : 0);
             musicChannel_.soundTransform = musicVolumeTransform;
         }
 
-        public static function setMusicVolume(_arg_1:Number):void
-        {
+        public static function setMusicVolume(_arg_1:Number):void{
             Parameters.data_.musicVolume = _arg_1;
             Parameters.save();
             if (!Parameters.data_.playMusic)
             {
                 return;
-            }
+            };
             if (musicVolumeTransform != null)
             {
                 musicVolumeTransform.volume = _arg_1;
@@ -63,7 +58,7 @@ public class Music
             else
             {
                 musicVolumeTransform = new SoundTransform(_arg_1);
-            }
+            };
             musicChannel_.soundTransform = musicVolumeTransform;
         }
 

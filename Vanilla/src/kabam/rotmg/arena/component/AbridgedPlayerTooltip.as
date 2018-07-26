@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.component.AbridgedPlayerTooltip
 
-package kabam.rotmg.arena.component
-{
+package kabam.rotmg.arena.component{
 import com.company.assembleegameclient.ui.GuildText;
 import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
@@ -15,11 +14,9 @@ import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
 import kabam.rotmg.text.view.StaticTextDisplay;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class AbridgedPlayerTooltip extends ToolTip 
-    {
+public class AbridgedPlayerTooltip extends ToolTip {
 
-        public function AbridgedPlayerTooltip(_arg_1:ArenaLeaderboardEntry)
-        {
+        public function AbridgedPlayerTooltip(_arg_1:ArenaLeaderboardEntry){
             var _local_5:GuildText;
             var _local_2:Bitmap = new Bitmap();
             _local_2.bitmapData = _arg_1.playerBitmap;
@@ -39,7 +36,7 @@ public class AbridgedPlayerTooltip extends ToolTip
                 _local_5.x = 40;
                 _local_5.y = 20;
                 addChild(_local_5);
-            }
+            };
             super(0x363636, 0.5, 0xFFFFFF, 1);
             var _local_4:EquippedGrid = new EquippedGrid(null, _arg_1.slotTypes, null);
             _local_4.x = 5;

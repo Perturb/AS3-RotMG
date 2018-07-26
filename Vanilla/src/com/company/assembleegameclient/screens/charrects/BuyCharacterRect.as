@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.charrects.BuyCharacterRect
 
-package com.company.assembleegameclient.screens.charrects
-{
+package com.company.assembleegameclient.screens.charrects{
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Shape;
@@ -18,15 +17,13 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class BuyCharacterRect extends CharacterRect 
-    {
+public class BuyCharacterRect extends CharacterRect {
 
         public static const BUY_CHARACTER_RECT_CLASS_NAME_TEXT:String = "BuyCharacterRect.classNameText";
 
         private var model:PlayerModel;
 
-        public function BuyCharacterRect(_arg_1:PlayerModel)
-        {
+        public function BuyCharacterRect(_arg_1:PlayerModel){
             this.model = _arg_1;
             super.color = 0x1F1F1F;
             super.overColor = 0x424242;
@@ -38,8 +35,7 @@ public class BuyCharacterRect extends CharacterRect
             this.makeCoin();
         }
 
-        private function makeCoin():void
-        {
+        private function makeCoin():void{
             var _local_1:BitmapData = IconFactory.makeCoin();
             var _local_2:Bitmap = new Bitmap(_local_1);
             _local_2.x = (WIDTH - 43);
@@ -47,8 +43,7 @@ public class BuyCharacterRect extends CharacterRect
             selectContainer.addChild(_local_2);
         }
 
-        private function makePriceText():void
-        {
+        private function makePriceText():void{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setAutoSize(TextFieldAutoSize.RIGHT);
             _local_1.setStringBuilder(new StaticStringBuilder(this.model.getNextCharSlotPrice().toString()));
@@ -58,18 +53,16 @@ public class BuyCharacterRect extends CharacterRect
             selectContainer.addChild(_local_1);
         }
 
-        private function makeTagline():void
-        {
+        private function makeTagline():void{
             var _local_1:int = int((100 - (this.model.getNextCharSlotPrice() / 10)));
             var _local_2:String = String(_local_1);
             if (_local_1 != 0)
             {
                 makeTaglineText(new LineBuilder().setParams(TextKey.BUY_CHARACTER_RECT_TAGLINE_TEXT, {"percentage":_local_2}));
-            }
+            };
         }
 
-        private function makeIcon():void
-        {
+        private function makeIcon():void{
             var _local_1:Shape;
             _local_1 = this.buildIcon();
             _local_1.x = (CharacterRectConstants.ICON_POS_X + 5);
@@ -77,8 +70,7 @@ public class BuyCharacterRect extends CharacterRect
             addChild(_local_1);
         }
 
-        private function buildIcon():Shape
-        {
+        private function buildIcon():Shape{
             var _local_1:Shape = new Shape();
             _local_1.graphics.beginFill(3880246);
             _local_1.graphics.lineStyle(1, 4603457);

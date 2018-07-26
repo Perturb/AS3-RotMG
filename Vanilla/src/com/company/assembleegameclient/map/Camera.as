@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.Camera
 
-package com.company.assembleegameclient.map
-{
+package com.company.assembleegameclient.map{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.RandomUtil;
@@ -14,8 +13,7 @@ import flash.geom.PerspectiveProjection;
 import flash.geom.Rectangle;
 import flash.geom.Vector3D;
 
-public class Camera
-    {
+public class Camera {
 
         public static const lN_:Vector3D = new Vector3D(0, 0, 1);
         public static const CENTER_SCREEN_RECT:Rectangle = new Rectangle(-300, -325, 600, 600);
@@ -47,8 +45,7 @@ public class Camera
         private var jitter_:Number = 0;
         private var rd_:Vector.<Number> = new Vector.<Number>(16, true);
 
-        public function Camera()
-        {
+        public function Camera(){
             this.pp_.focalLength = 3;
             this.pp_.fieldOfView = 48;
             this.nonPPMatrix_.appendScale(50, 50, 50);
@@ -57,8 +54,7 @@ public class Camera
             this.f_.z = -1;
         }
 
-        public function configureCamera(_arg_1:GameObject, _arg_2:Boolean):void
-        {
+        public function configureCamera(_arg_1:GameObject, _arg_2:Boolean):void{
             var _local_3:Rectangle = ((Parameters.data_.centerOnPlayer) ? CENTER_SCREEN_RECT : OFFSET_SCREEN_RECT);
             if (Parameters.screenShotMode_)
             {
@@ -69,38 +65,35 @@ public class Camera
                 else
                 {
                     _local_3 = SLIM_SCREENSHOT_SCREEN_RECT;
-                }
-            }
+                };
+            };
             var _local_4:Number = Parameters.data_.cameraAngle;
             this.configure(_arg_1.x_, _arg_1.y_, 12, _local_4, _local_3);
             this.isHallucinating_ = _arg_2;
         }
 
-        public function startJitter():void
-        {
+        public function startJitter():void{
             this.isJittering_ = true;
             this.jitter_ = 0;
         }
 
-        public function update(_arg_1:Number):void
-        {
+        public function update(_arg_1:Number):void{
             if (((this.isJittering_) && (this.jitter_ < this.MAX_JITTER)))
             {
                 this.jitter_ = (this.jitter_ + ((_arg_1 * this.MAX_JITTER) / this.JITTER_BUILDUP_MS));
                 if (this.jitter_ > this.MAX_JITTER)
                 {
                     this.jitter_ = this.MAX_JITTER;
-                }
-            }
+                };
+            };
         }
 
-        public function configure(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Rectangle):void
-        {
+        public function configure(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Rectangle):void{
             if (this.isJittering_)
             {
                 _arg_1 = (_arg_1 + RandomUtil.plusMinus(this.jitter_));
                 _arg_2 = (_arg_2 + RandomUtil.plusMinus(this.jitter_));
-            }
+            };
             this.x_ = _arg_1;
             this.y_ = _arg_2;
             this.z_ = _arg_3;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.services.WebMakePaymentTask
 
-package kabam.rotmg.account.web.services
-{
+package kabam.rotmg.account.web.services{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.PaymentMethod;
 
@@ -16,8 +15,7 @@ import kabam.rotmg.account.core.PaymentData;
 import kabam.rotmg.account.core.model.OfferModel;
 import kabam.rotmg.account.core.services.MakePaymentTask;
 
-public class WebMakePaymentTask extends BaseTask implements MakePaymentTask 
-    {
+public class WebMakePaymentTask extends BaseTask implements MakePaymentTask {
 
         [Inject]
         public var data:PaymentData;
@@ -25,8 +23,7 @@ public class WebMakePaymentTask extends BaseTask implements MakePaymentTask
         public var model:OfferModel;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             Parameters.data_.paymentMethod = this.data.paymentMethod;
             Parameters.save();
             var _local_1:PaymentMethod = PaymentMethod.getPaymentMethodByLabel(this.data.paymentMethod);

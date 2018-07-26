@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.control.ReskinCharacterSignal
 
-package kabam.rotmg.characters.reskin.control
-{
+package kabam.rotmg.characters.reskin.control{
 import kabam.rotmg.classes.model.CharacterSkin;
 
 import org.osflash.signals.Signal;
 
-public class ReskinCharacterSignal extends Signal
-    {
+public class ReskinCharacterSignal extends Signal {
 
-        public function ReskinCharacterSignal()
-        {
+        public function ReskinCharacterSignal(){
             super(CharacterSkin);
         }
 

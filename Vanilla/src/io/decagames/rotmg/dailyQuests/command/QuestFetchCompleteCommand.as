@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.command.QuestFetchCompleteCommand
 
-package io.decagames.rotmg.dailyQuests.command
-{
+package io.decagames.rotmg.dailyQuests.command{
 import io.decagames.rotmg.dailyQuests.messages.data.QuestData;
 import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
 import io.decagames.rotmg.dailyQuests.model.DailyQuest;
@@ -12,8 +11,7 @@ import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class QuestFetchCompleteCommand extends Command 
-    {
+public class QuestFetchCompleteCommand extends Command {
 
         [Inject]
         public var response:QuestFetchResponse;
@@ -21,8 +19,7 @@ public class QuestFetchCompleteCommand extends Command
         public var model:DailyQuestsModel;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             var _local_1:QuestData;
             var _local_2:DailyQuest;
             this.model.clear();
@@ -38,7 +35,7 @@ public class QuestFetchCompleteCommand extends Command
                 _local_2.category = _local_1.category;
                 _local_2.itemOfChoice = _local_1.itemOfChoice;
                 this.model.addQuest(_local_2);
-            }
+            };
         }
 
 

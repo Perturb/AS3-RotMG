@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.resizing.ResizeConfig
 
-package kabam.lib.resizing
-{
+package kabam.lib.resizing{
 import kabam.lib.resizing.signals.Resize;
 import kabam.lib.resizing.view.Resizable;
 import kabam.lib.resizing.view.ResizableMediator;
@@ -13,8 +12,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 
-public class ResizeConfig 
-    {
+public class ResizeConfig {
 
         [Inject]
         public var injector:Injector;
@@ -23,8 +21,7 @@ public class ResizeConfig
 
 
         [PostConstruct]
-        public function setup():void
-        {
+        public function setup():void{
             this.injector.map(Resize).asSingleton();
             this.mediatorMap.map(Resizable).toMediator(ResizableMediator);
         }

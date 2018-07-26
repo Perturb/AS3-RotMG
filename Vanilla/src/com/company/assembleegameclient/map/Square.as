@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.Square
 
-package com.company.assembleegameclient.map
-{
+package com.company.assembleegameclient.map{
 import com.company.assembleegameclient.engine3d.TextureMatrix;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.util.TileRedrawer;
@@ -13,8 +12,7 @@ import flash.display.BitmapData;
 import flash.display.IGraphicsData;
 import flash.geom.Vector3D;
 
-public class Square
-    {
+public class Square {
 
         public static const UVT:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
         private static const LOOKUP:Vector.<int> = new <int>[26171, 44789, 20333, 70429, 98257, 59393, 33961];
@@ -35,8 +33,7 @@ public class Square
         public var baseTexMatrix_:TextureMatrix = null;
         public var lastVisible_:int;
 
-        public function Square(_arg_1:Map, _arg_2:int, _arg_3:int)
-        {
+        public function Square(_arg_1:Map, _arg_2:int, _arg_3:int){
             this.map_ = _arg_1;
             this.x_ = _arg_2;
             this.y_ = _arg_3;
@@ -44,8 +41,7 @@ public class Square
             this.vin_ = new <Number>[this.x_, this.y_, 0, (this.x_ + 1), this.y_, 0, (this.x_ + 1), (this.y_ + 1), 0, this.x_, (this.y_ + 1), 0];
         }
 
-        private static function hash(_arg_1:int, _arg_2:int):int
-        {
+        private static function hash(_arg_1:int, _arg_2:int):int{
             var _local_3:int = LOOKUP[((_arg_1 + _arg_2) % 7)];
             var _local_4:* = (((_arg_1 << 16) | _arg_2) ^ 0x04DA072E);
             _local_4 = ((_local_4 * _local_3) % 0xFFFF);
@@ -53,8 +49,7 @@ public class Square
         }
 
 
-        public function dispose():void
-        {
+        public function dispose():void{
             var _local_1:SquareFace;
             this.map_ = null;
             this.center_ = null;
@@ -64,19 +59,18 @@ public class Square
             for each (_local_1 in this.faces_)
             {
                 _local_1.dispose();
-            }
+            };
             this.faces_.length = 0;
             if (this.topFace_ != null)
             {
                 this.topFace_.dispose();
                 this.topFace_ = null;
-            }
+            };
             this.faces_ = null;
             this.baseTexMatrix_ = null;
         }
 
-        public function setTileType(_arg_1:uint):void
-        {
+        public function setTileType(_arg_1:uint):void{
             this.tileType_ = _arg_1;
             this.props_ = GroundLibrary.propsLibrary_[this.tileType_];
             this.texture_ = GroundLibrary.getBitmapData(this.tileType_, hash(this.x_, this.y_));
@@ -84,22 +78,20 @@ public class Square
             this.faces_.length = 0;
         }
 
-        public function isWalkable():Boolean
-        {
+        public function isWalkable():Boolean{
             return ((!(this.props_.noWalk_)) && ((this.obj_ == null) || (!(this.obj_.props_.occupySquare_))));
         }
 
-        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             var _local_4:SquareFace;
             if (this.texture_ == null)
             {
                 return;
-            }
+            };
             if (this.faces_.length == 0)
             {
                 this.rebuild3D();
-            }
+            };
             for each (_local_4 in this.faces_)
             {
                 if (!_local_4.draw(_arg_1, _arg_2, _arg_3))
@@ -107,19 +99,17 @@ public class Square
                     if (_local_4.face_.vout_[1] < _arg_2.clipRect_.bottom)
                     {
                         this.lastVisible_ = 0;
-                    }
+                    };
                     return;
-                }
-            }
+                };
+            };
         }
 
-        public function drawTop(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
-        {
+        public function drawTop(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void{
             this.topFace_.draw(_arg_1, _arg_2, _arg_3);
         }
 
-        private function rebuild3D():void
-        {
+        private function rebuild3D():void{
             var _local_2:Number;
             var _local_3:Number;
             var _local_4:BitmapData;
@@ -135,7 +125,7 @@ public class Square
                 if (_local_1 != null)
                 {
                     this.faces_.push(new SquareFace(_local_1, this.vin_, 0, 0, AnimateProperties.NO_ANIMATE, 0, 0));
-                }
+                };
             }
             else
             {
@@ -153,10 +143,10 @@ public class Square
                     {
                         _local_2 = this.props_.xOffset_;
                         _local_3 = this.props_.yOffset_;
-                    }
-                }
+                    };
+                };
                 this.faces_.push(new SquareFace(((_local_1 != null) ? _local_1 : this.texture_), this.vin_, _local_2, _local_3, AnimateProperties.NO_ANIMATE, 0, 0));
-            }
+            };
             if (this.props_.sink_)
             {
                 this.sink_ = ((_local_1 == null) ? 12 : 6);
@@ -164,7 +154,7 @@ public class Square
             else
             {
                 this.sink_ = 0;
-            }
+            };
             if (this.props_.topTD_)
             {
                 _local_4 = this.props_.topTD_.getTexture();
@@ -174,9 +164,9 @@ public class Square
                 {
                     _local_5[_local_6] = 1;
                     _local_6 = (_local_6 + 3);
-                }
+                };
                 this.topFace_ = new SquareFace(_local_4, _local_5, 0, 0, this.props_.topAnimate_.type_, this.props_.topAnimate_.dx_, this.props_.topAnimate_.dy_);
-            }
+            };
         }
 
 

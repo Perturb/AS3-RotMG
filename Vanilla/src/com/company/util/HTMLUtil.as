@@ -1,31 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.util.HTMLUtil
 
-package com.company.util
-{
+package com.company.util{
 import flash.external.ExternalInterface;
 import flash.xml.XMLDocument;
 import flash.xml.XMLNode;
 import flash.xml.XMLNodeType;
 
-public class HTMLUtil 
-    {
+public class HTMLUtil {
 
 
-        public static function unescape(_arg_1:String):String
-        {
+        public static function unescape(_arg_1:String):String{
             return (new XMLDocument(_arg_1).firstChild.nodeValue);
         }
 
-        public static function escape(_arg_1:String):String
-        {
+        public static function escape(_arg_1:String):String{
             return (XML(new XMLNode(XMLNodeType.TEXT_NODE, _arg_1)).toXMLString());
         }
 
-        public static function refreshPageNoParams():void
-        {
+        public static function refreshPageNoParams():void{
             var _local_1:String;
             var _local_2:Array;
             var _local_3:String;
@@ -39,10 +34,10 @@ public class HTMLUtil
                     if (_local_3.indexOf("www.kabam") != -1)
                     {
                         _local_3 = "http://www.realmofthemadgod.com";
-                    }
+                    };
                     ExternalInterface.call("window.location.assign", _local_3);
-                }
-            }
+                };
+            };
         }
 
 

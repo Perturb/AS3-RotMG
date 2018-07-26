@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.LanguageConfig
 
-package kabam.rotmg.language
-{
+package kabam.rotmg.language{
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.language.control.RegisterChangeLanguageViaConsoleCommand;
 import kabam.rotmg.language.control.RegisterChangeLanguageViaConsoleSignal;
@@ -24,8 +23,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class LanguageConfig implements IConfig
-    {
+public class LanguageConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -37,8 +35,7 @@ public class LanguageConfig implements IConfig
         public var applicationSetup:ApplicationSetup;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(LanguageModel).toValue(new CookieLanguageModel());
             this.injector.map(StringMap).toSingleton(StringMapConcrete);
             this.injector.map(GetLanguageService);
@@ -49,8 +46,7 @@ public class LanguageConfig implements IConfig
             this.registerChangeViaConsole();
         }
 
-        private function registerChangeViaConsole():void
-        {
+        private function registerChangeViaConsole():void{
             this.injector.getInstance(RegisterChangeLanguageViaConsoleSignal).dispatch();
         }
 

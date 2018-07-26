@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.control.AlreadyBoughtPackageCommand
 
-package kabam.rotmg.packages.control
-{
+package kabam.rotmg.packages.control{
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.packages.view.PackageInfoDialog;
 
-public class AlreadyBoughtPackageCommand 
-    {
+public class AlreadyBoughtPackageCommand {
 
         private static const DIALOG_TITLE:String = "Package Purchased";
         private static const MESSAGE_TITLE:String = "You've already purchased this package!";
@@ -19,13 +17,11 @@ public class AlreadyBoughtPackageCommand
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.openDialog.dispatch(this.makeDialog());
         }
 
-        private function makeDialog():PackageInfoDialog
-        {
+        private function makeDialog():PackageInfoDialog{
             return (new PackageInfoDialog().setTitle(DIALOG_TITLE).setBody(MESSAGE_TITLE, MESSAGE_BODY));
         }
 

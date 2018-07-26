@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dropdown.DropDown
 
-package com.company.assembleegameclient.ui.dropdown
-{
+package com.company.assembleegameclient.ui.dropdown{
 import com.company.ui.BaseSimpleText;
 
 import flash.display.Sprite;
@@ -12,8 +11,7 @@ import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.geom.Point;
 
-public class DropDown extends Sprite
-    {
+public class DropDown extends Sprite {
 
         protected var strings_:Vector.<String>;
         protected var w_:int;
@@ -24,8 +22,7 @@ public class DropDown extends Sprite
         protected var selected_:DropDownItem;
         protected var all_:Sprite = new Sprite();
 
-        public function DropDown(_arg_1:Vector.<String>, _arg_2:int, _arg_3:int, _arg_4:String=null, _arg_5:Number=0, _arg_6:int=17)
-        {
+        public function DropDown(_arg_1:Vector.<String>, _arg_2:int, _arg_3:int, _arg_4:String=null, _arg_5:Number=0, _arg_6:int=17){
             this.strings_ = _arg_1;
             this.w_ = _arg_2;
             this.h_ = _arg_3;
@@ -38,22 +35,19 @@ public class DropDown extends Sprite
                 this.labelText_.updateMetrics();
                 addChild(this.labelText_);
                 this.xOffset_ = (this.labelText_.width + 5);
-            }
+            };
             this.setIndex(_arg_5);
         }
 
-        public function getValue():String
-        {
+        public function getValue():String{
             return (this.selected_.getValue());
         }
 
-        public function setListItems(_arg_1:Vector.<String>):void
-        {
+        public function setListItems(_arg_1:Vector.<String>):void{
             this.strings_ = _arg_1;
         }
 
-        public function setValue(_arg_1:String):Boolean
-        {
+        public function setValue(_arg_1:String):Boolean{
             var _local_2:int;
             while (_local_2 < this.strings_.length)
             {
@@ -61,37 +55,34 @@ public class DropDown extends Sprite
                 {
                     this.setIndex(_local_2);
                     return (true);
-                }
+                };
                 _local_2++;
-            }
+            };
             return (false);
         }
 
-        public function setIndex(_arg_1:int):void
-        {
+        public function setIndex(_arg_1:int):void{
             if (_arg_1 >= this.strings_.length)
             {
                 _arg_1 = 0;
-            }
+            };
             this.setSelected(this.strings_[_arg_1]);
         }
 
-        public function getIndex():int
-        {
+        public function getIndex():int{
             var _local_1:int;
             while (_local_1 < this.strings_.length)
             {
                 if (this.selected_.getValue() == this.strings_[_local_1])
                 {
                     return (_local_1);
-                }
+                };
                 _local_1++;
-            }
+            };
             return (-1);
         }
 
-        private function setSelected(_arg_1:String):void
-        {
+        private function setSelected(_arg_1:String):void{
             var _local_2:String = ((this.selected_ != null) ? this.selected_.getValue() : null);
             this.selected_ = new DropDownItem(_arg_1, this.w_, this.h_);
             this.selected_.x = this.xOffset_;
@@ -101,22 +92,20 @@ public class DropDown extends Sprite
             if (_arg_1 != _local_2)
             {
                 dispatchEvent(new Event(Event.CHANGE));
-            }
+            };
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             _arg_1.stopImmediatePropagation();
             this.selected_.removeEventListener(MouseEvent.CLICK, this.onClick);
             if (contains(this.selected_))
             {
                 removeChild(this.selected_);
-            }
+            };
             this.showAll();
         }
 
-        private function showAll():void
-        {
+        private function showAll():void{
             var _local_3:int;
             var _local_4:int;
             var _local_5:int;
@@ -132,13 +121,12 @@ public class DropDown extends Sprite
                 _local_5 = (this.xOffset_ - (this.w_ * _local_6));
                 this.listItems(_local_3, _local_4, _local_5);
                 _local_6++;
-            }
+            };
             this.all_.addEventListener(MouseEvent.ROLL_OUT, this.onOut);
             stage.addChild(this.all_);
         }
 
-        private function listItems(_arg_1:int, _arg_2:int, _arg_3:int):void
-        {
+        private function listItems(_arg_1:int, _arg_2:int, _arg_3:int):void{
             var _local_4:int;
             var _local_5:DropDownItem;
             _local_4 = 0;
@@ -152,25 +140,22 @@ public class DropDown extends Sprite
                 this.all_.addChild(_local_5);
                 _local_4 = (_local_4 + _local_5.h_);
                 _local_6++;
-            }
+            };
         }
 
-        private function hideAll():void
-        {
+        private function hideAll():void{
             this.all_.removeEventListener(MouseEvent.ROLL_OUT, this.onOut);
             stage.removeChild(this.all_);
         }
 
-        private function onSelect(_arg_1:MouseEvent):void
-        {
+        private function onSelect(_arg_1:MouseEvent):void{
             _arg_1.stopImmediatePropagation();
             this.hideAll();
             var _local_2:DropDownItem = (_arg_1.target as DropDownItem);
             this.setSelected(_local_2.getValue());
         }
 
-        private function onOut(_arg_1:MouseEvent):void
-        {
+        private function onOut(_arg_1:MouseEvent):void{
             this.hideAll();
             this.setSelected(this.selected_.getValue());
         }

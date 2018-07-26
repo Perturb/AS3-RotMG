@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.model.EnvironmentData
 
-package kabam.rotmg.ui.model
-{
-    public class EnvironmentData 
-    {
+package kabam.rotmg.ui.model{
+    public class EnvironmentData {
 
         public var isDesktop:Boolean;
         public var canMapEdit:Boolean;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.ChooseNameCommand
 
-package kabam.rotmg.ui.commands
-{
+package kabam.rotmg.ui.commands{
 import com.company.assembleegameclient.account.ui.NewChooseNameFrame;
 
 import flash.display.Sprite;
@@ -13,8 +12,7 @@ import kabam.rotmg.account.core.Account;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.ui.view.ChooseNameRegisterDialog;
 
-public class ChooseNameCommand 
-    {
+public class ChooseNameCommand {
 
         [Inject]
         public var account:Account;
@@ -22,8 +20,7 @@ public class ChooseNameCommand
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:Sprite;
             if (this.account.isRegistered())
             {
@@ -32,7 +29,7 @@ public class ChooseNameCommand
             else
             {
                 _local_1 = new ChooseNameRegisterDialog();
-            }
+            };
             this.openDialog.dispatch(_local_1);
         }
 

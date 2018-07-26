@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.TextPanelMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import kabam.rotmg.game.model.TextPanelData;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class TextPanelMediator extends Mediator 
-    {
+public class TextPanelMediator extends Mediator {
 
         [Inject]
         public var view:TextPanel;
@@ -18,8 +16,7 @@ public class TextPanelMediator extends Mediator
         public var data:TextPanelData;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.init(this.data.message);
         }
 

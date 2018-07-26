@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.ui.api.List
 
-package kabam.lib.ui.api
-{
+package kabam.lib.ui.api{
 import flash.display.DisplayObject;
 
-public interface List 
-    {
+public interface List {
 
         function addItem(_arg_1:DisplayObject):void;
         function setItems(_arg_1:Vector.<DisplayObject>):void;

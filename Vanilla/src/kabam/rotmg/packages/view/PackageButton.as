@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageButton
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import com.company.assembleegameclient.util.TimeUtil;
 
 import flash.display.DisplayObject;
@@ -20,8 +19,7 @@ import kabam.rotmg.ui.UIUtils;
 
 import org.osflash.signals.Signal;
 
-public class PackageButton extends BasePackageButton 
-    {
+public class PackageButton extends BasePackageButton {
 
         private const SHOW_DURATION:String = "showDuration";
         private const SHOW_QUANTITY:String = "showQuantity";
@@ -35,8 +33,7 @@ public class PackageButton extends BasePackageButton
         internal var durationStringBuilder:LineBuilder = new LineBuilder();
 
 
-        private static function makeText():TextFieldDisplayConcrete
-        {
+        private static function makeText():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF);
             _local_1.filters = [new DropShadowFilter(0, 0, 0)];
@@ -44,20 +41,18 @@ public class PackageButton extends BasePackageButton
         }
 
 
-        public function init():void
-        {
+        public function init():void{
             addChild(UIUtils.makeStaticHUDBackground());
             addChild(this.durationText);
             addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             this.setIcon(makeIcon());
         }
 
-        private function setState(_arg_1:String):void
-        {
+        private function setState(_arg_1:String):void{
             if (this._state == _arg_1)
             {
                 return;
-            }
+            };
             if (_arg_1 == this.SHOW_DURATION)
             {
                 removeChild(this.quantityText);
@@ -73,20 +68,18 @@ public class PackageButton extends BasePackageButton
                 else
                 {
                     throw (new Error(("PackageButton.setState: Unexpected state " + _arg_1)));
-                }
-            }
+                };
+            };
             this._state = _arg_1;
         }
 
-        public function setQuantity(_arg_1:int):void
-        {
+        public function setQuantity(_arg_1:int):void{
             this.quantityText.textChanged.addOnce(this.layout);
             this.quantityStringBuilder.setString(_arg_1.toString());
             this.quantityText.setStringBuilder(this.quantityStringBuilder);
         }
 
-        public function setDuration(_arg_1:int):void
-        {
+        public function setDuration(_arg_1:int):void{
             var _local_3:String;
             var _local_2:int = int(Math.ceil((_arg_1 / TimeUtil.DAY_IN_MS)));
             if (_local_2 > 1)
@@ -96,31 +89,27 @@ public class PackageButton extends BasePackageButton
             else
             {
                 _local_3 = TextKey.PACKAGE_BUTTON_DAY;
-            }
+            };
             this.durationText.textChanged.addOnce(this.layout);
             this.durationStringBuilder.setParams(_local_3, {"number":_local_2});
             this.durationText.setStringBuilder(this.durationStringBuilder);
         }
 
-        private function layout():void
-        {
+        private function layout():void{
             positionText(this._icon, this.durationText);
             positionText(this._icon, this.quantityText);
         }
 
-        public function setIcon(_arg_1:DisplayObject):void
-        {
+        public function setIcon(_arg_1:DisplayObject):void{
             this._icon = _arg_1;
             addChild(_arg_1);
         }
 
-        public function getIcon():DisplayObject
-        {
+        public function getIcon():DisplayObject{
             return (this._icon);
         }
 
-        private function onMouseUp(_arg_1:Event):void
-        {
+        private function onMouseUp(_arg_1:Event):void{
             this.clicked.dispatch();
         }
 

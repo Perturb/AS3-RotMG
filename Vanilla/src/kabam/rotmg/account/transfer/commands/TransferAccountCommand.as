@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.commands.TransferAccountCommand
 
-package kabam.rotmg.account.transfer.commands
-{
+package kabam.rotmg.account.transfer.commands{
 import com.company.assembleegameclient.ui.dialogs.DebugDialog;
 import com.company.util.HTMLUtil;
 
@@ -22,8 +21,7 @@ import kabam.rotmg.core.signals.TaskErrorSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class TransferAccountCommand 
-    {
+public class TransferAccountCommand {
 
         [Inject]
         public var task:MigrateAccountTask;
@@ -43,15 +41,13 @@ public class TransferAccountCommand
         public var data:TransferAccountData;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:BranchingTask = new BranchingTask(this.task, this.makeSuccess(), this.makeFailure());
             this.monitor.add(_local_1);
             _local_1.start();
         }
 
-        private function makeSuccess():Task
-        {
+        private function makeSuccess():Task{
             var _local_1:TaskSequence = new TaskSequence();
             var _local_2:PlatformModel = StaticInjectorContext.getInjector().getInstance(PlatformModel);
             _local_1.add(new DispatchSignalTask(this.updateAccount));
@@ -59,8 +55,7 @@ public class TransferAccountCommand
             return (_local_1);
         }
 
-        private function makeFailure():Task
-        {
+        private function makeFailure():Task{
             return (new DispatchSignalTask(this.loginError, this.task));
         }
 

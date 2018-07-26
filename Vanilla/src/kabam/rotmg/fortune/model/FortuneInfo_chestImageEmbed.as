@@ -1,4 +1,4 @@
-package kabam.rotmg.fortune.model
+﻿package kabam.rotmg.fortune.model
 {
 import mx.core.*;
 

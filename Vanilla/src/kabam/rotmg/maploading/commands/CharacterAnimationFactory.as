@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.maploading.commands.CharacterAnimationFactory
 
-package kabam.rotmg.maploading.commands
-{
+package kabam.rotmg.maploading.commands{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.parameters.Parameters;
 
@@ -15,8 +14,7 @@ import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 import kabam.rotmg.core.model.PlayerModel;
 
-public class CharacterAnimationFactory 
-    {
+public class CharacterAnimationFactory {
 
         [Inject]
         public var playerModel:PlayerModel;
@@ -31,8 +29,7 @@ public class CharacterAnimationFactory
         private var tex1:int;
 
 
-        public function make():Animation
-        {
+        public function make():Animation{
             this.currentChar = this.playerModel.getCharacterById(this.playerModel.currentCharId);
             this.characterClass = ((this.currentChar) ? this.getCurrentCharacterClass() : this.getDefaultCharacterClass());
             this.skin = this.characterClass.skins.getSelectedSkin();
@@ -42,13 +39,11 @@ public class CharacterAnimationFactory
             return (this.factory.makeWalkingIcon(this.skin.template, _local_1, this.tex1, this.tex2));
         }
 
-        private function getDefaultCharacterClass():CharacterClass
-        {
+        private function getDefaultCharacterClass():CharacterClass{
             return (this.classesModel.getSelected());
         }
 
-        private function getCurrentCharacterClass():CharacterClass
-        {
+        private function getCurrentCharacterClass():CharacterClass{
             return (this.classesModel.getCharacterClass(this.currentChar.objectType()));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleInputView
 
-package kabam.lib.console.view
-{
+package kabam.lib.console.view{
 import flash.events.KeyboardEvent;
 import flash.geom.Rectangle;
 import flash.text.TextField;
@@ -15,15 +14,13 @@ import flash.ui.Keyboard;
 import kabam.lib.resizing.view.Resizable;
 import kabam.lib.util.StageLifecycleUtil;
 
-public final class ConsoleInputView extends TextField implements Resizable 
-    {
+public final class ConsoleInputView extends TextField implements Resizable {
 
         public static const HEIGHT:int = 20;
 
         private var lifecycle:StageLifecycleUtil;
 
-        public function ConsoleInputView()
-        {
+        public function ConsoleInputView(){
             background = true;
             backgroundColor = 0x3300;
             border = true;
@@ -37,18 +34,15 @@ public final class ConsoleInputView extends TextField implements Resizable
             this.lifecycle.removedFromStage.add(this.onRemovedFromStage);
         }
 
-        private function onAddedToStage():void
-        {
+        private function onAddedToStage():void{
             addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        private function onRemovedFromStage():void
-        {
+        private function onRemovedFromStage():void{
             removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             var _local_2:String = text;
             switch (_arg_1.keyCode)
             {
@@ -62,16 +56,15 @@ public final class ConsoleInputView extends TextField implements Resizable
                 case Keyboard.DOWN:
                     dispatchEvent(new ConsoleEvent(ConsoleEvent.GET_NEXT));
                     return;
-            }
+            };
         }
 
-        public function resize(_arg_1:Rectangle):void
-        {
+        public function resize(_arg_1:Rectangle):void{
             var _local_2:int = (_arg_1.height * 0.5);
             if (_local_2 > HEIGHT)
             {
                 _local_2 = HEIGHT;
-            }
+            };
             width = _arg_1.width;
             height = _local_2;
             x = _arg_1.x;

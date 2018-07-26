@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.ObjectLibrary
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.objects.animation.AnimationsData;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.TextureRedrawer;
@@ -21,8 +20,7 @@ import kabam.rotmg.constants.GeneralConstants;
 import kabam.rotmg.constants.ItemConstants;
 import kabam.rotmg.messaging.impl.data.StatData;
 
-public class ObjectLibrary
-    {
+public class ObjectLibrary {
 
         public static var textureDataFactory:TextureDataFactory = new TextureDataFactory();
         public static const IMAGE_SET_NAME:String = "lofiObj3";
@@ -86,8 +84,7 @@ public class ObjectLibrary
         private static var currentDungeon:String = "";
 
 
-        public static function parseDungeonXML(_arg_1:String, _arg_2:XML):void
-        {
+        public static function parseDungeonXML(_arg_1:String, _arg_2:XML):void{
             var _local_3:int = (_arg_1.indexOf("_") + 1);
             var _local_4:int = _arg_1.indexOf("CXML");
             if (((_arg_1.indexOf("_ObjectsCXML") == -1) && (_arg_1.indexOf("_StaticObjectsCXML") == -1)))
@@ -101,25 +98,23 @@ public class ObjectLibrary
                     if (_arg_1.indexOf("Object") != -1)
                     {
                         _local_4 = _arg_1.indexOf("ObjectCXML");
-                    }
-                }
-            }
+                    };
+                };
+            };
             currentDungeon = _arg_1.substr(_local_3, (_local_4 - _local_3));
             dungeonsXMLLibrary_[currentDungeon] = new Dictionary(true);
             parseFromXML(_arg_2, parseDungeonCallbak);
         }
 
-        private static function parseDungeonCallbak(_arg_1:int, _arg_2:XML):void
-        {
+        private static function parseDungeonCallbak(_arg_1:int, _arg_2:XML):void{
             if (((!(currentDungeon == "")) && (!(dungeonsXMLLibrary_[currentDungeon] == null))))
             {
                 dungeonsXMLLibrary_[currentDungeon][_arg_1] = _arg_2;
                 propsLibrary_[_arg_1].belonedDungeon = currentDungeon;
-            }
+            };
         }
 
-        public static function parseFromXML(_arg_1:XML, _arg_2:Function=null):void
-        {
+        public static function parseFromXML(_arg_1:XML, _arg_2:Function=null):void{
             var _local_3:XML;
             var _local_4:String;
             var _local_5:String;
@@ -133,14 +128,14 @@ public class ObjectLibrary
                 if (_local_3.hasOwnProperty("DisplayId"))
                 {
                     _local_5 = _local_3.DisplayId;
-                }
+                };
                 if (_local_3.hasOwnProperty("Group"))
                 {
                     if (_local_3.Group == "Hexable")
                     {
                         hexTransforms_.push(_local_3);
-                    }
-                }
+                    };
+                };
                 _local_6 = int(_local_3.@type);
                 if (((_local_3.hasOwnProperty("PetBehavior")) || (_local_3.hasOwnProperty("PetAbility"))))
                 {
@@ -155,7 +150,7 @@ public class ObjectLibrary
                     if (_arg_2 != null)
                     {
                         (_arg_2(_local_6, _local_3));
-                    }
+                    };
                     if (String(_local_3.Class) == "Player")
                     {
                         playerClassAbbr_[_local_6] = String(_local_3.@id).substr(0, 2);
@@ -167,71 +162,66 @@ public class ObjectLibrary
                             {
                                 playerChars_[_local_8] = _local_3;
                                 _local_7 = true;
-                            }
+                            };
                             _local_8++;
-                        }
+                        };
                         if (!_local_7)
                         {
                             playerChars_.push(_local_3);
-                        }
-                    }
+                        };
+                    };
                     typeToTextureData_[_local_6] = textureDataFactory.create(_local_3);
                     if (_local_3.hasOwnProperty("Top"))
                     {
                         typeToTopTextureData_[_local_6] = textureDataFactory.create(XML(_local_3.Top));
-                    }
+                    };
                     if (_local_3.hasOwnProperty("Animation"))
                     {
                         typeToAnimationsData_[_local_6] = new AnimationsData(_local_3);
-                    }
+                    };
                     if (((_local_3.hasOwnProperty("IntergamePortal")) && (_local_3.hasOwnProperty("DungeonName"))))
                     {
                         dungeonToPortalTextureData_[String(_local_3.DungeonName)] = typeToTextureData_[_local_6];
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        public static function getIdFromType(_arg_1:int):String
-        {
+        public static function getIdFromType(_arg_1:int):String{
             var _local_2:XML = xmlLibrary_[_arg_1];
             if (_local_2 == null)
             {
                 return (null);
-            }
+            };
             return (String(_local_2.@id));
         }
 
-        public static function getSetXMLFromType(_arg_1:int):XML
-        {
+        public static function getSetXMLFromType(_arg_1:int):XML{
             var _local_2:XML;
             var _local_3:int;
             if (setLibrary_[_arg_1] != undefined)
             {
                 return (setLibrary_[_arg_1]);
-            }
+            };
             for each (_local_2 in EmbeddedData.skinsEquipmentSetsXML.EquipmentSet)
             {
                 _local_3 = int(_local_2.@type);
                 setLibrary_[_local_3] = _local_2;
-            }
+            };
             return (setLibrary_[_arg_1]);
         }
 
-        public static function getPropsFromId(_arg_1:String):ObjectProperties
-        {
+        public static function getPropsFromId(_arg_1:String):ObjectProperties{
             var _local_2:int = idToType_[_arg_1];
             return (propsLibrary_[_local_2]);
         }
 
-        public static function getXMLfromId(_arg_1:String):XML
-        {
+        public static function getXMLfromId(_arg_1:String):XML{
             var _local_2:int = idToType_[_arg_1];
             return (xmlLibrary_[_local_2]);
         }
 
-        public static function getObjectFromType(objectType:int):GameObject
-        {
+        public static function getObjectFromType(objectType:int):GameObject{
             var objectXML:XML;
             var typeReference:String;
             try
@@ -242,51 +232,47 @@ public class ObjectLibrary
             catch(e:Error)
             {
                 throw (new Error(("Type: 0x" + objectType.toString(16))));
-            }
+            };
             var typeClass:Class = ((TYPE_MAP[typeReference]) || (makeClass(typeReference)));
             return (new (typeClass)(objectXML));
         }
 
-        private static function makeClass(_arg_1:String):Class
-        {
+        private static function makeClass(_arg_1:String):Class{
             var _local_2:String = ("com.company.assembleegameclient.objects." + _arg_1);
             return (getDefinitionByName(_local_2) as Class);
         }
 
-        public static function getTextureFromType(_arg_1:int):BitmapData
-        {
+        public static function getTextureFromType(_arg_1:int):BitmapData{
             var _local_2:TextureData = typeToTextureData_[_arg_1];
             if (_local_2 == null)
             {
                 return (null);
-            }
+            };
             return (_local_2.getTexture());
         }
 
-        public static function getBitmapData(_arg_1:int):BitmapData
-        {
+        public static function getBitmapData(_arg_1:int):BitmapData{
             var _local_2:TextureData = typeToTextureData_[_arg_1];
             var _local_3:BitmapData = ((_local_2) ? _local_2.getTexture() : null);
             if (_local_3)
             {
                 return (_local_3);
-            }
+            };
             return (AssetLibrary.getImageFromSet(IMAGE_SET_NAME, IMAGE_ID));
         }
 
-        public static function getRedrawnTextureFromType(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Boolean=true, _arg_5:Number=5):BitmapData
-        {
+        public static function getRedrawnTextureFromType(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Boolean=true, _arg_5:Number=5):BitmapData{
             var _local_6:BitmapData = getBitmapData(_arg_1);
             if (((!(Parameters.itemTypes16.indexOf(_arg_1) == -1)) || (_local_6.height == 16)))
             {
                 _arg_2 = (_arg_2 * 0.5);
-            }
+            };
             var _local_7:TextureData = typeToTextureData_[_arg_1];
             var _local_8:BitmapData = ((_local_7) ? _local_7.mask_ : null);
             if (_local_8 == null)
             {
                 return (TextureRedrawer.redraw(_local_6, _arg_2, _arg_3, 0, _arg_4, _arg_5));
-            }
+            };
             var _local_9:XML = xmlLibrary_[_arg_1];
             var _local_10:int = ((_local_9.hasOwnProperty("Tex1")) ? int(_local_9.Tex1) : 0);
             var _local_11:int = ((_local_9.hasOwnProperty("Tex2")) ? int(_local_9.Tex2) : 0);
@@ -295,32 +281,29 @@ public class ObjectLibrary
             return (_local_6);
         }
 
-        public static function getSizeFromType(_arg_1:int):int
-        {
+        public static function getSizeFromType(_arg_1:int):int{
             var _local_2:XML = xmlLibrary_[_arg_1];
             if (!_local_2.hasOwnProperty("Size"))
             {
                 return (100);
-            }
+            };
             return (int(_local_2.Size));
         }
 
-        public static function getSlotTypeFromType(_arg_1:int):int
-        {
+        public static function getSlotTypeFromType(_arg_1:int):int{
             var _local_2:XML = xmlLibrary_[_arg_1];
             if (!_local_2.hasOwnProperty("SlotType"))
             {
                 return (-1);
-            }
+            };
             return (int(_local_2.SlotType));
         }
 
-        public static function isEquippableByPlayer(_arg_1:int, _arg_2:Player):Boolean
-        {
+        public static function isEquippableByPlayer(_arg_1:int, _arg_2:Player):Boolean{
             if (_arg_1 == ItemConstants.NO_ITEM)
             {
                 return (false);
-            }
+            };
             var _local_3:XML = xmlLibrary_[_arg_1];
             var _local_4:int = int(_local_3.SlotType.toString());
             var _local_5:uint;
@@ -329,14 +312,13 @@ public class ObjectLibrary
                 if (_arg_2.slotTypes_[_local_5] == _local_4)
                 {
                     return (true);
-                }
+                };
                 _local_5++;
-            }
+            };
             return (false);
         }
 
-        public static function getMatchingSlotIndex(_arg_1:int, _arg_2:Player):int
-        {
+        public static function getMatchingSlotIndex(_arg_1:int, _arg_2:Player):int{
             var _local_3:XML;
             var _local_4:int;
             var _local_5:uint;
@@ -350,55 +332,51 @@ public class ObjectLibrary
                     if (_arg_2.slotTypes_[_local_5] == _local_4)
                     {
                         return (_local_5);
-                    }
+                    };
                     _local_5++;
-                }
-            }
+                };
+            };
             return (-1);
         }
 
-        public static function isUsableByPlayer(_arg_1:int, _arg_2:Player):Boolean
-        {
+        public static function isUsableByPlayer(_arg_1:int, _arg_2:Player):Boolean{
             if (((_arg_2 == null) || (_arg_2.slotTypes_ == null)))
             {
                 return (true);
-            }
+            };
             var _local_3:XML = xmlLibrary_[_arg_1];
             if (((_local_3 == null) || (!(_local_3.hasOwnProperty("SlotType")))))
             {
                 return (false);
-            }
+            };
             var _local_4:int = _local_3.SlotType;
             if (((_local_4 == ItemConstants.POTION_TYPE) || (_local_4 == ItemConstants.EGG_TYPE)))
             {
                 return (true);
-            }
+            };
             var _local_5:int;
             while (_local_5 < _arg_2.slotTypes_.length)
             {
                 if (_arg_2.slotTypes_[_local_5] == _local_4)
                 {
                     return (true);
-                }
+                };
                 _local_5++;
-            }
+            };
             return (false);
         }
 
-        public static function isSoulbound(_arg_1:int):Boolean
-        {
+        public static function isSoulbound(_arg_1:int):Boolean{
             var _local_2:XML = xmlLibrary_[_arg_1];
             return ((!(_local_2 == null)) && (_local_2.hasOwnProperty("Soulbound")));
         }
 
-        public static function isDropTradable(_arg_1:int):Boolean
-        {
+        public static function isDropTradable(_arg_1:int):Boolean{
             var _local_2:XML = xmlLibrary_[_arg_1];
             return ((!(_local_2 == null)) && (_local_2.hasOwnProperty("DropTradable")));
         }
 
-        public static function usableBy(_arg_1:int):Vector.<String>
-        {
+        public static function usableBy(_arg_1:int):Vector.<String>{
             var _local_5:XML;
             var _local_6:Vector.<int>;
             var _local_7:int;
@@ -406,12 +384,12 @@ public class ObjectLibrary
             if (((_local_2 == null) || (!(_local_2.hasOwnProperty("SlotType")))))
             {
                 return (null);
-            }
+            };
             var _local_3:int = _local_2.SlotType;
             if ((((_local_3 == ItemConstants.POTION_TYPE) || (_local_3 == ItemConstants.RING_TYPE)) || (_local_3 == ItemConstants.EGG_TYPE)))
             {
                 return (null);
-            }
+            };
             var _local_4:Vector.<String> = new Vector.<String>();
             for each (_local_5 in playerChars_)
             {
@@ -423,33 +401,31 @@ public class ObjectLibrary
                     {
                         _local_4.push(typeToDisplayId_[int(_local_5.@type)]);
                         break;
-                    }
+                    };
                     _local_7++;
-                }
-            }
+                };
+            };
             return (_local_4);
         }
 
-        public static function playerMeetsRequirements(_arg_1:int, _arg_2:Player):Boolean
-        {
+        public static function playerMeetsRequirements(_arg_1:int, _arg_2:Player):Boolean{
             var _local_4:XML;
             if (_arg_2 == null)
             {
                 return (true);
-            }
+            };
             var _local_3:XML = xmlLibrary_[_arg_1];
             for each (_local_4 in _local_3.EquipRequirement)
             {
                 if (!playerMeetsRequirement(_local_4, _arg_2))
                 {
                     return (false);
-                }
-            }
+                };
+            };
             return (true);
         }
 
-        public static function playerMeetsRequirement(_arg_1:XML, _arg_2:Player):Boolean
-        {
+        public static function playerMeetsRequirement(_arg_1:XML, _arg_2:Player):Boolean{
             var _local_3:int;
             if (_arg_1.toString() == "Stat")
             {
@@ -474,13 +450,12 @@ public class ObjectLibrary
                         return (_arg_2.wisdom_ >= _local_3);
                     case StatData.DEXTERITY_STAT:
                         return (_arg_2.dexterity_ >= _local_3);
-                }
-            }
+                };
+            };
             return (false);
         }
 
-        public static function getPetDataXMLByType(_arg_1:int):XML
-        {
+        public static function getPetDataXMLByType(_arg_1:int):XML{
             return (petXMLDataLibrary_[_arg_1]);
         }
 

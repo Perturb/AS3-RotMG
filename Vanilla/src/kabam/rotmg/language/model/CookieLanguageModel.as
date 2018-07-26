@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.model.CookieLanguageModel
 
-package kabam.rotmg.language.model
-{
+package kabam.rotmg.language.model{
 import flash.net.SharedObject;
 import flash.utils.Dictionary;
 
-public class CookieLanguageModel implements LanguageModel
-    {
+public class CookieLanguageModel implements LanguageModel {
 
         public static const DEFAULT_LOCALE:String = "en";
 
@@ -17,8 +15,7 @@ public class CookieLanguageModel implements LanguageModel
         private var language:String;
         private var availableLanguages:Dictionary;
 
-        public function CookieLanguageModel()
-        {
+        public function CookieLanguageModel(){
             this.availableLanguages = this.makeAvailableLanguages();
             super();
             try
@@ -27,21 +24,18 @@ public class CookieLanguageModel implements LanguageModel
             }
             catch(error:Error)
             {
-            }
+            };
         }
 
-        public function getLanguage():String
-        {
+        public function getLanguage():String{
             return (this.language = ((this.language) || (this.readLanguageFromCookie())));
         }
 
-        private function readLanguageFromCookie():String
-        {
+        private function readLanguageFromCookie():String{
             return ((this.cookie.data.locale) || (DEFAULT_LOCALE));
         }
 
-        public function setLanguage(_arg_1:String):void
-        {
+        public function setLanguage(_arg_1:String):void{
             this.language = _arg_1;
             try
             {
@@ -50,32 +44,28 @@ public class CookieLanguageModel implements LanguageModel
             }
             catch(error:Error)
             {
-            }
+            };
         }
 
-        public function getLanguageFamily():String
-        {
+        public function getLanguageFamily():String{
             return (this.getLanguage().substr(0, 2).toLowerCase());
         }
 
-        public function getLanguageNames():Vector.<String>
-        {
+        public function getLanguageNames():Vector.<String>{
             var _local_2:String;
             var _local_1:Vector.<String> = new Vector.<String>();
             for (_local_2 in this.availableLanguages)
             {
                 _local_1.push(_local_2);
-            }
+            };
             return (_local_1);
         }
 
-        public function getLanguageCodeForName(_arg_1:String):String
-        {
+        public function getLanguageCodeForName(_arg_1:String):String{
             return (this.availableLanguages[_arg_1]);
         }
 
-        public function getNameForLanguageCode(_arg_1:String):String
-        {
+        public function getNameForLanguageCode(_arg_1:String):String{
             var _local_2:String;
             var _local_3:String;
             for (_local_3 in this.availableLanguages)
@@ -83,13 +73,12 @@ public class CookieLanguageModel implements LanguageModel
                 if (this.availableLanguages[_local_3] == _arg_1)
                 {
                     _local_2 = _local_3;
-                }
-            }
+                };
+            };
             return (_local_2);
         }
 
-        private function makeAvailableLanguages():Dictionary
-        {
+        private function makeAvailableLanguages():Dictionary{
             var _local_1:Dictionary = new Dictionary();
             _local_1["Languages.English"] = "en";
             _local_1["Languages.French"] = "fr";

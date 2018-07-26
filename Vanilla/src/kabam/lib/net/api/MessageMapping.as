@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.net.api.MessageMapping
 
-package kabam.lib.net.api
-{
+package kabam.lib.net.api{
 import kabam.lib.net.impl.MessagePool;
 
-public interface MessageMapping 
-    {
+public interface MessageMapping {
 
         function setID(_arg_1:int):MessageMapping;
         function toMessage(_arg_1:Class):MessageMapping;

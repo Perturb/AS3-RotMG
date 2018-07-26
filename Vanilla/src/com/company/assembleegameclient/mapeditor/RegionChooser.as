@@ -1,15 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.RegionChooser
 
-package com.company.assembleegameclient.mapeditor
-{
-    public class RegionChooser extends Chooser 
-    {
+package com.company.assembleegameclient.mapeditor{
+    public class RegionChooser extends Chooser {
 
-        public function RegionChooser()
-        {
+        public function RegionChooser(){
             var _local_1:XML;
             var _local_2:RegionElement;
             super(Layer.REGION);
@@ -17,7 +14,7 @@ package com.company.assembleegameclient.mapeditor
             {
                 _local_2 = new RegionElement(_local_1);
                 addElement(_local_2);
-            }
+            };
             hasBeenLoaded = true;
         }
 

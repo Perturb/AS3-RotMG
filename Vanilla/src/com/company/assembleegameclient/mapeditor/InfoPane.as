@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.InfoPane
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.map.RegionLibrary;
 import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -23,8 +22,7 @@ import flash.events.Event;
 import flash.filters.DropShadowFilter;
 import flash.geom.Rectangle;
 
-public class InfoPane extends Sprite
-    {
+public class InfoPane extends Sprite {
 
         public static const WIDTH:int = 134;
         public static const HEIGHT:int = 120;
@@ -40,8 +38,7 @@ public class InfoPane extends Sprite
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-        public function InfoPane(_arg_1:MEMap)
-        {
+        public function InfoPane(_arg_1:MEMap){
             this.meMap_ = _arg_1;
             this.drawBackground();
             this.rectText_ = new BaseSimpleText(12, 0xFFFFFF, false, (WIDTH - 10), 0);
@@ -59,24 +56,21 @@ public class InfoPane extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             var _local_2:Rectangle = this.meMap_.mouseRectT();
             this.rectText_.text = ((("Position: " + _local_2.x) + ", ") + _local_2.y);
             if (((_local_2.width > 1) || (_local_2.height > 1)))
             {
                 this.rectText_.text = (this.rectText_.text + ((("\nRect: " + _local_2.width) + ", ") + _local_2.height));
-            }
+            };
             this.rectText_.useTextDimensions();
             var _local_3:METile = this.meMap_.getTile(_local_2.x, _local_2.y);
             var _local_4:Vector.<int> = ((_local_3 == null) ? Layer.EMPTY_TILE : _local_3.types_);
@@ -87,8 +81,7 @@ public class InfoPane extends Sprite
             this.typeText_.useTextDimensions();
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             GraphicsUtil.clearPath(this.path_);
             GraphicsUtil.drawCutEdgeRect(0, 0, WIDTH, HEIGHT, 4, [1, 1, 1, 1], this.path_);
             graphics.drawGraphicsData(this.graphicsData_);

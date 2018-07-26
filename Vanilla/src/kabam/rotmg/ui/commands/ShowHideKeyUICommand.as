@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.ShowHideKeyUICommand
 
-package kabam.rotmg.ui.commands
-{
+package kabam.rotmg.ui.commands{
 import flash.display.DisplayObjectContainer;
 
 import kabam.rotmg.ui.view.KeysView;
 
-public class ShowHideKeyUICommand 
-    {
+public class ShowHideKeyUICommand {
 
         private static var show:Boolean = true;
         private static var view:KeysView;
@@ -19,8 +17,7 @@ public class ShowHideKeyUICommand
         public var contextView:DisplayObjectContainer;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (show)
             {
                 view = new KeysView();
@@ -34,7 +31,7 @@ public class ShowHideKeyUICommand
                 this.contextView.removeChild(view);
                 view = null;
                 show = true;
-            }
+            };
         }
 
 

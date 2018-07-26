@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.VisiblePlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
-public class VisiblePlugin extends TweenPlugin
-    {
+public class VisiblePlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 
@@ -18,18 +16,15 @@ public class VisiblePlugin extends TweenPlugin
         protected var _visible:Boolean;
         protected var _tween:TweenLite;
 
-        public function VisiblePlugin()
-        {
+        public function VisiblePlugin(){
             super("visible");
         }
 
-        override public function setRatio(_arg_1:Number):void
-        {
+        override public function setRatio(_arg_1:Number):void{
             _target.visible = (((_arg_1 == 1) && (((_tween._time / _tween._duration) == _progress) || (_tween._duration == 0))) ? _visible : _initVal);
         }
 
-        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean
-        {
+        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean{
             _target = _arg_1;
             _tween = _arg_3;
             _progress = ((_tween.vars.runBackwards) ? 0 : 1);

@@ -1,21 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.tooltip.PetTooltipMediator
 
-package io.decagames.rotmg.pets.components.tooltip
-{
+package io.decagames.rotmg.pets.components.tooltip{
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetTooltipMediator extends Mediator 
-    {
+public class PetTooltipMediator extends Mediator {
 
         [Inject]
         public var view:PetTooltip;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.init();
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetFamilyContainer
 
-package io.decagames.rotmg.pets.components.petSkinsCollection
-{
+package io.decagames.rotmg.pets.components.petSkinsCollection{
 import io.decagames.rotmg.pets.data.family.PetFamilyColors;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.gird.UIGridElement;
@@ -15,11 +14,9 @@ import io.decagames.rotmg.utils.colors.Tint;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PetFamilyContainer extends UIGridElement 
-    {
+public class PetFamilyContainer extends UIGridElement {
 
-        public function PetFamilyContainer(_arg_1:String, _arg_2:int, _arg_3:int)
-        {
+        public function PetFamilyContainer(_arg_1:String, _arg_2:int, _arg_3:int){
             var _local_5:SliceScalingBitmap;
             var _local_6:UILabel;
             var _local_7:SliceScalingBitmap;

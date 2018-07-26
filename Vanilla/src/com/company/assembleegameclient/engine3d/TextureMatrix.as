@@ -1,39 +1,33 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.engine3d.TextureMatrix
 
-package com.company.assembleegameclient.engine3d
-{
+package com.company.assembleegameclient.engine3d{
 import flash.display.BitmapData;
 import flash.geom.Matrix;
 
-public class TextureMatrix
-    {
+public class TextureMatrix {
 
         public var texture_:BitmapData = null;
         public var tToS_:Matrix = new Matrix();
         private var uvMatrix_:Matrix = null;
         private var tempMatrix_:Matrix = new Matrix();
 
-        public function TextureMatrix(_arg_1:BitmapData, _arg_2:Vector.<Number>)
-        {
+        public function TextureMatrix(_arg_1:BitmapData, _arg_2:Vector.<Number>){
             this.texture_ = _arg_1;
             this.calculateUVMatrix(_arg_2);
         }
 
-        public function setUVT(_arg_1:Vector.<Number>):void
-        {
+        public function setUVT(_arg_1:Vector.<Number>):void{
             this.calculateUVMatrix(_arg_1);
         }
 
-        public function setVOut(_arg_1:Vector.<Number>):void
-        {
+        public function setVOut(_arg_1:Vector.<Number>):void{
             this.calculateTextureMatrix(_arg_1);
         }
 
-        public function calculateTextureMatrix(_arg_1:Vector.<Number>):void
-        {
+        public function calculateTextureMatrix(_arg_1:Vector.<Number>):void{
             this.tToS_.a = this.uvMatrix_.a;
             this.tToS_.b = this.uvMatrix_.b;
             this.tToS_.c = this.uvMatrix_.c;
@@ -51,13 +45,12 @@ public class TextureMatrix
             this.tToS_.concat(this.tempMatrix_);
         }
 
-        public function calculateUVMatrix(_arg_1:Vector.<Number>):void
-        {
+        public function calculateUVMatrix(_arg_1:Vector.<Number>):void{
             if (this.texture_ == null)
             {
                 this.uvMatrix_ = null;
                 return;
-            }
+            };
             var _local_2:int = (_arg_1.length - 3);
             var _local_3:Number = (_arg_1[0] * this.texture_.width);
             var _local_4:Number = (_arg_1[1] * this.texture_.height);

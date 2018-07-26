@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.commands.UpdateActivePetCommand
 
-package io.decagames.rotmg.pets.commands
-{
+package io.decagames.rotmg.pets.commands{
 import io.decagames.rotmg.pets.data.PetsModel;
 import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class UpdateActivePetCommand extends Command
-    {
+public class UpdateActivePetCommand extends Command {
 
         [Inject]
         public var instanceID:int;
@@ -21,8 +19,7 @@ public class UpdateActivePetCommand extends Command
         public var notifyActivePetUpdated:NotifyActivePetUpdated;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             if (this.instanceID < 0)
             {
                 this.petsModel.removeActivePet();
@@ -30,7 +27,7 @@ public class UpdateActivePetCommand extends Command
             else
             {
                 this.petsModel.setActivePet(this.petsModel.getPet(this.instanceID));
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.minimap.view.MiniMapMediator
 
-package kabam.rotmg.minimap.view
-{
+package kabam.rotmg.minimap.view{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
 
@@ -23,8 +22,7 @@ import kabam.rotmg.ui.signals.UpdateHUDSignal;
 
 import robotlegs.bender.extensions.mediatorMap.api.IMediator;
 
-public class MiniMapMediator implements IMediator 
-    {
+public class MiniMapMediator implements IMediator {
 
         [Inject]
         public var view:MiniMap;
@@ -46,8 +44,7 @@ public class MiniMapMediator implements IMediator
         public var layers:Layers;
 
 
-        public function initialize():void
-        {
+        public function initialize():void{
             this.view.setMap(this.model.gameSprite.map);
             this.setFocus.add(this.onSetFocus);
             this.updateHUD.add(this.onUpdateHUD);
@@ -58,13 +55,11 @@ public class MiniMapMediator implements IMediator
             this.view.menuLayer = this.layers.top;
         }
 
-        private function onExitGame():void
-        {
+        private function onExitGame():void{
             this.view.deactivate();
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             this.setFocus.remove(this.onSetFocus);
             this.updateHUD.remove(this.onUpdateHUD);
             this.updateGameObjectTileSignal.remove(this.onUpdateGameObjectTile);
@@ -73,42 +68,37 @@ public class MiniMapMediator implements IMediator
             this.exitGameSignal.remove(this.onExitGame);
         }
 
-        private function onSetFocus(_arg_1:String):void
-        {
+        private function onSetFocus(_arg_1:String):void{
             var _local_2:GameObject = this.getFocusById(_arg_1);
             this.view.setFocus(_local_2);
         }
 
-        private function getFocusById(_arg_1:String):GameObject
-        {
+        private function getFocusById(_arg_1:String):GameObject{
             var _local_3:GameObject;
             if (_arg_1 == "")
             {
                 return (this.view.map.player_);
-            }
+            };
             var _local_2:Dictionary = this.view.map.goDict_;
             for each (_local_3 in _local_2)
             {
                 if (_local_3.name_ == _arg_1)
                 {
                     return (_local_3);
-                }
-            }
+                };
+            };
             return (this.view.map.player_);
         }
 
-        private function onUpdateGroundTile(_arg_1:UpdateGroundTileVO):void
-        {
+        private function onUpdateGroundTile(_arg_1:UpdateGroundTileVO):void{
             this.view.setGroundTile(_arg_1.tileX, _arg_1.tileY, _arg_1.tileType);
         }
 
-        private function onUpdateGameObjectTile(_arg_1:UpdateGameObjectTileVO):void
-        {
+        private function onUpdateGameObjectTile(_arg_1:UpdateGameObjectTileVO):void{
             this.view.setGameObjectTile(_arg_1.tileX, _arg_1.tileY, _arg_1.gameObject);
         }
 
-        private function onMiniMapZoom(_arg_1:String):void
-        {
+        private function onMiniMapZoom(_arg_1:String):void{
             if (_arg_1 == MiniMapZoomSignal.IN)
             {
                 this.view.zoomIn();
@@ -118,12 +108,11 @@ public class MiniMapMediator implements IMediator
                 if (_arg_1 == MiniMapZoomSignal.OUT)
                 {
                     this.view.zoomOut();
-                }
-            }
+                };
+            };
         }
 
-        private function onUpdateHUD(_arg_1:Player):void
-        {
+        private function onUpdateHUD(_arg_1:Player):void{
             this.view.draw();
         }
 

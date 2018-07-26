@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.commands.BuyBeginnersPackageCommand
 
-package kabam.rotmg.promotions.commands
-{
+package kabam.rotmg.promotions.commands{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.PaymentData;
 import kabam.rotmg.account.core.signals.OpenAccountPaymentSignal;
@@ -17,8 +16,7 @@ import kabam.rotmg.promotions.model.BeginnersPackageModel;
 import kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal;
 import kabam.rotmg.text.model.TextKey;
 
-public class BuyBeginnersPackageCommand
-    {
+public class BuyBeginnersPackageCommand {
 
         private static const REGISTER_DIALOG_TEXT:String = TextKey.BUY_BEGINNERS_PACKAGE_COMMAND_REGISTER_DIALOG;//"BuyBeginnersPackageCommand.registerDialog"
 
@@ -36,8 +34,7 @@ public class BuyBeginnersPackageCommand
         public var openMoneyWindow:OpenMoneyWindowSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.account.isRegistered())
             {
                 this.openAccountSpecificPaymentScreen();
@@ -45,11 +42,10 @@ public class BuyBeginnersPackageCommand
             else
             {
                 this.promptUserToRegisterAndAbort();
-            }
+            };
         }
 
-        private function openAccountSpecificPaymentScreen():void
-        {
+        private function openAccountSpecificPaymentScreen():void{
             if (((this.account is WebAccount) || (this.account is KabamAccount)))
             {
                 this.openMoneyWindow.dispatch();
@@ -57,18 +53,16 @@ public class BuyBeginnersPackageCommand
             else
             {
                 this.makePaymentImmediately();
-            }
+            };
         }
 
-        private function makePaymentImmediately():void
-        {
+        private function makePaymentImmediately():void{
             var _local_1:PaymentData = new PaymentData();
             _local_1.offer = this.model.getOffer();
             this.makePayment.dispatch(_local_1);
         }
 
-        private function promptUserToRegisterAndAbort():void
-        {
+        private function promptUserToRegisterAndAbort():void{
             this.openDialog.dispatch(new RegisterPromptDialog(REGISTER_DIALOG_TEXT));
         }
 

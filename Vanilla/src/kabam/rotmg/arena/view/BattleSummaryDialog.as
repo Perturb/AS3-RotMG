@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.BattleSummaryDialog
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
@@ -18,8 +17,7 @@ import kabam.rotmg.util.components.DialogBackground;
 
 import org.osflash.signals.Signal;
 
-public class BattleSummaryDialog extends Sprite 
-    {
+public class BattleSummaryDialog extends Sprite {
 
         private const WIDTH:int = 264;
         private const HEIGHT:int = 302;
@@ -33,8 +31,7 @@ public class BattleSummaryDialog extends Sprite
         private const background:DialogBackground = makeBackground();
         private const splashArt:* = makeSplashArt();
 
-        public function BattleSummaryDialog()
-        {
+        public function BattleSummaryDialog(){
             this.titleText = this.makeTitle();
             this.closeButton = this.makeButton();
             super();
@@ -44,68 +41,60 @@ public class BattleSummaryDialog extends Sprite
             this.makeVerticalDivide();
         }
 
-        private function makeBackground():DialogBackground
-        {
+        private function makeBackground():DialogBackground{
             var _local_1:DialogBackground = new DialogBackground();
             _local_1.draw(this.WIDTH, this.HEIGHT);
             addChild(_local_1);
             return (_local_1);
         }
 
-        public function positionThis():void
-        {
+        public function positionThis():void{
             x = ((stage.stageWidth - this.WIDTH) * 0.5);
             y = ((stage.stageHeight - this.HEIGHT) * 0.5);
         }
 
-        public function setCurrentRun(_arg_1:int, _arg_2:int):void
-        {
+        public function setCurrentRun(_arg_1:int, _arg_2:int):void{
             if (this.leftSummary)
             {
                 removeChild(this.leftSummary);
-            }
+            };
             this.leftSummary = new BattleSummaryText(TextKey.BATTLE_SUMMARY_CURRENT_SUBTITLE, _arg_1, _arg_2);
             this.leftSummary.y = ((60 - (this.leftSummary.height / 2)) + 132);
             this.leftSummary.x = ((this.WIDTH / 4) - (this.leftSummary.width / 2));
             addChild(this.leftSummary);
         }
 
-        public function setBestRun(_arg_1:int, _arg_2:int):void
-        {
+        public function setBestRun(_arg_1:int, _arg_2:int):void{
             if (this.rightSummary)
             {
                 removeChild(this.rightSummary);
-            }
+            };
             this.rightSummary = new BattleSummaryText(TextKey.BATTLE_SUMMARY_BEST_SUBTITLE, _arg_1, _arg_2);
             this.rightSummary.y = ((60 - (this.rightSummary.height / 2)) + 132);
             this.rightSummary.x = (((this.WIDTH / 4) - (this.rightSummary.width / 2)) + (this.WIDTH / 2));
             addChild(this.rightSummary);
         }
 
-        private function closeClicked(_arg_1:MouseEvent):void
-        {
+        private function closeClicked(_arg_1:MouseEvent):void{
             this.closeButton.removeEventListener(MouseEvent.CLICK, this.closeClicked);
             this.close.dispatch();
         }
 
-        private function makeVerticalDivide():void
-        {
+        private function makeVerticalDivide():void{
             this.background.graphics.lineStyle();
             this.background.graphics.beginFill(0x666666, 1);
             this.background.graphics.drawRect((this.WIDTH / 2), 132, 2, 120);
             this.background.graphics.endFill();
         }
 
-        private function drawHorizontalDivide(_arg_1:int):void
-        {
+        private function drawHorizontalDivide(_arg_1:int):void{
             this.background.graphics.lineStyle();
             this.background.graphics.beginFill(0x666666, 1);
             this.background.graphics.drawRect(1, _arg_1, (this.background.width - 2), 2);
             this.background.graphics.endFill();
         }
 
-        private function makeSplashArt():*
-        {
+        private function makeSplashArt():*{
             var _local_1:* = new this.BattleSummarySplash();
             _local_1.y = 27;
             _local_1.x = 2;
@@ -113,8 +102,7 @@ public class BattleSummaryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeTitle():StaticTextDisplay
-        {
+        private function makeTitle():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setSize(18).setBold(true).setColor(0xB3B3B3);
@@ -126,8 +114,7 @@ public class BattleSummaryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeButton():StaticTextButton
-        {
+        private function makeButton():StaticTextButton{
             var _local_1:StaticTextButton;
             _local_1 = new StaticTextButton(16, TextKey.BATTLE_SUMMARY_CLOSE, 100);
             _local_1.addEventListener(MouseEvent.CLICK, this.closeClicked);

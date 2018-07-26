@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.tos.popups.buttons.RefuseButtonMediator
 
-package io.decagames.rotmg.tos.popups.buttons
-{
+package io.decagames.rotmg.tos.popups.buttons{
 import io.decagames.rotmg.tos.popups.RefusePopup;
 import io.decagames.rotmg.ui.buttons.BaseButton;
 import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
@@ -12,8 +11,7 @@ import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class RefuseButtonMediator extends Mediator 
-    {
+public class RefuseButtonMediator extends Mediator {
 
         [Inject]
         public var view:RefuseButton;
@@ -23,18 +21,15 @@ public class RefuseButtonMediator extends Mediator
         public var showPopupSignal:ShowPopupSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.clickSignal.add(this.clickHandler);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.clickSignal.remove(this.clickHandler);
         }
 
-        private function clickHandler(_arg_1:BaseButton):void
-        {
+        private function clickHandler(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch();
             this.showPopupSignal.dispatch(new RefusePopup());
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatInputNotAllowedMediator
 
-package kabam.rotmg.chat.view
-{
+package kabam.rotmg.chat.view{
 import flash.events.MouseEvent;
 
 import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
@@ -14,8 +13,7 @@ import kabam.rotmg.ui.signals.HUDModelInitialized;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ChatInputNotAllowedMediator extends Mediator 
-    {
+public class ChatInputNotAllowedMediator extends Mediator {
 
         [Inject]
         public var view:ChatInputNotAllowed;
@@ -29,14 +27,12 @@ public class ChatInputNotAllowedMediator extends Mediator
         public var hudModelInitialized:HUDModelInitialized;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.setup(this.model);
             this.hudModelInitialized.add(this.onHUDModelInitialized);
         }
 
-        private function onHUDModelInitialized():void
-        {
+        private function onHUDModelInitialized():void{
             if (((this.hudModel.gameSprite) && (this.hudModel.gameSprite.evalIsNotInCombatMapArea())))
             {
                 this.view.addEventListener(MouseEvent.CLICK, this.onClick);
@@ -45,16 +41,14 @@ public class ChatInputNotAllowedMediator extends Mediator
             {
                 this.view.mouseEnabled = false;
                 this.view.mouseChildren = false;
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.removeEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             this.openAccountManagement.dispatch();
         }
 

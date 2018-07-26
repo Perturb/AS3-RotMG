@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.model.CharacterModel
 
-package kabam.rotmg.characters.model
-{
+package kabam.rotmg.characters.model{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 
-public interface CharacterModel 
-    {
+public interface CharacterModel {
 
         function getCharacterCount():int;
         function getCharacter(_arg_1:int):SavedCharacter;

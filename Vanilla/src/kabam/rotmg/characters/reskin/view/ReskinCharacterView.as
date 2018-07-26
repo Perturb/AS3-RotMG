@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.view.ReskinCharacterView
 
-package kabam.rotmg.characters.reskin.view
-{
+package kabam.rotmg.characters.reskin.view{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import flash.display.CapsStyle;
@@ -26,8 +25,7 @@ import kabam.rotmg.util.graphics.ButtonLayoutHelper;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class ReskinCharacterView extends Sprite
-    {
+public class ReskinCharacterView extends Sprite {
 
         private static const MARGIN:int = 10;
         private static const DIALOG_WIDTH:int = (CharacterSkinListView.WIDTH + (MARGIN * 2));
@@ -48,22 +46,19 @@ public class ReskinCharacterView extends Sprite
         public var viewHeight:int;
 
 
-        private function makeLayoutWaiter():SignalWaiter
-        {
+        private function makeLayoutWaiter():SignalWaiter{
             var _local_1:SignalWaiter = new SignalWaiter();
             _local_1.complete.add(this.positionButtons);
             return (_local_1);
         }
 
-        private function makeBackground():DialogBackground
-        {
+        private function makeBackground():DialogBackground{
             var _local_1:DialogBackground = new DialogBackground();
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeTitle():TextFieldDisplayConcrete
-        {
+        private function makeTitle():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xB6B6B6).setTextWidth(DIALOG_WIDTH);
             _local_1.setAutoSize(TextFieldAutoSize.CENTER).setBold(true);
             _local_1.setStringBuilder(new LineBuilder().setParams(TextKey.RESKINCHARACTERVIEW_TITLE));
@@ -72,8 +67,7 @@ public class ReskinCharacterView extends Sprite
             return (_local_1);
         }
 
-        private function makeListView():CharacterSkinListView
-        {
+        private function makeListView():CharacterSkinListView{
             var _local_1:CharacterSkinListView;
             _local_1 = new CharacterSkinListView();
             _local_1.x = MARGIN;
@@ -82,46 +76,40 @@ public class ReskinCharacterView extends Sprite
             return (_local_1);
         }
 
-        private function makeCancelButton():DeprecatedTextButton
-        {
+        private function makeCancelButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton = new DeprecatedTextButton(BUTTON_FONT, TextKey.RESKINCHARACTERVIEW_CANCEL, BUTTON_WIDTH);
             addChild(_local_1);
             this.layoutListener.push(_local_1.textChanged);
             return (_local_1);
         }
 
-        private function makeSelectButton():DeprecatedTextButton
-        {
+        private function makeSelectButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton = new DeprecatedTextButton(BUTTON_FONT, TextKey.RESKINCHARACTERVIEW_SELECT, BUTTON_WIDTH);
             addChild(_local_1);
             this.layoutListener.push(_local_1.textChanged);
             return (_local_1);
         }
 
-        public function setList(_arg_1:Vector.<DisplayObject>):void
-        {
+        public function setList(_arg_1:Vector.<DisplayObject>):void{
             this.list.setItems(_arg_1);
             this.getDialogHeight();
             this.resizeBackground();
             this.positionButtons();
         }
 
-        private function getDialogHeight():void
-        {
+        private function getDialogHeight():void{
             this.viewHeight = Math.min((CharacterSkinListView.HEIGHT + MARGIN), this.list.getListHeight());
             this.viewHeight = (this.viewHeight + ((BUTTONS_HEIGHT + (MARGIN * 2)) + TITLE_OFFSET));
         }
 
-        private function resizeBackground():void
-        {
+        private function resizeBackground():void{
             this.background.draw(DIALOG_WIDTH, this.viewHeight);
             this.background.graphics.lineStyle(2, 0x5B5B5B, 1, false, LineScaleMode.NONE, CapsStyle.NONE, JointStyle.BEVEL);
             this.background.graphics.moveTo(1, TITLE_OFFSET);
             this.background.graphics.lineTo((DIALOG_WIDTH - 1), TITLE_OFFSET);
         }
 
-        private function positionButtons():void
-        {
+        private function positionButtons():void{
             var _local_1:ButtonLayoutHelper = new ButtonLayoutHelper();
             _local_1.layout(DIALOG_WIDTH, this.cancel, this.select);
             this.cancel.y = (this.select.y = (this.viewHeight - BUTTONS_HEIGHT));

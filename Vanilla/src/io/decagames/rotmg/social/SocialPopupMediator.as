@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.SocialPopupMediator
 
-package io.decagames.rotmg.social
-{
+package io.decagames.rotmg.social{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import flash.events.KeyboardEvent;
@@ -35,8 +34,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class SocialPopupMediator extends Mediator 
-    {
+public class SocialPopupMediator extends Mediator {
 
         [Inject]
         public var view:SocialPopupView;
@@ -61,8 +59,7 @@ public class SocialPopupMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.socialModel.socialDataSignal.add(this.onDataLoaded);
             this.view.tabs.tabSelectedSignal.add(this.onTabSelected);
             this.refreshSignal.add(this.refreshListHandler);
@@ -74,14 +71,13 @@ public class SocialPopupMediator extends Mediator
             this.view.search.addEventListener(KeyboardEvent.KEY_UP, this.onSearchHandler);
         }
 
-        private function onTabSelected(_arg_1:String):void
-        {
+        private function onTabSelected(_arg_1:String):void{
             if (_arg_1 == SocialPopupView.FRIEND_TAB_LABEL)
             {
                 if (!this._isFriendsListLoaded)
                 {
                     this.socialModel.loadFriendsData();
-                }
+                };
             }
             else
             {
@@ -90,13 +86,12 @@ public class SocialPopupMediator extends Mediator
                     if (!this._isGuildListLoaded)
                     {
                         this.socialModel.loadGuildData();
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function onDataLoaded(_arg_1:String, _arg_2:Boolean, _arg_3:String):void
-        {
+        private function onDataLoaded(_arg_1:String, _arg_2:Boolean, _arg_3:String):void{
             switch (_arg_1)
             {
                 case SocialDataSignal.FRIENDS_DATA_LOADED:
@@ -110,18 +105,17 @@ public class SocialPopupMediator extends Mediator
                     {
                         this._isFriendsListLoaded = false;
                         this.showError(_arg_1, _arg_3);
-                    }
+                    };
                     return;
                 case SocialDataSignal.GUILD_DATA_LOADED:
                     this.view.clearGuildList();
                     this.showGuild();
                     this._isGuildListLoaded = true;
                     return;
-            }
+            };
         }
 
-        private function createAddButtonTooltip():void
-        {
+        private function createAddButtonTooltip():void{
             this.addFriendToolTip = new TextToolTip(0x363636, 0x9B9B9B, "Add a friend", "Click to add a friend", 200);
             this.hoverTooltipDelegate = new HoverTooltipDelegate();
             this.hoverTooltipDelegate.setShowToolTipSignal(this.showTooltipSignal);
@@ -130,13 +124,11 @@ public class SocialPopupMediator extends Mediator
             this.hoverTooltipDelegate.tooltip = this.addFriendToolTip;
         }
 
-        private function addButtonHandler(_arg_1:BaseButton):void
-        {
+        private function addButtonHandler(_arg_1:BaseButton):void{
             this.showPopupSignal.dispatch(new InviteFriendPopup());
         }
 
-        private function refreshListHandler(_arg_1:String, _arg_2:Boolean):void
-        {
+        private function refreshListHandler(_arg_1:String, _arg_2:Boolean):void{
             if (_arg_1 == RefreshListSignal.CONTEXT_FRIENDS_LIST)
             {
                 this.view.search.reset();
@@ -149,18 +141,16 @@ public class SocialPopupMediator extends Mediator
                 {
                     this.view.clearGuildList();
                     this.showGuild();
-                }
-            }
+                };
+            };
         }
 
-        private function onSearchHandler(_arg_1:KeyboardEvent):void
-        {
+        private function onSearchHandler(_arg_1:KeyboardEvent):void{
             this.view.clearFriendsList();
             this.showFriends(this.view.search.text);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.closeButton.dispose();
             this.refreshSignal.remove(this.refreshListHandler);
             this.view.addButton.clickSignal.remove(this.addButtonHandler);
@@ -170,13 +160,11 @@ public class SocialPopupMediator extends Mediator
             this.hoverTooltipDelegate = null;
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 
-        private function showFriends(_arg_1:String=""):void
-        {
+        private function showFriends(_arg_1:String=""):void{
             var _local_3:Vector.<FriendVO>;
             var _local_4:FriendVO;
             var _local_5:Vector.<FriendVO>;
@@ -194,25 +182,24 @@ public class SocialPopupMediator extends Mediator
                 {
                     this.view.addInvites(new FriendListItem(_local_5[_local_7], SocialItemState.INVITE));
                     _local_7++;
-                }
+                };
                 this.view.showInviteIndicator(true, SocialPopupView.FRIEND_TAB_LABEL);
             }
             else
             {
                 this.view.showInviteIndicator(false, SocialPopupView.FRIEND_TAB_LABEL);
-            }
+            };
             _local_3 = ((_local_2) ? this.socialModel.getFilterFriends(_arg_1) : this.socialModel.friendsList);
             this.view.addFriendCategory((((("Friends (" + this.socialModel.numberOfFriends) + "/") + SocialConfig.MAX_FRIENDS) + ")"));
             for each (_local_4 in _local_3)
             {
                 _local_8 = ((_local_4.isOnline) ? SocialItemState.ONLINE : SocialItemState.OFFLINE);
                 this.view.addFriend(new FriendListItem(_local_4, _local_8));
-            }
+            };
             this.view.addFriendCategory("");
         }
 
-        private function showError(_arg_1:String, _arg_2:String):void
-        {
+        private function showError(_arg_1:String, _arg_2:String):void{
             switch (_arg_1)
             {
                 case SocialDataSignal.FRIENDS_DATA_LOADED:
@@ -221,11 +208,10 @@ public class SocialPopupMediator extends Mediator
                 case SocialDataSignal.FRIEND_INVITATIONS_LOADED:
                     this.view.addFriendCategory(("Invitation Error: " + _arg_2));
                     return;
-            }
+            };
         }
 
-        private function showGuild():void
-        {
+        private function showGuild():void{
             var _local_4:Vector.<GuildMemberVO>;
             var _local_5:int;
             var _local_6:int;
@@ -247,13 +233,13 @@ public class SocialPopupMediator extends Mediator
                     _local_8 = ((_local_7.isOnline) ? SocialItemState.ONLINE : SocialItemState.OFFLINE);
                     this.view.addGuildMember(new GuildListItem(_local_7, _local_8, _local_1.myRank));
                     _local_6++;
-                }
+                };
                 this.view.addGuildCategory("");
             }
             else
             {
                 this.view.addGuildDefaultMessage(SocialPopupView.DEFAULT_NO_GUILD_MESSAGE);
-            }
+            };
         }
 
 

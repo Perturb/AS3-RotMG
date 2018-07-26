@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.minimap.MiniMapConfig
 
-package kabam.rotmg.minimap
-{
+package kabam.rotmg.minimap{
 import io.decagames.rotmg.classes.NewClassUnlockNotification;
 import io.decagames.rotmg.classes.NewClassUnlockNotificationMediator;
 import io.decagames.rotmg.classes.NewClassUnlockSignal;
@@ -22,8 +21,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class MiniMapConfig implements IConfig 
-    {
+public class MiniMapConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -33,8 +31,7 @@ public class MiniMapConfig implements IConfig
         public var mediatorMap:IMediatorMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(MiniMapZoomSignal).asSingleton();
             this.injector.map(SetMiniMapMapSignal).asSingleton();
             this.injector.map(UpdateGameObjectTileSignal).asSingleton();

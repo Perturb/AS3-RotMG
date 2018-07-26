@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.ArenaConfig
 
-package kabam.rotmg.arena
-{
+package kabam.rotmg.arena{
 import kabam.rotmg.arena.control.ArenaDeathCommand;
 import kabam.rotmg.arena.control.ArenaDeathSignal;
 import kabam.rotmg.arena.control.ClearCurrentRunCommand;
@@ -43,8 +42,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class ArenaConfig implements IConfig
-    {
+public class ArenaConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -56,8 +54,7 @@ public class ArenaConfig implements IConfig
         public var commandCenter:ICommandCenter;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(GetArenaLeaderboardTask);
             this.injector.map(GetBestArenaRunTask);
             this.injector.map(CurrentArenaRunModel).asSingleton();

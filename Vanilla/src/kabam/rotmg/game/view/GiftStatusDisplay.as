@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.GiftStatusDisplay
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
@@ -24,8 +23,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 import kabam.rotmg.ui.UIUtils;
 
-public class GiftStatusDisplay extends Sprite implements TooltipAble
-    {
+public class GiftStatusDisplay extends Sprite implements TooltipAble {
 
         public static const IMAGE_NAME:String = "lofiObj2";
         public static const IMAGE_ID:int = 127;
@@ -42,8 +40,7 @@ public class GiftStatusDisplay extends Sprite implements TooltipAble
         private var tooltip:TextToolTip = new TextToolTip(0x363636, 0x9B9B9B, null, TextKey.BUYPACKAGETASK_NEWGIFTS, 120);
         private var _isOpen:Boolean;
 
-        public function GiftStatusDisplay()
-        {
+        public function GiftStatusDisplay(){
             mouseChildren = false;
             this.giftOpenProcessedTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
             this.background = UIUtils.makeStaticHUDBackground();
@@ -63,53 +60,46 @@ public class GiftStatusDisplay extends Sprite implements TooltipAble
             this.text.y = (_local_1.bottom - _local_2);
         }
 
-        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
-        {
+        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void{
             this.hoverTooltipDelegate.setShowToolTipSignal(_arg_1);
         }
 
-        public function getShowToolTip():ShowTooltipSignal
-        {
+        public function getShowToolTip():ShowTooltipSignal{
             return (this.hoverTooltipDelegate.getShowToolTip());
         }
 
-        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void
-        {
+        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void{
             this.hoverTooltipDelegate.setHideToolTipsSignal(_arg_1);
         }
 
-        public function getHideToolTips():HideTooltipsSignal
-        {
+        public function getHideToolTips():HideTooltipsSignal{
             return (this.hoverTooltipDelegate.getHideToolTips());
         }
 
-        public function drawAsOpen():void
-        {
+        public function drawAsOpen():void{
             this._isOpen = true;
             addChild(this.background);
             addChild(this.text);
             addChild(this.bitmap);
         }
 
-        public function drawAsClosed():void
-        {
+        public function drawAsClosed():void{
             if (((this.background) && (this.background.parent == this)))
             {
                 removeChild(this.background);
-            }
+            };
             if (((this.text) && (this.text.parent == this)))
             {
                 removeChild(this.text);
-            }
+            };
             if (((this.bitmap) && (this.bitmap.parent == this)))
             {
                 removeChild(this.bitmap);
-            }
+            };
             this._isOpen = false;
         }
 
-        public function get isOpen():Boolean
-        {
+        public function get isOpen():Boolean{
             return (this._isOpen);
         }
 

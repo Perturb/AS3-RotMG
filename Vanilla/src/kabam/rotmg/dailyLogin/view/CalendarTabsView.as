@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.CalendarTabsView
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.util.GraphicsUtil;
 
 import flash.display.CapsStyle;
@@ -19,8 +18,7 @@ import flash.geom.Rectangle;
 
 import kabam.rotmg.dailyLogin.config.CalendarSettings;
 
-public class CalendarTabsView extends Sprite 
-    {
+public class CalendarTabsView extends Sprite {
 
         private var fill_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 1);
         private var fillTransparent_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 0);
@@ -32,14 +30,12 @@ public class CalendarTabsView extends Sprite
         private var calendar:CalendarView;
 
 
-        public function init(_arg_1:Rectangle):void
-        {
+        public function init(_arg_1:Rectangle):void{
             this.modalRectangle = _arg_1;
             this.tabs = new Vector.<CalendarTabButton>();
         }
 
-        public function addCalendar(_arg_1:String, _arg_2:String, _arg_3:String):CalendarTabButton
-        {
+        public function addCalendar(_arg_1:String, _arg_2:String, _arg_3:String):CalendarTabButton{
             var _local_4:CalendarTabButton;
             _local_4 = new CalendarTabButton(_arg_1, _arg_3, _arg_2, CalendarTabButton.STATE_IDLE, this.tabs.length);
             this.addChild(_local_4);
@@ -48,8 +44,7 @@ public class CalendarTabsView extends Sprite
             return (_local_4);
         }
 
-        public function selectTab(_arg_1:String):void
-        {
+        public function selectTab(_arg_1:String):void{
             var _local_2:CalendarTabButton;
             for each (_local_2 in this.tabs)
             {
@@ -60,32 +55,29 @@ public class CalendarTabsView extends Sprite
                 else
                 {
                     _local_2.state = CalendarTabButton.STATE_IDLE;
-                }
-            }
+                };
+            };
             if (this.calendar)
             {
                 removeChild(this.calendar);
-            }
+            };
             this.calendar = new CalendarView();
             addChild(this.calendar);
             this.calendar.x = CalendarSettings.DAILY_LOGIN_TABS_PADDING;
         }
 
-        public function drawTabs():void
-        {
+        public function drawTabs():void{
             this.drawBorder();
         }
 
-        private function drawBorder():void
-        {
+        private function drawBorder():void{
             var _local_1:Sprite = new Sprite();
             this.drawRectangle(_local_1, this.modalRectangle.width, this.modalRectangle.height);
             addChild(_local_1);
             _local_1.y = CalendarSettings.TABS_HEIGHT;
         }
 
-        private function drawRectangle(_arg_1:Sprite, _arg_2:int, _arg_3:int):void
-        {
+        private function drawRectangle(_arg_1:Sprite, _arg_2:int, _arg_3:int):void{
             _arg_1.addChild(CalendarDayBox.drawRectangleWithCuts([0, 0, 1, 1], _arg_2, _arg_3, 0x363636, 1, this.graphicsDataBackgroundTransparent, this.path_));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.mediators.ArenaPortalPanelMediator
 
-package com.company.assembleegameclient.ui.panels.mediators
-{
+package com.company.assembleegameclient.ui.panels.mediators{
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 import com.company.assembleegameclient.ui.panels.ArenaPortalPanel;
 import com.company.assembleegameclient.util.Currency;
@@ -30,8 +29,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ArenaPortalPanelMediator extends Mediator 
-    {
+public class ArenaPortalPanelMediator extends Mediator {
 
         public static const TEXT:String = "SellableObjectPanelMediator.text";
 
@@ -58,13 +56,11 @@ public class ArenaPortalPanelMediator extends Mediator
         private var dialog:Dialog;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.purchase.add(this.onPurchase);
         }
 
-        private function onPurchase(_arg_1:int):void
-        {
+        private function onPurchase(_arg_1:int):void{
             if ((_arg_1 == Currency.GOLD))
             {
                 this.purchaseWithGold();
@@ -72,11 +68,10 @@ public class ArenaPortalPanelMediator extends Mediator
             else
             {
                 this.purchaseWithFame();
-            }
+            };
         }
 
-        private function purchaseWithFame():void
-        {
+        private function purchaseWithFame():void{
             var _local_1:GetBestArenaRunTask;
             var _local_2:EnterArena;
             if (this.gameModel.player.nameChosen_)
@@ -94,11 +89,10 @@ public class ArenaPortalPanelMediator extends Mediator
                 this.dialog = new Dialog(TextKey.MUST_BE_NAMED_TITLE, TextKey.MUST_BE_NAMED_DESC, TextKey.ERRORDIALOG_OK, null, null);
                 this.dialog.addEventListener(Dialog.LEFT_BUTTON, this.onNoNameDialogClose);
                 this.openDialog.dispatch(this.dialog);
-            }
+            };
         }
 
-        private function purchaseWithGold():void
-        {
+        private function purchaseWithGold():void{
             var _local_1:GetBestArenaRunTask;
             var _local_2:EnterArena;
             if (!this.account.isRegistered())
@@ -128,17 +122,16 @@ public class ArenaPortalPanelMediator extends Mediator
                         _local_2.currency = Currency.GOLD;
                         this.socketServer.sendMessage(_local_2);
                         this.exitSignal.dispatch();
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function onNoNameDialogClose(_arg_1:Event):void
-        {
+        private function onNoNameDialogClose(_arg_1:Event):void{
             if (((this.dialog) && (this.dialog.hasEventListener(Dialog.LEFT_BUTTON))))
             {
                 this.dialog.removeEventListener(Dialog.LEFT_BUTTON, this.onNoNameDialogClose);
-            }
+            };
             this.dialog = null;
             this.closeDialog.dispatch();
         }

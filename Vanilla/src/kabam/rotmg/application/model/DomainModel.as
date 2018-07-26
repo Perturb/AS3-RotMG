@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.model.DomainModel
 
-package kabam.rotmg.application.model
-{
+package kabam.rotmg.application.model{
 import flash.net.LocalConnection;
 import flash.system.Security;
 
-public class DomainModel
-    {
+public class DomainModel {
 
         private const LOCALHOST:String = "localhost";
         private const PRODUCTION_WHITELIST:Array = ["www.realmofthemadgod.com", "realmofthemadgodhrd.appspot.com", "realmofthemadgod.appspot.com"];
@@ -23,40 +21,35 @@ public class DomainModel
         private var localDomain:String;
 
 
-        public function applyDomainSecurity():void
-        {
+        public function applyDomainSecurity():void{
             var _local_1:String;
             for each (_local_1 in this.WHITELIST)
             {
                 Security.allowDomain(_local_1);
-            }
+            };
         }
 
-        public function isLocalDomainValid():Boolean
-        {
+        public function isLocalDomainValid():Boolean{
             return ((this.client.isDesktop()) || (this.isLocalDomainInWhiteList()));
         }
 
-        public function isLocalDomainProduction():Boolean
-        {
+        public function isLocalDomainProduction():Boolean{
             var _local_1:String = this.getLocalDomain();
             return (!(this.PRODUCTION_WHITELIST.indexOf(_local_1) == -1));
         }
 
-        private function isLocalDomainInWhiteList():Boolean
-        {
+        private function isLocalDomainInWhiteList():Boolean{
             var _local_3:String;
             var _local_1:String = this.getLocalDomain();
             var _local_2:* = (_local_1 == this.LOCALHOST);
             for each (_local_3 in this.WHITELIST)
             {
                 _local_2 = ((_local_2) || (_local_1 == _local_3));
-            }
+            };
             return (_local_2);
         }
 
-        private function getLocalDomain():String
-        {
+        private function getLocalDomain():String{
             return (this.localDomain = ((this.localDomain) || (new LocalConnection().domain)));
         }
 

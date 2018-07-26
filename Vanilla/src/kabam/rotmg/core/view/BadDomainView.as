@@ -1,21 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.BadDomainView
 
-package kabam.rotmg.core.view
-{
+package kabam.rotmg.core.view{
 import flash.display.Sprite;
 import flash.text.TextField;
 import flash.text.TextFormat;
 
-public class BadDomainView extends Sprite 
-    {
+public class BadDomainView extends Sprite {
 
         private static const BAD_DOMAIN_TEXT:String = ((('<p align="center"><font color="#FFFFFF">Play at: ' + '<br/></font><font color="#7777EE">') + '<a href="http://www.realmofthemadgod.com/">') + "www.realmofthemadgod.com</font></a></p>");
 
-        public function BadDomainView()
-        {
+        public function BadDomainView(){
             var _local_1:TextField = new TextField();
             _local_1.selectable = false;
             var _local_2:TextFormat = new TextFormat();

@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.commands.KongregateOpenAccountInfoCommand
 
-package kabam.rotmg.account.kongregate.commands
-{
+package kabam.rotmg.account.kongregate.commands{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog;
 import kabam.rotmg.account.kongregate.view.KongregateApi;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class KongregateOpenAccountInfoCommand 
-    {
+public class KongregateOpenAccountInfoCommand {
 
         [Inject]
         public var account:Account;
@@ -21,8 +19,7 @@ public class KongregateOpenAccountInfoCommand
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.account.isRegistered())
             {
                 this.openDialog.dispatch(new KongregateAccountDetailDialog());
@@ -30,7 +27,7 @@ public class KongregateOpenAccountInfoCommand
             else
             {
                 this.api.showRegistrationDialog();
-            }
+            };
         }
 
 

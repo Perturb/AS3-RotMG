@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.EnterGameCommand
 
-package kabam.rotmg.ui.commands
-{
+package kabam.rotmg.ui.commands{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
 import kabam.rotmg.account.core.Account;
@@ -17,8 +16,7 @@ import kabam.rotmg.servers.api.ServerModel;
 import kabam.rotmg.ui.noservers.NoServersDialogFactory;
 import kabam.rotmg.ui.view.AgeVerificationDialog;
 
-public class EnterGameCommand 
-    {
+public class EnterGameCommand {
 
         private const DEFAULT_CHARACTER:int = 782;
 
@@ -38,8 +36,7 @@ public class EnterGameCommand
         public var noServersDialogFactory:NoServersDialogFactory;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (!this.servers.isServerAvailable())
             {
                 this.showNoServersDialog();
@@ -59,23 +56,20 @@ public class EnterGameCommand
                     else
                     {
                         this.showCurrentCharacterScreen();
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function showCurrentCharacterScreen():void
-        {
+        private function showCurrentCharacterScreen():void{
             this.setScreenWithValidData.dispatch(new CharacterSelectionAndNewsScreen());
         }
 
-        private function launchGame():void
-        {
+        private function launchGame():void{
             this.playGame.dispatch(this.makeGameInitData());
         }
 
-        private function makeGameInitData():GameInitData
-        {
+        private function makeGameInitData():GameInitData{
             var _local_1:GameInitData = new GameInitData();
             _local_1.createCharacter = true;
             _local_1.charId = this.model.getNextCharId();
@@ -84,13 +78,11 @@ public class EnterGameCommand
             return (_local_1);
         }
 
-        private function showAgeVerificationDialog():void
-        {
+        private function showAgeVerificationDialog():void{
             this.openDialog.dispatch(new AgeVerificationDialog());
         }
 
-        private function showNoServersDialog():void
-        {
+        private function showNoServersDialog():void{
             this.openDialog.dispatch(this.noServersDialogFactory.makeDialog());
         }
 

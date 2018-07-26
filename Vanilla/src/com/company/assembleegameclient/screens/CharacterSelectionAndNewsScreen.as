@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.assembleegameclient.ui.DeprecatedClickableText;
 import com.company.assembleegameclient.ui.Scrollbar;
 
@@ -32,8 +31,7 @@ import kabam.rotmg.ui.view.components.ScreenBase;
 
 import org.osflash.signals.Signal;
 
-public class CharacterSelectionAndNewsScreen extends Sprite 
-    {
+public class CharacterSelectionAndNewsScreen extends Sprite {
 
         private static const NEWS_X:int = 475;
         private static const TAB_UNSELECTED:uint = 0xB3B3B3;
@@ -70,27 +68,24 @@ public class CharacterSelectionAndNewsScreen extends Sprite
         private var classesButton:TitleMenuOption = ButtonFactory.getClassesButton();
         private var backButton:TitleMenuOption = ButtonFactory.getMainButton();
 
-        public function CharacterSelectionAndNewsScreen()
-        {
+        public function CharacterSelectionAndNewsScreen(){
             this.close = this.backButton.clicked;
             this.showClasses = this.classesButton.clicked;
             addChild(new ScreenBase());
             addChild(new AccountScreen());
         }
 
-        public function initialize(_arg_1:PlayerModel):void
-        {
+        public function initialize(_arg_1:PlayerModel):void{
             if (this.isInitialized)
             {
                 return;
-            }
+            };
             this.isInitialized = true;
             this.model = _arg_1;
             this.createDisplayAssets(_arg_1);
         }
 
-        private function createDisplayAssets(_arg_1:PlayerModel):void
-        {
+        private function createDisplayAssets(_arg_1:PlayerModel):void{
             this.createNameText();
             this.createCreditDisplay();
             this.createNewsText();
@@ -102,17 +97,16 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             {
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.createOpenGraveyardText();
-            }
+            };
             this.createCharacterListChar();
             this.makeMenuOptionsBar();
             if (!_arg_1.isNameChosen())
             {
                 this.createChooseNameLink();
-            }
+            };
         }
 
-        private function makeMenuOptionsBar():void
-        {
+        private function makeMenuOptionsBar():void{
             this.playButton.clicked.add(this.onPlayClick);
             this.menuOptionsBar = new MenuOptionsBar();
             this.menuOptionsBar.addButton(this.playButton, MenuOptionsBar.CENTER);
@@ -121,8 +115,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.menuOptionsBar);
         }
 
-        private function createNews():void
-        {
+        private function createNews():void{
             var _local_1:NewsView;
             _local_1 = new NewsView();
             _local_1.x = NEWS_X;
@@ -130,8 +123,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(_local_1);
         }
 
-        private function createScrollbar():void
-        {
+        private function createScrollbar():void{
             this.scrollBar = new Scrollbar(16, 399);
             this.scrollBar.x = 443;
             this.scrollBar.y = 113;
@@ -140,8 +132,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.scrollBar);
         }
 
-        private function createNewsText():void
-        {
+        private function createNewsText():void{
             this.newsText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
             this.newsText.setBold(true);
             this.newsText.setStringBuilder(new LineBuilder().setParams(TextKey.CHARACTER_SELECTION_NEWS));
@@ -151,8 +142,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.newsText);
         }
 
-        private function createCharacterListChar():void
-        {
+        private function createCharacterListChar():void{
             this.characterListType = CharacterList.TYPE_CHAR_SELECT;
             this.characterList = new CharacterList(this.model, CharacterList.TYPE_CHAR_SELECT);
             this.characterList.x = this.CHARACTER_LIST_X_POS;
@@ -161,12 +151,11 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             if (this.characterListHeight > this.SCROLLBAR_REQUIREMENT_HEIGHT)
             {
                 this.createScrollbar();
-            }
+            };
             addChild(this.characterList);
         }
 
-        private function createCharacterListGrave():void
-        {
+        private function createCharacterListGrave():void{
             this.characterListType = CharacterList.TYPE_GRAVE_SELECT;
             this.characterList = new CharacterList(this.model, CharacterList.TYPE_GRAVE_SELECT);
             this.characterList.x = this.CHARACTER_LIST_X_POS;
@@ -175,26 +164,24 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             if (this.characterListHeight > this.SCROLLBAR_REQUIREMENT_HEIGHT)
             {
                 this.createScrollbar();
-            }
+            };
             addChild(this.characterList);
         }
 
-        private function removeCharacterList():void
-        {
+        private function removeCharacterList():void{
             if (this.characterList != null)
             {
                 removeChild(this.characterList);
                 this.characterList = null;
-            }
+            };
             if (this.scrollBar != null)
             {
                 removeChild(this.scrollBar);
                 this.scrollBar = null;
-            }
+            };
         }
 
-        private function createOpenCharactersText():void
-        {
+        private function createOpenCharactersText():void{
             this.openCharactersText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
             this.openCharactersText.setBold(true);
             this.openCharactersText.setStringBuilder(new LineBuilder().setParams(TextKey.CHARACTER_SELECTION_CHARACTERS));
@@ -205,19 +192,17 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.openCharactersText);
         }
 
-        private function onOpenCharacters(_arg_1:MouseEvent):void
-        {
+        private function onOpenCharacters(_arg_1:MouseEvent):void{
             if (this.characterListType != CharacterList.TYPE_CHAR_SELECT)
             {
                 this.removeCharacterList();
                 this.openCharactersText.setColor(TAB_SELECTED);
                 this.openGraveyardText.setColor(TAB_UNSELECTED);
                 this.createCharacterListChar();
-            }
+            };
         }
 
-        private function createOpenGraveyardText():void
-        {
+        private function createOpenGraveyardText():void{
             this.openGraveyardText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
             this.openGraveyardText.setBold(true);
             this.openGraveyardText.setStringBuilder(new LineBuilder().setParams(TextKey.CHARACTER_SELECTION_GRAVEYARD));
@@ -228,19 +213,17 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.openGraveyardText);
         }
 
-        private function onOpenGraveyard(_arg_1:MouseEvent):void
-        {
+        private function onOpenGraveyard(_arg_1:MouseEvent):void{
             if (this.characterListType != CharacterList.TYPE_GRAVE_SELECT)
             {
                 this.removeCharacterList();
                 this.openCharactersText.setColor(TAB_UNSELECTED);
                 this.openGraveyardText.setColor(TAB_SELECTED);
                 this.createCharacterListGrave();
-            }
+            };
         }
 
-        private function createCreditDisplay():void
-        {
+        private function createCreditDisplay():void{
             this.creditDisplay = new CreditDisplay();
             this.creditDisplay.draw(this.model.getCredits(), this.model.getFame());
             this.creditDisplay.x = this.getReferenceRectangle().width;
@@ -248,8 +231,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.creditDisplay);
         }
 
-        private function createChooseNameLink():void
-        {
+        private function createChooseNameLink():void{
             this.nameChooseLink_ = new DeprecatedClickableText(16, false, TextKey.CHARACTER_SELECTION_AND_NEWS_SCREEN_CHOOSE_NAME);
             this.nameChooseLink_.y = 50;
             this.nameChooseLink_.setAutoSize(TextFieldAutoSize.CENTER);
@@ -258,8 +240,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.nameChooseLink_);
         }
 
-        private function createNameText():void
-        {
+        private function createNameText():void{
             this.nameText = new TextFieldDisplayConcrete().setSize(22).setColor(0xB3B3B3);
             this.nameText.setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.nameText.setStringBuilder(new StaticStringBuilder(this.model.getName()));
@@ -269,18 +250,16 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.nameText);
         }
 
-        internal function getReferenceRectangle():Rectangle
-        {
+        internal function getReferenceRectangle():Rectangle{
             var _local_1:Rectangle = new Rectangle();
             if (stage)
             {
                 _local_1 = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
-            }
+            };
             return (_local_1);
         }
 
-        private function createBoundaryLines():void
-        {
+        private function createBoundaryLines():void{
             this.lines = new Shape();
             this.lines.graphics.clear();
             this.lines.graphics.lineStyle(2, 0x545454);
@@ -292,21 +271,18 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             addChild(this.lines);
         }
 
-        private function onChooseName(_arg_1:MouseEvent):void
-        {
+        private function onChooseName(_arg_1:MouseEvent):void{
             this.chooseName.dispatch();
         }
 
-        private function onScrollBarChange(_arg_1:Event):void
-        {
+        private function onScrollBarChange(_arg_1:Event):void{
             if (this.characterList != null)
             {
                 this.characterList.setPos((-(this.scrollBar.pos()) * (this.characterListHeight - 400)));
-            }
+            };
         }
 
-        public function showPackageButton():void
-        {
+        public function showPackageButton():void{
             this.packageButton = new PackageButton();
             this.packageButton.init();
             this.packageButton.x = 6;
@@ -315,16 +291,14 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             this.removeIfAble(this.beginnersPackageButton);
         }
 
-        private function removeIfAble(_arg_1:DisplayObject):void
-        {
+        private function removeIfAble(_arg_1:DisplayObject):void{
             if (((_arg_1) && (contains(_arg_1))))
             {
                 removeChild(_arg_1);
-            }
+            };
         }
 
-        private function onPlayClick():void
-        {
+        private function onPlayClick():void{
             if (this.model.getCharacterCount() == 0)
             {
                 this.newCharacter.dispatch();
@@ -332,18 +306,17 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             else
             {
                 this.playGame.dispatch();
-            }
+            };
         }
 
-        public function setName(_arg_1:String):void
-        {
+        public function setName(_arg_1:String):void{
             this.nameText.setStringBuilder(new StaticStringBuilder(this.model.getName()));
             this.nameText.x = ((this.getReferenceRectangle().width - this.nameText.width) * 0.5);
             if (this.nameChooseLink_)
             {
                 removeChild(this.nameChooseLink_);
                 this.nameChooseLink_ = null;
-            }
+            };
         }
 
 

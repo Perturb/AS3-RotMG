@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.hatching.PetHatchingDialog
 
-package io.decagames.rotmg.pets.popup.hatching
-{
+package io.decagames.rotmg.pets.popup.hatching{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.AnimatedChar;
 import com.company.assembleegameclient.util.AnimatedChars;
@@ -33,8 +32,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PetHatchingDialog extends ModalPopup
-    {
+public class PetHatchingDialog extends ModalPopup {
 
         private var contentInset:SliceScalingBitmap;
         private var eggImage:Bitmap;
@@ -48,8 +46,7 @@ public class PetHatchingDialog extends ModalPopup
         private var _okButton:SliceScalingButton;
         private var petName:String;
 
-        public function PetHatchingDialog(petName:String, petSkin:int, itemType:int, unlocked:Boolean, skinVO:SkinVO)
-        {
+        public function PetHatchingDialog(petName:String, petSkin:int, itemType:int, unlocked:Boolean, skinVO:SkinVO){
             super(270, 180, "Pet hatching!");
             this.unlockedSkin = unlocked;
             this._petSkin = petSkin;
@@ -85,8 +82,7 @@ public class PetHatchingDialog extends ModalPopup
             this.animateEgg(this.animationTimeline, this.eggImage, 0, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, 0);
             this.animateEgg(this.animationTimeline, this.eggImage, 20, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, 0.3);
             this.animateEgg(this.animationTimeline, this.eggImage, -20, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, 0);
-            this.animateEgg(this.animationTimeline, this.eggImage, 0, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, 0, function ():void
-            {
+            this.animateEgg(this.animationTimeline, this.eggImage, 0, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, 0, function ():void{
                 showPet();
             });
             this.animationTimeline.to(this.eggImage, AnimationConfig.HATCHING_EGG_ANIMATION_DURATION, {"transformAroundPoint":{
@@ -104,13 +100,11 @@ public class PetHatchingDialog extends ModalPopup
             addChild(this._okButton);
         }
 
-        public function get okButton():SliceScalingButton
-        {
+        public function get okButton():SliceScalingButton{
             return (this._okButton);
         }
 
-        private function getTypeBitmap():Bitmap
-        {
+        private function getTypeBitmap():Bitmap{
             var _local_1:String = ObjectLibrary.getIdFromType(this._petSkin);
             var _local_2:XML = ObjectLibrary.getXMLfromId(_local_1);
             var _local_3:String = _local_2.AnimatedTexture.File;
@@ -122,8 +116,7 @@ public class PetHatchingDialog extends ModalPopup
             return (new Bitmap(_local_7));
         }
 
-        private function showPet():void
-        {
+        private function showPet():void{
             var animationSpiral:SliceScalingBitmap;
             var whiteRectangle:Sprite;
             var spinDuration:Number;
@@ -145,8 +138,7 @@ public class PetHatchingDialog extends ModalPopup
             TweenLite.to(whiteRectangle, 0.1, {
                 "alpha":1,
                 "ease":Sine.easeIn,
-                "onComplete":function ():void
-                {
+                "onComplete":function ():void{
                     var textInfo:* = undefined;
                     animationContainer.removeChild(eggImage);
                     animationContainer.addChild(animationSpiral);
@@ -169,7 +161,7 @@ public class PetHatchingDialog extends ModalPopup
                         textInfo.wordWrap = true;
                         textInfo.text = "New Pet Skin added to your Wardrobe!";
                         animationContainer.addChild(textInfo);
-                    }
+                    };
                     animationContainer.addChild(whiteRectangle);
                     TweenLite.to(animationSpiral, spinDuration, {
                         "transformAroundCenter":{"rotation":spinAngle},
@@ -180,8 +172,7 @@ public class PetHatchingDialog extends ModalPopup
                         "delay":(spinDuration - 0.2),
                         "overwrite":false,
                         "ease":Sine.easeIn,
-                        "onComplete":function ():void
-                        {
+                        "onComplete":function ():void{
                             animationContainer.removeChild(whiteRectangle);
                             animationContainer.removeChild(animationSpiral);
                         }
@@ -196,8 +187,7 @@ public class PetHatchingDialog extends ModalPopup
             });
         }
 
-        private function animateEgg(_arg_1:TimelineMax, _arg_2:Bitmap, _arg_3:Number, _arg_4:Number, _arg_5:Number, _arg_6:Function=null):void
-        {
+        private function animateEgg(_arg_1:TimelineMax, _arg_2:Bitmap, _arg_3:Number, _arg_4:Number, _arg_5:Number, _arg_6:Function=null):void{
             _arg_1.to(_arg_2, _arg_4, {
                 "delay":_arg_5,
                 "transformAroundPoint":{
@@ -210,8 +200,7 @@ public class PetHatchingDialog extends ModalPopup
             });
         }
 
-        public function get petSkin():int
-        {
+        public function get petSkin():int{
             return (this._petSkin);
         }
 

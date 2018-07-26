@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.partyoverlay.PartyOverlay
 
-package com.company.assembleegameclient.map.partyoverlay
-{
+package com.company.assembleegameclient.map.partyoverlay{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.objects.Party;
@@ -13,15 +12,13 @@ import com.company.assembleegameclient.objects.Player;
 import flash.display.Sprite;
 import flash.events.Event;
 
-public class PartyOverlay extends Sprite
-    {
+public class PartyOverlay extends Sprite {
 
         public var map_:Map;
         public var partyMemberArrows_:Vector.<PlayerArrow> = null;
         public var questArrow_:QuestArrow;
 
-        public function PartyOverlay(_arg_1:Map)
-        {
+        public function PartyOverlay(_arg_1:Map){
             var _local_3:PlayerArrow;
             super();
             this.map_ = _arg_1;
@@ -33,19 +30,17 @@ public class PartyOverlay extends Sprite
                 this.partyMemberArrows_[_local_2] = _local_3;
                 addChild(_local_3);
                 _local_2++;
-            }
+            };
             this.questArrow_ = new QuestArrow(this.map_);
             addChild(this.questArrow_);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             GameObjectArrow.removeMenu();
         }
 
-        public function draw(_arg_1:Camera, _arg_2:int):void
-        {
+        public function draw(_arg_1:Camera, _arg_2:int):void{
             var _local_6:PlayerArrow;
             var _local_7:Player;
             var _local_8:int;
@@ -55,7 +50,7 @@ public class PartyOverlay extends Sprite
             if (this.map_.player_ == null)
             {
                 return;
-            }
+            };
             var _local_3:Party = this.map_.party_;
             var _local_4:Player = this.map_.player_;
             var _local_5:int;
@@ -89,22 +84,22 @@ public class PartyOverlay extends Sprite
                                     if (!_local_9.mouseOver_)
                                     {
                                         _local_9.addGameObject(_local_7);
-                                    }
+                                    };
                                     _local_6.setGameObject(null);
                                     break;
-                                }
+                                };
                                 _local_8++;
-                            }
+                            };
                             _local_6.draw(_arg_2, _arg_1);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 _local_5++;
-            }
+            };
             if (!this.questArrow_.mouseOver_)
             {
                 this.questArrow_.draw(_arg_2, _arg_1);
-            }
+            };
         }
 
 

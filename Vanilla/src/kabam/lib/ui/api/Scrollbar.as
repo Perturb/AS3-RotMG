@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.ui.api.Scrollbar
 
-package kabam.lib.ui.api
-{
+package kabam.lib.ui.api{
 import org.osflash.signals.Signal;
 
-public interface Scrollbar 
-    {
+public interface Scrollbar {
 
         function get positionChanged():Signal;
         function setSize(_arg_1:int, _arg_2:int):void;

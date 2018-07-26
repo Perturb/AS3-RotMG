@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ResurrectionViewMediator
 
-package kabam.rotmg.death.view
-{
+package kabam.rotmg.death.view{
 import flash.display.Sprite;
 
 import kabam.rotmg.core.model.PlayerModel;
@@ -16,8 +15,7 @@ import kabam.rotmg.game.signals.PlayGameSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ResurrectionViewMediator extends Mediator 
-    {
+public class ResurrectionViewMediator extends Mediator {
 
         [Inject]
         public var death:DeathModel;
@@ -33,26 +31,22 @@ public class ResurrectionViewMediator extends Mediator
         public var closeDialogs:CloseDialogsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.closed.add(this.onClosed);
             this.view.showDialog.add(this.onShowDialog);
             this.view.init(this.death.getLastDeath().background);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.showDialog.remove(this.onShowDialog);
             this.view.closed.remove(this.onClosed);
         }
 
-        private function onShowDialog(_arg_1:Sprite):void
-        {
+        private function onShowDialog(_arg_1:Sprite):void{
             this.openDialog.dispatch(_arg_1);
         }
 
-        private function onClosed():void
-        {
+        private function onClosed():void{
             this.closeDialogs.dispatch();
             var _local_1:GameInitData = new GameInitData();
             _local_1.createCharacter = false;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.CheckBoxField
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import flash.display.CapsStyle;
 import flash.display.Graphics;
 import flash.display.JointStyle;
@@ -18,8 +17,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class CheckBoxField extends Sprite
-    {
+public class CheckBoxField extends Sprite {
 
         private static const BOX_SIZE:int = 20;
 
@@ -29,8 +27,7 @@ public class CheckBoxField extends Sprite
         private var checked_:Boolean;
         private var hasError:Boolean;
 
-        public function CheckBoxField(_arg_1:String, _arg_2:Boolean, _arg_3:uint=16)
-        {
+        public function CheckBoxField(_arg_1:String, _arg_2:Boolean, _arg_3:uint=16){
             this.checked_ = _arg_2;
             this.checkBox_ = new Sprite();
             this.checkBox_.x = 2;
@@ -55,54 +52,45 @@ public class CheckBoxField extends Sprite
             this.text_.textChanged.addOnce(this.onTextChanged);
         }
 
-        public function isChecked():Boolean
-        {
+        public function isChecked():Boolean{
             return (this.checked_);
         }
 
-        public function setChecked():void
-        {
+        public function setChecked():void{
             this.checked_ = true;
             this.redrawCheckBox();
         }
 
-        public function setUnchecked():void
-        {
+        public function setUnchecked():void{
             this.checked_ = false;
             this.redrawCheckBox();
         }
 
-        public function setError(_arg_1:String):void
-        {
+        public function setError(_arg_1:String):void{
             this.errorText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
         }
 
-        public function setTextStringBuilder(_arg_1:StringBuilder):void
-        {
+        public function setTextStringBuilder(_arg_1:StringBuilder):void{
             this.text_.setStringBuilder(_arg_1);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             this.errorText_.x = this.text_.x;
             this.errorText_.y = (this.text_.y + 20);
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             this.errorText_.setStringBuilder(new StaticStringBuilder(""));
             this.checked_ = (!(this.checked_));
             this.redrawCheckBox();
         }
 
-        public function setErrorHighlight(_arg_1:Boolean):void
-        {
+        public function setErrorHighlight(_arg_1:Boolean):void{
             this.hasError = _arg_1;
             this.redrawCheckBox();
         }
 
-        private function redrawCheckBox():void
-        {
+        private function redrawCheckBox():void{
             var _local_2:Number;
             var _local_1:Graphics = this.checkBox_.graphics;
             _local_1.clear();
@@ -118,7 +106,7 @@ public class CheckBoxField extends Sprite
                 _local_1.lineTo((BOX_SIZE - 2), 2);
                 _local_1.lineStyle();
                 this.hasError = false;
-            }
+            };
             if (this.hasError)
             {
                 _local_2 = 16549442;
@@ -126,7 +114,7 @@ public class CheckBoxField extends Sprite
             else
             {
                 _local_2 = 0x454545;
-            }
+            };
             _local_1.lineStyle(2, _local_2, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
             _local_1.drawRect(0, 0, BOX_SIZE, BOX_SIZE);
             _local_1.lineStyle();

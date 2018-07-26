@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.info.PetInfoItemMediator
 
-package io.decagames.rotmg.pets.popup.info
-{
+package io.decagames.rotmg.pets.popup.info{
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
 import kabam.rotmg.core.signals.HideTooltipsSignal;
@@ -13,8 +12,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetInfoItemMediator extends Mediator
-    {
+public class PetInfoItemMediator extends Mediator {
 
         [Inject]
         public var view:PetInfoItem;
@@ -25,8 +23,7 @@ public class PetInfoItemMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             var _local_1:ToolTip;
             if (this.view.titel == "Pets")
             {
@@ -55,11 +52,11 @@ public class PetInfoItemMediator extends Mediator
                             if (this.view.titel == "Wardrobe")
                             {
                                 _local_1 = new WardrobeTooltip();
-                            }
-                        }
-                    }
-                }
-            }
+                            };
+                        };
+                    };
+                };
+            };
             this.hoverTooltipDelegate = new HoverTooltipDelegate();
             this.hoverTooltipDelegate.setShowToolTipSignal(this.showTooltipSignal);
             this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);

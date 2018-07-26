@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.tutorial.Tutorial
 
-package com.company.assembleegameclient.tutorial
-{
+package com.company.assembleegameclient.tutorial{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
@@ -22,8 +21,7 @@ import kabam.rotmg.assets.EmbeddedData;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.core.service.GoogleAnalytics;
 
-public class Tutorial extends Sprite
-    {
+public class Tutorial extends Sprite {
 
         public static const NEXT_ACTION:String = "Next";
         public static const MOVE_FORWARD_ACTION:String = "MoveForward";
@@ -54,8 +52,7 @@ public class Tutorial extends Sprite
         private var trackingStep:int = -1;
         private var lastTrackingStepTimestamp:uint;
 
-        public function Tutorial(_arg_1:GameSprite)
-        {
+        public function Tutorial(_arg_1:GameSprite){
             var _local_2:XML;
             var _local_3:Graphics;
             super();
@@ -64,7 +61,7 @@ public class Tutorial extends Sprite
             for each (_local_2 in EmbeddedData.tutorialXML.Step)
             {
                 this.steps_.push(new Step(_local_2));
-            }
+            };
             this.tracker = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             this.tracker.trackEvent("tutorial", "started");
             addChild(this.boxesBack_);
@@ -80,19 +77,16 @@ public class Tutorial extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
             this.draw();
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function onEnterFrame(_arg_1:Event):void
-        {
+        private function onEnterFrame(_arg_1:Event):void{
             var _local_4:Step;
             var _local_5:Boolean;
             var _local_6:Requirement;
@@ -128,16 +122,16 @@ public class Tutorial extends Sprite
                                     {
                                         _local_11 = true;
                                         break;
-                                    }
-                                }
-                            }
+                                    };
+                                };
+                            };
                             if (!_local_11)
                             {
                                 _local_5 = false;
-                            }
+                            };
                             break;
-                    }
-                }
+                    };
+                };
                 if (!_local_5)
                 {
                     _local_4.satisfiedSince_ = 0;
@@ -153,28 +147,27 @@ public class Tutorial extends Sprite
                             {
                                 this.tracker.trackEvent("tutorial", "step", _local_3.toString(), (_local_4.satisfiedSince_ - this.lastTrackingStepTimestamp));
                                 this.lastTrackingStepTimestamp = getTimer();
-                            }
+                            };
                             this.trackingStep = _local_3;
-                        }
-                    }
+                        };
+                    };
                     _local_7 = (getTimer() - _local_4.satisfiedSince_);
                     for each (_local_8 in _local_4.uiDrawBoxes_)
                     {
                         _local_8.draw((5 * _local_2), this.boxes_.graphics, _local_7);
                         _local_8.draw((6 * _local_2), this.boxesBack_.graphics, _local_7);
-                    }
+                    };
                     for each (_local_9 in _local_4.uiDrawArrows_)
                     {
                         _local_9.draw((5 * _local_2), this.boxes_.graphics, _local_7);
                         _local_9.draw((6 * _local_2), this.boxesBack_.graphics, _local_7);
-                    }
-                }
+                    };
+                };
                 _local_3++;
-            }
+            };
         }
 
-        internal function doneAction(_arg_1:String):void
-        {
+        internal function doneAction(_arg_1:String):void{
             var _local_3:Requirement;
             var _local_4:Player;
             var _local_5:Boolean;
@@ -183,12 +176,12 @@ public class Tutorial extends Sprite
             if (this.currStepId_ >= this.steps_.length)
             {
                 return;
-            }
+            };
             var _local_2:Step = this.steps_[this.currStepId_];
             if (_arg_1 != _local_2.action_)
             {
                 return;
-            }
+            };
             for each (_local_3 in _local_2.reqs_)
             {
                 _local_4 = this.gs_.map.player_;
@@ -205,28 +198,27 @@ public class Tutorial extends Sprite
                                 {
                                     _local_5 = true;
                                     break;
-                                }
-                            }
-                        }
+                                };
+                            };
+                        };
                         if (!_local_5)
                         {
                             return;
-                        }
+                        };
                         break;
                     case EQUIP_REQUIREMENT:
                         if (_local_4.equipment_[_local_3.slot_] != _local_3.objectType_)
                         {
                             return;
-                        }
+                        };
                         break;
-                }
-            }
+                };
+            };
             this.currStepId_++;
             this.draw();
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             var _local_3:UIDrawBox;
         }
 

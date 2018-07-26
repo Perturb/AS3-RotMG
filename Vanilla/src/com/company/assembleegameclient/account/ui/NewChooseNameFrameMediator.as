@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.NewChooseNameFrameMediator
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import com.company.util.MoreObjectUtil;
 
 import kabam.rotmg.account.core.Account;
@@ -16,8 +15,7 @@ import kabam.rotmg.ui.signals.NameChangedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class NewChooseNameFrameMediator extends Mediator 
-    {
+public class NewChooseNameFrameMediator extends Mediator {
 
         [Inject]
         public var view:NewChooseNameFrame;
@@ -36,20 +34,17 @@ public class NewChooseNameFrameMediator extends Mediator
         private var name:String;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.choose.add(this.onChoose);
             this.view.cancel.add(this.onCancel);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.choose.remove(this.onChoose);
             this.view.cancel.remove(this.onCancel);
         }
 
-        private function onChoose(_arg_1:String):void
-        {
+        private function onChoose(_arg_1:String):void{
             this.name = _arg_1;
             if (_arg_1.length < 1)
             {
@@ -58,11 +53,10 @@ public class NewChooseNameFrameMediator extends Mediator
             else
             {
                 this.sendNameToServer();
-            }
+            };
         }
 
-        private function sendNameToServer():void
-        {
+        private function sendNameToServer():void{
             var _local_1:Object = {"name":this.name};
             MoreObjectUtil.addToObject(_local_1, this.account.getCredentials());
             this.client.complete.addOnce(this.onComplete);
@@ -70,8 +64,7 @@ public class NewChooseNameFrameMediator extends Mediator
             this.view.disable();
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onNameChoseDone();
@@ -79,27 +72,24 @@ public class NewChooseNameFrameMediator extends Mediator
             else
             {
                 this.onNameChoseError(_arg_2);
-            }
+            };
         }
 
-        private function onNameChoseDone():void
-        {
+        private function onNameChoseDone():void{
             if (this.playerModel != null)
             {
                 this.playerModel.setName(this.name);
-            }
+            };
             this.nameChanged.dispatch(this.name);
             this.closeDialogs.dispatch();
         }
 
-        private function onNameChoseError(_arg_1:String):void
-        {
+        private function onNameChoseError(_arg_1:String):void{
             this.view.setError(_arg_1);
             this.view.enable();
         }
 
-        private function onCancel():void
-        {
+        private function onCancel():void{
             this.closeDialogs.dispatch();
         }
 

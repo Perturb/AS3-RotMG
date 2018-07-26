@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.ShockParticle
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.thrown.BitmapParticle;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -12,8 +11,7 @@ import com.company.assembleegameclient.parameters.Parameters;
 import flash.display.BitmapData;
 import flash.geom.Point;
 
-public class ShockParticle extends BitmapParticle
-    {
+public class ShockParticle extends BitmapParticle {
 
         private var numFramesRemaining:int;
         private var dx_:Number;
@@ -30,8 +28,7 @@ public class ShockParticle extends BitmapParticle
         private var cameraAngle:Number = Parameters.data_.cameraAngle;
         private var images:Vector.<BitmapData>;
 
-        public function ShockParticle(_arg_1:uint, _arg_2:int, _arg_3:uint, _arg_4:Point, _arg_5:Point, _arg_6:Number, _arg_7:GameObject, _arg_8:Vector.<BitmapData>)
-        {
+        public function ShockParticle(_arg_1:uint, _arg_2:int, _arg_3:uint, _arg_4:Point, _arg_5:Point, _arg_6:Number, _arg_7:GameObject, _arg_8:Vector.<BitmapData>){
             this.go = _arg_7;
             this.radians = _arg_6;
             this.images = _arg_8;
@@ -45,18 +42,17 @@ public class ShockParticle extends BitmapParticle
             _rotation = (-(_arg_6) - this.cameraAngle);
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             this.numFramesRemaining--;
             if (this.numFramesRemaining <= 0)
             {
                 return (false);
-            }
+            };
             this.frameUpdateModulator++;
             if ((this.frameUpdateModulator % 2))
             {
                 this.currentFrame++;
-            }
+            };
             _bitmapData = this.images[(this.currentFrame % this.numFrames)];
             this.plusX = (this.plusX + this.dx_);
             this.plusY = (this.plusY + this.dy_);
@@ -64,7 +60,7 @@ public class ShockParticle extends BitmapParticle
             {
                 this.cameraAngle = Parameters.data_.cameraAngle;
                 _rotation = (-(this.radians) - this.cameraAngle);
-            }
+            };
             moveTo(((this.go.x_ + this.originX) + this.plusX), ((this.go.y_ + this.originY) + this.plusY));
             return (true);
         }

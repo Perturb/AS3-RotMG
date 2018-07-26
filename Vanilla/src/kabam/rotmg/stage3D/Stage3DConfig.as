@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.stage3D.Stage3DConfig
 
-package kabam.rotmg.stage3D
-{
+package kabam.rotmg.stage3D{
 import com.company.assembleegameclient.engine3d.Model3D;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.Stage3DProxy;
@@ -25,8 +24,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.IConfig;
 
-public class Stage3DConfig implements IConfig 
-    {
+public class Stage3DConfig implements IConfig {
 
         public static const WIDTH:int = 600;
         public static const HALF_WIDTH:int = (WIDTH / 2);//300
@@ -41,8 +39,7 @@ public class Stage3DConfig implements IConfig
         private var stage3D:Stage3DProxy;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mapSingletons();
             this.stage3D = this.stageProxy.getStage3Ds(0);
             this.stage3D.addEventListener(ErrorEvent.ERROR, Parameters.clearGpuRenderEvent);
@@ -50,22 +47,20 @@ public class Stage3DConfig implements IConfig
             this.stage3D.requestContext3D();
         }
 
-        private function mapSingletons():void
-        {
+        private function mapSingletons():void{
             this.injector.map(Render3D).asSingleton();
             this.injector.map(TextureFactory).asSingleton();
             this.injector.map(IndexBufferFactory).asSingleton();
             this.injector.map(VertexBufferFactory).asSingleton();
         }
 
-        private function onContextCreate(_arg_1:Event):void
-        {
+        private function onContextCreate(_arg_1:Event):void{
             this.stage3D.removeEventListener(Event.CONTEXT3D_CREATE, this.onContextCreate);
             var _local_2:Context3DProxy = this.stage3D.getContext3D();
             if (_local_2.GetContext3D().driverInfo.toLowerCase().indexOf("software") != -1)
             {
                 Parameters.clearGpuRender();
-            }
+            };
             _local_2.configureBackBuffer(WIDTH, HEIGHT, 2, true);
             _local_2.setBlendFactors(Context3DBlendFactor.SOURCE_ALPHA, Context3DBlendFactor.ONE_MINUS_SOURCE_ALPHA);
             _local_2.setDepthTest(false, Context3DCompareMode.LESS_EQUAL);

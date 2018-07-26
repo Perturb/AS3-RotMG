@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.view.KabamAccountDetailDialog
 
-package kabam.rotmg.account.kabam.view
-{
+package kabam.rotmg.account.kabam.view{
 import com.company.assembleegameclient.account.ui.Frame;
 
 import flash.display.Sprite;
@@ -18,20 +17,17 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class KabamAccountDetailDialog extends Sprite 
-    {
+public class KabamAccountDetailDialog extends Sprite {
 
         public var done:Signal;
         private var loginText_:TextFieldDisplayConcrete;
         private var usernameText_:TextFieldDisplayConcrete;
 
-        public function KabamAccountDetailDialog()
-        {
+        public function KabamAccountDetailDialog(){
             this.done = new Signal();
         }
 
-        public function setInfo(_arg_1:String):void
-        {
+        public function setInfo(_arg_1:String):void{
             var _local_2:Frame;
             _local_2 = new Frame(TextKey.KABAMACCOUNTDETAILDIALOG_TITLE, "", TextKey.KABAMACCOUNTDETAILDIALOG_RIGHTBUTTON, "/currentKabamLogin");
             addChild(_local_2);
@@ -52,8 +48,7 @@ public class KabamAccountDetailDialog extends Sprite
             _local_2.rightButton_.addEventListener(MouseEvent.CLICK, this.onContinue);
         }
 
-        private function onContinue(_arg_1:MouseEvent):void
-        {
+        private function onContinue(_arg_1:MouseEvent):void{
             this.done.dispatch();
         }
 

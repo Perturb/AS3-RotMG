@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.view.SpecialOfferButton
 
-package kabam.rotmg.promotions.view
-{
+package kabam.rotmg.promotions.view{
 import flash.display.Bitmap;
 import flash.display.DisplayObject;
 import flash.display.Sprite;
@@ -20,8 +19,7 @@ import kabam.rotmg.ui.UIUtils;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class SpecialOfferButton extends BasePackageButton
-    {
+public class SpecialOfferButton extends BasePackageButton {
 
         public static const NOTIFICATION_BACKGROUND_WIDTH:Number = 120;
         public static const NOTIFICATION_BACKGROUND_HEIGHT:Number = 25;
@@ -33,13 +31,11 @@ public class SpecialOfferButton extends BasePackageButton
         private var buttonLabel:TextFieldDisplayConcrete;
         private var _isSpecialOfferAvailable:Boolean;
 
-        public function SpecialOfferButton()
-        {
+        public function SpecialOfferButton(){
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.clicked = new NativeMappedSignal(this, MouseEvent.CLICK);
             tabChildren = false;
             tabEnabled = false;
@@ -47,13 +43,11 @@ public class SpecialOfferButton extends BasePackageButton
             this.makeLabelText();
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             parent.removeChild(this);
         }
 
-        private function makeUI():void
-        {
+        private function makeUI():void{
             this.clickArea = UIUtils.makeHUDBackground(NOTIFICATION_BACKGROUND_WIDTH, NOTIFICATION_BACKGROUND_HEIGHT);
             addChild(this.clickArea);
             this.goldIcon = new Bitmap(IconFactory.makeCoin());
@@ -62,8 +56,7 @@ public class SpecialOfferButton extends BasePackageButton
             addChild(this.goldIcon);
         }
 
-        private function makeLabelText():void
-        {
+        private function makeLabelText():void{
             this.buttonLabel = new TextFieldDisplayConcrete().setSize(FONT_SIZE).setColor(0xFFFFFF);
             this.buttonLabel.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
             this.buttonLabel.textChanged.addOnce(this.onTextChanged);
@@ -71,18 +64,15 @@ public class SpecialOfferButton extends BasePackageButton
             addChild(this.buttonLabel);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             positionText(this.goldIcon, this.buttonLabel);
         }
 
-        public function get isSpecialOfferAvailable():Boolean
-        {
+        public function get isSpecialOfferAvailable():Boolean{
             return (this._isSpecialOfferAvailable);
         }
 
-        public function set isSpecialOfferAvailable(_arg_1:Boolean):void
-        {
+        public function set isSpecialOfferAvailable(_arg_1:Boolean):void{
             this._isSpecialOfferAvailable = _arg_1;
         }
 

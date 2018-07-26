@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.view.ChatInput
 
-package kabam.rotmg.chat.view
-{
+package kabam.rotmg.chat.view{
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
@@ -17,8 +16,7 @@ import kabam.rotmg.chat.model.ChatModel;
 
 import org.osflash.signals.Signal;
 
-public class ChatInput extends Sprite 
-    {
+public class ChatInput extends Sprite {
 
         public const message:Signal = new Signal(String);
         public const close:Signal = new Signal();
@@ -27,27 +25,24 @@ public class ChatInput extends Sprite
         private var enteredText:Boolean;
         private var lastInput:String = "";
 
-        public function ChatInput()
-        {
+        public function ChatInput(){
             visible = false;
             this.enteredText = false;
         }
 
-        public function setup(_arg_1:ChatModel, _arg_2:TextField):void
-        {
+        public function setup(_arg_1:ChatModel, _arg_2:TextField):void{
             addChild((this.input = _arg_2));
             _arg_2.width = (_arg_1.bounds.width - 2);
             _arg_2.height = _arg_1.lineHeight;
             _arg_2.y = (_arg_1.bounds.height - _arg_1.lineHeight);
         }
 
-        public function activate(_arg_1:String, _arg_2:Boolean):void
-        {
+        public function activate(_arg_1:String, _arg_2:Boolean):void{
             this.enteredText = false;
             if (_arg_1 != null)
             {
                 this.input.text = _arg_1;
-            }
+            };
             var _local_3:int = ((_arg_1) ? _arg_1.length : 0);
             this.input.setSelection(_local_3, _local_3);
             if (_arg_2)
@@ -57,12 +52,11 @@ public class ChatInput extends Sprite
             else
             {
                 this.activateDisabled();
-            }
+            };
             visible = true;
         }
 
-        public function deactivate():void
-        {
+        public function deactivate():void{
             this.enteredText = false;
             removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
             stage.removeEventListener(KeyboardEvent.KEY_UP, this.onTextChange);
@@ -70,13 +64,11 @@ public class ChatInput extends Sprite
             ((stage) && (stage.focus = null));
         }
 
-        public function hasEnteredText():Boolean
-        {
+        public function hasEnteredText():Boolean{
             return (this.enteredText);
         }
 
-        private function activateEnabled():void
-        {
+        private function activateEnabled():void{
             this.input.type = TextFieldType.INPUT;
             this.input.border = true;
             this.input.selectable = true;
@@ -89,13 +81,11 @@ public class ChatInput extends Sprite
             ((stage) && (stage.focus = this.input));
         }
 
-        private function onTextChange(_arg_1:Event):void
-        {
+        private function onTextChange(_arg_1:Event):void{
             this.enteredText = true;
         }
 
-        private function activateDisabled():void
-        {
+        private function activateDisabled():void{
             this.input.type = TextFieldType.DYNAMIC;
             this.input.border = false;
             this.input.selectable = false;
@@ -105,8 +95,7 @@ public class ChatInput extends Sprite
             stage.removeEventListener(KeyboardEvent.KEY_UP, this.onTextChange);
         }
 
-        private function onKeyUp(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyUp(_arg_1:KeyboardEvent):void{
             var _local_2:int;
             if (_arg_1.keyCode == Keyboard.ENTER)
             {
@@ -117,17 +106,17 @@ public class ChatInput extends Sprite
                 else
                 {
                     this.close.dispatch();
-                }
+                };
                 this.lastInput = this.input.text;
                 _arg_1.stopImmediatePropagation();
-            }
+            };
             if (_arg_1.keyCode == Keyboard.UP)
             {
                 this.input.text = this.lastInput;
                 _local_2 = this.lastInput.length;
                 this.input.setSelection(_local_2, _local_2);
                 _arg_1.stopImmediatePropagation();
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.CharactersConfig
 
-package kabam.rotmg.characters
-{
+package kabam.rotmg.characters{
 import kabam.rotmg.characters.deletion.DeletionConfig;
 import kabam.rotmg.characters.model.CharacterModel;
 import kabam.rotmg.characters.model.LegacyCharacterModel;
@@ -16,8 +15,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class CharactersConfig implements IConfig 
-    {
+public class CharactersConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -27,8 +25,7 @@ public class CharactersConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(CharacterModel).toSingleton(LegacyCharacterModel);
             this.context.configure(DeletionConfig);
             this.context.configure(ReskinConfig);

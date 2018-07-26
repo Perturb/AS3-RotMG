@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.tutorial.Step
 
-package com.company.assembleegameclient.tutorial
-{
-public class Step
-    {
+package com.company.assembleegameclient.tutorial{
+public class Step {
 
         public var text_:String;
         public var action_:String;
@@ -16,8 +14,7 @@ public class Step
         public var satisfiedSince_:int = 0;
         public var trackingSent:Boolean;
 
-        public function Step(_arg_1:XML)
-        {
+        public function Step(_arg_1:XML){
             var _local_2:XML;
             var _local_3:XML;
             var _local_4:XML;
@@ -25,19 +22,18 @@ public class Step
             for each (_local_2 in _arg_1.UIDrawBox)
             {
                 this.uiDrawBoxes_.push(new UIDrawBox(_local_2));
-            }
+            };
             for each (_local_3 in _arg_1.UIDrawArrow)
             {
                 this.uiDrawArrows_.push(new UIDrawArrow(_local_3));
-            }
+            };
             for each (_local_4 in _arg_1.Requirement)
             {
                 this.reqs_.push(new Requirement(_local_4));
-            }
+            };
         }
 
-        public function toString():String
-        {
+        public function toString():String{
             return (("[" + this.text_) + "]");
         }
 

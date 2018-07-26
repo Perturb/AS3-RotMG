@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.Currency
 
-package com.company.assembleegameclient.util
-{
-    public class Currency 
-    {
+package com.company.assembleegameclient.util{
+    public class Currency {
 
         public static const INVALID:int = -1;
         public static const GOLD:int = 0;
@@ -15,8 +13,7 @@ package com.company.assembleegameclient.util
         public static const FORTUNE:int = 3;
 
 
-        public static function typeToName(_arg_1:int):String
-        {
+        public static function typeToName(_arg_1:int):String{
             switch (_arg_1)
             {
                 case GOLD:
@@ -27,7 +24,7 @@ package com.company.assembleegameclient.util
                     return ("Guild Fame");
                 case FORTUNE:
                     return ("Fortune Token");
-            }
+            };
             return ("");
         }
 

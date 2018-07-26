@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.EffectProperties
 
-package com.company.assembleegameclient.objects.particles
-{
-    public class EffectProperties 
-    {
+package com.company.assembleegameclient.objects.particles{
+    public class EffectProperties {
 
         public var id:String;
         public var particle:String;
@@ -33,8 +31,7 @@ package com.company.assembleegameclient.objects.particles
         public var bitmapFile:String;
         public var bitmapIndex:uint;
 
-        public function EffectProperties(_arg_1:XML)
-        {
+        public function EffectProperties(_arg_1:XML){
             this.id = _arg_1.toString();
             this.particle = _arg_1.@particle;
             this.cooldown = _arg_1.@cooldown;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.MenuOption
 
-package com.company.assembleegameclient.ui.menu
-{
+package com.company.assembleegameclient.ui.menu{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.CachingColorTransformer;
 import com.company.util.MoreColorUtil;
@@ -19,8 +18,7 @@ import flash.geom.ColorTransform;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class MenuOption extends Sprite 
-    {
+public class MenuOption extends Sprite {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
 
@@ -30,8 +28,7 @@ public class MenuOption extends Sprite
         protected var text_:TextFieldDisplayConcrete;
         protected var ct_:ColorTransform = null;
 
-        public function MenuOption(_arg_1:BitmapData, _arg_2:uint, _arg_3:String)
-        {
+        public function MenuOption(_arg_1:BitmapData, _arg_2:uint, _arg_3:String){
             this.origIconBitmapData_ = _arg_1;
             this.iconBitmapData_ = TextureRedrawer.redraw(_arg_1, this.redrawSize(), true, 0);
             this.icon_ = new Bitmap(this.iconBitmapData_);
@@ -50,13 +47,12 @@ public class MenuOption extends Sprite
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
         }
 
-        public function setColorTransform(_arg_1:ColorTransform):void
-        {
+        public function setColorTransform(_arg_1:ColorTransform):void{
             var _local_2:BitmapData;
             if (_arg_1 == this.ct_)
             {
                 return;
-            }
+            };
             this.ct_ = _arg_1;
             if (this.ct_ == null)
             {
@@ -69,21 +65,18 @@ public class MenuOption extends Sprite
                 _local_2 = TextureRedrawer.redraw(_local_2, this.redrawSize(), true, 0);
                 this.icon_.bitmapData = _local_2;
                 this.text_.transform.colorTransform = this.ct_;
-            }
+            };
         }
 
-        protected function onMouseOver(_arg_1:MouseEvent):void
-        {
+        protected function onMouseOver(_arg_1:MouseEvent):void{
             this.setColorTransform(mouseOverCT);
         }
 
-        protected function onMouseOut(_arg_1:MouseEvent):void
-        {
+        protected function onMouseOut(_arg_1:MouseEvent):void{
             this.setColorTransform(null);
         }
 
-        protected function redrawSize():int
-        {
+        protected function redrawSize():int{
             return (40 / (this.origIconBitmapData_.width / 8));
         }
 

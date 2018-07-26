@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.SubmitMapForm
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.account.ui.CheckBoxField;
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.account.ui.TextInputField;
@@ -25,8 +24,7 @@ import org.osflash.signals.Signal;
 
 import ru.inspirit.net.MultipartURLLoader;
 
-public class SubmitMapForm extends Frame
-    {
+public class SubmitMapForm extends Frame {
 
         public static var cancel:Signal;
 
@@ -38,8 +36,7 @@ public class SubmitMapForm extends Frame
         private var account:Account;
         private var checkbox:CheckBoxField;
 
-        public function SubmitMapForm(_arg_1:String, _arg_2:Object, _arg_3:Account)
-        {
+        public function SubmitMapForm(_arg_1:String, _arg_2:Object, _arg_3:Account){
             super("SubmitMapForm.Title", TextKey.FRAME_CANCEL, TextKey.WEB_CHANGE_PASSWORD_RIGHT, null, 300);
             cancel = new Signal();
             this.account = _arg_3;
@@ -58,26 +55,22 @@ public class SubmitMapForm extends Frame
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        public static function isInitialized():Boolean
-        {
+        public static function isInitialized():Boolean{
             return (!(cancel == null));
         }
 
 
-        private function disableButtons():void
-        {
+        private function disableButtons():void{
             rightButton_.removeEventListener(MouseEvent.CLICK, this.onSubmit);
             leftButton_.removeEventListener(MouseEvent.CLICK, this.onCancel);
         }
 
-        private function enableButtons():void
-        {
+        private function enableButtons():void{
             rightButton_.addEventListener(MouseEvent.CLICK, this.onSubmit);
             leftButton_.addEventListener(MouseEvent.CLICK, this.onCancel);
         }
 
-        private function onSubmit(_arg_1:MouseEvent):void
-        {
+        private function onSubmit(_arg_1:MouseEvent):void{
             this.disableButtons();
             this.mapName.clearError();
             var _local_2:JsonParser = StaticInjectorContext.getInjector().getInstance(JsonParser);
@@ -121,17 +114,15 @@ public class SubmitMapForm extends Frame
             else
             {
                 this.enableButtons();
-            }
+            };
         }
 
-        private function onCompleteException(_arg_1:IOErrorEvent):void
-        {
+        private function onCompleteException(_arg_1:IOErrorEvent):void{
             this.descr.setError("Exception. If persists, please contact dev team.");
             this.enableButtons();
         }
 
-        private function onComplete(_arg_1:Event):void
-        {
+        private function onComplete(_arg_1:Event):void{
             var _local_3:Array;
             var _local_4:String;
             var _local_2:MultipartURLLoader = MultipartURLLoader(_arg_1.target);
@@ -145,59 +136,55 @@ public class SubmitMapForm extends Frame
                 _local_3 = _local_2.loader.data.match("<.*>(.*)</.*>");
                 _local_4 = ((_local_3.length > 1) ? _local_3[1] : _local_2.loader.data);
                 this.descr.setError(_local_4);
-            }
+            };
             this.enableButtons();
         }
 
-        private function onCancel(_arg_1:MouseEvent=null):void
-        {
+        private function onCancel(_arg_1:MouseEvent=null):void{
             cancel.dispatch();
             if (parent)
             {
                 parent.removeChild(this);
-            }
+            };
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             if (rightButton_)
             {
                 rightButton_.removeEventListener(MouseEvent.CLICK, this.onSubmit);
-            }
+            };
             if (cancel)
             {
                 cancel.removeAll();
                 cancel = null;
-            }
+            };
         }
 
-        private function validated(_arg_1:Object):Boolean
-        {
+        private function validated(_arg_1:Object):Boolean{
             if (((_arg_1["name"].length < 6) || (_arg_1["name"].length > 24)))
             {
                 this.mapName.setError("Map name length out of range (6-24 chars)");
                 return (false);
-            }
+            };
             if (((_arg_1["description"].length < 10) || (_arg_1["description"].length > 250)))
             {
                 this.descr.setError("Description length out of range (10-250 chars)");
                 return (false);
-            }
+            };
             return (this.isValidMap());
         }
 
-        private function isValidMap():Boolean
-        {
+        private function isValidMap():Boolean{
             if (this.mapInfo.numExits < 1)
             {
                 this.descr.setError("Must have at least one User Dungeon End region drawn in this dungeon. (tmp)");
                 return (false);
-            }
+            };
             if (this.mapInfo.numEntries < 1)
             {
                 this.descr.setError("Must have at least one Spawn Region drawn in this dungeon. (tmp)");
                 return (false);
-            }
+            };
             return (true);
         }
 

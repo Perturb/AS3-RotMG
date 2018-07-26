@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison
 
-package com.company.assembleegameclient.ui.tooltip.slotcomparisons
-{
+package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class TomeComparison extends SlotComparison
-    {
+public class TomeComparison extends SlotComparison {
 
 
-        override protected function compareSlots(itemXML:XML, curItemXML:XML):void
-        {
+        override protected function compareSlots(itemXML:XML, curItemXML:XML):void{
             var nova:XMLList;
             var otherNova:XMLList;
             var tag:XML;
@@ -38,7 +35,7 @@ public class TomeComparison extends SlotComparison
                         "damage":nova.@damage,
                         "range":nova.@range
                     });
-                }
+                };
                 range = Number(nova.@range);
                 otherRange = Number(otherNova.@range);
                 amount = Number(nova.@amount);
@@ -51,7 +48,7 @@ public class TomeComparison extends SlotComparison
                 }).setPrefix(TooltipHelper.getOpenTag(getTextColor((wavg - otherWavg)))).setPostfix(TooltipHelper.getCloseTag());
                 comparisonStringBuilder.pushParams(TextKey.PARTY_HEAL, {"effect":innerStringBuilder});
                 processedTags[nova.toXMLString()] = true;
-            }
+            };
             if (itemXML.@id == "Tome of Purification")
             {
                 tag = itemXML.Activate.(text() == "RemoveNegativeConditions")[0];
@@ -69,8 +66,8 @@ public class TomeComparison extends SlotComparison
                         "duration":tag.@duration
                     }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                     processedTags[tag.toXMLString()] = true;
-                }
-            }
+                };
+            };
         }
 
 

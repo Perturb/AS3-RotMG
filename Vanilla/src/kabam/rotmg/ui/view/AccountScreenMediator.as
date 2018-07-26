@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.AccountScreenMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.screens.AccountScreen;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
@@ -24,8 +23,7 @@ import kabam.rotmg.core.signals.ShowTooltipSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class AccountScreenMediator extends Mediator
-    {
+public class AccountScreenMediator extends Mediator {
 
         [Inject]
         public var view:AccountScreen;
@@ -39,16 +37,14 @@ public class AccountScreenMediator extends Mediator
         public var hideTooltips:HideTooltipsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.tooltip.add(this.onTooltip);
             this.view.setRank(this.playerModel.getNumStars());
             this.view.setGuild(this.playerModel.getGuildName(), this.playerModel.getGuildRank());
             this.view.setAccountInfo(this.getInfoView());
         }
 
-        private function getInfoView():AccountInfoView
-        {
+        private function getInfoView():AccountInfoView{
             var _local_1:AccountInfoView;
             switch (this.account.gameNetwork())
             {
@@ -64,18 +60,16 @@ public class AccountScreenMediator extends Mediator
                 case SteamAccount.NETWORK_NAME:
                     _local_1 = new SteamAccountInfoView();
                     break;
-            }
+            };
             return (_local_1);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.tooltip.remove(this.onTooltip);
             this.hideTooltips.dispatch();
         }
 
-        private function onTooltip(_arg_1:ToolTip):void
-        {
+        private function onTooltip(_arg_1:ToolTip):void{
             this.showTooltip.dispatch(_arg_1);
         }
 

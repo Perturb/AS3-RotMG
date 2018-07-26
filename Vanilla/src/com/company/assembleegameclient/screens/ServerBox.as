@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.ServerBox
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
@@ -16,8 +15,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class ServerBox extends Sprite 
-    {
+public class ServerBox extends Sprite {
 
         public static const WIDTH:int = 384;
         public static const HEIGHT:int = 52;
@@ -28,8 +26,7 @@ public class ServerBox extends Sprite
         private var selected_:Boolean = false;
         private var over_:Boolean = false;
 
-        public function ServerBox(_arg_1:Server)
-        {
+        public function ServerBox(_arg_1:Server){
             this.value_ = ((_arg_1 == null) ? null : _arg_1.name);
             this.nameText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true);
             if (_arg_1 == null)
@@ -39,7 +36,7 @@ public class ServerBox extends Sprite
             else
             {
                 this.nameText_.setStringBuilder(new StaticStringBuilder(_arg_1.name));
-            }
+            };
             this.nameText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
             this.nameText_.x = 18;
             this.nameText_.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
@@ -51,13 +48,11 @@ public class ServerBox extends Sprite
             addEventListener(MouseEvent.ROLL_OUT, this.onRollOut);
         }
 
-        private function addUI(server:Server):void
-        {
+        private function addUI(server:Server):void{
             var onTextChanged:Function;
             var color:uint;
             var text:String;
-            onTextChanged = function ():void
-            {
+            onTextChanged = function ():void{
                 makeStatusText(color, text);
             };
             if (server != null)
@@ -75,14 +70,13 @@ public class ServerBox extends Sprite
                     {
                         color = 16549442;
                         text = "ServerBox.crowded";
-                    }
-                }
+                    };
+                };
                 this.nameText_.textChanged.addOnce(onTextChanged);
-            }
+            };
         }
 
-        private function makeStatusText(_arg_1:uint, _arg_2:String):void
-        {
+        private function makeStatusText(_arg_1:uint, _arg_2:String):void{
             this.statusText_ = new TextFieldDisplayConcrete().setSize(18).setColor(_arg_1).setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.statusText_.setStringBuilder(new LineBuilder().setParams(_arg_2));
             this.statusText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
@@ -91,37 +85,33 @@ public class ServerBox extends Sprite
             addChild(this.statusText_);
         }
 
-        public function setSelected(_arg_1:Boolean):void
-        {
+        public function setSelected(_arg_1:Boolean):void{
             this.selected_ = _arg_1;
             this.draw();
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.over_ = true;
             this.draw();
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             this.over_ = false;
             this.draw();
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             graphics.clear();
             if (this.selected_)
             {
                 graphics.lineStyle(2, 16777103);
-            }
+            };
             graphics.beginFill(((this.over_) ? 0x6B6B6B : 0x5C5C5C), 1);
             graphics.drawRect(0, 0, WIDTH, HEIGHT);
             if (this.selected_)
             {
                 graphics.lineStyle();
-            }
+            };
         }
 
 

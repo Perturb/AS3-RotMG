@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.model.GameInitData
 
-package kabam.rotmg.game.model
-{
+package kabam.rotmg.game.model{
 import flash.utils.ByteArray;
 
 import kabam.rotmg.servers.api.Server;
 
-public class GameInitData 
-    {
+public class GameInitData {
 
         public var server:Server;
         public var gameId:int;

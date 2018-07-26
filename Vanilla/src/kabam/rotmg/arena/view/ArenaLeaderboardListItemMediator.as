@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardListItemMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.display.Sprite;
 
 import kabam.rotmg.core.signals.HideTooltipsSignal;
@@ -13,8 +12,7 @@ import kabam.rotmg.game.model.GameModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ArenaLeaderboardListItemMediator extends Mediator 
-    {
+public class ArenaLeaderboardListItemMediator extends Mediator {
 
         [Inject]
         public var view:ArenaLeaderboardListItem;
@@ -26,26 +24,22 @@ public class ArenaLeaderboardListItemMediator extends Mediator
         public var gameModel:GameModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.showTooltip.add(this.onShow);
             this.view.hideTooltip.add(this.onHide);
             this.view.setColor();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.showTooltip.remove(this.onShow);
             this.view.hideTooltip.remove(this.onHide);
         }
 
-        private function onShow(_arg_1:Sprite):void
-        {
+        private function onShow(_arg_1:Sprite):void{
             this.showTooltip.dispatch(_arg_1);
         }
 
-        private function onHide():void
-        {
+        private function onHide():void{
             this.hideTooltips.dispatch();
         }
 

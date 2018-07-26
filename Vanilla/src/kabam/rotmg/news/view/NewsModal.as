@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsModal
 
-package kabam.rotmg.news.view
-{
+package kabam.rotmg.news.view{
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.util.AssetLibrary;
 import com.company.util.KeyCodes;
@@ -35,8 +34,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class NewsModal extends EmptyFrame
-    {
+public class NewsModal extends EmptyFrame {
 
         public static var backgroundImageEmbed:Class = NewsModal_backgroundImageEmbed;
         public static var foregroundImageEmbed:Class = NewsModal_foregroundImageEmbed;
@@ -65,8 +63,7 @@ public class NewsModal extends EmptyFrame
         private var currentPageNumber:int = 1;
         private var triggeredOnStartup:Boolean;
 
-        public function NewsModal(_arg_1:Boolean=false)
-        {
+        public function NewsModal(_arg_1:Boolean=false){
             this.triggeredOnStartup = _arg_1;
             this.newsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
             this.fontModel = StaticInjectorContext.getInjector().getInstance(FontModel);
@@ -83,8 +80,7 @@ public class NewsModal extends EmptyFrame
             closeButton.clicked.add(this.onCloseButtonClicked);
         }
 
-        public static function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean):TextFieldDisplayConcrete
-        {
+        public static function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean):TextFieldDisplayConcrete{
             var _local_5:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(((NewsModal.modalWidth - (TEXT_MARGIN * 2)) - 10));
             _local_5.setBold(true);
             if (_arg_4)
@@ -94,7 +90,7 @@ public class NewsModal extends EmptyFrame
             else
             {
                 _local_5.setStringBuilder(new LineBuilder().setParams(_arg_1));
-            }
+            };
             _local_5.setWordWrap(true);
             _local_5.setMultiLine(true);
             _local_5.setAutoSize(TextFieldAutoSize.CENTER);
@@ -106,24 +102,21 @@ public class NewsModal extends EmptyFrame
         }
 
 
-        public function onCloseButtonClicked():void
-        {
+        public function onCloseButtonClicked():void{
             var _local_1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
             closeButton.clicked.remove(this.onCloseButtonClicked);
             if (this.triggeredOnStartup)
             {
                 _local_1.dispatch();
-            }
+            };
         }
 
-        private function onAdded(_arg_1:Event):void
-        {
+        private function onAdded(_arg_1:Event):void{
             this.newsModel.markAsRead();
             this.refreshNewsButton();
         }
 
-        private function updateIndicator():void
-        {
+        private function updateIndicator():void{
             this.fontModel.apply(this.pageIndicator, 24, 0xFFFFFF, true);
             this.pageIndicator.text = ((this.currentPageNumber + " / ") + this.newsModel.numberOfNews);
             addChild(this.pageIndicator);
@@ -132,8 +125,7 @@ public class NewsModal extends EmptyFrame
             this.pageIndicator.width = (this.pageIndicator.textWidth + 4);
         }
 
-        private function initNavButtons():void
-        {
+        private function initNavButtons():void{
             this.updateIndicator();
             this.leftNavSprite = this.makeLeftNav();
             this.rightNavSprite = this.makeRightNav();
@@ -145,27 +137,25 @@ public class NewsModal extends EmptyFrame
             addChild(this.rightNavSprite);
         }
 
-        public function onClick(_arg_1:MouseEvent):void
-        {
+        public function onClick(_arg_1:MouseEvent):void{
             switch (_arg_1.currentTarget)
             {
                 case this.rightNavSprite:
                     if ((this.currentPageNumber + 1) <= this.newsModel.numberOfNews)
                     {
                         this.setPage((this.currentPageNumber + 1));
-                    }
+                    };
                     return;
                 case this.leftNavSprite:
                     if ((this.currentPageNumber - 1) >= 1)
                     {
                         this.setPage((this.currentPageNumber - 1));
-                    }
+                    };
                     return;
-            }
+            };
         }
 
-        private function destroy(_arg_1:Event):void
-        {
+        private function destroy(_arg_1:Event):void{
             removeEventListener(Event.ADDED_TO_STAGE, this.onAdded);
             WebMain.STAGE.removeEventListener(KeyboardEvent.KEY_DOWN, this.keyDownListener);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.destroy);
@@ -177,29 +167,26 @@ public class NewsModal extends EmptyFrame
             this.rightNavSprite.removeEventListener(MouseEvent.MOUSE_OUT, this.onArrowHoverOut);
         }
 
-        private function setPage(_arg_1:int):void
-        {
+        private function setPage(_arg_1:int):void{
             this.currentPageNumber = _arg_1;
             if (((this.currentPage) && (this.currentPage.parent)))
             {
                 removeChild(this.currentPage);
-            }
+            };
             this.currentPage = this.newsModel.getModalPage(_arg_1);
             addChild(this.currentPage);
             this.updateIndicator();
         }
 
-        private function refreshNewsButton():void
-        {
+        private function refreshNewsButton():void{
             var _local_1:HUDModel = StaticInjectorContext.getInjector().getInstance(HUDModel);
             if (((!(_local_1 == null)) && (!(_local_1.gameSprite == null))))
             {
                 _local_1.gameSprite.refreshNewsUpdateButton();
-            }
+            };
         }
 
-        override protected function makeModalBackground():Sprite
-        {
+        override protected function makeModalBackground():Sprite{
             var _local_1:Sprite = new Sprite();
             var _local_2:DisplayObject = new backgroundImageEmbed();
             _local_2.width = (protected::modalWidth + 1);
@@ -219,14 +206,13 @@ public class NewsModal extends EmptyFrame
             return (_local_1);
         }
 
-        private function keyDownListener(_arg_1:KeyboardEvent):void
-        {
+        private function keyDownListener(_arg_1:KeyboardEvent):void{
             if (_arg_1.keyCode == KeyCodes.RIGHT)
             {
                 if ((this.currentPageNumber + 1) <= this.newsModel.numberOfNews)
                 {
                     this.setPage((this.currentPageNumber + 1));
-                }
+                };
             }
             else
             {
@@ -235,13 +221,12 @@ public class NewsModal extends EmptyFrame
                     if ((this.currentPageNumber - 1) >= 1)
                     {
                         this.setPage((this.currentPageNumber - 1));
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function makeLeftNav():Sprite
-        {
+        private function makeLeftNav():Sprite{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiInterface", 54);
             var _local_2:Bitmap = new Bitmap(_local_1);
             _local_2.scaleX = 4;
@@ -255,8 +240,7 @@ public class NewsModal extends EmptyFrame
             return (_local_3);
         }
 
-        private function makeRightNav():Sprite
-        {
+        private function makeRightNav():Sprite{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiInterface", 55);
             var _local_2:Bitmap = new Bitmap(_local_1);
             _local_2.scaleX = 4;
@@ -270,18 +254,15 @@ public class NewsModal extends EmptyFrame
             return (_local_3);
         }
 
-        private function onArrowHover(_arg_1:MouseEvent):void
-        {
+        private function onArrowHover(_arg_1:MouseEvent):void{
             _arg_1.currentTarget.transform.colorTransform = OVER_COLOR_TRANSFORM;
         }
 
-        private function onArrowHoverOut(_arg_1:MouseEvent):void
-        {
+        private function onArrowHoverOut(_arg_1:MouseEvent):void{
             _arg_1.currentTarget.transform.colorTransform = MoreColorUtil.identity;
         }
 
-        override public function onCloseClick(_arg_1:MouseEvent):void
-        {
+        override public function onCloseClick(_arg_1:MouseEvent):void{
             SoundEffectLibrary.play("button_click");
         }
 

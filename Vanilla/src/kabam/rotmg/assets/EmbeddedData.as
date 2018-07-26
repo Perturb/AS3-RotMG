@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.assets.EmbeddedData
 
-package kabam.rotmg.assets
-{
-    public class EmbeddedData 
-    {
+package kabam.rotmg.assets{
+    public class EmbeddedData {
 
         public static const PlayersCXML:Class = EmbeddedData_PlayersCXML;
         private static const GroundCXML:Class = EmbeddedData_GroundCXML;
@@ -120,8 +118,7 @@ package kabam.rotmg.assets
         public static const tutorialXML:XML = XML(new TutorialScriptCXML());
 
 
-        public static function appendXML(_arg_1:Array, _arg_2:String, _arg_3:String):XML
-        {
+        public static function appendXML(_arg_1:Array, _arg_2:String, _arg_3:String):XML{
             var _local_6:XML;
             var _local_7:XML;
             var _local_4:XML = new XML((((("<" + _arg_2) + "></") + _arg_2) + ">"));
@@ -132,9 +129,9 @@ package kabam.rotmg.assets
                 for each (_local_7 in _local_6[_arg_3])
                 {
                     _local_4 = _local_4.appendChild(_local_7);
-                }
+                };
                 _local_5++;
-            }
+            };
             return (_local_4);
         }
 

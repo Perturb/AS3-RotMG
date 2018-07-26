@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindowMediator
 
-package io.decagames.rotmg.pets.windows.wardrobe
-{
+package io.decagames.rotmg.pets.windows.wardrobe{
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import io.decagames.rotmg.pets.data.PetsModel;
@@ -24,8 +23,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PetWardrobeWindowMediator extends Mediator 
-    {
+public class PetWardrobeWindowMediator extends Mediator {
 
         [Inject]
         public var view:PetWardrobeWindow;
@@ -48,8 +46,7 @@ public class PetWardrobeWindowMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
             this.addButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "add_button"));
             this.view.header.setTitle("Wardrobe", 350, DefaultLabelFormat.defaultPopupTitle);
@@ -76,23 +73,19 @@ public class PetWardrobeWindowMediator extends Mediator
             this.view.renderCollection(this.petsModel.totalOwnedPetsSkins, this.petsModel.totalPetsSkins);
         }
 
-        private function refreshCoins():void
-        {
+        private function refreshCoins():void{
             this.view.header.showCoins(132).coinsAmount = this.gameModel.player.credits_;
         }
 
-        private function refreshFame():void
-        {
+        private function refreshFame():void{
             this.view.header.showFame(132).fameAmount = this.gameModel.player.fame_;
         }
 
-        private function onAdd(_arg_1:BaseButton):void
-        {
+        private function onAdd(_arg_1:BaseButton):void{
             this.openMoneyWindow.dispatch();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.dispose();
             this.closeButton.dispose();
             this.addButton.dispose();
@@ -103,8 +96,7 @@ public class PetWardrobeWindowMediator extends Mediator
             this.hoverTooltipDelegate = null;
         }
 
-        private function onClose(_arg_1:BaseButton):void
-        {
+        private function onClose(_arg_1:BaseButton):void{
             this.closePopupSignal.dispatch(this.view);
         }
 

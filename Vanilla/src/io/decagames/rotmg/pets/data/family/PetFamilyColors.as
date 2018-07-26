@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.family.PetFamilyColors
 
-package io.decagames.rotmg.pets.data.family
-{
-public class PetFamilyColors 
-    {
+package io.decagames.rotmg.pets.data.family{
+public class PetFamilyColors {
 
         public static const AQUATIC:uint = 2453493;
         public static const AUTOMATON:uint = 5853776;
@@ -41,8 +39,7 @@ public class PetFamilyColors
         };
 
 
-        public static function getColorByFamilyKey(_arg_1:String):uint
-        {
+        public static function getColorByFamilyKey(_arg_1:String):uint{
             return (KEYS_TO_COLORS[PetFamilyKeys.getTranslationKey(_arg_1)]);
         }
 

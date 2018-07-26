@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer
 
-package kabam.rotmg.arena.component
-{
+package kabam.rotmg.arena.component{
 import flash.display.Sprite;
 import flash.events.TimerEvent;
 import flash.filters.DropShadowFilter;
@@ -14,8 +13,7 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.StaticTextDisplay;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class LeaderboardWeeklyResetTimer extends Sprite 
-    {
+public class LeaderboardWeeklyResetTimer extends Sprite {
 
         private const MONDAY:Number = 1;
         private const UTC_COUNTOFF_HOUR:Number = 7;
@@ -25,8 +23,7 @@ public class LeaderboardWeeklyResetTimer extends Sprite
         private var resetClock:StaticTextDisplay;
         private var resetClockStringBuilder:LineBuilder;
 
-        public function LeaderboardWeeklyResetTimer()
-        {
+        public function LeaderboardWeeklyResetTimer(){
             this.differenceMilliseconds = this.makeDifferenceMilliseconds();
             this.resetClock = this.makeResetClockDisplay();
             this.resetClockStringBuilder = new LineBuilder();
@@ -38,14 +35,12 @@ public class LeaderboardWeeklyResetTimer extends Sprite
             this.updateTimer.start();
         }
 
-        private function onUpdateTime(_arg_1:TimerEvent):void
-        {
+        private function onUpdateTime(_arg_1:TimerEvent):void{
             this.differenceMilliseconds = (this.differenceMilliseconds - 1000);
             this.resetClock.setStringBuilder(this.resetClockStringBuilder.setParams(TextKey.ARENA_WEEKLY_RESET_LABEL, {"time":this.getDateString()}));
         }
 
-        private function getDateString():String
-        {
+        private function getDateString():String{
             var _local_1:int = this.differenceMilliseconds;
             var _local_2:int = int(Math.floor((_local_1 / 86400000)));
             _local_1 = (_local_1 % 86400000);
@@ -62,25 +57,23 @@ public class LeaderboardWeeklyResetTimer extends Sprite
             else
             {
                 _local_6 = (((((_local_3 + " hours, ") + _local_4) + " minutes, ") + _local_5) + " seconds");
-            }
+            };
             return (_local_6);
         }
 
-        private function makeDifferenceMilliseconds():Number
-        {
+        private function makeDifferenceMilliseconds():Number{
             var _local_1:Date = new Date();
             var _local_2:Date = this.makeResetDate();
             return (_local_2.getTime() - _local_1.getTime());
         }
 
-        private function makeResetDate():Date
-        {
+        private function makeResetDate():Date{
             var _local_1:Date = new Date();
             if (((_local_1.dayUTC == this.MONDAY) && (_local_1.hoursUTC < this.UTC_COUNTOFF_HOUR)))
             {
                 _local_1.setUTCHours((this.UTC_COUNTOFF_HOUR - _local_1.hoursUTC));
                 return (_local_1);
-            }
+            };
             _local_1.setUTCHours(7);
             _local_1.setUTCMinutes(0);
             _local_1.setUTCSeconds(0);
@@ -89,12 +82,11 @@ public class LeaderboardWeeklyResetTimer extends Sprite
             while (_local_1.dayUTC != this.MONDAY)
             {
                 _local_1.setUTCDate((_local_1.dateUTC + 1));
-            }
+            };
             return (_local_1);
         }
 
-        private function makeResetClockDisplay():StaticTextDisplay
-        {
+        private function makeResetClockDisplay():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(14).setColor(16567065).setBold(true);
             _local_1.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.net.impl.MessagePool
 
-package kabam.lib.net.impl
-{
-    public class MessagePool 
-    {
+package kabam.lib.net.impl{
+    public class MessagePool {
 
         public var type:Class;
         public var callback:Function;
@@ -14,15 +12,13 @@ package kabam.lib.net.impl
         private var tail:Message;
         private var count:int = 0;
 
-        public function MessagePool(_arg_1:int, _arg_2:Class, _arg_3:Function)
-        {
+        public function MessagePool(_arg_1:int, _arg_2:Class, _arg_3:Function){
             this.type = _arg_2;
             this.id = _arg_1;
             this.callback = _arg_3;
         }
 
-        public function populate(_arg_1:int):MessagePool
-        {
+        public function populate(_arg_1:int):MessagePool{
             var _local_2:Message;
             this.count = (this.count + _arg_1);
             while (_arg_1--)
@@ -32,12 +28,11 @@ package kabam.lib.net.impl
                 ((this.tail) && (this.tail.next = _local_2));
                 _local_2.prev = this.tail;
                 this.tail = _local_2;
-            }
+            };
             return (this);
         }
 
-        public function require():Message
-        {
+        public function require():Message{
             var _local_1:Message = this.tail;
             if (_local_1)
             {
@@ -50,24 +45,21 @@ package kabam.lib.net.impl
                 _local_1 = new this.type(this.id, this.callback);
                 _local_1.pool = this;
                 this.count++;
-            }
+            };
             return (_local_1);
         }
 
-        public function getCount():int
-        {
+        public function getCount():int{
             return (this.count);
         }
 
-        internal function append(_arg_1:Message):void
-        {
+        internal function append(_arg_1:Message):void{
             ((this.tail) && (this.tail.next = _arg_1));
             _arg_1.prev = this.tail;
             this.tail = _arg_1;
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.tail = null;
         }
 

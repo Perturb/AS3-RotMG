@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.petPortrait.PetPortrait
 
-package io.decagames.rotmg.pets.components.petPortrait
-{
+package io.decagames.rotmg.pets.components.petPortrait{
 import com.company.assembleegameclient.ui.icons.IconButton;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 import com.company.util.AssetLibrary;
@@ -35,8 +34,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class PetPortrait extends Sprite
-    {
+public class PetPortrait extends Sprite {
 
         public static const INFO_HEIGHT:int = 207;
 
@@ -59,8 +57,7 @@ public class PetPortrait extends Sprite
         private var showFeedPower:Boolean;
         public var releaseSignal:Signal = new Signal();
 
-        public function PetPortrait(_arg_1:int, _arg_2:IPetVO, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:Boolean=false, _arg_6:Boolean=false)
-        {
+        public function PetPortrait(_arg_1:int, _arg_2:IPetVO, _arg_3:Boolean=false, _arg_4:Boolean=false, _arg_5:Boolean=false, _arg_6:Boolean=false){
             TweenPlugin.activate([TransformMatrixPlugin]);
             this._petVO = _arg_2;
             this._switchable = _arg_3;
@@ -79,7 +76,7 @@ public class PetPortrait extends Sprite
                 addChild(this.petSwitch);
                 this.petSwitch.y = 35;
                 this.petSwitch.x = ((_arg_1 / 2) - (this.petSwitch.width / 2));
-            }
+            };
             this.petRarity = new UILabel();
             DefaultLabelFormat.petInfoLabel(this.petRarity, 0xFFFFFF);
             addChild(this.petRarity);
@@ -99,59 +96,49 @@ public class PetPortrait extends Sprite
             this.render();
         }
 
-        public function hideRarityLabel():void
-        {
+        public function hideRarityLabel():void{
             this.petRarity.alpha = 0;
         }
 
-        public function get petVO():IPetVO
-        {
+        public function get petVO():IPetVO{
             return (this._petVO);
         }
 
-        public function get switchable():Boolean
-        {
+        public function get switchable():Boolean{
             return (this._switchable);
         }
 
-        public function set petVO(_arg_1:IPetVO):void
-        {
+        public function set petVO(_arg_1:IPetVO):void{
             this._petVO = _arg_1;
             this.render();
             this._petSkin.skinVO = _arg_1;
         }
 
-        public function get petSkin():PetSkinSlot
-        {
+        public function get petSkin():PetSkinSlot{
             return (this._petSkin);
         }
 
-        public function get showCurrentPet():Boolean
-        {
+        public function get showCurrentPet():Boolean{
             return (this._showCurrentPet);
         }
 
-        public function get enableAnimation():Boolean
-        {
+        public function get enableAnimation():Boolean{
             return (this._enableAnimation);
         }
 
-        public function set enableAnimation(_arg_1:Boolean):void
-        {
+        public function set enableAnimation(_arg_1:Boolean):void{
             this._petSkin.manualUpdate = _arg_1;
             this._enableAnimation = _arg_1;
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             if (this._releaseButton)
             {
                 this._releaseButton.removeEventListener(MouseEvent.CLICK, this.onReleaseClickHandler);
-            }
+            };
         }
 
-        private function startAnimation():void
-        {
+        private function startAnimation():void{
             var animationSpiral:SliceScalingBitmap;
             var whiteRectangle:Sprite;
             var spinDuration:Number;
@@ -160,7 +147,7 @@ public class PetPortrait extends Sprite
             if (this.isAnimating)
             {
                 return;
-            }
+            };
             this.animationWaitCounter = 0;
             this.isAnimating = true;
             animationSpiral = TextureParser.instance.getSliceScalingBitmap("UI", "animation_spiral");
@@ -179,8 +166,7 @@ public class PetPortrait extends Sprite
             TweenLite.to(whiteRectangle, flashDuration, {
                 "alpha":1,
                 "ease":Sine.easeIn,
-                "onComplete":function ():void
-                {
+                "onComplete":function ():void{
                     applyPetChange();
                     _petSkin.addSkin(StaticInjectorContext.getInjector().getInstance(PetIconFactory).getPetSkinTexture(_petVO, 50));
                     addChildAt(animationSpiral, 0);
@@ -193,8 +179,7 @@ public class PetPortrait extends Sprite
                         "delay":(spinDuration - 0.2),
                         "overwrite":false,
                         "ease":Sine.easeIn,
-                        "onComplete":function ():void
-                        {
+                        "onComplete":function ():void{
                             removeChild(whiteRectangle);
                             removeChild(animationSpiral);
                             isAnimating = false;
@@ -210,8 +195,7 @@ public class PetPortrait extends Sprite
             });
         }
 
-        private function render():void
-        {
+        private function render():void{
             if (this._petVO)
             {
                 if (((this._enableAnimation) && (((!(this.petName.text == "")) && (!(this.petName.text == this.petVO.name))) || ((!(this.petFamily.text == "")) && (!(this.petFamily.text == this.petVO.family))))))
@@ -221,7 +205,7 @@ public class PetPortrait extends Sprite
                 else
                 {
                     this.applyPetChange();
-                }
+                };
             }
             else
             {
@@ -231,18 +215,17 @@ public class PetPortrait extends Sprite
                 if (this.contentDividerTitle.parent)
                 {
                     removeChild(this.contentDividerTitle);
-                }
+                };
                 if (this._releaseButton)
                 {
                     this._releaseButton.removeEventListener(MouseEvent.CLICK, this.onReleaseClickHandler);
                     removeChild(this._releaseButton);
                     this._releaseButton = null;
-                }
-            }
+                };
+            };
         }
 
-        private function applyPetChange():void
-        {
+        private function applyPetChange():void{
             var _local_1:IconButtonFactory;
             Tint.add(this.contentDividerTitle, PetFamilyColors.getColorByFamilyKey(this.petVO.family), 1);
             this.petFamily.text = this.petVO.family;
@@ -256,12 +239,12 @@ public class PetPortrait extends Sprite
             {
                 addChild(this.contentDividerTitle);
                 addChild(this.petFamily);
-            }
+            };
             DefaultLabelFormat.petNameLabel(this.petName, this.petVO.rarity.color);
             if (this.petName.textWidth >= this.slotWidth)
             {
                 DefaultLabelFormat.petNameLabelSmall(this.petName, this.petVO.rarity.color);
-            }
+            };
             this.petRarity.x = ((this.slotWidth / 2) - (this.petRarity.width / 2));
             this.petFamily.x = ((this.slotWidth / 2) - (this.petFamily.width / 2));
             this.petName.x = ((this.slotWidth / 2) - (this.petName.width / 2));
@@ -273,19 +256,18 @@ public class PetPortrait extends Sprite
                 this._releaseButton.y = 10;
                 this._releaseButton.addEventListener(MouseEvent.CLICK, this.onReleaseClickHandler);
                 addChild(this._releaseButton);
-            }
+            };
             if (this._releaseButton)
             {
                 this._releaseButton.setToolTipText(("Release " + this.petVO.name));
-            }
+            };
             if (this.showFeedPower)
             {
                 this.updateFeedPowerInfo(this.getCurrentPointsFromAbilitiesList(), this.getMaxPointsFromAbilitiesList(), false);
-            }
+            };
         }
 
-        private function getMaxPointsFromAbilitiesList():int
-        {
+        private function getMaxPointsFromAbilitiesList():int{
             var _local_2:AbilityVO;
             var _local_1:int;
             for each (_local_2 in this._petVO.abilityList)
@@ -293,13 +275,12 @@ public class PetPortrait extends Sprite
                 if (_local_2.getUnlocked())
                 {
                     _local_1 = (_local_1 + AbilitiesUtil.abilityPowerToMinPoints(this._petVO.maxAbilityPower));
-                }
-            }
+                };
+            };
             return (_local_1);
         }
 
-        private function getCurrentPointsFromAbilitiesList():int
-        {
+        private function getCurrentPointsFromAbilitiesList():int{
             var _local_2:AbilityVO;
             var _local_1:int;
             for each (_local_2 in this._petVO.abilityList)
@@ -307,17 +288,16 @@ public class PetPortrait extends Sprite
                 if (_local_2.getUnlocked())
                 {
                     _local_1 = (_local_1 + _local_2.points);
-                }
-            }
+                };
+            };
             return (_local_1);
         }
 
-        private function updateFeedPowerInfo(_arg_1:int, _arg_2:int, _arg_3:Boolean):void
-        {
+        private function updateFeedPowerInfo(_arg_1:int, _arg_2:int, _arg_3:Boolean):void{
             if (_arg_1 > _arg_2)
             {
                 _arg_1 = _arg_2;
-            }
+            };
             var _local_4:* = "Feed Power: ";
             this.petFeedPower.text = (((_local_4 + _arg_1) + "/") + _arg_2);
             var _local_5:TextFormat = DefaultLabelFormat.petFeedPower(this.petFeedPower, 0xFFFFFF);
@@ -332,20 +312,18 @@ public class PetPortrait extends Sprite
                 {
                     _local_5.color = 6538829;
                     this.petFeedPower.setTextFormat(_local_5, _local_4.length, (_local_4.length + _arg_1.toString().length));
-                }
-            }
+                };
+            };
             this.petFeedPower.y = 25;
             this.petFeedPower.x = ((this.slotWidth / 2) - (this.petFeedPower.width / 2));
             addChild(this.petFeedPower);
         }
 
-        public function simulateFeed(_arg_1:Array, _arg_2:int):void
-        {
+        public function simulateFeed(_arg_1:Array, _arg_2:int):void{
             this.updateFeedPowerInfo((this.getCurrentPointsFromAbilitiesList() + _arg_2), this.getMaxPointsFromAbilitiesList(), (!(_arg_2 == 0)));
         }
 
-        private function onReleaseClickHandler(_arg_1:MouseEvent):void
-        {
+        private function onReleaseClickHandler(_arg_1:MouseEvent):void{
             this.releaseSignal.dispatch();
         }
 

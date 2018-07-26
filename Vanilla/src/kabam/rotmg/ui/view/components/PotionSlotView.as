@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.components.PotionSlotView
 
-package kabam.rotmg.ui.view.components
-{
+package kabam.rotmg.ui.view.components{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.TextureRedrawer;
@@ -33,8 +32,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeSignal;
 
-public class PotionSlotView extends Sprite 
-    {
+public class PotionSlotView extends Sprite {
 
         public static var BUTTON_WIDTH:int = 84;
         private static var BUTTON_HEIGHT:int = 24;
@@ -71,8 +69,7 @@ public class PotionSlotView extends Sprite
         private var pendingSecondClick:Boolean;
         private var isDragging:Boolean;
 
-        public function PotionSlotView(_arg_1:Array, _arg_2:int)
-        {
+        public function PotionSlotView(_arg_1:Array, _arg_2:int){
             var _local_3:BitmapData;
             super();
             mouseChildren = false;
@@ -111,8 +108,7 @@ public class PotionSlotView extends Sprite
             this.drop = new Signal(DisplayObject);
         }
 
-        public function setData(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:int=-1):void
-        {
+        public function setData(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:int=-1):void{
             var _local_6:int;
             var _local_7:BitmapData;
             var _local_8:Bitmap;
@@ -122,7 +118,7 @@ public class PotionSlotView extends Sprite
                 if (this.potionIcon != null)
                 {
                     removeChild(this.potionIcon);
-                }
+                };
                 _local_7 = ObjectLibrary.getRedrawnTextureFromType(_arg_4, 55, false);
                 this.potionIcon = new Bitmap(_local_7);
                 this.potionIcon.y = -11;
@@ -132,7 +128,7 @@ public class PotionSlotView extends Sprite
                 _local_8.x = (_local_8.x - 30);
                 _local_8.y = (_local_8.y - 30);
                 this.potionIconDraggableSprite.addChild(_local_8);
-            }
+            };
             var _local_5:* = (_arg_1 > 0);
             if (_local_5)
             {
@@ -159,11 +155,11 @@ public class PotionSlotView extends Sprite
                 this.text.y = 4;
                 this.text.setBold(false);
                 this.text.setSize(14);
-            }
+            };
             if (this.potionIcon)
             {
                 this.potionIcon.x = _local_6;
-            }
+            };
             if (!_local_5)
             {
                 if (Parameters.data_.contextualPotionBuy)
@@ -179,7 +175,7 @@ public class PotionSlotView extends Sprite
                     this.text.setColor(0xAAAAAA);
                     this.costIcon.filters = [this.grayscaleMatrix];
                     this.costIcon.visible = true;
-                }
+                };
             }
             else
             {
@@ -198,30 +194,27 @@ public class PotionSlotView extends Sprite
                         if (_arg_1 >= 4)
                         {
                             this.text.setColor(3007543);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 this.costIcon.filters = [];
                 this.costIcon.visible = false;
-            }
+            };
         }
 
-        public function setTextString(_arg_1:String):void
-        {
+        public function setTextString(_arg_1:String):void{
             this.text.setStringBuilder(new StaticStringBuilder(_arg_1));
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             this.setPendingDoubleClick(false);
         }
 
-        private function onMouseUp(_arg_1:MouseEvent):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent):void{
             if (this.isDragging)
             {
                 return;
-            }
+            };
             if (_arg_1.shiftKey)
             {
                 this.setPendingDoubleClick(false);
@@ -237,20 +230,18 @@ public class PotionSlotView extends Sprite
                 {
                     this.setPendingDoubleClick(false);
                     this.buyUse.dispatch();
-                }
-            }
+                };
+            };
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             if (!this.costIcon.visible)
             {
                 this.beginDragCheck(_arg_1);
-            }
+            };
         }
 
-        private function setPendingDoubleClick(_arg_1:Boolean):void
-        {
+        private function setPendingDoubleClick(_arg_1:Boolean):void{
             this.pendingSecondClick = _arg_1;
             if (this.pendingSecondClick)
             {
@@ -260,26 +251,23 @@ public class PotionSlotView extends Sprite
             else
             {
                 this.doubleClickTimer.stop();
-            }
+            };
         }
 
-        private function beginDragCheck(_arg_1:MouseEvent):void
-        {
+        private function beginDragCheck(_arg_1:MouseEvent):void{
             this.dragStart = new Point(_arg_1.stageX, _arg_1.stageY);
             addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
             addEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
             addEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
         }
 
-        private function cancelDragCheck(_arg_1:MouseEvent):void
-        {
+        private function cancelDragCheck(_arg_1:MouseEvent):void{
             removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
             removeEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
             removeEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
         }
 
-        private function onMouseMoveCheckDrag(_arg_1:MouseEvent):void
-        {
+        private function onMouseMoveCheckDrag(_arg_1:MouseEvent):void{
             var _local_2:Number = (_arg_1.stageX - this.dragStart.x);
             var _local_3:Number = (_arg_1.stageY - this.dragStart.y);
             var _local_4:Number = Math.sqrt(((_local_2 * _local_2) + (_local_3 * _local_3)));
@@ -288,24 +276,21 @@ public class PotionSlotView extends Sprite
                 this.cancelDragCheck(null);
                 this.setPendingDoubleClick(false);
                 this.beginDrag();
-            }
+            };
         }
 
-        private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void
-        {
+        private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void{
             this.setPendingDoubleClick(false);
         }
 
-        private function beginDrag():void
-        {
+        private function beginDrag():void{
             this.isDragging = true;
             this.potionIconDraggableSprite.startDrag(true);
             stage.addChild(this.potionIconDraggableSprite);
             this.potionIconDraggableSprite.addEventListener(MouseEvent.MOUSE_UP, this.endDrag);
         }
 
-        private function endDrag(_arg_1:MouseEvent):void
-        {
+        private function endDrag(_arg_1:MouseEvent):void{
             this.isDragging = false;
             this.potionIconDraggableSprite.stopDrag();
             this.potionIconDraggableSprite.x = this.dragStart.x;
@@ -315,14 +300,13 @@ public class PotionSlotView extends Sprite
             this.drop.dispatch(this.potionIconDraggableSprite.dropTarget);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.setPendingDoubleClick(false);
             this.cancelDragCheck(null);
             if (this.isDragging)
             {
                 this.potionIconDraggableSprite.stopDrag();
-            }
+            };
         }
 
 

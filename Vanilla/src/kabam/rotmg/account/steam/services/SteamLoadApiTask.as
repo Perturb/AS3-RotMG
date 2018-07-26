@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamLoadApiTask
 
-package kabam.rotmg.account.steam.services
-{
+package kabam.rotmg.account.steam.services{
 import flash.display.DisplayObject;
 import flash.display.LoaderInfo;
 
@@ -17,8 +16,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class SteamLoadApiTask extends BaseTask 
-    {
+public class SteamLoadApiTask extends BaseTask {
 
         [Inject]
         public var info:LoaderInfo;
@@ -35,23 +33,20 @@ public class SteamLoadApiTask extends BaseTask
         private var dialog:SteamSessionRequestErrorDialog;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.debug("startTask");
             this.layers.api.addChild((this.api as DisplayObject));
             this.api.loaded.addOnce(this.requestSessionTicket);
             this.api.load(this.info.parameters.steam_api_path);
         }
 
-        private function requestSessionTicket():void
-        {
+        private function requestSessionTicket():void{
             this.logger.debug("requestSessionTicket");
             this.api.sessionReceived.addOnce(this.onSessionReceived);
             this.api.requestSessionTicket();
         }
 
-        private function onSessionReceived(_arg_1:Boolean):void
-        {
+        private function onSessionReceived(_arg_1:Boolean):void{
             this.logger.debug("session received - isValid? {0}", [_arg_1]);
             if (_arg_1)
             {
@@ -60,18 +55,16 @@ public class SteamLoadApiTask extends BaseTask
             else
             {
                 this.showErrorDialog();
-            }
+            };
         }
 
-        private function showErrorDialog():void
-        {
+        private function showErrorDialog():void{
             this.dialog = ((this.dialog) || (new SteamSessionRequestErrorDialog()));
             this.dialog.ok.addOnce(this.onOK);
             this.openDialog.dispatch(this.dialog);
         }
 
-        private function onOK():void
-        {
+        private function onOK():void{
             this.closeDialog.dispatch();
             this.requestSessionTicket();
         }

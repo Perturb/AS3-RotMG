@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.control.TextHandler
 
-package kabam.rotmg.chat.control
-{
+package kabam.rotmg.chat.control{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.TextureDataConcrete;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -31,8 +30,7 @@ import kabam.rotmg.servers.api.ServerModel;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class TextHandler 
-    {
+public class TextHandler {
 
         private const NORMAL_SPEECH_COLORS:TextColors = new TextColors(14802908, 0xFFFFFF, 0x545454);
         private const ENEMY_SPEECH_COLORS:TextColors = new TextColors(5644060, 16549442, 13484223);
@@ -63,8 +61,7 @@ public class TextHandler
         public var setup:ApplicationSetup;
 
 
-        public function execute(_arg_1:Text):void
-        {
+        public function execute(_arg_1:Text):void{
             var _local_3:String;
             var _local_4:String;
             var _local_5:String;
@@ -72,11 +69,11 @@ public class TextHandler
             if (((((_arg_1.numStars_ < Parameters.data_.chatStarRequirement) && (!(_arg_1.name_ == this.model.player.name_))) && (!(_local_2))) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
             {
                 return;
-            }
+            };
             if ((((!(_arg_1.recipient_ == "")) && (Parameters.data_.chatFriend)) && (!(this.socialModel.isMyFriend(_arg_1.recipient_)))))
             {
                 return;
-            }
+            };
             if (((((!(Parameters.data_.chatAll)) && (!(_arg_1.name_ == this.model.player.name_))) && (!(_local_2))) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
             {
                 if (!((_arg_1.recipient_ == Parameters.GUILD_CHAT_NAME) && (Parameters.data_.chatGuild)))
@@ -84,9 +81,9 @@ public class TextHandler
                     if (!(((_arg_1.numStars_ < Parameters.data_.chatStarRequirement) && (!(_arg_1.recipient_ == ""))) && (Parameters.data_.chatWhisper)))
                     {
                         return;
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (this.useCleanString(_arg_1))
             {
                 _local_3 = _arg_1.cleanText_;
@@ -96,19 +93,19 @@ public class TextHandler
             {
                 _local_3 = _arg_1.text_;
                 _arg_1.text_ = this.replaceIfSlashServerCommand(_arg_1.text_);
-            }
+            };
             if (((_local_2) && (this.isToBeLocalized(_local_3))))
             {
                 _local_3 = this.getLocalizedString(_local_3);
-            }
+            };
             if (((!(_local_2)) && (this.spamFilter.isSpam(_local_3))))
             {
                 if (_arg_1.name_ == this.model.player.name_)
                 {
                     this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, "This message has been flagged as spam."));
-                }
+                };
                 return;
-            }
+            };
             if (_arg_1.recipient_)
             {
                 if (((!(_arg_1.recipient_ == this.model.player.name_)) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
@@ -122,9 +119,9 @@ public class TextHandler
                     {
                         this.tellModel.push(_arg_1.name_);
                         this.tellModel.resetRecipients();
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (((_local_2) && (TextureDataConcrete.remoteTexturesUsed == true)))
             {
                 TextureDataConcrete.remoteTexturesUsed = false;
@@ -137,8 +134,8 @@ public class TextHandler
                     this.addTextAsTextLine(_arg_1);
                     _arg_1.name_ = _local_4;
                     _arg_1.text_ = _local_5;
-                }
-            }
+                };
+            };
             if (_local_2)
             {
                 if (((((_arg_1.text_ == "Please verify your email before chat") && (!(this.hudModel == null))) && (this.hudModel.gameSprite.map.name_ == "Nexus")) && (!(this.openDialogSignal == null))))
@@ -156,34 +153,32 @@ public class TextHandler
                         else
                         {
                             NewsTicker.setPendingScrollText(_arg_1.text_);
-                        }
+                        };
                     }
                     else
                     {
                         if (((_arg_1.name_ == "#{objects.ft_shopkeep}") && (!(FortuneModel.HAS_FORTUNES))))
                         {
                             return;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             if (_arg_1.objectId_ >= 0)
             {
                 this.showSpeechBaloon(_arg_1, _local_3);
-            }
+            };
             if (((_local_2) || ((this.account.isRegistered()) && ((!(Parameters.data_["hidePlayerChat"])) || (this.isSpecialRecipientChat(_arg_1.name_))))))
             {
                 this.addTextAsTextLine(_arg_1);
-            }
+            };
         }
 
-        private function isSpecialRecipientChat(_arg_1:String):Boolean
-        {
+        private function isSpecialRecipientChat(_arg_1:String):Boolean{
             return ((_arg_1.length > 0) && ((_arg_1.charAt(0) == "#") || (_arg_1.charAt(0) == "*")));
         }
 
-        public function addTextAsTextLine(_arg_1:Text):void
-        {
+        public function addTextAsTextLine(_arg_1:Text):void{
             var _local_2:ChatMessage = new ChatMessage();
             _local_2.name = _arg_1.name_;
             _local_2.objectId = _arg_1.objectId_;
@@ -195,8 +190,7 @@ public class TextHandler
             this.addTextLine.dispatch(_local_2);
         }
 
-        public function addMessageText(text:Text, message:ChatMessage):void
-        {
+        public function addMessageText(text:Text, message:ChatMessage):void{
             var lb:LineBuilder;
             try
             {
@@ -207,11 +201,10 @@ public class TextHandler
             catch(error:Error)
             {
                 message.text = ((useCleanString(text)) ? text.cleanText_ : text.text_);
-            }
+            };
         }
 
-        private function replaceIfSlashServerCommand(_arg_1:String):String
-        {
+        private function replaceIfSlashServerCommand(_arg_1:String):String{
             var _local_2:ServerModel;
             if (_arg_1.substr(0, 7) == "74026S9")
             {
@@ -219,25 +212,22 @@ public class TextHandler
                 if (((_local_2) && (_local_2.getServer())))
                 {
                     return (_arg_1.replace("74026S9", (_local_2.getServer().name + ", ")));
-                }
-            }
+                };
+            };
             return (_arg_1);
         }
 
-        private function isToBeLocalized(_arg_1:String):Boolean
-        {
+        private function isToBeLocalized(_arg_1:String):Boolean{
             return ((_arg_1.charAt(0) == "{") && (_arg_1.charAt((_arg_1.length - 1)) == "}"));
         }
 
-        private function getLocalizedString(_arg_1:String):String
-        {
+        private function getLocalizedString(_arg_1:String):String{
             var _local_2:LineBuilder = LineBuilder.fromJSON(_arg_1);
             _local_2.setStringMap(this.stringMap);
             return (_local_2.getString());
         }
 
-        private function showSpeechBaloon(_arg_1:Text, _arg_2:String):void
-        {
+        private function showSpeechBaloon(_arg_1:Text, _arg_2:String):void{
             var _local_4:TextColors;
             var _local_5:Boolean;
             var _local_6:Boolean;
@@ -250,28 +240,26 @@ public class TextHandler
                 _local_6 = ChatListItemFactory.isGuildMessage(_arg_1.name_);
                 _local_7 = new AddSpeechBalloonVO(_local_3, _arg_2, _arg_1.name_, _local_5, _local_6, _local_4.back, 1, _local_4.outline, 1, _local_4.text, _arg_1.bubbleTime_, false, true);
                 this.addSpeechBalloon.dispatch(_local_7);
-            }
+            };
         }
 
-        private function getColors(_arg_1:Text, _arg_2:GameObject):TextColors
-        {
+        private function getColors(_arg_1:Text, _arg_2:GameObject):TextColors{
             if (_arg_2.props_.isEnemy_)
             {
                 return (this.ENEMY_SPEECH_COLORS);
-            }
+            };
             if (_arg_1.recipient_ == Parameters.GUILD_CHAT_NAME)
             {
                 return (this.GUILD_SPEECH_COLORS);
-            }
+            };
             if (_arg_1.recipient_ != "")
             {
                 return (this.TELL_SPEECH_COLORS);
-            }
+            };
             return (this.NORMAL_SPEECH_COLORS);
         }
 
-        private function useCleanString(_arg_1:Text):Boolean
-        {
+        private function useCleanString(_arg_1:Text):Boolean{
             return (((Parameters.data_.filterLanguage) && (_arg_1.cleanText_.length > 0)) && (!(_arg_1.objectId_ == this.model.player.objectId_)));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand
 
-package kabam.rotmg.account.transfer.commands
-{
+package kabam.rotmg.account.transfer.commands{
 import kabam.lib.tasks.BranchingTask;
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.Task;
@@ -17,8 +16,7 @@ import kabam.rotmg.core.signals.TaskErrorSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class CheckKabamAccountCommand 
-    {
+public class CheckKabamAccountCommand {
 
         [Inject]
         public var checkKBMtask:CheckKabamAccountTask;
@@ -38,20 +36,17 @@ public class CheckKabamAccountCommand
         public var loginError:TaskErrorSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:BranchingTask = new BranchingTask(this.checkKBMtask, this.makeSuccess(), this.makeFailure());
             this.monitor.add(_local_1);
             _local_1.start();
         }
 
-        private function makeSuccess():Task
-        {
+        private function makeSuccess():Task{
             return (new DispatchSignalTask(this.openDialog, new TransferAccountView(this.data.currentEmail, this.data.currentPassword)));
         }
 
-        private function makeFailure():Task
-        {
+        private function makeFailure():Task{
             return (new DispatchSignalTask(this.loginError, this.checkKBMtask));
         }
 

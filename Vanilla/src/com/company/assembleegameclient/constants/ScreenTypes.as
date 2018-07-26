@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.constants.ScreenTypes
 
-package com.company.assembleegameclient.constants
-{
-    public class ScreenTypes 
-    {
+package com.company.assembleegameclient.constants{
+    public class ScreenTypes {
 
         public static const PLAY:String = "Screens.play";
         public static const SERVERS:String = "Screens.servers";

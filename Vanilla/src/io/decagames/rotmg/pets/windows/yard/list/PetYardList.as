@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.list.PetYardList
 
-package io.decagames.rotmg.pets.windows.yard.list
-{
+package io.decagames.rotmg.pets.windows.yard.list{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.pets.components.petItem.PetItem;
@@ -19,8 +18,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 import io.decagames.rotmg.utils.colors.Tint;
 
-public class PetYardList extends Sprite
-    {
+public class PetYardList extends Sprite {
 
         public static var YARD_WIDTH:int = 275;
         public static const YARD_HEIGHT:int = 425;
@@ -34,8 +32,7 @@ public class PetYardList extends Sprite
         private var petGrid:UIGrid;
         private var _upgradeButton:SliceScalingButton;
 
-        public function PetYardList()
-        {
+        public function PetYardList(){
             this.contentGrid = new UIGrid((YARD_WIDTH - 55), 1, 15);
             this.contentInset = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", YARD_WIDTH);
             addChild(this.contentInset);
@@ -58,8 +55,7 @@ public class PetYardList extends Sprite
             this.createPetsGrid();
         }
 
-        public function showPetYardRarity(_arg_1:String, _arg_2:Boolean):void
-        {
+        public function showPetYardRarity(_arg_1:String, _arg_2:Boolean):void{
             var _local_3:SliceScalingBitmap;
             var _local_4:UILabel;
             _local_3 = TextureParser.instance.getSliceScalingBitmap("UI", "content_divider_smalltitle_white", 180);
@@ -81,11 +77,10 @@ public class PetYardList extends Sprite
                 this._upgradeButton.x = (((_local_3.x + _local_3.width) - this._upgradeButton.width) + 8);
                 this._upgradeButton.y = ((_local_3.y - (this._upgradeButton.height / 2)) + 8);
                 addChild(this._upgradeButton);
-            }
+            };
         }
 
-        private function createScrollview():void
-        {
+        private function createScrollview():void{
             var _local_1:Sprite = new Sprite();
             this.yardContainer = new Sprite();
             this.yardContainer.x = this.contentInset.x;
@@ -110,20 +105,17 @@ public class PetYardList extends Sprite
             _local_1.y = 45;
         }
 
-        public function addPet(_arg_1:PetItem):void
-        {
+        public function addPet(_arg_1:PetItem):void{
             var _local_2:UIGridElement = new UIGridElement();
             _local_2.addChild(_arg_1);
             this.petGrid.addGridElement(_local_2);
         }
 
-        public function clearPetsList():void
-        {
+        public function clearPetsList():void{
             this.petGrid.clearGrid();
         }
 
-        private function createPetsGrid():void
-        {
+        private function createPetsGrid():void{
             this.contentElement = new UIGridElement();
             this.petGrid = new UIGrid((YARD_WIDTH - 55), 5, 5);
             this.petGrid.x = 18;
@@ -132,8 +124,7 @@ public class PetYardList extends Sprite
             this.contentGrid.addGridElement(this.contentElement);
         }
 
-        public function get upgradeButton():BaseButton
-        {
+        public function get upgradeButton():BaseButton{
             return (this._upgradeButton);
         }
 

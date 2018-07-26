@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemBox
 
-package io.decagames.rotmg.shop.mysteryBox.contentPopup
-{
+package io.decagames.rotmg.shop.mysteryBox.contentPopup{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 
 import flash.display.Bitmap;
@@ -18,8 +17,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class ItemBox extends UIGridElement
-    {
+public class ItemBox extends UIGridElement {
 
         private var _itemId:String;
         private var bitmapName:String;
@@ -34,8 +32,7 @@ public class ItemBox extends UIGridElement
         private var itemMargin:int = 2;
         private var imageBitmap:Bitmap;
 
-        public function ItemBox(_arg_1:String, _arg_2:int, _arg_3:Boolean, _arg_4:String="", _arg_5:Boolean=false)
-        {
+        public function ItemBox(_arg_1:String, _arg_2:int, _arg_3:Boolean, _arg_4:String="", _arg_5:Boolean=false){
             this._itemId = _arg_1;
             this.bitmapName = _arg_4;
             this.isLastElement = _arg_5;
@@ -51,25 +48,22 @@ public class ItemBox extends UIGridElement
             this.resizeLabel();
         }
 
-        private function drawBackground(_arg_1:String, _arg_2:Boolean, _arg_3:int):void
-        {
+        private function drawBackground(_arg_1:String, _arg_2:Boolean, _arg_3:int):void{
             if (_arg_1 == "")
             {
                 this.graphics.clear();
                 this.graphics.beginFill(0x2D2D2D);
                 this.graphics.drawRect(0, 0, _arg_3, (this.itemSize + (2 * this.itemMargin)));
                 this.graphics.endFill();
-            }
+            };
         }
 
-        public function clearBackground():void
-        {
+        public function clearBackground():void{
             this.isBackgroundCleared = true;
             this.graphics.clear();
         }
 
-        private function drawElement(_arg_1:String, _arg_2:int):void
-        {
+        private function drawElement(_arg_1:String, _arg_2:int):void{
             this._itemBackground = new Sprite();
             this._itemBackground.graphics.clear();
             this._itemBackground.graphics.beginFill(0xFFFFFF, 0);
@@ -93,47 +87,41 @@ public class ItemBox extends UIGridElement
                 this.label.text = (_arg_2 + "x");
                 this.label.x = 10;
                 this._itemBackground.x = (this._itemBackground.x + (this.label.x + 10));
-            }
+            };
             addChild(this.label);
         }
 
-        override public function get height():Number
-        {
+        override public function get height():Number{
             return (this.itemSize + (2 * this.itemMargin));
         }
 
-        private function resizeLabel():void
-        {
+        private function resizeLabel():void{
             this.label.width = ((this.targetWidth - (this.itemSize + (2 * this.itemMargin))) - 16);
             this.label.y = (((this.height - this.label.textHeight) - 4) / 2);
         }
 
-        override public function resize(_arg_1:int, _arg_2:int=-1):void
-        {
+        override public function resize(_arg_1:int, _arg_2:int=-1):void{
             if (!this.isBackgroundCleared)
             {
                 this.drawBackground(this.bitmapName, this.isLastElement, _arg_1);
-            }
+            };
             this.targetWidth = _arg_1;
             this.resizeLabel();
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             if (this.imageBitmap)
             {
                 this.imageBitmap.bitmapData.dispose();
-            }
+            };
             super.dispose();
         }
 
-        public function get itemId():String
-        {
+        public function get itemId():String{
             return (this._itemId);
         }
 
-        public function get itemBackground():Sprite
-        {
+        public function get itemBackground():Sprite{
             return (this._itemBackground);
         }
 

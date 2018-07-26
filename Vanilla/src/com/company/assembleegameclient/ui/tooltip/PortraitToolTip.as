@@ -1,23 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.PortraitToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.util.BitmapUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 
-public class PortraitToolTip extends ToolTip
-    {
+public class PortraitToolTip extends ToolTip {
 
         private var portrait_:Bitmap;
 
-        public function PortraitToolTip(_arg_1:GameObject)
-        {
+        public function PortraitToolTip(_arg_1:GameObject){
             super(6036765, 1, 16549442, 1, false);
             this.portrait_ = new Bitmap();
             this.portrait_.x = 0;

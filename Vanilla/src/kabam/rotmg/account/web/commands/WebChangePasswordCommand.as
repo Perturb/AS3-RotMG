@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebChangePasswordCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import kabam.lib.tasks.BranchingTask;
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.Task;
@@ -18,8 +17,7 @@ import kabam.rotmg.core.signals.TrackEventSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class WebChangePasswordCommand 
-    {
+public class WebChangePasswordCommand {
 
         [Inject]
         public var task:ChangePasswordTask;
@@ -35,27 +33,23 @@ public class WebChangePasswordCommand
         public var track:TrackEventSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:BranchingTask = new BranchingTask(this.task, this.makeSuccess(), this.makeFailure());
             this.monitor.add(_local_1);
             _local_1.start();
         }
 
-        private function makeSuccess():Task
-        {
+        private function makeSuccess():Task{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.openDialog, new WebAccountDetailDialog()));
             return (_local_1);
         }
 
-        private function makeFailure():Task
-        {
+        private function makeFailure():Task{
             return (new DispatchSignalTask(this.loginError, this.task));
         }
 
-        private function makeTrackingData():TrackingData
-        {
+        private function makeTrackingData():TrackingData{
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "account";
             _local_1.action = "passwordChanged";

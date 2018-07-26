@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.PaymentMethodRadioButton
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import com.company.assembleegameclient.account.ui.components.Selectable;
 
 import flash.display.Sprite;
@@ -17,8 +16,7 @@ import kabam.rotmg.util.components.RadioButton;
 
 import org.osflash.signals.Signal;
 
-public class PaymentMethodRadioButton extends Sprite implements Selectable
-    {
+public class PaymentMethodRadioButton extends Sprite implements Selectable {
 
         public static const HEIGHT:int = 28;
 
@@ -28,8 +26,7 @@ public class PaymentMethodRadioButton extends Sprite implements Selectable
         private var text:TextFieldDisplayConcrete;
         private var button:RadioButton;
 
-        public function PaymentMethodRadioButton(_arg_1:String)
-        {
+        public function PaymentMethodRadioButton(_arg_1:String){
             this.label = _arg_1;
             this.makeRadioButton();
             this.makeLabelText();
@@ -38,25 +35,21 @@ public class PaymentMethodRadioButton extends Sprite implements Selectable
             this.text.textChanged.add(this.onTextChanged);
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             this.text.y = ((this.button.height / 2) - (this.text.height / 2));
             this.textSet.dispatch();
         }
 
-        public function getValue():String
-        {
+        public function getValue():String{
             return (this.label);
         }
 
-        private function makeRadioButton():void
-        {
+        private function makeRadioButton():void{
             this.button = new RadioButton();
             addChild(this.button);
         }
 
-        private function makeLabelText():void
-        {
+        private function makeLabelText():void{
             this.text = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true);
             this.text.setStringBuilder(new LineBuilder().setParams(this.label));
             this.text.filters = [new DropShadowFilter(0, 0, 0)];
@@ -64,18 +57,15 @@ public class PaymentMethodRadioButton extends Sprite implements Selectable
             addChild(this.text);
         }
 
-        public function setSelected(_arg_1:Boolean):void
-        {
+        public function setSelected(_arg_1:Boolean):void{
             this.button.setSelected(_arg_1);
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.text.setColor(16768133);
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             this.text.setColor(0xFFFFFF);
         }
 

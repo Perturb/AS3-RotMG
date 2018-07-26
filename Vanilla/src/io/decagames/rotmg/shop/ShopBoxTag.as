@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.ShopBoxTag
 
-package io.decagames.rotmg.shop
-{
+package io.decagames.rotmg.shop{
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
 
@@ -13,8 +12,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class ShopBoxTag extends Sprite 
-    {
+public class ShopBoxTag extends Sprite {
 
         public static const BLUE_TAG:String = "shop_blue_tag";
         public static const ORANGE_TAG:String = "shop_orange_tag";
@@ -24,8 +22,7 @@ public class ShopBoxTag extends Sprite
 
         private var background:SliceScalingBitmap;
 
-        public function ShopBoxTag(_arg_1:String, _arg_2:String, _arg_3:Boolean=false)
-        {
+        public function ShopBoxTag(_arg_1:String, _arg_2:String, _arg_3:Boolean=false){
             this.background = TextureParser.instance.getSliceScalingBitmap("UI", _arg_1);
             this.background.scaleType = SliceScalingBitmap.SCALE_TYPE_9;
             addChild(this.background);
@@ -40,14 +37,13 @@ public class ShopBoxTag extends Sprite
             else
             {
                 DefaultLabelFormat.shopTag(_local_4);
-            }
+            };
             addChild(_local_4);
             this.background.width = (_local_4.textWidth + 8);
             this.background.height = (_local_4.textHeight + 8);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.background.dispose();
         }
 

@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.mediators.EquippedGridMediator
 
-package com.company.assembleegameclient.ui.panels.mediators
-{
+package com.company.assembleegameclient.ui.panels.mediators{
 import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
 
 import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class EquippedGridMediator extends Mediator 
-    {
+public class EquippedGridMediator extends Mediator {
 
         [Inject]
         public var view:EquippedGrid;
@@ -20,13 +18,11 @@ public class EquippedGridMediator extends Mediator
         public var toggleShowTierTag:ToggleShowTierTagSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.toggleShowTierTag.add(this.onToggleShowTierTag);
         }
 
-        private function onToggleShowTierTag(_arg_1:Boolean):void
-        {
+        private function onToggleShowTierTag(_arg_1:Boolean):void{
             this.view.toggleTierTags(_arg_1);
         }
 

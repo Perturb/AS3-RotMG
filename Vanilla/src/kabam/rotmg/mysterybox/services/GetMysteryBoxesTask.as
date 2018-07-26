@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.mysterybox.services.GetMysteryBoxesTask
 
-package kabam.rotmg.mysterybox.services
-{
+package kabam.rotmg.mysterybox.services{
 import com.company.assembleegameclient.util.TimeUtil;
 
 import flash.utils.getTimer;
@@ -21,8 +20,7 @@ import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GetMysteryBoxesTask extends BaseTask
-    {
+public class GetMysteryBoxesTask extends BaseTask {
 
         private static const TEN_MINUTES:int = 600;
         private static var version:String = "0";
@@ -44,8 +42,7 @@ public class GetMysteryBoxesTask extends BaseTask
         public var lastRan:uint = 0;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             var _local_1:Number;
             var _local_2:Object;
             if (DynamicSettings.settingExists("MysteryBoxRefresh"))
@@ -55,7 +52,7 @@ public class GetMysteryBoxesTask extends BaseTask
             else
             {
                 _local_1 = TEN_MINUTES;
-            }
+            };
             if (((this.lastRan == 0) || ((this.lastRan + _local_1) < (getTimer() / 1000))))
             {
                 this.lastRan = (getTimer() / 1000);
@@ -70,16 +67,14 @@ public class GetMysteryBoxesTask extends BaseTask
             {
                 completeTask(true);
                 reset();
-            }
+            };
         }
 
-        public function clearLastRanBlock():void
-        {
+        public function clearLastRanBlock():void{
             this.lastRan = 0;
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             reset();
             if (_arg_1)
             {
@@ -89,11 +84,10 @@ public class GetMysteryBoxesTask extends BaseTask
             {
                 this.logger.warn("GetMysteryBox.onComplete: Request failed.");
                 completeTask(false);
-            }
+            };
         }
 
-        private function handleOkay(_arg_1:*):void
-        {
+        private function handleOkay(_arg_1:*):void{
             var _local_2:XMLList;
             var _local_3:XMLList;
             if (this.hasNoBoxes(_arg_1))
@@ -101,7 +95,7 @@ public class GetMysteryBoxesTask extends BaseTask
                 if (this.mysteryBoxModel.isInitialized())
                 {
                     return;
-                }
+                };
                 this.mysteryBoxModel.setInitialized(false);
             }
             else
@@ -113,19 +107,17 @@ public class GetMysteryBoxesTask extends BaseTask
                 if (_local_3.length() > 0)
                 {
                     this.parseFortune(_local_3);
-                }
-            }
+                };
+            };
             completeTask(true);
         }
 
-        private function hasNoBoxes(_arg_1:*):Boolean
-        {
+        private function hasNoBoxes(_arg_1:*):Boolean{
             var _local_2:XMLList = XML(_arg_1).children();
             return (_local_2.length() == 0);
         }
 
-        private function parseFortune(_arg_1:XMLList):void
-        {
+        private function parseFortune(_arg_1:XMLList):void{
             var _local_2:FortuneInfo = new FortuneInfo();
             _local_2.id = _arg_1.attribute("id").toString();
             _local_2.title = _arg_1.attribute("title").toString();
@@ -143,8 +135,7 @@ public class GetMysteryBoxesTask extends BaseTask
             this.fortuneModel.setFortune(_local_2);
         }
 
-        private function parse(_arg_1:XMLList):void
-        {
+        private function parse(_arg_1:XMLList):void{
             var _local_4:XML;
             var _local_5:MysteryBoxInfo;
             var _local_2:Array = [];
@@ -164,49 +155,49 @@ public class GetMysteryBoxesTask extends BaseTask
                     _local_5.saleAmount = _local_4.Sale.attribute("price").toString();
                     _local_5.saleCurrency = _local_4.Sale.attribute("currency").toString();
                     _local_5.saleEnd = TimeUtil.parseUTCDate(_local_4.Sale.End.toString());
-                }
+                };
                 if (_local_4.hasOwnProperty("Left"))
                 {
                     _local_5.unitsLeft = _local_4.Left;
-                }
+                };
                 if (_local_4.hasOwnProperty("Total"))
                 {
                     _local_5.totalUnits = _local_4.Total;
-                }
+                };
                 if (_local_4.hasOwnProperty("Slot"))
                 {
                     _local_5.slot = _local_4.Slot;
-                }
+                };
                 if (_local_4.hasOwnProperty("Jackpots"))
                 {
                     _local_5.jackpots = _local_4.Jackpots;
-                }
+                };
                 if (_local_4.hasOwnProperty("DisplayedItems"))
                 {
                     _local_5.displayedItems = _local_4.DisplayedItems;
-                }
+                };
                 if (_local_4.hasOwnProperty("Rolls"))
                 {
                     _local_5.rolls = int(_local_4.Rolls);
-                }
+                };
                 if (_local_4.hasOwnProperty("Tags"))
                 {
                     _local_5.tags = _local_4.Tags;
-                }
+                };
                 _local_5.iconImageUrl = _local_4.Icon.toString();
                 _local_5.infoImageUrl = _local_4.Image.toString();
                 _local_5.startTime = TimeUtil.parseUTCDate(_local_4.StartTime.toString());
                 if (_local_4.EndTime.toString())
                 {
                     _local_5.endTime = TimeUtil.parseUTCDate(_local_4.EndTime.toString());
-                }
+                };
                 _local_5.parseContents();
                 if (((!(_local_3)) && ((_local_5.isNew()) || (_local_5.isOnSale()))))
                 {
                     _local_3 = true;
-                }
+                };
                 _local_2.push(_local_5);
-            }
+            };
             this.mysteryBoxModel.setMysetryBoxes(_local_2);
             this.mysteryBoxModel.isNew = _local_3;
         }

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.GameObjectListItem
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
@@ -21,8 +20,7 @@ import kabam.rotmg.text.view.stringBuilder.TemplateBuilder;
 
 import org.osflash.signals.Signal;
 
-public class GameObjectListItem extends Sprite 
-    {
+public class GameObjectListItem extends Sprite {
 
         public var portrait:Bitmap;
         private var text:TextFieldDisplayConcrete;
@@ -36,8 +34,7 @@ public class GameObjectListItem extends Sprite
         private var level:int;
         private var positionClassBelow:Boolean;
 
-        public function GameObjectListItem(_arg_1:uint, _arg_2:Boolean, _arg_3:GameObject, _arg_4:Boolean=false)
-        {
+        public function GameObjectListItem(_arg_1:uint, _arg_2:Boolean, _arg_3:GameObject, _arg_4:Boolean=false){
             this.positionClassBelow = _arg_4;
             this.isLongVersion = _arg_2;
             this.color = _arg_1;
@@ -49,7 +46,7 @@ public class GameObjectListItem extends Sprite
             if (!_arg_2)
             {
                 this.text.setTextWidth(66).setTextHeight(20).setBold(true);
-            }
+            };
             this.text.x = 32;
             this.text.y = 6;
             this.text.filters = [new DropShadowFilter(0, 0, 0)];
@@ -58,8 +55,7 @@ public class GameObjectListItem extends Sprite
             this.draw(_arg_3);
         }
 
-        public function draw(_arg_1:GameObject, _arg_2:ColorTransform=null):void
-        {
+        public function draw(_arg_1:GameObject, _arg_2:ColorTransform=null):void{
             var _local_3:Boolean;
             _local_3 = this.isClear();
             this.go = _arg_1;
@@ -68,44 +64,38 @@ public class GameObjectListItem extends Sprite
             {
                 this.redraw();
                 transform.colorTransform = ((_arg_2) || (MoreColorUtil.identity));
-            }
+            };
         }
 
-        public function clear():void
-        {
+        public function clear():void{
             this.go = null;
             visible = false;
         }
 
-        public function isClear():Boolean
-        {
+        public function isClear():Boolean{
             return ((this.go == null) && (visible == false));
         }
 
-        private function hasChanged():Boolean
-        {
+        private function hasChanged():Boolean{
             var _local_1:Boolean = (((!(this.go.name_ == this.objname)) || (!(this.go.level_ == this.level))) || (!(this.go.objectType_ == this.type)));
             ((_local_1) && (this.updateData()));
             return (_local_1);
         }
 
-        private function updateData():void
-        {
+        private function updateData():void{
             this.objname = this.go.name_;
             this.level = this.go.level_;
             this.type = this.go.objectType_;
         }
 
-        private function redraw():void
-        {
+        private function redraw():void{
             this.portrait.bitmapData = this.go.getPortrait();
             this.text.setStringBuilder(this.prepareText());
             this.text.setColor(this.getDrawColor());
             this.text.update();
         }
 
-        private function prepareText():TemplateBuilder
-        {
+        private function prepareText():TemplateBuilder{
             this.builder = ((this.builder) || (new TemplateBuilder()));
             if (this.isLongVersion)
             {
@@ -120,13 +110,12 @@ public class GameObjectListItem extends Sprite
                 else
                 {
                     this.builder.setTemplate(ObjectLibrary.typeToDisplayId_[this.type]);
-                }
-            }
+                };
+            };
             return (this.builder);
         }
 
-        private function applyLongTextToBuilder():void
-        {
+        private function applyLongTextToBuilder():void{
             var _local_1:String;
             var _local_2:Object = {};
             if (this.isNameDefined())
@@ -138,7 +127,7 @@ public class GameObjectListItem extends Sprite
                 else
                 {
                     _local_1 = "<b>{name}</b> ({type}{level})";
-                }
+                };
                 _local_2.name = this.go.name_;
                 _local_2.type = ObjectLibrary.typeToDisplayId_[this.type];
                 _local_2.level = ((this.level < 1) ? "" : (" " + this.level));
@@ -147,30 +136,28 @@ public class GameObjectListItem extends Sprite
             {
                 _local_1 = "<b>{name}</b>";
                 _local_2.name = ObjectLibrary.typeToDisplayId_[this.type];
-            }
+            };
             this.builder.setTemplate(_local_1, _local_2);
         }
 
-        private function isNameDefined():Boolean
-        {
+        private function isNameDefined():Boolean{
             return ((!(this.go.name_ == null)) && (!(this.go.name_ == "")));
         }
 
-        private function getDrawColor():int
-        {
+        private function getDrawColor():int{
             var _local_1:Player = (this.go as Player);
             if (_local_1 == null)
             {
                 return (this.color);
-            }
+            };
             if (_local_1.isFellowGuild_)
             {
                 return (Parameters.FELLOW_GUILD_COLOR);
-            }
+            };
             if (_local_1.nameChosen_)
             {
                 return (Parameters.NAME_CHOSEN_COLOR);
-            }
+            };
             return (this.color);
         }
 

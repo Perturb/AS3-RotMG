@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebLoginCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 
@@ -27,8 +26,7 @@ import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
 import kabam.rotmg.packages.services.GetPackagesTask;
 
-public class WebLoginCommand 
-    {
+public class WebLoginCommand {
 
         [Inject]
         public var data:AccountData;
@@ -57,16 +55,14 @@ public class WebLoginCommand
         private var setScreenTask:DispatchSignalTask;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.setScreenTask = new DispatchSignalTask(this.setScreenWithValidData, this.getTargetScreen());
             var _local_1:BranchingTask = new BranchingTask(this.loginTask, this.makeSuccessTask(), this.makeFailureTask());
             this.monitor.add(_local_1);
             _local_1.start();
         }
 
-        private function makeSuccessTask():TaskSequence
-        {
+        private function makeSuccessTask():TaskSequence{
             var _local_1:TaskSequence;
             _local_1 = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.closeDialogs));
@@ -79,26 +75,23 @@ public class WebLoginCommand
             return (_local_1);
         }
 
-        private function makeFailureTask():TaskSequence
-        {
+        private function makeFailureTask():TaskSequence{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.loginError, this.loginTask));
             _local_1.add(this.setScreenTask);
             return (_local_1);
         }
 
-        private function getTargetScreen():Sprite
-        {
+        private function getTargetScreen():Sprite{
             var _local_1:Class = this.screenModel.getCurrentScreenType();
             if (((_local_1 == null) || (_local_1 == GameSprite)))
             {
                 _local_1 = CharacterSelectionAndNewsScreen;
-            }
+            };
             return (new (_local_1)());
         }
 
-        private function getTrackingData():TrackingData
-        {
+        private function getTrackingData():TrackingData{
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "account";
             _local_1.action = "signedIn";

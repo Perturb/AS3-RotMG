@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.background.NexusBackground
 
-package com.company.assembleegameclient.background
-{
+package com.company.assembleegameclient.background{
 import com.company.assembleegameclient.map.Camera;
 import com.company.util.GraphicsUtil;
 
@@ -17,8 +16,7 @@ import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;
 
-public class NexusBackground extends Background 
-    {
+public class NexusBackground extends Background {
 
         public static const MOVEMENT:Point = new Point(0.01, 0.01);
 
@@ -28,15 +26,13 @@ public class NexusBackground extends Background
         private var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, new Matrix(), true, false);
         private var path_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
 
-        public function NexusBackground()
-        {
+        public function NexusBackground(){
             visible = true;
             this.water_ = new BitmapDataSpy(0x0400, 0x0400, false, 0);
             this.water_.perlinNoise(0x0400, 0x0400, 8, Math.random(), true, true, BitmapDataChannel.BLUE, false, null);
         }
 
-        override public function draw(_arg_1:Camera, _arg_2:int):void
-        {
+        override public function draw(_arg_1:Camera, _arg_2:int):void{
             this.graphicsData_.length = 0;
             var _local_3:Matrix = this.bitmapFill_.matrix;
             _local_3.identity();
@@ -54,8 +50,7 @@ public class NexusBackground extends Background
             graphics.drawGraphicsData(this.graphicsData_);
         }
 
-        private function drawIslands(_arg_1:Camera, _arg_2:int):void
-        {
+        private function drawIslands(_arg_1:Camera, _arg_2:int):void{
             var _local_4:Island;
             var _local_3:int;
             while (_local_3 < this.islands_.length)
@@ -63,7 +58,7 @@ public class NexusBackground extends Background
                 _local_4 = this.islands_[_local_3];
                 _local_4.draw(_arg_1, _arg_2, this.graphicsData_);
                 _local_3++;
-            }
+            };
         }
 
 
@@ -82,8 +77,7 @@ import flash.display.IGraphicsData;
 import flash.geom.Matrix;
 import flash.geom.Point;
 
-class Island 
-{
+class Island {
 
     public var center_:Point;
     public var startTime_:int;
@@ -91,15 +85,13 @@ class Island
     private var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, new Matrix(), true, false);
     private var path_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
 
-    public function Island(_arg_1:Number, _arg_2:Number, _arg_3:int):void
-    {
+    public function Island(_arg_1:Number, _arg_2:Number, _arg_3:int):void{
         this.center_ = new Point(_arg_1, _arg_2);
         this.startTime_ = _arg_3;
         this.bitmapData_ = AssetLibrary.getImage("stars");
     }
 
-    public function draw(_arg_1:Camera, _arg_2:int, _arg_3:Vector.<IGraphicsData>):void
-    {
+    public function draw(_arg_1:Camera, _arg_2:int, _arg_3:Vector.<IGraphicsData>):void{
         var _local_4:int = (_arg_2 - this.startTime_);
         var _local_5:Number = (this.center_.x + (_local_4 * NexusBackground.MOVEMENT.x));
         var _local_6:Number = (this.center_.y + (_local_4 * NexusBackground.MOVEMENT.y));

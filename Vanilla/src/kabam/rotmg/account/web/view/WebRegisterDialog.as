@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.view.WebRegisterDialog
 
-package kabam.rotmg.account.web.view
-{
+package kabam.rotmg.account.web.view{
 import com.company.assembleegameclient.account.ui.CheckBoxField;
 import com.company.assembleegameclient.account.ui.Frame;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -23,8 +22,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class WebRegisterDialog extends Frame 
-    {
+public class WebRegisterDialog extends Frame {
 
         private const errors:Array = [];
 
@@ -40,15 +38,13 @@ public class WebRegisterDialog extends Frame
         private var tosText:TextFieldDisplayConcrete;
         private var endLink:String = "</a></font>";
 
-        public function WebRegisterDialog()
-        {
+        public function WebRegisterDialog(){
             super(TextKey.REGISTER_IMPERATIVE, "RegisterWebAccountDialog.leftButton", "RegisterWebAccountDialog.rightButton", "/registerAccount", 326);
             this.makeUIElements();
             this.makeSignals();
         }
 
-        private function makeUIElements():void
-        {
+        private function makeUIElements():void{
             this.emailInput = new LabeledField(TextKey.REGISTER_WEB_ACCOUNT_EMAIL, false, 275);
             this.passwordInput = new LabeledField(TextKey.REGISTER_WEB_ACCOUNT_PASSWORD, true, 275);
             this.retypePasswordInput = new LabeledField(TextKey.RETYPE_PASSWORD, true, 275);
@@ -67,8 +63,7 @@ public class WebRegisterDialog extends Frame
             this.makeSignInText();
         }
 
-        public function makeSignInText():void
-        {
+        public function makeSignInText():void{
             this.signInText = new TextFieldDisplayConcrete();
             var _local_1:* = '<font color="#7777EE"><a href="event:flash.events.TextEvent">';
             this.signInText.setStringBuilder(new LineBuilder().setParams(TextKey.SIGN_IN_TEXT, {
@@ -79,8 +74,7 @@ public class WebRegisterDialog extends Frame
             this.configureTextAndAdd(this.signInText);
         }
 
-        public function makeTosText():void
-        {
+        public function makeTosText():void{
             this.tosText = new TextFieldDisplayConcrete();
             var _local_1:* = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
             var _local_2:* = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
@@ -93,8 +87,7 @@ public class WebRegisterDialog extends Frame
             this.configureTextAndAdd(this.tosText);
         }
 
-        public function configureTextAndAdd(_arg_1:TextFieldDisplayConcrete):void
-        {
+        public function configureTextAndAdd(_arg_1:TextFieldDisplayConcrete):void{
             _arg_1.setSize(12).setColor(0xB3B3B3).setBold(true);
             _arg_1.setTextWidth(275);
             _arg_1.setMultiLine(true).setWordWrap(true).setHTML(true);
@@ -103,31 +96,27 @@ public class WebRegisterDialog extends Frame
             positionText(_arg_1);
         }
 
-        private function linkEvent(_arg_1:TextEvent):void
-        {
+        private function linkEvent(_arg_1:TextEvent):void{
             this.signIn.dispatch();
         }
 
-        private function makeSignals():void
-        {
+        private function makeSignals():void{
             this.cancel = new NativeMappedSignal(leftButton_, MouseEvent.CLICK);
             rightButton_.addEventListener(MouseEvent.CLICK, this.onRegister);
             this.register = new Signal(AccountData);
             this.signIn = new Signal();
         }
 
-        private function onRegister(_arg_1:MouseEvent):void
-        {
+        private function onRegister(_arg_1:MouseEvent):void{
             var _local_2:Boolean = this.areInputsValid();
             this.displayErrors();
             if (_local_2)
             {
                 this.sendData();
-            }
+            };
         }
 
-        private function areInputsValid():Boolean
-        {
+        private function areInputsValid():Boolean{
             this.errors.length = 0;
             var _local_1:Boolean = true;
             _local_1 = ((this.isEmailValid()) && (_local_1));
@@ -137,64 +126,58 @@ public class WebRegisterDialog extends Frame
             return ((this.isAgeValid()) && (_local_1));
         }
 
-        private function isAgeVerified():Boolean
-        {
+        private function isAgeVerified():Boolean{
             var _local_1:uint = DateFieldValidator.getPlayerAge(this.ageVerificationInput);
             var _local_2:* = (_local_1 >= 16);
             this.ageVerificationInput.setErrorHighlight((!(_local_2)));
             if (!_local_2)
             {
                 this.errors.push(TextKey.INELIGIBLE_AGE);
-            }
+            };
             return (_local_2);
         }
 
-        private function isAgeValid():Boolean
-        {
+        private function isAgeValid():Boolean{
             var _local_1:Boolean = this.ageVerificationInput.isValidDate();
             this.ageVerificationInput.setErrorHighlight((!(_local_1)));
             if (!_local_1)
             {
                 this.errors.push(TextKey.INVALID_BIRTHDATE);
-            }
+            };
             return (_local_1);
         }
 
-        private function isEmailValid():Boolean
-        {
+        private function isEmailValid():Boolean{
             var _local_1:Boolean = EmailValidator.isValidEmail(this.emailInput.text());
             this.emailInput.setErrorHighlight((!(_local_1)));
             if (!_local_1)
             {
                 this.errors.push(TextKey.INVALID_EMAIL_ADDRESS);
-            }
+            };
             return (_local_1);
         }
 
-        private function isPasswordValid():Boolean
-        {
+        private function isPasswordValid():Boolean{
             var _local_1:* = (this.passwordInput.text().length >= 5);
             this.passwordInput.setErrorHighlight((!(_local_1)));
             if (!_local_1)
             {
                 this.errors.push(TextKey.PASSWORD_TOO_SHORT);
-            }
+            };
             return (_local_1);
         }
 
-        private function isPasswordVerified():Boolean
-        {
+        private function isPasswordVerified():Boolean{
             var _local_1:* = (this.passwordInput.text() == this.retypePasswordInput.text());
             this.retypePasswordInput.setErrorHighlight((!(_local_1)));
             if (!_local_1)
             {
                 this.errors.push(TextKey.PASSWORDS_DONT_MATCH);
-            }
+            };
             return (_local_1);
         }
 
-        public function displayErrors():void
-        {
+        public function displayErrors():void{
             if (this.errors.length == 0)
             {
                 this.clearErrors();
@@ -202,28 +185,24 @@ public class WebRegisterDialog extends Frame
             else
             {
                 this.displayErrorText(((this.errors.length == 1) ? this.errors[0] : TextKey.MULTIPLE_ERRORS_MESSAGE));
-            }
+            };
         }
 
-        public function displayServerError(_arg_1:String):void
-        {
+        public function displayServerError(_arg_1:String):void{
             this.displayErrorText(_arg_1);
         }
 
-        private function clearErrors():void
-        {
+        private function clearErrors():void{
             titleText_.setStringBuilder(new LineBuilder().setParams(TextKey.REGISTER_IMPERATIVE));
             titleText_.setColor(0xB3B3B3);
         }
 
-        private function displayErrorText(_arg_1:String):void
-        {
+        private function displayErrorText(_arg_1:String):void{
             titleText_.setStringBuilder(new LineBuilder().setParams(_arg_1));
             titleText_.setColor(16549442);
         }
 
-        private function sendData():void
-        {
+        private function sendData():void{
             var _local_1:AccountData = new AccountData();
             _local_1.username = this.emailInput.text();
             _local_1.password = this.passwordInput.text();

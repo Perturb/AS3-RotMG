@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.model.ArenaLeaderboardEntry
 
-package kabam.rotmg.arena.model
-{
+package kabam.rotmg.arena.model{
 import flash.display.BitmapData;
 
 import io.decagames.rotmg.pets.data.vo.PetVO;
 
-public class ArenaLeaderboardEntry 
-    {
+public class ArenaLeaderboardEntry {
 
         public var playerBitmap:BitmapData;
         public var name:String;
@@ -25,13 +23,11 @@ public class ArenaLeaderboardEntry
         public var isPersonalRecord:Boolean = false;
 
 
-        public function isEqual(_arg_1:ArenaLeaderboardEntry):Boolean
-        {
+        public function isEqual(_arg_1:ArenaLeaderboardEntry):Boolean{
             return (((_arg_1.name == this.name) && (this.runtime == _arg_1.runtime)) && (this.currentWave == _arg_1.currentWave));
         }
 
-        public function isBetterThan(_arg_1:ArenaLeaderboardEntry):Boolean
-        {
+        public function isBetterThan(_arg_1:ArenaLeaderboardEntry):Boolean{
             return ((this.currentWave > _arg_1.currentWave) || ((this.currentWave == _arg_1.currentWave) && (this.runtime < _arg_1.runtime)));
         }
 

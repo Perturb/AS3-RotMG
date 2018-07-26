@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.commands.SteamOpenAccountInfoCommand
 
-package kabam.rotmg.account.steam.commands
-{
+package kabam.rotmg.account.steam.commands{
 import kabam.rotmg.account.steam.view.SteamAccountDetailDialog;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class SteamOpenAccountInfoCommand 
-    {
+public class SteamOpenAccountInfoCommand {
 
         [Inject]
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.openDialog.dispatch(new SteamAccountDetailDialog());
         }
 

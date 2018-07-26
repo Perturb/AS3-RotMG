@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import io.decagames.rotmg.pets.data.PetsModel;
 import io.decagames.rotmg.pets.data.vo.PetVO;
 import io.decagames.rotmg.pets.signals.EvolvePetSignal;
@@ -13,8 +12,7 @@ import kabam.rotmg.messaging.impl.EvolvePetInfo;
 
 import org.swiftsuspenders.Injector;
 
-public class EvolvedMessageHandler
-    {
+public class EvolvedMessageHandler {
 
         [Inject]
         public var injector:Injector;
@@ -24,8 +22,7 @@ public class EvolvedMessageHandler
         private var initialPet:PetVO;
 
 
-        public function handleMessage(_arg_1:EvolvedPetMessage):void
-        {
+        public function handleMessage(_arg_1:EvolvedPetMessage):void{
             this.message = _arg_1;
             this.evolvePetInfo = new EvolvePetInfo();
             this.addFinalPet();
@@ -33,23 +30,20 @@ public class EvolvedMessageHandler
             this.dispatchEvolvePetSignal();
         }
 
-        private function addFinalPet():void
-        {
+        private function addFinalPet():void{
             var _local_1:PetsModel = this.injector.getInstance(PetsModel);
             this.finalPet = _local_1.getPet(this.message.petID);
             this.finalPet.setSkin(this.message.finalSkin);
             this.evolvePetInfo.finalPet = this.finalPet;
         }
 
-        private function addInitialPet(_arg_1:EvolvedPetMessage):void
-        {
+        private function addInitialPet(_arg_1:EvolvedPetMessage):void{
             this.initialPet = PetVO.clone(this.finalPet);
             this.initialPet.setSkin(_arg_1.initialSkin);
             this.evolvePetInfo.initialPet = this.initialPet;
         }
 
-        private function dispatchEvolvePetSignal():void
-        {
+        private function dispatchEvolvePetSignal():void{
             var _local_1:EvolvePetSignal = this.injector.getInstance(EvolvePetSignal);
             _local_1.dispatch(this.evolvePetInfo);
         }

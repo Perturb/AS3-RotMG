@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboard
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import com.company.assembleegameclient.screens.TitleMenuOption;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.rotmg.graphics.ScreenGraphic;
@@ -32,8 +31,7 @@ import kabam.rotmg.ui.view.SignalWaiter;
 
 import org.osflash.signals.Signal;
 
-public class ArenaLeaderboard extends Sprite
-    {
+public class ArenaLeaderboard extends Sprite {
 
         public const requestData:Signal = new Signal(ArenaLeaderboardFilter);
         public const close:Signal = new Signal();
@@ -47,8 +45,7 @@ public class ArenaLeaderboard extends Sprite
         private var closeButton:TitleMenuOption;
         private var weeklyCountdownClock:LeaderboardWeeklyResetTimer;
 
-        public function ArenaLeaderboard()
-        {
+        public function ArenaLeaderboard(){
             this.list = this.makeList();
             this.title = this.makeTitle();
             this.leftSword = this.makeSword(false);
@@ -66,36 +63,31 @@ public class ArenaLeaderboard extends Sprite
             addChild(this.weeklyCountdownClock);
         }
 
-        public function init():void
-        {
+        public function init():void{
             var _local_1:ArenaLeaderboardTab = this.tabs[0];
             this.selected = _local_1;
             _local_1.setSelected(true);
             _local_1.selected.dispatch(_local_1);
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             var _local_1:ArenaLeaderboardTab;
             for each (_local_1 in this.tabs)
             {
                 _local_1.selected.remove(this.onSelected);
                 _local_1.destroy();
-            }
+            };
         }
 
-        public function reloadList():void
-        {
+        public function reloadList():void{
             this.setList(this.selected.getFilter().getEntries());
         }
 
-        private function onCloseClick(_arg_1:MouseEvent):void
-        {
+        private function onCloseClick(_arg_1:MouseEvent):void{
             this.close.dispatch();
         }
 
-        private function onSelected(_arg_1:ArenaLeaderboardTab):void
-        {
+        private function onSelected(_arg_1:ArenaLeaderboardTab):void{
             this.selected.setSelected(false);
             this.selected = _arg_1;
             this.selected.setSelected(true);
@@ -107,16 +99,14 @@ public class ArenaLeaderboard extends Sprite
             else
             {
                 this.requestData.dispatch(_arg_1.getFilter());
-            }
+            };
         }
 
-        public function setList(_arg_1:Vector.<ArenaLeaderboardEntry>):void
-        {
+        public function setList(_arg_1:Vector.<ArenaLeaderboardEntry>):void{
             this.list.setItems(_arg_1, true);
         }
 
-        private function makeTabs():Vector.<ArenaLeaderboardTab>
-        {
+        private function makeTabs():Vector.<ArenaLeaderboardTab>{
             var _local_3:ArenaLeaderboardFilter;
             var _local_4:ArenaLeaderboardTab;
             var _local_1:SignalWaiter = new SignalWaiter();
@@ -129,23 +119,21 @@ public class ArenaLeaderboard extends Sprite
                 _local_2.push(_local_4);
                 _local_1.push(_local_4.readyToAlign);
                 addChild(_local_4);
-            }
+            };
             _local_1.complete.addOnce(this.alignTabs);
             return (_local_2);
         }
 
-        private function makeSword(_arg_1:Boolean):Bitmap
-        {
+        private function makeSword(_arg_1:Boolean):Bitmap{
             var _local_2:BitmapData = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("lofiInterface2", 8), 64, true, 0, true);
             if (_arg_1)
             {
                 _local_2 = BitmapUtil.mirror(_local_2);
-            }
+            };
             return (new Bitmap(_local_2));
         }
 
-        private function makeTitle():StaticTextDisplay
-        {
+        private function makeTitle():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setBold(true).setColor(0xB3B3B3).setSize(32);
@@ -157,8 +145,7 @@ public class ArenaLeaderboard extends Sprite
             return (_local_1);
         }
 
-        private function makeCloseButton():void
-        {
+        private function makeCloseButton():void{
             this.closeButton = new TitleMenuOption(TextKey.DONE_TEXT, 36, false);
             this.closeButton.setAutoSize(TextFieldAutoSize.CENTER);
             this.closeButton.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
@@ -168,8 +155,7 @@ public class ArenaLeaderboard extends Sprite
             this.closeButton.addEventListener(MouseEvent.CLICK, this.onCloseClick);
         }
 
-        private function makeLines():void
-        {
+        private function makeLines():void{
             var _local_1:Shape = new Shape();
             addChild(_local_1);
             var _local_2:Graphics = _local_1.graphics;
@@ -178,8 +164,7 @@ public class ArenaLeaderboard extends Sprite
             _local_2.lineTo(800, 100);
         }
 
-        private function makeList():ArenaLeaderboardList
-        {
+        private function makeList():ArenaLeaderboardList{
             var _local_1:ArenaLeaderboardList;
             _local_1 = new ArenaLeaderboardList();
             _local_1.x = 15;
@@ -187,19 +172,17 @@ public class ArenaLeaderboard extends Sprite
             return (_local_1);
         }
 
-        private function alignTabs():void
-        {
+        private function alignTabs():void{
             var _local_2:ArenaLeaderboardTab;
             var _local_1:int = 20;
             for each (_local_2 in this.tabs)
             {
                 _local_2.x = _local_1;
                 _local_1 = (_local_1 + (_local_2.width + 20));
-            }
+            };
         }
 
-        private function makeResetTimer():LeaderboardWeeklyResetTimer
-        {
+        private function makeResetTimer():LeaderboardWeeklyResetTimer{
             var _local_1:LeaderboardWeeklyResetTimer;
             _local_1 = new LeaderboardWeeklyResetTimer();
             _local_1.y = 72;
@@ -207,8 +190,7 @@ public class ArenaLeaderboard extends Sprite
             return (_local_1);
         }
 
-        private function onAlignTitle():void
-        {
+        private function onAlignTitle():void{
             this.title.x = (stage.stageWidth / 2);
             this.leftSword.x = ((((stage.stageWidth / 2) - (this.title.width / 2)) - this.leftSword.width) + 10);
             this.leftSword.y = 15;

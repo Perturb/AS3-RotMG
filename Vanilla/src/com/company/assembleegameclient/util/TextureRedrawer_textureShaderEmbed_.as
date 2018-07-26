@@ -1,4 +1,4 @@
-package com.company.assembleegameclient.util
+﻿package com.company.assembleegameclient.util
 {
 import mx.core.*;
 

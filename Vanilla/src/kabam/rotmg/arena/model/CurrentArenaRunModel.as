@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.model.CurrentArenaRunModel
 
-package kabam.rotmg.arena.model
-{
+package kabam.rotmg.arena.model{
 import io.decagames.rotmg.pets.data.PetsModel;
 
 import kabam.rotmg.assets.services.CharacterFactory;
@@ -14,8 +13,7 @@ import kabam.rotmg.game.model.GameModel;
 
 import org.osflash.signals.Signal;
 
-public class CurrentArenaRunModel 
-    {
+public class CurrentArenaRunModel {
 
         [Inject]
         public var gameModel:GameModel;
@@ -31,20 +29,17 @@ public class CurrentArenaRunModel
         public var entry:ArenaLeaderboardEntry = new ArenaLeaderboardEntry();
         public const waveUpdated:Signal = new Signal();
 
-        public function CurrentArenaRunModel()
-        {
+        public function CurrentArenaRunModel(){
             this.clear();
         }
 
-        public function clear():void
-        {
+        public function clear():void{
             this.died = false;
             this.entry.currentWave = 0;
             this.entry.runtime = -1;
         }
 
-        public function incrementWave():void
-        {
+        public function incrementWave():void{
             if (this.died)
             {
                 this.died = false;
@@ -53,16 +48,14 @@ public class CurrentArenaRunModel
             {
                 this.entry.currentWave++;
                 this.waveUpdated.dispatch();
-            }
+            };
         }
 
-        public function hasEntry():Boolean
-        {
+        public function hasEntry():Boolean{
             return (!(this.entry.runtime == -1));
         }
 
-        public function saveCurrentUserInfo():void
-        {
+        public function saveCurrentUserInfo():void{
             this.clear();
             this.entry.name = this.gameModel.player.name_;
             var _local_1:CharacterSkin = this.classesModel.getCharacterClass(this.gameModel.player.objectType_).skins.getSkin(this.gameModel.player.skinId);

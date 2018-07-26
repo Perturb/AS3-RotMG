@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.ConditionEffect
 
-package com.company.assembleegameclient.util
-{
+package com.company.assembleegameclient.util{
 import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.PointUtil;
@@ -16,8 +15,7 @@ import flash.geom.Matrix;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class ConditionEffect
-    {
+public class ConditionEffect {
 
         public static const NOTHING:uint = 0;
         public static const DEAD:uint = 1;
@@ -137,8 +135,7 @@ public class ConditionEffect
         public var localizationKey_:String;
         public var icon16Bit_:Boolean;
 
-        public function ConditionEffect(_arg_1:String, _arg_2:uint, _arg_3:Array, _arg_4:String="", _arg_5:Boolean=false)
-        {
+        public function ConditionEffect(_arg_1:String, _arg_2:uint, _arg_3:Array, _arg_4:String="", _arg_5:Boolean=false){
             this.name_ = _arg_1;
             this.bit_ = _arg_2;
             this.iconOffsets_ = _arg_3;
@@ -146,37 +143,34 @@ public class ConditionEffect
             this.icon16Bit_ = _arg_5;
         }
 
-        public static function getConditionEffectFromName(_arg_1:String):uint
-        {
+        public static function getConditionEffectFromName(_arg_1:String):uint{
             var _local_2:uint;
             if (conditionEffectFromName_ == null)
             {
-                conditionEffectFromName_ = {};
+                conditionEffectFromName_ = new Object();
                 _local_2 = 0;
                 while (_local_2 < effects_.length)
                 {
                     conditionEffectFromName_[effects_[_local_2].name_] = _local_2;
                     _local_2++;
-                }
-            }
+                };
+            };
             return (conditionEffectFromName_[_arg_1]);
         }
 
-        public static function getConditionEffectEnumFromName(_arg_1:String):ConditionEffect
-        {
+        public static function getConditionEffectEnumFromName(_arg_1:String):ConditionEffect{
             var _local_2:ConditionEffect;
             for each (_local_2 in effects_)
             {
                 if (_local_2.name_ == _arg_1)
                 {
                     return (_local_2);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        public static function getConditionEffectIcons(_arg_1:uint, _arg_2:Vector.<BitmapData>, _arg_3:int):void
-        {
+        public static function getConditionEffectIcons(_arg_1:uint, _arg_2:Vector.<BitmapData>, _arg_3:int):void{
             var _local_4:uint;
             var _local_5:uint;
             var _local_6:Vector.<BitmapData>;
@@ -188,13 +182,12 @@ public class ConditionEffect
                 if (_local_6 != null)
                 {
                     _arg_2.push(_local_6[(_arg_3 % _local_6.length)]);
-                }
+                };
                 _arg_1 = _local_4;
-            }
+            };
         }
 
-        public static function getConditionEffectIcons2(_arg_1:uint, _arg_2:Vector.<BitmapData>, _arg_3:int):void
-        {
+        public static function getConditionEffectIcons2(_arg_1:uint, _arg_2:Vector.<BitmapData>, _arg_3:int):void{
             var _local_4:uint;
             var _local_5:uint;
             var _local_6:Vector.<BitmapData>;
@@ -206,20 +199,19 @@ public class ConditionEffect
                 if (_local_6 != null)
                 {
                     _arg_2.push(_local_6[(_arg_3 % _local_6.length)]);
-                }
+                };
                 _arg_1 = _local_4;
-            }
+            };
         }
 
-        public static function addConditionEffectIcon(_arg_1:Vector.<BitmapData>, _arg_2:int, _arg_3:Boolean):void
-        {
+        public static function addConditionEffectIcon(_arg_1:Vector.<BitmapData>, _arg_2:int, _arg_3:Boolean):void{
             var _local_4:BitmapData;
             var _local_5:Matrix;
             var _local_6:Matrix;
             if (effectIconCache == null)
             {
                 effectIconCache = {};
-            }
+            };
             if (effectIconCache[_arg_2])
             {
                 _local_4 = effectIconCache[_arg_2];
@@ -239,16 +231,15 @@ public class ConditionEffect
                 {
                     _local_4 = new BitmapDataSpy(16, 16, true, 0);
                     _local_4.draw(AssetLibrary.getImageFromSet("lofiInterface2", _arg_2), _local_5);
-                }
+                };
                 _local_4 = GlowRedrawer.outlineGlow(_local_4, 0xFFFFFFFF);
                 _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, GLOW_FILTER);
                 effectIconCache[_arg_2] = _local_4;
-            }
+            };
             _arg_1.push(_local_4);
         }
 
-        private static function getIconsFromBit(_arg_1:uint):Vector.<BitmapData>
-        {
+        private static function getIconsFromBit(_arg_1:uint):Vector.<BitmapData>{
             var _local_2:Matrix;
             var _local_3:uint;
             var _local_4:Vector.<BitmapData>;
@@ -256,7 +247,7 @@ public class ConditionEffect
             var _local_6:BitmapData;
             if (bitToIcon_ == null)
             {
-                bitToIcon_ = {};
+                bitToIcon_ = new Object();
                 _local_2 = new Matrix();
                 _local_2.translate(4, 4);
                 _local_3 = 0;
@@ -275,17 +266,16 @@ public class ConditionEffect
                             _local_6.applyFilter(_local_6, _local_6.rect, PointUtil.ORIGIN, GLOW_FILTER);
                             _local_4.push(_local_6);
                             _local_5++;
-                        }
-                    }
+                        };
+                    };
                     bitToIcon_[effects_[_local_3].bit_] = _local_4;
                     _local_3++;
-                }
-            }
+                };
+            };
             return (bitToIcon_[_arg_1]);
         }
 
-        private static function getIconsFromBit2(_arg_1:uint):Vector.<BitmapData>
-        {
+        private static function getIconsFromBit2(_arg_1:uint):Vector.<BitmapData>{
             var _local_2:Vector.<BitmapData>;
             var _local_3:BitmapData;
             var _local_4:Matrix;
@@ -319,21 +309,21 @@ public class ConditionEffect
                             {
                                 _local_3 = new BitmapDataSpy(16, 16, true, 0);
                                 _local_3.draw(AssetLibrary.getImageFromSet("lofiInterface2", effects_[_local_6].iconOffsets_[_local_7]), _local_4);
-                            }
+                            };
                             _local_3 = GlowRedrawer.outlineGlow(_local_3, 0xFFFFFFFF);
                             _local_3.applyFilter(_local_3, _local_3.rect, PointUtil.ORIGIN, GLOW_FILTER);
                             _local_2.push(_local_3);
                             _local_7++;
-                        }
-                    }
+                        };
+                    };
                     bitToIcon2_[effects_[_local_6].bit_] = _local_2;
                     _local_6++;
-                }
-            }
+                };
+            };
             if (((!(bitToIcon2_ == null)) && (!(bitToIcon2_[_arg_1] == null))))
             {
                 return (bitToIcon2_[_arg_1]);
-            }
+            };
             return (null);
         }
 

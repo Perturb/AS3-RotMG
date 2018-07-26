@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.serialization.MapDecoder
 
-package com.company.assembleegameclient.map.serialization
-{
+package com.company.assembleegameclient.map.serialization{
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.objects.BasicObject;
@@ -18,17 +17,14 @@ import flash.utils.ByteArray;
 import kabam.lib.json.JsonParser;
 import kabam.rotmg.core.StaticInjectorContext;
 
-public class MapDecoder
-    {
+public class MapDecoder {
 
 
-        private static function get json():JsonParser
-        {
+        private static function get json():JsonParser{
             return (StaticInjectorContext.getInjector().getInstance(JsonParser));
         }
 
-        public static function decodeMap(_arg_1:String):Map
-        {
+        public static function decodeMap(_arg_1:String):Map{
             var _local_2:Object = json.parse(_arg_1);
             var _local_3:Map = new Map(null);
             _local_3.setProps(_local_2["width"], _local_2["height"], _local_2["name"], _local_2["back"], false, false);
@@ -37,20 +33,17 @@ public class MapDecoder
             return (_local_3);
         }
 
-        public static function writeMap(_arg_1:String, _arg_2:Map, _arg_3:int, _arg_4:int):void
-        {
+        public static function writeMap(_arg_1:String, _arg_2:Map, _arg_3:int, _arg_4:int):void{
             var _local_5:Object = json.parse(_arg_1);
             writeMapInternal(_local_5, _arg_2, _arg_3, _arg_4);
         }
 
-        public static function getSize(_arg_1:String):IntPoint
-        {
+        public static function getSize(_arg_1:String):IntPoint{
             var _local_2:Object = json.parse(_arg_1);
             return (new IntPoint(_local_2["width"], _local_2["height"]));
         }
 
-        private static function writeMapInternal(_arg_1:Object, _arg_2:Map, _arg_3:int, _arg_4:int):void
-        {
+        private static function writeMapInternal(_arg_1:Object, _arg_2:Map, _arg_3:int, _arg_4:int):void{
             var _local_7:int;
             var _local_8:int;
             var _local_9:Object;
@@ -74,7 +67,7 @@ public class MapDecoder
                         {
                             _local_11 = GroundLibrary.idToType_[_local_9["ground"]];
                             _arg_2.setGroundTile(_local_8, _local_7, _local_11);
-                        }
+                        };
                         _local_10 = _local_9["objs"];
                         if (_local_10 != null)
                         {
@@ -83,17 +76,16 @@ public class MapDecoder
                                 _local_13 = getGameObject(_local_12);
                                 _local_13.objectId_ = BasicObject.getNextFakeObjectId();
                                 _arg_2.addObj(_local_13, (_local_8 + 0.5), (_local_7 + 0.5));
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     _local_8++;
-                }
+                };
                 _local_7++;
-            }
+            };
         }
 
-        public static function getGameObject(_arg_1:Object):GameObject
-        {
+        public static function getGameObject(_arg_1:Object):GameObject{
             var _local_2:int = ObjectLibrary.idToType_[_arg_1["id"]];
             var _local_3:XML = ObjectLibrary.xmlLibrary_[_local_2];
             var _local_4:GameObject = ObjectLibrary.getObjectFromType(_local_2);

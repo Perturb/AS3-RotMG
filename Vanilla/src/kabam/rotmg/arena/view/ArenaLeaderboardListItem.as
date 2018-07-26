@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardListItem
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.display.Bitmap;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
@@ -25,8 +24,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class ArenaLeaderboardListItem extends Sprite 
-    {
+public class ArenaLeaderboardListItem extends Sprite {
 
         private static const HEIGHT:int = 60;
 
@@ -54,8 +52,7 @@ public class ArenaLeaderboardListItem extends Sprite
         public const showTooltip:Signal = new Signal(Sprite);
         public const hideTooltip:Signal = new Signal();
 
-        public function ArenaLeaderboardListItem()
-        {
+        public function ArenaLeaderboardListItem(){
             this.petIconBackground = this.makePetIconBackground();
             this.rankNumber = this.makeTextDisplay();
             this.playerName = this.makeTextDisplay();
@@ -73,8 +70,7 @@ public class ArenaLeaderboardListItem extends Sprite
             this.addEventListeners();
         }
 
-        private function addEventListeners():void
-        {
+        private function addEventListeners():void{
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             this.playerIconContainer.addEventListener(MouseEvent.MOUSE_OVER, this.onPlayerIconOver);
@@ -83,8 +79,7 @@ public class ArenaLeaderboardListItem extends Sprite
             this.petIconContainer.addEventListener(MouseEvent.MOUSE_OUT, this.onPetIconOut);
         }
 
-        private function addChildren():void
-        {
+        private function addChildren():void{
             addChild(this.background);
             addChild(this.playerIconContainer);
             addChild(this.petIconBackground);
@@ -96,50 +91,43 @@ public class ArenaLeaderboardListItem extends Sprite
             this.playerIconContainer.addChild(this.playerIcon);
         }
 
-        private function onPlayerIconOut(_arg_1:MouseEvent):void
-        {
+        private function onPlayerIconOut(_arg_1:MouseEvent):void{
             this.hideTooltip.dispatch();
         }
 
-        private function onPlayerIconOver(_arg_1:MouseEvent):void
-        {
+        private function onPlayerIconOver(_arg_1:MouseEvent):void{
             if (this.playerTooltip)
             {
                 this.showTooltip.dispatch(this.playerTooltip);
-            }
+            };
         }
 
-        private function onPetIconOut(_arg_1:MouseEvent):void
-        {
+        private function onPetIconOut(_arg_1:MouseEvent):void{
             this.hideTooltip.dispatch();
         }
 
-        private function onPetIconOver(_arg_1:MouseEvent):void
-        {
+        private function onPetIconOver(_arg_1:MouseEvent):void{
             if (this.playerTooltip)
             {
                 this.showTooltip.dispatch(this.petTooltip);
-            }
+            };
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             if (this.isActive)
             {
                 this.background.alpha = 0;
-            }
+            };
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             if (this.isActive)
             {
                 this.background.alpha = 1;
-            }
+            };
         }
 
-        public function apply(_arg_1:ArenaLeaderboardEntry, _arg_2:Boolean):void
-        {
+        public function apply(_arg_1:ArenaLeaderboardEntry, _arg_2:Boolean):void{
             this.isActive = (!(_arg_1 == null));
             if (_arg_1)
             {
@@ -153,15 +141,15 @@ public class ArenaLeaderboardListItem extends Sprite
                 else
                 {
                     this.rankNumber.visible = false;
-                }
+                };
                 if (this.petBitmap)
                 {
                     this.destroyPetIcon();
-                }
+                };
                 if (_arg_1.pet)
                 {
                     this.initPetIcon(_arg_1);
-                }
+                };
                 this.rank = _arg_1.rank;
                 this.isPersonalRecord = _arg_1.isPersonalRecord;
                 this.setColor();
@@ -169,46 +157,40 @@ public class ArenaLeaderboardListItem extends Sprite
             else
             {
                 this.clear();
-            }
+            };
             this.align();
         }
 
-        private function initArenaData(_arg_1:ArenaLeaderboardEntry):void
-        {
+        private function initArenaData(_arg_1:ArenaLeaderboardEntry):void{
             this.waveNumber.setStringBuilder(this.waveNumberStringBuilder.setParams(TextKey.ARENA_LEADERBOARD_LIST_ITEM_WAVENUMBER, {"waveNumber":(_arg_1.currentWave - 1).toString()}));
             this.runTime.setStringBuilder(this.runTimeStringBuilder.setString(this.formatTime(Math.floor(_arg_1.runtime))));
         }
 
-        private function initPlayerData(_arg_1:ArenaLeaderboardEntry):void
-        {
+        private function initPlayerData(_arg_1:ArenaLeaderboardEntry):void{
             this.playerIcon.bitmapData = _arg_1.playerBitmap;
             this.playerTooltip = new AbridgedPlayerTooltip(_arg_1);
             this.playerName.setStringBuilder(this.playerNameStringBuilder.setString(_arg_1.name));
         }
 
-        private function initPetIcon(_arg_1:ArenaLeaderboardEntry):void
-        {
+        private function initPetIcon(_arg_1:ArenaLeaderboardEntry):void{
             this.petTooltip = new PetTooltip(_arg_1.pet);
             this.petBitmap = this.getPetBitmap(_arg_1.pet, 48);
             this.petIconContainer.addChild(this.petBitmap);
             this.petIconBackground.visible = true;
         }
 
-        private function destroyPetIcon():void
-        {
+        private function destroyPetIcon():void{
             this.petIconContainer.removeChild(this.petBitmap);
             this.petTooltip = null;
             this.petBitmap = null;
             this.petIconBackground.visible = false;
         }
 
-        private function getPetBitmap(_arg_1:PetVO, _arg_2:int):Bitmap
-        {
+        private function getPetBitmap(_arg_1:PetVO, _arg_2:int):Bitmap{
             return (new Bitmap(this.petIconFactory.getPetSkinTexture(_arg_1, _arg_2)));
         }
 
-        public function setColor():void
-        {
+        public function setColor():void{
             var _local_1:uint = 0xFFFFFF;
             if (this.isPersonalRecord)
             {
@@ -219,16 +201,15 @@ public class ArenaLeaderboardListItem extends Sprite
                 if (this.rank == 1)
                 {
                     _local_1 = 16777103;
-                }
-            }
+                };
+            };
             this.playerName.setColor(_local_1);
             this.waveNumber.setColor(_local_1);
             this.runTime.setColor(_local_1);
             this.rankNumber.setColor(_local_1);
         }
 
-        public function clear():void
-        {
+        public function clear():void{
             this.playerIcon.bitmapData = null;
             this.playerName.setStringBuilder(this.playerNameStringBuilder.setString(""));
             this.waveNumber.setStringBuilder(this.waveNumberStringBuilder.setParams(""));
@@ -237,14 +218,13 @@ public class ArenaLeaderboardListItem extends Sprite
             if (this.petBitmap)
             {
                 this.destroyPetIcon();
-            }
+            };
             this.petBitmap = null;
             this.petIconBackground.visible = false;
             this.rank = 0;
         }
 
-        private function makeTextDisplay():StaticTextDisplay
-        {
+        private function makeTextDisplay():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setBold(true).setSize(24);
@@ -252,8 +232,7 @@ public class ArenaLeaderboardListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeBackground():Sprite
-        {
+        private function makeBackground():Sprite{
             var _local_1:Sprite = new Sprite();
             _local_1.graphics.beginFill(0, 0.5);
             _local_1.graphics.drawRect(0, 0, 750, 60);
@@ -262,8 +241,7 @@ public class ArenaLeaderboardListItem extends Sprite
             return (_local_1);
         }
 
-        private function makePetIconBackground():Sprite
-        {
+        private function makePetIconBackground():Sprite{
             var _local_1:Sprite = new Sprite();
             _local_1.graphics.beginFill(0x545454);
             _local_1.graphics.drawRoundRect(0, 0, 40, 40, 10, 10);
@@ -272,8 +250,7 @@ public class ArenaLeaderboardListItem extends Sprite
             return (_local_1);
         }
 
-        private function formatTime(_arg_1:int):String
-        {
+        private function formatTime(_arg_1:int):String{
             var _local_2:int = int(Math.floor((_arg_1 / 60)));
             var _local_3:String = (((_local_2 < 10) ? "0" : "") + _local_2.toString());
             var _local_4:int = (_arg_1 % 60);
@@ -281,8 +258,7 @@ public class ArenaLeaderboardListItem extends Sprite
             return ((_local_3 + ":") + _local_5);
         }
 
-        private function align():void
-        {
+        private function align():void{
             this.rankNumber.x = 75;
             this.rankNumber.y = ((HEIGHT / 2) - (this.rankNumber.height / 2));
             this.playerIcon.x = 110;
@@ -293,7 +269,7 @@ public class ArenaLeaderboardListItem extends Sprite
                 this.petBitmap.y = ((HEIGHT / 2) - (this.petBitmap.height / 2));
                 this.petIconBackground.x = 175;
                 this.petIconBackground.y = ((HEIGHT / 2) - (this.petIconBackground.height / 2));
-            }
+            };
             this.playerName.x = 230;
             this.playerName.y = ((HEIGHT / 2) - (this.playerName.height / 2));
             this.waveNumber.x = 485;

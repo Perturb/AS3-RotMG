@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.AssetLoader
 
-package com.company.assembleegameclient.util
-{
+package com.company.assembleegameclient.util{
 import com.company.assembleegameclient.engine3d.Model3D;
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.map.RegionLibrary;
@@ -23,16 +22,14 @@ import flash.utils.getQualifiedClassName;
 import kabam.rotmg.assets.EmbeddedAssets;
 import kabam.rotmg.assets.EmbeddedData;
 
-public class AssetLoader
-    {
+public class AssetLoader {
 
         public static var currentXmlIsTesting:Boolean = false;
 
         public var music:IMusic = new MusicProxy();
 
 
-        public function load():void
-        {
+        public function load():void{
             this.addImages();
             this.addAnimatedCharacters();
             this.addSoundEffects();
@@ -47,8 +44,7 @@ public class AssetLoader
             SFX.load();
         }
 
-        private function addImages():void
-        {
+        private function addImages():void{
             AssetLibrary.addImageSet("lofiChar8x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("lofiChar16x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 16, 8);
             AssetLibrary.addImageSet("lofiChar16x16", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 16, 16);
@@ -123,8 +119,7 @@ public class AssetLoader
             AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
         }
 
-        private function addAnimatedCharacters():void
-        {
+        private function addAnimatedCharacters():void{
             AnimatedChars.add("chars8x8rBeach", new EmbeddedAssets.chars8x8rBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("chars8x8dBeach", new EmbeddedAssets.chars8x8dBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.DOWN);
             AnimatedChars.add("chars8x8rLow1", new EmbeddedAssets.chars8x8rLow1Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
@@ -179,8 +174,7 @@ public class AssetLoader
             AnimatedChars.add("magicWoodsChars16x16", new EmbeddedAssets.magicWoodsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
 
-        private function addSoundEffects():void
-        {
+        private function addSoundEffects():void{
             SoundEffectLibrary.load("button_click");
             SoundEffectLibrary.load("death_screen");
             SoundEffectLibrary.load("enter_realm");
@@ -193,8 +187,7 @@ public class AssetLoader
             SoundEffectLibrary.load("use_potion");
         }
 
-        private function parse3DModels():void
-        {
+        private function parse3DModels():void{
             var _local_1:String;
             var _local_2:ByteArray;
             var _local_3:String;
@@ -204,53 +197,48 @@ public class AssetLoader
                 _local_3 = _local_2.readUTFBytes(_local_2.length);
                 Model3D.parse3DOBJ(_local_1, _local_2);
                 Model3D.parseFromOBJ(_local_1, _local_3);
-            }
+            };
         }
 
-        private function parseParticleEffects():void
-        {
+        private function parseParticleEffects():void{
             var _local_1:XML = XML(new EmbeddedAssets.particlesEmbed());
             ParticleLibrary.parseFromXML(_local_1);
         }
 
-        private function parseGroundFiles():void
-        {
+        private function parseGroundFiles():void{
             var _local_1:*;
             for each (_local_1 in EmbeddedData.groundFiles)
             {
                 GroundLibrary.parseFromXML(XML(_local_1));
-            }
+            };
         }
 
-        private function parseObjectFiles():void
-        {
+        private function parseObjectFiles():void{
             var _local_1:int;
             while (_local_1 < 25)
             {
                 currentXmlIsTesting = this.checkIsTestingXML(EmbeddedData.objectFiles[_local_1]);
                 ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
-            }
+            };
             var _local_2:int;
             while (_local_2 < EmbeddedData.objectFiles.length)
             {
                 ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_local_2]), XML(EmbeddedData.objectFiles[_local_2]));
                 _local_2++;
-            }
+            };
             currentXmlIsTesting = false;
         }
 
-        private function parseRegionFiles():void
-        {
+        private function parseRegionFiles():void{
             var _local_1:*;
             for each (_local_1 in EmbeddedData.regionFiles)
             {
                 RegionLibrary.parseFromXML(XML(_local_1));
-            }
+            };
         }
 
-        private function checkIsTestingXML(_arg_1:*):Boolean
-        {
+        private function checkIsTestingXML(_arg_1:*):Boolean{
             return (!(getQualifiedClassName(_arg_1).indexOf("TestingCXML", 33) == -1));
         }
 

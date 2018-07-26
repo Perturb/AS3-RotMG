@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.model.SocialModel
 
-package io.decagames.rotmg.social.model
-{
+package io.decagames.rotmg.social.model{
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.FameUtil;
@@ -27,8 +26,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import org.osflash.signals.Signal;
 
-public class SocialModel
-    {
+public class SocialModel {
 
         [Inject]
         public var hudModel:HUDModel;
@@ -61,54 +59,47 @@ public class SocialModel
         private var _currentServer:Server;
         private var _guildVO:GuildVO;
 
-        public function SocialModel()
-        {
+        public function SocialModel(){
             this._initSocialModel();
         }
 
-        public function setCurrentServer(_arg_1:Server):void
-        {
+        public function setCurrentServer(_arg_1:Server):void{
             this._currentServer = _arg_1;
         }
 
-        public function getCurrentServerName():String
-        {
+        public function getCurrentServerName():String{
             return ((this._currentServer) ? this._currentServer.name : "");
         }
 
-        public function loadFriendsData():void
-        {
+        public function loadFriendsData():void{
             if (((this._friendsLoadInProcess) || (this._invitationsLoadInProgress)))
             {
                 return;
-            }
+            };
             this._friendsLoadInProcess = true;
             this._invitationsLoadInProgress = true;
             this.loadList(this.friendsDataRequest, FriendsActions.getURL(FriendsActions.FRIEND_LIST), this.onFriendListResponse);
         }
 
-        public function loadInvitations():void
-        {
+        public function loadInvitations():void{
             if (((this._friendsLoadInProcess) || (this._invitationsLoadInProgress)))
             {
                 return;
-            }
+            };
             this._invitationsLoadInProgress = true;
             this.loadList(this.friendsDataRequest, FriendsActions.getURL(FriendsActions.INVITE_LIST), this.onInvitationListResponse);
         }
 
-        public function loadGuildData():void
-        {
+        public function loadGuildData():void{
             if (this._guildLoadInProgress)
             {
                 return;
-            }
+            };
             this._guildLoadInProgress = true;
             this.loadList(this.guildDataRequest, GuildActions.getURL(GuildActions.GUILD_LIST), this.onGuildListResponse);
         }
 
-        public function seedFriends(_arg_1:XML):void
-        {
+        public function seedFriends(_arg_1:XML):void{
             var _local_2:String;
             var _local_3:String;
             var _local_4:String;
@@ -140,20 +131,18 @@ public class SocialModel
                         "vo":_local_5,
                         "list":this._offlineFriends
                     };
-                }
-            }
+                };
+            };
             this._onlineFriends.sort(this.sortFriend);
             this._offlineFriends.sort(this.sortFriend);
             this.updateFriendsList();
         }
 
-        public function isMyFriend(_arg_1:String):Boolean
-        {
+        public function isMyFriend(_arg_1:String):Boolean{
             return (!(this._friends[_arg_1] == null));
         }
 
-        public function updateFriendVO(_arg_1:String, _arg_2:Player):void
-        {
+        public function updateFriendVO(_arg_1:String, _arg_2:Player):void{
             var _local_3:Object;
             var _local_4:FriendVO;
             if (this.isMyFriend(_arg_1))
@@ -161,11 +150,10 @@ public class SocialModel
                 _local_3 = this._friends[_arg_1];
                 _local_4 = (_local_3.vo as FriendVO);
                 _local_4.updatePlayer(_arg_2);
-            }
+            };
         }
 
-        public function getFilterFriends(_arg_1:String):Vector.<FriendVO>
-        {
+        public function getFilterFriends(_arg_1:String):Vector.<FriendVO>{
             var _local_3:FriendVO;
             var _local_2:RegExp = new RegExp(_arg_1, "gix");
             this._onlineFilteredFriends.length = 0;
@@ -177,9 +165,9 @@ public class SocialModel
                 if (_local_3.getName().search(_local_2) >= 0)
                 {
                     this._onlineFilteredFriends.push(_local_3);
-                }
+                };
                 _local_4++;
-            }
+            };
             _local_4 = 0;
             while (_local_4 < this._offlineFriends.length)
             {
@@ -187,33 +175,30 @@ public class SocialModel
                 if (_local_3.getName().search(_local_2) >= 0)
                 {
                     this._offlineFilteredFriends.push(_local_3);
-                }
+                };
                 _local_4++;
-            }
+            };
             this._onlineFilteredFriends.sort(this.sortFriend);
             this._offlineFilteredFriends.sort(this.sortFriend);
             return (this._onlineFilteredFriends.concat(this._offlineFilteredFriends));
         }
 
-        public function ifReachMax():Boolean
-        {
+        public function ifReachMax():Boolean{
             return (this._numberOfFriends >= SocialConfig.MAX_FRIENDS);
         }
 
-        public function getAllInvitations():Vector.<FriendVO>
-        {
+        public function getAllInvitations():Vector.<FriendVO>{
             var _local_2:FriendVO;
             var _local_1:Vector.<FriendVO> = new Vector.<FriendVO>();
             for each (_local_2 in this._invitations)
             {
                 _local_1.push(_local_2);
-            }
+            };
             _local_1.sort(this.sortFriend);
             return (_local_1);
         }
 
-        public function removeFriend(_arg_1:String):Boolean
-        {
+        public function removeFriend(_arg_1:String):Boolean{
             var _local_2:Object = this._friends[_arg_1];
             if (_local_2)
             {
@@ -222,12 +207,11 @@ public class SocialModel
                 this._friends[_arg_1] = null;
                 delete this._friends[_arg_1];
                 return (true);
-            }
+            };
             return (false);
         }
 
-        public function removeInvitation(_arg_1:String):Boolean
-        {
+        public function removeInvitation(_arg_1:String):Boolean{
             if (this._invitations[_arg_1] != null)
             {
                 this._invitations[_arg_1] = null;
@@ -236,14 +220,13 @@ public class SocialModel
                 if (this._numberOfInvitation == 0)
                 {
                     this.noInvitationSignal.dispatch();
-                }
+                };
                 return (true);
-            }
+            };
             return (false);
         }
 
-        public function removeGuildMember(_arg_1:String):void
-        {
+        public function removeGuildMember(_arg_1:String):void{
             var _local_2:GuildMemberVO;
             for each (_local_2 in this._onlineGuildMembers)
             {
@@ -251,21 +234,20 @@ public class SocialModel
                 {
                     this._onlineGuildMembers.splice(this._onlineGuildMembers.indexOf(_local_2), 1);
                     break;
-                }
-            }
+                };
+            };
             for each (_local_2 in this._offlineGuildMembers)
             {
                 if (_local_2.name == _arg_1)
                 {
                     this._offlineGuildMembers.splice(this._offlineGuildMembers.indexOf(_local_2), 1);
                     break;
-                }
-            }
+                };
+            };
             this.updateGuildData();
         }
 
-        private function _initSocialModel():void
-        {
+        private function _initSocialModel():void{
             this._numberOfFriends = 0;
             this._numberOfInvitation = 0;
             this._friends = new Dictionary(true);
@@ -280,15 +262,13 @@ public class SocialModel
             this._guildLoadInProgress = false;
         }
 
-        private function loadList(_arg_1:ISocialTask, _arg_2:String, _arg_3:Function):void
-        {
+        private function loadList(_arg_1:ISocialTask, _arg_2:String, _arg_3:Function):void{
             _arg_1.requestURL = _arg_2;
             (_arg_1 as BaseTask).finished.addOnce(_arg_3);
             (_arg_1 as BaseTask).start();
         }
 
-        private function onFriendListResponse(_arg_1:FriendDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void
-        {
+        private function onFriendListResponse(_arg_1:FriendDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void{
             this._isFriDataOK = _arg_2;
             if (this._isFriDataOK)
             {
@@ -300,11 +280,10 @@ public class SocialModel
             else
             {
                 this.socialDataSignal.dispatch(SocialDataSignal.FRIENDS_DATA_LOADED, this._isFriDataOK, _arg_3);
-            }
+            };
         }
 
-        private function onInvitationListResponse(_arg_1:FriendDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void
-        {
+        private function onInvitationListResponse(_arg_1:FriendDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void{
             if (_arg_2)
             {
                 this.seedInvitations(_arg_1.xml);
@@ -313,13 +292,12 @@ public class SocialModel
             else
             {
                 this.socialDataSignal.dispatch(SocialDataSignal.FRIEND_INVITATIONS_LOADED, _arg_2, _arg_3);
-            }
+            };
             _arg_1.reset();
             this._invitationsLoadInProgress = false;
         }
 
-        private function onGuildListResponse(_arg_1:GuildDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void
-        {
+        private function onGuildListResponse(_arg_1:GuildDataRequestTask, _arg_2:Boolean, _arg_3:String=""):void{
             if (_arg_2)
             {
                 this.seedGuild(_arg_1.xml);
@@ -327,14 +305,13 @@ public class SocialModel
             else
             {
                 this.clearGuildData();
-            }
+            };
             _arg_1.reset();
             this._guildLoadInProgress = false;
             this.socialDataSignal.dispatch(SocialDataSignal.GUILD_DATA_LOADED, _arg_2, _arg_3);
         }
 
-        private function seedInvitations(_arg_1:XML):void
-        {
+        private function seedInvitations(_arg_1:XML):void{
             var _local_2:String;
             var _local_3:XML;
             var _local_4:Player;
@@ -348,12 +325,11 @@ public class SocialModel
                     _local_4 = Player.fromPlayerXML(_local_2, _local_3.Character[0]);
                     this._invitations[_local_2] = new FriendVO(_local_4);
                     this._numberOfInvitation++;
-                }
-            }
+                };
+            };
         }
 
-        private function seedGuild(_arg_1:XML):void
-        {
+        private function seedGuild(_arg_1:XML):void{
             var _local_3:XML;
             var _local_4:GuildMemberVO;
             var _local_5:String;
@@ -376,7 +352,7 @@ public class SocialModel
                     {
                         _local_4.isMe = true;
                         this._guildVO.myRank = _local_3.Rank;
-                    }
+                    };
                     _local_4.name = _local_5;
                     _local_4.rank = _local_3.Rank;
                     _local_4.fame = _local_3.Fame;
@@ -393,30 +369,27 @@ public class SocialModel
                     {
                         _local_4.lastLogin = this.getLastLoginInSeconds(_local_3.LastLogin);
                         this._offlineGuildMembers.push(_local_4);
-                    }
-                }
-            }
+                    };
+                };
+            };
             this.updateGuildData();
         }
 
-        private function getPlayerObject(_arg_1:String, _arg_2:XML):Player
-        {
+        private function getPlayerObject(_arg_1:String, _arg_2:XML):Player{
             var _local_3:XML = _arg_2.Character[0];
             if (int(_local_3.ObjectType) == 0)
             {
                 _local_3.ObjectType = "782";
-            }
+            };
             return (Player.fromPlayerXML(_arg_1, _local_3));
         }
 
-        private function getLastLoginInSeconds(_arg_1:String):Number
-        {
+        private function getLastLoginInSeconds(_arg_1:String):Number{
             var _local_2:Date = new Date();
             return ((_local_2.getTime() - TimeUtil.parseUTCDate(_arg_1).getTime()) / 1000);
         }
 
-        private function updateGuildData():void
-        {
+        private function updateGuildData():void{
             this._onlineGuildMembers.sort(this.sortGuildMemberByRank);
             this._offlineGuildMembers.sort(this.sortGuildMemberByRank);
             this._onlineGuildMembers.sort(this.sortGuildMemberByAlphabet);
@@ -426,15 +399,13 @@ public class SocialModel
             this._guildVO.guildMembers = this._guildMembers;
         }
 
-        private function clearGuildData():void
-        {
+        private function clearGuildData():void{
             this._onlineGuildMembers.length = 0;
             this._offlineGuildMembers.length = 0;
             this._guildVO = null;
         }
 
-        private function removeFriendFromList(_arg_1:String):void
-        {
+        private function removeFriendFromList(_arg_1:String):void{
             var _local_2:FriendVO;
             for each (_local_2 in this._onlineFriends)
             {
@@ -442,21 +413,20 @@ public class SocialModel
                 {
                     this._onlineFriends.splice(this._onlineFriends.indexOf(_local_2), 1);
                     break;
-                }
-            }
+                };
+            };
             for each (_local_2 in this._offlineFriends)
             {
                 if (_local_2.getName() == _arg_1)
                 {
                     this._offlineFriends.splice(this._offlineFriends.indexOf(_local_2), 1);
                     break;
-                }
-            }
+                };
+            };
             this.updateFriendsList();
         }
 
-        private function removeFromList(_arg_1:Vector.<FriendVO>, _arg_2:String):void
-        {
+        private function removeFromList(_arg_1:Vector.<FriendVO>, _arg_2:String):void{
             var _local_3:FriendVO;
             var _local_4:int;
             while (_local_4 < _arg_1.length)
@@ -466,103 +436,92 @@ public class SocialModel
                 {
                     _arg_1.slice(_local_4, 1);
                     return;
-                }
+                };
                 _local_4++;
-            }
+            };
         }
 
-        private function sortFriend(_arg_1:FriendVO, _arg_2:FriendVO):Number
-        {
+        private function sortFriend(_arg_1:FriendVO, _arg_2:FriendVO):Number{
             if (_arg_1.getName() < _arg_2.getName())
             {
                 return (-1);
-            }
+            };
             if (_arg_1.getName() > _arg_2.getName())
             {
                 return (1);
-            }
+            };
             return (0);
         }
 
-        private function sortGuildMemberByRank(_arg_1:GuildMemberVO, _arg_2:GuildMemberVO):Number
-        {
+        private function sortGuildMemberByRank(_arg_1:GuildMemberVO, _arg_2:GuildMemberVO):Number{
             if (_arg_1.rank > _arg_2.rank)
             {
                 return (-1);
-            }
+            };
             if (_arg_1.rank < _arg_2.rank)
             {
                 return (1);
-            }
+            };
             return (0);
         }
 
-        private function sortGuildMemberByAlphabet(_arg_1:GuildMemberVO, _arg_2:GuildMemberVO):Number
-        {
+        private function sortGuildMemberByAlphabet(_arg_1:GuildMemberVO, _arg_2:GuildMemberVO):Number{
             if (_arg_1.rank == _arg_2.rank)
             {
                 if (_arg_1.name < _arg_2.name)
                 {
                     return (-1);
-                }
+                };
                 if (_arg_1.name > _arg_2.name)
                 {
                     return (1);
-                }
+                };
                 return (0);
-            }
+            };
             return (0);
         }
 
-        private function serverNameDictionary():Dictionary
-        {
+        private function serverNameDictionary():Dictionary{
             var _local_2:Server;
             if (this._serverDict)
             {
                 return (this._serverDict);
-            }
+            };
             var _local_1:Vector.<Server> = this.serverModel.getServers();
             this._serverDict = new Dictionary(true);
             for each (_local_2 in _local_1)
             {
                 this._serverDict[_local_2.address] = _local_2.name;
-            }
+            };
             return (this._serverDict);
         }
 
-        private function starFilter(_arg_1:int, _arg_2:int, _arg_3:XML):Boolean
-        {
+        private function starFilter(_arg_1:int, _arg_2:int, _arg_3:XML):Boolean{
             return (FameUtil.numAllTimeStars(_arg_1, _arg_2, _arg_3) >= Parameters.data_.friendStarRequirement);
         }
 
-        private function updateFriendsList():void
-        {
+        private function updateFriendsList():void{
             this._friendsList = this._onlineFriends.concat(this._offlineFriends);
             this._numberOfFriends = this._friendsList.length;
         }
 
-        public function get hasInvitations():Boolean
-        {
+        public function get hasInvitations():Boolean{
             return (this._numberOfInvitation > 0);
         }
 
-        public function get guildVO():GuildVO
-        {
+        public function get guildVO():GuildVO{
             return (this._guildVO);
         }
 
-        public function get numberOfFriends():int
-        {
+        public function get numberOfFriends():int{
             return (this._numberOfFriends);
         }
 
-        public function get friendsList():Vector.<FriendVO>
-        {
+        public function get friendsList():Vector.<FriendVO>{
             return (this._friendsList);
         }
 
-        public function get numberOfGuildMembers():int
-        {
+        public function get numberOfGuildMembers():int{
             return (this._numberOfGuildMembers);
         }
 

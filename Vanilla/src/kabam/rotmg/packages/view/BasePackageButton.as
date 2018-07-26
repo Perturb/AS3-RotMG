@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.BasePackageButton
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.BitmapUtil;
@@ -17,15 +16,13 @@ import flash.geom.Rectangle;
 
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 
-public class BasePackageButton extends Sprite
-    {
+public class BasePackageButton extends Sprite {
 
         public static const IMAGE_NAME:String = "redLootBag";
         public static const IMAGE_ID:int = 0;
 
 
-        protected static function makeIcon():DisplayObject
-        {
+        protected static function makeIcon():DisplayObject{
             var _local_1:BitmapData = AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID);
             _local_1 = TextureRedrawer.redraw(_local_1, 40, true, 0);
             _local_1 = BitmapUtil.cropToBitmapData(_local_1, 10, 10, (_local_1.width - 20), (_local_1.height - 20));
@@ -36,8 +33,7 @@ public class BasePackageButton extends Sprite
         }
 
 
-        protected function positionText(_arg_1:DisplayObject, _arg_2:TextFieldDisplayConcrete):void
-        {
+        protected function positionText(_arg_1:DisplayObject, _arg_2:TextFieldDisplayConcrete):void{
             var _local_4:Number;
             var _local_3:Rectangle = _arg_1.getBounds(this);
             _local_4 = (_local_3.top + (_local_3.height / 2));

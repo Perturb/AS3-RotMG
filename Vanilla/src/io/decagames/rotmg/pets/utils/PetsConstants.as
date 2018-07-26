@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.utils.PetsConstants
 
-package io.decagames.rotmg.pets.utils
-{
-    public class PetsConstants 
-    {
+package io.decagames.rotmg.pets.utils{
+    public class PetsConstants {
 
         public static const MAX_LEVEL:int = 99;
         public static const WINDOW_LINE_ONE_POS_Y:uint = 30;

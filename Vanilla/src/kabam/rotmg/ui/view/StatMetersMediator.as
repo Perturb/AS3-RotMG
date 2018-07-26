@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.StatMetersMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.objects.Player;
 
 import kabam.rotmg.ui.model.HUDModel;
@@ -12,8 +11,7 @@ import kabam.rotmg.ui.signals.UpdateHUDSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class StatMetersMediator extends Mediator 
-    {
+public class StatMetersMediator extends Mediator {
 
         [Inject]
         public var view:StatMetersView;
@@ -23,18 +21,15 @@ public class StatMetersMediator extends Mediator
         public var updateHUD:UpdateHUDSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.updateHUD.add(this.onUpdateHUD);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.updateHUD.add(this.onUpdateHUD);
         }
 
-        private function onUpdateHUD(_arg_1:Player):void
-        {
+        private function onUpdateHUD(_arg_1:Player):void{
             this.view.update(_arg_1);
         }
 

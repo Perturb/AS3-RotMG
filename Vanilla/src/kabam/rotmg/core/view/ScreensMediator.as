@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.view.ScreensMediator
 
-package kabam.rotmg.core.view
-{
+package kabam.rotmg.core.view{
 import flash.display.Sprite;
 
 import kabam.rotmg.core.model.ScreenModel;
@@ -13,8 +12,7 @@ import kabam.rotmg.core.signals.SetScreenSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ScreensMediator extends Mediator 
-    {
+public class ScreensMediator extends Mediator {
 
         [Inject]
         public var view:ScreensView;
@@ -26,26 +24,22 @@ public class ScreensMediator extends Mediator
         public var gotoPrevious:GotoPreviousScreenSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.setScreen.add(this.onSetScreen);
             this.gotoPrevious.add(this.onGotoPrevious);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.setScreen.remove(this.onSetScreen);
             this.gotoPrevious.add(this.onGotoPrevious);
         }
 
-        private function onSetScreen(_arg_1:Sprite):void
-        {
+        private function onSetScreen(_arg_1:Sprite):void{
             this.model.setCurrentScreenType((Object(_arg_1).constructor as Class));
             this.view.setScreen(_arg_1);
         }
 
-        private function onGotoPrevious():void
-        {
+        private function onGotoPrevious():void{
             this.view.setScreen(this.view.getPrevious());
         }
 

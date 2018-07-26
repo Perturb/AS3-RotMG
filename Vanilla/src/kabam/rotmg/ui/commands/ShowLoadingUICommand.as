@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.commands.ShowLoadingUICommand
 
-package kabam.rotmg.ui.commands
-{
+package kabam.rotmg.ui.commands{
 import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
 import kabam.rotmg.application.model.DomainModel;
@@ -13,8 +12,7 @@ import kabam.rotmg.core.view.BadDomainView;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class ShowLoadingUICommand 
-    {
+public class ShowLoadingUICommand {
 
         [Inject]
         public var setScreen:SetScreenSignal;
@@ -24,8 +22,7 @@ public class ShowLoadingUICommand
         public var logger:ILogger;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.domain.isLocalDomainValid())
             {
                 this.showLoadingScreen();
@@ -33,16 +30,14 @@ public class ShowLoadingUICommand
             else
             {
                 this.openBadDomainView();
-            }
+            };
         }
 
-        private function showLoadingScreen():void
-        {
+        private function showLoadingScreen():void{
             this.setScreen.dispatch(new AccountLoadingScreen());
         }
 
-        private function openBadDomainView():void
-        {
+        private function openBadDomainView():void{
             this.logger.debug("bad domain, deny");
             this.setScreen.dispatch(new BadDomainView());
         }

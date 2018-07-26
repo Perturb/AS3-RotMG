@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.application.model.PlatformModel
 
-package kabam.rotmg.application.model
-{
+package kabam.rotmg.application.model{
 import flash.display.DisplayObjectContainer;
 import flash.display.LoaderInfo;
 import flash.system.Capabilities;
 
-public class PlatformModel
-    {
+public class PlatformModel {
 
         private static var platform:PlatformType;
 
@@ -20,51 +18,44 @@ public class PlatformModel
         public var root:DisplayObjectContainer;
 
 
-        public function isWeb():Boolean
-        {
+        public function isWeb():Boolean{
             return (!(Capabilities.playerType == this.DESKTOP));
         }
 
-        public function isDesktop():Boolean
-        {
+        public function isDesktop():Boolean{
             return (Capabilities.playerType == this.DESKTOP);
         }
 
-        public function getPlatform():PlatformType
-        {
+        public function getPlatform():PlatformType{
             return (platform = ((platform) || (this.determinePlatform())));
         }
 
-        private function determinePlatform():PlatformType
-        {
+        private function determinePlatform():PlatformType{
             var _local_1:Object = LoaderInfo(this.root.stage.root.loaderInfo).parameters;
             if (this.isKongregate(_local_1))
             {
                 return (PlatformType.KONGREGATE);
-            }
+            };
             if (this.isSteam(_local_1))
             {
                 return (PlatformType.STEAM);
-            }
+            };
             if (this.isKabam(_local_1))
             {
                 return (PlatformType.KABAM);
-            }
+            };
             return (PlatformType.WEB);
         }
 
-        private function isKongregate(_arg_1:Object):Boolean
-        {
+        private function isKongregate(_arg_1:Object):Boolean{
             return (!(_arg_1.kongregate_api_path == null));
         }
 
-        private function isSteam(_arg_1:Object):Boolean
-        {
+        private function isSteam(_arg_1:Object):Boolean{
             return (!(_arg_1.steam_api_path == null));
         }
 
-        private function isKabam(_arg_1:Object):Boolean
-        {
+        private function isKabam(_arg_1:Object):Boolean{
             return (!(_arg_1.kabam_signed_request == null));
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.MysteryBoxPanel
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.SellableObject;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -40,8 +39,7 @@ import kabam.rotmg.util.components.LegacyBuyButton;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class MysteryBoxPanel extends Panel
-    {
+public class MysteryBoxPanel extends Panel {
 
         private const BUTTON_OFFSET:int = 17;
 
@@ -53,8 +51,7 @@ public class MysteryBoxPanel extends Panel
         private var icon_:Sprite;
         private var bitmap_:Bitmap;
 
-        public function MysteryBoxPanel(_arg_1:GameSprite, _arg_2:uint)
-        {
+        public function MysteryBoxPanel(_arg_1:GameSprite, _arg_2:uint){
             var _local_3:Injector = StaticInjectorContext.getInjector();
             var _local_4:GetMysteryBoxesTask = _local_3.getInstance(GetMysteryBoxesTask);
             _local_4.start();
@@ -86,19 +83,18 @@ public class MysteryBoxPanel extends Panel
             {
                 this.infoButton_ = new DeprecatedTextButton(16, _local_6);
                 addChild(this.infoButton_);
-            }
+            };
             this.nameText_.setStringBuilder(new LineBuilder().setParams("Shop"));
             this.bitmap_.bitmapData = ArenaViewAssetFactory.returnHostBitmap(_arg_2).bitmapData;
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        public function setOwner(_arg_1:SellableObject):void
-        {
+        public function setOwner(_arg_1:SellableObject):void{
             if (_arg_1 == this.owner_)
             {
                 return;
-            }
+            };
             this.owner_ = _arg_1;
             this.buyButton_.setPrice(this.owner_.price_, this.owner_.currency_);
             var _local_2:String = this.owner_.soldObjectName();
@@ -106,27 +102,23 @@ public class MysteryBoxPanel extends Panel
             this.bitmap_.bitmapData = this.owner_.getIcon();
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.icon_.x = -4;
             this.icon_.y = -8;
             this.nameText_.x = 44;
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.infoButton_.removeEventListener(MouseEvent.CLICK, this.onInfoButtonClick);
         }
 
-        private function onInfoButtonClick(_arg_1:MouseEvent):void
-        {
+        private function onInfoButtonClick(_arg_1:MouseEvent):void{
             this.onInfoButton();
         }
 
-        private function onInfoButton():void
-        {
+        private function onInfoButton():void{
             var _local_5:ShowPopupSignal;
             var _local_1:Injector = StaticInjectorContext.getInjector();
             var _local_2:MysteryBoxModel = _local_1.getInstance(MysteryBoxModel);
@@ -142,34 +134,32 @@ public class MysteryBoxPanel extends Panel
                 else
                 {
                     _local_4.dispatch(new MysteryBoxSelectModal());
-                }
+                };
             }
             else
             {
                 if (!_local_3.isRegistered())
                 {
                     _local_4.dispatch(new RegisterPromptDialog("SellableObjectPanelMediator.text", {"type":Currency.typeToName(Currency.GOLD)}));
-                }
-            }
+                };
+            };
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.onInfoButton();
-            }
+            };
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.nameText_.y = ((this.nameText_.height > 30) ? 0 : 12);
             this.infoButton_.x = ((WIDTH / 2) - (this.infoButton_.width / 2));
             this.infoButton_.y = ((HEIGHT - (this.infoButton_.height / 2)) - this.BUTTON_OFFSET);
             if (!contains(this.infoButton_))
             {
                 addChild(this.infoButton_);
-            }
+            };
         }
 
 

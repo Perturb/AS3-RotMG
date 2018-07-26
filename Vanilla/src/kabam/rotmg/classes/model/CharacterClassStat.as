@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterClassStat
 
-package kabam.rotmg.classes.model
-{
-    public class CharacterClassStat 
-    {
+package kabam.rotmg.classes.model{
+    public class CharacterClassStat {
 
         public var initial:int;
         public var max:int;

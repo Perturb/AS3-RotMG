@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.screens.ServersScreen
 
-package com.company.assembleegameclient.screens
-{
+package com.company.assembleegameclient.screens{
 import com.company.assembleegameclient.ui.Scrollbar;
 
 import flash.display.Graphics;
@@ -25,8 +24,7 @@ import kabam.rotmg.ui.view.components.ScreenBase;
 
 import org.osflash.signals.Signal;
 
-public class ServersScreen extends Sprite 
-    {
+public class ServersScreen extends Sprite {
 
         private var selectServerText_:TextFieldDisplayConcrete;
         private var lines_:Shape;
@@ -36,21 +34,18 @@ public class ServersScreen extends Sprite
         private var servers:Vector.<Server>;
         public var gotoTitle:Signal;
 
-        public function ServersScreen()
-        {
+        public function ServersScreen(){
             addChild(new ScreenBase());
             this.gotoTitle = new Signal();
             addChild(new ScreenBase());
             addChild(new AccountScreen());
         }
 
-        private function onScrollBarChange(_arg_1:Event):void
-        {
+        private function onScrollBarChange(_arg_1:Event):void{
             this.serverBoxes_.y = (8 - (this.scrollBar_.pos() * (this.serverBoxes_.height - 400)));
         }
 
-        public function initialize(_arg_1:Vector.<Server>):void
-        {
+        public function initialize(_arg_1:Vector.<Server>):void{
             this.servers = _arg_1;
             this.makeSelectServerText();
             this.makeLines();
@@ -62,11 +57,10 @@ public class ServersScreen extends Sprite
             if (_local_2)
             {
                 _local_2.trackPageView("/serversScreen");
-            }
+            };
         }
 
-        private function makeMenuBar():void
-        {
+        private function makeMenuBar():void{
             var _local_1:MenuOptionsBar = new MenuOptionsBar();
             var _local_2:TitleMenuOption = ButtonFactory.getDoneButton();
             _local_1.addButton(_local_2, MenuOptionsBar.CENTER);
@@ -74,8 +68,7 @@ public class ServersScreen extends Sprite
             addChild(_local_1);
         }
 
-        private function makeScrollbar():void
-        {
+        private function makeScrollbar():void{
             this.scrollBar_ = new Scrollbar(16, 400);
             this.scrollBar_.x = ((800 - this.scrollBar_.width) - 4);
             this.scrollBar_.y = 104;
@@ -84,16 +77,14 @@ public class ServersScreen extends Sprite
             addChild(this.scrollBar_);
         }
 
-        private function makeServerBoxes():void
-        {
+        private function makeServerBoxes():void{
             this.serverBoxes_ = new ServerBoxes(this.servers);
             this.serverBoxes_.y = 8;
             this.serverBoxes_.addEventListener(Event.COMPLETE, this.onDone);
             this.content_.addChild(this.serverBoxes_);
         }
 
-        private function makeContainer():void
-        {
+        private function makeContainer():void{
             this.content_ = new Sprite();
             this.content_.x = 4;
             this.content_.y = 100;
@@ -106,8 +97,7 @@ public class ServersScreen extends Sprite
             addChild(this.content_);
         }
 
-        private function makeLines():void
-        {
+        private function makeLines():void{
             this.lines_ = new Shape();
             var _local_1:Graphics = this.lines_.graphics;
             _local_1.clear();
@@ -118,8 +108,7 @@ public class ServersScreen extends Sprite
             addChild(this.lines_);
         }
 
-        private function makeSelectServerText():void
-        {
+        private function makeSelectServerText():void{
             this.selectServerText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xB3B3B3).setBold(true);
             this.selectServerText_.setStringBuilder(new LineBuilder().setParams(TextKey.SERVERS_SELECT));
             this.selectServerText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
@@ -128,8 +117,7 @@ public class ServersScreen extends Sprite
             addChild(this.selectServerText_);
         }
 
-        private function onDone():void
-        {
+        private function onDone():void{
             this.gotoTitle.dispatch();
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.TextConfig
 
-package kabam.rotmg.text
-{
+package kabam.rotmg.text{
 import com.company.ui.BaseSimpleText;
 
 import kabam.rotmg.application.api.ApplicationSetup;
@@ -21,8 +20,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class TextConfig implements IConfig
-    {
+public class TextConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -32,8 +30,7 @@ public class TextConfig implements IConfig
         public var applicationSetup:ApplicationSetup;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(FontModel).asSingleton();
             this.mapTextFieldProvider();
             this.mediatorMap.map(TextFieldDisplay).toMediator(TextFieldDisplayMediator);
@@ -41,8 +38,7 @@ public class TextConfig implements IConfig
             this.injector.map(BitmapTextFactory);
         }
 
-        private function mapTextFieldProvider():void
-        {
+        private function mapTextFieldProvider():void{
             this.injector.map(TextAndMapProvider).toType(DebugTextAndMapProvider);
         }
 

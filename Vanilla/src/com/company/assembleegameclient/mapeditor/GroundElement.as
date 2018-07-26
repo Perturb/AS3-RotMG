@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.GroundElement
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.map.AnimateProperties;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.GroundLibrary;
@@ -16,8 +15,7 @@ import flash.display.IGraphicsData;
 import flash.display.Shape;
 import flash.geom.Rectangle;
 
-internal class GroundElement extends Element
-    {
+internal class GroundElement extends Element {
 
         private static const VIN:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
         private static const SCALE:Number = 0.6;
@@ -26,8 +24,7 @@ internal class GroundElement extends Element
         private var tileShape_:Shape;
         private var tileBD:BitmapData;
 
-        public function GroundElement(_arg_1:XML)
-        {
+        public function GroundElement(_arg_1:XML){
             super(int(_arg_1.@type));
             this.groundXML_ = _arg_1;
             var _local_2:Vector.<IGraphicsData> = new Vector.<IGraphicsData>();
@@ -44,13 +41,11 @@ internal class GroundElement extends Element
             addChild(this.tileShape_);
         }
 
-        override protected function getToolTip():ToolTip
-        {
+        override protected function getToolTip():ToolTip{
             return (new GroundTypeToolTip(this.groundXML_));
         }
 
-        override public function get objectBitmap():BitmapData
-        {
+        override public function get objectBitmap():BitmapData{
             return (this.tileBD);
         }
 

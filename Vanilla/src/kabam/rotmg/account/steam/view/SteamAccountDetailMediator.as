@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.view.SteamAccountDetailMediator
 
-package kabam.rotmg.account.steam.view
-{
+package kabam.rotmg.account.steam.view{
 import com.company.util.EmailValidator;
 
 import kabam.rotmg.account.core.Account;
@@ -15,8 +14,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class SteamAccountDetailMediator extends Mediator 
-    {
+public class SteamAccountDetailMediator extends Mediator {
 
         [Inject]
         public var view:SteamAccountDetailDialog;
@@ -30,41 +28,35 @@ public class SteamAccountDetailMediator extends Mediator
         public var openDialog:OpenDialogSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.populateDialog();
             this.view.done.add(this.onDone);
             this.view.register.add(this.onRegister);
             this.view.link.add(this.onLink);
         }
 
-        private function populateDialog():void
-        {
+        private function populateDialog():void{
             var _local_1:String = this.steam.getSteamId();
             var _local_2:String = this.account.getUserName();
             var _local_3:Boolean = EmailValidator.isValidEmail(_local_2);
             this.view.setInfo(_local_1, _local_2, _local_3);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.done.remove(this.onDone);
             this.view.register.remove(this.onRegister);
             this.view.link.remove(this.onLink);
         }
 
-        private function onDone():void
-        {
+        private function onDone():void{
             this.closeDialog.dispatch();
         }
 
-        private function onRegister():void
-        {
+        private function onRegister():void{
             this.openDialog.dispatch(new RegisterWebAccountDialog());
         }
 
-        private function onLink():void
-        {
+        private function onLink():void{
         }
 
 

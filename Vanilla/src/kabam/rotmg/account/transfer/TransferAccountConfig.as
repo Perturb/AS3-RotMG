@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.transfer.TransferAccountConfig
 
-package kabam.rotmg.account.transfer
-{
+package kabam.rotmg.account.transfer{
 import kabam.rotmg.account.core.services.MigrateAccountTask;
 import kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand;
 import kabam.rotmg.account.transfer.commands.TransferAccountCommand;
@@ -23,8 +22,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class TransferAccountConfig implements IConfig 
-    {
+public class TransferAccountConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -34,33 +32,28 @@ public class TransferAccountConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mapModels();
             this.mapCommands();
             this.mapMediators();
             this.mapServices();
         }
 
-        protected function mapModels():void
-        {
+        protected function mapModels():void{
         }
 
-        private function mapCommands():void
-        {
+        private function mapCommands():void{
             this.commandMap.map(TransferAccountSignal).toCommand(TransferAccountCommand);
             this.commandMap.map(CheckKabamAccountSignal).toCommand(CheckKabamAccountCommand);
             this.injector.map(TaskErrorSignal).asSingleton();
         }
 
-        protected function mapMediators():void
-        {
+        protected function mapMediators():void{
             this.mediatorMap.map(TransferAccountView).toMediator(TransferAccountMediator);
             this.mediatorMap.map(KabamLoginView).toMediator(KabamLoginMediator);
         }
 
-        protected function mapServices():void
-        {
+        protected function mapServices():void{
             this.injector.map(MigrateAccountTask).toType(TransferAccountTask);
         }
 

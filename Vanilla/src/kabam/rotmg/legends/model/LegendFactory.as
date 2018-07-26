@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.model.LegendFactory
 
-package kabam.rotmg.legends.model
-{
+package kabam.rotmg.legends.model{
 import com.company.util.ConversionUtil;
 
 import kabam.rotmg.assets.services.CharacterFactory;
@@ -13,8 +12,7 @@ import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 import kabam.rotmg.core.model.PlayerModel;
 
-public class LegendFactory 
-    {
+public class LegendFactory {
 
         [Inject]
         public var playerModel:PlayerModel;
@@ -26,8 +24,7 @@ public class LegendFactory
         private var legends:Vector.<Legend>;
 
 
-        public function makeLegends(_arg_1:XML):Vector.<Legend>
-        {
+        public function makeLegends(_arg_1:XML):Vector.<Legend>{
             this.ownAccountId = this.playerModel.getAccountId();
             this.legends = new Vector.<Legend>(0);
             this.makeLegendsFromList(_arg_1.FameListElem, false);
@@ -35,8 +32,7 @@ public class LegendFactory
             return (this.legends);
         }
 
-        private function makeLegendsFromList(_arg_1:XMLList, _arg_2:Boolean):void
-        {
+        private function makeLegendsFromList(_arg_1:XMLList, _arg_2:Boolean):void{
             var _local_3:XML;
             var _local_4:Legend;
             for each (_local_3 in _arg_1)
@@ -47,25 +43,23 @@ public class LegendFactory
                     _local_4.isOwnLegend = (_local_3.@accountId == this.ownAccountId);
                     _local_4.isFocus = _arg_2;
                     this.legends.push(_local_4);
-                }
-            }
+                };
+            };
         }
 
-        private function legendsContains(_arg_1:XML):Boolean
-        {
+        private function legendsContains(_arg_1:XML):Boolean{
             var _local_2:Legend;
             for each (_local_2 in this.legends)
             {
                 if (((_local_2.accountId == _arg_1.@accountId) && (_local_2.charId == _arg_1.@charId)))
                 {
                     return (true);
-                }
-            }
+                };
+            };
             return (false);
         }
 
-        public function makeLegend(_arg_1:XML):Legend
-        {
+        public function makeLegend(_arg_1:XML):Legend{
             var _local_2:int = _arg_1.ObjectType;
             var _local_3:int = _arg_1.Texture;
             var _local_4:CharacterClass = this.classesModel.getCharacterClass(_local_2);

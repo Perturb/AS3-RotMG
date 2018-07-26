@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.model.CharacterClass
 
-package kabam.rotmg.classes.model
-{
+package kabam.rotmg.classes.model{
 import org.osflash.signals.Signal;
 
-public class CharacterClass
-    {
+public class CharacterClass {
 
         public const selected:Signal = new Signal(CharacterClass);
         public const unlocks:Vector.<CharacterClassUnlock> = new Vector.<CharacterClassUnlock>(0);
@@ -35,27 +33,23 @@ public class CharacterClass
         private var isSelected:Boolean;
 
 
-        public function getIsSelected():Boolean
-        {
+        public function getIsSelected():Boolean{
             return (this.isSelected);
         }
 
-        public function setIsSelected(_arg_1:Boolean):void
-        {
+        public function setIsSelected(_arg_1:Boolean):void{
             if (this.isSelected != _arg_1)
             {
                 this.isSelected = _arg_1;
                 ((this.isSelected) && (this.selected.dispatch(this)));
-            }
+            };
         }
 
-        public function getMaxLevelAchieved():int
-        {
+        public function getMaxLevelAchieved():int{
             return (this.maxLevelAchieved);
         }
 
-        public function setMaxLevelAchieved(_arg_1:int):void
-        {
+        public function setMaxLevelAchieved(_arg_1:int):void{
             this.maxLevelAchieved = _arg_1;
             this.skins.updateSkins(this.maxLevelAchieved);
         }

@@ -5960,4 +5960,19 @@
       <BagType>8</BagType>
       <feedPower>2000</feedPower>
    </Object>
+   <Object type="0x1887" id="Oni Demon Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>362</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>You cannot pass the warden of the gates of Hell!\n\nSkin Class: Samurai</Description>
+      <Activate skinType="6278">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
 </Objects>

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollection
 
-package io.decagames.rotmg.pets.components.petSkinsCollection
-{
+package io.decagames.rotmg.pets.components.petSkinsCollection{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot;
@@ -18,8 +17,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 import io.decagames.rotmg.utils.colors.Tint;
 
-public class PetSkinsCollection extends Sprite
-    {
+public class PetSkinsCollection extends Sprite {
 
         public static var COLLECTION_WIDTH:int = 360;
         public static const COLLECTION_HEIGHT:int = 425;
@@ -32,8 +30,7 @@ public class PetSkinsCollection extends Sprite
         private var contentElement:UIGridElement;
         private var petGrid:UIGrid;
 
-        public function PetSkinsCollection(_arg_1:int, _arg_2:int)
-        {
+        public function PetSkinsCollection(_arg_1:int, _arg_2:int){
             var _local_3:SliceScalingBitmap;
             var _local_4:UILabel;
             super();
@@ -71,8 +68,7 @@ public class PetSkinsCollection extends Sprite
             this.createScrollview();
         }
 
-        private function createScrollview():void
-        {
+        private function createScrollview():void{
             var _local_1:Sprite;
             var _local_2:UIScrollbar;
             var _local_3:Sprite;
@@ -100,35 +96,32 @@ public class PetSkinsCollection extends Sprite
             _local_1.y = 42;
         }
 
-        private function sortByName(_arg_1:SkinVO, _arg_2:SkinVO):int
-        {
+        private function sortByName(_arg_1:SkinVO, _arg_2:SkinVO):int{
             if (_arg_1.name > _arg_2.name)
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        private function sortByRarity(_arg_1:SkinVO, _arg_2:SkinVO):int
-        {
+        private function sortByRarity(_arg_1:SkinVO, _arg_2:SkinVO):int{
             if (_arg_1.rarity.ordinal == _arg_2.rarity.ordinal)
             {
                 return (this.sortByName(_arg_1, _arg_2));
-            }
+            };
             if (_arg_1.rarity.ordinal > _arg_2.rarity.ordinal)
             {
                 return (1);
-            }
+            };
             return (-1);
         }
 
-        public function addPetSkins(_arg_1:String, _arg_2:Vector.<SkinVO>):void
-        {
+        public function addPetSkins(_arg_1:String, _arg_2:Vector.<SkinVO>):void{
             var _local_5:SkinVO;
             if (_arg_2 == null)
             {
                 return;
-            }
+            };
             var _local_3:int;
             var _local_4:int;
             this.petGrid = new UIGrid((COLLECTION_WIDTH - 40), 7, 5);
@@ -140,8 +133,8 @@ public class PetSkinsCollection extends Sprite
                 if (_local_5.isOwned)
                 {
                     _local_4++;
-                }
-            }
+                };
+            };
             this.petGrid.x = 10;
             this.petGrid.y = 25;
             var _local_6:PetFamilyContainer = new PetFamilyContainer(_arg_1, _local_4, _local_3);

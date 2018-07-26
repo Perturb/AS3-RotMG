@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.GameSpriteMediator
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 import com.company.assembleegameclient.game.events.ReconnectEvent;
@@ -52,8 +51,7 @@ import kabam.rotmg.ui.signals.UpdateHUDSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class GameSpriteMediator extends Mediator 
-    {
+public class GameSpriteMediator extends Mediator {
 
         [Inject]
         public var view:GameSprite;
@@ -123,18 +121,16 @@ public class GameSpriteMediator extends Mediator
         public var displayAreaChangedSignal:DisplayAreaChangedSignal;
 
 
-        public static function sleepForMs(_arg_1:int):void
-        {
+        public static function sleepForMs(_arg_1:int):void{
             var _local_2:int = getTimer();
             while (true)
             {
                 if ((getTimer() - _local_2) >= _arg_1) break;
-            }
+            };
         }
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.displayAreaChangedSignal.add(this.onDisplayAreaChanged);
             this.showLoadingViewSignal.dispatch();
             this.view.packageModel = this.packageModel;
@@ -160,13 +156,11 @@ public class GameSpriteMediator extends Mediator
             this.newsButtonRefreshSignal.add(this.onNewsButtonRefreshSignal);
         }
 
-        private function onDisplayAreaChanged():void
-        {
+        private function onDisplayAreaChanged():void{
             this.view.positionDynamicDisplays();
         }
 
-        private function onShowPackage():void
-        {
+        private function onShowPackage():void{
             var _local_1:PackageInfo = this.packageModel.startupPackage();
             if (_local_1)
             {
@@ -175,11 +169,10 @@ public class GameSpriteMediator extends Mediator
             else
             {
                 this.flushQueueSignal.dispatch();
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.displayAreaChangedSignal.remove(this.onDisplayAreaChanged);
             this.view.showPackage.remove(this.onShowPackage);
             this.setWorldInteraction.remove(this.onSetWorldInteraction);
@@ -195,32 +188,27 @@ public class GameSpriteMediator extends Mediator
             this.view.disconnect();
         }
 
-        private function onMonitor(_arg_1:String, _arg_2:int):void
-        {
+        private function onMonitor(_arg_1:String, _arg_2:int):void{
             this.monitor.recordTime(_arg_1, _arg_2);
         }
 
-        public function onSetWorldInteraction(_arg_1:Boolean):void
-        {
+        public function onSetWorldInteraction(_arg_1:Boolean):void{
             this.view.mui_.setEnablePlayerInput(_arg_1);
         }
 
-        private function onBeginner():void
-        {
+        private function onBeginner():void{
             this.view.showSpecialOfferIfSafe();
         }
 
-        private function onPackage():void
-        {
+        private function onPackage():void{
             this.view.showPackageButtonIfSafe();
         }
 
-        private function onClosed():void
-        {
+        private function onClosed():void{
             if (!this.view.isEditor)
             {
                 this.gameClosed.dispatch();
-            }
+            };
             this.closeDialogs.dispatch();
             this.closeAllPopups.dispatch();
             var _local_1:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
@@ -228,12 +216,11 @@ public class GameSpriteMediator extends Mediator
             sleepForMs(100);
         }
 
-        private function onReconnect(_arg_1:ReconnectEvent):void
-        {
+        private function onReconnect(_arg_1:ReconnectEvent):void{
             if (this.view.isEditor)
             {
                 return;
-            }
+            };
             var _local_2:GameInitData = new GameInitData();
             _local_2.server = _arg_1.server_;
             _local_2.gameId = _arg_1.gameId_;
@@ -245,31 +232,26 @@ public class GameSpriteMediator extends Mediator
             this.playGame.dispatch(_local_2);
         }
 
-        private function onGameSpriteModelInitialized():void
-        {
+        private function onGameSpriteModelInitialized():void{
             this.hudSetupStarted.dispatch(this.view);
             this.beginnersPackageAvailable.add(this.onBeginner);
             this.packageAvailable.add(this.onPackage);
             this.initPackages.dispatch();
         }
 
-        private function onStatusPanelDraw(_arg_1:Player):void
-        {
+        private function onStatusPanelDraw(_arg_1:Player):void{
             this.updateHUDSignal.dispatch(_arg_1);
         }
 
-        private function onHUDModelInitialized():void
-        {
+        private function onHUDModelInitialized():void{
             this.view.hudModelInitialized();
         }
 
-        private function onShowPetTooltip(_arg_1:Boolean):void
-        {
+        private function onShowPetTooltip(_arg_1:Boolean):void{
             this.view.showPetToolTip(_arg_1);
         }
 
-        private function onNewsButtonRefreshSignal():void
-        {
+        private function onNewsButtonRefreshSignal():void{
             this.view.refreshNewsUpdateButton();
         }
 

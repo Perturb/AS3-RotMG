@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.LineEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.util.RandomUtil;
 
@@ -12,22 +11,19 @@ import flash.geom.Point;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class LineEffect extends ParticleEffect
-    {
+public class LineEffect extends ParticleEffect {
 
         public var start_:Point;
         public var end_:Point;
         public var color_:int;
 
-        public function LineEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:int)
-        {
+        public function LineEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:int){
             this.start_ = new Point(_arg_1.x_, _arg_1.y_);
             this.end_ = new Point(_arg_2.x_, _arg_2.y_);
             this.color_ = _arg_3;
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:Point;
             var _local_6:Particle;
             x_ = this.start_.x;
@@ -40,12 +36,11 @@ public class LineEffect extends ParticleEffect
                 _local_6 = new SparkParticle(100, this.color_, 700, 0.5, RandomUtil.plusMinus(1), RandomUtil.plusMinus(1));
                 map_.addObj(_local_6, _local_5.x, _local_5.y);
                 _local_4++;
-            }
+            };
             return (false);
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:Point;
             var _local_6:Particle;
             x_ = this.start_.x;
@@ -58,7 +53,7 @@ public class LineEffect extends ParticleEffect
                 _local_6 = new SparkParticle(100, this.color_, 200, 0.5, RandomUtil.plusMinus(1), RandomUtil.plusMinus(1));
                 map_.addObj(_local_6, _local_5.x, _local_5.y);
                 _local_4++;
-            }
+            };
             return (false);
         }
 

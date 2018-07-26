@@ -1,22 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.mapeditor.RegionElement
 
-package com.company.assembleegameclient.mapeditor
-{
+package com.company.assembleegameclient.mapeditor{
 import com.company.assembleegameclient.map.RegionLibrary;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
 import flash.display.Shape;
 
-public class RegionElement extends Element
-    {
+public class RegionElement extends Element {
 
         public var regionXML_:XML;
 
-        public function RegionElement(_arg_1:XML)
-        {
+        public function RegionElement(_arg_1:XML){
             var _local_2:Shape;
             super(int(_arg_1.@type));
             this.regionXML_ = _arg_1;
@@ -29,8 +26,7 @@ public class RegionElement extends Element
             addChild(_local_2);
         }
 
-        override protected function getToolTip():ToolTip
-        {
+        override protected function getToolTip():ToolTip{
             return (new RegionTypeToolTip(this.regionXML_));
         }
 

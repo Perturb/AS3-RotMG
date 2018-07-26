@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.commands.TrackEventCommand
 
-package kabam.rotmg.core.commands
-{
+package kabam.rotmg.core.commands{
 import kabam.rotmg.core.service.GoogleAnalytics;
 import kabam.rotmg.core.service.TrackingData;
 
-public class TrackEventCommand
-    {
+public class TrackEventCommand {
 
         [Inject]
         public var analytics:GoogleAnalytics;
@@ -17,8 +15,7 @@ public class TrackEventCommand
         public var vo:TrackingData;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.analytics.trackEvent(this.vo.category, this.vo.action, this.vo.label, this.vo.value);
         }
 

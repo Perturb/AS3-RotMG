@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison
 
-package com.company.assembleegameclient.ui.tooltip.slotcomparisons
-{
+package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
-public class SealComparison extends SlotComparison
-    {
+public class SealComparison extends SlotComparison {
 
         private var healingTag:XML;
         private var damageTag:XML;
@@ -19,8 +17,7 @@ public class SealComparison extends SlotComparison
         private var otherDamageTag:XML;
 
 
-        override protected function compareSlots(itemXML:XML, curItemXML:XML):void
-        {
+        override protected function compareSlots(itemXML:XML, curItemXML:XML):void{
             var tag:XML;
             comparisonStringBuilder = new AppendingLineBuilder();
             this.healingTag = this.getEffectTag(itemXML, "Healing");
@@ -40,17 +37,15 @@ public class SealComparison extends SlotComparison
                         "duration":tag.@duration
                     }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                     processedTags[tag.toXMLString()] = true;
-                }
-            }
+                };
+            };
         }
 
-        private function canCompare():Boolean
-        {
+        private function canCompare():Boolean{
             return ((((!(this.healingTag == null)) && (!(this.damageTag == null))) && (!(this.otherHealingTag == null))) && (!(this.otherDamageTag == null)));
         }
 
-        private function getEffectTag(xml:XML, effectName:String):XML
-        {
+        private function getEffectTag(xml:XML, effectName:String):XML{
             var matches:XMLList;
             var tag:XML;
             matches = xml.Activate.(text() == "ConditionEffectAura");
@@ -59,13 +54,12 @@ public class SealComparison extends SlotComparison
                 if (tag.@effect == effectName)
                 {
                     return (tag);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        private function handleHealingText():void
-        {
+        private function handleHealingText():void{
             var _local_1:int = int(this.healingTag.@duration);
             var _local_2:int = int(this.otherHealingTag.@duration);
             var _local_3:Number = Number(this.healingTag.@range);
@@ -83,8 +77,7 @@ public class SealComparison extends SlotComparison
             processedTags[this.healingTag.toXMLString()] = true;
         }
 
-        private function handleDamagingText():void
-        {
+        private function handleDamagingText():void{
             var _local_1:int = int(this.damageTag.@duration);
             var _local_2:int = int(this.otherDamageTag.@duration);
             var _local_3:Number = Number(this.damageTag.@range);

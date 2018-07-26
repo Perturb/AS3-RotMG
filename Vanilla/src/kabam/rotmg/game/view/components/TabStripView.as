@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.TabStripView
 
-package kabam.rotmg.game.view.components
-{
+package kabam.rotmg.game.view.components{
 import com.company.assembleegameclient.objects.ImageFactory;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 import com.company.ui.BaseSimpleText;
@@ -19,8 +18,7 @@ import flash.events.MouseEvent;
 
 import org.osflash.signals.Signal;
 
-public class TabStripView extends Sprite 
-    {
+public class TabStripView extends Sprite {
 
         public const tabSelected:Signal = new Signal(String);
         public const WIDTH:Number = 186;
@@ -37,8 +35,7 @@ public class TabStripView extends Sprite
         private var contents:Vector.<Sprite> = new Vector.<Sprite>();
         public var currentTabIndex:int;
 
-        public function TabStripView(_arg_1:Number=186, _arg_2:Number=153)
-        {
+        public function TabStripView(_arg_1:Number=186, _arg_2:Number=153){
             this._width = _arg_1;
             this._height = _arg_2;
             this.tabSprite.addEventListener(MouseEvent.CLICK, this.onTabClicked);
@@ -48,18 +45,15 @@ public class TabStripView extends Sprite
             this.containerSprite.y = TabConstants.TAB_TOP_OFFSET;
         }
 
-        private function onTabClicked(_arg_1:MouseEvent):void
-        {
+        private function onTabClicked(_arg_1:MouseEvent):void{
             this.selectTab((_arg_1.target.parent as TabView));
         }
 
-        public function setSelectedTab(_arg_1:uint):void
-        {
+        public function setSelectedTab(_arg_1:uint):void{
             this.selectTab(this.tabs[_arg_1]);
         }
 
-        private function selectTab(_arg_1:TabView):void
-        {
+        private function selectTab(_arg_1:TabView):void{
             var _local_2:TabView;
             if (_arg_1)
             {
@@ -70,25 +64,23 @@ public class TabStripView extends Sprite
                     _arg_1.setSelected(true);
                     this.showContent(_arg_1.index);
                     this.tabSelected.dispatch(this.contents[_arg_1.index].name);
-                }
-            }
+                };
+            };
         }
 
-        public function getTabView(_arg_1:Class):*
-        {
+        public function getTabView(_arg_1:Class):*{
             var _local_2:Sprite;
             for each (_local_2 in this.contents)
             {
                 if ((_local_2 is _arg_1))
                 {
                     return (_local_2 as _arg_1);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        public function drawBackground():void
-        {
+        public function drawBackground():void{
             var _local_1:GraphicsSolidFill = new GraphicsSolidFill(TabConstants.BACKGROUND_COLOR, 1);
             var _local_2:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
             var _local_3:Vector.<IGraphicsData> = new <IGraphicsData>[_local_1, _local_2, GraphicsUtil.END_FILL];
@@ -98,8 +90,7 @@ public class TabStripView extends Sprite
             addChild(this.background);
         }
 
-        public function clearTabs():void
-        {
+        public function clearTabs():void{
             var _local_1:uint;
             this.currentTabIndex = 0;
             var _local_2:uint = this.tabs.length;
@@ -109,13 +100,12 @@ public class TabStripView extends Sprite
                 this.tabSprite.removeChild(this.tabs[_local_1]);
                 this.containerSprite.removeChild(this.contents[_local_1]);
                 _local_1++;
-            }
+            };
             this.tabs = new Vector.<TabView>();
             this.contents = new Vector.<Sprite>();
         }
 
-        public function addTab(_arg_1:*, _arg_2:Sprite):void
-        {
+        public function addTab(_arg_1:*, _arg_2:Sprite):void{
             var _local_4:TabView;
             var _local_3:int = this.tabs.length;
             if ((_arg_1 is Bitmap))
@@ -127,8 +117,8 @@ public class TabStripView extends Sprite
                 if ((_arg_1 is BaseSimpleText))
                 {
                     _local_4 = this.addTextTab(_local_3, (_arg_1 as BaseSimpleText));
-                }
-            }
+                };
+            };
             this.tabs.push(_local_4);
             this.tabSprite.addChild(_local_4);
             this.contents.push(_arg_2);
@@ -142,15 +132,13 @@ public class TabStripView extends Sprite
                 _local_4.setSelected(true);
                 this.showContent(0);
                 this.tabSelected.dispatch(_arg_2.name);
-            }
+            };
         }
 
-        public function removeTab():void
-        {
+        public function removeTab():void{
         }
 
-        private function addIconTab(_arg_1:int, _arg_2:Bitmap):TabIconView
-        {
+        private function addIconTab(_arg_1:int, _arg_2:Bitmap):TabIconView{
             var _local_4:TabIconView;
             var _local_3:Sprite = new TabBackground();
             _local_4 = new TabIconView(_arg_1, _local_3, _arg_2);
@@ -159,8 +147,7 @@ public class TabStripView extends Sprite
             return (_local_4);
         }
 
-        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView
-        {
+        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView{
             var _local_4:TabTextView;
             var _local_3:Sprite = new TabBackground();
             _local_4 = new TabTextView(_arg_1, _local_3, _arg_2);
@@ -169,8 +156,7 @@ public class TabStripView extends Sprite
             return (_local_4);
         }
 
-        private function showContent(_arg_1:int):void
-        {
+        private function showContent(_arg_1:int):void{
             var _local_2:Sprite;
             var _local_3:Sprite;
             if (_arg_1 != this.currentTabIndex)
@@ -180,7 +166,7 @@ public class TabStripView extends Sprite
                 _local_2.visible = false;
                 _local_3.visible = true;
                 this.currentTabIndex = _arg_1;
-            }
+            };
         }
 
 

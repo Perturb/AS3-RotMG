@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.view.FameView
 
-package kabam.rotmg.fame.view
-{
+package kabam.rotmg.fame.view{
 import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.screens.ScoreTextLine;
@@ -34,8 +33,7 @@ import kabam.rotmg.ui.view.components.ScreenBase;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class FameView extends Sprite
-    {
+public class FameView extends Sprite {
 
         public var closed:Signal;
         private var infoContainer:DisplayObjectContainer;
@@ -49,8 +47,7 @@ public class FameView extends Sprite
         private var isFadeComplete:Boolean;
         private var isDataPopulated:Boolean;
 
-        public function FameView()
-        {
+        public function FameView(){
             addChild(new ScreenBase());
             addChild((this.infoContainer = new Sprite()));
             addChild((this.overlayContainer = new Bitmap()));
@@ -60,36 +57,31 @@ public class FameView extends Sprite
             this.closed = new NativeMappedSignal(this.continueBtn, MouseEvent.CLICK);
         }
 
-        public function setIsAnimation(_arg_1:Boolean):void
-        {
+        public function setIsAnimation(_arg_1:Boolean):void{
             this.isAnimation = _arg_1;
         }
 
-        public function setBackground(_arg_1:BitmapData):void
-        {
+        public function setBackground(_arg_1:BitmapData):void{
             this.overlayContainer.bitmapData = _arg_1;
             var _local_2:GTween = new GTween(this.overlayContainer, 2, {"alpha":0});
             _local_2.onComplete = this.onFadeComplete;
             SoundEffectLibrary.play("death_screen");
         }
 
-        public function clearBackground():void
-        {
+        public function clearBackground():void{
             this.overlayContainer.bitmapData = null;
         }
 
-        private function onFadeComplete(_arg_1:GTween):void
-        {
+        private function onFadeComplete(_arg_1:GTween):void{
             removeChild(this.overlayContainer);
             this.isFadeComplete = true;
             if (this.isDataPopulated)
             {
                 this.makeContinueButton();
-            }
+            };
         }
 
-        public function setCharacterInfo(_arg_1:String, _arg_2:int, _arg_3:int):void
-        {
+        public function setCharacterInfo(_arg_1:String, _arg_2:int, _arg_3:int):void{
             this.title = new TextFieldDisplayConcrete().setSize(38).setColor(0xCCCCCC);
             this.title.setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.title.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
@@ -104,8 +96,7 @@ public class FameView extends Sprite
             this.infoContainer.addChild(this.title);
         }
 
-        public function setDeathInfo(_arg_1:String, _arg_2:String):void
-        {
+        public function setDeathInfo(_arg_1:String, _arg_2:String):void{
             this.date = new TextFieldDisplayConcrete().setSize(24).setColor(0xCCCCCC);
             this.date.setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             this.date.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
@@ -120,15 +111,14 @@ public class FameView extends Sprite
             else
             {
                 _local_3.setParams(TextKey.DEATH_INFO_SHORT, {"date":_arg_1});
-            }
+            };
             this.date.setStringBuilder(_local_3);
             this.date.x = (stage.stageWidth / 2);
             this.date.y = 272;
             this.infoContainer.addChild(this.date);
         }
 
-        private function convertKillerString(_arg_1:String):String
-        {
+        private function convertKillerString(_arg_1:String):String{
             var _local_2:Array = _arg_1.split(".");
             var _local_3:String = _local_2[0];
             var _local_4:String = _local_2[1];
@@ -173,7 +163,7 @@ public class FameView extends Sprite
                     case "lod cream tile":
                         _local_4 = "lod Cream Tile";
                         break;
-                }
+                };
             }
             else
             {
@@ -181,7 +171,7 @@ public class FameView extends Sprite
                 _local_4 = _local_4.replace(/_/g, " ");
                 _local_4 = _local_4.replace(/APOS/g, "'");
                 _local_4 = _local_4.replace(/BANG/g, "!");
-            }
+            };
             if (ObjectLibrary.getPropsFromId(_local_4) != null)
             {
                 _local_4 = ObjectLibrary.getPropsFromId(_local_4).displayId_;
@@ -191,13 +181,12 @@ public class FameView extends Sprite
                 if (GroundLibrary.getPropsFromId(_local_4) != null)
                 {
                     _local_4 = GroundLibrary.getPropsFromId(_local_4).displayId_;
-                }
-            }
+                };
+            };
             return (_local_4);
         }
 
-        public function setIcon(_arg_1:BitmapData):void
-        {
+        public function setIcon(_arg_1:BitmapData):void{
             var _local_2:Sprite;
             _local_2 = new Sprite();
             var _local_3:Sprite = new FameIconBackgroundDesign();
@@ -212,8 +201,7 @@ public class FameView extends Sprite
             this.infoContainer.addChild(_local_2);
         }
 
-        public function setScore(_arg_1:int, _arg_2:XML):void
-        {
+        public function setScore(_arg_1:int, _arg_2:XML):void{
             this.scoringBox = new ScoringBox(new Rectangle(0, 0, 784, 150), _arg_2);
             this.scoringBox.x = 8;
             this.scoringBox.y = 316;
@@ -229,11 +217,10 @@ public class FameView extends Sprite
             if (((!(this.isAnimation)) || (this.isFadeComplete)))
             {
                 this.makeContinueButton();
-            }
+            };
         }
 
-        private function makeContinueButton():void
-        {
+        private function makeContinueButton():void{
             this.infoContainer.addChild(new ScreenGraphic());
             this.continueBtn.x = (stage.stageWidth / 2);
             this.continueBtn.y = 550;
@@ -245,7 +232,7 @@ public class FameView extends Sprite
             else
             {
                 this.scoringBox.showScore();
-            }
+            };
         }
 
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModal
 
-package io.decagames.rotmg.shop.mysteryBox.rollModal
-{
+package io.decagames.rotmg.shop.mysteryBox.rollModal{
 import com.company.assembleegameclient.map.ParticleModalMap;
 import com.gskinner.motion.GTween;
 import com.gskinner.motion.easing.Sine;
@@ -31,8 +30,7 @@ import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
 import org.osflash.signals.Signal;
 
-public class MysteryBoxRollModal extends ModalPopup
-    {
+public class MysteryBoxRollModal extends ModalPopup {
 
         private const iconSize:Number = 80;
 
@@ -65,8 +63,7 @@ public class MysteryBoxRollModal extends ModalPopup
         private var movingDelay:Number = 0.1;
         private var buyButtonAnimationDuration:Number = 0.4;
 
-        public function MysteryBoxRollModal(_arg_1:MysteryBoxInfo, _arg_2:int=1)
-        {
+        public function MysteryBoxRollModal(_arg_1:MysteryBoxInfo, _arg_2:int=1){
             super(415, 530, _arg_1.title);
             this._quantity = _arg_2;
             this._info = _arg_1;
@@ -86,27 +83,24 @@ public class MysteryBoxRollModal extends ModalPopup
             this.addBuyButton();
         }
 
-        public function totalAnimationTime(_arg_1:int):Number
-        {
+        public function totalAnimationTime(_arg_1:int):Number{
             return (((this.exposeDuration * 2) + this.movingDuration) + ((_arg_1 - 1) * this.movingDelay));
         }
 
-        private function calculateElementSize(_arg_1:Point):int
-        {
+        private function calculateElementSize(_arg_1:Point):int{
             var _local_2:int = int(Math.floor((this.maxResultHeight / _arg_1.y)));
             if ((_local_2 * _arg_1.x) > this.maxResultWidth)
             {
                 _local_2 = int(Math.floor((this.maxResultWidth / _arg_1.x)));
-            }
+            };
             if ((_local_2 * _arg_1.y) > this.maxResultHeight)
             {
                 return (-1);
-            }
+            };
             return (_local_2);
         }
 
-        private function calculateGrid(_arg_1:int):Point
-        {
+        private function calculateGrid(_arg_1:int):Point{
             var _local_5:int;
             var _local_6:int;
             var _local_2:Point = new Point(11, 4);
@@ -114,7 +108,7 @@ public class MysteryBoxRollModal extends ModalPopup
             if (_arg_1 >= (_local_2.x * _local_2.y))
             {
                 return (_local_2);
-            }
+            };
             var _local_4:int = 11;
             while (_local_4 >= 1)
             {
@@ -139,20 +133,19 @@ public class MysteryBoxRollModal extends ModalPopup
                                     {
                                         _local_3 = _local_6;
                                         _local_2 = new Point(_local_4, _local_5);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                                    };
+                                };
+                            };
+                        };
+                    };
                     _local_5--;
-                }
+                };
                 _local_4--;
-            }
+            };
             return (_local_2);
         }
 
-        public function prepareResultGrid(_arg_1:int):void
-        {
+        public function prepareResultGrid(_arg_1:int):void{
             this.maxResultWidth = (contentWidth - (2 * this.resultGridMargin));
             var _local_2:Point = this.calculateGrid(_arg_1);
             this.resultElementWidth = this.calculateElementSize(_local_2);
@@ -162,27 +155,23 @@ public class MysteryBoxRollModal extends ModalPopup
             addChild(this.resultGrid);
         }
 
-        public function buyMore(_arg_1:int):void
-        {
+        public function buyMore(_arg_1:int):void{
             this._quantity = _arg_1;
             removeChild(this.resultGrid);
             this.hideBuyButton();
         }
 
-        public function showBuyButton():void
-        {
+        public function showBuyButton():void{
             new GTween(this.buySectionContainer, this.buyButtonAnimationDuration, {"alpha":1}, {"ease":Sine.easeIn});
             new GTween(this.vaultInfo, this.buyButtonAnimationDuration, {"alpha":1}, {"ease":Sine.easeIn});
         }
 
-        private function hideBuyButton():void
-        {
+        private function hideBuyButton():void{
             new GTween(this.buySectionContainer, this.buyButtonAnimationDuration, {"alpha":0}, {"ease":Sine.easeOut});
             new GTween(this.vaultInfo, this.buyButtonAnimationDuration, {"alpha":0}, {"ease":Sine.easeOut});
         }
 
-        private function addBuyButton():void
-        {
+        private function addBuyButton():void{
             this.buySectionContainer = new Sprite();
             this.buySectionContainer.alpha = 0;
             this.spinner = new FixedNumbersSpinner(TextureParser.instance.getSliceScalingBitmap("UI", "spinner_up_arrow"), 0, new <int>[1, 2, 3, 5, 10], "x");
@@ -193,7 +182,7 @@ public class MysteryBoxRollModal extends ModalPopup
             else
             {
                 this.buyButton = new ShopBuyButton(this.info.priceAmount, this.info.priceCurrency);
-            }
+            };
             this.buyButton.width = 95;
             this.buyButtonBackground = TextureParser.instance.getSliceScalingBitmap("UI", "buy_button_background", (this.buyButton.width + 60));
             this.buySectionContainer.addChild(this.buyButtonBackground);
@@ -209,8 +198,7 @@ public class MysteryBoxRollModal extends ModalPopup
             this.buySectionContainer.x = Math.round(((contentWidth - this.buySectionContainer.width) / 2));
         }
 
-        private function animateGridElement(element:UIItemContainer, delay:Number, triggerEventOnEnd:Boolean):void
-        {
+        private function animateGridElement(element:UIItemContainer, delay:Number, triggerEventOnEnd:Boolean):void{
             var resultGridElement:UIItemContainer;
             var timeout:uint;
             resultGridElement = new UIItemContainer(element.itemId, 0, 0, this.resultElementWidth);
@@ -218,7 +206,7 @@ public class MysteryBoxRollModal extends ModalPopup
             if (element.quantity > 1)
             {
                 resultGridElement.showQuantityLabel(element.quantity);
-            }
+            };
             resultGridElement.showTooltip = false;
             this.resultGrid.addGridElement(resultGridElement);
             var scale:Number = (this.resultElementWidth / this.iconSize);
@@ -232,25 +220,22 @@ public class MysteryBoxRollModal extends ModalPopup
                 "scaleY":scale
             }, {"ease":Sine.easeIn});
             tween1.delay = delay;
-            tween1.onComplete = function ():void
-            {
+            tween1.onComplete = function ():void{
                 element.alpha = 0;
                 resultGridElement.alpha = 1;
                 resultGridElement.showTooltip = true;
                 if (triggerEventOnEnd)
                 {
                     finishedShowingResult.dispatch();
-                }
+                };
             };
-            timeout = setTimeout(function ():void
-            {
+            timeout = setTimeout(function ():void{
                 particleModalMap.doLightning(((rollGrid.x + element.x) + (element.width / 2)), ((rollGrid.y + element.y) + (element.height / 2)), ((resultGrid.x + resultGridElement.x) + (resultGridElement.width / 2)), ((resultGrid.y + resultGridElement.y) + (resultGridElement.height / 2)), 115, 15787660, movingDuration);
                 clearTimeout(timeout);
             }, (delay + 0.2));
         }
 
-        public function displayResult(items:Array):void
-        {
+        public function displayResult(items:Array):void{
             var elements:Vector.<UIItemContainer>;
             elements = this.displayItems(items);
             var resetTween:GTween = new GTween(this.rollGrid, this.exposeDuration, {
@@ -260,15 +245,14 @@ public class MysteryBoxRollModal extends ModalPopup
                 "y":this.rollGrid.y
             }, {"ease":Sine.easeIn});
             resetTween.beginning();
-            resetTween.onComplete = function ():void
-            {
+            resetTween.onComplete = function ():void{
                 var _local_1:UIItemContainer;
                 var _local_2:int;
                 for each (_local_1 in elements)
                 {
                     _local_2 = elements.indexOf(_local_1);
                     animateGridElement(_local_1, (_local_2 * movingDelay), (_local_2 == (elements.length - 1)));
-                }
+                };
             };
             var blinkTween:GTween = new GTween(this.rollGrid, this.exposeDuration, {
                 "x":(this.rollGrid.x - ((this.rollGrid.width * (this.exposeScale - 1)) / 2)),
@@ -279,8 +263,7 @@ public class MysteryBoxRollModal extends ModalPopup
             blinkTween.nextTween = resetTween;
         }
 
-        public function displayItems(_arg_1:Array):Vector.<UIItemContainer>
-        {
+        public function displayItems(_arg_1:Array):Vector.<UIItemContainer>{
             var _local_3:Dictionary;
             var _local_4:String;
             var _local_5:UIItemContainer;
@@ -296,24 +279,23 @@ public class MysteryBoxRollModal extends ModalPopup
                     if (_local_6 > 1)
                     {
                         _local_5.showQuantityLabel(_local_6);
-                    }
+                    };
                     _local_5.showTooltip = false;
                     _local_2.push(_local_5);
                     this.rollGrid.addGridElement(_local_5);
-                }
-            }
+                };
+            };
             this.rollGrid.render();
             if (!this.rollGrid.parent)
             {
                 addChild(this.rollGrid);
-            }
+            };
             this.rollGrid.x = (this.spinnersContainer.x - (this.rollGrid.width / 2));
             this.rollGrid.y = (this.spinnersContainer.y - (this.rollGrid.height / 2));
             return (_local_2);
         }
 
-        private function createSpinners():void
-        {
+        private function createSpinners():void{
             this.bigSpinner = new Spinner(50, true);
             this.littleSpinner = new Spinner((this.bigSpinner.degreesPerSecond * 1.5), true);
             var _local_1:Number = 0.7;
@@ -328,13 +310,12 @@ public class MysteryBoxRollModal extends ModalPopup
             this.spinnersContainer.y = this.spinnerTopMargin;
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             this.rollGrid.dispose();
             if (this.resultGrid)
             {
                 this.resultGrid.dispose();
-            }
+            };
             this.buyButtonBackground.dispose();
             this.buyButton.dispose();
             this.spinner.dispose();
@@ -342,13 +323,11 @@ public class MysteryBoxRollModal extends ModalPopup
             this.finishedShowingResult.removeAll();
         }
 
-        public function get quantity():int
-        {
+        public function get quantity():int{
             return (this._quantity);
         }
 
-        public function get info():MysteryBoxInfo
-        {
+        public function get info():MysteryBoxInfo{
             return (this._info);
         }
 

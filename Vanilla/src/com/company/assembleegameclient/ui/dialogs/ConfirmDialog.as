@@ -1,37 +1,32 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.ConfirmDialog
 
-package com.company.assembleegameclient.ui.dialogs
-{
+package com.company.assembleegameclient.ui.dialogs{
 import flash.events.Event;
 
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-public class ConfirmDialog extends StaticDialog
-    {
+public class ConfirmDialog extends StaticDialog {
 
         private var _callback:Function;
 
-        public function ConfirmDialog(_arg_1:String, _arg_2:String, _arg_3:Function)
-        {
+        public function ConfirmDialog(_arg_1:String, _arg_2:String, _arg_3:Function){
             this._callback = _arg_3;
             super(_arg_1, _arg_2, "Cancel", "OK", null);
             addEventListener(Dialog.LEFT_BUTTON, this.onCancel);
             addEventListener(Dialog.RIGHT_BUTTON, this.onConfirm);
         }
 
-        private function onConfirm(_arg_1:Event):void
-        {
+        private function onConfirm(_arg_1:Event):void{
             this._callback();
             var _local_2:CloseDialogsSignal = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             _local_2.dispatch();
         }
 
-        private function onCancel(_arg_1:Event):void
-        {
+        private function onCancel(_arg_1:Event):void{
             var _local_2:CloseDialogsSignal = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             _local_2.dispatch();
         }

@@ -1,23 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.SliderOption
 
-package com.company.assembleegameclient.ui.options
-{
+package com.company.assembleegameclient.ui.options{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.events.Event;
 
-public class SliderOption extends BaseOption
-    {
+public class SliderOption extends BaseOption {
 
         private var sliderBar:VolumeSliderBar;
         private var disabled_:Boolean;
         private var callbackFunc:Function;
 
-        public function SliderOption(_arg_1:String, _arg_2:Function=null, _arg_3:Boolean=false)
-        {
+        public function SliderOption(_arg_1:String, _arg_2:Function=null, _arg_3:Boolean=false){
             super(_arg_1, "", "");
             this.sliderBar = new VolumeSliderBar(Parameters.data_[paramName_]);
             this.sliderBar.addEventListener(Event.CHANGE, this.onChange);
@@ -26,25 +23,22 @@ public class SliderOption extends BaseOption
             this.setDisabled(_arg_3);
         }
 
-        public function setDisabled(_arg_1:Boolean):void
-        {
+        public function setDisabled(_arg_1:Boolean):void{
             this.disabled_ = _arg_1;
             mouseEnabled = (!(this.disabled_));
             mouseChildren = (!(this.disabled_));
         }
 
-        override public function refresh():void
-        {
+        override public function refresh():void{
             this.sliderBar.currentVolume = Parameters.data_[paramName_];
         }
 
-        private function onChange(_arg_1:Event):void
-        {
+        private function onChange(_arg_1:Event):void{
             Parameters.data_[paramName_] = this.sliderBar.currentVolume;
             if (this.callbackFunc != null)
             {
                 this.callbackFunc(this.sliderBar.currentVolume);
-            }
+            };
             Parameters.save();
         }
 

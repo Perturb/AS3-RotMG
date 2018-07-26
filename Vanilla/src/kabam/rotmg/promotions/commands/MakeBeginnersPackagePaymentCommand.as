@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.promotions.commands.MakeBeginnersPackagePaymentCommand
 
-package kabam.rotmg.promotions.commands
-{
+package kabam.rotmg.promotions.commands{
 import kabam.lib.tasks.TaskMonitor;
 import kabam.rotmg.account.core.PaymentData;
 import kabam.rotmg.account.core.services.MakePaymentTask;
 import kabam.rotmg.packages.control.InitPackagesSignal;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
 
-public class MakeBeginnersPackagePaymentCommand
-    {
+public class MakeBeginnersPackagePaymentCommand {
 
         [Inject]
         public var data:PaymentData;
@@ -26,8 +24,7 @@ public class MakeBeginnersPackagePaymentCommand
         public var init:InitPackagesSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.monitor.add(this.task);
             this.task.start();
             this.model.markAsPurchased();

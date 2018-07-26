@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.view.CharacterSkinListItem
 
-package kabam.rotmg.classes.view
-{
+package kabam.rotmg.classes.view{
 import com.company.assembleegameclient.util.Currency;
 import com.company.util.MoreColorUtil;
 
@@ -32,8 +31,7 @@ import kabam.rotmg.util.components.api.BuyButton;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class CharacterSkinListItem extends Sprite
-    {
+public class CharacterSkinListItem extends Sprite {
 
         public static const WIDTH:int = 420;
         public static const PADDING:int = 16;
@@ -64,16 +62,14 @@ public class CharacterSkinListItem extends Sprite
         private var isOver:Boolean;
 
 
-        private function makeBackground():Shape
-        {
+        private function makeBackground():Shape{
             var _local_1:Shape = new Shape();
             this.drawBackground(_local_1.graphics, WIDTH);
             addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeSkinContainer():Sprite
-        {
+        private function makeSkinContainer():Sprite{
             var _local_1:Sprite;
             _local_1 = new Sprite();
             _local_1.x = 4;
@@ -82,8 +78,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeNameText():TextFieldDisplayConcrete
-        {
+        private function makeNameText():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true);
             _local_1.x = 60;
@@ -96,8 +91,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeLockText():TextFieldDisplayConcrete
-        {
+        private function makeLockText():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(14).setColor(0xFFFFFF);
             _local_1.setTextWidth(190);
             _local_1.setWordWrap(true);
@@ -107,8 +101,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeSelectionButton():RadioButton
-        {
+        private function makeSelectionButton():RadioButton{
             var _local_1:RadioButton;
             _local_1 = new RadioButton();
             _local_1.setSelected(false);
@@ -118,8 +111,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeLock():Bitmap
-        {
+        private function makeLock():Bitmap{
             var _local_1:Bitmap = new Bitmap();
             _local_1.scaleX = 2;
             _local_1.scaleY = 2;
@@ -128,15 +120,13 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        public function setLockIcon(_arg_1:BitmapData):void
-        {
+        public function setLockIcon(_arg_1:BitmapData):void{
             this.lock.bitmapData = _arg_1;
             this.lock.x = ((this.lockText.x - this.lock.width) - 5);
             this.lock.y = ((HEIGHT / 2) - (this.lock.height * 0.5));
         }
 
-        private function makeBuyButtonContainer():Sprite
-        {
+        private function makeBuyButtonContainer():Sprite{
             var _local_1:Sprite = new Sprite();
             _local_1.x = (WIDTH - PADDING);
             _local_1.y = PADDING;
@@ -144,8 +134,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        private function makeLimitedBanner():CharacterSkinLimitedBanner
-        {
+        private function makeLimitedBanner():CharacterSkinLimitedBanner{
             var _local_1:CharacterSkinLimitedBanner;
             _local_1 = new CharacterSkinLimitedBanner();
             _local_1.readyForPositioning.addOnce(this.setLimitedBannerVisibility);
@@ -155,8 +144,7 @@ public class CharacterSkinListItem extends Sprite
             return (_local_1);
         }
 
-        public function setBuyButton(_arg_1:BuyButton):void
-        {
+        public function setBuyButton(_arg_1:BuyButton):void{
             this.buyButton = _arg_1;
             _arg_1.readyForPlacement.add(this.onReadyForPlacement);
             ((this.model) && (this.setCost()));
@@ -166,25 +154,21 @@ public class CharacterSkinListItem extends Sprite
             this.setLimitedBannerVisibility();
         }
 
-        private function onReadyForPlacement():void
-        {
+        private function onReadyForPlacement():void{
             this.buyButton.x = -(this.buyButton.width);
         }
 
-        public function setSkin(_arg_1:Bitmap):void
-        {
+        public function setSkin(_arg_1:Bitmap):void{
             ((this.skinIcon) && (this.skinContainer.removeChild(this.skinIcon)));
             this.skinIcon = _arg_1;
             ((this.skinIcon) && (this.skinContainer.addChild(this.skinIcon)));
         }
 
-        public function getModel():CharacterSkin
-        {
+        public function getModel():CharacterSkin{
             return (this.model);
         }
 
-        public function setModel(_arg_1:CharacterSkin):void
-        {
+        public function setModel(_arg_1:CharacterSkin):void{
             ((this.model) && (this.model.changed.remove(this.onModelChanged)));
             this.model = _arg_1;
             ((this.model) && (this.model.changed.add(this.onModelChanged)));
@@ -193,8 +177,7 @@ public class CharacterSkinListItem extends Sprite
             addEventListener(MouseEvent.MOUSE_OUT, this.onOut);
         }
 
-        private function onModelChanged(_arg_1:CharacterSkin):void
-        {
+        private function onModelChanged(_arg_1:CharacterSkin):void{
             this.state = ((this.model) ? this.model.getState() : CharacterSkinState.NULL);
             this.updateName();
             this.updateState();
@@ -204,38 +187,32 @@ public class CharacterSkinListItem extends Sprite
             this.setIsSelected(((this.model) && (this.model.getIsSelected())));
         }
 
-        public function getState():CharacterSkinState
-        {
+        public function getState():CharacterSkinState{
             return (this.state);
         }
 
-        private function updateName():void
-        {
+        private function updateName():void{
             this.nameText.setStringBuilder(new LineBuilder().setParams(((this.model) ? this.model.name : "")));
             this.nameText.textChanged.addOnce(this.alignName);
         }
 
-        private function alignName():void
-        {
+        private function alignName():void{
             this.nameText.y = ((HEIGHT / 2) - (this.nameText.height / 2));
         }
 
-        private function updateState():void
-        {
+        private function updateState():void{
             this.setButtonVisibilities();
             this.updateBackground();
             this.setEventListeners();
             this.updateGrayFilter();
         }
 
-        private function setLimitedBannerVisibility():void
-        {
+        private function setLimitedBannerVisibility():void{
             this.limitedBanner.visible = ((((this.model) && (this.model.limited)) && (!(this.state == CharacterSkinState.OWNED))) && (!(this.state == CharacterSkinState.PURCHASING)));
             this.limitedBanner.x = ((((this.state == CharacterSkinState.LOCKED) || (!(this.buyButton))) ? (this.lock.x - 5) : ((this.buyButtonContainer.x + this.buyButton.x) - 15)) - this.limitedBanner.width);
         }
 
-        private function setButtonVisibilities():void
-        {
+        private function setButtonVisibilities():void{
             var _local_1:* = (this.state == CharacterSkinState.OWNED);
             var _local_2:* = (this.state == CharacterSkinState.PURCHASABLE);
             var _local_3:* = (this.state == CharacterSkinState.PURCHASING);
@@ -246,8 +223,7 @@ public class CharacterSkinListItem extends Sprite
             this.lockText.visible = ((_local_4) || (_local_3));
         }
 
-        private function setEventListeners():void
-        {
+        private function setEventListeners():void{
             if (this.state == CharacterSkinState.OWNED)
             {
                 this.addEventListeners();
@@ -255,29 +231,25 @@ public class CharacterSkinListItem extends Sprite
             else
             {
                 this.removeEventListeners();
-            }
+            };
         }
 
-        private function setCost():void
-        {
+        private function setCost():void{
             var _local_1:int = ((this.model) ? this.model.cost : 0);
             this.buyButton.setPrice(_local_1, Currency.GOLD);
         }
 
-        public function getIsSelected():Boolean
-        {
+        public function getIsSelected():Boolean{
             return (this.isSelected);
         }
 
-        public function setIsSelected(_arg_1:Boolean):void
-        {
+        public function setIsSelected(_arg_1:Boolean):void{
             this.isSelected = ((_arg_1) && (this.state == CharacterSkinState.OWNED));
             this.selectionButton.setSelected(_arg_1);
             this.updateBackground();
         }
 
-        private function updateUnlockText():void
-        {
+        private function updateUnlockText():void{
             if (((!(this.model == null)) && (!(this.model.unlockSpecial == null))))
             {
                 this.lockText.setStringBuilder(new StaticStringBuilder(this.model.unlockSpecial));
@@ -285,79 +257,68 @@ public class CharacterSkinListItem extends Sprite
             else
             {
                 this.lockText.setStringBuilder(((this.state == CharacterSkinState.PURCHASING) ? new LineBuilder().setParams(TextKey.PURCHASING_SKIN) : this.makeUnlockTextStringBuilder()));
-            }
+            };
             this.lockText.textChanged.addOnce(this.alignText);
         }
 
-        private function alignText():void
-        {
+        private function alignText():void{
             this.lockText.y = ((HEIGHT / 2) - (this.lockText.height / 2));
             this.setTextPosition(WIDTH);
         }
 
-        private function makeUnlockTextStringBuilder():StringBuilder
-        {
+        private function makeUnlockTextStringBuilder():StringBuilder{
             var _local_1:LineBuilder = new LineBuilder();
             var _local_2:String = ((this.model) ? this.model.unlockLevel.toString() : "");
             return (_local_1.setParams(TextKey.UNLOCK_LEVEL_SKIN, {"level":_local_2}));
         }
 
-        private function addEventListeners():void
-        {
+        private function addEventListeners():void{
             addEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        internal function removeEventListeners():void
-        {
+        internal function removeEventListeners():void{
             removeEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             this.setIsSelected(true);
         }
 
-        private function onOver(_arg_1:MouseEvent):void
-        {
+        private function onOver(_arg_1:MouseEvent):void{
             this.isOver = true;
             this.updateBackground();
             this.over.dispatch();
         }
 
-        private function onOut(_arg_1:MouseEvent):void
-        {
+        private function onOut(_arg_1:MouseEvent):void{
             this.isOver = false;
             this.updateBackground();
             this.out.dispatch();
         }
 
-        private function updateBackground():void
-        {
+        private function updateBackground():void{
             var _local_1:ColorTransform = this.background.transform.colorTransform;
             _local_1.color = this.getColor();
             this.background.transform.colorTransform = _local_1;
         }
 
-        private function getColor():uint
-        {
+        private function getColor():uint{
             if (this.state.isDisabled())
             {
                 return (LOCKED_COLOR);
-            }
+            };
             if (((this.isSelected) || (this.isOver)))
             {
                 return (HIGHLIGHTED_COLOR);
-            }
+            };
             return (AVAILABLE_COLOR);
         }
 
-        private function updateGrayFilter():void
-        {
+        private function updateGrayFilter():void{
             filters = ((this.state == CharacterSkinState.PURCHASING) ? [this.grayscaleMatrix] : []);
         }
 
-        public function setWidth(_arg_1:int):void
-        {
+        public function setWidth(_arg_1:int):void{
             this.buyButtonContainer.x = (_arg_1 - PADDING);
             this.setTextPosition(_arg_1);
             this.selectionButton.x = ((_arg_1 - this.selectionButton.width) - 15);
@@ -365,14 +326,12 @@ public class CharacterSkinListItem extends Sprite
             this.drawBackground(this.background.graphics, _arg_1);
         }
 
-        private function setTextPosition(_arg_1:int):void
-        {
+        private function setTextPosition(_arg_1:int):void{
             this.lockText.x = ((_arg_1 - this.lockText.width) - 4);
             this.lock.x = ((this.lockText.x - this.lock.width) - 4);
         }
 
-        private function drawBackground(_arg_1:Graphics, _arg_2:int):void
-        {
+        private function drawBackground(_arg_1:Graphics, _arg_2:int):void{
             _arg_1.clear();
             _arg_1.beginFill(AVAILABLE_COLOR);
             _arg_1.drawRect(0, 0, _arg_2, HEIGHT);

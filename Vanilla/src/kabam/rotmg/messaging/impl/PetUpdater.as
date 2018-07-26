@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.PetUpdater
 
-package kabam.rotmg.messaging.impl
-{
+package kabam.rotmg.messaging.impl{
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.objects.Pet;
 import com.company.assembleegameclient.util.ConditionEffect;
@@ -15,8 +14,7 @@ import io.decagames.rotmg.pets.data.vo.PetVO;
 
 import kabam.rotmg.messaging.impl.data.StatData;
 
-public class PetUpdater
-    {
+public class PetUpdater {
 
         [Inject]
         public var petsModel:PetsModel;
@@ -24,8 +22,7 @@ public class PetUpdater
         public var gameSprite:AGameSprite;
 
 
-        public function updatePetVOs(_arg_1:Pet, _arg_2:Vector.<StatData>):void
-        {
+        public function updatePetVOs(_arg_1:Pet, _arg_2:Vector.<StatData>):void{
             var _local_4:StatData;
             var _local_5:AbilityVO;
             var _local_6:*;
@@ -33,14 +30,14 @@ public class PetUpdater
             if (_local_3 == null)
             {
                 return;
-            }
+            };
             for each (_local_4 in _arg_2)
             {
                 _local_6 = _local_4.statValue_;
                 if (_local_4.statType_ == StatData.TEXTURE_STAT)
                 {
                     _local_3.setSkin(_local_6);
-                }
+                };
                 switch (_local_4.statType_)
                 {
                     case StatData.PET_INSTANCEID_STAT:
@@ -96,16 +93,15 @@ public class PetUpdater
                         _local_5 = _local_3.abilityList[2];
                         _local_5.type = _local_6;
                         break;
-                }
+                };
                 if (_local_5)
                 {
                     _local_5.updated.dispatch(_local_5);
-                }
-            }
+                };
+            };
         }
 
-        private function createPetVO(_arg_1:Pet, _arg_2:Vector.<StatData>):PetVO
-        {
+        private function createPetVO(_arg_1:Pet, _arg_2:Vector.<StatData>):PetVO{
             var _local_3:StatData;
             var _local_4:PetVO;
             for each (_local_3 in _arg_2)
@@ -115,13 +111,12 @@ public class PetUpdater
                     _local_4 = this.petsModel.getCachedVOOnly(_local_3.statValue_);
                     _arg_1.vo = ((_local_4) ? _local_4 : ((this.gameSprite.map.isPetYard) ? this.petsModel.getPetVO(_local_3.statValue_) : new PetVO(_local_3.statValue_)));
                     return (_arg_1.vo);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        public function updatePet(_arg_1:Pet, _arg_2:Vector.<StatData>):void
-        {
+        public function updatePet(_arg_1:Pet, _arg_2:Vector.<StatData>):void{
             var _local_3:StatData;
             var _local_4:*;
             for each (_local_3 in _arg_2)
@@ -130,16 +125,16 @@ public class PetUpdater
                 if (_local_3.statType_ == StatData.TEXTURE_STAT)
                 {
                     _arg_1.setSkin(_local_4);
-                }
+                };
                 if (_local_3.statType_ == StatData.SIZE_STAT)
                 {
                     _arg_1.size_ = _local_4;
-                }
+                };
                 if (_local_3.statType_ == StatData.CONDITION_STAT)
                 {
                     _arg_1.condition_[ConditionEffect.CE_FIRST_BATCH] = _local_4;
-                }
-            }
+                };
+            };
         }
 
 

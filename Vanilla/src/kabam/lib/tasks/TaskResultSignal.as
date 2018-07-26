@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.tasks.TaskResultSignal
 
-package kabam.lib.tasks
-{
+package kabam.lib.tasks{
 import org.osflash.signals.Signal;
 
-public class TaskResultSignal extends Signal 
-    {
+public class TaskResultSignal extends Signal {
 
-        public function TaskResultSignal()
-        {
+        public function TaskResultSignal(){
             super(BaseTask, Boolean, String);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.view.ResurrectionView
 
-package kabam.rotmg.death.view
-{
+package kabam.rotmg.death.view{
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
 import flash.display.Bitmap;
@@ -17,8 +16,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class ResurrectionView extends Sprite 
-    {
+public class ResurrectionView extends Sprite {
 
         public const showDialog:Signal = new Signal(Sprite);
         public const closed:Signal = new Signal();
@@ -30,14 +28,12 @@ public class ResurrectionView extends Sprite
         private var popup:Dialog;
 
 
-        public function init(_arg_1:BitmapData):void
-        {
+        public function init(_arg_1:BitmapData):void{
             this.createBackground(_arg_1);
             this.createPopup();
         }
 
-        private function createBackground(_arg_1:BitmapData):void
-        {
+        private function createBackground(_arg_1:BitmapData):void{
             var _local_4:Bitmap;
             var _local_2:Array = [0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 1, 0];
             var _local_3:ColorMatrixFilter = new ColorMatrixFilter(_local_2);
@@ -46,15 +42,13 @@ public class ResurrectionView extends Sprite
             addChild(_local_4);
         }
 
-        public function createPopup():void
-        {
+        public function createPopup():void{
             this.popup = new Dialog(TextKey.RESURRECTION_VIEW_YOU_DIED, TextKey.RESURRECTION_VIEW_DEATH_TEXT, TextKey.RESURRECTION_VIEW_SAVE_ME, null, null);
             this.popup.addEventListener(Dialog.LEFT_BUTTON, this.onButtonClick);
             this.showDialog.dispatch(this.popup);
         }
 
-        private function onButtonClick(_arg_1:Event):void
-        {
+        private function onButtonClick(_arg_1:Event):void{
             this.closed.dispatch();
         }
 

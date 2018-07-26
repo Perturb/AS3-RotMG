@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.component.BattleSummaryText
 
-package kabam.rotmg.arena.component
-{
+package kabam.rotmg.arena.component{
 import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
 
@@ -13,15 +12,13 @@ import kabam.rotmg.text.view.StaticTextDisplay;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class BattleSummaryText extends Sprite 
-    {
+public class BattleSummaryText extends Sprite {
 
         private var titleText:StaticTextDisplay;
         private var waveText:StaticTextDisplay;
         private var timeText:StaticTextDisplay;
 
-        public function BattleSummaryText(_arg_1:String, _arg_2:int, _arg_3:int)
-        {
+        public function BattleSummaryText(_arg_1:String, _arg_2:int, _arg_3:int){
             this.titleText = this.makeTitleText();
             this.waveText = this.makeSubtitleText();
             this.timeText = this.makeSubtitleText();
@@ -32,8 +29,7 @@ public class BattleSummaryText extends Sprite
             this.align();
         }
 
-        private function align():void
-        {
+        private function align():void{
             this.titleText.x = ((width / 2) - (this.titleText.width / 2));
             this.waveText.y = (this.titleText.height + 10);
             this.waveText.x = ((width / 2) - (this.waveText.width / 2));
@@ -41,8 +37,7 @@ public class BattleSummaryText extends Sprite
             this.timeText.x = ((width / 2) - (this.timeText.width / 2));
         }
 
-        private function createTimerString(_arg_1:int):String
-        {
+        private function createTimerString(_arg_1:int):String{
             var _local_2:int = int((_arg_1 / 60));
             var _local_3:int = (_arg_1 % 60);
             var _local_4:String = ((_local_2 < 10) ? "0" : "");
@@ -52,8 +47,7 @@ public class BattleSummaryText extends Sprite
             return (_local_4);
         }
 
-        private function makeTitleText():StaticTextDisplay
-        {
+        private function makeTitleText():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setSize(16).setBold(true).setColor(0xFFFFFF);
@@ -62,8 +56,7 @@ public class BattleSummaryText extends Sprite
             return (_local_1);
         }
 
-        private function makeSubtitleText():StaticTextDisplay
-        {
+        private function makeSubtitleText():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(14).setBold(true).setColor(0xB3B3B3);
             _local_1.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];

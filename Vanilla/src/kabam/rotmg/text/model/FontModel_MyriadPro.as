@@ -1,4 +1,4 @@
-package kabam.rotmg.text.model
+﻿package kabam.rotmg.text.model
 {
 import mx.core.*;
 

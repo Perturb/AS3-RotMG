@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.external.command.RequestPlayerCreditsCommand
 
-package kabam.rotmg.external.command
-{
+package kabam.rotmg.external.command{
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.TaskMonitor;
 import kabam.lib.tasks.TaskSequence;
@@ -14,8 +13,7 @@ import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class RequestPlayerCreditsCommand extends Command
-    {
+public class RequestPlayerCreditsCommand extends Command {
 
         [Inject]
         public var taskMonitor:TaskMonitor;
@@ -25,8 +23,7 @@ public class RequestPlayerCreditsCommand extends Command
         public var requestPlayerCreditsComplete:RequestPlayerCreditsCompleteSignal;
 
 
-        override public function execute():void
-        {
+        override public function execute():void{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.injector.getInstance(RequestPlayerCreditsTask));
             _local_1.add(new DispatchSignalTask(this.requestPlayerCreditsComplete));

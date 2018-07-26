@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.PlayerToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.GameObjectListItem;
 import com.company.assembleegameclient.ui.GuildText;
@@ -19,8 +18,7 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PlayerToolTip extends ToolTip 
-    {
+public class PlayerToolTip extends ToolTip {
 
         public var player_:Player;
         private var playerPanel_:GameObjectListItem;
@@ -31,8 +29,7 @@ public class PlayerToolTip extends ToolTip
         private var clickMessage_:TextFieldDisplayConcrete;
         private var eGrid:EquippedGrid;
 
-        public function PlayerToolTip(_arg_1:Player)
-        {
+        public function PlayerToolTip(_arg_1:Player){
             var _local_2:int;
             super(0x363636, 0.5, 0xFFFFFF, 1);
             this.player_ = _arg_1;
@@ -51,7 +48,7 @@ public class PlayerToolTip extends ToolTip
                 this.guildText_.y = (_local_2 - 2);
                 addChild(this.guildText_);
                 _local_2 = (_local_2 + 30);
-            }
+            };
             this.hpBar_ = new StatusBar(176, 16, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
             this.hpBar_.x = 6;
             this.hpBar_.y = _local_2;
@@ -77,8 +74,7 @@ public class PlayerToolTip extends ToolTip
             addChild(this.clickMessage_);
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.hpBar_.draw(this.player_.hp_, this.player_.maxHP_, this.player_.maxHPBoost_, this.player_.maxHPMax_);
             this.mpBar_.draw(this.player_.mp_, this.player_.maxMP_, this.player_.maxMPBoost_, this.player_.maxMPMax_);
             this.eGrid.setItems(this.player_.equipment_);

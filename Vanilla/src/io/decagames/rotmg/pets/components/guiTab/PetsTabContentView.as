@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.components.guiTab.PetsTabContentView
 
-package io.decagames.rotmg.pets.components.guiTab
-{
+package io.decagames.rotmg.pets.components.guiTab{
 import flash.display.Bitmap;
 import flash.display.Sprite;
 
@@ -20,8 +19,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.model.TabStripModel;
 
-public class PetsTabContentView extends Sprite
-    {
+public class PetsTabContentView extends Sprite {
 
         public var petBitmap:Bitmap;
         private var petsContent:Sprite = new Sprite();
@@ -31,8 +29,7 @@ public class PetsTabContentView extends Sprite
         private var petVO:PetVO;
 
 
-        public function init(_arg_1:PetVO):void
-        {
+        public function init(_arg_1:PetVO):void{
             this.petVO = _arg_1;
             this.petBitmap = _arg_1.getSkinBitmap();
             this.addChildren();
@@ -43,45 +40,39 @@ public class PetsTabContentView extends Sprite
             _arg_1.updated.add(this.onUpdate);
         }
 
-        private function onUpdate():void
-        {
+        private function onUpdate():void{
             this.updatePetBitmap();
             this.petRarityTextField.setStringBuilder(new LineBuilder().setParams(this.petVO.rarity.rarityKey));
         }
 
-        private function updatePetBitmap():void
-        {
+        private function updatePetBitmap():void{
             this.petsContent.removeChild(this.petBitmap);
             this.petBitmap = this.petVO.getSkinBitmap();
             this.petsContent.addChild(this.petBitmap);
         }
 
-        private function addAbilities():void
-        {
+        private function addAbilities():void{
             var _local_1:UIGrid = new PetStatsGrid(171, this.petVO);
             this.petsContent.addChild(_local_1);
             _local_1.y = 50;
         }
 
-        private function getNumAbilities():uint
-        {
+        private function getNumAbilities():uint{
             var _local_1:Boolean = ((this.petVO.rarity.rarityKey == PetRarityEnum.DIVINE.rarityKey) || (this.petVO.rarity.rarityKey == PetRarityEnum.LEGENDARY.rarityKey));
             if (_local_1)
             {
                 return (2);
-            }
+            };
             return (3);
         }
 
-        private function updateTextFields():void
-        {
+        private function updateTextFields():void{
             this.tabTitleTextField.setStringBuilder(new LineBuilder().setParams(this.petVO.name)).setColor(this.petVO.rarity.color).setSize(((this.petVO.name.length > 17) ? 11 : 15));
             this.petRarityTextField.setStringBuilder(new LineBuilder().setParams(this.petVO.rarity.rarityKey));
             this.petFamilyTextField.setStringBuilder(new LineBuilder().setParams(PetFamilyKeys.getTranslationKey(this.petVO.family))).setColor(PetFamilyColors.getColorByFamilyKey(this.petVO.family));
         }
 
-        private function addChildren():void
-        {
+        private function addChildren():void{
             this.petsContent.addChild(this.petBitmap);
             this.petsContent.addChild(this.tabTitleTextField);
             this.petsContent.addChild(this.petRarityTextField);
@@ -89,8 +80,7 @@ public class PetsTabContentView extends Sprite
             addChild(this.petsContent);
         }
 
-        private function positionChildren():void
-        {
+        private function positionChildren():void{
             this.petBitmap.x = (this.petBitmap.x - 10);
             this.petBitmap.y--;
             this.petsContent.x = 7;

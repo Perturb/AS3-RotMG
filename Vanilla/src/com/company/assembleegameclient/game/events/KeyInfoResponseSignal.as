@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.events.KeyInfoResponseSignal
 
-package com.company.assembleegameclient.game.events
-{
+package com.company.assembleegameclient.game.events{
 import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
 
 import org.osflash.signals.Signal;
 
-public class KeyInfoResponseSignal extends Signal
-    {
+public class KeyInfoResponseSignal extends Signal {
 
-        public function KeyInfoResponseSignal()
-        {
+        public function KeyInfoResponseSignal(){
             super(KeyInfoResponse);
         }
 

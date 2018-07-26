@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent
 
-package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
-{
+package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles{
 import flash.events.Event;
 
-public class ItemTileEvent extends Event 
-    {
+public class ItemTileEvent extends Event {
 
         public static const ITEM_MOVE:String = "ITEM_MOVE";
         public static const ITEM_DOUBLE_CLICK:String = "ITEM_DOUBLE_CLICK";
@@ -19,8 +17,7 @@ public class ItemTileEvent extends Event
 
         public var tile:InteractiveItemTile;
 
-        public function ItemTileEvent(_arg_1:String, _arg_2:InteractiveItemTile)
-        {
+        public function ItemTileEvent(_arg_1:String, _arg_2:InteractiveItemTile){
             super(_arg_1, true);
             this.tile = _arg_2;
         }

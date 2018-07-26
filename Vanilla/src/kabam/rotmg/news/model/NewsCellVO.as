@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.model.NewsCellVO
 
-package kabam.rotmg.news.model
-{
-    public class NewsCellVO 
-    {
+package kabam.rotmg.news.model{
+    public class NewsCellVO {
 
         public var imageURL:String;
         public var linkDetail:String;

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.classes.NewClassUnlockNotification
 
-package io.decagames.rotmg.classes
-{
+package io.decagames.rotmg.classes{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.AnimatedChar;
@@ -26,8 +25,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class NewClassUnlockNotification extends Sprite 
-    {
+public class NewClassUnlockNotification extends Sprite {
 
         private const WIDTH:int = 192;
         private const HEIGHT:int = 192;
@@ -40,20 +38,17 @@ public class NewClassUnlockNotification extends Sprite
         private var _timeLineMax:TimelineMax;
         private var _characterName:UILabel;
 
-        public function NewClassUnlockNotification()
-        {
+        public function NewClassUnlockNotification(){
             this.init();
         }
 
-        public function playNotification(_arg_1:Array=null):void
-        {
+        public function playNotification(_arg_1:Array=null):void{
             this._objectTypes = _arg_1;
             this.createCharacter();
             this.playAnimation();
         }
 
-        private function playAnimation():void
-        {
+        private function playAnimation():void{
             if (!this._timeLineMax)
             {
                 this._timeLineMax = new TimelineMax();
@@ -83,11 +78,10 @@ public class NewClassUnlockNotification extends Sprite
             else
             {
                 this._timeLineMax.play(0);
-            }
+            };
         }
 
-        private function resetAnimation():void
-        {
+        private function resetAnimation():void{
             if (this._objectTypes.length > 0)
             {
                 this.createCharacter();
@@ -96,11 +90,10 @@ public class NewClassUnlockNotification extends Sprite
             else
             {
                 this._timeLineMax.reverse();
-            }
+            };
         }
 
-        private function createCharacter():void
-        {
+        private function createCharacter():void{
             var _local_3:XML;
             var _local_5:int;
             if (this._newClass)
@@ -108,7 +101,7 @@ public class NewClassUnlockNotification extends Sprite
                 this._contentContainer.removeChild(this._newClass);
                 this._newClass.bitmapData.dispose();
                 this._newClass = null;
-            }
+            };
             var _local_1:int = ObjectLibrary.playerChars_.length;
             var _local_2:int = this._objectTypes.shift();
             var _local_4:int;
@@ -120,9 +113,9 @@ public class NewClassUnlockNotification extends Sprite
                 {
                     this._newClass = new Bitmap(this.getImageBitmapData(_local_3));
                     break;
-                }
+                };
                 _local_4++;
-            }
+            };
             if (this._newClass)
             {
                 this._newClass.x = ((this.WIDTH - this._newClass.width) / 2);
@@ -131,22 +124,20 @@ public class NewClassUnlockNotification extends Sprite
                 if (!this._characterName)
                 {
                     this.createCharacterName();
-                }
+                };
                 this._characterName.text = _local_3.@id;
                 this._characterName.x = ((this.WIDTH - this._characterName.width) / 2);
                 this._characterName.y = (((this.HEIGHT - this._characterName.height) / 2) + 20);
-            }
+            };
         }
 
-        private function createCharacterName():void
-        {
+        private function createCharacterName():void{
             this._characterName = new UILabel();
             DefaultLabelFormat.notificationLabel(this._characterName, 14, 0xFFFFFF, TextAlign.CENTER, true);
             this._contentContainer.addChild(this._characterName);
         }
 
-        private function createCharacterBackground():void
-        {
+        private function createCharacterBackground():void{
             var _local_1:Shape;
             var _local_2:SliceScalingBitmap;
             _local_1 = new Shape();
@@ -163,21 +154,18 @@ public class NewClassUnlockNotification extends Sprite
             this._contentContainer.addChild(_local_2);
         }
 
-        private function getImageBitmapData(_arg_1:XML):BitmapData
-        {
+        private function getImageBitmapData(_arg_1:XML):BitmapData{
             return (SavedCharacter.getImage(null, _arg_1, AnimatedChar.DOWN, AnimatedChar.STAND, 0, true, false));
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.createWhiteSplash();
             this.createContainers();
             this.createCharacterBackground();
             this.createClassUnlockLabel();
         }
 
-        private function createClassUnlockLabel():void
-        {
+        private function createClassUnlockLabel():void{
             var _local_1:UILabel;
             _local_1 = new UILabel();
             _local_1.text = this.NEW_CLASS_UNLOCKED;
@@ -188,8 +176,7 @@ public class NewClassUnlockNotification extends Sprite
             this._contentContainer.addChild(_local_1);
         }
 
-        private function createWhiteSplash():void
-        {
+        private function createWhiteSplash():void{
             this._whiteSplash = new Shape();
             var _local_1:Graphics = this._whiteSplash.graphics;
             _local_1.beginFill(0xFFFFFF);
@@ -202,8 +189,7 @@ public class NewClassUnlockNotification extends Sprite
             addChild(this._whiteSplash);
         }
 
-        private function createContainers():void
-        {
+        private function createContainers():void{
             this._contentContainer = new Sprite();
             this._contentContainer.alpha = 0;
             this._contentContainer.visible = false;

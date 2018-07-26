@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageOfferDialogMediator
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
@@ -13,8 +12,7 @@ import kabam.rotmg.packages.services.GetPackagesTask;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PackageOfferDialogMediator extends Mediator 
-    {
+public class PackageOfferDialogMediator extends Mediator {
 
         [Inject]
         public var getPackageTask:GetPackagesTask;
@@ -30,27 +28,23 @@ public class PackageOfferDialogMediator extends Mediator
         public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.buy.add(this.onBuy);
             this.view.close.add(this.onClose);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.close.remove(this.onClose);
             this.view.close.remove(this.onBuy);
             this.view.destroy();
         }
 
-        private function onBuy():void
-        {
+        private function onBuy():void{
             this.closeDialogsSignal.dispatch();
             this.buyPackageSignal.dispatch(this.view.getPackage());
         }
 
-        private function onClose():void
-        {
+        private function onClose():void{
             this.closeDialogsSignal.dispatch();
             this.flushStartupQueue.dispatch();
         }

@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.FilterPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
 import flash.filters.BitmapFilter;
 import flash.filters.BlurFilter;
 
-public class FilterPlugin extends TweenPlugin
-    {
+public class FilterPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 
@@ -22,13 +20,11 @@ public class FilterPlugin extends TweenPlugin
         protected var _filter:BitmapFilter;
         protected var _type:Class;
 
-        public function FilterPlugin(_arg_1:String="", _arg_2:Number=0)
-        {
+        public function FilterPlugin(_arg_1:String="", _arg_2:Number=0){
             super(_arg_1, _arg_2);
         }
 
-        protected function _initFilter(_arg_1:*, _arg_2:Object, _arg_3:TweenLite, _arg_4:Class, _arg_5:BitmapFilter, _arg_6:Array):Boolean
-        {
+        protected function _initFilter(_arg_1:*, _arg_2:Object, _arg_3:TweenLite, _arg_4:Class, _arg_5:BitmapFilter, _arg_6:Array):Boolean{
             var _local_8:String;
             var _local_9:int;
             var _local_10:HexColorsPlugin;
@@ -49,25 +45,25 @@ public class FilterPlugin extends TweenPlugin
                     do 
                     {
                     } while (((--_index > -1) && (!(_local_7[_index] is _type))));
-                }
-            }
+                };
+            };
             if (((_index < 0) || (!(_local_7[_index] is _type))))
             {
                 if (_index < 0)
                 {
                     _index = _local_7.length;
-                }
+                };
                 if (_index > _local_7.length)
                 {
                     _local_9 = (_local_7.length - 1);
                     while (++_local_9 < _index)
                     {
                         _local_7[_local_9] = new BlurFilter(0, 0, 1);
-                    }
-                }
+                    };
+                };
                 _local_7[_index] = _arg_5;
                 _target.filters = _local_7;
-            }
+            };
             _filter = _local_7[_index];
             _remove = (_local_11.remove == true);
             _local_9 = _arg_6.length;
@@ -91,15 +87,14 @@ public class FilterPlugin extends TweenPlugin
                         else
                         {
                             _addTween(_filter, _local_8, _filter[_local_8], _arg_2[_local_8], _propName);
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             return (true);
         }
 
-        override public function setRatio(_arg_1:Number):void
-        {
+        override public function setRatio(_arg_1:Number):void{
             super.setRatio(_arg_1);
             var _local_2:Array = _target.filters;
             if (!(_local_2[_index] is _type))
@@ -111,19 +106,19 @@ public class FilterPlugin extends TweenPlugin
                 if (_index == -1)
                 {
                     _index = _local_2.length;
-                }
-            }
+                };
+            };
             if (((((_arg_1 == 1) && (_remove)) && (_tween._time == _tween._duration)) && (!(_tween.data == "isFromStart"))))
             {
                 if (_index < _local_2.length)
                 {
                     _local_2.splice(_index, 1);
-                }
+                };
             }
             else
             {
                 _local_2[_index] = _filter;
-            }
+            };
             _target.filters = _local_2;
         }
 

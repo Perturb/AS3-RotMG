@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.TweenMax
 
-package com.greensock
-{
+package com.greensock{
 import com.greensock.core.Animation;
 import com.greensock.core.PropTween;
 import com.greensock.core.SimpleTimeline;
@@ -38,8 +37,7 @@ import flash.events.EventDispatcher;
 import flash.events.IEventDispatcher;
 import flash.utils.getTimer;
 
-public class TweenMax extends TweenLite implements IEventDispatcher
-    {
+public class TweenMax extends TweenLite implements IEventDispatcher {
 
         public static const version:String = "12.1.5";
         protected static var _listenerLookup:Object = {
@@ -65,8 +63,7 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             TweenPlugin.activate([AutoAlphaPlugin, EndArrayPlugin, FramePlugin, RemoveTintPlugin, TintPlugin, VisiblePlugin, VolumePlugin, BevelFilterPlugin, BezierPlugin, BezierThroughPlugin, BlurFilterPlugin, ColorMatrixFilterPlugin, ColorTransformPlugin, DropShadowFilterPlugin, FrameLabelPlugin, GlowFilterPlugin, HexColorsPlugin, RoundPropsPlugin, ShortRotationPlugin]);
         }
 
-        public function TweenMax(_arg_1:Object, _arg_2:Number, _arg_3:Object)
-        {
+        public function TweenMax(_arg_1:Object, _arg_2:Number, _arg_3:Object){
             super(_arg_1, _arg_2, _arg_3);
             _yoyo = (this.vars.yoyo == true);
             _repeat = int(this.vars.repeat);
@@ -83,19 +80,17 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         {
                             _dispatcher.dispatchEvent(new TweenEvent(TweenEvent.UPDATE));
                             _dispatcher.dispatchEvent(new TweenEvent(TweenEvent.COMPLETE));
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
         }
 
-        public static function resumeAll(_arg_1:Boolean=true, _arg_2:Boolean=true, _arg_3:Boolean=true):void
-        {
+        public static function resumeAll(_arg_1:Boolean=true, _arg_2:Boolean=true, _arg_3:Boolean=true):void{
             _changePause(false, _arg_1, _arg_2, _arg_3);
         }
 
-        public static function fromTo(_arg_1:Object, _arg_2:Number, _arg_3:Object, _arg_4:Object):TweenMax
-        {
+        public static function fromTo(_arg_1:Object, _arg_2:Number, _arg_3:Object, _arg_4:Object):TweenMax{
             _arg_4 = _prepVars(_arg_4, false);
             _arg_3 = _prepVars(_arg_3, false);
             _arg_4.startAt = _arg_3;
@@ -103,8 +98,7 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             return (new TweenMax(_arg_1, _arg_2, _arg_4));
         }
 
-        public static function staggerTo(targets:Array, duration:Number, vars:Object, stagger:Number=0, onCompleteAll:Function=null, onCompleteAllParams:Array=null):Array
-        {
+        public static function staggerTo(targets:Array, duration:Number, vars:Object, stagger:Number=0, onCompleteAll:Function=null, onCompleteAllParams:Array=null):Array{
             var copy:Object;
             var i:int;
             var p:String;
@@ -119,36 +113,33 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 for (p in vars)
                 {
                     copy[p] = vars[p];
-                }
+                };
                 copy.delay = delay;
                 if (i == (l - 1))
                 {
                     if (onCompleteAll != null)
                     {
-                        copy.onComplete = function ():void
-                        {
+                        copy.onComplete = function ():void{
                             if (internal::vars.onComplete)
                             {
                                 internal::vars.onComplete.apply(null, arguments);
-                            }
+                            };
                             onCompleteAll.apply(null, onCompleteAllParams);
                         };
-                    }
-                }
+                    };
+                };
                 a[i] = new TweenMax(targets[i], duration, copy);
                 delay = (delay + stagger);
                 i = (i + 1);
-            }
+            };
             return (a);
         }
 
-        public static function pauseAll(_arg_1:Boolean=true, _arg_2:Boolean=true, _arg_3:Boolean=true):void
-        {
+        public static function pauseAll(_arg_1:Boolean=true, _arg_2:Boolean=true, _arg_3:Boolean=true):void{
             _changePause(true, _arg_1, _arg_2, _arg_3);
         }
 
-        public static function staggerFromTo(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Object, _arg_5:Number=0, _arg_6:Function=null, _arg_7:Array=null):Array
-        {
+        public static function staggerFromTo(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Object, _arg_5:Number=0, _arg_6:Function=null, _arg_7:Array=null):Array{
             _arg_4 = _prepVars(_arg_4, false);
             _arg_3 = _prepVars(_arg_3, false);
             _arg_4.startAt = _arg_3;
@@ -156,18 +147,15 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             return (staggerTo(_arg_1, _arg_2, _arg_4, _arg_5, _arg_6, _arg_7));
         }
 
-        public static function getTweensOf(_arg_1:*, _arg_2:Boolean=false):Array
-        {
+        public static function getTweensOf(_arg_1:*, _arg_2:Boolean=false):Array{
             return (TweenLite.getTweensOf(_arg_1, _arg_2));
         }
 
-        public static function killTweensOf(_arg_1:*, _arg_2:*=false, _arg_3:Object=null):void
-        {
+        public static function killTweensOf(_arg_1:*, _arg_2:*=false, _arg_3:Object=null):void{
             TweenLite.killTweensOf(_arg_1, _arg_2, _arg_3);
         }
 
-        public static function delayedCall(_arg_1:Number, _arg_2:Function, _arg_3:Array=null, _arg_4:Boolean=false):TweenMax
-        {
+        public static function delayedCall(_arg_1:Number, _arg_2:Function, _arg_3:Array=null, _arg_4:Boolean=false):TweenMax{
             return (new TweenMax(_arg_2, 0, {
                 "delay":_arg_1,
                 "onComplete":_arg_2,
@@ -180,13 +168,11 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             }));
         }
 
-        public static function isTweening(_arg_1:Object):Boolean
-        {
+        public static function isTweening(_arg_1:Object):Boolean{
             return (TweenLite.getTweensOf(_arg_1, true).length > 0);
         }
 
-        public static function killAll(_arg_1:Boolean=false, _arg_2:Boolean=true, _arg_3:Boolean=true, _arg_4:Boolean=true):void
-        {
+        public static function killAll(_arg_1:Boolean=false, _arg_2:Boolean=true, _arg_3:Boolean=true, _arg_4:Boolean=true):void{
             var _local_7:Boolean;
             var _local_9:Animation;
             var _local_10:int;
@@ -206,14 +192,13 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     else
                     {
                         _local_9._enabled(false, false);
-                    }
-                }
+                    };
+                };
                 _local_10++;
-            }
+            };
         }
 
-        public static function killChildTweensOf(_arg_1:DisplayObjectContainer, _arg_2:Boolean=false):void
-        {
+        public static function killChildTweensOf(_arg_1:DisplayObjectContainer, _arg_2:Boolean=false):void{
             var _local_5:int;
             var _local_3:Array = getAllTweens(false);
             var _local_4:int = _local_3.length;
@@ -229,14 +214,13 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     else
                     {
                         _local_3[_local_5]._enabled(false, false);
-                    }
-                }
+                    };
+                };
                 _local_5++;
-            }
+            };
         }
 
-        private static function _changePause(_arg_1:Boolean, _arg_2:Boolean=true, _arg_3:Boolean=false, _arg_4:Boolean=true):void
-        {
+        private static function _changePause(_arg_1:Boolean, _arg_2:Boolean=true, _arg_3:Boolean=false, _arg_4:Boolean=true):void{
             var _local_6:Boolean;
             var _local_7:Animation;
             var _local_5:Array = getAllTweens(_arg_4);
@@ -249,38 +233,34 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 if (((((_local_8) || (_local_7 is SimpleTimeline)) || ((_local_6) && (_arg_3))) || ((_arg_2) && (!(_local_6)))))
                 {
                     _local_7.paused(_arg_1);
-                }
-            }
+                };
+            };
         }
 
-        public static function set(_arg_1:Object, _arg_2:Object):TweenMax
-        {
+        public static function set(_arg_1:Object, _arg_2:Object):TweenMax{
             return (new TweenMax(_arg_1, 0, _arg_2));
         }
 
-        public static function from(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax
-        {
+        public static function from(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax{
             _arg_3 = _prepVars(_arg_3, true);
             _arg_3.runBackwards = true;
             return (new TweenMax(_arg_1, _arg_2, _arg_3));
         }
 
-        public static function killDelayedCallsTo(_arg_1:Function):void
-        {
+        public static function killDelayedCallsTo(_arg_1:Function):void{
             TweenLite.killTweensOf(_arg_1);
         }
 
-        public static function globalTimeScale(_arg_1:Number=NaN):Number
-        {
+        public static function globalTimeScale(_arg_1:Number=NaN):Number{
             if (!arguments.length)
             {
                 return ((_rootTimeline == null) ? 1 : _rootTimeline._timeScale);
-            }
+            };
             _arg_1 = ((_arg_1) || (0.0001));
             if (_rootTimeline == null)
             {
                 TweenLite.to({}, 0, {});
-            }
+            };
             var _local_3:SimpleTimeline = _rootTimeline;
             var _local_4:Number = (getTimer() / 1000);
             _local_3._startTime = (_local_4 - (((_local_4 - _local_3._startTime) * _local_3._timeScale) / _arg_1));
@@ -291,18 +271,16 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             return (_arg_1);
         }
 
-        public static function getAllTweens(_arg_1:Boolean=false):Array
-        {
+        public static function getAllTweens(_arg_1:Boolean=false):Array{
             var _local_2:Array = _getChildrenOf(_rootTimeline, _arg_1);
             return (_local_2.concat(_getChildrenOf(_rootFramesTimeline, _arg_1)));
         }
 
-        protected static function _getChildrenOf(_arg_1:SimpleTimeline, _arg_2:Boolean):Array
-        {
+        protected static function _getChildrenOf(_arg_1:SimpleTimeline, _arg_2:Boolean):Array{
             if (_arg_1 == null)
             {
                 return ([]);
-            }
+            };
             var _local_3:Array = [];
             var _local_4:int;
             var _local_5:Animation = _arg_1._first;
@@ -319,17 +297,16 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     {
                         _local_6 = _local_4++;
                         _local_3[_local_6] = _local_5;
-                    }
+                    };
                     _local_3 = _local_3.concat(_getChildrenOf(SimpleTimeline(_local_5), _arg_2));
                     _local_4 = _local_3.length;
-                }
+                };
                 _local_5 = _local_5._next;
-            }
+            };
             return (_local_3);
         }
 
-        private static function _containsChildOf(_arg_1:DisplayObjectContainer, _arg_2:Object):Boolean
-        {
+        private static function _containsChildOf(_arg_1:DisplayObjectContainer, _arg_2:Object):Boolean{
             var _local_3:int;
             var _local_4:DisplayObjectContainer;
             if ((_arg_2 is Array))
@@ -340,8 +317,8 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     if (_containsChildOf(_arg_1, _arg_2[_local_3]))
                     {
                         return (true);
-                    }
-                }
+                    };
+                };
             }
             else
             {
@@ -353,38 +330,34 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (_local_4 == _arg_1)
                         {
                             return (true);
-                        }
+                        };
                         _local_4 = _local_4.parent;
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (false);
         }
 
-        public static function staggerFrom(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Number=0, _arg_5:Function=null, _arg_6:Array=null):Array
-        {
+        public static function staggerFrom(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Number=0, _arg_5:Function=null, _arg_6:Array=null):Array{
             _arg_3 = _prepVars(_arg_3, true);
             _arg_3.runBackwards = true;
             if (_arg_3.immediateRender != false)
             {
                 _arg_3.immediateRender = true;
-            }
+            };
             return (staggerTo(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6));
         }
 
-        public static function to(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax
-        {
+        public static function to(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax{
             return (new TweenMax(_arg_1, _arg_2, _arg_3));
         }
 
 
-        public function dispatchEvent(_arg_1:Event):Boolean
-        {
+        public function dispatchEvent(_arg_1:Event):Boolean{
             return ((_dispatcher == null) ? false : _dispatcher.dispatchEvent(_arg_1));
         }
 
-        override public function invalidate():*
-        {
+        override public function invalidate():*{
             _yoyo = Boolean((this.vars.yoyo == true));
             _repeat = ((this.vars.repeat) || (0));
             _repeatDelay = ((this.vars.repeatDelay) || (0));
@@ -394,55 +367,50 @@ public class TweenMax extends TweenLite implements IEventDispatcher
             return (super.invalidate());
         }
 
-        public function removeEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean=false):void
-        {
+        public function removeEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean=false):void{
             if (_dispatcher)
             {
                 _dispatcher.removeEventListener(_arg_1, _arg_2, _arg_3);
-            }
+            };
         }
 
-        public function addEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean=false, _arg_4:int=0, _arg_5:Boolean=false):void
-        {
+        public function addEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean=false, _arg_4:int=0, _arg_5:Boolean=false):void{
             if (_dispatcher == null)
             {
                 _dispatcher = new EventDispatcher(this);
-            }
+            };
             if (_arg_1 == TweenEvent.UPDATE)
             {
                 _hasUpdateListener = true;
-            }
+            };
             _dispatcher.addEventListener(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
         }
 
-        public function willTrigger(_arg_1:String):Boolean
-        {
+        public function willTrigger(_arg_1:String):Boolean{
             return ((_dispatcher == null) ? false : _dispatcher.willTrigger(_arg_1));
         }
 
-        override public function duration(_arg_1:Number=NaN):*
-        {
+        override public function duration(_arg_1:Number=NaN):*{
             if (!arguments.length)
             {
                 return (this._duration);
-            }
+            };
             return (super.duration(_arg_1));
         }
 
-        override public function time(_arg_1:Number=NaN, _arg_2:Boolean=false):*
-        {
+        override public function time(_arg_1:Number=NaN, _arg_2:Boolean=false):*{
             if (!arguments.length)
             {
                 return (_time);
-            }
+            };
             if (_dirty)
             {
                 totalDuration();
-            }
+            };
             if (_arg_1 > _duration)
             {
                 _arg_1 = _duration;
-            }
+            };
             if (((_yoyo) && (!((_cycle & 0x01) === 0))))
             {
                 _arg_1 = ((_duration - _arg_1) + (_cycle * (_duration + _repeatDelay)));
@@ -452,13 +420,12 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 if (_repeat != 0)
                 {
                     _arg_1 = (_arg_1 + (_cycle * (_duration + _repeatDelay)));
-                }
-            }
+                };
+            };
             return (totalTime(_arg_1, _arg_2));
         }
 
-        override public function render(_arg_1:Number, _arg_2:Boolean=false, _arg_3:Boolean=false):void
-        {
+        override public function render(_arg_1:Number, _arg_2:Boolean=false, _arg_3:Boolean=false):void{
             var _local_8:Boolean;
             var _local_9:String;
             var _local_10:PropTween;
@@ -472,8 +439,8 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 if (((_duration === 0) && (public::vars.repeat)))
                 {
                     invalidate();
-                }
-            }
+                };
+            };
             var _local_4:Number = ((_dirty) ? totalDuration() : _totalDuration);
             var _local_5:Number = _time;
             var _local_6:Number = _totalTime;
@@ -491,19 +458,19 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 {
                     _time = _duration;
                     ratio = ((_ease._calcEnd) ? _ease.getRatio(1) : 1);
-                }
+                };
                 if (!_reversed)
                 {
                     _local_8 = true;
                     _local_9 = "onComplete";
-                }
+                };
                 if (_duration == 0)
                 {
                     _local_11 = _rawPrevTime;
                     if (_startTime === _timeline._duration)
                     {
                         _arg_1 = 0;
-                    }
+                    };
                     if ((((_arg_1 === 0) || (_local_11 < 0)) || (_local_11 === _tinyNum)))
                     {
                         if (_local_11 !== _arg_1)
@@ -512,11 +479,11 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                             if (_local_11 > _tinyNum)
                             {
                                 _local_9 = "onReverseComplete";
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     _rawPrevTime = (_local_11 = ((((!(_arg_2)) || (!(_arg_1 === 0))) || (_rawPrevTime === _arg_1)) ? _arg_1 : _tinyNum));
-                }
+                };
             }
             else
             {
@@ -528,7 +495,7 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     {
                         _local_9 = "onReverseComplete";
                         _local_8 = _reversed;
-                    }
+                    };
                     if (_arg_1 < 0)
                     {
                         _active = false;
@@ -537,17 +504,17 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                             if (_rawPrevTime >= 0)
                             {
                                 _arg_3 = true;
-                            }
+                            };
                             _rawPrevTime = (_local_11 = ((((!(_arg_2)) || (!(_arg_1 === 0))) || (_rawPrevTime === _arg_1)) ? _arg_1 : _tinyNum));
-                        }
+                        };
                     }
                     else
                     {
                         if (!_initted)
                         {
                             _arg_3 = true;
-                        }
-                    }
+                        };
+                    };
                 }
                 else
                 {
@@ -561,16 +528,16 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                             if (_cycle === (_totalTime / _local_12))
                             {
                                 _cycle--;
-                            }
-                        }
+                            };
+                        };
                         _time = (_totalTime - (_cycle * _local_12));
                         if (_yoyo)
                         {
                             if ((_cycle & 0x01) != 0)
                             {
                                 _time = (_duration - _time);
-                            }
-                        }
+                            };
+                        };
                         if (_time > _duration)
                         {
                             _time = _duration;
@@ -580,9 +547,9 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                             if (_time < 0)
                             {
                                 _time = 0;
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     if (_easeType)
                     {
                         _local_13 = (_time / _duration);
@@ -591,11 +558,11 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (((_local_14 == 1) || ((_local_14 == 3) && (_local_13 >= 0.5))))
                         {
                             _local_13 = (1 - _local_13);
-                        }
+                        };
                         if (_local_14 == 3)
                         {
                             _local_13 = (_local_13 * 2);
-                        }
+                        };
                         if (_local_15 == 1)
                         {
                             _local_13 = (_local_13 * _local_13);
@@ -617,10 +584,10 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                                     if (_local_15 == 4)
                                     {
                                         _local_13 = (_local_13 * (((_local_13 * _local_13) * _local_13) * _local_13));
-                                    }
-                                }
-                            }
-                        }
+                                    };
+                                };
+                            };
+                        };
                         if (_local_14 == 1)
                         {
                             ratio = (1 - _local_13);
@@ -640,16 +607,16 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                                 else
                                 {
                                     ratio = (1 - (_local_13 / 2));
-                                }
-                            }
-                        }
+                                };
+                            };
+                        };
                     }
                     else
                     {
                         ratio = _ease.getRatio((_time / _duration));
-                    }
-                }
-            }
+                    };
+                };
+            };
             if ((((_local_5 == _time) && (!(_arg_3))) && (_cycle === _local_7)))
             {
                 if (_local_6 !== _totalTime)
@@ -659,18 +626,18 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (!_arg_2)
                         {
                             _onUpdate.apply(((public::vars.onUpdateScope) || (this)), public::vars.onUpdateParams);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 return;
-            }
+            };
             if (!_initted)
             {
                 _init();
                 if (((!(_initted)) || (_gc)))
                 {
                     return;
-                }
+                };
                 if (((_time) && (!(_local_8))))
                 {
                     ratio = _ease.getRatio((_time / _duration));
@@ -680,16 +647,16 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     if (((_local_8) && (_ease._calcEnd)))
                     {
                         ratio = _ease.getRatio(((_time === 0) ? 0 : 1));
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (!_active)
             {
                 if ((((!(_paused)) && (!(_time === _local_5))) && (_arg_1 >= 0)))
                 {
                     _active = true;
-                }
-            }
+                };
+            };
             if (_local_6 == 0)
             {
                 if (_startAt != null)
@@ -703,9 +670,9 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (!_local_9)
                         {
                             _local_9 = "_dummyGS";
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 if (((!(_totalTime == 0)) || (_duration == 0)))
                 {
                     if (!_arg_2)
@@ -713,14 +680,14 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (public::vars.onStart)
                         {
                             public::vars.onStart.apply(null, public::vars.onStartParams);
-                        }
+                        };
                         if (_dispatcher)
                         {
                             _dispatcher.dispatchEvent(new TweenEvent(TweenEvent.START));
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             _local_10 = _firstPT;
             while (_local_10)
             {
@@ -732,34 +699,34 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                 else
                 {
                     _local_10.t[_local_10.p] = ((_local_10.c * ratio) + _local_10.s);
-                }
+                };
                 _local_10 = _local_10._next;
-            }
+            };
             if (_onUpdate != null)
             {
                 if ((((_arg_1 < 0) && (!(_startAt == null))) && (!(_startTime == 0))))
                 {
                     _startAt.render(_arg_1, _arg_2, _arg_3);
-                }
+                };
                 if (!_arg_2)
                 {
                     if (((!(_totalTime === _local_6)) || (_local_8)))
                     {
                         _onUpdate.apply(null, public::vars.onUpdateParams);
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (_hasUpdateListener)
             {
                 if (((((_arg_1 < 0) && (!(_startAt == null))) && (_onUpdate == null)) && (!(_startTime == 0))))
                 {
                     _startAt.render(_arg_1, _arg_2, _arg_3);
-                }
+                };
                 if (!_arg_2)
                 {
                     _dispatcher.dispatchEvent(new TweenEvent(TweenEvent.UPDATE));
-                }
-            }
+                };
+            };
             if (_cycle != _local_7)
             {
                 if (!_arg_2)
@@ -769,14 +736,14 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (public::vars.onRepeat)
                         {
                             public::vars.onRepeat.apply(null, public::vars.onRepeatParams);
-                        }
+                        };
                         if (_dispatcher)
                         {
                             _dispatcher.dispatchEvent(new TweenEvent(TweenEvent.REPEAT));
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             if (_local_9)
             {
                 if (!_gc)
@@ -784,51 +751,48 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     if ((((((_arg_1 < 0) && (!(_startAt == null))) && (_onUpdate == null)) && (!(_hasUpdateListener))) && (!(_startTime == 0))))
                     {
                         _startAt.render(_arg_1, _arg_2, true);
-                    }
+                    };
                     if (_local_8)
                     {
                         if (_timeline.autoRemoveChildren)
                         {
                             _enabled(false, false);
-                        }
+                        };
                         _active = false;
-                    }
+                    };
                     if (!_arg_2)
                     {
                         if (public::vars[_local_9])
                         {
                             public::vars[_local_9].apply(null, public::vars[(_local_9 + "Params")]);
-                        }
+                        };
                         if (_dispatcher)
                         {
                             _dispatcher.dispatchEvent(new TweenEvent(((_local_9 == "onComplete") ? TweenEvent.COMPLETE : TweenEvent.REVERSE_COMPLETE)));
-                        }
-                    }
+                        };
+                    };
                     if ((((_duration === 0) && (_rawPrevTime === _tinyNum)) && (!(_local_11 === _tinyNum))))
                     {
                         _rawPrevTime = 0;
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        override public function totalProgress(_arg_1:Number=NaN, _arg_2:Boolean=false):*
-        {
+        override public function totalProgress(_arg_1:Number=NaN, _arg_2:Boolean=false):*{
             return ((arguments.length) ? totalTime((totalDuration() * _arg_1), _arg_2) : (_totalTime / totalDuration()));
         }
 
-        public function repeat(_arg_1:int=0):*
-        {
+        public function repeat(_arg_1:int=0):*{
             if (!arguments.length)
             {
                 return (_repeat);
-            }
+            };
             _repeat = _arg_1;
             return (_uncache(true));
         }
 
-        public function updateTo(_arg_1:Object, _arg_2:Boolean=false):*
-        {
+        public function updateTo(_arg_1:Object, _arg_2:Boolean=false):*{
             var _local_4:String;
             var _local_5:Number;
             var _local_6:Number;
@@ -848,13 +812,13 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     else
                     {
                         _timeline.insert(this, (_startTime - _delay));
-                    }
-                }
-            }
+                    };
+                };
+            };
             for (_local_4 in _arg_1)
             {
                 this.vars[_local_4] = _arg_1[_local_4];
-            }
+            };
             if (_initted)
             {
                 if (_arg_2)
@@ -866,14 +830,14 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                     if (_gc)
                     {
                         _enabled(true, false);
-                    }
+                    };
                     if (_notifyPluginsOfEnabled)
                     {
                         if (_firstPT != null)
                         {
                             _onPluginEvent("_onDisable", this);
-                        }
-                    }
+                        };
+                    };
                     if ((_time / _duration) > 0.998)
                     {
                         _local_5 = _time;
@@ -895,41 +859,37 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                                 _local_7.c = (_local_7.c * _local_6);
                                 _local_7.s = (_local_8 - _local_7.c);
                                 _local_7 = _local_7._next;
-                            }
-                        }
-                    }
-                }
-            }
+                            };
+                        };
+                    };
+                };
+            };
             return (this);
         }
 
-        public function repeatDelay(_arg_1:Number=NaN):*
-        {
+        public function repeatDelay(_arg_1:Number=NaN):*{
             if (!arguments.length)
             {
                 return (_repeatDelay);
-            }
+            };
             _repeatDelay = _arg_1;
             return (_uncache(true));
         }
 
-        public function yoyo(_arg_1:Boolean=false):*
-        {
+        public function yoyo(_arg_1:Boolean=false):*{
             if (!arguments.length)
             {
                 return (_yoyo);
-            }
+            };
             _yoyo = _arg_1;
             return (this);
         }
 
-        override public function progress(_arg_1:Number=NaN, _arg_2:Boolean=false):*
-        {
+        override public function progress(_arg_1:Number=NaN, _arg_2:Boolean=false):*{
             return ((arguments.length) ? totalTime(((duration() * (((_yoyo) && (!((_cycle & 0x01) === 0))) ? (1 - _arg_1) : _arg_1)) + (_cycle * (_duration + _repeatDelay))), _arg_2) : (_time / duration()));
         }
 
-        protected function _initDispatcher():Boolean
-        {
+        protected function _initDispatcher():Boolean{
             var _local_2:String;
             var _local_1:Boolean;
             for (_local_2 in _listenerLookup)
@@ -941,31 +901,29 @@ public class TweenMax extends TweenLite implements IEventDispatcher
                         if (_dispatcher == null)
                         {
                             _dispatcher = new EventDispatcher(this);
-                        }
+                        };
                         _dispatcher.addEventListener(_listenerLookup[_local_2], public::vars[_local_2], false, 0, true);
                         _local_1 = true;
-                    }
-                }
-            }
+                    };
+                };
+            };
             return (_local_1);
         }
 
-        override public function totalDuration(_arg_1:Number=NaN):*
-        {
+        override public function totalDuration(_arg_1:Number=NaN):*{
             if (!arguments.length)
             {
                 if (_dirty)
                 {
                     _totalDuration = ((_repeat == -1) ? 999999999999 : ((_duration * (_repeat + 1)) + (_repeatDelay * _repeat)));
                     _dirty = false;
-                }
+                };
                 return (_totalDuration);
-            }
+            };
             return ((_repeat == -1) ? this : duration(((_arg_1 - (_repeat * _repeatDelay)) / (_repeat + 1))));
         }
 
-        public function hasEventListener(_arg_1:String):Boolean
-        {
+        public function hasEventListener(_arg_1:String):Boolean{
             return ((_dispatcher == null) ? false : _dispatcher.hasEventListener(_arg_1));
         }
 

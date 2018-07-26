@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ImminentWaveCountdownClock
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.display.Sprite;
 import flash.events.TimerEvent;
 import flash.filters.DropShadowFilter;
@@ -17,8 +16,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class ImminentWaveCountdownClock extends Sprite 
-    {
+public class ImminentWaveCountdownClock extends Sprite {
 
         private var count:int = 5;
         private var waveNumber:int = -1;
@@ -38,43 +36,37 @@ public class ImminentWaveCountdownClock extends Sprite
         private const waveStartTimer:Timer = new Timer(1500, 1);
 
 
-        public function init():void
-        {
+        public function init():void{
             mouseChildren = false;
             mouseEnabled = false;
             this.waveTimer.addEventListener(TimerEvent.TIMER, this.updateCountdownClock);
             this.waveTimer.start();
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             this.waveTimer.stop();
             this.waveTimer.removeEventListener(TimerEvent.TIMER, this.updateCountdownClock);
             this.waveStartTimer.stop();
             this.waveStartTimer.removeEventListener(TimerEvent.TIMER, this.cleanup);
         }
 
-        public function show():void
-        {
+        public function show():void{
             addChild(this.countDownContainer);
             this.center();
         }
 
-        public function setWaveNumber(_arg_1:int):void
-        {
+        public function setWaveNumber(_arg_1:int):void{
             this.waveNumber = _arg_1;
             this.waveNumberText.setStringBuilder(new StaticStringBuilder(this.waveNumber.toString()));
             this.waveNumberText.x = ((this.waveAsset.width / 2) - (this.waveNumberText.width / 2));
         }
 
-        private function center():void
-        {
+        private function center():void{
             x = (300 - (width / 2));
             y = ((contains(this.countDownContainer)) ? 138 : 87.5);
         }
 
-        private function updateCountdownClock(_arg_1:TimerEvent):void
-        {
+        private function updateCountdownClock(_arg_1:TimerEvent):void{
             if (this.count > 1)
             {
                 this.count--;
@@ -89,17 +81,15 @@ public class ImminentWaveCountdownClock extends Sprite
                 this.waveStartTimer.addEventListener(TimerEvent.TIMER, this.cleanup);
                 this.waveStartTimer.start();
                 this.center();
-            }
+            };
         }
 
-        private function cleanup(_arg_1:TimerEvent):void
-        {
+        private function cleanup(_arg_1:TimerEvent):void{
             this.waveStartTimer.removeEventListener(TimerEvent.TIMER, this.cleanup);
             this.close.dispatch();
         }
 
-        private function makeNextWaveText():StaticTextDisplay
-        {
+        private function makeNextWaveText():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(20).setBold(true).setColor(0xCCCCCC);
             _local_1.setStringBuilder(new LineBuilder().setParams(TextKey.ARENA_COUNTDOWN_CLOCK_NEXT_WAVE));
@@ -108,8 +98,7 @@ public class ImminentWaveCountdownClock extends Sprite
             return (_local_1);
         }
 
-        private function makeCountdownText():StaticTextDisplay
-        {
+        private function makeCountdownText():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setSize(42).setBold(true).setColor(0xCCCCCC);
@@ -121,8 +110,7 @@ public class ImminentWaveCountdownClock extends Sprite
             return (_local_1);
         }
 
-        private function makeWaveText():StaticTextDisplay
-        {
+        private function makeWaveText():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(18).setBold(true).setColor(16567065);
             _local_1.setStringBuilder(new LineBuilder().setParams(TextKey.ARENA_COUNTDOWN_CLOCK_WAVE));
@@ -133,8 +121,7 @@ public class ImminentWaveCountdownClock extends Sprite
             return (_local_1);
         }
 
-        private function makeWaveNumberText():StaticTextDisplay
-        {
+        private function makeWaveNumberText():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(40).setBold(true).setColor(16567065);
             _local_1.y = ((this.waveText.y + this.waveText.height) - 5);
@@ -143,15 +130,13 @@ public class ImminentWaveCountdownClock extends Sprite
             return (_local_1);
         }
 
-        private function makeWaveAsset():*
-        {
+        private function makeWaveAsset():*{
             var _local_1:* = new this.WaveAsset();
             this.waveStartContainer.addChild(_local_1);
             return (_local_1);
         }
 
-        private function makeStartText():StaticTextDisplay
-        {
+        private function makeStartText():StaticTextDisplay{
             var _local_1:StaticTextDisplay = new StaticTextDisplay();
             _local_1.setSize(32).setBold(true).setColor(0xB3B3B3);
             _local_1.setStringBuilder(new LineBuilder().setParams(TextKey.ARENA_COUNTDOWN_CLOCK_START));

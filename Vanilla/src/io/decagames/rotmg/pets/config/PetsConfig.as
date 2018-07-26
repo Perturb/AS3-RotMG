@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.config.PetsConfig
 
-package io.decagames.rotmg.pets.config
-{
+package io.decagames.rotmg.pets.config{
 import com.company.assembleegameclient.ui.dialogs.DialogCloser;
 import com.company.assembleegameclient.ui.dialogs.DialogCloserMediator;
 
@@ -111,8 +110,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class PetsConfig implements IConfig 
-    {
+public class PetsConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -124,8 +122,7 @@ public class PetsConfig implements IConfig
         public var commandCenter:ICommandCenter;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(ShowPetTooltip).asSingleton();
             this.injector.map(NotifyActivePetUpdated).asSingleton();
             this.injector.map(PetsViewAssetFactory).asSingleton();

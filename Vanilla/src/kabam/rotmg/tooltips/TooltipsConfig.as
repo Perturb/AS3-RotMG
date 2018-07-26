@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.tooltips.TooltipsConfig
 
-package kabam.rotmg.tooltips
-{
+package kabam.rotmg.tooltips{
 import kabam.rotmg.tooltips.view.TooltipsMediator;
 import kabam.rotmg.tooltips.view.TooltipsView;
 
@@ -12,8 +11,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class TooltipsConfig implements IConfig 
-    {
+public class TooltipsConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -21,8 +19,7 @@ public class TooltipsConfig implements IConfig
         public var mediatorMap:IMediatorMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mediatorMap.map(TooltipsView).toMediator(TooltipsMediator);
         }
 

@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap
 
-package io.decagames.rotmg.ui.sliceScaling
-{
+package io.decagames.rotmg.ui.sliceScaling{
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;
 
-public class SliceScalingBitmap extends Bitmap
-    {
+public class SliceScalingBitmap extends Bitmap {
 
         public static var SCALE_TYPE_NONE:String = "none";
         public static var SCALE_TYPE_3:String = "3grid";
@@ -29,8 +27,7 @@ public class SliceScalingBitmap extends Bitmap
         private var _forceRenderInNextFrame:Boolean;
         private var _sourceBitmapName:String;
 
-        public function SliceScalingBitmap(_arg_1:BitmapData, _arg_2:String, _arg_3:Rectangle=null, _arg_4:uint=0, _arg_5:Number=1)
-        {
+        public function SliceScalingBitmap(_arg_1:BitmapData, _arg_2:String, _arg_3:Rectangle=null, _arg_4:uint=0, _arg_5:Number=1){
             this.bitmapDataToSlice = _arg_1;
             this.scaleGrid = _arg_3;
             this.currentWidth = _arg_1.width;
@@ -45,68 +42,61 @@ public class SliceScalingBitmap extends Bitmap
             else
             {
                 this.bitmapData = _arg_1;
-            }
+            };
         }
 
-        public function clone():SliceScalingBitmap
-        {
+        public function clone():SliceScalingBitmap{
             return (new SliceScalingBitmap(this.bitmapDataToSlice.clone(), this.scaleType, this.scaleGrid, this.fillColor, this.fillColorAlpha));
         }
 
-        override public function set width(_arg_1:Number):void
-        {
+        override public function set width(_arg_1:Number):void{
             if (((!(_arg_1 == this.currentWidth)) || (this._forceRenderInNextFrame)))
             {
                 this.currentWidth = _arg_1;
                 this.render();
-            }
+            };
         }
 
-        override public function set height(_arg_1:Number):void
-        {
+        override public function set height(_arg_1:Number):void{
             if (_arg_1 != this.currentHeight)
             {
                 this.currentHeight = _arg_1;
                 this.render();
-            }
+            };
         }
 
-        override public function get width():Number
-        {
+        override public function get width():Number{
             return (this.currentWidth);
         }
 
-        override public function get height():Number
-        {
+        override public function get height():Number{
             return (this.currentHeight);
         }
 
-        protected function render():void
-        {
+        protected function render():void{
             if (this._scaleType == SCALE_TYPE_NONE)
             {
                 return;
-            }
+            };
             if (this.bitmapData)
             {
                 this.bitmapData.dispose();
-            }
+            };
             if (this._scaleType == SCALE_TYPE_3)
             {
                 this.prepare3grid();
-            }
+            };
             if (this._scaleType == SCALE_TYPE_9)
             {
                 this.prepare9grid();
-            }
+            };
             if (this._forceRenderInNextFrame)
             {
                 this._forceRenderInNextFrame = false;
-            }
+            };
         }
 
-        private function prepare3grid():void
-        {
+        private function prepare3grid():void{
             var _local_1:int;
             var _local_2:int;
             var _local_3:int;
@@ -121,7 +111,7 @@ public class SliceScalingBitmap extends Bitmap
                 {
                     this.bitmapData.copyPixels(this.bitmapDataToSlice, new Rectangle(this.scaleGrid.x, 0, this.scaleGrid.width, this.bitmapDataToSlice.height), new Point(((this.scaleGrid.x + _local_2) + this.margin.x), this.margin.y));
                     _local_2++;
-                }
+                };
                 this.bitmapData.copyPixels(this.bitmapDataToSlice, new Rectangle((this.scaleGrid.x + this.scaleGrid.width), 0, (this.bitmapDataToSlice.width - (this.scaleGrid.x + this.scaleGrid.width)), this.bitmapDataToSlice.height), new Point(((this.scaleGrid.x + _local_1) + this.margin.x), this.margin.y));
             }
             else
@@ -134,13 +124,12 @@ public class SliceScalingBitmap extends Bitmap
                 {
                     this.bitmapData.copyPixels(this.bitmapDataToSlice, new Rectangle(0, this.scaleGrid.y, this.scaleGrid.width, this.bitmapDataToSlice.height), new Point(this.margin.x, ((this.margin.y + this.scaleGrid.y) + _local_4)));
                     _local_4++;
-                }
+                };
                 this.bitmapData.copyPixels(this.bitmapDataToSlice, new Rectangle(0, (this.scaleGrid.y + this.scaleGrid.height), this.bitmapDataToSlice.width, (this.bitmapDataToSlice.height - (this.scaleGrid.y + this.scaleGrid.height))), new Point(this.margin.x, ((this.margin.y + this.scaleGrid.y) + _local_3)));
-            }
+            };
         }
 
-        private function prepare9grid():void
-        {
+        private function prepare9grid():void{
             var _local_10:int;
             var _local_1:Rectangle = new Rectangle();
             var _local_2:Rectangle = new Rectangle();
@@ -165,70 +154,58 @@ public class SliceScalingBitmap extends Bitmap
                     _local_3.ty = (_local_2.y - (_local_1.y * _local_3.d));
                     _local_4.draw(this.bitmapDataToSlice, _local_3, null, null, _local_2);
                     _local_10++;
-                }
+                };
                 _local_9++;
-            }
+            };
             this.bitmapData = _local_4;
         }
 
-        public function addMargin(_arg_1:int, _arg_2:int):void
-        {
+        public function addMargin(_arg_1:int, _arg_2:int):void{
             this.margin = new Point(_arg_1, _arg_2);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.bitmapData.dispose();
             this.bitmapDataToSlice.dispose();
         }
 
-        public function get scaleType():String
-        {
+        public function get scaleType():String{
             return (this._scaleType);
         }
 
-        public function set scaleType(_arg_1:String):void
-        {
+        public function set scaleType(_arg_1:String):void{
             this._scaleType = _arg_1;
         }
 
-        override public function set x(_arg_1:Number):void
-        {
+        override public function set x(_arg_1:Number):void{
             super.x = Math.round(_arg_1);
         }
 
-        override public function set y(_arg_1:Number):void
-        {
+        override public function set y(_arg_1:Number):void{
             super.y = Math.round(_arg_1);
         }
 
-        public function get forceRenderInNextFrame():Boolean
-        {
+        public function get forceRenderInNextFrame():Boolean{
             return (this._forceRenderInNextFrame);
         }
 
-        public function set forceRenderInNextFrame(_arg_1:Boolean):void
-        {
+        public function set forceRenderInNextFrame(_arg_1:Boolean):void{
             this._forceRenderInNextFrame = _arg_1;
         }
 
-        public function get marginX():int
-        {
+        public function get marginX():int{
             return (this.margin.x);
         }
 
-        public function get marginY():int
-        {
+        public function get marginY():int{
             return (this.margin.y);
         }
 
-        public function get sourceBitmapName():String
-        {
+        public function get sourceBitmapName():String{
             return (this._sourceBitmapName);
         }
 
-        public function set sourceBitmapName(_arg_1:String):void
-        {
+        public function set sourceBitmapName(_arg_1:String):void{
             this._sourceBitmapName = _arg_1;
         }
 

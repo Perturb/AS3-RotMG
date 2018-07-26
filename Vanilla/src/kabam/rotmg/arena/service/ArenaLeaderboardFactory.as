@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.service.ArenaLeaderboardFactory
 
-package kabam.rotmg.arena.service
-{
+package kabam.rotmg.arena.service{
 import com.company.util.ConversionUtil;
 
 import io.decagames.rotmg.pets.data.vo.PetVO;
@@ -16,8 +15,7 @@ import kabam.rotmg.classes.model.CharacterClass;
 import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 
-public class ArenaLeaderboardFactory 
-    {
+public class ArenaLeaderboardFactory {
 
         [Inject]
         public var classesModel:ClassesModel;
@@ -27,8 +25,7 @@ public class ArenaLeaderboardFactory
         public var currentRunModel:CurrentArenaRunModel;
 
 
-        public function makeEntries(_arg_1:XMLList):Vector.<ArenaLeaderboardEntry>
-        {
+        public function makeEntries(_arg_1:XMLList):Vector.<ArenaLeaderboardEntry>{
             var _local_4:XML;
             var _local_2:Vector.<ArenaLeaderboardEntry> = new Vector.<ArenaLeaderboardEntry>();
             var _local_3:int = 1;
@@ -36,13 +33,12 @@ public class ArenaLeaderboardFactory
             {
                 _local_2.push(this.makeArenaEntry(_local_4, _local_3));
                 _local_3++;
-            }
+            };
             _local_2 = this.removeDuplicateUser(_local_2);
             return (this.addCurrentRun(_local_2));
         }
 
-        private function addCurrentRun(_arg_1:Vector.<ArenaLeaderboardEntry>):Vector.<ArenaLeaderboardEntry>
-        {
+        private function addCurrentRun(_arg_1:Vector.<ArenaLeaderboardEntry>):Vector.<ArenaLeaderboardEntry>{
             var _local_3:Boolean;
             var _local_4:Boolean;
             var _local_5:ArenaLeaderboardEntry;
@@ -58,28 +54,27 @@ public class ArenaLeaderboardFactory
                         this.currentRunModel.entry.rank = _local_5.rank;
                         _local_2.push(this.currentRunModel.entry);
                         _local_3 = true;
-                    }
+                    };
                     if (_local_5.isPersonalRecord)
                     {
                         _local_4 = true;
-                    }
+                    };
                     if (_local_3)
                     {
                         _local_5.rank++;
-                    }
+                    };
                     _local_2.push(_local_5);
-                }
+                };
                 if ((((_local_2.length < 20) && (!(_local_3))) && (!(_local_4))))
                 {
                     this.currentRunModel.entry.rank = (_local_2.length + 1);
                     _local_2.push(this.currentRunModel.entry);
-                }
-            }
+                };
+            };
             return ((_local_2.length > 0) ? _local_2 : _arg_1);
         }
 
-        private function removeDuplicateUser(_arg_1:Vector.<ArenaLeaderboardEntry>):Vector.<ArenaLeaderboardEntry>
-        {
+        private function removeDuplicateUser(_arg_1:Vector.<ArenaLeaderboardEntry>):Vector.<ArenaLeaderboardEntry>{
             var _local_3:Boolean;
             var _local_4:ArenaLeaderboardEntry;
             var _local_5:ArenaLeaderboardEntry;
@@ -100,19 +95,18 @@ public class ArenaLeaderboardFactory
                         if (_local_3)
                         {
                             _local_5.rank--;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             if (_local_2 != -1)
             {
                 _arg_1.splice(_local_2, 1);
-            }
+            };
             return (_arg_1);
         }
 
-        private function makeArenaEntry(_arg_1:XML, _arg_2:int):ArenaLeaderboardEntry
-        {
+        private function makeArenaEntry(_arg_1:XML, _arg_2:int):ArenaLeaderboardEntry{
             var _local_10:PetVO;
             var _local_11:XML;
             var _local_3:ArenaLeaderboardEntry = new ArenaLeaderboardEntry();
@@ -138,7 +132,7 @@ public class ArenaLeaderboardFactory
                 _local_11 = new XML(_arg_1.PlayData.Pet);
                 _local_10.apply(_local_11);
                 _local_3.pet = _local_10;
-            }
+            };
             return (_local_3);
         }
 

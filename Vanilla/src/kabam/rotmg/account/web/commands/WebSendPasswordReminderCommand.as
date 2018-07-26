@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebSendPasswordReminderCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import kabam.lib.tasks.BranchingTask;
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.TaskGroup;
@@ -14,8 +13,7 @@ import kabam.rotmg.account.web.view.WebLoginDialog;
 import kabam.rotmg.core.signals.TaskErrorSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
-public class WebSendPasswordReminderCommand 
-    {
+public class WebSendPasswordReminderCommand {
 
         [Inject]
         public var email:String;
@@ -29,8 +27,7 @@ public class WebSendPasswordReminderCommand
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:TaskGroup = new TaskGroup();
             _local_1.add(new DispatchSignalTask(this.openDialog, new WebLoginDialog()));
             var _local_2:TaskGroup = new TaskGroup();

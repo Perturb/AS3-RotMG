@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.spinner.NumberSpinner
 
-package io.decagames.rotmg.ui.spinner
-{
+package io.decagames.rotmg.ui.spinner{
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
 
@@ -15,8 +14,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
 import org.osflash.signals.Signal;
 
-public class NumberSpinner extends Sprite
-    {
+public class NumberSpinner extends Sprite {
 
         private var _upArrow:SliceScalingButton;
         private var _downArrow:SliceScalingButton;
@@ -29,8 +27,7 @@ public class NumberSpinner extends Sprite
         private var _step:int;
         public var valueWasChanged:Signal;
 
-        public function NumberSpinner(_arg_1:SliceScalingBitmap, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:int, _arg_6:String="")
-        {
+        public function NumberSpinner(_arg_1:SliceScalingBitmap, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:int, _arg_6:String=""){
             this._upArrow = new SliceScalingButton(_arg_1);
             this.startValue = _arg_2;
             this.minValue = _arg_3;
@@ -56,69 +53,60 @@ public class NumberSpinner extends Sprite
             this._value = _arg_2;
         }
 
-        protected function updateLabel():void
-        {
+        protected function updateLabel():void{
             this.label.text = (this._value.toString() + this.suffix);
             this.label.x = (-(this.label.width) / 2);
         }
 
-        public function addToValue(_arg_1:int):void
-        {
+        public function addToValue(_arg_1:int):void{
             var _local_2:int = this._value;
             this._value = (this._value + _arg_1);
             if (this._value > this.maxValue)
             {
                 this._value = this.maxValue;
-            }
+            };
             if (this._value < this.minValue)
             {
                 this._value = this.minValue;
-            }
+            };
             if (this._value != _local_2)
             {
                 this.valueWasChanged.dispatch(this.value);
-            }
+            };
             this.updateLabel();
         }
 
-        public function setValue(_arg_1:int):void
-        {
+        public function setValue(_arg_1:int):void{
             var _local_2:int = this._value;
             this._value = _arg_1;
             if (this._value != _local_2)
             {
                 this.valueWasChanged.dispatch(this.value);
-            }
+            };
             this.updateLabel();
         }
 
-        public function get value():int
-        {
+        public function get value():int{
             return (this._value);
         }
 
-        public function set value(_arg_1:int):void
-        {
+        public function set value(_arg_1:int):void{
             this._value = _arg_1;
         }
 
-        public function get upArrow():SliceScalingButton
-        {
+        public function get upArrow():SliceScalingButton{
             return (this._upArrow);
         }
 
-        public function get downArrow():SliceScalingButton
-        {
+        public function get downArrow():SliceScalingButton{
             return (this._downArrow);
         }
 
-        public function get step():int
-        {
+        public function get step():int{
             return (this._step);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this._upArrow.dispose();
             this._downArrow.dispose();
             this.valueWasChanged.removeAll();

@@ -1,30 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.NovaEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 
 import flash.geom.Point;
 
-public class NovaEffect extends ParticleEffect
-    {
+public class NovaEffect extends ParticleEffect {
 
         public var start_:Point;
         public var novaRadius_:Number;
         public var color_:int;
 
-        public function NovaEffect(_arg_1:GameObject, _arg_2:Number, _arg_3:int)
-        {
+        public function NovaEffect(_arg_1:GameObject, _arg_2:Number, _arg_3:int){
             this.start_ = new Point(_arg_1.x_, _arg_1.y_);
             this.novaRadius_ = _arg_2;
             this.color_ = _arg_3;
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_7:Number;
             var _local_8:Point;
             var _local_9:Particle;
@@ -41,12 +37,11 @@ public class NovaEffect extends ParticleEffect
                 _local_9 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_8);
                 map_.addObj(_local_9, x_, y_);
                 _local_6++;
-            }
+            };
             return (false);
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_7:Number;
             var _local_8:Point;
             var _local_9:Particle;
@@ -63,7 +58,7 @@ public class NovaEffect extends ParticleEffect
                 _local_9 = new SparkerParticle(_local_3, this.color_, _local_4, this.start_, _local_8);
                 map_.addObj(_local_9, x_, y_);
                 _local_6++;
-            }
+            };
             return (false);
         }
 

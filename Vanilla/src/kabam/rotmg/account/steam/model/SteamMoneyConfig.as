@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.model.SteamMoneyConfig
 
-package kabam.rotmg.account.steam.model
-{
+package kabam.rotmg.account.steam.model{
 import com.company.assembleegameclient.util.offer.Offer;
 
 import kabam.rotmg.account.core.model.MoneyConfig;
@@ -12,30 +11,25 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class SteamMoneyConfig implements MoneyConfig 
-    {
+public class SteamMoneyConfig implements MoneyConfig {
 
 
-        public function showPaymentMethods():Boolean
-        {
+        public function showPaymentMethods():Boolean{
             return (false);
         }
 
-        public function showBonuses():Boolean
-        {
+        public function showBonuses():Boolean{
             return (false);
         }
 
-        public function parseOfferPrice(_arg_1:Offer):StringBuilder
-        {
+        public function parseOfferPrice(_arg_1:Offer):StringBuilder{
             return (new LineBuilder().setParams(TextKey.PAYMENTS_STEAM_COST, {
                 "cost":_arg_1.price_,
                 "currency":_arg_1.currency_
             }));
         }
 
-        public function jsInitializeFunction():String
-        {
+        public function jsInitializeFunction():String{
             throw (new Error("No current support for new Kabam offer wall on Steam."));
         }
 

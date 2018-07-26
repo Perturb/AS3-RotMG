@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.board.EditBoard
 
-package com.company.assembleegameclient.ui.board
-{
+package com.company.assembleegameclient.ui.board{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.ui.BaseSimpleText;
@@ -25,8 +24,7 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.text.model.TextKey;
 
-internal class EditBoard extends Sprite 
-    {
+internal class EditBoard extends Sprite {
 
         public static const TEXT_WIDTH:int = 400;
         public static const TEXT_HEIGHT:int = 400;
@@ -46,8 +44,7 @@ internal class EditBoard extends Sprite
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-        public function EditBoard(_arg_1:String)
-        {
+        public function EditBoard(_arg_1:String){
             this.text_ = _arg_1;
             this.mainSprite_ = new Sprite();
             var _local_2:Shape = new Shape();
@@ -88,8 +85,7 @@ internal class EditBoard extends Sprite
             addChild(this.saveButton_);
         }
 
-        private function layoutBackground():void
-        {
+        private function layoutBackground():void{
             this.h_ = ((TEXT_HEIGHT + this.saveButton_.height) + 8);
             x = ((800 / 2) - (this.w_ / 2));
             y = ((600 / 2) - (this.h_ / 2));
@@ -100,32 +96,27 @@ internal class EditBoard extends Sprite
             this.scrollBar_.setIndicatorSize(TEXT_HEIGHT, this.boardText_.textHeight, false);
         }
 
-        public function getText():String
-        {
+        public function getText():String{
             return (this.boardText_.text);
         }
 
-        private function onScrollBarChange(_arg_1:Event):void
-        {
+        private function onScrollBarChange(_arg_1:Event):void{
             this.boardText_.scrollV = (1 + (this.scrollBar_.pos() * this.boardText_.maxScrollV));
         }
 
-        private function onCancel(_arg_1:Event):void
-        {
+        private function onCancel(_arg_1:Event):void{
             dispatchEvent(new Event(Event.CANCEL));
         }
 
-        private function onSave(_arg_1:Event):void
-        {
+        private function onSave(_arg_1:Event):void{
             dispatchEvent(new Event(Event.COMPLETE));
         }
 
-        private function onTextChange(_arg_1:Event):void
-        {
+        private function onTextChange(_arg_1:Event):void{
             if (this.scrollBar_ == null)
             {
                 return;
-            }
+            };
             this.scrollBar_.setIndicatorSize(TEXT_HEIGHT, this.boardText_.textHeight, false);
             if (this.boardText_.maxScrollV == 1)
             {
@@ -134,7 +125,7 @@ internal class EditBoard extends Sprite
             else
             {
                 this.scrollBar_.setPos(((this.boardText_.scrollV - 1) / (this.boardText_.maxScrollV - 1)));
-            }
+            };
         }
 
 

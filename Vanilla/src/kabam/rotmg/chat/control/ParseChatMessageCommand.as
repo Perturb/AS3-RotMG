@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.chat.control.ParseChatMessageCommand
 
-package kabam.rotmg.chat.control
-{
+package kabam.rotmg.chat.control{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -22,8 +21,7 @@ import kabam.rotmg.game.signals.AddTextLineSignal;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class ParseChatMessageCommand 
-    {
+public class ParseChatMessageCommand {
 
         [Inject]
         public var data:String;
@@ -45,8 +43,7 @@ public class ParseChatMessageCommand
         public var tracking:GoogleAnalytics;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:Object;
             var _local_2:Object;
             var _local_3:uint;
@@ -62,7 +59,7 @@ public class ParseChatMessageCommand
                         MoreObjectUtil.addToObject(_local_1, this.account.getCredentials());
                         this.client.sendRequest("/dailyquest/resetDailyQuests", _local_1);
                         this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, "Restarting daily quests. Please refresh game."));
-                    }
+                    };
                     return;
                 case "/resetPackagePopup":
                     Parameters.data_[PopupNamesConfig.PACKAGES_OFFER_POPUP] = null;
@@ -82,18 +79,18 @@ public class ParseChatMessageCommand
                         {
                             _local_2[_local_4.objectType_] = ((_local_2[_local_4.objectType_] != undefined) ? (_local_2[_local_4.objectType_] + 1) : uint(1));
                             _local_3++;
-                        }
-                    }
+                        };
+                    };
                     _local_5 = "";
                     for (_local_6 in _local_2)
                     {
                         _local_5 = (_local_5 + (((" " + ObjectLibrary.typeToDisplayId_[_local_6]) + ": ") + _local_2[_local_6]));
-                    }
+                    };
                     this.addTextLine.dispatch(ChatMessage.make("", ((("Classes online (" + _local_3) + "):") + _local_5)));
                     return;
                 default:
                     this.hudModel.gameSprite.gsc_.playerText(this.data);
-            }
+            };
         }
 
 

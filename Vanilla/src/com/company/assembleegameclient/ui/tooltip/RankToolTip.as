@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.RankToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.ui.LineBreakDesign;
 import com.company.assembleegameclient.util.FameUtil;
@@ -19,8 +18,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class RankToolTip extends ToolTip 
-    {
+public class RankToolTip extends ToolTip {
 
         private static const PADDING_LEFT:int = 6;
 
@@ -29,8 +27,7 @@ public class RankToolTip extends ToolTip
         private var howToText_:TextFieldDisplayConcrete;
         private var lineBreak_:LineBreakDesign = new LineBreakDesign(100, 0x1C1C1C);
 
-        public function RankToolTip(_arg_1:int)
-        {
+        public function RankToolTip(_arg_1:int){
             super(0x363636, 1, 0xFFFFFF, 1);
             this.earnedText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3).setBold(true);
             this.earnedText_.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
@@ -50,8 +47,7 @@ public class RankToolTip extends ToolTip
             _local_2.complete.addOnce(this.textAdded);
         }
 
-        private function textAdded():void
-        {
+        private function textAdded():void{
             var _local_2:LegendLine;
             var _local_3:int;
             this.earnedText_.y = (this.earnedText_.height + 2);
@@ -74,7 +70,7 @@ public class RankToolTip extends ToolTip
                 addChild(_local_2);
                 _local_3 = (_local_3 + _local_2.height);
                 _local_4++;
-            }
+            };
             _local_2 = new LegendLine(FameUtil.maxStars(), FameUtil.maxStars(), new ColorTransform());
             _local_2.x = PADDING_LEFT;
             _local_2.y = _local_3;
@@ -82,8 +78,7 @@ public class RankToolTip extends ToolTip
             this.draw();
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.lineBreak_.setWidthColor((width - 10), 0x1C1C1C);
             super.draw();
         }
@@ -101,29 +96,25 @@ import flash.geom.ColorTransform;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-class LegendLine extends Sprite 
-{
+class LegendLine extends Sprite {
 
     private var coloredStar_:StarGraphic;
     private var rangeText_:TextFieldDisplayConcrete;
     private var star_:StarGraphic;
 
-    public function LegendLine(_arg_1:int, _arg_2:int, _arg_3:ColorTransform)
-    {
+    public function LegendLine(_arg_1:int, _arg_2:int, _arg_3:ColorTransform){
         this.addColoredStar(_arg_3);
         this.addRangeText(_arg_1, _arg_2);
         this.addGreyStar();
     }
 
-    public function addGreyStar():void
-    {
+    public function addGreyStar():void{
         this.star_ = new StarGraphic();
         this.star_.transform.colorTransform = new ColorTransform((179 / 0xFF), (179 / 0xFF), (179 / 0xFF));
         addChild(this.star_);
     }
 
-    public function addRangeText(_arg_1:int, _arg_2:int):void
-    {
+    public function addRangeText(_arg_1:int, _arg_2:int):void{
         this.rangeText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
         this.rangeText_.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
         this.rangeText_.setStringBuilder(new StaticStringBuilder((": " + ((_arg_1 == _arg_2) ? _arg_1.toString() : ((_arg_1 + " - ") + _arg_2)))));
@@ -135,16 +126,14 @@ class LegendLine extends Sprite
         addChild(this.rangeText_);
     }
 
-    public function addColoredStar(_arg_1:ColorTransform):void
-    {
+    public function addColoredStar(_arg_1:ColorTransform):void{
         this.coloredStar_ = new StarGraphic();
         this.coloredStar_.transform.colorTransform = _arg_1;
         this.coloredStar_.y = 4;
         addChild(this.coloredStar_);
     }
 
-    private function positionGreyStar():void
-    {
+    private function positionGreyStar():void{
         this.star_.x = (this.rangeText_.getBounds(this).right + 2);
         this.star_.y = 4;
     }

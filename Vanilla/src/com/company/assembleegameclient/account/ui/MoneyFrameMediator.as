@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.MoneyFrameMediator
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 import com.company.assembleegameclient.util.offer.Offer;
 
@@ -24,8 +23,7 @@ import kabam.rotmg.ui.model.HUDModel;
 import robotlegs.bender.bundles.mvcs.Mediator;
 import robotlegs.bender.framework.api.ILogger;
 
-public class MoneyFrameMediator extends Mediator 
-    {
+public class MoneyFrameMediator extends Mediator {
 
         [Inject]
         public var view:MoneyFrame;
@@ -51,16 +49,14 @@ public class MoneyFrameMediator extends Mediator
         public var currentArenaRun:CurrentArenaRunModel;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.buyNow.add(this.onBuyNow);
             this.view.cancel.add(this.onCancel);
             this.moneyFrameEnableCancelSignal.addOnce(this.onMoneyFrameEnableCancel);
             this.initializeViewWhenOffersAreAvailable();
         }
 
-        private function initializeViewWhenOffersAreAvailable():void
-        {
+        private function initializeViewWhenOffersAreAvailable():void{
             if (this.model.offers)
             {
                 this.view.initialize(this.model.offers, this.config);
@@ -68,17 +64,15 @@ public class MoneyFrameMediator extends Mediator
             else
             {
                 this.requestOffersData();
-            }
+            };
         }
 
-        private function requestOffersData():void
-        {
+        private function requestOffersData():void{
             this.getOffers.finished.addOnce(this.onOffersReceived);
             this.getOffers.start();
         }
 
-        private function onOffersReceived(_arg_1:Task, _arg_2:Boolean, _arg_3:String=""):void
-        {
+        private function onOffersReceived(_arg_1:Task, _arg_2:Boolean, _arg_3:String=""):void{
             if (_arg_2)
             {
                 this.view.initialize(this.model.offers, this.config);
@@ -86,32 +80,28 @@ public class MoneyFrameMediator extends Mediator
             else
             {
                 this.openDialog.dispatch(new ErrorDialog("Unable to get gold offer information"));
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             if (this.hudModel.gameSprite.map.name_ == "Arena")
             {
                 this.openDialog.dispatch(new ContinueOrQuitDialog(this.currentArenaRun.costOfContinue, true));
-            }
+            };
             this.view.buyNow.add(this.onBuyNow);
             this.view.cancel.add(this.onCancel);
         }
 
-        protected function onBuyNow(_arg_1:Offer, _arg_2:String):void
-        {
+        protected function onBuyNow(_arg_1:Offer, _arg_2:String):void{
             this.logger.info("offer {0}, paymentMethod {1}", [_arg_1, _arg_2]);
             this.purchaseGold.dispatch(_arg_1, _arg_2);
         }
 
-        protected function onMoneyFrameEnableCancel():void
-        {
+        protected function onMoneyFrameEnableCancel():void{
             this.view.enableOnlyCancel();
         }
 
-        protected function onCancel():void
-        {
+        protected function onCancel():void{
             this.closeDialogs.dispatch();
         }
 

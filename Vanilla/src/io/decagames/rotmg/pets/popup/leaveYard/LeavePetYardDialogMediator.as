@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.leaveYard.LeavePetYardDialogMediator
 
-package io.decagames.rotmg.pets.popup.leaveYard
-{
+package io.decagames.rotmg.pets.popup.leaveYard{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import io.decagames.rotmg.ui.buttons.BaseButton;
@@ -14,8 +13,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class LeavePetYardDialogMediator extends Mediator 
-    {
+public class LeavePetYardDialogMediator extends Mediator {
 
         [Inject]
         public var view:LeavePetYardDialog;
@@ -25,18 +23,15 @@ public class LeavePetYardDialogMediator extends Mediator
         public var closeAll:CloseAllPopupsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.leaveButton.clickSignal.add(this.onLeave);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.leaveButton.clickSignal.remove(this.onLeave);
         }
 
-        private function onLeave(_arg_1:BaseButton):void
-        {
+        private function onLeave(_arg_1:BaseButton):void{
             this.hudModel.gameSprite.gsc_.escape();
             Parameters.data_.needsRandomRealm = false;
             Parameters.save();

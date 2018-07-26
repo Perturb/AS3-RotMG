@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.vo.IPetVO
 
-package io.decagames.rotmg.pets.data.vo
-{
+package io.decagames.rotmg.pets.data.vo{
 import com.company.assembleegameclient.util.MaskedImage;
 
 import flash.display.Bitmap;
@@ -13,8 +12,7 @@ import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
 
 import org.osflash.signals.Signal;
 
-public interface IPetVO
-    {
+public interface IPetVO {
 
         function get updated():Signal;
         function getSkinBitmap():Bitmap;

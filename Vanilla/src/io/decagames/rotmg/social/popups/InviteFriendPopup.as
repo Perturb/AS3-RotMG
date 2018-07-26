@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.popups.InviteFriendPopup
 
-package io.decagames.rotmg.social.popups
-{
+package io.decagames.rotmg.social.popups{
 import flash.text.TextFormatAlign;
 
 import io.decagames.rotmg.ui.buttons.SliceScalingButton;
@@ -14,14 +13,12 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.textField.InputTextField;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class InviteFriendPopup extends ModalPopup
-    {
+public class InviteFriendPopup extends ModalPopup {
 
         public var sendButton:SliceScalingButton;
         public var search:InputTextField;
 
-        public function InviteFriendPopup()
-        {
+        public function InviteFriendPopup(){
             var _local_1:SliceScalingBitmap;
             super(400, 85, "Send invitation");
             _local_1 = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", 300);

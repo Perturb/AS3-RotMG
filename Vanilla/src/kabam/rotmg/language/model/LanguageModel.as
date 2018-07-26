@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.model.LanguageModel
 
-package kabam.rotmg.language.model
-{
-public interface LanguageModel
-    {
+package kabam.rotmg.language.model{
+public interface LanguageModel {
 
         function getLanguage():String;
         function setLanguage(_arg_1:String):void;

@@ -456,7 +456,7 @@
       <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
       <UnlockCost>999</UnlockCost>
    </Object>
-   <Object type="0x0311" id="????">
+   <Object type="0x0311" id="Samurai">
       <Class>Player</Class>
       <Description>Coming soon!</Description>
       <AnimatedTexture>

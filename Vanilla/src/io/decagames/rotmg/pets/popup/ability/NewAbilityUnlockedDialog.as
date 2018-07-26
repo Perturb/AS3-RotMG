@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.popup.ability.NewAbilityUnlockedDialog
 
-package io.decagames.rotmg.pets.popup.ability
-{
+package io.decagames.rotmg.pets.popup.ability{
 import io.decagames.rotmg.ui.buttons.SliceScalingButton;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
@@ -14,13 +13,11 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class NewAbilityUnlockedDialog extends ModalPopup 
-    {
+public class NewAbilityUnlockedDialog extends ModalPopup {
 
         private var _okButton:SliceScalingButton;
 
-        public function NewAbilityUnlockedDialog(_arg_1:String)
-        {
+        public function NewAbilityUnlockedDialog(_arg_1:String){
             var _local_2:UILabel;
             var _local_4:UILabel;
             var _local_5:SliceScalingBitmap;
@@ -56,8 +53,7 @@ public class NewAbilityUnlockedDialog extends ModalPopup
             addChild(this._okButton);
         }
 
-        public function get okButton():SliceScalingButton
-        {
+        public function get okButton():SliceScalingButton{
             return (this._okButton);
         }
 

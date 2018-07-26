@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.SellableObjectPanel
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.Merchant;
 import com.company.assembleegameclient.objects.Player;
@@ -37,8 +36,7 @@ import kabam.rotmg.util.components.LegacyBuyButton;
 
 import org.osflash.signals.Signal;
 
-public class SellableObjectPanel extends Panel implements TooltipAble 
-    {
+public class SellableObjectPanel extends Panel implements TooltipAble {
 
         private const BUTTON_OFFSET:int = 17;
 
@@ -54,8 +52,7 @@ public class SellableObjectPanel extends Panel implements TooltipAble
         private var confirmBuyModal:ConfirmBuyModal;
         private var availableInventoryNumber:int;
 
-        public function SellableObjectPanel(_arg_1:GameSprite, _arg_2:SellableObject)
-        {
+        public function SellableObjectPanel(_arg_1:GameSprite, _arg_2:SellableObject){
             super(_arg_1);
             this.nameText_ = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth((WIDTH - 44));
             this.nameText_.setBold(true);
@@ -79,8 +76,7 @@ public class SellableObjectPanel extends Panel implements TooltipAble
             this.hoverTooltipDelegate.tooltip = _arg_2.getTooltip();
         }
 
-        private static function createRankReqText(rankReq:int):Sprite
-        {
+        private static function createRankReqText(rankReq:int):Sprite{
             var requiredText:TextFieldDisplayConcrete;
             var rankText:Sprite;
             var rankReqText:Sprite = new Sprite();
@@ -89,8 +85,7 @@ public class SellableObjectPanel extends Panel implements TooltipAble
             rankReqText.addChild(requiredText);
             rankText = new RankText(rankReq, false, false);
             rankReqText.addChild(rankText);
-            requiredText.textChanged.addOnce(function ():void
-            {
+            requiredText.textChanged.addOnce(function ():void{
                 rankText.x = ((requiredText.width * 0.5) + 4);
                 rankText.y = (-(rankText.height) / 2);
             });
@@ -98,8 +93,7 @@ public class SellableObjectPanel extends Panel implements TooltipAble
             return (rankReqText);
         }
 
-        private static function createGuildRankReqText(_arg_1:int):TextFieldDisplayConcrete
-        {
+        private static function createGuildRankReqText(_arg_1:int):TextFieldDisplayConcrete{
             var _local_2:TextFieldDisplayConcrete;
             _local_2 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFF0000).setBold(true).setAutoSize(TextFieldAutoSize.CENTER);
             var _local_3:String = GuildUtil.rankToString(_arg_1);
@@ -109,12 +103,11 @@ public class SellableObjectPanel extends Panel implements TooltipAble
         }
 
 
-        public function setOwner(_arg_1:SellableObject):void
-        {
+        public function setOwner(_arg_1:SellableObject):void{
             if (_arg_1 == this.owner_)
             {
                 return;
-            }
+            };
             this.owner_ = _arg_1;
             this.buyButton_.setPrice(this.owner_.price_, this.owner_.currency_);
             var _local_2:String = this.owner_.soldObjectName();
@@ -122,46 +115,40 @@ public class SellableObjectPanel extends Panel implements TooltipAble
             this.bitmap_.bitmapData = this.owner_.getIcon();
         }
 
-        public function setInventorySpaceAmount(_arg_1:int):void
-        {
+        public function setInventorySpaceAmount(_arg_1:int):void{
             this.availableInventoryNumber = _arg_1;
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.icon_.x = -4;
             this.icon_.y = -8;
             this.nameText_.x = 44;
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             if ((((!(parent == null)) && (!(this.confirmBuyModal == null))) && (this.confirmBuyModal.open)))
             {
                 parent.removeChild(this.confirmBuyModal);
-            }
+            };
         }
 
-        private function onBuyButtonClick(_arg_1:MouseEvent):void
-        {
+        private function onBuyButtonClick(_arg_1:MouseEvent):void{
             if (ConfirmBuyModal.free)
             {
                 this.buyEvent();
-            }
+            };
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if ((((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)) && (ConfirmBuyModal.free)))
             {
                 this.buyEvent();
-            }
+            };
         }
 
-        private function buyEvent():void
-        {
+        private function buyEvent():void{
             var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
             if ((((!(parent == null)) && (_local_1.isRegistered())) && (this.owner_ is Merchant)))
             {
@@ -171,11 +158,10 @@ public class SellableObjectPanel extends Panel implements TooltipAble
             else
             {
                 this.buyItem.dispatch(this.owner_);
-            }
+            };
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             var _local_1:Player = gs_.map.player_;
             this.nameText_.y = ((this.nameText_.height > 30) ? 0 : 12);
             var _local_2:int = this.owner_.rankReq_;
@@ -184,14 +170,14 @@ public class SellableObjectPanel extends Panel implements TooltipAble
                 if (contains(this.buyButton_))
                 {
                     removeChild(this.buyButton_);
-                }
+                };
                 if (((this.rankReqText_ == null) || (!(contains(this.rankReqText_)))))
                 {
                     this.rankReqText_ = createRankReqText(_local_2);
                     this.rankReqText_.x = ((WIDTH / 2) - (this.rankReqText_.width / 2));
                     this.rankReqText_.y = ((HEIGHT - (this.rankReqText_.height / 2)) - 20);
                     addChild(this.rankReqText_);
-                }
+                };
             }
             else
             {
@@ -200,14 +186,14 @@ public class SellableObjectPanel extends Panel implements TooltipAble
                     if (contains(this.buyButton_))
                     {
                         removeChild(this.buyButton_);
-                    }
+                    };
                     if (((this.guildRankReqText_ == null) || (!(contains(this.guildRankReqText_)))))
                     {
                         this.guildRankReqText_ = createGuildRankReqText(this.owner_.guildRankReq_);
                         this.guildRankReqText_.x = ((WIDTH / 2) - (this.guildRankReqText_.width / 2));
                         this.guildRankReqText_.y = ((HEIGHT - (this.guildRankReqText_.height / 2)) - 20);
                         addChild(this.guildRankReqText_);
-                    }
+                    };
                 }
                 else
                 {
@@ -218,32 +204,28 @@ public class SellableObjectPanel extends Panel implements TooltipAble
                     if (!contains(this.buyButton_))
                     {
                         addChild(this.buyButton_);
-                    }
+                    };
                     if (((!(this.rankReqText_ == null)) && (contains(this.rankReqText_))))
                     {
                         removeChild(this.rankReqText_);
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
-        {
+        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void{
             this.hoverTooltipDelegate.setShowToolTipSignal(_arg_1);
         }
 
-        public function getShowToolTip():ShowTooltipSignal
-        {
+        public function getShowToolTip():ShowTooltipSignal{
             return (this.hoverTooltipDelegate.getShowToolTip());
         }
 
-        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void
-        {
+        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void{
             this.hoverTooltipDelegate.setHideToolTipsSignal(_arg_1);
         }
 
-        public function getHideToolTips():HideTooltipsSignal
-        {
+        public function getHideToolTips():HideTooltipsSignal{
             return (this.hoverTooltipDelegate.getHideToolTips());
         }
 

@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.GuildPlayerListEvent
 
-package com.company.assembleegameclient.ui.guild
-{
+package com.company.assembleegameclient.ui.guild{
 import flash.events.Event;
 
-public class GuildPlayerListEvent extends Event 
-    {
+public class GuildPlayerListEvent extends Event {
 
         public static const SET_RANK:String = "SET_RANK";
         public static const REMOVE_MEMBER:String = "REMOVE_MEMBER";
@@ -16,8 +14,7 @@ public class GuildPlayerListEvent extends Event
         public var name_:String;
         public var rank_:int;
 
-        public function GuildPlayerListEvent(_arg_1:String, _arg_2:String, _arg_3:int=-1)
-        {
+        public function GuildPlayerListEvent(_arg_1:String, _arg_2:String, _arg_3:int=-1){
             super(_arg_1, true);
             this.name_ = _arg_2;
             this.rank_ = _arg_3;

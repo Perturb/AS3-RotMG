@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison
 
-package com.company.assembleegameclient.ui.tooltip.slotcomparisons
-{
+package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
 import kabam.rotmg.constants.*;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
-public class HelmetComparison extends SlotComparison
-    {
+public class HelmetComparison extends SlotComparison {
 
         private var berserk:XML;
         private var speedy:XML;
@@ -22,8 +20,7 @@ public class HelmetComparison extends SlotComparison
         private var otherArmored:XML;
 
 
-        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void
-        {
+        override protected function compareSlots(_arg_1:XML, _arg_2:XML):void{
             this.extractDataFromXML(_arg_1, _arg_2);
             comparisonStringBuilder = new AppendingLineBuilder();
             this.handleBerserk();
@@ -31,8 +28,7 @@ public class HelmetComparison extends SlotComparison
             this.handleArmored();
         }
 
-        private function extractDataFromXML(_arg_1:XML, _arg_2:XML):void
-        {
+        private function extractDataFromXML(_arg_1:XML, _arg_2:XML):void{
             this.berserk = this.getAuraTagByType(_arg_1, "Berserk");
             this.speedy = this.getSelfTagByType(_arg_1, "Speedy");
             this.armored = this.getSelfTagByType(_arg_1, "Armored");
@@ -41,8 +37,7 @@ public class HelmetComparison extends SlotComparison
             this.otherArmored = this.getSelfTagByType(_arg_2, "Armored");
         }
 
-        private function getAuraTagByType(xml:XML, typeName:String):XML
-        {
+        private function getAuraTagByType(xml:XML, typeName:String):XML{
             var matches:XMLList;
             var tag:XML;
             matches = xml.Activate.(text() == ActivationType.COND_EFFECT_AURA);
@@ -51,13 +46,12 @@ public class HelmetComparison extends SlotComparison
                 if (tag.@effect == typeName)
                 {
                     return (tag);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        private function getSelfTagByType(xml:XML, typeName:String):XML
-        {
+        private function getSelfTagByType(xml:XML, typeName:String):XML{
             var matches:XMLList;
             var tag:XML;
             matches = xml.Activate.(text() == ActivationType.COND_EFFECT_SELF);
@@ -66,17 +60,16 @@ public class HelmetComparison extends SlotComparison
                 if (tag.@effect == typeName)
                 {
                     return (tag);
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        private function handleBerserk():void
-        {
+        private function handleBerserk():void{
             if (((this.berserk == null) || (this.otherBerserk == null)))
             {
                 return;
-            }
+            };
             var _local_1:Number = Number(this.berserk.@range);
             var _local_2:Number = Number(this.otherBerserk.@range);
             var _local_3:Number = Number(this.berserk.@duration);
@@ -94,8 +87,7 @@ public class HelmetComparison extends SlotComparison
             processedTags[this.berserk.toXMLString()] = true;
         }
 
-        private function handleSpeedy():void
-        {
+        private function handleSpeedy():void{
             var _local_1:Number;
             var _local_2:Number;
             if (((!(this.speedy == null)) && (!(this.otherSpeedy == null))))
@@ -119,12 +111,11 @@ public class HelmetComparison extends SlotComparison
                         "duration":this.speedy.@duration
                     }, TooltipHelper.getOpenTag(BETTER_COLOR), TooltipHelper.getCloseTag());
                     processedTags[this.speedy.toXMLString()] = true;
-                }
-            }
+                };
+            };
         }
 
-        private function handleArmored():void
-        {
+        private function handleArmored():void{
             if (this.armored != null)
             {
                 comparisonStringBuilder.pushParams(TextKey.EFFECT_ON_SELF, {"effect":""});
@@ -133,7 +124,7 @@ public class HelmetComparison extends SlotComparison
                     "duration":this.armored.@duration
                 }, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
                 processedTags[this.armored.toXMLString()] = true;
-            }
+            };
         }
 
 

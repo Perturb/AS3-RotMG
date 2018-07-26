@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fortune.components.FortuneModal
 
-package kabam.rotmg.fortune.components
-{
+package kabam.rotmg.fortune.components{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.map.ParticleModalMap;
 import com.company.assembleegameclient.objects.GameObject;
@@ -54,8 +53,7 @@ import kabam.rotmg.util.components.SimpleButton;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class FortuneModal extends EmptyFrame
-    {
+public class FortuneModal extends EmptyFrame {
 
         public static var backgroundImageEmbed:Class = FortuneModal_backgroundImageEmbed;
         public static var fortunePlatformEmbed:Class = FortuneModal_fortunePlatformEmbed;
@@ -127,8 +125,7 @@ public class FortuneModal extends EmptyFrame
         private var chooseingState:Boolean = false;
         private var items:Array;
 
-        public function FortuneModal(_arg_1:GameSprite=null)
-        {
+        public function FortuneModal(_arg_1:GameSprite=null){
             protected::modalWidth = MODAL_WIDTH;
             protected::modalHeight = MODAL_HEIGHT;
             super(protected::modalWidth, protected::modalHeight);
@@ -149,7 +146,7 @@ public class FortuneModal extends EmptyFrame
             if (this.fortuneInfo == null)
             {
                 return;
-            }
+            };
             this.crystalMain.setXPos((protected::modalWidth / 2));
             this.crystalMain.setYPos(crystalMainY);
             this.resetBalls();
@@ -168,12 +165,12 @@ public class FortuneModal extends EmptyFrame
             if (_local_3 != null)
             {
                 this.creditDisplay_.draw(_local_3.credits_, 0, _local_3.tokens_);
-            }
+            };
             if (_arg_1 != null)
             {
                 this.gs_ = _arg_1;
                 this.gs_.creditDisplay_.visible = false;
-            }
+            };
             var _local_4:BitmapData = AssetLibrary.getImageFromSet("lofiObj3", 1172);
             _local_4 = TextureRedrawer.redraw(_local_4, 75, true, 0);
             this.crystalMain.addEventListener(MouseEvent.ROLL_OVER, this.displayInfoHover);
@@ -190,8 +187,7 @@ public class FortuneModal extends EmptyFrame
             this.onHoverPanel.visible = false;
         }
 
-        public static function doEaseOutInAnimation(_arg_1:DisplayObject, _arg_2:Object=null, _arg_3:Object=null, _arg_4:Function=null):void
-        {
+        public static function doEaseOutInAnimation(_arg_1:DisplayObject, _arg_2:Object=null, _arg_3:Object=null, _arg_4:Function=null):void{
             var _local_5:GTween = new GTween(_arg_1, (0.5 * 1), _arg_2, {"ease":Sine.easeOut});
             _local_5.nextTween = new GTween(_arg_1, (0.5 * 1), _arg_3, {"ease":Sine.easeIn});
             _local_5.nextTween.paused = true;
@@ -200,21 +196,18 @@ public class FortuneModal extends EmptyFrame
         }
 
 
-        private function displayInfoHover(_arg_1:MouseEvent):void
-        {
+        private function displayInfoHover(_arg_1:MouseEvent):void{
             this.onHoverPanel.visible = true;
         }
 
-        private function removeInfoHover(_arg_1:MouseEvent):void
-        {
+        private function removeInfoHover(_arg_1:MouseEvent):void{
             if (!(_arg_1.relatedObject is ItemWithTooltip))
             {
                 this.onHoverPanel.visible = false;
-            }
+            };
         }
 
-        private function InitButtons():void
-        {
+        private function InitButtons():void{
             this.goldPrice_ = int(this.fortuneInfo.priceFirstInGold);
             this.tokenPrice_ = int(this.fortuneInfo.priceFirstInToken);
             this.goldPriceSecond_ = int(this.fortuneInfo.priceSecondInGold);
@@ -237,8 +230,7 @@ public class FortuneModal extends EmptyFrame
             this.buyButtonFortune.addEventListener(MouseEvent.CLICK, this.onBuyWithFortuneClick);
         }
 
-        private function InitTexts():void
-        {
+        private function InitTexts():void{
             var _local_4:TextField;
             texts_ = new Vector.<TextField>();
             var _local_1:Vector.<String> = Vector.<String>(["HOW WILL YOU PLAY?", "THE FIVE MASTERS OF GOZOR WILL DETERMINE YOUR PRIZE!", "HERE'S WHAT YOU CAN WIN!", "Shuffling!", "PICK ONE TO WIN A PRIZE!", "YOU WON! ITEMS WILL BE PLACED IN YOUR GIFT CHEST", "TWO ITEMS LEFT! TAKE ANOTHER SHOT!", "PICK A SECOND PRIZE!", "PLAY AGAIN?", "Choose now or I will choose for you!", "Determining Prizes!", "Sorting Loot!", "What can you win?", "Big Prizes! Big Orbs! I love it!", "Wooah! Awesome lewt!", "Processing hadoop data..."]);
@@ -263,23 +255,22 @@ public class FortuneModal extends EmptyFrame
                 _local_4.filters = [new GlowFilter(0xFFFFFF, 1, 2, 2, 1.5, 1)];
                 texts_.push(_local_4);
                 _local_3++;
-            }
+            };
         }
 
-        private function setString(_arg_1:int):void
-        {
+        private function setString(_arg_1:int):void{
             if (this.parent == null)
             {
                 return;
-            }
+            };
             if (((this.currentString >= 0) && (!(texts_[this.currentString].parent == null))))
             {
                 removeChild(texts_[this.currentString]);
-            }
+            };
             if (_arg_1 < 0)
             {
                 return;
-            }
+            };
             this.currentString = _arg_1;
             var _local_2:TextField = texts_[this.currentString];
             _local_2.x = ((protected::modalWidth / 2) - (_local_2.width / 2));
@@ -287,8 +278,7 @@ public class FortuneModal extends EmptyFrame
             addChild(texts_[this.currentString]);
         }
 
-        private function destruct(_arg_1:Event):void
-        {
+        private function destruct(_arg_1:Event):void{
             this.largeCloseButton.clicked.removeAll();
             modalIsOpen = false;
             closed.dispatch();
@@ -308,27 +298,26 @@ public class FortuneModal extends EmptyFrame
             if (this.gs_ != null)
             {
                 this.gs_.creditDisplay_.visible = false;
-            }
+            };
         }
 
-        private function onItemSwitch(_arg_1:TimerEvent=null):void
-        {
+        private function onItemSwitch(_arg_1:TimerEvent=null):void{
             var _local_5:ItemWithTooltip;
             this.tooltipItemIDIndex++;
             if (this.tooltipItems == null)
             {
                 this.tooltipItems = Vector.<ItemWithTooltip>([new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex], ITEM_SIZE_IN_MC), new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[(this.tooltipItemIDIndex + 1)], ITEM_SIZE_IN_MC)]);
-            }
+            };
             if (this.tooltipItemIDIndex >= this.fortuneInfo._rollsWithContentsUnique.length)
             {
                 this.tooltipItemIDIndex = 0;
-            }
+            };
             var _local_2:int = (this.tooltipItemIDIndex % 2);
             if (((!(this.tooltipItems[this.currenttooltipItem] == null)) && (!(this.tooltipItems[this.currenttooltipItem].parent == null))))
             {
                 _local_5 = this.tooltipItems[this.currenttooltipItem];
                 this.doEaseInAnimation(_local_5, {"alpha":0}, this.removeChildAfterTween);
-            }
+            };
             var _local_3:ItemWithTooltip = new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex], ITEM_SIZE_IN_MC, true);
             _local_3.onMouseOver.add(this.onItemSwitchPause);
             _local_3.onMouseOut.add(this.onItemSwitchContinue);
@@ -343,37 +332,32 @@ public class FortuneModal extends EmptyFrame
             if (((!(this.creditDisplay_ == null)) && (!(_local_4 == null))))
             {
                 this.creditDisplay_.draw(_local_4.credits_, 0, _local_4.tokens_);
-            }
+            };
         }
 
-        private function removeChildAfterTween(_arg_1:GTween):void
-        {
+        private function removeChildAfterTween(_arg_1:GTween):void{
             if (_arg_1.target.parent != null)
             {
                 _arg_1.target.parent.removeChild(_arg_1.target);
-            }
+            };
         }
 
-        public function onItemSwitchPause():void
-        {
+        public function onItemSwitchPause():void{
             this.itemSwitchTimer.stop();
         }
 
-        public function onItemSwitchContinue():void
-        {
+        public function onItemSwitchContinue():void{
             this.itemSwitchTimer.start();
             this.onItemSwitch();
         }
 
-        public function addItemSwitch():void
-        {
+        public function addItemSwitch():void{
             this.itemSwitchTimer.delay = this.SWITCH_DELAY_NORMAL;
             this.itemSwitchTimer.addEventListener(TimerEvent.TIMER, this.onItemSwitch);
             this.onItemSwitchContinue();
         }
 
-        private function removeItemSwitch():void
-        {
+        private function removeItemSwitch():void{
             this.itemSwitchTimer.removeEventListener(TimerEvent.TIMER, this.onItemSwitch);
             var _local_1:int;
             while (_local_1 < 2)
@@ -384,27 +368,24 @@ public class FortuneModal extends EmptyFrame
                     this.tooltipItems[_local_1].onMouseOut.removeAll();
                     this.tooltipItems[_local_1].onMouseOver.removeAll();
                     this.tooltipItems[_local_1].parent.removeChild(this.tooltipItems[_local_1]);
-                }
+                };
                 _local_1++;
-            }
+            };
             this.onItemSwitchPause();
         }
 
-        private function canUseFortuneModal():Boolean
-        {
+        private function canUseFortuneModal():Boolean{
             return (FortuneModel.HAS_FORTUNES);
         }
 
-        private function doEaseInAnimation(_arg_1:DisplayObject, _arg_2:Object=null, _arg_3:Function=null):void
-        {
+        private function doEaseInAnimation(_arg_1:DisplayObject, _arg_2:Object=null, _arg_3:Function=null):void{
             var _local_4:GTween = new GTween(_arg_1, 0.5, _arg_2, {
                 "ease":Sine.easeOut,
                 "onComplete":_arg_3
             });
         }
 
-        private function onCountdownComplete():void
-        {
+        private function onCountdownComplete():void{
             var _local_2:int;
             var _local_1:CrystalSmall;
             do 
@@ -413,13 +394,12 @@ public class FortuneModal extends EmptyFrame
                 if (((this.state == STATE_ROUND_1) || (!(this.crystals[_local_2] == this.crystalClicked))))
                 {
                     _local_1 = this.crystals[_local_2];
-                }
+                };
             } while (_local_1 == null);
             this.smallBallClick(_local_1);
         }
 
-        protected function makePlatforms():void
-        {
+        protected function makePlatforms():void{
             var _local_1:ImageSprite;
             this.platformMain = new Sprite();
             _local_1 = new ImageSprite(new fortunePlatformEmbed2(), 500, 500);
@@ -441,8 +421,7 @@ public class FortuneModal extends EmptyFrame
             addChild(this.platformMainSub);
         }
 
-        override protected function makeModalBackground():Sprite
-        {
+        override protected function makeModalBackground():Sprite{
             var _local_1:Sprite = new Sprite();
             var _local_2:DisplayObject = new backgroundImageEmbed();
             _local_2.width = protected::modalWidth;
@@ -452,30 +431,26 @@ public class FortuneModal extends EmptyFrame
             return (_local_1);
         }
 
-        private function onResetClick(_arg_1:MouseEvent):void
-        {
+        private function onResetClick(_arg_1:MouseEvent):void{
             this.resetButton.removeEventListener(MouseEvent.CLICK, this.onResetClick);
             this.resetGame();
         }
 
-        private function onBuyWithGoldClick(_arg_1:MouseEvent):void
-        {
+        private function onBuyWithGoldClick(_arg_1:MouseEvent):void{
             this.onFirstBuySub(Currency.GOLD);
         }
 
-        private function onBuyWithFortuneClick(_arg_1:MouseEvent):void
-        {
+        private function onBuyWithFortuneClick(_arg_1:MouseEvent):void{
             this.onFirstBuySub(Currency.FORTUNE);
         }
 
-        private function onFirstBuySub(_arg_1:int):void
-        {
+        private function onFirstBuySub(_arg_1:int):void{
             var _local_2:Player;
             var _local_4:OpenDialogSignal;
             if (!this.canUseFortuneModal())
             {
                 this.fortuneEventOver();
-            }
+            };
             _local_2 = StaticInjectorContext.getInjector().getInstance(GameModel).player;
             if (_local_2 != null)
             {
@@ -484,18 +459,18 @@ public class FortuneModal extends EmptyFrame
                     _local_4 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
                     _local_4.dispatch(new NotEnoughGoldDialog());
                     return;
-                }
+                };
                 if (((_arg_1 == Currency.GOLD) && ((_local_2.credits_ - this.goldPrice_) < 0)))
                 {
                     _local_4 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
                     _local_4.dispatch(new NotEnoughGoldDialog());
                     return;
-                }
+                };
                 if (((_arg_1 == Currency.FORTUNE) && ((_local_2.tokens_ - this.tokenPrice_) < 0)))
                 {
                     return;
-                }
-            }
+                };
+            };
             this.itemSwitchTimer.delay = this.SWITCH_DELAY_FAST;
             this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_WAITING);
             var _local_3:Object = this.makeBasicParams();
@@ -512,13 +487,13 @@ public class FortuneModal extends EmptyFrame
                 else
                 {
                     return;
-                }
-            }
+                };
+            };
             if (this.state == STATE_ROUND_1)
             {
                 _local_3.status = 0;
                 this.crystalMain.removeEventListener(MouseEvent.ROLL_OVER, this.displayInfoHover);
-            }
+            };
             if (((this.state == STATE_ROUND_1) && (!(this.client.requestInProgress()))))
             {
                 this.buyButtonsDisable();
@@ -535,11 +510,11 @@ public class FortuneModal extends EmptyFrame
                         if ((_local_2.tokens_ - this.tokenPrice_) < 0)
                         {
                             return;
-                        }
+                        };
                         _local_2.tokens_ = (_local_2.tokens_ - this.tokenPrice_);
                         this.creditDisplay_.draw(_local_2.credits_, 0, _local_2.tokens_);
-                    }
-                }
+                    };
+                };
                 this.client.sendRequest("/account/playFortuneGame", _local_3);
                 this.setString((10 + int((Math.random() * 6))));
                 this.client.complete.addOnce(this.onFirstBuyComplete);
@@ -557,15 +532,14 @@ public class FortuneModal extends EmptyFrame
                     {
                         _local_2.credits_ = (_local_2.credits_ - this.goldPriceSecond_);
                         this.creditDisplay_.draw(_local_2.credits_, 0, _local_2.tokens_);
-                    }
+                    };
                     this.buyButtonGold.visible = false;
                     this.resetButton.visible = false;
-                }
-            }
+                };
+            };
         }
 
-        private function onFirstBuyComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onFirstBuyComplete(_arg_1:Boolean, _arg_2:*):void{
             var _local_3:XML;
             var _local_4:Player;
             var _local_5:Vector.<int>;
@@ -599,9 +573,9 @@ public class FortuneModal extends EmptyFrame
                         {
                             _local_4.tokens_ = int(_local_3.FortuneToken);
                             this.creditDisplay_.draw(_local_4.credits_, 0, _local_4.tokens_);
-                        }
-                    }
-                }
+                        };
+                    };
+                };
                 _local_5 = Vector.<int>([0, 2, 1]);
                 _local_6 = int(Math.floor((Math.random() * 3)));
                 _local_7 = (Math.random() > 0.5);
@@ -628,7 +602,7 @@ public class FortuneModal extends EmptyFrame
                         _local_11 = this.crystals[_local_5[_local_6]].getCenterY();
                         new TimerCallback(_local_15, this.doLightning, _local_13, _local_14, _local_10, _local_11);
                         new TimerCallback((_local_15 + 0.1), this.crystals[_local_5[_local_6]].doItemShow, int(_local_17));
-                    }
+                    };
                     _local_13 = _local_10;
                     _local_14 = _local_11;
                     _local_15 = (_local_15 + _local_16);
@@ -640,22 +614,21 @@ public class FortuneModal extends EmptyFrame
                     else
                     {
                         _local_6 = ((--_local_6 < 0) ? 2 : _local_6);
-                    }
-                }
+                    };
+                };
                 new TimerCallback(this.SHOW_PRIZES_TIME, this.onFirstBuyAnimateSub);
             }
             else
             {
                 this.handleError();
-            }
+            };
         }
 
-        private function onFirstBuyAnimateSub():void
-        {
+        private function onFirstBuyAnimateSub():void{
             if (((this.state == STATE_ROUND_2) && (!(this.crystalClicked == null))))
             {
                 this.resetBallsRound2();
-            }
+            };
             var _local_1:int;
             while (_local_1 < 3)
             {
@@ -664,15 +637,14 @@ public class FortuneModal extends EmptyFrame
                 this.crystals[_local_1].setAnimation(6, 7);
                 this.crystals[_local_1].setAnimationDuration(50);
                 _local_1++;
-            }
+            };
             this.setGameStage(this.GAME_STAGE_SPIN);
             this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_INNERROTATION);
             new TimerCallback(this.SPIN_TIME, this.onFirstBuyAnimateComplete);
             this.setString(3);
         }
 
-        private function onFirstBuyAnimateComplete():void
-        {
+        private function onFirstBuyAnimateComplete():void{
             this.setGameStage(this.GAME_STAGE_IDLE);
             if (this.state == STATE_ROUND_2)
             {
@@ -681,7 +653,7 @@ public class FortuneModal extends EmptyFrame
             else
             {
                 this.setString(4);
-            }
+            };
             this.ballClickEnable(this.crystalClicked);
             this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_BUZZING);
             this.doNova(this.crystalMain.getCenterX(), this.crystalMain.getCenterY(), 10, 0xFFFF);
@@ -694,13 +666,13 @@ public class FortuneModal extends EmptyFrame
                     this.crystals[_local_1].doItemReturn();
                     new TimerCallback(this.NOVA_DELAY_TIME, this.doNova, int(this.crystals[_local_1].returnCenterX()), int(this.crystals[_local_1].returnCenterY()), 5, 0xFFFF);
                     new TimerCallback(this.NOVA_DELAY_TIME, this.crystals[_local_1].setAnimationPulse);
-                }
+                };
                 _local_1++;
-            }
+            };
             if (this.countdownTimer == null)
             {
                 return;
-            }
+            };
             new TimerCallback(this.NOVA_DELAY_TIME, this.crystalMain.setAnimationStage, CrystalMain.ANIMATION_STAGE_PULSE);
             this.countdownTimer.start(this.COUNTDOWN_AMOUNT);
             this.countdownTimer.setXPos(this.crystalMain.getCenterX());
@@ -709,16 +681,14 @@ public class FortuneModal extends EmptyFrame
             this.chooseingState = true;
         }
 
-        private function setCountdownWarningString():void
-        {
+        private function setCountdownWarningString():void{
             if (((!(this.countdownTimer == null)) && (this.countdownTimer.isRunning())))
             {
                 this.setString(9);
-            }
+            };
         }
 
-        private function handleError():void
-        {
+        private function handleError():void{
             var _local_1:OpenDialogSignal;
             _local_1 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             var _local_2:Dialog = new Dialog("MysteryBoxRollModal.purchaseFailedString", "MysteryBoxRollModal.pleaseTryAgainString", "MysteryBoxRollModal.okString", null, null);
@@ -726,34 +696,29 @@ public class FortuneModal extends EmptyFrame
             _local_1.dispatch(_local_2);
         }
 
-        private function onErrorOk(_arg_1:Event):void
-        {
+        private function onErrorOk(_arg_1:Event):void{
             var _local_2:CloseDialogsSignal;
             _local_2 = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             _local_2.dispatch();
         }
 
-        private function fortuneEventOver():void
-        {
+        private function fortuneEventOver():void{
             var _local_1:OpenDialogSignal;
             _local_1 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _local_1.dispatch(new DebugDialog("The Alchemist has left the Nexus.Please check back later.", "Oh no!"));
         }
 
-        private function makeBasicParams():Object
-        {
+        private function makeBasicParams():Object{
             var _local_1:Object = this.account.getCredentials();
             _local_1.gameId = this.fortuneInfo.id;
             return (_local_1);
         }
 
-        private function onSmallBallClick(_arg_1:MouseEvent):void
-        {
+        private function onSmallBallClick(_arg_1:MouseEvent):void{
             this.smallBallClick(_arg_1.currentTarget);
         }
 
-        private function smallBallClick(_arg_1:Object):void
-        {
+        private function smallBallClick(_arg_1:Object):void{
             var _local_2:int;
             var _local_3:int;
             while (_local_3 < 3)
@@ -762,19 +727,18 @@ public class FortuneModal extends EmptyFrame
                 {
                     this.smallBallClickSub(_local_3, _local_2);
                     this.crystals[_local_3].setAnimationClicked();
-                }
+                };
                 if (this.crystals[_local_3] != this.crystalClicked)
                 {
                     _local_2++;
-                }
+                };
                 this.crystals[_local_3].setGlowState(CrystalSmall.GLOW_STATE_FADE);
                 _local_3++;
-            }
+            };
             this.chooseingState = false;
         }
 
-        private function smallBallClickSub(_arg_1:int, _arg_2:int):void
-        {
+        private function smallBallClickSub(_arg_1:int, _arg_2:int):void{
             var _local_3:Object = this.makeBasicParams();
             _local_3.choice = _arg_2;
             _local_3.status = this.state;
@@ -786,11 +750,10 @@ public class FortuneModal extends EmptyFrame
                 this.crystalClicked = this.crystals[_arg_1];
                 this.client.sendRequest("/account/playFortuneGame", _local_3);
                 this.client.complete.addOnce(this.onSmallBallClickComplete);
-            }
+            };
         }
 
-        private function onSmallBallClickComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onSmallBallClickComplete(_arg_1:Boolean, _arg_2:*):void{
             var _local_3:XML;
             var _local_4:OpenDialogSignal;
             if (_arg_1)
@@ -810,8 +773,8 @@ public class FortuneModal extends EmptyFrame
                         new TimerCallback(this.DISPLAY_PRIZE_TIME_1, this.onSmallBallClickCompleteRound2, _local_3.Awards);
                         new TimerCallback(0.25, this.doNova, this.crystalClicked.getCenterX(), this.crystalClicked.getCenterY(), 6, 0xFFFF);
                         new TimerCallback(0.25, this.crystalClicked.doItemReveal, _local_3.Awards);
-                    }
-                }
+                    };
+                };
                 new TimerCallback(0.5, this.setString, 5);
             }
             else
@@ -825,12 +788,11 @@ public class FortuneModal extends EmptyFrame
                 else
                 {
                     _local_4.dispatch(new DebugDialog("You have run out of time to choose.", "Oh no!"));
-                }
-            }
+                };
+            };
         }
 
-        private function onSmallBallClickCompleteRound2(_arg_1:int):void
-        {
+        private function onSmallBallClickCompleteRound2(_arg_1:int):void{
             var _local_2:int;
             this.resetSpinCrystalsVars();
             this.buyButtonsEnable();
@@ -844,9 +806,9 @@ public class FortuneModal extends EmptyFrame
                 if (int(this.items[_local_2]) == _arg_1)
                 {
                     this.items[_local_2] = this.items[(this.items.length - 1)];
-                }
+                };
                 _local_2++;
-            }
+            };
             this.items.pop();
             _local_2 = 0;
             while (_local_2 < this.crystals.length)
@@ -854,14 +816,13 @@ public class FortuneModal extends EmptyFrame
                 if (this.crystals[_local_2] != this.crystalClicked)
                 {
                     this.crystals[_local_2].doItemShow(int(this.items.pop()));
-                }
+                };
                 _local_2++;
-            }
+            };
             this.setString(6);
         }
 
-        private function resetGame():void
-        {
+        private function resetGame():void{
             this.state = STATE_ROUND_1;
             this.ballClickDisable();
             this.buyButtonsEnable();
@@ -880,45 +841,40 @@ public class FortuneModal extends EmptyFrame
             {
                 this.crystals[_local_1].resetVars();
                 _local_1++;
-            }
+            };
             this.resetBalls();
         }
 
-        private function resetSpinCrystalsVars():void
-        {
+        private function resetSpinCrystalsVars():void{
             this.radius = INIT_RADIUS_FROM_MAINCRYTAL;
             this.dtBuildup = 0;
             this.direction = 8;
             this.spinSpeed = 0;
         }
 
-        private function buyButtonsDisable():void
-        {
+        private function buyButtonsDisable():void{
             this.buyButtonGold.removeEventListener(MouseEvent.CLICK, this.onBuyWithGoldClick);
             this.buyButtonFortune.removeEventListener(MouseEvent.CLICK, this.onBuyWithFortuneClick);
         }
 
-        private function buyButtonsEnable():void
-        {
+        private function buyButtonsEnable():void{
             if (this.state == STATE_ROUND_1)
             {
                 this.buyButtonFortune.addEventListener(MouseEvent.CLICK, this.onBuyWithFortuneClick);
-            }
+            };
             this.buyButtonGold.addEventListener(MouseEvent.CLICK, this.onBuyWithGoldClick);
         }
 
-        private function ballClickDisable():void
-        {
+        private function ballClickDisable():void{
             var _local_1:int;
             while (_local_1 < 3)
             {
                 this.crystals[_local_1].removeEventListener(MouseEvent.CLICK, this.onSmallBallClick);
                 _local_1++;
-            }
+            };
         }
 
-        private function ballClickEnable(_arg_1:CrystalSmall=null):void
-        {
+        private function ballClickEnable(_arg_1:CrystalSmall=null):void{
             var _local_2:int;
             while (_local_2 < 3)
             {
@@ -930,13 +886,12 @@ public class FortuneModal extends EmptyFrame
                 {
                     this.crystals[_local_2].addEventListener(MouseEvent.CLICK, this.onSmallBallClick);
                     this.crystals[_local_2].setMouseTracking(true);
-                }
+                };
                 _local_2++;
-            }
+            };
         }
 
-        private function resetBalls():void
-        {
+        private function resetBalls():void{
             var _local_3:Number;
             var _local_1:int = INIT_RADIUS_FROM_MAINCRYTAL;
             var _local_2:int;
@@ -954,18 +909,17 @@ public class FortuneModal extends EmptyFrame
                     if (this.crystals[_local_2].visible == false)
                     {
                         this.crystals[_local_2].visible = true;
-                    }
-                }
+                    };
+                };
                 this.crystals[_local_2].removeItemReveal();
                 this.crystals[_local_2].setInactive();
                 this.crystals[_local_2].reset();
                 _local_2++;
-            }
+            };
             this.crystalClicked = null;
         }
 
-        private function resetBallsRound2():void
-        {
+        private function resetBallsRound2():void{
             var _local_4:Number;
             var _local_1:int;
             var _local_2:int = INIT_RADIUS_FROM_MAINCRYTAL;
@@ -973,7 +927,7 @@ public class FortuneModal extends EmptyFrame
             {
                 this.crystalClicked.visible = false;
                 this.crystalClicked.setInactive();
-            }
+            };
             var _local_3:int;
             while (_local_3 < 3)
             {
@@ -983,19 +937,18 @@ public class FortuneModal extends EmptyFrame
                     this.crystals[_local_3].setXPos((this.crystalMain.getCenterX() + (_local_2 * Math.sin(_local_4))));
                     this.crystals[_local_3].setYPos((this.crystalMain.getCenterY() + (_local_2 * Math.cos(_local_4))));
                     _local_1++;
-                }
+                };
                 _local_3++;
-            }
+            };
         }
 
-        public function spinCrystals():void
-        {
+        public function spinCrystals():void{
             var _local_3:Number;
             var _local_1:int = int(((200 * Math.abs(((int((getTimer() / 2)) % 1000) - 500))) / 1000));
             if (this.spinSpeed < this.MAX_SPIN_SPEED)
             {
                 this.spinSpeed = (this.spinSpeed + 4);
-            }
+            };
             var _local_2:int;
             while (_local_2 < 3)
             {
@@ -1003,11 +956,11 @@ public class FortuneModal extends EmptyFrame
                 this.crystals[_local_2].setXPos((this.crystalMain.getCenterX() + (this.radius * Math.sin(_local_3))));
                 this.crystals[_local_2].setYPos((this.crystalMain.getCenterY() + (this.radius * Math.cos(_local_3))));
                 _local_2++;
-            }
+            };
             if (this.radius == INIT_RADIUS_FROM_MAINCRYTAL)
             {
                 this.direction = (this.direction * -1);
-            }
+            };
             if (this.radius < 0)
             {
                 this.radius = 0;
@@ -1017,12 +970,11 @@ public class FortuneModal extends EmptyFrame
                 if (this.spinSpeed == this.MAX_SPIN_SPEED)
                 {
                     this.radius = (this.radius - ((this.direction * 2.85) / this.SPIN_TIME));
-                }
-            }
+                };
+            };
         }
 
-        public function onEnterFrame(_arg_1:Event):void
-        {
+        public function onEnterFrame(_arg_1:Event):void{
             var _local_5:Number;
             var _local_2:int = getTimer();
             var _local_3:int = (_local_2 - this.lastUpdate_);
@@ -1032,13 +984,13 @@ public class FortuneModal extends EmptyFrame
             {
                 this.spinCrystals();
                 this.crystalMain.setAnimationDuration(((this.MAX_SPIN_SPEED + 80) - this.spinSpeed));
-            }
+            };
             var _local_4:int;
             while (_local_4 < 3)
             {
                 this.crystals[_local_4].update(_local_2, _local_3);
                 _local_4++;
-            }
+            };
             this.rotateAroundCenter(this.platformMain, 0.1);
             this.rotateAroundCenter(this.platformMainSub, -0.15);
             if (this.chooseingState)
@@ -1047,13 +999,12 @@ public class FortuneModal extends EmptyFrame
                 if (_local_5 < 0.05)
                 {
                     this.crystals[int(((_local_5 * 200) % 3))].setShake(true);
-                }
-            }
+                };
+            };
             this.draw(_local_2, _local_3);
         }
 
-        public function rotateAroundCenter(_arg_1:DisplayObject, _arg_2:Number):void
-        {
+        public function rotateAroundCenter(_arg_1:DisplayObject, _arg_2:Number):void{
             if (_arg_2 < 0)
             {
                 _arg_2 = (_arg_2 * -1);
@@ -1062,19 +1013,17 @@ public class FortuneModal extends EmptyFrame
             else
             {
                 _arg_1.rotation = ((_arg_1.rotation + _arg_2) % 360);
-            }
+            };
         }
 
-        public function draw(_arg_1:int, _arg_2:int):void
-        {
+        public function draw(_arg_1:int, _arg_2:int):void{
             this.crystalMain.drawAnimation(_arg_1, _arg_2);
             this.particleMap.update(_arg_1, _arg_2);
             this.particleMap.draw(null, _arg_1);
             this.lastUpdate_ = _arg_1;
         }
 
-        private function doNova(_arg_1:Number, _arg_2:Number, _arg_3:int=20, _arg_4:int=12447231):void
-        {
+        private function doNova(_arg_1:Number, _arg_2:Number, _arg_3:int=20, _arg_4:int=12447231):void{
             var _local_5:GameObject;
             var _local_6:NovaEffect;
             if (this.particleMap != null)
@@ -1084,15 +1033,14 @@ public class FortuneModal extends EmptyFrame
                 _local_5.y_ = ParticleModalMap.getLocalPos(_arg_2);
                 _local_6 = new NovaEffect(_local_5, _arg_3, _arg_4);
                 this.particleMap.addObj(_local_6, _local_5.x_, _local_5.y_);
-            }
+            };
         }
 
-        private function doLightning(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:int=200, _arg_6:int=12447231):void
-        {
+        private function doLightning(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:int=200, _arg_6:int=12447231):void{
             if (this.parent == null)
             {
                 return;
-            }
+            };
             var _local_7:GameObject = new GameObject(null);
             _local_7.x_ = ParticleModalMap.getLocalPos(_arg_1);
             _local_7.y_ = ParticleModalMap.getLocalPos(_arg_2);
@@ -1103,8 +1051,7 @@ public class FortuneModal extends EmptyFrame
             this.particleMap.addObj(_local_9, _local_7.x_, _local_7.y_);
         }
 
-        private function setGameStage(_arg_1:int):void
-        {
+        private function setGameStage(_arg_1:int):void{
             this.gameStage_ = _arg_1;
         }
 

@@ -1,16 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.ColorUtil
 
-package com.company.assembleegameclient.util
-{
-    public class ColorUtil 
-    {
+package com.company.assembleegameclient.util{
+    public class ColorUtil {
 
 
-        public static function rangeRandomSmart(_arg_1:uint, _arg_2:uint):Number
-        {
+        public static function rangeRandomSmart(_arg_1:uint, _arg_2:uint):Number{
             var _local_3:uint = ((_arg_1 >> 16) & 0xFF);
             var _local_4:uint = ((_arg_1 >> 8) & 0xFF);
             var _local_5:uint = (_arg_1 & 0xFF);
@@ -23,8 +20,7 @@ package com.company.assembleegameclient.util
             return (((_local_9 << 16) | (_local_10 << 8)) | _local_11);
         }
 
-        public static function randomSmart(_arg_1:uint):Number
-        {
+        public static function randomSmart(_arg_1:uint):Number{
             var _local_2:uint = ((_arg_1 >> 16) & 0xFF);
             var _local_3:uint = ((_arg_1 >> 8) & 0xFF);
             var _local_4:uint = (_arg_1 & 0xFF);
@@ -34,8 +30,7 @@ package com.company.assembleegameclient.util
             return (((_local_5 << 16) | (_local_6 << 8)) | _local_7);
         }
 
-        public static function rangeRandomMix(_arg_1:uint, _arg_2:uint):Number
-        {
+        public static function rangeRandomMix(_arg_1:uint, _arg_2:uint):Number{
             var _local_3:uint = ((_arg_1 >> 16) & 0xFF);
             var _local_4:uint = ((_arg_1 >> 8) & 0xFF);
             var _local_5:uint = (_arg_1 & 0xFF);
@@ -49,8 +44,7 @@ package com.company.assembleegameclient.util
             return (((_local_10 << 16) | (_local_11 << 8)) | _local_12);
         }
 
-        public static function rangeRandom(_arg_1:uint, _arg_2:uint):Number
-        {
+        public static function rangeRandom(_arg_1:uint, _arg_2:uint):Number{
             return (_arg_2 + (Math.random() * (_arg_1 - _arg_2)));
         }
 

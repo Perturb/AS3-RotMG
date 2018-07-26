@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.KeysMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import kabam.rotmg.game.signals.GameClosedSignal;
 import kabam.rotmg.ui.model.Key;
 import kabam.rotmg.ui.signals.HideKeySignal;
@@ -12,8 +11,7 @@ import kabam.rotmg.ui.signals.ShowKeySignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class KeysMediator extends Mediator 
-    {
+public class KeysMediator extends Mediator {
 
         [Inject]
         public var view:KeysView;
@@ -25,32 +23,27 @@ public class KeysMediator extends Mediator
         public var gameClosed:GameClosedSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.showKey.add(this.onShowKey);
             this.hideKey.add(this.onHideKey);
             this.gameClosed.add(this.onGameClosed);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.showKey.remove(this.onShowKey);
             this.hideKey.remove(this.onHideKey);
             this.gameClosed.remove(this.onGameClosed);
         }
 
-        private function onShowKey(_arg_1:Key):void
-        {
+        private function onShowKey(_arg_1:Key):void{
             this.view.showKey(_arg_1);
         }
 
-        private function onHideKey(_arg_1:Key):void
-        {
+        private function onHideKey(_arg_1:Key):void{
             this.view.hideKey(_arg_1);
         }
 
-        private function onGameClosed():void
-        {
+        private function onGameClosed():void{
             this.view.parent.removeChild(this.view);
         }
 

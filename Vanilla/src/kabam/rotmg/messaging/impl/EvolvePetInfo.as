@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.EvolvePetInfo
 
-package kabam.rotmg.messaging.impl
-{
+package kabam.rotmg.messaging.impl{
 import io.decagames.rotmg.pets.data.vo.PetVO;
 
-public class EvolvePetInfo 
-    {
+public class EvolvePetInfo {
 
         public var initialPet:PetVO;
         public var finalPet:PetVO;

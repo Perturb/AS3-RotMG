@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.options.ChoiceBox
 
-package com.company.assembleegameclient.ui.options
-{
+package com.company.assembleegameclient.ui.options{
 import com.company.util.GraphicsUtil;
 
 import flash.display.CapsStyle;
@@ -24,8 +23,7 @@ import flash.text.TextFieldAutoSize;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class ChoiceBox extends Sprite
-    {
+public class ChoiceBox extends Sprite {
 
         public static const WIDTH:int = 80;
         public static const HEIGHT:int = 32;
@@ -44,8 +42,7 @@ public class ChoiceBox extends Sprite
         private var lineStyle_:GraphicsStroke = new GraphicsStroke(2, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, normalLineFill_);
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[internalFill_, lineStyle_, path_, GraphicsUtil.END_STROKE, GraphicsUtil.END_FILL];
 
-        public function ChoiceBox(_arg_1:Vector.<StringBuilder>, _arg_2:Array, _arg_3:Object, _arg_4:Number=0xFFFFFF)
-        {
+        public function ChoiceBox(_arg_1:Vector.<StringBuilder>, _arg_2:Array, _arg_3:Object, _arg_4:Number=0xFFFFFF){
             this.color = _arg_4;
             this.labels_ = _arg_1;
             this.values_ = _arg_2;
@@ -62,8 +59,7 @@ public class ChoiceBox extends Sprite
             addEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        public function setValue(_arg_1:*, _arg_2:Boolean=true):void
-        {
+        public function setValue(_arg_1:*, _arg_2:Boolean=true):void{
             var _local_3:int;
             while (_local_3 < this.values_.length)
             {
@@ -72,44 +68,39 @@ public class ChoiceBox extends Sprite
                     if (_local_3 == this.selectedIndex_)
                     {
                         return;
-                    }
+                    };
                     this.selectedIndex_ = _local_3;
                     break;
-                }
+                };
                 _local_3++;
-            }
+            };
             this.setSelected(this.selectedIndex_);
             if (_arg_2)
             {
                 dispatchEvent(new Event(Event.CHANGE));
-            }
+            };
         }
 
-        public function value():*
-        {
+        public function value():*{
             return (this.values_[this.selectedIndex_]);
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.over_ = true;
             this.drawBackground();
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             this.over_ = false;
             this.drawBackground();
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             this.setSelected(((this.selectedIndex_ + 1) % this.values_.length));
             dispatchEvent(new Event(Event.CHANGE));
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             GraphicsUtil.clearPath(this.path_);
             GraphicsUtil.drawCutEdgeRect(0, 0, WIDTH, HEIGHT, 4, [1, 1, 1, 1], this.path_);
             this.lineStyle_.fill = ((this.over_) ? this.overLineFill_ : this.normalLineFill_);
@@ -119,18 +110,16 @@ public class ChoiceBox extends Sprite
             _local_1.drawGraphicsData(this.graphicsData_);
         }
 
-        private function setSelected(_arg_1:int):void
-        {
+        private function setSelected(_arg_1:int):void{
             this.selectedIndex_ = _arg_1;
             if (((this.selectedIndex_ < 0) || (this.selectedIndex_ >= this.labels_.length)))
             {
                 this.selectedIndex_ = 0;
-            }
+            };
             this.setText(this.labels_[this.selectedIndex_]);
         }
 
-        private function setText(_arg_1:StringBuilder):void
-        {
+        private function setText(_arg_1:StringBuilder):void{
             this.labelText_.setStringBuilder(_arg_1);
             this.drawBackground();
         }

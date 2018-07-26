@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaLeaderboardTab
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
@@ -15,8 +14,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class ArenaLeaderboardTab extends Sprite 
-    {
+public class ArenaLeaderboardTab extends Sprite {
 
         private static const OVER_COLOR:int = 16567065;
         private static const DOWN_COLOR:int = 0xFFFFFF;
@@ -31,32 +29,27 @@ public class ArenaLeaderboardTab extends Sprite
         public const readyToAlign:Signal = label.textChanged;
         public const selected:Signal = new Signal(ArenaLeaderboardTab);
 
-        public function ArenaLeaderboardTab(_arg_1:ArenaLeaderboardFilter)
-        {
+        public function ArenaLeaderboardTab(_arg_1:ArenaLeaderboardFilter){
             this.filter = _arg_1;
             this.label.setStringBuilder(new LineBuilder().setParams(_arg_1.getName()));
             addChild(this.label);
             this.addMouseListeners();
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             this.removeMouseListeners();
         }
 
-        public function getFilter():ArenaLeaderboardFilter
-        {
+        public function getFilter():ArenaLeaderboardFilter{
             return (this.filter);
         }
 
-        public function setSelected(_arg_1:Boolean):void
-        {
+        public function setSelected(_arg_1:Boolean):void{
             this.isSelected = _arg_1;
             this.redraw();
         }
 
-        private function addMouseListeners():void
-        {
+        private function addMouseListeners():void{
             addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
@@ -64,8 +57,7 @@ public class ArenaLeaderboardTab extends Sprite
             addEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        private function removeMouseListeners():void
-        {
+        private function removeMouseListeners():void{
             removeEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
             removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
@@ -73,16 +65,14 @@ public class ArenaLeaderboardTab extends Sprite
             removeEventListener(MouseEvent.CLICK, this.onClick);
         }
 
-        private function onClick(_arg_1:MouseEvent):void
-        {
+        private function onClick(_arg_1:MouseEvent):void{
             if (!this.isSelected)
             {
                 this.selected.dispatch(this);
-            }
+            };
         }
 
-        private function redraw():void
-        {
+        private function redraw():void{
             if (this.isOver)
             {
                 this.label.setColor(OVER_COLOR);
@@ -96,37 +86,32 @@ public class ArenaLeaderboardTab extends Sprite
                 else
                 {
                     this.label.setColor(OUT_COLOR);
-                }
-            }
+                };
+            };
         }
 
-        private function onMouseUp(_arg_1:MouseEvent):void
-        {
+        private function onMouseUp(_arg_1:MouseEvent):void{
             this.isDown = false;
             this.redraw();
         }
 
-        private function onMouseDown(_arg_1:MouseEvent):void
-        {
+        private function onMouseDown(_arg_1:MouseEvent):void{
             this.isDown = true;
             this.redraw();
         }
 
-        private function onMouseOut(_arg_1:MouseEvent):void
-        {
+        private function onMouseOut(_arg_1:MouseEvent):void{
             this.isOver = false;
             this.isDown = false;
             this.redraw();
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.isOver = true;
             this.redraw();
         }
 
-        private function makeLabel():StaticTextDisplay
-        {
+        private function makeLabel():StaticTextDisplay{
             var _local_1:StaticTextDisplay;
             _local_1 = new StaticTextDisplay();
             _local_1.setBold(true).setColor(0xB3B3B3).setSize(20);

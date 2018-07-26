@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.partyoverlay.GameObjectArrow
 
-package com.company.assembleegameclient.map.partyoverlay
-{
+package com.company.assembleegameclient.map.partyoverlay{
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.ui.menu.Menu;
@@ -21,8 +20,7 @@ import flash.filters.DropShadowFilter;
 import flash.geom.Point;
 import flash.geom.Rectangle;
 
-public class GameObjectArrow extends Sprite
-    {
+public class GameObjectArrow extends Sprite {
 
         public static const SMALL_SIZE:int = 8;
         public static const BIG_SIZE:int = 11;
@@ -40,8 +38,7 @@ public class GameObjectArrow extends Sprite
         protected var tooltip_:ToolTip = null;
         private var tempPoint:Point = new Point();
 
-        public function GameObjectArrow(_arg_1:uint, _arg_2:uint, _arg_3:Boolean)
-        {
+        public function GameObjectArrow(_arg_1:uint, _arg_2:uint, _arg_3:Boolean){
             this.lineColor_ = _arg_1;
             this.fillColor_ = _arg_2;
             this.big_ = _arg_3;
@@ -54,86 +51,76 @@ public class GameObjectArrow extends Sprite
             visible = false;
         }
 
-        public static function removeMenu():void
-        {
+        public static function removeMenu():void{
             if (menu_ != null)
             {
                 if (menu_.parent != null)
                 {
                     menu_.parent.removeChild(menu_);
-                }
+                };
                 menu_ = null;
-            }
+            };
         }
 
 
-        protected function onMouseOver(_arg_1:MouseEvent):void
-        {
+        protected function onMouseOver(_arg_1:MouseEvent):void{
             this.mouseOver_ = true;
             this.drawArrow();
         }
 
-        protected function onMouseOut(_arg_1:MouseEvent):void
-        {
+        protected function onMouseOut(_arg_1:MouseEvent):void{
             this.mouseOver_ = false;
             this.drawArrow();
         }
 
-        protected function onMouseDown(_arg_1:MouseEvent):void
-        {
+        protected function onMouseDown(_arg_1:MouseEvent):void{
             _arg_1.stopImmediatePropagation();
         }
 
-        protected function setToolTip(_arg_1:ToolTip):void
-        {
+        protected function setToolTip(_arg_1:ToolTip):void{
             this.removeTooltip();
             this.tooltip_ = _arg_1;
             if (this.tooltip_ != null)
             {
                 addChild(this.tooltip_);
                 this.positionTooltip(this.tooltip_);
-            }
+            };
         }
 
-        protected function removeTooltip():void
-        {
+        protected function removeTooltip():void{
             if (this.tooltip_ != null)
             {
                 if (this.tooltip_.parent != null)
                 {
                     this.tooltip_.parent.removeChild(this.tooltip_);
-                }
+                };
                 this.tooltip_ = null;
-            }
+            };
         }
 
-        protected function setMenu(_arg_1:Menu):void
-        {
+        protected function setMenu(_arg_1:Menu):void{
             this.removeTooltip();
             menu_ = _arg_1;
             this.menuLayer.addChild(menu_);
         }
 
-        public function setGameObject(_arg_1:GameObject):void
-        {
+        public function setGameObject(_arg_1:GameObject):void{
             if (this.go_ != _arg_1)
             {
                 this.go_ = _arg_1;
-            }
+            };
             this.extraGOs_.length = 0;
             if (this.go_ == null)
             {
                 visible = false;
-            }
+            };
         }
 
-        public function addGameObject(_arg_1:GameObject):void
-        {
+        public function addGameObject(_arg_1:GameObject):void{
             this.extraGOs_.push(_arg_1);
         }
 
-        public function draw(_arg_1:int, _arg_2:Camera):void
-        {
+        public function draw(_arg_1:int, _arg_2:Camera):void{
             var _local_3:Rectangle;
             var _local_4:Number;
             var _local_5:Number;
@@ -141,7 +128,7 @@ public class GameObjectArrow extends Sprite
             {
                 visible = false;
                 return;
-            }
+            };
             this.go_.computeSortVal(_arg_2);
             _local_3 = _arg_2.clipRect_;
             _local_4 = this.go_.posS_[0];
@@ -151,7 +138,7 @@ public class GameObjectArrow extends Sprite
                 this.go_ = null;
                 visible = false;
                 return;
-            }
+            };
             x = this.tempPoint.x;
             y = this.tempPoint.y;
             var _local_6:Number = Trig.boundTo180((270 - (Trig.toDegrees * Math.atan2(_local_4, _local_5))));
@@ -160,11 +147,11 @@ public class GameObjectArrow extends Sprite
                 if (_local_6 > 45)
                 {
                     _local_6 = 45;
-                }
+                };
                 if (_local_6 < -45)
                 {
                     _local_6 = -45;
-                }
+                };
             }
             else
             {
@@ -175,27 +162,27 @@ public class GameObjectArrow extends Sprite
                         if (_local_6 < 135)
                         {
                             _local_6 = 135;
-                        }
+                        };
                     }
                     else
                     {
                         if (_local_6 > -135)
                         {
                             _local_6 = -135;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             if (this.tempPoint.y < (_local_3.top + 5))
             {
                 if (_local_6 < 45)
                 {
                     _local_6 = 45;
-                }
+                };
                 if (_local_6 > 135)
                 {
                     _local_6 = 135;
-                }
+                };
             }
             else
             {
@@ -204,23 +191,22 @@ public class GameObjectArrow extends Sprite
                     if (_local_6 > -45)
                     {
                         _local_6 = -45;
-                    }
+                    };
                     if (_local_6 < -135)
                     {
                         _local_6 = -135;
-                    }
-                }
-            }
+                    };
+                };
+            };
             this.arrow_.rotation = _local_6;
             if (this.tooltip_ != null)
             {
                 this.positionTooltip(this.tooltip_);
-            }
+            };
             visible = true;
         }
 
-        private function positionTooltip(_arg_1:ToolTip):void
-        {
+        private function positionTooltip(_arg_1:ToolTip):void{
             var _local_5:Number;
             var _local_8:Number;
             var _local_9:Number;
@@ -257,13 +243,12 @@ public class GameObjectArrow extends Sprite
                         _arg_1.x = (_local_4 - _local_6);
                         _local_9 = (_local_5 - (_local_7 * Math.tan((_local_2 * Trig.toRadians))));
                         _arg_1.y = (((_local_5 + _local_9) / 2) - (_local_7 / 2));
-                    }
-                }
-            }
+                    };
+                };
+            };
         }
 
-        private function drawArrow():void
-        {
+        private function drawArrow():void{
             var _local_1:Graphics = this.arrow_.graphics;
             _local_1.clear();
             var _local_2:int = (((this.big_) || (this.mouseOver_)) ? BIG_SIZE : SMALL_SIZE);

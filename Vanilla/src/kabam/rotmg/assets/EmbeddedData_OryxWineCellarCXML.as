@@ -1,4 +1,4 @@
-package kabam.rotmg.assets
+﻿package kabam.rotmg.assets
 {
 import mx.core.*;
 

@@ -1,23 +1,20 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.modal.ConfirmationModal
 
-package io.decagames.rotmg.ui.popups.modal
-{
+package io.decagames.rotmg.ui.popups.modal{
 import io.decagames.rotmg.ui.buttons.BaseButton;
 import io.decagames.rotmg.ui.buttons.SliceScalingButton;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class ConfirmationModal extends TextModal
-    {
+public class ConfirmationModal extends TextModal {
 
         public var confirmButton:SliceScalingButton;
 
-        public function ConfirmationModal(_arg_1:int, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:String, _arg_6:int=100)
-        {
+        public function ConfirmationModal(_arg_1:int, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:String, _arg_6:int=100){
             var _local_7:Vector.<BaseButton>;
             _local_7 = new Vector.<BaseButton>();
             var _local_8:ClosePopupButton = new ClosePopupButton(_arg_5);

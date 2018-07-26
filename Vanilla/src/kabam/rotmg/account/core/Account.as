@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.Account
 
-package kabam.rotmg.account.core
-{
-    public interface Account 
-    {
+package kabam.rotmg.account.core{
+    public interface Account {
 
         function getPlatformToken():String;
         function setPlatformToken(_arg_1:String):void;

@@ -1,37 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.model.DeathModel
 
-package kabam.rotmg.death.model
-{
+package kabam.rotmg.death.model{
 import kabam.rotmg.messaging.impl.incoming.Death;
 
-public class DeathModel 
-    {
+public class DeathModel {
 
         private var isDeathFameViewPending:Boolean;
         private var lastDeath:Death;
 
 
-        public function setLastDeath(_arg_1:Death):void
-        {
+        public function setLastDeath(_arg_1:Death):void{
             this.lastDeath = _arg_1;
             this.isDeathFameViewPending = true;
         }
 
-        public function getLastDeath():Death
-        {
+        public function getLastDeath():Death{
             return (this.lastDeath);
         }
 
-        public function getIsDeathViewPending():Boolean
-        {
+        public function getIsDeathViewPending():Boolean{
             return (this.isDeathFameViewPending);
         }
 
-        public function clearPendingDeathView():void
-        {
+        public function clearPendingDeathView():void{
             this.isDeathFameViewPending = false;
         }
 

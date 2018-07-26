@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.ChooseNameRegisterMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ChooseNameRegisterMediator extends Mediator
-    {
+public class ChooseNameRegisterMediator extends Mediator {
 
         [Inject]
         public var view:ChooseNameRegisterDialog;
@@ -18,26 +16,22 @@ public class ChooseNameRegisterMediator extends Mediator
         public var openAccountManagement:OpenAccountInfoSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.register.add(this.onRegister);
             this.view.cancel.add(this.onCancel);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.register.remove(this.onRegister);
             this.view.cancel.remove(this.onCancel);
         }
 
-        private function onRegister():void
-        {
+        private function onRegister():void{
             this.onCancel();
             this.openAccountManagement.dispatch();
         }
 
-        private function onCancel():void
-        {
+        private function onCancel():void{
             this.view.parent.removeChild(this.view);
         }
 

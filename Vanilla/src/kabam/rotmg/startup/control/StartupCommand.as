@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.startup.control.StartupCommand
 
-package kabam.rotmg.startup.control
-{
+package kabam.rotmg.startup.control{
 import kabam.lib.tasks.TaskMonitor;
 
-public class StartupCommand
-    {
+public class StartupCommand {
 
         [Inject]
         public var startup:StartupSequence;
@@ -16,8 +14,7 @@ public class StartupCommand
         public var monitor:TaskMonitor;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.monitor.add(this.startup);
             this.startup.start();
         }

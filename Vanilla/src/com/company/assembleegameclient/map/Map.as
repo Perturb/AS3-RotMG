@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.map.Map
 
-package com.company.assembleegameclient.map
-{
+package com.company.assembleegameclient.map{
 import com.company.assembleegameclient.background.Background;
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
@@ -40,8 +39,7 @@ import kabam.rotmg.stage3D.Renderer;
 import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
 import kabam.rotmg.stage3D.graphic3D.TextureFactory;
 
-public class Map extends AbstractMap
-    {
+public class Map extends AbstractMap {
 
         public static const CLOTH_BAZAAR:String = "Cloth Bazaar";
         public static const NEXUS:String = "Nexus";
@@ -74,13 +72,12 @@ public class Map extends AbstractMap
         private var graphicsData_:Vector.<IGraphicsData> = new Vector.<IGraphicsData>();
         private var graphicsDataStageSoftware_:Vector.<IGraphicsData> = new Vector.<IGraphicsData>();
         private var graphicsData3d_:Vector.<Object3DStage3D> = new Vector.<Object3DStage3D>();
-        public var visible_:Array = [];
-        public var visibleUnder_:Array = [];
+        public var visible_:Array = new Array();
+        public var visibleUnder_:Array = new Array();
         public var visibleSquares_:Vector.<Square> = new Vector.<Square>();
         public var topSquares_:Vector.<Square> = new Vector.<Square>();
 
-        public function Map(_arg_1:AGameSprite)
-        {
+        public function Map(_arg_1:AGameSprite){
             gs_ = _arg_1;
             hurtOverlay_ = new HurtOverlay();
             gradientOverlay_ = new GradientOverlay();
@@ -108,8 +105,7 @@ public class Map extends AbstractMap
             wasLastFrameGpu = Parameters.isGpuRender();
         }
 
-        override public function setProps(_arg_1:int, _arg_2:int, _arg_3:String, _arg_4:int, _arg_5:Boolean, _arg_6:Boolean):void
-        {
+        override public function setProps(_arg_1:int, _arg_2:int, _arg_3:String, _arg_4:int, _arg_5:Boolean, _arg_6:Boolean):void{
             width_ = _arg_1;
             height_ = _arg_2;
             name_ = _arg_3;
@@ -119,13 +115,11 @@ public class Map extends AbstractMap
             this.forceSoftwareRenderCheck(name_);
         }
 
-        private function forceSoftwareRenderCheck(_arg_1:String):void
-        {
+        private function forceSoftwareRenderCheck(_arg_1:String):void{
             forceSoftwareRender = ((!(this.forceSoftwareMap[_arg_1] == null)) || ((!(WebMain.STAGE == null)) && (WebMain.STAGE.stage3Ds[0].context3D == null)));
         }
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             squares_.length = (width_ * height_);
             addChild(this.bgCont);
             background_ = Background.getBackground(back_);
@@ -134,8 +128,8 @@ public class Map extends AbstractMap
                 if (background_ != null)
                 {
                     this.bgCont.addChild(background_);
-                }
-            }
+                };
+            };
             addChild(map_);
             addChild(hurtOverlay_);
             addChild(gradientOverlay_);
@@ -144,8 +138,7 @@ public class Map extends AbstractMap
             isPetYard = (name_.substr(0, 8) == "Pet Yard");
         }
 
-        override public function dispose():void
-        {
+        override public function dispose():void{
             var _local_1:Square;
             var _local_2:GameObject;
             var _local_3:BasicObject;
@@ -159,7 +152,7 @@ public class Map extends AbstractMap
             for each (_local_1 in squareList_)
             {
                 _local_1.dispose();
-            }
+            };
             squareList_.length = 0;
             squareList_ = null;
             squares_.length = 0;
@@ -167,12 +160,12 @@ public class Map extends AbstractMap
             for each (_local_2 in goDict_)
             {
                 _local_2.dispose();
-            }
+            };
             goDict_ = null;
             for each (_local_3 in boDict_)
             {
                 _local_3.dispose();
-            }
+            };
             boDict_ = null;
             merchLookup_ = null;
             player_ = null;
@@ -185,8 +178,7 @@ public class Map extends AbstractMap
             Program3DFactory.getInstance().dispose();
         }
 
-        override public function update(_arg_1:int, _arg_2:int):void
-        {
+        override public function update(_arg_1:int, _arg_2:int):void{
             var _local_3:BasicObject;
             var _local_4:int;
             this.inUpdate_ = true;
@@ -195,44 +187,42 @@ public class Map extends AbstractMap
                 if (!_local_3.update(_arg_1, _arg_2))
                 {
                     this.idsToRemove_.push(_local_3.objectId_);
-                }
-            }
+                };
+            };
             for each (_local_3 in boDict_)
             {
                 if (!_local_3.update(_arg_1, _arg_2))
                 {
                     this.idsToRemove_.push(_local_3.objectId_);
-                }
-            }
+                };
+            };
             this.inUpdate_ = false;
             for each (_local_3 in this.objsToAdd_)
             {
                 this.internalAddObj(_local_3);
-            }
+            };
             this.objsToAdd_.length = 0;
             for each (_local_4 in this.idsToRemove_)
             {
                 this.internalRemoveObj(_local_4);
-            }
+            };
             this.idsToRemove_.length = 0;
             party_.update(_arg_1, _arg_2);
         }
 
-        override public function pSTopW(_arg_1:Number, _arg_2:Number):Point
-        {
+        override public function pSTopW(_arg_1:Number, _arg_2:Number):Point{
             var _local_3:Square;
             for each (_local_3 in this.visibleSquares_)
             {
                 if (((!(_local_3.faces_.length == 0)) && (_local_3.faces_[0].face_.contains(_arg_1, _arg_2))))
                 {
                     return (new Point(_local_3.center_.x, _local_3.center_.y));
-                }
-            }
+                };
+            };
             return (null);
         }
 
-        override public function setGroundTile(_arg_1:int, _arg_2:int, _arg_3:uint):void
-        {
+        override public function setGroundTile(_arg_1:int, _arg_2:int, _arg_3:uint):void{
             var _local_8:int;
             var _local_9:int;
             var _local_10:Square;
@@ -251,21 +241,20 @@ public class Map extends AbstractMap
                     if (((!(_local_10 == null)) && ((_local_10.props_.hasEdge_) || (!(_local_10.tileType_ == _arg_3)))))
                     {
                         _local_10.faces_.length = 0;
-                    }
+                    };
                     _local_8++;
-                }
+                };
                 _local_7++;
-            }
+            };
         }
 
-        override public function addObj(_arg_1:BasicObject, _arg_2:Number, _arg_3:Number):void
-        {
+        override public function addObj(_arg_1:BasicObject, _arg_2:Number, _arg_3:Number):void{
             _arg_1.x_ = _arg_2;
             _arg_1.y_ = _arg_3;
             if ((_arg_1 is ParticleEffect))
             {
                 (_arg_1 as ParticleEffect).reducedDrawEnabled = (!(Parameters.data_.particleEffect));
-            }
+            };
             if (this.inUpdate_)
             {
                 this.objsToAdd_.push(_arg_1);
@@ -273,28 +262,26 @@ public class Map extends AbstractMap
             else
             {
                 this.internalAddObj(_arg_1);
-            }
+            };
         }
 
-        public function internalAddObj(_arg_1:BasicObject):void
-        {
+        public function internalAddObj(_arg_1:BasicObject):void{
             if (!_arg_1.addTo(this, _arg_1.x_, _arg_1.y_))
             {
                 return;
-            }
+            };
             var _local_2:Dictionary = ((_arg_1 is GameObject) ? goDict_ : boDict_);
             if (_local_2[_arg_1.objectId_] != null)
             {
                 if (!isPetYard)
                 {
                     return;
-                }
-            }
+                };
+            };
             _local_2[_arg_1.objectId_] = _arg_1;
         }
 
-        override public function removeObj(_arg_1:int):void
-        {
+        override public function removeObj(_arg_1:int):void{
             if (this.inUpdate_)
             {
                 this.idsToRemove_.push(_arg_1);
@@ -302,11 +289,10 @@ public class Map extends AbstractMap
             else
             {
                 this.internalRemoveObj(_arg_1);
-            }
+            };
         }
 
-        public function internalRemoveObj(_arg_1:int):void
-        {
+        public function internalRemoveObj(_arg_1:int):void{
             var _local_2:Dictionary = goDict_;
             var _local_3:BasicObject = _local_2[_arg_1];
             if (_local_3 == null)
@@ -316,18 +302,17 @@ public class Map extends AbstractMap
                 if (_local_3 == null)
                 {
                     return;
-                }
-            }
+                };
+            };
             _local_3.removeFromMap();
             delete _local_2[_arg_1];
         }
 
-        public function getSquare(_arg_1:Number, _arg_2:Number):Square
-        {
+        public function getSquare(_arg_1:Number, _arg_2:Number):Square{
             if (((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
             {
                 return (null);
-            }
+            };
             var _local_3:int = (int(_arg_1) + (int(_arg_2) * width_));
             var _local_4:Square = squares_[_local_3];
             if (_local_4 == null)
@@ -335,21 +320,19 @@ public class Map extends AbstractMap
                 _local_4 = new Square(this, int(_arg_1), int(_arg_2));
                 squares_[_local_3] = _local_4;
                 squareList_.push(_local_4);
-            }
+            };
             return (_local_4);
         }
 
-        public function lookupSquare(_arg_1:int, _arg_2:int):Square
-        {
+        public function lookupSquare(_arg_1:int, _arg_2:int):Square{
             if (((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
             {
                 return (null);
-            }
+            };
             return (squares_[(_arg_1 + (_arg_2 * width_))]);
         }
 
-        override public function draw(_arg_1:Camera, _arg_2:int):void
-        {
+        override public function draw(_arg_1:Camera, _arg_2:int):void{
             var _local_6:Square;
             var _local_13:GameObject;
             var _local_14:BasicObject;
@@ -374,7 +357,7 @@ public class Map extends AbstractMap
                 else
                 {
                     map_.graphics.clear();
-                }
+                };
                 signalRenderSwitch.dispatch(wasLastFrameGpu);
                 wasLastFrameGpu = Parameters.isGpuRender();
                 if (Parameters.isGpuRender())
@@ -382,16 +365,16 @@ public class Map extends AbstractMap
                     if (((!(background_ == null)) && (this.bgCont.contains(background_))))
                     {
                         this.bgCont.removeChild(background_);
-                    }
+                    };
                 }
                 else
                 {
                     if (((!(background_ == null)) && (!(this.bgCont.contains(background_)))))
                     {
                         this.bgCont.addChild(background_);
-                    }
-                }
-            }
+                    };
+                };
+            };
             var _local_3:Rectangle = _arg_1.clipRect_;
             x = -(_local_3.x);
             y = -(_local_3.y);
@@ -400,7 +383,7 @@ public class Map extends AbstractMap
             if (((!(background_ == null)) && (this.bgCont.contains(background_))))
             {
                 background_.draw(_arg_1, _arg_2);
-            }
+            };
             this.visible_.length = 0;
             this.visibleUnder_.length = 0;
             this.visibleSquares_.length = 0;
@@ -433,13 +416,13 @@ public class Map extends AbstractMap
                             if (_local_6.topFace_ != null)
                             {
                                 this.topSquares_.push(_local_6);
-                            }
-                        }
-                    }
+                            };
+                        };
+                    };
                     _local_15++;
-                }
+                };
                 _local_12++;
-            }
+            };
             for each (_local_13 in goDict_)
             {
                 _local_13.drawn_ = false;
@@ -459,15 +442,15 @@ public class Map extends AbstractMap
                             else
                             {
                                 this.visibleUnder_.push(_local_13);
-                            }
+                            };
                         }
                         else
                         {
                             this.visible_.push(_local_13);
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             for each (_local_14 in boDict_)
             {
                 _local_14.drawn_ = false;
@@ -477,16 +460,16 @@ public class Map extends AbstractMap
                     _local_14.drawn_ = true;
                     _local_14.computeSortVal(_arg_1);
                     this.visible_.push(_local_14);
-                }
-            }
+                };
+            };
             if (this.visibleUnder_.length > 0)
             {
                 this.visibleUnder_.sortOn(VISIBLE_SORT_FIELDS, VISIBLE_SORT_PARAMS);
                 for each (_local_14 in this.visibleUnder_)
                 {
                     _local_14.draw(this.graphicsData_, _arg_1, _arg_2);
-                }
-            }
+                };
+            };
             this.visible_.sortOn(VISIBLE_SORT_FIELDS, VISIBLE_SORT_PARAMS);
             if (Parameters.data_.drawShadows)
             {
@@ -495,24 +478,24 @@ public class Map extends AbstractMap
                     if (_local_14.hasShadow_)
                     {
                         _local_14.drawShadow(this.graphicsData_, _arg_1, _arg_2);
-                    }
-                }
-            }
+                    };
+                };
+            };
             for each (_local_14 in this.visible_)
             {
                 _local_14.draw(this.graphicsData_, _arg_1, _arg_2);
                 if (Parameters.isGpuRender())
                 {
                     _local_14.draw3d(this.graphicsData3d_);
-                }
-            }
+                };
+            };
             if (this.topSquares_.length > 0)
             {
                 for each (_local_6 in this.topSquares_)
                 {
                     _local_6.drawTop(this.graphicsData_, _arg_1, _arg_2);
-                }
-            }
+                };
+            };
             if ((((!(player_ == null)) && (player_.breath_ >= 0)) && (player_.breath_ < Parameters.BREATH_THRESH)))
             {
                 _local_19 = ((Parameters.BREATH_THRESH - player_.breath_) / Parameters.BREATH_THRESH);
@@ -526,7 +509,7 @@ public class Map extends AbstractMap
             else
             {
                 hurtOverlay_.visible = false;
-            }
+            };
             if (((!(player_ == null)) && (!(Parameters.screenShotMode_))))
             {
                 gradientOverlay_.visible = true;
@@ -536,7 +519,7 @@ public class Map extends AbstractMap
             else
             {
                 gradientOverlay_.visible = false;
-            }
+            };
             if (((Parameters.isGpuRender()) && (Renderer.inGame)))
             {
                 _local_21 = this.getFilterIndex();
@@ -558,10 +541,10 @@ public class Map extends AbstractMap
                             this.graphicsDataStageSoftware_.push(this.graphicsData_[_local_23]);
                             this.graphicsDataStageSoftware_.push(this.graphicsData_[(_local_23 + 1)]);
                             this.graphicsDataStageSoftware_.push(this.graphicsData_[(_local_23 + 2)]);
-                        }
-                    }
+                        };
+                    };
                     _local_23++;
-                }
+                };
                 if (this.graphicsDataStageSoftware_.length > 0)
                 {
                     map_.graphics.clear();
@@ -569,7 +552,7 @@ public class Map extends AbstractMap
                     if (this.lastSoftwareClear)
                     {
                         this.lastSoftwareClear = false;
-                    }
+                    };
                 }
                 else
                 {
@@ -577,18 +560,18 @@ public class Map extends AbstractMap
                     {
                         map_.graphics.clear();
                         this.lastSoftwareClear = true;
-                    }
-                }
+                    };
+                };
                 if ((_arg_2 % 149) == 0)
                 {
                     GraphicsFillExtra.manageSize();
-                }
+                };
             }
             else
             {
                 map_.graphics.clear();
                 map_.graphics.drawGraphicsData(this.graphicsData_);
-            }
+            };
             map_.filters.length = 0;
             if (((!(player_ == null)) && (!((player_.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.MAP_FILTER_BITMASK) == 0))))
             {
@@ -597,11 +580,11 @@ public class Map extends AbstractMap
                 {
                     _local_25 = (20 + (10 * Math.sin((_arg_2 / 1000))));
                     _local_24.push(new BlurFilter(_local_25, _local_25));
-                }
+                };
                 if (player_.isBlind())
                 {
                     _local_24.push(BLIND_FILTER);
-                }
+                };
                 map_.filters = _local_24;
             }
             else
@@ -609,8 +592,8 @@ public class Map extends AbstractMap
                 if (map_.filters.length > 0)
                 {
                     map_.filters = [];
-                }
-            }
+                };
+            };
             mapOverlay_.draw(_arg_1, _arg_2);
             partyOverlay_.draw(_arg_1, _arg_2);
             if (((player_) && (player_.isDarkness())))
@@ -625,12 +608,11 @@ public class Map extends AbstractMap
                 if (contains(this.darkness))
                 {
                     removeChild(this.darkness);
-                }
-            }
+                };
+            };
         }
 
-        private function getFilterIndex():uint
-        {
+        private function getFilterIndex():uint{
             var _local_1:uint;
             if (((!(player_ == null)) && (!((player_.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.MAP_FILTER_BITMASK) == 0))))
             {
@@ -649,10 +631,10 @@ public class Map extends AbstractMap
                         if (player_.isDrunk())
                         {
                             _local_1 = Renderer.STAGE3D_FILTER_DRUNK;
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             return (_local_1);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.friends.view.FriendListMediator
 
-package kabam.rotmg.friends.view
-{
+package kabam.rotmg.friends.view{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
@@ -25,8 +24,7 @@ import kabam.rotmg.ui.signals.EnterGameSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class FriendListMediator extends Mediator
-    {
+public class FriendListMediator extends Mediator {
 
         [Inject]
         public var view:FriendListView;
@@ -48,35 +46,30 @@ public class FriendListMediator extends Mediator
         public var playGame:PlayGameSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.actionSignal.add(this.onFriendActed);
             this.view.tabSignal.add(this.onTabSwitched);
             this.model.socialDataSignal.add(this.initView);
             this.model.loadFriendsData();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.actionSignal.removeAll();
             this.view.tabSignal.removeAll();
         }
 
-        private function initView(_arg_1:Boolean=false):void
-        {
+        private function initView(_arg_1:Boolean=false):void{
             if (_arg_1)
             {
                 this.view.init(this.model.friendsList, this.model.getAllInvitations(), this.model.getCurrentServerName());
-            }
+            };
         }
 
-        private function reportError(_arg_1:String):void
-        {
+        private function reportError(_arg_1:String):void{
             this.openDialog.dispatch(new ErrorDialog(_arg_1));
         }
 
-        private function onTabSwitched(_arg_1:String):void
-        {
+        private function onTabSwitched(_arg_1:String):void{
             switch (_arg_1)
             {
                 case FriendsActions.FRIEND_TAB:
@@ -85,11 +78,10 @@ public class FriendListMediator extends Mediator
                 case FriendsActions.INVITE_TAB:
                     this.view.updateInvitationTab(this.model.getAllInvitations());
                     return;
-            }
+            };
         }
 
-        private function onFriendActed(_arg_1:String, _arg_2:String):void
-        {
+        private function onFriendActed(_arg_1:String, _arg_2:String):void{
             var _local_4:String;
             var _local_5:String;
             var _local_3:FriendRequestVO = new FriendRequestVO(_arg_1, _arg_2);
@@ -105,15 +97,15 @@ public class FriendListMediator extends Mediator
                         if (_arg_2 == "")
                         {
                             this.view.updateFriendTab(this.model.friendsList, this.model.getCurrentServerName());
-                        }
-                    }
+                        };
+                    };
                     return;
                 case FriendsActions.INVITE:
                     if (this.model.ifReachMax())
                     {
                         this.view.updateInput(TextKey.FRIEND_REACH_CAPACITY);
                         return;
-                    }
+                    };
                     _local_3.callback = this.inviteFriendCallback;
                     break;
                 case FriendsActions.REMOVE:
@@ -140,12 +132,11 @@ public class FriendListMediator extends Mediator
                 case FriendsActions.JUMP:
                     this.jumpCallback(_arg_2);
                     return;
-            }
+            };
             this.actionSignal.dispatch(_local_3);
         }
 
-        private function inviteFriendCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void
-        {
+        private function inviteFriendCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void{
             if (_arg_1)
             {
                 this.view.updateInput(TextKey.FRIEND_SENT_INVITATION_TEXT, {"name":_arg_3});
@@ -159,12 +150,11 @@ public class FriendListMediator extends Mediator
                 else
                 {
                     this.view.updateInput(_arg_2);
-                }
-            }
+                };
+            };
         }
 
-        private function removeFriendCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void
-        {
+        private function removeFriendCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void{
             if (_arg_1)
             {
                 this.model.removeFriend(_arg_3);
@@ -172,53 +162,48 @@ public class FriendListMediator extends Mediator
             else
             {
                 this.reportError(_arg_2);
-            }
+            };
         }
 
-        private function acceptInvitationCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void
-        {
+        private function acceptInvitationCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void{
             if (_arg_1)
             {
                 this.model.seedFriends(XML(_arg_2));
                 if (this.model.removeInvitation(_arg_3))
                 {
                     this.view.updateInvitationTab(this.model.getAllInvitations());
-                }
+                };
             }
             else
             {
                 this.reportError(_arg_2);
-            }
+            };
         }
 
-        private function rejectInvitationCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void
-        {
+        private function rejectInvitationCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void{
             if (_arg_1)
             {
                 if (this.model.removeInvitation(_arg_3))
                 {
                     this.view.updateInvitationTab(this.model.getAllInvitations());
-                }
+                };
             }
             else
             {
                 this.reportError(_arg_2);
-            }
+            };
         }
 
-        private function blockInvitationCallback(_arg_1:String):void
-        {
+        private function blockInvitationCallback(_arg_1:String):void{
             this.model.removeInvitation(_arg_1);
         }
 
-        private function whisperCallback(_arg_1:String):void
-        {
+        private function whisperCallback(_arg_1:String):void{
             this.chatSignal.dispatch(true, (("/tell " + _arg_1) + " "));
             this.view.getCloseSignal().dispatch();
         }
 
-        private function jumpCallback(_arg_1:String):void
-        {
+        private function jumpCallback(_arg_1:String):void{
             Parameters.data_.preferredServer = _arg_1;
             Parameters.save();
             this.enterGame.dispatch();

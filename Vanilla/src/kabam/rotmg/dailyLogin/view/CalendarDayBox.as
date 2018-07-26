@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.CalendarDayBox
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.GraphicsUtil;
@@ -29,8 +28,7 @@ import kabam.rotmg.dailyLogin.model.CalendarDayModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class CalendarDayBox extends Sprite 
-    {
+public class CalendarDayBox extends Sprite {
 
         private var fill_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 1);
         private var fillCurrent_:GraphicsSolidFill = new GraphicsSolidFill(4889165, 1);
@@ -44,8 +42,7 @@ public class CalendarDayBox extends Sprite
         private var redDot:Bitmap;
         private var boxCuts:Array;
 
-        public function CalendarDayBox(_arg_1:CalendarDayModel, _arg_2:int, _arg_3:Boolean)
-        {
+        public function CalendarDayBox(_arg_1:CalendarDayModel, _arg_2:int, _arg_3:Boolean){
             var _local_6:ItemTileRenderer;
             var _local_7:Bitmap;
             var _local_8:BitmapData;
@@ -63,7 +60,7 @@ public class CalendarDayBox extends Sprite
                 else
                 {
                     this.boxCuts = [1, 0, 0, 0];
-                }
+                };
             }
             else
             {
@@ -76,7 +73,7 @@ public class CalendarDayBox extends Sprite
                     else
                     {
                         this.boxCuts = [0, 0, 1, 0];
-                    }
+                    };
                 }
                 else
                 {
@@ -93,10 +90,10 @@ public class CalendarDayBox extends Sprite
                         else
                         {
                             this.boxCuts = [0, 0, 0, 0];
-                        }
-                    }
-                }
-            }
+                        };
+                    };
+                };
+            };
             this.drawBackground(this.boxCuts, _arg_3);
             if (((_arg_1.gold == 0) && (_arg_1.itemID > 0)))
             {
@@ -104,7 +101,7 @@ public class CalendarDayBox extends Sprite
                 addChild(_local_6);
                 _local_6.x = Math.round((CalendarSettings.BOX_WIDTH / 2));
                 _local_6.y = Math.round((CalendarSettings.BOX_HEIGHT / 2));
-            }
+            };
             if (_arg_1.gold > 0)
             {
                 _local_7 = new Bitmap();
@@ -112,7 +109,7 @@ public class CalendarDayBox extends Sprite
                 addChild(_local_7);
                 _local_7.x = Math.round(((CalendarSettings.BOX_WIDTH / 2) - (_local_7.width / 2)));
                 _local_7.y = Math.round(((CalendarSettings.BOX_HEIGHT / 2) - (_local_7.height / 2)));
-            }
+            };
             this.displayDayNumber(_arg_1.dayNumber);
             if (_arg_1.claimKey != "")
             {
@@ -123,7 +120,7 @@ public class CalendarDayBox extends Sprite
                 this.redDot.x = ((CalendarSettings.BOX_WIDTH - Math.round((this.redDot.width / 2))) - 10);
                 this.redDot.y = (-(Math.round((this.redDot.width / 2))) + 10);
                 addChild(this.redDot);
-            }
+            };
             if (((_arg_1.quantity > 1) || (_arg_1.gold > 0)))
             {
                 _local_9 = new TextFieldDisplayConcrete().setSize(14).setColor(0xFFFFFF).setTextWidth(CalendarSettings.BOX_WIDTH).setAutoSize(TextFieldAutoSize.RIGHT);
@@ -131,15 +128,14 @@ public class CalendarDayBox extends Sprite
                 _local_9.y = (CalendarSettings.BOX_HEIGHT - 18);
                 _local_9.x = -2;
                 addChild(_local_9);
-            }
+            };
             if (_arg_1.isClaimed)
             {
                 this.markAsClaimed();
-            }
+            };
         }
 
-        public static function drawRectangleWithCuts(_arg_1:Array, _arg_2:int, _arg_3:int, _arg_4:uint, _arg_5:Number, _arg_6:Vector.<IGraphicsData>, _arg_7:GraphicsPath):Sprite
-        {
+        public static function drawRectangleWithCuts(_arg_1:Array, _arg_2:int, _arg_3:int, _arg_4:uint, _arg_5:Number, _arg_6:Vector.<IGraphicsData>, _arg_7:GraphicsPath):Sprite{
             var _local_8:Shape = new Shape();
             var _local_9:Shape = new Shape();
             var _local_10:Sprite = new Sprite();
@@ -160,17 +156,15 @@ public class CalendarDayBox extends Sprite
         }
 
 
-        public function getDay():CalendarDayModel
-        {
+        public function getDay():CalendarDayModel{
             return (this.day);
         }
 
-        public function markAsClaimed():void
-        {
+        public function markAsClaimed():void{
             if (((this.redDot) && (this.redDot.parent)))
             {
                 removeChild(this.redDot);
-            }
+            };
             var _local_1:BitmapData = AssetLibrary.getImageFromSet("lofiInterfaceBig", 11);
             _local_1 = TextureRedrawer.redraw(_local_1, 60, true, 2997032);
             var _local_2:Bitmap = new Bitmap(_local_1);
@@ -181,8 +175,7 @@ public class CalendarDayBox extends Sprite
             addChild(_local_2);
         }
 
-        private function displayDayNumber(_arg_1:int):void
-        {
+        private function displayDayNumber(_arg_1:int):void{
             var _local_2:TextFieldDisplayConcrete;
             _local_2 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth(CalendarSettings.BOX_WIDTH);
             _local_2.setBold(true);
@@ -192,8 +185,7 @@ public class CalendarDayBox extends Sprite
             addChild(_local_2);
         }
 
-        public function drawBackground(_arg_1:Array, _arg_2:Boolean):void
-        {
+        public function drawBackground(_arg_1:Array, _arg_2:Boolean):void{
             addChild(drawRectangleWithCuts(_arg_1, CalendarSettings.BOX_WIDTH, CalendarSettings.BOX_HEIGHT, 0x363636, 1, ((_arg_2) ? this.graphicsDataBackgroundCurrent : this.graphicsDataBackground), this.path_));
         }
 

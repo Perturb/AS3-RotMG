@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.QuestToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.ui.GameObjectListItem;
 
@@ -13,21 +12,18 @@ import flash.filters.DropShadowFilter;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class QuestToolTip extends ToolTip 
-    {
+public class QuestToolTip extends ToolTip {
 
         private var gameObject:GameObject;
         public var enemyGOLI_:GameObjectListItem;
 
-        public function QuestToolTip(_arg_1:GameObject)
-        {
+        public function QuestToolTip(_arg_1:GameObject){
             super(6036765, 1, 16549442, 1, false);
             this.gameObject = _arg_1;
             this.init();
         }
 
-        private function init():void
-        {
+        private function init():void{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = new TextFieldDisplayConcrete().setSize(22).setColor(16549442).setBold(true);
             _local_1.setStringBuilder(new LineBuilder().setParams("Bounty!"));

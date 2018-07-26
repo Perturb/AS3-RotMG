@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.services.GetAppEngineNewsTask
 
-package kabam.rotmg.news.services
-{
+package kabam.rotmg.news.services{
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
 import flash.utils.getTimer;
@@ -17,8 +16,7 @@ import kabam.rotmg.news.model.NewsCellLinkType;
 import kabam.rotmg.news.model.NewsCellVO;
 import kabam.rotmg.news.model.NewsModel;
 
-public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask 
-    {
+public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask {
 
         private static const TEN_MINUTES:int = 600;
 
@@ -35,8 +33,7 @@ public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
         private var updateCooldown:int = 600;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.numUpdateAttempts++;
             if (((this.lastRan == -1) || ((this.lastRan + this.updateCooldown) < (getTimer() / 1000))))
             {
@@ -48,15 +45,14 @@ public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
             {
                 completeTask(true);
                 reset();
-            }
+            };
             if ((((!("production".toLowerCase() == "dev")) && (!(this.updateCooldown == 0))) && (this.numUpdateAttempts >= 2)))
             {
                 this.updateCooldown = 0;
-            }
+            };
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onNewsRequestDone(_arg_2);
@@ -64,25 +60,23 @@ public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
             else
             {
                 this.onNewsRequestError(_arg_2);
-            }
+            };
             completeTask(_arg_1, _arg_2);
             reset();
         }
 
-        private function onNewsRequestDone(_arg_1:String):void
-        {
+        private function onNewsRequestDone(_arg_1:String):void{
             var _local_4:Object;
             var _local_2:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
             var _local_3:Object = JSON.parse(_arg_1);
             for each (_local_4 in _local_3)
             {
                 _local_2.push(this.returnNewsCellVO(_local_4));
-            }
+            };
             this.model.updateNews(_local_2);
         }
 
-        private function returnNewsCellVO(_arg_1:Object):NewsCellVO
-        {
+        private function returnNewsCellVO(_arg_1:Object):NewsCellVO{
             var _local_2:NewsCellVO = new NewsCellVO();
             _local_2.headline = _arg_1.title;
             _local_2.imageURL = _arg_1.image;
@@ -96,8 +90,7 @@ public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
             return (_local_2);
         }
 
-        private function onNewsRequestError(_arg_1:String):void
-        {
+        private function onNewsRequestError(_arg_1:String):void{
             this.openDialog.dispatch(new ErrorDialog("Unable to get news data."));
         }
 

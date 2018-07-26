@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.guild.MemberListLine
 
-package com.company.assembleegameclient.ui.guild
-{
+package com.company.assembleegameclient.ui.guild{
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 import com.company.assembleegameclient.util.GuildUtil;
 import com.company.rotmg.graphics.DeleteXGraphic;
@@ -27,8 +26,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-internal class MemberListLine extends Sprite 
-    {
+internal class MemberListLine extends Sprite {
 
         public static const WIDTH:int = 756;
         public static const HEIGHT:int = 32;
@@ -46,15 +44,14 @@ internal class MemberListLine extends Sprite
         private var demoteButton_:Sprite;
         private var removeButton_:Sprite;
 
-        public function MemberListLine(_arg_1:int, _arg_2:String, _arg_3:int, _arg_4:int, _arg_5:Boolean, _arg_6:int)
-        {
+        public function MemberListLine(_arg_1:int, _arg_2:String, _arg_3:int, _arg_4:int, _arg_5:Boolean, _arg_6:int){
             this.name_ = _arg_2;
             this.rank_ = _arg_3;
             var _local_7:uint = 0xB3B3B3;
             if (_arg_5)
             {
                 _local_7 = 16564761;
-            }
+            };
             this.placeText_ = new TextFieldDisplayConcrete().setSize(22).setColor(_local_7);
             this.placeText_.setStringBuilder(new StaticStringBuilder((_arg_1.toString() + ".")));
             this.placeText_.filters = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
@@ -97,7 +94,7 @@ internal class MemberListLine extends Sprite
                 this.promoteButton_.x = (670 + 6);
                 this.promoteButton_.y = (HEIGHT / 2);
                 addChild(this.promoteButton_);
-            }
+            };
             if (GuildUtil.canDemote(_arg_6, _arg_3))
             {
                 this.demoteButton_ = this.createArrow(false);
@@ -106,7 +103,7 @@ internal class MemberListLine extends Sprite
                 this.demoteButton_.x = (700 + 6);
                 this.demoteButton_.y = (HEIGHT / 2);
                 addChild(this.demoteButton_);
-            }
+            };
             if (GuildUtil.canRemove(_arg_6, _arg_3))
             {
                 this.removeButton_ = new DeleteXGraphic();
@@ -115,11 +112,10 @@ internal class MemberListLine extends Sprite
                 this.removeButton_.x = 730;
                 this.removeButton_.y = ((HEIGHT / 2) - (this.removeButton_.height / 2));
                 addChild(this.removeButton_);
-            }
+            };
         }
 
-        private function createArrow(_arg_1:Boolean):Sprite
-        {
+        private function createArrow(_arg_1:Boolean):Sprite{
             var _local_2:Sprite = new Sprite();
             var _local_3:Graphics = _local_2.graphics;
             _local_3.beginFill(0xFFFFFF);
@@ -130,30 +126,26 @@ internal class MemberListLine extends Sprite
             if (_arg_1)
             {
                 _local_2.rotation = 180;
-            }
+            };
             return (_local_2);
         }
 
-        private function addHighlighting(_arg_1:Sprite):void
-        {
+        private function addHighlighting(_arg_1:Sprite):void{
             _arg_1.addEventListener(MouseEvent.MOUSE_OVER, this.onHighlightOver);
             _arg_1.addEventListener(MouseEvent.ROLL_OUT, this.onHighlightOut);
         }
 
-        private function onHighlightOver(_arg_1:MouseEvent):void
-        {
+        private function onHighlightOver(_arg_1:MouseEvent):void{
             var _local_2:Sprite = (_arg_1.currentTarget as Sprite);
             _local_2.transform.colorTransform = mouseOverCT;
         }
 
-        private function onHighlightOut(_arg_1:MouseEvent):void
-        {
+        private function onHighlightOut(_arg_1:MouseEvent):void{
             var _local_2:Sprite = (_arg_1.currentTarget as Sprite);
             _local_2.transform.colorTransform = MoreColorUtil.identity;
         }
 
-        private function onPromote(_arg_1:MouseEvent):void
-        {
+        private function onPromote(_arg_1:MouseEvent):void{
             var _local_2:String = GuildUtil.rankToString(GuildUtil.promotedRank(this.rank_));
             var _local_3:Dialog = new Dialog("", "", TextKey.PROMOTE_LEFTBUTTON, TextKey.PROMOTE_RIGHTBUTTON, "/promote");
             _local_3.setTextParams(TextKey.PROMOTE_TEXT, {
@@ -166,14 +158,12 @@ internal class MemberListLine extends Sprite
             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(_local_3);
         }
 
-        private function onVerifiedPromote(_arg_1:Event):void
-        {
+        private function onVerifiedPromote(_arg_1:Event):void{
             dispatchEvent(new GuildPlayerListEvent(GuildPlayerListEvent.SET_RANK, this.name_, GuildUtil.promotedRank(this.rank_)));
             StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal).dispatch();
         }
 
-        private function onDemote(_arg_1:MouseEvent):void
-        {
+        private function onDemote(_arg_1:MouseEvent):void{
             var _local_2:String = GuildUtil.rankToString(GuildUtil.demotedRank(this.rank_));
             var _local_3:Dialog = new Dialog("", "", TextKey.DEMOTE_LEFT, TextKey.DEMOTE_RIGHT, "/demote");
             _local_3.setTextParams(TextKey.DEMOTE_TEXT, {
@@ -186,14 +176,12 @@ internal class MemberListLine extends Sprite
             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(_local_3);
         }
 
-        private function onVerifiedDemote(_arg_1:Event):void
-        {
+        private function onVerifiedDemote(_arg_1:Event):void{
             dispatchEvent(new GuildPlayerListEvent(GuildPlayerListEvent.SET_RANK, this.name_, GuildUtil.demotedRank(this.rank_)));
             StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal).dispatch();
         }
 
-        private function onRemove(_arg_1:MouseEvent):void
-        {
+        private function onRemove(_arg_1:MouseEvent):void{
             var _local_2:Dialog = new Dialog("", "", TextKey.REMOVE_LEFT, TextKey.REMOVE_RIGHT, "/removeFromGuild");
             _local_2.setTextParams(TextKey.REMOVE_TEXT, {"name":this.name_});
             _local_2.setTitleStringBuilder(new LineBuilder().setParams(TextKey.REMOVE_TITLE, {"name":this.name_}));
@@ -202,14 +190,12 @@ internal class MemberListLine extends Sprite
             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(_local_2);
         }
 
-        private function onVerifiedRemove(_arg_1:Event):void
-        {
+        private function onVerifiedRemove(_arg_1:Event):void{
             StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal).dispatch();
             dispatchEvent(new GuildPlayerListEvent(GuildPlayerListEvent.REMOVE_MEMBER, this.name_));
         }
 
-        private function onCancelDialog(_arg_1:Event):void
-        {
+        private function onCancelDialog(_arg_1:Event):void{
             StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal).dispatch();
         }
 

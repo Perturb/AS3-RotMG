@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.Merchant
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.map.Map;
@@ -25,8 +24,7 @@ import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
 import kabam.rotmg.language.model.StringMap;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class Merchant extends SellableObject implements IInteractiveObject
-    {
+public class Merchant extends SellableObject implements IInteractiveObject {
 
         private static const NONE_MESSAGE:int = 0;
         private static const NEW_MESSAGE:int = 1;
@@ -34,8 +32,7 @@ public class Merchant extends SellableObject implements IInteractiveObject
         private static const ITEMS_LEFT_MESSAGE:int = 3;
         private static const DISCOUNT_MESSAGE:int = 4;
         private static const T:Number = 1;
-        private static const DOSE_MATRIX:Matrix = (function ():Matrix
-        {
+        private static const DOSE_MATRIX:Matrix = (function ():Matrix{
             var _local_1:* = new Matrix();
             _local_1.translate(10, 5);
             return (_local_1);
@@ -55,46 +52,40 @@ public class Merchant extends SellableObject implements IInteractiveObject
         private var addSpeechBalloon:AddSpeechBalloonSignal = StaticInjectorContext.getInjector().getInstance(AddSpeechBalloonSignal);
         private var stringMap:StringMap = StaticInjectorContext.getInjector().getInstance(StringMap);
 
-        public function Merchant(_arg_1:XML)
-        {
+        public function Merchant(_arg_1:XML){
             super(_arg_1);
             isInteractive_ = true;
         }
 
-        override public function setPrice(_arg_1:int):void
-        {
+        override public function setPrice(_arg_1:int):void{
             super.setPrice(_arg_1);
             this.untilNextMessage_ = 0;
         }
 
-        override public function setRankReq(_arg_1:int):void
-        {
+        override public function setRankReq(_arg_1:int):void{
             super.setRankReq(_arg_1);
             this.untilNextMessage_ = 0;
         }
 
-        override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean
-        {
+        override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean{
             if (!super.addTo(_arg_1, _arg_2, _arg_3))
             {
                 return (false);
-            }
+            };
             _arg_1.merchLookup_[new IntPoint(x_, y_)] = this;
             return (true);
         }
 
-        override public function removeFromMap():void
-        {
+        override public function removeFromMap():void{
             var _local_1:IntPoint = new IntPoint(x_, y_);
             if (map_.merchLookup_[_local_1] == this)
             {
                 map_.merchLookup_[_local_1] = null;
-            }
+            };
             super.removeFromMap();
         }
 
-        public function getSpeechBalloon(_arg_1:int):AddSpeechBalloonVO
-        {
+        public function getSpeechBalloon(_arg_1:int):AddSpeechBalloonVO{
             var _local_2:LineBuilder;
             var _local_3:uint;
             var _local_4:uint;
@@ -121,8 +112,8 @@ public class Merchant extends SellableObject implements IInteractiveObject
                         else
                         {
                             _local_2 = new LineBuilder().setParams("Merchant.goingInNMinutes", {"minutes":this.minsLeft_});
-                        }
-                    }
+                        };
+                    };
                     _local_3 = 5973542;
                     _local_4 = 16549442;
                     _local_5 = 16549442;
@@ -141,13 +132,12 @@ public class Merchant extends SellableObject implements IInteractiveObject
                     break;
                 default:
                     return (null);
-            }
+            };
             _local_2.setStringMap(this.stringMap);
             return (new AddSpeechBalloonVO(this, _local_2.getString(), "", false, false, _local_3, 1, _local_4, 1, _local_5, 6, true, false));
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             var _local_5:GTween;
             super.update(_arg_1, _arg_2);
             if (this.firstUpdate_)
@@ -157,14 +147,14 @@ public class Merchant extends SellableObject implements IInteractiveObject
                     _local_5 = new GTween(this, (0.5 * T), {"size_":150}, {"ease":Sine.easeOut});
                     _local_5.nextTween = new GTween(this, (0.5 * T), {"size_":100}, {"ease":Sine.easeIn});
                     _local_5.nextTween.paused = true;
-                }
+                };
                 this.firstUpdate_ = false;
-            }
+            };
             this.untilNextMessage_ = (this.untilNextMessage_ - _arg_2);
             if (this.untilNextMessage_ > 0)
             {
                 return (true);
-            }
+            };
             this.untilNextMessage_ = 5000;
             var _local_3:Vector.<int> = new Vector.<int>();
             if (this.minsLeft_ == 2147483647)
@@ -176,49 +166,44 @@ public class Merchant extends SellableObject implements IInteractiveObject
                 if (((this.minsLeft_ >= 0) && (this.minsLeft_ <= 5)))
                 {
                     _local_3.push(MINS_LEFT_MESSAGE);
-                }
-            }
+                };
+            };
             if (((this.count_ >= 1) && (this.count_ <= 2)))
             {
                 _local_3.push(ITEMS_LEFT_MESSAGE);
-            }
+            };
             if (this.discount_ > 0)
             {
                 _local_3.push(DISCOUNT_MESSAGE);
-            }
+            };
             if (_local_3.length == 0)
             {
                 return (true);
-            }
+            };
             this.messageIndex_ = (++this.messageIndex_ % _local_3.length);
             var _local_4:int = _local_3[this.messageIndex_];
             this.addSpeechBalloon.dispatch(this.getSpeechBalloon(_local_4));
             return (true);
         }
 
-        override public function soldObjectName():String
-        {
+        override public function soldObjectName():String{
             return (ObjectLibrary.typeToDisplayId_[this.merchandiseType_]);
         }
 
-        override public function soldObjectInternalName():String
-        {
+        override public function soldObjectInternalName():String{
             var _local_1:XML = ObjectLibrary.xmlLibrary_[this.merchandiseType_];
             return (_local_1.@id.toString());
         }
 
-        override public function getTooltip():ToolTip
-        {
+        override public function getTooltip():ToolTip{
             return (new EquipmentToolTip(this.merchandiseType_, map_.player_, -1, InventoryOwnerTypes.NPC));
         }
 
-        override public function getSellableType():int
-        {
+        override public function getSellableType():int{
             return (this.merchandiseType_);
         }
 
-        override public function getIcon():BitmapData
-        {
+        override public function getIcon():BitmapData{
             var _local_3:BaseSimpleText;
             var _local_4:BaseSimpleText;
             var _local_1:BitmapData = ObjectLibrary.getRedrawnTextureFromType(this.merchandiseType_, 80, true);
@@ -230,7 +215,7 @@ public class Merchant extends SellableObject implements IInteractiveObject
                 _local_3.text = String(_local_2.Doses);
                 _local_3.updateMetrics();
                 _local_1.draw(_local_3, DOSE_MATRIX);
-            }
+            };
             if (_local_2.hasOwnProperty("Quantity"))
             {
                 _local_1 = _local_1.clone();
@@ -238,55 +223,51 @@ public class Merchant extends SellableObject implements IInteractiveObject
                 _local_4.text = String(_local_2.Quantity);
                 _local_4.updateMetrics();
                 _local_1.draw(_local_4, DOSE_MATRIX);
-            }
+            };
             return (_local_1);
         }
 
-        public function getTex1Id(_arg_1:int):int
-        {
+        public function getTex1Id(_arg_1:int):int{
             var _local_2:XML = ObjectLibrary.xmlLibrary_[this.merchandiseType_];
             if (_local_2 == null)
             {
                 return (_arg_1);
-            }
+            };
             if (((_local_2.Activate == "Dye") && (_local_2.hasOwnProperty("Tex1"))))
             {
                 return (int(_local_2.Tex1));
-            }
+            };
             return (_arg_1);
         }
 
-        public function getTex2Id(_arg_1:int):int
-        {
+        public function getTex2Id(_arg_1:int):int{
             var _local_2:XML = ObjectLibrary.xmlLibrary_[this.merchandiseType_];
             if (_local_2 == null)
             {
                 return (_arg_1);
-            }
+            };
             if (((_local_2.Activate == "Dye") && (_local_2.hasOwnProperty("Tex2"))))
             {
                 return (int(_local_2.Tex2));
-            }
+            };
             return (_arg_1);
         }
 
-        override protected function getTexture(_arg_1:Camera, _arg_2:int):BitmapData
-        {
+        override protected function getTexture(_arg_1:Camera, _arg_2:int):BitmapData{
             if (((this.alpha_ == 1) && (size_ == 100)))
             {
                 return (this.merchandiseTexture_);
-            }
+            };
             var _local_3:BitmapData = ObjectLibrary.getRedrawnTextureFromType(this.merchandiseType_, size_, false, false);
             if (this.alpha_ != 1)
             {
                 this.ct_.alphaMultiplier = this.alpha_;
                 _local_3.colorTransform(_local_3.rect, this.ct_);
-            }
+            };
             return (_local_3);
         }
 
-        public function setMerchandiseType(_arg_1:int):void
-        {
+        public function setMerchandiseType(_arg_1:int):void{
             this.merchandiseType_ = _arg_1;
             this.merchandiseTexture_ = ObjectLibrary.getRedrawnTextureFromType(this.merchandiseType_, 100, false);
         }

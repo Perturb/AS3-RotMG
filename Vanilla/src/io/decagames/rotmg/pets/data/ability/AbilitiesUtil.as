@@ -1,44 +1,38 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.data.ability.AbilitiesUtil
 
-package io.decagames.rotmg.pets.data.ability
-{
+package io.decagames.rotmg.pets.data.ability{
 import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
 import io.decagames.rotmg.pets.data.vo.AbilityVO;
 import io.decagames.rotmg.pets.data.vo.IPetVO;
 
-public class AbilitiesUtil
-    {
+public class AbilitiesUtil {
 
 
-        public static function isActiveAbility(_arg_1:PetRarityEnum, _arg_2:int):Boolean
-        {
+        public static function isActiveAbility(_arg_1:PetRarityEnum, _arg_2:int):Boolean{
             if (_arg_1.ordinal >= PetRarityEnum.LEGENDARY.ordinal)
             {
                 return (true);
-            }
+            };
             if (_arg_1.ordinal >= PetRarityEnum.UNCOMMON.ordinal)
             {
                 return (_arg_2 <= 1);
-            }
+            };
             return (_arg_2 == 0);
         }
 
-        public static function abilityPowerToMinPoints(_arg_1:int):int
-        {
+        public static function abilityPowerToMinPoints(_arg_1:int):int{
             return (Math.ceil(((AbilityConfig.ABILITY_LEVEL1_POINTS * (1 - Math.pow(AbilityConfig.ABILITY_GEOMETRIC_RATIO, (_arg_1 - 1)))) / (1 - AbilityConfig.ABILITY_GEOMETRIC_RATIO))));
         }
 
-        public static function abilityPointsToLevel(_arg_1:int):int
-        {
+        public static function abilityPointsToLevel(_arg_1:int):int{
             var _local_2:Number = (((_arg_1 * (AbilityConfig.ABILITY_GEOMETRIC_RATIO - 1)) / AbilityConfig.ABILITY_LEVEL1_POINTS) + 1);
             return (int((Math.log(_local_2) / Math.log(AbilityConfig.ABILITY_GEOMETRIC_RATIO))) + 1);
         }
 
-        public static function simulateAbilityUpgrade(_arg_1:IPetVO, _arg_2:int):Array
-        {
+        public static function simulateAbilityUpgrade(_arg_1:IPetVO, _arg_2:int):Array{
             var _local_5:AbilityVO;
             var _local_6:int;
             var _local_3:Array = [];
@@ -54,12 +48,12 @@ public class AbilitiesUtil
                     {
                         _local_6 = _arg_1.maxAbilityPower;
                         _local_5.points = abilityPowerToMinPoints(_local_6);
-                    }
+                    };
                     _local_5.level = _local_6;
-                }
+                };
                 _local_3.push(_local_5);
                 _local_4++;
-            }
+            };
             return (_local_3);
         }
 

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.friends.view.FriendListView
 
-package kabam.rotmg.friends.view
-{
+package kabam.rotmg.friends.view{
 import com.company.assembleegameclient.account.ui.TextInputField;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.dialogs.DialogCloser;
@@ -36,8 +35,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class FriendListView extends Sprite implements DialogCloser
-    {
+public class FriendListView extends Sprite implements DialogCloser {
 
         public static const TEXT_WIDTH:int = 500;
         public static const TEXT_HEIGHT:int = 500;
@@ -68,8 +66,7 @@ public class FriendListView extends Sprite implements DialogCloser
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
 
-        public function init(_arg_1:Vector.<FriendVO>, _arg_2:Vector.<FriendVO>, _arg_3:String):void
-        {
+        public function init(_arg_1:Vector.<FriendVO>, _arg_2:Vector.<FriendVO>, _arg_3:String):void{
             this._w = TEXT_WIDTH;
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this._tabView = new FriendTabView(TEXT_WIDTH, TEXT_HEIGHT);
@@ -84,12 +81,11 @@ public class FriendListView extends Sprite implements DialogCloser
             this._tabView.setSelectedTab(0);
         }
 
-        public function destroy():void
-        {
+        public function destroy():void{
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
-            }
+            };
             this._addButton.removeEventListener(MouseEvent.CLICK, this.onAddFriendClicked);
             this._addButton = null;
             this._tabView.destroy();
@@ -100,8 +96,7 @@ public class FriendListView extends Sprite implements DialogCloser
             this._invitationsContainer = null;
         }
 
-        public function updateFriendTab(_arg_1:Vector.<FriendVO>, _arg_2:String):void
-        {
+        public function updateFriendTab(_arg_1:Vector.<FriendVO>, _arg_2:String):void{
             var _local_3:FriendVO;
             var _local_4:FListItem;
             var _local_5:int;
@@ -111,7 +106,7 @@ public class FriendListView extends Sprite implements DialogCloser
             {
                 this._friendsContainer.removeChildAt((this._friendsContainer.getTotal() - 1));
                 _local_5--;
-            }
+            };
             _local_5 = 0;
             while (_local_5 < this._friendsContainer.getTotal())
             {
@@ -120,22 +115,21 @@ public class FriendListView extends Sprite implements DialogCloser
                 {
                     _local_4 = (this._friendsContainer.getChildAt(_local_5) as FListItem);
                     _local_4.update(_local_3, _arg_2);
-                }
+                };
                 _local_5++;
-            }
+            };
             for each (_local_3 in _arg_1)
             {
                 _local_4 = new FriendListItem(_local_3, LIST_ITEM_WIDTH, LIST_ITEM_HEIGHT, _arg_2);
                 _local_4.actionSignal.add(this.onListItemAction);
                 _local_4.x = 2;
                 this._friendsContainer.addListItem(_local_4);
-            }
+            };
             _arg_1.length = 0;
             _arg_1 = null;
         }
 
-        public function updateInvitationTab(_arg_1:Vector.<FriendVO>):void
-        {
+        public function updateInvitationTab(_arg_1:Vector.<FriendVO>):void{
             var _local_2:FriendVO;
             var _local_3:FListItem;
             var _local_4:int;
@@ -146,7 +140,7 @@ public class FriendListView extends Sprite implements DialogCloser
             {
                 this._invitationsContainer.removeChildAt((this._invitationsContainer.getTotal() - 1));
                 _local_4--;
-            }
+            };
             _local_4 = 0;
             while (_local_4 < this._invitationsContainer.getTotal())
             {
@@ -155,21 +149,20 @@ public class FriendListView extends Sprite implements DialogCloser
                 {
                     _local_3 = (this._invitationsContainer.getChildAt(_local_4) as FListItem);
                     _local_3.update(_local_2, "");
-                }
+                };
                 _local_4++;
-            }
+            };
             for each (_local_2 in _arg_1)
             {
                 _local_3 = new InvitationListItem(_local_2, LIST_ITEM_WIDTH, LIST_ITEM_HEIGHT);
                 _local_3.actionSignal.add(this.onListItemAction);
                 this._invitationsContainer.addListItem(_local_3);
-            }
+            };
             _arg_1.length = 0;
             _arg_1 = null;
         }
 
-        private function createFriendTab():void
-        {
+        private function createFriendTab():void{
             var _local_1:Sprite = new Sprite();
             _local_1.name = FriendsActions.FRIEND_TAB;
             this._nameInput = new TextInputField(TextKey.FRIEND_ADD_TITLE, false);
@@ -206,8 +199,7 @@ public class FriendListView extends Sprite implements DialogCloser
             this._tabView.addTab(_local_2, _local_1);
         }
 
-        private function createInvitationsTab():void
-        {
+        private function createInvitationsTab():void{
             var _local_1:Sprite;
             _local_1 = new Sprite();
             _local_1.name = FriendsActions.INVITE_TAB;
@@ -225,58 +217,48 @@ public class FriendListView extends Sprite implements DialogCloser
             this._tabView.addTab(_local_2, _local_1);
         }
 
-        private function seedData(_arg_1:Vector.<FriendVO>, _arg_2:Vector.<FriendVO>):void
-        {
+        private function seedData(_arg_1:Vector.<FriendVO>, _arg_2:Vector.<FriendVO>):void{
             this._friendTotalText.setStringBuilder(new LineBuilder().setParams(TextKey.FRIEND_TOTAL, {"total":_arg_1.length}));
             this.updateFriendTab(_arg_1, this._currentServerName);
             this.updateInvitationTab(_arg_2);
         }
 
-        private function onTabClicked(_arg_1:String):void
-        {
+        private function onTabClicked(_arg_1:String):void{
             this.tabSignal.dispatch(_arg_1);
         }
 
-        public function getCloseSignal():Signal
-        {
+        public function getCloseSignal():Signal{
             return (this.closeDialogSignal);
         }
 
-        public function updateInput(_arg_1:String, _arg_2:Object=null):void
-        {
+        public function updateInput(_arg_1:String, _arg_2:Object=null):void{
             this._nameInput.setError(_arg_1, _arg_2);
         }
 
-        private function onFocusIn(_arg_1:FocusEvent):void
-        {
+        private function onFocusIn(_arg_1:FocusEvent):void{
             this._nameInput.clearText();
             this._nameInput.clearError();
             this.actionSignal.dispatch(FriendsActions.SEARCH, this._nameInput.text());
         }
 
-        private function onAddFriendClicked(_arg_1:MouseEvent):void
-        {
+        private function onAddFriendClicked(_arg_1:MouseEvent):void{
             this.actionSignal.dispatch(FriendsActions.INVITE, this._nameInput.text());
         }
 
-        private function onSearchFriendClicked(_arg_1:MouseEvent):void
-        {
+        private function onSearchFriendClicked(_arg_1:MouseEvent):void{
             this.actionSignal.dispatch(FriendsActions.SEARCH, this._nameInput.text());
         }
 
-        private function onListItemAction(_arg_1:String, _arg_2:String):void
-        {
+        private function onListItemAction(_arg_1:String, _arg_2:String):void{
             this.actionSignal.dispatch(_arg_1, _arg_2);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
             this.destroy();
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             this._h = (TEXT_HEIGHT + 8);
             x = ((800 / 2) - (this._w / 2));
             y = ((600 / 2) - (this._h / 2));

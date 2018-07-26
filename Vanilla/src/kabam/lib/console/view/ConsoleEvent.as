@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.console.view.ConsoleEvent
 
-package kabam.lib.console.view
-{
+package kabam.lib.console.view{
 import flash.events.Event;
 
-public final class ConsoleEvent extends Event 
-    {
+public final class ConsoleEvent extends Event {
 
         public static const INPUT:String = "ConsoleEvent.INPUT";
         public static const GET_PREVIOUS:String = "ConsoleEvent.GET_PREVIOUS";
@@ -17,8 +15,7 @@ public final class ConsoleEvent extends Event
 
         public var data:String;
 
-        public function ConsoleEvent(_arg_1:String, _arg_2:String="")
-        {
+        public function ConsoleEvent(_arg_1:String, _arg_2:String=""){
             super(_arg_1, false, false);
             this.data = _arg_2;
         }

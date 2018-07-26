@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.menu.PlayerGroupMenu
 
-package com.company.assembleegameclient.ui.menu
-{
+package com.company.assembleegameclient.ui.menu{
 import com.company.assembleegameclient.map.AbstractMap;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.GameObjectListItem;
@@ -15,8 +14,7 @@ import flash.events.MouseEvent;
 
 import org.osflash.signals.Signal;
 
-public class PlayerGroupMenu extends Menu 
-    {
+public class PlayerGroupMenu extends Menu {
 
         private var playerPanels_:Vector.<GameObjectListItem> = new Vector.<GameObjectListItem>();
         private var posY:uint = 4;
@@ -26,8 +24,7 @@ public class PlayerGroupMenu extends Menu
         public var lineBreakDesign_:LineBreakDesign;
         public var unableToTeleport:Signal = new Signal();
 
-        public function PlayerGroupMenu(_arg_1:AbstractMap, _arg_2:Vector.<Player>)
-        {
+        public function PlayerGroupMenu(_arg_1:AbstractMap, _arg_2:Vector.<Player>){
             super(0x363636, 0xFFFFFF);
             this.map_ = _arg_1;
             this.players_ = _arg_2.concat();
@@ -35,8 +32,7 @@ public class PlayerGroupMenu extends Menu
             this.createPlayerList();
         }
 
-        private function createPlayerList():void
-        {
+        private function createPlayerList():void{
             var _local_1:Player;
             var _local_2:GameObjectListItem;
             for each (_local_1 in this.players_)
@@ -48,21 +44,19 @@ public class PlayerGroupMenu extends Menu
                 this.playerPanels_.push(_local_2);
                 _local_2.textReady.addOnce(this.onTextChanged);
                 this.posY = (this.posY + 32);
-            }
+            };
         }
 
-        private function onTextChanged():void
-        {
+        private function onTextChanged():void{
             var _local_1:GameObjectListItem;
             draw();
             for each (_local_1 in this.playerPanels_)
             {
                 _local_1.textReady.remove(this.onTextChanged);
-            }
+            };
         }
 
-        private function createHeader():void
-        {
+        private function createHeader():void{
             if (this.map_.allowPlayerTeleport())
             {
                 this.teleportOption_ = new TeleportMenuOption(this.map_.player_);
@@ -75,11 +69,10 @@ public class PlayerGroupMenu extends Menu
                 this.lineBreakDesign_.y = 40;
                 addChild(this.lineBreakDesign_);
                 this.posY = 52;
-            }
+            };
         }
 
-        private function onTeleport(_arg_1:Event):void
-        {
+        private function onTeleport(_arg_1:Event):void{
             var _local_4:Player;
             var _local_2:Player = this.map_.player_;
             var _local_3:Player;
@@ -95,9 +88,9 @@ public class PlayerGroupMenu extends Menu
                     else
                     {
                         break;
-                    }
-                }
-            }
+                    };
+                };
+            };
             if (_local_3 != null)
             {
                 _local_2.teleportTo(_local_3);
@@ -105,7 +98,7 @@ public class PlayerGroupMenu extends Menu
             else
             {
                 this.unableToTeleport.dispatch();
-            }
+            };
             remove();
         }
 

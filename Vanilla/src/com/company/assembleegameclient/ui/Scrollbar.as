@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.Scrollbar
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.util.GraphicsUtil;
 
 import flash.display.Graphics;
@@ -18,8 +17,7 @@ import flash.geom.ColorTransform;
 import flash.geom.Rectangle;
 import flash.utils.getTimer;
 
-public class Scrollbar extends Sprite 
-    {
+public class Scrollbar extends Sprite {
 
         private var width_:int;
         private var height_:int;
@@ -38,8 +36,7 @@ public class Scrollbar extends Sprite
         private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[backgroundFill_, path_, GraphicsUtil.END_FILL];
 
-        public function Scrollbar(_arg_1:int, _arg_2:int, _arg_3:Number=1, _arg_4:Sprite=null)
-        {
+        public function Scrollbar(_arg_1:int, _arg_2:int, _arg_3:Number=1, _arg_4:Sprite=null){
             this.target_ = _arg_4;
             this.background_ = new Sprite();
             this.background_.addEventListener(MouseEvent.MOUSE_DOWN, this.onBackgroundDown);
@@ -55,8 +52,7 @@ public class Scrollbar extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private static function drawArrow(_arg_1:int, _arg_2:int, _arg_3:Graphics):void
-        {
+        private static function drawArrow(_arg_1:int, _arg_2:int, _arg_3:Graphics):void{
             _arg_3.clear();
             _arg_3.beginFill(0x353535, 0.01);
             _arg_3.drawRect((-(_arg_1) / 2), (-(_arg_2) / 2), _arg_1, _arg_2);
@@ -70,13 +66,11 @@ public class Scrollbar extends Sprite
         }
 
 
-        public function pos():Number
-        {
+        public function pos():Number{
             return ((this.posIndicator_.y - this.indicatorRect_.y) / (this.indicatorRect_.height - this.posIndicator_.height));
         }
 
-        public function setIndicatorSize(_arg_1:Number, _arg_2:Number, _arg_3:Boolean=true):void
-        {
+        public function setIndicatorSize(_arg_1:Number, _arg_2:Number, _arg_3:Boolean=true):void{
             var _local_4:int = ((_arg_2 == 0) ? this.indicatorRect_.height : int(((_arg_1 / _arg_2) * this.indicatorRect_.height)));
             _local_4 = Math.min(this.indicatorRect_.height, Math.max(this.width_, _local_4));
             this.drawIndicator(this.width_, _local_4, this.posIndicator_.graphics);
@@ -84,32 +78,28 @@ public class Scrollbar extends Sprite
             if (_arg_3)
             {
                 this.setPos(0);
-            }
+            };
         }
 
-        public function setPos(_arg_1:Number):void
-        {
+        public function setPos(_arg_1:Number):void{
             if (((_arg_1 == Number.POSITIVE_INFINITY) || (_arg_1 == Number.NEGATIVE_INFINITY)))
             {
                 return;
-            }
+            };
             _arg_1 = Math.max(0, Math.min(1, _arg_1));
             this.posIndicator_.y = ((_arg_1 * (this.indicatorRect_.height - this.posIndicator_.height)) + this.indicatorRect_.y);
             this.sendPos();
         }
 
-        public function jumpUp():void
-        {
+        public function jumpUp():void{
             this.setPos((this.pos() - this.jumpDist_));
         }
 
-        public function jumpDown():void
-        {
+        public function jumpDown():void{
             this.setPos((this.pos() + this.jumpDist_));
         }
 
-        private function getSprite(_arg_1:Function):Sprite
-        {
+        private function getSprite(_arg_1:Function):Sprite{
             var _local_2:Sprite = new Sprite();
             _local_2.addEventListener(MouseEvent.MOUSE_DOWN, _arg_1);
             _local_2.addEventListener(MouseEvent.ROLL_OVER, this.onRollOver);
@@ -117,20 +107,17 @@ public class Scrollbar extends Sprite
             return (_local_2);
         }
 
-        private function onRollOver(_arg_1:MouseEvent):void
-        {
+        private function onRollOver(_arg_1:MouseEvent):void{
             var _local_2:Sprite = (_arg_1.target as Sprite);
             _local_2.transform.colorTransform = new ColorTransform(1, 0.8627, 0.5216);
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             var _local_2:Sprite = (_arg_1.target as Sprite);
             _local_2.transform.colorTransform = new ColorTransform(1, 1, 1);
         }
 
-        private function onBackgroundDown(_arg_1:MouseEvent):void
-        {
+        private function onBackgroundDown(_arg_1:MouseEvent):void{
             if (_arg_1.localY < this.posIndicator_.y)
             {
                 this.jumpUp();
@@ -138,11 +125,10 @@ public class Scrollbar extends Sprite
             else
             {
                 this.jumpDown();
-            }
+            };
         }
 
-        protected function onAddedToStage(_arg_1:Event):void
-        {
+        protected function onAddedToStage(_arg_1:Event):void{
             if (this.target_ != null)
             {
                 this.target_.addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
@@ -156,12 +142,11 @@ public class Scrollbar extends Sprite
                 else
                 {
                     WebMain.STAGE.addEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                }
-            }
+                };
+            };
         }
 
-        protected function onRemovedFromStage(_arg_1:Event):void
-        {
+        protected function onRemovedFromStage(_arg_1:Event):void{
             if (this.target_ != null)
             {
                 this.target_.removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
@@ -175,14 +160,13 @@ public class Scrollbar extends Sprite
                 else
                 {
                     WebMain.STAGE.removeEventListener(MouseEvent.MOUSE_WHEEL, this.onMouseWheel);
-                }
-            }
+                };
+            };
             removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        protected function onMouseWheel(_arg_1:MouseEvent):void
-        {
+        protected function onMouseWheel(_arg_1:MouseEvent):void{
             _arg_1.stopPropagation();
             _arg_1.stopImmediatePropagation();
             if (_arg_1.delta > 0)
@@ -194,28 +178,25 @@ public class Scrollbar extends Sprite
                 if (_arg_1.delta < 0)
                 {
                     this.jumpDown();
-                }
-            }
+                };
+            };
         }
 
-        private function onUpArrowDown(_arg_1:MouseEvent):void
-        {
+        private function onUpArrowDown(_arg_1:MouseEvent):void{
             addEventListener(Event.ENTER_FRAME, this.onArrowFrame);
             addEventListener(MouseEvent.MOUSE_UP, this.onArrowUp);
             this.lastUpdateTime_ = getTimer();
             this.change_ = -(this.speed_);
         }
 
-        private function onDownArrowDown(_arg_1:MouseEvent):void
-        {
+        private function onDownArrowDown(_arg_1:MouseEvent):void{
             addEventListener(Event.ENTER_FRAME, this.onArrowFrame);
             addEventListener(MouseEvent.MOUSE_UP, this.onArrowUp);
             this.lastUpdateTime_ = getTimer();
             this.change_ = this.speed_;
         }
 
-        private function onArrowFrame(_arg_1:Event):void
-        {
+        private function onArrowFrame(_arg_1:Event):void{
             var _local_2:int = getTimer();
             var _local_3:Number = ((_local_2 - this.lastUpdateTime_) / 1000);
             var _local_4:Number = (((this.height_ - (this.width_ * 3)) * _local_3) * this.change_);
@@ -223,40 +204,34 @@ public class Scrollbar extends Sprite
             this.lastUpdateTime_ = _local_2;
         }
 
-        private function onArrowUp(_arg_1:Event):void
-        {
+        private function onArrowUp(_arg_1:Event):void{
             removeEventListener(Event.ENTER_FRAME, this.onArrowFrame);
             removeEventListener(MouseEvent.MOUSE_UP, this.onArrowUp);
         }
 
-        private function onStartIndicatorDrag(_arg_1:MouseEvent):void
-        {
+        private function onStartIndicatorDrag(_arg_1:MouseEvent):void{
             this.posIndicator_.startDrag(false, new Rectangle(0, this.indicatorRect_.y, 0, (this.indicatorRect_.height - this.posIndicator_.height)));
             stage.addEventListener(MouseEvent.MOUSE_UP, this.onStopIndicatorDrag);
             stage.addEventListener(MouseEvent.MOUSE_MOVE, this.onDragMove);
             this.sendPos();
         }
 
-        private function onStopIndicatorDrag(_arg_1:MouseEvent):void
-        {
+        private function onStopIndicatorDrag(_arg_1:MouseEvent):void{
             stage.removeEventListener(MouseEvent.MOUSE_UP, this.onStopIndicatorDrag);
             stage.removeEventListener(MouseEvent.MOUSE_MOVE, this.onDragMove);
             this.posIndicator_.stopDrag();
             this.sendPos();
         }
 
-        private function onDragMove(_arg_1:MouseEvent):void
-        {
+        private function onDragMove(_arg_1:MouseEvent):void{
             this.sendPos();
         }
 
-        private function sendPos():void
-        {
+        private function sendPos():void{
             dispatchEvent(new Event(Event.CHANGE));
         }
 
-        public function resize(_arg_1:int, _arg_2:int, _arg_3:Number=1):void
-        {
+        public function resize(_arg_1:int, _arg_2:int, _arg_3:Number=1):void{
             this.width_ = _arg_1;
             this.height_ = _arg_2;
             this.speed_ = _arg_3;
@@ -280,8 +255,7 @@ public class Scrollbar extends Sprite
             this.posIndicator_.y = this.indicatorRect_.y;
         }
 
-        private function drawIndicator(_arg_1:int, _arg_2:int, _arg_3:Graphics):void
-        {
+        private function drawIndicator(_arg_1:int, _arg_2:int, _arg_3:Graphics):void{
             GraphicsUtil.clearPath(this.path_);
             GraphicsUtil.drawCutEdgeRect(0, 0, _arg_1, _arg_2, 4, [1, 1, 1, 1], this.path_);
             _arg_3.clear();

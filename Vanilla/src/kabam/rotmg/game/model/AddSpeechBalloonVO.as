@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.model.AddSpeechBalloonVO
 
-package kabam.rotmg.game.model
-{
+package kabam.rotmg.game.model{
 import com.company.assembleegameclient.objects.GameObject;
 
-public class AddSpeechBalloonVO
-    {
+public class AddSpeechBalloonVO {
 
         public var go:GameObject;
         public var text:String;
@@ -24,8 +22,7 @@ public class AddSpeechBalloonVO
         public var bold:Boolean;
         public var hideable:Boolean;
 
-        public function AddSpeechBalloonVO(_arg_1:GameObject, _arg_2:String, _arg_3:String, _arg_4:Boolean, _arg_5:Boolean, _arg_6:uint, _arg_7:Number, _arg_8:uint, _arg_9:Number, _arg_10:uint, _arg_11:int, _arg_12:Boolean, _arg_13:Boolean)
-        {
+        public function AddSpeechBalloonVO(_arg_1:GameObject, _arg_2:String, _arg_3:String, _arg_4:Boolean, _arg_5:Boolean, _arg_6:uint, _arg_7:Number, _arg_8:uint, _arg_9:Number, _arg_10:uint, _arg_11:int, _arg_12:Boolean, _arg_13:Boolean){
             this.go = _arg_1;
             this.text = _arg_2;
             this.name = _arg_3;

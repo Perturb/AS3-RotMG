@@ -1,30 +1,26 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.greensock.plugins.FrameLabelPlugin
 
-package com.greensock.plugins
-{
+package com.greensock.plugins{
 import com.greensock.TweenLite;
 
 import flash.display.MovieClip;
 
-public class FrameLabelPlugin extends FramePlugin
-    {
+public class FrameLabelPlugin extends FramePlugin {
 
         public static const API:Number = 2;
 
-        public function FrameLabelPlugin()
-        {
+        public function FrameLabelPlugin(){
             _propName = "frameLabel";
         }
 
-        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean
-        {
+        override public function _onInitTween(_arg_1:Object, _arg_2:*, _arg_3:TweenLite):Boolean{
             if (((!(_arg_3.target)) is MovieClip))
             {
                 return (false);
-            }
+            };
             _target = (_arg_1 as MovieClip);
             this.frame = _target.currentFrame;
             var _local_4:Array = _target.currentLabels;
@@ -37,12 +33,12 @@ public class FrameLabelPlugin extends FramePlugin
                 {
                     _local_6 = _local_4[_local_7].frame;
                     break;
-                }
-            }
+                };
+            };
             if (this.frame != _local_6)
             {
                 _addTween(this, "frame", this.frame, _local_6, "frame", true);
-            }
+            };
             return (true);
         }
 

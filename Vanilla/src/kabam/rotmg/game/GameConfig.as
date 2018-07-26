@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.GameConfig
 
-package kabam.rotmg.game
-{
+package kabam.rotmg.game{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.game.GiftStatusModel;
 import com.company.assembleegameclient.map.Map;
@@ -84,8 +83,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class GameConfig implements IConfig 
-    {
+public class GameConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -99,8 +97,7 @@ public class GameConfig implements IConfig
         public var setup:ApplicationSetup;
 
 
-        private function generalGameConfiguration():void
-        {
+        private function generalGameConfiguration():void{
             this.injector.map(UpdateGiftStatusDisplaySignal).asSingleton();
             this.injector.map(SetWorldInteractionSignal).asSingleton();
             this.injector.map(SetTextBoxVisibilitySignal).asSingleton();
@@ -134,23 +131,20 @@ public class GameConfig implements IConfig
             this.mapLoopMonitor();
         }
 
-        public function configure():void
-        {
+        public function configure():void{
             this.context.configure(GameFocusConfig);
             this.injector.map(GameModel).asSingleton();
             this.generalGameConfiguration();
             this.context.configure(ChatConfig);
         }
 
-        private function makeTextPanelMappings():void
-        {
+        private function makeTextPanelMappings():void{
             this.injector.map(TextPanelData).asSingleton();
             this.commandMap.map(TextPanelMessageUpdateSignal, true).toCommand(TextPanelMessageUpdateCommand);
             this.mediatorMap.map(TextPanel).toMediator(TextPanelMediator);
         }
 
-        private function makeGiftStatusDisplayMappings():void
-        {
+        private function makeGiftStatusDisplayMappings():void{
             this.mediatorMap.map(GiftStatusDisplay).toMediator(GiftStatusDisplayMediator);
             this.mediatorMap.map(ShopDisplay).toMediator(ShopDisplayMediator);
             this.mediatorMap.map(GameSprite).toMediator(GameSpriteMediator);
@@ -159,8 +153,7 @@ public class GameConfig implements IConfig
             this.mediatorMap.map(SellableObjectPanel).toMediator(SellableObjectPanelMediator);
         }
 
-        private function mapLoopMonitor():void
-        {
+        private function mapLoopMonitor():void{
             if (this.setup.isGameLoopMonitored())
             {
                 this.injector.map(LoopMonitor).toType(RollingMeanLoopMonitor);
@@ -168,7 +161,7 @@ public class GameConfig implements IConfig
             else
             {
                 this.injector.map(LoopMonitor).toType(NullLoopMonitor);
-            }
+            };
         }
 
 

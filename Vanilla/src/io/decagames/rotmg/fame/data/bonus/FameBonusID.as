@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.fame.data.bonus.FameBonusID
 
-package io.decagames.rotmg.fame.data.bonus
-{
-    public class FameBonusID 
-    {
+package io.decagames.rotmg.fame.data.bonus{
+    public class FameBonusID {
 
         public static const INVALID:int = -1;
         public static const LEGACY_BUILDER:int = 0;

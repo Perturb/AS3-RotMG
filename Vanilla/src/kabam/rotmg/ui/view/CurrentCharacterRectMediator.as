@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CurrentCharacterRectMediator
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
 
@@ -24,8 +23,7 @@ import kabam.rotmg.game.signals.PlayGameSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CurrentCharacterRectMediator extends Mediator 
-    {
+public class CurrentCharacterRectMediator extends Mediator {
 
         [Inject]
         public var view:CurrentCharacterRect;
@@ -45,34 +43,29 @@ public class CurrentCharacterRectMediator extends Mediator
         public var hideTooltips:HideTooltipsSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.selected.add(this.onSelected);
             this.view.deleteCharacter.add(this.onDeleteCharacter);
             this.view.showToolTip.add(this.onShow);
             this.view.hideTooltip.add(this.onHide);
         }
 
-        private function onShow(_arg_1:Sprite):void
-        {
+        private function onShow(_arg_1:Sprite):void{
             this.showTooltip.dispatch(_arg_1);
         }
 
-        private function onHide():void
-        {
+        private function onHide():void{
             this.hideTooltips.dispatch();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.hideTooltip.remove(this.onHide);
             this.view.showToolTip.remove(this.onShow);
             this.view.selected.remove(this.onSelected);
             this.view.deleteCharacter.remove(this.onDeleteCharacter);
         }
 
-        private function onSelected(_arg_1:SavedCharacter):void
-        {
+        private function onSelected(_arg_1:SavedCharacter):void{
             var _local_2:CharacterClass = this.classesModel.getCharacterClass(_arg_1.objectType());
             _local_2.setIsSelected(true);
             _local_2.skins.getSkin(_arg_1.skinType()).setIsSelected(true);
@@ -80,8 +73,7 @@ public class CurrentCharacterRectMediator extends Mediator
             this.launchGame(_arg_1);
         }
 
-        private function trackCharacterSelection(_arg_1:SavedCharacter):void
-        {
+        private function trackCharacterSelection(_arg_1:SavedCharacter):void{
             var _local_2:TrackingData = new TrackingData();
             _local_2.category = "character";
             _local_2.action = "select";
@@ -89,8 +81,7 @@ public class CurrentCharacterRectMediator extends Mediator
             _local_2.value = _arg_1.level();
         }
 
-        private function launchGame(_arg_1:SavedCharacter):void
-        {
+        private function launchGame(_arg_1:SavedCharacter):void{
             var _local_2:GameInitData = new GameInitData();
             _local_2.createCharacter = false;
             _local_2.charId = _arg_1.charId();
@@ -98,8 +89,7 @@ public class CurrentCharacterRectMediator extends Mediator
             this.playGame.dispatch(_local_2);
         }
 
-        private function onDeleteCharacter(_arg_1:SavedCharacter):void
-        {
+        private function onDeleteCharacter(_arg_1:SavedCharacter):void{
             this.model.select(_arg_1);
             this.openDialog.dispatch(new ConfirmDeleteCharacterDialog());
         }

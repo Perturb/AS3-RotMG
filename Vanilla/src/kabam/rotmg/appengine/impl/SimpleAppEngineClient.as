@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.appengine.impl.SimpleAppEngineClient
 
-package kabam.rotmg.appengine.impl
-{
+package kabam.rotmg.appengine.impl{
 import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.net.URLLoaderDataFormat;
@@ -16,8 +15,7 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 import org.osflash.signals.OnceSignal;
 
-public class SimpleAppEngineClient implements AppEngineClient
-    {
+public class SimpleAppEngineClient implements AppEngineClient {
 
         [Inject]
         public var loader:RetryLoader;
@@ -29,35 +27,29 @@ public class SimpleAppEngineClient implements AppEngineClient
         private var maxRetries:int;
         private var dataFormat:String;
 
-        public function SimpleAppEngineClient()
-        {
+        public function SimpleAppEngineClient(){
             this.isEncrypted = true;
             this.maxRetries = 0;
             this.dataFormat = URLLoaderDataFormat.TEXT;
         }
 
-        public function get complete():OnceSignal
-        {
+        public function get complete():OnceSignal{
             return (this.loader.complete);
         }
 
-        public function setDataFormat(_arg_1:String):void
-        {
+        public function setDataFormat(_arg_1:String):void{
             this.loader.setDataFormat(_arg_1);
         }
 
-        public function setSendEncrypted(_arg_1:Boolean):void
-        {
+        public function setSendEncrypted(_arg_1:Boolean):void{
             this.isEncrypted = _arg_1;
         }
 
-        public function setMaxRetries(_arg_1:int):void
-        {
+        public function setMaxRetries(_arg_1:int):void{
             this.loader.setMaxRetries(_arg_1);
         }
 
-        public function sendRequest(_arg_1:String, _arg_2:Object):void
-        {
+        public function sendRequest(_arg_1:String, _arg_2:Object):void{
             try
             {
                 if (_arg_2 == null)
@@ -68,11 +60,11 @@ public class SimpleAppEngineClient implements AppEngineClient
                 else
                 {
                     _arg_2.gameClientVersion = ((Parameters.BUILD_VERSION + ".") + Parameters.MINOR_VERSION);
-                }
+                };
             }
             catch(e:Error)
             {
-            }
+            };
             if (((!(_arg_2 == null)) && (_arg_2.guid)))
             {
                 this.loader.sendRequest(this.makeURL(((_arg_1 + "?g=") + escape(_arg_2.guid))), _arg_2);
@@ -80,20 +72,18 @@ public class SimpleAppEngineClient implements AppEngineClient
             else
             {
                 this.loader.sendRequest(this.makeURL(_arg_1), _arg_2);
-            }
+            };
         }
 
-        private function makeURL(_arg_1:String):String
-        {
+        private function makeURL(_arg_1:String):String{
             if (_arg_1.charAt(0) != "/")
             {
                 _arg_1 = ("/" + _arg_1);
-            }
+            };
             return (this.setup.getAppEngineUrl() + _arg_1);
         }
 
-        public function requestInProgress():Boolean
-        {
+        public function requestInProgress():Boolean{
             return (this.loader.isInProgress());
         }
 

@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.SparkerParticle
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.util.RandomUtil;
 
 import flash.geom.Point;
 
-public class SparkerParticle extends Particle
-    {
+public class SparkerParticle extends Particle {
 
         public var lifetime_:int;
         public var timeLeft_:int;
@@ -22,8 +20,7 @@ public class SparkerParticle extends Particle
         public var pathX_:Number;
         public var pathY_:Number;
 
-        public function SparkerParticle(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Point, _arg_5:Point)
-        {
+        public function SparkerParticle(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:Point, _arg_5:Point){
             super(_arg_2, 0, _arg_1);
             this.lifetime_ = (this.timeLeft_ = _arg_3);
             this.initialSize_ = _arg_1;
@@ -36,13 +33,12 @@ public class SparkerParticle extends Particle
             this.pathY_ = (y_ = this.start_.y);
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             this.timeLeft_ = (this.timeLeft_ - _arg_2);
             if (this.timeLeft_ <= 0)
             {
                 return (false);
-            }
+            };
             this.pathX_ = (this.pathX_ + (this.dx_ * _arg_2));
             this.pathY_ = (this.pathY_ + (this.dy_ * _arg_2));
             moveTo(this.pathX_, this.pathY_);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.news.view.NewsTicker
 
-package kabam.rotmg.news.view
-{
+package kabam.rotmg.news.view{
 import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
 import flash.display.Sprite;
@@ -15,8 +14,7 @@ import flash.utils.Timer;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.model.FontModel;
 
-public class NewsTicker extends Sprite
-    {
+public class NewsTicker extends Sprite {
 
         private static var pendingScrollText:String = "";
 
@@ -31,8 +29,7 @@ public class NewsTicker extends Sprite
         private var currentRepeat:uint = 0;
         private var scrollOffset:int = 0;
 
-        public function NewsTicker()
-        {
+        public function NewsTicker(){
             this.scrollText = this.createScrollText();
             this.timer = new Timer(0.17, 0);
             this.drawBackground();
@@ -42,17 +39,15 @@ public class NewsTicker extends Sprite
             {
                 this.activateNewScrollText(NewsTicker.pendingScrollText);
                 NewsTicker.pendingScrollText = "";
-            }
+            };
         }
 
-        public static function setPendingScrollText(_arg_1:String):void
-        {
+        public static function setPendingScrollText(_arg_1:String):void{
             NewsTicker.pendingScrollText = _arg_1;
         }
 
 
-        public function activateNewScrollText(_arg_1:String):void
-        {
+        public function activateNewScrollText(_arg_1:String):void{
             if (this.visible == false)
             {
                 this.visible = true;
@@ -61,15 +56,14 @@ public class NewsTicker extends Sprite
             else
             {
                 return;
-            }
+            };
             this.scrollText.text = ((this.SCROLL_PREPEND + _arg_1) + this.SCROLL_APPEND);
             this.timer.addEventListener(TimerEvent.TIMER, this.scrollAnimation);
             this.currentRepeat = 1;
             this.timer.start();
         }
 
-        private function scrollAnimation(_arg_1:TimerEvent):void
-        {
+        private function scrollAnimation(_arg_1:TimerEvent):void{
             this.timer.stop();
             if (this.scrollText.scrollH < this.scrollText.maxScrollH)
             {
@@ -94,25 +88,22 @@ public class NewsTicker extends Sprite
                     this.timer.removeEventListener(TimerEvent.TIMER, this.scrollAnimation);
                     this.visible = false;
                     StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
-                }
-            }
+                };
+            };
         }
 
-        private function align():void
-        {
+        private function align():void{
             this.scrollText.x = 5;
             this.scrollText.y = 2;
         }
 
-        private function drawBackground():void
-        {
+        private function drawBackground():void{
             graphics.beginFill(0, 0.4);
             graphics.drawRoundRect(0, 0, this.WIDTH, this.HEIGHT, 12, 12);
             graphics.endFill();
         }
 
-        private function createScrollText():TextField
-        {
+        private function createScrollText():TextField{
             var _local_1:TextField;
             _local_1 = new TextField();
             var _local_2:FontModel = StaticInjectorContext.getInjector().getInstance(FontModel);

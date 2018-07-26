@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.signals.UpdatePetYardSignal
 
-package io.decagames.rotmg.pets.signals
-{
+package io.decagames.rotmg.pets.signals{
 import org.osflash.signals.Signal;
 
-public class UpdatePetYardSignal extends Signal
-    {
+public class UpdatePetYardSignal extends Signal {
 
-        public function UpdatePetYardSignal()
-        {
+        public function UpdatePetYardSignal(){
             super(int);
         }
 

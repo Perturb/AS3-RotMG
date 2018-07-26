@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kongregate.view.KongregateAccountInfoMediator
 
-package kabam.rotmg.account.kongregate.view
-{
+package kabam.rotmg.account.kongregate.view{
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class KongregateAccountInfoMediator extends Mediator 
-    {
+public class KongregateAccountInfoMediator extends Mediator {
 
         [Inject]
         public var view:KongregateAccountInfoView;
@@ -16,18 +14,15 @@ public class KongregateAccountInfoMediator extends Mediator
         public var api:KongregateApi;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.register.add(this.onRegister);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.register.remove(this.onRegister);
         }
 
-        private function onRegister():void
-        {
+        private function onRegister():void{
             this.api.showRegistrationDialog();
         }
 

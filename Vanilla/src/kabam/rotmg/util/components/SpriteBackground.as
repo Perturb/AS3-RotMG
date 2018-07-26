@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.SpriteBackground
 
-package kabam.rotmg.util.components
-{
+package kabam.rotmg.util.components{
 import com.company.assembleegameclient.util.Currency;
 import com.company.util.GraphicsUtil;
 import com.company.util.MoreColorUtil;
@@ -24,8 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class SpriteBackground extends Sprite
-    {
+public class SpriteBackground extends Sprite {
 
         private static const BEVEL:int = 4;
         private static const PADDING:int = 2;
@@ -51,8 +49,7 @@ public class SpriteBackground extends Sprite
         private const graphicsData:Vector.<IGraphicsData> = new <IGraphicsData>[enabledFill, graphicsPath, GraphicsUtil.END_FILL];
         private const waiter:SignalWaiter = new SignalWaiter();
 
-        public function SpriteBackground(_arg_1:Number, _arg_2:Number)
-        {
+        public function SpriteBackground(_arg_1:Number, _arg_2:Number){
             this.prefix = "   ";
             this.sizeX = _arg_1;
             this.sizeY = _arg_2;
@@ -66,42 +63,36 @@ public class SpriteBackground extends Sprite
             addChild(this.text);
         }
 
-        public function setEnabled(_arg_1:Boolean):void
-        {
+        public function setEnabled(_arg_1:Boolean):void{
             if (_arg_1 != mouseEnabled)
             {
                 mouseEnabled = _arg_1;
                 filters = ((_arg_1) ? [] : [grayfilter]);
                 this.draw();
-            }
+            };
         }
 
-        private function updateUI():void
-        {
+        private function updateUI():void{
             this.updateBackground();
             this.draw();
         }
 
-        private function updateBackground():void
-        {
+        private function updateBackground():void{
             GraphicsUtil.clearPath(this.graphicsPath);
             GraphicsUtil.drawCutEdgeRect(0, 0, this.getWidth(), this.getHeight(), BEVEL, [1, 1, 1, 1], this.graphicsPath);
         }
 
-        private function draw():void
-        {
+        private function draw():void{
             this.graphicsData[0] = ((mouseEnabled) ? this.enabledFill : this.disabledFill);
             graphics.clear();
             graphics.drawGraphicsData(this.graphicsData);
         }
 
-        private function getWidth():int
-        {
+        private function getWidth():int{
             return (this.sizeX);
         }
 
-        private function getHeight():int
-        {
+        private function getHeight():int{
             return (this.sizeY);
         }
 

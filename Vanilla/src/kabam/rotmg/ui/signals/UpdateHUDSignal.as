@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.signals.UpdateHUDSignal
 
-package kabam.rotmg.ui.signals
-{
+package kabam.rotmg.ui.signals{
 import com.company.assembleegameclient.objects.Player;
 
 import org.osflash.signals.Signal;
 
-public class UpdateHUDSignal extends Signal 
-    {
+public class UpdateHUDSignal extends Signal {
 
-        public function UpdateHUDSignal()
-        {
+        public function UpdateHUDSignal(){
             super(Player);
         }
 

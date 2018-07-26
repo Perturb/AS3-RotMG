@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.offer.Offers
 
-package com.company.assembleegameclient.util.offer
-{
-public class Offers
-    {
+package com.company.assembleegameclient.util.offer{
+public class Offers {
 
         private static const BEST_DEAL:String = "(Best deal)";
         private static const MOST_POPULAR:String = "(Most popular)";
@@ -15,15 +13,13 @@ public class Offers
         public var exp:String;
         public var offerList:Vector.<Offer>;
 
-        public function Offers(_arg_1:XML)
-        {
+        public function Offers(_arg_1:XML){
             this.tok = _arg_1.Tok;
             this.exp = _arg_1.Exp;
             this.makeOffers(_arg_1);
         }
 
-        private function makeOffers(_arg_1:XML):void
-        {
+        private function makeOffers(_arg_1:XML):void{
             this.makeOfferList(_arg_1);
             this.sortOfferList();
             this.defineBonuses();
@@ -31,18 +27,16 @@ public class Offers
             this.defineBestDealTagline();
         }
 
-        private function makeOfferList(_arg_1:XML):void
-        {
+        private function makeOfferList(_arg_1:XML):void{
             var _local_2:XML;
             this.offerList = new Vector.<Offer>(0);
             for each (_local_2 in _arg_1.Offer)
             {
                 this.offerList.push(this.makeOffer(_local_2));
-            }
+            };
         }
 
-        private function makeOffer(_arg_1:XML):Offer
-        {
+        private function makeOffer(_arg_1:XML):Offer{
             var _local_2:String = _arg_1.Id;
             var _local_3:Number = Number(_arg_1.Price);
             var _local_4:int = int(_arg_1.RealmGold);
@@ -52,13 +46,11 @@ public class Offers
             return (new Offer(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7));
         }
 
-        private function sortOfferList():void
-        {
+        private function sortOfferList():void{
             this.offerList.sort(this.sortOffers);
         }
 
-        private function defineBonuses():void
-        {
+        private function defineBonuses():void{
             var _local_5:int;
             var _local_6:int;
             var _local_7:Number;
@@ -66,7 +58,7 @@ public class Offers
             if (this.offerList.length == 0)
             {
                 return;
-            }
+            };
             var _local_1:int = this.offerList[0].realmGold_;
             var _local_2:int = this.offerList[0].price_;
             var _local_3:Number = (_local_1 / _local_2);
@@ -79,28 +71,25 @@ public class Offers
                 _local_8 = (_local_5 - _local_7);
                 this.offerList[_local_4].bonus = (_local_8 / _local_6);
                 _local_4++;
-            }
+            };
         }
 
-        private function sortOffers(_arg_1:Offer, _arg_2:Offer):int
-        {
+        private function sortOffers(_arg_1:Offer, _arg_2:Offer):int{
             return (_arg_1.price_ - _arg_2.price_);
         }
 
-        private function defineMostPopularTagline():void
-        {
+        private function defineMostPopularTagline():void{
             var _local_1:Offer;
             for each (_local_1 in this.offerList)
             {
                 if (_local_1.price_ == 10)
                 {
                     _local_1.tagline = MOST_POPULAR;
-                }
-            }
+                };
+            };
         }
 
-        private function defineBestDealTagline():void
-        {
+        private function defineBestDealTagline():void{
             this.offerList[(this.offerList.length - 1)].tagline = BEST_DEAL;
         }
 

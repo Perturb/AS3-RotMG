@@ -1,32 +1,27 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.ui.impl.VerticalLayout
 
-package kabam.lib.ui.impl
-{
+package kabam.lib.ui.impl{
 import flash.display.DisplayObject;
 
 import kabam.lib.ui.api.Layout;
 
-public class VerticalLayout implements Layout 
-    {
+public class VerticalLayout implements Layout {
 
         private var padding:int = 0;
 
 
-        public function getPadding():int
-        {
+        public function getPadding():int{
             return (this.padding);
         }
 
-        public function setPadding(_arg_1:int):void
-        {
+        public function setPadding(_arg_1:int):void{
             this.padding = _arg_1;
         }
 
-        public function layout(_arg_1:Vector.<DisplayObject>, _arg_2:int=0):void
-        {
+        public function layout(_arg_1:Vector.<DisplayObject>, _arg_2:int=0):void{
             var _local_6:DisplayObject;
             var _local_3:int = _arg_2;
             var _local_4:int = _arg_1.length;
@@ -37,7 +32,7 @@ public class VerticalLayout implements Layout
                 _local_6.y = _local_3;
                 _local_3 = (_local_3 + (_local_6.height + this.padding));
                 _local_5++;
-            }
+            };
         }
 
 

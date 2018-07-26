@@ -1,21 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.pets.windows.yard.InteractionInfoMediator
 
-package io.decagames.rotmg.pets.windows.yard
-{
+package io.decagames.rotmg.pets.windows.yard{
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class InteractionInfoMediator extends Mediator 
-    {
+public class InteractionInfoMediator extends Mediator {
 
         [Inject]
         public var view:InteractionInfo;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
         }
 
 

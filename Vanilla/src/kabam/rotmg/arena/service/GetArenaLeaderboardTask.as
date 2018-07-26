@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.service.GetArenaLeaderboardTask
 
-package kabam.rotmg.arena.service
-{
+package kabam.rotmg.arena.service{
 import com.company.util.MoreObjectUtil;
 
 import kabam.lib.tasks.BaseTask;
@@ -14,8 +13,7 @@ import kabam.rotmg.arena.control.ReloadLeaderboard;
 import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
 import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
 
-public class GetArenaLeaderboardTask extends BaseTask 
-    {
+public class GetArenaLeaderboardTask extends BaseTask {
 
         private static const REQUEST:String = "arena/getRecords";
 
@@ -30,27 +28,23 @@ public class GetArenaLeaderboardTask extends BaseTask
         public var filter:ArenaLeaderboardFilter;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest(REQUEST, this.makeRequestObject());
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             ((_arg_1) && (this.updateLeaderboard(_arg_2)));
             completeTask(_arg_1, _arg_2);
         }
 
-        private function updateLeaderboard(_arg_1:String):void
-        {
+        private function updateLeaderboard(_arg_1:String):void{
             var _local_2:Vector.<ArenaLeaderboardEntry> = this.factory.makeEntries(XML(_arg_1).Record);
             this.filter.setEntries(_local_2);
             this.reloadLeaderboard.dispatch();
         }
 
-        private function makeRequestObject():Object
-        {
+        private function makeRequestObject():Object{
             var _local_1:Object = {"type":this.filter.getKey()};
             MoreObjectUtil.addToObject(_local_1, this.account.getCredentials());
             return (_local_1);

@@ -1,26 +1,23 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.account.ui.NewChooseNameFrame
 
-package com.company.assembleegameclient.account.ui
-{
+package com.company.assembleegameclient.account.ui{
 import flash.events.MouseEvent;
 
 import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class NewChooseNameFrame extends Frame 
-    {
+public class NewChooseNameFrame extends Frame {
 
         public const choose:Signal = new Signal();
         public const cancel:Signal = new Signal();
 
         private var name_:TextInputField;
 
-        public function NewChooseNameFrame()
-        {
+        public function NewChooseNameFrame(){
             super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE, "/newChooseName");
             this.name_ = new TextInputField(TextKey.NEWCHOOSENAMEFRAME_NAME, false);
             this.name_.inputText_.restrict = "A-Za-z";
@@ -34,18 +31,15 @@ public class NewChooseNameFrame extends Frame
             rightButton_.addEventListener(MouseEvent.CLICK, this.onChoose);
         }
 
-        private function onChoose(_arg_1:MouseEvent):void
-        {
+        private function onChoose(_arg_1:MouseEvent):void{
             this.choose.dispatch(this.name_.text());
         }
 
-        private function onCancel(_arg_1:MouseEvent):void
-        {
+        private function onCancel(_arg_1:MouseEvent):void{
             this.cancel.dispatch();
         }
 
-        public function setError(_arg_1:String):void
-        {
+        public function setError(_arg_1:String):void{
             this.name_.setError(_arg_1);
         }
 

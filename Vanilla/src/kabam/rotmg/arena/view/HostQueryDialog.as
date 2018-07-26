@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.HostQueryDialog
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import flash.display.BitmapData;
@@ -23,8 +22,7 @@ import kabam.rotmg.util.graphics.ButtonLayoutHelper;
 
 import org.osflash.signals.natives.NativeSignal;
 
-public class HostQueryDialog extends Sprite
-    {
+public class HostQueryDialog extends Sprite {
 
         public static const WIDTH:int = 274;
         public static const HEIGHT:int = 338;
@@ -42,21 +40,18 @@ public class HostQueryDialog extends Sprite
         public const backClick:NativeSignal = new NativeSignal(backButton, MouseEvent.CLICK);
 
 
-        private function makeDeferredLayout():SignalWaiter
-        {
+        private function makeDeferredLayout():SignalWaiter{
             var _local_1:SignalWaiter = new SignalWaiter();
             _local_1.complete.addOnce(this.onLayout);
             return (_local_1);
         }
 
-        private function onLayout():void
-        {
+        private function onLayout():void{
             var _local_1:ButtonLayoutHelper = new ButtonLayoutHelper();
             _local_1.layout(WIDTH, this.backButton);
         }
 
-        private function makeContainer():DisplayObjectContainer
-        {
+        private function makeContainer():DisplayObjectContainer{
             var _local_1:Sprite;
             _local_1 = new Sprite();
             _local_1.x = ((800 - WIDTH) / 2);
@@ -65,8 +60,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeBackground():PopupWindowBackground
-        {
+        private function makeBackground():PopupWindowBackground{
             var _local_1:PopupWindowBackground = new PopupWindowBackground();
             _local_1.draw(WIDTH, HEIGHT);
             _local_1.divide(PopupWindowBackground.HORIZONTAL_DIVISION, 34);
@@ -74,8 +68,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeHost():ArenaQueryDialogHost
-        {
+        private function makeHost():ArenaQueryDialogHost{
             var _local_1:ArenaQueryDialogHost;
             _local_1 = new ArenaQueryDialogHost();
             _local_1.x = 20;
@@ -84,8 +77,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeTitle():TextFieldDisplayConcrete
-        {
+        private function makeTitle():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete;
             _local_1 = ArenaViewAssetFactory.returnTextfield(0xFFFFFF, 18, true);
             _local_1.setStringBuilder(new LineBuilder().setParams(TITLE));
@@ -96,8 +88,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeBackButton():DeprecatedTextButton
-        {
+        private function makeBackButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton;
             _local_1 = new DeprecatedTextButton(16, BACK, 80);
             this.container.addChild(_local_1);
@@ -106,8 +97,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        private function makeCloseButton():DeprecatedTextButton
-        {
+        private function makeCloseButton():DeprecatedTextButton{
             var _local_1:DeprecatedTextButton;
             _local_1 = new DeprecatedTextButton(16, CLOSE, 110);
             _local_1.y = 292;
@@ -116,8 +106,7 @@ public class HostQueryDialog extends Sprite
             return (_local_1);
         }
 
-        public function setHostIcon(_arg_1:BitmapData):void
-        {
+        public function setHostIcon(_arg_1:BitmapData):void{
             this.host.setHostIcon(_arg_1);
         }
 

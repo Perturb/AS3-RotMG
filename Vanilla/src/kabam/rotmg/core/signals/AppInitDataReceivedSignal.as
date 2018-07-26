@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.signals.AppInitDataReceivedSignal
 
-package kabam.rotmg.core.signals
-{
+package kabam.rotmg.core.signals{
 import org.osflash.signals.Signal;
 
-public class AppInitDataReceivedSignal extends Signal
-    {
+public class AppInitDataReceivedSignal extends Signal {
 
-        public function AppInitDataReceivedSignal()
-        {
+        public function AppInitDataReceivedSignal(){
             super(XML);
         }
 

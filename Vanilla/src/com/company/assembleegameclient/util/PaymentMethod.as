@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.util.PaymentMethod
 
-package com.company.assembleegameclient.util
-{
+package com.company.assembleegameclient.util{
 import com.company.assembleegameclient.util.offer.Offer;
 
 import flash.net.URLVariables;
@@ -14,8 +13,7 @@ import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.text.model.TextKey;
 
-public class PaymentMethod
-    {
+public class PaymentMethod {
 
         public static const GO_METHOD:PaymentMethod = new PaymentMethod(TextKey.PAYMENTS_GOOGLE_CHECKOUT, "co", "");
         public static const PAYPAL_METHOD:PaymentMethod = new PaymentMethod(TextKey.PAYMENTS_PAYPAL, "ps", "P3");
@@ -26,29 +24,26 @@ public class PaymentMethod
         public var provider_:String;
         public var paymentid_:String;
 
-        public function PaymentMethod(_arg_1:String, _arg_2:String, _arg_3:String)
-        {
+        public function PaymentMethod(_arg_1:String, _arg_2:String, _arg_3:String){
             this.label_ = _arg_1;
             this.provider_ = _arg_2;
             this.paymentid_ = _arg_3;
         }
 
-        public static function getPaymentMethodByLabel(_arg_1:String):PaymentMethod
-        {
+        public static function getPaymentMethodByLabel(_arg_1:String):PaymentMethod{
             var _local_2:PaymentMethod;
             for each (_local_2 in PAYMENT_METHODS)
             {
                 if (_local_2.label_ == _arg_1)
                 {
                     return (_local_2);
-                }
-            }
+                };
+            };
             return (null);
         }
 
 
-        public function getURL(_arg_1:String, _arg_2:String, _arg_3:Offer):String
-        {
+        public function getURL(_arg_1:String, _arg_2:String, _arg_3:Offer):String{
             var _local_4:Account = StaticInjectorContext.getInjector().getInstance(Account);
             var _local_5:ApplicationSetup = StaticInjectorContext.getInjector().getInstance(ApplicationSetup);
             var _local_6:URLVariables = new URLVariables();
@@ -66,7 +61,7 @@ public class PaymentMethod
                     _local_6["price"] = _arg_3.price_.toString();
                     _local_6["paymentid"] = this.paymentid_;
                     break;
-            }
+            };
             return ((_local_5.getAppEngineUrl(true) + "/credits/add?") + _local_6.toString());
         }
 

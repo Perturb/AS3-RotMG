@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip
 
-package com.company.assembleegameclient.ui.tooltip
-{
+package com.company.assembleegameclient.ui.tooltip{
 import com.company.assembleegameclient.appengine.CharacterStats;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
@@ -28,8 +27,7 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class MyPlayerToolTip extends ToolTip
-    {
+public class MyPlayerToolTip extends ToolTip {
 
         private var factory:CharacterFactory;
         private var classes:ClassesModel;
@@ -48,16 +46,14 @@ public class MyPlayerToolTip extends ToolTip
         private var charStats:CharacterStats;
         private var stats_:StatsView;
 
-        public function MyPlayerToolTip(_arg_1:String, _arg_2:XML, _arg_3:CharacterStats)
-        {
+        public function MyPlayerToolTip(_arg_1:String, _arg_2:XML, _arg_3:CharacterStats){
             super(0x363636, 1, 0xFFFFFF, 1);
             this.accountName = _arg_1;
             this.charXML = _arg_2;
             this.charStats = _arg_3;
         }
 
-        public function createUI():void
-        {
+        public function createUI():void{
             var _local_5:Number;
             this.factory = StaticInjectorContext.getInjector().getInstance(CharacterFactory);
             this.classes = StaticInjectorContext.getInjector().getInstance(ClassesModel);
@@ -106,7 +102,7 @@ public class MyPlayerToolTip extends ToolTip
                 addChild(this.bGrid);
                 this.bGrid.setItems(this.player_.equipment_);
                 _local_5 = (_local_5 + 88);
-            }
+            };
             _local_5 = (_local_5 + 8);
             this.lineBreak_ = new LineBreakDesign(100, 0x1C1C1C);
             this.lineBreak_.x = 6;
@@ -119,11 +115,10 @@ public class MyPlayerToolTip extends ToolTip
             if (_local_6 > 0)
             {
                 this.makeNextClassQuestText(_local_6, _local_2);
-            }
+            };
         }
 
-        public function makeNextClassQuestText(_arg_1:int, _arg_2:XML):void
-        {
+        public function makeNextClassQuestText(_arg_1:int, _arg_2:XML):void{
             this.nextClassQuest_ = new TextFieldDisplayConcrete().setSize(13).setColor(16549442).setTextWidth(174);
             this.nextClassQuest_.setStringBuilder(new LineBuilder().setParams(TextKey.MY_PLAYER_TOOL_TIP_NEXT_CLASS_QUEST, {
                 "nextStarFame":_arg_1,
@@ -134,8 +129,7 @@ public class MyPlayerToolTip extends ToolTip
             waiter.push(this.nextClassQuest_.textChanged);
         }
 
-        public function makeBestLevelText():void
-        {
+        public function makeBestLevelText():void{
             this.bestLevel_ = new TextFieldDisplayConcrete().setSize(14).setColor(6206769);
             var _local_1:int = ((this.charStats == null) ? 0 : this.charStats.numStars());
             var _local_2:String = ((this.charStats != null) ? this.charStats.bestLevel() : 0).toString();
@@ -150,17 +144,15 @@ public class MyPlayerToolTip extends ToolTip
             waiter.push(this.bestLevel_.textChanged);
         }
 
-        override protected function alignUI():void
-        {
+        override protected function alignUI():void{
             if (this.nextClassQuest_)
             {
                 this.nextClassQuest_.x = 8;
                 this.nextClassQuest_.y = (this.bestLevel_.getBounds(this).bottom - 2);
-            }
+            };
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.hpBar_.draw(this.player_.hp_, this.player_.maxHP_, this.player_.maxHPBoost_, this.player_.maxHPMax_, this.player_.level_);
             this.mpBar_.draw(this.player_.mp_, this.player_.maxMP_, this.player_.maxMPBoost_, this.player_.maxMPMax_, this.player_.level_);
             this.lineBreak_.setWidthColor((width - 10), 0x1C1C1C);

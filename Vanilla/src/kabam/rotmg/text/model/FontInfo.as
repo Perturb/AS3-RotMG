@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.text.model.FontInfo
 
-package kabam.rotmg.text.model
-{
+package kabam.rotmg.text.model{
 import flash.display.BitmapData;
 import flash.geom.Rectangle;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 
-public class FontInfo
-    {
+public class FontInfo {
 
         private static const renderingFontSize:Number = 200;
         private static const GUTTER:Number = 2;
@@ -23,29 +21,24 @@ public class FontInfo
         private var verticalSpaceRatio:Number;
 
 
-        public function setName(_arg_1:String):void
-        {
+        public function setName(_arg_1:String):void{
             this.name = _arg_1;
             this.computeRatiosByRendering();
         }
 
-        public function getName():String
-        {
+        public function getName():String{
             return (this.name);
         }
 
-        public function getXHeight(_arg_1:Number):Number
-        {
+        public function getXHeight(_arg_1:Number):Number{
             return (this.xHeightRatio * _arg_1);
         }
 
-        public function getVerticalSpace(_arg_1:Number):Number
-        {
+        public function getVerticalSpace(_arg_1:Number):Number{
             return (this.verticalSpaceRatio * _arg_1);
         }
 
-        private function computeRatiosByRendering():void
-        {
+        private function computeRatiosByRendering():void{
             var _local_1:TextField = this.makeTextField();
             var _local_2:BitmapData = new BitmapDataSpy(_local_1.width, _local_1.height);
             _local_2.draw(_local_1);
@@ -55,8 +48,7 @@ public class FontInfo
             this.verticalSpaceRatio = this.deNormalize(((_local_1.height - _local_4.bottom) - GUTTER));
         }
 
-        private function makeTextField():TextField
-        {
+        private function makeTextField():TextField{
             var _local_1:TextField = new TextField();
             _local_1.autoSize = TextFieldAutoSize.LEFT;
             _local_1.text = "x";
@@ -65,8 +57,7 @@ public class FontInfo
             return (_local_1);
         }
 
-        private function deNormalize(_arg_1:Number):Number
-        {
+        private function deNormalize(_arg_1:Number):Number{
             return (_arg_1 / renderingFontSize);
         }
 

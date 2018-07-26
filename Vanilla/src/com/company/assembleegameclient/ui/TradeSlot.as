@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.TradeSlot
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
@@ -32,8 +31,7 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 
-public class TradeSlot extends Slot implements TooltipAble 
-    {
+public class TradeSlot extends Slot implements TooltipAble {
 
         private static const IDENTITY_MATRIX:Matrix = new Matrix();
         public static const EMPTY:int = -1;
@@ -52,8 +50,7 @@ public class TradeSlot extends Slot implements TooltipAble
         private var overlayPath_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
         private var graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, overlayPath_, GraphicsUtil.END_STROKE];
 
-        public function TradeSlot(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:Array, _arg_7:uint)
-        {
+        public function TradeSlot(_arg_1:int, _arg_2:Boolean, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:Array, _arg_7:uint){
             super(_arg_4, _arg_5, _arg_6);
             this.id = _arg_7;
             this.item_ = _arg_1;
@@ -62,31 +59,28 @@ public class TradeSlot extends Slot implements TooltipAble
             if (!_arg_2)
             {
                 transform.colorTransform = MoreColorUtil.veryDarkCT;
-            }
+            };
             this.overlay_ = this.getOverlay();
             addChild(this.overlay_);
             this.setIncluded(_arg_3);
             this.hoverTooltipDelegate.setDisplayObject(this);
         }
 
-        private static function makeDoseMatrix():Matrix
-        {
+        private static function makeDoseMatrix():Matrix{
             var _local_1:Matrix = new Matrix();
             _local_1.translate(10, 5);
             return (_local_1);
         }
 
 
-        private function drawItemIfAvailable():void
-        {
+        private function drawItemIfAvailable():void{
             if (!this.isEmpty())
             {
                 this.drawItem();
-            }
+            };
         }
 
-        private function drawItem():void
-        {
+        private function drawItem():void{
             var _local_4:Bitmap;
             var _local_5:BitmapData;
             var _local_6:BitmapData;
@@ -98,13 +92,13 @@ public class TradeSlot extends Slot implements TooltipAble
                 _local_1 = _local_1.clone();
                 _local_5 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Doses)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                 _local_1.draw(_local_5, DOSE_MATRIX);
-            }
+            };
             if (((_local_2.hasOwnProperty("Quantity")) && (this.bitmapFactory)))
             {
                 _local_1 = _local_1.clone();
                 _local_6 = this.bitmapFactory.make(new StaticStringBuilder(String(_local_2.Quantity)), 12, 0xFFFFFF, false, IDENTITY_MATRIX, false);
                 _local_1.draw(_local_6, DOSE_MATRIX);
-            }
+            };
             var _local_3:Point = offsets(this.item_, type_, false);
             _local_4 = new Bitmap(_local_1);
             _local_4.x = (((WIDTH / 2) - (_local_4.width / 2)) + _local_3.x);
@@ -112,8 +106,7 @@ public class TradeSlot extends Slot implements TooltipAble
             SpriteUtil.safeAddChild(this, _local_4);
         }
 
-        public function setIncluded(_arg_1:Boolean):void
-        {
+        public function setIncluded(_arg_1:Boolean):void{
             this.included_ = _arg_1;
             this.overlay_.visible = this.included_;
             if (this.included_)
@@ -123,18 +116,16 @@ public class TradeSlot extends Slot implements TooltipAble
             else
             {
                 fill_.color = 0x545454;
-            }
+            };
             drawBackground();
         }
 
-        public function setBitmapFactory(_arg_1:BitmapTextFactory):void
-        {
+        public function setBitmapFactory(_arg_1:BitmapTextFactory):void{
             this.bitmapFactory = _arg_1;
             this.drawItemIfAvailable();
         }
 
-        private function getOverlay():Shape
-        {
+        private function getOverlay():Shape{
             var _local_1:Shape = new Shape();
             GraphicsUtil.clearPath(this.overlayPath_);
             GraphicsUtil.drawCutEdgeRect(0, 0, WIDTH, HEIGHT, 4, cuts_, this.overlayPath_);
@@ -142,36 +133,30 @@ public class TradeSlot extends Slot implements TooltipAble
             return (_local_1);
         }
 
-        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void
-        {
+        public function setShowToolTipSignal(_arg_1:ShowTooltipSignal):void{
             this.hoverTooltipDelegate.setShowToolTipSignal(_arg_1);
         }
 
-        public function getShowToolTip():ShowTooltipSignal
-        {
+        public function getShowToolTip():ShowTooltipSignal{
             return (this.hoverTooltipDelegate.getShowToolTip());
         }
 
-        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void
-        {
+        public function setHideToolTipsSignal(_arg_1:HideTooltipsSignal):void{
             this.hoverTooltipDelegate.setHideToolTipsSignal(_arg_1);
         }
 
-        public function getHideToolTips():HideTooltipsSignal
-        {
+        public function getHideToolTips():HideTooltipsSignal{
             return (this.hoverTooltipDelegate.getHideToolTips());
         }
 
-        public function setPlayer(_arg_1:Player):void
-        {
+        public function setPlayer(_arg_1:Player):void{
             if (!this.isEmpty())
             {
                 this.hoverTooltipDelegate.tooltip = this.equipmentToolTipFactory.make(this.item_, _arg_1, -1, InventoryOwnerTypes.OTHER_PLAYER, this.id);
-            }
+            };
         }
 
-        public function isEmpty():Boolean
-        {
+        public function isEmpty():Boolean{
             return (this.item_ == EMPTY);
         }
 

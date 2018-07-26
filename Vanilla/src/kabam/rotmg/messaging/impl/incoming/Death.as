@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.Death
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.display.BitmapData;
 import flash.utils.IDataInput;
 
-public class Death extends IncomingMessage
-    {
+public class Death extends IncomingMessage {
 
         public var accountId_:String;
         public var charId_:int;
@@ -19,19 +17,16 @@ public class Death extends IncomingMessage
         public var isZombie:Boolean;
         public var background:BitmapData;
 
-        public function Death(_arg_1:uint, _arg_2:Function)
-        {
+        public function Death(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        public function disposeBackground():void
-        {
+        public function disposeBackground():void{
             ((this.background) && (this.background.dispose()));
             this.background = null;
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.accountId_ = _arg_1.readUTF();
             this.charId_ = _arg_1.readInt();
             this.killedBy_ = _arg_1.readUTF();
@@ -40,8 +35,7 @@ public class Death extends IncomingMessage
             this.isZombie = (!(this.zombieId == -1));
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("DEATH", "accountId_", "charId_", "killedBy_"));
         }
 

@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.util.KeyCodes
 
-package com.company.util
-{
-    public class KeyCodes 
-    {
+package com.company.util{
+    public class KeyCodes {
 
         public static const A:uint = 65;
         public static const ALTERNATE:uint = 18;

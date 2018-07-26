@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.ui.popups.header.CoinsField
 
-package io.decagames.rotmg.ui.popups.header
-{
+package io.decagames.rotmg.ui.popups.header{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
@@ -17,15 +16,13 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class CoinsField extends Sprite 
-    {
+public class CoinsField extends Sprite {
 
         private var coinsFieldBackground:SliceScalingBitmap;
         private var _label:UILabel;
         private var coinBitmap:Bitmap;
 
-        public function CoinsField(_arg_1:int)
-        {
+        public function CoinsField(_arg_1:int){
             this.coinsFieldBackground = TextureParser.instance.getSliceScalingBitmap("UI", "bordered_field", _arg_1);
             this._label = new UILabel();
             DefaultLabelFormat.coinsFieldLabel(this._label);
@@ -39,20 +36,17 @@ public class CoinsField extends Sprite
             addChild(this.coinBitmap);
         }
 
-        public function set coinsAmount(_arg_1:int):void
-        {
+        public function set coinsAmount(_arg_1:int):void{
             this._label.text = _arg_1.toString();
             this._label.x = (((this.coinsFieldBackground.width - this._label.textWidth) / 2) - 5);
             this._label.y = (((this.coinsFieldBackground.height - this._label.height) / 2) + 2);
         }
 
-        public function get label():UILabel
-        {
+        public function get label():UILabel{
             return (this._label);
         }
 
-        public function dispose():void
-        {
+        public function dispose():void{
             this.coinsFieldBackground.dispose();
             this.coinBitmap.bitmapData.dispose();
         }

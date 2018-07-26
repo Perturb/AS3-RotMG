@@ -1,32 +1,28 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.particles.CollapseEffect
 
-package com.company.assembleegameclient.objects.particles
-{
+package com.company.assembleegameclient.objects.particles{
 import com.company.assembleegameclient.objects.GameObject;
 
 import flash.geom.Point;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class CollapseEffect extends ParticleEffect
-    {
+public class CollapseEffect extends ParticleEffect {
 
         public var center_:Point;
         public var edgePoint_:Point;
         public var color_:int;
 
-        public function CollapseEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:WorldPosData, _arg_4:int)
-        {
+        public function CollapseEffect(_arg_1:GameObject, _arg_2:WorldPosData, _arg_3:WorldPosData, _arg_4:int){
             this.center_ = new Point(_arg_2.x_, _arg_2.y_);
             this.edgePoint_ = new Point(_arg_3.x_, _arg_3.y_);
             this.color_ = _arg_4;
         }
 
-        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runNormalRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_8:Number;
             var _local_9:Point;
             var _local_10:Particle;
@@ -44,12 +40,11 @@ public class CollapseEffect extends ParticleEffect
                 _local_10 = new SparkerParticle(_local_4, this.color_, _local_5, _local_9, this.center_);
                 map_.addObj(_local_10, x_, y_);
                 _local_7++;
-            }
+            };
             return (false);
         }
 
-        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function runEasyRendering(_arg_1:int, _arg_2:int):Boolean{
             var _local_8:Number;
             var _local_9:Point;
             var _local_10:Particle;
@@ -67,7 +62,7 @@ public class CollapseEffect extends ParticleEffect
                 _local_10 = new SparkerParticle(_local_4, this.color_, _local_5, _local_9, this.center_);
                 map_.addObj(_local_10, x_, y_);
                 _local_7++;
-            }
+            };
             return (false);
         }
 

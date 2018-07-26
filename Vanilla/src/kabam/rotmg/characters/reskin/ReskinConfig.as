@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.characters.reskin.ReskinConfig
 
-package kabam.rotmg.characters.reskin
-{
+package kabam.rotmg.characters.reskin{
 import kabam.lib.net.api.MessageMap;
 import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionCommand;
 import kabam.rotmg.characters.reskin.control.AddReskinConsoleActionSignal;
@@ -27,8 +26,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class ReskinConfig implements IConfig 
-    {
+public class ReskinConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -42,8 +40,7 @@ public class ReskinConfig implements IConfig
         public var messageMap:MessageMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mediatorMap.map(ReskinCharacterView).toMediator(ReskinCharacterMediator);
             this.mediatorMap.map(ReskinPanel).toMediator(ReskinPanelMediator);
             this.commandMap.map(AddReskinConsoleActionSignal).toCommand(AddReskinConsoleActionCommand);
@@ -53,8 +50,7 @@ public class ReskinConfig implements IConfig
             this.context.lifecycle.afterInitializing(this.onInit);
         }
 
-        private function onInit():void
-        {
+        private function onInit():void{
             this.injector.getInstance(AddReskinConsoleActionSignal).dispatch();
         }
 

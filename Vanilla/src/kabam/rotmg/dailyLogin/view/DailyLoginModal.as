@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.view.DailyLoginModal
 
-package kabam.rotmg.dailyLogin.view
-{
+package kabam.rotmg.dailyLogin.view{
 import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
@@ -27,8 +26,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class DailyLoginModal extends Sprite 
-    {
+public class DailyLoginModal extends Sprite {
 
         private var content:Sprite;
         private var calendarView:CalendarView = new CalendarView();
@@ -41,8 +39,7 @@ public class DailyLoginModal extends Sprite
         private var tabs:CalendarTabsView;
 
 
-        public function init(_arg_1:DailyLoginModel):void
-        {
+        public function init(_arg_1:DailyLoginModel):void{
             this.daysLeft = _arg_1.daysLeftToCalendarEnd;
             this.modalRectangle = CalendarSettings.getCalendarModalRectangle(_arg_1.overallMaxDays, (this.daysLeft < CalendarSettings.CLAIM_WARNING_BEFORE_DAYS));
             this.content = new Sprite();
@@ -54,19 +51,17 @@ public class DailyLoginModal extends Sprite
             if (this.daysLeft < CalendarSettings.CLAIM_WARNING_BEFORE_DAYS)
             {
                 this.tabs.y = (this.tabs.y + 20);
-            }
+            };
             this.centerModal();
         }
 
-        private function addClaimButton():void
-        {
+        private function addClaimButton():void{
             this.claimButton = new DeprecatedTextButtonStatic(16, "Go & Claim");
             this.claimButton.textChanged.addOnce(this.alignClaimButton);
             addChild(this.claimButton);
         }
 
-        public function showLegend(_arg_1:Boolean):void
-        {
+        public function showLegend(_arg_1:Boolean):void{
             var _local_2:Sprite;
             var _local_6:Bitmap;
             var _local_8:Bitmap;
@@ -103,21 +98,19 @@ public class DailyLoginModal extends Sprite
             else
             {
                 _local_2.x = CalendarSettings.DAILY_LOGIN_MODAL_PADDING;
-            }
+            };
             addChild(_local_2);
         }
 
-        private function alignClaimButton():void
-        {
+        private function alignClaimButton():void{
             this.claimButton.x = CalendarSettings.DAILY_LOGIN_MODAL_PADDING;
             this.claimButton.y = ((this.modalRectangle.height - this.claimButton.height) - CalendarSettings.DAILY_LOGIN_MODAL_PADDING);
             if (this.daysLeft < CalendarSettings.CLAIM_WARNING_BEFORE_DAYS)
             {
-            }
+            };
         }
 
-        private function createModalBox():void
-        {
+        private function createModalBox():void{
             var _local_1:DisplayObject = new MysteryBoxSelectModal.backgroundImageEmbed();
             //this.modalRectangle.width--;
             _local_1.height = (this.modalRectangle.height - 27);
@@ -129,29 +122,25 @@ public class DailyLoginModal extends Sprite
             this.content.addChild(this.makeModalBackground(this.modalRectangle.width, this.modalRectangle.height));
         }
 
-        private function makeModalBackground(_arg_1:int, _arg_2:int):PopupWindowBackground
-        {
+        private function makeModalBackground(_arg_1:int, _arg_2:int):PopupWindowBackground{
             var _local_3:PopupWindowBackground = new PopupWindowBackground();
             _local_3.draw(_arg_1, _arg_2, PopupWindowBackground.TYPE_TRANSPARENT_WITH_HEADER);
             return (_local_3);
         }
 
-        public function addCloseButton():void
-        {
+        public function addCloseButton():void{
             this.closeButton.y = 4;
             this.closeButton.x = ((this.modalRectangle.width - this.closeButton.width) - 5);
             addChild(this.closeButton);
         }
 
-        public function addTitle(_arg_1:String):void
-        {
+        public function addTitle(_arg_1:String):void{
             this.titleTxt = this.getText(_arg_1, 0, 6, true).setSize(18);
             this.titleTxt.setColor(0xFFDE00);
             addChild(this.titleTxt);
         }
 
-        public function showServerTime(_arg_1:String, _arg_2:String):void
-        {
+        public function showServerTime(_arg_1:String, _arg_2:String):void{
             var _local_3:TextFieldDisplayConcrete;
             this.serverTimeTxt = new TextFieldDisplayConcrete().setSize(14).setColor(0xFFFFFF).setTextWidth(this.modalRectangle.width);
             this.serverTimeTxt.setStringBuilder(new StaticStringBuilder(((("Server time: " + _arg_1) + ", ends on: ") + _arg_2)));
@@ -170,12 +159,11 @@ public class DailyLoginModal extends Sprite
             {
                 this.calendarView.y = 70;
                 this.serverTimeTxt.y = 40;
-            }
+            };
             addChild(this.serverTimeTxt);
         }
 
-        public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean=false):TextFieldDisplayConcrete
-        {
+        public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean=false):TextFieldDisplayConcrete{
             var _local_5:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth(this.modalRectangle.width);
             _local_5.setBold(true);
             if (_arg_4)
@@ -185,7 +173,7 @@ public class DailyLoginModal extends Sprite
             else
             {
                 _local_5.setStringBuilder(new LineBuilder().setParams(_arg_1));
-            }
+            };
             _local_5.setWordWrap(true);
             _local_5.setMultiLine(true);
             _local_5.setAutoSize(TextFieldAutoSize.CENTER);
@@ -196,8 +184,7 @@ public class DailyLoginModal extends Sprite
             return (_local_5);
         }
 
-        private function centerModal():void
-        {
+        private function centerModal():void{
             this.x = ((WebMain.STAGE.stageWidth / 2) - (this.width / 2));
             this.y = ((WebMain.STAGE.stageHeight / 2) - (this.height / 2));
             this.tabs.x = CalendarSettings.DAILY_LOGIN_MODAL_PADDING;

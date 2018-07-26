@@ -1,17 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.game.events.DeathEvent
 
-package com.company.assembleegameclient.game.events
-{
+package com.company.assembleegameclient.game.events{
 import com.company.assembleegameclient.objects.Player;
 
 import flash.display.BitmapData;
 import flash.events.Event;
 
-public class DeathEvent extends Event
-    {
+public class DeathEvent extends Event {
 
         public static const DEATH:String = "DEATH";
 
@@ -20,8 +18,7 @@ public class DeathEvent extends Event
         public var accountId_:int;
         public var charId_:int;
 
-        public function DeathEvent(_arg_1:BitmapData, _arg_2:int, _arg_3:int)
-        {
+        public function DeathEvent(_arg_1:BitmapData, _arg_2:int, _arg_3:int){
             super(DEATH);
             this.background_ = _arg_1;
             this.accountId_ = _arg_2;

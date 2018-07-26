@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.CloseDialogComponent
 
-package com.company.assembleegameclient.ui.dialogs
-{
+package com.company.assembleegameclient.ui.dialogs{
 import flash.events.Event;
 
 import org.osflash.signals.Signal;
 
-public class CloseDialogComponent
-    {
+public class CloseDialogComponent {
 
         private const closeSignal:Signal = new Signal();
 
@@ -18,25 +16,22 @@ public class CloseDialogComponent
         private var types:Vector.<String> = new Vector.<String>();
 
 
-        public function add(_arg_1:DialogCloser, _arg_2:String):void
-        {
+        public function add(_arg_1:DialogCloser, _arg_2:String):void{
             this.dialog = _arg_1;
             this.types.push(_arg_2);
             _arg_1.addEventListener(_arg_2, this.onButtonType);
         }
 
-        private function onButtonType(_arg_1:Event):void
-        {
+        private function onButtonType(_arg_1:Event):void{
             var _local_2:String;
             for each (_local_2 in this.types)
             {
                 this.dialog.removeEventListener(_local_2, this.onButtonType);
-            }
+            };
             this.dialog.getCloseSignal().dispatch();
         }
 
-        public function getCloseSignal():Signal
-        {
+        public function getCloseSignal():Signal{
             return (this.closeSignal);
         }
 

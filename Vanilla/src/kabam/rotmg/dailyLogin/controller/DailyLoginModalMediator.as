@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dailyLogin.controller.DailyLoginModalMediator
 
-package kabam.rotmg.dailyLogin.controller
-{
+package kabam.rotmg.dailyLogin.controller{
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.parameters.Parameters;
 
@@ -21,8 +20,7 @@ import kabam.rotmg.ui.model.HUDModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class DailyLoginModalMediator extends Mediator 
-    {
+public class DailyLoginModalMediator extends Mediator {
 
         [Inject]
         public var view:DailyLoginModal;
@@ -40,8 +38,7 @@ public class DailyLoginModalMediator extends Mediator
         public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.init(this.dailyLoginModel);
             this.view.addTitle("Login Rewards");
             var _local_1:DateTimeFormatter = new DateTimeFormatter("en-US");
@@ -55,7 +52,7 @@ public class DailyLoginModalMediator extends Mediator
             {
                 this.view.claimButton.addEventListener(MouseEvent.CLICK, this.onClaimClickHandler);
                 this.view.addEventListener(MouseEvent.CLICK, this.onPopupClickHandler);
-            }
+            };
             Parameters.data_.calendarShowOnDay = this.dailyLoginModel.getTimestampDay();
             Parameters.save();
             this.dailyLoginModel.shouldDisplayCalendarAtStartup = false;
@@ -63,39 +60,34 @@ public class DailyLoginModalMediator extends Mediator
             this.view.closeButton.clicked.add(this.onCloseButtonClicked);
         }
 
-        public function onCloseButtonClicked():void
-        {
+        public function onCloseButtonClicked():void{
             this.view.closeButton.clicked.remove(this.onCloseButtonClicked);
             this.flushStartupQueue.dispatch();
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             if (this.hudModel.gameSprite.map.name_ != Map.DAILY_QUEST_ROOM)
             {
                 this.view.claimButton.removeEventListener(MouseEvent.CLICK, this.onClaimClickHandler);
                 this.view.removeEventListener(MouseEvent.CLICK, this.onPopupClickHandler);
-            }
+            };
             super.destroy();
         }
 
-        private function enterPortal():void
-        {
+        private function enterPortal():void{
             this.closeDialogs.dispatch();
             this.hudModel.gameSprite.gsc_.gotoQuestRoom();
         }
 
-        private function onClaimClickHandler(_arg_1:MouseEvent):void
-        {
+        private function onClaimClickHandler(_arg_1:MouseEvent):void{
             this.enterPortal();
         }
 
-        private function onPopupClickHandler(_arg_1:MouseEvent):void
-        {
+        private function onPopupClickHandler(_arg_1:MouseEvent):void{
             if (_arg_1.target != DialogCloseButton)
             {
                 this.enterPortal();
-            }
+            };
         }
 
 

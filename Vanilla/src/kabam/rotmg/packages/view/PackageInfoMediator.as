@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.packages.view.PackageInfoMediator
 
-package kabam.rotmg.packages.view
-{
+package kabam.rotmg.packages.view{
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PackageInfoMediator extends Mediator 
-    {
+public class PackageInfoMediator extends Mediator {
 
         [Inject]
         public var view:PackageInfoDialog;
@@ -24,18 +22,15 @@ public class PackageInfoMediator extends Mediator
         public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.view.closed.add(this.onClosed);
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             this.view.closed.remove(this.onClosed);
         }
 
-        private function onClosed():void
-        {
+        private function onClosed():void{
             this.closeDialogs.dispatch();
             this.flushStartupQueue.dispatch();
         }

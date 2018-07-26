@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.minimap.control.SetMiniMapMapSignal
 
-package kabam.rotmg.minimap.control
-{
+package kabam.rotmg.minimap.control{
 import com.company.assembleegameclient.map.Map;
 
 import org.osflash.signals.Signal;
 
-public class SetMiniMapMapSignal extends Signal 
-    {
+public class SetMiniMapMapSignal extends Signal {
 
-        public function SetMiniMapMapSignal()
-        {
+        public function SetMiniMapMapSignal(){
             super(Map);
         }
 

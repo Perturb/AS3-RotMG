@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.legends.model.Legend
 
-package kabam.rotmg.legends.model
-{
+package kabam.rotmg.legends.model{
 import flash.display.BitmapData;
 
 import kabam.rotmg.fame.model.FameVO;
 
-public class Legend implements FameVO 
-    {
+public class Legend implements FameVO {
 
         public var isOwnLegend:Boolean;
         public var place:int;
@@ -24,13 +22,11 @@ public class Legend implements FameVO
         public var isFocus:Boolean;
 
 
-        public function getAccountId():String
-        {
+        public function getAccountId():String{
             return (this.accountId);
         }
 
-        public function getCharacterId():int
-        {
+        public function getCharacterId():int{
             return (this.charId);
         }
 

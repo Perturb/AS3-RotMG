@@ -1,4 +1,4 @@
-package kabam.rotmg.ui.view
+﻿package kabam.rotmg.ui.view
 {
 import mx.core.*;
 

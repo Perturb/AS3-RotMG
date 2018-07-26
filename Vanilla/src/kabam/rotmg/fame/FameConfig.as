@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.fame.FameConfig
 
-package kabam.rotmg.fame
-{
+package kabam.rotmg.fame{
 import kabam.rotmg.fame.control.ShowFameViewCommand;
 import kabam.rotmg.fame.control.ShowFameViewSignal;
 import kabam.rotmg.fame.model.FameModel;
@@ -18,8 +17,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class FameConfig implements IConfig 
-    {
+public class FameConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -29,8 +27,7 @@ public class FameConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(FameModel).asSingleton();
             this.injector.map(RequestCharacterFameTask);
             this.commandMap.map(ShowFameViewSignal).toCommand(ShowFameViewCommand);

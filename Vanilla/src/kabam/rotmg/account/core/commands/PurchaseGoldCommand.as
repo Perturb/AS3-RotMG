@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.commands.PurchaseGoldCommand
 
-package kabam.rotmg.account.core.commands
-{
+package kabam.rotmg.account.core.commands{
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.TaskMonitor;
 import kabam.lib.tasks.TaskSequence;
@@ -13,8 +12,7 @@ import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class PurchaseGoldCommand 
-    {
+public class PurchaseGoldCommand {
 
         [Inject]
         public var purchaseGold:PurchaseGoldTask;
@@ -26,8 +24,7 @@ public class PurchaseGoldCommand
         public var logger:ILogger;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             this.logger.debug("execute");
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.purchaseGold);

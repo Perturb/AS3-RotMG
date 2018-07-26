@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.UIConfig
 
-package kabam.rotmg.ui
-{
+package kabam.rotmg.ui{
 import com.company.assembleegameclient.account.ui.ChooseNameFrame;
 import com.company.assembleegameclient.account.ui.ChooseNameFrameMediator;
 import com.company.assembleegameclient.account.ui.CreateGuildFrame;
@@ -178,8 +177,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class UIConfig implements IConfig 
-    {
+public class UIConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -193,8 +191,7 @@ public class UIConfig implements IConfig
         public var startup:StartupSequence;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(NameChangedSignal).asSingleton();
             this.injector.map(PotionInventoryModel).asSingleton();
             this.injector.map(UpdatePotionInventorySignal).asSingleton();
@@ -289,8 +286,7 @@ public class UIConfig implements IConfig
             this.startup.addSignal(ShowTitleUISignal, StartupSequence.LAST);
         }
 
-        private function setupKeyUI():void
-        {
+        private function setupKeyUI():void{
             this.injector.map(ShowKeySignal).toValue(new ShowKeySignal());
             this.injector.map(HideKeySignal).toValue(new HideKeySignal());
             this.commandMap.map(ShowHideKeyUISignal).toCommand(ShowHideKeyUICommand);
@@ -298,8 +294,7 @@ public class UIConfig implements IConfig
             this.mediatorMap.map(KeysView).toMediator(KeysMediator);
         }
 
-        private function mapNoServersDialogFactory():void
-        {
+        private function mapNoServersDialogFactory():void{
             if (this.setup.useProductionDialogs())
             {
                 this.injector.map(NoServersDialogFactory).toSingleton(ProductionNoServersDialogFactory);
@@ -307,11 +302,10 @@ public class UIConfig implements IConfig
             else
             {
                 this.injector.map(NoServersDialogFactory).toSingleton(TestingNoServersDialogFactory);
-            }
+            };
         }
 
-        private function setupCharacterWindow():void
-        {
+        private function setupCharacterWindow():void{
             this.injector.map(HUDModel).asSingleton();
             this.injector.map(UpdateHUDSignal).asSingleton();
             this.injector.map(HUDModelInitialized).asSingleton();

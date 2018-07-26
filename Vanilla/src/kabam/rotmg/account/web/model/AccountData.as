@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.model.AccountData
 
-package kabam.rotmg.account.web.model
-{
-    public class AccountData 
-    {
+package kabam.rotmg.account.web.model{
+    public class AccountData {
 
         public var username:String;
         public var password:String;

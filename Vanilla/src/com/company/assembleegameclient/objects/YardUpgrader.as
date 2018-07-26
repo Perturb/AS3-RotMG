@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.YardUpgrader
 
-package com.company.assembleegameclient.objects
-{
+package com.company.assembleegameclient.objects{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.panels.Panel;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
@@ -14,22 +13,18 @@ import io.decagames.rotmg.pets.panels.YardUpgraderPanel;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class YardUpgrader extends GameObject implements IInteractiveObject
-    {
+public class YardUpgrader extends GameObject implements IInteractiveObject {
 
-        public function YardUpgrader(_arg_1:XML)
-        {
+        public function YardUpgrader(_arg_1:XML){
             super(_arg_1);
             isInteractive_ = true;
         }
 
-        public function getTooltip():ToolTip
-        {
+        public function getTooltip():ToolTip{
             return (new TextToolTip(0x363636, 0x9B9B9B, TextKey.CLOSEDGIFTCHEST_TITLE, TextKey.TEXTPANEL_GIFTCHESTISEMPTY, 200));
         }
 
-        public function getPanel(_arg_1:GameSprite):Panel
-        {
+        public function getPanel(_arg_1:GameSprite):Panel{
             return (new YardUpgraderPanel(_arg_1, objectType_));
         }
 

@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.model.MapModel
 
-package kabam.rotmg.core.model
-{
+package kabam.rotmg.core.model{
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.objects.IInteractiveObject;
 
-public class MapModel
-    {
+public class MapModel {
 
         public var currentInteractiveTarget:IInteractiveObject;
         public var currentMap:Map;

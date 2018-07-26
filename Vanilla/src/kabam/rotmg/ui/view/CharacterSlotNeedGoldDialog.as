@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
 import flash.display.Sprite;
@@ -14,8 +13,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class CharacterSlotNeedGoldDialog extends Sprite 
-    {
+public class CharacterSlotNeedGoldDialog extends Sprite {
 
         private static const ANALYTICS_PAGE:String = "/charSlotNeedGold";
 
@@ -26,8 +24,7 @@ public class CharacterSlotNeedGoldDialog extends Sprite
         private var price:int;
 
 
-        public function setPrice(_arg_1:int):void
-        {
+        public function setPrice(_arg_1:int):void{
             this.price = _arg_1;
             (((this.dialog) && (contains(this.dialog))) && (removeChild(this.dialog)));
             this.makeDialog();
@@ -35,20 +32,17 @@ public class CharacterSlotNeedGoldDialog extends Sprite
             this.dialog.addEventListener(Dialog.RIGHT_BUTTON, this.onBuyGold);
         }
 
-        private function makeDialog():void
-        {
+        private function makeDialog():void{
             this.dialog = new Dialog(TextKey.NOT_ENOUGH_GOLD, "", TextKey.FRAME_CANCEL, TextKey.BUY_GOLD, ANALYTICS_PAGE);
             this.dialog.setTextParams(TextKey.CHARACTERSLOTNEEDGOLDDIALOG_PRICE, {"price":this.price});
             addChild(this.dialog);
         }
 
-        public function onCancel(_arg_1:Event):void
-        {
+        public function onCancel(_arg_1:Event):void{
             this.cancel.dispatch();
         }
 
-        public function onBuyGold(_arg_1:Event):void
-        {
+        public function onBuyGold(_arg_1:Event):void{
             this.buyGold.dispatch();
         }
 

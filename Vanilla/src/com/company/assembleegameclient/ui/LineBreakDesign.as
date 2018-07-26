@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.LineBreakDesign
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.company.util.GraphicsUtil;
 
 import flash.display.GraphicsPath;
@@ -13,20 +12,17 @@ import flash.display.GraphicsSolidFill;
 import flash.display.IGraphicsData;
 import flash.display.Shape;
 
-public class LineBreakDesign extends Shape 
-    {
+public class LineBreakDesign extends Shape {
 
         private var designFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
         private var designPath_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>(), GraphicsPathWinding.NON_ZERO);
         private const designGraphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[designFill_, designPath_, GraphicsUtil.END_FILL];
 
-        public function LineBreakDesign(_arg_1:int, _arg_2:uint)
-        {
+        public function LineBreakDesign(_arg_1:int, _arg_2:uint){
             this.setWidthColor(_arg_1, _arg_2);
         }
 
-        public function setWidthColor(_arg_1:int, _arg_2:uint):void
-        {
+        public function setWidthColor(_arg_1:int, _arg_2:uint):void{
             graphics.clear();
             this.designFill_.color = _arg_2;
             GraphicsUtil.clearPath(this.designPath_);

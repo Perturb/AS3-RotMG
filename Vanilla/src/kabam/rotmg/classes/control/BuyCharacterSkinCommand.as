@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.classes.control.BuyCharacterSkinCommand
 
-package kabam.rotmg.classes.control
-{
+package kabam.rotmg.classes.control{
 import kabam.lib.tasks.TaskMonitor;
 import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.CharacterSkinState;
@@ -13,8 +12,7 @@ import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 
-public class BuyCharacterSkinCommand
-    {
+public class BuyCharacterSkinCommand {
 
         [Inject]
         public var skin:CharacterSkin;
@@ -28,16 +26,14 @@ public class BuyCharacterSkinCommand
         public var openDialog:OpenDialogSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.isSkinPurchasable())
             {
                 this.enterPurchaseFlow();
-            }
+            };
         }
 
-        private function enterPurchaseFlow():void
-        {
+        private function enterPurchaseFlow():void{
             if (this.isSkinAffordable())
             {
                 this.purchaseSkin();
@@ -45,27 +41,23 @@ public class BuyCharacterSkinCommand
             else
             {
                 this.enterGetCreditsFlow();
-            }
+            };
         }
 
-        private function isSkinPurchasable():Boolean
-        {
+        private function isSkinPurchasable():Boolean{
             return (this.skin.getState() == CharacterSkinState.PURCHASABLE);
         }
 
-        private function isSkinAffordable():Boolean
-        {
+        private function isSkinAffordable():Boolean{
             return (this.model.getCredits() >= this.skin.cost);
         }
 
-        private function purchaseSkin():void
-        {
+        private function purchaseSkin():void{
             this.monitor.add(this.task);
             this.task.start();
         }
 
-        private function enterGetCreditsFlow():void
-        {
+        private function enterGetCreditsFlow():void{
             this.openDialog.dispatch(new NotEnoughGoldDialog());
         }
 

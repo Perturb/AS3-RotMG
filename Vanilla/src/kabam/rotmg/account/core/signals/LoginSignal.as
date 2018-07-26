@@ -1,19 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.signals.LoginSignal
 
-package kabam.rotmg.account.core.signals
-{
+package kabam.rotmg.account.core.signals{
 import kabam.rotmg.account.web.model.AccountData;
 
 import org.osflash.signals.Signal;
 
-public class LoginSignal extends Signal
-    {
+public class LoginSignal extends Signal {
 
-        public function LoginSignal()
-        {
+        public function LoginSignal(){
             super(AccountData);
         }
 

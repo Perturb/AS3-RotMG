@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.arena.view.ArenaQueryPanelMediator
 
-package kabam.rotmg.arena.view
-{
+package kabam.rotmg.arena.view{
 import flash.events.MouseEvent;
 
 import io.decagames.rotmg.pets.data.PetsModel;
@@ -14,8 +13,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ArenaQueryPanelMediator extends Mediator 
-    {
+public class ArenaQueryPanelMediator extends Mediator {
 
         [Inject]
         public var view:ArenaQueryPanel;
@@ -27,13 +25,11 @@ public class ArenaQueryPanelMediator extends Mediator
         public var account:Account;
 
 
-        override public function initialize():void
-        {
+        override public function initialize():void{
             this.setEventListeners();
         }
 
-        private function setEventListeners():void
-        {
+        private function setEventListeners():void{
             if (this.view.enterButton)
             {
                 this.view.enterButton.addEventListener(MouseEvent.CLICK, this.onButtonLeftClick);
@@ -42,21 +38,18 @@ public class ArenaQueryPanelMediator extends Mediator
             else
             {
                 this.view.infoButton.addEventListener(MouseEvent.CLICK, this.onButtonRightClick);
-            }
+            };
         }
 
-        override public function destroy():void
-        {
+        override public function destroy():void{
             super.destroy();
         }
 
-        protected function onButtonRightClick(_arg_1:MouseEvent):void
-        {
+        protected function onButtonRightClick(_arg_1:MouseEvent):void{
             this.openDialog.dispatch(new HostQueryDialog());
         }
 
-        protected function onButtonLeftClick(_arg_1:MouseEvent):void
-        {
+        protected function onButtonLeftClick(_arg_1:MouseEvent):void{
             this.openDialog.dispatch(new ArenaLeaderboard());
         }
 

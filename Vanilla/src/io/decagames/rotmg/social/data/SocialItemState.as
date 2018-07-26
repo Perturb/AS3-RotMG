@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.data.SocialItemState
 
-package io.decagames.rotmg.social.data
-{
-    public class SocialItemState 
-    {
+package io.decagames.rotmg.social.data{
+    public class SocialItemState {
 
         public static const ONLINE:int = 1;
         public static const OFFLINE:int = 2;

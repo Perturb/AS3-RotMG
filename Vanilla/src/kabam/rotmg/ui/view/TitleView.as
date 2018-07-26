@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.ui.view.TitleView
 
-package kabam.rotmg.ui.view
-{
+package kabam.rotmg.ui.view{
 import com.company.assembleegameclient.screens.AccountScreen;
 import com.company.assembleegameclient.screens.TitleMenuOption;
 import com.company.assembleegameclient.ui.SoundIcon;
@@ -28,8 +27,7 @@ import kabam.rotmg.ui.view.components.MenuOptionsBar;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class TitleView extends Sprite
-    {
+public class TitleView extends Sprite {
 
         internal static var TitleScreenGraphic:Class = TitleView_TitleScreenGraphic;
         internal static var TitleScreenBackground:Class = TitleView_TitleScreenBackground;
@@ -56,8 +54,7 @@ public class TitleView extends Sprite
         public var optionalButtonsAdded:Signal;
         private var migrateButton:TitleMenuOption;
 
-        public function TitleView()
-        {
+        public function TitleView(){
             this.menuOptionsBar = this.makeMenuOptionsBar();
             this.optionalButtonsAdded = new Signal();
             super();
@@ -70,14 +67,12 @@ public class TitleView extends Sprite
             addChild(new SoundIcon());
         }
 
-        public function openKabamTransferView():void
-        {
+        public function openKabamTransferView():void{
             var _local_1:OpenDialogSignal = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _local_1.dispatch(new KabamLoginView());
         }
 
-        private function makeMenuOptionsBar():MenuOptionsBar
-        {
+        private function makeMenuOptionsBar():MenuOptionsBar{
             var _local_1:TitleMenuOption = ButtonFactory.getPlayButton();
             var _local_2:TitleMenuOption = ButtonFactory.getServersButton();
             var _local_3:TitleMenuOption = ButtonFactory.getAccountButton();
@@ -97,8 +92,7 @@ public class TitleView extends Sprite
             return (_local_6);
         }
 
-        private function makeChildren():void
-        {
+        private function makeChildren():void{
             this.versionText = this.makeText().setHTML(true).setAutoSize(TextFieldAutoSize.LEFT).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
             this.versionText.y = MIDDLE_OF_BOTTOM_BAND;
             addChild(this.versionText);
@@ -110,53 +104,45 @@ public class TitleView extends Sprite
             addChild(this.copyrightText);
         }
 
-        public function makeText():TextFieldDisplayConcrete
-        {
+        public function makeText():TextFieldDisplayConcrete{
             var _local_1:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(12).setColor(0x7F7F7F);
             _local_1.filters = [new DropShadowFilter(0, 0, 0)];
             return (_local_1);
         }
 
-        public function initialize(_arg_1:EnvironmentData):void
-        {
+        public function initialize(_arg_1:EnvironmentData):void{
             this.data = _arg_1;
             this.updateVersionText();
             this.handleOptionalButtons();
         }
 
-        public function putNoticeTagToOption(_arg_1:TitleMenuOption, _arg_2:String, _arg_3:int=14, _arg_4:uint=10092390, _arg_5:Boolean=true):void
-        {
+        public function putNoticeTagToOption(_arg_1:TitleMenuOption, _arg_2:String, _arg_3:int=14, _arg_4:uint=10092390, _arg_5:Boolean=true):void{
             _arg_1.createNoticeTag(_arg_2, _arg_3, _arg_4, _arg_5);
         }
 
-        private function updateVersionText():void
-        {
+        private function updateVersionText():void{
             this.versionText.setStringBuilder(new StaticStringBuilder(this.data.buildLabel));
         }
 
-        private function handleOptionalButtons():void
-        {
+        private function handleOptionalButtons():void{
             ((this.data.canMapEdit) && (this.createEditorButton()));
             ((this.data.isDesktop) && (this.createQuitButton()));
             this.optionalButtonsAdded.dispatch();
         }
 
-        private function createQuitButton():void
-        {
+        private function createQuitButton():void{
             var _local_1:TitleMenuOption = ButtonFactory.getQuitButton();
             this.menuOptionsBar.addButton(_local_1, MenuOptionsBar.RIGHT);
             this.quitClicked = _local_1.clicked;
         }
 
-        private function createEditorButton():void
-        {
+        private function createEditorButton():void{
             var _local_1:TitleMenuOption = ButtonFactory.getEditorButton();
             this.menuOptionsBar.addButton(_local_1, MenuOptionsBar.RIGHT);
             this.editorClicked = _local_1.clicked;
         }
 
-        private function makeMigrateButton():void
-        {
+        private function makeMigrateButton():void{
             this.migrateButton = new TitleMenuOption("Want to migrate your Kabam.com account?", 16, false);
             this.migrateButton.setAutoSize(TextFieldAutoSize.CENTER);
             this.kabamTransferClicked = new NativeMappedSignal(this.migrateButton, MouseEvent.CLICK);

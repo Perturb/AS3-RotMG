@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.PicView
 
-package com.company.assembleegameclient.ui
-{
+package com.company.assembleegameclient.ui{
 import com.adobe.images.PNGEncoder;
 
 import flash.display.Bitmap;
@@ -14,15 +13,13 @@ import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.net.FileReference;
 
-public class PicView extends Sprite 
-    {
+public class PicView extends Sprite {
 
         private var bitmap_:Bitmap;
         private var saveButton_:DeprecatedTextButton;
         private var closeButton_:DeprecatedTextButton;
 
-        public function PicView(_arg_1:BitmapData)
-        {
+        public function PicView(_arg_1:BitmapData){
             this.bitmap_ = new Bitmap(_arg_1);
             addChild(this.bitmap_);
             this.saveButton_ = new DeprecatedTextButton(16, "Save");
@@ -33,8 +30,7 @@ public class PicView extends Sprite
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             this.saveButton_.addEventListener(MouseEvent.CLICK, this.onSave);
             this.closeButton_.addEventListener(MouseEvent.CLICK, this.onClose);
             this.bitmap_.x = ((stage.stageHeight / 2) - (this.bitmap_.width / 2));
@@ -45,23 +41,20 @@ public class PicView extends Sprite
             this.saveButton_.y = ((this.bitmap_.y + this.bitmap_.height) + 10);
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             this.saveButton_.removeEventListener(MouseEvent.CLICK, this.onSave);
             this.closeButton_.removeEventListener(MouseEvent.CLICK, this.onClose);
         }
 
-        private function onSave(_arg_1:Event):void
-        {
+        private function onSave(_arg_1:Event):void{
             new FileReference().save(PNGEncoder.encode(this.bitmap_.bitmapData), "map.png");
         }
 
-        private function onClose(_arg_1:Event):void
-        {
+        private function onClose(_arg_1:Event):void{
             if (parent != null)
             {
                 parent.removeChild(this);
-            }
+            };
         }
 
 

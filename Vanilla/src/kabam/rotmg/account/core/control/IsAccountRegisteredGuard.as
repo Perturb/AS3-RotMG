@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.control.IsAccountRegisteredGuard
 
-package kabam.rotmg.account.core.control
-{
+package kabam.rotmg.account.core.control{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.view.RegisterPromptDialog;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.framework.api.IGuard;
 
-public class IsAccountRegisteredGuard implements IGuard
-    {
+public class IsAccountRegisteredGuard implements IGuard {
 
         [Inject]
         public var account:Account;
@@ -20,20 +18,17 @@ public class IsAccountRegisteredGuard implements IGuard
         public var openDialog:OpenDialogSignal;
 
 
-        public function approve():Boolean
-        {
+        public function approve():Boolean{
             var _local_1:Boolean = this.account.isRegistered();
             ((_local_1) || (this.enterRegisterFlow()));
             return (_local_1);
         }
 
-        protected function getString():String
-        {
+        protected function getString():String{
             return ("");
         }
 
-        private function enterRegisterFlow():void
-        {
+        private function enterRegisterFlow():void{
             this.openDialog.dispatch(new RegisterPromptDialog(this.getString()));
         }
 

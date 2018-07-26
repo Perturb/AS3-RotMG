@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.core.BuyCharacterSlotCommand
 
-package kabam.rotmg.account.core
-{
+package kabam.rotmg.account.core{
 import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
 import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
@@ -24,8 +23,7 @@ import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog;
 
-public class BuyCharacterSlotCommand 
-    {
+public class BuyCharacterSlotCommand {
 
         [Inject]
         public var price:int;
@@ -47,8 +45,7 @@ public class BuyCharacterSlotCommand
         public var track:TrackEventSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             if (this.isSlotUnaffordable())
             {
                 this.promptToGetMoreGold();
@@ -56,26 +53,22 @@ public class BuyCharacterSlotCommand
             else
             {
                 this.purchaseSlot();
-            }
+            };
         }
 
-        private function isSlotUnaffordable():Boolean
-        {
+        private function isSlotUnaffordable():Boolean{
             return (this.model.getCredits() < this.model.getNextCharSlotPrice());
         }
 
-        private function promptToGetMoreGold():void
-        {
+        private function promptToGetMoreGold():void{
             this.openDialog.dispatch(new CharacterSlotNeedGoldDialog());
         }
 
-        private function purchaseSlot():void
-        {
+        private function purchaseSlot():void{
             this.openDialog.dispatch(new PurchaseConfirmationDialog(this.purchaseConfirmed));
         }
 
-        private function purchaseConfirmed():void
-        {
+        private function purchaseConfirmed():void{
             this.openDialog.dispatch(new BuyingDialog());
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new BranchingTask(this.task, this.makeSuccessTask(), this.makeFailureTask()));
@@ -84,15 +77,13 @@ public class BuyCharacterSlotCommand
             _local_1.start();
         }
 
-        private function makeSuccessTask():Task
-        {
+        private function makeSuccessTask():Task{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.setScreen, new CharacterSelectionAndNewsScreen()));
             return (_local_1);
         }
 
-        private function makeTrackingData():TrackingData
-        {
+        private function makeTrackingData():TrackingData{
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "credits";
             _local_1.action = "buyConverted";
@@ -101,8 +92,7 @@ public class BuyCharacterSlotCommand
             return (_local_1);
         }
 
-        private function makeFailureTask():Task
-        {
+        private function makeFailureTask():Task{
             return (new DispatchSignalTask(this.openDialog, new ErrorDialog("Unable to complete character slot purchase")));
         }
 

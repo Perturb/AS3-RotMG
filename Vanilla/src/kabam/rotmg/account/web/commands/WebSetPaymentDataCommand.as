@@ -1,15 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebSetPaymentDataCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.web.WebAccount;
 
-public class WebSetPaymentDataCommand 
-    {
+public class WebSetPaymentDataCommand {
 
         [Inject]
         public var characterListData:XML;
@@ -17,8 +15,7 @@ public class WebSetPaymentDataCommand
         public var account:Account;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_2:XML;
             var _local_1:WebAccount = (this.account as WebAccount);
             if (this.characterListData.hasOwnProperty("KabamPaymentInfo"))
@@ -26,7 +23,7 @@ public class WebSetPaymentDataCommand
                 _local_2 = XML(this.characterListData.KabamPaymentInfo);
                 _local_1.signedRequest = _local_2.signedRequest;
                 _local_1.kabamId = _local_2.naid;
-            }
+            };
         }
 
 

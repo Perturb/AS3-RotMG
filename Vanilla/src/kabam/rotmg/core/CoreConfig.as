@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.core.CoreConfig
 
-package kabam.rotmg.core
-{
+package kabam.rotmg.core{
 import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
 import flash.display.DisplayObjectContainer;
@@ -61,8 +60,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class CoreConfig implements IConfig 
-    {
+public class CoreConfig implements IConfig {
 
         [Inject]
         public var context:IContext;
@@ -81,8 +79,7 @@ public class CoreConfig implements IConfig
         private var layers:Layers;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.configureModel();
             this.configureCommands();
             this.configureServices();
@@ -94,16 +91,14 @@ public class CoreConfig implements IConfig
             this.context.lifecycle.afterInitializing(this.init);
         }
 
-        private function configureModel():void
-        {
+        private function configureModel():void{
             this.injector.map(PlayerModel).asSingleton();
             this.injector.map(MapModel).asSingleton();
             this.injector.map(ScreenModel).asSingleton();
             this.injector.map(SpamFilter).asSingleton();
         }
 
-        private function configureCommands():void
-        {
+        private function configureCommands():void{
             this.commandMap.map(SetupDomainSecuritySignal).toCommand(SetupDomainSecurityCommand);
             this.commandMap.map(SetupAnalyticsSignal).toCommand(SetupAnalyticsCommand);
             this.commandMap.map(TrackEventSignal).toCommand(TrackEventCommand);
@@ -116,8 +111,7 @@ public class CoreConfig implements IConfig
             this.commandMap.map(CharListDataSignal).toCommand(UpdatePetsModelCommand);
         }
 
-        private function configureServices():void
-        {
+        private function configureServices():void{
             this.injector.map(JsonParser).toSingleton(SoftwareJsonParser);
             this.injector.map(TaskMonitor).asSingleton();
             this.injector.map(PurchaseCharacterClassTask);
@@ -126,8 +120,7 @@ public class CoreConfig implements IConfig
             this.injector.map(RequestAppInitTask);
         }
 
-        private function configureSignals():void
-        {
+        private function configureSignals():void{
             this.injector.map(SetScreenSignal).asSingleton();
             this.injector.map(GotoPreviousScreenSignal).asSingleton();
             this.injector.map(LaunchGameSignal).asSingleton();
@@ -139,14 +132,12 @@ public class CoreConfig implements IConfig
             this.injector.map(DisplayAreaChangedSignal).asSingleton();
         }
 
-        private function configureViews():void
-        {
+        private function configureViews():void{
             this.mediatorMap.map(ScreensView).toMediator(ScreensMediator);
             this.mediatorMap.map(TooltipAble).toMediator(TooltipAbleMediator);
         }
 
-        private function init():void
-        {
+        private function init():void{
             this.mediatorMap.mediate(this.contextView);
             this.layers = new Layers();
             this.injector.map(Layers).toValue(this.layers);

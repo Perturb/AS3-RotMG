@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.death.DeathConfig
 
-package kabam.rotmg.death
-{
+package kabam.rotmg.death{
 import com.company.assembleegameclient.game.GameSprite;
 
 import kabam.rotmg.death.control.HandleDeathCommand;
@@ -26,8 +25,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class DeathConfig implements IConfig
-    {
+public class DeathConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -37,8 +35,7 @@ public class DeathConfig implements IConfig
         public var mediatorMap:IMediatorMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.injector.map(DeathModel).asSingleton();
             this.commandMap.map(HandleDeathSignal).toCommand(HandleDeathCommand);
             this.commandMap.map(HandleNormalDeathSignal).toCommand(HandleNormalDeathCommand);

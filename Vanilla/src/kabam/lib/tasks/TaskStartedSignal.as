@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.lib.tasks.TaskStartedSignal
 
-package kabam.lib.tasks
-{
+package kabam.lib.tasks{
 import org.osflash.signals.Signal;
 
-public class TaskStartedSignal extends Signal 
-    {
+public class TaskStartedSignal extends Signal {
 
-        public function TaskStartedSignal()
-        {
+        public function TaskStartedSignal(){
             super(BaseTask);
         }
 

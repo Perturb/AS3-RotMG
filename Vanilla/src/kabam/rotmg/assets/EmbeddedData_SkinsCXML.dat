@@ -3973,4 +3973,14 @@
       <PlayerClassType>0x0320</PlayerClassType>
       <NoSkinSelect/>
    </Object>
+   <Object type="0x1886" id="Oni Demon Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>362</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
 </Objects>

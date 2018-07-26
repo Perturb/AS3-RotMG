@@ -1,12 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.social.tasks.ISocialTask
 
-package io.decagames.rotmg.social.tasks
-{
-    public interface ISocialTask 
-    {
+package io.decagames.rotmg.social.tasks{
+    public interface ISocialTask {
 
         function get requestURL():String;
         function set requestURL(_arg_1:String):void;

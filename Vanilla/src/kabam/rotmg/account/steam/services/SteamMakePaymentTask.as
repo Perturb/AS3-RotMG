@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.steam.services.SteamMakePaymentTask
 
-package kabam.rotmg.account.steam.services
-{
+package kabam.rotmg.account.steam.services{
 import com.company.assembleegameclient.ui.dialogs.DebugDialog;
 import com.company.assembleegameclient.util.offer.Offer;
 
@@ -17,8 +16,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask 
-    {
+public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask {
 
         [Inject]
         public var steam:SteamApi;
@@ -35,8 +33,7 @@ public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
         private var offer:Offer;
 
 
-        override protected function startTask():void
-        {
+        override protected function startTask():void{
             this.logger.debug("start task");
             this.offer = this.payment.offer;
             this.client.setMaxRetries(2);
@@ -47,8 +44,7 @@ public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
             });
         }
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onComplete(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onPurchaseOfferComplete();
@@ -56,17 +52,15 @@ public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
             else
             {
                 this.onPurchaseOfferError(_arg_2);
-            }
+            };
         }
 
-        private function onPurchaseOfferComplete():void
-        {
+        private function onPurchaseOfferComplete():void{
             this.logger.debug("purchaseOffer complete");
             this.steam.paymentAuthorized.addOnce(this.onPaymentAuthorized);
         }
 
-        private function onPaymentAuthorized(_arg_1:uint, _arg_2:String, _arg_3:Boolean):void
-        {
+        private function onPaymentAuthorized(_arg_1:uint, _arg_2:String, _arg_3:Boolean):void{
             this.logger.debug("payment authorized {0},{1},{2}", [_arg_1, _arg_2, _arg_3]);
             this.second.setMaxRetries(2);
             this.client.complete.addOnce(this.onAuthorized);
@@ -77,8 +71,7 @@ public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
             });
         }
 
-        private function onAuthorized(_arg_1:Boolean, _arg_2:*):void
-        {
+        private function onAuthorized(_arg_1:Boolean, _arg_2:*):void{
             if (_arg_1)
             {
                 this.onPurchaseFinalizeComplete();
@@ -86,24 +79,21 @@ public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
             else
             {
                 this.onPurchaseFinalizeError(_arg_2);
-            }
+            };
         }
 
-        private function onPurchaseFinalizeComplete():void
-        {
+        private function onPurchaseFinalizeComplete():void{
             this.logger.debug("purchaseFinalized complete");
             completeTask(true);
         }
 
-        private function onPurchaseFinalizeError(_arg_1:String):void
-        {
+        private function onPurchaseFinalizeError(_arg_1:String):void{
             this.logger.debug("purchaseFinalized error {0}", [_arg_1]);
             this.openDialog.dispatch(new DebugDialog(("Error: " + _arg_1)));
             completeTask(false);
         }
 
-        private function onPurchaseOfferError(_arg_1:String):void
-        {
+        private function onPurchaseOfferError(_arg_1:String):void{
             this.logger.debug("purchaseOffer request error {0}", [_arg_1]);
             this.openDialog.dispatch(new DebugDialog(("Error: " + _arg_1)));
             completeTask(false);

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.KabamAccountConfig
 
-package kabam.rotmg.account.kabam
-{
+package kabam.rotmg.account.kabam{
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.model.MoneyConfig;
 import kabam.rotmg.account.core.services.LoadAccountTask;
@@ -30,8 +29,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class KabamAccountConfig implements IConfig 
-    {
+public class KabamAccountConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -41,35 +39,30 @@ public class KabamAccountConfig implements IConfig
         public var commandMap:ISignalCommandMap;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             this.mapModels();
             this.mapCommands();
             this.mapMediators();
             this.mapServices();
         }
 
-        protected function mapModels():void
-        {
+        protected function mapModels():void{
             this.injector.map(KabamParameters).toSingleton(LoaderInfoKabamParameters);
             this.injector.map(Account).toSingleton(KabamAccount);
             this.injector.map(MoneyConfig).toSingleton(KabamMoneyConfig);
             this.injector.map(CharListDataSignal).asSingleton();
         }
 
-        private function mapCommands():void
-        {
+        private function mapCommands():void{
             this.commandMap.map(OpenAccountInfoSignal).toCommand(KabamOpenAccountInfoCommand);
         }
 
-        protected function mapMediators():void
-        {
+        protected function mapMediators():void{
             this.mediatorMap.map(KabamAccountDetailDialog).toMediator(KabamAccountDetailMediator);
             this.mediatorMap.map(AccountLoadErrorDialog).toMediator(AccountLoadErrorMediator);
         }
 
-        protected function mapServices():void
-        {
+        protected function mapServices():void{
             this.injector.map(MakePaymentTask).toType(WebMakePaymentTask);
             this.injector.map(LoadAccountTask).toType(KabamLoadAccountTask);
             this.injector.map(PurchaseGoldTask).toType(WebPurchaseGoldTask);

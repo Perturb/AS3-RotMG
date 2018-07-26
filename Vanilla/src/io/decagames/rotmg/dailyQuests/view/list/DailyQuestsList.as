@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestsList
 
-package io.decagames.rotmg.dailyQuests.view.list
-{
+package io.decagames.rotmg.dailyQuests.view.list{
 import flash.display.Sprite;
 
 import io.decagames.rotmg.ui.buttons.BaseButton;
@@ -15,8 +14,7 @@ import io.decagames.rotmg.ui.tabs.UITab;
 import io.decagames.rotmg.ui.tabs.UITabs;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class DailyQuestsList extends Sprite 
-    {
+public class DailyQuestsList extends Sprite {
 
         public static const LIST_WIDTH:int = 223;
         public static const SCROLL_WIDTH:int = 14;
@@ -35,8 +33,7 @@ public class DailyQuestsList extends Sprite
         private var contentTabs:SliceScalingBitmap;
         private var contentInset:SliceScalingBitmap;
 
-        public function DailyQuestsList()
-        {
+        public function DailyQuestsList(){
             this.contentTabs = TextureParser.instance.getSliceScalingBitmap("UI", "tab_inset_content_background", 230);
             addChild(this.contentTabs);
             this.contentTabs.height = 45;
@@ -55,8 +52,7 @@ public class DailyQuestsList extends Sprite
             addChild(this._tabs);
         }
 
-        private function createQuestsTab():UITab
-        {
+        private function createQuestsTab():UITab{
             var _local_1:UITab;
             var _local_2:Sprite;
             var _local_3:UIScrollbar;
@@ -85,8 +81,7 @@ public class DailyQuestsList extends Sprite
             return (_local_1);
         }
 
-        private function createEventsTab():UITab
-        {
+        private function createEventsTab():UITab{
             var _local_1:UITab;
             var _local_4:Sprite;
             _local_1 = new UITab("Events");
@@ -113,47 +108,41 @@ public class DailyQuestsList extends Sprite
             return (_local_1);
         }
 
-        public function addIndicator(_arg_1:Boolean):void
-        {
+        public function addIndicator(_arg_1:Boolean):void{
             this.eventsTab = this._tabs.getTabButtonByLabel("Events");
             if (this.eventsTab)
             {
                 this.eventsTab.showIndicator = _arg_1;
                 this.eventsTab.clickSignal.add(this.onEventsClick);
-            }
+            };
         }
 
-        private function onEventsClick(_arg_1:BaseButton):void
-        {
+        private function onEventsClick(_arg_1:BaseButton):void{
             if (TabButton(_arg_1).hasIndicator)
             {
                 TabButton(_arg_1).showIndicator = false;
-            }
+            };
         }
 
-        public function addQuestToList(_arg_1:DailyQuestListElement):void
-        {
+        public function addQuestToList(_arg_1:DailyQuestListElement):void{
             _arg_1.x = 10;
             _arg_1.y = (this.questLinesPosition * 35);
             this.questsContainer.addChild(_arg_1);
             this.questLinesPosition++;
         }
 
-        public function addEventToList(_arg_1:DailyQuestListElement):void
-        {
+        public function addEventToList(_arg_1:DailyQuestListElement):void{
             _arg_1.x = 10;
             _arg_1.y = (this.eventLinesPosition * 35);
             this.eventsContainer.addChild(_arg_1);
             this.eventLinesPosition++;
         }
 
-        public function get list():Sprite
-        {
+        public function get list():Sprite{
             return (this.questsContainer);
         }
 
-        public function get tabs():UITabs
-        {
+        public function get tabs():UITabs{
             return (this._tabs);
         }
 

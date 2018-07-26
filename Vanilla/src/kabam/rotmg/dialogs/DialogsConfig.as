@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.dialogs.DialogsConfig
 
-package kabam.rotmg.dialogs
-{
+package kabam.rotmg.dialogs{
 import kabam.lib.console.signals.RegisterConsoleActionSignal;
 import kabam.lib.console.vo.ConsoleAction;
 import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
@@ -23,8 +22,7 @@ import org.swiftsuspenders.Injector;
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class DialogsConfig implements IConfig
-    {
+public class DialogsConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;
@@ -34,8 +32,7 @@ public class DialogsConfig implements IConfig
         public var register:RegisterConsoleActionSignal;
 
 
-        public function configure():void
-        {
+        public function configure():void{
             var _local_1:ConsoleAction;
             this.injector.map(ShowDialogBackgroundSignal).asSingleton();
             this.injector.map(OpenDialogSignal).asSingleton();

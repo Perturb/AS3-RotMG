@@ -1,20 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.editor.Command
 
-package com.company.assembleegameclient.editor
-{
-    public class Command 
-    {
+package com.company.assembleegameclient.editor{
+    public class Command {
 
 
-        public function execute():void
-        {
+        public function execute():void{
         }
 
-        public function unexecute():void
-        {
+        public function unexecute():void{
         }
 
 

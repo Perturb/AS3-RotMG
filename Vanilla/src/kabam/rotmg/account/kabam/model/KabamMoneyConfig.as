@@ -1,37 +1,31 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.kabam.model.KabamMoneyConfig
 
-package kabam.rotmg.account.kabam.model
-{
+package kabam.rotmg.account.kabam.model{
 import com.company.assembleegameclient.util.offer.Offer;
 
 import kabam.rotmg.account.core.model.MoneyConfig;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class KabamMoneyConfig implements MoneyConfig 
-    {
+public class KabamMoneyConfig implements MoneyConfig {
 
 
-        public function showPaymentMethods():Boolean
-        {
+        public function showPaymentMethods():Boolean{
             return (true);
         }
 
-        public function showBonuses():Boolean
-        {
+        public function showBonuses():Boolean{
             return (false);
         }
 
-        public function parseOfferPrice(_arg_1:Offer):StringBuilder
-        {
+        public function parseOfferPrice(_arg_1:Offer):StringBuilder{
             return (new LineBuilder());
         }
 
-        public function jsInitializeFunction():String
-        {
+        public function jsInitializeFunction():String{
             return ("rotmg.KabamPayment.setupKabamAccount");
         }
 

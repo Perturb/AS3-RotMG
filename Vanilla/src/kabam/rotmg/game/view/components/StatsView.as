@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.components.StatsView
 
-package kabam.rotmg.game.view.components
-{
+package kabam.rotmg.game.view.components{
 import com.company.assembleegameclient.objects.Player;
 
 import flash.display.Sprite;
@@ -16,8 +15,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.natives.NativeSignal;
 
-public class StatsView extends Sprite
-    {
+public class StatsView extends Sprite {
 
         private static const statsModel:Array = [new StatModel(TextKey.STAT_MODEL_ATTACK_SHORT, TextKey.STAT_MODEL_ATTACK_LONG, TextKey.STAT_MODEL_ATTACK_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_DEFENSE_SHORT, TextKey.STAT_MODEL_DEFENSE_LONG, TextKey.STAT_MODEL_DEFENSE_DESCRIPTION, false), new StatModel(TextKey.STAT_MODEL_SPEED_SHORT, TextKey.STAT_MODEL_SPEED_LONG, TextKey.STAT_MODEL_SPEED_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_DEXTERITY_SHORT, TextKey.STAT_MODEL_DEXTERITY_LONG, TextKey.STAT_MODEL_DEXTERITY_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_VITALITY_SHORT, TextKey.STAT_MODEL_VITALITY_LONG, TextKey.STAT_MODEL_VITALITY_DESCRIPTION, true), new StatModel(TextKey.STAT_MODEL_WISDOM_SHORT, TextKey.STAT_MODEL_WISDOM_LONG, TextKey.STAT_MODEL_WISDOM_DESCRIPTION, true)];
         public static const ATTACK:int = 0;
@@ -39,8 +37,7 @@ public class StatsView extends Sprite
         public var mouseDown:NativeSignal;
         public var currentState:String = "state_docked";
 
-        public function StatsView()
-        {
+        public function StatsView(){
             this.background = this.createBackground();
             this.stats_ = new Vector.<StatView>();
             this.containerSprite = new Sprite();
@@ -52,8 +49,7 @@ public class StatsView extends Sprite
             this.mouseDown = new NativeSignal(this, MouseEvent.MOUSE_DOWN, MouseEvent);
         }
 
-        private function createStats():void
-        {
+        private function createStats():void{
             var _local_3:StatView;
             var _local_1:int;
             var _local_2:int;
@@ -64,11 +60,10 @@ public class StatsView extends Sprite
                 this.containerSprite.addChild(_local_3);
                 _local_1 = (_local_1 + (_local_2 % 2));
                 _local_2++;
-            }
+            };
         }
 
-        private function createStat(_arg_1:int, _arg_2:int):StatView
-        {
+        private function createStat(_arg_1:int, _arg_2:int):StatView{
             var _local_4:StatView;
             var _local_3:StatModel = statsModel[_arg_1];
             _local_4 = new StatView(_local_3.name, _local_3.abbreviation, _local_3.description, _local_3.redOnZero);
@@ -77,21 +72,19 @@ public class StatsView extends Sprite
             return (_local_4);
         }
 
-        public function draw(_arg_1:Player, _arg_2:Boolean=true):void
-        {
+        public function draw(_arg_1:Player, _arg_2:Boolean=true):void{
             if (_arg_1)
             {
                 this.setBackgroundVisibility();
                 this.drawStats(_arg_1);
-            }
+            };
             if (_arg_2)
             {
                 this.containerSprite.x = ((this.WIDTH - this.containerSprite.width) / 2);
-            }
+            };
         }
 
-        private function drawStats(_arg_1:Player):void
-        {
+        private function drawStats(_arg_1:Player):void{
             this.stats_[ATTACK].draw(_arg_1.attack_, _arg_1.attackBoost_, _arg_1.attackMax_, _arg_1.level_);
             this.stats_[DEFENSE].draw(_arg_1.defense_, _arg_1.defenseBoost_, _arg_1.defenseMax_, _arg_1.level_);
             this.stats_[SPEED].draw(_arg_1.speed_, _arg_1.speedBoost_, _arg_1.speedMax_, _arg_1.level_);
@@ -100,18 +93,15 @@ public class StatsView extends Sprite
             this.stats_[WISDOM].draw(_arg_1.wisdom_, _arg_1.wisdomBoost_, _arg_1.wisdomMax_, _arg_1.level_);
         }
 
-        public function dock():void
-        {
+        public function dock():void{
             this.currentState = STATE_DOCKED;
         }
 
-        public function undock():void
-        {
+        public function undock():void{
             this.currentState = STATE_UNDOCKED;
         }
 
-        private function createBackground():Sprite
-        {
+        private function createBackground():Sprite{
             this.background = new Sprite();
             this.background.graphics.clear();
             this.background.graphics.beginFill(0x363636);
@@ -121,8 +111,7 @@ public class StatsView extends Sprite
             return (this.background);
         }
 
-        private function setBackgroundVisibility():void
-        {
+        private function setBackgroundVisibility():void{
             if (this.currentState == STATE_UNDOCKED)
             {
                 this.background.alpha = 1;
@@ -132,8 +121,8 @@ public class StatsView extends Sprite
                 if (this.currentState == STATE_DOCKED)
                 {
                     this.background.alpha = 0;
-                }
-            }
+                };
+            };
         }
 
 

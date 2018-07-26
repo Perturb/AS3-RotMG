@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.game.view.FortuneGroundPanel
 
-package kabam.rotmg.game.view
-{
+package kabam.rotmg.game.view{
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.SellableObject;
 import com.company.assembleegameclient.parameters.Parameters;
@@ -38,8 +37,7 @@ import kabam.rotmg.util.components.LegacyBuyButton;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class FortuneGroundPanel extends Panel
-    {
+public class FortuneGroundPanel extends Panel {
 
         private static var hovering:Boolean;
 
@@ -54,8 +52,7 @@ public class FortuneGroundPanel extends Panel
         private var bitmap_:Bitmap;
         private var onHoverPanel:Sprite;
 
-        public function FortuneGroundPanel(_arg_1:GameSprite, _arg_2:uint)
-        {
+        public function FortuneGroundPanel(_arg_1:GameSprite, _arg_2:uint){
             var _local_3:Injector = StaticInjectorContext.getInjector();
             var _local_4:GetMysteryBoxesTask = _local_3.getInstance(GetMysteryBoxesTask);
             _local_4.start();
@@ -86,7 +83,7 @@ public class FortuneGroundPanel extends Panel
             {
                 this.infoButton_ = new DeprecatedTextButton(16, _local_6);
                 addChild(this.infoButton_);
-            }
+            };
             this.nameText_.setStringBuilder(new LineBuilder().setParams(_local_7));
             this.bitmap_.bitmapData = ArenaViewAssetFactory.returnHostBitmap(_arg_2).bitmapData;
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
@@ -99,18 +96,16 @@ public class FortuneGroundPanel extends Panel
             else
             {
                 FortuneModal.closed.add(this.enableInteract);
-            }
+            };
         }
 
-        private function enableInteract():void
-        {
+        private function enableInteract():void{
             this.infoButton_.addEventListener(MouseEvent.CLICK, this.onInfoButtonClick);
             WebMain.STAGE.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             FortuneModal.closed.remove(this.enableInteract);
         }
 
-        private function onHoverEnter(_arg_1:MouseEvent):void
-        {
+        private function onHoverEnter(_arg_1:MouseEvent):void{
             var _local_2:FortuneInfo;
             if (this.onHoverPanel == null)
             {
@@ -121,25 +116,23 @@ public class FortuneGroundPanel extends Panel
                 if (this.onHoverPanel != null)
                 {
                     addChild(this.onHoverPanel);
-                }
-            }
+                };
+            };
         }
 
-        private function onHoverExit(_arg_1:MouseEvent):void
-        {
+        private function onHoverExit(_arg_1:MouseEvent):void{
             if (((!(this.onHoverPanel == null)) && (this.onHoverPanel.parent)))
             {
                 removeChild(this.onHoverPanel);
                 this.onHoverPanel = null;
-            }
+            };
         }
 
-        public function setOwner(_arg_1:SellableObject):void
-        {
+        public function setOwner(_arg_1:SellableObject):void{
             if (_arg_1 == this.owner_)
             {
                 return;
-            }
+            };
             this.owner_ = _arg_1;
             this.buyButton_.setPrice(this.owner_.price_, this.owner_.currency_);
             var _local_2:String = this.owner_.soldObjectName();
@@ -147,31 +140,27 @@ public class FortuneGroundPanel extends Panel
             this.bitmap_.bitmapData = this.owner_.getIcon();
         }
 
-        private function onAddedToStage(_arg_1:Event):void
-        {
+        private function onAddedToStage(_arg_1:Event):void{
             this.icon_.x = -4;
             this.icon_.y = -8;
             this.nameText_.x = 44;
         }
 
-        private function onRemovedFromStage(_arg_1:Event):void
-        {
+        private function onRemovedFromStage(_arg_1:Event):void{
             stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             this.infoButton_.removeEventListener(MouseEvent.CLICK, this.onInfoButtonClick);
             FortuneModal.closed.remove(this.enableInteract);
         }
 
-        private function onInfoButtonClick(_arg_1:MouseEvent):void
-        {
+        private function onInfoButtonClick(_arg_1:MouseEvent):void{
             this.onInfoButton();
         }
 
-        private function onInfoButton():void
-        {
+        private function onInfoButton():void{
             if (FortuneModal.modalIsOpen)
             {
                 return;
-            }
+            };
             var _local_1:Injector = StaticInjectorContext.getInjector();
             var _local_2:FortuneModel = _local_1.getInstance(FortuneModel);
             var _local_3:Account = _local_1.getInstance(Account);
@@ -188,27 +177,25 @@ public class FortuneGroundPanel extends Panel
                 if (!_local_3.isRegistered())
                 {
                     _local_4.dispatch(new RegisterPromptDialog("SellableObjectPanelMediator.text", {"type":Currency.typeToName(Currency.GOLD)}));
-                }
-            }
+                };
+            };
         }
 
-        private function onKeyDown(_arg_1:KeyboardEvent):void
-        {
+        private function onKeyDown(_arg_1:KeyboardEvent):void{
             if (((_arg_1.keyCode == Parameters.data_.interact) && (stage.focus == null)))
             {
                 this.onInfoButton();
-            }
+            };
         }
 
-        override public function draw():void
-        {
+        override public function draw():void{
             this.nameText_.y = ((this.nameText_.height > 30) ? 0 : 12);
             this.infoButton_.x = ((WIDTH / 2) - (this.infoButton_.width / 2));
             this.infoButton_.y = ((HEIGHT - (this.infoButton_.height / 2)) - this.BUTTON_OFFSET);
             if (!contains(this.infoButton_))
             {
                 addChild(this.infoButton_);
-            }
+            };
         }
 
 

@@ -1,16 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.messaging.impl.incoming.ShowEffect
 
-package kabam.rotmg.messaging.impl.incoming
-{
+package kabam.rotmg.messaging.impl.incoming{
 import flash.utils.IDataInput;
 
 import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-public class ShowEffect extends IncomingMessage
-    {
+public class ShowEffect extends IncomingMessage {
 
         public static const UNKNOWN_EFFECT_TYPE:int = 0;
         public static const HEAL_EFFECT_TYPE:int = 1;
@@ -41,13 +39,11 @@ public class ShowEffect extends IncomingMessage
         public var color_:int;
         public var duration_:Number;
 
-        public function ShowEffect(_arg_1:uint, _arg_2:Function)
-        {
+        public function ShowEffect(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);
         }
 
-        override public function parseFromInput(_arg_1:IDataInput):void
-        {
+        override public function parseFromInput(_arg_1:IDataInput):void{
             this.effectType_ = _arg_1.readUnsignedByte();
             this.targetObjectId_ = _arg_1.readInt();
             this.pos1_.parseFromInput(_arg_1);
@@ -56,8 +52,7 @@ public class ShowEffect extends IncomingMessage
             this.duration_ = _arg_1.readFloat();
         }
 
-        override public function toString():String
-        {
+        override public function toString():String{
             return (formatToString("SHOW_EFFECT", "effectType_", "targetObjectId_", "pos1_", "pos2_", "color_", "duration_"));
         }
 

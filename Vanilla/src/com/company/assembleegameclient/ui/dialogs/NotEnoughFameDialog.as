@@ -1,25 +1,21 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog
 
-package com.company.assembleegameclient.ui.dialogs
-{
+package com.company.assembleegameclient.ui.dialogs{
 import flash.events.Event;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class NotEnoughFameDialog extends Dialog
-    {
+public class NotEnoughFameDialog extends Dialog {
 
-        public function NotEnoughFameDialog()
-        {
+        public function NotEnoughFameDialog(){
             super(TextKey.NOT_ENOUGH_FAME_DIALOG_TITLE, TextKey.NOT_ENOUGH_FAME_DIALOG_TEXT, TextKey.NOT_ENOUGH_FAME_DIALOG_LEFTBUTTON, null, "/notEnoughFame");
             addEventListener(LEFT_BUTTON, this.onOk);
         }
 
-        public function onOk(_arg_1:Event):void
-        {
+        public function onOk(_arg_1:Event):void{
             parent.removeChild(this);
         }
 

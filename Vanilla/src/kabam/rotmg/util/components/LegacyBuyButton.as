@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.util.components.LegacyBuyButton
 
-package kabam.rotmg.util.components
-{
+package kabam.rotmg.util.components{
 import com.company.assembleegameclient.util.Currency;
 import com.company.util.GraphicsUtil;
 import com.company.util.MoreColorUtil;
@@ -30,8 +29,7 @@ import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 import kabam.rotmg.util.components.api.BuyButton;
 
-public class LegacyBuyButton extends BuyButton
-    {
+public class LegacyBuyButton extends BuyButton {
 
         private static const BEVEL:int = 4;
         private static const PADDING:int = 2;
@@ -61,8 +59,7 @@ public class LegacyBuyButton extends BuyButton
         private const graphicsData:Vector.<IGraphicsData> = new <IGraphicsData>[enabledFill, graphicsPath, GraphicsUtil.END_FILL];
         private const waiter:SignalWaiter = new SignalWaiter();
 
-        public function LegacyBuyButton(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Boolean=false, _arg_6:Boolean=false)
-        {
+        public function LegacyBuyButton(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:int, _arg_5:Boolean=false, _arg_6:Boolean=false){
             this.prefix = _arg_1;
             this.text = new TextFieldDisplayConcrete().setSize(_arg_2).setColor(((_arg_6) ? 15544368 : 0x363636)).setBold(true);
             this.waiter.push(this.text.textChanged);
@@ -79,8 +76,7 @@ public class LegacyBuyButton extends BuyButton
             this.withOutLine = _arg_5;
         }
 
-        override public function setPrice(_arg_1:int, _arg_2:int):void
-        {
+        override public function setPrice(_arg_1:int, _arg_2:int):void{
             var _local_3:StringBuilder;
             if (((!(this.price == _arg_1)) || (!(this.currency == _arg_2))))
             {
@@ -89,58 +85,50 @@ public class LegacyBuyButton extends BuyButton
                 _local_3 = ((this.prefix != "") ? this.lineBuilder.setParams(this.prefix, {"cost":_arg_1.toString()}) : this.staticStringBuilder.setString(_arg_1.toString()));
                 this.text.setStringBuilder(_local_3);
                 this.updateUI();
-            }
+            };
         }
 
-        public function setStringBuilder(_arg_1:StringBuilder):void
-        {
+        public function setStringBuilder(_arg_1:StringBuilder):void{
             this.text.setStringBuilder(_arg_1);
             this.updateUI();
         }
 
-        public function getPrice():int
-        {
+        public function getPrice():int{
             return (this.price);
         }
 
-        public function setText(_arg_1:String):void
-        {
+        public function setText(_arg_1:String):void{
             this.text.setStringBuilder(new StaticStringBuilder(_arg_1));
             this.updateUI();
         }
 
-        override public function setEnabled(_arg_1:Boolean):void
-        {
+        override public function setEnabled(_arg_1:Boolean):void{
             if (_arg_1 != mouseEnabled)
             {
                 mouseEnabled = _arg_1;
                 filters = ((_arg_1) ? [] : [grayfilter]);
                 this.draw();
-            }
+            };
         }
 
-        override public function setWidth(_arg_1:int):void
-        {
+        override public function setWidth(_arg_1:int):void{
             this._width = _arg_1;
             this.updateUI();
         }
 
-        private function updateUI():void
-        {
+        private function updateUI():void{
             this.updateText();
             this.updateIcon();
             this.updateBackground();
             this.draw();
         }
 
-        private function readyForPlacementDispatch():void
-        {
+        private function readyForPlacementDispatch():void{
             this.updateUI();
             readyForPlacement.dispatch();
         }
 
-        private function updateIcon():void
-        {
+        private function updateIcon():void{
             switch (this.currency)
             {
                 case Currency.GOLD:
@@ -157,92 +145,78 @@ public class LegacyBuyButton extends BuyButton
                     break;
                 default:
                     this.icon.bitmapData = null;
-            }
+            };
             this.updateIconPosition();
         }
 
-        private function updateBackground():void
-        {
+        private function updateBackground():void{
             GraphicsUtil.clearPath(this.graphicsPath);
             GraphicsUtil.drawCutEdgeRect(0, 0, this.getWidth(), this.getHeight(), BEVEL, [1, 1, 1, 1], this.graphicsPath);
         }
 
-        private function updateText():void
-        {
+        private function updateText():void{
             this.text.x = ((((this.getWidth() - this.icon.width) - this.text.width) - PADDING) * 0.5);
             this.text.y = this.textVertMargin;
         }
 
-        private function updateIconPosition():void
-        {
+        private function updateIconPosition():void{
             this.icon.x = (this.text.x + this.text.width);
             this.icon.y = (((this.getHeight() - this.icon.height) - 1) * 0.5);
         }
 
-        private function onMouseOver(_arg_1:MouseEvent):void
-        {
+        private function onMouseOver(_arg_1:MouseEvent):void{
             this.enabledFill.color = 16768133;
             this.draw();
         }
 
-        private function onRollOut(_arg_1:MouseEvent):void
-        {
+        private function onRollOut(_arg_1:MouseEvent):void{
             this.enabledFill.color = 0xFFFFFF;
             this.draw();
         }
 
-        public function draw():void
-        {
+        public function draw():void{
             this.graphicsData[0] = ((mouseEnabled) ? this.enabledFill : this.disabledFill);
             graphics.clear();
             graphics.drawGraphicsData(this.graphicsData);
             if (this.withOutLine)
             {
                 this.drawOutline(graphics);
-            }
+            };
         }
 
-        private function getWidth():int
-        {
+        private function getWidth():int{
             return ((this.fixedWidth != -1) ? this.fixedWidth : Math.max(this._width, ((this.text.width + this.icon.width) + (4 * PADDING))));
         }
 
-        private function getHeight():int
-        {
+        private function getHeight():int{
             return ((this.fixedHeight != -1) ? this.fixedHeight : (this.text.height + (this.textVertMargin * 2)));
         }
 
-        public function freezeSize():void
-        {
+        public function freezeSize():void{
             this.fixedHeight = this.getHeight();
             this.fixedWidth = this.getWidth();
         }
 
-        public function unfreezeSize():void
-        {
+        public function unfreezeSize():void{
             this.fixedHeight = -1;
             this.fixedWidth = -1;
         }
 
-        public function scaleButtonWidth(_arg_1:Number):void
-        {
+        public function scaleButtonWidth(_arg_1:Number):void{
             this.fixedWidth = (this.getWidth() * _arg_1);
             this.updateUI();
         }
 
-        public function scaleButtonHeight(_arg_1:Number):void
-        {
+        public function scaleButtonHeight(_arg_1:Number):void{
             this.textVertMargin = (this.textVertMargin * _arg_1);
             this.updateUI();
         }
 
-        public function setOutLineColor(_arg_1:int):void
-        {
+        public function setOutLineColor(_arg_1:int):void{
             this.outLineColor = _arg_1;
         }
 
-        private function drawOutline(_arg_1:Graphics):void
-        {
+        private function drawOutline(_arg_1:Graphics):void{
             var _local_2:GraphicsSolidFill = new GraphicsSolidFill(0, 0.01);
             var _local_3:GraphicsSolidFill = new GraphicsSolidFill(this.outLineColor, 0.6);
             var _local_4:GraphicsStroke = new GraphicsStroke(4, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, _local_3);

@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.objects.thrown.ThrownProjectile
 
-package com.company.assembleegameclient.objects.thrown
-{
+package com.company.assembleegameclient.objects.thrown{
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.TextureRedrawer;
 
 import flash.display.BitmapData;
 import flash.geom.Point;
 
-public class ThrownProjectile extends BitmapParticle
-    {
+public class ThrownProjectile extends BitmapParticle {
 
         public var lifetime_:int;
         public var timeLeft_:int;
@@ -24,8 +22,7 @@ public class ThrownProjectile extends BitmapParticle
         public var pathY_:Number;
         private var bitmapData:BitmapData;
 
-        public function ThrownProjectile(_arg_1:uint, _arg_2:int, _arg_3:Point, _arg_4:Point)
-        {
+        public function ThrownProjectile(_arg_1:uint, _arg_2:int, _arg_3:Point, _arg_4:Point){
             this.bitmapData = ObjectLibrary.getTextureFromType(_arg_1);
             this.bitmapData = TextureRedrawer.redraw(this.bitmapData, ObjectLibrary.propsLibrary_[_arg_1].minSize_, true, 0, false);
             _rotationDelta = 0.2;
@@ -39,13 +36,12 @@ public class ThrownProjectile extends BitmapParticle
             this.pathY_ = (y_ = this.start_.y);
         }
 
-        override public function update(_arg_1:int, _arg_2:int):Boolean
-        {
+        override public function update(_arg_1:int, _arg_2:int):Boolean{
             this.timeLeft_ = (this.timeLeft_ - _arg_2);
             if (this.timeLeft_ <= 0)
             {
                 return (false);
-            }
+            };
             z_ = (Math.sin(((this.timeLeft_ / this.lifetime_) * Math.PI)) * 2);
             setSize(z_);
             this.pathX_ = (this.pathX_ + (this.dx_ * _arg_2));

@@ -1,18 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.language.control.ReloadCurrentScreenCommand
 
-package kabam.rotmg.language.control
-{
+package kabam.rotmg.language.control{
 import kabam.rotmg.core.model.ScreenModel;
 import kabam.rotmg.core.signals.InvalidateDataSignal;
 import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.ui.view.TitleView;
 
-public class ReloadCurrentScreenCommand
-    {
+public class ReloadCurrentScreenCommand {
 
         [Inject]
         public var invalidate:InvalidateDataSignal;
@@ -24,8 +22,7 @@ public class ReloadCurrentScreenCommand
         public var screensModel:ScreenModel;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:Class = ((this.screensModel.getCurrentScreenType()) || (TitleView));
             this.invalidate.dispatch();
             this.closeDialogs.dispatch();

@@ -1,10 +1,9 @@
-﻿// Decompiled by AS3 Sorcerer 5.48
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //kabam.rotmg.account.web.commands.WebRegisterAccountCommand
 
-package kabam.rotmg.account.web.commands
-{
+package kabam.rotmg.account.web.commands{
 import kabam.lib.tasks.BranchingTask;
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.Task;
@@ -19,8 +18,7 @@ import kabam.rotmg.core.signals.TrackEventSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.ui.signals.EnterGameSignal;
 
-public class WebRegisterAccountCommand 
-    {
+public class WebRegisterAccountCommand {
 
         [Inject]
         public var task:RegisterAccountTask;
@@ -38,15 +36,13 @@ public class WebRegisterAccountCommand
         public var enterGame:EnterGameSignal;
 
 
-        public function execute():void
-        {
+        public function execute():void{
             var _local_1:BranchingTask = new BranchingTask(this.task, this.makeSuccess(), this.makeFailure());
             this.monitor.add(_local_1);
             _local_1.start();
         }
 
-        private function makeSuccess():Task
-        {
+        private function makeSuccess():Task{
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.updateAccount));
             _local_1.add(new DispatchSignalTask(this.openDialog, new WebAccountDetailDialog()));
@@ -54,13 +50,11 @@ public class WebRegisterAccountCommand
             return (_local_1);
         }
 
-        private function makeFailure():DispatchSignalTask
-        {
+        private function makeFailure():DispatchSignalTask{
             return (new DispatchSignalTask(this.taskError, this.task));
         }
 
-        private function getTrackingData():TrackingData
-        {
+        private function getTrackingData():TrackingData{
             var _local_1:TrackingData = new TrackingData();
             _local_1.category = "account";
             _local_1.action = "accountRegistered";
