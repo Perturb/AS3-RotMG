@@ -4,19 +4,19 @@
 //com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.account.ui.components.Selectable;
-import com.company.assembleegameclient.account.ui.components.SelectionGroup;
+    import flash.display.Sprite;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.account.ui.components.SelectionGroup;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.account.ui.components.Selectable;
+    import flash.events.Event;
+    import flash.display.DisplayObject;
+    import kabam.lib.ui.impl.HorizontalLayout;
+    import kabam.lib.ui.api.Layout;
+    import __AS3__.vec.*;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import kabam.lib.ui.api.Layout;
-import kabam.lib.ui.impl.HorizontalLayout;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class PaymentMethodRadioButtons extends Sprite {
+    public class PaymentMethodRadioButtons extends Sprite {
 
         private const waiter:SignalWaiter = new SignalWaiter();
 

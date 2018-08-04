@@ -4,20 +4,18 @@
 //com.company.assembleegameclient.screens.AccountLoadingScreen
 
 package com.company.assembleegameclient.screens{
-import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.events.Event;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class AccountLoadingScreen extends Sprite {
+    public class AccountLoadingScreen extends Sprite {
 
         private var loadingText_:TextFieldDisplayConcrete;
         private var setMessage:SetLoadingMessageSignal;

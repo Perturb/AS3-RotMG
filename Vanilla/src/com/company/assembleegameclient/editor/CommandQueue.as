@@ -4,7 +4,10 @@
 //com.company.assembleegameclient.editor.CommandQueue
 
 package com.company.assembleegameclient.editor{
-public class CommandQueue {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class CommandQueue {
 
         private var list_:Vector.<CommandList> = new Vector.<CommandList>();
         private var currPos:int = 0;

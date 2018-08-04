@@ -4,12 +4,12 @@
 //kabam.rotmg.dailyLogin.view.CalendarView
 
 package kabam.rotmg.dailyLogin.view{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
+    import __AS3__.vec.Vector;
 
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-import kabam.rotmg.dailyLogin.model.CalendarDayModel;
-
-public class CalendarView extends Sprite {
+    public class CalendarView extends Sprite {
 
 
         public function init(_arg_1:Vector.<CalendarDayModel>, _arg_2:int, _arg_3:int):void{

@@ -4,11 +4,10 @@
 //com.greensock.plugins.ColorMatrixFilterPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.filters.ColorMatrixFilter;
+    import com.greensock.TweenLite;
 
-import flash.filters.ColorMatrixFilter;
-
-public class ColorMatrixFilterPlugin extends FilterPlugin {
+    public class ColorMatrixFilterPlugin extends FilterPlugin {
 
         public static const API:Number = 2;
         private static var _propNames:Array = [];

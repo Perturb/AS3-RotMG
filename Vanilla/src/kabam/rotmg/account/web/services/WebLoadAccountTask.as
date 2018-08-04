@@ -4,17 +4,15 @@
 //kabam.rotmg.account.web.services.WebLoadAccountTask
 
 package kabam.rotmg.account.web.services{
-import com.company.assembleegameclient.util.GUID;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.LoadAccountTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.web.model.AccountData;
+    import flash.net.SharedObject;
+    import com.company.assembleegameclient.util.GUID;
 
-import flash.net.SharedObject;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.services.LoadAccountTask;
-import kabam.rotmg.account.web.model.AccountData;
-import kabam.rotmg.appengine.api.AppEngineClient;
-
-public class WebLoadAccountTask extends BaseTask implements LoadAccountTask {
+    public class WebLoadAccountTask extends BaseTask implements LoadAccountTask {
 
         [Inject]
         public var account:Account;

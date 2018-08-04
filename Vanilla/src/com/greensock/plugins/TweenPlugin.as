@@ -4,10 +4,10 @@
 //com.greensock.plugins.TweenPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
-import com.greensock.core.PropTween;
+    import com.greensock.core.PropTween;
+    import com.greensock.TweenLite;
 
-public class TweenPlugin {
+    public class TweenPlugin {
 
         public static const version:String = "12.1.5";
         public static const API:Number = 2;

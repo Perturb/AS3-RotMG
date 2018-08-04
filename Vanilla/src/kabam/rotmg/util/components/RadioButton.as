@@ -4,22 +4,21 @@
 //kabam.rotmg.util.components.RadioButton
 
 package kabam.rotmg.util.components{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import flash.display.Shape;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import com.company.util.GraphicsUtil;
+    import flash.display.IGraphicsData;
+    import __AS3__.vec.Vector;
+    import flash.display.Graphics;
 
-import flash.display.CapsStyle;
-import flash.display.Graphics;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-
-import org.osflash.signals.Signal;
-
-public class RadioButton extends Sprite {
+    public class RadioButton extends Sprite {
 
         public const changed:Signal = new Signal(Boolean);
         private const WIDTH:int = 28;

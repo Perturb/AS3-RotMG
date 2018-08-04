@@ -4,17 +4,15 @@
 //kabam.rotmg.arena.component.AbridgedPlayerTooltip
 
 package kabam.rotmg.arena.component{
-import com.company.assembleegameclient.ui.GuildText;
-import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.GuildText;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
 
-import flash.display.Bitmap;
-
-import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class AbridgedPlayerTooltip extends ToolTip {
+    public class AbridgedPlayerTooltip extends ToolTip {
 
         public function AbridgedPlayerTooltip(_arg_1:ArenaLeaderboardEntry){
             var _local_5:GuildText;

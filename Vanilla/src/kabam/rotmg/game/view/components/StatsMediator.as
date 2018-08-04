@@ -4,16 +4,13 @@
 //kabam.rotmg.game.view.components.StatsMediator
 
 package kabam.rotmg.game.view.components{
-import com.company.assembleegameclient.objects.Player;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.ui.signals.UpdateHUDSignal;
+    import kabam.rotmg.ui.view.StatsDockedSignal;
+    import com.company.assembleegameclient.objects.Player;
+    import flash.events.MouseEvent;
 
-import flash.events.MouseEvent;
-
-import kabam.rotmg.ui.signals.UpdateHUDSignal;
-import kabam.rotmg.ui.view.StatsDockedSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class StatsMediator extends Mediator {
+    public class StatsMediator extends Mediator {
 
         [Inject]
         public var view:StatsView;

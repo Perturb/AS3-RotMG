@@ -4,62 +4,62 @@
 //com.company.assembleegameclient.objects.Player
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-import com.company.assembleegameclient.objects.particles.HealingEffect;
-import com.company.assembleegameclient.objects.particles.LevelUpEffect;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.assembleegameclient.tutorial.Tutorial;
-import com.company.assembleegameclient.tutorial.doneAction;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.ConditionEffect;
-import com.company.assembleegameclient.util.FameUtil;
-import com.company.assembleegameclient.util.FreeList;
-import com.company.assembleegameclient.util.MaskedImage;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-import com.company.util.CachingColorTransformer;
-import com.company.util.ConversionUtil;
-import com.company.util.GraphicsUtil;
-import com.company.util.IntPoint;
-import com.company.util.MoreColorUtil;
-import com.company.util.PointUtil;
-import com.company.util.Trig;
+    import __AS3__.vec.Vector;
+    import flash.geom.Point;
+    import flash.geom.Matrix;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import org.osflash.signals.Signal;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.particles.HealingEffect;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import com.company.util.IntPoint;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import flash.utils.Dictionary;
+    import com.company.util.ConversionUtil;
+    import kabam.rotmg.constants.GeneralConstants;
+    import kabam.rotmg.messaging.impl.data.StatData;
+    import flash.utils.getTimer;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import com.company.assembleegameclient.objects.particles.LevelUpEffect;
+    import com.company.util.PointUtil;
+    import com.company.assembleegameclient.map.Square;
+    import flash.geom.Vector3D;
+    import com.company.assembleegameclient.util.ConditionEffect;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.BitmapTextFactory;
+    import com.company.assembleegameclient.util.FameUtil;
+    import com.company.util.GraphicsUtil;
+    import com.company.util.MoreColorUtil;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.CachingColorTransformer;
+    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import kabam.rotmg.constants.UseType;
+    import kabam.rotmg.constants.ActivationType;
+    import com.company.assembleegameclient.util.MathUtil;
+    import com.company.assembleegameclient.tutorial.doneAction;
+    import com.company.assembleegameclient.tutorial.Tutorial;
+    import com.company.util.Trig;
+    import com.company.assembleegameclient.util.FreeList;
+    import kabam.rotmg.ui.model.TabStripModel;
+    import kabam.rotmg.game.model.PotionInventoryModel;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.geom.ColorTransform;
-import flash.geom.Matrix;
-import flash.geom.Point;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
-import flash.utils.getTimer;
-
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.constants.ActivationType;
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.constants.UseType;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.model.PotionInventoryModel;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.messaging.impl.data.StatData;
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.BitmapTextFactory;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.ui.model.TabStripModel;
-
-import org.osflash.signals.Signal;
-import org.swiftsuspenders.Injector;
-
-public class Player extends Character {
+    public class Player extends Character {
 
         public static const MS_BETWEEN_TELEPORT:int = 10000;
         public static const MS_REALM_TELEPORT:int = 120000;
@@ -1096,13 +1096,20 @@ public class Player extends Character {
 
         public function useAltWeapon(_arg_1:Number, _arg_2:Number, _arg_3:int):Boolean{
             var _local_7:Point;
-            var _local_11:XML;
-            var _local_13:int;
+            var _local_12:int;
+            var _local_13:XML;
             var _local_14:String;
             var _local_15:Number;
             var _local_16:Point;
             var _local_17:Number;
-            var _local_18:int;
+            var _local_18:Number;
+            var _local_19:Point;
+            var _local_20:ProjectileProperties;
+            var _local_21:Number;
+            var _local_22:Number;
+            var _local_23:Point;
+            var _local_24:Number;
+            var _local_25:int;
             if (((map_ == null) || (isPaused())))
             {
                 return (false);
@@ -1126,31 +1133,49 @@ public class Player extends Character {
             var _local_8:Boolean;
             var _local_9:Boolean;
             var _local_10:Boolean;
-            for each (_local_11 in _local_5.Activate)
+            if (_arg_3 == UseType.START_USE)
             {
-                _local_14 = _local_11.toString();
-                if (_local_14 == ActivationType.TELEPORT_LIMIT)
+                for each (_local_13 in _local_5.Activate)
                 {
-                    _local_15 = Number(_local_11.@maxDistance);
-                    _local_16 = new Point((x_ + (_local_15 * Math.cos(_local_6))), (y_ + (_local_15 * Math.sin(_local_6))));
-                    if (!this.isValidPosition(_local_16.x, _local_16.y))
+                    _local_14 = _local_13.toString();
+                    if (_local_14 == ActivationType.TELEPORT_LIMIT)
                     {
-                        SoundEffectLibrary.play("error");
-                        return (false);
+                        _local_15 = Number(_local_13.@maxDistance);
+                        _local_16 = new Point((x_ + (_local_15 * Math.cos(_local_6))), (y_ + (_local_15 * Math.sin(_local_6))));
+                        if (!this.isValidPosition(_local_16.x, _local_16.y))
+                        {
+                            SoundEffectLibrary.play("error");
+                            return (false);
+                        };
                     };
-                };
-                if (((_local_14 == ActivationType.TELEPORT) || (_local_14 == ActivationType.OBJECT_TOSS)))
-                {
-                    _local_8 = true;
-                    _local_10 = true;
-                };
-                if ((((((_local_14 == ActivationType.BULLET_NOVA) || (_local_14 == ActivationType.POISON_GRENADE)) || (_local_14 == ActivationType.VAMPIRE_BLAST)) || (_local_14 == ActivationType.TRAP)) || (_local_14 == ActivationType.STASIS_BLAST)))
-                {
-                    _local_8 = true;
-                };
-                if (_local_14 == ActivationType.SHOOT)
-                {
-                    _local_9 = true;
+                    if (((_local_14 == ActivationType.TELEPORT) || (_local_14 == ActivationType.OBJECT_TOSS)))
+                    {
+                        _local_8 = true;
+                        _local_10 = true;
+                    };
+                    if ((((((_local_14 == ActivationType.BULLET_NOVA) || (_local_14 == ActivationType.POISON_GRENADE)) || (_local_14 == ActivationType.VAMPIRE_BLAST)) || (_local_14 == ActivationType.TRAP)) || (_local_14 == ActivationType.STASIS_BLAST)))
+                    {
+                        _local_8 = true;
+                    };
+                    if (_local_14 == ActivationType.SHOOT)
+                    {
+                        _local_9 = true;
+                    };
+                    if (_local_14 == ActivationType.BULLET_CREATE)
+                    {
+                        _local_17 = (Math.sqrt(((_arg_1 * _arg_1) + (_arg_2 * _arg_2))) / 50);
+                        _local_18 = Math.max(this.getAttribute(_local_13, "minDistance", 0), Math.min(this.getAttribute(_local_13, "maxDistance", 4.4), _local_17));
+                        _local_19 = new Point((x_ + (_local_18 * Math.cos(_local_6))), (y_ + (_local_18 * Math.sin(_local_6))));
+                        _local_20 = ObjectLibrary.propsLibrary_[_local_4].projectiles_[0];
+                        _local_21 = ((_local_20.speed_ * _local_20.lifetime_) / 20000);
+                        _local_22 = (_local_6 + (this.getAttribute(_local_13, "offsetAngle", 90) * MathUtil.TO_RAD));
+                        _local_23 = new Point((_local_19.x + (_local_21 * Math.cos((_local_22 + Math.PI)))), (_local_19.y + (_local_21 * Math.sin((_local_22 + Math.PI)))));
+                        if (this.isFullOccupy((_local_23.x + 0.5), (_local_23.y + 0.5)))
+                        {
+                            SoundEffectLibrary.play("error");
+                            return (false);
+                        };
+                    };
                 };
             };
             if (_local_8)
@@ -1164,48 +1189,52 @@ public class Player extends Character {
             }
             else
             {
-                _local_17 = (Math.sqrt(((_arg_1 * _arg_1) + (_arg_2 * _arg_2))) / 50);
-                _local_7 = new Point((x_ + (_local_17 * Math.cos(_local_6))), (y_ + (_local_17 * Math.sin(_local_6))));
+                _local_24 = (Math.sqrt(((_arg_1 * _arg_1) + (_arg_2 * _arg_2))) / 50);
+                _local_7 = new Point((x_ + (_local_24 * Math.cos(_local_6))), (y_ + (_local_24 * Math.sin(_local_6))));
             };
-            var _local_12:int = getTimer();
+            var _local_11:int = getTimer();
             if (_arg_3 == UseType.START_USE)
             {
-                if (_local_12 < this.nextAltAttack_)
+                if (_local_11 < this.nextAltAttack_)
                 {
                     SoundEffectLibrary.play("error");
                     return (false);
                 };
-                _local_13 = int(_local_5.MpCost);
-                if (_local_13 > this.mp_)
+                _local_12 = int(_local_5.MpCost);
+                if (_local_12 > this.mp_)
                 {
                     SoundEffectLibrary.play("no_mana");
                     return (false);
                 };
-                _local_18 = 500;
+                _local_25 = 500;
                 if (_local_5.hasOwnProperty("Cooldown"))
                 {
-                    _local_18 = (Number(_local_5.Cooldown) * 1000);
+                    _local_25 = (Number(_local_5.Cooldown) * 1000);
                 };
-                this.nextAltAttack_ = (_local_12 + _local_18);
-                map_.gs_.gsc_.useItem(_local_12, objectId_, 1, _local_4, _local_7.x, _local_7.y, _arg_3);
+                this.nextAltAttack_ = (_local_11 + _local_25);
+                map_.gs_.gsc_.useItem(_local_11, objectId_, 1, _local_4, _local_7.x, _local_7.y, _arg_3);
                 if (_local_9)
                 {
-                    this.doShoot(_local_12, _local_4, _local_5, _local_6, false);
+                    this.doShoot(_local_11, _local_4, _local_5, _local_6, false);
                 };
             }
             else
             {
                 if (_local_5.hasOwnProperty("MultiPhase"))
                 {
-                    map_.gs_.gsc_.useItem(_local_12, objectId_, 1, _local_4, _local_7.x, _local_7.y, _arg_3);
-                    _local_13 = int(_local_5.MpEndCost);
-                    if (_local_13 <= this.mp_)
+                    map_.gs_.gsc_.useItem(_local_11, objectId_, 1, _local_4, _local_7.x, _local_7.y, _arg_3);
+                    _local_12 = int(_local_5.MpEndCost);
+                    if (_local_12 <= this.mp_)
                     {
-                        this.doShoot(_local_12, _local_4, _local_5, _local_6, false);
+                        this.doShoot(_local_11, _local_4, _local_5, _local_6, false);
                     };
                 };
             };
             return (true);
+        }
+
+        public function getAttribute(_arg_1:XML, _arg_2:String, _arg_3:Number=0):Number{
+            return ((_arg_1.hasOwnProperty(("@" + _arg_2))) ? Number(_arg_1.@[_arg_2]) : _arg_3);
         }
 
         public function attemptAttackAngle(_arg_1:Number):void{

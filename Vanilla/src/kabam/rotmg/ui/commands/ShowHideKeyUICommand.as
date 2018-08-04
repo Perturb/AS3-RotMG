@@ -4,11 +4,10 @@
 //kabam.rotmg.ui.commands.ShowHideKeyUICommand
 
 package kabam.rotmg.ui.commands{
-import flash.display.DisplayObjectContainer;
+    import kabam.rotmg.ui.view.KeysView;
+    import flash.display.DisplayObjectContainer;
 
-import kabam.rotmg.ui.view.KeysView;
-
-public class ShowHideKeyUICommand {
+    public class ShowHideKeyUICommand {
 
         private static var show:Boolean = true;
         private static var view:KeysView;

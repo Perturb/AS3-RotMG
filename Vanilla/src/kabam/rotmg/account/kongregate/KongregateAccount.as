@@ -4,10 +4,10 @@
 //kabam.rotmg.account.kongregate.KongregateAccount
 
 package kabam.rotmg.account.kongregate{
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.kongregate.view.KongregateApi;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.kongregate.view.KongregateApi;
 
-public class KongregateAccount implements Account {
+    public class KongregateAccount implements Account {
 
         public static const NETWORK_NAME:String = "kongregate";
 

@@ -4,9 +4,9 @@
 //kabam.rotmg.maploading.signals.HideMapLoadingSignalNoFade
 
 package kabam.rotmg.maploading.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class HideMapLoadingSignalNoFade extends Signal {
+    public class HideMapLoadingSignalNoFade extends Signal {
 
 
     }

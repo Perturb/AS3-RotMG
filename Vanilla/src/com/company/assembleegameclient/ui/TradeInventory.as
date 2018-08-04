@@ -4,21 +4,21 @@
 //com.company.assembleegameclient.ui.TradeInventory
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.ui.BaseSimpleText;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import com.company.ui.BaseSimpleText;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.TradeItem;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.constants.GeneralConstants;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.messaging.impl.data.TradeItem;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TradeInventory extends Sprite {
+    public class TradeInventory extends Sprite {
 
         private static const NO_CUT:Array = [0, 0, 0, 0];
         private static const cuts:Array = [[1, 0, 0, 1], NO_CUT, NO_CUT, [0, 1, 1, 0], [1, 0, 0, 0], NO_CUT, NO_CUT, [0, 1, 0, 0], [0, 0, 0, 1], NO_CUT, NO_CUT, [0, 0, 1, 0]];

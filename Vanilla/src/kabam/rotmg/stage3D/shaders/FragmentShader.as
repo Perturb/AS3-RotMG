@@ -4,12 +4,11 @@
 //kabam.rotmg.stage3D.shaders.FragmentShader
 
 package kabam.rotmg.stage3D.shaders{
-import com.adobe.utils.AGALMiniAssembler;
+    import flash.utils.ByteArray;
+    import com.adobe.utils.AGALMiniAssembler;
+    import flash.display3D.Context3DProgramType;
 
-import flash.display3D.Context3DProgramType;
-import flash.utils.ByteArray;
-
-public class FragmentShader {
+    public class FragmentShader {
 
         private var vertexProgram:ByteArray;
 

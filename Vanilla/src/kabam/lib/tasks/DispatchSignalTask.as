@@ -4,9 +4,9 @@
 //kabam.lib.tasks.DispatchSignalTask
 
 package kabam.lib.tasks{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class DispatchSignalTask extends BaseTask {
+    public class DispatchSignalTask extends BaseTask {
 
         private var signal:Signal;
         private var params:Array;

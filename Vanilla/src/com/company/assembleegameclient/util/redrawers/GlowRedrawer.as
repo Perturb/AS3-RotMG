@@ -4,21 +4,20 @@
 //com.company.assembleegameclient.util.redrawers.GlowRedrawer
 
 package com.company.assembleegameclient.util.redrawers{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.PointUtil;
+    import flash.filters.GlowFilter;
+    import flash.filters.BitmapFilterQuality;
+    import flash.geom.Matrix;
+    import flash.display.Shape;
+    import flash.utils.Dictionary;
+    import flash.display.BitmapData;
+    import flash.display.BlendMode;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.PointUtil;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.display.GradientType;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.BlendMode;
-import flash.display.GradientType;
-import flash.display.Shape;
-import flash.filters.BitmapFilterQuality;
-import flash.filters.GlowFilter;
-import flash.geom.Matrix;
-import flash.utils.Dictionary;
-
-public class GlowRedrawer {
+    public class GlowRedrawer {
 
         private static const GRADIENT_MAX_SUB:uint = 0x282828;
         private static const GLOW_FILTER:GlowFilter = new GlowFilter(0, 0.3, 12, 12, 2, BitmapFilterQuality.LOW, false, false);

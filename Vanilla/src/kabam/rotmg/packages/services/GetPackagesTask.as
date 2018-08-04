@@ -4,20 +4,17 @@
 //kabam.rotmg.packages.services.GetPackagesTask
 
 package kabam.rotmg.packages.services{
-import com.company.assembleegameclient.util.TimeUtil;
+    import kabam.lib.tasks.BaseTask;
+    import flash.utils.Timer;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.language.model.LanguageModel;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.packages.model.PackageInfo;
+    import com.company.assembleegameclient.util.TimeUtil;
 
-import flash.events.TimerEvent;
-import flash.utils.Timer;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.language.model.LanguageModel;
-import kabam.rotmg.packages.model.PackageInfo;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class GetPackagesTask extends BaseTask {
+    public class GetPackagesTask extends BaseTask {
 
         private static const HOUR:int = ((1000 * 60) * 60);//3600000
 

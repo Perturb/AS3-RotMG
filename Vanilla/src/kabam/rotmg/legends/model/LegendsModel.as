@@ -4,7 +4,9 @@
 //kabam.rotmg.legends.model.LegendsModel
 
 package kabam.rotmg.legends.model{
-public class LegendsModel {
+    import __AS3__.vec.Vector;
+
+    public class LegendsModel {
 
         private var timespan:Timespan = Timespan.WEEK;
         private const map:Object = {};

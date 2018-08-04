@@ -4,12 +4,11 @@
 //io.decagames.rotmg.pets.popup.info.WardrobeTooltip
 
 package io.decagames.rotmg.pets.popup.info{
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-public class WardrobeTooltip extends ToolTip {
+    public class WardrobeTooltip extends ToolTip {
 
         private var title:UILabel;
         private var topDesc:UILabel;

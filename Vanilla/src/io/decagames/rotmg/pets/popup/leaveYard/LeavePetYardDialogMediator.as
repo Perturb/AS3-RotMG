@@ -4,16 +4,13 @@
 //io.decagames.rotmg.pets.popup.leaveYard.LeavePetYardDialogMediator
 
 package io.decagames.rotmg.pets.popup.leaveYard{
-import com.company.assembleegameclient.parameters.Parameters;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.ui.model.HUDModel;
+    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class LeavePetYardDialogMediator extends Mediator {
+    public class LeavePetYardDialogMediator extends Mediator {
 
         [Inject]
         public var view:LeavePetYardDialog;

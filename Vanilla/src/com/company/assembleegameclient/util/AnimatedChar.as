@@ -4,15 +4,16 @@
 //com.company.assembleegameclient.util.AnimatedChar
 
 package com.company.assembleegameclient.util{
-import com.company.assembleegameclient.map.Camera;
-import com.company.util.Trig;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import flash.display.BitmapData;
+    import flash.geom.Point;
+    import flash.geom.Rectangle;
+    import com.company.util.Trig;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-import flash.utils.Dictionary;
-
-public class AnimatedChar {
+    public class AnimatedChar {
 
         public static const RIGHT:int = 0;
         public static const LEFT:int = 1;

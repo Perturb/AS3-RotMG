@@ -4,21 +4,18 @@
 //kabam.rotmg.account.steam.view.SteamAccountDetailDialog
 
 package kabam.rotmg.account.steam.view{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.events.MouseEvent;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class SteamAccountDetailDialog extends Sprite {
+    public class SteamAccountDetailDialog extends Sprite {
 
         public var done:Signal;
         public var register:Signal;

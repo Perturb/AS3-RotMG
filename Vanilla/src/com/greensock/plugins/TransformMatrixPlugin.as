@@ -4,12 +4,11 @@
 //com.greensock.plugins.TransformMatrixPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.geom.Matrix;
+    import flash.geom.Transform;
+    import com.greensock.TweenLite;
 
-import flash.geom.Matrix;
-import flash.geom.Transform;
-
-public class TransformMatrixPlugin extends TweenPlugin {
+    public class TransformMatrixPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         private static const _DEG2RAD:Number = (Math.PI / 180);//0.0174532925199433

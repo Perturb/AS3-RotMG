@@ -4,7 +4,10 @@
 //com.company.assembleegameclient.editor.CommandList
 
 package com.company.assembleegameclient.editor{
-public class CommandList {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class CommandList {
 
         private var list_:Vector.<Command> = new Vector.<Command>();
 

@@ -4,12 +4,12 @@
 //com.company.assembleegameclient.objects.SpiderWeb
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Square;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import com.company.assembleegameclient.map.Square;
 
-import flash.display.IGraphicsData;
-
-public class SpiderWeb extends GameObject {
+    public class SpiderWeb extends GameObject {
 
         private var wallFound_:Boolean = false;
 

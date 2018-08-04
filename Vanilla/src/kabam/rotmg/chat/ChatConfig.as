@@ -4,39 +4,37 @@
 //kabam.rotmg.chat.ChatConfig
 
 package kabam.rotmg.chat{
-import kabam.lib.net.api.MessageMap;
-import kabam.rotmg.chat.control.AddChatSignal;
-import kabam.rotmg.chat.control.ClearTellModelCommand;
-import kabam.rotmg.chat.control.ParseAddTextLineCommand;
-import kabam.rotmg.chat.control.ParseChatMessageCommand;
-import kabam.rotmg.chat.control.ParseChatMessageSignal;
-import kabam.rotmg.chat.control.ScrollListSignal;
-import kabam.rotmg.chat.control.ShowChatInputSignal;
-import kabam.rotmg.chat.control.TextHandler;
-import kabam.rotmg.chat.model.ChatModel;
-import kabam.rotmg.chat.model.TellModel;
-import kabam.rotmg.chat.view.Chat;
-import kabam.rotmg.chat.view.ChatInput;
-import kabam.rotmg.chat.view.ChatInputMediator;
-import kabam.rotmg.chat.view.ChatInputNotAllowed;
-import kabam.rotmg.chat.view.ChatInputNotAllowedMediator;
-import kabam.rotmg.chat.view.ChatList;
-import kabam.rotmg.chat.view.ChatListItemFactory;
-import kabam.rotmg.chat.view.ChatListMediator;
-import kabam.rotmg.chat.view.ChatMediator;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.game.signals.ExitGameSignal;
-import kabam.rotmg.game.signals.GameClosedSignal;
-import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.messaging.impl.incoming.Text;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import kabam.lib.net.api.MessageMap;
+    import robotlegs.bender.extensions.signalCommandMap.impl.SignalCommandMap;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import kabam.rotmg.chat.model.ChatModel;
+    import kabam.rotmg.chat.view.ChatListItemFactory;
+    import kabam.rotmg.chat.model.TellModel;
+    import kabam.rotmg.chat.control.AddChatSignal;
+    import kabam.rotmg.chat.control.ScrollListSignal;
+    import kabam.rotmg.chat.control.ShowChatInputSignal;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.chat.control.ParseAddTextLineCommand;
+    import kabam.rotmg.game.signals.ExitGameSignal;
+    import kabam.rotmg.chat.control.ClearTellModelCommand;
+    import kabam.rotmg.game.signals.GameClosedSignal;
+    import kabam.rotmg.messaging.impl.GameServerConnection;
+    import kabam.rotmg.messaging.impl.incoming.Text;
+    import kabam.rotmg.chat.control.TextHandler;
+    import kabam.rotmg.chat.control.ParseChatMessageSignal;
+    import kabam.rotmg.chat.control.ParseChatMessageCommand;
+    import kabam.rotmg.chat.view.ChatInput;
+    import kabam.rotmg.chat.view.ChatInputMediator;
+    import kabam.rotmg.chat.view.ChatList;
+    import kabam.rotmg.chat.view.ChatListMediator;
+    import kabam.rotmg.chat.view.Chat;
+    import kabam.rotmg.chat.view.ChatMediator;
+    import kabam.rotmg.chat.view.ChatInputNotAllowed;
+    import kabam.rotmg.chat.view.ChatInputNotAllowedMediator;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.impl.SignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class ChatConfig implements IConfig {
+    public class ChatConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

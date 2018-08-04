@@ -4,24 +4,21 @@
 //kabam.rotmg.account.core.view.EmptyFrame
 
 package kabam.rotmg.account.core.view{
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.text.TextFormatAlign;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
 
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class EmptyFrame extends Sprite {
+    public class EmptyFrame extends Sprite {
 
         public static const TEXT_MARGIN:int = 20;
 

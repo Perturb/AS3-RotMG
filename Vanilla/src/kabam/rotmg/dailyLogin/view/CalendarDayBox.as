@@ -4,31 +4,31 @@
 //kabam.rotmg.dailyLogin.view.CalendarDayBox
 
 package kabam.rotmg.dailyLogin.view{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.assets.services.IconFactory;
+    import com.company.util.AssetLibrary;
+    import flash.geom.Rectangle;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.display.Shape;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.geom.Rectangle;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.assets.services.IconFactory;
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-import kabam.rotmg.dailyLogin.model.CalendarDayModel;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class CalendarDayBox extends Sprite {
+    public class CalendarDayBox extends Sprite {
 
         private var fill_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 1);
         private var fillCurrent_:GraphicsSolidFill = new GraphicsSolidFill(4889165, 1);

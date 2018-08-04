@@ -4,10 +4,11 @@
 //kabam.rotmg.stage3D.Object3D.Util
 
 package kabam.rotmg.stage3D.Object3D{
-import flash.geom.Matrix3D;
-import flash.utils.ByteArray;
+    import flash.geom.Matrix3D;
+    import flash.utils.ByteArray;
+    import __AS3__.vec.*;
 
-public class Util {
+    public class Util {
 
 
         public static function perspectiveProjection(_arg_1:Number=90, _arg_2:Number=1, _arg_3:Number=1, _arg_4:Number=0x0800):Matrix3D{

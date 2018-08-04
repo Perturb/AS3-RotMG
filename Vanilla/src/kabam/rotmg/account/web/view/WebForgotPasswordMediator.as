@@ -4,14 +4,13 @@
 //kabam.rotmg.account.web.view.WebForgotPasswordMediator
 
 package kabam.rotmg.account.web.view{
-import kabam.lib.tasks.Task;
-import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.lib.tasks.Task;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class WebForgotPasswordMediator extends Mediator {
+    public class WebForgotPasswordMediator extends Mediator {
 
         [Inject]
         public var view:WebForgotPasswordDialog;

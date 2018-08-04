@@ -4,29 +4,26 @@
 //io.decagames.rotmg.social.widgets.BaseListItem
 
 package io.decagames.rotmg.social.widgets{
-import com.company.assembleegameclient.ui.icons.IconButton;
-import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.social.data.SocialItemState;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import com.company.assembleegameclient.ui.icons.IconButton;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-
-import io.decagames.rotmg.social.data.SocialItemState;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-public class BaseListItem extends Sprite implements TooltipAble {
+    public class BaseListItem extends Sprite implements TooltipAble {
 
         protected const LIST_ITEM_WIDTH:int = 310;
         protected const LIST_ITEM_HEIGHT:int = 40;

@@ -4,11 +4,10 @@
 //kabam.rotmg.characters.reskin.view.ReskinPanelMediator
 
 package kabam.rotmg.characters.reskin.view{
-import kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ReskinPanelMediator extends Mediator {
+    public class ReskinPanelMediator extends Mediator {
 
         [Inject]
         public var view:ReskinPanel;

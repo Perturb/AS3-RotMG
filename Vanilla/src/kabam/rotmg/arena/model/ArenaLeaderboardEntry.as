@@ -4,11 +4,11 @@
 //kabam.rotmg.arena.model.ArenaLeaderboardEntry
 
 package kabam.rotmg.arena.model{
-import flash.display.BitmapData;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import __AS3__.vec.Vector;
 
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-public class ArenaLeaderboardEntry {
+    public class ArenaLeaderboardEntry {
 
         public var playerBitmap:BitmapData;
         public var name:String;

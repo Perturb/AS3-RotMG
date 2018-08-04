@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.ui.view.components
+package kabam.rotmg.ui.view.components
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="MapBackground_EMBEDDED_BACKGROUNDMAP.dat", mimeType="application/octet-stream")]
-	public class MapBackground_EMBEDDED_BACKGROUNDMAP extends ByteArrayAsset
+	[Embed(source="MapBackground_EMBEDDED_BACKGROUNDMAP.dat", mimeType="application/octet-stream")]
+	public class MapBackground_EMBEDDED_BACKGROUNDMAP extends mx.core.ByteArrayAsset
 	{
 		public function MapBackground_EMBEDDED_BACKGROUNDMAP()
 		{

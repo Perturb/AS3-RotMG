@@ -4,28 +4,24 @@
 //io.decagames.rotmg.pets.panels.PetPanel
 
 package io.decagames.rotmg.pets.panels{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import org.osflash.signals.natives.NativeSignal;
+    import kabam.rotmg.editor.view.StaticTextButton;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import flash.display.Bitmap;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import kabam.rotmg.text.model.TextKey;
+    import io.decagames.rotmg.pets.utils.PetsConstants;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.utils.PetsConstants;
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.editor.view.StaticTextButton;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeSignal;
-
-public class PetPanel extends Panel {
+    public class PetPanel extends Panel {
 
         private static const FONT_SIZE:int = 16;
         private static const INVENTORY_PADDING:int = 6;

@@ -4,9 +4,9 @@
 //io.decagames.rotmg.pets.signals.PetFeedResultSignal
 
 package io.decagames.rotmg.pets.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class PetFeedResultSignal extends Signal {
+    public class PetFeedResultSignal extends Signal {
 
 
     }

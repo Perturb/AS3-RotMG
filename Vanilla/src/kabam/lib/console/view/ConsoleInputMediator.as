@@ -4,12 +4,11 @@
 //kabam.lib.console.view.ConsoleInputMediator
 
 package kabam.lib.console.view{
-import kabam.lib.console.model.Console;
-import kabam.lib.console.signals.ConsoleLogSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.lib.console.model.Console;
+    import kabam.lib.console.signals.ConsoleLogSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public final class ConsoleInputMediator extends Mediator {
+    public final class ConsoleInputMediator extends Mediator {
 
         private static const ERROR_PATTERN:String = '[0xFF3333:error - "${value}" not found]';
         private static const ACTION_PATTERN:String = "[0xFFEE00:${value}]";

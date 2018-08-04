@@ -4,27 +4,24 @@
 //kabam.rotmg.friends.view.FriendListMediator
 
 package kabam.rotmg.friends.view{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.social.model.SocialModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import io.decagames.rotmg.social.signals.FriendActionSignal;
+    import kabam.rotmg.chat.control.ShowChatInputSignal;
+    import kabam.rotmg.ui.signals.EnterGameSignal;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.game.signals.PlayGameSignal;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import io.decagames.rotmg.social.config.FriendsActions;
+    import io.decagames.rotmg.social.model.FriendRequestVO;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import kabam.rotmg.game.model.GameInitData;
 
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.model.FriendRequestVO;
-import io.decagames.rotmg.social.model.SocialModel;
-import io.decagames.rotmg.social.signals.FriendActionSignal;
-
-import kabam.rotmg.chat.control.ShowChatInputSignal;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.model.GameInitData;
-import kabam.rotmg.game.signals.PlayGameSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.ui.signals.EnterGameSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class FriendListMediator extends Mediator {
+    public class FriendListMediator extends Mediator {
 
         [Inject]
         public var view:FriendListView;

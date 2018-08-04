@@ -4,18 +4,16 @@
 //kabam.rotmg.game.view.NameChangerPanelMediator
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.account.ui.ChooseNameFrame;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.ui.signals.NameChangedSignal;
+    import com.company.assembleegameclient.account.ui.ChooseNameFrame;
+    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.account.web.WebAccount;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.RegisterPromptDialog;
-import kabam.rotmg.account.web.WebAccount;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.ui.signals.NameChangedSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class NameChangerPanelMediator extends Mediator {
+    public class NameChangerPanelMediator extends Mediator {
 
         [Inject]
         public var account:Account;

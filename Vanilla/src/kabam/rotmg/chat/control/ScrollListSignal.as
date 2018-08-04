@@ -4,9 +4,9 @@
 //kabam.rotmg.chat.control.ScrollListSignal
 
 package kabam.rotmg.chat.control{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class ScrollListSignal extends Signal {
+    public class ScrollListSignal extends Signal {
 
         public function ScrollListSignal(){
             super(int);

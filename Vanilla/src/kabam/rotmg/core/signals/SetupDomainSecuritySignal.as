@@ -4,9 +4,9 @@
 //kabam.rotmg.core.signals.SetupDomainSecuritySignal
 
 package kabam.rotmg.core.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class SetupDomainSecuritySignal extends Signal {
+    public class SetupDomainSecuritySignal extends Signal {
 
 
     }

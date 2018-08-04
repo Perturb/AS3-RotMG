@@ -4,13 +4,13 @@
 //com.company.assembleegameclient.util.StageProxy
 
 package com.company.assembleegameclient.util{
-import flash.display.DisplayObject;
-import flash.display.DisplayObjectContainer;
-import flash.display.InteractiveObject;
-import flash.events.Event;
-import flash.events.IEventDispatcher;
+    import flash.events.IEventDispatcher;
+    import flash.display.DisplayObject;
+    import flash.display.DisplayObjectContainer;
+    import flash.display.InteractiveObject;
+    import flash.events.Event;
 
-public class StageProxy implements IEventDispatcher {
+    public class StageProxy implements IEventDispatcher {
 
         private static var stage3D:Stage3DProxy = null;
 

@@ -4,41 +4,38 @@
 //io.decagames.rotmg.fame.FameContentPopupMediator
 
 package io.decagames.rotmg.fame{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import io.decagames.rotmg.fame.data.FameTracker;
+    import kabam.rotmg.core.model.PlayerModel;
+    import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
+    import kabam.rotmg.ui.model.HUDModel;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import io.decagames.rotmg.fame.data.TotalFame;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.fame.data.bonus.FameBonus;
+    import mx.formatters.DateFormatter;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import io.decagames.rotmg.utils.date.TimeSpan;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import io.decagames.rotmg.characterMetrics.data.MetricsID;
+    import io.decagames.rotmg.fame.data.bonus.FameBonusConfig;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-import io.decagames.rotmg.characterMetrics.data.MetricsID;
-import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
-import io.decagames.rotmg.fame.data.FameTracker;
-import io.decagames.rotmg.fame.data.TotalFame;
-import io.decagames.rotmg.fame.data.bonus.FameBonus;
-import io.decagames.rotmg.fame.data.bonus.FameBonusConfig;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.texture.TextureParser;
-import io.decagames.rotmg.utils.date.TimeSpan;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.ui.model.HUDModel;
-
-import mx.formatters.DateFormatter;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class FameContentPopupMediator extends Mediator {
+    public class FameContentPopupMediator extends Mediator {
 
         [Inject]
         public var view:FameContentPopup;

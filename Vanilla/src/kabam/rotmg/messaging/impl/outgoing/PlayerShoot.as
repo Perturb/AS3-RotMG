@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.outgoing.PlayerShoot
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class PlayerShoot extends OutgoingMessage {
+    public class PlayerShoot extends OutgoingMessage {
 
         public var time_:int;
         public var bulletId_:uint;

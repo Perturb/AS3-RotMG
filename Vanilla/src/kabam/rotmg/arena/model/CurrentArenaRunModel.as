@@ -4,16 +4,14 @@
 //kabam.rotmg.arena.model.CurrentArenaRunModel
 
 package kabam.rotmg.arena.model{
-import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.rotmg.game.model.GameModel;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.classes.model.CharacterSkin;
 
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.game.model.GameModel;
-
-import org.osflash.signals.Signal;
-
-public class CurrentArenaRunModel {
+    public class CurrentArenaRunModel {
 
         [Inject]
         public var gameModel:GameModel;

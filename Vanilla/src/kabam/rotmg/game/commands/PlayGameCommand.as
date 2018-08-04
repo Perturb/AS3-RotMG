@@ -4,24 +4,21 @@
 //kabam.rotmg.game.commands.PlayGameCommand
 
 package kabam.rotmg.game.commands{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import kabam.rotmg.game.model.GameInitData;
+    import kabam.rotmg.core.model.PlayerModel;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.rotmg.servers.api.ServerModel;
+    import kabam.rotmg.account.core.services.GetCharListTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.lib.net.impl.SocketServerModel;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.servers.api.Server;
+    import flash.utils.ByteArray;
+    import com.company.assembleegameclient.game.GameSprite;
 
-import flash.utils.ByteArray;
-
-import io.decagames.rotmg.pets.data.PetsModel;
-
-import kabam.lib.net.impl.SocketServerModel;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.account.core.services.GetCharListTask;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.game.model.GameInitData;
-import kabam.rotmg.servers.api.Server;
-import kabam.rotmg.servers.api.ServerModel;
-
-public class PlayGameCommand {
+    public class PlayGameCommand {
 
         public static const RECONNECT_DELAY:int = 2000;
 

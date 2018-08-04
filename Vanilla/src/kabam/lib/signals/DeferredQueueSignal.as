@@ -4,10 +4,10 @@
 //kabam.lib.signals.DeferredQueueSignal
 
 package kabam.lib.signals{
-import org.osflash.signals.ISlot;
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
+    import org.osflash.signals.ISlot;
 
-public class DeferredQueueSignal extends Signal {
+    public class DeferredQueueSignal extends Signal {
 
         private var data:Array = [];
         private var log:Boolean = true;

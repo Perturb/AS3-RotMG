@@ -4,25 +4,23 @@
 //kabam.rotmg.account.transfer.TransferAccountConfig
 
 package kabam.rotmg.account.transfer{
-import kabam.rotmg.account.core.services.MigrateAccountTask;
-import kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand;
-import kabam.rotmg.account.transfer.commands.TransferAccountCommand;
-import kabam.rotmg.account.transfer.services.TransferAccountTask;
-import kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal;
-import kabam.rotmg.account.transfer.signals.TransferAccountSignal;
-import kabam.rotmg.account.transfer.view.KabamLoginMediator;
-import kabam.rotmg.account.transfer.view.KabamLoginView;
-import kabam.rotmg.account.transfer.view.TransferAccountMediator;
-import kabam.rotmg.account.transfer.view.TransferAccountView;
-import kabam.rotmg.core.signals.TaskErrorSignal;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.account.transfer.signals.TransferAccountSignal;
+    import kabam.rotmg.account.transfer.commands.TransferAccountCommand;
+    import kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal;
+    import kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.rotmg.account.transfer.view.TransferAccountView;
+    import kabam.rotmg.account.transfer.view.TransferAccountMediator;
+    import kabam.rotmg.account.transfer.view.KabamLoginView;
+    import kabam.rotmg.account.transfer.view.KabamLoginMediator;
+    import kabam.rotmg.account.core.services.MigrateAccountTask;
+    import kabam.rotmg.account.transfer.services.TransferAccountTask;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class TransferAccountConfig implements IConfig {
+    public class TransferAccountConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

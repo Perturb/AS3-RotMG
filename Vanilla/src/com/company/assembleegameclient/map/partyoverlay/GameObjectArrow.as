@@ -4,23 +4,24 @@
 //com.company.assembleegameclient.map.partyoverlay.GameObjectArrow
 
 package com.company.assembleegameclient.map.partyoverlay{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.ui.menu.Menu;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.util.RectangleUtil;
-import com.company.util.Trig;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.menu.Menu;
+    import flash.display.DisplayObjectContainer;
+    import com.company.assembleegameclient.objects.GameObject;
+    import __AS3__.vec.Vector;
+    import flash.display.Shape;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import flash.geom.Point;
+    import flash.events.MouseEvent;
+    import flash.filters.DropShadowFilter;
+    import flash.geom.Rectangle;
+    import com.company.util.RectangleUtil;
+    import com.company.util.Trig;
+    import com.company.assembleegameclient.map.Camera;
+    import flash.display.Graphics;
+    import __AS3__.vec.*;
 
-import flash.display.DisplayObjectContainer;
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-
-public class GameObjectArrow extends Sprite {
+    public class GameObjectArrow extends Sprite {
 
         public static const SMALL_SIZE:int = 8;
         public static const BIG_SIZE:int = 11;

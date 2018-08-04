@@ -4,11 +4,10 @@
 //kabam.rotmg.external.command.MapExternalCallbacksCommand
 
 package kabam.rotmg.external.command{
-import kabam.rotmg.external.service.ExternalServiceHelper;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import kabam.rotmg.external.service.ExternalServiceHelper;
 
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class MapExternalCallbacksCommand extends Command {
+    public class MapExternalCallbacksCommand extends Command {
 
         [Inject]
         public var externalServiceHelper:ExternalServiceHelper;

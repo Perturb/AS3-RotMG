@@ -4,25 +4,22 @@
 //kabam.rotmg.account.transfer.view.KabamLoginView
 
 package kabam.rotmg.account.transfer.view{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
-import com.company.util.KeyCodes;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import kabam.rotmg.text.model.TextKey;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.account.transfer.model.TransferAccountData;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.KeyboardEvent;
+    import flash.events.Event;
+    import com.company.util.KeyCodes;
 
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.account.transfer.model.TransferAccountData;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class KabamLoginView extends Frame {
+    public class KabamLoginView extends Frame {
 
         public var cancel:Signal;
         public var signIn:Signal;

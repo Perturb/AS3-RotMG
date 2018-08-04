@@ -4,13 +4,15 @@
 //io.decagames.rotmg.ui.popups.modal.ConfirmationModal
 
 package io.decagames.rotmg.ui.popups.modal{
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
-import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import __AS3__.vec.*;
 
-public class ConfirmationModal extends TextModal {
+    public class ConfirmationModal extends TextModal {
 
         public var confirmButton:SliceScalingButton;
 

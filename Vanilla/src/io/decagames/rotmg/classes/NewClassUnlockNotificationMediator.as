@@ -4,9 +4,9 @@
 //io.decagames.rotmg.classes.NewClassUnlockNotificationMediator
 
 package io.decagames.rotmg.classes{
-import robotlegs.bender.bundles.mvcs.Mediator;
+    import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class NewClassUnlockNotificationMediator extends Mediator {
+    public class NewClassUnlockNotificationMediator extends Mediator {
 
         [Inject]
         public var view:NewClassUnlockNotification;

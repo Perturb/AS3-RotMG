@@ -4,9 +4,9 @@
 //kabam.rotmg.core.model.ScreenModel
 
 package kabam.rotmg.core.model{
-import com.company.assembleegameclient.screens.AccountLoadingScreen;
+    import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
-public class ScreenModel {
+    public class ScreenModel {
 
         private var currentType:Class;
 

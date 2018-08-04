@@ -4,13 +4,12 @@
 //io.decagames.rotmg.pets.commands.NewAbilityCommand
 
 package io.decagames.rotmg.pets.commands{
-import com.company.assembleegameclient.editor.Command;
+    import com.company.assembleegameclient.editor.Command;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.pets.utils.PetAbilityDisplayIDGetter;
+    import io.decagames.rotmg.pets.popup.ability.NewAbilityUnlockedDialog;
 
-import io.decagames.rotmg.pets.popup.ability.NewAbilityUnlockedDialog;
-import io.decagames.rotmg.pets.utils.PetAbilityDisplayIDGetter;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-public class NewAbilityCommand extends Command {
+    public class NewAbilityCommand extends Command {
 
         [Inject]
         public var openDialog:ShowPopupSignal;

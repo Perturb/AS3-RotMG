@@ -4,17 +4,15 @@
 //io.decagames.rotmg.pets.utils.PetsViewAssetFactory
 
 package io.decagames.rotmg.pets.utils{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.LineBreakDesign;
+    import flash.display.Shape;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Bitmap;
-import flash.display.Shape;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class PetsViewAssetFactory {
+    public class PetsViewAssetFactory {
 
 
         public static function returnPetSlotShape(_arg_1:uint, _arg_2:uint, _arg_3:int, _arg_4:Boolean, _arg_5:Boolean, _arg_6:int=2):Shape{

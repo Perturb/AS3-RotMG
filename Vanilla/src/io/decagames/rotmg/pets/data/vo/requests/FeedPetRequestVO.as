@@ -4,9 +4,10 @@
 //io.decagames.rotmg.pets.data.vo.requests.FeedPetRequestVO
 
 package io.decagames.rotmg.pets.data.vo.requests{
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.SlotObjectData;
 
-public class FeedPetRequestVO implements IUpgradePetRequestVO {
+    public class FeedPetRequestVO implements IUpgradePetRequestVO {
 
         public var petInstanceId:int;
         public var slotObjects:Vector.<SlotObjectData>;

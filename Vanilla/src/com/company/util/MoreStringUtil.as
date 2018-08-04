@@ -4,9 +4,9 @@
 //com.company.util.MoreStringUtil
 
 package com.company.util{
-import flash.utils.ByteArray;
+    import flash.utils.ByteArray;
 
-public class MoreStringUtil {
+    public class MoreStringUtil {
 
 
         public static function hexStringToByteArray(_arg_1:String):ByteArray{

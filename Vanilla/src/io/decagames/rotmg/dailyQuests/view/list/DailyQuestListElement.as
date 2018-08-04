@@ -4,17 +4,16 @@
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElement
 
 package io.decagames.rotmg.dailyQuests.view.list{
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.filters.BitmapFilterQuality;
-import flash.filters.DropShadowFilter;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.filters.DropShadowFilter;
+    import flash.filters.BitmapFilterQuality;
 
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class DailyQuestListElement extends Sprite {
+    public class DailyQuestListElement extends Sprite {
 
         private var _id:String;
         private var _questName:String;

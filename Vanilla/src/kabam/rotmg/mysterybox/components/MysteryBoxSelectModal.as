@@ -4,26 +4,25 @@
 //kabam.rotmg.mysterybox.components.MysteryBoxSelectModal
 
 package kabam.rotmg.mysterybox.components{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
+    import flash.display.Sprite;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+    import flash.events.Event;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.text.TextFormatAlign;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+    import flash.display.DisplayObject;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import __AS3__.vec.*;
 
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-import kabam.rotmg.mysterybox.services.MysteryBoxModel;
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.swiftsuspenders.Injector;
-
-public class MysteryBoxSelectModal extends Sprite {
+    public class MysteryBoxSelectModal extends Sprite {
 
         public static var modalWidth:int;
         public static var modalHeight:int;

@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.Pong
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class Pong extends OutgoingMessage {
+    public class Pong extends OutgoingMessage {
 
         public var serial_:int;
         public var time_:int;

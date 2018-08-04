@@ -4,10 +4,10 @@
 //kabam.rotmg.core.commands.InvalidateDataCommand
 
 package kabam.rotmg.core.commands{
-import kabam.rotmg.account.core.model.JSInitializedModel;
-import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.account.core.model.JSInitializedModel;
 
-public class InvalidateDataCommand {
+    public class InvalidateDataCommand {
 
         [Inject]
         public var model:PlayerModel;

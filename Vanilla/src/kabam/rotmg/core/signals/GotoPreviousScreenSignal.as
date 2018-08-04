@@ -4,9 +4,9 @@
 //kabam.rotmg.core.signals.GotoPreviousScreenSignal
 
 package kabam.rotmg.core.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class GotoPreviousScreenSignal extends Signal {
+    public class GotoPreviousScreenSignal extends Signal {
 
 
     }

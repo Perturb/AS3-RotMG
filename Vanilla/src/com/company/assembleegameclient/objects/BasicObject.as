@@ -4,15 +4,15 @@
 //com.company.assembleegameclient.objects.BasicObject
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.map.Square;
+    import com.company.assembleegameclient.map.Map;
+    import com.company.assembleegameclient.map.Square;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.IGraphicsData;
-
-import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-
-public class BasicObject {
+    public class BasicObject {
 
         private static var nextFakeObjectId_:int = 0;
 

@@ -4,10 +4,10 @@
 //com.company.util.IntPoint
 
 package com.company.util{
-import flash.geom.Matrix;
-import flash.geom.Point;
+    import flash.geom.Point;
+    import flash.geom.Matrix;
 
-public class IntPoint {
+    public class IntPoint {
 
         public var x_:int;
         public var y_:int;

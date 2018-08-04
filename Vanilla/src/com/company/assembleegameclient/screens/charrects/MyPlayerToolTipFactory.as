@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.screens.charrects.MyPlayerToolTipFactory
 
 package com.company.assembleegameclient.screens.charrects{
-import com.company.assembleegameclient.appengine.CharacterStats;
-import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
+    import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
+    import com.company.assembleegameclient.appengine.CharacterStats;
 
-public class MyPlayerToolTipFactory {
+    public class MyPlayerToolTipFactory {
 
 
         public function create(_arg_1:String, _arg_2:XML, _arg_3:CharacterStats):MyPlayerToolTip{

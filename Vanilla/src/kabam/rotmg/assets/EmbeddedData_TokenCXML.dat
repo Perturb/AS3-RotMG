@@ -480,1691 +480,6 @@
       <Treasure/>
       <feedPower>500</feedPower>
    </Object>
-   <Object type="0x20A0" id="Kingdom Skins Token x1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A1" id="Kingdom Skins Token x2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A2" id="Kingdom Skins Token x3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A3" id="Kingdom Skins Token x4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A4" id="Kingdom Skins Token x5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A5" id="Kingdom Skins Token x6">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>6</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A6" id="Kingdom Skins Token x7">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>7</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A7" id="Kingdom Skins Token x8">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>8</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A8" id="Kingdom Skins Token x9">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>9</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20A9" id="Kingdom Skins Token x10">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>10</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AA" id="Kingdom Skins Token x11">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>11</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AB" id="Kingdom Skins Token x12">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>12</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AC" id="Kingdom Skins Token x13">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>13</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AD" id="Kingdom Skins Token x14">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>14</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AE" id="Kingdom Skins Token x15">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>15</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20AF" id="Kingdom Skins Token x16">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>16</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B0" id="Kingdom Skins Token x17">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>17</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B1" id="Kingdom Skins Token x18">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>18</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B2" id="Kingdom Skins Token x19">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>19</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B3" id="Kingdom Skins Token x20">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>20</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B4" id="Kingdom Skins Token x21">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>21</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B5" id="Kingdom Skins Token x22">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>22</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B6" id="Kingdom Skins Token x23">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>23</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B7" id="Kingdom Skins Token x24">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>24</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B8" id="Kingdom Skins Token x25">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>25</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20B9" id="Kingdom Skins Token x26">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>26</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20BA" id="Kingdom Skins Token x27">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>27</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20BB" id="Kingdom Skins Token x28">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>28</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20BC" id="Kingdom Skins Token x29">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>29</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x20BD" id="Kingdom Skins Token x30">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x6e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Bring 30 of these tokens to the Tinkerer to get one of the Kingdom Skins.</Description>
-      <Quantity>30</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="30"/>
-         <EffectInfo name="Event" description="Kingdom Skins"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-   </Object>
-   <Object type="0x6CF7" id="Primal Ice x 1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>25</feedPower>
-   </Object>
-   <Object type="0x6CF8" id="Primal Ice x 2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>50</feedPower>
-   </Object>
-   <Object type="0x6CF9" id="Primal Ice x 3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>75</feedPower>
-   </Object>
-   <Object type="0x6CFA" id="Primal Ice x 4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>100</feedPower>
-   </Object>
-   <Object type="0x6CFB" id="Primal Ice x 5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>125</feedPower>
-   </Object>
-   <Object type="0x6CFC" id="Primal Ice x 6">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>6</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>150</feedPower>
-   </Object>
-   <Object type="0x6CFD" id="Primal Ice x 7">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>7</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>175</feedPower>
-   </Object>
-   <Object type="0x6CFE" id="Primal Ice x 8">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>8</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>200</feedPower>
-   </Object>
-   <Object type="0x6CFF" id="Primal Ice x 9">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>9</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>225</feedPower>
-   </Object>
-   <Object type="0x6D00" id="Primal Ice x 10">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>10</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>250</feedPower>
-   </Object>
-   <Object type="0x6D01" id="Primal Ice x 11">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>11</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>275</feedPower>
-   </Object>
-   <Object type="0x6D02" id="Primal Ice x 12">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>12</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>300</feedPower>
-   </Object>
-   <Object type="0x6D03" id="Primal Ice x 13">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>13</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>325</feedPower>
-   </Object>
-   <Object type="0x6D04" id="Primal Ice x 14">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>14</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>350</feedPower>
-   </Object>
-   <Object type="0x6D05" id="Primal Ice x 15">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>15</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>375</feedPower>
-   </Object>
-   <Object type="0x6D06" id="Primal Ice x 16">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>16</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>400</feedPower>
-   </Object>
-   <Object type="0x6D07" id="Primal Ice x 17">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>17</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>425</feedPower>
-   </Object>
-   <Object type="0x6D08" id="Primal Ice x 18">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>18</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>450</feedPower>
-   </Object>
-   <Object type="0x6D09" id="Primal Ice x 19">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>19</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>475</feedPower>
-   </Object>
-   <Object type="0x6D0A" id="Primal Ice x 20">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x2d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>Pulsing with energy, this ice rock seems to be worth a lot! Collect 20 and exchange them for a Primal Ice Weapon.</Description>
-      <Quantity>20</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="20"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>500</feedPower>
-   </Object>
-   <Object type="0x6CF1" id="Ice Shard x 1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A mysterious Ice Shard! 5 Ice Shards can be forged into 1 Primal Ice by the Tinkerer.</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="5"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>20</feedPower>
-   </Object>
-   <Object type="0x6CF2" id="Ice Shard x 2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A mysterious Ice Shard! 5 Ice Shards can be forged into 1 Primal Ice by the Tinkerer.</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="5"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>40</feedPower>
-   </Object>
-   <Object type="0x6CF3" id="Ice Shard x 3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A mysterious Ice Shard! 5 Ice Shards can be forged into 1 Primal Ice by the Tinkerer.</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="5"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>60</feedPower>
-   </Object>
-   <Object type="0x6CF4" id="Ice Shard x 4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A mysterious Ice Shard! 5 Ice Shards can be forged into 1 Primal Ice by the Tinkerer.</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="5"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>80</feedPower>
-   </Object>
-   <Object type="0x6CF5" id="Ice Shard x 5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5e</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A mysterious Ice Shard! 5 Ice Shards can be forged into 1 Primal Ice by the Tinkerer.</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="5"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>100</feedPower>
-   </Object>
-   <Object type="0x6CE6" id="Bell x 1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>75</feedPower>
-   </Object>
-   <Object type="0x6CE7" id="Bell x 2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>150</feedPower>
-   </Object>
-   <Object type="0x6CE8" id="Bell x 3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>225</feedPower>
-   </Object>
-   <Object type="0x6CE9" id="Bell x 4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>300</feedPower>
-   </Object>
-   <Object type="0x6CEA" id="Bell x 5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>375</feedPower>
-   </Object>
-   <Object type="0x6CEB" id="Bell x 6">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>6</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>450</feedPower>
-   </Object>
-   <Object type="0x6CEC" id="Bell x 7">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>7</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>525</feedPower>
-   </Object>
-   <Object type="0x6CED" id="Bell x 8">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>8</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>600</feedPower>
-   </Object>
-   <Object type="0x6CEE" id="Bell x 9">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>9</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>675</feedPower>
-   </Object>
-   <Object type="0x6CEF" id="Bell x 10">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5d</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Bell! Collect 10 to obtain a Reindeer Summoning Stone.</Description>
-      <Quantity>10</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="10"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <Activate id="Reindeer Mystery Bag">Exchange</Activate>
-      <BagType>7</BagType>
-      <Track/>
-      <Consumable/>
-      <feedPower>750</feedPower>
-   </Object>
-   <Object type="0x6ccc" id="Ornament x 1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>32</feedPower>
-   </Object>
-   <Object type="0x6ccd" id="Ornament x 2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>64</feedPower>
-   </Object>
-   <Object type="0x6CCE" id="Ornament x 3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>96</feedPower>
-   </Object>
-   <Object type="0x6CCF" id="Ornament x 4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>128</feedPower>
-   </Object>
-   <Object type="0x6CD0" id="Ornament x 5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>160</feedPower>
-   </Object>
-   <Object type="0x6CD1" id="Ornament x 6">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>6</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>192</feedPower>
-   </Object>
-   <Object type="0x6CD2" id="Ornament x 7">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>7</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>224</feedPower>
-   </Object>
-   <Object type="0x6CD3" id="Ornament x 8">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>8</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>256</feedPower>
-   </Object>
-   <Object type="0x6CD4" id="Ornament x 9">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>9</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>288</feedPower>
-   </Object>
-   <Object type="0x6CD5" id="Ornament x 10">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>10</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>320</feedPower>
-   </Object>
-   <Object type="0x6CD6" id="Ornament x 11">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>11</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>352</feedPower>
-   </Object>
-   <Object type="0x6CD7" id="Ornament x 12">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>12</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>384</feedPower>
-   </Object>
-   <Object type="0x6CD8" id="Ornament x 13">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>13</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>416</feedPower>
-   </Object>
-   <Object type="0x6CD9" id="Ornament x 14">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>14</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>448</feedPower>
-   </Object>
-   <Object type="0x6CDA" id="Ornament x 15">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>15</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>480</feedPower>
-   </Object>
-   <Object type="0x6CDB" id="Ornament x 16">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>16</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>512</feedPower>
-   </Object>
-   <Object type="0x6CDC" id="Ornament x 17">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>17</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>544</feedPower>
-   </Object>
-   <Object type="0x6CDD" id="Ornament x 18">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>18</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>576</feedPower>
-   </Object>
-   <Object type="0x6CDE" id="Ornament x 19">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>19</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>608</feedPower>
-   </Object>
-   <Object type="0x6CDF" id="Ornament x 20">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>20</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>640</feedPower>
-   </Object>
-   <Object type="0x6CE0" id="Ornament x 21">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>21</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>672</feedPower>
-   </Object>
-   <Object type="0x6CE1" id="Ornament x 22">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>22</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>704</feedPower>
-   </Object>
-   <Object type="0x6CE2" id="Ornament x 23">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>23</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>736</feedPower>
-   </Object>
-   <Object type="0x6CE3" id="Ornament x 24">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>24</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>768</feedPower>
-   </Object>
-   <Object type="0x6CE4" id="Ornament x 25">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>oryxHordeObjects8x8</File>
-         <Index>0x5c</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Magic Christmas Ornament! Collect 25 to obtain the Helping Huntress Skin.</Description>
-      <Quantity>25</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="25"/>
-         <EffectInfo name="Event" description="Christmas 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <Activate id="Helping Huntress Skin">Exchange</Activate>
-      <Track/>
-      <Consumable/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>800</feedPower>
-   </Object>
    <Object type="0x25fb" id="Magic Pumpkin">
       <Class>Equipment</Class>
       <Item/>
@@ -2186,1906 +501,582 @@
       <Track/>
       <Consumable/>
    </Object>
-   <Object type="0x2595" id="Pumpkin Seed x 1">
+   <Object type="0x99f" id="Moss Token x 1">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>1</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>200</feedPower>
-   </Object>
-   <Object type="0x2596" id="Pumpkin Seed x 2">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>2</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>400</feedPower>
-   </Object>
-   <Object type="0x2597" id="Pumpkin Seed x 3">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>3</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>600</feedPower>
-   </Object>
-   <Object type="0x2598" id="Pumpkin Seed x 4">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>4</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>800</feedPower>
-   </Object>
-   <Object type="0x2599" id="Pumpkin Seed x 5">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>5</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1000</feedPower>
-   </Object>
-   <Object type="0x259a" id="Pumpkin Seed x 6">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>6</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1200</feedPower>
-   </Object>
-   <Object type="0x259b" id="Pumpkin Seed x 7">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>7</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1400</feedPower>
-   </Object>
-   <Object type="0x259c" id="Pumpkin Seed x 8">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>8</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1600</feedPower>
-   </Object>
-   <Object type="0x259d" id="Pumpkin Seed x 9">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>9</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1800</feedPower>
-   </Object>
-   <Object type="0x259e" id="Pumpkin Seed x 10">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>10</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2000</feedPower>
-   </Object>
-   <Object type="0x259f" id="Pumpkin Seed x 11">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>11</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2200</feedPower>
-   </Object>
-   <Object type="0x25a0" id="Pumpkin Seed x 12">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>12</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2400</feedPower>
-   </Object>
-   <Object type="0x25a1" id="Pumpkin Seed x 13">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>13</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2600</feedPower>
-   </Object>
-   <Object type="0x25a2" id="Pumpkin Seed x 14">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>14</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2800</feedPower>
-   </Object>
-   <Object type="0x25a3" id="Pumpkin Seed x 15">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>15</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>3000</feedPower>
-   </Object>
-   <Object type="0x25a4" id="Pumpkin Seed x 16">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>16</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>3200</feedPower>
-   </Object>
-   <Object type="0x25a5" id="Pumpkin Seed x 17">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>17</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>3400</feedPower>
-   </Object>
-   <Object type="0x25a6" id="Pumpkin Seed x 18">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>18</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>3600</feedPower>
-   </Object>
-   <Object type="0x25a7" id="Pumpkin Seed x 19">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>19</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>3800</feedPower>
-   </Object>
-   <Object type="0x25a8" id="Pumpkin Seed x 20">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>20</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>4000</feedPower>
-   </Object>
-   <Object type="0x25a9" id="Pumpkin Seed x 21">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>21</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>4200</feedPower>
-   </Object>
-   <Object type="0x25aa" id="Pumpkin Seed x 22">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>22</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>4400</feedPower>
-   </Object>
-   <Object type="0x25ab" id="Pumpkin Seed x 23">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>23</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>4600</feedPower>
-   </Object>
-   <Object type="0x25ac" id="Pumpkin Seed x 24">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>24</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>4800</feedPower>
-   </Object>
-   <Object type="0x25ad" id="Pumpkin Seed x 25">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>25</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>5000</feedPower>
-   </Object>
-   <Object type="0x25ae" id="Pumpkin Seed x 26">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>26</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>5200</feedPower>
-   </Object>
-   <Object type="0x25af" id="Pumpkin Seed x 27">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>27</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>5400</feedPower>
-   </Object>
-   <Object type="0x25b0" id="Pumpkin Seed x 28">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>28</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>5600</feedPower>
-   </Object>
-   <Object type="0x25b1" id="Pumpkin Seed x 29">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>29</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>5800</feedPower>
-   </Object>
-   <Object type="0x25b2" id="Pumpkin Seed x 30">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>30</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>6000</feedPower>
-   </Object>
-   <Object type="0x25b3" id="Pumpkin Seed x 31">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>31</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>6200</feedPower>
-   </Object>
-   <Object type="0x25b4" id="Pumpkin Seed x 32">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>32</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>6400</feedPower>
-   </Object>
-   <Object type="0x25b5" id="Pumpkin Seed x 33">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>33</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>6600</feedPower>
-   </Object>
-   <Object type="0x25b6" id="Pumpkin Seed x 34">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>34</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>6800</feedPower>
-   </Object>
-   <Object type="0x25b7" id="Pumpkin Seed x 35">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>35</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>7000</feedPower>
-   </Object>
-   <Object type="0x25b8" id="Pumpkin Seed x 36">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>36</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>7200</feedPower>
-   </Object>
-   <Object type="0x25b9" id="Pumpkin Seed x 37">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>37</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>7400</feedPower>
-   </Object>
-   <Object type="0x25ba" id="Pumpkin Seed x 38">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>38</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>7600</feedPower>
-   </Object>
-   <Object type="0x25bb" id="Pumpkin Seed x 39">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>39</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>7800</feedPower>
-   </Object>
-   <Object type="0x25bc" id="Pumpkin Seed x 40">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>40</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>8000</feedPower>
-   </Object>
-   <Object type="0x25bd" id="Pumpkin Seed x 41">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>41</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>8200</feedPower>
-   </Object>
-   <Object type="0x25be" id="Pumpkin Seed x 42">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>42</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>8400</feedPower>
-   </Object>
-   <Object type="0x25bf" id="Pumpkin Seed x 43">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>43</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>8600</feedPower>
-   </Object>
-   <Object type="0x25c0" id="Pumpkin Seed x 44">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>44</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>8800</feedPower>
-   </Object>
-   <Object type="0x25c1" id="Pumpkin Seed x 45">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>45</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>9000</feedPower>
-   </Object>
-   <Object type="0x25c2" id="Pumpkin Seed x 46">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>46</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>9200</feedPower>
-   </Object>
-   <Object type="0x25c3" id="Pumpkin Seed x 47">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>47</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>9400</feedPower>
-   </Object>
-   <Object type="0x25c4" id="Pumpkin Seed x 48">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>48</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>9600</feedPower>
-   </Object>
-   <Object type="0x25c5" id="Pumpkin Seed x 49">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! You can drag and drop tokens onto each other and exchange a stack for a Helm of the Jack-o'-naut!</Description>
-      <Quantity>49</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>9800</feedPower>
-   </Object>
-   <Object type="0x25c6" id="Pumpkin Seed x 50">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x72</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A Pumpkin Seed! Its magic is gone, however you can still feed it to your pet.</Description>
-      <Quantity>50</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>10000</feedPower>
-      <Track/>
-   </Object>
-   <Object type="0x25c8" id="Bone Token x 1">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x5c0</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>1</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>50</feedPower>
    </Object>
-   <Object type="0x25c9" id="Bone Token x 2">
+   <Object type="0x9a0" id="Moss Token x 2">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>2</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>100</feedPower>
    </Object>
-   <Object type="0x25ca" id="Bone Token x 3">
+   <Object type="0x9a1" id="Moss Token x 3">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>3</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>150</feedPower>
    </Object>
-   <Object type="0x25cb" id="Bone Token x 4">
+   <Object type="0x9a2" id="Moss Token x 4">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>4</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>200</feedPower>
    </Object>
-   <Object type="0x25cc" id="Bone Token x 5">
+   <Object type="0x9a3" id="Moss Token x 5">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>5</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>250</feedPower>
    </Object>
-   <Object type="0x25cd" id="Bone Token x 6">
+   <Object type="0x9a4" id="Moss Token x 6">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>6</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>300</feedPower>
    </Object>
-   <Object type="0x25ce" id="Bone Token x 7">
+   <Object type="0x9a5" id="Moss Token x 7">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>7</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>350</feedPower>
    </Object>
-   <Object type="0x25cf" id="Bone Token x 8">
+   <Object type="0x9a6" id="Moss Token x 8">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>8</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>400</feedPower>
    </Object>
-   <Object type="0x25d0" id="Bone Token x 9">
+   <Object type="0x9a7" id="Moss Token x 9">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>9</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>450</feedPower>
    </Object>
-   <Object type="0x25d1" id="Bone Token x 10">
+   <Object type="0x9a8" id="Moss Token x 10">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2e</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
+      <Description>A small pile of moss! You can drag and drop tokens onto each other and exchange a stack for a Moss Bag!</Description>
       <Quantity>10</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="" description="Double click to create a Moss Bag! Doing so will consume the Tokens."/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <Activate id="Moss Bag MotMG">Exchange</Activate>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>500</feedPower>
+      <Track/>
+      <Consumable/>
+   </Object>
+   <Object type="0x9a9" id="Stone Token x 1">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>100</feedPower>
+   </Object>
+   <Object type="0x9aa" id="Stone Token x 2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>200</feedPower>
+   </Object>
+   <Object type="0x9ab" id="Stone Token x 3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>300</feedPower>
+   </Object>
+   <Object type="0x9ac" id="Stone Token x 4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>400</feedPower>
+   </Object>
+   <Object type="0x9ad" id="Stone Token x 5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>500</feedPower>
    </Object>
-   <Object type="0x25d2" id="Bone Token x 11">
+   <Object type="0x9ae" id="Stone Token x 6">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>11</Quantity>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>6</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>550</feedPower>
-   </Object>
-   <Object type="0x25d3" id="Bone Token x 12">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>12</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>600</feedPower>
    </Object>
-   <Object type="0x25d4" id="Bone Token x 13">
+   <Object type="0x9af" id="Stone Token x 7">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>13</Quantity>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>7</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>650</feedPower>
-   </Object>
-   <Object type="0x25d5" id="Bone Token x 14">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>14</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>700</feedPower>
    </Object>
-   <Object type="0x25d6" id="Bone Token x 15">
+   <Object type="0x9b0" id="Stone Token x 8">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>15</Quantity>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>8</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>750</feedPower>
-   </Object>
-   <Object type="0x25d7" id="Bone Token x 16">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>16</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>800</feedPower>
    </Object>
-   <Object type="0x25d8" id="Bone Token x 17">
+   <Object type="0x9b1" id="Stone Token x 9">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>17</Quantity>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>9</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>850</feedPower>
-   </Object>
-   <Object type="0x25d9" id="Bone Token x 18">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>18</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>900</feedPower>
    </Object>
-   <Object type="0x25da" id="Bone Token x 19">
+   <Object type="0x9b2" id="Stone Token x 10">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x2c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>19</Quantity>
+      <Description>A chunk of stone, probably from some ancient statue. You can drag and drop tokens onto each other and exchange a stack for a Stone Skin at the Tinkerer!</Description>
+      <Quantity>10</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="" description="The Tinkerer will exchange this stack for a Stone Skin of your choice."/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
-      <feedPower>950</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x25db" id="Bone Token x 20">
+   <Object type="0x9b3" id="Mad God Token x 1">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>20</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>1</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>200</feedPower>
+   </Object>
+   <Object type="0x9b4" id="Mad God Token x 2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x31</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>400</feedPower>
+   </Object>
+   <Object type="0x9b5" id="Mad God Token x 3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x31</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>600</feedPower>
+   </Object>
+   <Object type="0x9b6" id="Mad God Token x 4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x31</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>800</feedPower>
+   </Object>
+   <Object type="0x9b7" id="Mad God Token x 5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x31</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>1000</feedPower>
    </Object>
-   <Object type="0x25dc" id="Bone Token x 21">
+   <Object type="0x9b8" id="Mad God Token x 6">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>21</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      &gt;
+      <Quantity>6</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1050</feedPower>
-   </Object>
-   <Object type="0x25dd" id="Bone Token x 22">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>22</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1100</feedPower>
-   </Object>
-   <Object type="0x25de" id="Bone Token x 23">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>23</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1150</feedPower>
-   </Object>
-   <Object type="0x25df" id="Bone Token x 24">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>24</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>1200</feedPower>
    </Object>
-   <Object type="0x25e0" id="Bone Token x 25">
+   <Object type="0x9b9" id="Mad God Token x 7">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>25</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>7</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1250</feedPower>
-   </Object>
-   <Object type="0x25e1" id="Bone Token x 26">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>26</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1300</feedPower>
-   </Object>
-   <Object type="0x25e2" id="Bone Token x 27">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>27</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1350</feedPower>
-   </Object>
-   <Object type="0x25e3" id="Bone Token x 28">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>28</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>1400</feedPower>
    </Object>
-   <Object type="0x25e4" id="Bone Token x 29">
+   <Object type="0x9ba" id="Mad God Token x 8">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>29</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>8</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1450</feedPower>
-   </Object>
-   <Object type="0x25e5" id="Bone Token x 30">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>30</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1500</feedPower>
-   </Object>
-   <Object type="0x25e6" id="Bone Token x 31">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>31</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1550</feedPower>
-   </Object>
-   <Object type="0x25e7" id="Bone Token x 32">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>32</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>1600</feedPower>
    </Object>
-   <Object type="0x25e8" id="Bone Token x 33">
+   <Object type="0x9bb" id="Mad God Token x 9">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>33</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>9</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1650</feedPower>
-   </Object>
-   <Object type="0x25e9" id="Bone Token x 34">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>34</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1700</feedPower>
-   </Object>
-   <Object type="0x25ea" id="Bone Token x 35">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>35</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1750</feedPower>
-   </Object>
-   <Object type="0x25eb" id="Bone Token x 36">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>36</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>1800</feedPower>
    </Object>
-   <Object type="0x25ec" id="Bone Token x 37">
+   <Object type="0x9bc" id="Mad God Token x 10">
       <Class>Equipment</Class>
       <Item/>
       <Texture>
          <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
+         <Index>0x31</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>37</Quantity>
+      <Description>A token of the Mad God, rewarded only to the bravest in the Realm! You can drag and drop tokens onto each other and exchange a stack for a Kingdom Skin at the Tinkerer!</Description>
+      <Quantity>10</Quantity>
       <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1850</feedPower>
-   </Object>
-   <Object type="0x25ed" id="Bone Token x 38">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>38</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1900</feedPower>
-   </Object>
-   <Object type="0x25ee" id="Bone Token x 39">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>39</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>1950</feedPower>
-   </Object>
-   <Object type="0x25ef" id="Bone Token x 40">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>40</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
+         <EffectInfo name="" description="The Tinkerer will exchange this stack for a Kingdom Skin of your choice."/>
+         <EffectInfo name="Stack limit" description="10"/>
+         <EffectInfo name="Event" description="MotMG"/>
       </ExtraTooltipData>
       <Soulbound/>
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>2000</feedPower>
-   </Object>
-   <Object type="0x25f0" id="Bone Token x 41">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>41</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2050</feedPower>
-   </Object>
-   <Object type="0x25f1" id="Bone Token x 42">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>42</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2100</feedPower>
-   </Object>
-   <Object type="0x25f2" id="Bone Token x 43">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>43</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2150</feedPower>
-   </Object>
-   <Object type="0x25f3" id="Bone Token x 44">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>44</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2200</feedPower>
-   </Object>
-   <Object type="0x25f4" id="Bone Token x 45">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>45</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2250</feedPower>
-   </Object>
-   <Object type="0x25f5" id="Bone Token x 46">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>46</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2300</feedPower>
-   </Object>
-   <Object type="0x25f6" id="Bone Token x 47">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>47</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2350</feedPower>
-   </Object>
-   <Object type="0x25f7" id="Bone Token x 48">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>48</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2400</feedPower>
-   </Object>
-   <Object type="0x25f8" id="Bone Token x 49">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! You can drag and drop tokens onto each other and exchange a stack for an exclusive Wizard Skin!</Description>
-      <Quantity>49</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2450</feedPower>
-   </Object>
-   <Object type="0x25f9" id="Bone Token x 50">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>d2LofiObjEmbed</File>
-         <Index>0x33</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A bone token! Its magic is gone, however you can still feed it to your pet.</Description>
-      <Quantity>50</Quantity>
-      <ExtraTooltipData>
-         <EffectInfo name="Stack limit" description="50"/>
-         <EffectInfo name="Event" description="Halloween 2017"/>
-      </ExtraTooltipData>
-      <Soulbound/>
-      <BagType>7</BagType>
-      <Treasure/>
-      <feedPower>2500</feedPower>
-      <Track/>
    </Object>
 </Objects>

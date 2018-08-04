@@ -4,12 +4,14 @@
 //com.greensock.plugins.TransformAroundCenterPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import com.greensock.TweenLite;
+    import flash.display.*;
+    import flash.geom.*;
+    import com.greensock.*;
 
-import flash.geom.Point;
-import flash.geom.Rectangle;
-
-public class TransformAroundCenterPlugin extends TransformAroundPointPlugin {
+    public class TransformAroundCenterPlugin extends TransformAroundPointPlugin {
 
         public static const API:Number = 2;
 

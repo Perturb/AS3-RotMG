@@ -4,9 +4,11 @@
 //kabam.rotmg.classes.model.CharacterClass
 
 package kabam.rotmg.classes.model{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class CharacterClass {
+    public class CharacterClass {
 
         public const selected:Signal = new Signal(CharacterClass);
         public const unlocks:Vector.<CharacterClassUnlock> = new Vector.<CharacterClassUnlock>(0);

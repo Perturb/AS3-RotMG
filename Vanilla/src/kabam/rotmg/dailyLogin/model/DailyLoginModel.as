@@ -4,7 +4,10 @@
 //kabam.rotmg.dailyLogin.model.DailyLoginModel
 
 package kabam.rotmg.dailyLogin.model{
-public class DailyLoginModel {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class DailyLoginModel {
 
         public static const DAY_IN_MILLISECONDS:Number = (((24 * 60) * 60) * 1000);//86400000
 

@@ -4,15 +4,13 @@
 //com.company.assembleegameclient.ui.panels.mediators.InventoryGridMediator
 
 package com.company.assembleegameclient.ui.panels.mediators{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+    import kabam.rotmg.ui.signals.UpdateHUDSignal;
+    import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
+    import com.company.assembleegameclient.objects.Player;
 
-import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
-import kabam.rotmg.ui.signals.UpdateHUDSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class InventoryGridMediator extends Mediator {
+    public class InventoryGridMediator extends Mediator {
 
         [Inject]
         public var view:InventoryGrid;

@@ -4,18 +4,17 @@
 //io.decagames.rotmg.pets.popup.info.PetInfoDialog
 
 package io.decagames.rotmg.pets.popup.info{
-import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.popups.modal.ModalPopup;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
 
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.popups.modal.ModalPopup;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class PetInfoDialog extends ModalPopup {
+    public class PetInfoDialog extends ModalPopup {
 
         private var icon:Bitmap;
         private var contentInset:SliceScalingBitmap;

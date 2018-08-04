@@ -4,26 +4,29 @@
 //com.company.assembleegameclient.mapeditor.Chooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.adobe.images.PNGEncoder;
-import com.company.assembleegameclient.ui.Scrollbar;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import com.company.assembleegameclient.mapeditor.Element;
+    import com.company.assembleegameclient.ui.Scrollbar;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import flash.events.MouseEvent;
+    import flash.display.Shape;
+    import flash.events.Event;
+    import flash.utils.ByteArray;
+    import flash.net.FileReference;
+    import flash.display.BitmapData;
+    import com.adobe.images.PNGEncoder;
+    import __AS3__.vec.*;
+    import com.company.assembleegameclient.mapeditor.*;
 
-import flash.display.BitmapData;
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.net.FileReference;
-import flash.utils.ByteArray;
-
-internal class Chooser extends Sprite {
+    internal class Chooser extends Sprite {
 
         public static const WIDTH:int = 136;
         public static const HEIGHT:int = 430;

@@ -4,7 +4,10 @@
 //kabam.lib.tasks.TaskMonitor
 
 package kabam.lib.tasks{
-public class TaskMonitor {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class TaskMonitor {
 
         private var tasks:Vector.<Task>;
 

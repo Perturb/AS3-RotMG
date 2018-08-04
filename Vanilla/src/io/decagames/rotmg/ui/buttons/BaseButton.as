@@ -4,13 +4,12 @@
 //io.decagames.rotmg.ui.buttons.BaseButton
 
 package io.decagames.rotmg.ui.buttons{
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
 
-import org.osflash.signals.Signal;
-
-public class BaseButton extends Sprite {
+    public class BaseButton extends Sprite {
 
         protected var _disabled:Boolean;
         public var clickSignal:Signal = new Signal();

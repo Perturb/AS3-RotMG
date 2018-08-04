@@ -4,16 +4,14 @@
 //io.decagames.rotmg.pets.commands.EvolvePetCommand
 
 package io.decagames.rotmg.pets.commands{
-import com.company.assembleegameclient.editor.Command;
+    import com.company.assembleegameclient.editor.Command;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import kabam.rotmg.messaging.impl.EvolvePetInfo;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.data.vo.SkinVO;
+    import io.decagames.rotmg.pets.popup.evolving.PetEvolvingDialog;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.SkinVO;
-import io.decagames.rotmg.pets.popup.evolving.PetEvolvingDialog;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.messaging.impl.EvolvePetInfo;
-
-public class EvolvePetCommand extends Command {
+    public class EvolvePetCommand extends Command {
 
         [Inject]
         public var openDialog:ShowPopupSignal;

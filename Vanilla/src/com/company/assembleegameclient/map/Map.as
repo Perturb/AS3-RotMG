@@ -4,42 +4,42 @@
 //com.company.assembleegameclient.map.Map
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.background.Background;
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
-import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
-import com.company.assembleegameclient.objects.BasicObject;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Party;
-import com.company.assembleegameclient.objects.particles.ParticleEffect;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.ConditionEffect;
+    import flash.filters.ColorMatrixFilter;
+    import flash.geom.ColorTransform;
+    import flash.display.BitmapData;
+    import kabam.rotmg.game.logging.RollingMeanLoopMonitor;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.objects.BasicObject;
+    import flash.utils.Dictionary;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.assets.EmbeddedAssets;
+    import flash.display.Sprite;
+    import flash.display.IGraphicsData;
+    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+    import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
+    import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
+    import com.company.assembleegameclient.objects.Party;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.game.model.GameModel;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import com.company.assembleegameclient.background.Background;
+    import com.company.assembleegameclient.objects.GameObject;
+    import kabam.rotmg.stage3D.graphic3D.TextureFactory;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.particles.ParticleEffect;
+    import kabam.rotmg.stage3D.Render3D;
+    import flash.geom.Rectangle;
+    import kabam.rotmg.stage3D.Renderer;
+    import flash.display.GraphicsBitmapFill;
+    import flash.display.GraphicsSolidFill;
+    import com.company.assembleegameclient.util.ConditionEffect;
+    import flash.filters.BlurFilter;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.filters.BlurFilter;
-import flash.filters.ColorMatrixFilter;
-import flash.geom.ColorTransform;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-import flash.utils.Dictionary;
-
-import kabam.rotmg.assets.EmbeddedAssets;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.logging.RollingMeanLoopMonitor;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-import kabam.rotmg.stage3D.Render3D;
-import kabam.rotmg.stage3D.Renderer;
-import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
-import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-
-public class Map extends AbstractMap {
+    public class Map extends AbstractMap {
 
         public static const CLOTH_BAZAAR:String = "Cloth Bazaar";
         public static const NEXUS:String = "Nexus";

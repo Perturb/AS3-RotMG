@@ -4,9 +4,9 @@
 //kabam.rotmg.text.view.stringBuilder.TemplateBuilder
 
 package kabam.rotmg.text.view.stringBuilder{
-import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.language.model.StringMap;
 
-public class TemplateBuilder implements StringBuilder {
+    public class TemplateBuilder implements StringBuilder {
 
         private var template:String;
         private var tokens:Object;

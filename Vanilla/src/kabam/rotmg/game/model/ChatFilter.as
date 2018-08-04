@@ -4,9 +4,9 @@
 //kabam.rotmg.game.model.ChatFilter
 
 package kabam.rotmg.game.model{
-import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-public class ChatFilter {
+    public class ChatFilter {
 
 
         public function guestChatFilter(_arg_1:String):Boolean{

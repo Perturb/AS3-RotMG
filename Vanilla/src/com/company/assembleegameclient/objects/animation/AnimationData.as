@@ -4,7 +4,10 @@
 //com.company.assembleegameclient.objects.animation.AnimationData
 
 package com.company.assembleegameclient.objects.animation{
-public class AnimationData {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class AnimationData {
 
         public var prob_:Number = 1;
         public var period_:int;

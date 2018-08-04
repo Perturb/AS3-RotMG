@@ -4,11 +4,13 @@
 //com.company.assembleegameclient.objects.ProjectileProperties
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.util.ConditionEffect;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.util.ConditionEffect;
+    import com.company.assembleegameclient.util.*;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-public class ProjectileProperties {
+    public class ProjectileProperties {
 
         public var bulletType_:int;
         public var objectId_:String;

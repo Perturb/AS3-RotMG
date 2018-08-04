@@ -4,33 +4,31 @@
 //kabam.rotmg.chat.control.TextHandler
 
 package kabam.rotmg.chat.control{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.TextureDataConcrete;
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.game.model.GameModel;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+    import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.chat.model.TellModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.ui.model.HUDModel;
+    import io.decagames.rotmg.social.model.SocialModel;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import com.company.assembleegameclient.objects.TextureDataConcrete;
+    import kabam.rotmg.account.core.view.ConfirmEmailModal;
+    import kabam.rotmg.news.view.NewsTicker;
+    import kabam.rotmg.fortune.services.FortuneModel;
+    import kabam.rotmg.messaging.impl.incoming.Text;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.servers.api.ServerModel;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.game.model.AddSpeechBalloonVO;
+    import com.company.assembleegameclient.objects.GameObject;
+    import kabam.rotmg.chat.view.ChatListItemFactory;
 
-import io.decagames.rotmg.social.model.SocialModel;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.ConfirmEmailModal;
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.chat.model.TellModel;
-import kabam.rotmg.chat.view.ChatListItemFactory;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.fortune.services.FortuneModel;
-import kabam.rotmg.game.model.AddSpeechBalloonVO;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.messaging.impl.incoming.Text;
-import kabam.rotmg.news.view.NewsTicker;
-import kabam.rotmg.servers.api.ServerModel;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.model.HUDModel;
-
-public class TextHandler {
+    public class TextHandler {
 
         private const NORMAL_SPEECH_COLORS:TextColors = new TextColors(14802908, 0xFFFFFF, 0x545454);
         private const ENEMY_SPEECH_COLORS:TextColors = new TextColors(5644060, 16549442, 13484223);

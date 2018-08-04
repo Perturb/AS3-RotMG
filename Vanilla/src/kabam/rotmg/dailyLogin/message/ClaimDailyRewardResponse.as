@@ -4,11 +4,10 @@
 //kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse
 
 package kabam.rotmg.dailyLogin.message{
-import flash.utils.IDataInput;
+    import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
+    import flash.utils.IDataInput;
 
-import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
-
-public class ClaimDailyRewardResponse extends IncomingMessage {
+    public class ClaimDailyRewardResponse extends IncomingMessage {
 
         public var itemId:int;
         public var quantity:int;

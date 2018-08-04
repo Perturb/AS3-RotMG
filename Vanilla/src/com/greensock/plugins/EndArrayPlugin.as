@@ -4,9 +4,9 @@
 //com.greensock.plugins.EndArrayPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import com.greensock.TweenLite;
 
-public class EndArrayPlugin extends TweenPlugin {
+    public class EndArrayPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 

@@ -4,12 +4,12 @@
 //kabam.rotmg.classes.control.ResetClassDataCommand
 
 package kabam.rotmg.classes.control{
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.CharacterSkinState;
-import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import kabam.rotmg.classes.model.CharacterSkinState;
 
-public class ResetClassDataCommand {
+    public class ResetClassDataCommand {
 
         [Inject]
         public var classes:ClassesModel;

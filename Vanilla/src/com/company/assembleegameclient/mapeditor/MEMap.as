@@ -4,30 +4,36 @@
 //com.company.assembleegameclient.mapeditor.MEMap
 
 package com.company.assembleegameclient.mapeditor{
-import com.adobe.images.PNGEncoder;
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.RegionLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.AssetLibrary;
-import com.company.util.IntPoint;
-import com.company.util.KeyCodes;
-import com.company.util.PointUtil;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.mapeditor.MEMap_transbackgroundEmbed_;
+    import flash.display.BitmapData;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.mapeditor.BigBitmapData;
+    import flash.display.Shape;
+    import com.company.util.IntPoint;
+    import flash.display.Bitmap;
+    import com.company.util.AssetLibrary;
+    import flash.events.Event;
+    import com.company.assembleegameclient.mapeditor.METile;
+    import __AS3__.vec.Vector;
+    import flash.geom.Rectangle;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import flash.ui.Keyboard;
+    import com.company.util.KeyCodes;
+    import com.company.assembleegameclient.mapeditor.Layer;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.map.RegionLibrary;
+    import flash.display.Graphics;
+    import flash.geom.Matrix;
+    import com.company.util.PointUtil;
+    import com.adobe.images.PNGEncoder;
+    import flash.utils.ByteArray;
+    import __AS3__.vec.*;
+    import com.company.assembleegameclient.mapeditor.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.geom.Matrix;
-import flash.geom.Rectangle;
-import flash.ui.Keyboard;
-import flash.utils.ByteArray;
-import flash.utils.Dictionary;
-
-internal class MEMap extends Sprite {
+    internal class MEMap extends Sprite {
 
         private static var transbackgroundEmbed_:Class = MEMap_transbackgroundEmbed_;
         private static var transbackgroundBD_:BitmapData = new transbackgroundEmbed_().bitmapData;

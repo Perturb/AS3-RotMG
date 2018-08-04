@@ -4,15 +4,14 @@
 //io.decagames.rotmg.service.tracking.GoogleAnalyticsTracker
 
 package io.decagames.rotmg.service.tracking{
-import flash.crypto.generateRandomBytes;
-import flash.display.Loader;
-import flash.net.SharedObject;
-import flash.net.URLRequest;
-import flash.utils.ByteArray;
+    import robotlegs.bender.framework.api.ILogger;
+    import flash.net.SharedObject;
+    import flash.utils.ByteArray;
+    import flash.crypto.generateRandomBytes;
+    import flash.display.Loader;
+    import flash.net.URLRequest;
 
-import robotlegs.bender.framework.api.ILogger;
-
-public class GoogleAnalyticsTracker {
+    public class GoogleAnalyticsTracker {
 
         public static const VERSION:String = "1";
 

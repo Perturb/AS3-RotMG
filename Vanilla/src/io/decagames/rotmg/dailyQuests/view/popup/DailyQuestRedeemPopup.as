@@ -4,21 +4,22 @@
 //io.decagames.rotmg.dailyQuests.view.popup.DailyQuestRedeemPopup
 
 package io.decagames.rotmg.dailyQuests.view.popup{
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
+    import io.decagames.rotmg.ui.popups.modal.ModalPopup;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.dailyQuests.utils.SlotsRendered;
+    import io.decagames.rotmg.dailyQuests.data.DailyQuestItemSlotType;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.text.TextFieldAutoSize;
+    import io.decagames.rotmg.dailyQuests.model.DailyQuest;
+    import __AS3__.vec.*;
 
-import io.decagames.rotmg.dailyQuests.data.DailyQuestItemSlotType;
-import io.decagames.rotmg.dailyQuests.model.DailyQuest;
-import io.decagames.rotmg.dailyQuests.utils.SlotsRendered;
-import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.popups.modal.ModalPopup;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class DailyQuestRedeemPopup extends ModalPopup {
+    public class DailyQuestRedeemPopup extends ModalPopup {
 
         private var w_:int = 326;
         private var h_:int = 238;

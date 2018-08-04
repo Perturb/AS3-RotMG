@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.ShootAck
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class ShootAck extends OutgoingMessage {
+    public class ShootAck extends OutgoingMessage {
 
         public var time_:int;
 

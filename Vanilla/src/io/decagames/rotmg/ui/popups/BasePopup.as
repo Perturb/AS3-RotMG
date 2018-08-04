@@ -4,10 +4,10 @@
 //io.decagames.rotmg.ui.popups.BasePopup
 
 package io.decagames.rotmg.ui.popups{
-import flash.display.Sprite;
-import flash.geom.Rectangle;
+    import flash.display.Sprite;
+    import flash.geom.Rectangle;
 
-public class BasePopup extends Sprite {
+    public class BasePopup extends Sprite {
 
         protected var _showOnFullScreen:Boolean;
         protected var _popupWidth:int;

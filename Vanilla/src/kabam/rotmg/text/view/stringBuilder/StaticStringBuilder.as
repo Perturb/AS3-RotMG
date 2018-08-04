@@ -4,9 +4,9 @@
 //kabam.rotmg.text.view.stringBuilder.StaticStringBuilder
 
 package kabam.rotmg.text.view.stringBuilder{
-import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.language.model.StringMap;
 
-public class StaticStringBuilder implements StringBuilder {
+    public class StaticStringBuilder implements StringBuilder {
 
         private var string:String;
         private var prefix:String;

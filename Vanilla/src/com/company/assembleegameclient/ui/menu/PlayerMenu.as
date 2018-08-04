@@ -4,27 +4,24 @@
 //com.company.assembleegameclient.ui.menu.PlayerMenu
 
 package com.company.assembleegameclient.ui.menu{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.GameObjectListItem;
-import com.company.assembleegameclient.util.GuildUtil;
-import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.GameObjectListItem;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.chat.control.ShowChatInputSignal;
+    import io.decagames.rotmg.social.signals.FriendActionSignal;
+    import io.decagames.rotmg.social.model.FriendRequestVO;
+    import io.decagames.rotmg.social.config.FriendsActions;
 
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.model.FriendRequestVO;
-import io.decagames.rotmg.social.signals.FriendActionSignal;
-
-import kabam.rotmg.chat.control.ShowChatInputSignal;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class PlayerMenu extends Menu {
+    public class PlayerMenu extends Menu {
 
         public var gs_:AGameSprite;
         public var playerName_:String;

@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.objects.thrown.ThrownProjectile
 
 package com.company.assembleegameclient.objects.thrown{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.geom.Point;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.util.TextureRedrawer;
 
-import flash.display.BitmapData;
-import flash.geom.Point;
-
-public class ThrownProjectile extends BitmapParticle {
+    public class ThrownProjectile extends BitmapParticle {
 
         public var lifetime_:int;
         public var timeLeft_:int;

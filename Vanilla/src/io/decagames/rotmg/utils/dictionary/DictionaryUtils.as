@@ -4,9 +4,9 @@
 //io.decagames.rotmg.utils.dictionary.DictionaryUtils
 
 package io.decagames.rotmg.utils.dictionary{
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
 
-public class DictionaryUtils {
+    public class DictionaryUtils {
 
 
         public static function countKeys(_arg_1:Dictionary):int{

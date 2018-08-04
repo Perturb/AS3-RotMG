@@ -4,21 +4,22 @@
 //com.company.assembleegameclient.util.TileRedrawer
 
 package com.company.assembleegameclient.util{
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.GroundProperties;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.AssetLibrary;
-import com.company.util.BitmapUtil;
-import com.company.util.ImageSet;
-import com.company.util.PointUtil;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import __AS3__.vec.Vector;
+    import com.company.util.ImageSet;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.map.Square;
+    import com.company.assembleegameclient.map.Map;
+    import com.company.util.AssetLibrary;
+    import com.company.util.BitmapUtil;
+    import com.company.assembleegameclient.map.GroundProperties;
+    import com.company.util.PointUtil;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-
-public class TileRedrawer {
+    public class TileRedrawer {
 
         private static const rect0:Rectangle = new Rectangle(0, 0, 4, 4);
         private static const p0:Point = new Point(0, 0);

@@ -4,20 +4,19 @@
 //com.company.assembleegameclient.map.partyoverlay.QuestArrow
 
 package com.company.assembleegameclient.map.partyoverlay{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.map.Quest;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.PortraitToolTip;
-import com.company.assembleegameclient.ui.tooltip.QuestToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.greensock.TweenMax;
+    import com.company.assembleegameclient.map.Map;
+    import com.greensock.TweenMax;
+    import flash.utils.getTimer;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.ui.tooltip.QuestToolTip;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.ui.tooltip.PortraitToolTip;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.map.Quest;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.events.MouseEvent;
-import flash.utils.getTimer;
-
-public class QuestArrow extends GameObjectArrow {
+    public class QuestArrow extends GameObjectArrow {
 
         public var map_:Map;
         private var questArrowTween:TweenMax;

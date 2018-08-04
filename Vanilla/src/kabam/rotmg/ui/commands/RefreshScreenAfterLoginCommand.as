@@ -4,17 +4,15 @@
 //kabam.rotmg.ui.commands.RefreshScreenAfterLoginCommand
 
 package kabam.rotmg.ui.commands{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import kabam.rotmg.core.model.ScreenModel;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.core.signals.InvalidateDataSignal;
+    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import flash.display.Sprite;
 
-import flash.display.Sprite;
-
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.core.model.ScreenModel;
-import kabam.rotmg.core.signals.InvalidateDataSignal;
-import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-
-public class RefreshScreenAfterLoginCommand {
+    public class RefreshScreenAfterLoginCommand {
 
         [Inject]
         public var screenModel:ScreenModel;

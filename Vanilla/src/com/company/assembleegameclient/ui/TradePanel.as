@@ -4,16 +4,15 @@
 //com.company.assembleegameclient.ui.TradePanel
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.game.AGameSprite;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import flash.events.Event;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.messaging.impl.incoming.TradeStart;
+    import __AS3__.vec.Vector;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.messaging.impl.incoming.TradeStart;
-import kabam.rotmg.text.model.TextKey;
-
-public class TradePanel extends Sprite {
+    public class TradePanel extends Sprite {
 
         public static const WIDTH:int = 200;
         public static const HEIGHT:int = 400;

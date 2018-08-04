@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
-import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.constants.*;
 
-import kabam.rotmg.constants.*;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-
-public class CloakComparison extends SlotComparison {
+    public class CloakComparison extends SlotComparison {
 
 
         override protected function compareSlots(_arg_1:XML, _arg_2:XML):void{

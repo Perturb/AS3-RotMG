@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.assets
+package kabam.rotmg.assets
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="EmbeddedData_SkinsCXML.dat", mimeType="application/octet-stream")]
-	public class EmbeddedData_SkinsCXML extends ByteArrayAsset
+	[Embed(source="EmbeddedData_SkinsCXML.dat", mimeType="application/octet-stream")]
+	public class EmbeddedData_SkinsCXML extends mx.core.ByteArrayAsset
 	{
 		public function EmbeddedData_SkinsCXML()
 		{

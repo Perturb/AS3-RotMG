@@ -4,13 +4,12 @@
 //kabam.rotmg.ui.view.components.MenuOptionsBar
 
 package kabam.rotmg.ui.view.components{
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.display.Sprite;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import flash.geom.Rectangle;
 
-import flash.display.Sprite;
-import flash.geom.Rectangle;
-
-public class MenuOptionsBar extends Sprite {
+    public class MenuOptionsBar extends Sprite {
 
         private static const Y_POSITION:Number = 550;
         private static const SPACING:int = 20;

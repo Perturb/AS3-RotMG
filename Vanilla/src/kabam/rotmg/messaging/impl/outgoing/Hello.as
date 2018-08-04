@@ -4,10 +4,10 @@
 //kabam.rotmg.messaging.impl.outgoing.Hello
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.ByteArray;
-import flash.utils.IDataOutput;
+    import flash.utils.ByteArray;
+    import flash.utils.IDataOutput;
 
-public class Hello extends OutgoingMessage {
+    public class Hello extends OutgoingMessage {
 
         public var buildVersion_:String = new String();
         public var gameId_:int = 0;

@@ -4,15 +4,13 @@
 //kabam.rotmg.ui.view.CharacterRectListMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.screens.NewCharacterScreen;
-import com.company.assembleegameclient.screens.charrects.CharacterRectList;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.screens.charrects.CharacterRectList;
+    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
+    import com.company.assembleegameclient.screens.NewCharacterScreen;
 
-import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CharacterRectListMediator extends Mediator {
+    public class CharacterRectListMediator extends Mediator {
 
         [Inject]
         public var view:CharacterRectList;

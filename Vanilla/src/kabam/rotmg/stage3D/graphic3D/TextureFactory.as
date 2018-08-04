@@ -4,16 +4,15 @@
 //kabam.rotmg.stage3D.graphic3D.TextureFactory
 
 package kabam.rotmg.stage3D.graphic3D{
-import flash.display.BitmapData;
-import flash.display3D.Context3DTextureFormat;
-import flash.geom.Matrix;
-import flash.geom.Point;
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import kabam.rotmg.stage3D.proxies.Context3DProxy;
+    import flash.display.BitmapData;
+    import flash.geom.Matrix;
+    import kabam.rotmg.stage3D.proxies.TextureProxy;
+    import flash.display3D.Context3DTextureFormat;
+    import flash.geom.Point;
 
-import kabam.rotmg.stage3D.proxies.Context3DProxy;
-import kabam.rotmg.stage3D.proxies.TextureProxy;
-
-public class TextureFactory {
+    public class TextureFactory {
 
         private static var textures:Dictionary = new Dictionary();
         private static var flippedTextures:Dictionary = new Dictionary();

@@ -4,11 +4,10 @@
 //kabam.rotmg.game.model.GameInitData
 
 package kabam.rotmg.game.model{
-import flash.utils.ByteArray;
+    import kabam.rotmg.servers.api.Server;
+    import flash.utils.ByteArray;
 
-import kabam.rotmg.servers.api.Server;
-
-public class GameInitData {
+    public class GameInitData {
 
         public var server:Server;
         public var gameId:int;

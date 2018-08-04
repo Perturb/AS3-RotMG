@@ -4,28 +4,25 @@
 //kabam.rotmg.account.core.commands.ExternalOpenMoneyWindowCommand
 
 package kabam.rotmg.account.core.commands{
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.rotmg.account.core.model.JSInitializedModel;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.build.api.BuildData;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.rotmg.account.web.WebAccount;
+    import flash.net.URLVariables;
+    import flash.net.URLRequest;
+    import flash.net.URLRequestMethod;
+    import flash.net.navigateToURL;
+    import flash.external.ExternalInterface;
+    import kabam.rotmg.build.api.BuildEnvironment;
 
-import flash.external.ExternalInterface;
-import flash.net.URLRequest;
-import flash.net.URLRequestMethod;
-import flash.net.URLVariables;
-import flash.net.navigateToURL;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.model.JSInitializedModel;
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.account.web.WebAccount;
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.build.api.BuildEnvironment;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class ExternalOpenMoneyWindowCommand {
+    public class ExternalOpenMoneyWindowCommand {
 
         private const TESTING_ERROR_MESSAGE:String = "You cannot purchase gold on the testing server";
         private const REGISTRATION_ERROR_MESSAGE:String = "You must be registered to buy gold";

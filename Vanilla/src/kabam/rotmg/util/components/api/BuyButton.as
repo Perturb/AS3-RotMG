@@ -4,11 +4,10 @@
 //kabam.rotmg.util.components.api.BuyButton
 
 package kabam.rotmg.util.components.api{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
 
-import org.osflash.signals.Signal;
-
-public class BuyButton extends Sprite {
+    public class BuyButton extends Sprite {
 
         public const readyForPlacement:Signal = new Signal();
 

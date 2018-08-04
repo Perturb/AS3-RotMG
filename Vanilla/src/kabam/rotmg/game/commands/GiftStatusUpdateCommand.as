@@ -4,11 +4,10 @@
 //kabam.rotmg.game.commands.GiftStatusUpdateCommand
 
 package kabam.rotmg.game.commands{
-import com.company.assembleegameclient.game.GiftStatusModel;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import com.company.assembleegameclient.game.GiftStatusModel;
 
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class GiftStatusUpdateCommand extends Command {
+    public class GiftStatusUpdateCommand extends Command {
 
         [Inject]
         public var model:GiftStatusModel;

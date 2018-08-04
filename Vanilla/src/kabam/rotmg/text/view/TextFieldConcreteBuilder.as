@@ -4,14 +4,13 @@
 //kabam.rotmg.text.view.TextFieldConcreteBuilder
 
 package kabam.rotmg.text.view{
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.text.TextFormatAlign;
+    import flash.filters.DropShadowFilter;
 
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class TextFieldConcreteBuilder {
+    public class TextFieldConcreteBuilder {
 
         private var _containerWidth:int = -1;
         private var _containerMargin:int = -1;

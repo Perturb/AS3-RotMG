@@ -4,23 +4,20 @@
 //kabam.rotmg.account.kongregate.view.KongregateAccountInfoView
 
 package kabam.rotmg.account.kongregate.view{
-import com.company.assembleegameclient.screens.TitleMenuOption;
+    import flash.display.Sprite;
+    import kabam.rotmg.account.core.view.AccountInfoView;
+    import kabam.rotmg.text.model.TextKey;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.display.DisplayObject;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.core.view.AccountInfoView;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class KongregateAccountInfoView extends Sprite implements AccountInfoView {
+    public class KongregateAccountInfoView extends Sprite implements AccountInfoView {
 
         private static const REGISTER:String = TextKey.KONGREGATEACCOUNTINFOVIEW_REGISTER;//"KongregateAccountInfoView.register"
         private static const FONT_SIZE:int = 18;

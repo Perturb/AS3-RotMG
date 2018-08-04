@@ -4,17 +4,16 @@
 //io.decagames.rotmg.tos.config.ToSConfig
 
 package io.decagames.rotmg.tos.config{
-import io.decagames.rotmg.tos.popups.buttons.AcceptButton;
-import io.decagames.rotmg.tos.popups.buttons.AcceptButtonMediator;
-import io.decagames.rotmg.tos.popups.buttons.GoBackButton;
-import io.decagames.rotmg.tos.popups.buttons.GoBackButtonMediator;
-import io.decagames.rotmg.tos.popups.buttons.RefuseButton;
-import io.decagames.rotmg.tos.popups.buttons.RefuseButtonMediator;
+    import robotlegs.bender.framework.api.IConfig;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import io.decagames.rotmg.tos.popups.buttons.RefuseButton;
+    import io.decagames.rotmg.tos.popups.buttons.RefuseButtonMediator;
+    import io.decagames.rotmg.tos.popups.buttons.GoBackButton;
+    import io.decagames.rotmg.tos.popups.buttons.GoBackButtonMediator;
+    import io.decagames.rotmg.tos.popups.buttons.AcceptButton;
+    import io.decagames.rotmg.tos.popups.buttons.AcceptButtonMediator;
 
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class ToSConfig implements IConfig {
+    public class ToSConfig implements IConfig {
 
         [Inject]
         public var mediatorMap:IMediatorMap;

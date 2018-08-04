@@ -4,18 +4,16 @@
 //com.company.assembleegameclient.sound.Music
 
 package com.company.assembleegameclient.sound{
-import com.company.assembleegameclient.parameters.Parameters;
+    import flash.media.Sound;
+    import flash.media.SoundTransform;
+    import flash.media.SoundChannel;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.net.URLRequest;
+    import kabam.rotmg.core.service.GoogleAnalytics;
 
-import flash.media.Sound;
-import flash.media.SoundChannel;
-import flash.media.SoundTransform;
-import flash.net.URLRequest;
-
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-
-public class Music {
+    public class Music {
 
         private static var music_:Sound = null;
         private static var musicVolumeTransform:SoundTransform;

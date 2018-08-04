@@ -4,9 +4,9 @@
 //kabam.rotmg.legends.control.FameListUpdateSignal
 
 package kabam.rotmg.legends.control{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class FameListUpdateSignal extends Signal {
+    public class FameListUpdateSignal extends Signal {
 
 
     }

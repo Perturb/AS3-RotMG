@@ -4,16 +4,14 @@
 //kabam.rotmg.account.kongregate.view.KongregateAccountDetailMediator
 
 package kabam.rotmg.account.kongregate.view{
-import com.company.util.EmailValidator;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import com.company.util.EmailValidator;
+    import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class KongregateAccountDetailMediator extends Mediator {
+    public class KongregateAccountDetailMediator extends Mediator {
 
         [Inject]
         public var view:KongregateAccountDetailDialog;

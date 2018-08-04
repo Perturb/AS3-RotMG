@@ -4,28 +4,25 @@
 //io.decagames.rotmg.classes.NewClassUnlockNotification
 
 package io.decagames.rotmg.classes{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.greensock.TimelineMax;
-import com.greensock.TweenMax;
-import com.greensock.easing.Bounce;
-import com.greensock.easing.Expo;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import flash.display.Bitmap;
+    import com.greensock.TimelineMax;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import com.greensock.TweenMax;
+    import com.greensock.easing.Bounce;
+    import com.greensock.easing.Expo;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flashx.textLayout.formats.TextAlign;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import flash.display.BitmapData;
+    import flash.display.Graphics;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-
-import flashx.textLayout.formats.TextAlign;
-
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class NewClassUnlockNotification extends Sprite {
+    public class NewClassUnlockNotification extends Sprite {
 
         private const WIDTH:int = 192;
         private const HEIGHT:int = 192;

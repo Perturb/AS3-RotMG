@@ -4,16 +4,15 @@
 //io.decagames.rotmg.pets.windows.yard.InteractionInfo
 
 package io.decagames.rotmg.pets.windows.yard{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.tabs.UITabs;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.pets.windows.yard.feed.FeedTab;
+    import io.decagames.rotmg.pets.windows.yard.fuse.FuseTab;
 
-import io.decagames.rotmg.pets.windows.yard.feed.FeedTab;
-import io.decagames.rotmg.pets.windows.yard.fuse.FuseTab;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.tabs.UITabs;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class InteractionInfo extends Sprite {
+    public class InteractionInfo extends Sprite {
 
         public static var INFO_WIDTH:int = 275;
         public static const INFO_HEIGHT:int = 207;

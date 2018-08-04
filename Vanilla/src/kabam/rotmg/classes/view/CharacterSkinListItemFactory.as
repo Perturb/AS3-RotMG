@@ -4,20 +4,20 @@
 //kabam.rotmg.classes.view.CharacterSkinListItemFactory
 
 package kabam.rotmg.classes.view{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.Currency;
-import com.company.util.AssetLibrary;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.classes.model.CharacterSkins;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import com.company.assembleegameclient.util.Currency;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.display.BitmapData;
+    import flash.display.Bitmap;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.CharacterSkins;
-import kabam.rotmg.util.components.LegacyBuyButton;
-
-public class CharacterSkinListItemFactory {
+    public class CharacterSkinListItemFactory {
 
         [Inject]
         public var characters:CharacterFactory;

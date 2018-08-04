@@ -4,13 +4,13 @@
 //kabam.rotmg.messaging.impl.incoming.TradeStart
 
 package kabam.rotmg.messaging.impl.incoming{
-import com.company.assembleegameclient.util.FreeList;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.TradeItem;
+    import com.company.assembleegameclient.util.FreeList;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-import flash.utils.IDataInput;
-
-import kabam.rotmg.messaging.impl.data.TradeItem;
-
-public class TradeStart extends IncomingMessage {
+    public class TradeStart extends IncomingMessage {
 
         public var myItems_:Vector.<TradeItem> = new Vector.<TradeItem>();
         public var yourName_:String;

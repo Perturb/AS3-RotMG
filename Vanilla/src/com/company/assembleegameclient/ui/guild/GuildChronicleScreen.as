@@ -4,23 +4,21 @@
 //com.company.assembleegameclient.ui.guild.GuildChronicleScreen
 
 package com.company.assembleegameclient.ui.guild{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.game.events.GuildResultEvent;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.game.events.GuildResultEvent;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import flash.events.KeyboardEvent;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class GuildChronicleScreen extends Sprite {
+    public class GuildChronicleScreen extends Sprite {
 
         private var gs_:AGameSprite;
         private var container:Sprite;

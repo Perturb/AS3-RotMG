@@ -4,19 +4,16 @@
 //kabam.rotmg.death.view.ResurrectionView
 
 package kabam.rotmg.death.view{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import flash.display.BitmapData;
+    import flash.display.Bitmap;
+    import flash.filters.ColorMatrixFilter;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.ColorMatrixFilter;
-
-import kabam.rotmg.text.model.TextKey;
-
-import org.osflash.signals.Signal;
-
-public class ResurrectionView extends Sprite {
+    public class ResurrectionView extends Sprite {
 
         public const showDialog:Signal = new Signal(Sprite);
         public const closed:Signal = new Signal();

@@ -4,41 +4,40 @@
 //com.company.assembleegameclient.mapeditor.EditingScreen
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.account.ui.CheckBoxField;
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.assembleegameclient.editor.CommandEvent;
-import com.company.assembleegameclient.editor.CommandList;
-import com.company.assembleegameclient.editor.CommandQueue;
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.RegionLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
-import com.company.assembleegameclient.ui.dropdown.DropDown;
-import com.company.util.IntPoint;
-import com.company.util.SpriteUtil;
-import com.hurlant.util.Base64;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.editor.CommandQueue;
+    import com.company.assembleegameclient.ui.dropdown.DropDown;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import kabam.lib.json.JsonParser;
+    import org.swiftsuspenders.Injector;
+    import __AS3__.vec.Vector;
+    import flash.net.FileReference;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.ui.view.components.ScreenBase;
+    import com.company.assembleegameclient.editor.CommandEvent;
+    import flash.events.Event;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import flash.text.TextFieldAutoSize;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.account.ui.CheckBoxField;
+    import com.company.util.IntPoint;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.editor.CommandList;
+    import com.company.util.SpriteUtil;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import flash.geom.Rectangle;
+    import flash.utils.ByteArray;
+    import com.hurlant.util.Base64;
+    import com.company.assembleegameclient.map.RegionLibrary;
+    import flash.net.FileFilter;
+    import flash.events.IOErrorEvent;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.MouseEvent;
-import flash.geom.Rectangle;
-import flash.net.FileFilter;
-import flash.net.FileReference;
-import flash.text.TextFieldAutoSize;
-import flash.utils.ByteArray;
-import flash.utils.Dictionary;
-
-import kabam.lib.json.JsonParser;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.ui.view.components.ScreenBase;
-
-import org.swiftsuspenders.Injector;
-
-public class EditingScreen extends Sprite {
+    public class EditingScreen extends Sprite {
 
         private static const MAP_Y:int = ((600 - MEMap.SIZE) - 10);//78
 

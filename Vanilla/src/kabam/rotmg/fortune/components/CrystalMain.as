@@ -4,17 +4,18 @@
 //kabam.rotmg.fortune.components.CrystalMain
 
 package kabam.rotmg.fortune.components{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.filters.ColorMatrixFilter;
+    import com.company.util.MoreColorUtil;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.ColorMatrixFilter;
-
-public class CrystalMain extends Sprite {
+    public class CrystalMain extends Sprite {
 
         public static const ANIMATION_STAGE_PULSE:int = 0;
         public static const ANIMATION_STAGE_BUZZING:int = 1;

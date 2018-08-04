@@ -4,16 +4,15 @@
 //io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow
 
 package io.decagames.rotmg.pets.windows.wardrobe{
-import flash.display.Sprite;
+    import io.decagames.rotmg.ui.popups.UIPopup;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot;
+    import io.decagames.rotmg.pets.components.selectedPetSkinInfo.SelectedPetSkinInfo;
+    import io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollection;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
-import io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot;
-import io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollection;
-import io.decagames.rotmg.pets.components.selectedPetSkinInfo.SelectedPetSkinInfo;
-import io.decagames.rotmg.ui.popups.UIPopup;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class PetWardrobeWindow extends UIPopup {
+    public class PetWardrobeWindow extends UIPopup {
 
         private var _closeButton:Sprite;
         private var _contentContainer:Sprite;

@@ -4,7 +4,10 @@
 //kabam.lib.util.DateValidator
 
 package kabam.lib.util{
-public class DateValidator {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class DateValidator {
 
         private static const DAYS_IN_MONTH:Vector.<int> = Vector.<int>([31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
         private static const FEBRUARY:int = 2;

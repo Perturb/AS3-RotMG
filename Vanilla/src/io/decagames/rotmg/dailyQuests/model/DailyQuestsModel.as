@@ -4,13 +4,14 @@
 //io.decagames.rotmg.dailyQuests.model.DailyQuestsModel
 
 package io.decagames.rotmg.dailyQuests.model{
-import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
-import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.constants.GeneralConstants;
+    import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.ui.model.HUDModel;
-
-public class DailyQuestsModel {
+    public class DailyQuestsModel {
 
         private var _questsList:Vector.<DailyQuest> = new Vector.<DailyQuest>();
         private var slots:Vector.<DailyQuestItemSlot> = new Vector.<DailyQuestItemSlot>();
@@ -57,7 +58,7 @@ public class DailyQuestsModel {
             var _local_2:DailyQuest;
             for each (_local_2 in this._questsList)
             {
-                if (_local_2.id == _arg_1)
+                if (((_local_2.id == _arg_1) && (!(_local_2.repeatable))))
                 {
                     _local_2.completed = true;
                 };

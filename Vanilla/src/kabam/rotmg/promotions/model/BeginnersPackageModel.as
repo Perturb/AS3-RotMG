@@ -4,16 +4,14 @@
 //kabam.rotmg.promotions.model.BeginnersPackageModel
 
 package kabam.rotmg.promotions.model{
-import com.company.assembleegameclient.util.TimeUtil;
-import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.core.model.OfferModel;
+    import kabam.rotmg.promotions.signals.PackageStatusUpdateSignal;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.util.TimeUtil;
+    import com.company.assembleegameclient.util.offer.Offer;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.model.OfferModel;
-import kabam.rotmg.promotions.signals.PackageStatusUpdateSignal;
-
-import org.osflash.signals.Signal;
-
-public class BeginnersPackageModel {
+    public class BeginnersPackageModel {
 
         public static const STATUS_CANNOT_BUY:int = 0;
         public static const STATUS_CAN_BUY_SHOW_POP_UP:int = 1;

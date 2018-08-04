@@ -4,18 +4,16 @@
 //com.company.assembleegameclient.account.ui.NewChooseNameFrameMediator
 
 package com.company.assembleegameclient.account.ui{
-import com.company.util.MoreObjectUtil;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.ui.signals.NameChangedSignal;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.core.model.PlayerModel;
+    import com.company.util.MoreObjectUtil;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.ui.signals.NameChangedSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class NewChooseNameFrameMediator extends Mediator {
+    public class NewChooseNameFrameMediator extends Mediator {
 
         [Inject]
         public var view:NewChooseNameFrame;

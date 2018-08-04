@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.assets
+package kabam.rotmg.assets
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="EmbeddedAssets_particlesEmbed.dat", mimeType="application/octet-stream")]
-	public class EmbeddedAssets_particlesEmbed extends ByteArrayAsset
+	[Embed(source="EmbeddedAssets_particlesEmbed.dat", mimeType="application/octet-stream")]
+	public class EmbeddedAssets_particlesEmbed extends mx.core.ByteArrayAsset
 	{
 		public function EmbeddedAssets_particlesEmbed()
 		{

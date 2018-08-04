@@ -1522,4 +1522,18 @@
          <Index>18</Index>
       </AnimatedTexture>
    </Object>
+   <Object type="0x54e" id="Testing Gift Silex">
+      <Group>Testing Gifts Armor</Group>
+      <Class>Character</Class>
+      <StasisImmune/>
+      <Enemy/>
+      <NoMiniMap/>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Exp>0</Exp>
+      <Size>120</Size>
+      <Texture>
+         <File>lofiObj5new</File>
+         <Index>0x1d</Index>
+      </Texture>
+   </Object>
 </Objects>

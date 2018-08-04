@@ -4,24 +4,25 @@
 //kabam.rotmg.stage3D.graphic3D.Graphic3D
 
 package kabam.rotmg.stage3D.graphic3D{
-import flash.display.BitmapData;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsGradientFill;
-import flash.display3D.Context3DProgramType;
-import flash.display3D.Context3DVertexBufferFormat;
-import flash.display3D.IndexBuffer3D;
-import flash.display3D.VertexBuffer3D;
-import flash.geom.ColorTransform;
-import flash.geom.Matrix;
-import flash.geom.Matrix3D;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.stage3D.proxies.TextureProxy;
+    import flash.geom.Matrix3D;
+    import kabam.rotmg.stage3D.proxies.Context3DProxy;
+    import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
+    import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+    import flash.display.BitmapData;
+    import flash.geom.Matrix;
+    import flash.display3D.VertexBuffer3D;
+    import flash.display3D.IndexBuffer3D;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import flash.geom.ColorTransform;
+    import flash.display3D.Context3DProgramType;
+    import flash.display.GraphicsBitmapFill;
+    import flash.display.GraphicsGradientFill;
+    import flash.display3D.Context3DVertexBufferFormat;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-import kabam.rotmg.stage3D.proxies.Context3DProxy;
-import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
-import kabam.rotmg.stage3D.proxies.TextureProxy;
-import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
-
-public class Graphic3D {
+    public class Graphic3D {
 
         private static const gradientVertex:Vector.<Number> = Vector.<Number>([-0.5, 0.5, 0, 0, 0, 0, 0.01, 0, 1, 0.5, 0.5, 0, 0, 0, 0, 0.3, 1, 1, -0.5, -0.5, 0, 0, 0, 0, 0.1, 0, 0, 0.5, -0.5, 0, 0, 0, 0, 0.2, 1, 0]);
         private static const indices:Vector.<uint> = Vector.<uint>([0, 1, 2, 2, 1, 3]);

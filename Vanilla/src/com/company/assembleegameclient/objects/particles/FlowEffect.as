@@ -4,13 +4,11 @@
 //com.company.assembleegameclient.objects.particles.FlowEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-import flash.geom.Point;
-
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class FlowEffect extends ParticleEffect {
+    public class FlowEffect extends ParticleEffect {
 
         public var start_:Point;
         public var go_:GameObject;
@@ -68,10 +66,9 @@ public class FlowEffect extends ParticleEffect {
     }
 }//package com.company.assembleegameclient.objects.particles
 
-import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.particles.Particle;
-
 import flash.geom.Point;
+import com.company.assembleegameclient.objects.GameObject;
 
 class FlowParticle extends Particle {
 

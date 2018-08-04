@@ -4,16 +4,13 @@
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDialogMediator
 
 package io.decagames.rotmg.pets.components.caretaker{
-import flash.display.BitmapData;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import flash.display.BitmapData;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CaretakerQueryDialogMediator extends Mediator {
+    public class CaretakerQueryDialogMediator extends Mediator {
 
         [Inject]
         public var view:CaretakerQueryDialog;

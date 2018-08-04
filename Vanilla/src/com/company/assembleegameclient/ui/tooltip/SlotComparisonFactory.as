@@ -4,18 +4,17 @@
 //com.company.assembleegameclient.ui.tooltip.SlotComparisonFactory
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GenericArmorComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.OrbComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SlotComparison;
-import com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.GenericArmorComparison;
+    import kabam.rotmg.constants.ItemConstants;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.CloakComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.OrbComparison;
+    import com.company.assembleegameclient.ui.tooltip.slotcomparisons.SlotComparison;
 
-import kabam.rotmg.constants.ItemConstants;
-
-public class SlotComparisonFactory {
+    public class SlotComparisonFactory {
 
         private var hash:Object;
 

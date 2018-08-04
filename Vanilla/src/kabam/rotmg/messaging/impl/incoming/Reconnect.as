@@ -4,10 +4,10 @@
 //kabam.rotmg.messaging.impl.incoming.Reconnect
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.ByteArray;
-import flash.utils.IDataInput;
+    import flash.utils.ByteArray;
+    import flash.utils.IDataInput;
 
-public class Reconnect extends IncomingMessage {
+    public class Reconnect extends IncomingMessage {
 
         public var name_:String;
         public var host_:String;

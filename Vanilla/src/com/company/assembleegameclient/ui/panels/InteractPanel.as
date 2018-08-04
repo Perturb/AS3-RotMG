@@ -4,15 +4,14 @@
 //com.company.assembleegameclient.ui.panels.InteractPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.IInteractiveObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.IInteractiveObject;
+    import flash.events.Event;
+    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 
-import flash.display.Sprite;
-import flash.events.Event;
-
-public class InteractPanel extends Sprite {
+    public class InteractPanel extends Sprite {
 
         public static const MAX_DIST:Number = 1;
 

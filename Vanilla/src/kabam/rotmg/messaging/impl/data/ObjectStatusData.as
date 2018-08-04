@@ -4,12 +4,13 @@
 //kabam.rotmg.messaging.impl.data.ObjectStatusData
 
 package kabam.rotmg.messaging.impl.data{
-import com.company.assembleegameclient.util.FreeList;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.util.FreeList;
+    import flash.utils.IDataInput;
+    import flash.utils.IDataOutput;
+    import __AS3__.vec.*;
 
-import flash.utils.IDataInput;
-import flash.utils.IDataOutput;
-
-public class ObjectStatusData {
+    public class ObjectStatusData {
 
         public var objectId_:int;
         public var pos_:WorldPosData = new WorldPosData();

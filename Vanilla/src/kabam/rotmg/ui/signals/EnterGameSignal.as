@@ -4,9 +4,9 @@
 //kabam.rotmg.ui.signals.EnterGameSignal
 
 package kabam.rotmg.ui.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class EnterGameSignal extends Signal {
+    public class EnterGameSignal extends Signal {
 
 
     }

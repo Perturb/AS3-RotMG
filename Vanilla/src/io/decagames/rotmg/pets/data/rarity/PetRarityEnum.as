@@ -4,9 +4,9 @@
 //io.decagames.rotmg.pets.data.rarity.PetRarityEnum
 
 package io.decagames.rotmg.pets.data.rarity{
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class PetRarityEnum {
+    public class PetRarityEnum {
 
         public static const COMMON:PetRarityEnum = new PetRarityEnum("Pets.common", 0, 12960964, 0x454545);
         public static const UNCOMMON:PetRarityEnum = new PetRarityEnum("Pets.uncommon", 1, 12960964, 0x454545);

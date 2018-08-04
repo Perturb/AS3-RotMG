@@ -4,10 +4,10 @@
 //kabam.rotmg.packages.control.BuyPackageCommand
 
 package kabam.rotmg.packages.control{
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.packages.services.BuyPackageTask;
+    import kabam.rotmg.packages.services.BuyPackageTask;
+    import kabam.lib.tasks.TaskMonitor;
 
-public class BuyPackageCommand {
+    public class BuyPackageCommand {
 
         [Inject]
         public var buyPackageTask:BuyPackageTask;

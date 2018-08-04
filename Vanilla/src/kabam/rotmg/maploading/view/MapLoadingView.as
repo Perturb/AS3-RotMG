@@ -4,26 +4,26 @@
 //kabam.rotmg.maploading.view.MapLoadingView
 
 package kabam.rotmg.maploading.view{
-import com.gskinner.motion.GTween;
+    import flash.display.Sprite;
+    import flash.display.DisplayObjectContainer;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import __AS3__.vec.Vector;
+    import flash.display.DisplayObject;
+    import flash.display.MovieClip;
+    import kabam.rotmg.assets.model.Animation;
+    import flash.events.Event;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.ui.view.TitleView;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.core.view.ConfirmEmailModal;
+    import kabam.rotmg.account.web.view.WebLoginDialogForced;
+    import kabam.rotmg.account.web.view.WebRegisterDialog;
+    import com.gskinner.motion.GTween;
+    import __AS3__.vec.*;
 
-import flash.display.DisplayObject;
-import flash.display.DisplayObjectContainer;
-import flash.display.MovieClip;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.core.view.ConfirmEmailModal;
-import kabam.rotmg.account.web.view.WebLoginDialogForced;
-import kabam.rotmg.account.web.view.WebRegisterDialog;
-import kabam.rotmg.assets.model.Animation;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.TitleView;
-
-public class MapLoadingView extends Sprite {
+    public class MapLoadingView extends Sprite {
 
         public static const MAX_DIFFICULTY:int = 5;
         public static const FADE_OUT_TIME:Number = 0.58;

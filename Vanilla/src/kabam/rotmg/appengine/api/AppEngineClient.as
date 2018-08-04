@@ -4,9 +4,9 @@
 //kabam.rotmg.appengine.api.AppEngineClient
 
 package kabam.rotmg.appengine.api{
-import org.osflash.signals.OnceSignal;
+    import org.osflash.signals.OnceSignal;
 
-public interface AppEngineClient {
+    public interface AppEngineClient {
 
         function get complete():OnceSignal;
         function setDataFormat(_arg_1:String):void;

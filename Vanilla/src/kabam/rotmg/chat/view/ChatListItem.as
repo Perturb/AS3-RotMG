@@ -4,18 +4,17 @@
 //kabam.rotmg.chat.view.ChatListItem
 
 package kabam.rotmg.chat.view{
-import com.company.assembleegameclient.objects.Player;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import flash.display.DisplayObject;
+    import flash.utils.getTimer;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.ui.model.HUDModel;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.geom.Rectangle;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.geom.Rectangle;
-import flash.utils.getTimer;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.ui.model.HUDModel;
-
-public class ChatListItem extends Sprite {
+    public class ChatListItem extends Sprite {
 
         private static const CHAT_ITEM_TIMEOUT:uint = 20000;
 

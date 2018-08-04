@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.objects.particles.VortexEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.FreeList;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.FreeList;
 
-public class VortexEffect extends ParticleEffect {
+    public class VortexEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var color_:uint;
@@ -59,9 +59,8 @@ public class VortexEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import com.company.assembleegameclient.util.FreeList;
-
 import flash.geom.Vector3D;
+import com.company.assembleegameclient.util.FreeList;
 
 class VortexParticle extends Particle {
 

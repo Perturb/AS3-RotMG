@@ -4,7 +4,10 @@
 //kabam.rotmg.chat.model.TellModel
 
 package kabam.rotmg.chat.model{
-public class TellModel {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class TellModel {
 
         private var pastRecipients:Vector.<String> = new Vector.<String>();
         private var index:int = 0;

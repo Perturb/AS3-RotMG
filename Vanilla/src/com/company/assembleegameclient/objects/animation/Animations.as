@@ -4,9 +4,11 @@
 //com.company.assembleegameclient.objects.animation.Animations
 
 package com.company.assembleegameclient.objects.animation{
-import flash.display.BitmapData;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-public class Animations {
+    public class Animations {
 
         public var animationsData_:AnimationsData;
         public var nextRun_:Vector.<int> = null;
@@ -61,9 +63,8 @@ public class Animations {
 }//package com.company.assembleegameclient.objects.animation
 
 import com.company.assembleegameclient.objects.animation.AnimationData;
-import com.company.assembleegameclient.objects.animation.FrameData;
-
 import flash.display.BitmapData;
+import com.company.assembleegameclient.objects.animation.FrameData;
 
 class RunningAnimation {
 

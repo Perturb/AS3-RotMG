@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.CreateGuild
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class CreateGuild extends OutgoingMessage {
+    public class CreateGuild extends OutgoingMessage {
 
         public var name_:String;
 

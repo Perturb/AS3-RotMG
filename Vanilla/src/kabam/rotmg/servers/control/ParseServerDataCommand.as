@@ -4,12 +4,13 @@
 //kabam.rotmg.servers.control.ParseServerDataCommand
 
 package kabam.rotmg.servers.control{
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.servers.api.ServerModel;
+    import kabam.rotmg.servers.api.Server;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.servers.api.Server;
-import kabam.rotmg.servers.api.ServerModel;
-
-public class ParseServerDataCommand {
+    public class ParseServerDataCommand {
 
         [Inject]
         public var servers:ServerModel;

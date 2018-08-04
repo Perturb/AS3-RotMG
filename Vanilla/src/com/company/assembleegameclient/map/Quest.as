@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.map.Quest
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.utils.getTimer;
+    import com.company.assembleegameclient.objects.GameObject;
 
-import flash.utils.getTimer;
-
-public class Quest {
+    public class Quest {
 
         public var map_:Map;
         public var objectId_:int = -1;

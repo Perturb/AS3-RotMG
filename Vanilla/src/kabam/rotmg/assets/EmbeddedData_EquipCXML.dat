@@ -9054,6 +9054,257 @@
       <feedPower>850</feedPower>
       <Soulbound/>
    </Object>
+   <Object type="0x1aaa" id="Simple Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe0</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>0</Tier>
+      <Description>A small, quick-to-swing blade.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 0</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>150</MinDamage>
+         <MaxDamage>250</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+      </Projectile>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>40</MpCost>
+      <Activate numShots="2" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>5</feedPower>
+      <DropTradable/>
+   </Object>
+   <Object type="0x1aab" id="Steel Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe1</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>1</Tier>
+      <Description>A heavy wakizashi crafted by a fine metalworker.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 1</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>250</MinDamage>
+         <MaxDamage>350</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+      </Projectile>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>50</MpCost>
+      <Activate numShots="2" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>10</feedPower>
+      <DropTradable/>
+   </Object>
+   <Object type="0x1aac" id="Crimson Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe2</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>2</Tier>
+      <Description>A deep red wakizashi made of bronze.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 2</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>200</MinDamage>
+         <MaxDamage>300</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+      </Projectile>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>60</MpCost>
+      <Activate numShots="3" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>20</feedPower>
+      <DropTradable/>
+   </Object>
+   <Object type="0x1aad" id="Enforced Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe3</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>3</Tier>
+      <Description>A heavy wakizashi created and used by a secluded sect of powerful swordsmen.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 3</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>300</MinDamage>
+         <MaxDamage>400</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="1.0">Exposed</ConditionEffect>
+      </Projectile>
+      <Usable/>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <MpCost>65</MpCost>
+      <Activate numShots="3" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>45</feedPower>
+      <DropTradable/>
+   </Object>
+   <Object type="0x1aae" id="Turquoise Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe4</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>4</Tier>
+      <Description>A beautiful wakizashi, adorned with shining gemstones found within the extensive cavern, Okina Tomi.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 4</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>250</MinDamage>
+         <MaxDamage>350</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="2.0">Exposed</ConditionEffect>
+      </Projectile>
+      <Usable/>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <MpCost>70</MpCost>
+      <Activate numShots="4" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>90</feedPower>
+      <DropTradable/>
+   </Object>
+   <Object type="0x1aaf" id="Jade-Imbued Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe5</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>5</Tier>
+      <Description>A wakizashi adorned with sea green stones, only given to the greatest swordsmen by the Grand Emperor himself.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 5</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>380</MinDamage>
+         <MaxDamage>480</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="3.0">Exposed</ConditionEffect>
+      </Projectile>
+      <Usable/>
+      <BagType>4</BagType>
+      <FameBonus>3</FameBonus>
+      <MpCost>80</MpCost>
+      <Activate numShots="4" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>185</feedPower>
+   </Object>
+   <Object type="0x1ab0" id="Royal Wakizashi">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe6</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Tier>6</Tier>
+      <Description>A gorgeous wakizashi made of starmetal and gifted to an ancient king by the god Shinsetsuna for his devotion.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Slash 6</ObjectId>
+         <Speed>180</Speed>
+         <MinDamage>400</MinDamage>
+         <MaxDamage>500</MaxDamage>
+         <LifetimeMS>350</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="3.5">Exposed</ConditionEffect>
+      </Projectile>
+      <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+      <Usable/>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <MpCost>80</MpCost>
+      <Activate numShots="4" gapAngle="45" gapTiles="0.4" offsetAngle="90">BulletCreate</Activate>
+      <feedPower>380</feedPower>
+   </Object>
+   <Object type="0x2322" id="Wakizashi of Eastern Winds">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xe9</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Description>A wakizashi used by a powerful swordsman in ancient times. It seems to dance through the air as you swing it.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Wind</ObjectId>
+         <Speed>140</Speed>
+         <MinDamage>260</MinDamage>
+         <MaxDamage>490</MaxDamage>
+         <LifetimeMS>400</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="4.5">Exposed</ConditionEffect>
+         <Amplitude>0.42</Amplitude>
+         <FaceDir/>
+      </Projectile>
+      <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="28" amount="3">IncrementStat</ActivateOnEquip>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>5</FameBonus>
+      <MpCost>80</MpCost>
+      <Activate numShots="5" arcGap="8" gapAngle="0" gapTiles="0.3" offsetAngle="-90" maxDistance="4.6">BulletCreate</Activate>
+      <feedPower>800</feedPower>
+      <Soulbound/>
+   </Object>
+   <Object type="0x23c0" id="Wakizashi of Crossing Fires">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj6</File>
+         <Index>0xea</Index>
+      </Texture>
+      <SlotType>27</SlotType>
+      <Description>A blade created within the Hellforge and enchanted with dark magics to grant its wielder the power of a demon king.</Description>
+      <Projectile>
+         <ObjectId>Wakizashi Fire</ObjectId>
+         <Speed>160</Speed>
+         <MinDamage>480</MinDamage>
+         <MaxDamage>600</MaxDamage>
+         <LifetimeMS>400</LifetimeMS>
+         <PassesCover/>
+         <MultiHit/>
+         <ConditionEffect duration="3.0">Exposed</ConditionEffect>
+      </Projectile>
+      <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <MpCost>100</MpCost>
+      <Activate numShots="2" gapAngle="-45" gapTiles="0.5" offsetAngle="+75" maxDistance="4.0">BulletCreate</Activate>
+      <Activate numShots="2" gapAngle="+45" gapTiles="0.5" offsetAngle="-75" maxDistance="4.0">BulletCreate</Activate>
+      <feedPower>1000</feedPower>
+      <Soulbound/>
+   </Object>
    <Object type="0xc5b" id="Mad God Ale">
       <Class>Equipment</Class>
       <Item/>
@@ -10689,6 +10940,9 @@
       </Texture>
       <SlotType>17</SlotType>
       <Description>A staff that glows with the warmth and color of the rising sun.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Set" description="Summer Solstice"/>
+      </ExtraTooltipData>
       <RateOfFire>1</RateOfFire>
       <Sound>weapon/wand_of_death</Sound>
       <Projectile>
@@ -10716,6 +10970,9 @@
       </Texture>
       <SlotType>11</SlotType>
       <Description>A spell that blasts enemies with the fiery force of a thousand suns.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Set" description="Summer Solstice"/>
+      </ExtraTooltipData>
       <Sound>spell/magic_nova</Sound>
       <Projectile>
          <ObjectId>Idol Wave</ObjectId>
@@ -10742,6 +10999,9 @@
       </Texture>
       <SlotType>14</SlotType>
       <Description>A ceremonial robe worn by ritual leaders during the celebration of the Summer Solstice. Its golden threads shine with the light of the sun.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Set" description="Summer Solstice"/>
+      </ExtraTooltipData>
       <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="21" amount="13">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
@@ -10759,6 +11019,9 @@
       </Texture>
       <SlotType>9</SlotType>
       <Description>A ring forged by the mad god in the flames of the suns surface. Its magic protects its owner from some harm. Original Design by DieGo.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Set" description="Summer Solstice"/>
+      </ExtraTooltipData>
       <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
       <BagType>4</BagType>
       <FameBonus>4</FameBonus>
@@ -10850,7 +11113,7 @@
          <Index>0x4CF</Index>
       </Texture>
       <SlotType>1</SlotType>
-      <Description>An odd energy source known for the amazing ability to fire hats. Rarity: Uncommon</Description>
+      <Description>An odd energy source known for the amazing ability to fire hats.</Description>
       <RateOfFire>0.25</RateOfFire>
       <Sound>weapon/mithril_sword</Sound>
       <Projectile>
@@ -10864,7 +11127,7 @@
       </Projectile>
       <ArcGap>36</ArcGap>
       <NumProjectiles>10</NumProjectiles>
-      <BagType>2</BagType>
+      <BagType>4</BagType>
       <FameBonus>1</FameBonus>
       <OldSound>bladeSwing</OldSound>
    </Object>
@@ -10876,7 +11139,7 @@
          <Index>0x4D1</Index>
       </Texture>
       <SlotType>3</SlotType>
-      <Description>Meow! Meow meow meow! MEOWMEOWMEOW. Rarity: Uncommon</Description>
+      <Description>Meow! Meow meow meow! MEOWMEOWMEOW.</Description>
       <RateOfFire>0.25</RateOfFire>
       <Sound>weapon/heavy_crossbow</Sound>
       <Projectile>
@@ -10888,7 +11151,7 @@
          <Amplitude>2</Amplitude>
          <Frequency>2</Frequency>
       </Projectile>
-      <BagType>6</BagType>
+      <BagType>4</BagType>
       <NumProjectiles>5</NumProjectiles>
       <ArcGap>15</ArcGap>
       <OldSound>arrowShoot</OldSound>
@@ -10901,7 +11164,7 @@
          <Index>0x4D2</Index>
       </Texture>
       <SlotType>17</SlotType>
-      <Description>Made by a pretty lazy wizard. Hope it makes something worthwhile. Rarity: Rare</Description>
+      <Description>Made by a pretty lazy wizard. Hope it makes something worthwhile.</Description>
       <RateOfFire>0.3</RateOfFire>
       <Sound>weapon/wand_of_death</Sound>
       <Projectile>
@@ -10927,7 +11190,7 @@
          <Index>0x4D0</Index>
       </Texture>
       <SlotType>8</SlotType>
-      <Description>Created by a lonely Sorcerer. This sentient eye doesn't make a very good friend. It does, however, make fruit. Rarity: Rare, I guess</Description>
+      <Description>Created by a lonely Sorcerer. This sentient eye doesn't make a very good friend. It does, however, make fruit.</Description>
       <RateOfFire>0.25</RateOfFire>
       <Sound>weapon/wand_of_death</Sound>
       <Projectile>
@@ -10940,7 +11203,7 @@
          <PassesCover/>
       </Projectile>
       <NumProjectiles>4</NumProjectiles>
-      <BagType>2</BagType>
+      <BagType>4</BagType>
       <OldSound>magicShoot</OldSound>
       <feedPower>145</feedPower>
    </Object>
@@ -10952,7 +11215,7 @@
          <Index>0x4D3</Index>
       </Texture>
       <SlotType>2</SlotType>
-      <Description>This was all the rage a few Winter Solstices ago.  Rarity: Common</Description>
+      <Description>This was all the rage a few Winter Solstices ago.</Description>
       <RateOfFire>0.75</RateOfFire>
       <Sound>weapon/fire_dagger</Sound>
       <Projectile>
@@ -10962,7 +11225,7 @@
          <MinDamage>50</MinDamage>
          <MaxDamage>50</MaxDamage>
       </Projectile>
-      <BagType>2</BagType>
+      <BagType>4</BagType>
       <OldSound>daggerSwing</OldSound>
       <feedPower>145</feedPower>
    </Object>
@@ -13200,6 +13463,44 @@
       <BagType>8</BagType>
       <Track/>
    </Object>
+   <Object type="0x9bd" id="Moss Bag MotMG">
+      <DisplayId>Moss Bag</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2f</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A bag covered in moss that contains rewards!</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Activate>MysteryDyes</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <Track/>
+   </Object>
+   <Object type="0x9be" id="Stone Bag MotMG">
+      <DisplayId>Stone Bag</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x2d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A bag made of stone that contains rewards!</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Event" description="MotMG"/>
+      </ExtraTooltipData>
+      <Activate>MysteryDyes</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <Track/>
+   </Object>
    <Object type="0x13d9" id="Yellow Goodie Bag">
       <Class>Equipment</Class>
       <Item/>
@@ -13992,6 +14293,40 @@
       <Activate>Dye</Activate>
       <Sound>use_potion</Sound>
       <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+   </Object>
+   <Object type="0x998" id="Magical Accessory Dye Remover">
+      <Class>Dye</Class>
+      <DisplayId>Magical Accessory Dye Remover</DisplayId>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5ba</Index>
+      </Texture>
+      <Tex2>0xffffffff</Tex2>
+      <SlotType>10</SlotType>
+      <Description>Remove Accessory Dye from your character. Magical properties give the item unlimited use.</Description>
+      <InvUse/>
+      <Activate>Dye</Activate>
+      <Sound>use_potion</Sound>
+      <Soulbound/>
+      <BagType>8</BagType>
+   </Object>
+   <Object type="0x999" id="Magical Clothing Dye Remover">
+      <Class>Dye</Class>
+      <DisplayId>Magical Clothing Dye Remover</DisplayId>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5b9</Index>
+      </Texture>
+      <Tex1>0xffffffff</Tex1>
+      <SlotType>10</SlotType>
+      <Description>Remove Clothing Dye from your character. Magical properties give the item unlimited use.</Description>
+      <Activate>Dye</Activate>
+      <Sound>use_potion</Sound>
+      <InvUse/>
       <Soulbound/>
       <BagType>8</BagType>
    </Object>
@@ -14878,6 +15213,25 @@
       <ExtraTooltipData>
          <EffectInfo name="Type" description="Quest item"/>
          <EffectInfo name="Drop location" description="Obtained by defeating the Nightmare Colony in the Parasite Chambers"/>
+      </ExtraTooltipData>
+      <Sound>spell/fire_nova</Sound>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>50</feedPower>
+      <Soulbound/>
+   </Object>
+   <Object type="0x1e1a" id="Mark of the Fountain Spirit">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x7e</Index>
+      </Texture>
+      <Description>A medallion infused with the essence of the Fountain Spirit.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Type" description="Quest item"/>
+         <EffectInfo name="Drop location" description="Obtained by defeating the Fountain Spirit in the Magic Woods"/>
       </ExtraTooltipData>
       <Sound>spell/fire_nova</Sound>
       <BagType>7</BagType>
@@ -16440,7 +16794,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x7c</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Grants a random Skin listed below when used!\n\n*Wind Flower Skin\n*Kabuki Ninja Skin\n*Gnome Trickster Skin\n*Soubrette Trickster Skin\n*Icicle Dial Mystic Skin\n*Necro of Christmas Yet-to-Come Skin\n*Hollow Prince Necromancer Skin\n*Patriot Paladin Skin\n*Misery Ghost Bride Huntress Skin\n*Turkey Rogue Skin\n*Ordinary Box Rogue Skin\n*Dragon Tamer skin\n*Explorer Skin\n*Antique Diver Knight Skin\n*Guerilla Archer Skin\n*Elf Archer Skin\n*Gentleman Skin\n*Plague Doctor Assassin Skin\n*Redcoat Assassin Skin\n*Shrine Priestess Skin\n*Blizzard Sorcerer Skin</Description>
+      <Description>Grants a random Skin listed below when used!\n\n*Wind Flower Skin\n*Kabuki Ninja Skin\n*Gnome Trickster Skin\n*Soubrette Trickster Skin\n*Mini Phylactery Skin\n*Icicle Dial Mystic Skin\n*Necro of Christmas Yet-to-Come Skin\n*Hollow Prince Necromancer Skin\n*Patriot Paladin Skin\n*Mini Swoll Skin\n*Misery Ghost Bride Huntress Skin\n*Mini Queen Bee Huntress Skin\n*Turkey Rogue Skin\n*Ordinary Box Rogue Skin\n*Dragon Tamer skin\n*Explorer Skin\n*Antique Diver Knight Skin\n*Mini Oryx Skin\n*Guerilla Archer Skin\n*Elf Archer Skin\n*Mini Twilight Skin\n*Gentleman Skin\n*Plague Doctor Assassin Skin\n*Redcoat Assassin Skin\n*Mini Geb Skin\n*Shrine Priestess Skin\n*Blizzard Sorcerer Skin\n*Jester Skin</Description>
       <Activate>MysteryDyes</Activate>
       <Consumable/>
       <Soulbound/>
@@ -16455,7 +16809,7 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
          <Index>0x7b</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>Grants a random Skin listed below when used!\n\n*Mini Rosen Skin\n*Death Skin\n*Loki Trickster Skin\n*Deadly Vixen Skin\n*Pilgrim Mother Skin\n*Seer Mystic Skin\n*Death Mage Necromancer Skin\n*Voodoo Magus Necromancer Skin\n*Pilgrim Father Skin\n*Nerd Paladin Skin\n*Drake Hunter Skin\n*Mini Thessal Skin\n*Sheep Rogue Skin\n*Sheep Warrior Skin\n*Princess Warrior Skin\n*Slurp Knight Skin\n*Haunted Knight Skin\n*Sheep Archer Skin\n*Ethereal Princess Archer Skin\n*Sheep Wizard Skin\n*Mischievous Imp Skin\n*Schankmaid Assassin Skin\n*Alice Assassin Skin\n*Ice King Priest Skin\n*Sheep Priest Skin\n*Mini Malus Sorcerer Skin\n*Thunder God Sorcerer Skin</Description>
+      <Description>Grants a random Skin listed below when used!\n\n*Mini Rosen Skin\n*Death Skin\n*Loki Trickster Skin\n*Deadly Vixen Skin\n*Pilgrim Mother Skin\n*Seer Mystic Skin\n*Death Mage Necromancer Skin\n*Voodoo Magus Necromancer Skin\n*Pilgrim Father Skin\n*Nerd Paladin Skin\n*Drake Hunter Skin\n*Mini Thessal Skin\n*Sheep Rogue Skin\n*Mini Skuld Skin\n*Sheep Warrior Skin\n*Princess Warrior Skin\n*Slurp Knight Skin\n*Haunted Knight Skin\n*Sheep Archer Skin\n*Ethereal Princess Archer Skin\n*Sheep Wizard Skin\n*Mischievous Imp Skin\n*Schankmaid Assassin Skin\n*Alice Assassin Skin\n*Ice King Priest Skin\n*Sheep Priest Skin\n*Mini Malus Sorcerer Skin\n*Thunder God Sorcerer Skin</Description>
       <Activate>MysteryDyes</Activate>
       <Consumable/>
       <Soulbound/>
@@ -17966,5 +18320,184 @@ Donning this cursed piece of equipment is said to cause the wearer to fly into a
       <BagType>7</BagType>
       <Treasure/>
       <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x145" id="Energy Signet">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x8c</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Temporarily transform players around you to ducky Knight</Description>
+      <Activate skin="0x0144" duration="15">GroupTransform</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <Track/>
+   </Object>
+   <Object type="0x5b22" id="Random Spell Extraction Device">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa7</Index>
+      </Texture>
+      <SlotType>11</SlotType>
+      <Description>This strange weapon sometimes affects the size of surrounding creatures.</Description>
+      <Sound>spell/magic_nova</Sound>
+      <Projectile>
+         <ObjectId>Rsxd Shot</ObjectId>
+         <Speed>96</Speed>
+         <MinDamage>12</MinDamage>
+         <MaxDamage>75</MaxDamage>
+         <LifetimeMS>625</LifetimeMS>
+         <Size>60</Size>
+         <MultiHit/>
+         <PassesCover/>
+      </Projectile>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <Cooldown>1</Cooldown>
+      <MpCost>40</MpCost>
+      <Activate posOffset="6" numShots="10">BulletNova</Activate>
+      <Soulbound/>
+   </Object>
+   <Object type="0x5b24" id="Krathana">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa3</Index>
+      </Texture>
+      <SlotType>24</SlotType>
+      <Description>Omae wa...</Description>
+      <RateOfFire>1.20</RateOfFire>
+      <Sound>weapon/long_sword</Sound>
+      <Projectile id="0">
+         <ObjectId>Kratana Slash</ObjectId>
+         <Speed>130</Speed>
+         <MinDamage>1</MinDamage>
+         <MaxDamage>75</MaxDamage>
+         <LifetimeMS>650</LifetimeMS>
+         <Amplitude>0.5</Amplitude>
+         <Frequency>1</Frequency>
+         <Size>90</Size>
+         <MultiHit/>
+      </Projectile>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <OldSound>bladeSwing</OldSound>
+      <Soulbound/>
+   </Object>
+   <Object type="0x5b26" id="Silex's Hammer">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa5</Index>
+      </Texture>
+      <SlotType>1</SlotType>
+      <Description>When you have this hammer, you don't need a reason to use it.</Description>
+      <RateOfFire>0.33</RateOfFire>
+      <Sound>weapon/blunt_sword</Sound>
+      <Projectile>
+         <ObjectId>Banshot</ObjectId>
+         <Speed>7</Speed>
+         <MinDamage>5</MinDamage>
+         <MaxDamage>70</MaxDamage>
+         <LifetimeMS>6500</LifetimeMS>
+         <Size>80</Size>
+         <Parametric/>
+         <ArmorPiercing/>
+         <PassesCover/>
+      </Projectile>
+      <BagType>6</BagType>
+      <NumProjectiles>3</NumProjectiles>
+      <FameBonus>6</FameBonus>
+      <OldSound>arrowShoot</OldSound>
+      <Soulbound/>
+   </Object>
+   <Object type="0x5b1e" id="Jade Storm">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa1</Index>
+      </Texture>
+      <SlotType>11</SlotType>
+      <Description>A grand scroll capable of summoning sharpened emerald shards, slicing through even the most durable opponent.</Description>
+      <Sound>spell/magic_nova</Sound>
+      <Projectile>
+         <ObjectId>Jade Storm Proj</ObjectId>
+         <Speed>114</Speed>
+         <MinDamage>475</MinDamage>
+         <MaxDamage>900</MaxDamage>
+         <LifetimeMS>523</LifetimeMS>
+         <Size>120</Size>
+         <MultiHit/>
+         <PassesCover/>
+      </Projectile>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <Cooldown>0.5</Cooldown>
+      <MpCost>175</MpCost>
+      <Activate posOffset="3.5" numShots="5">BulletNova</Activate>
+      <feedPower>900</feedPower>
+      <Soulbound/>
+   </Object>
+   <Object type="0x5b1f" id="Cloak of the Mad God">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa0</Index>
+      </Texture>
+      <SlotType>13</SlotType>
+      <Description>A pitch black cloak enhanced by the defensive strength of the Oryx's own signature armor.</Description>
+      <Sound>spell/fire_nova</Sound>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <MpCost>125</MpCost>
+      <Activate effect="Invisible" duration="3.5">ConditionEffectSelf</Activate>
+      <Activate effect="Armored" duration="5">ConditionEffectSelf</Activate>
+      <Cooldown>6.5</Cooldown>
+      <feedPower>900</feedPower>
+      <Soulbound/>
+   </Object>
+   <Object type="0x5b20" id="Shield of Flowing Clarity">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xa2</Index>
+      </Texture>
+      <SlotType>5</SlotType>
+      <Description>This shimmering shield allows knights to enhance their concentration on targets, giving them more time to think about their next move in battle.</Description>
+      <Sound>spell/fire_spray</Sound>
+      <Projectile>
+         <ObjectId>Impact Shield</ObjectId>
+         <Speed>160</Speed>
+         <MinDamage>150</MinDamage>
+         <MaxDamage>330</MaxDamage>
+         <LifetimeMS>200</LifetimeMS>
+         <Size>80</Size>
+         <MultiHit/>
+         <PassesCover/>
+         <ConditionEffect duration="4">Slowed</ConditionEffect>
+      </Projectile>
+      <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+      <Activate>Shoot</Activate>
+      <NumProjectiles>5</NumProjectiles>
+      <MpCost>80</MpCost>
+      <Cooldown>0.5</Cooldown>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <feedPower>900</feedPower>
+      <Soulbound/>
    </Object>
 </Objects>

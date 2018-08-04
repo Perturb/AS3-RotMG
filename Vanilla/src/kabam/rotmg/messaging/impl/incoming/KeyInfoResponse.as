@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.KeyInfoResponse
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class KeyInfoResponse extends IncomingMessage {
+    public class KeyInfoResponse extends IncomingMessage {
 
         public var name:String;
         public var description:String;

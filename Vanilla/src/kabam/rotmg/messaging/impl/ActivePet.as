@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.ActivePet
 
 package kabam.rotmg.messaging.impl{
-import flash.utils.IDataInput;
+    import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
+    import flash.utils.IDataInput;
 
-import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
-
-public class ActivePet extends IncomingMessage {
+    public class ActivePet extends IncomingMessage {
 
         public var instanceID:int;
 

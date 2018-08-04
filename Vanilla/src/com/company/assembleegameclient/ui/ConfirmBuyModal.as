@@ -4,35 +4,31 @@
 //com.company.assembleegameclient.ui.ConfirmBuyModal
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.objects.SellableObject;
-import com.company.assembleegameclient.util.Currency;
+    import flash.display.Sprite;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.util.Currency;
+    import org.osflash.signals.natives.NativeSignal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.objects.SellableObject;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldConcreteBuilder;
+    import kabam.rotmg.fortune.components.ItemWithTooltip;
+    import flash.events.Event;
+    import kabam.rotmg.util.components.UIAssetsHelper;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
+    import flash.events.MouseEvent;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.fortune.components.ItemWithTooltip;
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldConcreteBuilder;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.util.components.LegacyBuyButton;
-import kabam.rotmg.util.components.UIAssetsHelper;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeSignal;
-
-public class ConfirmBuyModal extends Sprite {
+    public class ConfirmBuyModal extends Sprite {
 
         public static const WIDTH:int = 280;
         public static const HEIGHT:int = 240;
         public static const TEXT_MARGIN:int = 20;
         public static var free:Boolean = true;
 
-        private const closeButton:DialogCloseButton = PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
+        private const closeButton:DialogCloseButton = io.decagames.rotmg.pets.utils.PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
         private const buyButton:LegacyBuyButton = new LegacyBuyButton(TextKey.SELLABLEOBJECTPANEL_BUY, 16, 0, Currency.INVALID);
 
         private var buyButtonClicked:NativeSignal;

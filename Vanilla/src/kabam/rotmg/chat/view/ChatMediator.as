@@ -4,28 +4,26 @@
 //kabam.rotmg.chat.view.ChatMediator
 
 package kabam.rotmg.chat.view{
-import flash.display.Sprite;
-import flash.display.Stage;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.chat.model.ChatModel;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.chat.model.ChatShortcutModel;
+    import kabam.rotmg.chat.control.ShowChatInputSignal;
+    import kabam.rotmg.chat.control.ScrollListSignal;
+    import kabam.rotmg.chat.model.TellModel;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.account.core.signals.RegisterSignal;
+    import flash.display.Stage;
+    import flash.display.Sprite;
+    import kabam.rotmg.account.web.model.AccountData;
+    import flash.events.KeyboardEvent;
+    import flash.events.Event;
+    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+    import kabam.rotmg.text.model.TextKey;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.signals.RegisterSignal;
-import kabam.rotmg.account.core.view.RegisterPromptDialog;
-import kabam.rotmg.account.web.model.AccountData;
-import kabam.rotmg.chat.control.ScrollListSignal;
-import kabam.rotmg.chat.control.ShowChatInputSignal;
-import kabam.rotmg.chat.model.ChatModel;
-import kabam.rotmg.chat.model.ChatShortcutModel;
-import kabam.rotmg.chat.model.TellModel;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ChatMediator extends Mediator {
+    public class ChatMediator extends Mediator {
 
         private static const SCROLL_BUFFER_SIZE:int = 10;
 

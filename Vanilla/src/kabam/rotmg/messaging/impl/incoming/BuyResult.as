@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.BuyResult
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class BuyResult extends IncomingMessage {
+    public class BuyResult extends IncomingMessage {
 
         public static const UNKNOWN_ERROR_BRID:int = -1;
         public static const SUCCESS_BRID:int = 0;

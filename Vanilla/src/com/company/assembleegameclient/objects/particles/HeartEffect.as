@@ -4,10 +4,12 @@
 //com.company.assembleegameclient.objects.particles.HeartEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.ColorUtil;
+    import com.company.assembleegameclient.objects.GameObject;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.util.ColorUtil;
+    import __AS3__.vec.*;
 
-public class HeartEffect extends ParticleEffect {
+    public class HeartEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var color_:uint;

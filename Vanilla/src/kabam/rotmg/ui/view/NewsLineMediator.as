@@ -4,14 +4,12 @@
 //kabam.rotmg.ui.view.NewsLineMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.screens.GraveyardLine;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.screens.GraveyardLine;
+    import kabam.rotmg.fame.control.ShowFameViewSignal;
+    import kabam.rotmg.fame.model.SimpleFameVO;
 
-import kabam.rotmg.fame.control.ShowFameViewSignal;
-import kabam.rotmg.fame.model.SimpleFameVO;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class NewsLineMediator extends Mediator {
+    public class NewsLineMediator extends Mediator {
 
         [Inject]
         public var view:GraveyardLine;

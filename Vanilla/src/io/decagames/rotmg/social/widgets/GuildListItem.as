@@ -4,18 +4,15 @@
 //io.decagames.rotmg.social.widgets.GuildListItem
 
 package io.decagames.rotmg.social.widgets{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.icons.IconButton;
-import com.company.assembleegameclient.util.GuildUtil;
-import com.company.assembleegameclient.util.TimeUtil;
+    import com.company.assembleegameclient.ui.icons.IconButton;
+    import io.decagames.rotmg.social.model.GuildMemberVO;
+    import flash.events.Event;
+    import com.company.assembleegameclient.util.TimeUtil;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.text.model.TextKey;
 
-import flash.events.Event;
-
-import io.decagames.rotmg.social.model.GuildMemberVO;
-
-import kabam.rotmg.text.model.TextKey;
-
-public class GuildListItem extends BaseListItem {
+    public class GuildListItem extends BaseListItem {
 
         public var promoteButton:IconButton;
         public var demoteButton:IconButton;

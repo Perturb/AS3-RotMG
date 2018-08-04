@@ -4,11 +4,11 @@
 //kabam.rotmg.stage3D.proxies.TextureProxy
 
 package kabam.rotmg.stage3D.proxies{
-import flash.display.BitmapData;
-import flash.display3D.textures.Texture;
-import flash.display3D.textures.TextureBase;
+    import flash.display3D.textures.Texture;
+    import flash.display.BitmapData;
+    import flash.display3D.textures.TextureBase;
 
-public class TextureProxy {
+    public class TextureProxy {
 
         private var texture:Texture;
         protected var width:int;

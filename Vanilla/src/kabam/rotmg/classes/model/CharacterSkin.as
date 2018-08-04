@@ -4,11 +4,10 @@
 //kabam.rotmg.classes.model.CharacterSkin
 
 package kabam.rotmg.classes.model{
-import kabam.rotmg.assets.model.CharacterTemplate;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.assets.model.CharacterTemplate;
 
-import org.osflash.signals.Signal;
-
-public class CharacterSkin {
+    public class CharacterSkin {
 
         public const changed:Signal = new Signal(CharacterSkin);
 

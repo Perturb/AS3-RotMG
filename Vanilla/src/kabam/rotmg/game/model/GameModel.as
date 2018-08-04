@@ -4,12 +4,11 @@
 //kabam.rotmg.game.model.GameModel
 
 package kabam.rotmg.game.model{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.Player;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.objects.GameObject;
 
-import flash.utils.Dictionary;
-
-public class GameModel {
+    public class GameModel {
 
         public var player:Player;
         public var gameObjects:Dictionary;

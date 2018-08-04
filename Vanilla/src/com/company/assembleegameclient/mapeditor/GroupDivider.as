@@ -4,17 +4,17 @@
 //com.company.assembleegameclient.mapeditor.GroupDivider
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.RegionLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.model.PlayerModel;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.map.RegionLibrary;
+    import com.company.util.MoreStringUtil;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.model.PlayerModel;
-
-public class GroupDivider {
+    public class GroupDivider {
 
         public static const GROUP_LABELS:Vector.<String> = new <String>["Ground", "Basic Objects", "Enemies", "Walls", "3D Objects", "All Map Objects", "Regions", "Dungeons", "All Game Objects"];
         public static var GROUPS:Dictionary = new Dictionary(true);

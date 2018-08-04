@@ -4,18 +4,18 @@
 //com.company.assembleegameclient.util.FameUtil
 
 package com.company.assembleegameclient.util{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.rotmg.graphics.StarGraphic;
-import com.company.util.AssetLibrary;
+    import __AS3__.vec.Vector;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.display.Sprite;
+    import flash.filters.DropShadowFilter;
+    import com.company.rotmg.graphics.StarGraphic;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
 
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
+    public class FameUtil {
 
-public class FameUtil {
-
-        public static const MAX_STARS:int = 70;
+        public static const MAX_STARS:int = 75;
         public static const STARS:Vector.<int> = new <int>[20, 150, 400, 800, 2000];
         private static const lightBlueCT:ColorTransform = new ColorTransform((138 / 0xFF), (152 / 0xFF), (222 / 0xFF));
         private static const darkBlueCT:ColorTransform = new ColorTransform((49 / 0xFF), (77 / 0xFF), (219 / 0xFF));

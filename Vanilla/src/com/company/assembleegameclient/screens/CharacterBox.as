@@ -4,33 +4,30 @@
 //com.company.assembleegameclient.screens.CharacterBox
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.appengine.CharacterStats;
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.ui.tooltip.ClassToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.FameUtil;
-import com.company.rotmg.graphics.FullCharBoxGraphic;
-import com.company.rotmg.graphics.LockedCharBoxGraphic;
-import com.company.rotmg.graphics.StarGraphic;
-import com.company.util.AssetLibrary;
-import com.gskinner.motion.GTween;
+    import flash.display.Sprite;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.appengine.CharacterStats;
+    import kabam.rotmg.core.model.PlayerModel;
+    import org.osflash.signals.natives.NativeSignal;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.rotmg.graphics.LockedCharBoxGraphic;
+    import com.company.rotmg.graphics.FullCharBoxGraphic;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.assembleegameclient.ui.tooltip.ClassToolTip;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.util.FameUtil;
+    import com.company.util.AssetLibrary;
+    import com.gskinner.motion.GTween;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import com.company.rotmg.graphics.StarGraphic;
+    import kabam.rotmg.text.model.TextKey;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.natives.NativeSignal;
-
-public class CharacterBox extends Sprite {
+    public class CharacterBox extends Sprite {
 
         private static const fullCT:ColorTransform = new ColorTransform(0.8, 0.8, 0.8);
         private static const emptyCT:ColorTransform = new ColorTransform(0.2, 0.2, 0.2);

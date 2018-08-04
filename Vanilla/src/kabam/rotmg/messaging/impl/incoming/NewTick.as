@@ -4,13 +4,13 @@
 //kabam.rotmg.messaging.impl.incoming.NewTick
 
 package kabam.rotmg.messaging.impl.incoming{
-import com.company.assembleegameclient.util.FreeList;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.ObjectStatusData;
+    import com.company.assembleegameclient.util.FreeList;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-import flash.utils.IDataInput;
-
-import kabam.rotmg.messaging.impl.data.ObjectStatusData;
-
-public class NewTick extends IncomingMessage {
+    public class NewTick extends IncomingMessage {
 
         public var tickId_:int;
         public var tickTime_:int;

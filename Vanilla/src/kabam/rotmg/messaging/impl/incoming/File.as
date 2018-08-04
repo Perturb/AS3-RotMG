@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.File
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class File extends IncomingMessage {
+    public class File extends IncomingMessage {
 
         public var filename_:String;
         public var file_:String;

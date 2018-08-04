@@ -4,17 +4,16 @@
 //kabam.rotmg.maploading.commands.CharacterAnimationFactory
 
 package kabam.rotmg.maploading.commands{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.assets.model.Animation;
 
-import kabam.rotmg.assets.model.Animation;
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.core.model.PlayerModel;
-
-public class CharacterAnimationFactory {
+    public class CharacterAnimationFactory {
 
         [Inject]
         public var playerModel:PlayerModel;

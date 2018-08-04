@@ -4,10 +4,12 @@
 //kabam.rotmg.language.model.CookieLanguageModel
 
 package kabam.rotmg.language.model{
-import flash.net.SharedObject;
-import flash.utils.Dictionary;
+    import flash.net.SharedObject;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class CookieLanguageModel implements LanguageModel {
+    public class CookieLanguageModel implements LanguageModel {
 
         public static const DEFAULT_LOCALE:String = "en";
 

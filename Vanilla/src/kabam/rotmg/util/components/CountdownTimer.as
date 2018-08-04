@@ -4,20 +4,17 @@
 //kabam.rotmg.util.components.CountdownTimer
 
 package kabam.rotmg.util.components{
-import com.gskinner.motion.GTween;
+    import flash.display.Sprite;
+    import flash.utils.Timer;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import org.osflash.signals.Signal;
+    import flash.filters.DropShadowFilter;
+    import flash.filters.GlowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.gskinner.motion.GTween;
+    import flash.events.TimerEvent;
 
-import flash.display.Sprite;
-import flash.events.TimerEvent;
-import flash.filters.DropShadowFilter;
-import flash.filters.GlowFilter;
-import flash.utils.Timer;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class CountdownTimer extends Sprite {
+    public class CountdownTimer extends Sprite {
 
         public static const MARGIN:int = 8;
 

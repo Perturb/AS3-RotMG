@@ -4,9 +4,10 @@
 //com.company.assembleegameclient.objects.Character
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import __AS3__.vec.Vector;
 
-public class Character extends GameObject {
+    public class Character extends GameObject {
 
         public var hurtSound_:String;
         public var deathSound_:String;

@@ -4,19 +4,18 @@
 //kabam.rotmg.ui.view.components.MapBackground
 
 package kabam.rotmg.ui.view.components{
-import com.company.assembleegameclient.background.Background;
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.map.serialization.MapDecoder;
-import com.company.util.IntPoint;
+    import flash.display.Sprite;
+    import flash.geom.Rectangle;
+    import com.company.assembleegameclient.map.Map;
+    import com.company.util.IntPoint;
+    import com.company.assembleegameclient.map.Camera;
+    import flash.events.Event;
+    import flash.utils.getTimer;
+    import flash.utils.ByteArray;
+    import com.company.assembleegameclient.map.serialization.MapDecoder;
+    import com.company.assembleegameclient.background.Background;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.geom.Rectangle;
-import flash.utils.ByteArray;
-import flash.utils.getTimer;
-
-public class MapBackground extends Sprite {
+    public class MapBackground extends Sprite {
 
         private static const BORDER:int = 10;
         private static const RECTANGLE:Rectangle = new Rectangle(-400, -300, 800, 600);

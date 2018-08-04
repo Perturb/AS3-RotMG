@@ -4,21 +4,21 @@
 //kabam.rotmg.game.view.components.TabStripView
 
 package kabam.rotmg.game.view.components{
-import com.company.assembleegameclient.objects.ImageFactory;
-import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-import com.company.ui.BaseSimpleText;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+    import com.company.assembleegameclient.objects.ImageFactory;
+    import __AS3__.vec.Vector;
+    import flash.events.MouseEvent;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.display.Bitmap;
+    import com.company.ui.BaseSimpleText;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-
-import org.osflash.signals.Signal;
-
-public class TabStripView extends Sprite {
+    public class TabStripView extends Sprite {
 
         public const tabSelected:Signal = new Signal(String);
         public const WIDTH:Number = 186;

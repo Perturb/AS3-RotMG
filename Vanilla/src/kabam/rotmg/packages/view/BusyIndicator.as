@@ -4,13 +4,13 @@
 //kabam.rotmg.packages.view.BusyIndicator
 
 package kabam.rotmg.packages.view{
-import flash.display.BlendMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.TimerEvent;
-import flash.utils.Timer;
+    import flash.display.Sprite;
+    import flash.utils.Timer;
+    import flash.events.Event;
+    import flash.display.BlendMode;
+    import flash.events.TimerEvent;
 
-public class BusyIndicator extends Sprite {
+    public class BusyIndicator extends Sprite {
 
         private const pinwheel:Sprite = makePinWheel();
         private const innerCircleMask:Sprite = makeInner();

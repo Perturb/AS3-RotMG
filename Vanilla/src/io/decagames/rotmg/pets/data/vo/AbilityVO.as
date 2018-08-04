@@ -4,11 +4,10 @@
 //io.decagames.rotmg.pets.data.vo.AbilityVO
 
 package io.decagames.rotmg.pets.data.vo{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
 
-import org.osflash.signals.Signal;
-
-public class AbilityVO {
+    public class AbilityVO {
 
         public const updated:Signal = new Signal(AbilityVO);
 

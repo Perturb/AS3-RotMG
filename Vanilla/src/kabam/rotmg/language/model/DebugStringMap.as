@@ -4,9 +4,11 @@
 //kabam.rotmg.language.model.DebugStringMap
 
 package kabam.rotmg.language.model{
-import kabam.rotmg.text.model.DebugTextInfo;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.text.model.DebugTextInfo;
+    import __AS3__.vec.*;
 
-public class DebugStringMap implements StringMap {
+    public class DebugStringMap implements StringMap {
 
         [Inject]
         public var delegate:StringMap;

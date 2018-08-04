@@ -4,12 +4,12 @@
 //com.company.util.AssetLibrary
 
 package com.company.util{
-import flash.display.BitmapData;
-import flash.media.Sound;
-import flash.media.SoundTransform;
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import flash.display.BitmapData;
+    import flash.media.Sound;
+    import flash.media.SoundTransform;
 
-public class AssetLibrary {
+    public class AssetLibrary {
 
         private static var images_:Dictionary = new Dictionary();
         private static var imageSets_:Dictionary = new Dictionary();

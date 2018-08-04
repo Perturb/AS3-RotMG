@@ -4,13 +4,13 @@
 //com.company.util.CachingColorTransformer
 
 package com.company.util{
-import flash.display.BitmapData;
-import flash.filters.BitmapFilter;
-import flash.geom.ColorTransform;
-import flash.geom.Point;
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import flash.display.BitmapData;
+    import flash.geom.ColorTransform;
+    import flash.geom.Point;
+    import flash.filters.BitmapFilter;
 
-public class CachingColorTransformer {
+    public class CachingColorTransformer {
 
         private static var bds_:Dictionary = new Dictionary();
 

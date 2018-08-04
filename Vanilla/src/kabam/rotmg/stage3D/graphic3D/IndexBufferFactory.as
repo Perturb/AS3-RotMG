@@ -4,15 +4,15 @@
 //kabam.rotmg.stage3D.graphic3D.IndexBufferFactory
 
 package kabam.rotmg.stage3D.graphic3D{
-import flash.utils.Dictionary;
+    import org.swiftsuspenders.dependencyproviders.DependencyProvider;
+    import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.stage3D.proxies.Context3DProxy;
+    import org.swiftsuspenders.Injector;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.stage3D.proxies.Context3DProxy;
-import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
-
-import org.swiftsuspenders.Injector;
-import org.swiftsuspenders.dependencyproviders.DependencyProvider;
-
-public class IndexBufferFactory implements DependencyProvider {
+    public class IndexBufferFactory implements DependencyProvider {
 
         private static const numVertices:int = 6;
 

@@ -4,11 +4,11 @@
 //kabam.lib.ui.impl.VerticalLayout
 
 package kabam.lib.ui.impl{
-import flash.display.DisplayObject;
+    import kabam.lib.ui.api.Layout;
+    import flash.display.DisplayObject;
+    import __AS3__.vec.Vector;
 
-import kabam.lib.ui.api.Layout;
-
-public class VerticalLayout implements Layout {
+    public class VerticalLayout implements Layout {
 
         private var padding:int = 0;
 

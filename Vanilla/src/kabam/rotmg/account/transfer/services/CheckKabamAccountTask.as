@@ -4,14 +4,14 @@
 //kabam.rotmg.account.transfer.services.CheckKabamAccountTask
 
 package kabam.rotmg.account.transfer.services{
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.transfer.model.TransferAccountData;
-import kabam.rotmg.account.transfer.view.KabamLoginView;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.model.PlayerModel;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.account.transfer.model.TransferAccountData;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.transfer.view.KabamLoginView;
 
-public class CheckKabamAccountTask extends BaseTask {
+    public class CheckKabamAccountTask extends BaseTask {
 
         [Inject]
         public var account:Account;

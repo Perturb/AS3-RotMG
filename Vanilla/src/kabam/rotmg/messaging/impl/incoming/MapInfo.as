@@ -4,9 +4,11 @@
 //kabam.rotmg.messaging.impl.incoming.MapInfo
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-public class MapInfo extends IncomingMessage {
+    public class MapInfo extends IncomingMessage {
 
         public var width_:int;
         public var height_:int;

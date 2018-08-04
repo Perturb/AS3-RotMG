@@ -4,13 +4,14 @@
 //com.company.assembleegameclient.map.GroundProperties
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.objects.TextureData;
-import com.company.assembleegameclient.objects.TextureDataConcrete;
-import com.company.util.BitmapUtil;
+    import com.company.assembleegameclient.objects.TextureData;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.TextureDataConcrete;
+    import com.company.util.BitmapUtil;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-
-public class GroundProperties {
+    public class GroundProperties {
 
         public var type_:int;
         public var id_:String;

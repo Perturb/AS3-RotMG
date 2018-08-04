@@ -4,11 +4,13 @@
 //io.decagames.rotmg.tos.popups.RefusePopup
 
 package io.decagames.rotmg.tos.popups{
-import io.decagames.rotmg.tos.popups.buttons.GoBackButton;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.modal.TextModal;
+    import io.decagames.rotmg.ui.popups.modal.TextModal;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.tos.popups.buttons.GoBackButton;
+    import __AS3__.vec.*;
 
-public class RefusePopup extends TextModal {
+    public class RefusePopup extends TextModal {
 
         public function RefusePopup(){
             var _local_1:Vector.<BaseButton> = new Vector.<BaseButton>();

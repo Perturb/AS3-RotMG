@@ -4,10 +4,12 @@
 //com.company.assembleegameclient.util.AnimatedChars
 
 package com.company.assembleegameclient.util{
-import flash.display.BitmapData;
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-public class AnimatedChars {
+    public class AnimatedChars {
 
         private static var nameMap_:Dictionary = new Dictionary();
 

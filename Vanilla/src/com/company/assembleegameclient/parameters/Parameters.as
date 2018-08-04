@@ -4,20 +4,20 @@
 //com.company.assembleegameclient.parameters.Parameters
 
 package com.company.assembleegameclient.parameters{
-import com.company.assembleegameclient.map.Map;
-import com.company.util.KeyCodes;
-import com.company.util.MoreDateUtil;
+    import flash.display.DisplayObject;
+    import flash.net.SharedObject;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import com.company.util.KeyCodes;
+    import com.company.assembleegameclient.map.Map;
+    import flash.events.Event;
+    import com.company.util.MoreDateUtil;
+    import flash.system.Capabilities;
 
-import flash.display.DisplayObject;
-import flash.events.Event;
-import flash.net.SharedObject;
-import flash.system.Capabilities;
-import flash.utils.Dictionary;
+    public class Parameters {
 
-public class Parameters {
-
-        public static const BUILD_VERSION:String = "X27.0";
-        public static const MINOR_VERSION:String = "2";
+        public static const BUILD_VERSION:String = "X28.0";
+        public static const MINOR_VERSION:String = "1";
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = false;

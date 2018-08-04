@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.Ping
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class Ping extends IncomingMessage {
+    public class Ping extends IncomingMessage {
 
         public var serial_:int;
 

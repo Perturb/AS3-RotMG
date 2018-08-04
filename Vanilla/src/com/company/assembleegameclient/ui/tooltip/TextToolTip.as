@@ -4,14 +4,13 @@
 //com.company.assembleegameclient.ui.tooltip.TextToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class TextToolTip extends ToolTip {
+    public class TextToolTip extends ToolTip {
 
         public var titleText_:TextFieldDisplayConcrete;
         public var tipText_:TextFieldDisplayConcrete;

@@ -4,27 +4,23 @@
 //com.company.assembleegameclient.mapeditor.SubmitMapForm
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.account.ui.CheckBoxField;
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.account.ui.TextInputField;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import kabam.rotmg.editor.view.components.savedialog.TagsInputField;
+    import kabam.rotmg.account.core.Account;
+    import com.company.assembleegameclient.account.ui.CheckBoxField;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.lib.json.JsonParser;
+    import ru.inspirit.net.MultipartURLLoader;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import flash.events.IOErrorEvent;
+    import kabam.rotmg.fortune.components.TimerCallback;
 
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.MouseEvent;
-
-import kabam.lib.json.JsonParser;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.editor.view.components.savedialog.TagsInputField;
-import kabam.rotmg.fortune.components.TimerCallback;
-import kabam.rotmg.text.model.TextKey;
-
-import org.osflash.signals.Signal;
-
-import ru.inspirit.net.MultipartURLLoader;
-
-public class SubmitMapForm extends Frame {
+    public class SubmitMapForm extends Frame {
 
         public static var cancel:Signal;
 

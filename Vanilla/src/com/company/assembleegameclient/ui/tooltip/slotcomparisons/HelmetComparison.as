@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.HelmetComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
-import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.constants.*;
 
-import kabam.rotmg.constants.*;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-
-public class HelmetComparison extends SlotComparison {
+    public class HelmetComparison extends SlotComparison {
 
         private var berserk:XML;
         private var speedy:XML;

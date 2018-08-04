@@ -4,9 +4,10 @@
 //com.company.assembleegameclient.engine3d.Plane3D
 
 package com.company.assembleegameclient.engine3d{
-import flash.geom.Vector3D;
+    import flash.geom.Vector3D;
+    import __AS3__.vec.Vector;
 
-public class Plane3D {
+    public class Plane3D {
 
         public static const NONE:int = 0;
         public static const POSITIVE:int = 1;

@@ -4,11 +4,11 @@
 //io.decagames.rotmg.ui.popups.UIPopup
 
 package io.decagames.rotmg.ui.popups{
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class UIPopup extends BasePopup {
+    public class UIPopup extends BasePopup {
 
         private var _header:PopupHeader;
         private var footer:SliceScalingBitmap;

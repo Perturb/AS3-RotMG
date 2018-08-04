@@ -4,30 +4,28 @@
 //com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.appengine.CharacterStats;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.GameObjectListItem;
-import com.company.assembleegameclient.ui.LineBreakDesign;
-import com.company.assembleegameclient.ui.StatusBar;
-import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-import com.company.assembleegameclient.util.FameUtil;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.GameObjectListItem;
+    import com.company.assembleegameclient.ui.StatusBar;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+    import com.company.assembleegameclient.appengine.CharacterStats;
+    import kabam.rotmg.game.view.components.StatsView;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.constants.GeneralConstants;
+    import com.company.assembleegameclient.util.FameUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
 
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.view.components.StatsView;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class MyPlayerToolTip extends ToolTip {
+    public class MyPlayerToolTip extends ToolTip {
 
         private var factory:CharacterFactory;
         private var classes:ClassesModel;

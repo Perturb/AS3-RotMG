@@ -4,14 +4,13 @@
 //io.decagames.rotmg.ui.textField.InputTextField
 
 package io.decagames.rotmg.ui.textField{
-import flash.events.Event;
-import flash.events.FocusEvent;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFieldType;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.text.TextFieldType;
+    import flash.text.TextFieldAutoSize;
+    import flash.events.FocusEvent;
+    import flash.events.Event;
 
-import io.decagames.rotmg.ui.labels.UILabel;
-
-public class InputTextField extends UILabel {
+    public class InputTextField extends UILabel {
 
         private var _wasModified:Boolean;
         private var placeholder:String;

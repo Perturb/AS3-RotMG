@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.objects.particles.StreamEffect
 
 package com.company.assembleegameclient.objects.particles{
-import flash.geom.Point;
+    import flash.geom.Point;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class StreamEffect extends ParticleEffect {
+    public class StreamEffect extends ParticleEffect {
 
         public var start_:Point;
         public var end_:Point;
@@ -42,9 +41,8 @@ public class StreamEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-
-import flash.geom.Point;
 import flash.geom.Vector3D;
+import flash.geom.Point;
 
 class StreamParticle extends Particle {
 

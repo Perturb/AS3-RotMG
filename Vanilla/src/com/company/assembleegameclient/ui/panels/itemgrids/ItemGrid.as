@@ -4,25 +4,23 @@
 //com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids{
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-import com.company.assembleegameclient.objects.Container;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.Container;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+    import kabam.rotmg.constants.ItemConstants;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+    import __AS3__.vec.Vector;
 
-import flash.events.MouseEvent;
-
-import kabam.rotmg.constants.ItemConstants;
-import kabam.rotmg.text.model.TextKey;
-
-import org.osflash.signals.Signal;
-
-public class ItemGrid extends Panel {
+    public class ItemGrid extends Panel {
 
         private static const NO_CUT:Array = [0, 0, 0, 0];
         private static const CutsByNum:Object = {

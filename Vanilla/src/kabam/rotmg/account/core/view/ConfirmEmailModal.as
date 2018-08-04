@@ -4,26 +4,23 @@
 //kabam.rotmg.account.core.view.ConfirmEmailModal
 
 package kabam.rotmg.account.core.view{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.util.EmailValidator;
-import com.company.util.MoreObjectUtil;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.account.web.model.AccountData;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.events.MouseEvent;
+    import com.company.util.EmailValidator;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import com.company.util.MoreObjectUtil;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
 
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.web.model.AccountData;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-
-public class ConfirmEmailModal extends Frame {
+    public class ConfirmEmailModal extends Frame {
 
         public var register:Signal = new Signal(AccountData);
         public var cancel:Signal;

@@ -4,7 +4,9 @@
 //io.decagames.rotmg.social.model.GuildVO
 
 package io.decagames.rotmg.social.model{
-public class GuildVO {
+    import __AS3__.vec.Vector;
+
+    public class GuildVO {
 
         private var _guildName:String;
         private var _guildId:String;

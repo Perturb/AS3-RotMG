@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.mapeditor.METile
 
 package com.company.assembleegameclient.mapeditor{
-public class METile {
+    import __AS3__.vec.Vector;
+
+    public class METile {
 
         public var types_:Vector.<int> = new <int>[-1, -1, -1];
         public var objName_:String = null;

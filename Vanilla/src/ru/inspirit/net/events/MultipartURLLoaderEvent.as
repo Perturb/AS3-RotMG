@@ -4,9 +4,9 @@
 //ru.inspirit.net.events.MultipartURLLoaderEvent
 
 package ru.inspirit.net.events{
-import flash.events.Event;
+    import flash.events.Event;
 
-public class MultipartURLLoaderEvent extends Event {
+    public class MultipartURLLoaderEvent extends Event {
 
         public static const DATA_PREPARE_PROGRESS:String = "dataPrepareProgress";
         public static const DATA_PREPARE_COMPLETE:String = "dataPrepareComplete";

@@ -4,25 +4,22 @@
 //kabam.rotmg.minimap.view.MiniMapMediator
 
 package kabam.rotmg.minimap.view{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediator;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+    import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
+    import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
+    import kabam.rotmg.minimap.control.MiniMapZoomSignal;
+    import kabam.rotmg.ui.signals.UpdateHUDSignal;
+    import kabam.rotmg.game.signals.ExitGameSignal;
+    import kabam.rotmg.core.view.Layers;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.utils.Dictionary;
+    import kabam.rotmg.minimap.model.UpdateGroundTileVO;
+    import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
+    import com.company.assembleegameclient.objects.Player;
 
-import flash.utils.Dictionary;
-
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-import kabam.rotmg.game.signals.ExitGameSignal;
-import kabam.rotmg.minimap.control.MiniMapZoomSignal;
-import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
-import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
-import kabam.rotmg.minimap.model.UpdateGroundTileVO;
-import kabam.rotmg.ui.model.HUDModel;
-import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
-import kabam.rotmg.ui.signals.UpdateHUDSignal;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediator;
-
-public class MiniMapMediator implements IMediator {
+    public class MiniMapMediator implements IMediator {
 
         [Inject]
         public var view:MiniMap;

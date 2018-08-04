@@ -4,18 +4,18 @@
 //kabam.rotmg.arena.service.ArenaLeaderboardFactory
 
 package kabam.rotmg.arena.service{
-import com.company.util.ConversionUtil;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import kabam.rotmg.arena.model.CurrentArenaRunModel;
+    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import com.company.util.ConversionUtil;
+    import __AS3__.vec.*;
 
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-import kabam.rotmg.arena.model.CurrentArenaRunModel;
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-
-public class ArenaLeaderboardFactory {
+    public class ArenaLeaderboardFactory {
 
         [Inject]
         public var classesModel:ClassesModel;

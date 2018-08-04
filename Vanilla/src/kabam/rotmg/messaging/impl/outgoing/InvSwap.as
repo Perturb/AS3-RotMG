@@ -4,12 +4,11 @@
 //kabam.rotmg.messaging.impl.outgoing.InvSwap
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import kabam.rotmg.messaging.impl.data.SlotObjectData;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class InvSwap extends OutgoingMessage {
+    public class InvSwap extends OutgoingMessage {
 
         public var time_:int;
         public var position_:WorldPosData = new WorldPosData();

@@ -4,9 +4,9 @@
 //kabam.rotmg.util.graphics.GraphicsHelper
 
 package kabam.rotmg.util.graphics{
-import flash.display.Graphics;
+    import flash.display.Graphics;
 
-public class GraphicsHelper {
+    public class GraphicsHelper {
 
 
         public function drawBevelRect(_arg_1:int, _arg_2:int, _arg_3:BevelRect, _arg_4:Graphics):void{

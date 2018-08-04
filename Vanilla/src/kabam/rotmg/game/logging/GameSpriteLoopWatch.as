@@ -4,9 +4,11 @@
 //kabam.rotmg.game.logging.GameSpriteLoopWatch
 
 package kabam.rotmg.game.logging{
-import kabam.lib.console.model.Watch;
+    import kabam.lib.console.model.Watch;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class GameSpriteLoopWatch extends Watch {
+    public class GameSpriteLoopWatch extends Watch {
 
         private static const WATCH_PATTERN:String = "[{NAME}] [0x33FF33:{/x {MEAN}ms (min {MIN}ms, max {MAX}ms)]";
         private static const COUNT:int = 10;

@@ -4,13 +4,11 @@
 //com.company.assembleegameclient.objects.particles.ConeBlastEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import com.company.assembleegameclient.objects.GameObject;
 
-import flash.geom.Point;
-
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class ConeBlastEffect extends ParticleEffect {
+    public class ConeBlastEffect extends ParticleEffect {
 
         public var start_:Point;
         public var target_:WorldPosData;

@@ -4,22 +4,19 @@
 //kabam.rotmg.packages.view.PackageButton
 
 package kabam.rotmg.packages.view{
-import com.company.assembleegameclient.util.TimeUtil;
+    import org.osflash.signals.Signal;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.ui.UIUtils;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.util.TimeUtil;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
 
-import flash.display.DisplayObject;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.UIUtils;
-
-import org.osflash.signals.Signal;
-
-public class PackageButton extends BasePackageButton {
+    public class PackageButton extends BasePackageButton {
 
         private const SHOW_DURATION:String = "showDuration";
         private const SHOW_QUANTITY:String = "showQuantity";

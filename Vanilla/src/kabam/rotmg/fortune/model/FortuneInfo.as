@@ -4,16 +4,17 @@
 //kabam.rotmg.fortune.model.FortuneInfo
 
 package kabam.rotmg.fortune.model{
-import flash.display.DisplayObject;
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.net.URLRequest;
-import flash.utils.Dictionary;
+    import flash.display.DisplayObject;
+    import kabam.display.Loader.LoaderProxy;
+    import kabam.display.Loader.LoaderProxyConcrete;
+    import __AS3__.vec.Vector;
+    import flash.events.Event;
+    import flash.events.IOErrorEvent;
+    import flash.net.URLRequest;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.*;
 
-import kabam.display.Loader.LoaderProxy;
-import kabam.display.Loader.LoaderProxyConcrete;
-
-public class FortuneInfo {
+    public class FortuneInfo {
 
         public static var chestImageEmbed:Class = FortuneInfo_chestImageEmbed;
 

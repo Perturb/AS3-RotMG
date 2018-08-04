@@ -4,25 +4,23 @@
 //com.company.assembleegameclient.util.AssetLoader
 
 package com.company.assembleegameclient.util{
-import com.company.assembleegameclient.engine3d.Model3D;
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.RegionLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.particles.ParticleLibrary;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.sound.IMusic;
-import com.company.assembleegameclient.sound.SFX;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.assembleegameclient.ui.options.Options;
-import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.sound.IMusic;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.ui.options.Options;
+    import com.company.assembleegameclient.sound.SFX;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.assets.EmbeddedAssets;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import flash.utils.ByteArray;
+    import com.company.assembleegameclient.engine3d.Model3D;
+    import com.company.assembleegameclient.objects.particles.ParticleLibrary;
+    import kabam.rotmg.assets.EmbeddedData;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.utils.getQualifiedClassName;
+    import com.company.assembleegameclient.map.RegionLibrary;
 
-import flash.utils.ByteArray;
-import flash.utils.getQualifiedClassName;
-
-import kabam.rotmg.assets.EmbeddedAssets;
-import kabam.rotmg.assets.EmbeddedData;
-
-public class AssetLoader {
+    public class AssetLoader {
 
         public static var currentXmlIsTesting:Boolean = false;
 
@@ -94,6 +92,8 @@ public class AssetLoader {
             AssetLibrary.addImageSet("mountainTempleObjects16x16", new EmbeddedAssets.mountainTempleObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("oryxHordeObjects8x8", new EmbeddedAssets.oryxHordeObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("oryxHordeObjects16x16", new EmbeddedAssets.oryxHordeObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("battleOryxObjects8x8", new EmbeddedAssets.battleOryxObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("battleOryxObjects16x16", new EmbeddedAssets.battleOryxObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("santaWorkshopObjects8x8", new EmbeddedAssets.santaWorkshopObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("santaWorkshopObjects16x16", new EmbeddedAssets.santaWorkshopObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("parasiteDenObjects8x8", new EmbeddedAssets.parasiteDenObjects8x8Embed_().bitmapData, 8, 8);
@@ -115,6 +115,8 @@ public class AssetLoader {
             AssetLibrary.addImageSet("lostHallsObjects16x16", new EmbeddedAssets.lostHallsObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("cnidarianReefObjects8x8", new EmbeddedAssets.cnidarianReefObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("cnidarianReefObjects16x16", new EmbeddedAssets.cnidarianReefObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("secludedThicketObjects8x8", new EmbeddedAssets.secludedThicketObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("secludedThicketObjects16x16", new EmbeddedAssets.secludedThicketObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("magicWoodsObjects8x8", new EmbeddedAssets.magicWoodsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
         }
@@ -159,6 +161,8 @@ public class AssetLoader {
             AnimatedChars.add("mountainTempleChars16x16", new EmbeddedAssets.mountainTempleChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("oryxHordeChars8x8", new EmbeddedAssets.oryxHordeChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("oryxHordeChars16x16", new EmbeddedAssets.oryxHordeChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+            AnimatedChars.add("battleOryxChars8x8", new EmbeddedAssets.battleOryxChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("battleOryxChars16x16", new EmbeddedAssets.battleOryxChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("santaWorkshopChars8x8", new EmbeddedAssets.santaWorkshopChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("santaWorkshopChars16x16", new EmbeddedAssets.santaWorkshopChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
             AnimatedChars.add("Hanami8x8chars", new EmbeddedAssets.Hanami8x8charsEmbed_().bitmapData, null, 8, 8, 64, 8, AnimatedChar.RIGHT);
@@ -172,6 +176,8 @@ public class AssetLoader {
             AnimatedChars.add("lostHallsChars8x8", new EmbeddedAssets.lostHallsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("magicWoodsChars8x8", new EmbeddedAssets.magicWoodsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("magicWoodsChars16x16", new EmbeddedAssets.magicWoodsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+            AnimatedChars.add("secludedThicketChars8x8", new EmbeddedAssets.secludedThicketChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("secludedThicketChars16x16", new EmbeddedAssets.secludedThicketChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
 
         private function addSoundEffects():void{

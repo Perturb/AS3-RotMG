@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.mapeditor.Layer
 
 package com.company.assembleegameclient.mapeditor{
-public class Layer {
+    import __AS3__.vec.Vector;
+
+    public class Layer {
 
         public static const GROUND:int = 0;
         public static const OBJECT:int = 1;

@@ -4,19 +4,17 @@
 //kabam.rotmg.account.steam.services.SteamLoadApiTask
 
 package kabam.rotmg.account.steam.services{
-import flash.display.DisplayObject;
-import flash.display.LoaderInfo;
+    import kabam.lib.tasks.BaseTask;
+    import flash.display.LoaderInfo;
+    import kabam.rotmg.account.steam.SteamApi;
+    import kabam.rotmg.core.view.Layers;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.account.steam.view.SteamSessionRequestErrorDialog;
+    import flash.display.DisplayObject;
 
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.steam.SteamApi;
-import kabam.rotmg.account.steam.view.SteamSessionRequestErrorDialog;
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class SteamLoadApiTask extends BaseTask {
+    public class SteamLoadApiTask extends BaseTask {
 
         [Inject]
         public var info:LoaderInfo;

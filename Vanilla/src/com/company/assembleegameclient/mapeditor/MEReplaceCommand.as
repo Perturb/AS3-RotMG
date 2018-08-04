@@ -4,9 +4,9 @@
 //com.company.assembleegameclient.mapeditor.MEReplaceCommand
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.editor.Command;
+    import com.company.assembleegameclient.editor.Command;
 
-public class MEReplaceCommand extends Command {
+    public class MEReplaceCommand extends Command {
 
         private var map_:MEMap;
         private var x_:int;

@@ -4,26 +4,23 @@
 //kabam.rotmg.account.ui.components.DateField
 
 package kabam.rotmg.account.ui.components{
-import com.company.ui.BaseSimpleText;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.ui.BaseSimpleText;
+    import kabam.lib.util.DateValidator;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.TextEvent;
+    import flash.events.FocusEvent;
+    import flash.events.Event;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.text.TextFieldAutoSize;
+    import org.osflash.signals.Signal;
 
-import flash.display.CapsStyle;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.FocusEvent;
-import flash.events.TextEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.lib.util.DateValidator;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-
-public class DateField extends Sprite {
+    public class DateField extends Sprite {
 
         private static const BACKGROUND_COLOR:uint = 0x333333;
         private static const ERROR_BORDER_COLOR:uint = 16549442;

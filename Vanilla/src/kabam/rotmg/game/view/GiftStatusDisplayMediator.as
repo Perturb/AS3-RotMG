@@ -4,12 +4,11 @@
 //kabam.rotmg.game.view.GiftStatusDisplayMediator
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.game.GiftStatusModel;
-import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
+    import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
+    import com.company.assembleegameclient.game.GiftStatusModel;
+    import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
-import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
-
-public class GiftStatusDisplayMediator {
+    public class GiftStatusDisplayMediator {
 
         [Inject]
         public var updateGiftStatusDisplay:UpdateGiftStatusDisplaySignal;

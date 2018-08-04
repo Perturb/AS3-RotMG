@@ -4,21 +4,20 @@
 //io.decagames.rotmg.pets.windows.yard.list.PetYardList
 
 package io.decagames.rotmg.pets.windows.yard.list{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import io.decagames.rotmg.utils.colors.Tint;
+    import io.decagames.rotmg.ui.scroll.UIScrollbar;
+    import io.decagames.rotmg.pets.components.petItem.PetItem;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import io.decagames.rotmg.pets.components.petItem.PetItem;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.scroll.UIScrollbar;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-import io.decagames.rotmg.utils.colors.Tint;
-
-public class PetYardList extends Sprite {
+    public class PetYardList extends Sprite {
 
         public static var YARD_WIDTH:int = 275;
         public static const YARD_HEIGHT:int = 425;
@@ -81,7 +80,8 @@ public class PetYardList extends Sprite {
         }
 
         private function createScrollview():void{
-            var _local_1:Sprite = new Sprite();
+            var _local_1:Sprite;
+            _local_1 = new Sprite();
             this.yardContainer = new Sprite();
             this.yardContainer.x = this.contentInset.x;
             this.yardContainer.y = 2;

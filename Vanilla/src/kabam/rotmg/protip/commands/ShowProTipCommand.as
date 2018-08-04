@@ -4,11 +4,11 @@
 //kabam.rotmg.protip.commands.ShowProTipCommand
 
 package kabam.rotmg.protip.commands{
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.protip.model.IProTipModel;
-import kabam.rotmg.protip.view.ProTipView;
+    import kabam.rotmg.core.view.Layers;
+    import kabam.rotmg.protip.view.ProTipView;
+    import kabam.rotmg.protip.model.IProTipModel;
 
-public class ShowProTipCommand {
+    public class ShowProTipCommand {
 
         [Inject]
         public var layers:Layers;

@@ -4,31 +4,30 @@
 //kabam.rotmg.ui.view.HUDView
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.TradePanel;
-import com.company.assembleegameclient.ui.panels.InteractPanel;
-import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-import com.company.util.GraphicsUtil;
-import com.company.util.SpriteUtil;
+    import flash.display.Sprite;
+    import flash.geom.Point;
+    import kabam.rotmg.minimap.view.MiniMapImp;
+    import io.decagames.rotmg.classes.NewClassUnlockNotification;
+    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.game.view.components.TabStripView;
+    import com.company.assembleegameclient.ui.panels.InteractPanel;
+    import com.company.assembleegameclient.ui.TradePanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import com.company.util.GraphicsUtil;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import kabam.rotmg.messaging.impl.incoming.TradeStart;
+    import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+    import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+    import com.company.util.SpriteUtil;
+    import __AS3__.vec.*;
 
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.geom.Point;
-
-import io.decagames.rotmg.classes.NewClassUnlockNotification;
-
-import kabam.rotmg.game.view.components.TabStripView;
-import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
-import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-import kabam.rotmg.messaging.impl.incoming.TradeStart;
-import kabam.rotmg.minimap.view.MiniMapImp;
-
-public class HUDView extends Sprite implements UnFocusAble {
+    public class HUDView extends Sprite implements UnFocusAble {
 
         private const BG_POSITION:Point = new Point(0, 0);
         private const MAP_POSITION:Point = new Point(4, 4);

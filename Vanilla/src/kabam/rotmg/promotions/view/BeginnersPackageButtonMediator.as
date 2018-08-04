@@ -4,12 +4,11 @@
 //kabam.rotmg.promotions.view.BeginnersPackageButtonMediator
 
 package kabam.rotmg.promotions.view{
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
-import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class BeginnersPackageButtonMediator extends Mediator {
+    public class BeginnersPackageButtonMediator extends Mediator {
 
         [Inject]
         public var view:BeginnersPackageButton;

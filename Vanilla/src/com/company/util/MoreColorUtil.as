@@ -4,9 +4,9 @@
 //com.company.util.MoreColorUtil
 
 package com.company.util{
-import flash.geom.ColorTransform;
+    import flash.geom.ColorTransform;
 
-public class MoreColorUtil {
+    public class MoreColorUtil {
 
         public static const greyscaleFilterMatrix:Array = [0.3, 0.59, 0.11, 0, 0, 0.3, 0.59, 0.11, 0, 0, 0.3, 0.59, 0.11, 0, 0, 0, 0, 0, 1, 0];
         public static const redFilterMatrix:Array = [0.3, 0.59, 0.11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0];

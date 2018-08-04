@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.objects.particles.ShockeeEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.utils.Timer;
+    import flash.events.TimerEvent;
 
-import flash.events.TimerEvent;
-import flash.geom.Point;
-import flash.utils.Timer;
-
-public class ShockeeEffect extends ParticleEffect {
+    public class ShockeeEffect extends ParticleEffect {
 
         public var start_:Point;
         public var go:GameObject;

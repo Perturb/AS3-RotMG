@@ -4,11 +4,10 @@
 //kabam.rotmg.fortune.services.FortuneModel
 
 package kabam.rotmg.fortune.services{
-import kabam.rotmg.fortune.model.FortuneInfo;
+    import kabam.rotmg.fortune.model.FortuneInfo;
+    import org.osflash.signals.Signal;
 
-import org.osflash.signals.Signal;
-
-public class FortuneModel {
+    public class FortuneModel {
 
         public static var HAS_FORTUNES:Boolean = false;
 

@@ -4,18 +4,16 @@
 //kabam.rotmg.arena.component.HostQuerySpeechBubble
 
 package kabam.rotmg.arena.component{
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import kabam.rotmg.util.graphics.GraphicsHelper;
+    import kabam.rotmg.util.graphics.BevelRect;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.text.TextFieldAutoSize;
+    import flashx.textLayout.formats.VerticalAlign;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import flashx.textLayout.formats.VerticalAlign;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.util.graphics.BevelRect;
-import kabam.rotmg.util.graphics.GraphicsHelper;
-
-public class HostQuerySpeechBubble extends Sprite {
+    public class HostQuerySpeechBubble extends Sprite {
 
         private const WIDTH:int = 174;
         private const HEIGHT:int = 225;

@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.mapeditor.ObjectTypeToolTip
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.ui.BaseSimpleText;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.ui.BaseSimpleText;
+    import flash.filters.DropShadowFilter;
 
-import flash.filters.DropShadowFilter;
-
-public class ObjectTypeToolTip extends ToolTip {
+    public class ObjectTypeToolTip extends ToolTip {
 
         private static const MAX_WIDTH:int = 180;
 

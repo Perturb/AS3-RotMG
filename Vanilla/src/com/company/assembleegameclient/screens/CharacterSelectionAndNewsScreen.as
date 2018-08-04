@@ -4,34 +4,31 @@
 //com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
-import com.company.assembleegameclient.ui.Scrollbar;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.promotions.view.BeginnersPackageButton;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import kabam.rotmg.game.view.CreditDisplay;
+    import flash.display.Shape;
+    import com.company.assembleegameclient.ui.Scrollbar;
+    import kabam.rotmg.packages.view.PackageButton;
+    import kabam.rotmg.ui.view.components.MenuOptionsBar;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.ui.view.ButtonFactory;
+    import kabam.rotmg.ui.view.components.ScreenBase;
+    import kabam.rotmg.news.view.NewsView;
+    import flash.events.Event;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.MouseEvent;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.geom.Rectangle;
+    import flash.display.DisplayObject;
 
-import flash.display.DisplayObject;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.game.view.CreditDisplay;
-import kabam.rotmg.news.view.NewsView;
-import kabam.rotmg.packages.view.PackageButton;
-import kabam.rotmg.promotions.view.BeginnersPackageButton;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.view.ButtonFactory;
-import kabam.rotmg.ui.view.components.MenuOptionsBar;
-import kabam.rotmg.ui.view.components.ScreenBase;
-
-import org.osflash.signals.Signal;
-
-public class CharacterSelectionAndNewsScreen extends Sprite {
+    public class CharacterSelectionAndNewsScreen extends Sprite {
 
         private static const NEWS_X:int = 475;
         private static const TAB_UNSELECTED:uint = 0xB3B3B3;

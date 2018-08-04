@@ -4,9 +4,9 @@
 //kabam.rotmg.game.commands.ParsePotionDataCommand
 
 package kabam.rotmg.game.commands{
-import kabam.rotmg.game.model.PotionInventoryModel;
+    import kabam.rotmg.game.model.PotionInventoryModel;
 
-public class ParsePotionDataCommand {
+    public class ParsePotionDataCommand {
 
         [Inject]
         public var data:XML;

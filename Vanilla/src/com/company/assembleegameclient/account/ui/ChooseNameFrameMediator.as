@@ -4,18 +4,16 @@
 //com.company.assembleegameclient.account.ui.ChooseNameFrameMediator
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.game.events.NameResultEvent;
-import com.company.assembleegameclient.parameters.Parameters;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.core.signals.TrackEventSignal;
+    import kabam.rotmg.ui.signals.NameChangedSignal;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import com.company.assembleegameclient.game.events.NameResultEvent;
+    import kabam.rotmg.core.service.TrackingData;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import kabam.rotmg.core.service.TrackingData;
-import kabam.rotmg.core.signals.TrackEventSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.ui.signals.NameChangedSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ChooseNameFrameMediator extends Mediator {
+    public class ChooseNameFrameMediator extends Mediator {
 
         [Inject]
         public var view:ChooseNameFrame;

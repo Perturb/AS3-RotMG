@@ -4,11 +4,11 @@
 //kabam.rotmg.util.graphics.ButtonLayoutHelper
 
 package kabam.rotmg.util.graphics{
-import flash.display.DisplayObject;
-import flash.errors.IllegalOperationError;
-import flash.geom.Rectangle;
+    import flash.errors.IllegalOperationError;
+    import flash.geom.Rectangle;
+    import flash.display.DisplayObject;
 
-public class ButtonLayoutHelper {
+    public class ButtonLayoutHelper {
 
 
         public function layout(_arg_1:int, ... _args):void{

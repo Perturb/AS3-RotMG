@@ -4,9 +4,9 @@
 //kabam.lib.console.signals.ConsoleUnwatchSignal
 
 package kabam.lib.console.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class ConsoleUnwatchSignal extends Signal {
+    public class ConsoleUnwatchSignal extends Signal {
 
         public function ConsoleUnwatchSignal(){
             super(String);

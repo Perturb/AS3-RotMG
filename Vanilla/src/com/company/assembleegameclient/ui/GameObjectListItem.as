@@ -4,23 +4,20 @@
 //com.company.assembleegameclient.ui.GameObjectListItem
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.TemplateBuilder;
+    import com.company.assembleegameclient.objects.GameObject;
+    import org.osflash.signals.Signal;
+    import flash.filters.DropShadowFilter;
+    import com.company.util.MoreColorUtil;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.TemplateBuilder;
-
-import org.osflash.signals.Signal;
-
-public class GameObjectListItem extends Sprite {
+    public class GameObjectListItem extends Sprite {
 
         public var portrait:Bitmap;
         private var text:TextFieldDisplayConcrete;

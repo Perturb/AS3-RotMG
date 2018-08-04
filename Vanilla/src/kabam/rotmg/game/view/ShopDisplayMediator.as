@@ -4,20 +4,18 @@
 //kabam.rotmg.game.view.ShopDisplayMediator
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.packages.services.PackageModel;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import kabam.rotmg.packages.model.PackageInfo;
+    import flash.events.MouseEvent;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.MouseEvent;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.packages.model.PackageInfo;
-import kabam.rotmg.packages.services.PackageModel;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ShopDisplayMediator extends Mediator {
+    public class ShopDisplayMediator extends Mediator {
 
         [Inject]
         public var view:ShopDisplay;

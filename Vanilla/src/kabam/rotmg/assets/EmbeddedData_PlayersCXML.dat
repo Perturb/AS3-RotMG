@@ -458,32 +458,35 @@
    </Object>
    <Object type="0x0311" id="Samurai">
       <Class>Player</Class>
-      <Description>Coming soon!</Description>
+      <Description>The samurai fights with a katana and uses his wakizashi sidearm to expose enemy weak points.</Description>
       <AnimatedTexture>
          <File>players</File>
          <Index>14</Index>
       </AnimatedTexture>
+      <HitSound>player/warrior_hit</HitSound>
+      <DeathSound>player/warrior_death</DeathSound>
       <Player/>
       <BloodProb>1.0</BloodProb>
       <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-      <Equipment>0xc44, -1, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-      <MaxHitPoints max="200">100</MaxHitPoints>
-      <MaxMagicPoints max="200">100</MaxMagicPoints>
-      <Attack max="40">10</Attack>
+      <Equipment>0xc44, 0x1aaa, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+      <MaxHitPoints max="720">150</MaxHitPoints>
+      <MaxMagicPoints max="252">100</MaxMagicPoints>
+      <Attack max="75">12</Attack>
       <Defense max="25">0</Defense>
-      <Speed max="40">10</Speed>
-      <Dexterity max="40">10</Dexterity>
+      <Speed max="50">10</Speed>
+      <Dexterity max="50">10</Dexterity>
       <HpRegen max="40">10</HpRegen>
-      <MpRegen max="40">10</MpRegen>
-      <LevelIncrease min="0" max="0">MaxHitPoints</LevelIncrease>
-      <LevelIncrease min="0" max="0">MaxMagicPoints</LevelIncrease>
-      <LevelIncrease min="0" max="0">Attack</LevelIncrease>
+      <MpRegen max="60">12</MpRegen>
+      <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+      <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+      <LevelIncrease min="1" max="2">Attack</LevelIncrease>
       <LevelIncrease min="0" max="0">Defense</LevelIncrease>
-      <LevelIncrease min="0" max="0">Speed</LevelIncrease>
-      <LevelIncrease min="0" max="0">Dexterity</LevelIncrease>
-      <LevelIncrease min="0" max="0">HpRegen</LevelIncrease>
-      <LevelIncrease min="0" max="0">MpRegen</LevelIncrease>
-      <UnlockLevel level="25" type="0x030e">Wizard</UnlockLevel>
+      <LevelIncrease min="0" max="2">Speed</LevelIncrease>
+      <LevelIncrease min="0" max="2">Dexterity</LevelIncrease>
+      <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+      <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+      <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
+      <UnlockLevel level="20" type="0x0326">Ninja</UnlockLevel>
       <UnlockCost>999999</UnlockCost>
    </Object>
 </Objects>

@@ -4,9 +4,9 @@
 //com.company.assembleegameclient.util.DisplayHierarchy
 
 package com.company.assembleegameclient.util{
-import flash.display.DisplayObject;
+    import flash.display.DisplayObject;
 
-public class DisplayHierarchy {
+    public class DisplayHierarchy {
 
 
         public static function getParentWithType(_arg_1:DisplayObject, _arg_2:Class):DisplayObject{

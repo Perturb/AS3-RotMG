@@ -4,18 +4,16 @@
 //kabam.rotmg.arena.view.ImminentWaveCountdownClockMediator
 
 package kabam.rotmg.arena.view{
-import flash.events.TimerEvent;
-import flash.utils.Timer;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.core.view.Layers;
+    import kabam.rotmg.arena.model.CurrentArenaRunModel;
+    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+    import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
+    import kabam.rotmg.game.signals.GameClosedSignal;
+    import flash.utils.Timer;
+    import flash.events.TimerEvent;
 
-import kabam.rotmg.arena.model.CurrentArenaRunModel;
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.game.signals.GameClosedSignal;
-import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ImminentWaveCountdownClockMediator extends Mediator {
+    public class ImminentWaveCountdownClockMediator extends Mediator {
 
         [Inject]
         public var view:ImminentWaveCountdownClock;

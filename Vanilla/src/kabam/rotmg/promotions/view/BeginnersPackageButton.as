@@ -4,20 +4,18 @@
 //kabam.rotmg.promotions.view.BeginnersPackageButton
 
 package kabam.rotmg.promotions.view{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
+    import kabam.rotmg.packages.view.BasePackageButton;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.DisplayObject;
+    import flash.display.Sprite;
+    import kabam.rotmg.ui.UIUtils;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import flash.events.MouseEvent;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import kabam.rotmg.packages.view.BasePackageButton;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.UIUtils;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class BeginnersPackageButton extends BasePackageButton {
+    public class BeginnersPackageButton extends BasePackageButton {
 
         private static const FONT_SIZE:int = 16;
         public static const NOTIFICATION_BACKGROUND_WIDTH:Number = 50;

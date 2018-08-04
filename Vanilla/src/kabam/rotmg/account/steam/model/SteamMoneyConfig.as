@@ -4,14 +4,13 @@
 //kabam.rotmg.account.steam.model.SteamMoneyConfig
 
 package kabam.rotmg.account.steam.model{
-import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class SteamMoneyConfig implements MoneyConfig {
+    public class SteamMoneyConfig implements MoneyConfig {
 
 
         public function showPaymentMethods():Boolean{

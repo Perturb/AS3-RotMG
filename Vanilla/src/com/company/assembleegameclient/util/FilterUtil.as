@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.util.FilterUtil
 
 package com.company.assembleegameclient.util{
-import com.company.util.MoreColorUtil;
+    import flash.filters.DropShadowFilter;
+    import flash.filters.GlowFilter;
+    import flash.filters.ColorMatrixFilter;
+    import com.company.util.MoreColorUtil;
 
-import flash.filters.ColorMatrixFilter;
-import flash.filters.DropShadowFilter;
-import flash.filters.GlowFilter;
-
-public class FilterUtil {
+    public class FilterUtil {
 
         private static const STANDARD_DROP_SHADOW_FILTER:Array = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
         private static const STANDARD_OUTLINE_FILTER:Array = [new GlowFilter(0, 1, 2, 2, 10, 1)];

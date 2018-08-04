@@ -4,11 +4,10 @@
 //kabam.rotmg.characters.model.LegacyCharacterModel
 
 package kabam.rotmg.characters.model{
-import com.company.assembleegameclient.appengine.SavedCharacter;
+    import kabam.rotmg.core.model.PlayerModel;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
 
-import kabam.rotmg.core.model.PlayerModel;
-
-public class LegacyCharacterModel implements CharacterModel {
+    public class LegacyCharacterModel implements CharacterModel {
 
         [Inject]
         public var wrapped:PlayerModel;

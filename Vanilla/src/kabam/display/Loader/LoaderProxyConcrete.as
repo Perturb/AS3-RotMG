@@ -4,15 +4,14 @@
 //kabam.display.Loader.LoaderProxyConcrete
 
 package kabam.display.Loader{
-import flash.display.DisplayObject;
-import flash.display.Loader;
-import flash.net.URLRequest;
-import flash.system.LoaderContext;
+    import flash.display.Loader;
+    import kabam.display.LoaderInfo.LoaderInfoProxy;
+    import flash.display.DisplayObject;
+    import kabam.display.LoaderInfo.LoaderInfoProxyConcrete;
+    import flash.net.URLRequest;
+    import flash.system.LoaderContext;
 
-import kabam.display.LoaderInfo.LoaderInfoProxy;
-import kabam.display.LoaderInfo.LoaderInfoProxyConcrete;
-
-public class LoaderProxyConcrete extends LoaderProxy {
+    public class LoaderProxyConcrete extends LoaderProxy {
 
         private var loader:Loader = (addChild(new Loader()) as Loader);
         private var _contentLoaderInfo:LoaderInfoProxy;

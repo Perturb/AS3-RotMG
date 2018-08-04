@@ -4,19 +4,17 @@
 //com.company.assembleegameclient.ui.panels.GuildBoardPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.board.GuildBoardWindow;
-import com.company.assembleegameclient.util.GuildUtil;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.GameSprite;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.board.GuildBoardWindow;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.text.model.TextKey;
-
-public class GuildBoardPanel extends ButtonPanel {
+    public class GuildBoardPanel extends ButtonPanel {
 
         public function GuildBoardPanel(_arg_1:GameSprite){
             super(_arg_1, TextKey.GUILD_BOARD_TITLE, TextKey.PANEL_VIEW_BUTTON);

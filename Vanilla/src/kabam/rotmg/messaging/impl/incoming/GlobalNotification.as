@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.GlobalNotification
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class GlobalNotification extends IncomingMessage {
+    public class GlobalNotification extends IncomingMessage {
 
         public var type:int;
         public var text:String;

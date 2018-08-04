@@ -4,13 +4,13 @@
 //com.company.assembleegameclient.objects.particles.ParticleEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.display.IGraphicsData;
-
-public class ParticleEffect extends GameObject {
+    public class ParticleEffect extends GameObject {
 
         public var reducedDrawEnabled:Boolean;
 

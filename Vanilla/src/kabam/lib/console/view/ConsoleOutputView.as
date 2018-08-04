@@ -4,20 +4,18 @@
 //kabam.lib.console.view.ConsoleOutputView
 
 package kabam.lib.console.view{
-import com.junkbyte.console.Console;
-import com.junkbyte.console.ConsoleConfig;
+    import flash.display.Sprite;
+    import kabam.lib.resizing.view.Resizable;
+    import com.junkbyte.console.Console;
+    import flash.text.TextField;
+    import flash.display.BlendMode;
+    import flash.text.TextFormat;
+    import flash.text.TextFieldAutoSize;
+    import com.junkbyte.console.ConsoleConfig;
+    import kabam.lib.console.model.Watch;
+    import flash.geom.Rectangle;
 
-import flash.display.BlendMode;
-import flash.display.Sprite;
-import flash.geom.Rectangle;
-import flash.text.TextField;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
-
-import kabam.lib.console.model.Watch;
-import kabam.lib.resizing.view.Resizable;
-
-public final class ConsoleOutputView extends Sprite implements Resizable {
+    public final class ConsoleOutputView extends Sprite implements Resizable {
 
         private static const DEFAULT_OUTPUT:String = "kabam.lib/console";
 

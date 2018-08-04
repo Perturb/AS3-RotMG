@@ -4,25 +4,22 @@
 //kabam.rotmg.fortune.components.ItemWithTooltip
 
 package kabam.rotmg.fortune.components{
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import org.osflash.signals.Signal;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-import org.osflash.signals.Signal;
-
-public class ItemWithTooltip extends Sprite implements TooltipAble {
+    public class ItemWithTooltip extends Sprite implements TooltipAble {
 
         private var itemId:int;
         public var hoverTooltipDelegate:HoverTooltipDelegate = new HoverTooltipDelegate();

@@ -4,10 +4,10 @@
 //kabam.rotmg.chat.control.AddChatSignal
 
 package kabam.rotmg.chat.control{
-import kabam.lib.signals.DeferredQueueSignal;
-import kabam.rotmg.chat.model.ChatMessage;
+    import kabam.lib.signals.DeferredQueueSignal;
+    import kabam.rotmg.chat.model.ChatMessage;
 
-public class AddChatSignal extends DeferredQueueSignal {
+    public class AddChatSignal extends DeferredQueueSignal {
 
         public function AddChatSignal(){
             super(ChatMessage);

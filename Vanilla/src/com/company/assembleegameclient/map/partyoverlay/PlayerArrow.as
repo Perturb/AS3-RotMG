@@ -4,15 +4,15 @@
 //com.company.assembleegameclient.map.partyoverlay.PlayerArrow
 
 package com.company.assembleegameclient.map.partyoverlay{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.menu.Menu;
-import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
-import com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip;
+    import com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
+    import com.company.assembleegameclient.ui.menu.Menu;
+    import com.company.assembleegameclient.objects.GameObject;
+    import __AS3__.vec.Vector;
 
-import flash.events.MouseEvent;
-
-public class PlayerArrow extends GameObjectArrow {
+    public class PlayerArrow extends GameObjectArrow {
 
         public function PlayerArrow(){
             super(0xFFFFFF, 4179794, false);

@@ -4,19 +4,16 @@
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.UIItemContainer
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.text.TextFormat;
+    import kabam.rotmg.text.model.FontModel;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFormat;
-
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-import kabam.rotmg.text.model.FontModel;
-
-public class UIItemContainer extends UIGridElement {
+    public class UIItemContainer extends UIGridElement {
 
         private var _itemId:int;
         private var size:int;

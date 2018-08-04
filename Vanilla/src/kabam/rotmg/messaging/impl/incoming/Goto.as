@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.incoming.Goto
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import flash.utils.IDataInput;
 
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class Goto extends IncomingMessage {
+    public class Goto extends IncomingMessage {
 
         public var objectId_:int;
         public var pos_:WorldPosData = new WorldPosData();

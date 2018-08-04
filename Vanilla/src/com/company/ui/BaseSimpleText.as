@@ -4,14 +4,14 @@
 //com.company.ui.BaseSimpleText
 
 package com.company.ui{
-import flash.events.Event;
-import flash.text.Font;
-import flash.text.TextField;
-import flash.text.TextFieldType;
-import flash.text.TextFormat;
-import flash.text.TextLineMetrics;
+    import flash.text.TextField;
+    import flash.text.Font;
+    import flash.text.TextFormat;
+    import flash.text.TextFieldType;
+    import flash.events.Event;
+    import flash.text.TextLineMetrics;
 
-public class BaseSimpleText extends TextField {
+    public class BaseSimpleText extends TextField {
 
         public static const MyriadPro:Class = BaseSimpleText_MyriadPro;
 

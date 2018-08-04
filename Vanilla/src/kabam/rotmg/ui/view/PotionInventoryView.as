@@ -4,11 +4,10 @@
 //kabam.rotmg.ui.view.PotionInventoryView
 
 package kabam.rotmg.ui.view{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.ui.view.components.PotionSlotView;
 
-import kabam.rotmg.ui.view.components.PotionSlotView;
-
-public class PotionInventoryView extends Sprite {
+    public class PotionInventoryView extends Sprite {
 
         private static const LEFT_BUTTON_CUTS:Array = [1, 0, 0, 1];
         private static const RIGHT_BUTTON_CUTS:Array = [0, 1, 1, 0];

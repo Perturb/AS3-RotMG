@@ -152,6 +152,10 @@ package kabam.rotmg.assets{
         public static var oryxHordeChars16x16Embed_:Class = EmbeddedAssets_oryxHordeChars16x16Embed_;
         public static var oryxHordeObjects8x8Embed_:Class = EmbeddedAssets_oryxHordeObjects8x8Embed_;
         public static var oryxHordeObjects16x16Embed_:Class = EmbeddedAssets_oryxHordeObjects16x16Embed_;
+        public static var battleOryxChars8x8Embed_:Class = EmbeddedAssets_battleOryxChars8x8Embed_;
+        public static var battleOryxChars16x16Embed_:Class = EmbeddedAssets_battleOryxChars16x16Embed_;
+        public static var battleOryxObjects8x8Embed_:Class = EmbeddedAssets_battleOryxObjects8x8Embed_;
+        public static var battleOryxObjects16x16Embed_:Class = EmbeddedAssets_battleOryxObjects16x16Embed_;
         public static var santaWorkshopChars8x8Embed_:Class = EmbeddedAssets_santaWorkshopChars8x8Embed_;
         public static var santaWorkshopChars16x16Embed_:Class = EmbeddedAssets_santaWorkshopChars16x16Embed_;
         public static var santaWorkshopObjects8x8Embed_:Class = EmbeddedAssets_santaWorkshopObjects8x8Embed_;
@@ -180,6 +184,10 @@ package kabam.rotmg.assets{
         public static var magicWoodsChars16x16Embed_:Class = EmbeddedAssets_magicWoodsChars16x16Embed_;
         public static var magicWoodsObjects8x8Embed_:Class = EmbeddedAssets_magicWoodsObjects8x8Embed_;
         public static var magicWoodsObjects16x16Embed_:Class = EmbeddedAssets_magicWoodsObjects16x16Embed_;
+        public static var secludedThicketChars8x8Embed_:Class = EmbeddedAssets_secludedThicketChars8x8Embed_;
+        public static var secludedThicketChars16x16Embed_:Class = EmbeddedAssets_secludedThicketChars16x16Embed_;
+        public static var secludedThicketObjects8x8Embed_:Class = EmbeddedAssets_secludedThicketObjects8x8Embed_;
+        public static var secludedThicketObjects16x16Embed_:Class = EmbeddedAssets_secludedThicketObjects16x16Embed_;
         public static var cnidarianReefObjects8x8Embed_:Class = EmbeddedAssets_cnidarianReefObjects8x8Embed_;
         public static var cnidarianReefObjects16x16Embed_:Class = EmbeddedAssets_cnidarianReefObjects16x16Embed_;
         public static var models_:Object = {

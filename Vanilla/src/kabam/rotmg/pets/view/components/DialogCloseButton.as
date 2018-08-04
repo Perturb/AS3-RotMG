@@ -4,13 +4,12 @@
 //kabam.rotmg.pets.view.components.DialogCloseButton
 
 package kabam.rotmg.pets.view.components{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import flash.display.DisplayObject;
+    import flash.events.MouseEvent;
 
-import org.osflash.signals.Signal;
-
-public class DialogCloseButton extends Sprite {
+    public class DialogCloseButton extends Sprite {
 
         public static var CloseButtonAsset:Class = DialogCloseButton_CloseButtonAsset;
         public static var CloseButtonLargeAsset:Class = DialogCloseButton_CloseButtonLargeAsset;

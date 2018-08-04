@@ -4,9 +4,11 @@
 //io.decagames.rotmg.dailyQuests.messages.data.QuestData
 
 package io.decagames.rotmg.dailyQuests.messages.data{
-import flash.utils.IDataInput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-public class QuestData {
+    public class QuestData {
 
         public var id:String;
         public var name:String;
@@ -15,6 +17,7 @@ public class QuestData {
         public var rewards:Vector.<int> = new Vector.<int>();
         public var completed:Boolean;
         public var itemOfChoice:Boolean;
+        public var repeatable:Boolean;
         public var category:int;
 
 
@@ -39,6 +42,7 @@ public class QuestData {
             };
             this.completed = _arg_1.readBoolean();
             this.itemOfChoice = _arg_1.readBoolean();
+            this.repeatable = _arg_1.readBoolean();
         }
 
 

@@ -4,20 +4,18 @@
 //kabam.rotmg.fame.FameConfig
 
 package kabam.rotmg.fame{
-import kabam.rotmg.fame.control.ShowFameViewCommand;
-import kabam.rotmg.fame.control.ShowFameViewSignal;
-import kabam.rotmg.fame.model.FameModel;
-import kabam.rotmg.fame.service.RequestCharacterFameTask;
-import kabam.rotmg.fame.view.FameMediator;
-import kabam.rotmg.fame.view.FameView;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.fame.model.FameModel;
+    import kabam.rotmg.fame.service.RequestCharacterFameTask;
+    import kabam.rotmg.fame.control.ShowFameViewSignal;
+    import kabam.rotmg.fame.control.ShowFameViewCommand;
+    import kabam.rotmg.fame.view.FameView;
+    import kabam.rotmg.fame.view.FameMediator;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class FameConfig implements IConfig {
+    public class FameConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

@@ -4,13 +4,13 @@
 //kabam.rotmg.account.kongregate.commands.KongregateRelayApiLoginCommand
 
 package kabam.rotmg.account.kongregate.commands{
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.account.core.services.RelayLoginTask;
-import kabam.rotmg.ui.signals.RefreshScreenAfterLoginSignal;
+    import kabam.rotmg.account.core.services.RelayLoginTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.ui.signals.RefreshScreenAfterLoginSignal;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.DispatchSignalTask;
 
-public class KongregateRelayApiLoginCommand {
+    public class KongregateRelayApiLoginCommand {
 
         [Inject]
         public var relay:RelayLoginTask;

@@ -4,27 +4,24 @@
 //com.company.assembleegameclient.ui.panels.GuildRegisterPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.util.Currency;
-import com.company.assembleegameclient.util.GuildUtil;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.util.Currency;
+    import com.company.assembleegameclient.game.GameSprite;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-import kabam.rotmg.util.components.LegacyBuyButton;
-
-import org.osflash.signals.Signal;
-
-public class GuildRegisterPanel extends Panel {
+    public class GuildRegisterPanel extends Panel {
 
         public const openCreateGuildFrame:Signal = new Signal();
         public const waiter:SignalWaiter = new SignalWaiter();

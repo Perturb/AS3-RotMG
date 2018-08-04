@@ -4,11 +4,11 @@
 //kabam.rotmg.ui.commands.ShowTitleUICommand
 
 package kabam.rotmg.ui.commands{
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.ui.view.TitleView;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.ui.view.TitleView;
 
-public class ShowTitleUICommand {
+    public class ShowTitleUICommand {
 
         [Inject]
         public var setScreen:SetScreenSignal;

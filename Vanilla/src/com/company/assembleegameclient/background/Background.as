@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.background.Background
 
 package com.company.assembleegameclient.background{
-import com.company.assembleegameclient.map.Camera;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.display.Sprite;
-
-public class Background extends Sprite {
+    public class Background extends Sprite {
 
         public static const NO_BACKGROUND:int = 0;
         public static const STAR_BACKGROUND:int = 1;

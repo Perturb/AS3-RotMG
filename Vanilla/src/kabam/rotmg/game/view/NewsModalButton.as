@@ -4,27 +4,25 @@
 //kabam.rotmg.game.view.NewsModalButton
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.ui.UIUtils;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.geom.Rectangle;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.news.view.NewsModal;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import kabam.rotmg.news.model.NewsModel;
+    import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.news.model.NewsModel;
-import kabam.rotmg.news.view.NewsModal;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.UIUtils;
-
-public class NewsModalButton extends Sprite {
+    public class NewsModalButton extends Sprite {
 
         public static const IMAGE_NAME:String = "lofiObj2";
         public static const IMAGE_ID:int = 345;

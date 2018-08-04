@@ -4,25 +4,22 @@
 //com.company.assembleegameclient.screens.NewCharacterScreen
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.appengine.SavedCharactersList;
-import com.company.assembleegameclient.constants.ScreenTypes;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.game.view.CreditDisplay;
+    import kabam.rotmg.ui.view.components.ScreenBase;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import com.company.assembleegameclient.constants.ScreenTypes;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.appengine.SavedCharactersList;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.core.model.PlayerModel;
+    import flash.events.Event;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.game.view.CreditDisplay;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.ui.view.components.ScreenBase;
-
-import org.osflash.signals.Signal;
-
-public class NewCharacterScreen extends Sprite {
+    public class NewCharacterScreen extends Sprite {
 
         public var tooltip:Signal;
         public var close:Signal;

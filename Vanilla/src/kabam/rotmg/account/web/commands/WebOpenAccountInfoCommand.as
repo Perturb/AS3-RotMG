@@ -4,12 +4,12 @@
 //kabam.rotmg.account.web.commands.WebOpenAccountInfoCommand
 
 package kabam.rotmg.account.web.commands{
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-import kabam.rotmg.account.web.view.WebRegisterDialog;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+    import kabam.rotmg.account.web.view.WebRegisterDialog;
 
-public class WebOpenAccountInfoCommand {
+    public class WebOpenAccountInfoCommand {
 
         [Inject]
         public var account:Account;

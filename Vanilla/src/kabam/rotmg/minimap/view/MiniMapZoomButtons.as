@@ -4,17 +4,15 @@
 //kabam.rotmg.minimap.view.MiniMapZoomButtons
 
 package kabam.rotmg.minimap.view{
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import flash.geom.ColorTransform;
+    import org.osflash.signals.Signal;
+    import flash.display.Bitmap;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import flash.events.MouseEvent;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.geom.ColorTransform;
-
-import org.osflash.signals.Signal;
-
-public class MiniMapZoomButtons extends Sprite {
+    public class MiniMapZoomButtons extends Sprite {
 
         private const FADE:ColorTransform = new ColorTransform(0.5, 0.5, 0.5);
         private const NORM:ColorTransform = new ColorTransform(1, 1, 1);

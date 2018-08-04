@@ -4,15 +4,14 @@
 //com.company.assembleegameclient.objects.particles.ParticleField
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.thrown.BitmapParticle;
+    import com.company.assembleegameclient.objects.thrown.BitmapParticle;
+    import flash.display.Sprite;
+    import flash.utils.Timer;
+    import flash.display.BitmapData;
+    import flash.events.TimerEvent;
+    import flash.geom.Point;
 
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.TimerEvent;
-import flash.geom.Point;
-import flash.utils.Timer;
-
-public class ParticleField extends BitmapParticle {
+    public class ParticleField extends BitmapParticle {
 
         private const SMALL:String = "SMALL";
         private const LARGE:String = "LARGE";
@@ -127,7 +126,6 @@ public class ParticleField extends BitmapParticle {
 
 import flash.display.Shape;
 import flash.geom.Point;
-
 import org.osflash.signals.Signal;
 
 class Square extends Shape {

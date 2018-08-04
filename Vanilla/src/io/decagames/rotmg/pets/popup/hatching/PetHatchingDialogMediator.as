@@ -4,15 +4,14 @@
 //io.decagames.rotmg.pets.popup.hatching.PetHatchingDialogMediator
 
 package io.decagames.rotmg.pets.popup.hatching{
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.texture.TextureParser;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetHatchingDialogMediator extends Mediator {
+    public class PetHatchingDialogMediator extends Mediator {
 
         [Inject]
         public var view:PetHatchingDialog;

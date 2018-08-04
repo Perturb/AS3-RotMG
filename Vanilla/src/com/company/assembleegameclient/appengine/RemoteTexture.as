@@ -4,21 +4,17 @@
 //com.company.assembleegameclient.appengine.RemoteTexture
 
 package com.company.assembleegameclient.appengine{
-import flash.display.BitmapData;
-import flash.net.URLLoaderDataFormat;
-import flash.utils.ByteArray;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
+    import kabam.rotmg.appengine.api.RetryLoader;
+    import flash.net.URLLoaderDataFormat;
+    import ion.utils.png.PNGDecoder;
+    import flash.display.BitmapData;
+    import flash.utils.ByteArray;
 
-import ion.utils.png.PNGDecoder;
-
-import kabam.rotmg.appengine.api.RetryLoader;
-import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
-import kabam.rotmg.core.StaticInjectorContext;
-
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class RemoteTexture {
+    public class RemoteTexture {
 
         private static const URL_PATTERN:String = "https://{DOMAIN}/picture/get";
         private static const ERROR_PATTERN:String = "Remote Texture Error: {ERROR} (id:{ID}, instance:{INSTANCE})";

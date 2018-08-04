@@ -4,32 +4,28 @@
 //com.company.assembleegameclient.ui.panels.mediators.ArenaPortalPanelMediator
 
 package com.company.assembleegameclient.ui.panels.mediators{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.assembleegameclient.ui.panels.ArenaPortalPanel;
-import com.company.assembleegameclient.util.Currency;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.ui.panels.ArenaPortalPanel;
+    import kabam.lib.net.impl.SocketServer;
+    import kabam.lib.net.api.MessageProvider;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.game.model.GameModel;
+    import kabam.rotmg.arena.model.CurrentArenaRunModel;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.game.signals.ExitGameSignal;
+    import kabam.rotmg.account.core.Account;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import com.company.assembleegameclient.util.Currency;
+    import kabam.rotmg.arena.service.GetBestArenaRunTask;
+    import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
+    import kabam.rotmg.messaging.impl.GameServerConnection;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+    import flash.events.Event;
 
-import flash.events.Event;
-
-import kabam.lib.net.api.MessageProvider;
-import kabam.lib.net.impl.SocketServer;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.RegisterPromptDialog;
-import kabam.rotmg.arena.model.CurrentArenaRunModel;
-import kabam.rotmg.arena.service.GetBestArenaRunTask;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.game.signals.ExitGameSignal;
-import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ArenaPortalPanelMediator extends Mediator {
+    public class ArenaPortalPanelMediator extends Mediator {
 
         public static const TEXT:String = "SellableObjectPanelMediator.text";
 

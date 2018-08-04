@@ -4,13 +4,13 @@
 //io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap
 
 package io.decagames.rotmg.ui.sliceScaling{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.geom.Matrix;
-import flash.geom.Point;
-import flash.geom.Rectangle;
+    import flash.display.Bitmap;
+    import flash.geom.Rectangle;
+    import flash.display.BitmapData;
+    import flash.geom.Point;
+    import flash.geom.Matrix;
 
-public class SliceScalingBitmap extends Bitmap {
+    public class SliceScalingBitmap extends Bitmap {
 
         public static var SCALE_TYPE_NONE:String = "none";
         public static var SCALE_TYPE_3:String = "3grid";

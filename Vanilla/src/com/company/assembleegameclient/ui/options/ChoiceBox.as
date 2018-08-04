@@ -4,26 +4,26 @@
 //com.company.assembleegameclient.ui.options.ChoiceBox
 
 package com.company.assembleegameclient.ui.options{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import flash.display.Graphics;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.Graphics;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class ChoiceBox extends Sprite {
+    public class ChoiceBox extends Sprite {
 
         public static const WIDTH:int = 80;
         public static const HEIGHT:int = 32;

@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.ui.EquipmentToolTipFactory
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.objects.Player;
+    import flash.display.Sprite;
 
-import flash.display.Sprite;
-
-public class EquipmentToolTipFactory {
+    public class EquipmentToolTipFactory {
 
 
         public function make(_arg_1:int, _arg_2:Player, _arg_3:int, _arg_4:String, _arg_5:uint):Sprite{

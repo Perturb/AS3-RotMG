@@ -4,14 +4,14 @@
 //com.company.assembleegameclient.objects.particles.ShockParticle
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.thrown.BitmapParticle;
-import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.objects.thrown.BitmapParticle;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import flash.geom.Point;
 
-import flash.display.BitmapData;
-import flash.geom.Point;
-
-public class ShockParticle extends BitmapParticle {
+    public class ShockParticle extends BitmapParticle {
 
         private var numFramesRemaining:int;
         private var dx_:Number;

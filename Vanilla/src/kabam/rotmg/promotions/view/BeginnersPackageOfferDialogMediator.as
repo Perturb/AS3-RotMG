@@ -4,17 +4,16 @@
 //kabam.rotmg.promotions.view.BeginnersPackageOfferDialogMediator
 
 package kabam.rotmg.promotions.view{
-import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.signals.SetWorldInteractionSignal;
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
-import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
+    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+    import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class BeginnersPackageOfferDialogMediator extends Mediator {
+    public class BeginnersPackageOfferDialogMediator extends Mediator {
 
         [Inject]
         public var view:BeginnersPackageOfferDialog;

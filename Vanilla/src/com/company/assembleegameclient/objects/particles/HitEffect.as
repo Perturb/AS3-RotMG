@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.objects.particles.HitEffect
 
 package com.company.assembleegameclient.objects.particles{
-public class HitEffect extends ParticleEffect {
+    import __AS3__.vec.Vector;
+
+    public class HitEffect extends ParticleEffect {
 
         public var colors_:Vector.<uint>;
         public var numParts_:int;
@@ -65,7 +67,6 @@ public class HitEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-
 import flash.geom.Vector3D;
 
 class HitParticle extends Particle {

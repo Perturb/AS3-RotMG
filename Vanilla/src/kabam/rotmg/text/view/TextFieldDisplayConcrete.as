@@ -4,18 +4,16 @@
 //kabam.rotmg.text.view.TextFieldDisplayConcrete
 
 package kabam.rotmg.text.view{
-import flash.display.Sprite;
-import flash.text.TextField;
-import flash.text.TextFormat;
-import flash.text.TextLineMetrics;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import flash.text.TextField;
+    import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.model.FontInfo;
+    import flash.text.TextLineMetrics;
+    import flash.text.TextFormat;
 
-import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.text.model.FontInfo;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class TextFieldDisplayConcrete extends Sprite implements TextFieldDisplay {
+    public class TextFieldDisplayConcrete extends Sprite implements TextFieldDisplay {
 
         public static const MIDDLE:String = "middle";
         public static const BOTTOM:String = "bottom";

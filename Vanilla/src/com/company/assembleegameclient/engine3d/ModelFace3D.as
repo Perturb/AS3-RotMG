@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.engine3d.ModelFace3D
 
 package com.company.assembleegameclient.engine3d{
-public class ModelFace3D {
+    import __AS3__.vec.Vector;
+
+    public class ModelFace3D {
 
         public var model_:Model3D;
         public var indicies_:Vector.<int>;

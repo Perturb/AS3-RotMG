@@ -4,14 +4,12 @@
 //kabam.rotmg.ui.view.ChooseNameRegisterDialog
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.model.TextKey;
+    import org.osflash.signals.natives.NativeMappedSignal;
 
-import kabam.rotmg.text.model.TextKey;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class ChooseNameRegisterDialog extends Dialog {
+    public class ChooseNameRegisterDialog extends Dialog {
 
         private static const TRACKING_TAG:String = "/chooseNameNeedRegister";
 

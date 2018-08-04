@@ -4,31 +4,26 @@
 //io.decagames.rotmg.pets.panels.PetPanelMediator
 
 package io.decagames.rotmg.pets.panels{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.assembleegameclient.util.StageProxy;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.signals.ShowPetTooltip;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import io.decagames.rotmg.pets.signals.DeactivatePet;
+    import io.decagames.rotmg.pets.signals.ActivatePet;
+    import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import org.swiftsuspenders.Injector;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import com.company.assembleegameclient.util.StageProxy;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialog;
+    import io.decagames.rotmg.pets.utils.PetsConstants;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialog;
-import io.decagames.rotmg.pets.signals.ActivatePet;
-import io.decagames.rotmg.pets.signals.DeactivatePet;
-import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
-import io.decagames.rotmg.pets.signals.ShowPetTooltip;
-import io.decagames.rotmg.pets.utils.PetsConstants;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetPanelMediator extends Mediator {
+    public class PetPanelMediator extends Mediator {
 
         [Inject]
         public var view:PetPanel;

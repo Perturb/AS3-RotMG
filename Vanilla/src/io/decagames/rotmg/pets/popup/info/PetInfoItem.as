@@ -4,16 +4,15 @@
 //io.decagames.rotmg.pets.popup.info.PetInfoItem
 
 package io.decagames.rotmg.pets.popup.info{
-import flash.display.Sprite;
-import flash.events.Event;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Sprite;
+    import flash.events.Event;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class PetInfoItem extends UIGridElement {
+    public class PetInfoItem extends UIGridElement {
 
         private var listBackground:SliceScalingBitmap;
         private var infoTitle:UILabel;

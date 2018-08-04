@@ -4,11 +4,10 @@
 //kabam.rotmg.constants.ItemConstants
 
 package kabam.rotmg.constants{
-import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
 
-import flash.display.BitmapData;
-
-public class ItemConstants {
+    public class ItemConstants {
 
         public static const NO_ITEM:int = -1;
         public static const ALL_TYPE:int = 0;
@@ -99,7 +98,7 @@ public class ItemConstants {
                 case EGG_TYPE:
                     return ("EquipmentType.Any");
                 case NEW_ABIL_TYPE:
-                    return ("EquipmentType.NewAbil");
+                    return ("Wakizashi");
             };
             return ("EquipmentType.InvalidType");
         }
@@ -183,7 +182,7 @@ public class ItemConstants {
                     _local_2 = AssetLibrary.getImageFromSet("lofiObj3", 555);
                     break;
                 case NEW_ABIL_TYPE:
-                    _local_2 = AssetLibrary.getImageFromSet("lofiObj2", 122);
+                    _local_2 = AssetLibrary.getImageFromSet("lofiObj6", 224);
                     break;
             };
             return (_local_2);

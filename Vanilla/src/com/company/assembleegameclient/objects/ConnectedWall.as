@@ -4,16 +4,16 @@
 //com.company.assembleegameclient.objects.ConnectedWall
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.engine3d.ObjectFace3D;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.AssetLibrary;
+    import flash.geom.Vector3D;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.engine3d.ObjectFace3D;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.geom.Vector3D;
-
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-
-public class ConnectedWall extends ConnectedObject {
+    public class ConnectedWall extends ConnectedObject {
 
         protected var objectXML_:XML;
         protected var bI_:Number = 0.5;

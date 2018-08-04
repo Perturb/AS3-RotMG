@@ -4,11 +4,10 @@
 //com.greensock.plugins.BlurFilterPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.filters.BlurFilter;
+    import com.greensock.TweenLite;
 
-import flash.filters.BlurFilter;
-
-public class BlurFilterPlugin extends FilterPlugin {
+    public class BlurFilterPlugin extends FilterPlugin {
 
         public static const API:Number = 2;
         private static var _propNames:Array = ["blurX", "blurY", "quality"];

@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.promotions.view
+package kabam.rotmg.promotions.view
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed.png")]
-	public class BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed extends BitmapAsset
+	[Embed(source="BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed.png")]
+	public class BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed extends mx.core.BitmapAsset
 	{
 		public function BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed()
 		{

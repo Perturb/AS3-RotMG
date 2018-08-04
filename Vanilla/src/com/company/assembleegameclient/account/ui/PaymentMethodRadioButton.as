@@ -4,19 +4,16 @@
 //com.company.assembleegameclient.account.ui.PaymentMethodRadioButton
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.account.ui.components.Selectable;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.account.ui.components.Selectable;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.util.components.RadioButton;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.util.components.RadioButton;
-
-import org.osflash.signals.Signal;
-
-public class PaymentMethodRadioButton extends Sprite implements Selectable {
+    public class PaymentMethodRadioButton extends Sprite implements Selectable {
 
         public static const HEIGHT:int = 28;
 

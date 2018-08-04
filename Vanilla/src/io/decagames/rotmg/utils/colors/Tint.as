@@ -4,10 +4,10 @@
 //io.decagames.rotmg.utils.colors.Tint
 
 package io.decagames.rotmg.utils.colors{
-import flash.display.DisplayObject;
-import flash.geom.ColorTransform;
+    import flash.geom.ColorTransform;
+    import flash.display.DisplayObject;
 
-public class Tint {
+    public class Tint {
 
 
         public static function add(_arg_1:DisplayObject, _arg_2:uint, _arg_3:Number):void{

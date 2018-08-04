@@ -4,14 +4,12 @@
 //kabam.rotmg.game.view.PortalPanelMediator
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.ui.panels.PortalPanel;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.ui.panels.PortalPanel;
+    import kabam.rotmg.game.signals.ExitGameSignal;
+    import kabam.rotmg.core.service.GoogleAnalytics;
 
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.game.signals.ExitGameSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PortalPanelMediator extends Mediator {
+    public class PortalPanelMediator extends Mediator {
 
         [Inject]
         public var view:PortalPanel;

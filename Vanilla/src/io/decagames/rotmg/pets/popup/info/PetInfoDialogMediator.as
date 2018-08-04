@@ -4,15 +4,14 @@
 //io.decagames.rotmg.pets.popup.info.PetInfoDialogMediator
 
 package io.decagames.rotmg.pets.popup.info{
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.texture.TextureParser;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetInfoDialogMediator extends Mediator {
+    public class PetInfoDialogMediator extends Mediator {
 
         [Inject]
         public var view:PetInfoDialog;

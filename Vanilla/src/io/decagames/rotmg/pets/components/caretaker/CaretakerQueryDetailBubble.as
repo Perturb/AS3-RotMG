@@ -4,18 +4,16 @@
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDetailBubble
 
 package io.decagames.rotmg.pets.components.caretaker{
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.text.TextFieldAutoSize;
+    import flashx.textLayout.formats.VerticalAlign;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.util.graphics.GraphicsHelper;
+    import kabam.rotmg.util.graphics.BevelRect;
 
-import flashx.textLayout.formats.VerticalAlign;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.util.graphics.BevelRect;
-import kabam.rotmg.util.graphics.GraphicsHelper;
-
-public class CaretakerQueryDetailBubble extends Sprite {
+    public class CaretakerQueryDetailBubble extends Sprite {
 
         private const WIDTH:int = 441;
         private const HEIGHT:int = 252;

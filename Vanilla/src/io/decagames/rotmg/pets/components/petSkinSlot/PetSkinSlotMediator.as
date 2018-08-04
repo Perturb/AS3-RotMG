@@ -4,15 +4,13 @@
 //io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlotMediator
 
 package io.decagames.rotmg.pets.components.petSkinSlot{
-import flash.events.MouseEvent;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+    import io.decagames.rotmg.pets.signals.SelectPetSkinSignal;
+    import flash.events.MouseEvent;
+    import io.decagames.rotmg.pets.data.vo.IPetVO;
 
-import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
-import io.decagames.rotmg.pets.data.vo.IPetVO;
-import io.decagames.rotmg.pets.signals.SelectPetSkinSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetSkinSlotMediator extends Mediator {
+    public class PetSkinSlotMediator extends Mediator {
 
         [Inject]
         public var view:PetSkinSlot;

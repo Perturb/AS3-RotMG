@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.ui.tooltip.PortraitToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.util.BitmapUtil;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
+    import com.company.util.BitmapUtil;
+    import com.company.assembleegameclient.objects.GameObject;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-
-public class PortraitToolTip extends ToolTip {
+    public class PortraitToolTip extends ToolTip {
 
         private var portrait_:Bitmap;
 

@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.account.ui.TextInputField;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
 
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-public class EditTilePropertiesFrame extends Frame {
+    public class EditTilePropertiesFrame extends Frame {
 
         public var objectName_:TextInputField;
 

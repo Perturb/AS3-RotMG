@@ -4,16 +4,14 @@
 //com.company.assembleegameclient.objects.PetUpgrader
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import io.decagames.rotmg.pets.panels.PetInteractionPanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-import io.decagames.rotmg.pets.panels.PetInteractionPanel;
-
-import kabam.rotmg.text.model.TextKey;
-
-public class PetUpgrader extends GameObject implements IInteractiveObject {
+    public class PetUpgrader extends GameObject implements IInteractiveObject {
 
         public function PetUpgrader(_arg_1:XML){
             super(_arg_1);

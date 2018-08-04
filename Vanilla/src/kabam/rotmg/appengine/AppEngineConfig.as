@@ -4,21 +4,19 @@
 //kabam.rotmg.appengine.AppEngineConfig
 
 package kabam.rotmg.appengine{
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.appengine.api.RetryLoader;
-import kabam.rotmg.appengine.impl.AppEngineRequestStats;
-import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
-import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
-import kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient;
-import kabam.rotmg.appengine.impl.TrackingAppEngineClient;
-import kabam.rotmg.application.api.ApplicationSetup;
+    import robotlegs.bender.framework.api.IConfig;
+    import robotlegs.bender.framework.api.IContext;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.appengine.api.RetryLoader;
+    import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
+    import kabam.rotmg.appengine.impl.AppEngineRequestStats;
+    import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient;
+    import kabam.rotmg.appengine.impl.TrackingAppEngineClient;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.framework.api.IConfig;
-import robotlegs.bender.framework.api.IContext;
-
-public class AppEngineConfig implements IConfig {
+    public class AppEngineConfig implements IConfig {
 
         private const TRACK_APP_ENGINE_CALLS:Boolean = true;
 

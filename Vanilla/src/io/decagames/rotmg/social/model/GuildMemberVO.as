@@ -4,9 +4,9 @@
 //io.decagames.rotmg.social.model.GuildMemberVO
 
 package io.decagames.rotmg.social.model{
-import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.Player;
 
-public class GuildMemberVO {
+    public class GuildMemberVO {
 
         private var _name:String;
         private var _rank:int;

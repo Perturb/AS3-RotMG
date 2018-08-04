@@ -4,27 +4,24 @@
 //kabam.rotmg.account.web.view.WebAccountInfoView
 
 package kabam.rotmg.account.web.view{
-import com.company.assembleegameclient.screens.TitleMenuOption;
+    import flash.display.Sprite;
+    import kabam.rotmg.account.core.view.AccountInfoView;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import flash.events.MouseEvent;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.build.api.BuildData;
+    import kabam.rotmg.build.api.BuildEnvironment;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.core.view.AccountInfoView;
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.build.api.BuildEnvironment;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class WebAccountInfoView extends Sprite implements AccountInfoView {
+    public class WebAccountInfoView extends Sprite implements AccountInfoView {
 
         private static const FONT_SIZE:int = 18;
 

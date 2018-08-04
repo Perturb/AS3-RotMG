@@ -4,10 +4,12 @@
 //com.company.assembleegameclient.util.BloodComposition
 
 package com.company.assembleegameclient.util{
-import flash.display.BitmapData;
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-public class BloodComposition {
+    public class BloodComposition {
 
         private static var idDict_:Dictionary = new Dictionary();
         private static var imageDict_:Dictionary = new Dictionary();

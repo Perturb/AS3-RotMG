@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.ui.dialogs.DebugDialog
 
 package com.company.assembleegameclient.ui.dialogs{
-import flash.events.Event;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import flash.events.Event;
 
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-
-public class DebugDialog extends StaticDialog {
+    public class DebugDialog extends StaticDialog {
 
         private var f:Function;
 

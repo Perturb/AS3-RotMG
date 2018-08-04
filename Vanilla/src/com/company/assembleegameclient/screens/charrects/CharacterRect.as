@@ -4,18 +4,16 @@
 //com.company.assembleegameclient.screens.charrects.CharacterRect
 
 package com.company.assembleegameclient.screens.charrects{
-import com.company.rotmg.graphics.StarGraphic;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import com.company.rotmg.graphics.StarGraphic;
+    import flash.geom.ColorTransform;
 
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class CharacterRect extends Sprite {
+    public class CharacterRect extends Sprite {
 
         public static const WIDTH:int = 419;
         public static const HEIGHT:int = 59;

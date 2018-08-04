@@ -4,32 +4,29 @@
 //kabam.rotmg.dailyLogin.view.ItemTileRenderer
 
 package kabam.rotmg.dailyLogin.view{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import flash.display.Sprite;
+    import flash.filters.ColorMatrixFilter;
+    import flash.geom.Matrix;
+    import kabam.rotmg.text.view.BitmapTextFactory;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import flash.display.Bitmap;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+    import kabam.rotmg.constants.ItemConstants;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.ColorMatrixFilter;
-import flash.geom.Matrix;
-
-import kabam.rotmg.constants.ItemConstants;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.BitmapTextFactory;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.swiftsuspenders.Injector;
-
-public class ItemTileRenderer extends Sprite {
+    public class ItemTileRenderer extends Sprite {
 
         protected static const DIM_FILTER:Array = [new ColorMatrixFilter([0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 1, 0])];
         private static const IDENTITY_MATRIX:Matrix = new Matrix();

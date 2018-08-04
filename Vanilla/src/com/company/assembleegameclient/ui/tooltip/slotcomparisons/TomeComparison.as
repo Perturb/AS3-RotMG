@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.TomeComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
-import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.text.model.TextKey;
 
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TomeComparison extends SlotComparison {
+    public class TomeComparison extends SlotComparison {
 
 
         override protected function compareSlots(itemXML:XML, curItemXML:XML):void{

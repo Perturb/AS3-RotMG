@@ -4,11 +4,12 @@
 //kabam.rotmg.dialogs.model.DialogsModel
 
 package kabam.rotmg.dialogs.model{
-import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.Vector;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import org.osflash.signals.Signal;
-
-public class DialogsModel {
+    public class DialogsModel {
 
         private var popupPriority:Array = [PopupNamesConfig.BEGINNERS_OFFER_POPUP, PopupNamesConfig.NEWS_POPUP, PopupNamesConfig.DAILY_LOGIN_POPUP, PopupNamesConfig.PACKAGES_OFFER_POPUP];
         private var queue:Vector.<PopupQueueEntry> = new Vector.<PopupQueueEntry>();

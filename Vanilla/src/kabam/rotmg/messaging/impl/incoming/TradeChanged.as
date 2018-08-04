@@ -4,9 +4,11 @@
 //kabam.rotmg.messaging.impl.incoming.TradeChanged
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-public class TradeChanged extends IncomingMessage {
+    public class TradeChanged extends IncomingMessage {
 
         public var offer_:Vector.<Boolean> = new Vector.<Boolean>();
 

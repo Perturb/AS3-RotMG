@@ -4,7 +4,9 @@
 //kabam.rotmg.language.model.LanguageModel
 
 package kabam.rotmg.language.model{
-public interface LanguageModel {
+    import __AS3__.vec.Vector;
+
+    public interface LanguageModel {
 
         function getLanguage():String;
         function setLanguage(_arg_1:String):void;

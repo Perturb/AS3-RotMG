@@ -4,20 +4,18 @@
 //com.company.assembleegameclient.map.mapoverlay.CharacterStatusText
 
 package com.company.assembleegameclient.map.mapoverlay{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.filters.GlowFilter;
+    import com.company.assembleegameclient.map.Camera;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
+    import flash.geom.Matrix;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.filters.GlowFilter;
-import flash.geom.Matrix;
-import flash.geom.Point;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class CharacterStatusText extends Sprite implements IMapOverlayElement {
+    public class CharacterStatusText extends Sprite implements IMapOverlayElement {
 
         public const MAX_DRIFT:int = 40;
 

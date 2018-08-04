@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.appengine.SavedNewsItem
 
 package com.company.assembleegameclient.appengine{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
 
-import flash.display.BitmapData;
-
-public class SavedNewsItem {
+    public class SavedNewsItem {
 
         private static const FAME:String = "fame";
 

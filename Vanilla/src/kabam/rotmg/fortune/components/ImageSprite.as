@@ -4,10 +4,10 @@
 //kabam.rotmg.fortune.components.ImageSprite
 
 package kabam.rotmg.fortune.components{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import flash.display.DisplayObject;
 
-public class ImageSprite extends Sprite {
+    public class ImageSprite extends Sprite {
 
         public var displayOb_:DisplayObject;
 

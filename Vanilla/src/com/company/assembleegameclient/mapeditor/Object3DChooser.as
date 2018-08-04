@@ -4,12 +4,13 @@
 //com.company.assembleegameclient.mapeditor.Object3DChooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import com.company.util.MoreStringUtil;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-public class Object3DChooser extends Chooser {
+    public class Object3DChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";

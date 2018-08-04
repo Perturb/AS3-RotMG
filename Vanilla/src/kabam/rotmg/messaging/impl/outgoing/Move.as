@@ -4,12 +4,13 @@
 //kabam.rotmg.messaging.impl.outgoing.Move
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.MoveRecord;
+    import flash.utils.IDataOutput;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.messaging.impl.data.MoveRecord;
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class Move extends OutgoingMessage {
+    public class Move extends OutgoingMessage {
 
         public var tickId_:int;
         public var time_:int;

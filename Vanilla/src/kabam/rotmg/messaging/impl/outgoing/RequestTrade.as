@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.RequestTrade
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class RequestTrade extends OutgoingMessage {
+    public class RequestTrade extends OutgoingMessage {
 
         public var name_:String;
 

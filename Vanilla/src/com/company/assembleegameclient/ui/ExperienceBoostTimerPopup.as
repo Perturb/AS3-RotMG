@@ -4,14 +4,12 @@
 //com.company.assembleegameclient.ui.ExperienceBoostTimerPopup
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.ui.components.TimerDisplay;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.components.TimerDisplay;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class ExperienceBoostTimerPopup extends Sprite {
+    public class ExperienceBoostTimerPopup extends Sprite {
 
         private var timerDisplay:TimerDisplay;
         private var textField:TextFieldDisplayConcrete;

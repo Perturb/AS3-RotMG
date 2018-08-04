@@ -4,12 +4,11 @@
 //kabam.rotmg.messaging.impl.data.StatData
 
 package kabam.rotmg.messaging.impl.data{
-import flash.utils.IDataInput;
-import flash.utils.IDataOutput;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.utils.IDataInput;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.text.model.TextKey;
-
-public class StatData {
+    public class StatData {
 
         public static const MAX_HP_STAT:int = 0;
         public static const HP_STAT:int = 1;

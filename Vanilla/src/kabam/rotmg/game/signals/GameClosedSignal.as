@@ -4,9 +4,9 @@
 //kabam.rotmg.game.signals.GameClosedSignal
 
 package kabam.rotmg.game.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class GameClosedSignal extends Signal {
+    public class GameClosedSignal extends Signal {
 
 
     }

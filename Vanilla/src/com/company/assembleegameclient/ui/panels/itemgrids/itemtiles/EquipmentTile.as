@@ -4,15 +4,14 @@
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-import com.company.assembleegameclient.util.EquipmentUtil;
-import com.company.assembleegameclient.util.FilterUtil;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.util.EquipmentUtil;
+    import com.company.assembleegameclient.util.FilterUtil;
+    import com.company.assembleegameclient.objects.Player;
 
-import flash.display.Bitmap;
-
-public class EquipmentTile extends InteractiveItemTile {
+    public class EquipmentTile extends InteractiveItemTile {
 
         public var backgroundDetail:Bitmap;
         public var itemType:int;

@@ -4,15 +4,14 @@
 //io.decagames.rotmg.pets.components.petStatsGrid.PetStatsGridMediator
 
 package io.decagames.rotmg.pets.components.petStatsGrid{
-import io.decagames.rotmg.pets.data.ability.AbilitiesUtil;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.signals.ReleasePetSignal;
-import io.decagames.rotmg.pets.signals.SelectPetSignal;
-import io.decagames.rotmg.pets.signals.SimulateFeedSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.signals.SelectPetSignal;
+    import io.decagames.rotmg.pets.signals.SimulateFeedSignal;
+    import io.decagames.rotmg.pets.signals.ReleasePetSignal;
+    import io.decagames.rotmg.pets.data.ability.AbilitiesUtil;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetStatsGridMediator extends Mediator {
+    public class PetStatsGridMediator extends Mediator {
 
         [Inject]
         public var view:PetStatsGrid;

@@ -4,9 +4,11 @@
 //kabam.rotmg.messaging.impl.incoming.AccountList
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-public class AccountList extends IncomingMessage {
+    public class AccountList extends IncomingMessage {
 
         public var accountListId_:int;
         public var accountIds_:Vector.<String> = new Vector.<String>();

@@ -4,13 +4,13 @@
 //kabam.rotmg.classes.view.CharacterSkinListView
 
 package kabam.rotmg.classes.view{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.util.components.VerticalScrollingList;
+    import __AS3__.vec.Vector;
+    import flash.display.DisplayObject;
+    import kabam.lib.ui.api.Size;
 
-import kabam.lib.ui.api.Size;
-import kabam.rotmg.util.components.VerticalScrollingList;
-
-public class CharacterSkinListView extends Sprite {
+    public class CharacterSkinListView extends Sprite {
 
         public static const PADDING:int = 5;
         public static const WIDTH:int = 442;

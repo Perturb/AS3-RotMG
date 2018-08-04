@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.incoming.NewAbilityMessage
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import kabam.lib.net.impl.Message;
+    import flash.utils.IDataInput;
 
-import kabam.lib.net.impl.Message;
-
-public class NewAbilityMessage extends Message {
+    public class NewAbilityMessage extends Message {
 
         public var type:int;
 

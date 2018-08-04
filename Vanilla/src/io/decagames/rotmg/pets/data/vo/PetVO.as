@@ -4,17 +4,14 @@
 //io.decagames.rotmg.pets.data.vo.PetVO
 
 package io.decagames.rotmg.pets.data.vo{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.pets.data.skin.PetSkinRenderer;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import io.decagames.rotmg.pets.data.PetsModel;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.skin.PetSkinRenderer;
-
-import kabam.rotmg.core.StaticInjectorContext;
-
-import org.osflash.signals.Signal;
-
-public class PetVO extends PetSkinRenderer implements IPetVO {
+    public class PetVO extends PetSkinRenderer implements IPetVO {
 
         private var staticData:XML;
         private var id:int;

@@ -4,17 +4,15 @@
 //com.company.assembleegameclient.ui.options.BaseOption
 
 package com.company.assembleegameclient.ui.options{
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class BaseOption extends Option {
+    public class BaseOption extends Option {
 
         public var paramName_:String;
         private var tooltipText_:String;

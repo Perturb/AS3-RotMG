@@ -4,23 +4,23 @@
 //com.company.assembleegameclient.objects.ObjectLibrary
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.objects.animation.AnimationsData;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.ConversionUtil;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.objects.animation.AnimationsData;
+    import kabam.rotmg.assets.EmbeddedData;
+    import flash.utils.getDefinitionByName;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import kabam.rotmg.constants.ItemConstants;
+    import kabam.rotmg.constants.GeneralConstants;
+    import com.company.util.ConversionUtil;
+    import kabam.rotmg.messaging.impl.data.StatData;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.utils.Dictionary;
-import flash.utils.getDefinitionByName;
-
-import kabam.rotmg.assets.EmbeddedData;
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.constants.ItemConstants;
-import kabam.rotmg.messaging.impl.data.StatData;
-
-public class ObjectLibrary {
+    public class ObjectLibrary {
 
         public static var textureDataFactory:TextureDataFactory = new TextureDataFactory();
         public static const IMAGE_SET_NAME:String = "lofiObj3";

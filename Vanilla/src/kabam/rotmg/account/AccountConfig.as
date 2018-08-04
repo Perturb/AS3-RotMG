@@ -4,50 +4,46 @@
 //kabam.rotmg.account.AccountConfig
 
 package kabam.rotmg.account{
-import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
+    import robotlegs.bender.framework.api.IConfig;
+    import flash.display.DisplayObjectContainer;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.framework.api.IContext;
+    import flash.display.LoaderInfo;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.account.core.services.VerifyAgeTask;
+    import kabam.rotmg.account.core.services.GetCharListTask;
+    import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
+    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+    import kabam.rotmg.account.core.model.OfferModel;
+    import kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask;
+    import kabam.rotmg.account.core.view.MoneyFrame;
+    import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
+    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsDialog;
+    import kabam.rotmg.account.securityQuestions.mediators.SecurityQuestionsMediator;
+    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsConfirmDialog;
+    import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
+    import kabam.rotmg.account.core.view.PurchaseConfirmationMediator;
+    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
+    import kabam.rotmg.account.core.BuyCharacterSlotCommand;
+    import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
+    import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
+    import kabam.rotmg.account.core.commands.PurchaseGoldCommand;
+    import kabam.rotmg.account.core.signals.VerifyAgeSignal;
+    import kabam.rotmg.account.core.commands.VerifyAgeCommand;
+    import kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal;
+    import kabam.rotmg.account.securityQuestions.commands.SaveSecurityQuestionsCommand;
+    import kabam.rotmg.account.kongregate.KongregateAccountConfig;
+    import kabam.rotmg.account.steam.SteamAccountConfig;
+    import kabam.rotmg.account.kabam.KabamAccountConfig;
+    import kabam.rotmg.account.web.WebAccountConfig;
+    import kabam.rotmg.account.transfer.TransferAccountConfig;
 
-import flash.display.DisplayObjectContainer;
-import flash.display.LoaderInfo;
-
-import kabam.rotmg.account.core.BuyCharacterSlotCommand;
-import kabam.rotmg.account.core.commands.PurchaseGoldCommand;
-import kabam.rotmg.account.core.commands.VerifyAgeCommand;
-import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
-import kabam.rotmg.account.core.model.OfferModel;
-import kabam.rotmg.account.core.services.GetCharListTask;
-import kabam.rotmg.account.core.services.VerifyAgeTask;
-import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.account.core.signals.VerifyAgeSignal;
-import kabam.rotmg.account.core.view.MoneyFrame;
-import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
-import kabam.rotmg.account.core.view.PurchaseConfirmationMediator;
-import kabam.rotmg.account.kabam.KabamAccountConfig;
-import kabam.rotmg.account.kongregate.KongregateAccountConfig;
-import kabam.rotmg.account.securityQuestions.commands.SaveSecurityQuestionsCommand;
-import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-import kabam.rotmg.account.securityQuestions.mediators.SecurityQuestionsMediator;
-import kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal;
-import kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask;
-import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsConfirmDialog;
-import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsDialog;
-import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-import kabam.rotmg.account.steam.SteamAccountConfig;
-import kabam.rotmg.account.transfer.TransferAccountConfig;
-import kabam.rotmg.account.web.WebAccountConfig;
-import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
-
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-import robotlegs.bender.framework.api.IContext;
-import robotlegs.bender.framework.api.ILogger;
-
-public class AccountConfig implements IConfig {
+    public class AccountConfig implements IConfig {
 
         [Inject]
         public var root:DisplayObjectContainer;

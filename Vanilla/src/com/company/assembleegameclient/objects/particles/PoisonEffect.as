@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.objects.particles.PoisonEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.RandomUtil;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.RandomUtil;
 
-public class PoisonEffect extends ParticleEffect {
+    public class PoisonEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var color_:int;

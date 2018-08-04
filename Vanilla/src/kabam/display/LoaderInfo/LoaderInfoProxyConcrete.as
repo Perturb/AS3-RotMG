@@ -4,11 +4,11 @@
 //kabam.display.LoaderInfo.LoaderInfoProxyConcrete
 
 package kabam.display.LoaderInfo{
-import flash.display.LoaderInfo;
-import flash.events.Event;
-import flash.events.EventDispatcher;
+    import flash.events.EventDispatcher;
+    import flash.display.LoaderInfo;
+    import flash.events.Event;
 
-public class LoaderInfoProxyConcrete extends EventDispatcher implements LoaderInfoProxy {
+    public class LoaderInfoProxyConcrete extends EventDispatcher implements LoaderInfoProxy {
 
         private var _loaderInfo:LoaderInfo;
 

@@ -4,9 +4,9 @@
 //com.company.assembleegameclient.objects.particles.AOEEffect
 
 package com.company.assembleegameclient.objects.particles{
-import flash.geom.Point;
+    import flash.geom.Point;
 
-public class AOEEffect extends ParticleEffect {
+    public class AOEEffect extends ParticleEffect {
 
         public var start_:Point;
         public var novaRadius_:Number;

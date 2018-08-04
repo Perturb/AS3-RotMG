@@ -4,22 +4,20 @@
 //kabam.rotmg.appengine.impl.AppEngineRetryLoader
 
 package kabam.rotmg.appengine.impl{
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.SecurityErrorEvent;
-import flash.net.URLLoader;
-import flash.net.URLLoaderDataFormat;
-import flash.net.URLRequest;
-import flash.net.URLRequestMethod;
-import flash.net.URLVariables;
-import flash.utils.ByteArray;
-import flash.utils.getTimer;
+    import kabam.rotmg.appengine.api.RetryLoader;
+    import org.osflash.signals.OnceSignal;
+    import flash.net.URLRequest;
+    import flash.net.URLLoader;
+    import flash.net.URLLoaderDataFormat;
+    import flash.net.URLRequestMethod;
+    import flash.net.URLVariables;
+    import flash.utils.getTimer;
+    import flash.events.IOErrorEvent;
+    import flash.events.SecurityErrorEvent;
+    import flash.events.Event;
+    import flash.utils.ByteArray;
 
-import kabam.rotmg.appengine.api.RetryLoader;
-
-import org.osflash.signals.OnceSignal;
-
-public class AppEngineRetryLoader implements RetryLoader {
+    public class AppEngineRetryLoader implements RetryLoader {
 
         private const _complete:OnceSignal = new OnceSignal(Boolean);
 

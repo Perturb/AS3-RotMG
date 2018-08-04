@@ -4,15 +4,14 @@
 //kabam.rotmg.util.components.DialogBackground
 
 package kabam.rotmg.util.components{
-import flash.display.CapsStyle;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.util.graphics.BevelRect;
+    import kabam.rotmg.util.graphics.GraphicsHelper;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
 
-import kabam.rotmg.util.graphics.BevelRect;
-import kabam.rotmg.util.graphics.GraphicsHelper;
-
-public class DialogBackground extends Sprite {
+    public class DialogBackground extends Sprite {
 
         private static const BEVEL:int = 4;
 

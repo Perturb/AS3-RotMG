@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.objects.FortuneTeller
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Camera;
+    import kabam.rotmg.fortune.services.FortuneModel;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.display.IGraphicsData;
-
-import kabam.rotmg.fortune.services.FortuneModel;
-
-public class FortuneTeller extends Character {
+    public class FortuneTeller extends Character {
 
         public function FortuneTeller(_arg_1:XML){
             super(_arg_1);

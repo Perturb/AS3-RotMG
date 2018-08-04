@@ -4,56 +4,55 @@
 //kabam.rotmg.fortune.components.FortuneModal
 
 package kabam.rotmg.fortune.components{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.map.ParticleModalMap;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.objects.particles.LightningEffect;
-import com.company.assembleegameclient.objects.particles.NovaEffect;
-import com.company.assembleegameclient.ui.dialogs.DebugDialog;
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.assembleegameclient.util.Currency;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.gskinner.motion.GTween;
-import com.gskinner.motion.easing.Sine;
+    import kabam.rotmg.account.core.view.EmptyFrame;
+    import __AS3__.vec.Vector;
+    import flash.text.TextField;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.util.components.SimpleButton;
+    import com.company.assembleegameclient.util.Currency;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import kabam.rotmg.util.components.CountdownTimer;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.fortune.services.FortuneModel;
+    import kabam.rotmg.fortune.model.FortuneInfo;
+    import com.company.assembleegameclient.map.ParticleModalMap;
+    import flash.utils.Timer;
+    import kabam.rotmg.ui.view.components.MapBackground;
+    import flash.display.Sprite;
+    import kabam.rotmg.game.view.CreditDisplay;
+    import com.company.assembleegameclient.game.GameSprite;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import flash.utils.getTimer;
+    import flash.events.Event;
+    import kabam.rotmg.game.model.GameModel;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.util.components.InfoHoverPaneFactory;
+    import com.gskinner.motion.GTween;
+    import com.gskinner.motion.easing.Sine;
+    import flash.display.DisplayObject;
+    import flash.text.TextFormat;
+    import flash.text.TextFormatAlign;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.GlowFilter;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.objects.particles.NovaEffect;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import com.company.assembleegameclient.objects.particles.LightningEffect;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.events.TimerEvent;
-import flash.filters.GlowFilter;
-import flash.text.TextField;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
-import flash.text.TextFormatAlign;
-import flash.utils.Timer;
-import flash.utils.getTimer;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.EmptyFrame;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.fortune.model.FortuneInfo;
-import kabam.rotmg.fortune.services.FortuneModel;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.game.view.CreditDisplay;
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-import kabam.rotmg.ui.view.components.MapBackground;
-import kabam.rotmg.util.components.CountdownTimer;
-import kabam.rotmg.util.components.InfoHoverPaneFactory;
-import kabam.rotmg.util.components.SimpleButton;
-
-import org.osflash.signals.Signal;
-import org.swiftsuspenders.Injector;
-
-public class FortuneModal extends EmptyFrame {
+    public class FortuneModal extends EmptyFrame {
 
         public static var backgroundImageEmbed:Class = FortuneModal_backgroundImageEmbed;
         public static var fortunePlatformEmbed:Class = FortuneModal_fortunePlatformEmbed;

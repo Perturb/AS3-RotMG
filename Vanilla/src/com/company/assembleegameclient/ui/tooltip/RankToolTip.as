@@ -4,21 +4,19 @@
 //com.company.assembleegameclient.ui.tooltip.RankToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.LineBreakDesign;
-import com.company.assembleegameclient.util.FameUtil;
-import com.company.rotmg.graphics.StarGraphic;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.rotmg.graphics.StarGraphic;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.util.FameUtil;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import flash.geom.ColorTransform;
+    import flash.geom.Rectangle;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
 
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-import flash.geom.Rectangle;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class RankToolTip extends ToolTip {
+    public class RankToolTip extends ToolTip {
 
         private static const PADDING_LEFT:int = 6;
 
@@ -87,14 +85,12 @@ public class RankToolTip extends ToolTip {
     }
 }//package com.company.assembleegameclient.ui.tooltip
 
-import com.company.rotmg.graphics.StarGraphic;
-
 import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-
+import com.company.rotmg.graphics.StarGraphic;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import flash.geom.ColorTransform;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import flash.filters.DropShadowFilter;
 
 class LegendLine extends Sprite {
 

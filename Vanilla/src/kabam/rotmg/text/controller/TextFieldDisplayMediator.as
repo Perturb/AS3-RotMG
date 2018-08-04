@@ -4,13 +4,12 @@
 //kabam.rotmg.text.controller.TextFieldDisplayMediator
 
 package kabam.rotmg.text.controller{
-import kabam.rotmg.text.model.FontModel;
-import kabam.rotmg.text.model.TextAndMapProvider;
-import kabam.rotmg.text.view.TextFieldDisplay;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.text.view.TextFieldDisplay;
+    import kabam.rotmg.text.model.FontModel;
+    import kabam.rotmg.text.model.TextAndMapProvider;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class TextFieldDisplayMediator extends Mediator {
+    public class TextFieldDisplayMediator extends Mediator {
 
         [Inject]
         public var textFieldDisplay:TextFieldDisplay;

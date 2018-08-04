@@ -4,19 +4,17 @@
 //com.company.assembleegameclient.ui.board.GuildBoardWindow
 
 package com.company.assembleegameclient.ui.board{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.util.MoreObjectUtil;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import flash.display.Graphics;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.account.core.Account;
+    import flash.events.Event;
+    import com.company.util.MoreObjectUtil;
 
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.StaticInjectorContext;
-
-public class GuildBoardWindow extends Sprite {
+    public class GuildBoardWindow extends Sprite {
 
         private var canEdit_:Boolean;
         private var darkBox_:Shape;

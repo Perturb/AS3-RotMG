@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.objects.particles.ExplosionEffect
 
 package com.company.assembleegameclient.objects.particles{
-public class ExplosionEffect extends ParticleEffect {
+    import __AS3__.vec.Vector;
+
+    public class ExplosionEffect extends ParticleEffect {
 
         public var colors_:Vector.<uint>;
         public var numParts_:int;
@@ -86,7 +88,6 @@ public class ExplosionEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-
 import flash.geom.Vector3D;
 
 class ExplosionParticle extends Particle {

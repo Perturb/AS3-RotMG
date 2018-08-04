@@ -4,11 +4,12 @@
 //com.company.assembleegameclient.util.MaskedImageSet
 
 package com.company.assembleegameclient.util{
-import com.company.util.ImageSet;
+    import __AS3__.vec.Vector;
+    import com.company.util.ImageSet;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-
-public class MaskedImageSet {
+    public class MaskedImageSet {
 
         public var images_:Vector.<MaskedImage> = new Vector.<MaskedImage>();
 

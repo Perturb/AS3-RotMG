@@ -4,9 +4,11 @@
 //com.company.util.ImageSet
 
 package com.company.util{
-import flash.display.BitmapData;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-public class ImageSet {
+    public class ImageSet {
 
         public var images_:Vector.<BitmapData>;
 

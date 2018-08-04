@@ -4,29 +4,29 @@
 //com.company.assembleegameclient.account.ui.Frame
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import __AS3__.vec.Vector;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.Event;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.account.web.view.LabeledField;
+    import flash.display.DisplayObject;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.DisplayObject;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.web.view.LabeledField;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class Frame extends Sprite {
+    public class Frame extends Sprite {
 
         private static const INDENT:Number = 17;
 

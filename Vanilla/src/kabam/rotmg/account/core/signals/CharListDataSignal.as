@@ -4,9 +4,9 @@
 //kabam.rotmg.account.core.signals.CharListDataSignal
 
 package kabam.rotmg.account.core.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class CharListDataSignal extends Signal {
+    public class CharListDataSignal extends Signal {
 
         public function CharListDataSignal(){
             super(XML);

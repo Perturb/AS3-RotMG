@@ -4,16 +4,15 @@
 //io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot
 
 package io.decagames.rotmg.pets.components.petInfoSlot{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.pets.components.petPortrait.PetPortrait;
+    import io.decagames.rotmg.pets.data.vo.IPetVO;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.pets.components.petStatsGrid.PetStatsGrid;
 
-import io.decagames.rotmg.pets.components.petPortrait.PetPortrait;
-import io.decagames.rotmg.pets.components.petStatsGrid.PetStatsGrid;
-import io.decagames.rotmg.pets.data.vo.IPetVO;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class PetInfoSlot extends Sprite {
+    public class PetInfoSlot extends Sprite {
 
         public static const INFO_HEIGHT:int = 207;
         public static const STATS_WIDTH:int = 150;

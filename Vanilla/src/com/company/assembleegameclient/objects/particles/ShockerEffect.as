@@ -4,17 +4,18 @@
 //com.company.assembleegameclient.objects.particles.ShockerEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.ImageSet;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.utils.Timer;
+    import com.company.util.AssetLibrary;
+    import com.company.util.ImageSet;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.events.TimerEvent;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.events.TimerEvent;
-import flash.geom.Point;
-import flash.utils.Timer;
-
-public class ShockerEffect extends ParticleEffect {
+    public class ShockerEffect extends ParticleEffect {
 
         public static var images:Vector.<BitmapData>;
 

@@ -4,40 +4,37 @@
 //kabam.rotmg.ui.view.TitleMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.mapeditor.MapEditor;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.screens.ServersScreen;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+    import kabam.rotmg.ui.signals.EnterGameSignal;
+    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import kabam.rotmg.core.view.Layers;
+    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.build.api.BuildData;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.net.URLRequest;
+    import flash.net.navigateToURL;
+    import flash.net.URLVariables;
+    import kabam.rotmg.application.DynamicSettings;
+    import flash.net.URLRequestMethod;
+    import flash.system.Capabilities;
+    import flash.external.ExternalInterface;
+    import kabam.rotmg.ui.model.EnvironmentData;
+    import com.company.assembleegameclient.screens.ServersScreen;
+    import kabam.rotmg.legends.view.LegendsView;
+    import com.company.assembleegameclient.mapeditor.MapEditor;
+    import flash.events.Event;
 
-import flash.events.Event;
-import flash.external.ExternalInterface;
-import flash.net.URLRequest;
-import flash.net.URLRequestMethod;
-import flash.net.URLVariables;
-import flash.net.navigateToURL;
-import flash.system.Capabilities;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.application.DynamicSettings;
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.legends.view.LegendsView;
-import kabam.rotmg.ui.model.EnvironmentData;
-import kabam.rotmg.ui.signals.EnterGameSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-import robotlegs.bender.framework.api.ILogger;
-
-public class TitleMediator extends Mediator {
+    public class TitleMediator extends Mediator {
 
         private static var supportCalledBefore:Boolean = false;
 

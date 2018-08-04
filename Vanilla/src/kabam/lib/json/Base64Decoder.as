@@ -4,9 +4,9 @@
 //kabam.lib.json.Base64Decoder
 
 package kabam.lib.json{
-import com.hurlant.util.Base64;
+    import com.hurlant.util.Base64;
 
-public class Base64Decoder {
+    public class Base64Decoder {
 
 
         public function decode(_arg_1:String):String{

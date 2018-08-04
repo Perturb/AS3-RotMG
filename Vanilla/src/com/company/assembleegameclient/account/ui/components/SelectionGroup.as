@@ -4,7 +4,9 @@
 //com.company.assembleegameclient.account.ui.components.SelectionGroup
 
 package com.company.assembleegameclient.account.ui.components{
-public class SelectionGroup {
+    import __AS3__.vec.Vector;
+
+    public class SelectionGroup {
 
         private var selectables:Vector.<Selectable>;
         private var selected:Selectable;

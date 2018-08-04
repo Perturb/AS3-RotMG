@@ -4,14 +4,13 @@
 //kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask
 
 package kabam.rotmg.account.securityQuestions.tasks{
-import com.company.util.MoreObjectUtil;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsData;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import com.company.util.MoreObjectUtil;
 
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsData;
-import kabam.rotmg.appengine.api.AppEngineClient;
-
-public class SaveSecurityQuestionsTask extends BaseTask {
+    public class SaveSecurityQuestionsTask extends BaseTask {
 
         [Inject]
         public var account:Account;

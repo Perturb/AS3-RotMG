@@ -4,11 +4,12 @@
 //com.company.assembleegameclient.ui.dialogs.CloseDialogComponent
 
 package com.company.assembleegameclient.ui.dialogs{
-import flash.events.Event;
+    import org.osflash.signals.Signal;
+    import __AS3__.vec.Vector;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import org.osflash.signals.Signal;
-
-public class CloseDialogComponent {
+    public class CloseDialogComponent {
 
         private const closeSignal:Signal = new Signal();
 

@@ -4,10 +4,10 @@
 //com.company.util.Triangle
 
 package com.company.util{
-import flash.geom.Point;
-import flash.geom.Rectangle;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
 
-public class Triangle {
+    public class Triangle {
 
         public var x0_:Number;
         public var y0_:Number;

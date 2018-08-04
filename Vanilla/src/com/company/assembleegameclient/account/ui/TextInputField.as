@@ -4,20 +4,18 @@
 //com.company.assembleegameclient.account.ui.TextInputField
 
 package com.company.assembleegameclient.account.ui{
-import com.company.ui.BaseSimpleText;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.ui.BaseSimpleText;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.events.Event;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import flash.display.CapsStyle;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class TextInputField extends Sprite {
+    public class TextInputField extends Sprite {
 
         public static const BACKGROUND_COLOR:uint = 0x333333;
         public static const ERROR_BORDER_COLOR:uint = 16549442;

@@ -14,7 +14,7 @@
       <DeathSound>monster/skeletons_death</DeathSound>
       <Size>250</Size>
       <ShadowSize>25</ShadowSize>
-      <MaxHitPoints>90000</MaxHitPoints>
+      <MaxHitPoints>65000</MaxHitPoints>
       <Defense>60</Defense>
       <Exp>253</Exp>
       <ParalyzeImmune/>
@@ -100,7 +100,7 @@
       <DeathSound>monster/skeletons_death</DeathSound>
       <Size>200</Size>
       <ShadowSize>25</ShadowSize>
-      <MaxHitPoints>25000</MaxHitPoints>
+      <MaxHitPoints>17500</MaxHitPoints>
       <Defense>70</Defense>
       <Exp>0</Exp>
       <ParalyzeImmune/>
@@ -187,7 +187,7 @@
       <DeathSound>monster/skeletons_death</DeathSound>
       <Size>200</Size>
       <ShadowSize>25</ShadowSize>
-      <MaxHitPoints>25000</MaxHitPoints>
+      <MaxHitPoints>17500</MaxHitPoints>
       <Defense>70</Defense>
       <Exp>0</Exp>
       <ParalyzeImmune/>
@@ -507,10 +507,14 @@
          <File>lofiObj3</File>
          <Index>0x466</Index>
       </Texture>
-      <MaxHitPoints>120000</MaxHitPoints>
+      <MaxHitPoints>80000</MaxHitPoints>
       <Defense>35</Defense>
       <Size>160</Size>
       <Exp>0</Exp>
+      <ParalyzeImmune/>
+      <DazedImmune/>
+      <StasisImmune/>
+      <StunImmune/>
    </Object>
    <Object type="0xaab3" id="Shaitan Portal Dropper">
       <Class>GameObject</Class>

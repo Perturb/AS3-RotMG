@@ -4,17 +4,15 @@
 //kabam.rotmg.game.view.TextPanel
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.game.GameSprite;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
 
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TextPanel extends Panel {
+    public class TextPanel extends Panel {
 
         private var textField:TextFieldDisplayConcrete;
         private var virtualWidth:Number;

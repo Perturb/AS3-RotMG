@@ -4,28 +4,24 @@
 //kabam.rotmg.game.view.ShopDisplay
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.ui.UIUtils;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.geom.Rectangle;
+    import io.decagames.rotmg.utils.colors.GreyScale;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.shop.ShopPopupView;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-
-import io.decagames.rotmg.shop.ShopPopupView;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-import io.decagames.rotmg.utils.colors.GreyScale;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.UIUtils;
-
-import org.swiftsuspenders.Injector;
-
-public class ShopDisplay extends Sprite {
+    public class ShopDisplay extends Sprite {
 
         public static const IMAGE_NAME:String = "lofiObj4";
         public static const IMAGE_ID:int = 216;

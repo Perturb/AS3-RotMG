@@ -4,17 +4,15 @@
 //kabam.rotmg.mysterybox.MysteryBoxConfig
 
 package kabam.rotmg.mysterybox{
-import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-import kabam.rotmg.mysterybox.services.MysteryBoxModel;
-import kabam.rotmg.startup.control.StartupSequence;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.startup.control.StartupSequence;
+    import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+    import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class MysteryBoxConfig implements IConfig {
+    public class MysteryBoxConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

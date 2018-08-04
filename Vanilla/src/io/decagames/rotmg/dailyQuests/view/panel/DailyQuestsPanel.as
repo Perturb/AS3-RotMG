@@ -4,20 +4,17 @@
 //io.decagames.rotmg.dailyQuests.view.panel.DailyQuestsPanel
 
 package io.decagames.rotmg.dailyQuests.view.panel{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.assembleegameclient.game.GameSprite;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
 
-import flash.display.Bitmap;
-
-import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class DailyQuestsPanel extends Panel {
+    public class DailyQuestsPanel extends Panel {
 
         private static var questDataExists:Boolean = false;
 

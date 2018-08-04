@@ -4,13 +4,12 @@
 //kabam.rotmg.core.service.PurchaseCharacterErrorTask
 
 package kabam.rotmg.core.service{
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-
-public class PurchaseCharacterErrorTask extends BaseTask {
+    public class PurchaseCharacterErrorTask extends BaseTask {
 
         [Inject]
         public var openDialog:OpenDialogSignal;

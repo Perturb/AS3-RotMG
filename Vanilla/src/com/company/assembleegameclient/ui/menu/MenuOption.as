@@ -4,21 +4,19 @@
 //com.company.assembleegameclient.ui.menu.MenuOption
 
 package com.company.assembleegameclient.ui.menu{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.CachingColorTransformer;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import flash.geom.ColorTransform;
+    import flash.display.BitmapData;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import com.company.util.MoreColorUtil;
+    import com.company.util.CachingColorTransformer;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class MenuOption extends Sprite {
+    public class MenuOption extends Sprite {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
 

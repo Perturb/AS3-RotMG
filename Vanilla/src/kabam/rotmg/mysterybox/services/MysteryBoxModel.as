@@ -4,14 +4,16 @@
 //kabam.rotmg.mysterybox.services.MysteryBoxModel
 
 package kabam.rotmg.mysterybox.services{
-import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class MysteryBoxModel {
+    public class MysteryBoxModel {
 
         private var models:Object;
         private var initialized:Boolean = false;
         private var _isNew:Boolean = false;
-        private var maxSlots:int = 12;
+        private var maxSlots:int = 18;
 
 
         public function getBoxesOrderByWeight():Object{

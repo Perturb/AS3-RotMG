@@ -4,20 +4,19 @@
 //kabam.rotmg.classes.view.ClassDetailView
 
 package kabam.rotmg.classes.view{
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
+    import flash.display.Sprite;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Bitmap;
+    import kabam.rotmg.util.components.StarsView;
+    import kabam.rotmg.assets.model.Animation;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.assets.services.IconFactory;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import kabam.rotmg.assets.model.Animation;
-import kabam.rotmg.assets.services.IconFactory;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-import kabam.rotmg.util.components.StarsView;
-
-public class ClassDetailView extends Sprite {
+    public class ClassDetailView extends Sprite {
 
         private static const RIGHT_JUSTIFICATION_STATS:int = 205;
         private static const WIDTH:int = 344;

@@ -4,13 +4,11 @@
 //kabam.rotmg.ui.view.LoadingMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.screens.LoadingScreen;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.screens.LoadingScreen;
+    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
 
-import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class LoadingMediator extends Mediator {
+    public class LoadingMediator extends Mediator {
 
         [Inject]
         public var view:LoadingScreen;

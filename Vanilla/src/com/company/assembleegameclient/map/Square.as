@@ -4,15 +4,16 @@
 //com.company.assembleegameclient.map.Square
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.engine3d.TextureMatrix;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.TileRedrawer;
+    import __AS3__.vec.Vector;
+    import flash.geom.Vector3D;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.engine3d.TextureMatrix;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.util.TileRedrawer;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.IGraphicsData;
-import flash.geom.Vector3D;
-
-public class Square {
+    public class Square {
 
         public static const UVT:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
         private static const LOOKUP:Vector.<int> = new <int>[26171, 44789, 20333, 70429, 98257, 59393, 33961];

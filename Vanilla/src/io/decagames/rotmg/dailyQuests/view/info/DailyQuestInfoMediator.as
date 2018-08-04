@@ -4,29 +4,27 @@
 //io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfoMediator
 
 package io.decagames.rotmg.dailyQuests.view.info{
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
+    import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
+    import kabam.rotmg.ui.model.HUDModel;
+    import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
+    import io.decagames.rotmg.dailyQuests.signal.LockQuestScreenSignal;
+    import io.decagames.rotmg.dailyQuests.signal.SelectedItemSlotsSignal;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import io.decagames.rotmg.dailyQuests.model.DailyQuest;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.messaging.impl.data.SlotObjectData;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.game.view.components.BackpackTabContent;
+    import kabam.rotmg.game.view.components.InventoryTabContent;
+    import __AS3__.vec.*;
 
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.dailyQuests.model.DailyQuest;
-import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
-import io.decagames.rotmg.dailyQuests.signal.LockQuestScreenSignal;
-import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
-import io.decagames.rotmg.dailyQuests.signal.SelectedItemSlotsSignal;
-import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.game.view.components.BackpackTabContent;
-import kabam.rotmg.game.view.components.InventoryTabContent;
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class DailyQuestInfoMediator extends Mediator {
+    public class DailyQuestInfoMediator extends Mediator {
 
         [Inject]
         public var showInfoSignal:ShowQuestInfoSignal;
@@ -140,7 +138,10 @@ public class DailyQuestInfoMediator extends Mediator {
                 };
                 this.lockScreen.dispatch();
                 this.hud.gameSprite.gsc_.questRedeem(this.model.currentQuest.id, _local_2, this.model.selectedItem);
-                this.model.currentQuest.completed = true;
+                if (!this.model.currentQuest.repeatable)
+                {
+                    this.model.currentQuest.completed = true;
+                };
                 this.view.completeButton.completed = true;
                 this.view.completeButton.disabled = true;
             };

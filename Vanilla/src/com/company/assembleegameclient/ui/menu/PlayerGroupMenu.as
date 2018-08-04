@@ -4,17 +4,17 @@
 //com.company.assembleegameclient.ui.menu.PlayerGroupMenu
 
 package com.company.assembleegameclient.ui.menu{
-import com.company.assembleegameclient.map.AbstractMap;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.GameObjectListItem;
-import com.company.assembleegameclient.ui.LineBreakDesign;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.ui.GameObjectListItem;
+    import com.company.assembleegameclient.map.AbstractMap;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import org.osflash.signals.Signal;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.events.Event;
-import flash.events.MouseEvent;
-
-import org.osflash.signals.Signal;
-
-public class PlayerGroupMenu extends Menu {
+    public class PlayerGroupMenu extends Menu {
 
         private var playerPanels_:Vector.<GameObjectListItem> = new Vector.<GameObjectListItem>();
         private var posY:uint = 4;

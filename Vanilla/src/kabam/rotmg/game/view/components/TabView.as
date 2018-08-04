@@ -4,9 +4,9 @@
 //kabam.rotmg.game.view.components.TabView
 
 package kabam.rotmg.game.view.components{
-import flash.display.Sprite;
+    import flash.display.Sprite;
 
-public class TabView extends Sprite {
+    public class TabView extends Sprite {
 
         public var index:int;
 

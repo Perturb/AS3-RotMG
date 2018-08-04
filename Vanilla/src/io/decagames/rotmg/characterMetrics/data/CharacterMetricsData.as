@@ -4,9 +4,9 @@
 //io.decagames.rotmg.characterMetrics.data.CharacterMetricsData
 
 package io.decagames.rotmg.characterMetrics.data{
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
 
-public class CharacterMetricsData {
+    public class CharacterMetricsData {
 
         private var stats:Dictionary;
 

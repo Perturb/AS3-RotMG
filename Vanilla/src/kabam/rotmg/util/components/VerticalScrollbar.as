@@ -4,13 +4,11 @@
 //kabam.rotmg.util.components.VerticalScrollbar
 
 package kabam.rotmg.util.components{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.lib.ui.api.Scrollbar;
+    import org.osflash.signals.Signal;
 
-import kabam.lib.ui.api.Scrollbar;
-
-import org.osflash.signals.Signal;
-
-public class VerticalScrollbar extends Sprite implements Scrollbar {
+    public class VerticalScrollbar extends Sprite implements Scrollbar {
 
         public static const WIDTH:int = 20;
         public static const BEVEL:int = 4;

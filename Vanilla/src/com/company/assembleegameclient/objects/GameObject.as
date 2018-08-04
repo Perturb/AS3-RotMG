@@ -4,63 +4,62 @@
 //com.company.assembleegameclient.objects.GameObject
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.engine3d.Model3D;
-import com.company.assembleegameclient.engine3d.Object3D;
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-import com.company.assembleegameclient.objects.animation.Animations;
-import com.company.assembleegameclient.objects.animation.AnimationsData;
-import com.company.assembleegameclient.objects.particles.ExplosionEffect;
-import com.company.assembleegameclient.objects.particles.HitEffect;
-import com.company.assembleegameclient.objects.particles.ParticleEffect;
-import com.company.assembleegameclient.objects.particles.ShockerEffect;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.BloodComposition;
-import com.company.assembleegameclient.util.ConditionEffect;
-import com.company.assembleegameclient.util.MaskedImage;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.BitmapUtil;
-import com.company.util.CachingColorTransformer;
-import com.company.util.ConversionUtil;
-import com.company.util.GraphicsUtil;
-import com.company.util.MoreColorUtil;
+    import flash.filters.ColorMatrixFilter;
+    import com.company.util.MoreColorUtil;
+    import flash.geom.Matrix;
+    import flash.display.BitmapData;
+    import flash.display.GraphicsBitmapFill;
+    import flash.display.GraphicsPath;
+    import com.company.assembleegameclient.objects.particles.ShockerEffect;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.engine3d.Object3D;
+    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+    import com.company.assembleegameclient.objects.particles.ParticleEffect;
+    import com.company.assembleegameclient.objects.animation.Animations;
+    import flash.utils.Dictionary;
+    import flash.geom.Point;
+    import flash.geom.Vector3D;
+    import com.company.util.GraphicsUtil;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsGradientFill;
+    import com.company.assembleegameclient.engine3d.Model3D;
+    import com.company.assembleegameclient.objects.animation.AnimationsData;
+    import com.company.util.ConversionUtil;
+    import com.company.assembleegameclient.util.ConditionEffect;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import com.company.util.BitmapUtil;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import com.company.assembleegameclient.map.Map;
+    import com.company.assembleegameclient.map.Square;
+    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.util.BloodComposition;
+    import com.company.assembleegameclient.objects.particles.ExplosionEffect;
+    import com.company.assembleegameclient.objects.particles.HitEffect;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.BitmapTextFactory;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import com.company.util.CachingColorTransformer;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import flash.utils.getTimer;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import flash.geom.ColorTransform;
+    import flash.display.GradientType;
+    import flash.utils.getQualifiedClassName;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.GradientType;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsGradientFill;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.filters.ColorMatrixFilter;
-import flash.geom.ColorTransform;
-import flash.geom.Matrix;
-import flash.geom.Point;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
-import flash.utils.getQualifiedClassName;
-import flash.utils.getTimer;
-
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.BitmapTextFactory;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class GameObject extends BasicObject {
+    public class GameObject extends BasicObject {
 
         protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
         protected static const CURSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.redFilterMatrix);

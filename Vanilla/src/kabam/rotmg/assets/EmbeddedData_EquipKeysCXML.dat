@@ -988,4 +988,22 @@
       <Activate id="Cnidarian Reef Portal">CreatePortal</Activate>
       <Track/>
    </Object>
+   <Object type="0xf20" id="Mad God Mayhem Key">
+      <Class>Equipment</Class>
+      <Item/>
+      <DisplayId>Mad God Mayhem Key</DisplayId>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0xc3</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A key which opens an entrance to The Mad God Mayhem event.</Description>
+      <Sound>use_key</Sound>
+      <Consumable/>
+      <Soulbound/>
+      <feedPower>200</feedPower>
+      <BagType>8</BagType>
+      <Activate id="oryxPandemonium Portal">Create</Activate>
+      <Track/>
+   </Object>
 </Objects>

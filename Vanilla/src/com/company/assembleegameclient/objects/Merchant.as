@@ -4,27 +4,27 @@
 //com.company.assembleegameclient.objects.Merchant
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.ui.BaseSimpleText;
-import com.company.util.IntPoint;
-import com.gskinner.motion.GTween;
-import com.gskinner.motion.easing.Sine;
+    import flash.geom.Matrix;
+    import flash.display.BitmapData;
+    import flash.geom.ColorTransform;
+    import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.language.model.StringMap;
+    import com.company.util.IntPoint;
+    import com.company.assembleegameclient.map.Map;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.game.model.AddSpeechBalloonVO;
+    import com.gskinner.motion.GTween;
+    import com.gskinner.motion.easing.Sine;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.ui.BaseSimpleText;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.geom.ColorTransform;
-import flash.geom.Matrix;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.model.AddSpeechBalloonVO;
-import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class Merchant extends SellableObject implements IInteractiveObject {
+    public class Merchant extends SellableObject implements IInteractiveObject {
 
         private static const NONE_MESSAGE:int = 0;
         private static const NEW_MESSAGE:int = 1;

@@ -4,11 +4,11 @@
 //com.company.assembleegameclient.objects.CharacterChanger
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.CharacterChangerPanel;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.CharacterChangerPanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-public class CharacterChanger extends GameObject implements IInteractiveObject {
+    public class CharacterChanger extends GameObject implements IInteractiveObject {
 
         public function CharacterChanger(_arg_1:XML){
             super(_arg_1);

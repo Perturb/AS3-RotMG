@@ -4,12 +4,11 @@
 //kabam.rotmg.ui.view.AgeVerificationMediator
 
 package kabam.rotmg.ui.view{
-import kabam.rotmg.account.core.signals.VerifyAgeSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.signals.VerifyAgeSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class AgeVerificationMediator extends Mediator {
+    public class AgeVerificationMediator extends Mediator {
 
         [Inject]
         public var view:AgeVerificationDialog;

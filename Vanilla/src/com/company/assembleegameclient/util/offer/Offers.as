@@ -4,7 +4,10 @@
 //com.company.assembleegameclient.util.offer.Offers
 
 package com.company.assembleegameclient.util.offer{
-public class Offers {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class Offers {
 
         private static const BEST_DEAL:String = "(Best deal)";
         private static const MOST_POPULAR:String = "(Most popular)";

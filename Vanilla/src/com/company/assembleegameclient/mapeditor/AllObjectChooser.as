@@ -4,12 +4,16 @@
 //com.company.assembleegameclient.mapeditor.AllObjectChooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.mapeditor.Layer;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.mapeditor.GroupDivider;
+    import com.company.util.MoreStringUtil;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import __AS3__.vec.*;
+    import com.company.assembleegameclient.mapeditor.*;
 
-import flash.utils.Dictionary;
-
-internal class AllObjectChooser extends Chooser {
+    internal class AllObjectChooser extends Chooser {
 
         public static const GROUP_NAME_MAP_OBJECTS:String = "All Map Objects";
         public static const GROUP_NAME_GAME_OBJECTS:String = "All Game Objects";

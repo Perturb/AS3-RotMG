@@ -4,16 +4,16 @@
 //kabam.rotmg.account.kabam.services.KabamLoadAccountTask
 
 package kabam.rotmg.account.kabam.services{
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.services.LoadAccountTask;
-import kabam.rotmg.account.kabam.KabamAccount;
-import kabam.rotmg.account.kabam.model.KabamParameters;
-import kabam.rotmg.account.kabam.view.AccountLoadErrorDialog;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.LoadAccountTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.kabam.model.KabamParameters;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.kabam.KabamAccount;
+    import kabam.rotmg.account.kabam.view.AccountLoadErrorDialog;
 
-public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask {
+    public class KabamLoadAccountTask extends BaseTask implements LoadAccountTask {
 
         [Inject]
         public var account:Account;

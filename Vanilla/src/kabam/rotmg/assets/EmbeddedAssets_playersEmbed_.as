@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.assets
+package kabam.rotmg.assets
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="EmbeddedAssets_playersEmbed_.png")]
-	public class EmbeddedAssets_playersEmbed_ extends BitmapAsset
+	[Embed(source="EmbeddedAssets_playersEmbed_.png")]
+	public class EmbeddedAssets_playersEmbed_ extends mx.core.BitmapAsset
 	{
 		public function EmbeddedAssets_playersEmbed_()
 		{

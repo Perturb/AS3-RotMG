@@ -4,13 +4,13 @@
 //io.decagames.rotmg.utils.colors.GreyScale
 
 package io.decagames.rotmg.utils.colors{
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.filters.ColorMatrixFilter;
-import flash.geom.Point;
-import flash.geom.Rectangle;
+    import flash.filters.ColorMatrixFilter;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import flash.display.BitmapData;
+    import flash.display.DisplayObject;
 
-public class GreyScale {
+    public class GreyScale {
 
 
         public static function setGreyScale(_arg_1:BitmapData):BitmapData{

@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.Load
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class Load extends OutgoingMessage {
+    public class Load extends OutgoingMessage {
 
         public var charId_:int;
         public var isFromArena_:Boolean;

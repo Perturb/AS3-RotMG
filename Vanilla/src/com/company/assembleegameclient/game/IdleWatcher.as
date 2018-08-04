@@ -4,16 +4,14 @@
 //com.company.assembleegameclient.game.IdleWatcher
 
 package com.company.assembleegameclient.game{
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-
-public class IdleWatcher {
+    public class IdleWatcher {
 
         private static const MINUTE_IN_MS:int = (60 * 1000);//60000
         private static const FIRST_WARNING_MINUTES:int = 10;

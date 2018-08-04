@@ -4,11 +4,10 @@
 //kabam.rotmg.chat.control.ClearTellModelCommand
 
 package kabam.rotmg.chat.control{
-import kabam.rotmg.chat.model.TellModel;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import kabam.rotmg.chat.model.TellModel;
 
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class ClearTellModelCommand extends Command {
+    public class ClearTellModelCommand extends Command {
 
         [Inject]
         public var tellModel:TellModel;

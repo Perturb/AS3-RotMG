@@ -4,16 +4,16 @@
 //com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.GameObjectListItem;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.GameObjectListItem;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
+    import __AS3__.vec.*;
 
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class PlayerGroupToolTip extends ToolTip {
+    public class PlayerGroupToolTip extends ToolTip {
 
         public var players_:Vector.<Player> = null;
         private var playerPanels_:Vector.<GameObjectListItem> = new Vector.<GameObjectListItem>();

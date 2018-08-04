@@ -4,20 +4,20 @@
 //kabam.rotmg.promotions.commands.ShowBeginnersPackageCommand
 
 package kabam.rotmg.promotions.commands{
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.services.GetOffersTask;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
-import kabam.rotmg.promotions.service.GetPackageStatusTask;
-import kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog;
-import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.promotions.service.GetPackageStatusTask;
+    import kabam.rotmg.account.core.services.GetOffersTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
+    import kabam.lib.tasks.Task;
+    import kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog;
 
-public class ShowBeginnersPackageCommand {
+    public class ShowBeginnersPackageCommand {
 
         [Inject]
         public var account:Account;

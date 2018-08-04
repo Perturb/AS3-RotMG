@@ -4,17 +4,15 @@
 //com.company.assembleegameclient.ui.panels.ButtonPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.game.GameSprite;
 
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class ButtonPanel extends Panel {
+    public class ButtonPanel extends Panel {
 
         private var titleText_:TextFieldDisplayConcrete;
         protected var button_:DeprecatedTextButton;

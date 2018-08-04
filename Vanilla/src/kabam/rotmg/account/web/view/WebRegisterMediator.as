@@ -4,17 +4,16 @@
 //kabam.rotmg.account.web.view.WebRegisterMediator
 
 package kabam.rotmg.account.web.view{
-import kabam.lib.tasks.Task;
-import kabam.rotmg.account.core.signals.RegisterSignal;
-import kabam.rotmg.account.web.model.AccountData;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.core.signals.RegisterSignal;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
+    import kabam.rotmg.account.web.model.AccountData;
+    import kabam.lib.tasks.Task;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class WebRegisterMediator extends Mediator {
+    public class WebRegisterMediator extends Mediator {
 
         [Inject]
         public var view:WebRegisterDialog;

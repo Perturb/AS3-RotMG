@@ -4,14 +4,16 @@
 //com.greensock.plugins.TintPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
-import com.greensock.core.PropTween;
+    import flash.geom.Transform;
+    import flash.geom.ColorTransform;
+    import com.greensock.core.PropTween;
+    import flash.display.DisplayObject;
+    import com.greensock.TweenLite;
+    import flash.display.*;
+    import com.greensock.*;
+    import com.greensock.core.*;
 
-import flash.display.DisplayObject;
-import flash.geom.ColorTransform;
-import flash.geom.Transform;
-
-public class TintPlugin extends TweenPlugin {
+    public class TintPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         protected static var _props:Array = ["redMultiplier", "greenMultiplier", "blueMultiplier", "alphaMultiplier", "redOffset", "greenOffset", "blueOffset", "alphaOffset"];

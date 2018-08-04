@@ -4,11 +4,11 @@
 //io.decagames.rotmg.pets.data.ability.AbilitiesUtil
 
 package io.decagames.rotmg.pets.data.ability{
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.vo.AbilityVO;
-import io.decagames.rotmg.pets.data.vo.IPetVO;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import io.decagames.rotmg.pets.data.vo.AbilityVO;
+    import io.decagames.rotmg.pets.data.vo.IPetVO;
 
-public class AbilitiesUtil {
+    public class AbilitiesUtil {
 
 
         public static function isActiveAbility(_arg_1:PetRarityEnum, _arg_2:int):Boolean{

@@ -4,12 +4,11 @@
 //kabam.rotmg.account.kabam.KabamAccount
 
 package kabam.rotmg.account.kabam{
-import flash.external.ExternalInterface;
+    import kabam.rotmg.account.core.Account;
+    import kabam.lib.json.JsonParser;
+    import flash.external.ExternalInterface;
 
-import kabam.lib.json.JsonParser;
-import kabam.rotmg.account.core.Account;
-
-public class KabamAccount implements Account {
+    public class KabamAccount implements Account {
 
         public static const NETWORK_NAME:String = "kabam.com";
         private static const PLAY_PLATFORM_NAME:String = "kabam.com";

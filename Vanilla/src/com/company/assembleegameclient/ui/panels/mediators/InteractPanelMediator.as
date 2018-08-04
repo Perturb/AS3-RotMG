@@ -4,17 +4,14 @@
 //com.company.assembleegameclient.ui.panels.mediators.InteractPanelMediator
 
 package com.company.assembleegameclient.ui.panels.mediators{
-import com.company.assembleegameclient.objects.IInteractiveObject;
-import com.company.assembleegameclient.objects.Pet;
-import com.company.assembleegameclient.ui.panels.InteractPanel;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.ui.panels.InteractPanel;
+    import kabam.rotmg.core.model.MapModel;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import com.company.assembleegameclient.objects.IInteractiveObject;
+    import com.company.assembleegameclient.objects.Pet;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-
-import kabam.rotmg.core.model.MapModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class InteractPanelMediator extends Mediator {
+    public class InteractPanelMediator extends Mediator {
 
         [Inject]
         public var view:InteractPanel;

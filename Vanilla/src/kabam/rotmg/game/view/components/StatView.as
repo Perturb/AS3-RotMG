@@ -4,22 +4,19 @@
 //kabam.rotmg.game.view.components.StatView
 
 package kabam.rotmg.game.view.components{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import org.osflash.signals.natives.NativeSignal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.events.MouseEvent;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeSignal;
-
-public class StatView extends Sprite {
+    public class StatView extends Sprite {
 
         public static var toMaxTextSignal:Signal = new Signal(Boolean);
 

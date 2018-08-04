@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.objects.animation.FrameData
 
 package com.company.assembleegameclient.objects.animation{
-import com.company.assembleegameclient.objects.TextureData;
-import com.company.assembleegameclient.objects.TextureDataConcrete;
+    import com.company.assembleegameclient.objects.TextureData;
+    import com.company.assembleegameclient.objects.TextureDataConcrete;
 
-public class FrameData {
+    public class FrameData {
 
         public var time_:int;
         public var textureData_:TextureData;

@@ -4,17 +4,18 @@
 //io.decagames.rotmg.ui.popups.PopupMediator
 
 package io.decagames.rotmg.ui.popups{
-import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+    import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+    import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
+    import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PopupMediator extends Mediator {
+    public class PopupMediator extends Mediator {
 
         [Inject]
         public var view:PopupView;

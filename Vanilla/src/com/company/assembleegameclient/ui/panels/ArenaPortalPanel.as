@@ -4,25 +4,22 @@
 //com.company.assembleegameclient.ui.panels.ArenaPortalPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.objects.ArenaPortal;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.util.Currency;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.objects.ArenaPortal;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.util.Currency;
+    import flash.events.MouseEvent;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.game.AGameSprite;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.util.components.LegacyBuyButton;
-
-import org.osflash.signals.Signal;
-
-public class ArenaPortalPanel extends Panel {
+    public class ArenaPortalPanel extends Panel {
 
         public const purchase:Signal = new Signal(int);
 

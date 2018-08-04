@@ -4,16 +4,14 @@
 //kabam.rotmg.chat.view.ChatInputNotAllowedMediator
 
 package kabam.rotmg.chat.view{
-import flash.events.MouseEvent;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.chat.model.ChatModel;
+    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.ui.signals.HUDModelInitialized;
+    import flash.events.MouseEvent;
 
-import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-import kabam.rotmg.chat.model.ChatModel;
-import kabam.rotmg.ui.model.HUDModel;
-import kabam.rotmg.ui.signals.HUDModelInitialized;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ChatInputNotAllowedMediator extends Mediator {
+    public class ChatInputNotAllowedMediator extends Mediator {
 
         [Inject]
         public var view:ChatInputNotAllowed;

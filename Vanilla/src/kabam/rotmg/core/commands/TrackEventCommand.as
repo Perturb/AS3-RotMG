@@ -4,10 +4,10 @@
 //kabam.rotmg.core.commands.TrackEventCommand
 
 package kabam.rotmg.core.commands{
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.core.service.TrackingData;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.core.service.TrackingData;
 
-public class TrackEventCommand {
+    public class TrackEventCommand {
 
         [Inject]
         public var analytics:GoogleAnalytics;

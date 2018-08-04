@@ -4,24 +4,23 @@
 //io.decagames.rotmg.fame.StatsLine
 
 package io.decagames.rotmg.fame{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Bitmap;
+    import flash.text.TextFormat;
+    import kabam.rotmg.text.model.FontModel;
+    import flash.text.TextFormatAlign;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.AssetLibrary;
+    import io.decagames.rotmg.utils.colors.Tint;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.text.TextFormat;
-import flash.text.TextFormatAlign;
-
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.utils.colors.Tint;
-
-import kabam.rotmg.text.model.FontModel;
-
-public class StatsLine extends Sprite {
+    public class StatsLine extends Sprite {
 
         public static const TYPE_BONUS:int = 0;
         public static const TYPE_STAT:int = 1;

@@ -4,27 +4,24 @@
 //kabam.rotmg.arena.view.ArenaLeaderboardListItem
 
 package kabam.rotmg.arena.view{
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
+    import flash.display.Sprite;
+    import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
+    import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.text.TextFieldAutoSize;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+    import kabam.rotmg.text.model.TextKey;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import flash.filters.DropShadowFilter;
 
-import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
-import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
-import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class ArenaLeaderboardListItem extends Sprite {
+    public class ArenaLeaderboardListItem extends Sprite {
 
         private static const HEIGHT:int = 60;
 

@@ -4,26 +4,26 @@
 //com.company.assembleegameclient.tutorial.TutorialMessage
 
 package com.company.assembleegameclient.tutorial{
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.geom.Rectangle;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import flash.utils.getTimer;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.geom.Rectangle;
-import flash.utils.getTimer;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TutorialMessage extends Sprite {
+    public class TutorialMessage extends Sprite {
 
         public static const BORDER:int = 8;
 

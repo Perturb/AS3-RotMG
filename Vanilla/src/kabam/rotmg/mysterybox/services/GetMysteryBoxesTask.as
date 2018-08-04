@@ -4,23 +4,20 @@
 //kabam.rotmg.mysterybox.services.GetMysteryBoxesTask
 
 package kabam.rotmg.mysterybox.services{
-import com.company.assembleegameclient.util.TimeUtil;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.fortune.services.FortuneModel;
+    import kabam.rotmg.account.core.Account;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.language.model.LanguageModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.application.DynamicSettings;
+    import flash.utils.getTimer;
+    import kabam.rotmg.fortune.model.FortuneInfo;
+    import com.company.assembleegameclient.util.TimeUtil;
+    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
-import flash.utils.getTimer;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.application.DynamicSettings;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.fortune.model.FortuneInfo;
-import kabam.rotmg.fortune.services.FortuneModel;
-import kabam.rotmg.language.model.LanguageModel;
-import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class GetMysteryBoxesTask extends BaseTask {
+    public class GetMysteryBoxesTask extends BaseTask {
 
         private static const TEN_MINUTES:int = 600;
         private static var version:String = "0";

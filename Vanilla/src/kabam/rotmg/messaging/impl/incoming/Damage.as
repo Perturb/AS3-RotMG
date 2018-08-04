@@ -4,9 +4,11 @@
 //kabam.rotmg.messaging.impl.incoming.Damage
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-public class Damage extends IncomingMessage {
+    public class Damage extends IncomingMessage {
 
         public var targetId_:int;
         public var effects_:Vector.<uint> = new Vector.<uint>();

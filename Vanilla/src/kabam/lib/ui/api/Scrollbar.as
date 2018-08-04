@@ -4,9 +4,9 @@
 //kabam.lib.ui.api.Scrollbar
 
 package kabam.lib.ui.api{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public interface Scrollbar {
+    public interface Scrollbar {
 
         function get positionChanged():Signal;
         function setSize(_arg_1:int, _arg_2:int):void;

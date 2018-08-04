@@ -4,7 +4,9 @@
 //kabam.rotmg.arena.model.ArenaLeaderboardFilter
 
 package kabam.rotmg.arena.model{
-public class ArenaLeaderboardFilter {
+    import __AS3__.vec.Vector;
+
+    public class ArenaLeaderboardFilter {
 
         private var name:String;
         private var key:String;

@@ -4,29 +4,27 @@
 //kabam.rotmg.dailyLogin.view.DailyLoginModal
 
 package kabam.rotmg.dailyLogin.view{
-import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import flash.geom.Rectangle;
+    import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
+    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+    import flash.display.Bitmap;
+    import flash.text.TextFormatAlign;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
-
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-import kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class DailyLoginModal extends Sprite {
+    public class DailyLoginModal extends Sprite {
 
         private var content:Sprite;
         private var calendarView:CalendarView = new CalendarView();
@@ -112,11 +110,9 @@ public class DailyLoginModal extends Sprite {
 
         private function createModalBox():void{
             var _local_1:DisplayObject = new MysteryBoxSelectModal.backgroundImageEmbed();
-            //this.modalRectangle.width--;
+            this.modalRectangle.width--;
             _local_1.height = (this.modalRectangle.height - 27);
-            _local_1.width = (this.modalRectangle.width - 1);
             _local_1.y = 27;
-            _local_1.x = 0;
             _local_1.alpha = 0.95;
             this.content.addChild(_local_1);
             this.content.addChild(this.makeModalBackground(this.modalRectangle.width, this.modalRectangle.height));

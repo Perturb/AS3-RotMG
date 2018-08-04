@@ -4,24 +4,24 @@
 //com.company.assembleegameclient.engine3d.ObjectFace3D
 
 package com.company.assembleegameclient.engine3d{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.GraphicsUtil;
-import com.company.util.MoreColorUtil;
+    import flash.display.BitmapData;
+    import __AS3__.vec.Vector;
+    import flash.geom.Vector3D;
+    import flash.display.GraphicsPath;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsBitmapFill;
+    import flash.geom.Matrix;
+    import flash.display.GraphicsPathCommand;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.util.MoreColorUtil;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.stage3D.GraphicsFillExtra;
+    import flash.display.IGraphicsData;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsPathCommand;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.geom.ColorTransform;
-import flash.geom.Matrix;
-import flash.geom.Vector3D;
-
-import kabam.rotmg.stage3D.GraphicsFillExtra;
-
-public class ObjectFace3D {
+    public class ObjectFace3D {
 
         public static const blackBitmap:BitmapData = new BitmapData(1, 1, true, 0xFF000000);
 

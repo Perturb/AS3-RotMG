@@ -4,11 +4,10 @@
 //kabam.rotmg.chat.view.Chat
 
 package kabam.rotmg.chat.view{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.chat.model.ChatModel;
 
-import kabam.rotmg.chat.model.ChatModel;
-
-public class Chat extends Sprite {
+    public class Chat extends Sprite {
 
         public var list:ChatList;
         private var input:ChatInput;

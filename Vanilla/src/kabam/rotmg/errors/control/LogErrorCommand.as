@@ -4,11 +4,10 @@
 //kabam.rotmg.errors.control.LogErrorCommand
 
 package kabam.rotmg.errors.control{
-import flash.events.ErrorEvent;
+    import robotlegs.bender.framework.api.ILogger;
+    import flash.events.ErrorEvent;
 
-import robotlegs.bender.framework.api.ILogger;
-
-public class LogErrorCommand {
+    public class LogErrorCommand {
 
         [Inject]
         public var logger:ILogger;

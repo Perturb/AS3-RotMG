@@ -4,11 +4,10 @@
 //com.greensock.plugins.FrameLabelPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.display.MovieClip;
+    import com.greensock.TweenLite;
 
-import flash.display.MovieClip;
-
-public class FrameLabelPlugin extends FramePlugin {
+    public class FrameLabelPlugin extends FramePlugin {
 
         public static const API:Number = 2;
 

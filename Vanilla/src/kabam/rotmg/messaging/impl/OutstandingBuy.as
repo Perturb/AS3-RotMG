@@ -4,10 +4,10 @@
 //kabam.rotmg.messaging.impl.OutstandingBuy
 
 package kabam.rotmg.messaging.impl{
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.service.GoogleAnalytics;
 
-internal class OutstandingBuy {
+    internal class OutstandingBuy {
 
         private var id_:String;
         private var price_:int;

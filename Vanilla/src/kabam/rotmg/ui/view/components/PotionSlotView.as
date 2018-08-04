@@ -4,35 +4,34 @@
 //kabam.rotmg.ui.view.components.PotionSlotView
 
 package kabam.rotmg.ui.view.components{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.GraphicsUtil;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import flash.filters.DropShadowFilter;
+    import org.osflash.signals.natives.NativeSignal;
+    import org.osflash.signals.Signal;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Bitmap;
+    import flash.filters.ColorMatrixFilter;
+    import flash.utils.Timer;
+    import flash.geom.Point;
+    import flash.display.BitmapData;
+    import com.company.util.MoreColorUtil;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.events.TimerEvent;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import flash.display.DisplayObject;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.events.TimerEvent;
-import flash.filters.ColorMatrixFilter;
-import flash.filters.DropShadowFilter;
-import flash.geom.Point;
-import flash.utils.Timer;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeSignal;
-
-public class PotionSlotView extends Sprite {
+    public class PotionSlotView extends Sprite {
 
         public static var BUTTON_WIDTH:int = 84;
         private static var BUTTON_HEIGHT:int = 24;

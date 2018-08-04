@@ -4,12 +4,11 @@
 //kabam.rotmg.ui.view.CharacterSlotRegisterMediator
 
 package kabam.rotmg.ui.view{
-import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CharacterSlotRegisterMediator extends Mediator {
+    public class CharacterSlotRegisterMediator extends Mediator {
 
         [Inject]
         public var view:CharacterSlotRegisterDialog;

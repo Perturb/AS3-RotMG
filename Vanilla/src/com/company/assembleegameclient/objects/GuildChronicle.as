@@ -4,11 +4,11 @@
 //com.company.assembleegameclient.objects.GuildChronicle
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.GuildChroniclePanel;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.GuildChroniclePanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-public class GuildChronicle extends GameObject implements IInteractiveObject {
+    public class GuildChronicle extends GameObject implements IInteractiveObject {
 
         public function GuildChronicle(_arg_1:XML){
             super(_arg_1);

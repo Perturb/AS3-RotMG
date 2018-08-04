@@ -4,9 +4,9 @@
 //com.greensock.plugins.AutoAlphaPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import com.greensock.TweenLite;
 
-public class AutoAlphaPlugin extends TweenPlugin {
+    public class AutoAlphaPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 

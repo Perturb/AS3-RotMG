@@ -4,29 +4,29 @@
 //com.company.assembleegameclient.ui.guild.MemberListLine
 
 package com.company.assembleegameclient.ui.guild{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.assembleegameclient.util.GuildUtil;
-import com.company.rotmg.graphics.DeleteXGraphic;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import flash.geom.ColorTransform;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.text.TextFieldAutoSize;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import com.company.rotmg.graphics.DeleteXGraphic;
+    import flash.display.Graphics;
+    import com.company.util.MoreColorUtil;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import com.company.assembleegameclient.ui.guild.GuildPlayerListEvent;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import flash.events.Event;
+    import com.company.assembleegameclient.ui.guild.*;
 
-import flash.display.Bitmap;
-import flash.display.Graphics;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-internal class MemberListLine extends Sprite {
+    internal class MemberListLine extends Sprite {
 
         public static const WIDTH:int = 756;
         public static const HEIGHT:int = 32;

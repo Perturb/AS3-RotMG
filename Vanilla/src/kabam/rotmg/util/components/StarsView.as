@@ -4,13 +4,14 @@
 //kabam.rotmg.util.components.StarsView
 
 package kabam.rotmg.util.components{
-import com.company.rotmg.graphics.StarGraphic;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import com.company.rotmg.graphics.StarGraphic;
+    import flash.display.Graphics;
+    import flash.geom.ColorTransform;
+    import __AS3__.vec.*;
 
-import flash.display.Graphics;
-import flash.display.Sprite;
-import flash.geom.ColorTransform;
-
-public class StarsView extends Sprite {
+    public class StarsView extends Sprite {
 
         private static const TOTAL:int = 5;
         private static const MARGIN:int = 4;

@@ -4,9 +4,9 @@
 //com.greensock.plugins.BezierThroughPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import com.greensock.TweenLite;
 
-public class BezierThroughPlugin extends BezierPlugin {
+    public class BezierThroughPlugin extends BezierPlugin {
 
         public static const API:Number = 2;
 

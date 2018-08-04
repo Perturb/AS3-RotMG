@@ -4,29 +4,27 @@
 //io.decagames.rotmg.social.model.SocialModel
 
 package io.decagames.rotmg.social.model{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.FameUtil;
-import com.company.assembleegameclient.util.TimeUtil;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.servers.api.ServerModel;
+    import io.decagames.rotmg.social.tasks.FriendDataRequestTask;
+    import io.decagames.rotmg.social.tasks.GuildDataRequestTask;
+    import io.decagames.rotmg.social.signals.SocialDataSignal;
+    import org.osflash.signals.Signal;
+    import __AS3__.vec.Vector;
+    import flash.utils.Dictionary;
+    import kabam.rotmg.servers.api.Server;
+    import io.decagames.rotmg.social.config.FriendsActions;
+    import io.decagames.rotmg.social.config.GuildActions;
+    import com.company.assembleegameclient.objects.Player;
+    import io.decagames.rotmg.social.config.SocialConfig;
+    import kabam.lib.tasks.BaseTask;
+    import io.decagames.rotmg.social.tasks.ISocialTask;
+    import com.company.assembleegameclient.util.TimeUtil;
+    import com.company.assembleegameclient.util.FameUtil;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.config.GuildActions;
-import io.decagames.rotmg.social.config.SocialConfig;
-import io.decagames.rotmg.social.signals.SocialDataSignal;
-import io.decagames.rotmg.social.tasks.FriendDataRequestTask;
-import io.decagames.rotmg.social.tasks.GuildDataRequestTask;
-import io.decagames.rotmg.social.tasks.ISocialTask;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.servers.api.Server;
-import kabam.rotmg.servers.api.ServerModel;
-import kabam.rotmg.ui.model.HUDModel;
-
-import org.osflash.signals.Signal;
-
-public class SocialModel {
+    public class SocialModel {
 
         [Inject]
         public var hudModel:HUDModel;

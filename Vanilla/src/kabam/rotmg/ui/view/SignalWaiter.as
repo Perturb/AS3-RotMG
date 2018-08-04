@@ -4,13 +4,11 @@
 //kabam.rotmg.ui.view.SignalWaiter
 
 package kabam.rotmg.ui.view{
-import com.adobe.utils.DictionaryUtil;
+    import org.osflash.signals.Signal;
+    import flash.utils.Dictionary;
+    import com.adobe.utils.DictionaryUtil;
 
-import flash.utils.Dictionary;
-
-import org.osflash.signals.Signal;
-
-public class SignalWaiter {
+    public class SignalWaiter {
 
         public var complete:Signal = new Signal();
         private var texts:Dictionary = new Dictionary();

@@ -4,15 +4,12 @@
 //io.decagames.rotmg.pets.data.vo.IPetVO
 
 package io.decagames.rotmg.pets.data.vo{
-import com.company.assembleegameclient.util.MaskedImage;
+    import org.osflash.signals.Signal;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import com.company.assembleegameclient.util.MaskedImage;
 
-import flash.display.Bitmap;
-
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-
-import org.osflash.signals.Signal;
-
-public interface IPetVO {
+    public interface IPetVO {
 
         function get updated():Signal;
         function getSkinBitmap():Bitmap;

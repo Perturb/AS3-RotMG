@@ -4,18 +4,16 @@
 //com.company.assembleegameclient.ui.GuildText
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.util.GuildUtil;
-import com.company.util.SpriteUtil;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import com.company.util.SpriteUtil;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class GuildText extends Sprite {
+    public class GuildText extends Sprite {
 
         private var name_:String;
         private var rank_:int;

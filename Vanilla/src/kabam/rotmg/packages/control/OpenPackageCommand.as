@@ -4,16 +4,14 @@
 //kabam.rotmg.packages.control.OpenPackageCommand
 
 package kabam.rotmg.packages.control{
-import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.packages.services.PackageModel;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import kabam.rotmg.packages.model.PackageInfo;
+    import io.decagames.rotmg.shop.packages.startupPackage.StartupPackage;
 
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.packages.model.PackageInfo;
-import kabam.rotmg.packages.services.PackageModel;
-
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class OpenPackageCommand extends Command {
+    public class OpenPackageCommand extends Command {
 
         [Inject]
         public var openDialogSignal:OpenDialogSignal;

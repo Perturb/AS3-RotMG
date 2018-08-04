@@ -229,7 +229,7 @@
          <Index>30</Index>
       </AnimatedTexture>
       <PlayerClassType>0x031e</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x0388" id="Slime Archer">
       <Skin/>
@@ -239,7 +239,7 @@
          <Index>35</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0307</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x0389" id="Slime Priest">
       <Skin/>
@@ -249,7 +249,7 @@
          <Index>31</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0310</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x0390" id="Agent">
       <Skin/>
@@ -319,7 +319,7 @@
          <Index>22</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0326</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x0393" id="Bashing Bride">
       <Skin/>
@@ -389,7 +389,7 @@
          <Index>32</Index>
       </AnimatedTexture>
       <PlayerClassType>0x030e</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x0395" id="Deadly Vixen">
       <Skin/>
@@ -529,7 +529,7 @@
          <Index>23</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0325</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2336" id="Slime Trickster">
       <Skin/>
@@ -539,7 +539,7 @@
          <Index>24</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0324</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2342" id="Slime Mystic">
       <Skin/>
@@ -549,7 +549,7 @@
          <Index>25</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0323</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2343" id="Slime Huntress">
       <Skin/>
@@ -559,7 +559,7 @@
          <Index>26</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0322</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2344" id="Slime Necromancer">
       <Skin/>
@@ -569,7 +569,7 @@
          <Index>27</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0321</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2345" id="Slime Assassin">
       <Skin/>
@@ -579,7 +579,7 @@
          <Index>28</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0320</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2346" id="Slime Paladin">
       <Skin/>
@@ -589,7 +589,7 @@
          <Index>29</Index>
       </AnimatedTexture>
       <PlayerClassType>0x031f</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2347" id="Slime Rogue">
       <Skin/>
@@ -599,7 +599,7 @@
          <Index>33</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0300</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x2348" id="Slime Warrior">
       <Skin/>
@@ -609,7 +609,7 @@
          <Index>34</Index>
       </AnimatedTexture>
       <PlayerClassType>0x031d</PlayerClassType>
-      <UnlockSpecial>Seriously slimy quest reward.</UnlockSpecial>
+      <UnlockSpecial>Reward from Moss Bags during MotMG.</UnlockSpecial>
    </Object>
    <Object type="0x744a" id="Puppet Master">
       <Skin/>
@@ -1121,7 +1121,7 @@
          <Index>108</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0321</PlayerClassType>
-      <UnlockSpecial>Only appears during Halloween!</UnlockSpecial>
+      <UnlockSpecial>Drops from Lord Ruthven in the Manor of the Immortals.</UnlockSpecial>
    </Object>
    <Object type="0x7f8e" id="Headless Rider">
       <Skin/>
@@ -1131,7 +1131,7 @@
          <Index>109</Index>
       </AnimatedTexture>
       <PlayerClassType>0x031f</PlayerClassType>
-      <UnlockSpecial>Only appears during Halloween!</UnlockSpecial>
+      <UnlockSpecial>Drops from the Headless Horseman.</UnlockSpecial>
    </Object>
    <Object type="0x7f90" id="Pilgrim Father">
       <Skin/>
@@ -3603,7 +3603,7 @@
       <PlayerClassType>0x0321</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x23fd" id="Outpost Guard Warrior">
+   <Object type="0x23fd" id="Kingsman Cavalry Warrior">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3613,7 +3613,7 @@
       <PlayerClassType>0x031d</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x23fe" id="King's Champion Knight">
+   <Object type="0x23fe" id="Kingsman Guard Knight">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3623,7 +3623,7 @@
       <PlayerClassType>0x031e</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x23ff" id="King's Guard Paladin">
+   <Object type="0x23ff" id="Kingsman Armorbearer Paladin">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3673,7 +3673,7 @@
       <PlayerClassType>0x0324</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x2404" id="Hired Mercenary Assassin">
+   <Object type="0x2404" id="Blackguard Mercenary Assassin">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3683,7 +3683,7 @@
       <PlayerClassType>0x0320</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x2405" id="Foreign General Ninja">
+   <Object type="0x2405" id="Sensei Ninja">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3703,7 +3703,7 @@
       <PlayerClassType>0x0300</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x2407" id="Old Bowman Archer">
+   <Object type="0x2407" id="Kings Bowman Archer">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3713,7 +3713,7 @@
       <PlayerClassType>0x307</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x2408" id="Honed Huntress">
+   <Object type="0x2408" id="Forest Tracker Huntress">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3733,7 +3733,7 @@
       <PlayerClassType>0x0310</PlayerClassType>
       <NoSkinSelect/>
    </Object>
-   <Object type="0x240a" id="Aged Sorcerer">
+   <Object type="0x240a" id="Royal Sorcerer">
       <Skin/>
       <Class>Skin</Class>
       <AnimatedTexture>
@@ -3871,6 +3871,7 @@
          <Index>351</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0324</PlayerClassType>
+      <UnlockSpecial>Drops in the Cnidarian Reef.</UnlockSpecial>
       <NoSkinSelect/>
    </Object>
    <Object type="0x7005" id="Mini Horrific Sorcerer">
@@ -3973,6 +3974,16 @@
       <PlayerClassType>0x0320</PlayerClassType>
       <NoSkinSelect/>
    </Object>
+   <Object type="0x18ca" id="Beefcake Brutus Warrior">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>19</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
    <Object type="0x1886" id="Oni Demon Samurai">
       <Skin/>
       <Class>Skin</Class>
@@ -3981,6 +3992,275 @@
          <Index>362</Index>
       </AnimatedTexture>
       <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x5f35" id="Tattooed Yakuza Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>363</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x1884" id="Cowboy Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>364</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe02" id="Tennis Player Archer">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>365</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x307</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe03" id="Beach Assassin">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>366</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0320</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe04" id="Snorkeler Knight">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>367</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031e</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe05" id="Beach Party Necromancer">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>368</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0321</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe06" id="Banana Boat Paladin">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>369</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031f</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe07" id="Buckethead Warrior">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>370</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0xe08" id="Summer Vacation Wizard">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>371</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x30e</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x749a" id="Storm Archer">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>372</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x307</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x749b" id="Foreign Prince Paladin">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>373</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031f</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x749c" id="Hoodoo Priestess">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>374</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0310</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x4ae0" id="Hermit Wizard">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>375</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x30e</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x602a" id="Giant Sword Warrior">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>376</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x7462" id="Wanderer Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>377</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x280d" id="Stone Statue Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>378</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <UnlockSpecial>Month of the Mad God Reward!</UnlockSpecial>
+   </Object>
+   <Object type="0x223e" id="Chonmage Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>379</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+   </Object>
+   <Object type="0x223f" id="Baywatch Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>380</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x2240" id="Shark Hunter Ninja">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>381</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0326</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x2241" id="Kilnmaster Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>382</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x2246" id="Slime Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>383</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x2247" id="Onna Bugeisha Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>384</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x4848" id="Foreign General Samurai">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>385</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0311</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x620e" id="Silex Almighty Knight">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>386</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031e</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x6210" id="Random Mad Scientist">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>387</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x30e</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x6212" id="Krathman">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>388</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0326</PlayerClassType>
+      <NoSkinSelect/>
+   </Object>
+   <Object type="0x0144" id="mini Paladin skin Placeholder">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>254</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0xffff</PlayerClassType>
       <NoSkinSelect/>
    </Object>
 </Objects>

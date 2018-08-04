@@ -4,15 +4,15 @@
 //io.decagames.rotmg.pets.components.petItem.PetItem
 
 package io.decagames.rotmg.pets.components.petItem{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.pets.view.dialogs.Disableable;
+    import io.decagames.rotmg.pets.components.petIcon.PetIcon;
+    import io.decagames.rotmg.pets.utils.ItemBackgroundFactory;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import kabam.rotmg.pets.view.dialogs.*;
+    import io.decagames.rotmg.pets.*;
 
-import io.decagames.rotmg.pets.components.petIcon.PetIcon;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.utils.ItemBackgroundFactory;
-
-import kabam.rotmg.pets.view.dialogs.Disableable;
-
-public class PetItem extends Sprite implements Disableable {
+    public class PetItem extends Sprite implements Disableable {
 
         public static const TOP_LEFT:String = "topLeft";
         public static const TOP_RIGHT:String = "topRight";

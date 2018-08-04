@@ -4,21 +4,22 @@
 //com.company.assembleegameclient.objects.particles.XMLParticle
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.objects.BasicObject;
-import com.company.assembleegameclient.objects.animation.Animations;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.GraphicsUtil;
+    import com.company.assembleegameclient.objects.BasicObject;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.animation.Animations;
+    import flash.geom.Vector3D;
+    import flash.display.GraphicsBitmapFill;
+    import flash.display.GraphicsPath;
+    import com.company.util.GraphicsUtil;
+    import __AS3__.vec.Vector;
+    import flash.geom.Matrix;
+    import com.company.assembleegameclient.map.Square;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsPath;
-import flash.display.IGraphicsData;
-import flash.geom.Matrix;
-import flash.geom.Vector3D;
-
-public class XMLParticle extends BasicObject {
+    public class XMLParticle extends BasicObject {
 
         public var texture_:BitmapData = null;
         public var animations_:Animations = null;

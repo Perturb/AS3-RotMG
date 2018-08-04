@@ -4,11 +4,13 @@
 //com.company.util.ConversionUtil
 
 package com.company.util{
-import flash.geom.Point;
-import flash.geom.Rectangle;
-import flash.geom.Vector3D;
+    import __AS3__.vec.Vector;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import flash.geom.Vector3D;
+    import __AS3__.vec.*;
 
-public class ConversionUtil {
+    public class ConversionUtil {
 
         public function ConversionUtil(_arg_1:StaticEnforcer){
         }

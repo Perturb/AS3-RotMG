@@ -4,13 +4,14 @@
 //io.decagames.rotmg.shop.packages.PurchaseCompleteModal
 
 package io.decagames.rotmg.shop.packages{
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.modal.TextModal;
-import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
+    import io.decagames.rotmg.ui.popups.modal.TextModal;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
+    import kabam.rotmg.packages.model.PackageInfo;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.packages.model.PackageInfo;
-
-public class PurchaseCompleteModal extends TextModal {
+    public class PurchaseCompleteModal extends TextModal {
 
         public function PurchaseCompleteModal(_arg_1:String){
             var _local_2:Vector.<BaseButton> = new Vector.<BaseButton>();

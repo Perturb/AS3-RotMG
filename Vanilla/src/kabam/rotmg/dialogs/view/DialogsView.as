@@ -4,13 +4,13 @@
 //kabam.rotmg.dialogs.view.DialogsView
 
 package kabam.rotmg.dialogs.view{
-import flash.display.DisplayObject;
-import flash.display.DisplayObjectContainer;
-import flash.display.Graphics;
-import flash.display.Sprite;
-import flash.events.Event;
+    import flash.display.Sprite;
+    import flash.display.DisplayObjectContainer;
+    import flash.display.DisplayObject;
+    import flash.display.Graphics;
+    import flash.events.Event;
 
-public class DialogsView extends Sprite {
+    public class DialogsView extends Sprite {
 
         private var background:Sprite;
         private var container:DisplayObjectContainer;

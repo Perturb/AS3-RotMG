@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.ReskinUnlock
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class ReskinUnlock extends IncomingMessage {
+    public class ReskinUnlock extends IncomingMessage {
 
         public var skinID:int;
         public var isPetSkin:int;

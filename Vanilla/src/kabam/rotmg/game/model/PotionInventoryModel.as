@@ -4,13 +4,11 @@
 //kabam.rotmg.game.model.PotionInventoryModel
 
 package kabam.rotmg.game.model{
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.ui.model.PotionModel;
 
-import kabam.rotmg.ui.model.PotionModel;
-
-import org.osflash.signals.Signal;
-
-public class PotionInventoryModel {
+    public class PotionInventoryModel {
 
         public static const HEALTH_POTION_ID:int = 2594;
         public static const HEALTH_POTION_SLOT:int = 254;

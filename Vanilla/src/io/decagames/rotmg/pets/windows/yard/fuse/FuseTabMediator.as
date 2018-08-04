@@ -4,40 +4,38 @@
 //io.decagames.rotmg.pets.windows.yard.fuse.FuseTabMediator
 
 package io.decagames.rotmg.pets.windows.yard.fuse{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.util.Currency;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.utils.PetItemFactory;
+    import io.decagames.rotmg.pets.signals.SelectPetSignal;
+    import io.decagames.rotmg.pets.signals.SelectFusePetSignal;
+    import io.decagames.rotmg.pets.signals.UpgradePetSignal;
+    import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
+    import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
+    import io.decagames.rotmg.pets.signals.NewAbilitySignal;
+    import io.decagames.rotmg.pets.signals.EvolvePetSignal;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import kabam.rotmg.game.model.GameModel;
+    import kabam.rotmg.core.model.PlayerModel;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.pets.components.petItem.PetItem;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.messaging.impl.EvolvePetInfo;
+    import io.decagames.rotmg.pets.data.vo.requests.FusePetRequestVO;
+    import kabam.rotmg.messaging.impl.PetUpgradeRequest;
+    import io.decagames.rotmg.shop.NotEnoughResources;
+    import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import io.decagames.rotmg.pets.utils.FeedFuseCostModel;
+    import io.decagames.rotmg.pets.utils.FusionCalculator;
+    import __AS3__.vec.*;
 
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.components.petItem.PetItem;
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.data.vo.requests.FusePetRequestVO;
-import io.decagames.rotmg.pets.signals.EvolvePetSignal;
-import io.decagames.rotmg.pets.signals.NewAbilitySignal;
-import io.decagames.rotmg.pets.signals.SelectFusePetSignal;
-import io.decagames.rotmg.pets.signals.SelectPetSignal;
-import io.decagames.rotmg.pets.signals.UpgradePetSignal;
-import io.decagames.rotmg.pets.utils.FeedFuseCostModel;
-import io.decagames.rotmg.pets.utils.FusionCalculator;
-import io.decagames.rotmg.pets.utils.PetItemFactory;
-import io.decagames.rotmg.shop.NotEnoughResources;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
-import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.messaging.impl.EvolvePetInfo;
-import kabam.rotmg.messaging.impl.PetUpgradeRequest;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class FuseTabMediator extends Mediator {
+    public class FuseTabMediator extends Mediator {
 
         [Inject]
         public var view:FuseTab;

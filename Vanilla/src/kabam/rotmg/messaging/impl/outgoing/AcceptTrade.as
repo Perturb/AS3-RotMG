@@ -4,9 +4,11 @@
 //kabam.rotmg.messaging.impl.outgoing.AcceptTrade
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import __AS3__.vec.Vector;
+    import flash.utils.IDataOutput;
+    import __AS3__.vec.*;
 
-public class AcceptTrade extends OutgoingMessage {
+    public class AcceptTrade extends OutgoingMessage {
 
         public var myOffer_:Vector.<Boolean> = new Vector.<Boolean>();
         public var yourOffer_:Vector.<Boolean> = new Vector.<Boolean>();

@@ -4,16 +4,16 @@
 //io.decagames.rotmg.ui.tabs.UITabs
 
 package io.decagames.rotmg.ui.tabs{
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.geom.Point;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import io.decagames.rotmg.social.signals.TabSelectedSignal;
+    import __AS3__.vec.Vector;
+    import flash.events.Event;
+    import flash.geom.Point;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import __AS3__.vec.*;
 
-import io.decagames.rotmg.social.signals.TabSelectedSignal;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-
-import org.osflash.signals.Signal;
-
-public class UITabs extends Sprite {
+    public class UITabs extends Sprite {
 
         public var buttonsRenderedSignal:Signal = new Signal();
         public var tabSelectedSignal:TabSelectedSignal = new TabSelectedSignal();

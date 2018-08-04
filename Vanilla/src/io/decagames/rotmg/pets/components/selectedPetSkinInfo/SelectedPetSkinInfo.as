@@ -4,17 +4,16 @@
 //io.decagames.rotmg.pets.components.selectedPetSkinInfo.SelectedPetSkinInfo
 
 package io.decagames.rotmg.pets.components.selectedPetSkinInfo{
-import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import io.decagames.rotmg.shop.ShopBuyButton;
+    import io.decagames.rotmg.pets.config.PetsPricing;
+    import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.pets.data.skin.SelectedPetButtonType;
 
-import io.decagames.rotmg.pets.components.petInfoSlot.PetInfoSlot;
-import io.decagames.rotmg.pets.config.PetsPricing;
-import io.decagames.rotmg.pets.data.skin.SelectedPetButtonType;
-import io.decagames.rotmg.shop.ShopBuyButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-public class SelectedPetSkinInfo extends PetInfoSlot {
+    public class SelectedPetSkinInfo extends PetInfoSlot {
 
         private var _goldActionButton:SliceScalingButton;
         private var _fameActionButton:SliceScalingButton;

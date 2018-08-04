@@ -4,13 +4,11 @@
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElementMediator
 
 package io.decagames.rotmg.dailyQuests.view.list{
-import flash.events.MouseEvent;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
+    import flash.events.MouseEvent;
 
-import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class DailyQuestListElementMediator extends Mediator {
+    public class DailyQuestListElementMediator extends Mediator {
 
         [Inject]
         public var view:DailyQuestListElement;

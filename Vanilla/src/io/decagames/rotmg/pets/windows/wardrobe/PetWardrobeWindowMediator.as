@@ -4,26 +4,23 @@
 //io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindowMediator
 
 package io.decagames.rotmg.pets.windows.wardrobe{
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.game.model.GameModel;
+    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetWardrobeWindowMediator extends Mediator {
+    public class PetWardrobeWindowMediator extends Mediator {
 
         [Inject]
         public var view:PetWardrobeWindow;

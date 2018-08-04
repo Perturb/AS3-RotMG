@@ -4,13 +4,12 @@
 //kabam.rotmg.death.control.ZombifyCommand
 
 package kabam.rotmg.death.control{
-import kabam.rotmg.death.view.ZombifyDialog;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.death.view.ZombifyDialog;
 
-import robotlegs.bender.framework.api.ILogger;
-
-public class ZombifyCommand {
+    public class ZombifyCommand {
 
         [Inject]
         public var openDialog:OpenDialogSignal;

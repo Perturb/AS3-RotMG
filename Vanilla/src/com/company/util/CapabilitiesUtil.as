@@ -4,9 +4,9 @@
 //com.company.util.CapabilitiesUtil
 
 package com.company.util{
-import flash.system.Capabilities;
+    import flash.system.Capabilities;
 
-public class CapabilitiesUtil {
+    public class CapabilitiesUtil {
 
 
         public static function getHumanReadable():String{

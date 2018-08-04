@@ -4,7 +4,9 @@
 //io.decagames.rotmg.pets.data.family.PetFamilyColors
 
 package io.decagames.rotmg.pets.data.family{
-public class PetFamilyColors {
+    import io.decagames.rotmg.pets.data.*;
+
+    public class PetFamilyColors {
 
         public static const AQUATIC:uint = 2453493;
         public static const AUTOMATON:uint = 5853776;

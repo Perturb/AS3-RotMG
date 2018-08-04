@@ -4,11 +4,10 @@
 //kabam.rotmg.external.service.ExternalServiceHelper
 
 package kabam.rotmg.external.service{
-import flash.external.ExternalInterface;
+    import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
+    import flash.external.ExternalInterface;
 
-import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
-
-public class ExternalServiceHelper {
+    public class ExternalServiceHelper {
 
         [Inject]
         public var requestPlayerCredits:RequestPlayerCreditsSignal;

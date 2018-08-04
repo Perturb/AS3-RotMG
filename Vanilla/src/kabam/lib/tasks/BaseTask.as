@@ -4,11 +4,10 @@
 //kabam.lib.tasks.BaseTask
 
 package kabam.lib.tasks{
-import flash.errors.IllegalOperationError;
+    import flash.errors.IllegalOperationError;
+    import org.osflash.signals.Signal;
 
-import org.osflash.signals.Signal;
-
-public class BaseTask implements Task {
+    public class BaseTask implements Task {
 
         private var _started:TaskStartedSignal;
         private var _finished:TaskResultSignal;

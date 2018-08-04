@@ -4,17 +4,18 @@
 //com.company.util.GraphicsUtil
 
 package com.company.util{
-import flash.display.CapsStyle;
-import flash.display.GraphicsEndFill;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsPathCommand;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.geom.Matrix;
+    import flash.display.GraphicsEndFill;
+    import __AS3__.vec.Vector;
+    import flash.display.GraphicsPathCommand;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import flash.geom.Matrix;
 
-public class GraphicsUtil {
+    public class GraphicsUtil {
 
         public static const END_FILL:GraphicsEndFill = new GraphicsEndFill();
         public static const QUAD_COMMANDS:Vector.<int> = new <int>[GraphicsPathCommand.MOVE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO, GraphicsPathCommand.LINE_TO];

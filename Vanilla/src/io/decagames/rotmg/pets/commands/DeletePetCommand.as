@@ -4,11 +4,10 @@
 //io.decagames.rotmg.pets.commands.DeletePetCommand
 
 package io.decagames.rotmg.pets.commands{
-import com.company.assembleegameclient.editor.Command;
+    import com.company.assembleegameclient.editor.Command;
+    import io.decagames.rotmg.pets.data.PetsModel;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-
-public class DeletePetCommand extends Command {
+    public class DeletePetCommand extends Command {
 
         [Inject]
         public var petID:int;

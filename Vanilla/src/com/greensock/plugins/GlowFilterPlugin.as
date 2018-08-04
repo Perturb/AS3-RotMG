@@ -4,11 +4,10 @@
 //com.greensock.plugins.GlowFilterPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.filters.GlowFilter;
+    import com.greensock.TweenLite;
 
-import flash.filters.GlowFilter;
-
-public class GlowFilterPlugin extends FilterPlugin {
+    public class GlowFilterPlugin extends FilterPlugin {
 
         public static const API:Number = 2;
         private static var _propNames:Array = ["color", "alpha", "blurX", "blurY", "strength", "quality", "inner", "knockout"];

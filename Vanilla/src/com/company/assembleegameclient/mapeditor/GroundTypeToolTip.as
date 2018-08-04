@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.mapeditor.GroundTypeToolTip
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.ui.BaseSimpleText;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.ui.BaseSimpleText;
+    import flash.filters.DropShadowFilter;
 
-import flash.filters.DropShadowFilter;
-
-public class GroundTypeToolTip extends ToolTip {
+    public class GroundTypeToolTip extends ToolTip {
 
         private static const MAX_WIDTH:int = 180;
 

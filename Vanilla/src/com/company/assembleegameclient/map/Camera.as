@@ -4,16 +4,17 @@
 //com.company.assembleegameclient.map.Camera
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.RandomUtil;
+    import flash.geom.Vector3D;
+    import flash.geom.Rectangle;
+    import flash.geom.PerspectiveProjection;
+    import flash.geom.Matrix3D;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.RandomUtil;
+    import __AS3__.vec.*;
 
-import flash.geom.Matrix3D;
-import flash.geom.PerspectiveProjection;
-import flash.geom.Rectangle;
-import flash.geom.Vector3D;
-
-public class Camera {
+    public class Camera {
 
         public static const lN_:Vector3D = new Vector3D(0, 0, 1);
         public static const CENTER_SCREEN_RECT:Rectangle = new Rectangle(-300, -325, 600, 600);

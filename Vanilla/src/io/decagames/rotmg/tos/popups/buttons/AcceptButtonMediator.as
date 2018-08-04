@@ -4,15 +4,13 @@
 //io.decagames.rotmg.tos.popups.buttons.AcceptButtonMediator
 
 package io.decagames.rotmg.tos.popups.buttons{
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class AcceptButtonMediator extends Mediator {
+    public class AcceptButtonMediator extends Mediator {
 
         [Inject]
         public var view:AcceptButton;

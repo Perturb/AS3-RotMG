@@ -4,14 +4,14 @@
 //kabam.rotmg.messaging.impl.incoming.Update
 
 package kabam.rotmg.messaging.impl.incoming{
-import com.company.assembleegameclient.util.FreeList;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.GroundTileData;
+    import kabam.rotmg.messaging.impl.data.ObjectData;
+    import com.company.assembleegameclient.util.FreeList;
+    import flash.utils.IDataInput;
+    import __AS3__.vec.*;
 
-import flash.utils.IDataInput;
-
-import kabam.rotmg.messaging.impl.data.GroundTileData;
-import kabam.rotmg.messaging.impl.data.ObjectData;
-
-public class Update extends IncomingMessage {
+    public class Update extends IncomingMessage {
 
         public var tiles_:Vector.<GroundTileData> = new Vector.<GroundTileData>();
         public var newObjs_:Vector.<ObjectData> = new Vector.<ObjectData>();

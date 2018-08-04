@@ -4,13 +4,12 @@
 //io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialogMediator
 
 package io.decagames.rotmg.pets.popup.releasePet{
-import io.decagames.rotmg.pets.signals.ReleasePetSignal;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.signals.ReleasePetSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ReleasePetDialogMediator extends Mediator {
+    public class ReleasePetDialogMediator extends Mediator {
 
         [Inject]
         public var view:ReleasePetDialog;

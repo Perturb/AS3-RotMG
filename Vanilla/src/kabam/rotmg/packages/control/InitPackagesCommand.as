@@ -4,10 +4,10 @@
 //kabam.rotmg.packages.control.InitPackagesCommand
 
 package kabam.rotmg.packages.control{
-import kabam.rotmg.packages.services.PackageModel;
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.packages.services.PackageModel;
 
-public class InitPackagesCommand {
+    public class InitPackagesCommand {
 
         [Inject]
         public var beginnersPackageModel:BeginnersPackageModel;

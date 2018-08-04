@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.EnemyHit
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class EnemyHit extends OutgoingMessage {
+    public class EnemyHit extends OutgoingMessage {
 
         public var time_:int;
         public var bulletId_:uint;

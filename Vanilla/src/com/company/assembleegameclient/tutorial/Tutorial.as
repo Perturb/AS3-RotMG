@@ -4,24 +4,24 @@
 //com.company.assembleegameclient.tutorial.Tutorial
 
 package com.company.assembleegameclient.tutorial{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.PointUtil;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.game.GameSprite;
+    import __AS3__.vec.Vector;
+    import flash.display.Shape;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import flash.display.Graphics;
+    import flash.utils.getTimer;
+    import kabam.rotmg.assets.EmbeddedData;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.events.Event;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.filters.BlurFilter;
+    import com.company.util.PointUtil;
+    import __AS3__.vec.*;
 
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.BlurFilter;
-import flash.utils.getTimer;
-
-import kabam.rotmg.assets.EmbeddedData;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-
-public class Tutorial extends Sprite {
+    public class Tutorial extends Sprite {
 
         public static const NEXT_ACTION:String = "Next";
         public static const MOVE_FORWARD_ACTION:String = "MoveForward";

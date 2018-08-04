@@ -4,11 +4,10 @@
 //com.greensock.plugins.BevelFilterPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.filters.BevelFilter;
+    import com.greensock.TweenLite;
 
-import flash.filters.BevelFilter;
-
-public class BevelFilterPlugin extends FilterPlugin {
+    public class BevelFilterPlugin extends FilterPlugin {
 
         public static const API:Number = 2;
         private static var _propNames:Array = ["distance", "angle", "highlightColor", "highlightAlpha", "shadowColor", "shadowAlpha", "blurX", "blurY", "strength", "quality"];

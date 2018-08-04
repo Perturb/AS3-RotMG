@@ -4,9 +4,9 @@
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles{
-import flash.events.Event;
+    import flash.events.Event;
 
-public class ItemTileEvent extends Event {
+    public class ItemTileEvent extends Event {
 
         public static const ITEM_MOVE:String = "ITEM_MOVE";
         public static const ITEM_DOUBLE_CLICK:String = "ITEM_DOUBLE_CLICK";

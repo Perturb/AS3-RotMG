@@ -4,26 +4,23 @@
 //kabam.rotmg.ui.view.CurrentCharacterRectMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
+    import kabam.rotmg.core.signals.TrackEventSignal;
+    import kabam.rotmg.game.signals.PlayGameSignal;
+    import kabam.rotmg.characters.model.CharacterModel;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import flash.display.Sprite;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import kabam.rotmg.core.service.TrackingData;
+    import kabam.rotmg.game.model.GameInitData;
+    import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog;
 
-import flash.display.Sprite;
-
-import kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog;
-import kabam.rotmg.characters.model.CharacterModel;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.core.service.TrackingData;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.core.signals.TrackEventSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.model.GameInitData;
-import kabam.rotmg.game.signals.PlayGameSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CurrentCharacterRectMediator extends Mediator {
+    public class CurrentCharacterRectMediator extends Mediator {
 
         [Inject]
         public var view:CurrentCharacterRect;

@@ -4,24 +4,22 @@
 //com.company.assembleegameclient.ui.panels.TradeRequestPanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.utils.Timer;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.AGameSprite;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.events.TimerEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.utils.Timer;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class TradeRequestPanel extends Panel {
+    public class TradeRequestPanel extends Panel {
 
         public var name_:String;
         private var title_:TextFieldDisplayConcrete;

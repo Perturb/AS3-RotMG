@@ -1,9 +1,9 @@
-﻿package io.decagames.rotmg.pets.data
+package io.decagames.rotmg.pets.data
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="PetsModel_petsDataXML.dat", mimeType="application/octet-stream")]
-	public class PetsModel_petsDataXML extends ByteArrayAsset
+	[Embed(source="PetsModel_petsDataXML.dat", mimeType="application/octet-stream")]
+	public class PetsModel_petsDataXML extends mx.core.ByteArrayAsset
 	{
 		public function PetsModel_petsDataXML()
 		{

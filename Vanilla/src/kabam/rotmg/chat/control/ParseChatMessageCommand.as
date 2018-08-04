@@ -4,24 +4,23 @@
 //kabam.rotmg.chat.control.ParseChatMessageCommand
 
 package kabam.rotmg.chat.control{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.MoreObjectUtil;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.build.api.BuildData;
+    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.util.MoreObjectUtil;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.dialogs.model.PopupNamesConfig;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-import kabam.rotmg.dialogs.model.PopupNamesConfig;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.ui.model.HUDModel;
-
-public class ParseChatMessageCommand {
+    public class ParseChatMessageCommand {
 
         [Inject]
         public var data:String;

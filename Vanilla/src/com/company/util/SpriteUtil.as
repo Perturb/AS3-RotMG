@@ -4,10 +4,10 @@
 //com.company.util.SpriteUtil
 
 package com.company.util{
-import flash.display.DisplayObject;
-import flash.display.DisplayObjectContainer;
+    import flash.display.DisplayObjectContainer;
+    import flash.display.DisplayObject;
 
-public class SpriteUtil {
+    public class SpriteUtil {
 
 
         public static function safeAddChild(_arg_1:DisplayObjectContainer, _arg_2:DisplayObject):void{

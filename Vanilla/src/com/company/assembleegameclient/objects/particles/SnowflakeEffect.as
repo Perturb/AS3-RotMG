@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.objects.particles.SnowflakeEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.ColorUtil;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.ColorUtil;
 
-import flash.geom.Point;
-
-public class SnowflakeEffect extends ParticleEffect {
+    public class SnowflakeEffect extends ParticleEffect {
 
         public var start_:Point;
         public var color1_:int;
@@ -57,8 +56,8 @@ public class SnowflakeEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import com.company.assembleegameclient.objects.particles.SparkParticle;
 import com.company.assembleegameclient.util.MathUtil;
+import com.company.assembleegameclient.objects.particles.SparkParticle;
 import com.company.assembleegameclient.util.RandomUtil;
 
 class SnowflakeParticle extends Particle {

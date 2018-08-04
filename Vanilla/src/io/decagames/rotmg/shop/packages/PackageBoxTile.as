@@ -4,16 +4,14 @@
 //io.decagames.rotmg.shop.packages.PackageBoxTile
 
 package io.decagames.rotmg.shop.packages{
-import flash.display.Loader;
-import flash.display.Sprite;
+    import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
+    import flash.display.Loader;
+    import kabam.rotmg.packages.model.PackageInfo;
 
-import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
-import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-
-import kabam.rotmg.packages.model.PackageInfo;
-
-public class PackageBoxTile extends GenericBoxTile {
+    public class PackageBoxTile extends GenericBoxTile {
 
         private var backgroundContainer:Sprite = new Sprite();
         private var imageMask:SliceScalingBitmap;

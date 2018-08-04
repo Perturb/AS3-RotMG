@@ -4,11 +4,10 @@
 //kabam.rotmg.application.impl.PrivateSetup
 
 package kabam.rotmg.application.impl{
-import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import kabam.rotmg.application.api.ApplicationSetup;
-
-public class PrivateSetup implements ApplicationSetup {
+    public class PrivateSetup implements ApplicationSetup {
 
         private const SERVER:String = "test.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);

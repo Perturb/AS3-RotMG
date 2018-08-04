@@ -4,13 +4,12 @@
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollectionMediator
 
 package io.decagames.rotmg.pets.components.petSkinsCollection{
-import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.family.PetFamilyKeys;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+    import io.decagames.rotmg.pets.data.family.PetFamilyKeys;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetSkinsCollectionMediator extends Mediator {
+    public class PetSkinsCollectionMediator extends Mediator {
 
         [Inject]
         public var view:PetSkinsCollection;

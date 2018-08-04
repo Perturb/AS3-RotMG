@@ -4,13 +4,11 @@
 //com.company.assembleegameclient.util.GuildUtil
 
 package com.company.assembleegameclient.util{
-import com.company.util.AssetLibrary;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
 
-import flash.display.BitmapData;
-
-import kabam.rotmg.text.model.TextKey;
-
-public class GuildUtil {
+    public class GuildUtil {
 
         public static const INITIATE:int = 0;
         public static const MEMBER:int = 10;

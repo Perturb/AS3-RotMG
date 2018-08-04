@@ -4,13 +4,11 @@
 //kabam.rotmg.core.service.GoogleAnalytics
 
 package kabam.rotmg.core.service{
-import flash.system.Capabilities;
+    import io.decagames.rotmg.service.tracking.GoogleAnalyticsTracker;
+    import robotlegs.bender.framework.api.ILogger;
+    import flash.system.Capabilities;
 
-import io.decagames.rotmg.service.tracking.GoogleAnalyticsTracker;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class GoogleAnalytics {
+    public class GoogleAnalytics {
 
         private var tracker:GoogleAnalyticsTracker;
         [Inject]

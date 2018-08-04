@@ -4,24 +4,22 @@
 //com.company.assembleegameclient.ui.options.KeyCodeBox
 
 package com.company.assembleegameclient.ui.options{
-import com.company.util.KeyCodes;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.filters.DropShadowFilter;
+    import flash.text.TextFieldAutoSize;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.util.KeyCodes;
+    import flash.display.Graphics;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import flash.events.KeyboardEvent;
+    import flash.utils.getTimer;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
 
-import flash.display.Graphics;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.utils.getTimer;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class KeyCodeBox extends Sprite {
+    public class KeyCodeBox extends Sprite {
 
         public static const WIDTH:int = 80;
         public static const HEIGHT:int = 32;

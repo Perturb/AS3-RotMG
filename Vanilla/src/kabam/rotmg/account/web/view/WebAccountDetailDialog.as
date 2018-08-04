@@ -4,20 +4,17 @@
 //kabam.rotmg.account.web.view.WebAccountDetailDialog
 
 package kabam.rotmg.account.web.view{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
 
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class WebAccountDetailDialog extends Frame {
+    public class WebAccountDetailDialog extends Frame {
 
         public var cancel:Signal;
         public var change:Signal;

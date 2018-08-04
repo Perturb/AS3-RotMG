@@ -4,22 +4,19 @@
 //kabam.rotmg.dailyLogin.controller.CalendarDayBoxMediator
 
 package kabam.rotmg.dailyLogin.controller{
-import com.company.assembleegameclient.map.Map;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.dailyLogin.view.CalendarDayBox;
+    import kabam.lib.net.impl.SocketServer;
+    import kabam.lib.net.api.MessageProvider;
+    import kabam.rotmg.core.model.MapModel;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
+    import com.company.assembleegameclient.map.Map;
+    import kabam.rotmg.messaging.impl.GameServerConnection;
 
-import flash.events.MouseEvent;
-
-import kabam.lib.net.api.MessageProvider;
-import kabam.lib.net.impl.SocketServer;
-import kabam.rotmg.core.model.MapModel;
-import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
-import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-import kabam.rotmg.dailyLogin.view.CalendarDayBox;
-import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CalendarDayBoxMediator extends Mediator {
+    public class CalendarDayBoxMediator extends Mediator {
 
         [Inject]
         public var view:CalendarDayBox;

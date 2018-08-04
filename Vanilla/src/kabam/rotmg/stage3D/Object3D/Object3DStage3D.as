@@ -4,17 +4,16 @@
 //kabam.rotmg.stage3D.Object3D.Object3DStage3D
 
 package kabam.rotmg.stage3D.Object3D{
-import flash.display.BitmapData;
-import flash.display3D.Context3D;
-import flash.display3D.Context3DTextureFormat;
-import flash.display3D.Context3DVertexBufferFormat;
-import flash.display3D.textures.Texture;
-import flash.geom.Matrix3D;
-import flash.geom.Vector3D;
+    import flash.display.BitmapData;
+    import flash.geom.Matrix3D;
+    import flash.geom.Vector3D;
+    import flash.display3D.textures.Texture;
+    import kabam.rotmg.stage3D.graphic3D.TextureFactory;
+    import flash.display3D.Context3DVertexBufferFormat;
+    import flash.display3D.Context3DTextureFormat;
+    import flash.display3D.Context3D;
 
-import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-
-public class Object3DStage3D {
+    public class Object3DStage3D {
 
         public static const missingTextureBitmap:BitmapData = new BitmapData(1, 1, true, 0x888888FF);
 

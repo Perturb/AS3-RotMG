@@ -4,29 +4,29 @@
 //kabam.rotmg.fortune.components.CrystalSmall
 
 package kabam.rotmg.fortune.components{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
-import com.company.util.MoreColorUtil;
-import com.gskinner.motion.GTween;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import __AS3__.vec.Vector;
+    import flash.text.TextField;
+    import flash.filters.GlowFilter;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.filters.ColorMatrixFilter;
+    import com.company.util.MoreColorUtil;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import flash.text.TextFormat;
+    import flash.text.TextFormatAlign;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.text.TextFieldAutoSize;
+    import com.gskinner.motion.GTween;
+    import flash.ui.Mouse;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.ColorMatrixFilter;
-import flash.filters.GlowFilter;
-import flash.text.TextField;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
-import flash.text.TextFormatAlign;
-import flash.ui.Mouse;
-
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class CrystalSmall extends Sprite {
+    public class CrystalSmall extends Sprite {
 
         public static const ANIM_PULSE:int = 1;
         public static const ANIM_HOVER:int = 2;

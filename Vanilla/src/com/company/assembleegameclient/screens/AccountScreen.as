@@ -4,20 +4,17 @@
 //com.company.assembleegameclient.screens.AccountScreen
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.ui.GuildText;
-import com.company.assembleegameclient.ui.RankText;
-import com.company.assembleegameclient.ui.tooltip.RankToolTip;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.ui.RankText;
+    import com.company.assembleegameclient.ui.GuildText;
+    import kabam.rotmg.account.core.view.AccountInfoView;
+    import flash.display.Shape;
+    import flash.display.DisplayObject;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.ui.tooltip.RankToolTip;
 
-import flash.display.DisplayObject;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.account.core.view.AccountInfoView;
-
-import org.osflash.signals.Signal;
-
-public class AccountScreen extends Sprite {
+    public class AccountScreen extends Sprite {
 
         public var tooltip:Signal;
         private var rankLayer:Sprite;

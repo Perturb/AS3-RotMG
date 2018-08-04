@@ -401,10 +401,16 @@
       <DisplayId>Katana Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
-      <AnimatedTexture>
-         <File>parasiteDenChars8x8</File>
-         <Index>24</Index>
-      </AnimatedTexture>
+      <RandomTexture>
+         <AnimatedTexture>
+            <File>parasiteDenChars8x8</File>
+            <Index>24</Index>
+         </AnimatedTexture>
+         <AnimatedTexture>
+            <File>parasiteDenChars8x8</File>
+            <Index>25</Index>
+         </AnimatedTexture>
+      </RandomTexture>
       <HitSound>monster/flayers_hit</HitSound>
       <DeathSound>monster/flayers_death</DeathSound>
       <BloodProb>0.5</BloodProb>
@@ -606,10 +612,16 @@
       <DisplayId>Katana Wielding Host</DisplayId>
       <Class>Character</Class>
       <Enemy/>
-      <AnimatedTexture>
-         <File>parasiteDenChars8x8</File>
-         <Index>24</Index>
-      </AnimatedTexture>
+      <RandomTexture>
+         <AnimatedTexture>
+            <File>parasiteDenChars8x8</File>
+            <Index>24</Index>
+         </AnimatedTexture>
+         <AnimatedTexture>
+            <File>parasiteDenChars8x8</File>
+            <Index>25</Index>
+         </AnimatedTexture>
+      </RandomTexture>
       <HitSound>monster/flayers_hit</HitSound>
       <DeathSound>monster/flayers_death</DeathSound>
       <BloodProb>0.5</BloodProb>
@@ -1487,7 +1499,7 @@
       <Enemy/>
       <AnimatedTexture>
          <File>parasiteDenChars8x8</File>
-         <Index>25</Index>
+         <Index>26</Index>
       </AnimatedTexture>
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/blobs_death</DeathSound>

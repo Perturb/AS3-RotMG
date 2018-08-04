@@ -4,29 +4,27 @@
 //com.company.assembleegameclient.ui.icons.IconButton
 
 package com.company.assembleegameclient.ui.icons{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.KeyCodes;
-import com.company.util.MoreColorUtil;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import flash.geom.ColorTransform;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import flash.display.BitmapData;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.util.KeyCodes;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import com.company.util.MoreColorUtil;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.geom.ColorTransform;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-public class IconButton extends Sprite implements TooltipAble {
+    public class IconButton extends Sprite implements TooltipAble {
 
         protected static const mouseOverCT:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
         protected static const disableCT:ColorTransform = new ColorTransform(0.6, 0.6, 0.6, 1);

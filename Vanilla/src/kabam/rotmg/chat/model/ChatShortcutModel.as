@@ -4,10 +4,10 @@
 //kabam.rotmg.chat.model.ChatShortcutModel
 
 package kabam.rotmg.chat.model{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.options.Options;
+    import com.company.assembleegameclient.ui.options.Options;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-public class ChatShortcutModel {
+    public class ChatShortcutModel {
 
         private var commandShortcut:int = 191;
         private var chatShortcut:int = 13;

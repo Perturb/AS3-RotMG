@@ -4,16 +4,16 @@
 //com.company.assembleegameclient.mapeditor.Filter
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.dropdown.DropDown;
-import com.company.ui.BaseSimpleText;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import com.company.assembleegameclient.ui.dropdown.DropDown;
+    import com.company.ui.BaseSimpleText;
+    import flash.events.FocusEvent;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import flash.events.Event;
+    import __AS3__.vec.Vector;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.FocusEvent;
-
-public class Filter extends Sprite {
+    public class Filter extends Sprite {
 
         private static const GAP:int = 2;
 

@@ -4,10 +4,10 @@
 //kabam.rotmg.packages.control.AlreadyBoughtPackageCommand
 
 package kabam.rotmg.packages.control{
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.packages.view.PackageInfoDialog;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.packages.view.PackageInfoDialog;
 
-public class AlreadyBoughtPackageCommand {
+    public class AlreadyBoughtPackageCommand {
 
         private static const DIALOG_TITLE:String = "Package Purchased";
         private static const MESSAGE_TITLE:String = "You've already purchased this package!";

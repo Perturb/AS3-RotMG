@@ -4,9 +4,9 @@
 //kabam.lib.json.SoftwareJsonParser
 
 package kabam.lib.json{
-import com.adobe.serialization.json.JSON;
+    import com.adobe.serialization.json.JSON;
 
-public class SoftwareJsonParser implements JsonParser {
+    public class SoftwareJsonParser implements JsonParser {
 
 
         public function stringify(_arg_1:Object):String{

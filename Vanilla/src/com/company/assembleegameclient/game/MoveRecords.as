@@ -4,9 +4,11 @@
 //com.company.assembleegameclient.game.MoveRecords
 
 package com.company.assembleegameclient.game{
-import kabam.rotmg.messaging.impl.data.MoveRecord;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.MoveRecord;
+    import __AS3__.vec.*;
 
-public class MoveRecords {
+    public class MoveRecords {
 
         public var lastClearTime_:int = -1;
         public var records_:Vector.<MoveRecord> = new Vector.<MoveRecord>();

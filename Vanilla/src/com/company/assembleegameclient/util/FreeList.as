@@ -4,9 +4,11 @@
 //com.company.assembleegameclient.util.FreeList
 
 package com.company.assembleegameclient.util{
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class FreeList {
+    public class FreeList {
 
         private static var dict_:Dictionary = new Dictionary();
 

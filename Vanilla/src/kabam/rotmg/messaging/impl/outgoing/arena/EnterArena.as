@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.outgoing.arena.EnterArena
 
 package kabam.rotmg.messaging.impl.outgoing.arena{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-
-public class EnterArena extends OutgoingMessage {
+    public class EnterArena extends OutgoingMessage {
 
         public var currency:int;
 

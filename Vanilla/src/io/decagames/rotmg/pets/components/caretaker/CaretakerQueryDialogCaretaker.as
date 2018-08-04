@@ -4,11 +4,11 @@
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDialogCaretaker
 
 package io.decagames.rotmg.pets.components.caretaker{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import flash.display.BitmapData;
 
-public class CaretakerQueryDialogCaretaker extends Sprite {
+    public class CaretakerQueryDialogCaretaker extends Sprite {
 
         private const speechBubble:CaretakerQuerySpeechBubble = makeSpeechBubble();
         private const detailBubble:CaretakerQueryDetailBubble = makeDetailBubble();

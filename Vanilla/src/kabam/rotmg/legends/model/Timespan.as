@@ -4,9 +4,10 @@
 //kabam.rotmg.legends.model.Timespan
 
 package kabam.rotmg.legends.model{
-import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.model.TextKey;
+    import __AS3__.vec.Vector;
 
-public class Timespan {
+    public class Timespan {
 
         public static const WEEK:Timespan = new Timespan(TextKey.TIMESPAN_WEEK, "week");
         public static const MONTH:Timespan = new Timespan(TextKey.TIMESPAN_MONTH, "month");

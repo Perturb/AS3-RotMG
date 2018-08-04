@@ -329,4 +329,29 @@
          <Size>100</Size>
       </Projectile>
    </Object>
+   <Object type="0x5e82" id="Zombie Samurai">
+      <Class>Character</Class>
+      <Group>Zombies</Group>
+      <Enemy/>
+      <AnimatedTexture>
+         <File>chars8x8rEncounters</File>
+         <Index>143</Index>
+      </AnimatedTexture>
+      <HitSound>monster/slimes_death</HitSound>
+      <DeathSound>monster/flying_brain_death</DeathSound>
+      <Size>100</Size>
+      <ShadowSize>0</ShadowSize>
+      <MaxHitPoints>2500</MaxHitPoints>
+      <Defense>20</Defense>
+      <Exp>20</Exp>
+      <Projectile id="0">
+         <ObjectId>Poison Katana Slash</ObjectId>
+         <Damage>60</Damage>
+         <Speed>60</Speed>
+         <LifetimeMS>1100</LifetimeMS>
+         <Size>100</Size>
+         <Amplitude>0.5</Amplitude>
+         <Frequency>1</Frequency>
+      </Projectile>
+   </Object>
 </Objects>

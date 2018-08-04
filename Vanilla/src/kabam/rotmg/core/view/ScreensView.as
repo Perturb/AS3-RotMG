@@ -4,9 +4,9 @@
 //kabam.rotmg.core.view.ScreensView
 
 package kabam.rotmg.core.view{
-import flash.display.Sprite;
+    import flash.display.Sprite;
 
-public class ScreensView extends Sprite {
+    public class ScreensView extends Sprite {
 
         private var current:Sprite;
         private var previous:Sprite;

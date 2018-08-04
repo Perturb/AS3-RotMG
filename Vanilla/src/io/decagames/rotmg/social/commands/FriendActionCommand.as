@@ -4,19 +4,18 @@
 //io.decagames.rotmg.social.commands.FriendActionCommand
 
 package io.decagames.rotmg.social.commands{
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.model.FriendRequestVO;
-import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
-import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import io.decagames.rotmg.social.model.FriendRequestVO;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import io.decagames.rotmg.social.config.FriendsActions;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class FriendActionCommand {
+    public class FriendActionCommand {
 
         [Inject]
         public var client:AppEngineClient;

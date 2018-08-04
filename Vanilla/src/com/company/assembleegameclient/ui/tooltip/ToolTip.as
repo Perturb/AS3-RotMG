@@ -4,24 +4,24 @@
 //com.company.assembleegameclient.ui.tooltip.ToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.display.DisplayObject;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import flash.filters.DropShadowFilter;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.DisplayObject;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class ToolTip extends Sprite {
+    public class ToolTip extends Sprite {
 
         private var background_:uint;
         private var backgroundAlpha_:Number;

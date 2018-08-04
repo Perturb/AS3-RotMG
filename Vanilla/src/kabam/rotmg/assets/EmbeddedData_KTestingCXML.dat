@@ -361,7 +361,7 @@
          <LifetimeMS>600</LifetimeMS>
       </Projectile>
       <NumProjectiles>3</NumProjectiles>
-      <ArcGap>90</ArcGap>
+      <ArcGap>10</ArcGap>
       <BagType>6</BagType>
       <feedPower>100000</feedPower>
       <Soulbound/>

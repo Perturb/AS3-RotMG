@@ -4,21 +4,18 @@
 //kabam.rotmg.core.commands.SetScreenWithValidDataCommand
 
 package kabam.rotmg.core.commands{
-import com.company.assembleegameclient.screens.LoadingScreen;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import flash.display.Sprite;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.account.core.services.GetCharListTask;
+    import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
+    import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
+    import com.company.assembleegameclient.screens.LoadingScreen;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.DispatchSignalTask;
 
-import flash.display.Sprite;
-
-import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
-
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.services.GetCharListTask;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
-
-public class SetScreenWithValidDataCommand {
+    public class SetScreenWithValidDataCommand {
 
         [Inject]
         public var model:PlayerModel;

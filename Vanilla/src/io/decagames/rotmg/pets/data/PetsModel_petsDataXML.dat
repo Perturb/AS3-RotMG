@@ -10935,4 +10935,324 @@
       <DisplayId>Cylindron Pet Skin</DisplayId>
       <feedPower>2000</feedPower>
    </Object>
+   <Object id="Living Tree" type="0x72a0">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Woodland</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Living Tree Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x72a1" id="Living Tree Pet Skin">
+      <PetSkin/>
+      <DisplayId>Living Tree</DisplayId>
+      <Class>PetSkin</Class>
+      <Family>Woodland</Family>
+      <Rarity>Rare</Rarity>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>224</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x72a2" id="Living Tree Pet Stone">
+      <DisplayId>Living Tree Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>224</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>I have a lot of growing up to do!\n\nUnlocks Living Tree Skin of the Woodland family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="29345">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Chinchilla" type="0x72a3">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Exotic</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Chinchilla Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x72a4" id="Chinchilla Pet Skin">
+      <PetSkin/>
+      <DisplayId>Chinchilla</DisplayId>
+      <Class>PetSkin</Class>
+      <Family>Exotic</Family>
+      <Rarity>Rare</Rarity>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>225</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x72a5" id="Chinchilla Pet Stone">
+      <DisplayId>Chinchilla Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>225</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Don't mistake me for a fluffy bunny - I'm a genuine Chilean Chinchilla&#8230;\n\nUnlocks Chinchilla Skin of the Exotic family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="29348">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Golden Chess Piece" type="0x72a6">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Golden Chess Piece Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x72a7" id="Golden Chess Piece Pet Skin">
+      <PetSkin/>
+      <DisplayId>Golden Chess Piece</DisplayId>
+      <Class>PetSkin</Class>
+      <Family>? ? ? ?</Family>
+      <Rarity>Rare</Rarity>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>226</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x72a8" id="Golden Chess Piece Pet Stone">
+      <DisplayId>Golden Chess Piece Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>226</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Rook no further!\n\nSprite Credits: Tero\n\nUnlocks Golden Chess Piece Skin of the ? ? ? ? family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="29351">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="World Turtles" type="0x6408">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Reptile</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>World Turtles Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x6409" id="World Turtles Pet Skin">
+      <PetSkin/>
+      <DisplayId>World Turtles</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>81</Index>
+      </AnimatedTexture>
+      <Family>Reptile</Family>
+      <Rarity>Divine</Rarity>
+   </Object>
+   <Object type="0x640a" id="World Turtles Pet Stone">
+      <DisplayId>World Turtles Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>81</Index>
+      </AnimatedTexture>
+      <ScaleValue>10</ScaleValue>
+      <SlotType>10</SlotType>
+      <Description>Yes that's right, ALL the way down.\n\nSprite Credits: Dappertron\n\nUnlocks World Turtles Skin of the Reptile family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="25609">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Skelly Penguin" type="0x370f">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Penguin</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Skelly Penguin Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x3710" id="Skelly Penguin Pet Skin">
+      <PetSkin/>
+      <DisplayId>Skelly Penguin</DisplayId>
+      <Class>PetSkin</Class>
+      <Family>Penguin</Family>
+      <Rarity>Rare</Rarity>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>227</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x3711" id="Skelly Penguin Pet Stone">
+      <DisplayId>Skelly Penguin Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>227</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Surprisingly buoyant, all things considered.\n\nSprite Credits: Dappertron\n\nUnlocks Skelly Penguin Skin of the Penguin family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="14096">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Reticulated Longuin" type="0x3712">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Reticulated Longuin Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x3713" id="Reticulated Longuin Pet Skin">
+      <PetSkin/>
+      <DisplayId>Reticulated Longuin</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>82</Index>
+      </AnimatedTexture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+   </Object>
+   <Object type="0x3714" id="Reticulated Longuin Pet Stone">
+      <DisplayId>Reticulated Longuin Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>82</Index>
+      </AnimatedTexture>
+      <ScaleValue>10</ScaleValue>
+      <SlotType>10</SlotType>
+      <Description>"Nature's" "perfect" predator.\n\nSprite Credits: Dappertron\n\nUnlocks Reticulated Longuin Skin of the Penguin family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="14099">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Transcendent Penguin" type="0x3715">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Transcendent Penguin Pet Skin</DefaultSkin>
+      <Size>80</Size>
+   </Object>
+   <Object type="0x3716" id="Transcendent Penguin Pet Skin">
+      <PetSkin/>
+      <DisplayId>Transcendent Penguin</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>83</Index>
+      </AnimatedTexture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+   </Object>
+   <Object type="0x3717" id="Transcendent Penguin Pet Stone">
+      <DisplayId>Transcendent Penguin Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>83</Index>
+      </AnimatedTexture>
+      <ScaleValue>10</ScaleValue>
+      <SlotType>10</SlotType>
+      <Description>Gaze into the infinite pupil of space and time, and bear witness to my million trillion truths: a penguin did it.\n\nSprite Credits: Dappertron\n\nUnlocks Transcendent Penguin Skin of the Penguin family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="14102">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object id="Aeronautical Penguin" type="0x3718">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Aeronautical Penguin Pet Skin</DefaultSkin>
+      <Size>80</Size>
+      <WhileMoving>
+         <Z>0.35</Z>
+         <Flying/>
+      </WhileMoving>
+   </Object>
+   <Object type="0x3719" id="Aeronautical Penguin Pet Skin">
+      <PetSkin/>
+      <DisplayId>Aeronautical Penguin</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>84</Index>
+      </AnimatedTexture>
+      <Family>Penguin</Family>
+      <Rarity>Divine</Rarity>
+   </Object>
+   <Object type="0x371a" id="Aeronautical Penguin Pet Stone">
+      <DisplayId>Aeronautical Penguin Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>84</Index>
+      </AnimatedTexture>
+      <ScaleValue>10</ScaleValue>
+      <SlotType>10</SlotType>
+      <Description>Look to the skies, and behold a dream fulfilled.\n\nSprite Credits: Dappertron\n\nUnlocks Aeronautical Penguin Skin of the Penguin family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="14105">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
 </Objects>

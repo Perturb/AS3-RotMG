@@ -4,34 +4,33 @@
 //kabam.rotmg.arena.view.ArenaLeaderboard
 
 package kabam.rotmg.arena.view{
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.rotmg.graphics.ScreenGraphic;
-import com.company.util.AssetLibrary;
-import com.company.util.BitmapUtil;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import flash.display.Bitmap;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import kabam.rotmg.arena.model.ArenaLeaderboardModel;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.util.BitmapUtil;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Shape;
+    import flash.display.Graphics;
+    import __AS3__.vec.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer;
-import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
-import kabam.rotmg.arena.model.ArenaLeaderboardModel;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-import org.osflash.signals.Signal;
-
-public class ArenaLeaderboard extends Sprite {
+    public class ArenaLeaderboard extends Sprite {
 
         public const requestData:Signal = new Signal(ArenaLeaderboardFilter);
         public const close:Signal = new Signal();

@@ -4,31 +4,27 @@
 //kabam.rotmg.ui.view.CharacterDetailsMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.objects.ImageFactory;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-import com.company.assembleegameclient.ui.options.Options;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.ui.signals.HUDModelInitialized;
+    import kabam.rotmg.ui.signals.UpdateHUDSignal;
+    import kabam.rotmg.ui.signals.NameChangedSignal;
+    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+    import com.company.assembleegameclient.objects.ImageFactory;
+    import kabam.rotmg.chat.model.TellModel;
+    import io.decagames.rotmg.social.model.SocialModel;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import io.decagames.rotmg.social.SocialPopupView;
+    import kabam.rotmg.friends.view.FriendListView;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import com.company.assembleegameclient.ui.options.Options;
+    import com.company.assembleegameclient.objects.Player;
 
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.social.SocialPopupView;
-import io.decagames.rotmg.social.model.SocialModel;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.chat.model.TellModel;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.friends.view.FriendListView;
-import kabam.rotmg.ui.model.HUDModel;
-import kabam.rotmg.ui.signals.HUDModelInitialized;
-import kabam.rotmg.ui.signals.NameChangedSignal;
-import kabam.rotmg.ui.signals.UpdateHUDSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CharacterDetailsMediator extends Mediator {
+    public class CharacterDetailsMediator extends Mediator {
 
         [Inject]
         public var view:CharacterDetailsView;

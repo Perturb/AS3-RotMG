@@ -4,9 +4,9 @@
 //com.company.assembleegameclient.mapeditor.SubmitJMEvent
 
 package com.company.assembleegameclient.mapeditor{
-import flash.events.Event;
+    import flash.events.Event;
 
-public class SubmitJMEvent extends Event {
+    public class SubmitJMEvent extends Event {
 
         public static const SUBMIT_JM_EVENT:String = "SUBMIT_JM_EVENT";
 

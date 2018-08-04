@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.Create
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class Create extends OutgoingMessage {
+    public class Create extends OutgoingMessage {
 
         public var classType:int;
         public var skinType:int;

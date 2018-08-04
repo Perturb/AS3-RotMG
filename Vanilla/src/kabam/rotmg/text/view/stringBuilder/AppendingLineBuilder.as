@@ -4,9 +4,11 @@
 //kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder
 
 package kabam.rotmg.text.view.stringBuilder{
-import kabam.rotmg.language.model.StringMap;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.language.model.StringMap;
+    import __AS3__.vec.*;
 
-public class AppendingLineBuilder implements StringBuilder {
+    public class AppendingLineBuilder implements StringBuilder {
 
         private var data:Vector.<LineData> = new Vector.<LineData>();
         private var delimiter:String = "\n";
@@ -49,9 +51,9 @@ public class AppendingLineBuilder implements StringBuilder {
     }
 }//package kabam.rotmg.text.view.stringBuilder
 
-import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.language.model.StringMap;
 
 class LineData {
 

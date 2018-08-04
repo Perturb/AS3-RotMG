@@ -4,15 +4,13 @@
 //io.decagames.rotmg.ui.ProgressBar
 
 package io.decagames.rotmg.ui{
-import com.greensock.TweenLite;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Shape;
+    import flash.text.TextFormat;
+    import com.greensock.TweenLite;
 
-import flash.display.Shape;
-import flash.text.TextFormat;
-
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-public class ProgressBar extends UIGridElement {
+    public class ProgressBar extends UIGridElement {
 
         public static const DYNAMIC_LABEL_TOKEN:String = "{X}";
         public static const MAX_VALUE_TOKEN:String = "{M}";

@@ -4,12 +4,14 @@
 //kabam.rotmg.stage3D.Object3D.Model3D_stage3d
 
 package kabam.rotmg.stage3D.Object3D{
-import flash.display3D.Context3D;
-import flash.display3D.VertexBuffer3D;
-import flash.utils.ByteArray;
-import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import flash.display3D.VertexBuffer3D;
+    import flash.utils.Dictionary;
+    import flash.display3D.Context3D;
+    import flash.utils.ByteArray;
+    import __AS3__.vec.*;
 
-public class Model3D_stage3d {
+    public class Model3D_stage3d {
 
         public var name:String;
         public var groups:Vector.<OBJGroup>;

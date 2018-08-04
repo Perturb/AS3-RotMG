@@ -4,24 +4,22 @@
 //io.decagames.rotmg.social.popups.InviteFriendPopupMediator
 
 package io.decagames.rotmg.social.popups{
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.model.FriendRequestVO;
-import io.decagames.rotmg.social.signals.FriendActionSignal;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-import io.decagames.rotmg.ui.texture.TextureParser;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
+    import io.decagames.rotmg.social.signals.FriendActionSignal;
+    import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import io.decagames.rotmg.social.model.FriendRequestVO;
+    import io.decagames.rotmg.social.config.FriendsActions;
+    import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class InviteFriendPopupMediator extends Mediator {
+    public class InviteFriendPopupMediator extends Mediator {
 
         [Inject]
         public var view:InviteFriendPopup;

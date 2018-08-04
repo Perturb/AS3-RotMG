@@ -4,63 +4,61 @@
 //kabam.rotmg.account.web.WebAccountConfig
 
 package kabam.rotmg.account.web{
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.account.core.services.ChangePasswordTask;
-import kabam.rotmg.account.core.services.LoadAccountTask;
-import kabam.rotmg.account.core.services.LoginTask;
-import kabam.rotmg.account.core.services.MakePaymentTask;
-import kabam.rotmg.account.core.services.PurchaseGoldTask;
-import kabam.rotmg.account.core.services.RegisterAccountTask;
-import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
-import kabam.rotmg.account.core.services.SendPasswordReminderTask;
-import kabam.rotmg.account.core.signals.CharListDataSignal;
-import kabam.rotmg.account.core.signals.LoginSignal;
-import kabam.rotmg.account.core.signals.LogoutSignal;
-import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-import kabam.rotmg.account.core.signals.RegisterSignal;
-import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
-import kabam.rotmg.account.web.commands.WebChangePasswordCommand;
-import kabam.rotmg.account.web.commands.WebLoginCommand;
-import kabam.rotmg.account.web.commands.WebLogoutCommand;
-import kabam.rotmg.account.web.commands.WebOpenAccountInfoCommand;
-import kabam.rotmg.account.web.commands.WebRegisterAccountCommand;
-import kabam.rotmg.account.web.commands.WebSendPasswordReminderCommand;
-import kabam.rotmg.account.web.commands.WebSetPaymentDataCommand;
-import kabam.rotmg.account.web.model.WebMoneyConfig;
-import kabam.rotmg.account.web.services.WebChangePasswordTask;
-import kabam.rotmg.account.web.services.WebLoadAccountTask;
-import kabam.rotmg.account.web.services.WebLoginTask;
-import kabam.rotmg.account.web.services.WebMakePaymentTask;
-import kabam.rotmg.account.web.services.WebPurchaseGoldTask;
-import kabam.rotmg.account.web.services.WebRegisterAccountTask;
-import kabam.rotmg.account.web.services.WebSendPasswordReminderTask;
-import kabam.rotmg.account.web.services.WebSendVerificationEmailTask;
-import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
-import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-import kabam.rotmg.account.web.view.WebAccountDetailMediator;
-import kabam.rotmg.account.web.view.WebAccountInfoMediator;
-import kabam.rotmg.account.web.view.WebAccountInfoView;
-import kabam.rotmg.account.web.view.WebChangePasswordDialog;
-import kabam.rotmg.account.web.view.WebChangePasswordDialogForced;
-import kabam.rotmg.account.web.view.WebChangePasswordMediator;
-import kabam.rotmg.account.web.view.WebChangePasswordMediatorForced;
-import kabam.rotmg.account.web.view.WebForgotPasswordDialog;
-import kabam.rotmg.account.web.view.WebForgotPasswordMediator;
-import kabam.rotmg.account.web.view.WebLoginDialog;
-import kabam.rotmg.account.web.view.WebLoginDialogForced;
-import kabam.rotmg.account.web.view.WebLoginMediator;
-import kabam.rotmg.account.web.view.WebLoginMediatorForced;
-import kabam.rotmg.account.web.view.WebRegisterDialog;
-import kabam.rotmg.account.web.view.WebRegisterMediator;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import kabam.rotmg.account.web.model.WebMoneyConfig;
+    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+    import kabam.rotmg.account.web.commands.WebOpenAccountInfoCommand;
+    import kabam.rotmg.account.core.signals.LoginSignal;
+    import kabam.rotmg.account.web.commands.WebLoginCommand;
+    import kabam.rotmg.account.core.signals.LogoutSignal;
+    import kabam.rotmg.account.web.commands.WebLogoutCommand;
+    import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
+    import kabam.rotmg.account.web.commands.WebChangePasswordCommand;
+    import kabam.rotmg.account.core.signals.SendPasswordReminderSignal;
+    import kabam.rotmg.account.web.commands.WebSendPasswordReminderCommand;
+    import kabam.rotmg.account.core.signals.RegisterSignal;
+    import kabam.rotmg.account.web.commands.WebRegisterAccountCommand;
+    import kabam.rotmg.account.core.signals.CharListDataSignal;
+    import kabam.rotmg.account.web.commands.WebSetPaymentDataCommand;
+    import kabam.rotmg.account.web.view.WebAccountInfoView;
+    import kabam.rotmg.account.web.view.WebAccountInfoMediator;
+    import kabam.rotmg.account.web.view.WebChangePasswordDialog;
+    import kabam.rotmg.account.web.view.WebChangePasswordMediator;
+    import kabam.rotmg.account.web.view.WebForgotPasswordDialog;
+    import kabam.rotmg.account.web.view.WebForgotPasswordMediator;
+    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+    import kabam.rotmg.account.web.view.WebAccountDetailMediator;
+    import kabam.rotmg.account.web.view.WebRegisterDialog;
+    import kabam.rotmg.account.web.view.WebRegisterMediator;
+    import kabam.rotmg.account.web.view.WebLoginDialog;
+    import kabam.rotmg.account.web.view.WebLoginMediator;
+    import kabam.rotmg.account.web.view.WebLoginDialogForced;
+    import kabam.rotmg.account.web.view.WebLoginMediatorForced;
+    import kabam.rotmg.account.web.view.WebChangePasswordDialogForced;
+    import kabam.rotmg.account.web.view.WebChangePasswordMediatorForced;
+    import kabam.rotmg.account.core.services.ChangePasswordTask;
+    import kabam.rotmg.account.web.services.WebChangePasswordTask;
+    import kabam.rotmg.account.core.services.LoadAccountTask;
+    import kabam.rotmg.account.web.services.WebLoadAccountTask;
+    import kabam.rotmg.account.core.services.LoginTask;
+    import kabam.rotmg.account.web.services.WebLoginTask;
+    import kabam.rotmg.account.core.services.MakePaymentTask;
+    import kabam.rotmg.account.web.services.WebMakePaymentTask;
+    import kabam.rotmg.account.core.services.PurchaseGoldTask;
+    import kabam.rotmg.account.web.services.WebPurchaseGoldTask;
+    import kabam.rotmg.account.core.services.RegisterAccountTask;
+    import kabam.rotmg.account.web.services.WebRegisterAccountTask;
+    import kabam.rotmg.account.core.services.SendPasswordReminderTask;
+    import kabam.rotmg.account.web.services.WebSendPasswordReminderTask;
+    import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
+    import kabam.rotmg.account.web.services.WebSendVerificationEmailTask;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class WebAccountConfig implements IConfig {
+    public class WebAccountConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

@@ -4,11 +4,11 @@
 //com.company.assembleegameclient.objects.GuildHallPortal
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.GuildHallPortalPanel;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.GuildHallPortalPanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-public class GuildHallPortal extends GameObject implements IInteractiveObject {
+    public class GuildHallPortal extends GameObject implements IInteractiveObject {
 
         public function GuildHallPortal(_arg_1:XML){
             super(_arg_1);

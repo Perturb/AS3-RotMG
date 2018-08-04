@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.objects.ImageFactory
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
 
-import flash.display.BitmapData;
-
-public class ImageFactory {
+    public class ImageFactory {
 
 
         public function getImageFromSet(_arg_1:String, _arg_2:int):BitmapData{

@@ -4,11 +4,11 @@
 //kabam.lib.ui.impl.NullLayout
 
 package kabam.lib.ui.impl{
-import flash.display.DisplayObject;
+    import kabam.lib.ui.api.Layout;
+    import __AS3__.vec.Vector;
+    import flash.display.DisplayObject;
 
-import kabam.lib.ui.api.Layout;
-
-public class NullLayout implements Layout {
+    public class NullLayout implements Layout {
 
 
         public function getPadding():int{

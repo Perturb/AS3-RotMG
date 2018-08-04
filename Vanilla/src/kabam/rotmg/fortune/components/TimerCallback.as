@@ -4,10 +4,10 @@
 //kabam.rotmg.fortune.components.TimerCallback
 
 package kabam.rotmg.fortune.components{
-import flash.events.TimerEvent;
-import flash.utils.Timer;
+    import flash.utils.Timer;
+    import flash.events.TimerEvent;
 
-public class TimerCallback {
+    public class TimerCallback {
 
         private var f:Function;
         private var data1:*;

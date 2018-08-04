@@ -4,26 +4,24 @@
 //com.company.assembleegameclient.account.ui.MoneyFrameMediator
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
-import com.company.assembleegameclient.util.offer.Offer;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.view.MoneyFrame;
+    import kabam.rotmg.account.core.model.OfferModel;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
+    import kabam.rotmg.account.core.services.GetOffersTask;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.ui.model.HUDModel;
+    import kabam.rotmg.arena.model.CurrentArenaRunModel;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.lib.tasks.Task;
+    import kabam.rotmg.arena.view.ContinueOrQuitDialog;
+    import com.company.assembleegameclient.util.offer.Offer;
 
-import kabam.lib.tasks.Task;
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.account.core.model.OfferModel;
-import kabam.rotmg.account.core.services.GetOffersTask;
-import kabam.rotmg.account.core.signals.PurchaseGoldSignal;
-import kabam.rotmg.account.core.view.MoneyFrame;
-import kabam.rotmg.arena.model.CurrentArenaRunModel;
-import kabam.rotmg.arena.view.ContinueOrQuitDialog;
-import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-import robotlegs.bender.framework.api.ILogger;
-
-public class MoneyFrameMediator extends Mediator {
+    public class MoneyFrameMediator extends Mediator {
 
         [Inject]
         public var view:MoneyFrame;

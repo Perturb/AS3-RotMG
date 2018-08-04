@@ -4,9 +4,9 @@
 //io.decagames.rotmg.pets.data.yard.PetYardEnum
 
 package io.decagames.rotmg.pets.data.yard{
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
 
-public class PetYardEnum {
+    public class PetYardEnum {
 
         public static const PET_YARD_ONE:PetYardEnum = new PetYardEnum("Yard Upgrader 1", 1, PetRarityEnum.COMMON);
         public static const PET_YARD_TWO:PetYardEnum = new PetYardEnum("Yard Upgrader 2", 2, PetRarityEnum.UNCOMMON);

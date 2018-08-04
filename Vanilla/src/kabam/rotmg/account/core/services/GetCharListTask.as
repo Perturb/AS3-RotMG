@@ -4,31 +4,29 @@
 //kabam.rotmg.account.core.services.GetCharListTask
 
 package kabam.rotmg.account.core.services{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.util.MoreObjectUtil;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.core.signals.SetLoadingMessageSignal;
+    import kabam.rotmg.account.core.signals.CharListDataSignal;
+    import robotlegs.bender.framework.api.ILogger;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+    import flash.utils.Timer;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.util.MoreObjectUtil;
+    import kabam.rotmg.account.web.view.MigrationDialog;
+    import kabam.rotmg.account.web.WebAccount;
+    import kabam.rotmg.account.web.view.WebLoginDialog;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.fortune.components.TimerCallback;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.account.core.*;
 
-import flash.events.TimerEvent;
-import flash.utils.Timer;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.signals.CharListDataSignal;
-import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-import kabam.rotmg.account.web.WebAccount;
-import kabam.rotmg.account.web.view.MigrationDialog;
-import kabam.rotmg.account.web.view.WebLoginDialog;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.fortune.components.TimerCallback;
-import kabam.rotmg.text.model.TextKey;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class GetCharListTask extends BaseTask {
+    public class GetCharListTask extends BaseTask {
 
         private static const ONE_SECOND_IN_MS:int = 1000;
         private static const MAX_RETRIES:int = 7;

@@ -4,14 +4,13 @@
 //com.company.assembleegameclient.ui.options.OptionsTabTitle
 
 package com.company.assembleegameclient.ui.options{
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
 
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class OptionsTabTitle extends Sprite {
+    public class OptionsTabTitle extends Sprite {
 
         private static const TEXT_SIZE:int = 16;
 

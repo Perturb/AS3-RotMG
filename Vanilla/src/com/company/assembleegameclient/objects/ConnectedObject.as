@@ -4,18 +4,18 @@
 //com.company.assembleegameclient.objects.ConnectedObject
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.engine3d.Object3D;
-import com.company.assembleegameclient.engine3d.ObjectFace3D;
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Square;
+    import flash.utils.Dictionary;
+    import flash.geom.Vector3D;
+    import com.company.assembleegameclient.engine3d.ObjectFace3D;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.map.Square;
+    import flash.geom.Utils3D;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import com.company.assembleegameclient.engine3d.Object3D;
 
-import flash.display.BitmapData;
-import flash.display.IGraphicsData;
-import flash.geom.Utils3D;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
-
-public class ConnectedObject extends GameObject {
+    public class ConnectedObject extends GameObject {
 
         protected static const DOT_TYPE:int = 0;
         protected static const SHORT_LINE_TYPE:int = 1;

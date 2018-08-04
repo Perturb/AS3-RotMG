@@ -4,15 +4,16 @@
 //com.company.assembleegameclient.map.partyoverlay.PartyOverlay
 
 package com.company.assembleegameclient.map.partyoverlay{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.objects.Party;
-import com.company.assembleegameclient.objects.Player;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.map.Map;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.objects.Party;
+    import flash.events.Event;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.Sprite;
-import flash.events.Event;
-
-public class PartyOverlay extends Sprite {
+    public class PartyOverlay extends Sprite {
 
         public var map_:Map;
         public var partyMemberArrows_:Vector.<PlayerArrow> = null;

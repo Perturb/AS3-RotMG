@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.fortune.components
+package kabam.rotmg.fortune.components
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="FortuneModal_backgroundImageEmbed.png")]
-	public class FortuneModal_backgroundImageEmbed extends BitmapAsset
+	[Embed(source="FortuneModal_backgroundImageEmbed.png")]
+	public class FortuneModal_backgroundImageEmbed extends mx.core.BitmapAsset
 	{
 		public function FortuneModal_backgroundImageEmbed()
 		{

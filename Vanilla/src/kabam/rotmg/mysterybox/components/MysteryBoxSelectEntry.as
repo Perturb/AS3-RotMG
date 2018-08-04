@@ -4,31 +4,29 @@
 //kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry
 
 package kabam.rotmg.mysterybox.components{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
-import com.company.assembleegameclient.util.Currency;
+    import flash.display.Sprite;
+    import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.util.Currency;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import kabam.rotmg.util.components.UIAssetsHelper;
+    import flash.utils.getTimer;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.text.TextFormatAlign;
+    import flash.filters.DropShadowFilter;
+    import flash.filters.ColorMatrixFilter;
+    import flash.geom.Point;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import kabam.rotmg.core.StaticInjectorContext;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.ColorMatrixFilter;
-import flash.filters.DropShadowFilter;
-import flash.geom.Point;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
-import flash.utils.getTimer;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.util.components.LegacyBuyButton;
-import kabam.rotmg.util.components.UIAssetsHelper;
-
-public class MysteryBoxSelectEntry extends Sprite {
+    public class MysteryBoxSelectEntry extends Sprite {
 
         public static var redBarEmbed:Class = MysteryBoxSelectEntry_redBarEmbed;
 

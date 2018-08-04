@@ -4,15 +4,13 @@
 //io.decagames.rotmg.pets.popup.info.PetInfoItemMediator
 
 package io.decagames.rotmg.pets.popup.info{
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetInfoItemMediator extends Mediator {
+    public class PetInfoItemMediator extends Mediator {
 
         [Inject]
         public var view:PetInfoItem;

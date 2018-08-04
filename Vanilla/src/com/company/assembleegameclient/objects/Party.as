@@ -4,14 +4,12 @@
 //com.company.assembleegameclient.objects.Party
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Map;
-import com.company.util.PointUtil;
+    import com.company.assembleegameclient.map.Map;
+    import flash.utils.Dictionary;
+    import com.company.util.PointUtil;
+    import kabam.rotmg.messaging.impl.incoming.AccountList;
 
-import flash.utils.Dictionary;
-
-import kabam.rotmg.messaging.impl.incoming.AccountList;
-
-public class Party {
+    public class Party {
 
         public static const NUM_MEMBERS:int = 6;
         private static const SORT_ON_FIELDS:Array = ["starred_", "distSqFromThisPlayer_", "objectId_"];

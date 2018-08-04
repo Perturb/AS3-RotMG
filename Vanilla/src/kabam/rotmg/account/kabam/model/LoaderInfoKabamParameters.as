@@ -4,14 +4,12 @@
 //kabam.rotmg.account.kabam.model.LoaderInfoKabamParameters
 
 package kabam.rotmg.account.kabam.model{
-import flash.display.LoaderInfo;
+    import flash.display.LoaderInfo;
+    import kabam.lib.json.JsonParser;
+    import kabam.lib.json.Base64Decoder;
+    import robotlegs.bender.framework.api.ILogger;
 
-import kabam.lib.json.Base64Decoder;
-import kabam.lib.json.JsonParser;
-
-import robotlegs.bender.framework.api.ILogger;
-
-public class LoaderInfoKabamParameters implements KabamParameters {
+    public class LoaderInfoKabamParameters implements KabamParameters {
 
         [Inject]
         public var info:LoaderInfo;

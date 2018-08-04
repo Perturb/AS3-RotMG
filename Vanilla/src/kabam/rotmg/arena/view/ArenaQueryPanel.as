@@ -4,18 +4,16 @@
 //kabam.rotmg.arena.view.ArenaQueryPanel
 
 package kabam.rotmg.arena.view{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.arena.util.ArenaViewAssetFactory;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import com.company.assembleegameclient.game.GameSprite;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import flash.display.Bitmap;
-
-import kabam.rotmg.arena.util.ArenaViewAssetFactory;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class ArenaQueryPanel extends Panel {
+    public class ArenaQueryPanel extends Panel {
 
         private const titleText:TextFieldDisplayConcrete = ArenaViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
 

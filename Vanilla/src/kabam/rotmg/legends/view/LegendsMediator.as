@@ -4,19 +4,18 @@
 //kabam.rotmg.legends.view.LegendsMediator
 
 package kabam.rotmg.legends.view{
-import kabam.rotmg.core.signals.TrackPageViewSignal;
-import kabam.rotmg.death.model.DeathModel;
-import kabam.rotmg.fame.control.ShowFameViewSignal;
-import kabam.rotmg.legends.control.ExitLegendsSignal;
-import kabam.rotmg.legends.control.FameListUpdateSignal;
-import kabam.rotmg.legends.control.RequestFameListSignal;
-import kabam.rotmg.legends.model.Legend;
-import kabam.rotmg.legends.model.LegendsModel;
-import kabam.rotmg.legends.model.Timespan;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.legends.model.LegendsModel;
+    import kabam.rotmg.death.model.DeathModel;
+    import kabam.rotmg.fame.control.ShowFameViewSignal;
+    import kabam.rotmg.legends.control.RequestFameListSignal;
+    import kabam.rotmg.legends.control.FameListUpdateSignal;
+    import kabam.rotmg.legends.control.ExitLegendsSignal;
+    import kabam.rotmg.core.signals.TrackPageViewSignal;
+    import kabam.rotmg.legends.model.Timespan;
+    import kabam.rotmg.legends.model.Legend;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class LegendsMediator extends Mediator {
+    public class LegendsMediator extends Mediator {
 
         [Inject]
         public var view:LegendsView;

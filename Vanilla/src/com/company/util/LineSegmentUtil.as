@@ -4,9 +4,9 @@
 //com.company.util.LineSegmentUtil
 
 package com.company.util{
-import flash.geom.Point;
+    import flash.geom.Point;
 
-public class LineSegmentUtil {
+    public class LineSegmentUtil {
 
 
         public static function intersection(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number, _arg_5:Number, _arg_6:Number, _arg_7:Number, _arg_8:Number):Point{

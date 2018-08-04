@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class GoToQuestRoom extends OutgoingMessage {
+    public class GoToQuestRoom extends OutgoingMessage {
 
         public function GoToQuestRoom(_arg_1:uint, _arg_2:Function){
             super(_arg_1, _arg_2);

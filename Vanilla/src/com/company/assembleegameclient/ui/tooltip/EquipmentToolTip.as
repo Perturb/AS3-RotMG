@@ -4,37 +4,37 @@
 //com.company.assembleegameclient.ui.tooltip.EquipmentToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.LineBreakDesign;
-import com.company.assembleegameclient.util.FilterUtil;
-import com.company.assembleegameclient.util.MathUtil;
-import com.company.assembleegameclient.util.TierUtil;
-import com.company.util.BitmapUtil;
-import com.company.util.KeyCodes;
+    import flash.utils.Dictionary;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import com.company.assembleegameclient.objects.Player;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
+    import kabam.rotmg.ui.model.HUDModel;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.assembleegameclient.util.FilterUtil;
+    import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import flash.display.BitmapData;
+    import com.company.util.BitmapUtil;
+    import com.company.assembleegameclient.util.TierUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.assembleegameclient.util.MathUtil;
+    import kabam.rotmg.constants.ActivationType;
+    import kabam.rotmg.messaging.impl.data.StatData;
+    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.util.KeyCodes;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import __AS3__.vec.*;
+    import kabam.rotmg.constants.*;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.utils.Dictionary;
-
-import io.decagames.rotmg.ui.labels.UILabel;
-
-import kabam.rotmg.constants.ActivationType;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.messaging.impl.data.StatData;
-import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.ui.model.HUDModel;
-
-public class EquipmentToolTip extends ToolTip {
+    public class EquipmentToolTip extends ToolTip {
 
         private static const MAX_WIDTH:int = 230;
         public static var keyInfo:Dictionary = new Dictionary();
@@ -602,6 +602,9 @@ public class EquipmentToolTip extends ToolTip {
                         case ActivationType.BULLET_NOVA:
                             this.getSpell(activateXML, compareXML);
                             break;
+                        case ActivationType.BULLET_CREATE:
+                            this.getBulletCreate(activateXML, compareXML);
+                            break;
                         case ActivationType.VAMPIRE_BLAST:
                             this.getSkull(activateXML, compareXML);
                             break;
@@ -732,6 +735,26 @@ public class EquipmentToolTip extends ToolTip {
             var _local_4:String = this.colorUntiered("Spell: ");
             _local_4 = (_local_4 + "{numShots} Shots");
             this.effects.push(new Effect(_local_4, {"numShots":TooltipHelper.compare(_local_3.a, _local_3.b)}));
+        }
+
+        private function getBulletCreate(_arg_1:XML, _arg_2:XML=null):void{
+            var _local_3:ComPair = new ComPair(_arg_1, _arg_2, "numShots", 3);
+            var _local_4:ComPair = new ComPair(_arg_1, _arg_2, "offsetAngle", 90);
+            var _local_5:ComPair = new ComPair(_arg_1, _arg_2, "minDistance", 0);
+            var _local_6:ComPair = new ComPair(_arg_1, _arg_2, "maxDistance", 4.4);
+            var _local_7:String = this.colorUntiered("Wakizashi: ");
+            _local_7 = (_local_7 + "{numShots} shots at {angle}\n");
+            if (_local_5.a)
+            {
+                _local_7 = (_local_7 + "Min Cast Range: {minDistance}\n");
+            };
+            _local_7 = (_local_7 + "Max Cast Range: {maxDistance}");
+            this.effects.push(new Effect(_local_7, {
+                "numShots":TooltipHelper.compare(_local_3.a, _local_3.b),
+                "angle":TooltipHelper.getPlural(_local_4.a, "degree"),
+                "minDistance":TooltipHelper.compareAndGetPlural(_local_5.a, _local_5.b, "square", false),
+                "maxDistance":TooltipHelper.compareAndGetPlural(_local_6.a, _local_6.b, "square")
+            }));
         }
 
         private function getSkull(_arg_1:XML, _arg_2:XML=null):void{
@@ -1404,8 +1427,8 @@ public class EquipmentToolTip extends ToolTip {
     }
 }//package com.company.assembleegameclient.ui.tooltip
 
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
 class ComPair {
 

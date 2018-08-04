@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.objects.particles.SkyBeamEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.FreeList;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.FreeList;
 
-public class SkyBeamEffect extends ParticleEffect {
+    public class SkyBeamEffect extends ParticleEffect {
 
         private static const BUBBLE_PERIOD:int = 30;
 

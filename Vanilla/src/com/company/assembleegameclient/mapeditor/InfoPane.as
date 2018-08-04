@@ -4,25 +4,26 @@
 //com.company.assembleegameclient.mapeditor.InfoPane
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.map.RegionLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.ui.BaseSimpleText;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import com.company.ui.BaseSimpleText;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.filters.DropShadowFilter;
+    import flash.events.Event;
+    import flash.geom.Rectangle;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.map.RegionLibrary;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-
-public class InfoPane extends Sprite {
+    public class InfoPane extends Sprite {
 
         public static const WIDTH:int = 134;
         public static const HEIGHT:int = 120;

@@ -4,31 +4,29 @@
 //kabam.rotmg.ui.view.CurrentCharacterMediator
 
 package kabam.rotmg.ui.view{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-import com.company.assembleegameclient.screens.NewCharacterScreen;
-import com.company.util.MoreDateUtil;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.core.signals.TrackEventSignal;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import kabam.rotmg.game.signals.PlayGameSignal;
+    import kabam.rotmg.ui.signals.ChooseNameSignal;
+    import kabam.rotmg.ui.signals.NameChangedSignal;
+    import kabam.rotmg.core.signals.TrackPageViewSignal;
+    import kabam.rotmg.packages.control.InitPackagesSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+    import kabam.rotmg.core.service.TrackingData;
+    import com.company.util.MoreDateUtil;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.screens.NewCharacterScreen;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.game.model.GameInitData;
 
-import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.service.TrackingData;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.core.signals.TrackEventSignal;
-import kabam.rotmg.core.signals.TrackPageViewSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.model.GameInitData;
-import kabam.rotmg.game.signals.PlayGameSignal;
-import kabam.rotmg.packages.control.InitPackagesSignal;
-import kabam.rotmg.ui.signals.ChooseNameSignal;
-import kabam.rotmg.ui.signals.NameChangedSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class CurrentCharacterMediator extends Mediator {
+    public class CurrentCharacterMediator extends Mediator {
 
         [Inject]
         public var view:CharacterSelectionAndNewsScreen;

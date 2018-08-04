@@ -4,9 +4,9 @@
 //kabam.rotmg.legends.control.ExitLegendsSignal
 
 package kabam.rotmg.legends.control{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class ExitLegendsSignal extends Signal {
+    public class ExitLegendsSignal extends Signal {
 
 
     }

@@ -4,16 +4,15 @@
 //io.decagames.rotmg.pets.windows.yard.feed.FeedTab
 
 package io.decagames.rotmg.pets.windows.yard.feed{
-import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.ui.tabs.UITab;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.shop.ShopBuyButton;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.pets.windows.yard.feed.items.FeedItem;
 
-import io.decagames.rotmg.pets.windows.yard.feed.items.FeedItem;
-import io.decagames.rotmg.shop.ShopBuyButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.tabs.UITab;
-
-public class FeedTab extends UITab {
+    public class FeedTab extends UITab {
 
         private var feedGrid:UIGrid;
         private var _feedGoldButton:ShopBuyButton;

@@ -4,9 +4,11 @@
 //kabam.rotmg.classes.model.ClassesModel
 
 package kabam.rotmg.classes.model{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
 
-public class ClassesModel {
+    public class ClassesModel {
 
         public static const WIZARD_ID:int = 782;
 

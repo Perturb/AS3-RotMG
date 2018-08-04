@@ -4,25 +4,24 @@
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-import com.company.assembleegameclient.util.FilterUtil;
-import com.company.assembleegameclient.util.TierUtil;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import flash.display.Shape;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.constants.ItemConstants;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.util.TierUtil;
+    import com.company.assembleegameclient.util.FilterUtil;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Shape;
-import flash.display.Sprite;
-
-import io.decagames.rotmg.ui.labels.UILabel;
-
-import kabam.rotmg.constants.ItemConstants;
-
-public class ItemTile extends Sprite {
+    public class ItemTile extends Sprite {
 
         public static const WIDTH:int = 40;
         public static const HEIGHT:int = 40;

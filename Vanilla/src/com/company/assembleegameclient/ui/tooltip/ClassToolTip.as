@@ -4,39 +4,37 @@
 //com.company.assembleegameclient.ui.tooltip.ClassToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.appengine.CharacterStats;
-import com.company.assembleegameclient.appengine.SavedCharactersList;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.LineBreakDesign;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.AnimatedChars;
-import com.company.assembleegameclient.util.EquipmentUtil;
-import com.company.assembleegameclient.util.FameUtil;
-import com.company.assembleegameclient.util.FilterUtil;
-import com.company.assembleegameclient.util.MaskedImage;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.rotmg.graphics.StarGraphic;
-import com.company.util.AssetLibrary;
-import com.company.util.CachingColorTransformer;
-import com.company.util.ConversionUtil;
+    import flash.geom.ColorTransform;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.LineBreakDesign;
+    import kabam.rotmg.core.model.PlayerModel;
+    import com.company.assembleegameclient.appengine.CharacterStats;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.util.AnimatedChars;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.display.BitmapData;
+    import com.company.util.CachingColorTransformer;
+    import com.company.util.ConversionUtil;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.util.EquipmentUtil;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.util.FilterUtil;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.util.FameUtil;
+    import flash.display.Graphics;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import com.company.rotmg.graphics.StarGraphic;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import com.company.assembleegameclient.appengine.SavedCharactersList;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Graphics;
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-import flash.geom.ColorTransform;
-
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class ClassToolTip extends ToolTip {
+    public class ClassToolTip extends ToolTip {
 
         public static const CLASS_TOOL_TIP_WIDTH:int = 210;
         public static const FULL_STAR:ColorTransform = new ColorTransform(0.8, 0.8, 0.8);
@@ -338,23 +336,20 @@ public class ClassToolTip extends ToolTip {
             {
                 _local_7 = _local_2[_local_6];
                 _local_8 = _local_7.@id;
-                if (_local_8 != "????")
+                if (((!(_local_3 == _local_8)) && (_local_7.UnlockLevel)))
                 {
-                    if (((!(_local_3 == _local_8)) && (_local_7.UnlockLevel)))
+                    for each (_local_9 in _local_7.UnlockLevel)
                     {
-                        for each (_local_9 in _local_7.UnlockLevel)
+                        if (_local_3 == _local_9.toString())
                         {
-                            if (_local_3 == _local_9.toString())
-                            {
-                                _local_10 = int(_local_9.@level);
-                                _local_11 = ((_local_4 >= _local_10) ? 0xFF00 : 0xFF0000);
-                                _local_12 = new UILabel();
-                                _local_12.text = ((("Reach level " + _local_10.toString()) + " to unlock ") + _local_8);
-                                DefaultLabelFormat.characterToolTipLabel(_local_12, _local_11);
-                                _local_12.y = _local_5;
-                                this._classUnlockContainer.addChild(_local_12);
-                                _local_5 = (_local_5 + 14);
-                            };
+                            _local_10 = int(_local_9.@level);
+                            _local_11 = ((_local_4 >= _local_10) ? 0xFF00 : 0xFF0000);
+                            _local_12 = new UILabel();
+                            _local_12.text = ((("Reach level " + _local_10.toString()) + " to unlock ") + _local_8);
+                            DefaultLabelFormat.characterToolTipLabel(_local_12, _local_11);
+                            _local_12.y = _local_5;
+                            this._classUnlockContainer.addChild(_local_12);
+                            _local_5 = (_local_5 + 14);
                         };
                     };
                 };
@@ -374,23 +369,16 @@ public class ClassToolTip extends ToolTip {
             addChild(this.toUnlockText_);
             this.unlockText_ = new TextFieldDisplayConcrete().setSize(13).setColor(16549442).setTextWidth(174).setWordWrap(false).setMultiLine(true);
             var _local_1:AppendingLineBuilder = new AppendingLineBuilder();
-            if (String(this._playerXML.@id) == "????")
+            for each (_local_2 in this._playerXML.UnlockLevel)
             {
-                _local_1.pushParams("Wait until Month of the Mad God!");
-            }
-            else
-            {
-                for each (_local_2 in this._playerXML.UnlockLevel)
+                _local_3 = ObjectLibrary.idToType_[_local_2.toString()];
+                _local_4 = int(_local_2.@level);
+                if (this._playerModel.getBestLevel(_local_3) < int(_local_2.@level))
                 {
-                    _local_3 = ObjectLibrary.idToType_[_local_2.toString()];
-                    _local_4 = int(_local_2.@level);
-                    if (this._playerModel.getBestLevel(_local_3) < int(_local_2.@level))
-                    {
-                        _local_1.pushParams(TextKey.TO_UNLOCK_REACH_LEVEL, {
-                            "unlockLevel":_local_4,
-                            "typeToDisplay":ObjectLibrary.typeToDisplayId_[_local_3]
-                        });
-                    };
+                    _local_1.pushParams(TextKey.TO_UNLOCK_REACH_LEVEL, {
+                        "unlockLevel":_local_4,
+                        "typeToDisplay":ObjectLibrary.typeToDisplayId_[_local_3]
+                    });
                 };
             };
             this.unlockText_.setStringBuilder(_local_1);

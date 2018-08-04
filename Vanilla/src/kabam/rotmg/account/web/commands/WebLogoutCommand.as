@@ -4,21 +4,18 @@
 //kabam.rotmg.account.web.commands.WebLogoutCommand
 
 package kabam.rotmg.account.web.commands{
-import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.core.signals.InvalidateDataSignal;
+    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+    import kabam.rotmg.core.model.ScreenModel;
+    import kabam.rotmg.packages.services.GetPackagesTask;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.fame.view.FameView;
+    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import flash.display.Sprite;
 
-import flash.display.Sprite;
-
-import io.decagames.rotmg.pets.data.PetsModel;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.core.model.ScreenModel;
-import kabam.rotmg.core.signals.InvalidateDataSignal;
-import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-import kabam.rotmg.fame.view.FameView;
-import kabam.rotmg.packages.services.GetPackagesTask;
-
-public class WebLogoutCommand {
+    public class WebLogoutCommand {
 
         [Inject]
         public var account:Account;

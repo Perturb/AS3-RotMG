@@ -4,21 +4,19 @@
 //io.decagames.rotmg.pets.components.petIcon.PetIcon
 
 package io.decagames.rotmg.pets.components.petIcon{
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.geom.ColorTransform;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import kabam.rotmg.pets.view.dialogs.Disableable;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
+    import flash.geom.ColorTransform;
+    import flash.events.Event;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
 
-import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.pets.view.dialogs.Disableable;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-public class PetIcon extends Sprite implements TooltipAble, Disableable {
+    public class PetIcon extends Sprite implements TooltipAble, Disableable {
 
         public static const DISABLE_COLOR:uint = 0x292929;
 

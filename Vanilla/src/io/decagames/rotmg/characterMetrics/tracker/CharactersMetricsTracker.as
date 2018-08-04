@@ -4,14 +4,12 @@
 //io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker
 
 package io.decagames.rotmg.characterMetrics.tracker{
-import com.hurlant.util.Base64;
+    import flash.utils.Dictionary;
+    import com.hurlant.util.Base64;
+    import io.decagames.rotmg.characterMetrics.data.CharacterMetricsData;
+    import flash.utils.IDataInput;
 
-import flash.utils.Dictionary;
-import flash.utils.IDataInput;
-
-import io.decagames.rotmg.characterMetrics.data.CharacterMetricsData;
-
-public class CharactersMetricsTracker {
+    public class CharactersMetricsTracker {
 
         public static const STATS_SIZE:int = 5;
 

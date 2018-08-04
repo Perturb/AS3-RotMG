@@ -4,17 +4,16 @@
 //kabam.rotmg.packages.services.BuyPackageTask
 
 package kabam.rotmg.packages.services{
-import com.company.assembleegameclient.map.QueueStatusTextSignal;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.core.model.PlayerModel;
+    import com.company.assembleegameclient.map.QueueStatusTextSignal;
+    import kabam.rotmg.packages.model.PackageInfo;
+    import kabam.rotmg.packages.control.BuyPackageSuccessfulSignal;
+    import kabam.rotmg.text.model.TextKey;
 
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.packages.control.BuyPackageSuccessfulSignal;
-import kabam.rotmg.packages.model.PackageInfo;
-import kabam.rotmg.text.model.TextKey;
-
-public class BuyPackageTask extends BaseTask {
+    public class BuyPackageTask extends BaseTask {
 
         private static const ERROR_MESSAGES_THAT_REFRESH:Array = ["Package is not Available", "Package is not Available Right Now", "Invalid PackageId"];
 

@@ -4,12 +4,16 @@
 //com.company.assembleegameclient.mapeditor.EnemyChooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.mapeditor.Layer;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.mapeditor.GroupDivider;
+    import com.company.util.MoreStringUtil;
+    import __AS3__.vec.*;
+    import com.company.assembleegameclient.mapeditor.*;
 
-import flash.utils.Dictionary;
-
-internal class EnemyChooser extends Chooser {
+    internal class EnemyChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";

@@ -4,35 +4,34 @@
 //com.company.assembleegameclient.ui.dialogs.ErrorDialog
 
 package com.company.assembleegameclient.ui.dialogs{
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.util.StageProxy;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import com.company.assembleegameclient.util.StageProxy;
+    import flash.display.Shape;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import org.osflash.signals.natives.NativeMappedSignal;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.display.Graphics;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.Graphics;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class ErrorDialog extends Sprite {
+    public class ErrorDialog extends Sprite {
 
         public static const GREY:int = 0xB3B3B3;
         protected static const WIDTH:int = 300;

@@ -4,12 +4,13 @@
 //com.company.assembleegameclient.mapeditor.DungeonChooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import flash.utils.Dictionary;
+    import __AS3__.vec.Vector;
+    import com.company.util.MoreStringUtil;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-public class DungeonChooser extends Chooser {
+    public class DungeonChooser extends Chooser {
 
         public var currentDungon:String = "";
         private var cache:Dictionary;

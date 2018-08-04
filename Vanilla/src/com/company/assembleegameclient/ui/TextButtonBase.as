@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.ui.TextButtonBase
 
 package com.company.assembleegameclient.ui{
-import flash.events.MouseEvent;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TextButtonBase extends BackgroundFilledText {
+    public class TextButtonBase extends BackgroundFilledText {
 
         public function TextButtonBase(_arg_1:int){
             super(_arg_1);

@@ -4,13 +4,12 @@
 //kabam.rotmg.util.components.UIAssetsHelper
 
 package kabam.rotmg.util.components{
-import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.util.AssetLibrary;
+    import flash.display.Bitmap;
+    import flash.display.Sprite;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-
-public class UIAssetsHelper {
+    public class UIAssetsHelper {
 
         public static const LEFT_NEVIGATOR:String = "left";
         public static const RIGHT_NEVIGATOR:String = "right";

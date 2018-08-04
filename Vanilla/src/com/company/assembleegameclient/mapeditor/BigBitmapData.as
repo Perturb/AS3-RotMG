@@ -4,13 +4,15 @@
 //com.company.assembleegameclient.mapeditor.BigBitmapData
 
 package com.company.assembleegameclient.mapeditor{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.geom.Matrix;
-import flash.geom.Rectangle;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
+    import flash.geom.Rectangle;
+    import flash.geom.Matrix;
+    import flash.display.Bitmap;
+    import flash.display.Sprite;
+    import __AS3__.vec.*;
 
-public class BigBitmapData {
+    public class BigBitmapData {
 
         private static const CHUNK_SIZE:int = 0x0100;
 

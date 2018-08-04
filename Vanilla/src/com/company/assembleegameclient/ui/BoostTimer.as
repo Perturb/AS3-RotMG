@@ -4,17 +4,14 @@
 //com.company.assembleegameclient.ui.BoostTimer
 
 package com.company.assembleegameclient.ui{
-import com.company.assembleegameclient.ui.components.TimerDisplay;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.components.TimerDisplay;
+    import org.osflash.signals.Signal;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import flash.display.Sprite;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-import org.osflash.signals.Signal;
-
-public class BoostTimer extends Sprite {
+    public class BoostTimer extends Sprite {
 
         private var labelTextField:TextFieldDisplayConcrete;
         private var timerDisplay:TimerDisplay;

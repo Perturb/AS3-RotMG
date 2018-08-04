@@ -4,19 +4,17 @@
 //com.company.assembleegameclient.mapeditor.MapEditor
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.game.events.DeathEvent;
-import com.company.assembleegameclient.game.events.ReconnectEvent;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.screens.TitleMenuOption;
+    import flash.display.Sprite;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.servers.api.Server;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.events.ReconnectEvent;
+    import com.company.assembleegameclient.game.events.DeathEvent;
 
-import flash.display.Sprite;
-import flash.events.Event;
-
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.servers.api.Server;
-
-public class MapEditor extends Sprite {
+    public class MapEditor extends Sprite {
 
         private var model:PlayerModel;
         private var server:Server;

@@ -4,14 +4,13 @@
 //kabam.rotmg.game.view.components.TabTextView
 
 package kabam.rotmg.game.view.components{
-import com.company.ui.BaseSimpleText;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import com.company.ui.BaseSimpleText;
+    import flash.display.Bitmap;
+    import com.company.util.AssetLibrary;
+    import flash.geom.ColorTransform;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.geom.ColorTransform;
-
-public class TabTextView extends TabView {
+    public class TabTextView extends TabView {
 
         private var background:Sprite;
         private var text:BaseSimpleText;

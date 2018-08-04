@@ -4,15 +4,15 @@
 //com.company.assembleegameclient.engine3d.Model3D
 
 package com.company.assembleegameclient.engine3d{
-import com.company.util.ConversionUtil;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
+    import flash.utils.ByteArray;
+    import flash.display3D.Context3D;
+    import com.company.util.ConversionUtil;
+    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+    import __AS3__.vec.*;
 
-import flash.display3D.Context3D;
-import flash.utils.ByteArray;
-
-import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
-import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-
-public class Model3D {
+    public class Model3D {
 
         private static var modelLib_:Object = new Object();
         private static var models:Object = new Object();

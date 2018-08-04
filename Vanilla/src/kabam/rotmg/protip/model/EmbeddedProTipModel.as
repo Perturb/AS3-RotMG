@@ -4,7 +4,10 @@
 //kabam.rotmg.protip.model.EmbeddedProTipModel
 
 package kabam.rotmg.protip.model{
-public class EmbeddedProTipModel implements IProTipModel {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class EmbeddedProTipModel implements IProTipModel {
 
         public static var protipsXML:Class = EmbeddedProTipModel_protipsXML;
 

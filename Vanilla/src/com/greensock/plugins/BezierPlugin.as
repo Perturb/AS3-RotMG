@@ -4,11 +4,10 @@
 //com.greensock.plugins.BezierPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.geom.Point;
+    import com.greensock.TweenLite;
 
-import flash.geom.Point;
-
-public class BezierPlugin extends TweenPlugin {
+    public class BezierPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
         protected static const _RAD2DEG:Number = (180 / Math.PI);//57.2957795130823

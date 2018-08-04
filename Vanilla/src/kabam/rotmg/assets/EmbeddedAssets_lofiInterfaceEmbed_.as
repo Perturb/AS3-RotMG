@@ -1,9 +1,9 @@
-﻿package kabam.rotmg.assets
+package kabam.rotmg.assets
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="EmbeddedAssets_lofiInterfaceEmbed_.png")]
-	public class EmbeddedAssets_lofiInterfaceEmbed_ extends BitmapAsset
+	[Embed(source="EmbeddedAssets_lofiInterfaceEmbed_.png")]
+	public class EmbeddedAssets_lofiInterfaceEmbed_ extends mx.core.BitmapAsset
 	{
 		public function EmbeddedAssets_lofiInterfaceEmbed_()
 		{

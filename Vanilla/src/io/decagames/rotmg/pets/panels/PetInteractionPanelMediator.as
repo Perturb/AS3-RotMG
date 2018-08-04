@@ -4,21 +4,17 @@
 //io.decagames.rotmg.pets.panels.PetInteractionPanelMediator
 
 package io.decagames.rotmg.pets.panels{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.StageProxy;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+    import com.company.assembleegameclient.util.StageProxy;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetInteractionPanelMediator extends Mediator {
+    public class PetInteractionPanelMediator extends Mediator {
 
         [Inject]
         public var view:PetInteractionPanel;

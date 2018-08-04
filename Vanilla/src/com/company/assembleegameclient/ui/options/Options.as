@@ -4,45 +4,45 @@
 //com.company.assembleegameclient.ui.options.Options
 
 package com.company.assembleegameclient.ui.options{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.assembleegameclient.sound.Music;
-import com.company.assembleegameclient.sound.SFX;
-import com.company.assembleegameclient.ui.StatusBar;
-import com.company.rotmg.graphics.ScreenGraphic;
-import com.company.util.AssetLibrary;
-import com.company.util.KeyCodes;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.ui.UIUtils;
+    import flash.events.Event;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.ui.StatusBar;
+    import kabam.rotmg.game.view.components.StatView;
+    import flash.ui.MouseCursorData;
+    import flash.display.BitmapData;
+    import flash.ui.MouseCursor;
+    import flash.geom.Point;
+    import com.company.util.AssetLibrary;
+    import flash.ui.Mouse;
+    import flash.system.Capabilities;
+    import flash.events.KeyboardEvent;
+    import com.company.util.KeyCodes;
+    import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
+    import flash.display.StageDisplayState;
+    import com.company.assembleegameclient.sound.Music;
+    import com.company.assembleegameclient.sound.SFX;
+    import flash.net.URLRequest;
+    import flash.net.URLRequestMethod;
+    import flash.net.navigateToURL;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.display.StageDisplayState;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Point;
-import flash.net.URLRequest;
-import flash.net.URLRequestMethod;
-import flash.net.navigateToURL;
-import flash.system.Capabilities;
-import flash.text.TextFieldAutoSize;
-import flash.ui.Mouse;
-import flash.ui.MouseCursor;
-import flash.ui.MouseCursorData;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.game.view.components.StatView;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.ui.UIUtils;
-import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
-
-public class Options extends Sprite {
+    public class Options extends Sprite {
 
         private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND, TextKey.OPTIONS_FRIEND, TextKey.OPTIONS_MISC];
         public static const Y_POSITION:int = 550;

@@ -4,9 +4,9 @@
 //en_US$SharedResources_properties
 
 package {
-import mx.resources.ResourceBundle;
+    import mx.resources.ResourceBundle;
 
-public class en_US$SharedResources_properties extends ResourceBundle {
+    public class en_US$SharedResources_properties extends ResourceBundle {
 
         public function en_US$SharedResources_properties(){
             super("en_US", "SharedResources");

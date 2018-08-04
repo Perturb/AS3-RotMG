@@ -4,15 +4,16 @@
 //com.company.assembleegameclient.engine3d.Object3D
 
 package com.company.assembleegameclient.engine3d{
-import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.Vector;
+    import flash.geom.Matrix3D;
+    import flash.geom.Vector3D;
+    import flash.geom.Utils3D;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import flash.display.BitmapData;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.IGraphicsData;
-import flash.geom.Matrix3D;
-import flash.geom.Utils3D;
-import flash.geom.Vector3D;
-
-public class Object3D {
+    public class Object3D {
 
         public var model_:Model3D = null;
         public var vL_:Vector.<Number>;

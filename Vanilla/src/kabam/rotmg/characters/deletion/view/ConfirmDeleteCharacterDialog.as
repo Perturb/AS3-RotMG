@@ -4,16 +4,13 @@
 //kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog
 
 package kabam.rotmg.characters.deletion.view{
-import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.dialogs.Dialog;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
 
-import flash.display.Sprite;
-import flash.events.Event;
-
-import kabam.rotmg.text.model.TextKey;
-
-import org.osflash.signals.Signal;
-
-public class ConfirmDeleteCharacterDialog extends Sprite {
+    public class ConfirmDeleteCharacterDialog extends Sprite {
 
         private const CANCEL_EVENT:String = Dialog.LEFT_BUTTON;
         private const DELETE_EVENT:String = Dialog.RIGHT_BUTTON;

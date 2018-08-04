@@ -4,16 +4,14 @@
 //kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem
 
 package kabam.rotmg.ui.view.components.dropdown{
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import org.osflash.signals.Signal;
 
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-
-public class LocalizedDropDownItem extends Sprite {
+    public class LocalizedDropDownItem extends Sprite {
 
         public var w_:int;
         public var h_:int;

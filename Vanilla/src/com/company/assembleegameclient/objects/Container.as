@@ -4,14 +4,14 @@
 //com.company.assembleegameclient.objects.Container
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.map.Map;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;
-import com.company.util.PointUtil;
+    import com.company.util.PointUtil;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import com.company.assembleegameclient.map.Map;
+    import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-public class Container extends GameObject implements IInteractiveObject {
+    public class Container extends GameObject implements IInteractiveObject {
 
         public var isLoot_:Boolean;
         public var canHaveSoulbound_:Boolean;

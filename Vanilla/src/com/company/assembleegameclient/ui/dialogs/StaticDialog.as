@@ -4,33 +4,33 @@
 //com.company.assembleegameclient.ui.dialogs.StaticDialog
 
 package com.company.assembleegameclient.ui.dialogs{
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.util.StageProxy;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.util.StageProxy;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.display.Shape;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.core.service.GoogleAnalytics;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.display.Graphics;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.Graphics;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-
-public class StaticDialog extends Sprite {
+    public class StaticDialog extends Sprite {
 
         public static const LEFT_BUTTON:String = "dialogLeftButton";
         public static const RIGHT_BUTTON:String = "dialogRightButton";

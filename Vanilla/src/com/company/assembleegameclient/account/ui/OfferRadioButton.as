@@ -4,27 +4,25 @@
 //com.company.assembleegameclient.account.ui.OfferRadioButton
 
 package com.company.assembleegameclient.account.ui{
-import com.company.assembleegameclient.account.ui.components.BackgroundBox;
-import com.company.assembleegameclient.account.ui.components.Selectable;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.offer.Offer;
-import com.company.util.AssetLibrary;
-import com.company.util.BitmapUtil;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.account.ui.components.Selectable;
+    import kabam.rotmg.ui.view.SignalWaiter;
+    import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import com.company.assembleegameclient.account.ui.components.BackgroundBox;
+    import kabam.rotmg.util.components.RadioButton;
+    import flash.display.BitmapData;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.events.MouseEvent;
+    import com.company.util.AssetLibrary;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.BitmapUtil;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.SignalWaiter;
-import kabam.rotmg.util.components.RadioButton;
-
-public class OfferRadioButton extends Sprite implements Selectable {
+    public class OfferRadioButton extends Sprite implements Selectable {
 
         private static const SELECTED_COLOR:int = 0x777777;
         private static const OVER_COLOR:int = 0x5B5B5B;

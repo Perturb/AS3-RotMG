@@ -4,19 +4,16 @@
 //io.decagames.rotmg.shop.ShopBuyButton
 
 package io.decagames.rotmg.shop{
-import com.company.assembleegameclient.util.Currency;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import com.company.assembleegameclient.util.Currency;
+    import kabam.rotmg.assets.services.IconFactory;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-import kabam.rotmg.assets.services.IconFactory;
-
-public class ShopBuyButton extends SliceScalingButton {
+    public class ShopBuyButton extends SliceScalingButton {
 
         private var _priceLabel:UILabel;
         private var coinBitmap:Bitmap;

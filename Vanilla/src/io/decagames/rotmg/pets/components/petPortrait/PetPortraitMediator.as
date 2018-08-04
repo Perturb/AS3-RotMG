@@ -4,21 +4,19 @@
 //io.decagames.rotmg.pets.components.petPortrait.PetPortraitMediator
 
 package io.decagames.rotmg.pets.components.petPortrait{
-import flash.events.MouseEvent;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.pets.signals.SelectPetSignal;
+    import io.decagames.rotmg.pets.signals.ReleasePetSignal;
+    import io.decagames.rotmg.pets.signals.SimulateFeedSignal;
+    import flash.events.MouseEvent;
+    import io.decagames.rotmg.pets.data.ability.AbilitiesUtil;
+    import io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialog;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.popup.choosePet.ChoosePetPopup;
 
-import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
-import io.decagames.rotmg.pets.data.ability.AbilitiesUtil;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.popup.choosePet.ChoosePetPopup;
-import io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialog;
-import io.decagames.rotmg.pets.signals.ReleasePetSignal;
-import io.decagames.rotmg.pets.signals.SelectPetSignal;
-import io.decagames.rotmg.pets.signals.SimulateFeedSignal;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class PetPortraitMediator extends Mediator {
+    public class PetPortraitMediator extends Mediator {
 
         [Inject]
         public var view:PetPortrait;

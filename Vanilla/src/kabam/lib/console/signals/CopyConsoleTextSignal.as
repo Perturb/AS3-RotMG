@@ -4,9 +4,9 @@
 //kabam.lib.console.signals.CopyConsoleTextSignal
 
 package kabam.lib.console.signals{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class CopyConsoleTextSignal extends Signal {
+    public class CopyConsoleTextSignal extends Signal {
 
 
     }

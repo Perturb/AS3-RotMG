@@ -4,17 +4,15 @@
 //io.decagames.rotmg.ui.spinner.NumberSpinner
 
 package io.decagames.rotmg.ui.spinner{
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import org.osflash.signals.Signal;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.text.TextFieldAutoSize;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-
-import org.osflash.signals.Signal;
-
-public class NumberSpinner extends Sprite {
+    public class NumberSpinner extends Sprite {
 
         private var _upArrow:SliceScalingButton;
         private var _downArrow:SliceScalingButton;

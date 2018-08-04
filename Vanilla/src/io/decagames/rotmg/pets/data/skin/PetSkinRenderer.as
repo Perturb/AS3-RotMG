@@ -4,17 +4,16 @@
 //io.decagames.rotmg.pets.data.skin.PetSkinRenderer
 
 package io.decagames.rotmg.pets.data.skin{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.AnimatedChars;
-import com.company.assembleegameclient.util.MaskedImage;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.util.AnimatedChars;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-
-public class PetSkinRenderer {
+    public class PetSkinRenderer {
 
         protected var _skinType:int;
         protected var skin:AnimatedChar;

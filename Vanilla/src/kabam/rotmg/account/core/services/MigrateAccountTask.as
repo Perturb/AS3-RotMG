@@ -4,9 +4,9 @@
 //kabam.rotmg.account.core.services.MigrateAccountTask
 
 package kabam.rotmg.account.core.services{
-import kabam.lib.tasks.Task;
+    import kabam.lib.tasks.Task;
 
-public interface MigrateAccountTask extends Task {
+    public interface MigrateAccountTask extends Task {
 
     }
 }//package kabam.rotmg.account.core.services

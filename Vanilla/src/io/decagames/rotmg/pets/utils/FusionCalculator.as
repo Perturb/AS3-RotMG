@@ -4,10 +4,10 @@
 //io.decagames.rotmg.pets.utils.FusionCalculator
 
 package io.decagames.rotmg.pets.utils{
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
 
-public class FusionCalculator {
+    public class FusionCalculator {
 
         private static var ranges:Object = makeRanges();
 

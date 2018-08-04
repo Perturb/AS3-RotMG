@@ -4,17 +4,16 @@
 //io.decagames.rotmg.dailyQuests.view.list.DailyQuestsList
 
 package io.decagames.rotmg.dailyQuests.view.list{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.tabs.UITabs;
+    import io.decagames.rotmg.ui.tabs.TabButton;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.tabs.UITab;
+    import io.decagames.rotmg.ui.scroll.UIScrollbar;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
 
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.scroll.UIScrollbar;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.tabs.TabButton;
-import io.decagames.rotmg.ui.tabs.UITab;
-import io.decagames.rotmg.ui.tabs.UITabs;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class DailyQuestsList extends Sprite {
+    public class DailyQuestsList extends Sprite {
 
         public static const LIST_WIDTH:int = 223;
         public static const SCROLL_WIDTH:int = 14;

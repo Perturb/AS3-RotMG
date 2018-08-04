@@ -4,32 +4,28 @@
 //com.company.assembleegameclient.appengine.SavedCharacter
 
 package com.company.assembleegameclient.appengine{
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.AnimatedChars;
-import com.company.assembleegameclient.util.MaskedImage;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-import com.company.util.CachingColorTransformer;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import com.company.assembleegameclient.util.AnimatedChars;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+    import com.company.util.CachingColorTransformer;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.constants.GeneralConstants;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.assets.services.CharacterFactory;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
 
-import flash.display.BitmapData;
-import flash.geom.ColorTransform;
-
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-
-import kabam.rotmg.assets.services.CharacterFactory;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.core.StaticInjectorContext;
-
-import org.swiftsuspenders.Injector;
-
-public class SavedCharacter {
+    public class SavedCharacter {
 
         public var charXML_:XML;
         public var name_:String = null;

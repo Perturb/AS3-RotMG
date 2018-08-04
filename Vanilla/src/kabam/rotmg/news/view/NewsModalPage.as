@@ -4,18 +4,16 @@
 //kabam.rotmg.news.view.NewsModalPage
 
 package kabam.rotmg.news.view{
-import com.company.assembleegameclient.ui.Scrollbar;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.Scrollbar;
+    import flash.text.TextField;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.text.model.FontModel;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.events.Event;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.filters.DropShadowFilter;
-import flash.text.TextField;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.text.model.FontModel;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class NewsModalPage extends Sprite {
+    public class NewsModalPage extends Sprite {
 
         public static const TEXT_MARGIN:int = 22;
         public static const TEXT_MARGIN_HTML:int = 26;

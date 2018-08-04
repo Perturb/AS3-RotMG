@@ -4,9 +4,9 @@
 //com.greensock.plugins.ShortRotationPlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import com.greensock.TweenLite;
 
-public class ShortRotationPlugin extends TweenPlugin {
+    public class ShortRotationPlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 

@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.objects.ObjectProperties
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
-import flash.utils.Dictionary;
-
-public class ObjectProperties {
+    public class ObjectProperties {
 
         public var type_:int;
         public var id_:String;

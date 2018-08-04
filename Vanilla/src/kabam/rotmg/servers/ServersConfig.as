@@ -4,21 +4,19 @@
 //kabam.rotmg.servers.ServersConfig
 
 package kabam.rotmg.servers{
-import kabam.rotmg.account.core.signals.CharListDataSignal;
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.build.api.BuildEnvironment;
-import kabam.rotmg.servers.api.ServerModel;
-import kabam.rotmg.servers.control.ParseServerDataCommand;
-import kabam.rotmg.servers.model.FixedIPServerModel;
-import kabam.rotmg.servers.model.LiveServerModel;
-import kabam.rotmg.servers.model.LocalhostServerModel;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.build.api.BuildData;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.build.api.BuildEnvironment;
+    import kabam.rotmg.servers.api.ServerModel;
+    import kabam.rotmg.servers.model.LocalhostServerModel;
+    import kabam.rotmg.servers.model.FixedIPServerModel;
+    import kabam.rotmg.servers.model.LiveServerModel;
+    import kabam.rotmg.account.core.signals.CharListDataSignal;
+    import kabam.rotmg.servers.control.ParseServerDataCommand;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class ServersConfig implements IConfig {
+    public class ServersConfig implements IConfig {
 
         [Inject]
         public var injector:Injector;

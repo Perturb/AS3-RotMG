@@ -4,14 +4,13 @@
 //kabam.display.Loader.LoaderProxy
 
 package kabam.display.Loader{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.net.URLRequest;
-import flash.system.LoaderContext;
+    import flash.display.Sprite;
+    import flash.display.DisplayObject;
+    import kabam.display.LoaderInfo.LoaderInfoProxy;
+    import flash.net.URLRequest;
+    import flash.system.LoaderContext;
 
-import kabam.display.LoaderInfo.LoaderInfoProxy;
-
-public class LoaderProxy extends Sprite {
+    public class LoaderProxy extends Sprite {
 
 
         public function get content():DisplayObject{

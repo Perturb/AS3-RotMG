@@ -4,12 +4,12 @@
 //kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem
 
 package kabam.rotmg.messaging.impl.outgoing.arena{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.messaging.impl.data.SlotObjectData;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
-import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-
-public class QuestRedeem extends OutgoingMessage {
+    public class QuestRedeem extends OutgoingMessage {
 
         public var questID:String;
         public var slots:Vector.<SlotObjectData>;

@@ -4,13 +4,13 @@
 //kabam.rotmg.ui.view.KeysView
 
 package kabam.rotmg.ui.view{
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import mx.core.BitmapAsset;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.ui.model.Key;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.ui.model.Key;
-
-import mx.core.BitmapAsset;
-
-public class KeysView extends Sprite {
+    public class KeysView extends Sprite {
 
         private static var keyBackgroundPng:Class = KeysView_keyBackgroundPng;
         private static var greenKeyPng:Class = KeysView_greenKeyPng;

@@ -4,25 +4,22 @@
 //io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot
 
 package io.decagames.rotmg.pets.components.petSkinSlot{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import io.decagames.rotmg.pets.data.vo.IPetVO;
+    import flash.display.Bitmap;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import org.osflash.signals.Signal;
+    import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
+    import io.decagames.rotmg.utils.colors.GreyScale;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
 
-import io.decagames.rotmg.pets.components.tooltip.PetTooltip;
-import io.decagames.rotmg.pets.data.vo.IPetVO;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.utils.colors.GreyScale;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-import org.osflash.signals.Signal;
-
-public class PetSkinSlot extends UIGridElement implements TooltipAble {
+    public class PetSkinSlot extends UIGridElement implements TooltipAble {
 
         public static const SLOT_SIZE:int = 40;
 
@@ -99,11 +96,12 @@ public class PetSkinSlot extends UIGridElement implements TooltipAble {
         }
 
         private function createNewLabel(_arg_1:int):Sprite{
+            var _local_3:UILabel;
             var _local_2:Sprite = new Sprite();
             _local_2.graphics.beginFill(0xFFFFFF);
             _local_2.graphics.drawRect(0, 0, _arg_1, 9);
             _local_2.graphics.endFill();
-            var _local_3:UILabel = new UILabel();
+            _local_3 = new UILabel();
             DefaultLabelFormat.newSkinLabel(_local_3);
             _local_3.width = _arg_1;
             _local_3.wordWrap = true;

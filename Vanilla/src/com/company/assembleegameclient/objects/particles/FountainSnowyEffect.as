@@ -4,10 +4,10 @@
 //com.company.assembleegameclient.objects.particles.FountainSnowyEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.FreeList;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.util.FreeList;
 
-public class FountainSnowyEffect extends ParticleEffect {
+    public class FountainSnowyEffect extends ParticleEffect {
 
         public var go_:GameObject;
         public var color_:uint;
@@ -50,9 +50,8 @@ public class FountainSnowyEffect extends ParticleEffect {
 }//package com.company.assembleegameclient.objects.particles
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import com.company.assembleegameclient.util.FreeList;
-
 import flash.geom.Vector3D;
+import com.company.assembleegameclient.util.FreeList;
 
 class FountainSnowyParticle extends Particle {
 

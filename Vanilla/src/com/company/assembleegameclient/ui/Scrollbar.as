@@ -4,20 +4,21 @@
 //com.company.assembleegameclient.ui.Scrollbar
 
 package com.company.assembleegameclient.ui{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.geom.Rectangle;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import flash.display.Graphics;
+    import flash.geom.ColorTransform;
+    import flash.utils.getTimer;
+    import __AS3__.vec.*;
 
-import flash.display.Graphics;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.geom.ColorTransform;
-import flash.geom.Rectangle;
-import flash.utils.getTimer;
-
-public class Scrollbar extends Sprite {
+    public class Scrollbar extends Sprite {
 
         private var width_:int;
         private var height_:int;

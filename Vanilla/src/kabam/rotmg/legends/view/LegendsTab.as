@@ -4,16 +4,14 @@
 //kabam.rotmg.legends.view.LegendsTab
 
 package kabam.rotmg.legends.view{
-import flash.display.Sprite;
-import flash.events.MouseEvent;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.legends.model.Timespan;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.MouseEvent;
 
-import kabam.rotmg.legends.model.Timespan;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-
-public class LegendsTab extends Sprite {
+    public class LegendsTab extends Sprite {
 
         private static const OVER_COLOR:int = 16567065;
         private static const DOWN_COLOR:int = 0xFFFFFF;

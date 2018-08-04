@@ -4,16 +4,14 @@
 //kabam.rotmg.account.web.view.WebForgotPasswordDialog
 
 package kabam.rotmg.account.web.view{
-import com.company.assembleegameclient.account.ui.Frame;
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import com.company.assembleegameclient.account.ui.Frame;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import com.company.assembleegameclient.ui.DeprecatedClickableText;
+    import flash.events.MouseEvent;
+    import org.osflash.signals.natives.NativeMappedSignal;
 
-import flash.events.MouseEvent;
-
-import org.osflash.signals.Signal;
-import org.osflash.signals.natives.NativeMappedSignal;
-
-public class WebForgotPasswordDialog extends Frame {
+    public class WebForgotPasswordDialog extends Frame {
 
         public var cancel:Signal;
         public var submit:Signal;

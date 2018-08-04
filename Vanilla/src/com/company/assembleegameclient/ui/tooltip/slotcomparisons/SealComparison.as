@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.ui.tooltip.slotcomparisons.SealComparison
 
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons{
-import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
 
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-
-public class SealComparison extends SlotComparison {
+    public class SealComparison extends SlotComparison {
 
         private var healingTag:XML;
         private var damageTag:XML;

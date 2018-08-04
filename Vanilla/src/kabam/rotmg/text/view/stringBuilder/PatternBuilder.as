@@ -4,9 +4,9 @@
 //kabam.rotmg.text.view.stringBuilder.PatternBuilder
 
 package kabam.rotmg.text.view.stringBuilder{
-import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.language.model.StringMap;
 
-public class PatternBuilder implements StringBuilder {
+    public class PatternBuilder implements StringBuilder {
 
         private const PATTERN:RegExp = /(\{([^\{]+?)\})/gi;
 

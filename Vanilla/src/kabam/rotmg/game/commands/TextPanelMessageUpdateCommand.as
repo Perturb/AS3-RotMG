@@ -4,11 +4,10 @@
 //kabam.rotmg.game.commands.TextPanelMessageUpdateCommand
 
 package kabam.rotmg.game.commands{
-import kabam.rotmg.game.model.TextPanelData;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import kabam.rotmg.game.model.TextPanelData;
 
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class TextPanelMessageUpdateCommand extends Command {
+    public class TextPanelMessageUpdateCommand extends Command {
 
         [Inject]
         public var model:TextPanelData;

@@ -4,15 +4,16 @@
 //com.company.assembleegameclient.ui.LineBreakDesign
 
 package com.company.assembleegameclient.ui{
-import com.company.util.GraphicsUtil;
+    import flash.display.Shape;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import flash.display.GraphicsPathWinding;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import __AS3__.vec.*;
 
-import flash.display.GraphicsPath;
-import flash.display.GraphicsPathWinding;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Shape;
-
-public class LineBreakDesign extends Shape {
+    public class LineBreakDesign extends Shape {
 
         private var designFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
         private var designPath_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>(), GraphicsPathWinding.NON_ZERO);

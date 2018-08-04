@@ -4,17 +4,17 @@
 //kabam.rotmg.account.transfer.services.TransferAccountTask
 
 package kabam.rotmg.account.transfer.services{
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.services.MigrateAccountTask;
-import kabam.rotmg.account.transfer.model.TransferAccountData;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.application.model.PlatformModel;
-import kabam.rotmg.application.model.PlatformType;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.model.PlayerModel;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.MigrateAccountTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.account.transfer.model.TransferAccountData;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.application.model.PlatformModel;
+    import kabam.rotmg.application.model.PlatformType;
 
-public class TransferAccountTask extends BaseTask implements MigrateAccountTask {
+    public class TransferAccountTask extends BaseTask implements MigrateAccountTask {
 
         [Inject]
         public var account:Account;

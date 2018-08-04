@@ -4,18 +4,16 @@
 //kabam.rotmg.packages.view.GoldDisplay
 
 package kabam.rotmg.packages.view{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import flash.display.Sprite;
+    import flash.display.DisplayObject;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import flash.display.Bitmap;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-public class GoldDisplay extends Sprite {
+    public class GoldDisplay extends Sprite {
 
         internal var graphic:DisplayObject;
         internal var text:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);

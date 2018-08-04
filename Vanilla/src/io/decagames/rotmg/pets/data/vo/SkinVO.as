@@ -4,12 +4,11 @@
 //io.decagames.rotmg.pets.data.vo.SkinVO
 
 package io.decagames.rotmg.pets.data.vo{
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.skin.PetSkinRenderer;
+    import io.decagames.rotmg.pets.data.skin.PetSkinRenderer;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import org.osflash.signals.Signal;
 
-import org.osflash.signals.Signal;
-
-public class SkinVO extends PetSkinRenderer implements IPetVO {
+    public class SkinVO extends PetSkinRenderer implements IPetVO {
 
         private var _family:String;
         private var _rarity:PetRarityEnum;

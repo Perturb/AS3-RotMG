@@ -4,10 +4,11 @@
 //com.company.assembleegameclient.engine3d.TextureMatrix
 
 package com.company.assembleegameclient.engine3d{
-import flash.display.BitmapData;
-import flash.geom.Matrix;
+    import flash.display.BitmapData;
+    import flash.geom.Matrix;
+    import __AS3__.vec.Vector;
 
-public class TextureMatrix {
+    public class TextureMatrix {
 
         public var texture_:BitmapData = null;
         public var tToS_:Matrix = new Matrix();

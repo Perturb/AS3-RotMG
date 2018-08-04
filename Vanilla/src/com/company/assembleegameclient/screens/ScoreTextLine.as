@@ -4,28 +4,26 @@
 //com.company.assembleegameclient.screens.ScoreTextLine
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import flash.display.Sprite;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.DisplayObject;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.events.Event;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import flash.utils.getTimer;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import flash.display.DisplayObject;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-import flash.utils.getTimer;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-
-public class ScoreTextLine extends Sprite implements TooltipAble {
+    public class ScoreTextLine extends Sprite implements TooltipAble {
 
         public static var textTooltip_:TextToolTip = new TextToolTip(0x363636, 0x9B9B9B, null, "", 150);
 

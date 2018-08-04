@@ -4,13 +4,13 @@
 //kabam.rotmg.news.view.NewsMediator
 
 package kabam.rotmg.news.view{
-import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
-import kabam.rotmg.news.model.NewsCellVO;
-import kabam.rotmg.news.model.NewsModel;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
+    import kabam.rotmg.news.model.NewsModel;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.news.model.NewsCellVO;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class NewsMediator extends Mediator {
+    public class NewsMediator extends Mediator {
 
         [Inject]
         public var view:NewsView;

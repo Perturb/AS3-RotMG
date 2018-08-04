@@ -4,21 +4,18 @@
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.SlotBox
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Bitmap;
+    import flash.text.TextFieldAutoSize;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.display.Shape;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.assets.services.IconFactory;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
-
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-import kabam.rotmg.assets.services.IconFactory;
-
-public class SlotBox extends UIGridElement {
+    public class SlotBox extends UIGridElement {
 
         public static const CHAR_SLOT:String = "CHAR_SLOT";
         public static const VAULT_SLOT:String = "VAULT_SLOT";

@@ -4,25 +4,23 @@
 //io.decagames.rotmg.fame.FameContentPopup
 
 package io.decagames.rotmg.fame{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.geom.Rectangle;
+    import io.decagames.rotmg.ui.popups.modal.ModalPopup;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.tabs.UITabs;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.geom.Rectangle;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import kabam.rotmg.assets.services.IconFactory;
+    import flash.display.BitmapData;
+    import io.decagames.rotmg.ui.tabs.UITab;
+    import io.decagames.rotmg.ui.scroll.UIScrollbar;
 
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.modal.ModalPopup;
-import io.decagames.rotmg.ui.scroll.UIScrollbar;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.tabs.UITab;
-import io.decagames.rotmg.ui.tabs.UITabs;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-import kabam.rotmg.assets.services.IconFactory;
-
-public class FameContentPopup extends ModalPopup {
+    public class FameContentPopup extends ModalPopup {
 
         private var characterDecorationBG:SliceScalingBitmap;
         private var contentTabs:SliceScalingBitmap;

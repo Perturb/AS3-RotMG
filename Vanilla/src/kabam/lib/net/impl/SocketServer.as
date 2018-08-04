@@ -4,23 +4,20 @@
 //kabam.lib.net.impl.SocketServer
 
 package kabam.lib.net.impl{
-import com.company.assembleegameclient.parameters.Parameters;
-import com.hurlant.crypto.symmetric.ICipher;
+    import org.osflash.signals.Signal;
+    import flash.utils.ByteArray;
+    import kabam.lib.net.api.MessageProvider;
+    import flash.net.Socket;
+    import flash.utils.Timer;
+    import com.hurlant.crypto.symmetric.ICipher;
+    import flash.events.Event;
+    import flash.events.ProgressEvent;
+    import flash.events.IOErrorEvent;
+    import flash.events.SecurityErrorEvent;
+    import flash.events.TimerEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.ProgressEvent;
-import flash.events.SecurityErrorEvent;
-import flash.events.TimerEvent;
-import flash.net.Socket;
-import flash.utils.ByteArray;
-import flash.utils.Timer;
-
-import kabam.lib.net.api.MessageProvider;
-
-import org.osflash.signals.Signal;
-
-public class SocketServer {
+    public class SocketServer {
 
         public static const MESSAGE_LENGTH_SIZE_IN_BYTES:int = 4;
 

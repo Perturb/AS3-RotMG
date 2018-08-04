@@ -4,9 +4,9 @@
 //io.decagames.rotmg.pets.utils.PetAbilityDisplayIDGetter
 
 package io.decagames.rotmg.pets.utils{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
 
-public class PetAbilityDisplayIDGetter {
+    public class PetAbilityDisplayIDGetter {
 
 
         public function getID(_arg_1:int):String{

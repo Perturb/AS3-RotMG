@@ -4,7 +4,10 @@
 //kabam.lib.tasks.TaskGroup
 
 package kabam.lib.tasks{
-public class TaskGroup extends BaseTask {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class TaskGroup extends BaseTask {
 
         private var tasks:Vector.<BaseTask>;
         private var pending:int;

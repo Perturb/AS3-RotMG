@@ -4,23 +4,21 @@
 //com.company.assembleegameclient.objects.Pet
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import com.company.assembleegameclient.util.AnimatedChar;
-import com.company.assembleegameclient.util.AnimatedChars;
-import com.company.assembleegameclient.util.MaskedImage;
+    import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import com.company.assembleegameclient.util.AnimatedChar;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import io.decagames.rotmg.pets.panels.PetPanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import com.company.assembleegameclient.util.MaskedImage;
+    import com.company.assembleegameclient.util.AnimatedChars;
 
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.panels.PetPanel;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
-import kabam.rotmg.text.model.TextKey;
-
-public class Pet extends GameObject implements IInteractiveObject {
+    public class Pet extends GameObject implements IInteractiveObject {
 
         private var textPanelUpdateSignal:TextPanelMessageUpdateSignal;
         public var vo:PetVO;
@@ -67,6 +65,14 @@ public class Pet extends GameObject implements IInteractiveObject {
             animatedChar_ = this.skin;
             texture_ = _local_5.image_;
             mask_ = _local_5.mask_;
+            var _local_6:ObjectProperties = ObjectLibrary.getPropsFromId(_local_2.DisplayId);
+            if (_local_6)
+            {
+                props_.flying_ = _local_6.flying_;
+                props_.whileMoving_ = _local_6.whileMoving_;
+                flying_ = props_.flying_;
+                z_ = props_.z_;
+            };
         }
 
         public function setDefaultSkin():void{

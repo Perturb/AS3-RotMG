@@ -4,11 +4,11 @@
 //kabam.rotmg.legends.model.Legend
 
 package kabam.rotmg.legends.model{
-import flash.display.BitmapData;
+    import kabam.rotmg.fame.model.FameVO;
+    import __AS3__.vec.Vector;
+    import flash.display.BitmapData;
 
-import kabam.rotmg.fame.model.FameVO;
-
-public class Legend implements FameVO {
+    public class Legend implements FameVO {
 
         public var isOwnLegend:Boolean;
         public var place:int;

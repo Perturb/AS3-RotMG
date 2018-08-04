@@ -4,12 +4,11 @@
 //com.company.assembleegameclient.util.TierUtil
 
 package com.company.assembleegameclient.util{
-import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.labels.UILabel;
-
-public class TierUtil {
+    public class TierUtil {
 
 
         public static function getTierTag(_arg_1:XML, _arg_2:int=12):UILabel{

@@ -4,39 +4,37 @@
 //kabam.rotmg.game.view.SellableObjectPanel
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.Merchant;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.objects.SellableObject;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.ConfirmBuyModal;
-import com.company.assembleegameclient.ui.RankText;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.util.Currency;
-import com.company.assembleegameclient.util.GuildUtil;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import kabam.rotmg.tooltips.TooltipAble;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.objects.SellableObject;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.ui.ConfirmBuyModal;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import com.company.assembleegameclient.util.Currency;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.RankText;
+    import com.company.assembleegameclient.util.GuildUtil;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.account.core.Account;
+    import com.company.assembleegameclient.objects.Merchant;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import com.company.assembleegameclient.ui.panels.*;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.tooltips.TooltipAble;
-import kabam.rotmg.util.components.LegacyBuyButton;
-
-import org.osflash.signals.Signal;
-
-public class SellableObjectPanel extends Panel implements TooltipAble {
+    public class SellableObjectPanel extends Panel implements TooltipAble {
 
         private const BUTTON_OFFSET:int = 17;
 

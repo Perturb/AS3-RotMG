@@ -588,18 +588,20 @@
       <Exp>1000</Exp>
       <StasisImmune/>
    </Object>
-   <Object type="0x744F" id="Event Chest Portal">
+   <Object type="0x744F" id="Event Chest MotMG">
       <DisplayId>Event Chest</DisplayId>
       <Class>Character</Class>
       <Enemy/>
+      <KeepDamageRecord/>
       <Texture>
-         <File>lofiObj3</File>
-         <Index>0x466</Index>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x8d</Index>
       </Texture>
-      <MaxHitPoints>30000</MaxHitPoints>
+      <MaxHitPoints>60000</MaxHitPoints>
       <Defense>0</Defense>
       <Size>160</Size>
-      <Exp>0</Exp>
+      <Exp>1000</Exp>
+      <StasisImmune/>
    </Object>
    <Object type="0xd8d" id="Quest Chest">
       <DisplayId>Quest Chest</DisplayId>

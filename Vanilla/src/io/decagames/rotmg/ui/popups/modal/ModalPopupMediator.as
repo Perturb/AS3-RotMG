@@ -4,11 +4,10 @@
 //io.decagames.rotmg.ui.popups.modal.ModalPopupMediator
 
 package io.decagames.rotmg.ui.popups.modal{
-import flash.events.Event;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import flash.events.Event;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class ModalPopupMediator extends Mediator {
+    public class ModalPopupMediator extends Mediator {
 
         [Inject]
         public var view:ModalPopup;

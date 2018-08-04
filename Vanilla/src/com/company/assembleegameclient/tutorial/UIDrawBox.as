@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.tutorial.UIDrawBox
 
 package com.company.assembleegameclient.tutorial{
-import com.company.util.ConversionUtil;
+    import flash.geom.Point;
+    import flash.geom.Rectangle;
+    import com.company.util.ConversionUtil;
+    import flash.display.Graphics;
 
-import flash.display.Graphics;
-import flash.geom.Point;
-import flash.geom.Rectangle;
-
-public class UIDrawBox {
+    public class UIDrawBox {
 
         public const ANIMATION_MS:int = 500;
         public const ORIGIN:Point = new Point(250, 200);

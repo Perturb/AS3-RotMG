@@ -4,11 +4,10 @@
 //com.greensock.plugins.FramePlugin
 
 package com.greensock.plugins{
-import com.greensock.TweenLite;
+    import flash.display.MovieClip;
+    import com.greensock.TweenLite;
 
-import flash.display.MovieClip;
-
-public class FramePlugin extends TweenPlugin {
+    public class FramePlugin extends TweenPlugin {
 
         public static const API:Number = 2;
 

@@ -4,7 +4,11 @@
 //kabam.lib.console.model.ActionHistory
 
 package kabam.lib.console.model{
-internal final class ActionHistory {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+    import kabam.lib.console.model.*;
+
+    internal final class ActionHistory {
 
         private var stack:Vector.<String>;
         private var index:int;

@@ -4,7 +4,10 @@
 //com.company.assembleegameclient.tutorial.Step
 
 package com.company.assembleegameclient.tutorial{
-public class Step {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class Step {
 
         public var text_:String;
         public var action_:String;

@@ -4,37 +4,35 @@
 //io.decagames.rotmg.social.SocialPopupMediator
 
 package io.decagames.rotmg.social{
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.core.signals.HideTooltipsSignal;
+    import kabam.rotmg.ui.model.HUDModel;
+    import io.decagames.rotmg.social.model.SocialModel;
+    import io.decagames.rotmg.social.signals.RefreshListSignal;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import kabam.rotmg.tooltips.HoverTooltipDelegate;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.ui.popups.header.PopupHeader;
+    import flash.events.KeyboardEvent;
+    import io.decagames.rotmg.social.signals.SocialDataSignal;
+    import io.decagames.rotmg.social.popups.InviteFriendPopup;
+    import io.decagames.rotmg.ui.buttons.BaseButton;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.social.model.FriendVO;
+    import io.decagames.rotmg.social.widgets.FriendListItem;
+    import io.decagames.rotmg.social.data.SocialItemState;
+    import io.decagames.rotmg.social.config.SocialConfig;
+    import io.decagames.rotmg.social.model.GuildMemberVO;
+    import io.decagames.rotmg.social.model.GuildVO;
+    import io.decagames.rotmg.social.widgets.GuildInfoItem;
+    import io.decagames.rotmg.social.widgets.GuildListItem;
+    import io.decagames.rotmg.social.widgets.*;
 
-import flash.events.KeyboardEvent;
-
-import io.decagames.rotmg.social.config.SocialConfig;
-import io.decagames.rotmg.social.data.SocialItemState;
-import io.decagames.rotmg.social.model.FriendVO;
-import io.decagames.rotmg.social.model.GuildMemberVO;
-import io.decagames.rotmg.social.model.GuildVO;
-import io.decagames.rotmg.social.model.SocialModel;
-import io.decagames.rotmg.social.popups.InviteFriendPopup;
-import io.decagames.rotmg.social.signals.RefreshListSignal;
-import io.decagames.rotmg.social.signals.SocialDataSignal;
-import io.decagames.rotmg.social.widgets.FriendListItem;
-import io.decagames.rotmg.social.widgets.GuildInfoItem;
-import io.decagames.rotmg.social.widgets.GuildListItem;
-import io.decagames.rotmg.ui.buttons.BaseButton;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.popups.header.PopupHeader;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-import kabam.rotmg.core.signals.HideTooltipsSignal;
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class SocialPopupMediator extends Mediator {
+    public class SocialPopupMediator extends Mediator {
 
         [Inject]
         public var view:SocialPopupView;

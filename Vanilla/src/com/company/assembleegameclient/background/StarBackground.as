@@ -1,17 +1,18 @@
-﻿﻿// Decompiled by AS3 Sorcerer 5.94
+﻿// Decompiled by AS3 Sorcerer 5.94
 // www.as3sorcerer.com
 
 //com.company.assembleegameclient.background.StarBackground
 
 package com.company.assembleegameclient.background{
-import com.company.assembleegameclient.map.Camera;
-import com.company.util.AssetLibrary;
-import com.company.util.ImageSet;
-import com.company.util.PointUtil;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import com.company.util.AssetLibrary;
+    import com.company.util.ImageSet;
+    import com.company.util.PointUtil;
+    import __AS3__.vec.*;
 
-import flash.display.IGraphicsData;
-
-public class StarBackground extends Background {
+    public class StarBackground extends Background {
 
         public var stars_:Vector.<Star> = new Vector.<Star>();
         protected var graphicsData_:Vector.<IGraphicsData> = new Vector.<IGraphicsData>();
@@ -55,15 +56,16 @@ public class StarBackground extends Background {
     }
 }//package com.company.assembleegameclient.background
 
-import com.company.assembleegameclient.map.Camera;
-
+import __AS3__.vec.Vector;
+import flash.display.GraphicsPathCommand;
+import flash.display.GraphicsEndFill;
 import flash.display.BitmapData;
 import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsEndFill;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsPathCommand;
-import flash.display.IGraphicsData;
 import flash.geom.Matrix;
+import flash.display.GraphicsPath;
+import flash.display.IGraphicsData;
+import com.company.assembleegameclient.map.Camera;
+import __AS3__.vec.*;
 
 class Star {
 
@@ -77,7 +79,7 @@ class Star {
     private var w_:Number;
     private var h_:Number;
     protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, new Matrix(), false, false);
-    protected var path_:GraphicsPath = new GraphicsPath(sqCommands, new Vector.<Number>());
+    protected var path_:GraphicsPath = new flash.display.GraphicsPath(sqCommands, new Vector.<Number>());
 
     public function Star(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:BitmapData):void{
         this.x_ = _arg_1;

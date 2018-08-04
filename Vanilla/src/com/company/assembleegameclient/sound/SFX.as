@@ -4,14 +4,12 @@
 //com.company.assembleegameclient.sound.SFX
 
 package com.company.assembleegameclient.sound{
-import com.company.assembleegameclient.parameters.Parameters;
+    import flash.media.SoundTransform;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import kabam.rotmg.core.service.GoogleAnalytics;
 
-import flash.media.SoundTransform;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.service.GoogleAnalytics;
-
-public class SFX {
+    public class SFX {
 
         private static var sfxTrans_:SoundTransform;
 

@@ -4,13 +4,14 @@
 //kabam.rotmg.chat.view.ChatList
 
 package kabam.rotmg.chat.view{
-import flash.display.Sprite;
-import flash.events.TimerEvent;
-import flash.utils.Timer;
+    import flash.display.Sprite;
+    import flash.utils.Timer;
+    import __AS3__.vec.Vector;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.chat.model.ChatModel;
+    import __AS3__.vec.*;
 
-import kabam.rotmg.chat.model.ChatModel;
-
-public class ChatList extends Sprite {
+    public class ChatList extends Sprite {
 
         private const timer:Timer = new Timer(1000);
         private const itemsToRemove:Vector.<ChatListItem> = new Vector.<ChatListItem>();

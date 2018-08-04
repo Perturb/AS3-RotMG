@@ -4,13 +4,12 @@
 //kabam.rotmg.promotions.view.SpecialOfferButtonMediator
 
 package kabam.rotmg.promotions.view{
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
-import kabam.rotmg.promotions.signals.PackageStatusUpdateSignal;
-import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
+    import kabam.rotmg.promotions.signals.PackageStatusUpdateSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class SpecialOfferButtonMediator extends Mediator {
+    public class SpecialOfferButtonMediator extends Mediator {
 
         [Inject]
         public var view:SpecialOfferButton;

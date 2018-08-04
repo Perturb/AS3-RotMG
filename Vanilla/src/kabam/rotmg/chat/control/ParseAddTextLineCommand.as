@@ -4,16 +4,14 @@
 //kabam.rotmg.chat.control.ParseAddTextLineCommand
 
 package kabam.rotmg.chat.control{
-import com.company.assembleegameclient.parameters.Parameters;
+    import robotlegs.bender.bundles.mvcs.Command;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import kabam.rotmg.text.model.TextAndMapProvider;
+    import kabam.rotmg.chat.model.ChatModel;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.chat.model.ChatModel;
-import kabam.rotmg.text.model.TextAndMapProvider;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import robotlegs.bender.bundles.mvcs.Command;
-
-public class ParseAddTextLineCommand extends Command {
+    public class ParseAddTextLineCommand extends Command {
 
         [Inject]
         public var chatMessage:ChatMessage;

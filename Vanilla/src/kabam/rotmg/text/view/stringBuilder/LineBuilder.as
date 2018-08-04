@@ -4,10 +4,10 @@
 //kabam.rotmg.text.view.stringBuilder.LineBuilder
 
 package kabam.rotmg.text.view.stringBuilder{
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.core.StaticInjectorContext;
 
-public class LineBuilder implements StringBuilder {
+    public class LineBuilder implements StringBuilder {
 
         public var key:String;
         public var tokens:Object;

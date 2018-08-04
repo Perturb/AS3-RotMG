@@ -4,27 +4,26 @@
 //com.company.assembleegameclient.ui.TradeButton
 
 package com.company.assembleegameclient.ui{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import flash.utils.getTimer;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.util.GraphicsUtil;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.text.TextFieldAutoSize;
-import flash.utils.getTimer;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TradeButton extends BackgroundFilledText {
+    public class TradeButton extends BackgroundFilledText {
 
         private static const WAIT_TIME:int = 2999;
         private static const COUNTDOWN_STATE:int = 0;

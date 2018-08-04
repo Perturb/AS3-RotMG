@@ -1,8 +1,8 @@
-﻿package com.company.ui
+package com.company.ui
 {
-import mx.core.*;
+	import mx.core.*;
 
-[Embed(source="BaseSimpleText_MyriadPro.swf", symbol="com.company.ui.BaseSimpleText_MyriadPro")]
+	[Embed(source="BaseSimpleText_MyriadPro.swf", symbol="com.company.ui.BaseSimpleText_MyriadPro")]
 	public class BaseSimpleText_MyriadPro extends FontAsset
 	{
 	public function BaseSimpleText_MyriadPro()

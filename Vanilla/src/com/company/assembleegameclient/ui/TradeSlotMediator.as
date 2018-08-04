@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.ui.TradeSlotMediator
 
 package com.company.assembleegameclient.ui{
-import kabam.rotmg.text.view.BitmapTextFactory;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.text.view.BitmapTextFactory;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class TradeSlotMediator extends Mediator {
+    public class TradeSlotMediator extends Mediator {
 
         [Inject]
         public var bitmapFactory:BitmapTextFactory;

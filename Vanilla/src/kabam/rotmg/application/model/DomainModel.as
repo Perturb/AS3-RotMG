@@ -4,10 +4,10 @@
 //kabam.rotmg.application.model.DomainModel
 
 package kabam.rotmg.application.model{
-import flash.net.LocalConnection;
-import flash.system.Security;
+    import flash.system.Security;
+    import flash.net.LocalConnection;
 
-public class DomainModel {
+    public class DomainModel {
 
         private const LOCALHOST:String = "localhost";
         private const PRODUCTION_WHITELIST:Array = ["www.realmofthemadgod.com", "realmofthemadgodhrd.appspot.com", "realmofthemadgod.appspot.com"];

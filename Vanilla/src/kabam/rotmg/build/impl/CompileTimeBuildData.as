@@ -4,14 +4,13 @@
 //kabam.rotmg.build.impl.CompileTimeBuildData
 
 package kabam.rotmg.build.impl{
-import flash.display.LoaderInfo;
-import flash.net.LocalConnection;
-import flash.system.Capabilities;
+    import kabam.rotmg.build.api.BuildData;
+    import flash.display.LoaderInfo;
+    import kabam.rotmg.build.api.BuildEnvironment;
+    import flash.net.LocalConnection;
+    import flash.system.Capabilities;
 
-import kabam.rotmg.build.api.BuildData;
-import kabam.rotmg.build.api.BuildEnvironment;
-
-public class CompileTimeBuildData implements BuildData {
+    public class CompileTimeBuildData implements BuildData {
 
         private static const DESKTOP:String = "Desktop";
         private static const ROTMG:String = "www.realmofthemadgod.com";

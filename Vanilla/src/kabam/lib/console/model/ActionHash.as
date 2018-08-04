@@ -4,9 +4,12 @@
 //kabam.lib.console.model.ActionHash
 
 package kabam.lib.console.model{
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+    import kabam.lib.console.model.*;
 
-internal final class ActionHash {
+    internal final class ActionHash {
 
         private var signalMap:Object;
         private var descriptionMap:Object;

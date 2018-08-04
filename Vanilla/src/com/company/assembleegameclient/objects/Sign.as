@@ -4,20 +4,18 @@
 //com.company.assembleegameclient.objects.Sign
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.util.TextureRedrawer;
+    import kabam.rotmg.language.model.StringMap;
+    import kabam.rotmg.text.model.FontModel;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.text.TextField;
+    import flash.text.TextFieldAutoSize;
+    import flash.text.TextFormat;
+    import flash.text.TextFormatAlign;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.display.BitmapData;
-import flash.text.TextField;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
-import flash.text.TextFormatAlign;
-
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.text.model.FontModel;
-
-public class Sign extends GameObject {
+    public class Sign extends GameObject {
 
         private var stringMap:StringMap;
         private var fontModel:FontModel;

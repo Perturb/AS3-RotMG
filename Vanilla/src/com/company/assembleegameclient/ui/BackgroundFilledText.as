@@ -4,17 +4,17 @@
 //com.company.assembleegameclient.ui.BackgroundFilledText
 
 package com.company.assembleegameclient.ui{
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.text.TextFieldAutoSize;
+    import __AS3__.vec.*;
 
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.IGraphicsData;
-import flash.display.Sprite;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class BackgroundFilledText extends Sprite {
+    public class BackgroundFilledText extends Sprite {
 
         protected static const MARGIN:int = 4;
 

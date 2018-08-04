@@ -4,7 +4,9 @@
 //kabam.rotmg.servers.api.ServerModel
 
 package kabam.rotmg.servers.api{
-public interface ServerModel {
+    import __AS3__.vec.Vector;
+
+    public interface ServerModel {
 
         function setServers(_arg_1:Vector.<Server>):void;
         function getServer():Server;

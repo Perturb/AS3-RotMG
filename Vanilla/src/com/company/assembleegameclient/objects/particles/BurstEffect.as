@@ -4,13 +4,11 @@
 //com.company.assembleegameclient.objects.particles.BurstEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
 
-import flash.geom.Point;
-
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class BurstEffect extends ParticleEffect {
+    public class BurstEffect extends ParticleEffect {
 
         public var center_:Point;
         public var edgePoint_:Point;

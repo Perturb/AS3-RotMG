@@ -4,13 +4,12 @@
 //com.company.assembleegameclient.map.GroundLibrary
 
 package com.company.assembleegameclient.map{
-import com.company.assembleegameclient.objects.TextureDataConcrete;
-import com.company.util.BitmapUtil;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.objects.TextureDataConcrete;
+    import flash.display.BitmapData;
+    import com.company.util.BitmapUtil;
 
-import flash.display.BitmapData;
-import flash.utils.Dictionary;
-
-public class GroundLibrary {
+    public class GroundLibrary {
 
         public static const propsLibrary_:Dictionary = new Dictionary();
         public static const xmlLibrary_:Dictionary = new Dictionary();

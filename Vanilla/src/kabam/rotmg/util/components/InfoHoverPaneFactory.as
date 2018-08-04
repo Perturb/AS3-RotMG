@@ -4,12 +4,11 @@
 //kabam.rotmg.util.components.InfoHoverPaneFactory
 
 package kabam.rotmg.util.components{
-import flash.display.DisplayObject;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.pets.view.components.PopupWindowBackground;
+    import flash.display.DisplayObject;
 
-import kabam.rotmg.pets.view.components.PopupWindowBackground;
-
-public class InfoHoverPaneFactory extends Sprite {
+    public class InfoHoverPaneFactory extends Sprite {
 
 
         public static function make(_arg_1:DisplayObject):Sprite{

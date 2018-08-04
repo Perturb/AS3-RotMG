@@ -4,11 +4,11 @@
 //com.company.util.RectangleUtil
 
 package com.company.util{
-import flash.geom.Matrix;
-import flash.geom.Point;
-import flash.geom.Rectangle;
+    import flash.geom.Rectangle;
+    import flash.geom.Point;
+    import flash.geom.Matrix;
 
-public class RectangleUtil {
+    public class RectangleUtil {
 
 
         public static function pointDist(_arg_1:Rectangle, _arg_2:Number, _arg_3:Number):Number{

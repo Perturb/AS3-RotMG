@@ -4,56 +4,51 @@
 //com.company.assembleegameclient.game.MapUserInput
 
 package com.company.assembleegameclient.game{
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.tutorial.Tutorial;
-import com.company.assembleegameclient.tutorial.doneAction;
-import com.company.assembleegameclient.ui.options.Options;
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.KeyCodes;
+    import net.hires.debug.Stats;
+    import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
+    import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
+    import kabam.rotmg.minimap.control.MiniMapZoomSignal;
+    import kabam.rotmg.game.signals.UseBuyPotionSignal;
+    import kabam.rotmg.game.model.PotionInventoryModel;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
+    import kabam.rotmg.ui.model.TabStripModel;
+    import kabam.rotmg.core.view.Layers;
+    import kabam.rotmg.game.signals.ExitGameSignal;
+    import flash.events.Event;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.application.api.ApplicationSetup;
+    import flash.events.MouseEvent;
+    import flash.display.Stage;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.constants.UseType;
+    import com.company.assembleegameclient.tutorial.doneAction;
+    import com.company.assembleegameclient.tutorial.Tutorial;
+    import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
+    import kabam.rotmg.chat.model.ChatMessage;
+    import com.company.assembleegameclient.objects.GameObject;
+    import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+    import com.company.assembleegameclient.map.Square;
+    import kabam.rotmg.ui.UIUtils;
+    import com.company.util.KeyCodes;
+    import kabam.rotmg.game.model.UseBuyPotionVO;
+    import io.decagames.rotmg.social.SocialPopupView;
+    import kabam.rotmg.friends.view.FriendListView;
+    import com.company.assembleegameclient.ui.options.Options;
+    import flash.system.Capabilities;
+    import flash.display.StageDisplayState;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import kabam.rotmg.constants.GeneralConstants;
+    import kabam.rotmg.messaging.impl.GameServerConnection;
 
-import flash.display.Stage;
-import flash.display.StageDisplayState;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.system.Capabilities;
-
-import io.decagames.rotmg.social.SocialPopupView;
-import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
-import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
-import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
-
-import kabam.rotmg.application.api.ApplicationSetup;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.constants.GeneralConstants;
-import kabam.rotmg.constants.UseType;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.core.view.Layers;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.friends.view.FriendListView;
-import kabam.rotmg.game.model.PotionInventoryModel;
-import kabam.rotmg.game.model.UseBuyPotionVO;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.game.signals.ExitGameSignal;
-import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
-import kabam.rotmg.game.signals.UseBuyPotionSignal;
-import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
-import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.minimap.control.MiniMapZoomSignal;
-import kabam.rotmg.ui.UIUtils;
-import kabam.rotmg.ui.model.TabStripModel;
-
-import net.hires.debug.Stats;
-
-import org.swiftsuspenders.Injector;
-
-public class MapUserInput {
+    public class MapUserInput {
 
         private static var stats_:Stats = new Stats();
         private static const MOUSE_DOWN_WAIT_PERIOD:uint = 175;

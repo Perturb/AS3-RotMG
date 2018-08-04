@@ -4,11 +4,10 @@
 //kabam.rotmg.pets.view.components.DialogCloseButtonMediator
 
 package kabam.rotmg.pets.view.components{
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class DialogCloseButtonMediator extends Mediator {
+    public class DialogCloseButtonMediator extends Mediator {
 
         [Inject]
         public var view:DialogCloseButton;

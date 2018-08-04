@@ -4,9 +4,10 @@
 //kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy
 
 package kabam.rotmg.stage3D.proxies{
-import flash.display3D.VertexBuffer3D;
+    import flash.display3D.VertexBuffer3D;
+    import __AS3__.vec.Vector;
 
-public class VertexBuffer3DProxy {
+    public class VertexBuffer3DProxy {
 
         private var vertexBuffer3D:VertexBuffer3D;
         protected var data:Vector.<Number>;

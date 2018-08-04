@@ -4,25 +4,25 @@
 //com.company.assembleegameclient.ui.menu.Menu
 
 package com.company.assembleegameclient.ui.menu{
-import com.company.util.GraphicsUtil;
-import com.company.util.RectangleUtil;
+    import flash.display.Sprite;
+    import kabam.rotmg.ui.view.UnFocusAble;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.filters.DropShadowFilter;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
+    import flash.geom.Rectangle;
+    import com.company.util.RectangleUtil;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
-
-import kabam.rotmg.ui.view.UnFocusAble;
-
-public class Menu extends Sprite implements UnFocusAble {
+    public class Menu extends Sprite implements UnFocusAble {
 
         private var background_:uint;
         private var outline_:uint;

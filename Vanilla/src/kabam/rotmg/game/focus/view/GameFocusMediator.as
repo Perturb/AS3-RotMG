@@ -4,16 +4,13 @@
 //kabam.rotmg.game.focus.view.GameFocusMediator
 
 package kabam.rotmg.game.focus.view{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.GameObject;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.objects.GameObject;
+    import flash.utils.Dictionary;
 
-import flash.utils.Dictionary;
-
-import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class GameFocusMediator extends Mediator {
+    public class GameFocusMediator extends Mediator {
 
         [Inject]
         public var signal:SetGameFocusSignal;

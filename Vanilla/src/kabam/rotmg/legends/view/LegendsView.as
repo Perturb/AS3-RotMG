@@ -4,28 +4,27 @@
 //kabam.rotmg.legends.view.LegendsView
 
 package kabam.rotmg.legends.view{
-import com.company.assembleegameclient.screens.TitleMenuOption;
-import com.company.assembleegameclient.ui.Scrollbar;
-import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.display.Sprite;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.legends.model.Timespan;
+    import kabam.rotmg.legends.model.Legend;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.screens.TitleMenuOption;
+    import com.company.assembleegameclient.ui.Scrollbar;
+    import kabam.rotmg.ui.view.components.ScreenBase;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.filters.DropShadowFilter;
+    import flash.display.Shape;
+    import flash.display.Graphics;
+    import com.company.rotmg.graphics.ScreenGraphic;
+    import flash.events.MouseEvent;
+    import flash.events.Event;
+    import __AS3__.vec.*;
 
-import flash.display.Graphics;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.legends.model.Legend;
-import kabam.rotmg.legends.model.Timespan;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.ui.view.components.ScreenBase;
-
-import org.osflash.signals.Signal;
-
-public class LegendsView extends Sprite {
+    public class LegendsView extends Sprite {
 
         public const timespanChanged:Signal = new Signal(Timespan);
         public const showDetail:Signal = new Signal(Legend);

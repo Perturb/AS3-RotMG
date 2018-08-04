@@ -4,14 +4,13 @@
 //kabam.rotmg.account.web.view.FormField
 
 package kabam.rotmg.account.web.view{
-import com.company.ui.BaseSimpleText;
+    import flash.display.Sprite;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import com.company.ui.BaseSimpleText;
 
-import flash.display.CapsStyle;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-
-public class FormField extends Sprite {
+    public class FormField extends Sprite {
 
         protected static const BACKGROUND_COLOR:uint = 0x333333;
         protected static const ERROR_BORDER_COLOR:uint = 16549442;

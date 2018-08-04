@@ -4,13 +4,12 @@
 //kabam.rotmg.arena.component.ArenaQueryDialogHost
 
 package kabam.rotmg.arena.component{
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import kabam.rotmg.arena.view.HostQueryDialog;
+    import flash.display.BitmapData;
 
-import kabam.rotmg.arena.view.HostQueryDialog;
-
-public class ArenaQueryDialogHost extends Sprite {
+    public class ArenaQueryDialogHost extends Sprite {
 
         private const speechBubble:HostQuerySpeechBubble = makeSpeechBubble();
         private const detailBubble:HostQueryDetailBubble = makeDetailBubble();
@@ -32,7 +31,8 @@ public class ArenaQueryDialogHost extends Sprite {
         }
 
         private function makeHostIcon():Bitmap{
-            var _local_1:Bitmap = new Bitmap(this.makeDebugBitmapData());
+            var _local_1:Bitmap;
+            _local_1 = new Bitmap(this.makeDebugBitmapData());
             _local_1.x = 0;
             _local_1.y = 0;
             addChild(_local_1);

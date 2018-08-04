@@ -4,9 +4,10 @@
 //kabam.lib.ui.api.Layout
 
 package kabam.lib.ui.api{
-import flash.display.DisplayObject;
+    import __AS3__.vec.Vector;
+    import flash.display.DisplayObject;
 
-public interface Layout {
+    public interface Layout {
 
         function getPadding():int;
         function setPadding(_arg_1:int):void;

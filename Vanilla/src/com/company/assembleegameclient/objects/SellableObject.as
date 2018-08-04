@@ -4,15 +4,13 @@
 //com.company.assembleegameclient.objects.SellableObject
 
 package com.company.assembleegameclient.objects{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+    import flash.display.BitmapData;
+    import kabam.rotmg.game.view.SellableObjectPanel;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.panels.Panel;
 
-import flash.display.BitmapData;
-
-import kabam.rotmg.game.view.SellableObjectPanel;
-
-public class SellableObject extends GameObject implements IInteractiveObject {
+    public class SellableObject extends GameObject implements IInteractiveObject {
 
         public var price_:int = 0;
         public var currency_:int = -1;

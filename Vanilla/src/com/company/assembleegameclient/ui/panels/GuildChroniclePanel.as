@@ -4,17 +4,15 @@
 //com.company.assembleegameclient.ui.panels.GuildChroniclePanel
 
 package com.company.assembleegameclient.ui.panels{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.Event;
+    import com.company.assembleegameclient.game.GameSprite;
+    import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
 
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.text.model.TextKey;
-
-public class GuildChroniclePanel extends ButtonPanel {
+    public class GuildChroniclePanel extends ButtonPanel {
 
         public function GuildChroniclePanel(_arg_1:GameSprite){
             super(_arg_1, TextKey.GUILD_CHRONICLE_TITLE, TextKey.PANEL_VIEW_BUTTON);

@@ -4,13 +4,12 @@
 //kabam.lib.ui.GroupMappedSignal
 
 package kabam.lib.ui{
-import flash.events.Event;
-import flash.events.IEventDispatcher;
-import flash.utils.Dictionary;
+    import org.osflash.signals.Signal;
+    import flash.utils.Dictionary;
+    import flash.events.IEventDispatcher;
+    import flash.events.Event;
 
-import org.osflash.signals.Signal;
-
-public class GroupMappedSignal extends Signal {
+    public class GroupMappedSignal extends Signal {
 
         private var eventType:String;
         private var mappedTargets:Dictionary;

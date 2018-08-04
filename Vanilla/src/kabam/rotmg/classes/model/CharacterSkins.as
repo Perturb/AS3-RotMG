@@ -4,7 +4,10 @@
 //kabam.rotmg.classes.model.CharacterSkins
 
 package kabam.rotmg.classes.model{
-public class CharacterSkins {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class CharacterSkins {
 
         private const skins:Vector.<CharacterSkin> = new Vector.<CharacterSkin>(0);
         private const map:Object = {};

@@ -4,38 +4,36 @@
 //kabam.rotmg.friends.view.FriendListView
 
 package kabam.rotmg.friends.view{
-import com.company.assembleegameclient.account.ui.TextInputField;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.dialogs.DialogCloser;
-import com.company.ui.BaseSimpleText;
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import com.company.assembleegameclient.ui.dialogs.DialogCloser;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import com.company.assembleegameclient.account.ui.TextInputField;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.pets.view.components.DialogCloseButton;
+    import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.events.Event;
+    import io.decagames.rotmg.social.model.FriendVO;
+    import flash.events.MouseEvent;
+    import flash.events.FocusEvent;
+    import io.decagames.rotmg.social.config.FriendsActions;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import com.company.ui.BaseSimpleText;
+    import flash.text.TextFormatAlign;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.FocusEvent;
-import flash.events.MouseEvent;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
-
-import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-import io.decagames.rotmg.social.config.FriendsActions;
-import io.decagames.rotmg.social.model.FriendVO;
-
-import kabam.rotmg.pets.view.components.DialogCloseButton;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-import org.osflash.signals.Signal;
-
-public class FriendListView extends Sprite implements DialogCloser {
+    public class FriendListView extends Sprite implements DialogCloser {
 
         public static const TEXT_WIDTH:int = 500;
         public static const TEXT_HEIGHT:int = 500;

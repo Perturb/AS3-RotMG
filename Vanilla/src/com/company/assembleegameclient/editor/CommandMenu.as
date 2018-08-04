@@ -4,12 +4,12 @@
 //com.company.assembleegameclient.editor.CommandMenu
 
 package com.company.assembleegameclient.editor{
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.utils.Dictionary;
+    import flash.display.Sprite;
+    import flash.utils.Dictionary;
+    import flash.events.Event;
+    import flash.events.KeyboardEvent;
 
-public class CommandMenu extends Sprite {
+    public class CommandMenu extends Sprite {
 
         private var keyCodeDict_:Dictionary = new Dictionary();
         private var yOffset_:int = 0;

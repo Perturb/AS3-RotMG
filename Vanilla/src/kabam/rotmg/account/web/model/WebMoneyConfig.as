@@ -4,14 +4,13 @@
 //kabam.rotmg.account.web.model.WebMoneyConfig
 
 package kabam.rotmg.account.web.model{
-import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.account.core.model.MoneyConfig;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-import kabam.rotmg.account.core.model.MoneyConfig;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class WebMoneyConfig implements MoneyConfig {
+    public class WebMoneyConfig implements MoneyConfig {
 
 
         public function showPaymentMethods():Boolean{

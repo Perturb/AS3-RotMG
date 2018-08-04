@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.incoming.ClientStat
 
 package kabam.rotmg.messaging.impl.incoming{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class ClientStat extends IncomingMessage {
+    public class ClientStat extends IncomingMessage {
 
         public var name_:String;
         public var value_:int;

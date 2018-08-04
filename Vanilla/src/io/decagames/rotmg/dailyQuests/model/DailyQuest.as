@@ -4,7 +4,9 @@
 //io.decagames.rotmg.dailyQuests.model.DailyQuest
 
 package io.decagames.rotmg.dailyQuests.model{
-public class DailyQuest {
+    import __AS3__.vec.Vector;
+
+    public class DailyQuest {
 
         public var completed:Boolean;
         public var id:String;
@@ -14,10 +16,11 @@ public class DailyQuest {
         public var requirements:Vector.<int>;
         public var category:int;
         public var itemOfChoice:Boolean;
+        public var repeatable:Boolean;
 
 
         public function toString():String{
-            return (((((((((((((("Quest: id=" + this.id) + ", name=") + this.name) + ", description=") + this.description) + ", category=") + this.category) + ", rewards=") + this.rewards) + ", requirements=") + this.requirements) + ", is itemOfChoice? ") + ((this.itemOfChoice) ? "true" : ("false" + ", is completed? "))) + ((this.completed) ? "true" : "false"));
+            return ((((((((((((((((("Quest: id=" + this.id) + ", name=") + this.name) + ", description=") + this.description) + ", category=") + this.category) + ", rewards=") + this.rewards) + ", requirements=") + this.requirements) + ", is itemOfChoice? ") + ((this.itemOfChoice) ? "true" : "false")) + ", is completed? ") + ((this.completed) ? "true" : "false")) + ", repeatable? ") + ((this.repeatable) ? "true" : "false"));
         }
 
 

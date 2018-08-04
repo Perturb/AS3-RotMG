@@ -40,6 +40,7 @@ package kabam.rotmg.constants{
         public static const GENERIC_ACTIVATE:String = "GenericActivate";
         public static const OBJECT_TOSS:String = "ObjectToss";
         public static const TELEPORT_LIMIT:String = "TeleportLimit";
+        public static const BULLET_CREATE:String = "BulletCreate";
 
 
     }

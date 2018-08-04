@@ -4,34 +4,32 @@
 //io.decagames.rotmg.social.SocialPopupView
 
 package io.decagames.rotmg.social{
-import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.util.AssetLibrary;
+    import io.decagames.rotmg.ui.popups.modal.ModalPopup;
+    import io.decagames.rotmg.ui.textField.InputTextField;
+    import io.decagames.rotmg.ui.buttons.SliceScalingButton;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.gird.UIGrid;
+    import io.decagames.rotmg.ui.tabs.UITabs;
+    import flash.display.Sprite;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import flash.geom.Rectangle;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import io.decagames.rotmg.social.widgets.FriendListItem;
+    import io.decagames.rotmg.social.widgets.GuildInfoItem;
+    import flash.text.TextFormatAlign;
+    import io.decagames.rotmg.social.widgets.GuildListItem;
+    import io.decagames.rotmg.ui.tabs.TabButton;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import com.company.assembleegameclient.util.TextureRedrawer;
+    import com.company.util.AssetLibrary;
+    import flash.display.BitmapData;
+    import flash.display.Bitmap;
+    import io.decagames.rotmg.ui.tabs.UITab;
+    import io.decagames.rotmg.ui.scroll.UIScrollbar;
+    import flash.text.TextFieldAutoSize;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.geom.Rectangle;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormatAlign;
-
-import io.decagames.rotmg.social.widgets.FriendListItem;
-import io.decagames.rotmg.social.widgets.GuildInfoItem;
-import io.decagames.rotmg.social.widgets.GuildListItem;
-import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGrid;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.popups.modal.ModalPopup;
-import io.decagames.rotmg.ui.scroll.UIScrollbar;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.tabs.TabButton;
-import io.decagames.rotmg.ui.tabs.UITab;
-import io.decagames.rotmg.ui.tabs.UITabs;
-import io.decagames.rotmg.ui.textField.InputTextField;
-import io.decagames.rotmg.ui.texture.TextureParser;
-
-public class SocialPopupView extends ModalPopup {
+    public class SocialPopupView extends ModalPopup {
 
         public static const SOCIAL_LABEL:String = "Social";
         public static const FRIEND_TAB_LABEL:String = "Friends";

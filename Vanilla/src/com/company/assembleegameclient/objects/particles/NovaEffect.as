@@ -4,11 +4,10 @@
 //com.company.assembleegameclient.objects.particles.NovaEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
 
-import flash.geom.Point;
-
-public class NovaEffect extends ParticleEffect {
+    public class NovaEffect extends ParticleEffect {
 
         public var start_:Point;
         public var novaRadius_:Number;

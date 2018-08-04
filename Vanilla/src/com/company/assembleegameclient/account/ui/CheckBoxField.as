@@ -4,20 +4,19 @@
 //com.company.assembleegameclient.account.ui.CheckBoxField
 
 package com.company.assembleegameclient.account.ui{
-import flash.display.CapsStyle;
-import flash.display.Graphics;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
+    import flash.display.Sprite;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.display.Graphics;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
 
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-
-public class CheckBoxField extends Sprite {
+    public class CheckBoxField extends Sprite {
 
         private static const BOX_SIZE:int = 20;
 

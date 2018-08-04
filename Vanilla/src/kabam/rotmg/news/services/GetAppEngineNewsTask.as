@@ -4,19 +4,19 @@
 //kabam.rotmg.news.services.GetAppEngineNewsTask
 
 package kabam.rotmg.news.services{
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.news.model.NewsModel;
+    import kabam.rotmg.language.model.LanguageModel;
+    import flash.utils.getTimer;
+    import kabam.rotmg.news.model.NewsCellVO;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.news.model.NewsCellLinkType;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import __AS3__.vec.*;
 
-import flash.utils.getTimer;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.language.model.LanguageModel;
-import kabam.rotmg.news.model.NewsCellLinkType;
-import kabam.rotmg.news.model.NewsCellVO;
-import kabam.rotmg.news.model.NewsModel;
-
-public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask {
+    public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask {
 
         private static const TEN_MINUTES:int = 600;
 

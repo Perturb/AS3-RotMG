@@ -4,21 +4,17 @@
 //io.decagames.rotmg.pets.windows.yard.feed.items.FeedItemMediator
 
 package io.decagames.rotmg.pets.windows.yard.feed.items{
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.core.signals.ShowTooltipSignal;
+    import kabam.rotmg.ui.model.HUDModel;
+    import io.decagames.rotmg.pets.signals.SelectFeedItemSignal;
+    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+    import flash.events.MouseEvent;
 
-import flash.events.MouseEvent;
-
-import io.decagames.rotmg.pets.signals.SelectFeedItemSignal;
-
-import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.ui.model.HUDModel;
-
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class FeedItemMediator extends Mediator {
+    public class FeedItemMediator extends Mediator {
 
         [Inject]
         public var view:FeedItem;

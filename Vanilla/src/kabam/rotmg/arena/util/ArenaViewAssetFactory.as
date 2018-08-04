@@ -4,14 +4,12 @@
 //kabam.rotmg.arena.util.ArenaViewAssetFactory
 
 package kabam.rotmg.arena.util{
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.filters.DropShadowFilter;
+    import flash.display.Bitmap;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
 
-import flash.display.Bitmap;
-import flash.filters.DropShadowFilter;
-
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-
-public class ArenaViewAssetFactory {
+    public class ArenaViewAssetFactory {
 
 
         public static function returnTextfield(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Boolean=false):TextFieldDisplayConcrete{

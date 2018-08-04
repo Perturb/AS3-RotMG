@@ -4,18 +4,19 @@
 //com.company.assembleegameclient.objects.thrown.BitmapParticle
 
 package com.company.assembleegameclient.objects.thrown{
-import com.company.assembleegameclient.map.Camera;
-import com.company.assembleegameclient.map.Square;
-import com.company.assembleegameclient.objects.BasicObject;
-import com.company.util.GraphicsUtil;
+    import com.company.assembleegameclient.objects.BasicObject;
+    import flash.display.GraphicsBitmapFill;
+    import flash.display.GraphicsPath;
+    import com.company.util.GraphicsUtil;
+    import __AS3__.vec.Vector;
+    import flash.geom.Matrix;
+    import flash.display.BitmapData;
+    import com.company.assembleegameclient.map.Square;
+    import flash.display.IGraphicsData;
+    import com.company.assembleegameclient.map.Camera;
+    import __AS3__.vec.*;
 
-import flash.display.BitmapData;
-import flash.display.GraphicsBitmapFill;
-import flash.display.GraphicsPath;
-import flash.display.IGraphicsData;
-import flash.geom.Matrix;
-
-public class BitmapParticle extends BasicObject {
+    public class BitmapParticle extends BasicObject {
 
         protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, null, false, false);
         protected var path_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, null);

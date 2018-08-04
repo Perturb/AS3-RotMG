@@ -4,21 +4,20 @@
 //io.decagames.rotmg.pets.data.PetsModel
 
 package io.decagames.rotmg.pets.data{
-import com.company.assembleegameclient.appengine.SavedCharacter;
-import com.company.assembleegameclient.map.AbstractMap;
-import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
+    import kabam.rotmg.core.model.PlayerModel;
+    import __AS3__.vec.Vector;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import io.decagames.rotmg.pets.data.yard.PetYardEnum;
+    import com.company.assembleegameclient.map.AbstractMap;
+    import io.decagames.rotmg.pets.data.vo.SkinVO;
+    import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
+    import com.company.assembleegameclient.appengine.SavedCharacter;
+    import __AS3__.vec.*;
 
-import flash.utils.Dictionary;
-
-import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.data.vo.SkinVO;
-import io.decagames.rotmg.pets.data.yard.PetYardEnum;
-import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
-
-import kabam.rotmg.core.model.PlayerModel;
-
-public class PetsModel {
+    public class PetsModel {
 
         private static var petsDataXML:Class = PetsModel_petsDataXML;
 

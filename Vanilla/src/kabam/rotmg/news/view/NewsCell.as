@@ -4,26 +4,24 @@
 //kabam.rotmg.news.view.NewsCell
 
 package kabam.rotmg.news.view{
-import flash.display.Loader;
-import flash.display.Shape;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.net.URLRequest;
-import flash.text.TextFieldAutoSize;
+    import flash.display.Sprite;
+    import flash.display.Shape;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.news.model.NewsCellVO;
+    import flash.display.Loader;
+    import org.osflash.signals.Signal;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import flash.events.MouseEvent;
+    import kabam.rotmg.text.view.TextDisplay;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+    import flash.filters.DropShadowFilter;
+    import flash.events.Event;
+    import flash.events.IOErrorEvent;
+    import flash.net.URLRequest;
 
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.news.model.NewsCellVO;
-import kabam.rotmg.text.view.TextDisplay;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-
-import org.osflash.signals.Signal;
-import org.swiftsuspenders.Injector;
-
-public class NewsCell extends Sprite {
+    public class NewsCell extends Sprite {
 
         internal static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
         internal static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;

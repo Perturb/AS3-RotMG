@@ -4,19 +4,17 @@
 //com.company.assembleegameclient.ui.menu.TeleportMenuOption
 
 package com.company.assembleegameclient.ui.menu{
-import com.company.assembleegameclient.objects.Player;
-import com.company.util.AssetLibrary;
+    import flash.geom.ColorTransform;
+    import com.company.assembleegameclient.objects.Player;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import flash.display.Shape;
+    import com.company.util.AssetLibrary;
+    import kabam.rotmg.text.model.TextKey;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.events.Event;
+    import flash.events.MouseEvent;
 
-import flash.display.Shape;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.geom.ColorTransform;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class TeleportMenuOption extends MenuOption {
+    public class TeleportMenuOption extends MenuOption {
 
         private static const inactiveCT:ColorTransform = new ColorTransform((84 / 0xFF), (84 / 0xFF), (84 / 0xFF));
 

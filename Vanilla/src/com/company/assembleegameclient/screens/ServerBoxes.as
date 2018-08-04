@@ -4,14 +4,14 @@
 //com.company.assembleegameclient.screens.ServerBoxes
 
 package com.company.assembleegameclient.screens{
-import com.company.assembleegameclient.parameters.Parameters;
+    import flash.display.Sprite;
+    import __AS3__.vec.Vector;
+    import kabam.rotmg.servers.api.Server;
+    import flash.events.MouseEvent;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import __AS3__.vec.*;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-
-import kabam.rotmg.servers.api.Server;
-
-public class ServerBoxes extends Sprite {
+    public class ServerBoxes extends Sprite {
 
         private var boxes_:Vector.<ServerBox> = new Vector.<ServerBox>();
 

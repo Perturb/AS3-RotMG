@@ -4,21 +4,19 @@
 //kabam.rotmg.fame.service.RequestCharacterFameTask
 
 package kabam.rotmg.fame.service{
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
-import com.company.util.DateFormatterReplacement;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.classes.model.ClassesModel;
+    import kabam.rotmg.assets.model.CharacterTemplate;
+    import flash.utils.Timer;
+    import flash.events.TimerEvent;
+    import kabam.rotmg.classes.model.CharacterClass;
+    import kabam.rotmg.classes.model.CharacterSkin;
+    import com.company.util.DateFormatterReplacement;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-import flash.events.TimerEvent;
-import flash.utils.Timer;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.assets.model.CharacterTemplate;
-import kabam.rotmg.classes.model.CharacterClass;
-import kabam.rotmg.classes.model.CharacterSkin;
-import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-
-public class RequestCharacterFameTask extends BaseTask {
+    public class RequestCharacterFameTask extends BaseTask {
 
         [Inject]
         public var client:AppEngineClient;

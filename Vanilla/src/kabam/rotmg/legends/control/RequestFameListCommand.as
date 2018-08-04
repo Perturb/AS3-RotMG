@@ -4,17 +4,17 @@
 //kabam.rotmg.legends.control.RequestFameListCommand
 
 package kabam.rotmg.legends.control{
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.death.model.DeathModel;
-import kabam.rotmg.fame.model.FameModel;
-import kabam.rotmg.legends.service.GetLegendsListTask;
+    import kabam.rotmg.legends.service.GetLegendsListTask;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.death.model.DeathModel;
+    import kabam.rotmg.fame.model.FameModel;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.lib.tasks.Task;
 
-public class RequestFameListCommand {
+    public class RequestFameListCommand {
 
         [Inject]
         public var task:GetLegendsListTask;

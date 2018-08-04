@@ -4,11 +4,13 @@
 //com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+    import com.company.assembleegameclient.objects.GameObject;
+    import com.company.assembleegameclient.objects.Player;
+    import __AS3__.vec.*;
 
-public class ContainerGrid extends ItemGrid {
+    public class ContainerGrid extends ItemGrid {
 
         private const NUM_SLOTS:uint = 8;
 

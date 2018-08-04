@@ -4,21 +4,19 @@
 //com.company.assembleegameclient.ui.tooltip.PlayerToolTip
 
 package com.company.assembleegameclient.ui.tooltip{
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.GameObjectListItem;
-import com.company.assembleegameclient.ui.GuildText;
-import com.company.assembleegameclient.ui.RankText;
-import com.company.assembleegameclient.ui.StatusBar;
-import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+    import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.ui.GameObjectListItem;
+    import com.company.assembleegameclient.ui.RankText;
+    import com.company.assembleegameclient.ui.GuildText;
+    import com.company.assembleegameclient.ui.StatusBar;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import flash.filters.DropShadowFilter;
 
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class PlayerToolTip extends ToolTip {
+    public class PlayerToolTip extends ToolTip {
 
         public var player_:Player;
         private var playerPanel_:GameObjectListItem;

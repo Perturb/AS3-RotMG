@@ -4,17 +4,16 @@
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetFamilyContainer
 
 package io.decagames.rotmg.pets.components.petSkinsCollection{
-import io.decagames.rotmg.pets.data.family.PetFamilyColors;
-import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-import io.decagames.rotmg.ui.gird.UIGridElement;
-import io.decagames.rotmg.ui.labels.UILabel;
-import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-import io.decagames.rotmg.ui.texture.TextureParser;
-import io.decagames.rotmg.utils.colors.Tint;
+    import io.decagames.rotmg.ui.gird.UIGridElement;
+    import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
+    import io.decagames.rotmg.ui.labels.UILabel;
+    import io.decagames.rotmg.pets.data.family.PetFamilyColors;
+    import io.decagames.rotmg.ui.texture.TextureParser;
+    import io.decagames.rotmg.utils.colors.Tint;
+    import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class PetFamilyContainer extends UIGridElement {
+    public class PetFamilyContainer extends UIGridElement {
 
         public function PetFamilyContainer(_arg_1:String, _arg_2:int, _arg_3:int){
             var _local_5:SliceScalingBitmap;

@@ -4,40 +4,38 @@
 //kabam.rotmg.game.view.FortuneGroundPanel
 
 package kabam.rotmg.game.view{
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.objects.SellableObject;
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.panels.Panel;
-import com.company.assembleegameclient.util.Currency;
+    import com.company.assembleegameclient.ui.panels.Panel;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.objects.SellableObject;
+    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+    import kabam.rotmg.util.components.LegacyBuyButton;
+    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+    import flash.display.Sprite;
+    import flash.display.Bitmap;
+    import kabam.rotmg.core.StaticInjectorContext;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.text.TextFieldAutoSize;
+    import flash.filters.DropShadowFilter;
+    import kabam.rotmg.fortune.services.FortuneModel;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.arena.util.ArenaViewAssetFactory;
+    import flash.events.Event;
+    import kabam.rotmg.fortune.components.FortuneModal;
+    import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
+    import com.company.assembleegameclient.game.GameSprite;
+    import kabam.rotmg.fortune.model.FortuneInfo;
+    import kabam.rotmg.util.components.InfoHoverPaneFactory;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+    import com.company.assembleegameclient.util.Currency;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.ui.panels.*;
 
-import flash.display.Bitmap;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.KeyboardEvent;
-import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.text.TextFieldAutoSize;
-
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.view.RegisterPromptDialog;
-import kabam.rotmg.arena.util.ArenaViewAssetFactory;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.fortune.components.FortuneModal;
-import kabam.rotmg.fortune.model.FortuneInfo;
-import kabam.rotmg.fortune.services.FortuneModel;
-import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-import kabam.rotmg.util.components.InfoHoverPaneFactory;
-import kabam.rotmg.util.components.LegacyBuyButton;
-
-import org.osflash.signals.Signal;
-import org.swiftsuspenders.Injector;
-
-public class FortuneGroundPanel extends Panel {
+    public class FortuneGroundPanel extends Panel {
 
         private static var hovering:Boolean;
 

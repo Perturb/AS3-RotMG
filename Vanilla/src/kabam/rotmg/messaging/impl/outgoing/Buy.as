@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.outgoing.Buy
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import flash.utils.IDataOutput;
 
-public class Buy extends OutgoingMessage {
+    public class Buy extends OutgoingMessage {
 
         public var objectId_:int;
         public var quantity_:int;

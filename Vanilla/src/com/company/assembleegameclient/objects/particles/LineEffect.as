@@ -4,14 +4,12 @@
 //com.company.assembleegameclient.objects.particles.LineEffect
 
 package com.company.assembleegameclient.objects.particles{
-import com.company.assembleegameclient.objects.GameObject;
-import com.company.assembleegameclient.util.RandomUtil;
+    import flash.geom.Point;
+    import com.company.assembleegameclient.objects.GameObject;
+    import kabam.rotmg.messaging.impl.data.WorldPosData;
+    import com.company.assembleegameclient.util.RandomUtil;
 
-import flash.geom.Point;
-
-import kabam.rotmg.messaging.impl.data.WorldPosData;
-
-public class LineEffect extends ParticleEffect {
+    public class LineEffect extends ParticleEffect {
 
         public var start_:Point;
         public var end_:Point;

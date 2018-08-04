@@ -4,9 +4,9 @@
 //kabam.rotmg.account.kongregate.view.KongregateAccountInfoMediator
 
 package kabam.rotmg.account.kongregate.view{
-import robotlegs.bender.bundles.mvcs.Mediator;
+    import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class KongregateAccountInfoMediator extends Mediator {
+    public class KongregateAccountInfoMediator extends Mediator {
 
         [Inject]
         public var view:KongregateAccountInfoView;

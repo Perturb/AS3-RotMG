@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.outgoing.Reskin
 
 package kabam.rotmg.messaging.impl.outgoing{
-import com.company.assembleegameclient.objects.Player;
+    import com.company.assembleegameclient.objects.Player;
+    import flash.utils.IDataOutput;
 
-import flash.utils.IDataOutput;
-
-public class Reskin extends OutgoingMessage {
+    public class Reskin extends OutgoingMessage {
 
         public var skinID:int;
         public var player:Player;

@@ -4,15 +4,13 @@
 //kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler
 
 package kabam.rotmg.messaging.impl.incoming{
-import io.decagames.rotmg.pets.data.PetsModel;
-import io.decagames.rotmg.pets.data.vo.PetVO;
-import io.decagames.rotmg.pets.signals.EvolvePetSignal;
+    import org.swiftsuspenders.Injector;
+    import kabam.rotmg.messaging.impl.EvolvePetInfo;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.data.PetsModel;
+    import io.decagames.rotmg.pets.signals.EvolvePetSignal;
 
-import kabam.rotmg.messaging.impl.EvolvePetInfo;
-
-import org.swiftsuspenders.Injector;
-
-public class EvolvedMessageHandler {
+    public class EvolvedMessageHandler {
 
         [Inject]
         public var injector:Injector;

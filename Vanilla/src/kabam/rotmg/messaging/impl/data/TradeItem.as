@@ -4,9 +4,9 @@
 //kabam.rotmg.messaging.impl.data.TradeItem
 
 package kabam.rotmg.messaging.impl.data{
-import flash.utils.IDataInput;
+    import flash.utils.IDataInput;
 
-public class TradeItem {
+    public class TradeItem {
 
         public var item_:int;
         public var slotType_:int;

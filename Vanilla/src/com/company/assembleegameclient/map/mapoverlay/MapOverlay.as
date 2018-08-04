@@ -4,14 +4,12 @@
 //com.company.assembleegameclient.map.mapoverlay.MapOverlay
 
 package com.company.assembleegameclient.map.mapoverlay{
-import com.company.assembleegameclient.map.Camera;
+    import flash.display.Sprite;
+    import kabam.rotmg.game.view.components.QueuedStatusTextList;
+    import kabam.rotmg.game.view.components.QueuedStatusText;
+    import com.company.assembleegameclient.map.Camera;
 
-import flash.display.Sprite;
-
-import kabam.rotmg.game.view.components.QueuedStatusText;
-import kabam.rotmg.game.view.components.QueuedStatusTextList;
-
-public class MapOverlay extends Sprite {
+    public class MapOverlay extends Sprite {
 
         private const speechBalloons:Object = {};
         private const queuedText:Object = {};

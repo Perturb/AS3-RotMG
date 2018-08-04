@@ -4,7 +4,10 @@
 //kabam.lib.tasks.TaskSequence
 
 package kabam.lib.tasks{
-public class TaskSequence extends BaseTask {
+    import __AS3__.vec.Vector;
+    import __AS3__.vec.*;
+
+    public class TaskSequence extends BaseTask {
 
         private var tasks:Vector.<Task>;
         private var index:int;

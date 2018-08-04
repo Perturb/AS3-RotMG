@@ -4,12 +4,12 @@
 //io.decagames.rotmg.pets.utils.PetItemFactory
 
 package io.decagames.rotmg.pets.utils{
-import io.decagames.rotmg.pets.components.petIcon.PetIcon;
-import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
-import io.decagames.rotmg.pets.components.petItem.PetItem;
-import io.decagames.rotmg.pets.data.vo.PetVO;
+    import io.decagames.rotmg.pets.components.petIcon.PetIconFactory;
+    import io.decagames.rotmg.pets.components.petItem.PetItem;
+    import io.decagames.rotmg.pets.components.petIcon.PetIcon;
+    import io.decagames.rotmg.pets.data.vo.PetVO;
 
-public class PetItemFactory {
+    public class PetItemFactory {
 
         [Inject]
         public var petIconFactory:PetIconFactory;

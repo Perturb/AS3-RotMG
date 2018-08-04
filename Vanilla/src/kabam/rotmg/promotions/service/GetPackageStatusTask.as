@@ -4,12 +4,12 @@
 //kabam.rotmg.promotions.service.GetPackageStatusTask
 
 package kabam.rotmg.promotions.service{
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+    import kabam.rotmg.appengine.api.AppEngineClient;
 
-public class GetPackageStatusTask extends BaseTask {
+    public class GetPackageStatusTask extends BaseTask {
 
         [Inject]
         public var account:Account;

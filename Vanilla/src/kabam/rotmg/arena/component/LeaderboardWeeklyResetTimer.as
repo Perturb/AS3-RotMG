@@ -4,16 +4,15 @@
 //kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer
 
 package kabam.rotmg.arena.component{
-import flash.display.Sprite;
-import flash.events.TimerEvent;
-import flash.filters.DropShadowFilter;
-import flash.utils.Timer;
+    import flash.display.Sprite;
+    import flash.utils.Timer;
+    import kabam.rotmg.text.view.StaticTextDisplay;
+    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+    import kabam.rotmg.text.model.TextKey;
+    import flash.events.TimerEvent;
+    import flash.filters.DropShadowFilter;
 
-import kabam.rotmg.text.model.TextKey;
-import kabam.rotmg.text.view.StaticTextDisplay;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-
-public class LeaderboardWeeklyResetTimer extends Sprite {
+    public class LeaderboardWeeklyResetTimer extends Sprite {
 
         private const MONDAY:Number = 1;
         private const UTC_COUNTOFF_HOUR:Number = 7;

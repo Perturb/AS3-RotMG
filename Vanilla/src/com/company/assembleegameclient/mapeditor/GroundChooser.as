@@ -4,14 +4,18 @@
 //com.company.assembleegameclient.mapeditor.GroundChooser
 
 package com.company.assembleegameclient.mapeditor{
-import com.company.assembleegameclient.map.GroundLibrary;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.util.MoreStringUtil;
+    import flash.utils.Dictionary;
+    import com.company.assembleegameclient.mapeditor.Layer;
+    import flash.events.Event;
+    import __AS3__.vec.Vector;
+    import com.company.assembleegameclient.mapeditor.GroupDivider;
+    import com.company.util.MoreStringUtil;
+    import com.company.assembleegameclient.map.GroundLibrary;
+    import com.company.assembleegameclient.objects.ObjectLibrary;
+    import __AS3__.vec.*;
+    import com.company.assembleegameclient.mapeditor.*;
 
-import flash.events.Event;
-import flash.utils.Dictionary;
-
-internal class GroundChooser extends Chooser {
+    internal class GroundChooser extends Chooser {
 
         private var cache:Dictionary;
         private var lastSearch:String = "";

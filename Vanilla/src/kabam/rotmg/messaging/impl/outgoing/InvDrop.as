@@ -4,11 +4,10 @@
 //kabam.rotmg.messaging.impl.outgoing.InvDrop
 
 package kabam.rotmg.messaging.impl.outgoing{
-import flash.utils.IDataOutput;
+    import kabam.rotmg.messaging.impl.data.SlotObjectData;
+    import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
-
-public class InvDrop extends OutgoingMessage {
+    public class InvDrop extends OutgoingMessage {
 
         public var slotObject_:SlotObjectData = new SlotObjectData();
 

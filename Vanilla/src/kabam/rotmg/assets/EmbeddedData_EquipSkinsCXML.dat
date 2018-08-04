@@ -239,7 +239,7 @@
       <Consumable/>
       <Soulbound/>
       <BagType>8</BagType>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
    </Object>
    <Object type="0x7f93" id="Pilgrim Father Skin">
       <Class>Equipment</Class>
@@ -385,6 +385,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Knight with the Slime Skin.\n\nSkin Class: Knight</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="903">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -399,6 +402,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Archer with the Slime Skin.\n\nSkin Class: Archer</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="904">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -413,6 +419,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Priest with the Slime Skin.\n\nSkin Class: Priest</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="905">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -498,6 +507,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Ninja with the Slime Skin.\n\nSkin Class: Ninja</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="856">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -596,6 +608,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>This? Don't be afraid of me. My spell just backfired, it will wear off soon.\n\nSkin Class: Wizard</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="872">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -806,6 +821,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Sorcerer with the Slime Skin.\n\nSkin Class: Sorcerer</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9013">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -820,6 +838,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Trickster with the Slime Skin.\n\nSkin Class: Trickster</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9014">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -834,6 +855,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Mystic with the Slime Skin.\n\nSkin Class: Mystic</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9026">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -848,6 +872,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Huntress with the Slime Skin.\n\nSkin Class: Huntress</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9027">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -862,6 +889,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Necromancer with the Slime Skin.\n\nSkin Class: Necromancer</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9028">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -876,6 +906,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Assassin with the Slime Skin.\n\nSkin Class: Assassin</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9029">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -890,6 +923,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Paladin with the Slime Skin.\n\nSkin Class: Paladin</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9030">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -904,6 +940,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Rogue with the Slime Skin.\n\nSkin Class: Rogue</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9031">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -918,6 +957,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Customize your Warrior with the Slime Skin.\n\nSkin Class: Warrior</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9032">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -3194,11 +3236,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Rogue\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19419">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bf5" id="Stone Archer Skin">
       <Class>Equipment</Class>
@@ -3209,11 +3255,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Archer\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19420">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bf6" id="Stone Wizard Skin">
       <Class>Equipment</Class>
@@ -3224,11 +3274,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Wizard\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19421">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bf7" id="Stone Priest Skin">
       <Class>Equipment</Class>
@@ -3239,11 +3293,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Priest\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19422">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bf8" id="Stone Warrior Skin">
       <Class>Equipment</Class>
@@ -3254,11 +3312,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Warrior\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19423">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bf9" id="Stone Knight Skin">
       <Class>Equipment</Class>
@@ -3269,11 +3331,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Knight\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19424">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bfa" id="Stone Paladin Skin">
       <Class>Equipment</Class>
@@ -3284,11 +3350,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Paladin\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19425">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bfb" id="Stone Assassin Skin">
       <Class>Equipment</Class>
@@ -3299,11 +3369,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Assassin\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19426">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bfc" id="Stone Necromancer Skin">
       <Class>Equipment</Class>
@@ -3314,11 +3388,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Necromancer\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19427">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bfd" id="Stone Huntress Skin">
       <Class>Equipment</Class>
@@ -3329,11 +3407,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Huntress\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19428">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bfe" id="Stone Mystic Skin">
       <Class>Equipment</Class>
@@ -3344,11 +3426,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Mystic\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19429">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4bff" id="Stone Trickster Skin">
       <Class>Equipment</Class>
@@ -3359,11 +3445,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Trickster\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19430">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4c00" id="Stone Sorcerer Skin">
       <Class>Equipment</Class>
@@ -3374,11 +3464,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Sorcerer\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19431">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4c01" id="Stone Ninja Skin">
       <Class>Equipment</Class>
@@ -3389,11 +3483,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Ninja\nSprite Credits: PoloKai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="19432">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
-      <feedPower>2000</feedPower>
+      <feedPower>1000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x4c02" id="Voodoo Magus Necromancer Skin">
       <Class>Equipment</Class>
@@ -5420,7 +5518,7 @@
       <Soulbound/>
       <feedPower>2000</feedPower>
    </Object>
-   <Object type="0x240b" id="Outpost Guard Warrior Skin">
+   <Object type="0x240b" id="Kingsman Cavalry Warrior Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5429,13 +5527,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;Our defenses are weakened, fall back!&#8221;\n\nSkin Class: Warrior\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9213">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x240c" id="King's Champion Knight Skin">
+   <Object type="0x240c" id="Kingsman Guard Knight Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5444,13 +5546,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;We will not fall! Stand firm!&#8221;\n\nSkin Class: Knight\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9214">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x240d" id="King's Guard Paladin Skin">
+   <Object type="0x240d" id="Kingsman Armorbearer Paladin Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5459,6 +5565,9 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;We will protect our King! Even if it costs us our lives!&#8221;\n\nSkin Class: Paladin\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9215">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
@@ -5474,11 +5583,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;My magic couldn&#8217;t phase them, they shifted shape, and took my soul.&#8221;\n\nSkin Class: Wizard\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9216">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x240f" id="Demon Summoner Necromancer Skin">
       <Class>Equipment</Class>
@@ -5489,11 +5602,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;I will soon join them, I will bring forth destruction! Our cult will never fall!&#8221;\n\nSkin Class: Necromancer\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9217">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x2410" id="Wandering Gypsy Mystic Skin">
       <Class>Equipment</Class>
@@ -5504,11 +5621,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;I warned them, I saw the future, and yet they did nothing to change fate&#8230;&#8221;\n\nSkin Class: Mystic\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9218">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x2411" id="Village Peasant Trickster Skin">
       <Class>Equipment</Class>
@@ -5519,13 +5640,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;I was tending my field, and a dark cloud blackened the skies.&#8221;\n\nSkin Class: Trickster\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9219">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x2412" id="Hired Mercenary Assassin Skin">
+   <Object type="0x2412" id="Blackguard Mercenary Assassin Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5534,13 +5659,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;I watched as the Void swallowed them all, and I could not avoid their fate.&#8221;\n\nSkin Class: Assassin\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9220">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x2413" id="Foreign General Ninja Skin">
+   <Object type="0x2413" id="Sensei Ninja Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5548,12 +5677,16 @@
          <Index>334</Index>
       </AnimatedTexture>
       <SlotType>10</SlotType>
-      <Description>&#8221;What a terrible curse befell this place, what sorcery had these people toyed with?&#8221;\n\nSkin Class: Ninja\nSprite Credits: WunderWafe</Description>
+      <Description>&#8221;As I meditated, I felt a powerful force. A horrific world void of life flooded my mind. And before me, my vision came true.&#8221;\n\nSkin Class: Ninja\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9221">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x2414" id="King of Thieves Rogue Skin">
       <Class>Equipment</Class>
@@ -5564,13 +5697,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;I hid among the shadows, and I paid the price, and it swallowed me whole.&#8221;\n\nSkin Class: Rogue\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9222">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x2415" id="Old Bowman Archer Skin">
+   <Object type="0x2415" id="Kings Bowman Archer Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5579,13 +5716,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;The ground rumbled beneath my feet, and trees fell in the forest&#8230;&#8221;\n\nSkin Class: Archer\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9223">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x2416" id="Honed Huntress Skin">
+   <Object type="0x2416" id="Forest Tracker Huntress Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5594,11 +5735,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;Before us split open a rift, a purple void, and a horrific shape-shifter came forth.&#8221;\n\nSkin Class: Huntress\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9224">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x2417" id="Carthusian Monk Priest Skin">
       <Class>Equipment</Class>
@@ -5609,13 +5754,17 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;An impure voice echoed across the land, and our souls were taken from our bodies&#8230;&#8221;\n\nSkin Class: Priest\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9225">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
-   <Object type="0x2418" id="Aged Sorcerer Skin">
+   <Object type="0x2418" id="Royal Sorcerer Skin">
       <Class>Equipment</Class>
       <Item/>
       <AnimatedTexture>
@@ -5624,11 +5773,15 @@
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>&#8221;All I saw was darkness, my body became a husk, and I fell into endless torment and anguish.&#8221;\n\nSkin Class: Sorcerer\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
       <Activate skinType="9226">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
       <feedPower>2000</feedPower>
+      <Track/>
    </Object>
    <Object type="0x241e" id="Lustrous Champion Knight Skin">
       <Class>Equipment</Class>
@@ -5960,6 +6113,21 @@
       <BagType>8</BagType>
       <feedPower>2000</feedPower>
    </Object>
+   <Object type="0x18cb" id="Beefcake Brutus Warrior Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>19</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>After all this time spent fighting in the Arena, Brutus has new challenges to take on... and slash.\n\nSkin Class: Warrior</Description>
+      <Activate skinType="6346">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
    <Object type="0x1887" id="Oni Demon Samurai Skin">
       <Class>Equipment</Class>
       <Item/>
@@ -5970,6 +6138,406 @@
       <SlotType>10</SlotType>
       <Description>You cannot pass the warden of the gates of Hell!\n\nSkin Class: Samurai</Description>
       <Activate skinType="6278">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x5f36" id="Tattooed Yakuza Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>363</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>The nail that sticks up must be hammered down.\n\nSkin Class: Samurai</Description>
+      <Activate skinType="24373">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x1885" id="Cowboy Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>364</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Ya&#8217;ll don&#8217;t mess with the samurai cowboy, ya hear!\n\nSkin Class: Samurai</Description>
+      <Activate skinType="6276">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17da" id="Tennis Player Archer Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>365</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>If you are tired of shooting enemies with the bow, just practice your accuracy with the tennis racket!\n\nSkin Class: Archer\nSprite Credits: Lovens</Description>
+      <Activate skinType="3586">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17db" id="Beach Assassin Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>366</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Removing that mask from the face helps to get a better tan.\n\nSkin Class: Assassin\nSprite Credits: Lovens</Description>
+      <Activate skinType="3587">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17dc" id="Snorkeler Knight Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>367</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Have you tried stunning a shark with bare hands? Well, I wouldn't recommend.\n\nSkin Class: Knight\nSprite Credits: Lovens</Description>
+      <Activate skinType="3588">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17dd" id="Beach Party Necromancer Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>368</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>He prefers partying to fighting!\n\nSkin Class: Necromancer\nSprite Credits: Lovens</Description>
+      <Activate skinType="3589">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17de" id="Banana Boat Paladin Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>369</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>This guy can surf as well!\n\nSkin Class: Paladin\nSprite Credits: Lovens</Description>
+      <Activate skinType="3590">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17df" id="Buckethead Warrior Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>370</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>When you can't get your hands on the Helm of the Juggernaut there is always a decent replacement.\n\nSkin Class: Warrior\nSprite Credits: Lovens</Description>
+      <Activate skinType="3591">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x17e0" id="Summer Vacation Wizard Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>371</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>This summer drink definitely contains some magic!\n\nSkin Class: Wizard\nSprite Credits: Lovens</Description>
+      <Activate skinType="3592">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x749d" id="Storm Archer Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>372</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Ever got struck by lightning? I have.\n\nSkin Class: Archer\nSprite Credits: Tero</Description>
+      <Activate skinType="29850">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x749e" id="Foreign Prince Paladin Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>373</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Clear the way in the left bazaar, let him through, he's a bright new star!\n\nSkin Class: Paladin\nSprite Credits: Lovens</Description>
+      <Activate skinType="29851">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x749f" id="Hoodoo Priestess Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>374</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>With her powerful spiritual rituals she can cure you of almost every curse!\n\nSkin Class: Priest\nSprite Credits: Lovens</Description>
+      <Activate skinType="29852">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x4ae1" id="Hermit Wizard Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>375</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>This wizard won't attend any beach parties.\n\nSkin Class: Wizard\nSprite Credits: Yasmule, Lovens</Description>
+      <Activate skinType="19168">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x602b" id="Giant Sword Warrior Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>376</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>They call me one slash man!\n\nSkin Class: Warrior</Description>
+      <Activate skinType="24618">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x7463" id="Wanderer Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>377</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>He may look like a wanderer, but the has sharp eyes and even sharper katana!\n\nSkin Class: Samurai\nSprite Credits: Nazoado</Description>
+      <Activate skinType="29794">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x280e" id="Stone Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>378</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>First I was afraid, I was petrified... And then I realized I could still move. Huh, Craig's really bad at rituals.\n\nSkin Class: Samurai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Stone Skins"/>
+      </ExtraTooltipData>
+      <Activate skinType="10253">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>1000</feedPower>
+      <Track/>
+   </Object>
+   <Object type="0x2242" id="Chonmage Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>379</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>My duty lies with the people... My honor - within myself!\n\nSkin Class: Samurai\nSprite Credits: KwispyKwap</Description>
+      <Activate skinType="8766">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x2243" id="Baywatch Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>380</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Some people stand in the darkness!\n\nSkin Class: Samurai\nSprite Credits: Lovens, Dappertron</Description>
+      <Activate skinType="8767">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x2244" id="Shark Hunter Ninja Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>381</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>The fastest among all realm swimmers.\n\nSkin Class: Ninja\nSprite Credits: Lovens</Description>
+      <Activate skinType="8768">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x2245" id="Kilnmaster Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>382</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>He makes all the women swoon as soon as they're near him. He's just too hot for them.\n\nSkin Class: Samurai\nSprite Credits: Atrapper</Description>
+      <Activate skinType="8769">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x2248" id="Slime Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>383</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Customize your Samurai with the Slime Skin.\n\nSkin Class: Samurai</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Slime Skins"/>
+      </ExtraTooltipData>
+      <Activate skinType="8774">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x2249" id="Onna Bugeisha Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>384</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>A noble master of martial arts.\n\nSkin Class: Samurai\nSprite Credits: Lovens</Description>
+      <Activate skinType="8775">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x4849" id="Foreign General Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>385</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>&#8221;What a terrible curse befell this place, what sorcery had these people toyed with?&#8221;\n\nSkin Class: Samurai\nSprite Credits: WunderWafe</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="Collection" description="Kingdom Skins"/>
+      </ExtraTooltipData>
+      <Activate skinType="18504">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+      <Track/>
+   </Object>
+   <Object type="0x620f" id="Silex Almighty Knight Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>386</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>STOP. Hammer time!\n\nSkin Class: Knight\nSprite Credits: Lovens</Description>
+      <Activate skinType="25102">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x6211" id="Random Mad Scientist Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>387</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>True wizard of game development!\n\nSkin Class: Wizard\nSprite Credits: Lovens</Description>
+      <Activate skinType="25104">UnlockSkin</Activate>
+      <Consumable/>
+      <BagType>8</BagType>
+      <Soulbound/>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x6213" id="Krathman Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>388</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>NANANANANANA...Krathman!\n\nSkin Class: Ninja\nSprite Credits: Lovens</Description>
+      <Activate skinType="25106">UnlockSkin</Activate>
       <Consumable/>
       <BagType>8</BagType>
       <Soulbound/>
